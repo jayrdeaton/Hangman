@@ -1,16 +1,19 @@
-# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
-
 # dependencies
 node_modules/
 
 # Expo
 .expo/
-dist/
 web-build/
+ios/
+android/
 expo-env.d.ts
+dist
+build*
+
+# AI Readme files
+readmes/
 
 # Native
-.kotlin/
 *.orig.*
 *.jks
 *.p8
@@ -36,6 +39,11 @@ yarn-error.*
 # typescript
 *.tsbuildinfo
 
-# generated native folders
-/ios
-/android
+# testing
+coverage/
+
+# vscode
+.vscode/exponentIndex.js
+
+# vercel
+.vercel
