@@ -1,7 +1,11 @@
-import { JSX } from 'react'
+import React, { JSX } from 'react'
 
-import { Main } from './src/components'
+import { Main, Providers } from './src/components'
 
-const App = (): JSX.Element => <Main />
+const App = (): JSX.Element => (
+  <Providers>
+    <Main />
+  </Providers>
+)
 
 export default App

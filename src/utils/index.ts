@@ -1,3 +1,6 @@
+export * from './getBlendedColor'
+export * from './getHex'
 export * from './getRGB'
+export * from './getTriadicPalette'
 export * from './isDarkColor'
 export * from './settings'

@@ -1,19 +1,15 @@
 import { StatusBar } from 'expo-status-bar'
-import { JSX, useEffect, useMemo, useState } from 'react'
-import { Alert, KeyboardAvoidingView, Platform, StyleSheet, useColorScheme, View } from 'react-native'
-import { Appbar, Button, MD3DarkTheme, MD3LightTheme, Provider as PaperProvider, Text, TextInput } from 'react-native-paper'
+import { JSX, useEffect, useState } from 'react'
+import { Alert, KeyboardAvoidingView, Platform, StyleSheet, View } from 'react-native'
+import { Appbar, Button, Text, TextInput } from 'react-native-paper'
 
-import { getSavedColor, getSavedTheme, isDarkColor, saveColor, ThemeOverride } from '../utils'
+import { getSavedColor, saveColor } from '../utils'
 import { ColorPicker } from './ColorPicker'
 import { HangmanDrawingRandom } from './HangmanDrawingRandom'
 import { Keyboard } from './Keyboard'
-import { SettingsScreen } from './SettingsScreen'
 
 export const Main = (): JSX.Element => {
-  const scheme = useColorScheme()
   const [primaryColor, setPrimaryColor] = useState('#6200ee')
-  const [settingsVisible, setSettingsVisible] = useState(false)
-  const [themeOverride, setThemeOverride] = useState<ThemeOverride | null>(null)
   // Game state
   const [setupWord, setSetupWord] = useState('')
   const [secretVisible, setSecretVisible] = useState(false)
@@ -27,8 +23,6 @@ export const Main = (): JSX.Element => {
     ;(async () => {
       const saved = await getSavedColor()
       if (saved && mounted) setPrimaryColor(saved)
-      const savedTheme = await getSavedTheme()
-      if (savedTheme && mounted) setThemeOverride(savedTheme)
     })()
     return () => {
       mounted = false
@@ -39,20 +33,6 @@ export const Main = (): JSX.Element => {
     // persist color whenever it changes
     saveColor(primaryColor)
   }, [primaryColor])
-
-  const theme = useMemo(() => {
-    const effectiveScheme = themeOverride && themeOverride !== 'system' ? themeOverride : scheme
-    const onPrimary = isDarkColor(primaryColor) ? MD3LightTheme.colors.onPrimary : MD3DarkTheme.colors.onPrimary
-    return effectiveScheme === 'dark'
-      ? {
-          ...MD3DarkTheme,
-          colors: { ...MD3DarkTheme.colors, primary: primaryColor, onPrimary }
-        }
-      : {
-          ...MD3LightTheme,
-          colors: { ...MD3LightTheme.colors, primary: primaryColor, onPrimary }
-        }
-  }, [scheme, themeOverride, primaryColor])
 
   const handleGuess = (letter) => {
     const L = letter.toUpperCase()
@@ -103,83 +83,70 @@ export const Main = (): JSX.Element => {
   }
 
   return (
-    <PaperProvider theme={theme}>
-      <View style={[StyleSheet.absoluteFill, { backgroundColor: theme.colors.background }]}>
-        <Appbar.Header>
-          <Appbar.Content title='Hangman' />
-          {/* <Appbar.Action icon='cog' onPress={() => setSettingsVisible(true)} accessibilityLabel='Settings' /> */}
-        </Appbar.Header>
+    <View style={StyleSheet.absoluteFill}>
+      <Appbar.Header>
+        <Appbar.Content title='Hangman' />
+        {/* <Appbar.Action icon='cog' onPress={() => setSettingsVisible(true)} accessibilityLabel='Settings' /> */}
+      </Appbar.Header>
 
-        <KeyboardAvoidingView style={styles.container} behavior={Platform.OS === 'ios' ? 'padding' : 'height'} keyboardVerticalOffset={Platform.OS === 'ios' ? 60 : 0}>
-          {!secretWord ? (
-            <View style={styles.setupContainer}>
-              <Text style={styles.title}>Pass & Play — Enter a secret word</Text>
-              <TextInput style={styles.input} value={setupWord} onChangeText={setSetupWord} placeholder='Secret word (letters and spaces allowed)' autoCapitalize='characters' secureTextEntry={!secretVisible} maxLength={128} numberOfLines={3} mode='outlined' right={<TextInput.Icon icon={secretVisible ? 'eye-off' : 'eye'} onPress={() => setSecretVisible((s) => !s)} />} />
-              <ColorPicker label='Pick accent color for this round' color={primaryColor} onChange={setPrimaryColor} />
-              <Button
-                mode='contained'
-                onPress={() => {
-                  const normalized = setupWord
-                    .replace(/[^A-Za-z ]/g, '')
-                    .replace(/\s+/g, ' ')
-                    .trim()
-                    .toUpperCase()
-                  if (!normalized || normalized.replace(/ /g, '').length === 0) {
-                    Alert.alert('Enter a valid word', 'Please enter a secret word using letters A–Z (spaces allowed)')
-                    return
-                  }
-                  setSecretWord(normalized)
-                  setGuessedLetters([])
-                  setWrongGuesses(0)
-                  setSetupWord('')
-                }}
-                style={styles.margin}
-              >
-                Start Game
-              </Button>
-            </View>
-          ) : (
-            <View style={styles.gameContainer}>
-              <HangmanDrawingRandom wrongGuesses={wrongGuesses} manColor={primaryColor} />
-              {/* <HangmanDrawing wrongGuesses={wrongGuesses} color={theme.colors.onBackground} manColor={primaryColor} /> */}
-              <Text style={styles.wordDisplay} accessibilityLabel='Secret word display'>
-                {secretWord
-                  .split('')
-                  .map((ch) => (ch === ' ' ? ' ' : guessedLetters.includes(ch) ? ch : '_'))
-                  .join(' ')}
-              </Text>
-              <Text style={styles.margin}>
-                Wrong guesses: {wrongGuesses} / {maxWrong}
-              </Text>
-              <Keyboard guessedLetters={guessedLetters} color={primaryColor} onGuess={handleGuess} />
-              <Button
-                mode='outlined'
-                onPress={() => {
-                  setSecretWord('')
-                  setGuessedLetters([])
-                  setWrongGuesses(0)
-                }}
-                style={styles.margin}
-              >
-                New Game
-              </Button>
-            </View>
-          )}
-          <StatusBar style='auto' />
-        </KeyboardAvoidingView>
-
-        <SettingsScreen
-          visible={settingsVisible}
-          onDismiss={() => setSettingsVisible(false)}
-          color={primaryColor}
-          onColorChange={setPrimaryColor}
-          onReset={() => {
-            setPrimaryColor('#6200ee')
-            setThemeOverride('system')
-          }}
-        />
-      </View>
-    </PaperProvider>
+      <KeyboardAvoidingView style={styles.container} behavior={Platform.OS === 'ios' ? 'padding' : 'height'} keyboardVerticalOffset={Platform.OS === 'ios' ? 60 : 0}>
+        {!secretWord ? (
+          <View style={styles.setupContainer}>
+            <Text style={styles.title}>Pass & Play — Enter a secret word</Text>
+            <TextInput style={styles.input} value={setupWord} onChangeText={setSetupWord} placeholder='Secret word (letters and spaces allowed)' autoCapitalize='characters' secureTextEntry={!secretVisible} maxLength={128} numberOfLines={3} mode='outlined' right={<TextInput.Icon icon={secretVisible ? 'eye-off' : 'eye'} onPress={() => setSecretVisible((s) => !s)} />} />
+            <ColorPicker label='Pick accent color for this round' color={primaryColor} onChange={setPrimaryColor} />
+            <Button
+              mode='contained'
+              onPress={() => {
+                const normalized = setupWord
+                  .replace(/[^A-Za-z ]/g, '')
+                  .replace(/\s+/g, ' ')
+                  .trim()
+                  .toUpperCase()
+                if (!normalized || normalized.replace(/ /g, '').length === 0) {
+                  Alert.alert('Enter a valid word', 'Please enter a secret word using letters A–Z (spaces allowed)')
+                  return
+                }
+                setSecretWord(normalized)
+                setGuessedLetters([])
+                setWrongGuesses(0)
+                setSetupWord('')
+              }}
+              style={styles.margin}
+            >
+              Start Game
+            </Button>
+          </View>
+        ) : (
+          <View style={styles.gameContainer}>
+            <HangmanDrawingRandom wrongGuesses={wrongGuesses} manColor={primaryColor} />
+            {/* <HangmanDrawing wrongGuesses={wrongGuesses} color={theme.colors.onBackground} manColor={primaryColor} /> */}
+            <Text style={styles.wordDisplay} accessibilityLabel='Secret word display'>
+              {secretWord
+                .split('')
+                .map((ch) => (ch === ' ' ? ' ' : guessedLetters.includes(ch) ? ch : '_'))
+                .join(' ')}
+            </Text>
+            <Text style={styles.margin}>
+              Wrong guesses: {wrongGuesses} / {maxWrong}
+            </Text>
+            <Keyboard guessedLetters={guessedLetters} color={primaryColor} onGuess={handleGuess} />
+            <Button
+              mode='outlined'
+              onPress={() => {
+                setSecretWord('')
+                setGuessedLetters([])
+                setWrongGuesses(0)
+              }}
+              style={styles.margin}
+            >
+              New Game
+            </Button>
+          </View>
+        )}
+        <StatusBar style='auto' />
+      </KeyboardAvoidingView>
+    </View>
   )
 }
 
