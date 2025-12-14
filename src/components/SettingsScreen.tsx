@@ -3,14 +3,14 @@ import { StyleSheet, View } from 'react-native'
 import { Button, Divider, IconButton, Modal, Portal, RadioButton, Text } from 'react-native-paper'
 
 import { getSavedTheme, resetSettings, saveTheme, ThemeOverride } from '../utils/settings'
-import ColorPicker from './ColorPicker'
+import { ColorPicker } from './ColorPicker'
 
 const COLORS = {
   modalBackground: '#ffffff',
   danger: '#b00020'
 }
 
-type Props = {
+export type SettingsScreenProps = {
   visible: boolean
   onDismiss: () => void
   color: string
@@ -18,7 +18,7 @@ type Props = {
   onReset?: () => void
 }
 
-const SettingsScreen: React.FC<Props> = ({ visible, onDismiss, color, onColorChange, onReset }) => {
+export const SettingsScreen: React.FC<SettingsScreenProps> = ({ visible, onDismiss, color, onColorChange, onReset }) => {
   const [theme, setTheme] = useState<ThemeOverride>('system')
 
   useEffect(() => {
@@ -92,5 +92,3 @@ const styles = StyleSheet.create({
   },
   section: { marginTop: 12 }
 })
-
-export default SettingsScreen

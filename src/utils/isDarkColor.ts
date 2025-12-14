@@ -1,6 +1,6 @@
 import { getRGB } from './getRGB'
 
-const isDarkColor = (value: string): boolean => {
+export const isDarkColor = (value: string): boolean => {
   const rgb = getRGB(value)
   if (!rgb) return false
 
@@ -14,5 +14,3 @@ const isDarkColor = (value: string): boolean => {
 
   return luminance < 0.5
 }
-
-export default isDarkColor

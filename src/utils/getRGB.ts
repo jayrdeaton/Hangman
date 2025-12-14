@@ -1,4 +1,4 @@
-type RGB = {
+export type RGB = {
   r: number
   g: number
   b: number
@@ -61,5 +61,3 @@ export const getRGB = (value: string): RGB | null => {
 
   return null
 }
-
-export default getRGB

@@ -2,9 +2,8 @@ import React, { useMemo, useState } from 'react'
 import { StyleSheet, View } from 'react-native'
 import Svg, { Circle, Line } from 'react-native-svg'
 
-type Props = {
+export type HangmanDrawingRandomProps = {
   wrongGuesses: number
-  color?: string
   manColor?: string
 }
 
@@ -22,7 +21,7 @@ function shuffle<T>(arr: T[]) {
   return a
 }
 
-const HangmanDrawingRandom: React.FC<Props> = ({ wrongGuesses, color = 'black', manColor = 'black' }) => {
+export const HangmanDrawingRandom: React.FC<HangmanDrawingRandomProps> = ({ wrongGuesses, manColor = 'black' }) => {
   // Generate a random removal order once per mounted component instance
   // Shuffle limbs first so arms/legs disappear randomly, then remove body, then head
   const [removalOrder] = useState<(typeof PART_KEYS)[number][]>(() => {
@@ -64,5 +63,3 @@ const HangmanDrawingRandom: React.FC<Props> = ({ wrongGuesses, color = 'black', 
 const styles = StyleSheet.create({
   container: { alignItems: 'center', marginVertical: 20 }
 })
-
-export default HangmanDrawingRandom

@@ -2,14 +2,14 @@ import React from 'react'
 import { StyleSheet, View } from 'react-native'
 import { Button } from 'react-native-paper'
 
-type Props = {
+export type KeyboardProps = {
   guessedLetters: string[]
   onGuess: (letter: string) => void
   disabled?: boolean
   color?: string
 }
 
-const Keyboard: React.FC<Props> = ({ guessedLetters, onGuess }) => {
+export const Keyboard: React.FC<KeyboardProps> = ({ guessedLetters, onGuess }) => {
   const rows = ['QWERTYUIOP'.split(''), 'ASDFGHJKL'.split(''), 'ZXCVBNM'.split('')]
 
   return (
@@ -49,5 +49,3 @@ const styles = StyleSheet.create({
     marginHorizontal: 10
   }
 })
-
-export default Keyboard

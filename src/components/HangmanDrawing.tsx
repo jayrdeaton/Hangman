@@ -2,13 +2,13 @@ import React from 'react'
 import { StyleSheet, View } from 'react-native'
 import Svg, { Circle, Line } from 'react-native-svg'
 
-type Props = {
+export type HangmanDrawingProps = {
   wrongGuesses: number
   color?: string
   manColor?: string
 }
 
-const HangmanDrawing: React.FC<Props> = ({ wrongGuesses, color = 'black', manColor = 'black' }) => {
+export const HangmanDrawing: React.FC<HangmanDrawingProps> = ({ wrongGuesses, color = 'black', manColor = 'black' }) => {
   const parts: React.ReactNode[] = [<Circle key='head' cx='200' cy='80' r='30' stroke={manColor} strokeWidth='4' fill='none' />, <Line key='body' x1='200' y1='110' x2='200' y2='180' stroke={manColor} strokeWidth='4' />, <Line key='leftarm' x1='200' y1='130' x2='170' y2='150' stroke={manColor} strokeWidth='4' />, <Line key='rightarm' x1='200' y1='130' x2='230' y2='150' stroke={manColor} strokeWidth='4' />, <Line key='leftleg' x1='200' y1='180' x2='180' y2='220' stroke={manColor} strokeWidth='4' />, <Line key='rightleg' x1='200' y1='180' x2='220' y2='220' stroke={manColor} strokeWidth='4' />]
 
   return (
@@ -27,5 +27,3 @@ const HangmanDrawing: React.FC<Props> = ({ wrongGuesses, color = 'black', manCol
 const styles = StyleSheet.create({
   container: { alignItems: 'center', marginVertical: 20 }
 })
-
-export default HangmanDrawing
