@@ -1,15 +1,16 @@
 import { StatusBar } from 'expo-status-bar'
-import { JSX, useEffect, useState } from 'react'
-import { Alert, KeyboardAvoidingView, Platform, StyleSheet, View } from 'react-native'
+import { JSX, useState } from 'react'
+import { Alert, Platform, StyleSheet, View } from 'react-native'
+import { KeyboardAvoidingView } from 'react-native-keyboard-controller'
 import { Appbar, Button, Text, TextInput } from 'react-native-paper'
 
-import { getSavedColor, saveColor } from '../utils'
+import { useTheme } from '../hooks'
 import { ColorPicker } from './ColorPicker'
 import { HangmanDrawingRandom } from './HangmanDrawingRandom'
 import { Keyboard } from './Keyboard'
 
 export const Main = (): JSX.Element => {
-  const [primaryColor, setPrimaryColor] = useState('#6200ee')
+  const { color, setColor } = useTheme()
   // Game state
   const [setupWord, setSetupWord] = useState('')
   const [secretVisible, setSecretVisible] = useState(false)
@@ -17,22 +18,6 @@ export const Main = (): JSX.Element => {
   const [guessedLetters, setGuessedLetters] = useState<string[]>([])
   const [wrongGuesses, setWrongGuesses] = useState(0)
   const maxWrong = 6
-
-  useEffect(() => {
-    let mounted = true
-    ;(async () => {
-      const saved = await getSavedColor()
-      if (saved && mounted) setPrimaryColor(saved)
-    })()
-    return () => {
-      mounted = false
-    }
-  }, [])
-
-  useEffect(() => {
-    // persist color whenever it changes
-    saveColor(primaryColor)
-  }, [primaryColor])
 
   const handleGuess = (letter) => {
     const L = letter.toUpperCase()
@@ -94,7 +79,7 @@ export const Main = (): JSX.Element => {
           <View style={styles.setupContainer}>
             <Text style={styles.title}>Pass & Play — Enter a secret word</Text>
             <TextInput style={styles.input} value={setupWord} onChangeText={setSetupWord} placeholder='Secret word (letters and spaces allowed)' autoCapitalize='characters' secureTextEntry={!secretVisible} maxLength={128} numberOfLines={3} mode='outlined' right={<TextInput.Icon icon={secretVisible ? 'eye-off' : 'eye'} onPress={() => setSecretVisible((s) => !s)} />} />
-            <ColorPicker label='Pick accent color for this round' color={primaryColor} onChange={setPrimaryColor} />
+            <ColorPicker label='Pick accent color for this round' color={color} onChange={setColor} />
             <Button
               mode='contained'
               onPress={() => {
@@ -119,7 +104,7 @@ export const Main = (): JSX.Element => {
           </View>
         ) : (
           <View style={styles.gameContainer}>
-            <HangmanDrawingRandom wrongGuesses={wrongGuesses} manColor={primaryColor} />
+            <HangmanDrawingRandom wrongGuesses={wrongGuesses} manColor={color} />
             {/* <HangmanDrawing wrongGuesses={wrongGuesses} color={theme.colors.onBackground} manColor={primaryColor} /> */}
             <Text style={styles.wordDisplay} accessibilityLabel='Secret word display'>
               {secretWord
@@ -130,7 +115,7 @@ export const Main = (): JSX.Element => {
             <Text style={styles.margin}>
               Wrong guesses: {wrongGuesses} / {maxWrong}
             </Text>
-            <Keyboard guessedLetters={guessedLetters} color={primaryColor} onGuess={handleGuess} />
+            <Keyboard guessedLetters={guessedLetters} color={color} onGuess={handleGuess} />
             <Button
               mode='outlined'
               onPress={() => {
@@ -162,19 +147,14 @@ const styles = StyleSheet.create({
     width: '100%'
   },
   input: {
-    // minHeight: 56,
-    // padding: 12,
     textAlignVertical: 'top',
     width: '100%'
   },
   margin: { marginVertical: 8 },
   setupContainer: {
     alignItems: 'center',
-    // maxWidth: 600,
-    // width: '100%',
     height: '100%',
     justifyContent: 'center',
-    paddingBottom: 200,
     width: '100%'
   },
   title: {
