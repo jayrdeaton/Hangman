@@ -58,7 +58,8 @@ export const Theme = ({ children }: ThemeProps) => {
       level4: getBlendedColor(blendedGrey, nextTheme.colors.surface, 0.55),
       level5: getBlendedColor(blendedGrey, nextTheme.colors.surface, 0.7)
     }
-
+    nextTheme.fonts.displayMedium.fontFamily = 'Menlo'
+    // nextTheme.fonts.displayMedium.fontSize = 100
     setTheme(nextTheme)
   }, [appearance, color, scheme])
   useEffect(() => {

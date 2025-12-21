@@ -1,10 +1,11 @@
 import React, { useMemo, useState } from 'react'
-import { StyleSheet, View } from 'react-native'
+import { LayoutChangeEvent, StyleProp, StyleSheet, View, ViewStyle } from 'react-native'
 import Svg, { Circle, Line } from 'react-native-svg'
 
 export type HangmanDrawingRandomProps = {
+  color?: string
   wrongGuesses: number
-  manColor?: string
+  style?: StyleProp<ViewStyle>
 }
 
 const PART_KEYS = ['leftarm', 'rightarm', 'leftleg', 'rightleg', 'body', 'head'] as const
@@ -21,7 +22,8 @@ function shuffle<T>(arr: T[]) {
   return a
 }
 
-export const HangmanDrawingRandom: React.FC<HangmanDrawingRandomProps> = ({ wrongGuesses, manColor = 'black' }) => {
+export const HangmanDrawingRandom: React.FC<HangmanDrawingRandomProps> = ({ color = 'black', style, wrongGuesses }) => {
+  const [dimensions, setDimensions] = useState<{ width: number; height: number }>({ width: 0, height: 0 })
   // Generate a random removal order once per mounted component instance
   // Shuffle limbs first so arms/legs disappear randomly, then remove body, then head
   const [removalOrder] = useState<(typeof PART_KEYS)[number][]>(() => {
@@ -34,14 +36,14 @@ export const HangmanDrawingRandom: React.FC<HangmanDrawingRandomProps> = ({ wron
   // occupies most of the available space (no gallows area).
   const parts = useMemo(
     () => ({
-      head: <Circle key='head' cx='100' cy='60' r='40' stroke={manColor} strokeWidth='4' fill='none' />,
-      body: <Line key='body' x1='100' y1='100' x2='100' y2='180' stroke={manColor} strokeWidth='4' />,
-      leftarm: <Line key='leftarm' x1='100' y1='120' x2='60' y2='140' stroke={manColor} strokeWidth='4' />,
-      rightarm: <Line key='rightarm' x1='100' y1='120' x2='140' y2='140' stroke={manColor} strokeWidth='4' />,
-      leftleg: <Line key='leftleg' x1='100' y1='180' x2='70' y2='230' stroke={manColor} strokeWidth='4' />,
-      rightleg: <Line key='rightleg' x1='100' y1='180' x2='130' y2='230' stroke={manColor} strokeWidth='4' />
+      head: <Circle key='head' cx='100' cy='60' r='40' stroke={color} strokeWidth='4' fill='none' />,
+      body: <Line key='body' x1='100' y1='100' x2='100' y2='180' stroke={color} strokeWidth='4' />,
+      leftarm: <Line key='leftarm' x1='100' y1='120' x2='60' y2='140' stroke={color} strokeWidth='4' />,
+      rightarm: <Line key='rightarm' x1='100' y1='120' x2='140' y2='140' stroke={color} strokeWidth='4' />,
+      leftleg: <Line key='leftleg' x1='100' y1='180' x2='70' y2='230' stroke={color} strokeWidth='4' />,
+      rightleg: <Line key='rightleg' x1='100' y1='180' x2='130' y2='230' stroke={color} strokeWidth='4' />
     }),
-    [manColor]
+    [color]
   )
 
   const totalParts = PART_KEYS.length
@@ -50,10 +52,13 @@ export const HangmanDrawingRandom: React.FC<HangmanDrawingRandomProps> = ({ wron
 
   // Show parts that are NOT removed
   const visibleParts = PART_KEYS.filter((k) => !removed.has(k)).map((k) => parts[k])
-
+  const handleLayout = (event: LayoutChangeEvent) => {
+    const { width, height } = event.nativeEvent.layout
+    setDimensions({ width, height })
+  }
   return (
-    <View style={styles.container}>
-      <Svg width='200' height='260' viewBox='0 0 200 260'>
+    <View style={[styles.container, style]} onLayout={handleLayout}>
+      <Svg width={dimensions.width} height={dimensions.height} viewBox='0 0 200 260'>
         {visibleParts}
       </Svg>
     </View>

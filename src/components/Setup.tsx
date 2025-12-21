@@ -1,20 +1,20 @@
 import { StatusBar } from 'expo-status-bar'
-import { JSX, useState } from 'react'
+import { JSX, useEffect, useState } from 'react'
 import { Alert, Platform, StyleSheet, View } from 'react-native'
 import { KeyboardAvoidingView } from 'react-native-keyboard-controller'
-import { Appbar, Button, Text, TextInput } from 'react-native-paper'
+import { Button, Text, TextInput } from 'react-native-paper'
 
 import { useTheme } from '../hooks'
 import { ColorPicker } from './ColorPicker'
 
 export type SetupProps = {
   onStart: (value: string) => void
+  phrase: string
 }
 
-export const Setup = ({ onStart }: SetupProps): JSX.Element => {
+export const Setup = ({ onStart, phrase: initialPhrase }: SetupProps): JSX.Element => {
   const { color, setColor } = useTheme()
-  // Game state
-  const [phrase, setPhrase] = useState('')
+  const [phrase, setPhrase] = useState(initialPhrase)
   const [isSecure, setIsSecure] = useState(false)
   const handleSecure = () => setIsSecure((s) => !s)
   const handleStart = () => {
@@ -29,12 +29,9 @@ export const Setup = ({ onStart }: SetupProps): JSX.Element => {
     }
     onStart(normalized)
   }
+  useEffect(() => setPhrase(initialPhrase), [initialPhrase])
   return (
     <View style={StyleSheet.absoluteFill}>
-      <Appbar.Header>
-        <Appbar.Content title='Setup' />
-        {/* <Appbar.Action icon='cog' onPress={() => setSettingsVisible(true)} accessibilityLabel='Settings' /> */}
-      </Appbar.Header>
       <KeyboardAvoidingView style={styles.container} behavior={Platform.OS === 'ios' ? 'padding' : 'height'} keyboardVerticalOffset={Platform.OS === 'ios' ? 60 : 0}>
         <View style={styles.setupContainer}>
           <Text style={styles.title}>Pass & Play — Enter a secret word</Text>

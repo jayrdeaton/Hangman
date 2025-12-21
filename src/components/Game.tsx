@@ -1,6 +1,7 @@
-import { JSX, useState } from 'react'
-import { Alert, StyleSheet, View } from 'react-native'
-import { Appbar, Button, Text } from 'react-native-paper'
+import * as haptics from 'expo-haptics'
+import { JSX, useEffect, useMemo, useState } from 'react'
+import { Alert, Platform, StyleSheet, Text as RNText, View } from 'react-native'
+import { Text } from 'react-native-paper'
 
 import { useTheme } from '../hooks'
 import { HangmanDrawingRandom } from './HangmanDrawingRandom'
@@ -26,6 +27,7 @@ export const Game = ({ onStop, phrase }: GameProps): JSX.Element => {
     if (!phrase.includes(L)) {
       const w = wrongGuesses + 1
       setWrongGuesses(w)
+      void haptics.selectionAsync()
       if (w >= maxWrong) {
         // show the loss alert while leaving the full hangman visible
         Alert.alert(
@@ -41,6 +43,8 @@ export const Game = ({ onStop, phrase }: GameProps): JSX.Element => {
         )
       }
     } else {
+      void haptics.impactAsync()
+
       const allRevealed = phrase.split('').every((c) => c === ' ' || next.includes(c))
       if (allRevealed) {
         Alert.alert(
@@ -57,40 +61,43 @@ export const Game = ({ onStop, phrase }: GameProps): JSX.Element => {
       }
     }
   }
-
+  useEffect(() => {
+    setGuessedLetters([])
+    setWrongGuesses(0)
+  }, [phrase])
+  const guessDisplay = useMemo(() => {
+    // Join letters with a narrow no-break space (\u202F) so words cannot
+    // break internally, but use a regular space between words so the
+    // visible gap stays (and wrapped lines won't gain a leading indent).
+    return phrase
+      .split(' ')
+      .map((word) =>
+        word
+          .split('')
+          .map((ch) => (guessedLetters.includes(ch) ? ch : '_'))
+          .join('\u202F')
+      )
+      .join(' ')
+  }, [phrase, guessedLetters])
   return (
     <View style={StyleSheet.absoluteFill}>
-      <Appbar.Header>
-        <Appbar.Content title='Game' />
-        <Appbar.Action icon='exit-to-app' onPress={onStop} accessibilityLabel='Exit Game' />
-      </Appbar.Header>
       <View style={styles.gameContainer}>
-        <HangmanDrawingRandom wrongGuesses={wrongGuesses} manColor={color} />
-        <Text style={styles.wordDisplay} accessibilityLabel='Secret word display'>
-          {phrase
-            .split('')
-            .map((ch) => (ch === ' ' ? ' ' : guessedLetters.includes(ch) ? ch : '_'))
-            .join(' ')}
-        </Text>
+        <HangmanDrawingRandom wrongGuesses={wrongGuesses} color={color} style={styles.flex} />
+        <RNText style={styles.text} accessibilityLabel='Secret word display'>
+          {guessDisplay}
+        </RNText>
         <Text style={styles.margin}>
           Wrong guesses: {wrongGuesses} / {maxWrong}
         </Text>
         <Keyboard guessedLetters={guessedLetters} color={color} onGuess={handleGuess} />
-        <Button mode='outlined' onPress={onStop} style={styles.margin}>
-          New Game
-        </Button>
       </View>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
-  gameContainer: {
-    alignItems: 'center',
-    width: '100%'
-  },
+  flex: { flex: 1, width: '100%' },
+  gameContainer: { alignItems: 'center', flex: 1 },
   margin: { marginVertical: 8 },
-  wordDisplay: {
-    fontSize: 28
-  }
+  text: { fontFamily: Platform.OS === 'android' ? 'monospace' : 'Menlo', fontSize: 30, textAlign: 'center' }
 })

@@ -1,19 +1,19 @@
 import React from 'react'
-import { StyleSheet, View } from 'react-native'
+import { StyleProp, StyleSheet, View, ViewStyle } from 'react-native'
 import { Button } from 'react-native-paper'
 
 export type KeyboardProps = {
+  color?: string
+  disabled?: boolean
   guessedLetters: string[]
   onGuess: (letter: string) => void
-  disabled?: boolean
-  color?: string
+  style?: StyleProp<ViewStyle>
 }
 
-export const Keyboard: React.FC<KeyboardProps> = ({ guessedLetters, onGuess }) => {
+export const Keyboard: React.FC<KeyboardProps> = ({ guessedLetters, onGuess, style }) => {
   const rows = ['QWERTYUIOP'.split(''), 'ASDFGHJKL'.split(''), 'ZXCVBNM'.split('')]
-
   return (
-    <View style={styles.keyboard}>
+    <View style={[styles.keyboard, style]}>
       {rows.map((row, rowIndex) => (
         <View key={rowIndex} style={styles.row}>
           {row.map((letter) => {
