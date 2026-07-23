@@ -1,0 +1,202 @@
+[
+  {
+    "id": "84ecf9ebc3b463d77e1a0fd6ba3e6e80",
+    "source": "theme",
+    "type": "title",
+    "answer": "French Revolution",
+    "normalizedAnswer": "FRENCH REVOLUTION",
+    "category": "History",
+    "difficulty": 27.3,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "history"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "d814f061989fd7ac78a8228d0f1eb175",
+    "source": "theme",
+    "type": "title",
+    "answer": "Industrial Revolution",
+    "normalizedAnswer": "INDUSTRIAL REVOLUTION",
+    "category": "History",
+    "difficulty": 28.9,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 20,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "history"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "5622362f891c76398b80d36322b776e7",
+    "source": "theme",
+    "type": "title",
+    "answer": "American Civil War",
+    "normalizedAnswer": "AMERICAN CIVIL WAR",
+    "category": "History",
+    "difficulty": 24.7,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 16,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "history"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "f7ced961422ba40c737628ee9267767c",
+    "source": "theme",
+    "type": "title",
+    "answer": "World War One",
+    "normalizedAnswer": "WORLD WAR ONE",
+    "category": "History",
+    "difficulty": 17.2,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "history"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "08299d7e112e2161cef82a43746a4c2c",
+    "source": "theme",
+    "type": "title",
+    "answer": "World War Two",
+    "normalizedAnswer": "WORLD WAR TWO",
+    "category": "History",
+    "difficulty": 15.7,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "history"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "60a3923d86dfda0d4e82b6828beecea4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Renaissance",
+    "normalizedAnswer": "RENAISSANCE",
+    "category": "History",
+    "difficulty": 14.9,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "history"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "b2cbe804daadb2945161cde56588763a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Roman Empire",
+    "normalizedAnswer": "ROMAN EMPIRE",
+    "category": "History",
+    "difficulty": 16.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "history"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "d8b7117db601a2164566f3390851078f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ottoman Empire",
+    "normalizedAnswer": "OTTOMAN EMPIRE",
+    "category": "History",
+    "difficulty": 19.1,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "history"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "e59a61b070c84a7468029b78dbdfbf0a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Moon Landing",
+    "normalizedAnswer": "MOON LANDING",
+    "category": "History",
+    "difficulty": 16.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "history"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "9d1f397d431cc49441ee6a8d6fab79d9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Fall of the Berlin Wall",
+    "normalizedAnswer": "FALL OF THE BERLIN WALL",
+    "category": "History",
+    "difficulty": 27.200000000000003,
+    "difficultyTier": "hard",
+    "wordCount": 5,
+    "letterCount": 19,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "history"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  }
+]

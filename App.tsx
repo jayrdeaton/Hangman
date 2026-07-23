@@ -1,33 +1,25 @@
-import { reloadAsync } from 'expo-updates'
-import React, { JSX, useEffect } from 'react'
-import { AppState, AppStateStatus } from 'react-native'
+import { useUpdater } from '@rific/updater'
+import React, { JSX } from 'react'
+import { StyleSheet } from 'react-native'
+import { GestureHandlerRootView } from 'react-native-gesture-handler'
 
-import { Main, Providers } from './src/components'
-import { checkForUpdate, getUpdateConfirmation } from './src/utils'
+import { Main } from '@/components/Main'
+import { Providers } from '@/components/Providers'
 
 const App = (): JSX.Element => {
-  useEffect(() => {
-    const checkAndPrompt = async () => {
-      if (__DEV__) return
-      try {
-        const update = await checkForUpdate()
-        if (!update) return
-        const confirmation = await getUpdateConfirmation(update)
-        if (!confirmation) return
-        await reloadAsync()
-      } catch {}
-    }
-    const subscription = AppState.addEventListener('change', (nextAppState: AppStateStatus) => {
-      if (nextAppState === 'active') checkAndPrompt()
-    })
-    checkAndPrompt()
-    return subscription.remove
-  }, [])
+  useUpdater()
+
   return (
-    <Providers>
-      <Main />
-    </Providers>
+    <GestureHandlerRootView style={styles.flex}>
+      <Providers>
+        <Main />
+      </Providers>
+    </GestureHandlerRootView>
   )
 }
 
 export default App
+
+const styles = StyleSheet.create({
+  flex: { flex: 1 }
+})

@@ -1,0 +1,202 @@
+[
+  {
+    "id": "eb47d71e4911b59893e70ca61525d88a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Eiffel Tower",
+    "normalizedAnswer": "EIFFEL TOWER",
+    "category": "Travel",
+    "difficulty": 16.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "travel"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "4d51617920dd1bb00364ba27ae3916b9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Great Wall of China",
+    "normalizedAnswer": "GREAT WALL OF CHINA",
+    "category": "Travel",
+    "difficulty": 27.1,
+    "difficultyTier": "hard",
+    "wordCount": 4,
+    "letterCount": 16,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "travel"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "88c5c850f5ce81dc2be884d547fc55d0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Statue of Liberty",
+    "normalizedAnswer": "STATUE OF LIBERTY",
+    "category": "Travel",
+    "difficulty": 24.8,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "travel"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "9b03a405e9c2fe2c61416ca82fa55ef3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sydney Opera House",
+    "normalizedAnswer": "SYDNEY OPERA HOUSE",
+    "category": "Travel",
+    "difficulty": 23.7,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 16,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "travel"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "5ba5944444ce399c4a8115882bd82178",
+    "source": "theme",
+    "type": "title",
+    "answer": "Golden Gate Bridge",
+    "normalizedAnswer": "GOLDEN GATE BRIDGE",
+    "category": "Travel",
+    "difficulty": 23.7,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 16,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "travel"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "d5b975872428d4aa7ac3cb955803ba7d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Heathrow Airport",
+    "normalizedAnswer": "HEATHROW AIRPORT",
+    "category": "Travel",
+    "difficulty": 19.9,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "travel"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "366b89cd622cfb5b546af4e7edeff322",
+    "source": "theme",
+    "type": "title",
+    "answer": "JFK International Airport",
+    "normalizedAnswer": "JFK INTERNATIONAL AIRPORT",
+    "category": "Travel",
+    "difficulty": 33,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 23,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "travel"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "f6f2ae5fd53038aa85242a41693ac173",
+    "source": "theme",
+    "type": "title",
+    "answer": "Tokyo Station",
+    "normalizedAnswer": "TOKYO STATION",
+    "category": "Travel",
+    "difficulty": 19.7,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "travel"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "b4a8440823d89cfc3626d5787dc14c24",
+    "source": "theme",
+    "type": "title",
+    "answer": "Machu Picchu",
+    "normalizedAnswer": "MACHU PICCHU",
+    "category": "Travel",
+    "difficulty": 15.3,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "travel"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "625029e9fffe1c106286b372a41166fe",
+    "source": "theme",
+    "type": "title",
+    "answer": "Times Square",
+    "normalizedAnswer": "TIMES SQUARE",
+    "category": "Travel",
+    "difficulty": 20.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "travel"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  }
+]

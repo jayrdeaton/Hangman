@@ -3,28 +3,25 @@
     "name": "Hangman",
     "slug": "Ad-Free-Hangman",
     "version": "1.0.0",
+    "scheme": "hangman",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
     "userInterfaceStyle": "automatic",
-    "newArchEnabled": true,
-    "splash": {
-      "image": "./assets/splash-icon.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.infinitetoken.Hangman",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false
+      },
+      "icon": {
+        "dark": "./assets/images/dark-icon.png",
+        "light": "./assets/images/light-icon.png"
       }
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "foregroundImage": "./assets/images/splash-icon.png",
+        "backgroundColor": "#F0F0F0"
       },
-      "edgeToEdgeEnabled": true,
       "package": "com.infinitetoken.Hangman",
       "permissions": [
         "android.permission.RECORD_AUDIO",
@@ -32,12 +29,27 @@
       ]
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "bundler": "metro",
+      "output": "single",
+      "favicon": "./assets/images/light-icon.png"
     },
     "plugins": [
       "expo-audio",
-      "expo-sqlite",
-      "expo-background-task"
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#F0F0F0",
+          "image": "./assets/images/splash-icon.png",
+          "dark": {
+            "image": "./assets/images/splash-icon.png",
+            "backgroundColor": "#0F0F0F"
+          },
+          "imageWidth": 200
+        }
+      ],
+      "expo-status-bar",
+      "expo-font",
+      "expo-asset"
     ],
     "extra": {
       "eas": {

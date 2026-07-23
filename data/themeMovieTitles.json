@@ -1,0 +1,202 @@
+[
+  {
+    "id": "70ab9dfcca038f6b8215270809fd427b",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Godfather",
+    "normalizedAnswer": "THE GODFATHER",
+    "category": "Movie Title",
+    "difficulty": 18.7,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "1602f00a1de40f546ae99dfb1f5e2e17",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Dark Knight",
+    "normalizedAnswer": "THE DARK KNIGHT",
+    "category": "Movie Title",
+    "difficulty": 26,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "dfff52d557696d196913c6f3738ad664",
+    "source": "theme",
+    "type": "title",
+    "answer": "Titanic",
+    "normalizedAnswer": "TITANIC",
+    "category": "Movie Title",
+    "difficulty": 10.3,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "7acdbcb2c61e7a765b62db92eeedf979",
+    "source": "theme",
+    "type": "title",
+    "answer": "Jurassic Park",
+    "normalizedAnswer": "JURASSIC PARK",
+    "category": "Movie Title",
+    "difficulty": 23.7,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "bb408b69c99d987f2a622976a7863d9f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Back to the Future",
+    "normalizedAnswer": "BACK TO THE FUTURE",
+    "category": "Movie Title",
+    "difficulty": 26.2,
+    "difficultyTier": "hard",
+    "wordCount": 4,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "4eacb6a3d18ef345ce88d3b752d9eef0",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Matrix",
+    "normalizedAnswer": "THE MATRIX",
+    "category": "Movie Title",
+    "difficulty": 18.5,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "0fe5665776899e22161af667d8df9970",
+    "source": "theme",
+    "type": "title",
+    "answer": "Star Wars",
+    "normalizedAnswer": "STAR WARS",
+    "category": "Movie Title",
+    "difficulty": 11.1,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "b69d80645fd12c5fdb836a991616d0a1",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Lion King",
+    "normalizedAnswer": "THE LION KING",
+    "category": "Movie Title",
+    "difficulty": 21.2,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "af8a01d243d54b6091243812e2b4998f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Inception",
+    "normalizedAnswer": "INCEPTION",
+    "category": "Movie Title",
+    "difficulty": 14.1,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "999469f80dc835467528eca52c954e84",
+    "source": "theme",
+    "type": "title",
+    "answer": "Casablanca",
+    "normalizedAnswer": "CASABLANCA",
+    "category": "Movie Title",
+    "difficulty": 13,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  }
+]

@@ -1,0 +1,202 @@
+[
+  {
+    "id": "3f7a69bb08c687ff31df4fd04190792c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Breaking Bad",
+    "normalizedAnswer": "BREAKING BAD",
+    "category": "TV Show",
+    "difficulty": 20.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "tv"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "8eb11df643eddc8137f52259703e1124",
+    "source": "theme",
+    "type": "title",
+    "answer": "Game of Thrones",
+    "normalizedAnswer": "GAME OF THRONES",
+    "category": "TV Show",
+    "difficulty": 22.5,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 13,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "tv"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c35fbf3222f02b638b46c1f08b11ecbf",
+    "source": "theme",
+    "type": "title",
+    "answer": "Friends",
+    "normalizedAnswer": "FRIENDS",
+    "category": "TV Show",
+    "difficulty": 13.3,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "tv"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "d6b1988031b99ee539ca4d67cadf7fa7",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Office",
+    "normalizedAnswer": "THE OFFICE",
+    "category": "TV Show",
+    "difficulty": 14.5,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "tv"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "d45207b98b2907216dbfd31b5cc72920",
+    "source": "theme",
+    "type": "title",
+    "answer": "Seinfeld",
+    "normalizedAnswer": "SEINFELD",
+    "category": "TV Show",
+    "difficulty": 13.7,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "tv"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "819b28c929c841b955bc8e9b6035b649",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Simpsons",
+    "normalizedAnswer": "THE SIMPSONS",
+    "category": "TV Show",
+    "difficulty": 18.3,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "tv"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "718969b4a0669b2abb46634325fdda12",
+    "source": "theme",
+    "type": "title",
+    "answer": "Stranger Things",
+    "normalizedAnswer": "STRANGER THINGS",
+    "category": "TV Show",
+    "difficulty": 19.5,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "tv"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "aa453f8471413f8e4f75e25280c1545b",
+    "source": "theme",
+    "type": "title",
+    "answer": "The X-Files",
+    "normalizedAnswer": "THE XFILES",
+    "category": "TV Show",
+    "difficulty": 18.5,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "tv"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "387fb081e99a7181fee1e690b9967ad1",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Mandalorian",
+    "normalizedAnswer": "THE MANDALORIAN",
+    "category": "TV Show",
+    "difficulty": 22.5,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "tv"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6c32cd63353acb6f0143baceeac0e92f",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Sopranos",
+    "normalizedAnswer": "THE SOPRANOS",
+    "category": "TV Show",
+    "difficulty": 18.3,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "tv"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  }
+]

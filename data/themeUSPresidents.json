@@ -1,0 +1,1010 @@
+[
+  {
+    "id": "66d5cd64d0019575a6fe7a084f6e68ff",
+    "source": "theme",
+    "type": "title",
+    "answer": "Name",
+    "normalizedAnswer": "NAME",
+    "category": "US President",
+    "difficulty": 7.6,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "history",
+      "us-president"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States"
+    }
+  },
+  {
+    "id": "904e069fe7fc08140a65413efd450ce5",
+    "source": "theme",
+    "type": "title",
+    "answer": "George Washington",
+    "normalizedAnswer": "GEORGE WASHINGTON",
+    "category": "US President",
+    "difficulty": 23.3,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "history",
+      "us-president"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States"
+    }
+  },
+  {
+    "id": "98c7081e418450b2401a248bb4b877e1",
+    "source": "theme",
+    "type": "title",
+    "answer": "John Adams",
+    "normalizedAnswer": "JOHN ADAMS",
+    "category": "US President",
+    "difficulty": 18.5,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "history",
+      "us-president"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States"
+    }
+  },
+  {
+    "id": "65a3e03aa188b644c81d2229a6639b92",
+    "source": "theme",
+    "type": "title",
+    "answer": "Thomas Jefferson",
+    "normalizedAnswer": "THOMAS JEFFERSON",
+    "category": "US President",
+    "difficulty": 25.4,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "history",
+      "us-president"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States"
+    }
+  },
+  {
+    "id": "6e9727e095590d510489f75f9359763e",
+    "source": "theme",
+    "type": "title",
+    "answer": "James Madison",
+    "normalizedAnswer": "JAMES MADISON",
+    "category": "US President",
+    "difficulty": 21.2,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "history",
+      "us-president"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States"
+    }
+  },
+  {
+    "id": "00331d7fc93576951161853f1cca21e5",
+    "source": "theme",
+    "type": "title",
+    "answer": "James Monroe",
+    "normalizedAnswer": "JAMES MONROE",
+    "category": "US President",
+    "difficulty": 19.3,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "history",
+      "us-president"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States"
+    }
+  },
+  {
+    "id": "55b45e63eb394e47d80ba9ecebd6072e",
+    "source": "theme",
+    "type": "title",
+    "answer": "John Quincy Adams",
+    "normalizedAnswer": "JOHN QUINCY ADAMS",
+    "category": "US President",
+    "difficulty": 31.3,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "history",
+      "us-president"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States"
+    }
+  },
+  {
+    "id": "087a4f20ce74b280e48d849d8d1bb149",
+    "source": "theme",
+    "type": "title",
+    "answer": "Andrew Jackson",
+    "normalizedAnswer": "ANDREW JACKSON",
+    "category": "US President",
+    "difficulty": 27.1,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "history",
+      "us-president"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States"
+    }
+  },
+  {
+    "id": "b79bea89f769c424f62ad88118c6be44",
+    "source": "theme",
+    "type": "title",
+    "answer": "Martin Van Buren",
+    "normalizedAnswer": "MARTIN VAN BUREN",
+    "category": "US President",
+    "difficulty": 23.9,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "history",
+      "us-president"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States"
+    }
+  },
+  {
+    "id": "e234c35954e76019eea8097b320f05d5",
+    "source": "theme",
+    "type": "title",
+    "answer": "William Henry Harrison",
+    "normalizedAnswer": "WILLIAM HENRY HARRISON",
+    "category": "US President",
+    "difficulty": 26.8,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 20,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "history",
+      "us-president"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States"
+    }
+  },
+  {
+    "id": "3e61b5ef459a576373e8263844dbdbd5",
+    "source": "theme",
+    "type": "title",
+    "answer": "John Tyler",
+    "normalizedAnswer": "JOHN TYLER",
+    "category": "US President",
+    "difficulty": 20,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "history",
+      "us-president"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States"
+    }
+  },
+  {
+    "id": "fc8e728e36a936f9a93af3ac2135fbd1",
+    "source": "theme",
+    "type": "title",
+    "answer": "James K. Polk",
+    "normalizedAnswer": "JAMES K POLK",
+    "category": "US President",
+    "difficulty": 25.8,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "history",
+      "us-president"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States"
+    }
+  },
+  {
+    "id": "5a5e9a38caa95d7b4a4c27c2d90927ba",
+    "source": "theme",
+    "type": "title",
+    "answer": "Zachary Taylor",
+    "normalizedAnswer": "ZACHARY TAYLOR",
+    "category": "US President",
+    "difficulty": 21.6,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "history",
+      "us-president"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States"
+    }
+  },
+  {
+    "id": "6335012e56679fb9e63e89ccf4047591",
+    "source": "theme",
+    "type": "title",
+    "answer": "Millard Fillmore",
+    "normalizedAnswer": "MILLARD FILLMORE",
+    "category": "US President",
+    "difficulty": 19.9,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "history",
+      "us-president"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States"
+    }
+  },
+  {
+    "id": "5ef3ec20e6d579926559dd96ac910765",
+    "source": "theme",
+    "type": "title",
+    "answer": "Franklin Pierce",
+    "normalizedAnswer": "FRANKLIN PIERCE",
+    "category": "US President",
+    "difficulty": 23.5,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "history",
+      "us-president"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States"
+    }
+  },
+  {
+    "id": "eb38604b098f5c6059f8908178be7d0e",
+    "source": "theme",
+    "type": "title",
+    "answer": "James Buchanan",
+    "normalizedAnswer": "JAMES BUCHANAN",
+    "category": "US President",
+    "difficulty": 23.1,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "history",
+      "us-president"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States"
+    }
+  },
+  {
+    "id": "c76c729e8f6bc355835edef7d9cb87c8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Abraham Lincoln",
+    "normalizedAnswer": "ABRAHAM LINCOLN",
+    "category": "US President",
+    "difficulty": 21,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "history",
+      "us-president"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States"
+    }
+  },
+  {
+    "id": "1e75693b0b392f66046a8acd2952684f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Andrew Johnson",
+    "normalizedAnswer": "ANDREW JOHNSON",
+    "category": "US President",
+    "difficulty": 23.1,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "history",
+      "us-president"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States"
+    }
+  },
+  {
+    "id": "61e27a2e7d0552044d085f7baecf990c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ulysses S. Grant",
+    "normalizedAnswer": "ULYSSES S GRANT",
+    "category": "US President",
+    "difficulty": 21,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "history",
+      "us-president"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States"
+    }
+  },
+  {
+    "id": "3a36877f4ad9f2807c026849eda3d575",
+    "source": "theme",
+    "type": "title",
+    "answer": "Rutherford B. Hayes",
+    "normalizedAnswer": "RUTHERFORD B HAYES",
+    "category": "US President",
+    "difficulty": 25.2,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 16,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "history",
+      "us-president"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States"
+    }
+  },
+  {
+    "id": "f7d320275e0e4a9a48523338e2d5ffbb",
+    "source": "theme",
+    "type": "title",
+    "answer": "James A. Garfield",
+    "normalizedAnswer": "JAMES A GARFIELD",
+    "category": "US President",
+    "difficulty": 25.4,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 14,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "history",
+      "us-president"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States"
+    }
+  },
+  {
+    "id": "1269f3b13f1a5aa88cadc9596389b562",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chester A. Arthur",
+    "normalizedAnswer": "CHESTER A ARTHUR",
+    "category": "US President",
+    "difficulty": 18.4,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 14,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "history",
+      "us-president"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States"
+    }
+  },
+  {
+    "id": "24cde0c89c791e5f87ef0ce7c1012a16",
+    "source": "theme",
+    "type": "title",
+    "answer": "Grover Cleveland 1st term",
+    "normalizedAnswer": "GROVER CLEVELAND 1ST TERM",
+    "category": "US President",
+    "difficulty": 34.5,
+    "difficultyTier": "hard",
+    "wordCount": 4,
+    "letterCount": 22,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "history",
+      "us-president"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States"
+    }
+  },
+  {
+    "id": "dc0343258f4396f2242dabc94117e58e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Benjamin Harrison",
+    "normalizedAnswer": "BENJAMIN HARRISON",
+    "category": "US President",
+    "difficulty": 25.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "history",
+      "us-president"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States"
+    }
+  },
+  {
+    "id": "8a2202035d5d028e3ae06bed760e3e52",
+    "source": "theme",
+    "type": "title",
+    "answer": "Grover Cleveland 2nd term",
+    "normalizedAnswer": "GROVER CLEVELAND 2ND TERM",
+    "category": "US President",
+    "difficulty": 33,
+    "difficultyTier": "hard",
+    "wordCount": 4,
+    "letterCount": 22,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "history",
+      "us-president"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States"
+    }
+  },
+  {
+    "id": "c2e198d36f49df323b1ffe6ceaefb0e0",
+    "source": "theme",
+    "type": "title",
+    "answer": "William McKinley",
+    "normalizedAnswer": "WILLIAM MCKINLEY",
+    "category": "US President",
+    "difficulty": 23.9,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "history",
+      "us-president"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States"
+    }
+  },
+  {
+    "id": "cae97f77894ad895a0e88458f2d27f4b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Theodore Roosevelt",
+    "normalizedAnswer": "THEODORE ROOSEVELT",
+    "category": "US President",
+    "difficulty": 23.2,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 17,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "history",
+      "us-president"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States"
+    }
+  },
+  {
+    "id": "90ced87e5b081464111c660df787c802",
+    "source": "theme",
+    "type": "title",
+    "answer": "William Howard Taft",
+    "normalizedAnswer": "WILLIAM HOWARD TAFT",
+    "category": "US President",
+    "difficulty": 24.1,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 17,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "history",
+      "us-president"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States"
+    }
+  },
+  {
+    "id": "a40b30b9822e31ac2b1c849c155cf14e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Woodrow Wilson",
+    "normalizedAnswer": "WOODROW WILSON",
+    "category": "US President",
+    "difficulty": 17.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "history",
+      "us-president"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States"
+    }
+  },
+  {
+    "id": "d8fb422fb4a4c3b37ea756b16896d9ce",
+    "source": "theme",
+    "type": "title",
+    "answer": "Warren G. Harding",
+    "normalizedAnswer": "WARREN G HARDING",
+    "category": "US President",
+    "difficulty": 19.9,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 14,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "history",
+      "us-president"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States"
+    }
+  },
+  {
+    "id": "29b5cedf76c31d2dd336f2a8ce0107af",
+    "source": "theme",
+    "type": "title",
+    "answer": "Calvin Coolidge",
+    "normalizedAnswer": "CALVIN COOLIDGE",
+    "category": "US President",
+    "difficulty": 23.5,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "history",
+      "us-president"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States"
+    }
+  },
+  {
+    "id": "3ef3b8b0a4055ec80f86f6dadb9cade6",
+    "source": "theme",
+    "type": "title",
+    "answer": "Herbert Hoover",
+    "normalizedAnswer": "HERBERT HOOVER",
+    "category": "US President",
+    "difficulty": 18.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "history",
+      "us-president"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States"
+    }
+  },
+  {
+    "id": "057155e38a473e323387f5302f368265",
+    "source": "theme",
+    "type": "title",
+    "answer": "Franklin D. Roosevelt",
+    "normalizedAnswer": "FRANKLIN D ROOSEVELT",
+    "category": "US President",
+    "difficulty": 32.5,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 18,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "history",
+      "us-president"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States"
+    }
+  },
+  {
+    "id": "5d107256fbee6cc23f8a11060b470a75",
+    "source": "theme",
+    "type": "title",
+    "answer": "Harry S. Truman",
+    "normalizedAnswer": "HARRY S TRUMAN",
+    "category": "US President",
+    "difficulty": 19.1,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "history",
+      "us-president"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States"
+    }
+  },
+  {
+    "id": "1f6ac2d72a7a978acfd957d22518ed30",
+    "source": "theme",
+    "type": "title",
+    "answer": "Dwight D. Eisenhower",
+    "normalizedAnswer": "DWIGHT D EISENHOWER",
+    "category": "US President",
+    "difficulty": 24.1,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 17,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "history",
+      "us-president"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States"
+    }
+  },
+  {
+    "id": "bd4ca2c41720470b920c4b435cf9da60",
+    "source": "theme",
+    "type": "title",
+    "answer": "John F. Kennedy",
+    "normalizedAnswer": "JOHN F KENNEDY",
+    "category": "US President",
+    "difficulty": 24.1,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "history",
+      "us-president"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States"
+    }
+  },
+  {
+    "id": "7c200ce4066f7a557d7aa907e05605a2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lyndon B. Johnson",
+    "normalizedAnswer": "LYNDON B JOHNSON",
+    "category": "US President",
+    "difficulty": 22.4,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 14,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "history",
+      "us-president"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States"
+    }
+  },
+  {
+    "id": "f56575c90056eadb15baafa6cf6384fe",
+    "source": "theme",
+    "type": "title",
+    "answer": "Richard Nixon",
+    "normalizedAnswer": "RICHARD NIXON",
+    "category": "US President",
+    "difficulty": 21.2,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "history",
+      "us-president"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States"
+    }
+  },
+  {
+    "id": "9fab014130c3ad4adb513b1510c73663",
+    "source": "theme",
+    "type": "title",
+    "answer": "Gerald Ford",
+    "normalizedAnswer": "GERALD FORD",
+    "category": "US President",
+    "difficulty": 16.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "history",
+      "us-president"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States"
+    }
+  },
+  {
+    "id": "dfc06a76399939185e4824178174baae",
+    "source": "theme",
+    "type": "title",
+    "answer": "Jimmy Carter",
+    "normalizedAnswer": "JIMMY CARTER",
+    "category": "US President",
+    "difficulty": 20.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "history",
+      "us-president"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States"
+    }
+  },
+  {
+    "id": "f917ca7bc872f3573860ddd331985133",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ronald Reagan",
+    "normalizedAnswer": "RONALD REAGAN",
+    "category": "US President",
+    "difficulty": 17.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "history",
+      "us-president"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States"
+    }
+  },
+  {
+    "id": "97263f1496c799976eb9978c2eeb36f2",
+    "source": "theme",
+    "type": "title",
+    "answer": "George H. W. Bush",
+    "normalizedAnswer": "GEORGE H W BUSH",
+    "category": "US President",
+    "difficulty": 19.5,
+    "difficultyTier": "medium",
+    "wordCount": 4,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "history",
+      "us-president"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States"
+    }
+  },
+  {
+    "id": "9e31cfb7e5eb864503277179ac784bc6",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bill Clinton",
+    "normalizedAnswer": "BILL CLINTON",
+    "category": "US President",
+    "difficulty": 15.3,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "history",
+      "us-president"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States"
+    }
+  },
+  {
+    "id": "bf5e4155ac3a46d171547ae1ee3a1633",
+    "source": "theme",
+    "type": "title",
+    "answer": "George W. Bush",
+    "normalizedAnswer": "GEORGE W BUSH",
+    "category": "US President",
+    "difficulty": 18.7,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "history",
+      "us-president"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States"
+    }
+  },
+  {
+    "id": "8cb19ec78992f972cac430170d7ccab5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Barack Obama",
+    "normalizedAnswer": "BARACK OBAMA",
+    "category": "US President",
+    "difficulty": 17.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "history",
+      "us-president"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States"
+    }
+  },
+  {
+    "id": "3b1b420e2f3fec0504ddc4a7f097c9d8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Donald Trump 1st term",
+    "normalizedAnswer": "DONALD TRUMP 1ST TERM",
+    "category": "US President",
+    "difficulty": 26.4,
+    "difficultyTier": "hard",
+    "wordCount": 4,
+    "letterCount": 18,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "history",
+      "us-president"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States"
+    }
+  },
+  {
+    "id": "15c6f0c88c1562343d737fe0c42d5482",
+    "source": "theme",
+    "type": "title",
+    "answer": "Joe Biden",
+    "normalizedAnswer": "JOE BIDEN",
+    "category": "US President",
+    "difficulty": 16.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "history",
+      "us-president"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States"
+    }
+  },
+  {
+    "id": "ff93e56449b3c8329d5576383c28e7d4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Donald Trump 2nd term",
+    "normalizedAnswer": "DONALD TRUMP 2ND TERM",
+    "category": "US President",
+    "difficulty": 24.9,
+    "difficultyTier": "hard",
+    "wordCount": 4,
+    "letterCount": 18,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "history",
+      "us-president"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States"
+    }
+  }
+]

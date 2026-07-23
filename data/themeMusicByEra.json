@@ -1,0 +1,212 @@
+[
+  {
+    "id": "6fb24a7897a2c90ba4a4e8fa992ec599",
+    "source": "theme",
+    "type": "title",
+    "answer": "Michael Jackson",
+    "normalizedAnswer": "MICHAEL JACKSON",
+    "category": "Music Artist by Era",
+    "difficulty": 29,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "d6b5c37bba2007839a5e958240b4df28",
+    "source": "theme",
+    "type": "title",
+    "answer": "Madonna",
+    "normalizedAnswer": "MADONNA",
+    "category": "Music Artist by Era",
+    "difficulty": 10.3,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "bf24dddfbc7ab69a77ddfdfdb1bb18c8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Prince",
+    "normalizedAnswer": "PRINCE",
+    "category": "Music Artist by Era",
+    "difficulty": 11.4,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "e0816768dba5662f1e97f6569eadd73b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Nirvana",
+    "normalizedAnswer": "NIRVANA",
+    "category": "Music Artist by Era",
+    "difficulty": 12.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "bf4b08217b82f93308948b1a928383f7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Backstreet Boys",
+    "normalizedAnswer": "BACKSTREET BOYS",
+    "category": "Music Artist by Era",
+    "difficulty": 23.5,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "01cf803ef47f8bd86309b7846db3b337",
+    "source": "theme",
+    "type": "title",
+    "answer": "Britney Spears",
+    "normalizedAnswer": "BRITNEY SPEARS",
+    "category": "Music Artist by Era",
+    "difficulty": 20.6,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "5911558efc826e5737b10035d1204c4e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Linkin Park",
+    "normalizedAnswer": "LINKIN PARK",
+    "category": "Music Artist by Era",
+    "difficulty": 19.9,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "7637e71bb43800a557816cdad6b97309",
+    "source": "theme",
+    "type": "title",
+    "answer": "Taylor Swift",
+    "normalizedAnswer": "TAYLOR SWIFT",
+    "category": "Music Artist by Era",
+    "difficulty": 19.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "d7d3f50da5b199bf098bef030822fde2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bruno Mars",
+    "normalizedAnswer": "BRUNO MARS",
+    "category": "Music Artist by Era",
+    "difficulty": 16,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "86a0df042ec9431a1e3f6fbad2217d85",
+    "source": "theme",
+    "type": "title",
+    "answer": "Billie Eilish",
+    "normalizedAnswer": "BILLIE EILISH",
+    "category": "Music Artist by Era",
+    "difficulty": 14.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  }
+]

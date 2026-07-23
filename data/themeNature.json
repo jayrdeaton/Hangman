@@ -1,0 +1,202 @@
+[
+  {
+    "id": "79018ee572da684d9811956f1ea9e886",
+    "source": "theme",
+    "type": "title",
+    "answer": "African Elephant",
+    "normalizedAnswer": "AFRICAN ELEPHANT",
+    "category": "Nature",
+    "difficulty": 22.9,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "nature"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "68882781ae0a919f52304a3d0c69c002",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bald Eagle",
+    "normalizedAnswer": "BALD EAGLE",
+    "category": "Nature",
+    "difficulty": 13,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "nature"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "646db83efad1dc6dfe7a0ea477e2d269",
+    "source": "theme",
+    "type": "title",
+    "answer": "Great White Shark",
+    "normalizedAnswer": "GREAT WHITE SHARK",
+    "category": "Nature",
+    "difficulty": 24.3,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "nature"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "70d0b9ffdd927b5bad3ec9e2bd4fcc40",
+    "source": "theme",
+    "type": "title",
+    "answer": "Blue Whale",
+    "normalizedAnswer": "BLUE WHALE",
+    "category": "Nature",
+    "difficulty": 14.5,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "nature"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6ad0cea8f7640108a752016bf7d0adc9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Giant Sequoia",
+    "normalizedAnswer": "GIANT SEQUOIA",
+    "category": "Nature",
+    "difficulty": 22.7,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "nature"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "331b3c7f50eb7f582aa9dbfb2da7916c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Redwood Forest",
+    "normalizedAnswer": "REDWOOD FOREST",
+    "category": "Nature",
+    "difficulty": 17.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "nature"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "09eeeee436689a6a0261893ac5a4e6c0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Amazon Rainforest",
+    "normalizedAnswer": "AMAZON RAINFOREST",
+    "category": "Nature",
+    "difficulty": 25.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "nature"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "8022b89778a3dad709c1e1c03b1b0dc9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Monarch Butterfly",
+    "normalizedAnswer": "MONARCH BUTTERFLY",
+    "category": "Nature",
+    "difficulty": 27.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "nature"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c084a5d2417f355ba93618d2aa56ed39",
+    "source": "theme",
+    "type": "title",
+    "answer": "Polar Bear",
+    "normalizedAnswer": "POLAR BEAR",
+    "category": "Nature",
+    "difficulty": 14.5,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "nature"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "710deb10d048de39e646f3b797144f40",
+    "source": "theme",
+    "type": "title",
+    "answer": "Komodo Dragon",
+    "normalizedAnswer": "KOMODO DRAGON",
+    "category": "Nature",
+    "difficulty": 19.7,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "nature"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  }
+]

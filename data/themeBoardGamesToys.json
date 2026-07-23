@@ -1,0 +1,212 @@
+[
+  {
+    "id": "be6c4006ebc0b404de8f123155131a93",
+    "source": "theme",
+    "type": "title",
+    "answer": "Monopoly",
+    "normalizedAnswer": "MONOPOLY",
+    "category": "Board Game or Toy",
+    "difficulty": 12.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "board-game",
+      "toy"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "95e2e00862db474371eeeb12eac47d79",
+    "source": "theme",
+    "type": "title",
+    "answer": "Scrabble",
+    "normalizedAnswer": "SCRABBLE",
+    "category": "Board Game or Toy",
+    "difficulty": 13.7,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "board-game",
+      "toy"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "5fe9b832caa86d53778dbcf10dcfe6c9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chess",
+    "normalizedAnswer": "CHESS",
+    "category": "Board Game or Toy",
+    "difficulty": 8,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "board-game",
+      "toy"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6f7010ad5cf643114f88687fdcfe0dec",
+    "source": "theme",
+    "type": "title",
+    "answer": "Risk",
+    "normalizedAnswer": "RISK",
+    "category": "Board Game or Toy",
+    "difficulty": 10.1,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "board-game",
+      "toy"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "076b91d99d77cdf57d582170e08a2e1c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Clue",
+    "normalizedAnswer": "CLUE",
+    "category": "Board Game or Toy",
+    "difficulty": 7.6,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "board-game",
+      "toy"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a578e59689e7160057732c9b194442c7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Catan",
+    "normalizedAnswer": "CATAN",
+    "category": "Board Game or Toy",
+    "difficulty": 8,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "board-game",
+      "toy"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "037732aa2c89e43ca0caf999ceb1a6d2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Barbie",
+    "normalizedAnswer": "BARBIE",
+    "category": "Board Game or Toy",
+    "difficulty": 9.9,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "board-game",
+      "toy"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a51dc8061dd1f8bfc5732b78ccb0cf9f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lego",
+    "normalizedAnswer": "LEGO",
+    "category": "Board Game or Toy",
+    "difficulty": 7.6,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "board-game",
+      "toy"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "cb1ab7f1981b82ad949863c6dc38697e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Hot Wheels",
+    "normalizedAnswer": "HOT WHEELS",
+    "category": "Board Game or Toy",
+    "difficulty": 14.5,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "board-game",
+      "toy"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "41acebc4f463dd0ffa540b19288108e1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Rubiks Cube",
+    "normalizedAnswer": "RUBIKS CUBE",
+    "category": "Board Game or Toy",
+    "difficulty": 18.9,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "board-game",
+      "toy"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  }
+]

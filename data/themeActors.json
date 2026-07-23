@@ -1,0 +1,1002 @@
+[
+  {
+    "id": "7fc9e40184d307cdb89a9393f35fbc18",
+    "source": "theme",
+    "type": "title",
+    "answer": "Katharine Hepburn",
+    "normalizedAnswer": "KATHARINE HEPBURN",
+    "category": "Actor",
+    "difficulty": 25.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "actor"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Stars"
+    }
+  },
+  {
+    "id": "831ef55e060e6abfa6fceb28ccaba6cc",
+    "source": "theme",
+    "type": "title",
+    "answer": "Humphrey Bogart",
+    "normalizedAnswer": "HUMPHREY BOGART",
+    "category": "Actor",
+    "difficulty": 24,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "actor"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Stars"
+    }
+  },
+  {
+    "id": "5b3b2349d0d38670572c2ec09782ef2a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bette Davis",
+    "normalizedAnswer": "BETTE DAVIS",
+    "category": "Actor",
+    "difficulty": 18.9,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "actor"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Stars"
+    }
+  },
+  {
+    "id": "9a5822b42a0c4d0629b2d6680aa776b5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cary Grant",
+    "normalizedAnswer": "CARY GRANT",
+    "category": "Actor",
+    "difficulty": 14.5,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "actor"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Stars"
+    }
+  },
+  {
+    "id": "a37ea497fd2244666d9e6c5309aa03a5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Audrey Hepburn",
+    "normalizedAnswer": "AUDREY HEPBURN",
+    "category": "Actor",
+    "difficulty": 20.6,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "actor"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Stars"
+    }
+  },
+  {
+    "id": "ee93e1476c4350aecb1d10ac6ed765c7",
+    "source": "theme",
+    "type": "title",
+    "answer": "James Stewart",
+    "normalizedAnswer": "JAMES STEWART",
+    "category": "Actor",
+    "difficulty": 19.7,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "actor"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Stars"
+    }
+  },
+  {
+    "id": "f80ddb7ee5e15a6fa0bc8221b1d2a5fc",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ingrid Bergman",
+    "normalizedAnswer": "INGRID BERGMAN",
+    "category": "Actor",
+    "difficulty": 19.1,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "actor"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Stars"
+    }
+  },
+  {
+    "id": "6dd3c5dc7ae2276a9cde6af3c3e5f124",
+    "source": "theme",
+    "type": "title",
+    "answer": "Marlon Brando",
+    "normalizedAnswer": "MARLON BRANDO",
+    "category": "Actor",
+    "difficulty": 17.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "actor"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Stars"
+    }
+  },
+  {
+    "id": "5840cf2496f6ca6c9a1cad678b9ab144",
+    "source": "theme",
+    "type": "title",
+    "answer": "Greta Garbo",
+    "normalizedAnswer": "GRETA GARBO",
+    "category": "Actor",
+    "difficulty": 14.9,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "actor"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Stars"
+    }
+  },
+  {
+    "id": "2a794110ea7e0216bc88a97d4792246e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Fred Astaire",
+    "normalizedAnswer": "FRED ASTAIRE",
+    "category": "Actor",
+    "difficulty": 16.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "actor"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Stars"
+    }
+  },
+  {
+    "id": "778a1c57d964b35281579a6548d3c187",
+    "source": "theme",
+    "type": "title",
+    "answer": "Marilyn Monroe",
+    "normalizedAnswer": "MARILYN MONROE",
+    "category": "Actor",
+    "difficulty": 19.1,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "actor"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Stars"
+    }
+  },
+  {
+    "id": "688a4bca45b7dac9b6cb73dc34268aec",
+    "source": "theme",
+    "type": "title",
+    "answer": "Henry Fonda",
+    "normalizedAnswer": "HENRY FONDA",
+    "category": "Actor",
+    "difficulty": 17.9,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "actor"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Stars"
+    }
+  },
+  {
+    "id": "8416ebcae36738c35bd1377bbc39d918",
+    "source": "theme",
+    "type": "title",
+    "answer": "Elizabeth Taylor",
+    "normalizedAnswer": "ELIZABETH TAYLOR",
+    "category": "Actor",
+    "difficulty": 25.4,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "actor"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Stars"
+    }
+  },
+  {
+    "id": "6714eaf9f58a1b1a4e409657acd720a6",
+    "source": "theme",
+    "type": "title",
+    "answer": "Clark Gable",
+    "normalizedAnswer": "CLARK GABLE",
+    "category": "Actor",
+    "difficulty": 18.9,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "actor"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Stars"
+    }
+  },
+  {
+    "id": "3d573485e3d54dd28b2f588868af4af9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Judy Garland",
+    "normalizedAnswer": "JUDY GARLAND",
+    "category": "Actor",
+    "difficulty": 20.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "actor"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Stars"
+    }
+  },
+  {
+    "id": "3f6c28f2730ab7148b1f233b5bdf9f2c",
+    "source": "theme",
+    "type": "title",
+    "answer": "James Cagney",
+    "normalizedAnswer": "JAMES CAGNEY",
+    "category": "Actor",
+    "difficulty": 20.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "actor"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Stars"
+    }
+  },
+  {
+    "id": "6a9999e7c18fbb0dffc49b3ffc69c642",
+    "source": "theme",
+    "type": "title",
+    "answer": "Marlene Dietrich",
+    "normalizedAnswer": "MARLENE DIETRICH",
+    "category": "Actor",
+    "difficulty": 22.9,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "actor"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Stars"
+    }
+  },
+  {
+    "id": "70feb34ac5cbd4111825fb758c4c8737",
+    "source": "theme",
+    "type": "title",
+    "answer": "Spencer Tracy",
+    "normalizedAnswer": "SPENCER TRACY",
+    "category": "Actor",
+    "difficulty": 18.7,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "actor"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Stars"
+    }
+  },
+  {
+    "id": "22953c308d20f412fde56f4c8a6e1049",
+    "source": "theme",
+    "type": "title",
+    "answer": "Joan Crawford",
+    "normalizedAnswer": "JOAN CRAWFORD",
+    "category": "Actor",
+    "difficulty": 21.2,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "actor"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Stars"
+    }
+  },
+  {
+    "id": "62d09dadbe85eaeb51d83a06a66bedb6",
+    "source": "theme",
+    "type": "title",
+    "answer": "Charlie Chaplin",
+    "normalizedAnswer": "CHARLIE CHAPLIN",
+    "category": "Actor",
+    "difficulty": 19.5,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "actor"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Stars"
+    }
+  },
+  {
+    "id": "bffd67027767b6a6360042b356be9a6e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Barbara Stanwyck",
+    "normalizedAnswer": "BARBARA STANWYCK",
+    "category": "Actor",
+    "difficulty": 23.9,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "actor"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Stars"
+    }
+  },
+  {
+    "id": "fe1cf129ff28706b17b82b833752c355",
+    "source": "theme",
+    "type": "title",
+    "answer": "Gary Cooper",
+    "normalizedAnswer": "GARY COOPER",
+    "category": "Actor",
+    "difficulty": 16.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "actor"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Stars"
+    }
+  },
+  {
+    "id": "899d0cab526d120b56eccf0a7a291ce8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Claudette Colbert",
+    "normalizedAnswer": "CLAUDETTE COLBERT",
+    "category": "Actor",
+    "difficulty": 21.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "actor"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Stars"
+    }
+  },
+  {
+    "id": "826b9bd5d7285dfdaf719c0647d2d8da",
+    "source": "theme",
+    "type": "title",
+    "answer": "Gregory Peck",
+    "normalizedAnswer": "GREGORY PECK",
+    "category": "Actor",
+    "difficulty": 19.3,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "actor"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Stars"
+    }
+  },
+  {
+    "id": "06933a3cc9756c4d6ca2678020553246",
+    "source": "theme",
+    "type": "title",
+    "answer": "Grace Kelly",
+    "normalizedAnswer": "GRACE KELLY",
+    "category": "Actor",
+    "difficulty": 18.9,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "actor"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Stars"
+    }
+  },
+  {
+    "id": "19f61c8ff6e6eb77d02bbb6f18faee31",
+    "source": "theme",
+    "type": "title",
+    "answer": "John Wayne",
+    "normalizedAnswer": "JOHN WAYNE",
+    "category": "Actor",
+    "difficulty": 18.5,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "actor"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Stars"
+    }
+  },
+  {
+    "id": "ace865f13496dc7c16487f33a78fdcd0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ginger Rogers",
+    "normalizedAnswer": "GINGER ROGERS",
+    "category": "Actor",
+    "difficulty": 15.7,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "actor"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Stars"
+    }
+  },
+  {
+    "id": "6d13d39f48f1451d7fef073d74483974",
+    "source": "theme",
+    "type": "title",
+    "answer": "Laurence Olivier",
+    "normalizedAnswer": "LAURENCE OLIVIER",
+    "category": "Actor",
+    "difficulty": 23.9,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "actor"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Stars"
+    }
+  },
+  {
+    "id": "462c512c90c83787d7e067bb20bdfa23",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mae West",
+    "normalizedAnswer": "MAE WEST",
+    "category": "Actor",
+    "difficulty": 12.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "actor"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Stars"
+    }
+  },
+  {
+    "id": "27955335f961c40ecb6248c32f9ef34c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Gene Kelly",
+    "normalizedAnswer": "GENE KELLY",
+    "category": "Actor",
+    "difficulty": 15.5,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "actor"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Stars"
+    }
+  },
+  {
+    "id": "bbf5976830f5aa82e05400bab776d5cd",
+    "source": "theme",
+    "type": "title",
+    "answer": "Vivien Leigh",
+    "normalizedAnswer": "VIVIEN LEIGH",
+    "category": "Actor",
+    "difficulty": 20.3,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "actor"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Stars"
+    }
+  },
+  {
+    "id": "abc7f060544c3e5f7034221a8cd49fd7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Orson Welles",
+    "normalizedAnswer": "ORSON WELLES",
+    "category": "Actor",
+    "difficulty": 15.3,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "actor"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Stars"
+    }
+  },
+  {
+    "id": "9a1a204523bffa8ba72e1911729190b9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lillian Gish",
+    "normalizedAnswer": "LILLIAN GISH",
+    "category": "Actor",
+    "difficulty": 15.3,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "actor"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Stars"
+    }
+  },
+  {
+    "id": "4efafe9455113bc00f60054bcaa609ad",
+    "source": "theme",
+    "type": "title",
+    "answer": "Kirk Douglas",
+    "normalizedAnswer": "KIRK DOUGLAS",
+    "category": "Actor",
+    "difficulty": 24.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "actor"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Stars"
+    }
+  },
+  {
+    "id": "d9bbb327947f3212ac923f48831c14a9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Shirley Temple",
+    "normalizedAnswer": "SHIRLEY TEMPLE",
+    "category": "Actor",
+    "difficulty": 20.6,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "actor"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Stars"
+    }
+  },
+  {
+    "id": "b85575f943519dc674abad8f59fc8027",
+    "source": "theme",
+    "type": "title",
+    "answer": "James Dean",
+    "normalizedAnswer": "JAMES DEAN",
+    "category": "Actor",
+    "difficulty": 17,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "actor"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Stars"
+    }
+  },
+  {
+    "id": "30f1eb95f31377ce3fc50ceb23eb997d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Rita Hayworth",
+    "normalizedAnswer": "RITA HAYWORTH",
+    "category": "Actor",
+    "difficulty": 17.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "actor"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Stars"
+    }
+  },
+  {
+    "id": "5ac85700ecb73eb10190c78e4d532d42",
+    "source": "theme",
+    "type": "title",
+    "answer": "Burt Lancaster",
+    "normalizedAnswer": "BURT LANCASTER",
+    "category": "Actor",
+    "difficulty": 20.6,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "actor"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Stars"
+    }
+  },
+  {
+    "id": "499ebcc844654457fbe40c728a98a6cb",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lauren Bacall",
+    "normalizedAnswer": "LAUREN BACALL",
+    "category": "Actor",
+    "difficulty": 17.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "actor"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Stars"
+    }
+  },
+  {
+    "id": "1bb8e2afbc7fe06799a4ab8f081096ba",
+    "source": "theme",
+    "type": "title",
+    "answer": "Marx Brothers Chico Harpo Groucho Zeppo",
+    "normalizedAnswer": "MARX BROTHERS CHICO HARPO GROUCHO ZEPPO",
+    "category": "Actor",
+    "difficulty": 44.6,
+    "difficultyTier": "hard",
+    "wordCount": 6,
+    "letterCount": 34,
+    "uniqueLetterCount": 16,
+    "tags": [
+      "theme",
+      "actor"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Stars"
+    }
+  },
+  {
+    "id": "27267ce580152cfb45fc7f34dadde83b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sophia Loren",
+    "normalizedAnswer": "SOPHIA LOREN",
+    "category": "Actor",
+    "difficulty": 19.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "actor"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Stars"
+    }
+  },
+  {
+    "id": "794a4ff7452e4536248f86aa52b069bb",
+    "source": "theme",
+    "type": "title",
+    "answer": "Buster Keaton",
+    "normalizedAnswer": "BUSTER KEATON",
+    "category": "Actor",
+    "difficulty": 22.7,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "actor"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Stars"
+    }
+  },
+  {
+    "id": "689a7595857412fb6213c4f3ce91713e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Jean Harlow",
+    "normalizedAnswer": "JEAN HARLOW",
+    "category": "Actor",
+    "difficulty": 20.4,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "actor"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Stars"
+    }
+  },
+  {
+    "id": "772e8e10f384c7974c4d70bddadbb453",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sidney Poitier",
+    "normalizedAnswer": "SIDNEY POITIER",
+    "category": "Actor",
+    "difficulty": 20.6,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "actor"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Stars"
+    }
+  },
+  {
+    "id": "66930039a3af0e114393225001d389a1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Carole Lombard",
+    "normalizedAnswer": "CAROLE LOMBARD",
+    "category": "Actor",
+    "difficulty": 19.1,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "actor"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Stars"
+    }
+  },
+  {
+    "id": "059ba8f768b41dadfc002ddbe4fa26fe",
+    "source": "theme",
+    "type": "title",
+    "answer": "Robert Mitchum",
+    "normalizedAnswer": "ROBERT MITCHUM",
+    "category": "Actor",
+    "difficulty": 20.6,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "actor"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Stars"
+    }
+  },
+  {
+    "id": "6781815699a53b4bdab94addf3fd760c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mary Pickford",
+    "normalizedAnswer": "MARY PICKFORD",
+    "category": "Actor",
+    "difficulty": 24.2,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "actor"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Stars"
+    }
+  },
+  {
+    "id": "1e725a323c581785e51eea07268e4f81",
+    "source": "theme",
+    "type": "title",
+    "answer": "Edward G. Robinson",
+    "normalizedAnswer": "EDWARD G ROBINSON",
+    "category": "Actor",
+    "difficulty": 23.3,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "actor"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Stars"
+    }
+  },
+  {
+    "id": "10f541bd0380c1ef8c716f6742b57bed",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ava Gardner",
+    "normalizedAnswer": "AVA GARDNER",
+    "category": "Actor",
+    "difficulty": 17.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "actor"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Stars"
+    }
+  },
+  {
+    "id": "e6f056bbd36dece156be63b12ecb799c",
+    "source": "theme",
+    "type": "title",
+    "answer": "William Holden",
+    "normalizedAnswer": "WILLIAM HOLDEN",
+    "category": "Actor",
+    "difficulty": 20.6,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "actor"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Stars"
+    }
+  }
+]

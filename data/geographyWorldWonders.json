@@ -1,0 +1,443 @@
+[
+  {
+    "id": "fe4f3bf02a364057386c159e7978889d",
+    "source": "geography",
+    "type": "title",
+    "answer": "Giza Pyramids",
+    "normalizedAnswer": "GIZA PYRAMIDS",
+    "category": "World Wonder",
+    "difficulty": 22.7,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "geography",
+      "landmark",
+      "wonder"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/New_7_Wonders_of_the_World"
+    }
+  },
+  {
+    "id": "addeb492497e2001ca163b7edc4b8032",
+    "source": "geography",
+    "type": "title",
+    "answer": "Petra",
+    "normalizedAnswer": "PETRA",
+    "category": "World Wonder",
+    "difficulty": 9.5,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "landmark",
+      "wonder"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/New_7_Wonders_of_the_World"
+    }
+  },
+  {
+    "id": "c18d1140bfd379dc96d7ec99a29cc20e",
+    "source": "geography",
+    "type": "title",
+    "answer": "Colosseum",
+    "normalizedAnswer": "COLOSSEUM",
+    "category": "World Wonder",
+    "difficulty": 14.1,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "landmark",
+      "wonder"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/New_7_Wonders_of_the_World"
+    }
+  },
+  {
+    "id": "fc32061b19e5736735663bd863df1392",
+    "source": "geography",
+    "type": "title",
+    "answer": "Chichén Itz",
+    "normalizedAnswer": "CHICHN ITZ",
+    "category": "World Wonder",
+    "difficulty": 15.5,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "landmark",
+      "wonder"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/New_7_Wonders_of_the_World"
+    }
+  },
+  {
+    "id": "a550f8e159d9c3ed1bebd0c4d2d79586",
+    "source": "geography",
+    "type": "title",
+    "answer": "Great Wall of China",
+    "normalizedAnswer": "GREAT WALL OF CHINA",
+    "category": "World Wonder",
+    "difficulty": 27.1,
+    "difficultyTier": "hard",
+    "wordCount": 4,
+    "letterCount": 16,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "geography",
+      "landmark",
+      "wonder"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/New_7_Wonders_of_the_World"
+    }
+  },
+  {
+    "id": "03a3a0a6fab1840f269cd10c96398363",
+    "source": "geography",
+    "type": "title",
+    "answer": "Machu Picchu",
+    "normalizedAnswer": "MACHU PICCHU",
+    "category": "World Wonder",
+    "difficulty": 15.3,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "landmark",
+      "wonder"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/New_7_Wonders_of_the_World"
+    }
+  },
+  {
+    "id": "b5d73435cd1ae9d4ff4db746a9578ced",
+    "source": "geography",
+    "type": "title",
+    "answer": "Taj Mahal",
+    "normalizedAnswer": "TAJ MAHAL",
+    "category": "World Wonder",
+    "difficulty": 15.1,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "landmark",
+      "wonder"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/New_7_Wonders_of_the_World"
+    }
+  },
+  {
+    "id": "1e63727ba0317ea718b544a6c526b4b9",
+    "source": "geography",
+    "type": "title",
+    "answer": "Christ the Redeemer",
+    "normalizedAnswer": "CHRIST THE REDEEMER",
+    "category": "World Wonder",
+    "difficulty": 21.1,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 17,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "landmark",
+      "wonder"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/New_7_Wonders_of_the_World"
+    }
+  },
+  {
+    "id": "9a9255c19746ef460a7a386c919f64ec",
+    "source": "geography",
+    "type": "title",
+    "answer": "Stonehenge",
+    "normalizedAnswer": "STONEHENGE",
+    "category": "World Wonder",
+    "difficulty": 14.5,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "landmark",
+      "wonder"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/New_7_Wonders_of_the_World"
+    }
+  },
+  {
+    "id": "c079343efb1f4f9e24cfcb56ca9a14c3",
+    "source": "geography",
+    "type": "title",
+    "answer": "Acropolis of Athens",
+    "normalizedAnswer": "ACROPOLIS OF ATHENS",
+    "category": "World Wonder",
+    "difficulty": 27.1,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 17,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "geography",
+      "landmark",
+      "wonder"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/New_7_Wonders_of_the_World"
+    }
+  },
+  {
+    "id": "28bca919c95bf329d3dd419de8d43773",
+    "source": "geography",
+    "type": "title",
+    "answer": "Hagia Sophia",
+    "normalizedAnswer": "HAGIA SOPHIA",
+    "category": "World Wonder",
+    "difficulty": 15.3,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "landmark",
+      "wonder"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/New_7_Wonders_of_the_World"
+    }
+  },
+  {
+    "id": "90e7652a1b59fe47c70cdb3581c8f146",
+    "source": "geography",
+    "type": "title",
+    "answer": "Angkor Wat",
+    "normalizedAnswer": "ANGKOR WAT",
+    "category": "World Wonder",
+    "difficulty": 18.5,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "landmark",
+      "wonder"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/New_7_Wonders_of_the_World"
+    }
+  },
+  {
+    "id": "1c6d4ea6f22fe511d3b512599146a6ea",
+    "source": "geography",
+    "type": "title",
+    "answer": "Moai Statues",
+    "normalizedAnswer": "MOAI STATUES",
+    "category": "World Wonder",
+    "difficulty": 16.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "landmark",
+      "wonder"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/New_7_Wonders_of_the_World"
+    }
+  },
+  {
+    "id": "8bd8dfb543086856e883c96bf4dbd738",
+    "source": "geography",
+    "type": "title",
+    "answer": "Timbuktu",
+    "normalizedAnswer": "TIMBUKTU",
+    "category": "World Wonder",
+    "difficulty": 14.7,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "landmark",
+      "wonder"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/New_7_Wonders_of_the_World"
+    }
+  },
+  {
+    "id": "5bc0f6686def63e556256a930e6f25b6",
+    "source": "geography",
+    "type": "title",
+    "answer": "Alhambra",
+    "normalizedAnswer": "ALHAMBRA",
+    "category": "World Wonder",
+    "difficulty": 12.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "landmark",
+      "wonder"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/New_7_Wonders_of_the_World"
+    }
+  },
+  {
+    "id": "fd23af83461f43062d123374e3e6bae1",
+    "source": "geography",
+    "type": "title",
+    "answer": "Kremlin and Red Square",
+    "normalizedAnswer": "KREMLIN AND RED SQUARE",
+    "category": "World Wonder",
+    "difficulty": 31.8,
+    "difficultyTier": "hard",
+    "wordCount": 4,
+    "letterCount": 19,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "geography",
+      "landmark",
+      "wonder"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/New_7_Wonders_of_the_World"
+    }
+  },
+  {
+    "id": "3841d0e5433665151caaf70babf020bf",
+    "source": "geography",
+    "type": "title",
+    "answer": "Kiyomizu-dera",
+    "normalizedAnswer": "KIYOMIZUDERA",
+    "category": "World Wonder",
+    "difficulty": 26.3,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 12,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "geography",
+      "landmark",
+      "wonder"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/New_7_Wonders_of_the_World"
+    }
+  },
+  {
+    "id": "b1f42fd270ad10efdcfe806716c6ea92",
+    "source": "geography",
+    "type": "title",
+    "answer": "Neuschwanstein Castle",
+    "normalizedAnswer": "NEUSCHWANSTEIN CASTLE",
+    "category": "World Wonder",
+    "difficulty": 24.9,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 20,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "geography",
+      "landmark",
+      "wonder"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/New_7_Wonders_of_the_World"
+    }
+  },
+  {
+    "id": "7a38c3340e505ff49df92d3178a0db5e",
+    "source": "geography",
+    "type": "title",
+    "answer": "Statue of Liberty",
+    "normalizedAnswer": "STATUE OF LIBERTY",
+    "category": "World Wonder",
+    "difficulty": 24.8,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "geography",
+      "landmark",
+      "wonder"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/New_7_Wonders_of_the_World"
+    }
+  },
+  {
+    "id": "6d4bdebd97179180ca6c50814d758f9a",
+    "source": "geography",
+    "type": "title",
+    "answer": "Eiffel Tower",
+    "normalizedAnswer": "EIFFEL TOWER",
+    "category": "World Wonder",
+    "difficulty": 16.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "landmark",
+      "wonder"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/New_7_Wonders_of_the_World"
+    }
+  },
+  {
+    "id": "990b4c3f943ff05febcb2713aa5761c2",
+    "source": "geography",
+    "type": "title",
+    "answer": "Sydney Opera House",
+    "normalizedAnswer": "SYDNEY OPERA HOUSE",
+    "category": "World Wonder",
+    "difficulty": 23.7,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 16,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "geography",
+      "landmark",
+      "wonder"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/New_7_Wonders_of_the_World"
+    }
+  }
+]

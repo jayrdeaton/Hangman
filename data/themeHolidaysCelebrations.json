@@ -1,0 +1,202 @@
+[
+  {
+    "id": "dc9bf3f5e1049b28c98e99e36be137bd",
+    "source": "theme",
+    "type": "title",
+    "answer": "New Years Day",
+    "normalizedAnswer": "NEW YEARS DAY",
+    "category": "Holiday and Celebration",
+    "difficulty": 17.2,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "holiday"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ab0014d830d6e7314df25971cfa8b868",
+    "source": "theme",
+    "type": "title",
+    "answer": "Valentines Day",
+    "normalizedAnswer": "VALENTINES DAY",
+    "category": "Holiday and Celebration",
+    "difficulty": 23.1,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "holiday"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "3aaa0b8eb1072137ddcd671ef97b2ac1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Easter Sunday",
+    "normalizedAnswer": "EASTER SUNDAY",
+    "category": "Holiday and Celebration",
+    "difficulty": 18.7,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "holiday"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "315d233d5a6c7ffe62fc7f980b5d1de5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Halloween",
+    "normalizedAnswer": "HALLOWEEN",
+    "category": "Holiday and Celebration",
+    "difficulty": 14.1,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "holiday"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "7028577359cf87e8de2cd194dc787745",
+    "source": "theme",
+    "type": "title",
+    "answer": "Thanksgiving",
+    "normalizedAnswer": "THANKSGIVING",
+    "category": "Holiday and Celebration",
+    "difficulty": 23.3,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "holiday"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "668a8fef2defaa91df253a4ff69fdfc4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Christmas Day",
+    "normalizedAnswer": "CHRISTMAS DAY",
+    "category": "Holiday and Celebration",
+    "difficulty": 20.2,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "holiday"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c29b55068e489a5be0a7c499f7f2c0dc",
+    "source": "theme",
+    "type": "title",
+    "answer": "Hanukkah",
+    "normalizedAnswer": "HANUKKAH",
+    "category": "Holiday and Celebration",
+    "difficulty": 15.7,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "holiday"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "7d47948e9a7e8ba0f8804398073c928c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Diwali",
+    "normalizedAnswer": "DIWALI",
+    "category": "Holiday and Celebration",
+    "difficulty": 9.9,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "holiday"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c7a97534e10f7093f62f452cbbee5c32",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lunar New Year",
+    "normalizedAnswer": "LUNAR NEW YEAR",
+    "category": "Holiday and Celebration",
+    "difficulty": 17.6,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "holiday"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "632ba6b02111e1d3eaf14237ae6691c2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Independence Day",
+    "normalizedAnswer": "INDEPENDENCE DAY",
+    "category": "Holiday and Celebration",
+    "difficulty": 18.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "holiday"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  }
+]

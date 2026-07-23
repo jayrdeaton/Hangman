@@ -1,0 +1,202 @@
+[
+  {
+    "id": "410ff583765fcd93fc1908cde85fe368",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ford Mustang",
+    "normalizedAnswer": "FORD MUSTANG",
+    "category": "Vehicle",
+    "difficulty": 21.3,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "d078940546a07730e17b4d3c0e05d2a0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chevrolet Corvette",
+    "normalizedAnswer": "CHEVROLET CORVETTE",
+    "category": "Vehicle",
+    "difficulty": 24.2,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 17,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "465db57b61c933c17853e85f24990dd2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Tesla Model S",
+    "normalizedAnswer": "TESLA MODEL S",
+    "category": "Vehicle",
+    "difficulty": 17.2,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "79eea4be6fe84eaea77b2dfa723e20e4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Honda Civic",
+    "normalizedAnswer": "HONDA CIVIC",
+    "category": "Vehicle",
+    "difficulty": 18.9,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "5c05518c723d92b5a66cedc8184d1835",
+    "source": "theme",
+    "type": "title",
+    "answer": "Boeing 747",
+    "normalizedAnswer": "BOEING 747",
+    "category": "Vehicle",
+    "difficulty": 13,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "5263b655139248ca65a6993a3d97a62d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Airbus A320",
+    "normalizedAnswer": "AIRBUS A320",
+    "category": "Vehicle",
+    "difficulty": 13.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "acf0dcc3db792f2209aba5e92a42164f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Harley-Davidson Sportster",
+    "normalizedAnswer": "HARLEYDAVIDSON SPORTSTER",
+    "category": "Vehicle",
+    "difficulty": 33.1,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 23,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "52b8e19de56a42e3c64842002fb47a14",
+    "source": "theme",
+    "type": "title",
+    "answer": "Yamaha R1",
+    "normalizedAnswer": "YAMAHA R1",
+    "category": "Vehicle",
+    "difficulty": 11.1,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "3b986bfc990225d9cb539e1fe4d8342a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Porsche 911",
+    "normalizedAnswer": "PORSCHE 911",
+    "category": "Vehicle",
+    "difficulty": 14.9,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "47d52208b972814a2acc628598a7a2e1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Jeep Wrangler",
+    "normalizedAnswer": "JEEP WRANGLER",
+    "category": "Vehicle",
+    "difficulty": 21.2,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  }
+]

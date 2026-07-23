@@ -1,0 +1,202 @@
+[
+  {
+    "id": "131fb677d0425ff7b3aebdfb68de772a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chicken Parmesan",
+    "normalizedAnswer": "CHICKEN PARMESAN",
+    "category": "Food and Drink",
+    "difficulty": 25.4,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "food"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "519e5be775e2918ec4e9d69034136e2c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Spaghetti Bolognese",
+    "normalizedAnswer": "SPAGHETTI BOLOGNESE",
+    "category": "Food and Drink",
+    "difficulty": 25.6,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 18,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "food"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "d7546da89c1936b58edabb3318735cfc",
+    "source": "theme",
+    "type": "title",
+    "answer": "Caesar Salad",
+    "normalizedAnswer": "CAESAR SALAD",
+    "category": "Food and Drink",
+    "difficulty": 15.3,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "food"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "da31a0fb116519b644383f281c75a690",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sushi Roll",
+    "normalizedAnswer": "SUSHI ROLL",
+    "category": "Food and Drink",
+    "difficulty": 14.5,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "food"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ecba0fbc9cb4bb569bb1337d5c29d7c7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chocolate Cake",
+    "normalizedAnswer": "CHOCOLATE CAKE",
+    "category": "Food and Drink",
+    "difficulty": 20.1,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "food"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "32b58fcb86b36aa34c3731d05fb493ad",
+    "source": "theme",
+    "type": "title",
+    "answer": "Apple Pie",
+    "normalizedAnswer": "APPLE PIE",
+    "category": "Food and Drink",
+    "difficulty": 11.1,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "food"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "03dacc54e80ab8786088a1b9f25a26de",
+    "source": "theme",
+    "type": "title",
+    "answer": "Iced Coffee",
+    "normalizedAnswer": "ICED COFFEE",
+    "category": "Food and Drink",
+    "difficulty": 13.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "food"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a92ddebab282c9bcda6e83ae830a5b07",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lemonade",
+    "normalizedAnswer": "LEMONADE",
+    "category": "Food and Drink",
+    "difficulty": 13.7,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "food"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6f05944c9f76a739b21f9c136fd52fc2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Margarita Pizza",
+    "normalizedAnswer": "MARGARITA PIZZA",
+    "category": "Food and Drink",
+    "difficulty": 23,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "food"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "5000d2939e189b35cba1943b04827a92",
+    "source": "theme",
+    "type": "title",
+    "answer": "French Toast",
+    "normalizedAnswer": "FRENCH TOAST",
+    "category": "Food and Drink",
+    "difficulty": 19.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "food"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  }
+]

@@ -1,22 +1,27 @@
-import { JSX, ReactNode } from 'react'
+import { Fragment, JSX, ReactNode } from 'react'
+import { Platform } from 'react-native'
 import { KeyboardProvider } from 'react-native-keyboard-controller'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 import { Provider as ReduxProvider } from 'react-redux'
 import { PersistGate } from 'redux-persist/integration/react'
 
-import { persistor, store } from '../store'
+import { persistor, store } from '@/redux/store'
+
 import { Theme } from './Theme'
 
 export type ProvidersProps = { children: ReactNode }
 
+// react-native-keyboard-controller has no web implementation — skip its provider there.
+const KeyboardWrapper = Platform.OS === 'web' ? Fragment : KeyboardProvider
+
 export const Providers = ({ children }: ProvidersProps): JSX.Element => (
   <SafeAreaProvider>
-    <KeyboardProvider>
+    <KeyboardWrapper>
       <ReduxProvider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           <Theme>{children}</Theme>
         </PersistGate>
       </ReduxProvider>
-    </KeyboardProvider>
+    </KeyboardWrapper>
   </SafeAreaProvider>
 )

@@ -1,0 +1,202 @@
+[
+  {
+    "id": "94f79792a1cf00e16246fcda6df70b40",
+    "source": "theme",
+    "type": "title",
+    "answer": "Apple",
+    "normalizedAnswer": "APPLE",
+    "category": "Company",
+    "difficulty": 8,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "970298b279d36995dcf223c0adba6812",
+    "source": "theme",
+    "type": "title",
+    "answer": "Microsoft",
+    "normalizedAnswer": "MICROSOFT",
+    "category": "Company",
+    "difficulty": 15.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "e98cde289553843e02a48d6a8af56c04",
+    "source": "theme",
+    "type": "title",
+    "answer": "Google",
+    "normalizedAnswer": "GOOGLE",
+    "category": "Company",
+    "difficulty": 8.4,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "2998207f10f93d32a4d33ea739126fbe",
+    "source": "theme",
+    "type": "title",
+    "answer": "Amazon",
+    "normalizedAnswer": "AMAZON",
+    "category": "Company",
+    "difficulty": 12.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ab8418f4b0836425e037d1d4fcc95a78",
+    "source": "theme",
+    "type": "title",
+    "answer": "Netflix",
+    "normalizedAnswer": "NETFLIX",
+    "category": "Company",
+    "difficulty": 15.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "e9d51b5ccc70ed0aa5a945df3a1fc234",
+    "source": "theme",
+    "type": "title",
+    "answer": "Disney",
+    "normalizedAnswer": "DISNEY",
+    "category": "Company",
+    "difficulty": 11.4,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "cdac7f761a851ea4babe0c856be9b4f3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Toyota",
+    "normalizedAnswer": "TOYOTA",
+    "category": "Company",
+    "difficulty": 8.4,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "24e7906e75b56b74b3bcd319b48e4cfe",
+    "source": "theme",
+    "type": "title",
+    "answer": "Nike",
+    "normalizedAnswer": "NIKE",
+    "category": "Company",
+    "difficulty": 10.1,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "5097a069c870dfc102b101b5cc32b109",
+    "source": "theme",
+    "type": "title",
+    "answer": "Samsung",
+    "normalizedAnswer": "SAMSUNG",
+    "category": "Company",
+    "difficulty": 11.8,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "d0b11ee58bf1a944f4b7d93eca5d6209",
+    "source": "theme",
+    "type": "title",
+    "answer": "Coca-Cola",
+    "normalizedAnswer": "COCACOLA",
+    "category": "Company",
+    "difficulty": 9.2,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  }
+]

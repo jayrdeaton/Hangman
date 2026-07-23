@@ -1,0 +1,202 @@
+[
+  {
+    "id": "ac5421fb44713ecc58ba6ee5cb745330",
+    "source": "theme",
+    "type": "title",
+    "answer": "JavaScript",
+    "normalizedAnswer": "JAVASCRIPT",
+    "category": "Technology",
+    "difficulty": 22.5,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "48cc60ab0ab39972e36bad70291c9d0d",
+    "source": "theme",
+    "type": "title",
+    "answer": "TypeScript",
+    "normalizedAnswer": "TYPESCRIPT",
+    "category": "Technology",
+    "difficulty": 16,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "4348bb57245e3f04c51c2ca06135ffed",
+    "source": "theme",
+    "type": "title",
+    "answer": "Python",
+    "normalizedAnswer": "PYTHON",
+    "category": "Technology",
+    "difficulty": 11.4,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "4217ea842ecba01c90588990015218fd",
+    "source": "theme",
+    "type": "title",
+    "answer": "React Native",
+    "normalizedAnswer": "REACT NATIVE",
+    "category": "Technology",
+    "difficulty": 19.3,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "45a785bffd4efc04fa0b82e9782917c7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Node.js",
+    "normalizedAnswer": "NODEJS",
+    "category": "Technology",
+    "difficulty": 13.9,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "e800e6dcb8a190a40566230b0ce62185",
+    "source": "theme",
+    "type": "title",
+    "answer": "PostgreSQL",
+    "normalizedAnswer": "POSTGRESQL",
+    "category": "Technology",
+    "difficulty": 20,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "bc1f549ef50a66f60a7c7180a27761cb",
+    "source": "theme",
+    "type": "title",
+    "answer": "Android",
+    "normalizedAnswer": "ANDROID",
+    "category": "Technology",
+    "difficulty": 11.8,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "1eb6c353fe64ca53431f525a2b6cdbe1",
+    "source": "theme",
+    "type": "title",
+    "answer": "iOS",
+    "normalizedAnswer": "IOS",
+    "category": "Technology",
+    "difficulty": 5.7,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "72d45e25b53e754860dd49d4274e21a7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Visual Studio Code",
+    "normalizedAnswer": "VISUAL STUDIO CODE",
+    "category": "Technology",
+    "difficulty": 26.2,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 16,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a5e1155459c4f6486e60d733c531f128",
+    "source": "theme",
+    "type": "title",
+    "answer": "Docker",
+    "normalizedAnswer": "DOCKER",
+    "category": "Technology",
+    "difficulty": 13.9,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  }
+]

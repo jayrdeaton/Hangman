@@ -1,0 +1,202 @@
+[
+  {
+    "id": "9093eac36ab8fc75c62f9190eb742fb1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Super Mario Bros",
+    "normalizedAnswer": "SUPER MARIO BROS",
+    "category": "Video Game",
+    "difficulty": 21.4,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "video-game"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "018abbffc30774983d9d87b6a181b9b7",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Legend of Zelda",
+    "normalizedAnswer": "THE LEGEND OF ZELDA",
+    "category": "Video Game",
+    "difficulty": 26.6,
+    "difficultyTier": "hard",
+    "wordCount": 4,
+    "letterCount": 16,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "video-game"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "7ffb3e89e31919fe560c5c9ef3ed6063",
+    "source": "theme",
+    "type": "title",
+    "answer": "Minecraft",
+    "normalizedAnswer": "MINECRAFT",
+    "category": "Video Game",
+    "difficulty": 17.1,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "video-game"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a0decea20689ff201627d31d031c73b1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Fortnite",
+    "normalizedAnswer": "FORTNITE",
+    "category": "Video Game",
+    "difficulty": 13.7,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "video-game"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "79f6b097e232cd970b81906ec771a3cc",
+    "source": "theme",
+    "type": "title",
+    "answer": "Call of Duty",
+    "normalizedAnswer": "CALL OF DUTY",
+    "category": "Video Game",
+    "difficulty": 18.3,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "video-game"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "04c53f3ec324607bc8a543323991c3c7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Grand Theft Auto",
+    "normalizedAnswer": "GRAND THEFT AUTO",
+    "category": "Video Game",
+    "difficulty": 22.9,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 14,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "video-game"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "500ccadccb18fdc495f31b1f8fb76852",
+    "source": "theme",
+    "type": "title",
+    "answer": "Final Fantasy",
+    "normalizedAnswer": "FINAL FANTASY",
+    "category": "Video Game",
+    "difficulty": 17.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "video-game"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "5752d545fe64053b40a58a1e2a1c1df9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Halo Infinite",
+    "normalizedAnswer": "HALO INFINITE",
+    "category": "Video Game",
+    "difficulty": 18.7,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "video-game"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "4a5bd7ad3a8262c14caf65f3194d4dab",
+    "source": "theme",
+    "type": "title",
+    "answer": "Street Fighter",
+    "normalizedAnswer": "STREET FIGHTER",
+    "category": "Video Game",
+    "difficulty": 17.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "video-game"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "e55b29f8cf1a5f7eb5fcbd2326fe4f35",
+    "source": "theme",
+    "type": "title",
+    "answer": "Animal Crossing",
+    "normalizedAnswer": "ANIMAL CROSSING",
+    "category": "Video Game",
+    "difficulty": 21,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "video-game"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  }
+]

@@ -1,0 +1,3509 @@
+[
+  {
+    "id": "984edf38b2d35b41b0eb00a53438820f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Winning team",
+    "normalizedAnswer": "WINNING TEAM",
+    "category": "Sports Team",
+    "difficulty": 16.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Super_Bowl_champions"
+    }
+  },
+  {
+    "id": "d3823beaacf1fe64420ba18d09f54b17",
+    "source": "theme",
+    "type": "title",
+    "answer": "Green Bay Packersn",
+    "normalizedAnswer": "GREEN BAY PACKERSN",
+    "category": "Sports Team",
+    "difficulty": 26.2,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 16,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Super_Bowl_champions"
+    }
+  },
+  {
+    "id": "d3dc45691e2af3cdef634134e9e3e169",
+    "source": "theme",
+    "type": "title",
+    "answer": "New York Jetsa",
+    "normalizedAnswer": "NEW YORK JETSA",
+    "category": "Sports Team",
+    "difficulty": 27.1,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 12,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Super_Bowl_champions"
+    }
+  },
+  {
+    "id": "5b219726c4b9f8e3b73be1f326f3b93e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Kansas City Chiefsa",
+    "normalizedAnswer": "KANSAS CITY CHIEFSA",
+    "category": "Sports Team",
+    "difficulty": 26.6,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 17,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Super_Bowl_champions"
+    }
+  },
+  {
+    "id": "1335547073ee9039efd27de8d182b6b9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Baltimore ColtsA",
+    "normalizedAnswer": "BALTIMORE COLTSA",
+    "category": "Sports Team",
+    "difficulty": 22.9,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Super_Bowl_champions"
+    }
+  },
+  {
+    "id": "52593b1cc48076f973c99e7b97d86047",
+    "source": "theme",
+    "type": "title",
+    "answer": "Dallas CowboysN",
+    "normalizedAnswer": "DALLAS COWBOYSN",
+    "category": "Sports Team",
+    "difficulty": 21,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Super_Bowl_champions"
+    }
+  },
+  {
+    "id": "7867ccd9601f2d70b87b738871d9dec6",
+    "source": "theme",
+    "type": "title",
+    "answer": "Miami DolphinsA",
+    "normalizedAnswer": "MIAMI DOLPHINSA",
+    "category": "Sports Team",
+    "difficulty": 21,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Super_Bowl_champions"
+    }
+  },
+  {
+    "id": "a597bd543122b0696813ff37b907647a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Pittsburgh SteelersA",
+    "normalizedAnswer": "PITTSBURGH STEELERSA",
+    "category": "Sports Team",
+    "difficulty": 26,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 19,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Super_Bowl_champions"
+    }
+  },
+  {
+    "id": "c865ae51d47d957cbf7b5d281cd8719f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Oakland RaidersA",
+    "normalizedAnswer": "OAKLAND RAIDERSA",
+    "category": "Sports Team",
+    "difficulty": 23.9,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Super_Bowl_champions"
+    }
+  },
+  {
+    "id": "e50b6516ec0a755c08ab18e343c203c9",
+    "source": "theme",
+    "type": "title",
+    "answer": "San Francisco 49ersN",
+    "normalizedAnswer": "SAN FRANCISCO 49ERSN",
+    "category": "Sports Team",
+    "difficulty": 21.5,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 18,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Super_Bowl_champions"
+    }
+  },
+  {
+    "id": "737f76726c1f56eac02ba3df5e3bfc89",
+    "source": "theme",
+    "type": "title",
+    "answer": "Washington RedskinsN",
+    "normalizedAnswer": "WASHINGTON REDSKINSN",
+    "category": "Sports Team",
+    "difficulty": 30,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 19,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Super_Bowl_champions"
+    }
+  },
+  {
+    "id": "2f068fef04b850812dc5745cb9c48df3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Los Angeles RaidersA",
+    "normalizedAnswer": "LOS ANGELES RAIDERSA",
+    "category": "Sports Team",
+    "difficulty": 23,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 18,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Super_Bowl_champions"
+    }
+  },
+  {
+    "id": "3c5824238fed3844792c1a3ac0b05adb",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chicago BearsN",
+    "normalizedAnswer": "CHICAGO BEARSN",
+    "category": "Sports Team",
+    "difficulty": 22.1,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Super_Bowl_champions"
+    }
+  },
+  {
+    "id": "abab4555e9191a80921399aa990bfbb1",
+    "source": "theme",
+    "type": "title",
+    "answer": "New York GiantsN",
+    "normalizedAnswer": "NEW YORK GIANTSN",
+    "category": "Sports Team",
+    "difficulty": 26.9,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 14,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Super_Bowl_champions"
+    }
+  },
+  {
+    "id": "0bfaa9f726cd0c597cde9b86dd4a2374",
+    "source": "theme",
+    "type": "title",
+    "answer": "Denver BroncosA",
+    "normalizedAnswer": "DENVER BRONCOSA",
+    "category": "Sports Team",
+    "difficulty": 23.5,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Super_Bowl_champions"
+    }
+  },
+  {
+    "id": "d02d44897052161b3028f2533a0d24c3",
+    "source": "theme",
+    "type": "title",
+    "answer": "St. Louis RamsN",
+    "normalizedAnswer": "ST LOUIS RAMSN",
+    "category": "Sports Team",
+    "difficulty": 20.6,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Super_Bowl_champions"
+    }
+  },
+  {
+    "id": "7e50e0823dc889d6f90e783bc5fb67a0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Baltimore RavensA",
+    "normalizedAnswer": "BALTIMORE RAVENSA",
+    "category": "Sports Team",
+    "difficulty": 27.3,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Super_Bowl_champions"
+    }
+  },
+  {
+    "id": "af328e366ddc4de0f25fef721031998c",
+    "source": "theme",
+    "type": "title",
+    "answer": "New England PatriotsA",
+    "normalizedAnswer": "NEW ENGLAND PATRIOTSA",
+    "category": "Sports Team",
+    "difficulty": 27.9,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 19,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Super_Bowl_champions"
+    }
+  },
+  {
+    "id": "06fa193096d6f3432478d89d6423fd48",
+    "source": "theme",
+    "type": "title",
+    "answer": "Tampa Bay BuccaneersN",
+    "normalizedAnswer": "TAMPA BAY BUCCANEERSN",
+    "category": "Sports Team",
+    "difficulty": 26.4,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 19,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Super_Bowl_champions"
+    }
+  },
+  {
+    "id": "1a3b91635e551a70566b7a644c888052",
+    "source": "theme",
+    "type": "title",
+    "answer": "Indianapolis ColtsA",
+    "normalizedAnswer": "INDIANAPOLIS COLTSA",
+    "category": "Sports Team",
+    "difficulty": 22.6,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 18,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Super_Bowl_champions"
+    }
+  },
+  {
+    "id": "5473011c5fe2af393c540a484448e9d7",
+    "source": "theme",
+    "type": "title",
+    "answer": "New Orleans SaintsN",
+    "normalizedAnswer": "NEW ORLEANS SAINTSN",
+    "category": "Sports Team",
+    "difficulty": 22.6,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 17,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Super_Bowl_champions"
+    }
+  },
+  {
+    "id": "8f8e9a3394bab3a7d1ed20e9a5df6d9b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Seattle SeahawksN",
+    "normalizedAnswer": "SEATTLE SEAHAWKSN",
+    "category": "Sports Team",
+    "difficulty": 22.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Super_Bowl_champions"
+    }
+  },
+  {
+    "id": "d6406a3420d42fdb7650daf349a783f8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Philadelphia EaglesN",
+    "normalizedAnswer": "PHILADELPHIA EAGLESN",
+    "category": "Sports Team",
+    "difficulty": 23,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 19,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Super_Bowl_champions"
+    }
+  },
+  {
+    "id": "05867267d154b234896ee3e31507d010",
+    "source": "theme",
+    "type": "title",
+    "answer": "Los Angeles RamsN",
+    "normalizedAnswer": "LOS ANGELES RAMSN",
+    "category": "Sports Team",
+    "difficulty": 20.3,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Super_Bowl_champions"
+    }
+  },
+  {
+    "id": "1b9aa2ace1d5f97ea35e6a460d6da801",
+    "source": "theme",
+    "type": "title",
+    "answer": "Away team",
+    "normalizedAnswer": "AWAY TEAM",
+    "category": "Sports Team",
+    "difficulty": 12.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Super_Bowl_champions"
+    }
+  },
+  {
+    "id": "844c84dc912b4c3ff68a2e16c9363616",
+    "source": "theme",
+    "type": "title",
+    "answer": "2026–27 AFC championA",
+    "normalizedAnswer": "202627 AFC CHAMPIONA",
+    "category": "Sports Team",
+    "difficulty": 21.5,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 18,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Super_Bowl_champions"
+    }
+  },
+  {
+    "id": "0e6e8497523d69d70ff937e8c232831d",
+    "source": "theme",
+    "type": "title",
+    "answer": "2027–28 NFC championN",
+    "normalizedAnswer": "202728 NFC CHAMPIONN",
+    "category": "Sports Team",
+    "difficulty": 21.5,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 18,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Super_Bowl_champions"
+    }
+  },
+  {
+    "id": "2d20d746379fa64818a35775105e4cf8",
+    "source": "theme",
+    "type": "title",
+    "answer": "2028–29 AFC championA",
+    "normalizedAnswer": "202829 AFC CHAMPIONA",
+    "category": "Sports Team",
+    "difficulty": 21.5,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 18,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Super_Bowl_champions"
+    }
+  },
+  {
+    "id": "3e1f8a32668d95f9566027e5fec49b1b",
+    "source": "theme",
+    "type": "title",
+    "answer": "2029–30 NFC championN",
+    "normalizedAnswer": "202930 NFC CHAMPIONN",
+    "category": "Sports Team",
+    "difficulty": 21.5,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 18,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Super_Bowl_champions"
+    }
+  },
+  {
+    "id": "e44acd47421a5f9ca3ee039549e1fc39",
+    "source": "theme",
+    "type": "title",
+    "answer": "Losses",
+    "normalizedAnswer": "LOSSES",
+    "category": "Sports Team",
+    "difficulty": 8.4,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Super_Bowl_champions"
+    }
+  },
+  {
+    "id": "6650330e6a9747aeb7b26e434a036347",
+    "source": "theme",
+    "type": "title",
+    "answer": "Boston Americans",
+    "normalizedAnswer": "BOSTON AMERICANS",
+    "category": "Sports Team",
+    "difficulty": 22.9,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_World_Series_champions"
+    }
+  },
+  {
+    "id": "980ffe5d326a5ad378d820bebdd31caa",
+    "source": "theme",
+    "type": "title",
+    "answer": "New York Giants",
+    "normalizedAnswer": "NEW YORK GIANTS",
+    "category": "Sports Team",
+    "difficulty": 26.5,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 13,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_World_Series_champions"
+    }
+  },
+  {
+    "id": "2e9b79dd5e304aecfb05d9c84d304035",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chicago White Sox",
+    "normalizedAnswer": "CHICAGO WHITE SOX",
+    "category": "Sports Team",
+    "difficulty": 25.8,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_World_Series_champions"
+    }
+  },
+  {
+    "id": "48c1364f4352453fe720e5fa411527c6",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chicago Cubs",
+    "normalizedAnswer": "CHICAGO CUBS",
+    "category": "Sports Team",
+    "difficulty": 18.3,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_World_Series_champions"
+    }
+  },
+  {
+    "id": "7d61001b972cb6fa8372c13c24145496",
+    "source": "theme",
+    "type": "title",
+    "answer": "Pittsburgh Pirates",
+    "normalizedAnswer": "PITTSBURGH PIRATES",
+    "category": "Sports Team",
+    "difficulty": 23.7,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 17,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_World_Series_champions"
+    }
+  },
+  {
+    "id": "f4920f07c4e2a32a0952fcc3e25f89ad",
+    "source": "theme",
+    "type": "title",
+    "answer": "Philadelphia Athletics",
+    "normalizedAnswer": "PHILADELPHIA ATHLETICS",
+    "category": "Sports Team",
+    "difficulty": 23.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 21,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_World_Series_champions"
+    }
+  },
+  {
+    "id": "e95a03098226f541d5816bbcfa7de3b7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Boston Red Sox",
+    "normalizedAnswer": "BOSTON RED SOX",
+    "category": "Sports Team",
+    "difficulty": 21.6,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_World_Series_champions"
+    }
+  },
+  {
+    "id": "30073b4be06bc831fa036f18faf1a9c7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Boston Braves",
+    "normalizedAnswer": "BOSTON BRAVES",
+    "category": "Sports Team",
+    "difficulty": 21.2,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_World_Series_champions"
+    }
+  },
+  {
+    "id": "ea4b6ef4bf1d7f3b09b4bd01b413d21f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cincinnati Reds",
+    "normalizedAnswer": "CINCINNATI REDS",
+    "category": "Sports Team",
+    "difficulty": 19.5,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_World_Series_champions"
+    }
+  },
+  {
+    "id": "c867acc6e9e4bb919ab848a6e1dcdee0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cleveland Indians",
+    "normalizedAnswer": "CLEVELAND INDIANS",
+    "category": "Sports Team",
+    "difficulty": 22.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_World_Series_champions"
+    }
+  },
+  {
+    "id": "d32b796a2283ea69546b30ab0d978bcc",
+    "source": "theme",
+    "type": "title",
+    "answer": "New York Yankees",
+    "normalizedAnswer": "NEW YORK YANKEES",
+    "category": "Sports Team",
+    "difficulty": 24.9,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 14,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_World_Series_champions"
+    }
+  },
+  {
+    "id": "9986ae5f4c68d067bc5af4563ac457a2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Washington Senators",
+    "normalizedAnswer": "WASHINGTON SENATORS",
+    "category": "Sports Team",
+    "difficulty": 24.1,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 18,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_World_Series_champions"
+    }
+  },
+  {
+    "id": "54f2b856098d41bf8c1c4ab754b068d5",
+    "source": "theme",
+    "type": "title",
+    "answer": "St. Louis Cardinals",
+    "normalizedAnswer": "ST LOUIS CARDINALS",
+    "category": "Sports Team",
+    "difficulty": 23.7,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 16,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_World_Series_champions"
+    }
+  },
+  {
+    "id": "02d253ba22ed3e05718c09efc67d8f98",
+    "source": "theme",
+    "type": "title",
+    "answer": "Detroit Tigers",
+    "normalizedAnswer": "DETROIT TIGERS",
+    "category": "Sports Team",
+    "difficulty": 17.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_World_Series_champions"
+    }
+  },
+  {
+    "id": "3e8c8bfdc2819d73fbd422430f316288",
+    "source": "theme",
+    "type": "title",
+    "answer": "Brooklyn Dodgers",
+    "normalizedAnswer": "BROOKLYN DODGERS",
+    "category": "Sports Team",
+    "difficulty": 25.4,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_World_Series_champions"
+    }
+  },
+  {
+    "id": "edc1ebbdacd37252c30d9bd4d6f0e736",
+    "source": "theme",
+    "type": "title",
+    "answer": "Milwaukee Braves",
+    "normalizedAnswer": "MILWAUKEE BRAVES",
+    "category": "Sports Team",
+    "difficulty": 29.4,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_World_Series_champions"
+    }
+  },
+  {
+    "id": "c3d3f65c62a34c60a2719e226ef6e0e8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Los Angeles Dodgers",
+    "normalizedAnswer": "LOS ANGELES DODGERS",
+    "category": "Sports Team",
+    "difficulty": 21.1,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 17,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_World_Series_champions"
+    }
+  },
+  {
+    "id": "5f02d41069ea4c097f4948e59f4576ec",
+    "source": "theme",
+    "type": "title",
+    "answer": "Baltimore Orioles",
+    "normalizedAnswer": "BALTIMORE ORIOLES",
+    "category": "Sports Team",
+    "difficulty": 21.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_World_Series_champions"
+    }
+  },
+  {
+    "id": "d5e3a1556874be85dabc05c233da280d",
+    "source": "theme",
+    "type": "title",
+    "answer": "New York Mets",
+    "normalizedAnswer": "NEW YORK METS",
+    "category": "Sports Team",
+    "difficulty": 22.7,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 11,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_World_Series_champions"
+    }
+  },
+  {
+    "id": "7471bc826b1a6f715a6ddf995279a514",
+    "source": "theme",
+    "type": "title",
+    "answer": "Oakland Athletics",
+    "normalizedAnswer": "OAKLAND ATHLETICS",
+    "category": "Sports Team",
+    "difficulty": 27.3,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_World_Series_champions"
+    }
+  },
+  {
+    "id": "88fe5203aba08b570c6d97fa19f9ca16",
+    "source": "theme",
+    "type": "title",
+    "answer": "Philadelphia Phillies",
+    "normalizedAnswer": "PHILADELPHIA PHILLIES",
+    "category": "Sports Team",
+    "difficulty": 20.4,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 20,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_World_Series_champions"
+    }
+  },
+  {
+    "id": "0ef03a0bc77d03cb6b9eadc2d009b54c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Kansas City Royals",
+    "normalizedAnswer": "KANSAS CITY ROYALS",
+    "category": "Sports Team",
+    "difficulty": 26.2,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 16,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_World_Series_champions"
+    }
+  },
+  {
+    "id": "db855298bfa3b44c61ae203c1528982e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Minnesota Twins",
+    "normalizedAnswer": "MINNESOTA TWINS",
+    "category": "Sports Team",
+    "difficulty": 19.5,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_World_Series_champions"
+    }
+  },
+  {
+    "id": "243d53ae7a47afaac5d8861cc3eb8403",
+    "source": "theme",
+    "type": "title",
+    "answer": "Toronto Blue Jays",
+    "normalizedAnswer": "TORONTO BLUE JAYS",
+    "category": "Sports Team",
+    "difficulty": 27.3,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_World_Series_champions"
+    }
+  },
+  {
+    "id": "a227ee8a885534164772283ba2394f1c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cancelled due to a players' strike",
+    "normalizedAnswer": "CANCELLED DUE TO A PLAYERS STRIKE",
+    "category": "Sports Team",
+    "difficulty": 38.2,
+    "difficultyTier": "hard",
+    "wordCount": 6,
+    "letterCount": 28,
+    "uniqueLetterCount": 15,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_World_Series_champions"
+    }
+  },
+  {
+    "id": "35c1cda73f28ee9fdb00c25c9e2c8068",
+    "source": "theme",
+    "type": "title",
+    "answer": "Atlanta Braves",
+    "normalizedAnswer": "ATLANTA BRAVES",
+    "category": "Sports Team",
+    "difficulty": 21.6,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_World_Series_champions"
+    }
+  },
+  {
+    "id": "57d58e0f4a3c431319dc5dd5a0daba83",
+    "source": "theme",
+    "type": "title",
+    "answer": "Florida Marlins",
+    "normalizedAnswer": "FLORIDA MARLINS",
+    "category": "Sports Team",
+    "difficulty": 21,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_World_Series_champions"
+    }
+  },
+  {
+    "id": "92e8476f95155228a35b1941169f3be8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Arizona Diamondbacks",
+    "normalizedAnswer": "ARIZONA DIAMONDBACKS",
+    "category": "Sports Team",
+    "difficulty": 31,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 19,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_World_Series_champions"
+    }
+  },
+  {
+    "id": "e2d2620c6ca9413509f82b3974e2da61",
+    "source": "theme",
+    "type": "title",
+    "answer": "Anaheim Angels",
+    "normalizedAnswer": "ANAHEIM ANGELS",
+    "category": "Sports Team",
+    "difficulty": 19.1,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_World_Series_champions"
+    }
+  },
+  {
+    "id": "35d2a777436da510daf5b770374c582b",
+    "source": "theme",
+    "type": "title",
+    "answer": "San Francisco Giants",
+    "normalizedAnswer": "SAN FRANCISCO GIANTS",
+    "category": "Sports Team",
+    "difficulty": 23,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 18,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_World_Series_champions"
+    }
+  },
+  {
+    "id": "19cc2c0d44f6a3e8c3f8fb464886465e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Houston Astros",
+    "normalizedAnswer": "HOUSTON ASTROS",
+    "category": "Sports Team",
+    "difficulty": 17.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_World_Series_champions"
+    }
+  },
+  {
+    "id": "96dcefd1afb0cd4cb73a4e0bbcbfb740",
+    "source": "theme",
+    "type": "title",
+    "answer": "Washington Nationals",
+    "normalizedAnswer": "WASHINGTON NATIONALS",
+    "category": "Sports Team",
+    "difficulty": 23,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 19,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_World_Series_champions"
+    }
+  },
+  {
+    "id": "b234f860c4df413297a3fff53c3b8a37",
+    "source": "theme",
+    "type": "title",
+    "answer": "Texas Rangers",
+    "normalizedAnswer": "TEXAS RANGERS",
+    "category": "Sports Team",
+    "difficulty": 19.7,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_World_Series_champions"
+    }
+  },
+  {
+    "id": "adad36a1334283d6a35b7d0df6667db6",
+    "source": "theme",
+    "type": "title",
+    "answer": "Wins",
+    "normalizedAnswer": "WINS",
+    "category": "Sports Team",
+    "difficulty": 7.6,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_World_Series_champions"
+    }
+  },
+  {
+    "id": "25ef950a245bec75c3831d202b2e894d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Matchup",
+    "normalizedAnswer": "MATCHUP",
+    "category": "Sports Team",
+    "difficulty": 13.3,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_World_Series_champions"
+    }
+  },
+  {
+    "id": "6d6ece2e7b17cc0aeec9db1c7cf44674",
+    "source": "theme",
+    "type": "title",
+    "answer": "New York Yankees vs. Los Angeles Dodgers",
+    "normalizedAnswer": "NEW YORK YANKEES VS LOS ANGELES DODGERS",
+    "category": "Sports Team",
+    "difficulty": 42.6,
+    "difficultyTier": "hard",
+    "wordCount": 7,
+    "letterCount": 33,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_World_Series_champions"
+    }
+  },
+  {
+    "id": "99f4b6f946aa82dbd4839ebb3f292419",
+    "source": "theme",
+    "type": "title",
+    "answer": "New York Yankees vs. San Francisco Giants",
+    "normalizedAnswer": "NEW YORK YANKEES VS SAN FRANCISCO GIANTS",
+    "category": "Sports Team",
+    "difficulty": 46,
+    "difficultyTier": "hard",
+    "wordCount": 7,
+    "letterCount": 34,
+    "uniqueLetterCount": 15,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_World_Series_champions"
+    }
+  },
+  {
+    "id": "127fad148740001a7bff931400d00676",
+    "source": "theme",
+    "type": "title",
+    "answer": "St. Louis Cardinals vs. New York Yankees",
+    "normalizedAnswer": "ST LOUIS CARDINALS VS NEW YORK YANKEES",
+    "category": "Sports Team",
+    "difficulty": 46.7,
+    "difficultyTier": "hard",
+    "wordCount": 7,
+    "letterCount": 32,
+    "uniqueLetterCount": 16,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_World_Series_champions"
+    }
+  },
+  {
+    "id": "7716aa2196ac1e8ac35663ed3008baf3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chicago Cubs vs. Detroit Tigers",
+    "normalizedAnswer": "CHICAGO CUBS VS DETROIT TIGERS",
+    "category": "Sports Team",
+    "difficulty": 35.5,
+    "difficultyTier": "hard",
+    "wordCount": 5,
+    "letterCount": 26,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_World_Series_champions"
+    }
+  },
+  {
+    "id": "82b771f4619a5e75c094f5dc6c3caf9c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Athletics vs. San Francisco Giants",
+    "normalizedAnswer": "ATHLETICS VS SAN FRANCISCO GIANTS",
+    "category": "Sports Team",
+    "difficulty": 36.7,
+    "difficultyTier": "hard",
+    "wordCount": 5,
+    "letterCount": 29,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_World_Series_champions"
+    }
+  },
+  {
+    "id": "1d094cdc982d9e1c8cbf50a7357ec3a0",
+    "source": "theme",
+    "type": "title",
+    "answer": "New York Yankees vs. Atlanta Braves",
+    "normalizedAnswer": "NEW YORK YANKEES VS ATLANTA BRAVES",
+    "category": "Sports Team",
+    "difficulty": 43.1,
+    "difficultyTier": "hard",
+    "wordCount": 6,
+    "letterCount": 29,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_World_Series_champions"
+    }
+  },
+  {
+    "id": "72cb3a18eb43ffec546e453591e83562",
+    "source": "theme",
+    "type": "title",
+    "answer": "Boston Red Sox vs. St. Louis Cardinals",
+    "normalizedAnswer": "BOSTON RED SOX VS ST LOUIS CARDINALS",
+    "category": "Sports Team",
+    "difficulty": 41.9,
+    "difficultyTier": "hard",
+    "wordCount": 7,
+    "letterCount": 30,
+    "uniqueLetterCount": 15,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_World_Series_champions"
+    }
+  },
+  {
+    "id": "6d786d13feb2f4b790e2064bbb53ac7d",
+    "source": "theme",
+    "type": "title",
+    "answer": "New York Yankees vs. Cincinnati Reds",
+    "normalizedAnswer": "NEW YORK YANKEES VS CINCINNATI REDS",
+    "category": "Sports Team",
+    "difficulty": 42.5,
+    "difficultyTier": "hard",
+    "wordCount": 6,
+    "letterCount": 30,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_World_Series_champions"
+    }
+  },
+  {
+    "id": "bae808e099a23592bc954383c71d10b3",
+    "source": "theme",
+    "type": "title",
+    "answer": "St. Louis Cardinals vs. Detroit Tigers",
+    "normalizedAnswer": "ST LOUIS CARDINALS VS DETROIT TIGERS",
+    "category": "Sports Team",
+    "difficulty": 37.9,
+    "difficultyTier": "hard",
+    "wordCount": 6,
+    "letterCount": 31,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_World_Series_champions"
+    }
+  },
+  {
+    "id": "2a187e869dc21cfd5891ecda2a2ecf40",
+    "source": "theme",
+    "type": "title",
+    "answer": "Athletics vs. Chicago Cubs",
+    "normalizedAnswer": "ATHLETICS VS CHICAGO CUBS",
+    "category": "Sports Team",
+    "difficulty": 32,
+    "difficultyTier": "hard",
+    "wordCount": 4,
+    "letterCount": 22,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_World_Series_champions"
+    }
+  },
+  {
+    "id": "29f31b4f4edb8b0c7fe296c2114101a4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Athletics vs. St. Louis Cardinals",
+    "normalizedAnswer": "ATHLETICS VS ST LOUIS CARDINALS",
+    "category": "Sports Team",
+    "difficulty": 35.9,
+    "difficultyTier": "hard",
+    "wordCount": 5,
+    "letterCount": 27,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_World_Series_champions"
+    }
+  },
+  {
+    "id": "97e6841ece0108498519d848f055e360",
+    "source": "theme",
+    "type": "title",
+    "answer": "Minnesota Twins vs. San Francisco Giants",
+    "normalizedAnswer": "MINNESOTA TWINS VS SAN FRANCISCO GIANTS",
+    "category": "Sports Team",
+    "difficulty": 39.1,
+    "difficultyTier": "hard",
+    "wordCount": 6,
+    "letterCount": 34,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_World_Series_champions"
+    }
+  },
+  {
+    "id": "a2fdce079f47600a9f19b389056fb629",
+    "source": "theme",
+    "type": "title",
+    "answer": "New York Yankees vs. Chicago Cubs",
+    "normalizedAnswer": "NEW YORK YANKEES VS CHICAGO CUBS",
+    "category": "Sports Team",
+    "difficulty": 44.3,
+    "difficultyTier": "hard",
+    "wordCount": 6,
+    "letterCount": 27,
+    "uniqueLetterCount": 16,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_World_Series_champions"
+    }
+  },
+  {
+    "id": "bfd6f0dce5cadf6f67889dc0b6a78270",
+    "source": "theme",
+    "type": "title",
+    "answer": "New York Yankees vs. Pittsburgh Pirates",
+    "normalizedAnswer": "NEW YORK YANKEES VS PITTSBURGH PIRATES",
+    "category": "Sports Team",
+    "difficulty": 48.2,
+    "difficultyTier": "hard",
+    "wordCount": 6,
+    "letterCount": 33,
+    "uniqueLetterCount": 17,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_World_Series_champions"
+    }
+  },
+  {
+    "id": "e1b51ffa33f5fd41bed3e71f23c586f2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Pittsburgh Pirates vs. Baltimore Orioles",
+    "normalizedAnswer": "PITTSBURGH PIRATES VS BALTIMORE ORIOLES",
+    "category": "Sports Team",
+    "difficulty": 40.6,
+    "difficultyTier": "hard",
+    "wordCount": 5,
+    "letterCount": 35,
+    "uniqueLetterCount": 15,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_World_Series_champions"
+    }
+  },
+  {
+    "id": "7bbe7f0806c3d2b10071d5b4c1b4845d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Los Angeles Dodgers vs. Athletics",
+    "normalizedAnswer": "LOS ANGELES DODGERS VS ATHLETICS",
+    "category": "Sports Team",
+    "difficulty": 36.3,
+    "difficultyTier": "hard",
+    "wordCount": 5,
+    "letterCount": 28,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_World_Series_champions"
+    }
+  },
+  {
+    "id": "16885ae761963a3f92ada3bb1ec17c67",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cincinnati Reds vs. Athletics",
+    "normalizedAnswer": "CINCINNATI REDS VS ATHLETICS",
+    "category": "Sports Team",
+    "difficulty": 31.700000000000003,
+    "difficultyTier": "hard",
+    "wordCount": 4,
+    "letterCount": 25,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_World_Series_champions"
+    }
+  },
+  {
+    "id": "f933646cd91f8b5c89bf6e5a151bec88",
+    "source": "theme",
+    "type": "title",
+    "answer": "Atlanta Braves vs. Cleveland Guardians",
+    "normalizedAnswer": "ATLANTA BRAVES VS CLEVELAND GUARDIANS",
+    "category": "Sports Team",
+    "difficulty": 43.3,
+    "difficultyTier": "hard",
+    "wordCount": 5,
+    "letterCount": 33,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_World_Series_champions"
+    }
+  },
+  {
+    "id": "285dccef4e9886ad854ab167fcf6d0a7",
+    "source": "theme",
+    "type": "title",
+    "answer": "New York Yankees vs. Philadelphia Phillies",
+    "normalizedAnswer": "NEW YORK YANKEES VS PHILADELPHIA PHILLIES",
+    "category": "Sports Team",
+    "difficulty": 46.400000000000006,
+    "difficultyTier": "hard",
+    "wordCount": 6,
+    "letterCount": 36,
+    "uniqueLetterCount": 15,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_World_Series_champions"
+    }
+  },
+  {
+    "id": "60c1a7e389e5063472ee37f935c66f03",
+    "source": "theme",
+    "type": "title",
+    "answer": "Boston Red Sox vs. Los Angeles Dodgers",
+    "normalizedAnswer": "BOSTON RED SOX VS LOS ANGELES DODGERS",
+    "category": "Sports Team",
+    "difficulty": 39.3,
+    "difficultyTier": "hard",
+    "wordCount": 7,
+    "letterCount": 31,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_World_Series_champions"
+    }
+  },
+  {
+    "id": "c8cc845e71dc6ecca96c58a25728fe2b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Montreal Hockey Club",
+    "normalizedAnswer": "MONTREAL HOCKEY CLUB",
+    "category": "Sports Team",
+    "difficulty": 31.5,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 18,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "5d19d2766806f0c3b6545443ef0be283",
+    "source": "theme",
+    "type": "title",
+    "answer": "Montreal Victorias",
+    "normalizedAnswer": "MONTREAL VICTORIAS",
+    "category": "Sports Team",
+    "difficulty": 27.7,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 17,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "74c114a2f8dc5cd82fe2f37fa83d3c1c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Winnipeg Victorias",
+    "normalizedAnswer": "WINNIPEG VICTORIAS",
+    "category": "Sports Team",
+    "difficulty": 29.2,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 17,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "45453de3ded3269e5623b81961f6569b",
+    "source": "theme",
+    "type": "title",
+    "answer": "1896 MHA champion",
+    "normalizedAnswer": "1896 MHA CHAMPION",
+    "category": "Sports Team",
+    "difficulty": 18.8,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "0f29a47e8152a0e6284df35bfd4b03c3",
+    "source": "theme",
+    "type": "title",
+    "answer": "1897 AHAC Champion",
+    "normalizedAnswer": "1897 AHAC CHAMPION",
+    "category": "Sports Team",
+    "difficulty": 19.2,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 16,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "cdc20b0e9ce673c5afa7549285b59b5a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ottawa Capitals",
+    "normalizedAnswer": "OTTAWA CAPITALS",
+    "category": "Sports Team",
+    "difficulty": 19.5,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "acd9f5b46b6ed88bc9f72557f29a82d8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Frank Richardson-playing",
+    "normalizedAnswer": "FRANK RICHARDSONPLAYING",
+    "category": "Sports Team",
+    "difficulty": 34.2,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 22,
+    "uniqueLetterCount": 15,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "b6e37fbc42fd840c0d38034e16561e3b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Montreal Shamrocks",
+    "normalizedAnswer": "MONTREAL SHAMROCKS",
+    "category": "Sports Team",
+    "difficulty": 27.7,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 17,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "1fb5784e445d159300e471c665e4aa66",
+    "source": "theme",
+    "type": "title",
+    "answer": "Queen's University",
+    "normalizedAnswer": "QUEENS UNIVERSITY",
+    "category": "Sports Team",
+    "difficulty": 26.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "342635a4f330f049c4293d02aff306b2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Halifax Crescents",
+    "normalizedAnswer": "HALIFAX CRESCENTS",
+    "category": "Sports Team",
+    "difficulty": 27.3,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "6a53e35c40b1fe44618dd8ff9e0135cf",
+    "source": "theme",
+    "type": "title",
+    "answer": "1900 CAHL Champion",
+    "normalizedAnswer": "1900 CAHL CHAMPION",
+    "category": "Sports Team",
+    "difficulty": 20.7,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 16,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "6d563ae9a0295f2b05b6ef10c1a8e311",
+    "source": "theme",
+    "type": "title",
+    "answer": "Winnipeg Hockey Club",
+    "normalizedAnswer": "WINNIPEG HOCKEY CLUB",
+    "category": "Sports Team",
+    "difficulty": 31.5,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 18,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "29a9dcb2ce6c947c7c8b4dfb382ae106",
+    "source": "theme",
+    "type": "title",
+    "answer": "Toronto Wellingtons",
+    "normalizedAnswer": "TORONTO WELLINGTONS",
+    "category": "Sports Team",
+    "difficulty": 22.6,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 18,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "3699562c55a038173af86c6d9c445964",
+    "source": "theme",
+    "type": "title",
+    "answer": "1902 MHA Champion",
+    "normalizedAnswer": "1902 MHA CHAMPION",
+    "category": "Sports Team",
+    "difficulty": 18.8,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "a01cbc5977c1759538db9648dbe10cbd",
+    "source": "theme",
+    "type": "title",
+    "answer": "Desse Browne",
+    "normalizedAnswer": "DESSE BROWNE",
+    "category": "Sports Team",
+    "difficulty": 16.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "eba256edd792a202d9303b02e920b935",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ottawa Silver Seven",
+    "normalizedAnswer": "OTTAWA SILVER SEVEN",
+    "category": "Sports Team",
+    "difficulty": 29.1,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 17,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "b5de5fe8a2fb145aca238bdcae95a156",
+    "source": "theme",
+    "type": "title",
+    "answer": "Rat Portage Thistles",
+    "normalizedAnswer": "RAT PORTAGE THISTLES",
+    "category": "Sports Team",
+    "difficulty": 24.5,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 18,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "eeff48982db9fa754acda58d43ae358d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Alf Smith-playing",
+    "normalizedAnswer": "ALF SMITHPLAYING",
+    "category": "Sports Team",
+    "difficulty": 24.4,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "f935c52469c2240d7badcdafc7b820c1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Montreal Wanderers",
+    "normalizedAnswer": "MONTREAL WANDERERS",
+    "category": "Sports Team",
+    "difficulty": 23.7,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 17,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "5f886af8ea99551419c5f133eed10051",
+    "source": "theme",
+    "type": "title",
+    "answer": "Brandon Wheat City",
+    "normalizedAnswer": "BRANDON WHEAT CITY",
+    "category": "Sports Team",
+    "difficulty": 26.7,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 16,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "ea62fd237332e280c6f6249237b309f3",
+    "source": "theme",
+    "type": "title",
+    "answer": "1905 FAHL Champion",
+    "normalizedAnswer": "1905 FAHL CHAMPION",
+    "category": "Sports Team",
+    "difficulty": 22.2,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 16,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "7483da1e0b4e4a88976c5c3a9dedda30",
+    "source": "theme",
+    "type": "title",
+    "answer": "Smiths Falls Hockey Club",
+    "normalizedAnswer": "SMITHS FALLS HOCKEY CLUB",
+    "category": "Sports Team",
+    "difficulty": 34.6,
+    "difficultyTier": "hard",
+    "wordCount": 4,
+    "letterCount": 21,
+    "uniqueLetterCount": 15,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "18cecd5bc76b112f006fd247e0456c00",
+    "source": "theme",
+    "type": "title",
+    "answer": "New Glasgow Cubs",
+    "normalizedAnswer": "NEW GLASGOW CUBS",
+    "category": "Sports Team",
+    "difficulty": 22.9,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 14,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "22b5c36bbad0e95e22332e74865ed48f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Kenora Thistles",
+    "normalizedAnswer": "KENORA THISTLES",
+    "category": "Sports Team",
+    "difficulty": 25,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "2d80fe466bb40efdb6d593111694cda6",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cecil Blachford",
+    "normalizedAnswer": "CECIL BLACHFORD",
+    "category": "Sports Team",
+    "difficulty": 22.5,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "dce4d8848ba21a15078fe6ed23a8cc74",
+    "source": "theme",
+    "type": "title",
+    "answer": "1908 ECAHA Champions",
+    "normalizedAnswer": "1908 ECAHA CHAMPIONS",
+    "category": "Sports Team",
+    "difficulty": 23,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 18,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "aa30e408ecf1091476f1ccbf863ef6d9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Winnipeg Maple Leafs",
+    "normalizedAnswer": "WINNIPEG MAPLE LEAFS",
+    "category": "Sports Team",
+    "difficulty": 24.5,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 18,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "28645458dd60d17e005524b3e9d347a9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Toronto Pros",
+    "normalizedAnswer": "TORONTO PROS",
+    "category": "Sports Team",
+    "difficulty": 13.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "d4bb9dd33ad952c3010eb3eb105c1ba6",
+    "source": "theme",
+    "type": "title",
+    "answer": "Edmonton HC",
+    "normalizedAnswer": "EDMONTON HC",
+    "category": "Sports Team",
+    "difficulty": 16.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "1f19e55001cb91422ba5f5a5d74847fd",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ottawa Hockey Club",
+    "normalizedAnswer": "OTTAWA HOCKEY CLUB",
+    "category": "Sports Team",
+    "difficulty": 27.7,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 16,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "74d3eaaa2be6b3b0913306191905747c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Galt Hockey Club",
+    "normalizedAnswer": "GALT HOCKEY CLUB",
+    "category": "Sports Team",
+    "difficulty": 26.9,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 14,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "a4835d2b6ca581082044e8029032e6db",
+    "source": "theme",
+    "type": "title",
+    "answer": "Berlin Dutchmen",
+    "normalizedAnswer": "BERLIN DUTCHMEN",
+    "category": "Sports Team",
+    "difficulty": 24,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "b9699fda5684579ef0391ba27cb4c610",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ottawa Senators",
+    "normalizedAnswer": "OTTAWA SENATORS",
+    "category": "Sports Team",
+    "difficulty": 18,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "cfff92fd358bcb35001a09a4c7202d7c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Port Arthur Bearcats",
+    "normalizedAnswer": "PORT ARTHUR BEARCATS",
+    "category": "Sports Team",
+    "difficulty": 24.5,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 18,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "8a7e0ba8420eabb73b8427ef9adb37a6",
+    "source": "theme",
+    "type": "title",
+    "answer": "Quebec Bulldogs",
+    "normalizedAnswer": "QUEBEC BULLDOGS",
+    "category": "Sports Team",
+    "difficulty": 23.5,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "b5a6c85203e2629fcf54bd0c54e6b2aa",
+    "source": "theme",
+    "type": "title",
+    "answer": "Moncton Victorias",
+    "normalizedAnswer": "MONCTON VICTORIAS",
+    "category": "Sports Team",
+    "difficulty": 24.3,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "3c165dfb0b92307b8e38726202565b79",
+    "source": "theme",
+    "type": "title",
+    "answer": "Joe Malone",
+    "normalizedAnswer": "JOE MALONE",
+    "category": "Sports Team",
+    "difficulty": 17,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "f66c6838a3aede5c5bdca83e0fe3b31c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sydney Millionaires",
+    "normalizedAnswer": "SYDNEY MILLIONAIRES",
+    "category": "Sports Team",
+    "difficulty": 24.1,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 18,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "329a65bc4aee65a47255688d9d794003",
+    "source": "theme",
+    "type": "title",
+    "answer": "Toronto Hockey Club",
+    "normalizedAnswer": "TORONTO HOCKEY CLUB",
+    "category": "Sports Team",
+    "difficulty": 28.1,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 17,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "7485351f7ca37f6a5c63326a3beec5ff",
+    "source": "theme",
+    "type": "title",
+    "answer": "Vancouver Millionaires",
+    "normalizedAnswer": "VANCOUVER MILLIONAIRES",
+    "category": "Sports Team",
+    "difficulty": 31.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 21,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "993a5e0b359aedfa2cac2a565a578ab4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Montreal Canadiens",
+    "normalizedAnswer": "MONTREAL CANADIENS",
+    "category": "Sports Team",
+    "difficulty": 25.2,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 17,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "928568e45bae73e52bfeff15c5640f5b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Seattle Metropolitans",
+    "normalizedAnswer": "SEATTLE METROPOLITANS",
+    "category": "Sports Team",
+    "difficulty": 24.9,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 20,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "818700d1709be8097ccc82f4af59cdff",
+    "source": "theme",
+    "type": "title",
+    "answer": "Montreal Canadiens vs. Seattle Metropolitans – Series cancelled after the fifth game because of the flu epidemic – Stanley Cup not awarded",
+    "normalizedAnswer": "MONTREAL CANADIENS VS SEATTLE METROPOLITANS SERIES CANCELLED AFTER THE FIFTH GAME BECAUSE OF THE FLU EPIDEMIC STANLEY CUP NOT AWARDED",
+    "category": "Sports Team",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 20,
+    "letterCount": 114,
+    "uniqueLetterCount": 21,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "81e5fbdba7ca0c35a3af74911fd5d1cd",
+    "source": "theme",
+    "type": "title",
+    "answer": "Toronto St. Patricks",
+    "normalizedAnswer": "TORONTO ST PATRICKS",
+    "category": "Sports Team",
+    "difficulty": 25.1,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 17,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "bc3d14ac0aebeafdb63772cca46a2f91",
+    "source": "theme",
+    "type": "title",
+    "answer": "Victoria Cougars",
+    "normalizedAnswer": "VICTORIA COUGARS",
+    "category": "Sports Team",
+    "difficulty": 23.9,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "1022a23ce22d827b342750c80f3e59ff",
+    "source": "theme",
+    "type": "title",
+    "answer": "Montreal Maroons",
+    "normalizedAnswer": "MONTREAL MAROONS",
+    "category": "Sports Team",
+    "difficulty": 19.9,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "7b659b405a71606e3801bae853760541",
+    "source": "theme",
+    "type": "title",
+    "answer": "New York Rangers",
+    "normalizedAnswer": "NEW YORK RANGERS",
+    "category": "Sports Team",
+    "difficulty": 23.9,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "d7aa84f2a17ec322178a7f681c51ab56",
+    "source": "theme",
+    "type": "title",
+    "answer": "Boston Bruins",
+    "normalizedAnswer": "BOSTON BRUINS",
+    "category": "Sports Team",
+    "difficulty": 17.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "14fbb4faddebbca6f2a75047f3ddd503",
+    "source": "theme",
+    "type": "title",
+    "answer": "Toronto Maple Leafs",
+    "normalizedAnswer": "TORONTO MAPLE LEAFS",
+    "category": "Sports Team",
+    "difficulty": 24.1,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 17,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "90b855a445d821e82649f2dddddacf12",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chicago Black Hawks",
+    "normalizedAnswer": "CHICAGO BLACK HAWKS",
+    "category": "Sports Team",
+    "difficulty": 29.1,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 17,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "c305cc53f57d9f228f920d901dd1c405",
+    "source": "theme",
+    "type": "title",
+    "answer": "Detroit Red Wings",
+    "normalizedAnswer": "DETROIT RED WINGS",
+    "category": "Sports Team",
+    "difficulty": 21.8,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "e46fde86dbfa3f8a7cb2c30f6b1a6c43",
+    "source": "theme",
+    "type": "title",
+    "answer": "Philadelphia Flyers",
+    "normalizedAnswer": "PHILADELPHIA FLYERS",
+    "category": "Sports Team",
+    "difficulty": 24.1,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 18,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "3593d6bb84b4fd4e2c468d099d18d88f",
+    "source": "theme",
+    "type": "title",
+    "answer": "New York Islanders",
+    "normalizedAnswer": "NEW YORK ISLANDERS",
+    "category": "Sports Team",
+    "difficulty": 27.7,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 16,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "5926d8b38a11cd146ee55e3ecd7252fc",
+    "source": "theme",
+    "type": "title",
+    "answer": "Edmonton Oilers",
+    "normalizedAnswer": "EDMONTON OILERS",
+    "category": "Sports Team",
+    "difficulty": 21,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "581d98cf424ee3a3ffdf165ba758e7d5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Calgary Flames",
+    "normalizedAnswer": "CALGARY FLAMES",
+    "category": "Sports Team",
+    "difficulty": 20.6,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "407303a37711552f197a0cdd9b7b4505",
+    "source": "theme",
+    "type": "title",
+    "answer": "Pittsburgh Penguins",
+    "normalizedAnswer": "PITTSBURGH PENGUINS",
+    "category": "Sports Team",
+    "difficulty": 24.1,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 18,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "50e0ecf9a4a67b370980336b9a00c486",
+    "source": "theme",
+    "type": "title",
+    "answer": "New Jersey Devils",
+    "normalizedAnswer": "NEW JERSEY DEVILS",
+    "category": "Sports Team",
+    "difficulty": 28.3,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "2cefb005274f69fac8fc2c1685ccce72",
+    "source": "theme",
+    "type": "title",
+    "answer": "Colorado Avalanche",
+    "normalizedAnswer": "COLORADO AVALANCHE",
+    "category": "Sports Team",
+    "difficulty": 24.7,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 17,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "2b5a7796a7eaeabbd312cd02bedb6dd0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Dallas Stars",
+    "normalizedAnswer": "DALLAS STARS",
+    "category": "Sports Team",
+    "difficulty": 13.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "075d3a2064ce522e5dad69fe77cd0f59",
+    "source": "theme",
+    "type": "title",
+    "answer": "Tampa Bay Lightning",
+    "normalizedAnswer": "TAMPA BAY LIGHTNING",
+    "category": "Sports Team",
+    "difficulty": 24.1,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 17,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "6e0aa91bcaed3ff31916155608ac897b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Season cancelled due to the 2004–05 NHL lockout",
+    "normalizedAnswer": "SEASON CANCELLED DUE TO THE 200405 NHL LOCKOUT",
+    "category": "Sports Team",
+    "difficulty": 38.900000000000006,
+    "difficultyTier": "hard",
+    "wordCount": 8,
+    "letterCount": 39,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "eb8b20295855a7b41d4abdc33fd8cb21",
+    "source": "theme",
+    "type": "title",
+    "answer": "Carolina Hurricanes",
+    "normalizedAnswer": "CAROLINA HURRICANES",
+    "category": "Sports Team",
+    "difficulty": 24.1,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 18,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "60db68945f22bd064395f43458f5ba3a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Anaheim Ducks",
+    "normalizedAnswer": "ANAHEIM DUCKS",
+    "category": "Sports Team",
+    "difficulty": 24.2,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "07dcae3d60c249e605d562e615d59ea9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chicago Blackhawks",
+    "normalizedAnswer": "CHICAGO BLACKHAWKS",
+    "category": "Sports Team",
+    "difficulty": 28.7,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 17,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "a03b0f12a9b076e09f6ae7ab9f4da84f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Los Angeles Kings",
+    "normalizedAnswer": "LOS ANGELES KINGS",
+    "category": "Sports Team",
+    "difficulty": 22.8,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "2cb4ff993be992f8605bec97423abc70",
+    "source": "theme",
+    "type": "title",
+    "answer": "Washington Capitals",
+    "normalizedAnswer": "WASHINGTON CAPITALS",
+    "category": "Sports Team",
+    "difficulty": 25.6,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 18,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "9515de0dd485ade14bbdbafd291af270",
+    "source": "theme",
+    "type": "title",
+    "answer": "St. Louis Blues",
+    "normalizedAnswer": "ST LOUIS BLUES",
+    "category": "Sports Team",
+    "difficulty": 17.6,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "503cc566121fd623adda6412e08dd49e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Vegas Golden Knights",
+    "normalizedAnswer": "VEGAS GOLDEN KNIGHTS",
+    "category": "Sports Team",
+    "difficulty": 32.5,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 18,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "22fe4342f95150d711060c2a2c914441",
+    "source": "theme",
+    "type": "title",
+    "answer": "Florida Panthers",
+    "normalizedAnswer": "FLORIDA PANTHERS",
+    "category": "Sports Team",
+    "difficulty": 25.9,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "dd06bb0dddd67b020cdc3c39a6efacd4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Team",
+    "normalizedAnswer": "TEAM",
+    "category": "Sports Team",
+    "difficulty": 7.6,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "0f5111fc687923393cf795e8778a9046",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ottawa HC",
+    "normalizedAnswer": "OTTAWA HC",
+    "category": "Sports Team",
+    "difficulty": 12.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "a4936f035eae3cb82d496d9dd95d17ee",
+    "source": "theme",
+    "type": "title",
+    "answer": "Montreal HC",
+    "normalizedAnswer": "MONTREAL HC",
+    "category": "Sports Team",
+    "difficulty": 19.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "fd1ed7b0637209f3a5da0a7652af4941",
+    "source": "theme",
+    "type": "title",
+    "answer": "Rat Portage/Kenora Thistles",
+    "normalizedAnswer": "RAT PORTAGEKENORA THISTLES",
+    "category": "Sports Team",
+    "difficulty": 32.4,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 24,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "1c2868aa43ca2008f927942bf0262dd8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Toronto Blueshirts",
+    "normalizedAnswer": "TORONTO BLUESHIRTS",
+    "category": "Sports Team",
+    "difficulty": 23.7,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 17,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "246ddf15f497b39099d6e3c9f8e26f41",
+    "source": "theme",
+    "type": "title",
+    "answer": "Galt HC",
+    "normalizedAnswer": "GALT HC",
+    "category": "Sports Team",
+    "difficulty": 11.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "5027c2cc1aa021daea6fef3b6124600b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Vancouver Canucks",
+    "normalizedAnswer": "VANCOUVER CANUCKS",
+    "category": "Sports Team",
+    "difficulty": 29.3,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "5befaaa3387a9ce372d10db98d8e752d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Buffalo Sabres",
+    "normalizedAnswer": "BUFFALO SABRES",
+    "category": "Sports Team",
+    "difficulty": 19.1,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "c6bd37a4905c14b96c694c96e3ef3849",
+    "source": "theme",
+    "type": "title",
+    "answer": "Nashville Predators",
+    "normalizedAnswer": "NASHVILLE PREDATORS",
+    "category": "Sports Team",
+    "difficulty": 29.6,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 18,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "c8e2c17ce45aa1634d21a59093f125ae",
+    "source": "theme",
+    "type": "title",
+    "answer": "San Jose Sharks",
+    "normalizedAnswer": "SAN JOSE SHARKS",
+    "category": "Sports Team",
+    "difficulty": 24.5,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "a47baa3cfb8e6db399c7ebbac84ba189",
+    "source": "theme",
+    "type": "title",
+    "answer": "Portland Rosebuds",
+    "normalizedAnswer": "PORTLAND ROSEBUDS",
+    "category": "Sports Team",
+    "difficulty": 24.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "fc031f700b2ce3fa592b313426659e3e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Edmonton Eskimos",
+    "normalizedAnswer": "EDMONTON ESKIMOS",
+    "category": "Sports Team",
+    "difficulty": 22.4,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  },
+  {
+    "id": "1e0717a33e426c6fc0ad270313d1ffb3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Calgary Tigers",
+    "normalizedAnswer": "CALGARY TIGERS",
+    "category": "Sports Team",
+    "difficulty": 20.6,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
+    }
+  }
+]

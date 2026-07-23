@@ -1,0 +1,2187 @@
+[
+  {
+    "id": "0cc850649a88427c01806e7a0c22785e",
+    "source": "geography",
+    "type": "title",
+    "answer": "Acadia",
+    "normalizedAnswer": "ACADIA",
+    "category": "National Park",
+    "difficulty": 8.4,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "6b1482eb70d781a02b6577fd78067f48",
+    "source": "geography",
+    "type": "title",
+    "answer": "American Samoa",
+    "normalizedAnswer": "AMERICAN SAMOA",
+    "category": "National Park",
+    "difficulty": 19.1,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "708b4e1af6452f494667c13d949b5d58",
+    "source": "geography",
+    "type": "title",
+    "answer": "Arches",
+    "normalizedAnswer": "ARCHES",
+    "category": "National Park",
+    "difficulty": 11.4,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "18b592088ef504d63d8f6423e19e05a8",
+    "source": "geography",
+    "type": "title",
+    "answer": "Badlands",
+    "normalizedAnswer": "BADLANDS",
+    "category": "National Park",
+    "difficulty": 12.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "caf1a055c7ac3cd47f61763fa51bd747",
+    "source": "geography",
+    "type": "title",
+    "answer": "Big Bend",
+    "normalizedAnswer": "BIG BEND",
+    "category": "National Park",
+    "difficulty": 12.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "795b09b61cb2137ee6d955afdd6136b9",
+    "source": "geography",
+    "type": "title",
+    "answer": "Biscayne",
+    "normalizedAnswer": "BISCAYNE",
+    "category": "National Park",
+    "difficulty": 15.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "9d5903308f75c346e6f6aa4bc2de79b8",
+    "source": "geography",
+    "type": "title",
+    "answer": "Black Canyon of the Gunnison",
+    "normalizedAnswer": "BLACK CANYON OF THE GUNNISON",
+    "category": "National Park",
+    "difficulty": 37.7,
+    "difficultyTier": "hard",
+    "wordCount": 5,
+    "letterCount": 24,
+    "uniqueLetterCount": 16,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "996b43f7ae7a5a0fe7a22a8cf09b0dc1",
+    "source": "geography",
+    "type": "title",
+    "answer": "Bryce Canyon",
+    "normalizedAnswer": "BRYCE CANYON",
+    "category": "National Park",
+    "difficulty": 16.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "03209a17bf51a1ce16e7446e1f13b5fe",
+    "source": "geography",
+    "type": "title",
+    "answer": "Canyonlands",
+    "normalizedAnswer": "CANYONLANDS",
+    "category": "National Park",
+    "difficulty": 16.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "aa0084721bb072e4718f9483db484ff9",
+    "source": "geography",
+    "type": "title",
+    "answer": "Capitol Reef",
+    "normalizedAnswer": "CAPITOL REEF",
+    "category": "National Park",
+    "difficulty": 19.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "1aafb3b5759ae0d399aaf7fe637a1b33",
+    "source": "geography",
+    "type": "title",
+    "answer": "Carlsbad Caverns",
+    "normalizedAnswer": "CARLSBAD CAVERNS",
+    "category": "National Park",
+    "difficulty": 23.9,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "0ddf9255d63fa6aced66f8594f100027",
+    "source": "geography",
+    "type": "title",
+    "answer": "Channel Islands",
+    "normalizedAnswer": "CHANNEL ISLANDS",
+    "category": "National Park",
+    "difficulty": 19.5,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "3f1337c563dfdbcd2353f1d2c5af7cdf",
+    "source": "geography",
+    "type": "title",
+    "answer": "Congaree",
+    "normalizedAnswer": "CONGAREE",
+    "category": "National Park",
+    "difficulty": 13.7,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "abe5886a190e9d8ddc2e94b42c78ba76",
+    "source": "geography",
+    "type": "title",
+    "answer": "Crater Lake",
+    "normalizedAnswer": "CRATER LAKE",
+    "category": "National Park",
+    "difficulty": 17.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "8ca3378e6e96cdcfd9cce30ad03ff016",
+    "source": "geography",
+    "type": "title",
+    "answer": "Cuyahoga Valley",
+    "normalizedAnswer": "CUYAHOGA VALLEY",
+    "category": "National Park",
+    "difficulty": 23.5,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "e994e10ddacf310651b3906459656f8e",
+    "source": "geography",
+    "type": "title",
+    "answer": "Death Valley",
+    "normalizedAnswer": "DEATH VALLEY",
+    "category": "National Park",
+    "difficulty": 19.3,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "e98536dbfee8ee840f39aa27eaa79a86",
+    "source": "geography",
+    "type": "title",
+    "answer": "Denali",
+    "normalizedAnswer": "DENALI",
+    "category": "National Park",
+    "difficulty": 11.4,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "b42991bc0922d730fe59af3077a8d8ce",
+    "source": "geography",
+    "type": "title",
+    "answer": "Dry Tortugas",
+    "normalizedAnswer": "DRY TORTUGAS",
+    "category": "National Park",
+    "difficulty": 18.3,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "c8e289c98b9a0bb6366db802d20db898",
+    "source": "geography",
+    "type": "title",
+    "answer": "Everglades",
+    "normalizedAnswer": "EVERGLADES",
+    "category": "National Park",
+    "difficulty": 18.5,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "2f3a8e2e7bc980626014b2a32f833eea",
+    "source": "geography",
+    "type": "title",
+    "answer": "Gates of the Arctic",
+    "normalizedAnswer": "GATES OF THE ARCTIC",
+    "category": "National Park",
+    "difficulty": 24.1,
+    "difficultyTier": "hard",
+    "wordCount": 4,
+    "letterCount": 16,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "a7ea9e59614b00ea3b4efca0a9793a8c",
+    "source": "geography",
+    "type": "title",
+    "answer": "Gateway Arch",
+    "normalizedAnswer": "GATEWAY ARCH",
+    "category": "National Park",
+    "difficulty": 18.3,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "1539e0968fe1648821e7b764dd8db29f",
+    "source": "geography",
+    "type": "title",
+    "answer": "Glacier",
+    "normalizedAnswer": "GLACIER",
+    "category": "National Park",
+    "difficulty": 13.3,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "46d0f19f38d9ff14c7589340dce8c32c",
+    "source": "geography",
+    "type": "title",
+    "answer": "Glacier Bay",
+    "normalizedAnswer": "GLACIER BAY",
+    "category": "National Park",
+    "difficulty": 17.9,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "e93c28a603a08c7573dbe84a94968219",
+    "source": "geography",
+    "type": "title",
+    "answer": "Grand Canyon",
+    "normalizedAnswer": "GRAND CANYON",
+    "category": "National Park",
+    "difficulty": 16.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "1bb851eea2294f9b1920b240b4b4c624",
+    "source": "geography",
+    "type": "title",
+    "answer": "Grand Teton",
+    "normalizedAnswer": "GRAND TETON",
+    "category": "National Park",
+    "difficulty": 16.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "c66098e9c962e9634e0183fe7100648c",
+    "source": "geography",
+    "type": "title",
+    "answer": "Great Basin",
+    "normalizedAnswer": "GREAT BASIN",
+    "category": "National Park",
+    "difficulty": 17.9,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "a880f3f18aacd84948e6c8679f36bc74",
+    "source": "geography",
+    "type": "title",
+    "answer": "Great Sand Dunes",
+    "normalizedAnswer": "GREAT SAND DUNES",
+    "category": "National Park",
+    "difficulty": 19.9,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 14,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "aba2871506c56001e0138cf39d59a2cf",
+    "source": "geography",
+    "type": "title",
+    "answer": "Great Smoky Mountains",
+    "normalizedAnswer": "GREAT SMOKY MOUNTAINS",
+    "category": "National Park",
+    "difficulty": 30.4,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 19,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "4943820fa2efa57c12550662a6f0ab1f",
+    "source": "geography",
+    "type": "title",
+    "answer": "Guadalupe Mountains",
+    "normalizedAnswer": "GUADALUPE MOUNTAINS",
+    "category": "National Park",
+    "difficulty": 27.1,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 18,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "f92b04195fb92ead7e85cbe97deb3bd4",
+    "source": "geography",
+    "type": "title",
+    "answer": "Haleakal",
+    "normalizedAnswer": "HALEAKAL",
+    "category": "National Park",
+    "difficulty": 13.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "dc5344ed0ee9a0bc0afbc73732d06fc2",
+    "source": "geography",
+    "type": "title",
+    "answer": "Hawaiʻi Volcanoes",
+    "normalizedAnswer": "HAWAII VOLCANOES",
+    "category": "National Park",
+    "difficulty": 25.4,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "12193e18a0f8173ecbd174f348137d21",
+    "source": "geography",
+    "type": "title",
+    "answer": "Hot Springs",
+    "normalizedAnswer": "HOT SPRINGS",
+    "category": "National Park",
+    "difficulty": 17.9,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "6ca200e0ee803015405761858bd9a689",
+    "source": "geography",
+    "type": "title",
+    "answer": "Indiana Dunes",
+    "normalizedAnswer": "INDIANA DUNES",
+    "category": "National Park",
+    "difficulty": 15.7,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "c6e72bddc6c01846fcef140b877b4e1d",
+    "source": "geography",
+    "type": "title",
+    "answer": "Isle Royale",
+    "normalizedAnswer": "ISLE ROYALE",
+    "category": "National Park",
+    "difficulty": 16.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "ce3d579c10c5709a7f456bd191653fd7",
+    "source": "geography",
+    "type": "title",
+    "answer": "Joshua Tree",
+    "normalizedAnswer": "JOSHUA TREE",
+    "category": "National Park",
+    "difficulty": 20.4,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "8c9c3ee4bf6febb00d54c5b25d8f0ead",
+    "source": "geography",
+    "type": "title",
+    "answer": "Katmai",
+    "normalizedAnswer": "KATMAI",
+    "category": "National Park",
+    "difficulty": 12.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "bc9c38fc060ccbc3a1d64786a21e2784",
+    "source": "geography",
+    "type": "title",
+    "answer": "Kenai Fjords",
+    "normalizedAnswer": "KENAI FJORDS",
+    "category": "National Park",
+    "difficulty": 26.3,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "ed937f0ac8c8301fff0443a941562196",
+    "source": "geography",
+    "type": "title",
+    "answer": "Kings Canyon",
+    "normalizedAnswer": "KINGS CANYON",
+    "category": "National Park",
+    "difficulty": 20.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "8ddf143aaf2d7e495af87281a6e1fb83",
+    "source": "geography",
+    "type": "title",
+    "answer": "Kobuk Valley",
+    "normalizedAnswer": "KOBUK VALLEY",
+    "category": "National Park",
+    "difficulty": 25.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "c89152723af05af719000edff20387c7",
+    "source": "geography",
+    "type": "title",
+    "answer": "Lake Clark",
+    "normalizedAnswer": "LAKE CLARK",
+    "category": "National Park",
+    "difficulty": 18,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "2867b7ccd99866d9e3c4c27bd1251378",
+    "source": "geography",
+    "type": "title",
+    "answer": "Lassen Volcanic",
+    "normalizedAnswer": "LASSEN VOLCANIC",
+    "category": "National Park",
+    "difficulty": 22,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "3bb8fc8ec62f60ac37820188de7b7b44",
+    "source": "geography",
+    "type": "title",
+    "answer": "Mammoth Cave",
+    "normalizedAnswer": "MAMMOTH CAVE",
+    "category": "National Park",
+    "difficulty": 19.3,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "8122351c08da92b838db2b8ff9db0c98",
+    "source": "geography",
+    "type": "title",
+    "answer": "Mesa Verde",
+    "normalizedAnswer": "MESA VERDE",
+    "category": "National Park",
+    "difficulty": 17,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "767be7f0fa366cdea5ef3daaa7ee38c8",
+    "source": "geography",
+    "type": "title",
+    "answer": "Mount Rainier",
+    "normalizedAnswer": "MOUNT RAINIER",
+    "category": "National Park",
+    "difficulty": 18.7,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "e6ade682516e477d5fb8f796f16f28ed",
+    "source": "geography",
+    "type": "title",
+    "answer": "New River Gorge",
+    "normalizedAnswer": "NEW RIVER GORGE",
+    "category": "National Park",
+    "difficulty": 20.5,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 13,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "4c946dcf3686d3d2199f4bb2a845ccfc",
+    "source": "geography",
+    "type": "title",
+    "answer": "North Cascades",
+    "normalizedAnswer": "NORTH CASCADES",
+    "category": "National Park",
+    "difficulty": 20.6,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "fe8c1d8404864dec2b7dabfd59d3200d",
+    "source": "geography",
+    "type": "title",
+    "answer": "Olympic",
+    "normalizedAnswer": "OLYMPIC",
+    "category": "National Park",
+    "difficulty": 13.3,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "3956cbfe189267cb05430f3290ce3779",
+    "source": "geography",
+    "type": "title",
+    "answer": "Petrified Forest",
+    "normalizedAnswer": "PETRIFIED FOREST",
+    "category": "National Park",
+    "difficulty": 19.9,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "217994d5fdaddfb6f0f18bfae26b7864",
+    "source": "geography",
+    "type": "title",
+    "answer": "Pinnacles",
+    "normalizedAnswer": "PINNACLES",
+    "category": "National Park",
+    "difficulty": 15.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "8c1845b7cc6613c381715809bc128fa6",
+    "source": "geography",
+    "type": "title",
+    "answer": "Redwood",
+    "normalizedAnswer": "REDWOOD",
+    "category": "National Park",
+    "difficulty": 10.3,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "28b9c22aab382a97d18086cbf8be8be7",
+    "source": "geography",
+    "type": "title",
+    "answer": "Rocky Mountain",
+    "normalizedAnswer": "ROCKY MOUNTAIN",
+    "category": "National Park",
+    "difficulty": 24.6,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "265ee11956520e10231b295c0cda098a",
+    "source": "geography",
+    "type": "title",
+    "answer": "Saguaro",
+    "normalizedAnswer": "SAGUARO",
+    "category": "National Park",
+    "difficulty": 11.8,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "a4a47c9d7666505b0c1af839182d0dd0",
+    "source": "geography",
+    "type": "title",
+    "answer": "Sequoia",
+    "normalizedAnswer": "SEQUOIA",
+    "category": "National Park",
+    "difficulty": 15.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "3338f78f4c60b25269ac84d56ff8488b",
+    "source": "geography",
+    "type": "title",
+    "answer": "Shenandoah",
+    "normalizedAnswer": "SHENANDOAH",
+    "category": "National Park",
+    "difficulty": 14.5,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "97c1659df682c8bd0d7c0feff72038e9",
+    "source": "geography",
+    "type": "title",
+    "answer": "Theodore Roosevelt",
+    "normalizedAnswer": "THEODORE ROOSEVELT",
+    "category": "National Park",
+    "difficulty": 23.2,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 17,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "c314978361ac52e642309105b893818a",
+    "source": "geography",
+    "type": "title",
+    "answer": "Virgin Islands",
+    "normalizedAnswer": "VIRGIN ISLANDS",
+    "category": "National Park",
+    "difficulty": 21.6,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "b37edfd91bd0e64fc953226a5ab2aea4",
+    "source": "geography",
+    "type": "title",
+    "answer": "Voyageurs",
+    "normalizedAnswer": "VOYAGEURS",
+    "category": "National Park",
+    "difficulty": 19.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "a91c1696e494a5ba40d30cc2375567c5",
+    "source": "geography",
+    "type": "title",
+    "answer": "White Sands",
+    "normalizedAnswer": "WHITE SANDS",
+    "category": "National Park",
+    "difficulty": 17.9,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "6253164cc88a25b7ff980e76d565172f",
+    "source": "geography",
+    "type": "title",
+    "answer": "Wind Cave",
+    "normalizedAnswer": "WIND CAVE",
+    "category": "National Park",
+    "difficulty": 18.1,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "1c8966449f646f0e482c0d60daebc6be",
+    "source": "geography",
+    "type": "title",
+    "answer": "Wrangell–St. Elias",
+    "normalizedAnswer": "WRANGELLST ELIAS",
+    "category": "National Park",
+    "difficulty": 21.4,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "d108889c8c69c686f541492469bdfa2b",
+    "source": "geography",
+    "type": "title",
+    "answer": "Yellowstone",
+    "normalizedAnswer": "YELLOWSTONE",
+    "category": "National Park",
+    "difficulty": 16.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "f2c939288286825a50b30c0b704abca9",
+    "source": "geography",
+    "type": "title",
+    "answer": "Yosemite",
+    "normalizedAnswer": "YOSEMITE",
+    "category": "National Park",
+    "difficulty": 13.7,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "7bfe2bd0c67a1ed8a2f605a04c2ba07c",
+    "source": "geography",
+    "type": "title",
+    "answer": "Zion",
+    "normalizedAnswer": "ZION",
+    "category": "National Park",
+    "difficulty": 10.1,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "3c9e130d14820eb731d60ca7a77d86f7",
+    "source": "geography",
+    "type": "title",
+    "answer": "State",
+    "normalizedAnswer": "STATE",
+    "category": "National Park",
+    "difficulty": 8,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "e475d5da0420b5e9b9e49562530efb42",
+    "source": "geography",
+    "type": "title",
+    "answer": "California",
+    "normalizedAnswer": "CALIFORNIA",
+    "category": "National Park",
+    "difficulty": 16,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "ee25ca198d6f9d29160f985f63da5638",
+    "source": "geography",
+    "type": "title",
+    "answer": "Alaska",
+    "normalizedAnswer": "ALASKA",
+    "category": "National Park",
+    "difficulty": 10.9,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "3fb71d871350b0c8633b7c4a5469bb02",
+    "source": "geography",
+    "type": "title",
+    "answer": "Utah",
+    "normalizedAnswer": "UTAH",
+    "category": "National Park",
+    "difficulty": 7.6,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "3a3fc5ee10378cbfcfeda229ddfddfe6",
+    "source": "geography",
+    "type": "title",
+    "answer": "Colorado",
+    "normalizedAnswer": "COLORADO",
+    "category": "National Park",
+    "difficulty": 12.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "1328e8854b82a89ef69478ed8e18234b",
+    "source": "geography",
+    "type": "title",
+    "answer": "Arizona",
+    "normalizedAnswer": "ARIZONA",
+    "category": "National Park",
+    "difficulty": 14.3,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "8d9643691b71c906dbc8d1759bb7297a",
+    "source": "geography",
+    "type": "title",
+    "answer": "Florida",
+    "normalizedAnswer": "FLORIDA",
+    "category": "National Park",
+    "difficulty": 13.3,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "b5ccbfd0b3df680f1a816f368a979280",
+    "source": "geography",
+    "type": "title",
+    "answer": "Washington",
+    "normalizedAnswer": "WASHINGTON",
+    "category": "National Park",
+    "difficulty": 17.5,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "06dca053ab0ec82b9aa76720a35930be",
+    "source": "geography",
+    "type": "title",
+    "answer": "Hawaii",
+    "normalizedAnswer": "HAWAII",
+    "category": "National Park",
+    "difficulty": 8.4,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "b90f425f9d14873a125c0db80e409f07",
+    "source": "geography",
+    "type": "title",
+    "answer": "New Mexico",
+    "normalizedAnswer": "NEW MEXICO",
+    "category": "National Park",
+    "difficulty": 18.5,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "227e9df4f753ffe201b78619b4dc6fcf",
+    "source": "geography",
+    "type": "title",
+    "answer": "South Dakota",
+    "normalizedAnswer": "SOUTH DAKOTA",
+    "category": "National Park",
+    "difficulty": 19.3,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "39d7d403db9f85235e03b9d0939b6008",
+    "source": "geography",
+    "type": "title",
+    "answer": "Texas",
+    "normalizedAnswer": "TEXAS",
+    "category": "National Park",
+    "difficulty": 12,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "e531b91b2c0347c184f7627aa3fa17c6",
+    "source": "geography",
+    "type": "title",
+    "answer": "Montana",
+    "normalizedAnswer": "MONTANA",
+    "category": "National Park",
+    "difficulty": 10.3,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "c8baa2bac6d577e801132e04ec5549ba",
+    "source": "geography",
+    "type": "title",
+    "answer": "Nevada",
+    "normalizedAnswer": "NEVADA",
+    "category": "National Park",
+    "difficulty": 12.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "8ba8ef701f9a30adf118de9409d0c6d3",
+    "source": "geography",
+    "type": "title",
+    "answer": "Wyoming",
+    "normalizedAnswer": "WYOMING",
+    "category": "National Park",
+    "difficulty": 13.3,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "8485956be22835de80affcbffbc3caa0",
+    "source": "geography",
+    "type": "title",
+    "answer": "Arkansas",
+    "normalizedAnswer": "ARKANSAS",
+    "category": "National Park",
+    "difficulty": 13.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "f454354ad445e4bc72b772558d2793e7",
+    "source": "geography",
+    "type": "title",
+    "answer": "Indiana",
+    "normalizedAnswer": "INDIANA",
+    "category": "National Park",
+    "difficulty": 8.8,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "ef5cb500e6398928815aa02ec5bab721",
+    "source": "geography",
+    "type": "title",
+    "answer": "Kentucky",
+    "normalizedAnswer": "KENTUCKY",
+    "category": "National Park",
+    "difficulty": 18.7,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "fec64a3206d69edcb13b3f33bc77d723",
+    "source": "geography",
+    "type": "title",
+    "answer": "Maine",
+    "normalizedAnswer": "MAINE",
+    "category": "National Park",
+    "difficulty": 9.5,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "710f3f64a440092c26c6e7d2cefff44d",
+    "source": "geography",
+    "type": "title",
+    "answer": "Michigan",
+    "normalizedAnswer": "MICHIGAN",
+    "category": "National Park",
+    "difficulty": 13.7,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "43640ef0568a2ce1bbaedfa1f9e0b69c",
+    "source": "geography",
+    "type": "title",
+    "answer": "Minnesota",
+    "normalizedAnswer": "MINNESOTA",
+    "category": "National Park",
+    "difficulty": 15.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "60bc06d68b7b1810fcf9a433332557fe",
+    "source": "geography",
+    "type": "title",
+    "answer": "Missouri",
+    "normalizedAnswer": "MISSOURI",
+    "category": "National Park",
+    "difficulty": 12.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "259b8becbd86a9d22185322c45a11128",
+    "source": "geography",
+    "type": "title",
+    "answer": "North Dakota",
+    "normalizedAnswer": "NORTH DAKOTA",
+    "category": "National Park",
+    "difficulty": 19.3,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "e27742fe6049b237c2c04c557c1acbcb",
+    "source": "geography",
+    "type": "title",
+    "answer": "Ohio",
+    "normalizedAnswer": "OHIO",
+    "category": "National Park",
+    "difficulty": 6.1,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "0f97df1758954faeea2ab95e2422cda1",
+    "source": "geography",
+    "type": "title",
+    "answer": "Oregon",
+    "normalizedAnswer": "OREGON",
+    "category": "National Park",
+    "difficulty": 9.9,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "c01ac1a156a75cbe1fdd05812f81a067",
+    "source": "geography",
+    "type": "title",
+    "answer": "South Carolina",
+    "normalizedAnswer": "SOUTH CAROLINA",
+    "category": "National Park",
+    "difficulty": 22.1,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "766afbe4bf9512c066f5f3557e71c750",
+    "source": "geography",
+    "type": "title",
+    "answer": "U.S. Virgin Islands",
+    "normalizedAnswer": "US VIRGIN ISLANDS",
+    "category": "National Park",
+    "difficulty": 24.3,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "8ab2b2f09b57505d767c10deeda8b4ab",
+    "source": "geography",
+    "type": "title",
+    "answer": "Virginia",
+    "normalizedAnswer": "VIRGINIA",
+    "category": "National Park",
+    "difficulty": 14.7,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "1038db81170898a861bf2f900177e2e2",
+    "source": "geography",
+    "type": "title",
+    "answer": "West Virginia",
+    "normalizedAnswer": "WEST VIRGINIA",
+    "category": "National Park",
+    "difficulty": 22.7,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "dc52892fad9e87cced20dca7ad7881c2",
+    "source": "geography",
+    "type": "title",
+    "answer": "Idaho",
+    "normalizedAnswer": "IDAHO",
+    "category": "National Park",
+    "difficulty": 9.5,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "dd12f3aeab18455799086ec630947ce3",
+    "source": "geography",
+    "type": "title",
+    "answer": "North Carolina",
+    "normalizedAnswer": "NORTH CAROLINA",
+    "category": "National Park",
+    "difficulty": 19.1,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  },
+  {
+    "id": "277bd04c6d98b54b3f4c1f66b895d761",
+    "source": "geography",
+    "type": "title",
+    "answer": "Tennessee",
+    "normalizedAnswer": "TENNESSEE",
+    "category": "National Park",
+    "difficulty": 9.6,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "landmark",
+      "park",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States",
+      "region": "us"
+    }
+  }
+]

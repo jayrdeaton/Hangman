@@ -1,0 +1,2402 @@
+[
+  {
+    "id": "2c4acc5ebb61bfd908365a5fbfb70aab",
+    "source": "theme",
+    "type": "title",
+    "answer": "Karkinos",
+    "normalizedAnswer": "KARKINOS",
+    "category": "Mythology Figure",
+    "difficulty": 18.7,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "fbc2dc7fe81d6c1f6be668fee4ccf336",
+    "source": "theme",
+    "type": "title",
+    "answer": "Nerites",
+    "normalizedAnswer": "NERITES",
+    "category": "Mythology Figure",
+    "difficulty": 11.8,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "d028ceb860b7c6864b6d9bf6fb7cf2de",
+    "source": "theme",
+    "type": "title",
+    "answer": "mukade",
+    "normalizedAnswer": "MUKADE",
+    "category": "Mythology Figure",
+    "difficulty": 13.9,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "2726500156a64fd936d7629a0a353ae0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Zaratan",
+    "normalizedAnswer": "ZARATAN",
+    "category": "Mythology Figure",
+    "difficulty": 12.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "e7eb10745b6bd1ac66a741085d19aa97",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chickcharney",
+    "normalizedAnswer": "CHICKCHARNEY",
+    "category": "Mythology Figure",
+    "difficulty": 20.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "8c4854a3c49157d102216ec73ddc309c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Nyctimene",
+    "normalizedAnswer": "NYCTIMENE",
+    "category": "Mythology Figure",
+    "difficulty": 14.1,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "0f6d317ca172f2e72e91ed5886e0ccd0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Owlman",
+    "normalizedAnswer": "OWLMAN",
+    "category": "Mythology Figure",
+    "difficulty": 11.4,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "293470d44832697d7c15220938b95d18",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sirin",
+    "normalizedAnswer": "SIRIN",
+    "category": "Mythology Figure",
+    "difficulty": 8,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "077c7b4f34209f91f05908e879557ef5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Strix",
+    "normalizedAnswer": "STRIX",
+    "category": "Mythology Figure",
+    "difficulty": 12,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "47fc3bb0aecfadb90a47f8063ee4443f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Balayang",
+    "normalizedAnswer": "BALAYANG",
+    "category": "Mythology Figure",
+    "difficulty": 12.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "e323727e8feb7473efd2ca15b29c7507",
+    "source": "theme",
+    "type": "title",
+    "answer": "Camazotz",
+    "normalizedAnswer": "CAMAZOTZ",
+    "category": "Mythology Figure",
+    "difficulty": 17.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "8d9d34b4011a845ef537d79e82b70639",
+    "source": "theme",
+    "type": "title",
+    "answer": "Leutogi",
+    "normalizedAnswer": "LEUTOGI",
+    "category": "Mythology Figure",
+    "difficulty": 13.3,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "52272324b91629933b87e485106edffe",
+    "source": "theme",
+    "type": "title",
+    "answer": "Minyades",
+    "normalizedAnswer": "MINYADES",
+    "category": "Mythology Figure",
+    "difficulty": 15.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "eeabb1aa5999fbdc6d7d57e36fde757c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Tjinimin",
+    "normalizedAnswer": "TJINIMIN",
+    "category": "Mythology Figure",
+    "difficulty": 13.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "07202b05c504f6c6a0a3ad182aba3277",
+    "source": "theme",
+    "type": "title",
+    "answer": "Vetala",
+    "normalizedAnswer": "VETALA",
+    "category": "Mythology Figure",
+    "difficulty": 12.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "ed7a2984903b7870f492ae6de296ef7e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bjarndyrakongur",
+    "normalizedAnswer": "BJARNDYRAKONGUR",
+    "category": "Mythology Figure",
+    "difficulty": 27.5,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "bfc041a9eea09ce53e9287745b0b769e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bugbear",
+    "normalizedAnswer": "BUGBEAR",
+    "category": "Mythology Figure",
+    "difficulty": 11.8,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "18fe0216db91da49b8118fca7f99dfa4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Callisto",
+    "normalizedAnswer": "CALLISTO",
+    "category": "Mythology Figure",
+    "difficulty": 13.7,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "c756841d00e05b296fdccabacfdaf88d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Stiff-Legged Bear",
+    "normalizedAnswer": "STIFFLEGGED BEAR",
+    "category": "Mythology Figure",
+    "difficulty": 22.9,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "59dd9197febeb5c169798320cea5d980",
+    "source": "theme",
+    "type": "title",
+    "answer": "Werehyena",
+    "normalizedAnswer": "WEREHYENA",
+    "category": "Mythology Figure",
+    "difficulty": 14.1,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "e5c647269bae4195a141a670bf745505",
+    "source": "theme",
+    "type": "title",
+    "answer": "Azeban",
+    "normalizedAnswer": "AZEBAN",
+    "category": "Mythology Figure",
+    "difficulty": 12.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "54d21833682611f7e8cadc5f0690b568",
+    "source": "theme",
+    "type": "title",
+    "answer": "Drop bear",
+    "normalizedAnswer": "DROP BEAR",
+    "category": "Mythology Figure",
+    "difficulty": 14.1,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "9ad3b81a018c6a431a3b5e04fd1fc7ef",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bunyip",
+    "normalizedAnswer": "BUNYIP",
+    "category": "Mythology Figure",
+    "difficulty": 11.4,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "7daedd2c4fe0402ed336fe2a85618a5b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Afanc",
+    "normalizedAnswer": "AFANC",
+    "category": "Mythology Figure",
+    "difficulty": 8,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "119c76944281e1b7a66adce132ffdd1d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lavellan",
+    "normalizedAnswer": "LAVELLAN",
+    "category": "Mythology Figure",
+    "difficulty": 13.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "02e8cf1b2335b4538634fd4267d1fb83",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ratatoskr",
+    "normalizedAnswer": "RATATOSKR",
+    "category": "Mythology Figure",
+    "difficulty": 15.1,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "8f6b4dc3df536b63574296ba24286f15",
+    "source": "theme",
+    "type": "title",
+    "answer": "Rat king; phenomenon in which a number of rats become intertwined at their tails",
+    "normalizedAnswer": "RAT KING PHENOMENON IN WHICH A NUMBER OF RATS BECOME INTERTWINED AT THEIR TAILS",
+    "category": "Mythology Figure",
+    "difficulty": 64.1,
+    "difficultyTier": "hard",
+    "wordCount": 14,
+    "letterCount": 66,
+    "uniqueLetterCount": 20,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "c95caa862f3875a685056d71b3aa0801",
+    "source": "theme",
+    "type": "title",
+    "answer": "Wolpertinger",
+    "normalizedAnswer": "WOLPERTINGER",
+    "category": "Mythology Figure",
+    "difficulty": 19.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "8f19d03d41ed86f19c963104b30b7892",
+    "source": "theme",
+    "type": "title",
+    "answer": "Allocamelus",
+    "normalizedAnswer": "ALLOCAMELUS",
+    "category": "Mythology Figure",
+    "difficulty": 16.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "42a1a5ddb0f19ed2418b3a161deb5ff9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Heavenly Llama",
+    "normalizedAnswer": "HEAVENLY LLAMA",
+    "category": "Mythology Figure",
+    "difficulty": 20.1,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "6adf474e068d39286b74d726298d51b3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Abath",
+    "normalizedAnswer": "ABATH",
+    "category": "Mythology Figure",
+    "difficulty": 8,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "439320f1ccb1202831668f5422e1ff73",
+    "source": "theme",
+    "type": "title",
+    "answer": "Baku",
+    "normalizedAnswer": "BAKU",
+    "category": "Mythology Figure",
+    "difficulty": 10.1,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "11606dd9305be4d0c1f51bb9cfc8f541",
+    "source": "theme",
+    "type": "title",
+    "answer": "Behemoth",
+    "normalizedAnswer": "BEHEMOTH",
+    "category": "Mythology Figure",
+    "difficulty": 12.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "ab2274c5d78d08d581b6bb06a4a7c334",
+    "source": "theme",
+    "type": "title",
+    "answer": "Quugaarpak - Explanation for Mammoths & other Ice Age remains washing out of riversides. Underworld monsters who dig their way up to the human world, but die upon breathing our air",
+    "normalizedAnswer": "QUUGAARPAK EXPLANATION FOR MAMMOTHS OTHER ICE AGE REMAINS WASHING OUT OF RIVERSIDES UNDERWORLD MONSTERS WHO DIG THEIR WAY UP TO THE HUMAN WORLD BUT DIE UPON BREATHING OUR AIR",
+    "category": "Mythology Figure",
+    "difficulty": 115.60000000000001,
+    "difficultyTier": "hard",
+    "wordCount": 29,
+    "letterCount": 146,
+    "uniqueLetterCount": 24,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "9fe998c1b7dc779a1e569ff269807e15",
+    "source": "theme",
+    "type": "title",
+    "answer": "Taweret",
+    "normalizedAnswer": "TAWERET",
+    "category": "Mythology Figure",
+    "difficulty": 10.3,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "7026f64ebdf5db2a5596ab4d1701321c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Calydonian Boar",
+    "normalizedAnswer": "CALYDONIAN BOAR",
+    "category": "Mythology Figure",
+    "difficulty": 21,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "7ce29a91574ebfe74ffe8caa2341fd8a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Erymanthian Boar",
+    "normalizedAnswer": "ERYMANTHIAN BOAR",
+    "category": "Mythology Figure",
+    "difficulty": 22.9,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "55f582067c805fb91eb7e1e0fc817226",
+    "source": "theme",
+    "type": "title",
+    "answer": "Zhu Bajie",
+    "normalizedAnswer": "ZHU BAJIE",
+    "category": "Mythology Figure",
+    "difficulty": 20.6,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "96b3725e47d1d497940964fbe3e07bbe",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mapinguari",
+    "normalizedAnswer": "MAPINGUARI",
+    "category": "Mythology Figure",
+    "difficulty": 16,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "b1a78837c07b304c7180089d12c24a8a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Akkorokamui",
+    "normalizedAnswer": "AKKOROKAMUI",
+    "category": "Mythology Figure",
+    "difficulty": 22.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "7c3dd8268f01167edc36db9101987ce9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Amikuk - Shapeshifting four armed 'octopus' that can swim through land as easily as water",
+    "normalizedAnswer": "AMIKUK SHAPESHIFTING FOUR ARMED OCTOPUS THAT CAN SWIM THROUGH LAND AS EASILY AS WATER",
+    "category": "Mythology Figure",
+    "difficulty": 69,
+    "difficultyTier": "hard",
+    "wordCount": 14,
+    "letterCount": 72,
+    "uniqueLetterCount": 20,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "e4266b8321aa363b34c7120daccc7bc5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Carbuncle",
+    "normalizedAnswer": "CARBUNCLE",
+    "category": "Mythology Figure",
+    "difficulty": 15.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "c4dcd9af716f1d0c49a627ceb3b3e8db",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lou Carcolh",
+    "normalizedAnswer": "LOU CARCOLH",
+    "category": "Mythology Figure",
+    "difficulty": 14.9,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "c6da4a0d4de03b982851ec677b6839ee",
+    "source": "theme",
+    "type": "title",
+    "answer": "Kraken",
+    "normalizedAnswer": "KRAKEN",
+    "category": "Mythology Figure",
+    "difficulty": 14.9,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "bde5a24f857ee1f049f897a54cbbcd66",
+    "source": "theme",
+    "type": "title",
+    "answer": "Shen",
+    "normalizedAnswer": "SHEN",
+    "category": "Mythology Figure",
+    "difficulty": 7.6,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "747fb5e2e88529a3d75c9000c4e02b46",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bloody Bones",
+    "normalizedAnswer": "BLOODY BONES",
+    "category": "Mythology Figure",
+    "difficulty": 16.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "557fa1368b4c66dcbbcdb6bf2bc76671",
+    "source": "theme",
+    "type": "title",
+    "answer": "Gashadokuro",
+    "normalizedAnswer": "GASHADOKURO",
+    "category": "Mythology Figure",
+    "difficulty": 20.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "124c5254af0fb9263971498e5c4edd86",
+    "source": "theme",
+    "type": "title",
+    "answer": "Grim Reaper",
+    "normalizedAnswer": "GRIM REAPER",
+    "category": "Mythology Figure",
+    "difficulty": 14.9,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "9f542bcd7dcac35001adb275dd72c293",
+    "source": "theme",
+    "type": "title",
+    "answer": "Skeleton",
+    "normalizedAnswer": "SKELETON",
+    "category": "Mythology Figure",
+    "difficulty": 16.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "8efd124d3708470eed16e3b7a723d7a6",
+    "source": "theme",
+    "type": "title",
+    "answer": "Asura",
+    "normalizedAnswer": "ASURA",
+    "category": "Mythology Figure",
+    "difficulty": 8,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "d717b91429d1f1fb135c0bbb502d666e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Deva / Devi",
+    "normalizedAnswer": "DEVA DEVI",
+    "category": "Mythology Figure",
+    "difficulty": 16.1,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "a39a99cb849c5c34938153cdca386b63",
+    "source": "theme",
+    "type": "title",
+    "answer": "Noppera-b",
+    "normalizedAnswer": "NOPPERAB",
+    "category": "Mythology Figure",
+    "difficulty": 13.7,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "5d4f8fa2ad74c89cca36a5d9022fc8f0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Futakuchi-onna",
+    "normalizedAnswer": "FUTAKUCHIONNA",
+    "category": "Mythology Figure",
+    "difficulty": 22.7,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "00d04994f0643ebda980facf7b608f61",
+    "source": "theme",
+    "type": "title",
+    "answer": "Harionago",
+    "normalizedAnswer": "HARIONAGO",
+    "category": "Mythology Figure",
+    "difficulty": 14.1,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "35df9cc462d2f3c54ec333e0a3c86c68",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mavka",
+    "normalizedAnswer": "MAVKA",
+    "category": "Mythology Figure",
+    "difficulty": 13,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "0d1b66823ccd6aa4a988839992cb1d7d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Medusa",
+    "normalizedAnswer": "MEDUSA",
+    "category": "Mythology Figure",
+    "difficulty": 11.4,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "06dc26138d2b66d93d494f3dafeb7c33",
+    "source": "theme",
+    "type": "title",
+    "answer": "Kuchisake-onna",
+    "normalizedAnswer": "KUCHISAKEONNA",
+    "category": "Mythology Figure",
+    "difficulty": 25.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "8393c38f437449655c2651314af39114",
+    "source": "theme",
+    "type": "title",
+    "answer": "Selkie",
+    "normalizedAnswer": "SELKIE",
+    "category": "Mythology Figure",
+    "difficulty": 12.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "b45b8742be03fa7f5dea8878e0d5c598",
+    "source": "theme",
+    "type": "title",
+    "answer": "Skin-walker",
+    "normalizedAnswer": "SKINWALKER",
+    "category": "Mythology Figure",
+    "difficulty": 22.5,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "c5db41082cd2dadfff7324a532e1264c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Swan maiden",
+    "normalizedAnswer": "SWAN MAIDEN",
+    "category": "Mythology Figure",
+    "difficulty": 16.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "838097cb75c1052f0892029b2cde1bfc",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bakeneko",
+    "normalizedAnswer": "BAKENEKO",
+    "category": "Mythology Figure",
+    "difficulty": 17.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "5f3c2e037aa32bb97391c7b005a35630",
+    "source": "theme",
+    "type": "title",
+    "answer": "Kitsune",
+    "normalizedAnswer": "KITSUNE",
+    "category": "Mythology Figure",
+    "difficulty": 15.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "8350d7469aebed71c95fe547e996ac3c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Yamata no Orochi",
+    "normalizedAnswer": "YAMATA NO OROCHI",
+    "category": "Mythology Figure",
+    "difficulty": 21.4,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "cbb263f70d7d88107020e7ce083f5ed6",
+    "source": "theme",
+    "type": "title",
+    "answer": "Kumiho",
+    "normalizedAnswer": "KUMIHO",
+    "category": "Mythology Figure",
+    "difficulty": 13.9,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "9f00462953364f8582e982b6e8fb1163",
+    "source": "theme",
+    "type": "title",
+    "answer": "Hulder",
+    "normalizedAnswer": "HULDER",
+    "category": "Mythology Figure",
+    "difficulty": 11.4,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "dfad99795b920cd1e25817433aa451f1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Nguruvilu",
+    "normalizedAnswer": "NGURUVILU",
+    "category": "Mythology Figure",
+    "difficulty": 16.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "bb1e6627c6d167efbd40442761aea1bf",
+    "source": "theme",
+    "type": "title",
+    "answer": "Serpopard",
+    "normalizedAnswer": "SERPOPARD",
+    "category": "Mythology Figure",
+    "difficulty": 14.1,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "45960989543fcc03ecd04a52d3094e4f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Rokurokubi",
+    "normalizedAnswer": "ROKUROKUBI",
+    "category": "Mythology Figure",
+    "difficulty": 18,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "6ba9013b03a31a61e99c695fbdfbad2e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Vampire",
+    "normalizedAnswer": "VAMPIRE",
+    "category": "Mythology Figure",
+    "difficulty": 15.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "52051c1485895b3fa0456dc5a11f01a9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Manananggal",
+    "normalizedAnswer": "MANANANGGAL",
+    "category": "Mythology Figure",
+    "difficulty": 11.9,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "bd4a6b0a6b579565632e67070a5ded15",
+    "source": "theme",
+    "type": "title",
+    "answer": "Geryon",
+    "normalizedAnswer": "GERYON",
+    "category": "Mythology Figure",
+    "difficulty": 11.4,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "56c5cdfceeb9d24a36a7cf97d13b6b9b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Pixiu",
+    "normalizedAnswer": "PIXIU",
+    "category": "Mythology Figure",
+    "difficulty": 10.5,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "0d6f4781e537dd0059d57cdae8a4ebc1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Aralez",
+    "normalizedAnswer": "ARALEZ",
+    "category": "Mythology Figure",
+    "difficulty": 12.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "10873fb28a8184765a08c8c0ce525a37",
+    "source": "theme",
+    "type": "title",
+    "answer": "Phoenix",
+    "normalizedAnswer": "PHOENIX",
+    "category": "Mythology Figure",
+    "difficulty": 15.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "77ed8c6f2b6f73fc1068d6799774709f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ubume",
+    "normalizedAnswer": "UBUME",
+    "category": "Mythology Figure",
+    "difficulty": 8,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "8d7034b21fa208b75ce09280438f1b18",
+    "source": "theme",
+    "type": "title",
+    "answer": "Angel",
+    "normalizedAnswer": "ANGEL",
+    "category": "Mythology Figure",
+    "difficulty": 9.5,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "a45d3364540ec2719351223b16736220",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chalkydri",
+    "normalizedAnswer": "CHALKYDRI",
+    "category": "Mythology Figure",
+    "difficulty": 19.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "03e14496a409d14562649189f71c6867",
+    "source": "theme",
+    "type": "title",
+    "answer": "Deity",
+    "normalizedAnswer": "DEITY",
+    "category": "Mythology Figure",
+    "difficulty": 9.5,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "4367211604ce525b966a3592c6a21653",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lampetia",
+    "normalizedAnswer": "LAMPETIA",
+    "category": "Mythology Figure",
+    "difficulty": 13.7,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "55e4c30c930c0e24e284dfbc35ca5dfe",
+    "source": "theme",
+    "type": "title",
+    "answer": "Will-o'-the-wisp",
+    "normalizedAnswer": "WILLOTHEWISP",
+    "category": "Mythology Figure",
+    "difficulty": 18.3,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "d5019644d2c72d9b80dd92b6feda8608",
+    "source": "theme",
+    "type": "title",
+    "answer": "Dragon",
+    "normalizedAnswer": "DRAGON",
+    "category": "Mythology Figure",
+    "difficulty": 11.4,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "1072c8ce8b9c8d09698f4a5a87c7e7e2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Banshee",
+    "normalizedAnswer": "BANSHEE",
+    "category": "Mythology Figure",
+    "difficulty": 11.8,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "384f1ecc6010661c1b5fab96fdda89e0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Encantado",
+    "normalizedAnswer": "ENCANTADO",
+    "category": "Mythology Figure",
+    "difficulty": 14.1,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "edef6a3a9413c385cd687b1b3e99a479",
+    "source": "theme",
+    "type": "title",
+    "answer": "Fenghuang",
+    "normalizedAnswer": "FENGHUANG",
+    "category": "Mythology Figure",
+    "difficulty": 14.1,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "b7c5adbbb21a6459be5e11fa5d920e02",
+    "source": "theme",
+    "type": "title",
+    "answer": "Fossegrim",
+    "normalizedAnswer": "FOSSEGRIM",
+    "category": "Mythology Figure",
+    "difficulty": 15.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "d9dbe2bac3e5eb1984649524e5262869",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mermaid",
+    "normalizedAnswer": "MERMAID",
+    "category": "Mythology Figure",
+    "difficulty": 11.8,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "730bc75c7035f066e5cb149e78eec9a1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Nue",
+    "normalizedAnswer": "NUE",
+    "category": "Mythology Figure",
+    "difficulty": 5.7,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "6aaf73c3400626aa7ce65c0dc7da8162",
+    "source": "theme",
+    "type": "title",
+    "answer": "Siren",
+    "normalizedAnswer": "SIREN",
+    "category": "Mythology Figure",
+    "difficulty": 9.5,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "e0918c3b8923d387b888f504d25c7c11",
+    "source": "theme",
+    "type": "title",
+    "answer": "Yamabiko",
+    "normalizedAnswer": "YAMABIKO",
+    "category": "Mythology Figure",
+    "difficulty": 16.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "e439d2a8cd6dbc722c2a670d69866011",
+    "source": "theme",
+    "type": "title",
+    "answer": "Gef",
+    "normalizedAnswer": "GEF",
+    "category": "Mythology Figure",
+    "difficulty": 5.7,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "3083eb0d8185becb0a86dfa4f00fd6d8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Satan",
+    "normalizedAnswer": "SATAN",
+    "category": "Mythology Figure",
+    "difficulty": 8,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "0e56771f62b027e56cd81c749514f785",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chronos",
+    "normalizedAnswer": "CHRONOS",
+    "category": "Mythology Figure",
+    "difficulty": 11.8,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "a8deb083b3a1ded56fe2c8454b50b0cb",
+    "source": "theme",
+    "type": "title",
+    "answer": "Father Time",
+    "normalizedAnswer": "FATHER TIME",
+    "category": "Mythology Figure",
+    "difficulty": 16.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "7bbdcfdfc7a75628beda609726e89a74",
+    "source": "theme",
+    "type": "title",
+    "answer": "Gremlin",
+    "normalizedAnswer": "GREMLIN",
+    "category": "Mythology Figure",
+    "difficulty": 13.3,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "9ebda65cdf236b94fc2102ed8a73b46e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Baba Yaga",
+    "normalizedAnswer": "BABA YAGA",
+    "category": "Mythology Figure",
+    "difficulty": 9.6,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "4e0a178f4476d99be349de9ca362ede9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bai Ze",
+    "normalizedAnswer": "BAI ZE",
+    "category": "Mythology Figure",
+    "difficulty": 12.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "63a5ceae5ad2c369bcbc1ccd728a0322",
+    "source": "theme",
+    "type": "title",
+    "answer": "Griffin",
+    "normalizedAnswer": "GRIFFIN",
+    "category": "Mythology Figure",
+    "difficulty": 10.3,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "839701ac8f303babbe9b9a61bdb6141a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Salmon of Wisdom",
+    "normalizedAnswer": "SALMON OF WISDOM",
+    "category": "Mythology Figure",
+    "difficulty": 21.4,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "9f248f14511a6bfdd94ec8065ca3bb34",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sphinx",
+    "normalizedAnswer": "SPHINX",
+    "category": "Mythology Figure",
+    "difficulty": 13.9,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "088b5ec2597e3544e622cc0b4c24bdc0",
+    "source": "theme",
+    "type": "title",
+    "answer": "See list of theological demons",
+    "normalizedAnswer": "SEE LIST OF THEOLOGICAL DEMONS",
+    "category": "Mythology Figure",
+    "difficulty": 33,
+    "difficultyTier": "hard",
+    "wordCount": 5,
+    "letterCount": 26,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "b8c6b076dddfe3b687a6037b76e33da0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ala",
+    "normalizedAnswer": "ALA",
+    "category": "Mythology Figure",
+    "difficulty": 4.2,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 2,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "778832edfe1419d3ded30bf2cbfb5159",
+    "source": "theme",
+    "type": "title",
+    "answer": "Elemental",
+    "normalizedAnswer": "ELEMENTAL",
+    "category": "Mythology Figure",
+    "difficulty": 12.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "c05b61dde252ad918fac184b375753d8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Feldgeister",
+    "normalizedAnswer": "FELDGEISTER",
+    "category": "Mythology Figure",
+    "difficulty": 17.9,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "9554377ca02547a87aa4b3500056da36",
+    "source": "theme",
+    "type": "title",
+    "answer": "Zduha",
+    "normalizedAnswer": "ZDUHA",
+    "category": "Mythology Figure",
+    "difficulty": 12,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "fde2f6754c76f38982dd84e5ca221023",
+    "source": "theme",
+    "type": "title",
+    "answer": "Fairy",
+    "normalizedAnswer": "FAIRY",
+    "category": "Mythology Figure",
+    "difficulty": 9.5,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "1fe8c903422552c4dbfd36d1979bd93b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Gnome",
+    "normalizedAnswer": "GNOME",
+    "category": "Mythology Figure",
+    "difficulty": 9.5,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "73e12eed37a7663660c32d75f8560224",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ennedi tiger",
+    "normalizedAnswer": "ENNEDI TIGER",
+    "category": "Mythology Figure",
+    "difficulty": 15.3,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "07ba356ab4ea5d00f4e8fa13af4d50e0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cherufe",
+    "normalizedAnswer": "CHERUFE",
+    "category": "Mythology Figure",
+    "difficulty": 11.8,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "13d16f85834607425e10a4aa8753c5d6",
+    "source": "theme",
+    "type": "title",
+    "answer": "Salamander",
+    "normalizedAnswer": "SALAMANDER",
+    "category": "Mythology Figure",
+    "difficulty": 16,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "dab2877bfcf4dd0c61bc75c390b75c32",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chalkydri beings from the Second Book of Enoch",
+    "normalizedAnswer": "CHALKYDRI BEINGS FROM THE SECOND BOOK OF ENOCH",
+    "category": "Mythology Figure",
+    "difficulty": 50.400000000000006,
+    "difficultyTier": "hard",
+    "wordCount": 8,
+    "letterCount": 39,
+    "uniqueLetterCount": 18,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "0e6c9c3f70e984f5e323d8b54b9c2c9f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Kua Fu a giant in China",
+    "normalizedAnswer": "KUA FU A GIANT IN CHINA",
+    "category": "Mythology Figure",
+    "difficulty": 26.700000000000003,
+    "difficultyTier": "hard",
+    "wordCount": 6,
+    "letterCount": 18,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "610ce824f918a4d75192afbe941da8fc",
+    "source": "theme",
+    "type": "title",
+    "answer": "Three-legged bird in China, Korea, and Japan",
+    "normalizedAnswer": "THREELEGGED BIRD IN CHINA KOREA AND JAPAN",
+    "category": "Mythology Figure",
+    "difficulty": 45.400000000000006,
+    "difficultyTier": "hard",
+    "wordCount": 7,
+    "letterCount": 35,
+    "uniqueLetterCount": 16,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "5630944b6c66b97b5a3158366ab50f90",
+    "source": "theme",
+    "type": "title",
+    "answer": "Phoenix in Greek Mythology",
+    "normalizedAnswer": "PHOENIX IN GREEK MYTHOLOGY",
+    "category": "Mythology Figure",
+    "difficulty": 36.4,
+    "difficultyTier": "hard",
+    "wordCount": 4,
+    "letterCount": 23,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "c40535cb3ab13347a0b5cd04b49eec33",
+    "source": "theme",
+    "type": "title",
+    "answer": "Jade rabbit",
+    "normalizedAnswer": "JADE RABBIT",
+    "category": "Mythology Figure",
+    "difficulty": 18.9,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "cc595dbb78bb023ea88fda6c69f89ba1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Werewolf",
+    "normalizedAnswer": "WEREWOLF",
+    "category": "Mythology Figure",
+    "difficulty": 12.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "0be9b800d57a5529bc8e8ac17c49691b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Werejaguar",
+    "normalizedAnswer": "WEREJAGUAR",
+    "category": "Mythology Figure",
+    "difficulty": 17,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "0db13eb3929355585540be47f21937ea",
+    "source": "theme",
+    "type": "title",
+    "answer": "Alien",
+    "normalizedAnswer": "ALIEN",
+    "category": "Mythology Figure",
+    "difficulty": 9.5,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "0d551175b622263278a502abf3c210a3",
+    "source": "theme",
+    "type": "title",
+    "answer": "World Elephant",
+    "normalizedAnswer": "WORLD ELEPHANT",
+    "category": "Mythology Figure",
+    "difficulty": 22.1,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "85733c0165896215525f90047a3c0b5f",
+    "source": "theme",
+    "type": "title",
+    "answer": "World Tree",
+    "normalizedAnswer": "WORLD TREE",
+    "category": "Mythology Figure",
+    "difficulty": 14.5,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  },
+  {
+    "id": "93e84787155beb8dad8e13adcb53a218",
+    "source": "theme",
+    "type": "title",
+    "answer": "World Turtle",
+    "normalizedAnswer": "WORLD TURTLE",
+    "category": "Mythology Figure",
+    "difficulty": 16.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "mythology"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_legendary_creatures_by_type"
+    }
+  }
+]

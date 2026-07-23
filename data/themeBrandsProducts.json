@@ -1,0 +1,716 @@
+[
+  {
+    "id": "4a4e4e40a566d6723f4969566f22f7ba",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ensure",
+    "normalizedAnswer": "ENSURE",
+    "category": "Brand",
+    "difficulty": 9.9,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "brand",
+      "product"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_brand_name_food_products"
+    }
+  },
+  {
+    "id": "a9e9a2ebec11cc345a6380f664857a4b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Horlicks",
+    "normalizedAnswer": "HORLICKS",
+    "category": "Brand",
+    "difficulty": 17.7,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "brand",
+      "product"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_brand_name_food_products"
+    }
+  },
+  {
+    "id": "7a976ccd2a3a2e15284cd3099118b562",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ajinomoto",
+    "normalizedAnswer": "AJINOMOTO",
+    "category": "Brand",
+    "difficulty": 16.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "brand",
+      "product"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_brand_name_food_products"
+    }
+  },
+  {
+    "id": "11fd5512c2466669e172fa8045432056",
+    "source": "theme",
+    "type": "title",
+    "answer": "Hellmann's and Best Foods",
+    "normalizedAnswer": "HELLMANNS AND BEST FOODS",
+    "category": "Brand",
+    "difficulty": 27.6,
+    "difficultyTier": "hard",
+    "wordCount": 4,
+    "letterCount": 21,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "brand",
+      "product"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_brand_name_food_products"
+    }
+  },
+  {
+    "id": "033e52d129de748953d32995fb588d90",
+    "source": "theme",
+    "type": "title",
+    "answer": "Dennis' Horseradish",
+    "normalizedAnswer": "DENNIS HORSERADISH",
+    "category": "Brand",
+    "difficulty": 20.7,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 17,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "brand",
+      "product"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_brand_name_food_products"
+    }
+  },
+  {
+    "id": "5743e73b854a37c6151c75ff93647640",
+    "source": "theme",
+    "type": "title",
+    "answer": "Egg Beaters",
+    "normalizedAnswer": "EGG BEATERS",
+    "category": "Brand",
+    "difficulty": 14.9,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "brand",
+      "product"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_brand_name_food_products"
+    }
+  },
+  {
+    "id": "4ac21ff04433a574244610fd153e9178",
+    "source": "theme",
+    "type": "title",
+    "answer": "Moorhouse's",
+    "normalizedAnswer": "MOORHOUSES",
+    "category": "Brand",
+    "difficulty": 14.5,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "brand",
+      "product"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_brand_name_food_products"
+    }
+  },
+  {
+    "id": "3381784801a70b10c71bb1833b897f70",
+    "source": "theme",
+    "type": "title",
+    "answer": "Banquet",
+    "normalizedAnswer": "BANQUET",
+    "category": "Brand",
+    "difficulty": 15.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "brand",
+      "product"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_brand_name_food_products"
+    }
+  },
+  {
+    "id": "d83e57919b00737791aaaf2b564932bf",
+    "source": "theme",
+    "type": "title",
+    "answer": "Birds Eye",
+    "normalizedAnswer": "BIRDS EYE",
+    "category": "Brand",
+    "difficulty": 14.1,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "brand",
+      "product"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_brand_name_food_products"
+    }
+  },
+  {
+    "id": "2713f05c12cd179fcce1afa193dcf43f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Findus",
+    "normalizedAnswer": "FINDUS",
+    "category": "Brand",
+    "difficulty": 11.4,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "brand",
+      "product"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_brand_name_food_products"
+    }
+  },
+  {
+    "id": "86b437db3d4f042358afd4a4df35e194",
+    "source": "theme",
+    "type": "title",
+    "answer": "Freezer Queen",
+    "normalizedAnswer": "FREEZER QUEEN",
+    "category": "Brand",
+    "difficulty": 20.7,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "brand",
+      "product"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_brand_name_food_products"
+    }
+  },
+  {
+    "id": "4f1c6a925f1be5bfe3c5f7f3fc4f5411",
+    "source": "theme",
+    "type": "title",
+    "answer": "FRoSTA",
+    "normalizedAnswer": "FROSTA",
+    "category": "Brand",
+    "difficulty": 11.4,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "brand",
+      "product"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_brand_name_food_products"
+    }
+  },
+  {
+    "id": "c03f2b2ac4114fb575fddf16b9776563",
+    "source": "theme",
+    "type": "title",
+    "answer": "Jus-Rol",
+    "normalizedAnswer": "JUSROL",
+    "category": "Brand",
+    "difficulty": 13.9,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "brand",
+      "product"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_brand_name_food_products"
+    }
+  },
+  {
+    "id": "68aae4e12f5e574e208ba1b2734fb91a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Marie Callender's",
+    "normalizedAnswer": "MARIE CALLENDERS",
+    "category": "Brand",
+    "difficulty": 21.4,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "brand",
+      "product"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_brand_name_food_products"
+    }
+  },
+  {
+    "id": "74f6c639405787a20dac70ff95c04fdc",
+    "source": "theme",
+    "type": "title",
+    "answer": "Stouffer's",
+    "normalizedAnswer": "STOUFFERS",
+    "category": "Brand",
+    "difficulty": 14.1,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "brand",
+      "product"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_brand_name_food_products"
+    }
+  },
+  {
+    "id": "709750265324a1938f6c1a53ec9eff26",
+    "source": "theme",
+    "type": "title",
+    "answer": "Tombstone",
+    "normalizedAnswer": "TOMBSTONE",
+    "category": "Brand",
+    "difficulty": 14.1,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "brand",
+      "product"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_brand_name_food_products"
+    }
+  },
+  {
+    "id": "c2e2630f030c4aeb8d0056b4293ebb36",
+    "source": "theme",
+    "type": "title",
+    "answer": "XLNT Foods",
+    "normalizedAnswer": "XLNT FOODS",
+    "category": "Brand",
+    "difficulty": 18.5,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "brand",
+      "product"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_brand_name_food_products"
+    }
+  },
+  {
+    "id": "c576a721847c323d873769ba4f07fb14",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ayam Brand",
+    "normalizedAnswer": "AYAM BRAND",
+    "category": "Brand",
+    "difficulty": 14.5,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "brand",
+      "product"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_brand_name_food_products"
+    }
+  },
+  {
+    "id": "cc1915c4154260a79209542bdbbb1c1e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Peperami – pork sausage snack",
+    "normalizedAnswer": "PEPERAMI PORK SAUSAGE SNACK",
+    "category": "Brand",
+    "difficulty": 35.3,
+    "difficultyTier": "hard",
+    "wordCount": 4,
+    "letterCount": 24,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "brand",
+      "product"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_brand_name_food_products"
+    }
+  },
+  {
+    "id": "c939d38c98587021d8a952432999c441",
+    "source": "theme",
+    "type": "title",
+    "answer": "Planters nuts",
+    "normalizedAnswer": "PLANTERS NUTS",
+    "category": "Brand",
+    "difficulty": 18.7,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "brand",
+      "product"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_brand_name_food_products"
+    }
+  },
+  {
+    "id": "0855207cc4aae2401c93aaffa0dcb67c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Pocky",
+    "normalizedAnswer": "POCKY",
+    "category": "Brand",
+    "difficulty": 12,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "brand",
+      "product"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_brand_name_food_products"
+    }
+  },
+  {
+    "id": "17d348e72f7621dd55661ced52775d59",
+    "source": "theme",
+    "type": "title",
+    "answer": "Slim Jim",
+    "normalizedAnswer": "SLIM JIM",
+    "category": "Brand",
+    "difficulty": 13.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "brand",
+      "product"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_brand_name_food_products"
+    }
+  },
+  {
+    "id": "fdd1114cabc8ace8d7a28f8624090a96",
+    "source": "theme",
+    "type": "title",
+    "answer": "Space Food Sticks",
+    "normalizedAnswer": "SPACE FOOD STICKS",
+    "category": "Brand",
+    "difficulty": 25.8,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "brand",
+      "product"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_brand_name_food_products"
+    }
+  },
+  {
+    "id": "1c891b1780a05a863902e2a890658f62",
+    "source": "theme",
+    "type": "title",
+    "answer": "Alpro – soy yogurt",
+    "normalizedAnswer": "ALPRO SOY YOGURT",
+    "category": "Brand",
+    "difficulty": 21.4,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "brand",
+      "product"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_brand_name_food_products"
+    }
+  },
+  {
+    "id": "ffd43c0e23f5905b689f4b23141d40ef",
+    "source": "theme",
+    "type": "title",
+    "answer": "Eden Foods Inc",
+    "normalizedAnswer": "EDEN FOODS INC",
+    "category": "Brand",
+    "difficulty": 17.6,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "brand",
+      "product"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_brand_name_food_products"
+    }
+  },
+  {
+    "id": "72d910df28f64d748db4afbbe6d9eb4f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Gale's",
+    "normalizedAnswer": "GALES",
+    "category": "Brand",
+    "difficulty": 9.5,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "brand",
+      "product"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_brand_name_food_products"
+    }
+  },
+  {
+    "id": "39671f389e8d41e77fbc7585df279519",
+    "source": "theme",
+    "type": "title",
+    "answer": "Hartley's",
+    "normalizedAnswer": "HARTLEYS",
+    "category": "Brand",
+    "difficulty": 15.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "brand",
+      "product"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_brand_name_food_products"
+    }
+  },
+  {
+    "id": "dc5da1f7e41aecfbca1868dfe570f0c0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Rafhan",
+    "normalizedAnswer": "RAFHAN",
+    "category": "Brand",
+    "difficulty": 9.9,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "brand",
+      "product"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_brand_name_food_products"
+    }
+  },
+  {
+    "id": "e5d726318989dc68e753dd9ca04d6d4c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Tiptree",
+    "normalizedAnswer": "TIPTREE",
+    "category": "Brand",
+    "difficulty": 10.3,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "brand",
+      "product"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_brand_name_food_products"
+    }
+  },
+  {
+    "id": "333060087408fe1240bfa8dda2bd1b9f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Welch's",
+    "normalizedAnswer": "WELCHS",
+    "category": "Brand",
+    "difficulty": 11.4,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "brand",
+      "product"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_brand_name_food_products"
+    }
+  },
+  {
+    "id": "a7c946df9db601ec1d3d951538fd7e43",
+    "source": "theme",
+    "type": "title",
+    "answer": "Fleischmann's Yeast",
+    "normalizedAnswer": "FLEISCHMANNS YEAST",
+    "category": "Brand",
+    "difficulty": 25.2,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 17,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "brand",
+      "product"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_brand_name_food_products"
+    }
+  },
+  {
+    "id": "22cf7dc9c65932e5b42494c5fd75f262",
+    "source": "theme",
+    "type": "title",
+    "answer": "Food portal",
+    "normalizedAnswer": "FOOD PORTAL",
+    "category": "Brand",
+    "difficulty": 16.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "brand",
+      "product"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_brand_name_food_products"
+    }
+  },
+  {
+    "id": "1dac23439d6d178a0813cfe42d6e3e81",
+    "source": "theme",
+    "type": "title",
+    "answer": "Companies portal",
+    "normalizedAnswer": "COMPANIES PORTAL",
+    "category": "Brand",
+    "difficulty": 24.4,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "brand",
+      "product"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_brand_name_food_products"
+    }
+  },
+  {
+    "id": "f9e3a61694bd74483732b4dfb826e608",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lists portal",
+    "normalizedAnswer": "LISTS PORTAL",
+    "category": "Brand",
+    "difficulty": 16.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "brand",
+      "product"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_brand_name_food_products"
+    }
+  }
+]

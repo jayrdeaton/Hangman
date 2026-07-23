@@ -33,8 +33,16 @@ yarn-error.*
 .DS_Store
 *.pem
 
-# local env files
+# local env files (real secrets — .env.example is the checked-in template)
+.env
 .env*.local
+
+# scraper build artifacts — raw scrape output / build-time-only intermediate
+# data, never read by the shipped app; regenerate locally via the scripts/
+# scrapers if needed. See src/data/puzzleCatalog.generated.ts for what the
+# app actually bundles.
+/JEOPARDY.json
+/data/puzzlesAll.json
 
 # typescript
 *.tsbuildinfo

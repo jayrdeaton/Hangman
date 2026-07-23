@@ -1,0 +1,1178 @@
+[
+  {
+    "id": "3cd5f677148831e5e023bf65d478b854",
+    "source": "theme",
+    "type": "title",
+    "answer": "Name",
+    "normalizedAnswer": "NAME",
+    "category": "First Lady",
+    "difficulty": 7.6,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "b405a727903e9a36b88efded20ae8d1a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Martha WashingtonJune 2, 1731 – May 22, 1802",
+    "normalizedAnswer": "MARTHA WASHINGTONJUNE 2 1731 MAY 22 1802",
+    "category": "First Lady",
+    "difficulty": 41,
+    "difficultyTier": "hard",
+    "wordCount": 7,
+    "letterCount": 34,
+    "uniqueLetterCount": 15,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "b02f69881d84d03bb0c533955cd74962",
+    "source": "theme",
+    "type": "title",
+    "answer": "Abigail AdamsNovember 22, 1744 – October 28, 1818",
+    "normalizedAnswer": "ABIGAIL ADAMSNOVEMBER 22 1744 OCTOBER 28 1818",
+    "category": "First Lady",
+    "difficulty": 43,
+    "difficultyTier": "hard",
+    "wordCount": 7,
+    "letterCount": 39,
+    "uniqueLetterCount": 15,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "4aa383f317761893f8820b703c103ad0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Martha RandolphSeptember 27, 1772 – October 10, 1836",
+    "normalizedAnswer": "MARTHA RANDOLPHSEPTEMBER 27 1772 OCTOBER 10 1836",
+    "category": "First Lady",
+    "difficulty": 40.2,
+    "difficultyTier": "hard",
+    "wordCount": 7,
+    "letterCount": 42,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "b021a79ee3a7655dc5cb79cf8811e4df",
+    "source": "theme",
+    "type": "title",
+    "answer": "Dolley MadisonMay 20, 1768 – July 12, 1849",
+    "normalizedAnswer": "DOLLEY MADISONMAY 20 1768 JULY 12 1849",
+    "category": "First Lady",
+    "difficulty": 35.7,
+    "difficultyTier": "hard",
+    "wordCount": 7,
+    "letterCount": 32,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "995d277154a41835afb98895c930f1a4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Elizabeth MonroeJune 30, 1768 – September 23, 1830",
+    "normalizedAnswer": "ELIZABETH MONROEJUNE 30 1768 SEPTEMBER 23 1830",
+    "category": "First Lady",
+    "difficulty": 47.400000000000006,
+    "difficultyTier": "hard",
+    "wordCount": 7,
+    "letterCount": 40,
+    "uniqueLetterCount": 16,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "c4933966b217ad8f9c401c5e1c250732",
+    "source": "theme",
+    "type": "title",
+    "answer": "Louisa AdamsBirth country: Great Britain February 12, 1775 – May 15, 1852",
+    "normalizedAnswer": "LOUISA ADAMSBIRTH COUNTRY GREAT BRITAIN FEBRUARY 12 1775 MAY 15 1852",
+    "category": "First Lady",
+    "difficulty": 54.2,
+    "difficultyTier": "hard",
+    "wordCount": 11,
+    "letterCount": 58,
+    "uniqueLetterCount": 18,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "48b0e108fa5959efec8964adc8d3a0c3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Emily Donelson June 1, 1807 – December 19, 1836",
+    "normalizedAnswer": "EMILY DONELSON JUNE 1 1807 DECEMBER 19 1836",
+    "category": "First Lady",
+    "difficulty": 40.7,
+    "difficultyTier": "hard",
+    "wordCount": 8,
+    "letterCount": 36,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "219400079edbf3875242cce1d16dfa99",
+    "source": "theme",
+    "type": "title",
+    "answer": "November 26, 1834–March 4, 1837",
+    "normalizedAnswer": "NOVEMBER 26 1834MARCH 4 1837",
+    "category": "First Lady",
+    "difficulty": 28.700000000000003,
+    "difficultyTier": "hard",
+    "wordCount": 5,
+    "letterCount": 24,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "374a882c59c02ef7683ed1538010fb47",
+    "source": "theme",
+    "type": "title",
+    "answer": "March 4, 1837–November 27, 1838",
+    "normalizedAnswer": "MARCH 4 1837NOVEMBER 27 1838",
+    "category": "First Lady",
+    "difficulty": 28.700000000000003,
+    "difficultyTier": "hard",
+    "wordCount": 5,
+    "letterCount": 24,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "262a26cdbb8f7552082a9fcea339e856",
+    "source": "theme",
+    "type": "title",
+    "answer": "November 27, 1838–March 4, 1841",
+    "normalizedAnswer": "NOVEMBER 27 1838MARCH 4 1841",
+    "category": "First Lady",
+    "difficulty": 28.700000000000003,
+    "difficultyTier": "hard",
+    "wordCount": 5,
+    "letterCount": 24,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "eb9b12b5653281d2e95fa50a823d339b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Anna HarrisonJuly 25, 1775 – February 25, 1864",
+    "normalizedAnswer": "ANNA HARRISONJULY 25 1775 FEBRUARY 25 1864",
+    "category": "First Lady",
+    "difficulty": 40.3,
+    "difficultyTier": "hard",
+    "wordCount": 7,
+    "letterCount": 36,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "fcd07cbbc43286287e966aca795ba360",
+    "source": "theme",
+    "type": "title",
+    "answer": "March 4, 1841–April 4, 1841",
+    "normalizedAnswer": "MARCH 4 1841APRIL 4 1841",
+    "category": "First Lady",
+    "difficulty": 21.6,
+    "difficultyTier": "hard",
+    "wordCount": 5,
+    "letterCount": 20,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "85d383a2df599689e3a97214bc05569d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Letitia TylerNovember 12, 1790 – September 10, 1842",
+    "normalizedAnswer": "LETITIA TYLERNOVEMBER 12 1790 SEPTEMBER 10 1842",
+    "category": "First Lady",
+    "difficulty": 42.3,
+    "difficultyTier": "hard",
+    "wordCount": 7,
+    "letterCount": 41,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "93f25fe628a8a3532bceb21f5ac506fd",
+    "source": "theme",
+    "type": "title",
+    "answer": "September 10, 1842–June 26, 1844",
+    "normalizedAnswer": "SEPTEMBER 10 1842JUNE 26 1844",
+    "category": "First Lady",
+    "difficulty": 29.1,
+    "difficultyTier": "hard",
+    "wordCount": 5,
+    "letterCount": 25,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "9246637b2831532fcdf05c4ce5831bc4",
+    "source": "theme",
+    "type": "title",
+    "answer": "June 26, 1844–March 4, 1845",
+    "normalizedAnswer": "JUNE 26 1844MARCH 4 1845",
+    "category": "First Lady",
+    "difficulty": 25.6,
+    "difficultyTier": "hard",
+    "wordCount": 5,
+    "letterCount": 20,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "891ea33f2b9f38fd438d0ab172e7cb34",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sarah PolkSeptember 4, 1803 – August 14, 1891",
+    "normalizedAnswer": "SARAH POLKSEPTEMBER 4 1803 AUGUST 14 1891",
+    "category": "First Lady",
+    "difficulty": 39.900000000000006,
+    "difficultyTier": "hard",
+    "wordCount": 7,
+    "letterCount": 35,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "eca9f76df09794ad89f147ffde60c9fd",
+    "source": "theme",
+    "type": "title",
+    "answer": "Margaret \"Peggy\" TaylorSeptember 21, 1788 – August 14, 1852",
+    "normalizedAnswer": "MARGARET PEGGY TAYLORSEPTEMBER 21 1788 AUGUST 14 1852",
+    "category": "First Lady",
+    "difficulty": 40.7,
+    "difficultyTier": "hard",
+    "wordCount": 8,
+    "letterCount": 46,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "76b5d52cae97ece0d99f0d2f40e42eb8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Abigail FillmoreMarch 13, 1798 – March 30, 1853",
+    "normalizedAnswer": "ABIGAIL FILLMOREMARCH 13 1798 MARCH 30 1853",
+    "category": "First Lady",
+    "difficulty": 35.2,
+    "difficultyTier": "hard",
+    "wordCount": 7,
+    "letterCount": 37,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "6fb22e2ae12a72be2e063b0be6728e04",
+    "source": "theme",
+    "type": "title",
+    "answer": "Jane PierceMarch 12, 1806 – December 2, 1863",
+    "normalizedAnswer": "JANE PIERCEMARCH 12 1806 DECEMBER 2 1863",
+    "category": "First Lady",
+    "difficulty": 36.5,
+    "difficultyTier": "hard",
+    "wordCount": 7,
+    "letterCount": 34,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "618601ad9441b86707281b1a1f20a606",
+    "source": "theme",
+    "type": "title",
+    "answer": "Harriet LaneMay 9, 1830 – July 3, 1903",
+    "normalizedAnswer": "HARRIET LANEMAY 9 1830 JULY 3 1903",
+    "category": "First Lady",
+    "difficulty": 34.1,
+    "difficultyTier": "hard",
+    "wordCount": 7,
+    "letterCount": 28,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "3b76d69fd7cf3775d1851c0675102967",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mary LincolnDecember 13, 1818 – July 16, 1882",
+    "normalizedAnswer": "MARY LINCOLNDECEMBER 13 1818 JULY 16 1882",
+    "category": "First Lady",
+    "difficulty": 39.900000000000006,
+    "difficultyTier": "hard",
+    "wordCount": 7,
+    "letterCount": 35,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "e7904fd90149b791fca12f44d55010cb",
+    "source": "theme",
+    "type": "title",
+    "answer": "Eliza JohnsonOctober 4, 1810 – January 15, 1876",
+    "normalizedAnswer": "ELIZA JOHNSONOCTOBER 4 1810 JANUARY 15 1876",
+    "category": "First Lady",
+    "difficulty": 48.7,
+    "difficultyTier": "hard",
+    "wordCount": 7,
+    "letterCount": 37,
+    "uniqueLetterCount": 16,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "da062ab2914033f97069e715d7a61d3c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Julia GrantJanuary 26, 1826 – December 14, 1902",
+    "normalizedAnswer": "JULIA GRANTJANUARY 26 1826 DECEMBER 14 1902",
+    "category": "First Lady",
+    "difficulty": 44.7,
+    "difficultyTier": "hard",
+    "wordCount": 7,
+    "letterCount": 37,
+    "uniqueLetterCount": 15,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "5a5958e6d0992fceff64d18bcd13c093",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lucy HayesAugust 28, 1831 – June 25, 1889",
+    "normalizedAnswer": "LUCY HAYESAUGUST 28 1831 JUNE 25 1889",
+    "category": "First Lady",
+    "difficulty": 35.3,
+    "difficultyTier": "hard",
+    "wordCount": 7,
+    "letterCount": 31,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "ce3dd5fc28b8f0255f2013370e707d6f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lucretia GarfieldApril 19, 1832 – March 14, 1918",
+    "normalizedAnswer": "LUCRETIA GARFIELDAPRIL 19 1832 MARCH 14 1918",
+    "category": "First Lady",
+    "difficulty": 38.6,
+    "difficultyTier": "hard",
+    "wordCount": 7,
+    "letterCount": 38,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "1123ad4031b551fb22dcd2cfdf503e1c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mary McElroyJuly 5, 1841 – January 8, 1917",
+    "normalizedAnswer": "MARY MCELROYJULY 5 1841 JANUARY 8 1917",
+    "category": "First Lady",
+    "difficulty": 36.7,
+    "difficultyTier": "hard",
+    "wordCount": 7,
+    "letterCount": 32,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "2a8e01f404f7e1d11bef14256857b9c6",
+    "source": "theme",
+    "type": "title",
+    "answer": "Rose ClevelandJune 13, 1846 – November 22, 1918",
+    "normalizedAnswer": "ROSE CLEVELANDJUNE 13 1846 NOVEMBER 22 1918",
+    "category": "First Lady",
+    "difficulty": 45.7,
+    "difficultyTier": "hard",
+    "wordCount": 7,
+    "letterCount": 37,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "765c8b901a4bf5c6051800dcae3c34f8",
+    "source": "theme",
+    "type": "title",
+    "answer": "June 2, 1886–March 4, 1889",
+    "normalizedAnswer": "JUNE 2 1886MARCH 4 1889",
+    "category": "First Lady",
+    "difficulty": 25.200000000000003,
+    "difficultyTier": "hard",
+    "wordCount": 5,
+    "letterCount": 19,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "293649506cf5d52930642b7c239871cc",
+    "source": "theme",
+    "type": "title",
+    "answer": "Caroline HarrisonOctober 1, 1832 – October 25, 1892",
+    "normalizedAnswer": "CAROLINE HARRISONOCTOBER 1 1832 OCTOBER 25 1892",
+    "category": "First Lady",
+    "difficulty": 36.8,
+    "difficultyTier": "hard",
+    "wordCount": 7,
+    "letterCount": 41,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "746055b8812a483a528925a9446f644b",
+    "source": "theme",
+    "type": "title",
+    "answer": "October 25, 1892–March 4, 1893",
+    "normalizedAnswer": "OCTOBER 25 1892MARCH 4 1893",
+    "category": "First Lady",
+    "difficulty": 24.3,
+    "difficultyTier": "hard",
+    "wordCount": 5,
+    "letterCount": 23,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "3dd31bf86fd40a57e6cdd1ac2fc2620f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Frances ClevelandJuly 21, 1864 – October 29, 1947",
+    "normalizedAnswer": "FRANCES CLEVELANDJULY 21 1864 OCTOBER 29 1947",
+    "category": "First Lady",
+    "difficulty": 47,
+    "difficultyTier": "hard",
+    "wordCount": 7,
+    "letterCount": 39,
+    "uniqueLetterCount": 16,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "f1e0ae0e6d4d73d16fe11741a2fbb4d1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ida McKinleyJune 8, 1847 – May 26, 1907",
+    "normalizedAnswer": "IDA MCKINLEYJUNE 8 1847 MAY 26 1907",
+    "category": "First Lady",
+    "difficulty": 37,
+    "difficultyTier": "hard",
+    "wordCount": 7,
+    "letterCount": 29,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "d122d59dc0be1954fdeac3e9a07560fe",
+    "source": "theme",
+    "type": "title",
+    "answer": "Edith RooseveltAugust 6, 1861 – September 30, 1948",
+    "normalizedAnswer": "EDITH ROOSEVELTAUGUST 6 1861 SEPTEMBER 30 1948",
+    "category": "First Lady",
+    "difficulty": 44.900000000000006,
+    "difficultyTier": "hard",
+    "wordCount": 7,
+    "letterCount": 40,
+    "uniqueLetterCount": 16,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "1ec6b6bd0419c4fc744cced43a33cde0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Helen \"Nellie\" TaftJune 2, 1861 – May 22, 1943",
+    "normalizedAnswer": "HELEN NELLIE TAFTJUNE 2 1861 MAY 22 1943",
+    "category": "First Lady",
+    "difficulty": 36.5,
+    "difficultyTier": "hard",
+    "wordCount": 8,
+    "letterCount": 33,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "f648010653249118fe13f18ab10e7d8d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ellen WilsonMay 15, 1860 – August 6, 1914",
+    "normalizedAnswer": "ELLEN WILSONMAY 15 1860 AUGUST 6 1914",
+    "category": "First Lady",
+    "difficulty": 34.3,
+    "difficultyTier": "hard",
+    "wordCount": 7,
+    "letterCount": 31,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "ec1a9cabeb67396bccce0cf9177b5c8c",
+    "source": "theme",
+    "type": "title",
+    "answer": "August 6, 1914–December 18, 1915",
+    "normalizedAnswer": "AUGUST 6 1914DECEMBER 18 1915",
+    "category": "First Lady",
+    "difficulty": 28.1,
+    "difficultyTier": "hard",
+    "wordCount": 5,
+    "letterCount": 25,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "7217e6c7e770b21d6007e05b1508f7ac",
+    "source": "theme",
+    "type": "title",
+    "answer": "December 18, 1915–March 4, 1921",
+    "normalizedAnswer": "DECEMBER 18 1915MARCH 4 1921",
+    "category": "First Lady",
+    "difficulty": 23.200000000000003,
+    "difficultyTier": "hard",
+    "wordCount": 5,
+    "letterCount": 24,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "4198710825d203b4850d74b115ecae46",
+    "source": "theme",
+    "type": "title",
+    "answer": "Florence HardingAugust 15, 1860 – November 21, 1924",
+    "normalizedAnswer": "FLORENCE HARDINGAUGUST 15 1860 NOVEMBER 21 1924",
+    "category": "First Lady",
+    "difficulty": 48.3,
+    "difficultyTier": "hard",
+    "wordCount": 7,
+    "letterCount": 41,
+    "uniqueLetterCount": 18,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "7b173fd391ece9b007abd2737f393973",
+    "source": "theme",
+    "type": "title",
+    "answer": "Grace CoolidgeJanuary 3, 1879 – July 8, 1957",
+    "normalizedAnswer": "GRACE COOLIDGEJANUARY 3 1879 JULY 8 1957",
+    "category": "First Lady",
+    "difficulty": 40.5,
+    "difficultyTier": "hard",
+    "wordCount": 7,
+    "letterCount": 34,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "fc325be356b0ba0539049870faf8ecfd",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lou HooverMarch 29, 1874 – January 7, 1944",
+    "normalizedAnswer": "LOU HOOVERMARCH 29 1874 JANUARY 7 1944",
+    "category": "First Lady",
+    "difficulty": 39.7,
+    "difficultyTier": "hard",
+    "wordCount": 7,
+    "letterCount": 32,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "c4c671ebb3a1a7a4889be0d914ed359f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Eleanor RooseveltOctober 11, 1884 – November 7, 1962",
+    "normalizedAnswer": "ELEANOR ROOSEVELTOCTOBER 11 1884 NOVEMBER 7 1962",
+    "category": "First Lady",
+    "difficulty": 42.2,
+    "difficultyTier": "hard",
+    "wordCount": 7,
+    "letterCount": 42,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "1ff2662bec81548c8d2a250b85afe9d0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Elizabeth \"Bess\" TrumanFebruary 13, 1885 – October 18, 1982",
+    "normalizedAnswer": "ELIZABETH BESS TRUMANFEBRUARY 13 1885 OCTOBER 18 1982",
+    "category": "First Lady",
+    "difficulty": 49.2,
+    "difficultyTier": "hard",
+    "wordCount": 8,
+    "letterCount": 46,
+    "uniqueLetterCount": 17,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "d376c77b1ba707a2e5720fdc45148bdd",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mary \"Mamie\" EisenhowerNovember 14, 1896 – November 1, 1979",
+    "normalizedAnswer": "MARY MAMIE EISENHOWERNOVEMBER 14 1896 NOVEMBER 1 1979",
+    "category": "First Lady",
+    "difficulty": 45.7,
+    "difficultyTier": "hard",
+    "wordCount": 8,
+    "letterCount": 46,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "5a285b818f381ca7b97db9fc550c44fd",
+    "source": "theme",
+    "type": "title",
+    "answer": "Jacqueline \"Jackie\" KennedyJuly 28, 1929 – May 19, 1994",
+    "normalizedAnswer": "JACQUELINE JACKIE KENNEDYJULY 28 1929 MAY 19 1994",
+    "category": "First Lady",
+    "difficulty": 54.1,
+    "difficultyTier": "hard",
+    "wordCount": 8,
+    "letterCount": 42,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "bb5422c4c3d7d5b09caecee4e1222a79",
+    "source": "theme",
+    "type": "title",
+    "answer": "Claudia \"Lady Bird\" JohnsonDecember 22, 1912 – July 11, 2007",
+    "normalizedAnswer": "CLAUDIA LADY BIRD JOHNSONDECEMBER 22 1912 JULY 11 2007",
+    "category": "First Lady",
+    "difficulty": 50.6,
+    "difficultyTier": "hard",
+    "wordCount": 9,
+    "letterCount": 46,
+    "uniqueLetterCount": 16,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "5011e15f3f92bee7051221ec76e666e7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Thelma \"Pat\" NixonMarch 16, 1912 – June 22, 1993",
+    "normalizedAnswer": "THELMA PAT NIXONMARCH 16 1912 JUNE 22 1993",
+    "category": "First Lady",
+    "difficulty": 44.3,
+    "difficultyTier": "hard",
+    "wordCount": 8,
+    "letterCount": 35,
+    "uniqueLetterCount": 15,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "e42bdde1fde1071ff83bf4ec619e65f3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Elizabeth \"Betty\" FordApril 8, 1918 – July 8, 2011",
+    "normalizedAnswer": "ELIZABETH BETTY FORDAPRIL 8 1918 JULY 8 2011",
+    "category": "First Lady",
+    "difficulty": 46.6,
+    "difficultyTier": "hard",
+    "wordCount": 8,
+    "letterCount": 37,
+    "uniqueLetterCount": 16,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "0dd0b473a8cb81ecc490177941d4da1c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Rosalynn CarterAugust 18, 1927 – November 19, 2023",
+    "normalizedAnswer": "ROSALYNN CARTERAUGUST 18 1927 NOVEMBER 19 2023",
+    "category": "First Lady",
+    "difficulty": 43.400000000000006,
+    "difficultyTier": "hard",
+    "wordCount": 7,
+    "letterCount": 40,
+    "uniqueLetterCount": 15,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "b09e56652a435c044f19d285895d75e2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Nancy ReaganJuly 6, 1921 – March 6, 2016",
+    "normalizedAnswer": "NANCY REAGANJULY 6 1921 MARCH 6 2016",
+    "category": "First Lady",
+    "difficulty": 34.9,
+    "difficultyTier": "hard",
+    "wordCount": 7,
+    "letterCount": 30,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "f51129aae5b459bacac9e670caa39447",
+    "source": "theme",
+    "type": "title",
+    "answer": "Barbara BushJune 8, 1925 – April 17, 2018",
+    "normalizedAnswer": "BARBARA BUSHJUNE 8 1925 APRIL 17 2018",
+    "category": "First Lady",
+    "difficulty": 35.3,
+    "difficultyTier": "hard",
+    "wordCount": 7,
+    "letterCount": 31,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "9c7436dc53a821a6cb1456447ba1233b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Hillary ClintonBorn October 26, 1947",
+    "normalizedAnswer": "HILLARY CLINTONBORN OCTOBER 26 1947",
+    "category": "First Lady",
+    "difficulty": 32,
+    "difficultyTier": "hard",
+    "wordCount": 5,
+    "letterCount": 31,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "7a6dd0c016ebd41042d52454c6660e64",
+    "source": "theme",
+    "type": "title",
+    "answer": "Laura BushBorn November 4, 1946",
+    "normalizedAnswer": "LAURA BUSHBORN NOVEMBER 4 1946",
+    "category": "First Lady",
+    "difficulty": 32.5,
+    "difficultyTier": "hard",
+    "wordCount": 5,
+    "letterCount": 26,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "29a994c1d7e921796fbd063a763eb32d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Michelle ObamaBorn January 17, 1964",
+    "normalizedAnswer": "MICHELLE OBAMABORN JANUARY 17 1964",
+    "category": "First Lady",
+    "difficulty": 37.1,
+    "difficultyTier": "hard",
+    "wordCount": 5,
+    "letterCount": 30,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "41e8a74cd64e74361da3fdb664693629",
+    "source": "theme",
+    "type": "title",
+    "answer": "Melania TrumpBirth country: Yugoslavia Born April 26, 1970",
+    "normalizedAnswer": "MELANIA TRUMPBIRTH COUNTRY YUGOSLAVIA BORN APRIL 26 1970",
+    "category": "First Lady",
+    "difficulty": 51.900000000000006,
+    "difficultyTier": "hard",
+    "wordCount": 8,
+    "letterCount": 49,
+    "uniqueLetterCount": 18,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "46846b905bb42a1f469a8c434e8a1d89",
+    "source": "theme",
+    "type": "title",
+    "answer": "Jill BidenBorn June 3, 1951",
+    "normalizedAnswer": "JILL BIDENBORN JUNE 3 1951",
+    "category": "First Lady",
+    "difficulty": 30.4,
+    "difficultyTier": "hard",
+    "wordCount": 5,
+    "letterCount": 22,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  }
+]

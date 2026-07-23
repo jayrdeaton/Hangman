@@ -1,0 +1,202 @@
+[
+  {
+    "id": "006a3945f6c59dc72086c7fc13721db8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Never Odd or Even",
+    "normalizedAnswer": "NEVER ODD OR EVEN",
+    "category": "Wordplay",
+    "difficulty": 20.8,
+    "difficultyTier": "hard",
+    "wordCount": 4,
+    "letterCount": 14,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "wordplay"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "b1217f413fe029c60179cba8cc2b814d",
+    "source": "theme",
+    "type": "title",
+    "answer": "A Man A Plan A Canal Panama",
+    "normalizedAnswer": "A MAN A PLAN A CANAL PANAMA",
+    "category": "Wordplay",
+    "difficulty": 19.8,
+    "difficultyTier": "medium",
+    "wordCount": 7,
+    "letterCount": 21,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "wordplay"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "24aeb4075f5a0978fea45c0abcc9a307",
+    "source": "theme",
+    "type": "title",
+    "answer": "She Sells Seashells",
+    "normalizedAnswer": "SHE SELLS SEASHELLS",
+    "category": "Wordplay",
+    "difficulty": 15.100000000000001,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 17,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "wordplay"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "1c1532226299d99326d37171f073abe3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Peter Piper Picked a Peck",
+    "normalizedAnswer": "PETER PIPER PICKED A PECK",
+    "category": "Wordplay",
+    "difficulty": 28.5,
+    "difficultyTier": "hard",
+    "wordCount": 5,
+    "letterCount": 21,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "wordplay"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a6b54364d1e081c4cd957857ea2ff1f8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Red Lorry Yellow Lorry",
+    "normalizedAnswer": "RED LORRY YELLOW LORRY",
+    "category": "Wordplay",
+    "difficulty": 19.3,
+    "difficultyTier": "medium",
+    "wordCount": 4,
+    "letterCount": 19,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "wordplay"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "134b4b9411ffe87f3bd03db50c85b726",
+    "source": "theme",
+    "type": "title",
+    "answer": "Unique New York",
+    "normalizedAnswer": "UNIQUE NEW YORK",
+    "category": "Wordplay",
+    "difficulty": 26,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "wordplay"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "65d947d6cb941d03d8965948e2c39fa0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Toy Boat",
+    "normalizedAnswer": "TOY BOAT",
+    "category": "Wordplay",
+    "difficulty": 10.7,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "wordplay"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "9eb7ec32d657bcddc910ebe765a24f3b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Madam Im Adam",
+    "normalizedAnswer": "MADAM IM ADAM",
+    "category": "Wordplay",
+    "difficulty": 11.2,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 11,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "wordplay"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "3a062d476911723c637e305867e89d21",
+    "source": "theme",
+    "type": "title",
+    "answer": "Step on No Pets",
+    "normalizedAnswer": "STEP ON NO PETS",
+    "category": "Wordplay",
+    "difficulty": 15,
+    "difficultyTier": "medium",
+    "wordCount": 4,
+    "letterCount": 12,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "wordplay"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "81fa8ff1c240f5afa873d8c3a34da137",
+    "source": "theme",
+    "type": "title",
+    "answer": "Live Not on Evil",
+    "normalizedAnswer": "LIVE NOT ON EVIL",
+    "category": "Wordplay",
+    "difficulty": 21.9,
+    "difficultyTier": "hard",
+    "wordCount": 4,
+    "letterCount": 13,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "wordplay"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  }
+]
