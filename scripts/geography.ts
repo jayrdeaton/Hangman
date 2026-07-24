@@ -100,8 +100,7 @@ const parseCountries = async (): Promise<GeographySeed[]> => {
 }
 
 const parseUSStates = async (): Promise<GeographySeed[]> => {
-  const url =
-    'https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States'
+  const url = 'https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States'
   const html = await fetchHtml(url)
   const $ = cheerio.load(html)
 
@@ -179,11 +178,7 @@ const dedupeSeeds = (seeds: GeographySeed[]) => {
 }
 
 async function main() {
-  const [countries, states, cities] = await Promise.all([
-    parseCountries(),
-    parseUSStates(),
-    parseWorldCities()
-  ])
+  const [countries, states, cities] = await Promise.all([parseCountries(), parseUSStates(), parseWorldCities()])
 
   const countryPuzzles = dedupeSeeds(countries).map(createPuzzle)
   const statePuzzles = dedupeSeeds(states).map(createPuzzle)
@@ -193,12 +188,7 @@ async function main() {
 
   await fs.mkdir('./data', { recursive: true })
 
-  await Promise.all([
-    fs.writeFile('./data/geographyCountries.json', JSON.stringify(countryPuzzles, null, 2)),
-    fs.writeFile('./data/geographyUSStates.json', JSON.stringify(statePuzzles, null, 2)),
-    fs.writeFile('./data/geographyCities.json', JSON.stringify(cityPuzzles, null, 2)),
-    fs.writeFile('./data/geography.json', JSON.stringify(all, null, 2))
-  ])
+  await Promise.all([fs.writeFile('./data/geographyCountries.json', JSON.stringify(countryPuzzles, null, 2)), fs.writeFile('./data/geographyUSStates.json', JSON.stringify(statePuzzles, null, 2)), fs.writeFile('./data/geographyCities.json', JSON.stringify(cityPuzzles, null, 2)), fs.writeFile('./data/geography.json', JSON.stringify(all, null, 2))])
 
   console.log(`saved countries: ${countryPuzzles.length}`)
   console.log(`saved us states/capitals: ${statePuzzles.length}`)

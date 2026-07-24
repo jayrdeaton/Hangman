@@ -1,8 +1,8 @@
 /* eslint-disable no-console */
-import { createGunzip } from 'zlib'
+import fs from 'fs/promises'
 import { createInterface } from 'readline'
 import { Readable } from 'stream'
-import fs from 'fs/promises'
+import { createGunzip } from 'zlib'
 
 import type { Puzzle } from '../src/types/puzzle'
 import { difficulty, difficultyTier, id, normalize, uniqueLetters } from './utils'
@@ -35,7 +35,7 @@ const genreMap: Record<string, string> = {
   Sport: 'Sport',
   Thriller: 'Thriller',
   War: 'War',
-  Western: 'Western',
+  Western: 'Western'
 }
 
 const streamLines = async (url: string, onLine: (cols: string[]) => void): Promise<void> => {
@@ -99,7 +99,7 @@ const main = async () => {
     const genreList = genres?.split(',') ?? []
     const source = isMovie ? ('movie' as const) : ('tv' as const)
     const defaultCategory = isMovie ? 'Movie' : 'TV Show'
-    const category = genreList.map(g => genreMap[g]).find(Boolean) ?? defaultCategory
+    const category = genreList.map((g) => genreMap[g]).find(Boolean) ?? defaultCategory
 
     const score = difficulty(answer)
 
@@ -118,8 +118,8 @@ const main = async () => {
       metadata: {
         year: startYear !== '\\N' ? startYear : undefined,
         rating: r.rating,
-        votes: r.votes,
-      },
+        votes: r.votes
+      }
     }
 
     if (isMovie) movies.push(puzzle)

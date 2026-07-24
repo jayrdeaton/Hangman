@@ -23,7 +23,7 @@ const fakeMode: GameMode = {
 const baseConfig: PuzzleConfig = {
   sourceMode: 'custom',
   difficulty: 'any',
-  packKey: '',
+  packKeys: [],
   mode: fakeMode,
   customPhrase: '',
   customHint: ''
@@ -106,7 +106,7 @@ describe('resolvePuzzle - custom source mode', () => {
   })
 })
 
-describe('resolvePuzzle - category source mode', () => {
+describe('resolvePuzzle - random source mode, scoped to selected packs', () => {
   const fakeManifest = [
     {
       key: 'bands',
@@ -142,12 +142,12 @@ describe('resolvePuzzle - category source mode', () => {
     mockGetPuzzleManifest.mockReturnValue(fakeManifest)
     mockGetPuzzlesForCategory.mockReturnValue([fakePuzzle])
 
-    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'category', packKey: 'bands' })
+    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random', packKeys: ['bands'] })
 
     expect(result.ok).toBe(true)
     if (result.ok) {
       expect(result.payload.phrase).toBe('THE BEATLES')
-      expect(result.payload.sourceMode).toBe('category')
+      expect(result.payload.sourceMode).toBe('random')
       expect(result.payload.packKey).toBe('bands')
       expect(result.payload.packLabel).toBe('Bands')
       expect(result.payload.puzzleId).toBe('bands-1')
@@ -155,68 +155,144 @@ describe('resolvePuzzle - category source mode', () => {
     }
   })
 
-  it('returns ok:false when the packKey does not exist in the manifest', () => {
+  it('returns ok:false when none of the selected packKeys exist in the manifest', () => {
     mockGetPuzzleManifest.mockReturnValue(fakeManifest)
     mockGetPuzzlesForCategory.mockReturnValue([fakePuzzle])
 
-    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'category', packKey: 'nonexistent' })
+    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random', packKeys: ['nonexistent'] })
 
     expect(result.ok).toBe(false)
     if (!result.ok) expect(result.error.length).toBeGreaterThan(0)
   })
 
-  it('returns ok:false when no packKey is provided', () => {
+  it('returns ok:false when no packKeys are selected', () => {
     mockGetPuzzleManifest.mockReturnValue(fakeManifest)
     mockGetPuzzlesForCategory.mockReturnValue([fakePuzzle])
 
-    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'category', packKey: '' })
+    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random', packKeys: [] })
 
     expect(result.ok).toBe(false)
     if (!result.ok) expect(result.error.length).toBeGreaterThan(0)
   })
 
-  it('returns ok:false when the pack exists but has no puzzles matching the requested difficulty', () => {
+  it('returns ok:false when the selected packs exist but have no puzzles matching the requested difficulty', () => {
     mockGetPuzzleManifest.mockReturnValue(fakeManifest)
     mockGetPuzzlesForCategory.mockReturnValue([])
 
-    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'category', packKey: 'bands', difficulty: 'hard' })
+    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random', packKeys: ['bands'], difficulty: 'hard' })
 
     expect(result.ok).toBe(false)
     if (!result.ok) expect(result.error.length).toBeGreaterThan(0)
   })
 
-  it('sets hint to just the pack label when the pack has a single category (avoids a redundant repeat)', () => {
+  it('only draws from the selected packKeys, ignoring other packs in the manifest', () => {
+    const otherPack = { ...fakeManifest[0], key: 'movies', label: 'Movies' }
+    const otherPuzzle = { ...fakePuzzle, id: 'movies-1', answer: 'Jurassic Park', normalizedAnswer: 'JURASSIC PARK' }
+    mockGetPuzzleManifest.mockReturnValue([...fakeManifest, otherPack])
+    mockGetPuzzlesForCategory.mockImplementation((key: string) => {
+      if (key === 'bands') return [fakePuzzle]
+      if (key === 'movies') return [otherPuzzle]
+      return []
+    })
+
+    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random', packKeys: ['movies'] })
+
+    expect(result.ok).toBe(true)
+    if (result.ok) expect(result.payload.packKey).toBe('movies')
+  })
+
+  it('sets hint to just the humanized category, without the pack label', () => {
     mockGetPuzzleManifest.mockReturnValue([{ ...fakeManifest[0], label: 'Theme Technology', categories: ['Technology'] }])
     mockGetPuzzlesForCategory.mockReturnValue([{ ...fakePuzzle, category: 'Technology' }])
 
-    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'category', packKey: 'bands' })
+    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random', packKeys: ['bands'] })
 
     expect(result.ok).toBe(true)
-    if (result.ok) expect(result.payload.hint).toBe('Theme Technology')
+    if (result.ok) expect(result.payload.hint).toBe('Technology')
   })
 
-  it('sets hint to "label: humanized category" when the pack has multiple categories', () => {
-    mockGetPuzzleManifest.mockReturnValue([{ ...fakeManifest[0], label: 'Wheel', categories: ['food-and-drink', 'what-are-you-doing'] }])
-    mockGetPuzzlesForCategory.mockReturnValue([{ ...fakePuzzle, category: 'what-are-you-doing' }])
-
-    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'category', packKey: 'bands' })
-
-    expect(result.ok).toBe(true)
-    if (result.ok) expect(result.payload.hint).toBe('Wheel: What-Are-You-Doing')
-  })
-
-  it('title-cases ALL CAPS categories without altering punctuation, for multi-category packs', () => {
-    mockGetPuzzleManifest.mockReturnValue([{ ...fakeManifest[0], label: 'Jeopardy', categories: ['JACK BE HOMONYM-BLE', 'OTHER'] }])
+  it('title-cases ALL CAPS categories without altering punctuation', () => {
+    mockGetPuzzleManifest.mockReturnValue([{ ...fakeManifest[0], label: 'Trivia', categories: ['JACK BE HOMONYM-BLE', 'OTHER'] }])
     mockGetPuzzlesForCategory.mockReturnValue([{ ...fakePuzzle, category: 'JACK BE HOMONYM-BLE' }])
 
-    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'category', packKey: 'bands' })
+    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random', packKeys: ['bands'] })
 
     expect(result.ok).toBe(true)
-    if (result.ok) expect(result.payload.hint).toBe('Jeopardy: Jack Be Homonym-Ble')
+    if (result.ok) expect(result.payload.hint).toBe('Jack Be Homonym-Ble')
+  })
+
+  it('still fully title-cases an ALL CAPS category with an incidental lowercase ordinal suffix', () => {
+    mockGetPuzzleManifest.mockReturnValue([{ ...fakeManifest[0], label: 'Trivia', categories: ["20th CENTURY WOMEN", 'OTHER'] }])
+    mockGetPuzzlesForCategory.mockReturnValue([{ ...fakePuzzle, category: '20th CENTURY WOMEN' }])
+
+    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random', packKeys: ['bands'] })
+
+    expect(result.ok).toBe(true)
+    if (result.ok) expect(result.payload.hint).toBe('20th Century Women')
+  })
+
+  it('preserves a real acronym in an otherwise mixed-case category', () => {
+    mockGetPuzzleManifest.mockReturnValue([{ ...fakeManifest[0], label: 'Theme USPresidents', categories: ['US President'] }])
+    mockGetPuzzlesForCategory.mockReturnValue([{ ...fakePuzzle, category: 'US President' }])
+
+    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random', packKeys: ['bands'] })
+
+    expect(result.ok).toBe(true)
+    if (result.ok) expect(result.payload.hint).toBe('US President')
+  })
+
+  it('title-cases lowercase kebab-slug categories, keeping hyphens', () => {
+    mockGetPuzzleManifest.mockReturnValue([{ ...fakeManifest[0], label: 'Phrases', categories: ['food-and-drink', 'what-are-you-doing'] }])
+    mockGetPuzzlesForCategory.mockReturnValue([{ ...fakePuzzle, category: 'what-are-you-doing' }])
+
+    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random', packKeys: ['bands'] })
+
+    expect(result.ok).toBe(true)
+    if (result.ok) expect(result.payload.hint).toBe('What-Are-You-Doing')
+  })
+
+  it('appends the pack subject to bare movie/TV genre categories to resolve ambiguity', () => {
+    mockGetPuzzleManifest.mockReturnValue([{ ...fakeManifest[0], label: 'Movies', categories: ['Action', 'Comedy'] }])
+    mockGetPuzzlesForCategory.mockReturnValue([{ ...fakePuzzle, source: 'movie', category: 'Action' }])
+
+    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random', packKeys: ['bands'] })
+
+    expect(result.ok).toBe(true)
+    if (result.ok) expect(result.payload.hint).toBe('Action Movies')
+  })
+
+  it('does not double up the subject suffix for the ungenred movie/TV fallback category', () => {
+    mockGetPuzzleManifest.mockReturnValue([{ ...fakeManifest[0], label: 'Tv Shows', categories: ['TV Show'] }])
+    mockGetPuzzlesForCategory.mockReturnValue([{ ...fakePuzzle, source: 'tv', category: 'TV Show' }])
+
+    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random', packKeys: ['bands'] })
+
+    expect(result.ok).toBe(true)
+    if (result.ok) expect(result.payload.hint).toBe('TV Show')
+  })
+
+  it('prefers an explicit per-puzzle hint (custom packs) over the category-derived hint', () => {
+    mockGetPuzzleManifest.mockReturnValue(fakeManifest)
+    mockGetPuzzlesForCategory.mockReturnValue([{ ...fakePuzzle, metadata: { hint: 'A famous rock band' } }])
+
+    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random', packKeys: ['bands'] })
+
+    expect(result.ok).toBe(true)
+    if (result.ok) expect(result.payload.hint).toBe('A famous rock band')
+  })
+
+  it('falls back to the category-derived hint when the explicit hint is blank', () => {
+    mockGetPuzzleManifest.mockReturnValue(fakeManifest)
+    mockGetPuzzlesForCategory.mockReturnValue([{ ...fakePuzzle, metadata: { hint: '   ' } }])
+
+    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random', packKeys: ['bands'] })
+
+    expect(result.ok).toBe(true)
+    if (result.ok) expect(result.payload.hint).toBe('Classic Rock')
   })
 })
 
-describe('resolvePuzzle - random source mode', () => {
+describe('resolvePuzzle - random source mode, multiple packs selected', () => {
   const packA = {
     key: 'bands',
     file: 'bands.json',
@@ -265,6 +341,8 @@ describe('resolvePuzzle - random source mode', () => {
     uniqueLetterCount: 10
   }
 
+  const allPackKeys = [packA.key, packB.key]
+
   beforeEach(() => {
     mockGetPuzzleManifest.mockReset()
     mockGetPuzzlesForCategory.mockReset()
@@ -278,7 +356,7 @@ describe('resolvePuzzle - random source mode', () => {
       return []
     })
 
-    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random' })
+    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random', packKeys: allPackKeys })
 
     expect(result.ok).toBe(true)
     if (result.ok) {
@@ -295,7 +373,7 @@ describe('resolvePuzzle - random source mode', () => {
       return []
     })
 
-    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random' })
+    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random', packKeys: allPackKeys })
 
     expect(result.ok).toBe(true)
     if (result.ok) {
@@ -314,7 +392,7 @@ describe('resolvePuzzle - random source mode', () => {
     })
 
     // Only packB's difficultyTiers includes 'hard', so it is the sole eligible pack.
-    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random', difficulty: 'hard' })
+    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random', packKeys: allPackKeys, difficulty: 'hard' })
 
     expect(result.ok).toBe(true)
     if (result.ok) expect(result.payload.packKey).toBe('movies')
@@ -324,7 +402,7 @@ describe('resolvePuzzle - random source mode', () => {
     mockGetPuzzleManifest.mockReturnValue([packA])
     mockGetPuzzlesForCategory.mockReturnValue([bandPuzzle])
 
-    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random', difficulty: 'hard' })
+    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random', packKeys: [packA.key], difficulty: 'hard' })
 
     expect(result.ok).toBe(false)
     if (!result.ok) expect(result.error.length).toBeGreaterThan(0)
@@ -334,7 +412,7 @@ describe('resolvePuzzle - random source mode', () => {
     mockGetPuzzleManifest.mockReturnValue([{ ...packA, count: 0 }])
     mockGetPuzzlesForCategory.mockReturnValue([])
 
-    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random' })
+    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random', packKeys: [packA.key] })
 
     expect(result.ok).toBe(false)
     if (!result.ok) expect(result.error.length).toBeGreaterThan(0)

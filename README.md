@@ -8,11 +8,11 @@ The project includes script-based data scrapers for generating puzzles used in s
 
 Run individual scrapers:
 
-- `npm run scraper:wheel`
+- `npm run scraper:phrases`
 - `npm run scraper:geography`
 - `npm run scraper:landmarks`
 - `npm run scraper:themes`
-- `npm run scraper:jeopardy`
+- `npm run scraper:trivia`
 - `npm run scraper:music`
 - `npm run scraper:movies`
 - `npm run scraper:tv`
@@ -31,9 +31,9 @@ The orchestrator is prerequisite-aware. It will:
 
 ### Prerequisites
 
-#### Jeopardy
+#### Trivia
 
-- Required file: `./JEOPARDY.csv`
+- Required file: `./JEOPARDY.json`
 
 #### Movies and TV
 
@@ -43,9 +43,9 @@ The orchestrator is prerequisite-aware. It will:
 
 - Required env var: `SPOTIFY_TOKEN`
 
-#### Wheel
+#### Phrases
 
-- Optional env var: `WHEEL_MAX_PAGES`
+- Optional env var: `PHRASES_MAX_PAGES`
 - Default is `1` page per category for stable scraping.
 
 ### Example Setup
@@ -63,7 +63,7 @@ npm run scraper:all
 
 Scrapers write JSON data under `./data/`:
 
-- `wheel.json`
+- `phrases.json`
 - `geography.json`
 - `geographyCountries.json`
 - `geographyUSStates.json`
@@ -99,7 +99,7 @@ Scrapers write JSON data under `./data/`:
 - `themeWordplay.json`
 - `puzzleManifest.json`
 - `puzzlesAll.json`
-- `jeopardy.json`
+- `trivia.json`
 - `bands.json`
 - `movies.json`
 - `tvShows.json`

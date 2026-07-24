@@ -1,17 +1,25 @@
 import React from 'react'
 import { StyleProp, StyleSheet, View, ViewStyle } from 'react-native'
-import { Button } from 'react-native-paper'
+import { Button, useTheme } from 'react-native-paper'
+
+import type { KeyboardLayout } from '@/hooks/useKeyboardLayout'
 
 export type KeyboardProps = {
-  color?: string
   disabled?: boolean
   guessedLetters: string[]
+  layout?: KeyboardLayout
   onGuess: (letter: string) => void
   style?: StyleProp<ViewStyle>
 }
 
-export const Keyboard: React.FC<KeyboardProps> = ({ guessedLetters, onGuess, style }) => {
-  const rows = ['QWERTYUIOP'.split(''), 'ASDFGHJKL'.split(''), 'ZXCVBNM'.split('')]
+const LAYOUT_ROWS: Record<KeyboardLayout, string[][]> = {
+  abc: ['ABCDEFGHI'.split(''), 'JKLMNOPQR'.split(''), 'STUVWXYZ'.split('')],
+  qwerty: ['QWERTYUIOP'.split(''), 'ASDFGHJKL'.split(''), 'ZXCVBNM'.split('')]
+}
+
+export const Keyboard: React.FC<KeyboardProps> = ({ disabled = false, guessedLetters, layout = 'qwerty', onGuess, style }) => {
+  const theme = useTheme()
+  const rows = LAYOUT_ROWS[layout]
   return (
     <View style={[styles.keyboard, style]}>
       {rows.map((row, rowIndex) => (
@@ -19,7 +27,7 @@ export const Keyboard: React.FC<KeyboardProps> = ({ guessedLetters, onGuess, sty
           {row.map((letter) => {
             const isGuessed = guessedLetters.includes(letter)
             return (
-              <Button mode='contained' key={letter} disabled={isGuessed} style={styles.key} onPress={() => onGuess(letter)} labelStyle={styles.text}>
+              <Button mode='contained' key={letter} disabled={isGuessed || disabled} buttonColor={theme.colors.secondary} textColor={theme.colors.onSecondary} style={styles.key} onPress={() => onGuess(letter)} labelStyle={styles.text}>
                 {letter}
               </Button>
             )

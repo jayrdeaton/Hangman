@@ -1,6 +1,10 @@
 # dependencies
 node_modules/
 
+# yalc (local package linking)
+.yalc/
+yalc.lock
+
 # Expo
 .expo/
 web-build/
@@ -43,6 +47,10 @@ yarn-error.*
 # app actually bundles.
 /JEOPARDY.json
 /data/puzzlesAll.json
+
+# full uncurated scrape output, kept locally so packs can be re-curated
+# (different category selection, cap, etc.) without re-scraping
+/data/raw/
 
 # typescript
 *.tsbuildinfo

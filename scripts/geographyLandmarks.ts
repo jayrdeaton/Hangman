@@ -182,11 +182,7 @@ const parseNewWorldWonders = async (): Promise<LandmarkSeed[]> => {
 }
 
 async function main() {
-  const [parks, heritage, wonders] = await Promise.all([
-    parseUSNationalParks(),
-    parseWorldHeritageSites(),
-    parseNewWorldWonders()
-  ])
+  const [parks, heritage, wonders] = await Promise.all([parseUSNationalParks(), parseWorldHeritageSites(), parseNewWorldWonders()])
 
   const parkPuzzles = dedupeSeeds(parks).map(createPuzzle)
   const heritagePuzzles = dedupeSeeds(heritage).map(createPuzzle)
@@ -196,12 +192,7 @@ async function main() {
 
   await fs.mkdir('./data', { recursive: true })
 
-  await Promise.all([
-    fs.writeFile('./data/geographyNationalParks.json', JSON.stringify(parkPuzzles, null, 2)),
-    fs.writeFile('./data/geographyLandmarksUNESCO.json', JSON.stringify(heritagePuzzles, null, 2)),
-    fs.writeFile('./data/geographyWorldWonders.json', JSON.stringify(wonderPuzzles, null, 2)),
-    fs.writeFile('./data/geographyLandmarks.json', JSON.stringify(all, null, 2))
-  ])
+  await Promise.all([fs.writeFile('./data/geographyNationalParks.json', JSON.stringify(parkPuzzles, null, 2)), fs.writeFile('./data/geographyLandmarksUNESCO.json', JSON.stringify(heritagePuzzles, null, 2)), fs.writeFile('./data/geographyWorldWonders.json', JSON.stringify(wonderPuzzles, null, 2)), fs.writeFile('./data/geographyLandmarks.json', JSON.stringify(all, null, 2))])
 
   console.log(`saved national parks: ${parkPuzzles.length}`)
   console.log(`saved world heritage sites: ${heritagePuzzles.length}`)

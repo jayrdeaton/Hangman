@@ -12,14 +12,19 @@ type ScraperTask = {
 }
 
 const tasks: ScraperTask[] = [
-  { name: 'wheel', file: 'scripts/wheel.ts' },
+  { name: 'phrases', file: 'scripts/phrases.ts' },
   { name: 'geography', file: 'scripts/geography.ts' },
   { name: 'landmarks', file: 'scripts/geographyLandmarks.ts' },
   { name: 'themes', file: 'scripts/themePacks.ts' },
   {
-    name: 'jeopardy',
-    file: 'scripts/jeapardy.ts',
+    name: 'trivia',
+    file: 'scripts/trivia.ts',
     requires: { files: ['./JEOPARDY.json'] }
+  },
+  {
+    name: 'trivia-curate',
+    file: 'scripts/curateTrivia.ts',
+    requires: { files: ['./data/raw/trivia.json'] }
   },
   { name: 'musicbrainz', file: 'scripts/musicbrainz.ts' },
   { name: 'imdb', file: 'scripts/imdb.ts' },

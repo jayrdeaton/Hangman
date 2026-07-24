@@ -1,15 +1,15 @@
 [
   {
-    "id": "6fb24a7897a2c90ba4a4e8fa992ec599",
+    "id": "2bd20a6ad6f4a62e0523f3b685a28f5a",
     "source": "theme",
     "type": "title",
-    "answer": "Michael Jackson",
-    "normalizedAnswer": "MICHAEL JACKSON",
+    "answer": "Performing Artist",
+    "normalizedAnswer": "PERFORMING ARTIST",
     "category": "Music Artist by Era",
-    "difficulty": 29,
-    "difficultyTier": "hard",
+    "difficulty": 56,
+    "difficultyTier": "easy",
     "wordCount": 2,
-    "letterCount": 14,
+    "letterCount": 16,
     "uniqueLetterCount": 12,
     "tags": [
       "theme",
@@ -17,41 +17,62 @@
       "era"
     ],
     "metadata": {
-      "source": "fallback"
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
     }
   },
   {
-    "id": "d6b5c37bba2007839a5e958240b4df28",
+    "id": "d94be6ba5ab7cb8063c61fe9359893b7",
     "source": "theme",
     "type": "title",
-    "answer": "Madonna",
-    "normalizedAnswer": "MADONNA",
+    "answer": "Bobby Darin",
+    "normalizedAnswer": "BOBBY DARIN",
     "category": "Music Artist by Era",
-    "difficulty": 10.3,
-    "difficultyTier": "easy",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 5,
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
     "tags": [
       "theme",
       "music",
       "era"
     ],
     "metadata": {
-      "source": "fallback"
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
     }
   },
   {
-    "id": "bf24dddfbc7ab69a77ddfdfdb1bb18c8",
+    "id": "3f4030d6cbb3b3c12a8680fccec192fa",
     "source": "theme",
     "type": "title",
-    "answer": "Prince",
-    "normalizedAnswer": "PRINCE",
+    "answer": "Bob Newhart",
+    "normalizedAnswer": "BOB NEWHART",
     "category": "Music Artist by Era",
-    "difficulty": 11.4,
-    "difficultyTier": "easy",
-    "wordCount": 1,
-    "letterCount": 6,
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "22967c04fc72fc6336621535a195c12a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Peter Nero",
+    "normalizedAnswer": "PETER NERO",
+    "category": "Music Artist by Era",
+    "difficulty": 82.4,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 9,
     "uniqueLetterCount": 6,
     "tags": [
       "theme",
@@ -59,41 +80,41 @@
       "era"
     ],
     "metadata": {
-      "source": "fallback"
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
     }
   },
   {
-    "id": "e0816768dba5662f1e97f6569eadd73b",
+    "id": "cd1652c1dce74815e77f0fb371f520a3",
     "source": "theme",
     "type": "title",
-    "answer": "Nirvana",
-    "normalizedAnswer": "NIRVANA",
+    "answer": "Robert Goulet",
+    "normalizedAnswer": "ROBERT GOULET",
     "category": "Music Artist by Era",
-    "difficulty": 12.8,
+    "difficulty": 73.2,
     "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 5,
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
     "tags": [
       "theme",
       "music",
       "era"
     ],
     "metadata": {
-      "source": "fallback"
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
     }
   },
   {
-    "id": "bf4b08217b82f93308948b1a928383f7",
+    "id": "43edfee74ccc3075b5500290c613a5e1",
     "source": "theme",
     "type": "title",
-    "answer": "Backstreet Boys",
-    "normalizedAnswer": "BACKSTREET BOYS",
+    "answer": "The Swingle Singers",
+    "normalizedAnswer": "THE SWINGLE SINGERS",
     "category": "Music Artist by Era",
-    "difficulty": 23.5,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 14,
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 17,
     "uniqueLetterCount": 10,
     "tags": [
       "theme",
@@ -101,38 +122,17 @@
       "era"
     ],
     "metadata": {
-      "source": "fallback"
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
     }
   },
   {
-    "id": "01cf803ef47f8bd86309b7846db3b337",
+    "id": "64178ff4a8ca567cef1ad21ed983e87e",
     "source": "theme",
     "type": "title",
-    "answer": "Britney Spears",
-    "normalizedAnswer": "BRITNEY SPEARS",
+    "answer": "The Beatles",
+    "normalizedAnswer": "THE BEATLES",
     "category": "Music Artist by Era",
-    "difficulty": 20.6,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 13,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "music",
-      "era"
-    ],
-    "metadata": {
-      "source": "fallback"
-    }
-  },
-  {
-    "id": "5911558efc826e5737b10035d1204c4e",
-    "source": "theme",
-    "type": "title",
-    "answer": "Linkin Park",
-    "normalizedAnswer": "LINKIN PARK",
-    "category": "Music Artist by Era",
-    "difficulty": 19.9,
+    "difficulty": 78,
     "difficultyTier": "medium",
     "wordCount": 2,
     "letterCount": 10,
@@ -143,20 +143,83 @@
       "era"
     ],
     "metadata": {
-      "source": "fallback"
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
     }
   },
   {
-    "id": "7637e71bb43800a557816cdad6b97309",
+    "id": "ac58c5a64c7c1a8d78bd51f62c947d17",
     "source": "theme",
     "type": "title",
-    "answer": "Taylor Swift",
-    "normalizedAnswer": "TAYLOR SWIFT",
+    "answer": "Tom Jones",
+    "normalizedAnswer": "TOM JONES",
     "category": "Music Artist by Era",
-    "difficulty": 19.8,
+    "difficulty": 78.8,
     "difficultyTier": "medium",
     "wordCount": 2,
-    "letterCount": 11,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "43b550bd910cc7981766fbfe16aea39f",
+    "source": "theme",
+    "type": "title",
+    "answer": "No award",
+    "normalizedAnswer": "NO AWARD",
+    "category": "Music Artist by Era",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "ca8af6b6dd8cb77cb673c809961d1c03",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bobbie Gentry",
+    "normalizedAnswer": "BOBBIE GENTRY",
+    "category": "Music Artist by Era",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "d10fc6b9b632e3d4c88ebd5c606ad80b",
+    "source": "theme",
+    "type": "title",
+    "answer": "José Feliciano",
+    "normalizedAnswer": "JOS FELICIANO",
+    "category": "Music Artist by Era",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
     "uniqueLetterCount": 10,
     "tags": [
       "theme",
@@ -164,20 +227,104 @@
       "era"
     ],
     "metadata": {
-      "source": "fallback"
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
     }
   },
   {
-    "id": "d7d3f50da5b199bf098bef030822fde2",
+    "id": "d08bc096c2697d96a9269822296f7e6b",
     "source": "theme",
     "type": "title",
-    "answer": "Bruno Mars",
-    "normalizedAnswer": "BRUNO MARS",
+    "answer": "Crosby, Stills & Nash",
+    "normalizedAnswer": "CROSBY STILLS NASH",
     "category": "Music Artist by Era",
-    "difficulty": 16,
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 16,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "cda4e8608870b299b5afb697bc618301",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Carpenters",
+    "normalizedAnswer": "THE CARPENTERS",
+    "category": "Music Artist by Era",
+    "difficulty": 68.8,
     "difficultyTier": "medium",
     "wordCount": 2,
-    "letterCount": 9,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "1447dc2ddbf90987697473de63a6c500",
+    "source": "theme",
+    "type": "title",
+    "answer": "Carly Simon",
+    "normalizedAnswer": "CARLY SIMON",
+    "category": "Music Artist by Era",
+    "difficulty": 66,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "191878dff8aef2696c64b806bc2e7f46",
+    "source": "theme",
+    "type": "title",
+    "answer": "America",
+    "normalizedAnswer": "AMERICA",
+    "category": "Music Artist by Era",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "cae3fa6795732e187c1853ff26ce14cf",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bette Midler",
+    "normalizedAnswer": "BETTE MIDLER",
+    "category": "Music Artist by Era",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
     "uniqueLetterCount": 8,
     "tags": [
       "theme",
@@ -185,18 +332,333 @@
       "era"
     ],
     "metadata": {
-      "source": "fallback"
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
     }
   },
   {
-    "id": "86a0df042ec9431a1e3f6fbad2217d85",
+    "id": "2bc2c3da6238f1f4fd9cc8bee28be075",
     "source": "theme",
     "type": "title",
-    "answer": "Billie Eilish",
-    "normalizedAnswer": "BILLIE EILISH",
+    "answer": "Marvin Hamlisch",
+    "normalizedAnswer": "MARVIN HAMLISCH",
     "category": "Music Artist by Era",
-    "difficulty": 14.2,
+    "difficulty": 64.4,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "3d2ad2f1d70d9a78513c4041e803266a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Natalie Cole",
+    "normalizedAnswer": "NATALIE COLE",
+    "category": "Music Artist by Era",
+    "difficulty": 73.6,
     "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "4c12a6c6957d95c0d2eeaf8e40fa3261",
+    "source": "theme",
+    "type": "title",
+    "answer": "Starland Vocal Band",
+    "normalizedAnswer": "STARLAND VOCAL BAND",
+    "category": "Music Artist by Era",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 17,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "de4e0ba715baeb37d011f6bd903be6f9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Debby Boone",
+    "normalizedAnswer": "DEBBY BOONE",
+    "category": "Music Artist by Era",
+    "difficulty": 82,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "f45c2aef538e4a5696c06b857da16275",
+    "source": "theme",
+    "type": "title",
+    "answer": "A Taste of Honey",
+    "normalizedAnswer": "A TASTE OF HONEY",
+    "category": "Music Artist by Era",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 4,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "25817409e37073bc4a13f2687277e772",
+    "source": "theme",
+    "type": "title",
+    "answer": "Rickie Lee Jones",
+    "normalizedAnswer": "RICKIE LEE JONES",
+    "category": "Music Artist by Era",
+    "difficulty": 64.4,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "f261e378c143c3ad94c1129a037de16a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Christopher Cross",
+    "normalizedAnswer": "CHRISTOPHER CROSS",
+    "category": "Music Artist by Era",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "6142051306cd21ecffd0e7ee7f1f007e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sheena Easton",
+    "normalizedAnswer": "SHEENA EASTON",
+    "category": "Music Artist by Era",
+    "difficulty": 77.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "250d33c5032eddc6d01592ff6dbc1f8a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Men at Work",
+    "normalizedAnswer": "MEN AT WORK",
+    "category": "Music Artist by Era",
+    "difficulty": 70.4,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 9,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "68171a0547db1518151c0a095ce3be3f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Culture Club",
+    "normalizedAnswer": "CULTURE CLUB",
+    "category": "Music Artist by Era",
+    "difficulty": 77.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "8d627e496eab9510de0a0ce48e7f333f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cyndi Lauper",
+    "normalizedAnswer": "CYNDI LAUPER",
+    "category": "Music Artist by Era",
+    "difficulty": 61.6,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "ef9b62c7e3d581b47dd2097f0fc2e8cd",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sade",
+    "normalizedAnswer": "SADE",
+    "category": "Music Artist by Era",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "1899ce5ebf8be6ed8017c2bc2f7d2bd4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bruce Hornsby & The Range",
+    "normalizedAnswer": "BRUCE HORNSBY THE RANGE",
+    "category": "Music Artist by Era",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 20,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "9041183f593ad1fbdbd4b5a9cd186603",
+    "source": "theme",
+    "type": "title",
+    "answer": "Jody Watley",
+    "normalizedAnswer": "JODY WATLEY",
+    "category": "Music Artist by Era",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "3cbb4236539f794dc608161cc3cc4d91",
+    "source": "theme",
+    "type": "title",
+    "answer": "Tracy Chapman",
+    "normalizedAnswer": "TRACY CHAPMAN",
+    "category": "Music Artist by Era",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "cbfc1be7f1f0c34679d0e6549a6bd360",
+    "source": "theme",
+    "type": "title",
+    "answer": "Milli Vanilli",
+    "normalizedAnswer": "MILLI VANILLI",
+    "category": "Music Artist by Era",
+    "difficulty": 81.2,
+    "difficultyTier": "hard",
     "wordCount": 2,
     "letterCount": 12,
     "uniqueLetterCount": 6,
@@ -206,7 +668,763 @@
       "era"
     ],
     "metadata": {
-      "source": "fallback"
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "9c3a3878166f751b02f3ed267203a1f5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mariah Carey",
+    "normalizedAnswer": "MARIAH CAREY",
+    "category": "Music Artist by Era",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "fcb9df766ce1cad7e700d094e0e65325",
+    "source": "theme",
+    "type": "title",
+    "answer": "Marc Cohn",
+    "normalizedAnswer": "MARC COHN",
+    "category": "Music Artist by Era",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "765d4872246c780e614f82cd9841643e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Arrested Development",
+    "normalizedAnswer": "ARRESTED DEVELOPMENT",
+    "category": "Music Artist by Era",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 19,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "762c805af5488d15c6832e4a67507cd8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Toni Braxton",
+    "normalizedAnswer": "TONI BRAXTON",
+    "category": "Music Artist by Era",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "115a7817302163d96820885586acee63",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sheryl Crow",
+    "normalizedAnswer": "SHERYL CROW",
+    "category": "Music Artist by Era",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "7ae4f7c7dc3f867bfcbdd0faa7e6e5f8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Hootie & the Blowfish",
+    "normalizedAnswer": "HOOTIE THE BLOWFISH",
+    "category": "Music Artist by Era",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 17,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "f17b906bd786bbe6ba73d2be9274db8d",
+    "source": "theme",
+    "type": "title",
+    "answer": "LeAnn Rimes",
+    "normalizedAnswer": "LEANN RIMES",
+    "category": "Music Artist by Era",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "75d5796284a8fb7333f22b419c1ed8e2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Paula Cole",
+    "normalizedAnswer": "PAULA COLE",
+    "category": "Music Artist by Era",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "a283165ee3b1e679b160fe9325d009ce",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lauryn Hill",
+    "normalizedAnswer": "LAURYN HILL",
+    "category": "Music Artist by Era",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "5978a15d41bf1c1490f76dfd2147f3b7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Christina Aguilera",
+    "normalizedAnswer": "CHRISTINA AGUILERA",
+    "category": "Music Artist by Era",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 17,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "a43e0a58954dae68d8758b8a0650d11d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Shelby Lynne",
+    "normalizedAnswer": "SHELBY LYNNE",
+    "category": "Music Artist by Era",
+    "difficulty": 77.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "438d9ed6a1a4df19c5f799bdafe3dd1e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Alicia Keys",
+    "normalizedAnswer": "ALICIA KEYS",
+    "category": "Music Artist by Era",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "173856843cc8a0373cd4889f56bccb7a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Norah Jones",
+    "normalizedAnswer": "NORAH JONES",
+    "category": "Music Artist by Era",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "765b4de13b209c71888e3034a5347e04",
+    "source": "theme",
+    "type": "title",
+    "answer": "Evanescence",
+    "normalizedAnswer": "EVANESCENCE",
+    "category": "Music Artist by Era",
+    "difficulty": 81.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "727e7efa8e857a3a54b2338336768f39",
+    "source": "theme",
+    "type": "title",
+    "answer": "Maroon 5",
+    "normalizedAnswer": "MAROON 5",
+    "category": "Music Artist by Era",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "d3cd7f98debf7adce6356bbad2d3d272",
+    "source": "theme",
+    "type": "title",
+    "answer": "John Legend",
+    "normalizedAnswer": "JOHN LEGEND",
+    "category": "Music Artist by Era",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "e085027b7cf446c2861b12ddbf9b4199",
+    "source": "theme",
+    "type": "title",
+    "answer": "Carrie Underwood",
+    "normalizedAnswer": "CARRIE UNDERWOOD",
+    "category": "Music Artist by Era",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "f70fdd396dfaa3e33c4083fe51e8ac7c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Amy Winehouse",
+    "normalizedAnswer": "AMY WINEHOUSE",
+    "category": "Music Artist by Era",
+    "difficulty": 61.2,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "02f557243a3f921441b3290467048455",
+    "source": "theme",
+    "type": "title",
+    "answer": "Adele",
+    "normalizedAnswer": "ADELE",
+    "category": "Music Artist by Era",
+    "difficulty": 92,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "31cfb04c9bda398d37e6da42d35b96aa",
+    "source": "theme",
+    "type": "title",
+    "answer": "Zac Brown Band",
+    "normalizedAnswer": "ZAC BROWN BAND",
+    "category": "Music Artist by Era",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "d8f8a2f5b6abee4832c37c2242ef747f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Esperanza Spalding",
+    "normalizedAnswer": "ESPERANZA SPALDING",
+    "category": "Music Artist by Era",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 17,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "d8ce7116f8e49b0bdb93516d2f9679b4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bon Iver",
+    "normalizedAnswer": "BON IVER",
+    "category": "Music Artist by Era",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "47a1a70428716d1145910c078285c3c1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Fun",
+    "normalizedAnswer": "FUN",
+    "category": "Music Artist by Era",
+    "difficulty": 96.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "5dc9e41f682753294511bebb68ebbfaf",
+    "source": "theme",
+    "type": "title",
+    "answer": "Macklemore & Ryan Lewis",
+    "normalizedAnswer": "MACKLEMORE RYAN LEWIS",
+    "category": "Music Artist by Era",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 19,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "5a49effbaf1f39814428aaa9dfefb052",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sam Smith",
+    "normalizedAnswer": "SAM SMITH",
+    "category": "Music Artist by Era",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "151f2e12ce0dbdc2445bf569a91e5683",
+    "source": "theme",
+    "type": "title",
+    "answer": "Meghan Trainor",
+    "normalizedAnswer": "MEGHAN TRAINOR",
+    "category": "Music Artist by Era",
+    "difficulty": 64.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "51c18953a9b16d8c62000c703cab066b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chance the Rapper",
+    "normalizedAnswer": "CHANCE THE RAPPER",
+    "category": "Music Artist by Era",
+    "difficulty": 72,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "4d2e97828fb0612cd4dd2c087815b9c2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Alessia Cara",
+    "normalizedAnswer": "ALESSIA CARA",
+    "category": "Music Artist by Era",
+    "difficulty": 77.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "453dee8ec9487912a2a55c05edd65208",
+    "source": "theme",
+    "type": "title",
+    "answer": "Dua Lipa",
+    "normalizedAnswer": "DUA LIPA",
+    "category": "Music Artist by Era",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "86a0df042ec9431a1e3f6fbad2217d85",
+    "source": "theme",
+    "type": "title",
+    "answer": "Billie Eilish",
+    "normalizedAnswer": "BILLIE EILISH",
+    "category": "Music Artist by Era",
+    "difficulty": 81.2,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "c9ea056d5d399b14ccd6537ec182d59b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Megan Thee Stallion",
+    "normalizedAnswer": "MEGAN THEE STALLION",
+    "category": "Music Artist by Era",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 17,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "872669de2cbe5103f08fedb976055cac",
+    "source": "theme",
+    "type": "title",
+    "answer": "Olivia Rodrigo",
+    "normalizedAnswer": "OLIVIA RODRIGO",
+    "category": "Music Artist by Era",
+    "difficulty": 72.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "d74fddfa8cd121b453348d8bf916affd",
+    "source": "theme",
+    "type": "title",
+    "answer": "Samara Joy",
+    "normalizedAnswer": "SAMARA JOY",
+    "category": "Music Artist by Era",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "dacf7a3d7615993d12cab697f11b74c6",
+    "source": "theme",
+    "type": "title",
+    "answer": "Victoria Monét",
+    "normalizedAnswer": "VICTORIA MONT",
+    "category": "Music Artist by Era",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "b00f80816bbf554f0acfe5f12b0bfa78",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chappell Roan",
+    "normalizedAnswer": "CHAPPELL ROAN",
+    "category": "Music Artist by Era",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+    }
+  },
+  {
+    "id": "29a5d853f8a577fd4da57e1f284c131f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Olivia Dean",
+    "normalizedAnswer": "OLIVIA DEAN",
+    "category": "Music Artist by Era",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "music",
+      "era"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
     }
   }
 ]

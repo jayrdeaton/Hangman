@@ -3,18 +3,18 @@ import Svg from 'react-native-svg'
 
 import type { GameMode } from '@/types/gameModes'
 
-import { Body, GallowsWithRope, Head, LeftArm, LeftLeg, RightArm, RightLeg } from './shared/classicParts'
+import { CenteredBody, CenteredLeftArm, CenteredLeftLeg, CenteredRightArm, CenteredRightLeg, CenteredRopeAndHead } from './shared/classicParts'
 
 // Starts complete. Parts are removed in removal order on each wrong guess.
-// Removal order: head first, legs last (psychological: "saving" the character).
-const REMOVAL_ORDER = [Head, Body, LeftArm, RightArm, LeftLeg, RightLeg]
+// Removal order: head first, legs last (psychological: "saving" the character). No gallows frame, so the
+// figure is horizontally centered rather than offset to clear a gallows pole.
+const REMOVAL_ORDER = [CenteredRopeAndHead, CenteredBody, CenteredLeftArm, CenteredRightArm, CenteredLeftLeg, CenteredRightLeg]
 
 const DisappearingVisual = ({ mistakes, color, width, height }: { mistakes: number; color: string; width: number; height: number }) => {
   const removed = Math.min(Math.max(0, mistakes), REMOVAL_ORDER.length)
   const visible = REMOVAL_ORDER.slice(removed)
   return (
     <Svg width={width} height={height} viewBox='0 0 100 100'>
-      <GallowsWithRope color={color} />
       {visible.map((Part, i) => (
         <Part key={i} color={color} />
       ))}

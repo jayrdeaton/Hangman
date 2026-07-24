@@ -1,102 +1,122 @@
 [
   {
-    "id": "eb47d71e4911b59893e70ca61525d88a",
+    "id": "ad9b06acc1ea946719d2d817773e77a8",
     "source": "theme",
     "type": "title",
-    "answer": "Eiffel Tower",
-    "normalizedAnswer": "EIFFEL TOWER",
+    "answer": "Hartsfield–Jackson Atlanta International Airport",
+    "normalizedAnswer": "HARTSFIELDJACKSON ATLANTA INTERNATIONAL AIRPORT",
     "category": "Travel",
-    "difficulty": 16.8,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "travel"
-    ],
-    "metadata": {
-      "source": "fallback"
-    }
-  },
-  {
-    "id": "4d51617920dd1bb00364ba27ae3916b9",
-    "source": "theme",
-    "type": "title",
-    "answer": "Great Wall of China",
-    "normalizedAnswer": "GREAT WALL OF CHINA",
-    "category": "Travel",
-    "difficulty": 27.1,
-    "difficultyTier": "hard",
+    "difficulty": 40,
+    "difficultyTier": "easy",
     "wordCount": 4,
-    "letterCount": 16,
-    "uniqueLetterCount": 13,
+    "letterCount": 44,
+    "uniqueLetterCount": 16,
     "tags": [
       "theme",
       "travel"
     ],
     "metadata": {
-      "source": "fallback"
+      "source": "https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic"
     }
   },
   {
-    "id": "88c5c850f5ce81dc2be884d547fc55d0",
+    "id": "6ab21fcf01ba1a89936fa2b05c9b2030",
     "source": "theme",
     "type": "title",
-    "answer": "Statue of Liberty",
-    "normalizedAnswer": "STATUE OF LIBERTY",
+    "answer": "Dubai International Airport",
+    "normalizedAnswer": "DUBAI INTERNATIONAL AIRPORT",
     "category": "Travel",
-    "difficulty": 24.8,
-    "difficultyTier": "hard",
+    "difficulty": 56,
+    "difficultyTier": "easy",
     "wordCount": 3,
-    "letterCount": 15,
+    "letterCount": 25,
     "uniqueLetterCount": 12,
     "tags": [
       "theme",
       "travel"
     ],
     "metadata": {
-      "source": "fallback"
+      "source": "https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic"
     }
   },
   {
-    "id": "9b03a405e9c2fe2c61416ca82fa55ef3",
+    "id": "8faf39ce952e1a4aa8f151635347c77e",
     "source": "theme",
     "type": "title",
-    "answer": "Sydney Opera House",
-    "normalizedAnswer": "SYDNEY OPERA HOUSE",
+    "answer": "Tokyo Haneda Airport",
+    "normalizedAnswer": "TOKYO HANEDA AIRPORT",
     "category": "Travel",
-    "difficulty": 23.7,
-    "difficultyTier": "hard",
+    "difficulty": 56,
+    "difficultyTier": "easy",
     "wordCount": 3,
-    "letterCount": 16,
-    "uniqueLetterCount": 11,
+    "letterCount": 18,
+    "uniqueLetterCount": 12,
     "tags": [
       "theme",
       "travel"
     ],
     "metadata": {
-      "source": "fallback"
+      "source": "https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic"
     }
   },
   {
-    "id": "5ba5944444ce399c4a8115882bd82178",
+    "id": "79fdb6ef1e6bdf4e08903c8f32482ebd",
     "source": "theme",
     "type": "title",
-    "answer": "Golden Gate Bridge",
-    "normalizedAnswer": "GOLDEN GATE BRIDGE",
+    "answer": "Dallas Fort Worth International Airport",
+    "normalizedAnswer": "DALLAS FORT WORTH INTERNATIONAL AIRPORT",
     "category": "Travel",
-    "difficulty": 23.7,
-    "difficultyTier": "hard",
-    "wordCount": 3,
-    "letterCount": 16,
-    "uniqueLetterCount": 11,
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 35,
+    "uniqueLetterCount": 14,
     "tags": [
       "theme",
       "travel"
     ],
     "metadata": {
-      "source": "fallback"
+      "source": "https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic"
+    }
+  },
+  {
+    "id": "e4c83bb76eada7edc48d5fe670f53c85",
+    "source": "theme",
+    "type": "title",
+    "answer": "Shanghai Pudong International Airport",
+    "normalizedAnswer": "SHANGHAI PUDONG INTERNATIONAL AIRPORT",
+    "category": "Travel",
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 34,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "travel"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic"
+    }
+  },
+  {
+    "id": "f4eae98dc24d87a779d05fb1aaec932f",
+    "source": "theme",
+    "type": "title",
+    "answer": "O'Hare International Airport",
+    "normalizedAnswer": "OHARE INTERNATIONAL AIRPORT",
+    "category": "Travel",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 25,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "travel"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic"
     }
   },
   {
@@ -106,7 +126,7 @@
     "answer": "Heathrow Airport",
     "normalizedAnswer": "HEATHROW AIRPORT",
     "category": "Travel",
-    "difficulty": 19.9,
+    "difficulty": 68,
     "difficultyTier": "medium",
     "wordCount": 2,
     "letterCount": 15,
@@ -116,87 +136,867 @@
       "travel"
     ],
     "metadata": {
-      "source": "fallback"
+      "source": "https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic"
     }
   },
   {
-    "id": "366b89cd622cfb5b546af4e7edeff322",
+    "id": "fb19e4544159c43ddc84a479c93142c8",
     "source": "theme",
     "type": "title",
-    "answer": "JFK International Airport",
-    "normalizedAnswer": "JFK INTERNATIONAL AIRPORT",
+    "answer": "Istanbul Airport",
+    "normalizedAnswer": "ISTANBUL AIRPORT",
     "category": "Travel",
-    "difficulty": 33,
-    "difficultyTier": "hard",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "travel"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic"
+    }
+  },
+  {
+    "id": "ec83f10067b1f4fdcdce223289548f4a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Guangzhou Baiyun International Airport",
+    "normalizedAnswer": "GUANGZHOU BAIYUN INTERNATIONAL AIRPORT",
+    "category": "Travel",
+    "difficulty": 44,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 35,
+    "uniqueLetterCount": 15,
+    "tags": [
+      "theme",
+      "travel"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic"
+    }
+  },
+  {
+    "id": "bef48f0a4d421863a1cf45d1b175879c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Denver International Airport",
+    "normalizedAnswer": "DENVER INTERNATIONAL AIRPORT",
+    "category": "Travel",
+    "difficulty": 60,
+    "difficultyTier": "easy",
     "wordCount": 3,
-    "letterCount": 23,
+    "letterCount": 26,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "travel"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic"
+    }
+  },
+  {
+    "id": "88924dd7ea1fd6ba887f99840cb03db8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Indira Gandhi International Airport",
+    "normalizedAnswer": "INDIRA GANDHI INTERNATIONAL AIRPORT",
+    "category": "Travel",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 32,
     "uniqueLetterCount": 12,
     "tags": [
       "theme",
       "travel"
     ],
     "metadata": {
-      "source": "fallback"
+      "source": "https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic"
     }
   },
   {
-    "id": "f6f2ae5fd53038aa85242a41693ac173",
+    "id": "c351371e0839e6f38a91fd291450e515",
     "source": "theme",
     "type": "title",
-    "answer": "Tokyo Station",
-    "normalizedAnswer": "TOKYO STATION",
+    "answer": "Seoul Incheon International Airport",
+    "normalizedAnswer": "SEOUL INCHEON INTERNATIONAL AIRPORT",
     "category": "Travel",
-    "difficulty": 19.7,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 12,
-    "uniqueLetterCount": 8,
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 32,
+    "uniqueLetterCount": 13,
     "tags": [
       "theme",
       "travel"
     ],
     "metadata": {
-      "source": "fallback"
+      "source": "https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic"
     }
   },
   {
-    "id": "b4a8440823d89cfc3626d5787dc14c24",
+    "id": "eddc7a57842e1dd5368fd2c64b124c45",
     "source": "theme",
     "type": "title",
-    "answer": "Machu Picchu",
-    "normalizedAnswer": "MACHU PICCHU",
+    "answer": "Los Angeles International Airport",
+    "normalizedAnswer": "LOS ANGELES INTERNATIONAL AIRPORT",
     "category": "Travel",
-    "difficulty": 15.3,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 7,
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 30,
+    "uniqueLetterCount": 11,
     "tags": [
       "theme",
       "travel"
     ],
     "metadata": {
-      "source": "fallback"
+      "source": "https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic"
     }
   },
   {
-    "id": "625029e9fffe1c106286b372a41166fe",
+    "id": "876ed0adeb37df4657b86ff6b134ceb1",
     "source": "theme",
     "type": "title",
-    "answer": "Times Square",
-    "normalizedAnswer": "TIMES SQUARE",
+    "answer": "Charles de Gaulle Airport",
+    "normalizedAnswer": "CHARLES DE GAULLE AIRPORT",
     "category": "Travel",
-    "difficulty": 20.8,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 9,
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 22,
+    "uniqueLetterCount": 14,
     "tags": [
       "theme",
       "travel"
     ],
     "metadata": {
-      "source": "fallback"
+      "source": "https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic"
+    }
+  },
+  {
+    "id": "d9bf2ee90ee0c453e9d0fc0fb7310463",
+    "source": "theme",
+    "type": "title",
+    "answer": "Beijing Capital International Airport",
+    "normalizedAnswer": "BEIJING CAPITAL INTERNATIONAL AIRPORT",
+    "category": "Travel",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 34,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "travel"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic"
+    }
+  },
+  {
+    "id": "8f88f86709be96d79c8fec6a6f52712a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Singapore Changi Airport",
+    "normalizedAnswer": "SINGAPORE CHANGI AIRPORT",
+    "category": "Travel",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 22,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "travel"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic"
+    }
+  },
+  {
+    "id": "b2f676dd5a86c955c08946289183c679",
+    "source": "theme",
+    "type": "title",
+    "answer": "Amsterdam Airport Schiphol",
+    "normalizedAnswer": "AMSTERDAM AIRPORT SCHIPHOL",
+    "category": "Travel",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 24,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "travel"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic"
+    }
+  },
+  {
+    "id": "a0f38992fd33ddebf568dcf0250b0dd1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Adolfo Suárez Madrid–Barajas Airport",
+    "normalizedAnswer": "ADOLFO SUREZ MADRIDBARAJAS AIRPORT",
+    "category": "Travel",
+    "difficulty": 40,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 31,
+    "uniqueLetterCount": 16,
+    "tags": [
+      "theme",
+      "travel"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic"
+    }
+  },
+  {
+    "id": "daeda908b0b16a1f1f51836d2a9649ee",
+    "source": "theme",
+    "type": "title",
+    "answer": "Shenzhen Bao'an International Airport",
+    "normalizedAnswer": "SHENZHEN BAOAN INTERNATIONAL AIRPORT",
+    "category": "Travel",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 33,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "travel"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic"
+    }
+  },
+  {
+    "id": "4dd7b0b5c70564f3a6599ee9151e0eab",
+    "source": "theme",
+    "type": "title",
+    "answer": "Kuala Lumpur International Airport",
+    "normalizedAnswer": "KUALA LUMPUR INTERNATIONAL AIRPORT",
+    "category": "Travel",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 31,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "travel"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic"
+    }
+  },
+  {
+    "id": "e8a96c673255b732a7da808866028a24",
+    "source": "theme",
+    "type": "title",
+    "answer": "Frankfurt Airport",
+    "normalizedAnswer": "FRANKFURT AIRPORT",
+    "category": "Travel",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "travel"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic"
+    }
+  },
+  {
+    "id": "e2f20a3d6074c542063e03b256f01739",
+    "source": "theme",
+    "type": "title",
+    "answer": "Suvarnabhumi Airport",
+    "normalizedAnswer": "SUVARNABHUMI AIRPORT",
+    "category": "Travel",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 19,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "travel"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic"
+    }
+  },
+  {
+    "id": "9943815fae4a77dbc48d34d0fcbd3c67",
+    "source": "theme",
+    "type": "title",
+    "answer": "John F. Kennedy International Airport",
+    "normalizedAnswer": "JOHN F KENNEDY INTERNATIONAL AIRPORT",
+    "category": "Travel",
+    "difficulty": 44,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 32,
+    "uniqueLetterCount": 15,
+    "tags": [
+      "theme",
+      "travel"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic"
+    }
+  },
+  {
+    "id": "7226132a974f736c2f82e8ad673c053d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Hong Kong International Airport",
+    "normalizedAnswer": "HONG KONG INTERNATIONAL AIRPORT",
+    "category": "Travel",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 28,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "travel"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic"
+    }
+  },
+  {
+    "id": "281ef3151bd409ce461c8dd9a2ac13cc",
+    "source": "theme",
+    "type": "title",
+    "answer": "Orlando International Airport",
+    "normalizedAnswer": "ORLANDO INTERNATIONAL AIRPORT",
+    "category": "Travel",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 27,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "travel"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic"
+    }
+  },
+  {
+    "id": "3b02244946aa456d1976d267abd325c4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Josep Tarradellas Barcelona–El Prat Airport",
+    "normalizedAnswer": "JOSEP TARRADELLAS BARCELONAEL PRAT AIRPORT",
+    "category": "Travel",
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 38,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "travel"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic"
+    }
+  },
+  {
+    "id": "4265e5ec4644935d9a4bd6f1c74502c3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chengdu Tianfu International Airport",
+    "normalizedAnswer": "CHENGDU TIANFU INTERNATIONAL AIRPORT",
+    "category": "Travel",
+    "difficulty": 44,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 33,
+    "uniqueLetterCount": 15,
+    "tags": [
+      "theme",
+      "travel"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic"
+    }
+  },
+  {
+    "id": "19a34ccad51fb0b806f981f56b0d865c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chhatrapati Shivaji Maharaj International Airport",
+    "normalizedAnswer": "CHHATRAPATI SHIVAJI MAHARAJ INTERNATIONAL AIRPORT",
+    "category": "Travel",
+    "difficulty": 44,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 45,
+    "uniqueLetterCount": 15,
+    "tags": [
+      "theme",
+      "travel"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic"
+    }
+  },
+  {
+    "id": "276609e5459036b683087478c2a5c759",
+    "source": "theme",
+    "type": "title",
+    "answer": "Miami International Airport",
+    "normalizedAnswer": "MIAMI INTERNATIONAL AIRPORT",
+    "category": "Travel",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 25,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "travel"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic"
+    }
+  },
+  {
+    "id": "2f48cd94df4e53da585c650f28d3a05b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Harry Reid International Airport",
+    "normalizedAnswer": "HARRY REID INTERNATIONAL AIRPORT",
+    "category": "Travel",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 29,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "travel"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic"
+    }
+  },
+  {
+    "id": "96b4879f9fc55982bc21961c57d9cacf",
+    "source": "theme",
+    "type": "title",
+    "answer": "Soekarno–Hatta International Airport",
+    "normalizedAnswer": "SOEKARNOHATTA INTERNATIONAL AIRPORT",
+    "category": "Travel",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 33,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "travel"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic"
+    }
+  },
+  {
+    "id": "082a1ef94751ab210b995b085ff757be",
+    "source": "theme",
+    "type": "title",
+    "answer": "San Francisco International Airport",
+    "normalizedAnswer": "SAN FRANCISCO INTERNATIONAL AIRPORT",
+    "category": "Travel",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 32,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "travel"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic"
+    }
+  },
+  {
+    "id": "64ce7abc3cdd67548aee5bc6e537ca29",
+    "source": "theme",
+    "type": "title",
+    "answer": "Hamad International Airport",
+    "normalizedAnswer": "HAMAD INTERNATIONAL AIRPORT",
+    "category": "Travel",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 25,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "travel"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic"
+    }
+  },
+  {
+    "id": "6a274582ac7fdaf449e038be5bcaa911",
+    "source": "theme",
+    "type": "title",
+    "answer": "Charlotte Douglas International Airport",
+    "normalizedAnswer": "CHARLOTTE DOUGLAS INTERNATIONAL AIRPORT",
+    "category": "Travel",
+    "difficulty": 44,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 36,
+    "uniqueLetterCount": 15,
+    "tags": [
+      "theme",
+      "travel"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic"
+    }
+  },
+  {
+    "id": "2caaec572991761ecfcf1decfc134d50",
+    "source": "theme",
+    "type": "title",
+    "answer": "Beijing Daxing International Airport",
+    "normalizedAnswer": "BEIJING DAXING INTERNATIONAL AIRPORT",
+    "category": "Travel",
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 33,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "travel"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic"
+    }
+  },
+  {
+    "id": "c61c6e49da3f3f2152d39f71b080d491",
+    "source": "theme",
+    "type": "title",
+    "answer": "King Abdulaziz International Airport",
+    "normalizedAnswer": "KING ABDULAZIZ INTERNATIONAL AIRPORT",
+    "category": "Travel",
+    "difficulty": 44,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 33,
+    "uniqueLetterCount": 15,
+    "tags": [
+      "theme",
+      "travel"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic"
+    }
+  },
+  {
+    "id": "b05774ac87b36b37fdd1192b2cf2c81f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Seattle–Tacoma International Airport",
+    "normalizedAnswer": "SEATTLETACOMA INTERNATIONAL AIRPORT",
+    "category": "Travel",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 33,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "travel"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic"
+    }
+  },
+  {
+    "id": "c90d8bb56f09952ec56a40b1623ade85",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ninoy Aquino International Airport",
+    "normalizedAnswer": "NINOY AQUINO INTERNATIONAL AIRPORT",
+    "category": "Travel",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 31,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "travel"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic"
+    }
+  },
+  {
+    "id": "45e193bdd67abfe84ca58a9236770474",
+    "source": "theme",
+    "type": "title",
+    "answer": "Phoenix Sky Harbor International Airport",
+    "normalizedAnswer": "PHOENIX SKY HARBOR INTERNATIONAL AIRPORT",
+    "category": "Travel",
+    "difficulty": 44,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 36,
+    "uniqueLetterCount": 15,
+    "tags": [
+      "theme",
+      "travel"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic"
+    }
+  },
+  {
+    "id": "f59090a685052237e3de593293b5e687",
+    "source": "theme",
+    "type": "title",
+    "answer": "Leonardo da Vinci Rome Fiumicino Airport",
+    "normalizedAnswer": "LEONARDO DA VINCI ROME FIUMICINO AIRPORT",
+    "category": "Travel",
+    "difficulty": 44,
+    "difficultyTier": "easy",
+    "wordCount": 6,
+    "letterCount": 35,
+    "uniqueLetterCount": 15,
+    "tags": [
+      "theme",
+      "travel"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic"
+    }
+  },
+  {
+    "id": "35a2409e18c6e2ee314f04c87a701b15",
+    "source": "theme",
+    "type": "title",
+    "answer": "Hangzhou Xiaoshan International Airport",
+    "normalizedAnswer": "HANGZHOU XIAOSHAN INTERNATIONAL AIRPORT",
+    "category": "Travel",
+    "difficulty": 44,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 36,
+    "uniqueLetterCount": 15,
+    "tags": [
+      "theme",
+      "travel"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic"
+    }
+  },
+  {
+    "id": "395fe65ba4c82d5cf0736ed7b2f2df40",
+    "source": "theme",
+    "type": "title",
+    "answer": "Shanghai Hongqiao International Airport",
+    "normalizedAnswer": "SHANGHAI HONGQIAO INTERNATIONAL AIRPORT",
+    "category": "Travel",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 36,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "travel"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic"
+    }
+  },
+  {
+    "id": "8c5b988af050093babbd1bc313eafac3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chongqing Jiangbei International Airport",
+    "normalizedAnswer": "CHONGQING JIANGBEI INTERNATIONAL AIRPORT",
+    "category": "Travel",
+    "difficulty": 44,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 37,
+    "uniqueLetterCount": 15,
+    "tags": [
+      "theme",
+      "travel"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic"
+    }
+  },
+  {
+    "id": "5c9c20da9025841030086ddbff8a9f3b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Kunming Changshui International Airport",
+    "normalizedAnswer": "KUNMING CHANGSHUI INTERNATIONAL AIRPORT",
+    "category": "Travel",
+    "difficulty": 40,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 36,
+    "uniqueLetterCount": 16,
+    "tags": [
+      "theme",
+      "travel"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic"
+    }
+  },
+  {
+    "id": "fb399740b24be51c9f465784e779eef4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Xi'an Xianyang International Airport",
+    "normalizedAnswer": "XIAN XIANYANG INTERNATIONAL AIRPORT",
+    "category": "Travel",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 32,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "travel"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic"
+    }
+  },
+  {
+    "id": "9ca7a6e8a4f0395d66e9e245a1443e02",
+    "source": "theme",
+    "type": "title",
+    "answer": "Istanbul Sabiha Gökçen International Airport",
+    "normalizedAnswer": "ISTANBUL SABIHA GKEN INTERNATIONAL AIRPORT",
+    "category": "Travel",
+    "difficulty": 44,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 38,
+    "uniqueLetterCount": 15,
+    "tags": [
+      "theme",
+      "travel"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic"
+    }
+  },
+  {
+    "id": "d79c37fc84fd4da7bce3644bd92e1cb0",
+    "source": "theme",
+    "type": "title",
+    "answer": "George Bush Intercontinental Airport",
+    "normalizedAnswer": "GEORGE BUSH INTERCONTINENTAL AIRPORT",
+    "category": "Travel",
+    "difficulty": 44,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 33,
+    "uniqueLetterCount": 15,
+    "tags": [
+      "theme",
+      "travel"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic"
+    }
+  },
+  {
+    "id": "d3c3a5268615ee3ff331a95e5a9600f9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Taoyuan International Airport",
+    "normalizedAnswer": "TAOYUAN INTERNATIONAL AIRPORT",
+    "category": "Travel",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 27,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "travel"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic"
+    }
+  },
+  {
+    "id": "a53e3d2828c231c83b2095ee9b689e8c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Toronto Pearson International Airport",
+    "normalizedAnswer": "TORONTO PEARSON INTERNATIONAL AIRPORT",
+    "category": "Travel",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 34,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "travel"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic"
+    }
+  },
+  {
+    "id": "e1589125b3c32d559a50c85cb34449ea",
+    "source": "theme",
+    "type": "title",
+    "answer": "São Paulo/Guarulhos International Airport",
+    "normalizedAnswer": "SO PAULOGUARULHOS INTERNATIONAL AIRPORT",
+    "category": "Travel",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 36,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "travel"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic"
     }
   }
 ]

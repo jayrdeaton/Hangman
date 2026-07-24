@@ -16,7 +16,7 @@ const LettersVisual = ({ color, width, height }: { mistakes: number; color: stri
 export const lettersMode: GameMode = {
   id: 'letters',
   label: 'Letters Only',
-  description: 'No artwork — just the letters, bigger',
+  description: 'No artwork, just the letters, bigger',
   category: 'minimal',
   behavior: 'none',
   maxMistakes: 6,

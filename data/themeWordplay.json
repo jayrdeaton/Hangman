@@ -6,7 +6,7 @@
     "answer": "Never Odd or Even",
     "normalizedAnswer": "NEVER ODD OR EVEN",
     "category": "Wordplay",
-    "difficulty": 20.8,
+    "difficulty": 80.4,
     "difficultyTier": "hard",
     "wordCount": 4,
     "letterCount": 14,
@@ -26,8 +26,8 @@
     "answer": "A Man A Plan A Canal Panama",
     "normalizedAnswer": "A MAN A PLAN A CANAL PANAMA",
     "category": "Wordplay",
-    "difficulty": 19.8,
-    "difficultyTier": "medium",
+    "difficulty": 80,
+    "difficultyTier": "hard",
     "wordCount": 7,
     "letterCount": 21,
     "uniqueLetterCount": 6,
@@ -46,8 +46,8 @@
     "answer": "She Sells Seashells",
     "normalizedAnswer": "SHE SELLS SEASHELLS",
     "category": "Wordplay",
-    "difficulty": 15.100000000000001,
-    "difficultyTier": "medium",
+    "difficulty": 84,
+    "difficultyTier": "hard",
     "wordCount": 3,
     "letterCount": 17,
     "uniqueLetterCount": 5,
@@ -66,8 +66,8 @@
     "answer": "Peter Piper Picked a Peck",
     "normalizedAnswer": "PETER PIPER PICKED A PECK",
     "category": "Wordplay",
-    "difficulty": 28.5,
-    "difficultyTier": "hard",
+    "difficulty": 68,
+    "difficultyTier": "medium",
     "wordCount": 5,
     "letterCount": 21,
     "uniqueLetterCount": 9,
@@ -86,7 +86,7 @@
     "answer": "Red Lorry Yellow Lorry",
     "normalizedAnswer": "RED LORRY YELLOW LORRY",
     "category": "Wordplay",
-    "difficulty": 19.3,
+    "difficulty": 76,
     "difficultyTier": "medium",
     "wordCount": 4,
     "letterCount": 19,
@@ -106,8 +106,8 @@
     "answer": "Unique New York",
     "normalizedAnswer": "UNIQUE NEW YORK",
     "category": "Wordplay",
-    "difficulty": 26,
-    "difficultyTier": "hard",
+    "difficulty": 64.8,
+    "difficultyTier": "easy",
     "wordCount": 3,
     "letterCount": 13,
     "uniqueLetterCount": 10,
@@ -126,8 +126,8 @@
     "answer": "Toy Boat",
     "normalizedAnswer": "TOY BOAT",
     "category": "Wordplay",
-    "difficulty": 10.7,
-    "difficultyTier": "easy",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
     "wordCount": 2,
     "letterCount": 7,
     "uniqueLetterCount": 5,
@@ -146,8 +146,8 @@
     "answer": "Madam Im Adam",
     "normalizedAnswer": "MADAM IM ADAM",
     "category": "Wordplay",
-    "difficulty": 11.2,
-    "difficultyTier": "easy",
+    "difficulty": 89.6,
+    "difficultyTier": "hard",
     "wordCount": 3,
     "letterCount": 11,
     "uniqueLetterCount": 4,
@@ -166,8 +166,8 @@
     "answer": "Step on No Pets",
     "normalizedAnswer": "STEP ON NO PETS",
     "category": "Wordplay",
-    "difficulty": 15,
-    "difficultyTier": "medium",
+    "difficulty": 81.2,
+    "difficultyTier": "hard",
     "wordCount": 4,
     "letterCount": 12,
     "uniqueLetterCount": 6,
@@ -186,11 +186,331 @@
     "answer": "Live Not on Evil",
     "normalizedAnswer": "LIVE NOT ON EVIL",
     "category": "Wordplay",
-    "difficulty": 21.9,
-    "difficultyTier": "hard",
+    "difficulty": 76.8,
+    "difficultyTier": "medium",
     "wordCount": 4,
     "letterCount": 13,
     "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "wordplay"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "e843d9ac3bafd63cc85df4e03dee9db7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Was It a Cat I Saw",
+    "normalizedAnswer": "WAS IT A CAT I SAW",
+    "category": "Wordplay",
+    "difficulty": 80.8,
+    "difficultyTier": "hard",
+    "wordCount": 6,
+    "letterCount": 13,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "wordplay"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "86b3692688899be9c9a25fdd17ca0b48",
+    "source": "theme",
+    "type": "title",
+    "answer": "Race Car",
+    "normalizedAnswer": "RACE CAR",
+    "category": "Wordplay",
+    "difficulty": 91.2,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 7,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "wordplay"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "16bc4430824ba374bd5438d6d3ca5519",
+    "source": "theme",
+    "type": "title",
+    "answer": "Level",
+    "normalizedAnswer": "LEVEL",
+    "category": "Wordplay",
+    "difficulty": 96,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "wordplay"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "eba6ef5d03efb65500be6c1ea67ae445",
+    "source": "theme",
+    "type": "title",
+    "answer": "Rotator",
+    "normalizedAnswer": "ROTATOR",
+    "category": "Wordplay",
+    "difficulty": 91.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "wordplay"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "32f77f8b175ea685f87460a3af00f4b0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Kayak",
+    "normalizedAnswer": "KAYAK",
+    "category": "Wordplay",
+    "difficulty": 96,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "wordplay"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6abfd0f2068d25aa1f089bcb65b98921",
+    "source": "theme",
+    "type": "title",
+    "answer": "Deified",
+    "normalizedAnswer": "DEIFIED",
+    "category": "Wordplay",
+    "difficulty": 91.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "wordplay"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "045473c99a94b8757326d487465e0944",
+    "source": "theme",
+    "type": "title",
+    "answer": "Repaper",
+    "normalizedAnswer": "REPAPER",
+    "category": "Wordplay",
+    "difficulty": 91.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "wordplay"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "4aa12840f1e908c83982d22791f1f6ac",
+    "source": "theme",
+    "type": "title",
+    "answer": "Wow Such Amaze",
+    "normalizedAnswer": "WOW SUCH AMAZE",
+    "category": "Wordplay",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "wordplay"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "8e366caf3f698b0b175810a303a4d972",
+    "source": "theme",
+    "type": "title",
+    "answer": "How Much Wood Would a Woodchuck Chuck",
+    "normalizedAnswer": "HOW MUCH WOOD WOULD A WOODCHUCK CHUCK",
+    "category": "Wordplay",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 7,
+    "letterCount": 31,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "wordplay"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "5c6b0374cf668d345f9035e73bdc947c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Fuzzy Wuzzy Was a Bear",
+    "normalizedAnswer": "FUZZY WUZZY WAS A BEAR",
+    "category": "Wordplay",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 18,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "wordplay"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "d6004892e46ef80d2e597180876639d4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Betty Botter Bought Some Butter",
+    "normalizedAnswer": "BETTY BOTTER BOUGHT SOME BUTTER",
+    "category": "Wordplay",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 27,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "wordplay"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a14f9683a40ce8d47c5bfd9939880d4a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sally Sells Seashells by the Seashore",
+    "normalizedAnswer": "SALLY SELLS SEASHELLS BY THE SEASHORE",
+    "category": "Wordplay",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 6,
+    "letterCount": 32,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "wordplay"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "7d3a40fc2b199d95b748762a43d315f2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Irish Wristwatch",
+    "normalizedAnswer": "IRISH WRISTWATCH",
+    "category": "Wordplay",
+    "difficulty": 72,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "wordplay"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "2e63996f86a011e5041a1c87151a798c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Six Slippery Snails",
+    "normalizedAnswer": "SIX SLIPPERY SNAILS",
+    "category": "Wordplay",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 17,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "wordplay"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "275f276d2e69cc66c0489c00c81762c3",
+    "source": "theme",
+    "type": "title",
+    "answer": "A Proper Copper Coffee Pot",
+    "normalizedAnswer": "A PROPER COPPER COFFEE POT",
+    "category": "Wordplay",
+    "difficulty": 72,
+    "difficultyTier": "medium",
+    "wordCount": 5,
+    "letterCount": 22,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "wordplay"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "8d381be0822754027c79a5198159d092",
+    "source": "theme",
+    "type": "title",
+    "answer": "Freshly Fried Flying Fish",
+    "normalizedAnswer": "FRESHLY FRIED FLYING FISH",
+    "category": "Wordplay",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 22,
+    "uniqueLetterCount": 11,
     "tags": [
       "theme",
       "wordplay"

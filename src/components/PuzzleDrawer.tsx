@@ -2,26 +2,22 @@ import { BlurView, useBlur, useThemeSettings } from '@rific/auto-paper'
 import { Drawer, DrawerEdgeSwipe } from '@rific/drawer'
 import { JSX, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { AccessibilityInfo, Platform, ScrollView as RNScrollView, Share, StyleSheet, View } from 'react-native'
-import { Button, Chip, IconButton, SegmentedButtons, Text, TextInput } from 'react-native-paper'
+import { Button, IconButton, SegmentedButtons, Text, TextInput } from 'react-native-paper'
 import { useSharedValue } from 'react-native-reanimated'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
 import type { GameMode } from '@/types/gameModes'
 import type { GameStartPayload, PuzzleSourceMode } from '@/types/gameSession'
 import { alert } from '@/utils/alert'
-import { commaString } from '@/utils/commaString'
-import { horizontalWheelScrollProps } from '@/utils/horizontalWheelScroll'
 import { getPuzzleManifest, PuzzleDifficultyTier } from '@/utils/puzzleCatalog'
 import { buildPuzzleLink } from '@/utils/puzzleLink'
 import { type PuzzleConfig, resolvePuzzle } from '@/utils/puzzlePicker'
 
 import { ModeSelector } from './ModeSelector'
+import { PackPickerDialog } from './PackPickerDialog'
 
-// No icons here (unlike the mode-selector cards) — three icon+label segments don't fit the
-// drawer's width without truncating "Category", so this stays text-only like Difficulty below.
 const SOURCE_OPTIONS: { label: string; value: PuzzleSourceMode }[] = [
   { label: 'Random', value: 'random' },
-  { label: 'Category', value: 'category' },
   { label: 'Custom', value: 'custom' }
 ]
 
@@ -33,8 +29,7 @@ const DIFFICULTY_OPTIONS: { label: string; value: 'any' | PuzzleDifficultyTier }
 ]
 
 const SOURCE_MODE_ANNOUNCEMENT: Record<PuzzleSourceMode, string> = {
-  random: 'Random puzzle — difficulty options shown',
-  category: 'Category picker shown',
+  random: 'Pack picker and difficulty options shown',
   custom: 'Custom puzzle form shown'
 }
 
@@ -47,13 +42,18 @@ export type PuzzleDrawerProps = {
   onRequestOpen: () => void
   initialConfig: PuzzleConfig
   onConfirm: (payload: GameStartPayload, config: PuzzleConfig) => void
+  packsVersion?: number
+  onPacksChanged?: () => void
 }
 
-export const PuzzleDrawer = ({ visible, onDismiss, onRequestOpen, initialConfig, onConfirm }: PuzzleDrawerProps): JSX.Element => {
+export const PuzzleDrawer = ({ visible, onDismiss, onRequestOpen, initialConfig, onConfirm, packsVersion = 0, onPacksChanged = () => {} }: PuzzleDrawerProps): JSX.Element => {
   const { settings } = useThemeSettings()
   const blur = useBlur()
   const insets = useSafeAreaInsets()
-  const manifest = useMemo(() => getPuzzleManifest().filter((item) => item.count > 0), [])
+  // packsVersion isn't read here — it's a change counter bumped whenever a custom pack is
+  // created/edited/deleted/imported, since getPuzzleManifest() otherwise looks pure to React.
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- packsVersion is an intentional external invalidation trigger, not a value the memo body reads
+  const manifest = useMemo(() => getPuzzleManifest().filter((item) => item.count > 0), [packsVersion])
   const translateX = useSharedValue(-DRAWER_WIDTH)
 
   const [draft, setDraft] = useState<PuzzleConfig>(initialConfig)
@@ -61,7 +61,14 @@ export const PuzzleDrawer = ({ visible, onDismiss, onRequestOpen, initialConfig,
   // so masking by default only made typos harder to catch. The toggle still lets them hide it
   // afterward (e.g. before handing the device to whoever's guessing).
   const [isRevealed, setIsRevealed] = useState(true)
+  const [packPickerVisible, setPackPickerVisible] = useState(false)
   const hasAnnouncedRef = useRef(false)
+
+  const packSummaryLabel = useMemo(() => {
+    if (draft.packKeys.length === 0) return 'No packs selected'
+    if (draft.packKeys.length === manifest.length) return 'All packs'
+    return `${draft.packKeys.length} of ${manifest.length} packs`
+  }, [draft.packKeys, manifest.length])
 
   const updateDraft = useCallback((patch: Partial<PuzzleConfig>) => setDraft((d) => ({ ...d, ...patch })), [])
 
@@ -117,7 +124,7 @@ export const PuzzleDrawer = ({ visible, onDismiss, onRequestOpen, initialConfig,
     try {
       if (Platform.OS === 'web') {
         await navigator.clipboard.writeText(link)
-        void alert('Copied to clipboard', 'Send this link to a friend — opening it starts them on your puzzle.')
+        void alert('Copied to clipboard', 'Send this link to a friend. Opening it starts them on your puzzle.')
         return
       }
       await Share.share({ message: `Can you guess my Hangman puzzle? ${link}` })
@@ -145,9 +152,8 @@ export const PuzzleDrawer = ({ visible, onDismiss, onRequestOpen, initialConfig,
             </Text>
             <SegmentedButtons value={draft.sourceMode} onValueChange={(value) => updateDraft({ sourceMode: value as PuzzleSourceMode })} buttons={SOURCE_OPTIONS} />
 
-            {/* Custom inputs and the category picker are mutually exclusive, so they share this one
-                slot right under Puzzle source — whichever is relevant appears in the same place,
-                instead of the category picker jumping around relative to Difficulty below. */}
+            {/* Custom inputs and the Random controls are mutually exclusive, so they share this one
+                slot right under Puzzle source — whichever is relevant appears in the same place. */}
             {draft.sourceMode === 'custom' ? (
               <View style={styles.customForm}>
                 <TextInput testID='phrase-input' value={draft.customPhrase} onChangeText={(customPhrase) => updateDraft({ customPhrase })} label='Secret word (letters and spaces)' autoCapitalize='characters' secureTextEntry={!isRevealed} maxLength={128} mode='outlined' right={<TextInput.Icon icon={isRevealed ? 'eye-off' : 'eye'} onPress={() => setIsRevealed((r) => !r)} accessibilityLabel={isRevealed ? 'Hide secret word' : 'Show secret word'} accessibilityState={{ selected: isRevealed }} />} />
@@ -156,31 +162,21 @@ export const PuzzleDrawer = ({ visible, onDismiss, onRequestOpen, initialConfig,
                   Share this puzzle
                 </Button>
               </View>
-            ) : null}
-
-            {draft.sourceMode === 'category' ? (
+            ) : (
               <>
                 <Text variant='titleMedium' style={styles.sectionLabel}>
-                  Choose a pack
+                  Choose packs
                 </Text>
-                <RNScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.chipRow} {...horizontalWheelScrollProps}>
-                  {manifest.map((item) => (
-                    <Chip key={item.key} selected={draft.packKey === item.key} onPress={() => updateDraft({ packKey: item.key })}>
-                      {item.label} ({commaString(item.count)})
-                    </Chip>
-                  ))}
-                </RNScrollView>
-              </>
-            ) : null}
+                <Button mode='outlined' icon='format-list-checks' onPress={() => setPackPickerVisible(true)} contentStyle={styles.packPickerContent}>
+                  {packSummaryLabel}
+                </Button>
 
-            {draft.sourceMode !== 'custom' ? (
-              <>
                 <Text variant='titleMedium' style={styles.sectionLabel}>
                   Difficulty
                 </Text>
                 <SegmentedButtons value={draft.difficulty} onValueChange={(value) => updateDraft({ difficulty: value as 'any' | PuzzleDifficultyTier })} buttons={DIFFICULTY_OPTIONS} />
               </>
-            ) : null}
+            )}
 
             <Text variant='titleMedium' style={styles.sectionLabel}>
               Game mode
@@ -195,15 +191,13 @@ export const PuzzleDrawer = ({ visible, onDismiss, onRequestOpen, initialConfig,
           </View>
         </View>
       </Drawer>
+
+      <PackPickerDialog visible={packPickerVisible} onDismiss={() => setPackPickerVisible(false)} selectedKeys={draft.packKeys} onChangeSelectedKeys={(packKeys) => updateDraft({ packKeys })} packsVersion={packsVersion} onPacksChanged={onPacksChanged} />
     </>
   )
 }
 
 const styles = StyleSheet.create({
-  chipRow: {
-    columnGap: 8,
-    paddingBottom: 4
-  },
   confirmContent: { height: 52 },
   confirmLabel: { fontSize: 16, fontWeight: '700' },
   customForm: { paddingTop: 16 },
@@ -217,6 +211,7 @@ const styles = StyleSheet.create({
     paddingVertical: 12
   },
   hintInput: { marginTop: 8 },
+  packPickerContent: { justifyContent: 'flex-start' },
   panelContent: {
     elevation: 8,
     flex: 1,

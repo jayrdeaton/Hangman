@@ -1,182 +1,22 @@
 [
   {
-    "id": "70ab9dfcca038f6b8215270809fd427b",
+    "id": "4bc912e8ce5e333b96211fdd0ba47373",
     "source": "theme",
     "type": "title",
-    "answer": "The Godfather",
-    "normalizedAnswer": "THE GODFATHER",
+    "answer": "Citizen Kane",
+    "normalizedAnswer": "CITIZEN KANE",
     "category": "Movie Title",
-    "difficulty": 18.7,
+    "difficulty": 73.6,
     "difficultyTier": "medium",
     "wordCount": 2,
-    "letterCount": 12,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "movie"
-    ],
-    "metadata": {
-      "source": "fallback"
-    }
-  },
-  {
-    "id": "1602f00a1de40f546ae99dfb1f5e2e17",
-    "source": "theme",
-    "type": "title",
-    "answer": "The Dark Knight",
-    "normalizedAnswer": "THE DARK KNIGHT",
-    "category": "Movie Title",
-    "difficulty": 26,
-    "difficultyTier": "hard",
-    "wordCount": 3,
-    "letterCount": 13,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "movie"
-    ],
-    "metadata": {
-      "source": "fallback"
-    }
-  },
-  {
-    "id": "dfff52d557696d196913c6f3738ad664",
-    "source": "theme",
-    "type": "title",
-    "answer": "Titanic",
-    "normalizedAnswer": "TITANIC",
-    "category": "Movie Title",
-    "difficulty": 10.3,
-    "difficultyTier": "easy",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "movie"
-    ],
-    "metadata": {
-      "source": "fallback"
-    }
-  },
-  {
-    "id": "7acdbcb2c61e7a765b62db92eeedf979",
-    "source": "theme",
-    "type": "title",
-    "answer": "Jurassic Park",
-    "normalizedAnswer": "JURASSIC PARK",
-    "category": "Movie Title",
-    "difficulty": 23.7,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 12,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "movie"
-    ],
-    "metadata": {
-      "source": "fallback"
-    }
-  },
-  {
-    "id": "bb408b69c99d987f2a622976a7863d9f",
-    "source": "theme",
-    "type": "title",
-    "answer": "Back to the Future",
-    "normalizedAnswer": "BACK TO THE FUTURE",
-    "category": "Movie Title",
-    "difficulty": 26.2,
-    "difficultyTier": "hard",
-    "wordCount": 4,
-    "letterCount": 15,
-    "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "movie"
-    ],
-    "metadata": {
-      "source": "fallback"
-    }
-  },
-  {
-    "id": "4eacb6a3d18ef345ce88d3b752d9eef0",
-    "source": "theme",
-    "type": "title",
-    "answer": "The Matrix",
-    "normalizedAnswer": "THE MATRIX",
-    "category": "Movie Title",
-    "difficulty": 18.5,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 9,
+    "letterCount": 11,
     "uniqueLetterCount": 8,
     "tags": [
       "theme",
       "movie"
     ],
     "metadata": {
-      "source": "fallback"
-    }
-  },
-  {
-    "id": "0fe5665776899e22161af667d8df9970",
-    "source": "theme",
-    "type": "title",
-    "answer": "Star Wars",
-    "normalizedAnswer": "STAR WARS",
-    "category": "Movie Title",
-    "difficulty": 11.1,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "movie"
-    ],
-    "metadata": {
-      "source": "fallback"
-    }
-  },
-  {
-    "id": "b69d80645fd12c5fdb836a991616d0a1",
-    "source": "theme",
-    "type": "title",
-    "answer": "The Lion King",
-    "normalizedAnswer": "THE LION KING",
-    "category": "Movie Title",
-    "difficulty": 21.2,
-    "difficultyTier": "hard",
-    "wordCount": 3,
-    "letterCount": 11,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "movie"
-    ],
-    "metadata": {
-      "source": "fallback"
-    }
-  },
-  {
-    "id": "af8a01d243d54b6091243812e2b4998f",
-    "source": "theme",
-    "type": "title",
-    "answer": "Inception",
-    "normalizedAnswer": "INCEPTION",
-    "category": "Movie Title",
-    "difficulty": 14.1,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 9,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "movie"
-    ],
-    "metadata": {
-      "source": "fallback"
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
     }
   },
   {
@@ -186,8 +26,8 @@
     "answer": "Casablanca",
     "normalizedAnswer": "CASABLANCA",
     "category": "Movie Title",
-    "difficulty": 13,
-    "difficultyTier": "medium",
+    "difficulty": 82,
+    "difficultyTier": "hard",
     "wordCount": 1,
     "letterCount": 10,
     "uniqueLetterCount": 6,
@@ -196,7 +36,2427 @@
       "movie"
     ],
     "metadata": {
-      "source": "fallback"
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "70ab9dfcca038f6b8215270809fd427b",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Godfather",
+    "normalizedAnswer": "THE GODFATHER",
+    "category": "Movie Title",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "ec88819d4d286a7d317aaa8d35c4f628",
+    "source": "theme",
+    "type": "title",
+    "answer": "Gone with the Wind",
+    "normalizedAnswer": "GONE WITH THE WIND",
+    "category": "Movie Title",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 4,
+    "letterCount": 15,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "22393023395b4a75d9130922845876e8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lawrence of Arabia",
+    "normalizedAnswer": "LAWRENCE OF ARABIA",
+    "category": "Movie Title",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 16,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "0237b9c4bc7dfae62439b003c673e496",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Wizard of Oz",
+    "normalizedAnswer": "THE WIZARD OF OZ",
+    "category": "Movie Title",
+    "difficulty": 60.8,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 13,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "b7592c0562baee505a6f8178fcf03a03",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Graduate",
+    "normalizedAnswer": "THE GRADUATE",
+    "category": "Movie Title",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "9f11b1c3cb2057f5dd7955ff20338c3b",
+    "source": "theme",
+    "type": "title",
+    "answer": "On the Waterfront",
+    "normalizedAnswer": "ON THE WATERFRONT",
+    "category": "Movie Title",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "c0db0a772c5f6dd513f61a2b10201929",
+    "source": "theme",
+    "type": "title",
+    "answer": "Schindler's List",
+    "normalizedAnswer": "SCHINDLERS LIST",
+    "category": "Movie Title",
+    "difficulty": 64.4,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "2f7edcd5d1590d6912cb6c68e77e4281",
+    "source": "theme",
+    "type": "title",
+    "answer": "Singin' in the Rain",
+    "normalizedAnswer": "SINGIN IN THE RAIN",
+    "category": "Movie Title",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 4,
+    "letterCount": 15,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "ebd108446b3928dc9aed6f99bfc5af47",
+    "source": "theme",
+    "type": "title",
+    "answer": "It's a Wonderful Life",
+    "normalizedAnswer": "ITS A WONDERFUL LIFE",
+    "category": "Movie Title",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 17,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "0a2097483cee7827ed2f400ec006dfaa",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sunset Boulevard",
+    "normalizedAnswer": "SUNSET BOULEVARD",
+    "category": "Movie Title",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "5c4502af17f0b9d13560107137232c82",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Bridge on the River Kwai",
+    "normalizedAnswer": "THE BRIDGE ON THE RIVER KWAI",
+    "category": "Movie Title",
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 6,
+    "letterCount": 23,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "efd7d4c6d6fea0bfaec34a9ec67e98aa",
+    "source": "theme",
+    "type": "title",
+    "answer": "Some Like It Hot",
+    "normalizedAnswer": "SOME LIKE IT HOT",
+    "category": "Movie Title",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 4,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "0fe5665776899e22161af667d8df9970",
+    "source": "theme",
+    "type": "title",
+    "answer": "Star Wars",
+    "normalizedAnswer": "STAR WARS",
+    "category": "Movie Title",
+    "difficulty": 86.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "885fef2b6de87cca1f1067a1c7a0b6be",
+    "source": "theme",
+    "type": "title",
+    "answer": "All About Eve",
+    "normalizedAnswer": "ALL ABOUT EVE",
+    "category": "Movie Title",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "70105e65ae643e10b946ed1c3f4bb3d0",
+    "source": "theme",
+    "type": "title",
+    "answer": "The African Queen",
+    "normalizedAnswer": "THE AFRICAN QUEEN",
+    "category": "Movie Title",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "a2ac13d52565d26ef7e8681423be7545",
+    "source": "theme",
+    "type": "title",
+    "answer": "Psycho",
+    "normalizedAnswer": "PSYCHO",
+    "category": "Movie Title",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "916537def3a369950940cc92519c9d4b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chinatown",
+    "normalizedAnswer": "CHINATOWN",
+    "category": "Movie Title",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "b1572382d0a5c2a8ab59d4aeed485258",
+    "source": "theme",
+    "type": "title",
+    "answer": "One Flew Over the Cuckoo's Nest",
+    "normalizedAnswer": "ONE FLEW OVER THE CUCKOOS NEST",
+    "category": "Movie Title",
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 6,
+    "letterCount": 25,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "30fd20eaffe5d627265187b8ca29d7e3",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Grapes of Wrath",
+    "normalizedAnswer": "THE GRAPES OF WRATH",
+    "category": "Movie Title",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 16,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "901bcfd7a5d8bc25b4613dca486b03c2",
+    "source": "theme",
+    "type": "title",
+    "answer": "2001: A Space Odyssey",
+    "normalizedAnswer": "2001 A SPACE ODYSSEY",
+    "category": "Movie Title",
+    "difficulty": 72.8,
+    "difficultyTier": "medium",
+    "wordCount": 4,
+    "letterCount": 17,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "18194f59fd7168500e94d016dcbd983b",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Maltese Falcon",
+    "normalizedAnswer": "THE MALTESE FALCON",
+    "category": "Movie Title",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 16,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "cb2a680e630daa4f72fded4786311617",
+    "source": "theme",
+    "type": "title",
+    "answer": "Raging Bull",
+    "normalizedAnswer": "RAGING BULL",
+    "category": "Movie Title",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "21aa624daea8d5ac8885cac5696eb375",
+    "source": "theme",
+    "type": "title",
+    "answer": "E.T. the Extra-Terrestrial",
+    "normalizedAnswer": "ET THE EXTRATERRESTRIAL",
+    "category": "Movie Title",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 21,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "78457d355994ff7583b8070e715a01b0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Dr. Strangelove",
+    "normalizedAnswer": "DR STRANGELOVE",
+    "category": "Movie Title",
+    "difficulty": 60.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "63b7c8af0549a3e6021dad7da2d54b0b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bonnie and Clyde",
+    "normalizedAnswer": "BONNIE AND CLYDE",
+    "category": "Movie Title",
+    "difficulty": 64.4,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "2cb71ef9e7ff7aea0108efc547a9134b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Apocalypse Now",
+    "normalizedAnswer": "APOCALYPSE NOW",
+    "category": "Movie Title",
+    "difficulty": 64.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "9d40fbb906a6de3fef73c9a53e7fdc22",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mr. Smith Goes to Washington",
+    "normalizedAnswer": "MR SMITH GOES TO WASHINGTON",
+    "category": "Movie Title",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 23,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "61e7a9a393259936c8de82d5d5a68eff",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Treasure of the Sierra Madre",
+    "normalizedAnswer": "THE TREASURE OF THE SIERRA MADRE",
+    "category": "Movie Title",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 6,
+    "letterCount": 27,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "58da6eb6bb9358f1db150041b6862558",
+    "source": "theme",
+    "type": "title",
+    "answer": "Annie Hall",
+    "normalizedAnswer": "ANNIE HALL",
+    "category": "Movie Title",
+    "difficulty": 82.4,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "1a6b79a633fefa64a86fcea1149f77f3",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Godfather Part II",
+    "normalizedAnswer": "THE GODFATHER PART II",
+    "category": "Movie Title",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 18,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "5b968ef697a4f43b981acc2bc4e30278",
+    "source": "theme",
+    "type": "title",
+    "answer": "High Noon",
+    "normalizedAnswer": "HIGH NOON",
+    "category": "Movie Title",
+    "difficulty": 86.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "9336f019487eb9736a41a192de02d489",
+    "source": "theme",
+    "type": "title",
+    "answer": "To Kill a Mockingbird",
+    "normalizedAnswer": "TO KILL A MOCKINGBIRD",
+    "category": "Movie Title",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 18,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "e997b96c4e004cf22c8d3328731fba4c",
+    "source": "theme",
+    "type": "title",
+    "answer": "It Happened One Night",
+    "normalizedAnswer": "IT HAPPENED ONE NIGHT",
+    "category": "Movie Title",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 18,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "22c2f0cc1abfc61df2b15f32ef8aeec8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Midnight Cowboy",
+    "normalizedAnswer": "MIDNIGHT COWBOY",
+    "category": "Movie Title",
+    "difficulty": 56.4,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "905ca3d32249e1c2ca9055d5ae495193",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Best Years of Our Lives",
+    "normalizedAnswer": "THE BEST YEARS OF OUR LIVES",
+    "category": "Movie Title",
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 6,
+    "letterCount": 22,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "d4d8ef90c30aad296e33de30d8897130",
+    "source": "theme",
+    "type": "title",
+    "answer": "Double Indemnity",
+    "normalizedAnswer": "DOUBLE INDEMNITY",
+    "category": "Movie Title",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "a1bc43fbb25c959e71496794110dd53e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Doctor Zhivago",
+    "normalizedAnswer": "DOCTOR ZHIVAGO",
+    "category": "Movie Title",
+    "difficulty": 60.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "2e824375861f7676494cd05d5c5f0434",
+    "source": "theme",
+    "type": "title",
+    "answer": "North by Northwest",
+    "normalizedAnswer": "NORTH BY NORTHWEST",
+    "category": "Movie Title",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 16,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "bf5886d445906e3c2a00d9923462787e",
+    "source": "theme",
+    "type": "title",
+    "answer": "West Side Story",
+    "normalizedAnswer": "WEST SIDE STORY",
+    "category": "Movie Title",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "53fe7e5eb1538e192ad90dd4c0a6e6e4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Rear Window",
+    "normalizedAnswer": "REAR WINDOW",
+    "category": "Movie Title",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "76ee6582b4091aac80f06904271eb641",
+    "source": "theme",
+    "type": "title",
+    "answer": "King Kong",
+    "normalizedAnswer": "KING KONG",
+    "category": "Movie Title",
+    "difficulty": 86.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "d164115ef8e4719a001a77ea5052eb05",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Birth of a Nation",
+    "normalizedAnswer": "THE BIRTH OF A NATION",
+    "category": "Movie Title",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 17,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "d89ab0e9d27a29d35884ed615cc16b8b",
+    "source": "theme",
+    "type": "title",
+    "answer": "A Streetcar Named Desire",
+    "normalizedAnswer": "A STREETCAR NAMED DESIRE",
+    "category": "Movie Title",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 21,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "a83fa6027b1a84deaf36a2782c543926",
+    "source": "theme",
+    "type": "title",
+    "answer": "A Clockwork Orange",
+    "normalizedAnswer": "A CLOCKWORK ORANGE",
+    "category": "Movie Title",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 16,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "1ac6ebe9cffdc13d31f1e4575c9a2f39",
+    "source": "theme",
+    "type": "title",
+    "answer": "Taxi Driver",
+    "normalizedAnswer": "TAXI DRIVER",
+    "category": "Movie Title",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "31fdc73f5c80443bcdfb605f7b125eeb",
+    "source": "theme",
+    "type": "title",
+    "answer": "Jaws",
+    "normalizedAnswer": "JAWS",
+    "category": "Movie Title",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "c14eef459805def60000fdcdf7f9c1d4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Snow White and the Seven Dwarfs",
+    "normalizedAnswer": "SNOW WHITE AND THE SEVEN DWARFS",
+    "category": "Movie Title",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 6,
+    "letterCount": 26,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "21dc7f1d1bf68b074028f84b37c396ba",
+    "source": "theme",
+    "type": "title",
+    "answer": "Butch Cassidy and the Sundance Kid",
+    "normalizedAnswer": "BUTCH CASSIDY AND THE SUNDANCE KID",
+    "category": "Movie Title",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 6,
+    "letterCount": 29,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "8d8c7e9e8ace5d689dc5b45935818b7d",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Philadelphia Story",
+    "normalizedAnswer": "THE PHILADELPHIA STORY",
+    "category": "Movie Title",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 20,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "764834653d0810e34efee6fd754ac93c",
+    "source": "theme",
+    "type": "title",
+    "answer": "From Here to Eternity",
+    "normalizedAnswer": "FROM HERE TO ETERNITY",
+    "category": "Movie Title",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 18,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "887770835ac6f4d63ee7020523bbf3ec",
+    "source": "theme",
+    "type": "title",
+    "answer": "Amadeus",
+    "normalizedAnswer": "AMADEUS",
+    "category": "Movie Title",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "6086e94873bf21250d14ca5c8bb9c2dc",
+    "source": "theme",
+    "type": "title",
+    "answer": "All Quiet on the Western Front",
+    "normalizedAnswer": "ALL QUIET ON THE WESTERN FRONT",
+    "category": "Movie Title",
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 6,
+    "letterCount": 25,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "98717a1da78f227bf0e580fbb1be0dce",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Sound of Music",
+    "normalizedAnswer": "THE SOUND OF MUSIC",
+    "category": "Movie Title",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 15,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "c2b27aa5d6c31100b26a28cc613e64b7",
+    "source": "theme",
+    "type": "title",
+    "answer": "M*A*S*H",
+    "normalizedAnswer": "MASH",
+    "category": "Movie Title",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "18ea1c2aec9b05a1232600617ca7dd9b",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Third Man",
+    "normalizedAnswer": "THE THIRD MAN",
+    "category": "Movie Title",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "5ce575dbd49996c7995417c90aebdef5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Fantasia",
+    "normalizedAnswer": "FANTASIA",
+    "category": "Movie Title",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "fb714da01e19427762a363cf7264d6c8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Rebel Without a Cause",
+    "normalizedAnswer": "REBEL WITHOUT A CAUSE",
+    "category": "Movie Title",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 18,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "cffe512c0a68a69fdf818f9a02917d51",
+    "source": "theme",
+    "type": "title",
+    "answer": "Raiders of the Lost Ark",
+    "normalizedAnswer": "RAIDERS OF THE LOST ARK",
+    "category": "Movie Title",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 19,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "d8fdb59cfbf264d388e196862d7ba185",
+    "source": "theme",
+    "type": "title",
+    "answer": "Vertigo",
+    "normalizedAnswer": "VERTIGO",
+    "category": "Movie Title",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "a4b77cd85a6562383c51e1efbbd8ddb5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Tootsie",
+    "normalizedAnswer": "TOOTSIE",
+    "category": "Movie Title",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "2ee89b7f62b5d06701fa60f122884d44",
+    "source": "theme",
+    "type": "title",
+    "answer": "Stagecoach",
+    "normalizedAnswer": "STAGECOACH",
+    "category": "Movie Title",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "2ba15154c2fca7b304238a184cf0ab6c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Close Encounters of the Third Kind",
+    "normalizedAnswer": "CLOSE ENCOUNTERS OF THE THIRD KIND",
+    "category": "Movie Title",
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 6,
+    "letterCount": 29,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "a2402b8407eb0c0c3e2f247a091cd7d9",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Silence of the Lambs",
+    "normalizedAnswer": "THE SILENCE OF THE LAMBS",
+    "category": "Movie Title",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 20,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "5a19a31f7b2dbf0cbfe610a68dbb5dcb",
+    "source": "theme",
+    "type": "title",
+    "answer": "Network",
+    "normalizedAnswer": "NETWORK",
+    "category": "Movie Title",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "1502d907cce18de42bc85c9d7ef81f68",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Manchurian Candidate",
+    "normalizedAnswer": "THE MANCHURIAN CANDIDATE",
+    "category": "Movie Title",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 22,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "9ad76843ac588014bde38c494c4e8d5f",
+    "source": "theme",
+    "type": "title",
+    "answer": "An American in Paris",
+    "normalizedAnswer": "AN AMERICAN IN PARIS",
+    "category": "Movie Title",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 4,
+    "letterCount": 17,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "4f08c8ae5b346808e40aeaa38e5f8c66",
+    "source": "theme",
+    "type": "title",
+    "answer": "Shane",
+    "normalizedAnswer": "SHANE",
+    "category": "Movie Title",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "d948763ba9babc8f52eb9a22309440aa",
+    "source": "theme",
+    "type": "title",
+    "answer": "The French Connection",
+    "normalizedAnswer": "THE FRENCH CONNECTION",
+    "category": "Movie Title",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 19,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "cda86325992e467d7f216e05b62417fd",
+    "source": "theme",
+    "type": "title",
+    "answer": "Forrest Gump",
+    "normalizedAnswer": "FORREST GUMP",
+    "category": "Movie Title",
+    "difficulty": 65.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "0f6b9b7c2538487fde8e9956e1fbda2c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ben-Hur",
+    "normalizedAnswer": "BENHUR",
+    "category": "Movie Title",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "74a7462d4af100802d3c5b6390913fa9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Wuthering Heights",
+    "normalizedAnswer": "WUTHERING HEIGHTS",
+    "category": "Movie Title",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "ca9c25ca9e0bb73355c981fb15651a59",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Gold Rush",
+    "normalizedAnswer": "THE GOLD RUSH",
+    "category": "Movie Title",
+    "difficulty": 65.6,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 11,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "882039b1ce6b5f143c3bf9baed75c911",
+    "source": "theme",
+    "type": "title",
+    "answer": "Dances with Wolves",
+    "normalizedAnswer": "DANCES WITH WOLVES",
+    "category": "Movie Title",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 16,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "d16f4c5084c0ae424858de51b5a48e04",
+    "source": "theme",
+    "type": "title",
+    "answer": "City Lights",
+    "normalizedAnswer": "CITY LIGHTS",
+    "category": "Movie Title",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "17ca4c86d86813608471852b3015e83e",
+    "source": "theme",
+    "type": "title",
+    "answer": "American Graffiti",
+    "normalizedAnswer": "AMERICAN GRAFFITI",
+    "category": "Movie Title",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "54c70d20aa73a8feafcf18a013effa1e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Rocky",
+    "normalizedAnswer": "ROCKY",
+    "category": "Movie Title",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "46ca5f7d280516872f48c9586d5b6c89",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Deer Hunter",
+    "normalizedAnswer": "THE DEER HUNTER",
+    "category": "Movie Title",
+    "difficulty": 76.8,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 13,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "778aafeb9065202e4395de687d3f3d52",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Wild Bunch",
+    "normalizedAnswer": "THE WILD BUNCH",
+    "category": "Movie Title",
+    "difficulty": 61.2,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 12,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "d59cf2c7261ee699f2ea782eee9bd2ec",
+    "source": "theme",
+    "type": "title",
+    "answer": "Modern Times",
+    "normalizedAnswer": "MODERN TIMES",
+    "category": "Movie Title",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "064014e2acc3bd79259e6cb4ed7de262",
+    "source": "theme",
+    "type": "title",
+    "answer": "Giant",
+    "normalizedAnswer": "GIANT",
+    "category": "Movie Title",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "7204e8a61dcecc7303241d516c4377d1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Platoon",
+    "normalizedAnswer": "PLATOON",
+    "category": "Movie Title",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "963883c1f50b1400b6b0758bf0c15129",
+    "source": "theme",
+    "type": "title",
+    "answer": "Fargo",
+    "normalizedAnswer": "FARGO",
+    "category": "Movie Title",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "5c3173bd01c617eb1c51ffaaa22624f3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Duck Soup",
+    "normalizedAnswer": "DUCK SOUP",
+    "category": "Movie Title",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "6cf9116468dc950b99cc82cfe81a51b9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mutiny on the Bounty",
+    "normalizedAnswer": "MUTINY ON THE BOUNTY",
+    "category": "Movie Title",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 17,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "11edbea62de27cb9d77870876bc58b7d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Frankenstein",
+    "normalizedAnswer": "FRANKENSTEIN",
+    "category": "Movie Title",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "bcc74fd349b8aef230c6d919648c7aac",
+    "source": "theme",
+    "type": "title",
+    "answer": "Easy Rider",
+    "normalizedAnswer": "EASY RIDER",
+    "category": "Movie Title",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "f871b7be9269d32d5ab23d7dcdbadf3e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Patton",
+    "normalizedAnswer": "PATTON",
+    "category": "Movie Title",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "e78e4f60653b1e6f9aab44b5a73ccc08",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Jazz Singer",
+    "normalizedAnswer": "THE JAZZ SINGER",
+    "category": "Movie Title",
+    "difficulty": 60.8,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 13,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "41b1ca3f5d2a4c4f62c7c94b2b8f91d2",
+    "source": "theme",
+    "type": "title",
+    "answer": "My Fair Lady",
+    "normalizedAnswer": "MY FAIR LADY",
+    "category": "Movie Title",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "c54cd4a1bdd5d1e4c8ad7392bd9ba6f8",
+    "source": "theme",
+    "type": "title",
+    "answer": "A Place in the Sun",
+    "normalizedAnswer": "A PLACE IN THE SUN",
+    "category": "Movie Title",
+    "difficulty": 60.4,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 14,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "600950311c3bcbb4df330710dec1fa6c",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Apartment",
+    "normalizedAnswer": "THE APARTMENT",
+    "category": "Movie Title",
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "15fd74e824bfff52a59bcbc107e73e41",
+    "source": "theme",
+    "type": "title",
+    "answer": "Goodfellas",
+    "normalizedAnswer": "GOODFELLAS",
+    "category": "Movie Title",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "446c14677537cb00b8209245f1feae5e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Pulp Fiction",
+    "normalizedAnswer": "PULP FICTION",
+    "category": "Movie Title",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "c9e46d8665ba1d0a432f673aba74b5da",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Searchers",
+    "normalizedAnswer": "THE SEARCHERS",
+    "category": "Movie Title",
+    "difficulty": 77.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "b6845e167cfbe757ab36ea5b4126f733",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bringing Up Baby",
+    "normalizedAnswer": "BRINGING UP BABY",
+    "category": "Movie Title",
+    "difficulty": 68.4,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 14,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "eb3409e8237e95d7b3aadd1ec185da82",
+    "source": "theme",
+    "type": "title",
+    "answer": "Unforgiven",
+    "normalizedAnswer": "UNFORGIVEN",
+    "category": "Movie Title",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "e94072c718913a1c69e10310c50ae550",
+    "source": "theme",
+    "type": "title",
+    "answer": "Guess Who's Coming to Dinner",
+    "normalizedAnswer": "GUESS WHOS COMING TO DINNER",
+    "category": "Movie Title",
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 23,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "1a87f0598f12425e80d439b9eeb3be3b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Yankee Doodle Dandy",
+    "normalizedAnswer": "YANKEE DOODLE DANDY",
+    "category": "Movie Title",
+    "difficulty": 72,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 17,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "653589dca360871283f20a77cf612c2e",
+    "source": "theme",
+    "type": "title",
+    "answer": "The General",
+    "normalizedAnswer": "THE GENERAL",
+    "category": "Movie Title",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "da8e5f70aa699d01fc01f57b07c08f1d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Intolerance",
+    "normalizedAnswer": "INTOLERANCE",
+    "category": "Movie Title",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "60e782286adf367c8c0d14a8f1438493",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Fellowship of the Ring",
+    "normalizedAnswer": "THE FELLOWSHIP OF THE RING",
+    "category": "Movie Title",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 22,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "bf9acfc9adcf37195d1d1000628f7da7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Nashville",
+    "normalizedAnswer": "NASHVILLE",
+    "category": "Movie Title",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "61ad6e7d487b2bffbf9c76054231eec0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sullivan's Travels",
+    "normalizedAnswer": "SULLIVANS TRAVELS",
+    "category": "Movie Title",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "e54175657d93dbc643c20a9a6ac2ae7c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cabaret",
+    "normalizedAnswer": "CABARET",
+    "category": "Movie Title",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "03c1e8e4bcabec1aee80ede836475234",
+    "source": "theme",
+    "type": "title",
+    "answer": "Who's Afraid of Virginia Woolf",
+    "normalizedAnswer": "WHOS AFRAID OF VIRGINIA WOOLF",
+    "category": "Movie Title",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 25,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "01f5af842b334020959bbd7087d596ff",
+    "source": "theme",
+    "type": "title",
+    "answer": "Saving Private Ryan",
+    "normalizedAnswer": "SAVING PRIVATE RYAN",
+    "category": "Movie Title",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 17,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "957918f18fe587ac5c42b8164c21e10e",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Shawshank Redemption",
+    "normalizedAnswer": "THE SHAWSHANK REDEMPTION",
+    "category": "Movie Title",
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 22,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "81443e339316077fa5096ed8624949be",
+    "source": "theme",
+    "type": "title",
+    "answer": "In the Heat of the Night",
+    "normalizedAnswer": "IN THE HEAT OF THE NIGHT",
+    "category": "Movie Title",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 6,
+    "letterCount": 19,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "b95e334c866e7db1a0258cbe24548506",
+    "source": "theme",
+    "type": "title",
+    "answer": "All the President's Men",
+    "normalizedAnswer": "ALL THE PRESIDENTS MEN",
+    "category": "Movie Title",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 19,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "2975b444a1584f39f980da6f9d68995b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Spartacus",
+    "normalizedAnswer": "SPARTACUS",
+    "category": "Movie Title",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "06bb50313bd9e8b06eef0c08ce87a39a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sunrise",
+    "normalizedAnswer": "SUNRISE",
+    "category": "Movie Title",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "dfff52d557696d196913c6f3738ad664",
+    "source": "theme",
+    "type": "title",
+    "answer": "Titanic",
+    "normalizedAnswer": "TITANIC",
+    "category": "Movie Title",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "719c36cc8175bb48afb4aadd67902524",
+    "source": "theme",
+    "type": "title",
+    "answer": "A Night at the Opera",
+    "normalizedAnswer": "A NIGHT AT THE OPERA",
+    "category": "Movie Title",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 16,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "5185adc92109635a363f40f0d97ccbae",
+    "source": "theme",
+    "type": "title",
+    "answer": "12 Angry Men",
+    "normalizedAnswer": "12 ANGRY MEN",
+    "category": "Movie Title",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "1c870aa4b2af764fc95d147d587dd46b",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Sixth Sense",
+    "normalizedAnswer": "THE SIXTH SENSE",
+    "category": "Movie Title",
+    "difficulty": 76.8,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 13,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "65b78629f908c44770471245bbc9f24e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Swing Time",
+    "normalizedAnswer": "SWING TIME",
+    "category": "Movie Title",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "7ad5f7e7f447ca937703bdba9c0440bd",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sophie's Choice",
+    "normalizedAnswer": "SOPHIES CHOICE",
+    "category": "Movie Title",
+    "difficulty": 76.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "3d5d65ad75167094b6b236c67a1217e7",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Last Picture Show",
+    "normalizedAnswer": "THE LAST PICTURE SHOW",
+    "category": "Movie Title",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 18,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "d77a6082ef78b4a671a21e2481fae149",
+    "source": "theme",
+    "type": "title",
+    "answer": "Do the Right Thing",
+    "normalizedAnswer": "DO THE RIGHT THING",
+    "category": "Movie Title",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 4,
+    "letterCount": 15,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "52b842893bf37f680a149cc37ca51f3f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Blade Runner",
+    "normalizedAnswer": "BLADE RUNNER",
+    "category": "Movie Title",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
+    }
+  },
+  {
+    "id": "13d1345c2e9dec20a3e63dce41098427",
+    "source": "theme",
+    "type": "title",
+    "answer": "Toy Story",
+    "normalizedAnswer": "TOY STORY",
+    "category": "Movie Title",
+    "difficulty": 86.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "movie"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
     }
   }
 ]

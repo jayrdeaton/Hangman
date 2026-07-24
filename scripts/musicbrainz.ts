@@ -10,6 +10,15 @@ type MusicBrainzArtist = {
   'artist-type'?: string
 }
 
+// MusicBrainz tags are freeform and editor-submitted — most are genres, but some are the
+// community's own editorial/maintenance notes (e.g. "fixme" flags a record needing a fix) or
+// per-artist disambiguation cruft (e.g. "crickets2" for a duplicate "The Crickets" entry).
+// Picking tags[0] blindly surfaces those as the category, so obvious non-genre tags are skipped
+// in favor of the next one.
+const NON_GENRE_TAGS = new Set(['fixme', 'cleanup', 'clean up transliterations', 'server name', 'seen live', 'favorites', 'favorite'])
+
+const pickGenreTag = (tags: string[]): string | undefined => tags.find((tag) => !NON_GENRE_TAGS.has(tag.toLowerCase()) && !/\d/.test(tag))
+
 async function fetchBands(offset = 0) {
   const params = new URLSearchParams({
     query: 'tag:rock',
@@ -52,7 +61,8 @@ async function main() {
 
       const tags = artist.tags?.map((tag) => tag.name) || []
 
-      const primaryGenre = tags[0] ? `${capitalize(tags[0])} Band` : 'Band'
+      const genreTag = pickGenreTag(tags)
+      const primaryGenre = genreTag ? `${capitalize(genreTag)} Band` : 'Band'
       const score = difficulty(answer)
 
       puzzles.push({

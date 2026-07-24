@@ -63,7 +63,7 @@ describe('buildPuzzleLink + parseSharedPuzzle round trip', () => {
     expect(result).toEqual({
       sourceMode: 'custom',
       difficulty: 'any',
-      packKey: '',
+      packKeys: [],
       mode: robotMode,
       customPhrase: 'HELLO WORLD',
       customHint: 'A friendly greeting'

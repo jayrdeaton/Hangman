@@ -7,6 +7,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { DEFAULT_MODE } from '@/modes/registry'
 import type { GameStartPayload } from '@/types/gameSession'
 import { ACHIEVEMENT_DEFINITIONS_BY_ID, type AchievementId, recordLoss, recordSolve } from '@/utils/achievements'
+import { loadCustomPacksCache } from '@/utils/customPacks'
 import { getPuzzleManifest } from '@/utils/puzzleCatalog'
 import { parseSharedPuzzle } from '@/utils/puzzleLink'
 import { type PuzzleConfig, resolvePuzzle } from '@/utils/puzzlePicker'
@@ -16,20 +17,27 @@ import { gameShell } from '@/utils/webLayout'
 import { AchievementsDialog } from './AchievementsDialog'
 import { Game, type SolveDetails } from './Game'
 import { PuzzleDrawer } from './PuzzleDrawer'
+import { type CategoryProgress } from './RoundEndDialog'
 import { SettingsDialog } from './SettingsDialog'
 
 const DEFAULT_CONFIG: PuzzleConfig = {
   sourceMode: 'random',
   difficulty: 'any',
-  packKey: '',
+  packKeys: [],
   mode: DEFAULT_MODE,
   customPhrase: '',
   customHint: ''
 }
 
-// First pack in the manifest — the initial config needs a real key to fall back on if the player
-// switches to Category mode without picking one explicitly.
-const buildInitialConfig = (): PuzzleConfig => ({ ...DEFAULT_CONFIG, packKey: getPuzzleManifest().filter((item) => item.count > 0)[0]?.key ?? '' })
+// Every pack starts checked — the initial config needs a non-empty selection to fall back on if
+// the player switches to Category mode without narrowing it down first, and "everything" is the
+// least surprising default (it behaves just like Random until they deselect something).
+const buildInitialConfig = (): PuzzleConfig => ({
+  ...DEFAULT_CONFIG,
+  packKeys: getPuzzleManifest()
+    .filter((item) => item.count > 0)
+    .map((item) => item.key)
+})
 
 export const Main = (): JSX.Element => {
   const insets = useSafeAreaInsets()
@@ -49,10 +57,17 @@ export const Main = (): JSX.Element => {
     const result = resolvePuzzle(config)
     return result.ok ? result.payload : null
   })
+  // Game is keyed on this counter (not session.phrase) so it always remounts on a new round —
+  // two consecutive puzzles can land on the identical normalized phrase (a small pack, or two
+  // different puzzles normalizing to the same text), and keying on the phrase text would then
+  // reuse the same Game instance, carrying its outcome/celebrationCycle/guessedLetters state into the
+  // "new" round instead of resetting it.
+  const [roundKey, setRoundKey] = useState(0)
   const [drawerVisible, setDrawerVisible] = useState(false)
   const [achievementsVisible, setAchievementsVisible] = useState(false)
   const [settingsVisible, setSettingsVisible] = useState(false)
   const [unlockVersion, setUnlockVersion] = useState(0)
+  const [customPacksVersion, setCustomPacksVersion] = useState(0)
   // A share link opened while the app is already running shouldn't silently replace whatever's in
   // progress — it prefills the drawer instead, same "explicit confirm" rule the drawer's own New
   // Puzzle button follows. Distinct from `config`, which only ever reflects the last CONFIRMED
@@ -61,6 +76,10 @@ export const Main = (): JSX.Element => {
   const [handledUrl, setHandledUrl] = useState(incomingUrl)
   const [snackbarQueue, setSnackbarQueue] = useState<AchievementId[]>([])
   const pendingAchievementsRef = useRef<AchievementId[]>([])
+  // The category-completion stat shown on a win. Cleared synchronously at the top of
+  // handleSolved (see below) so a fresh win never briefly shows the previous win's numbers
+  // while the unlock-map lookup for the new one is still in flight.
+  const [categoryProgress, setCategoryProgress] = useState<CategoryProgress | null>(null)
 
   // Native caches the cold-start URL in a singleton that only resets via this call (unlike web,
   // which always re-reads the live window location) — clearing it once consumed means a later
@@ -70,12 +89,22 @@ export const Main = (): JSX.Element => {
   }, [])
 
   const refreshUnlocks = useCallback(() => setUnlockVersion((v) => v + 1), [])
+  const refreshCustomPacks = useCallback(() => setCustomPacksVersion((v) => v + 1), [])
+
+  // Custom packs live in AsyncStorage, so they aren't available for the very first (synchronous)
+  // auto-started puzzle on cold boot — same "loads shortly after first paint" tradeoff the app
+  // already accepts for unlocks/achievements. Bumping the version afterward makes them show up in
+  // the pack picker and future random draws as soon as they're hydrated.
+  useEffect(() => {
+    void loadCustomPacksCache().then(refreshCustomPacks)
+  }, [refreshCustomPacks])
 
   const handleConfirmPuzzle = useCallback((payload: GameStartPayload, nextConfig: PuzzleConfig) => {
     setSession(payload)
     setConfig(nextConfig)
     setDrawerVisible(false)
     setPendingShare(null)
+    setRoundKey((k) => k + 1)
   }, [])
 
   const handleDismissDrawer = useCallback(() => {
@@ -85,6 +114,11 @@ export const Main = (): JSX.Element => {
 
   const handleSolved = useCallback(
     async (details: SolveDetails) => {
+      // Cleared here (synchronously, before the first await below) so it's batched with the
+      // Game's own setOutcome('win') and never paints the previous round's category stats
+      // while this round's unlock-map lookup is still in flight.
+      setCategoryProgress(null)
+
       let packUnlockedCount: number | undefined
       let packTotalCount: number | undefined
 
@@ -94,6 +128,7 @@ export const Main = (): JSX.Element => {
         packUnlockedCount = getUnlockedCountForPack(unlockMap, session.packKey)
         packTotalCount = getPuzzleManifest().find((item) => item.key === session.packKey)?.count
         if (unlocked) refreshUnlocks()
+        if (session.packLabel && packTotalCount) setCategoryProgress({ label: session.packLabel, unlockedCount: packUnlockedCount, totalCount: packTotalCount })
       }
 
       const newlyUnlocked = await recordSolve({
@@ -115,20 +150,45 @@ export const Main = (): JSX.Element => {
     void recordLoss()
   }, [])
 
-  const handleRoundEnd = useCallback(() => {
+  const surfacePendingAchievements = useCallback(() => {
     if (pendingAchievementsRef.current.length > 0) {
       setSnackbarQueue(pendingAchievementsRef.current)
       pendingAchievementsRef.current = []
     }
+  }, [])
+
+  // Shared by "Next puzzle" (drawing from the player's full standing selection) and "Another in
+  // category" (drawing from a one-off config narrowed to just the pack just won) — both leave a
+  // round and want a puzzle pulled from *some* config, they just disagree on which one.
+  const startNextRound = useCallback(
+    (nextConfig: PuzzleConfig) => {
+      surfacePendingAchievements()
+      const result = resolvePuzzle(nextConfig)
+      if (result.ok) {
+        setSession(result.payload)
+        setRoundKey((k) => k + 1)
+      }
+    },
+    [surfacePendingAchievements]
+  )
+
+  const handleRoundEnd = useCallback(() => {
     // A custom word is one-off — there's no "next" word to auto-generate, so surface the drawer
     // to ask for a new one instead of silently replaying the same phrase.
     if (config.sourceMode === 'custom') {
+      surfacePendingAchievements()
       setDrawerVisible(true)
       return
     }
-    const result = resolvePuzzle(config)
-    if (result.ok) setSession(result.payload)
-  }, [config])
+    startNextRound(config)
+  }, [config, startNextRound, surfacePendingAchievements])
+
+  // Only ever wired up while categoryProgress is set, which only happens for a pack-sourced win
+  // (see handleSolved) — session.packKey is guaranteed non-null whenever this can be called.
+  const handlePlayAnotherInCategory = useCallback(() => {
+    if (!session?.packKey) return
+    startNextRound({ ...config, packKeys: [session.packKey] })
+  }, [config, session, startNextRound])
 
   /* eslint-disable react-hooks/set-state-in-effect --
      Synchronizing with an external system (an OS-level deep link arriving after mount), not
@@ -153,9 +213,9 @@ export const Main = (): JSX.Element => {
         <Appbar.Action icon='cog-outline' onPress={() => setSettingsVisible(true)} accessibilityLabel='Settings' />
       </Appbar.Header>
 
-      <View style={[styles.flex, gameShell, { paddingBottom: insets.bottom }]}>{session ? <Game key={session.phrase} onStop={handleRoundEnd} onSolved={handleSolved} onLost={handleLost} phrase={session.phrase} mode={session.mode} hint={session.hint} /> : null}</View>
+      <View style={[styles.flex, gameShell, { paddingBottom: insets.bottom }]}>{session ? <Game key={roundKey} onStop={handleRoundEnd} onSolved={handleSolved} onLost={handleLost} phrase={session.phrase} mode={session.mode} hint={session.hint} difficultyTier={session.difficultyTier} categoryProgress={categoryProgress} onAnotherInCategory={handlePlayAnotherInCategory} /> : null}</View>
 
-      <PuzzleDrawer visible={drawerVisible} onDismiss={handleDismissDrawer} onRequestOpen={() => setDrawerVisible(true)} initialConfig={pendingShare ?? config} onConfirm={handleConfirmPuzzle} />
+      <PuzzleDrawer visible={drawerVisible} onDismiss={handleDismissDrawer} onRequestOpen={() => setDrawerVisible(true)} initialConfig={pendingShare ?? config} onConfirm={handleConfirmPuzzle} packsVersion={customPacksVersion} onPacksChanged={refreshCustomPacks} />
       <AchievementsDialog visible={achievementsVisible} onDismiss={() => setAchievementsVisible(false)} unlockVersion={unlockVersion} />
       <SettingsDialog visible={settingsVisible} onDismiss={() => setSettingsVisible(false)} onUnlocksChanged={refreshUnlocks} />
       <Snackbar visible={snackbarQueue.length > 0} onDismiss={() => setSnackbarQueue((q) => q.slice(1))} duration={3000} icon='trophy-outline'>

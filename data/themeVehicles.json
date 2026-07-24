@@ -1,42 +1,262 @@
 [
   {
-    "id": "410ff583765fcd93fc1908cde85fe368",
+    "id": "b195ecb051ba9b9d59186870323a20b2",
     "source": "theme",
     "type": "title",
-    "answer": "Ford Mustang",
-    "normalizedAnswer": "FORD MUSTANG",
+    "answer": "Volkswagen Golf GTI",
+    "normalizedAnswer": "VOLKSWAGEN GOLF GTI",
     "category": "Vehicle",
-    "difficulty": 21.3,
-    "difficultyTier": "hard",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 17,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "31834c27f1774db47a7f6504660fce67",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mercedes-Benz E-Class",
+    "normalizedAnswer": "MERCEDESBENZ ECLASS",
+    "category": "Vehicle",
+    "difficulty": 60,
+    "difficultyTier": "easy",
     "wordCount": 2,
-    "letterCount": 11,
+    "letterCount": 18,
     "uniqueLetterCount": 11,
     "tags": [
       "theme",
       "vehicle"
     ],
     "metadata": {
-      "source": "fallback"
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
     }
   },
   {
-    "id": "d078940546a07730e17b4d3c0e05d2a0",
+    "id": "ff014782ba44fa66ff265d1ee5790d49",
     "source": "theme",
     "type": "title",
-    "answer": "Chevrolet Corvette",
-    "normalizedAnswer": "CHEVROLET CORVETTE",
+    "answer": "Toyota Prius",
+    "normalizedAnswer": "TOYOTA PRIUS",
     "category": "Vehicle",
-    "difficulty": 24.2,
-    "difficultyTier": "hard",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
     "wordCount": 2,
-    "letterCount": 17,
-    "uniqueLetterCount": 8,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
     "tags": [
       "theme",
       "vehicle"
     ],
     "metadata": {
-      "source": "fallback"
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "7589324d5ffbfed152436d74d94129a5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Genesis G90",
+    "normalizedAnswer": "GENESIS G90",
+    "category": "Vehicle",
+    "difficulty": 86.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "c1722754d7658fd48d3831d8c829dd5e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lucid Air",
+    "normalizedAnswer": "LUCID AIR",
+    "category": "Vehicle",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "89333bfb42c9a9da2ccfde83c46fffe9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mercedes Benz E-Class",
+    "normalizedAnswer": "MERCEDES BENZ ECLASS",
+    "category": "Vehicle",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 18,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "4d65b1ac1cc1943c0f84a1d1e699e2cf",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chevrolet Corvette Stingray",
+    "normalizedAnswer": "CHEVROLET CORVETTE STINGRAY",
+    "category": "Vehicle",
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 25,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "d1a0aaef13f149585f80362911849fc1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Genesis G70",
+    "normalizedAnswer": "GENESIS G70",
+    "category": "Vehicle",
+    "difficulty": 86.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "aacfaefea55acc2fcc2767399e031bb4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Alfa Romeo Giulia",
+    "normalizedAnswer": "ALFA ROMEO GIULIA",
+    "category": "Vehicle",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "988001a25a92d9c1cb6bb3d76b7341cd",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chevrolet Bolt EV",
+    "normalizedAnswer": "CHEVROLET BOLT EV",
+    "category": "Vehicle",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "000062386b9f2c00470d40e7cbe30591",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chevrolet Camaro",
+    "normalizedAnswer": "CHEVROLET CAMARO",
+    "category": "Vehicle",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "392e9d068cc2177f7d20f9ca1caadbc3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Volkswagen Golf",
+    "normalizedAnswer": "VOLKSWAGEN GOLF",
+    "category": "Vehicle",
+    "difficulty": 60.4,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "ade3495f9a1155ce2c5c1e668288bf5e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cadillac CTS",
+    "normalizedAnswer": "CADILLAC CTS",
+    "category": "Vehicle",
+    "difficulty": 77.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
     }
   },
   {
@@ -46,7 +266,7 @@
     "answer": "Tesla Model S",
     "normalizedAnswer": "TESLA MODEL S",
     "category": "Vehicle",
-    "difficulty": 17.2,
+    "difficulty": 73.6,
     "difficultyTier": "medium",
     "wordCount": 3,
     "letterCount": 11,
@@ -56,17 +276,57 @@
       "vehicle"
     ],
     "metadata": {
-      "source": "fallback"
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
     }
   },
   {
-    "id": "79eea4be6fe84eaea77b2dfa723e20e4",
+    "id": "60f6f99bccc3d69c62c6d24f3946477d",
     "source": "theme",
     "type": "title",
-    "answer": "Honda Civic",
-    "normalizedAnswer": "HONDA CIVIC",
+    "answer": "Volkswagen Passat",
+    "normalizedAnswer": "VOLKSWAGEN PASSAT",
     "category": "Vehicle",
-    "difficulty": 18.9,
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "9fad270fb4d19fae8f473b950bf6cbb3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chevrolet Volt",
+    "normalizedAnswer": "CHEVROLET VOLT",
+    "category": "Vehicle",
+    "difficulty": 72.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "e2a73cd909f3717d23d448209ae5d795",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ford Fusion",
+    "normalizedAnswer": "FORD FUSION",
+    "category": "Vehicle",
+    "difficulty": 74,
     "difficultyTier": "medium",
     "wordCount": 2,
     "letterCount": 10,
@@ -76,18 +336,158 @@
       "vehicle"
     ],
     "metadata": {
-      "source": "fallback"
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
     }
   },
   {
-    "id": "5c05518c723d92b5a66cedc8184d1835",
+    "id": "1dc85fcbaf6ddfadc432d0043afc2c14",
     "source": "theme",
     "type": "title",
-    "answer": "Boeing 747",
-    "normalizedAnswer": "BOEING 747",
+    "answer": "Nissan GT-R",
+    "normalizedAnswer": "NISSAN GTR",
     "category": "Vehicle",
-    "difficulty": 13,
+    "difficulty": 78.4,
     "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "e5c5a5c2641a6c7d90894ea7b590cb11",
+    "source": "theme",
+    "type": "title",
+    "answer": "Toyota Camry",
+    "normalizedAnswer": "TOYOTA CAMRY",
+    "category": "Vehicle",
+    "difficulty": 77.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "79eea4be6fe84eaea77b2dfa723e20e4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Honda Civic",
+    "normalizedAnswer": "HONDA CIVIC",
+    "category": "Vehicle",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "8949e99657d513a93b19d1d0da0e5a0e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chrysler 300",
+    "normalizedAnswer": "CHRYSLER 300",
+    "category": "Vehicle",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "fba997c26563efbcb6ed9415d1b899f2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Infiniti G35",
+    "normalizedAnswer": "INFINITI G35",
+    "category": "Vehicle",
+    "difficulty": 86.4,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "b4853934093ea5480f0b5c4b733444f5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ford Thunderbird",
+    "normalizedAnswer": "FORD THUNDERBIRD",
+    "category": "Vehicle",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "73f545b623e77660a3577d7fb3666ff1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chrysler PT Cruiser",
+    "normalizedAnswer": "CHRYSLER PT CRUISER",
+    "category": "Vehicle",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 17,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "8c83f71b4843acadd10024bf373d7b73",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lincoln LS",
+    "normalizedAnswer": "LINCOLN LS",
+    "category": "Vehicle",
+    "difficulty": 82.4,
+    "difficultyTier": "hard",
     "wordCount": 2,
     "letterCount": 9,
     "uniqueLetterCount": 6,
@@ -96,77 +496,557 @@
       "vehicle"
     ],
     "metadata": {
-      "source": "fallback"
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
     }
   },
   {
-    "id": "5263b655139248ca65a6993a3d97a62d",
+    "id": "b6e95e2131b91f05e5a36625225624fc",
     "source": "theme",
     "type": "title",
-    "answer": "Airbus A320",
-    "normalizedAnswer": "AIRBUS A320",
+    "answer": "Chrysler 300M",
+    "normalizedAnswer": "CHRYSLER 300M",
     "category": "Vehicle",
-    "difficulty": 13.4,
+    "difficulty": 74.4,
     "difficultyTier": "medium",
     "wordCount": 2,
-    "letterCount": 10,
-    "uniqueLetterCount": 6,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
     "tags": [
       "theme",
       "vehicle"
     ],
     "metadata": {
-      "source": "fallback"
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
     }
   },
   {
-    "id": "acf0dcc3db792f2209aba5e92a42164f",
+    "id": "d078940546a07730e17b4d3c0e05d2a0",
     "source": "theme",
     "type": "title",
-    "answer": "Harley-Davidson Sportster",
-    "normalizedAnswer": "HARLEYDAVIDSON SPORTSTER",
+    "answer": "Chevrolet Corvette",
+    "normalizedAnswer": "CHEVROLET CORVETTE",
     "category": "Vehicle",
-    "difficulty": 33.1,
-    "difficultyTier": "hard",
+    "difficulty": 72,
+    "difficultyTier": "medium",
     "wordCount": 2,
-    "letterCount": 23,
+    "letterCount": 17,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "4dcf37da5ad4ba12df3ab6d5a9e19f62",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chevrolet Malibu",
+    "normalizedAnswer": "CHEVROLET MALIBU",
+    "category": "Vehicle",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "1853b1932457d5f65d64193105e3ce34",
+    "source": "theme",
+    "type": "title",
+    "answer": "Dodge Caravan",
+    "normalizedAnswer": "DODGE CARAVAN",
+    "category": "Vehicle",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "8719e91d70323cce1986eab19a9a021f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chrysler Cirrus",
+    "normalizedAnswer": "CHRYSLER CIRRUS",
+    "category": "Vehicle",
+    "difficulty": 68.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "410ff583765fcd93fc1908cde85fe368",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ford Mustang",
+    "normalizedAnswer": "FORD MUSTANG",
+    "category": "Vehicle",
+    "difficulty": 61.6,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "5f923fb549ebfb63198aa69bbd0d7aaf",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ford Probe GT",
+    "normalizedAnswer": "FORD PROBE GT",
+    "category": "Vehicle",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "c99c05851cb11b66bbc697a1721d0ff6",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cadillac Seville Touring Sedan",
+    "normalizedAnswer": "CADILLAC SEVILLE TOURING SEDAN",
+    "category": "Vehicle",
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 27,
     "uniqueLetterCount": 14,
     "tags": [
       "theme",
       "vehicle"
     ],
     "metadata": {
-      "source": "fallback"
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
     }
   },
   {
-    "id": "52b8e19de56a42e3c64842002fb47a14",
+    "id": "d0f86c72e0e85fdea554dbaa73b45419",
     "source": "theme",
     "type": "title",
-    "answer": "Yamaha R1",
-    "normalizedAnswer": "YAMAHA R1",
+    "answer": "Chevrolet Caprice Classic LTZ",
+    "normalizedAnswer": "CHEVROLET CAPRICE CLASSIC LTZ",
     "category": "Vehicle",
-    "difficulty": 11.1,
+    "difficulty": 52,
     "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 5,
+    "wordCount": 4,
+    "letterCount": 26,
+    "uniqueLetterCount": 13,
     "tags": [
       "theme",
       "vehicle"
     ],
     "metadata": {
-      "source": "fallback"
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
     }
   },
   {
-    "id": "3b986bfc990225d9cb539e1fe4d8342a",
+    "id": "060fdf4e4c9715f72af1ef603cd90dd4",
     "source": "theme",
     "type": "title",
-    "answer": "Porsche 911",
-    "normalizedAnswer": "PORSCHE 911",
+    "answer": "Lincoln Town Car",
+    "normalizedAnswer": "LINCOLN TOWN CAR",
     "category": "Vehicle",
-    "difficulty": 14.9,
+    "difficulty": 68.4,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 14,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "d20d0fb3bf09b91759476ee5a8ae4a16",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ford Thunderbird Super Coupe",
+    "normalizedAnswer": "FORD THUNDERBIRD SUPER COUPE",
+    "category": "Vehicle",
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 25,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "cd2fa89092bf5710bb343ae023dccc08",
+    "source": "theme",
+    "type": "title",
+    "answer": "Pontiac Grand Prix",
+    "normalizedAnswer": "PONTIAC GRAND PRIX",
+    "category": "Vehicle",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 16,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "73a62925b427888999f81851a612938e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ford Thunderbird Turbo Coupe",
+    "normalizedAnswer": "FORD THUNDERBIRD TURBO COUPE",
+    "category": "Vehicle",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 25,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "d654d87757d99630fc5772847fd775fc",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ford Taurus LX",
+    "normalizedAnswer": "FORD TAURUS LX",
+    "category": "Vehicle",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "8a7dc6e8c488e93aa0b21f4f0c320083",
+    "source": "theme",
+    "type": "title",
+    "answer": "Volkswagen GTI",
+    "normalizedAnswer": "VOLKSWAGEN GTI",
+    "category": "Vehicle",
+    "difficulty": 56.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "8177b53f79e40ed315a8914b9bdba4b0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Renault Alliance",
+    "normalizedAnswer": "RENAULT ALLIANCE",
+    "category": "Vehicle",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "8ced2e681355de0f50d258a8e657d0b3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chevrolet Camaro Z28",
+    "normalizedAnswer": "CHEVROLET CAMARO Z28",
+    "category": "Vehicle",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 18,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "db1c6b3a291f499fb5d1664ffc52225d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chrysler K Cars (Dodge Aries",
+    "normalizedAnswer": "CHRYSLER K CARS DODGE ARIES",
+    "category": "Vehicle",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 23,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "c9ce19bce377b830b56a0d50267fb80b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chevrolet Citation",
+    "normalizedAnswer": "CHEVROLET CITATION",
+    "category": "Vehicle",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 17,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "27056365bb0bd0d38373f4b804b5edae",
+    "source": "theme",
+    "type": "title",
+    "answer": "Buick Riviera S",
+    "normalizedAnswer": "BUICK RIVIERA S",
+    "category": "Vehicle",
+    "difficulty": 64.8,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "86a3bcd5f52f5e19730d8302f7745dee",
+    "source": "theme",
+    "type": "title",
+    "answer": "Dodge Omni",
+    "normalizedAnswer": "DODGE OMNI",
+    "category": "Vehicle",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "a44ffd657932e79937144927d7dea478",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chevrolet Caprice",
+    "normalizedAnswer": "CHEVROLET CAPRICE",
+    "category": "Vehicle",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "689fdc3da665923dff3d3adf7fdd6c21",
+    "source": "theme",
+    "type": "title",
+    "answer": "Dodge Aspen",
+    "normalizedAnswer": "DODGE ASPEN",
+    "category": "Vehicle",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "571955d7f81871990617dc84eaeabe6b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chevrolet Monza 2+2",
+    "normalizedAnswer": "CHEVROLET MONZA 22",
+    "category": "Vehicle",
+    "difficulty": 56.4,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 16,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "dce5257975e1f79953dd2f0f4c5a2a40",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chevrolet Monte Carlo",
+    "normalizedAnswer": "CHEVROLET MONTE CARLO",
+    "category": "Vehicle",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 19,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "6f0d8d7df859e82d4604d3e06c30658d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Citroën SM",
+    "normalizedAnswer": "CITRON SM",
+    "category": "Vehicle",
+    "difficulty": 74.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "b75f8edb313bfac921f92c9996b421a4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chevrolet Vega",
+    "normalizedAnswer": "CHEVROLET VEGA",
+    "category": "Vehicle",
+    "difficulty": 64.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "008d85bfdcd9b4a35de94de58ece7732",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ford Torino",
+    "normalizedAnswer": "FORD TORINO",
+    "category": "Vehicle",
+    "difficulty": 78,
     "difficultyTier": "medium",
     "wordCount": 2,
     "letterCount": 10,
@@ -176,27 +1056,267 @@
       "vehicle"
     ],
     "metadata": {
-      "source": "fallback"
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
     }
   },
   {
-    "id": "47d52208b972814a2acc628598a7a2e1",
+    "id": "4000450a8f9948633ecacc384d3a4f23",
     "source": "theme",
     "type": "title",
-    "answer": "Jeep Wrangler",
-    "normalizedAnswer": "JEEP WRANGLER",
+    "answer": "Plymouth Road Runner",
+    "normalizedAnswer": "PLYMOUTH ROAD RUNNER",
     "category": "Vehicle",
-    "difficulty": 21.2,
-    "difficultyTier": "hard",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 18,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "4b1b14070d9a7e5f1a6dfd9408418298",
+    "source": "theme",
+    "type": "title",
+    "answer": "Pontiac GTO",
+    "normalizedAnswer": "PONTIAC GTO",
+    "category": "Vehicle",
+    "difficulty": 74,
+    "difficultyTier": "medium",
     "wordCount": 2,
-    "letterCount": 12,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "4f605d3e6d80afd1a7c4fda1148477a7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mercury Cougar",
+    "normalizedAnswer": "MERCURY COUGAR",
+    "category": "Vehicle",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
     "uniqueLetterCount": 9,
     "tags": [
       "theme",
       "vehicle"
     ],
     "metadata": {
-      "source": "fallback"
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "d116c5cc55d97fbfeda22e4ce4d737cb",
+    "source": "theme",
+    "type": "title",
+    "answer": "Oldsmobile Toronado",
+    "normalizedAnswer": "OLDSMOBILE TORONADO",
+    "category": "Vehicle",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 18,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "e822b0b62c399728b9df4ef989ffd3f9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Pontiac Motor Division",
+    "normalizedAnswer": "PONTIAC MOTOR DIVISION",
+    "category": "Vehicle",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 20,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "6615e61279817e04fc5397e3924c3ddf",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ford Motor Company",
+    "normalizedAnswer": "FORD MOTOR COMPANY",
+    "category": "Vehicle",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 16,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "acf46172354e771bbc4dd81bfde65718",
+    "source": "theme",
+    "type": "title",
+    "answer": "American Motors Rambler",
+    "normalizedAnswer": "AMERICAN MOTORS RAMBLER",
+    "category": "Vehicle",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 21,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "bf9b03c8bc5c456e9f0fa38a266c63bc",
+    "source": "theme",
+    "type": "title",
+    "answer": "Buick Special",
+    "normalizedAnswer": "BUICK SPECIAL",
+    "category": "Vehicle",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "1ec373abfd3d2110b111bd8b207ab588",
+    "source": "theme",
+    "type": "title",
+    "answer": "Pontiac Tempest",
+    "normalizedAnswer": "PONTIAC TEMPEST",
+    "category": "Vehicle",
+    "difficulty": 64.4,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "40e86aae0af0f5e8fb8ca5ba8a663c9b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chevrolet Corvair",
+    "normalizedAnswer": "CHEVROLET CORVAIR",
+    "category": "Vehicle",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "8e8e7cda4b2e169e6d3ed17a6140ccdf",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chrysler Corporation",
+    "normalizedAnswer": "CHRYSLER CORPORATION",
+    "category": "Vehicle",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 19,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "760acc395fdbc1f0378946bda3d33e37",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chevrolet Motor Division",
+    "normalizedAnswer": "CHEVROLET MOTOR DIVISION",
+    "category": "Vehicle",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 22,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
+    }
+  },
+  {
+    "id": "c3c57de9d90510db3622296b4c003913",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cadillac Motor Division",
+    "normalizedAnswer": "CADILLAC MOTOR DIVISION",
+    "category": "Vehicle",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 21,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "vehicle"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
     }
   }
 ]

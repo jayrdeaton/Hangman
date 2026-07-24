@@ -5,6 +5,7 @@
       "@/*": ["./*"],
       "@/components/*": ["./src/components/*"],
       "@/constants/*": ["./src/constants/*"],
+      "@/effects/*": ["./src/effects/*"],
       "@/hooks/*": ["./src/hooks/*"],
       "@/modes/*": ["./src/modes/*"],
       "@/redux/*": ["./src/redux/*"],

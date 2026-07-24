@@ -1,1 +1,3602 @@
-[]
+[
+  {
+    "id": "b6f260f5975792a6f36cbc68ec81e47a",
+    "source": "movie",
+    "type": "title",
+    "answer": "The Odyssey",
+    "normalizedAnswer": "THE ODYSSEY",
+    "category": "Movie",
+    "difficulty": 78,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "metadata": {
+      "year": "2026",
+      "popularity": 1036.952,
+      "rating": 7.949
+    }
+  },
+  {
+    "id": "55de43dabf48e10b1649a016eb6e284b",
+    "source": "movie",
+    "type": "title",
+    "answer": "Disclosure Day",
+    "normalizedAnswer": "DISCLOSURE DAY",
+    "category": "Sci-Fi",
+    "difficulty": 60.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 11,
+    "metadata": {
+      "year": "2026",
+      "popularity": 631.5367,
+      "rating": 7.145
+    }
+  },
+  {
+    "id": "904a86a00ca31e43b2d27f4957a6e4aa",
+    "source": "movie",
+    "type": "title",
+    "answer": "Moana",
+    "normalizedAnswer": "MOANA",
+    "category": "Movie",
+    "difficulty": 92,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "metadata": {
+      "year": "2026",
+      "popularity": 619.8748,
+      "rating": 5.8
+    }
+  },
+  {
+    "id": "ea41548d515d275efec39df2fc02d6a0",
+    "source": "movie",
+    "type": "title",
+    "answer": "Obsession",
+    "normalizedAnswer": "OBSESSION",
+    "category": "Horror",
+    "difficulty": 82.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "metadata": {
+      "year": "2026",
+      "popularity": 458.8216,
+      "rating": 8.246
+    }
+  },
+  {
+    "id": "6489083b83b0c83c65220f3b54be0c13",
+    "source": "movie",
+    "type": "title",
+    "answer": "Backrooms",
+    "normalizedAnswer": "BACKROOMS",
+    "category": "Horror",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "metadata": {
+      "year": "2026",
+      "popularity": 452.7738,
+      "rating": 7.1
+    }
+  },
+  {
+    "id": "713e51caaeb6cdabdda85e219ead61af",
+    "source": "movie",
+    "type": "title",
+    "answer": "Supergirl",
+    "normalizedAnswer": "SUPERGIRL",
+    "category": "Action",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "metadata": {
+      "year": "2026",
+      "popularity": 392.937,
+      "rating": 6.14
+    }
+  },
+  {
+    "id": "17221d53342c1a5015f5046014554eb1",
+    "source": "movie",
+    "type": "title",
+    "answer": "Minions & Monsters",
+    "normalizedAnswer": "MINIONS MONSTERS",
+    "category": "Movie",
+    "difficulty": 72,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 8,
+    "metadata": {
+      "year": "2026",
+      "popularity": 374.0304,
+      "rating": 6.411
+    }
+  },
+  {
+    "id": "e6475d6f4f486ce64a7049acc3ddfc61",
+    "source": "movie",
+    "type": "title",
+    "answer": "Scary Movie",
+    "normalizedAnswer": "SCARY MOVIE",
+    "category": "Comedy",
+    "difficulty": 66,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 10,
+    "metadata": {
+      "year": "2026",
+      "popularity": 373.5666,
+      "rating": 6.459
+    }
+  },
+  {
+    "id": "789abd09205beb4fb060dd8b1f421ed5",
+    "source": "movie",
+    "type": "title",
+    "answer": "Toy Story 5",
+    "normalizedAnswer": "TOY STORY 5",
+    "category": "Movie",
+    "difficulty": 86.8,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 9,
+    "uniqueLetterCount": 5,
+    "metadata": {
+      "year": "2026",
+      "popularity": 372.2682,
+      "rating": 7.415
+    }
+  },
+  {
+    "id": "64afae94cd7526e6aa9e09f09043c52e",
+    "source": "movie",
+    "type": "title",
+    "answer": "The Mandalorian and Grogu",
+    "normalizedAnswer": "THE MANDALORIAN AND GROGU",
+    "category": "Action",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 22,
+    "uniqueLetterCount": 13,
+    "metadata": {
+      "year": "2026",
+      "popularity": 245.8769,
+      "rating": 7.054
+    }
+  },
+  {
+    "id": "1e2f86085d37f13dc130a5470391d8e6",
+    "source": "movie",
+    "type": "title",
+    "answer": "Masters of the Universe",
+    "normalizedAnswer": "MASTERS OF THE UNIVERSE",
+    "category": "Action",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 20,
+    "uniqueLetterCount": 13,
+    "metadata": {
+      "year": "2026",
+      "popularity": 234.7251,
+      "rating": 7.3
+    }
+  },
+  {
+    "id": "3f40364e3c0447b9d1e2a351764d5789",
+    "source": "movie",
+    "type": "title",
+    "answer": "Borderline",
+    "normalizedAnswer": "BORDERLINE",
+    "category": "Movie",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "metadata": {
+      "year": "2026",
+      "popularity": 210.5918,
+      "rating": 0
+    }
+  },
+  {
+    "id": "c3f4155928e7c39f3a5a010a82601f6d",
+    "source": "movie",
+    "type": "title",
+    "answer": "Descendants: Wicked Wonderland",
+    "normalizedAnswer": "DESCENDANTS WICKED WONDERLAND",
+    "category": "Movie",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 27,
+    "uniqueLetterCount": 13,
+    "metadata": {
+      "year": "2026",
+      "popularity": 203.239,
+      "rating": 7.815
+    }
+  },
+  {
+    "id": "deacb998fd283878146edb04b3f6de03",
+    "source": "movie",
+    "type": "title",
+    "answer": "Project Hail Mary",
+    "normalizedAnswer": "PROJECT HAIL MARY",
+    "category": "Sci-Fi",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 13,
+    "metadata": {
+      "year": "2026",
+      "popularity": 196.7182,
+      "rating": 8.658
+    }
+  },
+  {
+    "id": "7af457f4c21008a5db9999b64694d858",
+    "source": "movie",
+    "type": "title",
+    "answer": "Desire",
+    "normalizedAnswer": "DESIRE",
+    "category": "Movie",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "metadata": {
+      "year": "2026",
+      "popularity": 195.7052,
+      "rating": 7
+    }
+  },
+  {
+    "id": "dbacdb5fe44670d859fe8ef141adcb02",
+    "source": "movie",
+    "type": "title",
+    "answer": "The Devil Wears Prada 2",
+    "normalizedAnswer": "THE DEVIL WEARS PRADA 2",
+    "category": "Comedy",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 19,
+    "uniqueLetterCount": 12,
+    "metadata": {
+      "year": "2026",
+      "popularity": 182.5897,
+      "rating": 7.129
+    }
+  },
+  {
+    "id": "3b233252acb7c1fd1084d6ea5db69794",
+    "source": "movie",
+    "type": "title",
+    "answer": "Affair at the Nuns' Temple: Paradise Sex",
+    "normalizedAnswer": "AFFAIR AT THE NUNS TEMPLE PARADISE SEX",
+    "category": "Movie",
+    "difficulty": 44,
+    "difficultyTier": "easy",
+    "wordCount": 7,
+    "letterCount": 32,
+    "uniqueLetterCount": 15,
+    "metadata": {
+      "year": "1998",
+      "popularity": 172.0113,
+      "rating": 3.4
+    }
+  },
+  {
+    "id": "55862463a499deae6ec4355e4c183a1b",
+    "source": "movie",
+    "type": "title",
+    "answer": "Passenger",
+    "normalizedAnswer": "PASSENGER",
+    "category": "Horror",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "metadata": {
+      "year": "2026",
+      "popularity": 157.7819,
+      "rating": 7.261
+    }
+  },
+  {
+    "id": "693bb1039dce9f3de06942347f823749",
+    "source": "movie",
+    "type": "title",
+    "answer": "Your Heart Will Be Broken",
+    "normalizedAnswer": "YOUR HEART WILL BE BROKEN",
+    "category": "Romance",
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 21,
+    "uniqueLetterCount": 14,
+    "metadata": {
+      "year": "2026",
+      "popularity": 157.574,
+      "rating": 7.2
+    }
+  },
+  {
+    "id": "146f25568be77b72eeb1082bf5aa71d6",
+    "source": "movie",
+    "type": "title",
+    "answer": "The Sparrow's Fluttering",
+    "normalizedAnswer": "THE SPARROWS FLUTTERING",
+    "category": "Drama",
+    "difficulty": 44,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 21,
+    "uniqueLetterCount": 15,
+    "metadata": {
+      "year": "1988",
+      "popularity": 157.0336,
+      "rating": 4.167
+    }
+  },
+  {
+    "id": "d538c9970670277b8add1329000ca1e8",
+    "source": "movie",
+    "type": "title",
+    "answer": "Spider-Man: Brand New Day",
+    "normalizedAnswer": "SPIDERMAN BRAND NEW DAY",
+    "category": "Sci-Fi",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 20,
+    "uniqueLetterCount": 12,
+    "metadata": {
+      "year": "2026",
+      "popularity": 156.3287,
+      "rating": 0
+    }
+  },
+  {
+    "id": "9efc86c9a1f78b8a533b8d58150484d8",
+    "source": "movie",
+    "type": "title",
+    "answer": "Deep Water",
+    "normalizedAnswer": "DEEP WATER",
+    "category": "Horror",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "metadata": {
+      "year": "2026",
+      "popularity": 153.8779,
+      "rating": 7.4
+    }
+  },
+  {
+    "id": "23a30e63210a7fef5d9ce862e92ab0cf",
+    "source": "movie",
+    "type": "title",
+    "answer": "The Furious",
+    "normalizedAnswer": "THE FURIOUS",
+    "category": "Action",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "metadata": {
+      "year": "2026",
+      "popularity": 138.5131,
+      "rating": 7.376
+    }
+  },
+  {
+    "id": "5e3a96f40314321ced431a9f41290e70",
+    "source": "movie",
+    "type": "title",
+    "answer": "Kraken",
+    "normalizedAnswer": "KRAKEN",
+    "category": "Horror",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "metadata": {
+      "year": "2026",
+      "popularity": 138.4744,
+      "rating": 6.413
+    }
+  },
+  {
+    "id": "846513d8292e707b3c4d284ad48e1997",
+    "source": "movie",
+    "type": "title",
+    "answer": "Michael",
+    "normalizedAnswer": "MICHAEL",
+    "category": "Movie",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "metadata": {
+      "year": "2026",
+      "popularity": 125.8724,
+      "rating": 8.696
+    }
+  },
+  {
+    "id": "6364ba3141f4147c7af594fbdc0b1784",
+    "source": "movie",
+    "type": "title",
+    "answer": "Mortal Kombat II",
+    "normalizedAnswer": "MORTAL KOMBAT II",
+    "category": "Action",
+    "difficulty": 68.4,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 14,
+    "uniqueLetterCount": 9,
+    "metadata": {
+      "year": "2026",
+      "popularity": 120.1345,
+      "rating": 7.979
+    }
+  },
+  {
+    "id": "b143373a5c307813fef38cf130b56760",
+    "source": "movie",
+    "type": "title",
+    "answer": "Avatar: Fire and Ash",
+    "normalizedAnswer": "AVATAR FIRE AND ASH",
+    "category": "Sci-Fi",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 16,
+    "uniqueLetterCount": 11,
+    "metadata": {
+      "year": "2025",
+      "popularity": 120.1107,
+      "rating": 7.642
+    }
+  },
+  {
+    "id": "0f40aeaf59aa9daa2cea330f8102bdfa",
+    "source": "movie",
+    "type": "title",
+    "answer": "Citizen Vigilante",
+    "normalizedAnswer": "CITIZEN VIGILANTE",
+    "category": "Movie",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 10,
+    "metadata": {
+      "year": "2026",
+      "popularity": 113.0377,
+      "rating": 6.406
+    }
+  },
+  {
+    "id": "2e95a87865addcd2985b0c3fb2c4ee94",
+    "source": "movie",
+    "type": "title",
+    "answer": "The Super Mario Galaxy Movie",
+    "normalizedAnswer": "THE SUPER MARIO GALAXY MOVIE",
+    "category": "Movie",
+    "difficulty": 40,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 24,
+    "uniqueLetterCount": 16,
+    "metadata": {
+      "year": "2026",
+      "popularity": 107.9632,
+      "rating": 8.253
+    }
+  },
+  {
+    "id": "06ca94b755a2b2ee0aeff611401e511c",
+    "source": "movie",
+    "type": "title",
+    "answer": "Au Bonheur des Dames",
+    "normalizedAnswer": "AU BONHEUR DES DAMES",
+    "category": "Drama",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 17,
+    "uniqueLetterCount": 11,
+    "metadata": {
+      "year": "1930",
+      "popularity": 106.7951,
+      "rating": 6.3
+    }
+  },
+  {
+    "id": "9f6abe96a2f5c26d0c3956188d85d0c0",
+    "source": "movie",
+    "type": "title",
+    "answer": "Lee Cronin's The Mummy",
+    "normalizedAnswer": "LEE CRONINS THE MUMMY",
+    "category": "Horror",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 18,
+    "uniqueLetterCount": 13,
+    "metadata": {
+      "year": "2026",
+      "popularity": 105.4796,
+      "rating": 8
+    }
+  },
+  {
+    "id": "9edc6d14f29b8068c8ebd9ca9543684f",
+    "source": "movie",
+    "type": "title",
+    "answer": "Demon Slayer: Kimetsu no Yaiba Infinity Castle",
+    "normalizedAnswer": "DEMON SLAYER KIMETSU NO YAIBA INFINITY CASTLE",
+    "category": "Movie",
+    "difficulty": 36,
+    "difficultyTier": "easy",
+    "wordCount": 7,
+    "letterCount": 39,
+    "uniqueLetterCount": 17,
+    "metadata": {
+      "year": "2025",
+      "popularity": 100.5174,
+      "rating": 7.746
+    }
+  },
+  {
+    "id": "23e18a094014383b30016601548307f1",
+    "source": "movie",
+    "type": "title",
+    "answer": "Avengers: Doomsday",
+    "normalizedAnswer": "AVENGERS DOOMSDAY",
+    "category": "Sci-Fi",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 11,
+    "metadata": {
+      "year": "2026",
+      "popularity": 100.0596,
+      "rating": 0
+    }
+  },
+  {
+    "id": "011371d72ffe4525de6bd9e63505949e",
+    "source": "movie",
+    "type": "title",
+    "answer": "Forgive Us All",
+    "normalizedAnswer": "FORGIVE US ALL",
+    "category": "Horror",
+    "difficulty": 61.2,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 12,
+    "uniqueLetterCount": 11,
+    "metadata": {
+      "year": "2025",
+      "popularity": 96.991,
+      "rating": 5
+    }
+  },
+  {
+    "id": "5ec5db34c11e4c773315db185561008d",
+    "source": "movie",
+    "type": "title",
+    "answer": "The Death of Robin Hood",
+    "normalizedAnswer": "THE DEATH OF ROBIN HOOD",
+    "category": "Movie",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 19,
+    "uniqueLetterCount": 11,
+    "metadata": {
+      "year": "2026",
+      "popularity": 92.5001,
+      "rating": 6.737
+    }
+  },
+  {
+    "id": "399a3f0eca78c004796827ff3a61f01d",
+    "source": "movie",
+    "type": "title",
+    "answer": "Black Box",
+    "normalizedAnswer": "BLACK BOX",
+    "category": "Horror",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "metadata": {
+      "year": "2026",
+      "popularity": 91.4842,
+      "rating": 6.304
+    }
+  },
+  {
+    "id": "80bd6d1973bed65b23b1081448c7ac71",
+    "source": "movie",
+    "type": "title",
+    "answer": "Shape of My Heart",
+    "normalizedAnswer": "SHAPE OF MY HEART",
+    "category": "Romance",
+    "difficulty": 60.4,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 14,
+    "uniqueLetterCount": 11,
+    "metadata": {
+      "year": "2024",
+      "popularity": 89.9245,
+      "rating": 6.25
+    }
+  },
+  {
+    "id": "915c69935f89ea9bc1594c673ebc5c03",
+    "source": "movie",
+    "type": "title",
+    "answer": "The Shawshank Redemption",
+    "normalizedAnswer": "THE SHAWSHANK REDEMPTION",
+    "category": "Drama",
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 22,
+    "uniqueLetterCount": 14,
+    "metadata": {
+      "year": "1994",
+      "popularity": 83.141,
+      "rating": 8.726
+    }
+  },
+  {
+    "id": "64ff9a154527aa14df2ed7a1f403d0a8",
+    "source": "movie",
+    "type": "title",
+    "answer": "Graphic Desires",
+    "normalizedAnswer": "GRAPHIC DESIRES",
+    "category": "Movie",
+    "difficulty": 64.4,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "metadata": {
+      "year": "2023",
+      "popularity": 80.9497,
+      "rating": 7.1
+    }
+  },
+  {
+    "id": "cb7b6d6fe21acc252526a09a474c4e89",
+    "source": "movie",
+    "type": "title",
+    "answer": "The Punisher: One Last Kill",
+    "normalizedAnswer": "THE PUNISHER ONE LAST KILL",
+    "category": "Action",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 22,
+    "uniqueLetterCount": 13,
+    "metadata": {
+      "year": "2026",
+      "popularity": 75.0507,
+      "rating": 8.319
+    }
+  },
+  {
+    "id": "d7e48c55a0f05f51fe441c310d1825f3",
+    "source": "movie",
+    "type": "title",
+    "answer": "Spider-Man: No Way Home",
+    "normalizedAnswer": "SPIDERMAN NO WAY HOME",
+    "category": "Action",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 18,
+    "uniqueLetterCount": 13,
+    "metadata": {
+      "year": "2021",
+      "popularity": 74.6332,
+      "rating": 7.934
+    }
+  },
+  {
+    "id": "d1f10533ae94222c8665a0731a65e3b1",
+    "source": "movie",
+    "type": "title",
+    "answer": "Interstellar",
+    "normalizedAnswer": "INTERSTELLAR",
+    "category": "Movie",
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "metadata": {
+      "year": "2014",
+      "popularity": 74.561,
+      "rating": 8.5
+    }
+  },
+  {
+    "id": "1f9ab7d44f25abf219c6beffc60d2181",
+    "source": "movie",
+    "type": "title",
+    "answer": "The Banished",
+    "normalizedAnswer": "THE BANISHED",
+    "category": "Horror",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "metadata": {
+      "year": "2025",
+      "popularity": 74.5374,
+      "rating": 4.765
+    }
+  },
+  {
+    "id": "5a6f05e0bc8142dcc53b3c37f824d1ed",
+    "source": "movie",
+    "type": "title",
+    "answer": "Apex",
+    "normalizedAnswer": "APEX",
+    "category": "Action",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "metadata": {
+      "year": "2026",
+      "popularity": 74.1563,
+      "rating": 6.863
+    }
+  },
+  {
+    "id": "26741f0fc83350961d3f089f9e3e7f62",
+    "source": "movie",
+    "type": "title",
+    "answer": "Boulevard",
+    "normalizedAnswer": "BOULEVARD",
+    "category": "Romance",
+    "difficulty": 70.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 9,
+    "metadata": {
+      "year": "2026",
+      "popularity": 73.1796,
+      "rating": 7.6
+    }
+  },
+  {
+    "id": "3f31d67778ccae277e3c2de1811f49cb",
+    "source": "movie",
+    "type": "title",
+    "answer": "Avatar Aang: The Last Airbender",
+    "normalizedAnswer": "AVATAR AANG THE LAST AIRBENDER",
+    "category": "Movie",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 26,
+    "uniqueLetterCount": 13,
+    "metadata": {
+      "year": "2026",
+      "popularity": 72.5442,
+      "rating": 0
+    }
+  },
+  {
+    "id": "983b34ef770e5481404ac228839b599e",
+    "source": "movie",
+    "type": "title",
+    "answer": "Morning Moon Is Cruel",
+    "normalizedAnswer": "MORNING MOON IS CRUEL",
+    "category": "Drama",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 18,
+    "uniqueLetterCount": 11,
+    "metadata": {
+      "year": "1981",
+      "popularity": 72.2191,
+      "rating": 4.3
+    }
+  },
+  {
+    "id": "eabb8d70697d8f77447c372320d77cf3",
+    "source": "movie",
+    "type": "title",
+    "answer": "Kung Fu Soccer",
+    "normalizedAnswer": "KUNG FU SOCCER",
+    "category": "Drama",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "metadata": {
+      "year": "2026",
+      "popularity": 71.5665,
+      "rating": 6.3
+    }
+  },
+  {
+    "id": "79d8d3e2c2708ee974b19d6217c2e14f",
+    "source": "movie",
+    "type": "title",
+    "answer": "Hoppers",
+    "normalizedAnswer": "HOPPERS",
+    "category": "Movie",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "metadata": {
+      "year": "2026",
+      "popularity": 69.6751,
+      "rating": 8.189
+    }
+  },
+  {
+    "id": "98d5e15305fdcaa685d84b5217bec87f",
+    "source": "movie",
+    "type": "title",
+    "answer": "Shelter",
+    "normalizedAnswer": "SHELTER",
+    "category": "Action",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "metadata": {
+      "year": "2026",
+      "popularity": 69.4792,
+      "rating": 7.766
+    }
+  },
+  {
+    "id": "53e549873555221a67004af2775d5b39",
+    "source": "movie",
+    "type": "title",
+    "answer": "Night of the Living Dead",
+    "normalizedAnswer": "NIGHT OF THE LIVING DEAD",
+    "category": "Horror",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 20,
+    "uniqueLetterCount": 12,
+    "metadata": {
+      "year": "2026",
+      "popularity": 68.6107,
+      "rating": 5.016
+    }
+  },
+  {
+    "id": "4c78b805b1a41a3396ddbc0736cae5c3",
+    "source": "movie",
+    "type": "title",
+    "answer": "Swapped",
+    "normalizedAnswer": "SWAPPED",
+    "category": "Movie",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "metadata": {
+      "year": "2026",
+      "popularity": 68.1406,
+      "rating": 8.9
+    }
+  },
+  {
+    "id": "1cd2912c44a45776c34eeac286d9b43e",
+    "source": "movie",
+    "type": "title",
+    "answer": "Bokshi",
+    "normalizedAnswer": "BOKSHI",
+    "category": "Horror",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "metadata": {
+      "year": "2025",
+      "popularity": 67.608,
+      "rating": 6
+    }
+  },
+  {
+    "id": "b935a89a3d664cec50e8f6f4763fe779",
+    "source": "movie",
+    "type": "title",
+    "answer": "The Sheep Detectives",
+    "normalizedAnswer": "THE SHEEP DETECTIVES",
+    "category": "Comedy",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 18,
+    "uniqueLetterCount": 9,
+    "metadata": {
+      "year": "2026",
+      "popularity": 67.3433,
+      "rating": 7.897
+    }
+  },
+  {
+    "id": "f7d7803c5d97af2977b1a3ef95204102",
+    "source": "movie",
+    "type": "title",
+    "answer": "Evil Dead Burn",
+    "normalizedAnswer": "EVIL DEAD BURN",
+    "category": "Horror",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "metadata": {
+      "year": "2026",
+      "popularity": 64.7557,
+      "rating": 6.823
+    }
+  },
+  {
+    "id": "d8ea8708775239a0cf45f543a3361bab",
+    "source": "movie",
+    "type": "title",
+    "answer": "Zombies of the Third Reich",
+    "normalizedAnswer": "ZOMBIES OF THE THIRD REICH",
+    "category": "Horror",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 22,
+    "uniqueLetterCount": 13,
+    "metadata": {
+      "year": "2025",
+      "popularity": 64.538,
+      "rating": 4.1
+    }
+  },
+  {
+    "id": "5c7517eb50817eff8b77baf226f56749",
+    "source": "movie",
+    "type": "title",
+    "answer": "Siping",
+    "normalizedAnswer": "SIPING",
+    "category": "Drama",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "metadata": {
+      "year": "2026",
+      "popularity": 61.7984,
+      "rating": 4
+    }
+  },
+  {
+    "id": "9fb9cc780a29ea3d232a53c98034d49d",
+    "source": "movie",
+    "type": "title",
+    "answer": "The Shadow's Edge",
+    "normalizedAnswer": "THE SHADOWS EDGE",
+    "category": "Action",
+    "difficulty": 68.4,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 14,
+    "uniqueLetterCount": 9,
+    "metadata": {
+      "year": "2025",
+      "popularity": 60.8269,
+      "rating": 7.892
+    }
+  },
+  {
+    "id": "4278614bc569120a1c2a5cd7b1847161",
+    "source": "movie",
+    "type": "title",
+    "answer": "Damage",
+    "normalizedAnswer": "DAMAGE",
+    "category": "Drama",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "metadata": {
+      "year": "1992",
+      "popularity": 58.8875,
+      "rating": 6.606
+    }
+  },
+  {
+    "id": "f8bf180b21d67f05e8b55143e38a5acc",
+    "source": "movie",
+    "type": "title",
+    "answer": "23 000 Lives",
+    "normalizedAnswer": "23 000 LIVES",
+    "category": "Drama",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 10,
+    "uniqueLetterCount": 5,
+    "metadata": {
+      "year": "2026",
+      "popularity": 58.1534,
+      "rating": 5.198
+    }
+  },
+  {
+    "id": "0e0993bc5b08600af59cd2e12a9d8082",
+    "source": "movie",
+    "type": "title",
+    "answer": "A Flame in My Heart",
+    "normalizedAnswer": "A FLAME IN MY HEART",
+    "category": "Drama",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "metadata": {
+      "year": "1987",
+      "popularity": 79.4449,
+      "rating": 6.071
+    }
+  },
+  {
+    "id": "d9fe5988814ef32ea2f537072d942dd4",
+    "source": "movie",
+    "type": "title",
+    "answer": "I Know Who You Are",
+    "normalizedAnswer": "I KNOW WHO YOU ARE",
+    "category": "Movie",
+    "difficulty": 60.4,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 14,
+    "uniqueLetterCount": 11,
+    "metadata": {
+      "year": "2026",
+      "popularity": 51.2852,
+      "rating": 6.2
+    }
+  },
+  {
+    "id": "5d14af94fff003d7e7a10f22fbf9e379",
+    "source": "movie",
+    "type": "title",
+    "answer": "Jurassic World Rebirth",
+    "normalizedAnswer": "JURASSIC WORLD REBIRTH",
+    "category": "Sci-Fi",
+    "difficulty": 44,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 20,
+    "uniqueLetterCount": 15,
+    "metadata": {
+      "year": "2025",
+      "popularity": 51.4732,
+      "rating": 6.277
+    }
+  },
+  {
+    "id": "2af82afb22d6b54aae9cccf6b9f1be92",
+    "source": "movie",
+    "type": "title",
+    "answer": "Heartstopper Forever",
+    "normalizedAnswer": "HEARTSTOPPER FOREVER",
+    "category": "Romance",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 19,
+    "uniqueLetterCount": 10,
+    "metadata": {
+      "year": "2026",
+      "popularity": 52.7965,
+      "rating": 7.2
+    }
+  },
+  {
+    "id": "c7cc2fbefef42f33089875bf551ecc29",
+    "source": "movie",
+    "type": "title",
+    "answer": "Ghost Stories",
+    "normalizedAnswer": "GHOST STORIES",
+    "category": "Horror",
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "metadata": {
+      "year": "1982",
+      "popularity": 57.6445,
+      "rating": 6.2
+    }
+  },
+  {
+    "id": "c75cb6565b81b5920f30313cc6c255fb",
+    "source": "movie",
+    "type": "title",
+    "answer": "In the Grey",
+    "normalizedAnswer": "IN THE GREY",
+    "category": "Action",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "metadata": {
+      "year": "2026",
+      "popularity": 54.0596,
+      "rating": 7.539
+    }
+  },
+  {
+    "id": "545c4ec17b540d48258259fdc7a086b1",
+    "source": "movie",
+    "type": "title",
+    "answer": "Vixen!",
+    "normalizedAnswer": "VIXEN",
+    "category": "Drama",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "metadata": {
+      "year": "1968",
+      "popularity": 63.6612,
+      "rating": 5.529
+    }
+  },
+  {
+    "id": "4bdbf7a82f69331034c9b20bad565d39",
+    "source": "movie",
+    "type": "title",
+    "answer": "Tom Clancy's Jack Ryan: Ghost War",
+    "normalizedAnswer": "TOM CLANCYS JACK RYAN GHOST WAR",
+    "category": "Action",
+    "difficulty": 44,
+    "difficultyTier": "easy",
+    "wordCount": 6,
+    "letterCount": 26,
+    "uniqueLetterCount": 15,
+    "metadata": {
+      "year": "2026",
+      "popularity": 55.0705,
+      "rating": 6.993
+    }
+  },
+  {
+    "id": "684059afa7927dacd5aa88064e381928",
+    "source": "movie",
+    "type": "title",
+    "answer": "Inception",
+    "normalizedAnswer": "INCEPTION",
+    "category": "Action",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "metadata": {
+      "year": "2010",
+      "popularity": 52.6887,
+      "rating": 8.372
+    }
+  },
+  {
+    "id": "9f93b7f5cd9a28390f2466248c36cbb4",
+    "source": "movie",
+    "type": "title",
+    "answer": "The Get Out",
+    "normalizedAnswer": "THE GET OUT",
+    "category": "Action",
+    "difficulty": 82.4,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "metadata": {
+      "year": "2026",
+      "popularity": 47.3179,
+      "rating": 6.3
+    }
+  },
+  {
+    "id": "f9b7bcac2e4b36c4e1329c3ad5b0e0da",
+    "source": "movie",
+    "type": "title",
+    "answer": "Troy",
+    "normalizedAnswer": "TROY",
+    "category": "Movie",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "metadata": {
+      "year": "2004",
+      "popularity": 54.482,
+      "rating": 7.181
+    }
+  },
+  {
+    "id": "7f6020cf6ab20319ee22f11b1d5ed74e",
+    "source": "movie",
+    "type": "title",
+    "answer": "Stop! That! Train!",
+    "normalizedAnswer": "STOP THAT TRAIN",
+    "category": "Action",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "metadata": {
+      "year": "2026",
+      "popularity": 40.4697,
+      "rating": 5.1
+    }
+  },
+  {
+    "id": "a53f16c6b674c1a58d6f4790d72788ae",
+    "source": "movie",
+    "type": "title",
+    "answer": "Maa Inti Bangaram",
+    "normalizedAnswer": "MAA INTI BANGARAM",
+    "category": "Action",
+    "difficulty": 72,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 8,
+    "metadata": {
+      "year": "2026",
+      "popularity": 46.6728,
+      "rating": 7
+    }
+  },
+  {
+    "id": "9f85beb3a9f625e67edcfbe5521be53b",
+    "source": "movie",
+    "type": "title",
+    "answer": "Zootopia 2",
+    "normalizedAnswer": "ZOOTOPIA 2",
+    "category": "Movie",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "metadata": {
+      "year": "2025",
+      "popularity": 50.0274,
+      "rating": 7.683
+    }
+  },
+  {
+    "id": "202ead4925e89a38bdc37ae3184a08ad",
+    "source": "movie",
+    "type": "title",
+    "answer": "Moana 2",
+    "normalizedAnswer": "MOANA 2",
+    "category": "Movie",
+    "difficulty": 92,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 6,
+    "uniqueLetterCount": 4,
+    "metadata": {
+      "year": "2024",
+      "popularity": 45.0109,
+      "rating": 6.992
+    }
+  },
+  {
+    "id": "b2a652077ce2081aacdbc1d7d2deb54a",
+    "source": "movie",
+    "type": "title",
+    "answer": "The Housemaid",
+    "normalizedAnswer": "THE HOUSEMAID",
+    "category": "Movie",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "metadata": {
+      "year": "2025",
+      "popularity": 49.0587,
+      "rating": 7.273
+    }
+  },
+  {
+    "id": "a8fbe0398506d2c1239d1720932405fa",
+    "source": "movie",
+    "type": "title",
+    "answer": "The Dark Knight",
+    "normalizedAnswer": "THE DARK KNIGHT",
+    "category": "Action",
+    "difficulty": 64.8,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "metadata": {
+      "year": "2008",
+      "popularity": 48.6472,
+      "rating": 8.533
+    }
+  },
+  {
+    "id": "862cb6a198ffbfb4e4f303b70ff6b3fa",
+    "source": "movie",
+    "type": "title",
+    "answer": "The Avengers",
+    "normalizedAnswer": "THE AVENGERS",
+    "category": "Sci-Fi",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "metadata": {
+      "year": "2012",
+      "popularity": 46.259,
+      "rating": 8.058
+    }
+  },
+  {
+    "id": "5ec1d896515b9caeb36ef9845e5ef4fb",
+    "source": "movie",
+    "type": "title",
+    "answer": "Deadpool & Wolverine",
+    "normalizedAnswer": "DEADPOOL WOLVERINE",
+    "category": "Action",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 17,
+    "uniqueLetterCount": 11,
+    "metadata": {
+      "year": "2024",
+      "popularity": 43.0487,
+      "rating": 7.582
+    }
+  },
+  {
+    "id": "66f2c4fc142f2bf43c685c9d663941da",
+    "source": "movie",
+    "type": "title",
+    "answer": "Simpsley",
+    "normalizedAnswer": "SIMPSLEY",
+    "category": "Movie",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "metadata": {
+      "year": "2026",
+      "popularity": 40.735,
+      "rating": 7.802
+    }
+  },
+  {
+    "id": "b9471b0256ed08ad746a477f7e576042",
+    "source": "movie",
+    "type": "title",
+    "answer": "War of the Worlds",
+    "normalizedAnswer": "WAR OF THE WORLDS",
+    "category": "Sci-Fi",
+    "difficulty": 60.4,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 14,
+    "uniqueLetterCount": 11,
+    "metadata": {
+      "year": "2025",
+      "popularity": 45.8237,
+      "rating": 4.084
+    }
+  },
+  {
+    "id": "b30d0da34cfeb176dd158a45478643a3",
+    "source": "movie",
+    "type": "title",
+    "answer": "The Bad Guys 2",
+    "normalizedAnswer": "THE BAD GUYS 2",
+    "category": "Movie",
+    "difficulty": 66,
+    "difficultyTier": "medium",
+    "wordCount": 4,
+    "letterCount": 11,
+    "uniqueLetterCount": 10,
+    "metadata": {
+      "year": "2025",
+      "popularity": 44.7504,
+      "rating": 7.634
+    }
+  },
+  {
+    "id": "67772ed609f648e3f0bc712adba8f8b7",
+    "source": "movie",
+    "type": "title",
+    "answer": "Avengers: Infinity War",
+    "normalizedAnswer": "AVENGERS INFINITY WAR",
+    "category": "Movie",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 19,
+    "uniqueLetterCount": 12,
+    "metadata": {
+      "year": "2018",
+      "popularity": 44.7468,
+      "rating": 8.2
+    }
+  },
+  {
+    "id": "3f92c0b5f3d81facfcbb0654e21bb7be",
+    "source": "movie",
+    "type": "title",
+    "answer": "Summerween",
+    "normalizedAnswer": "SUMMERWEEN",
+    "category": "Horror",
+    "difficulty": 78,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "metadata": {
+      "year": "2026",
+      "popularity": 43.8094,
+      "rating": 5.7
+    }
+  },
+  {
+    "id": "df07354df18c28457883c691cff16a1e",
+    "source": "movie",
+    "type": "title",
+    "answer": "Dolly",
+    "normalizedAnswer": "DOLLY",
+    "category": "Horror",
+    "difficulty": 92,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "metadata": {
+      "year": "2026",
+      "popularity": 42.9789,
+      "rating": 5.95
+    }
+  },
+  {
+    "id": "3c7e8ea0894eb2fca03c0b904f1b0d60",
+    "source": "movie",
+    "type": "title",
+    "answer": "Evil Dead Rise",
+    "normalizedAnswer": "EVIL DEAD RISE",
+    "category": "Horror",
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "metadata": {
+      "year": "2023",
+      "popularity": 42.5112,
+      "rating": 6.947
+    }
+  },
+  {
+    "id": "46e09bd93f8050aa6d9a226dbbcb7f8b",
+    "source": "movie",
+    "type": "title",
+    "answer": "KPop Demon Hunters",
+    "normalizedAnswer": "KPOP DEMON HUNTERS",
+    "category": "Movie",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 16,
+    "uniqueLetterCount": 12,
+    "metadata": {
+      "year": "2025",
+      "popularity": 42.3774,
+      "rating": 8.02
+    }
+  },
+  {
+    "id": "2b094d2ef2372dbcac3f20039dac6d67",
+    "source": "movie",
+    "type": "title",
+    "answer": "Oppenheimer",
+    "normalizedAnswer": "OPPENHEIMER",
+    "category": "Drama",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "metadata": {
+      "year": "2023",
+      "popularity": 41.9823,
+      "rating": 8.024
+    }
+  },
+  {
+    "id": "9405bf33dc990f6c1b1e21029163eaff",
+    "source": "movie",
+    "type": "title",
+    "answer": "The Lord of the Rings: The Return of the King",
+    "normalizedAnswer": "THE LORD OF THE RINGS THE RETURN OF THE KING",
+    "category": "Movie",
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 10,
+    "letterCount": 35,
+    "uniqueLetterCount": 14,
+    "metadata": {
+      "year": "2003",
+      "popularity": 41.1725,
+      "rating": 8.502
+    }
+  },
+  {
+    "id": "cc116a87132eb6d920625b929781b506",
+    "source": "movie",
+    "type": "title",
+    "answer": "Little Brother",
+    "normalizedAnswer": "LITTLE BROTHER",
+    "category": "Comedy",
+    "difficulty": 72.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 8,
+    "metadata": {
+      "year": "2026",
+      "popularity": 40.7573,
+      "rating": 6.427
+    }
+  },
+  {
+    "id": "b919134d15f0cc020a48b09a0ea6e64d",
+    "source": "movie",
+    "type": "title",
+    "answer": "The Drama",
+    "normalizedAnswer": "THE DRAMA",
+    "category": "Romance",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "metadata": {
+      "year": "2026",
+      "popularity": 40.5184,
+      "rating": 6.926
+    }
+  },
+  {
+    "id": "190758c91680a5b961a7d83a1479a476",
+    "source": "movie",
+    "type": "title",
+    "answer": "Greenland 2: Migration",
+    "normalizedAnswer": "GREENLAND 2 MIGRATION",
+    "category": "Movie",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 19,
+    "uniqueLetterCount": 11,
+    "metadata": {
+      "year": "2026",
+      "popularity": 40.3412,
+      "rating": 6.45
+    }
+  },
+  {
+    "id": "1fe77723a8fa30d59bef269318ffa1df",
+    "source": "movie",
+    "type": "title",
+    "answer": "Raakaasa",
+    "normalizedAnswer": "RAAKAASA",
+    "category": "Movie",
+    "difficulty": 90.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 4,
+    "metadata": {
+      "year": "2026",
+      "popularity": 40.0909,
+      "rating": 6.533
+    }
+  },
+  {
+    "id": "1612661a2ccb370b44b165701ced29f4",
+    "source": "movie",
+    "type": "title",
+    "answer": "Melancoly Baby",
+    "normalizedAnswer": "MELANCOLY BABY",
+    "category": "Romance",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "metadata": {
+      "year": "1979",
+      "popularity": 40.085,
+      "rating": 6.333
+    }
+  },
+  {
+    "id": "9d28ca6ae164f99437a3ad1fbc3a918d",
+    "source": "movie",
+    "type": "title",
+    "answer": "Blades of the Guardians",
+    "normalizedAnswer": "BLADES OF THE GUARDIANS",
+    "category": "Action",
+    "difficulty": 44,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 20,
+    "uniqueLetterCount": 15,
+    "metadata": {
+      "year": "2026",
+      "popularity": 39.3726,
+      "rating": 7.173
+    }
+  },
+  {
+    "id": "4b383382ca78a0514e24dc582b84bb00",
+    "source": "movie",
+    "type": "title",
+    "answer": "War Machine",
+    "normalizedAnswer": "WAR MACHINE",
+    "category": "Action",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "metadata": {
+      "year": "2026",
+      "popularity": 39.3345,
+      "rating": 7.426
+    }
+  },
+  {
+    "id": "87299074f82273581ec3163dd5e7f320",
+    "source": "movie",
+    "type": "title",
+    "answer": "Being 14",
+    "normalizedAnswer": "BEING 14",
+    "category": "Drama",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "metadata": {
+      "year": "2015",
+      "popularity": 39.2945,
+      "rating": 4.1
+    }
+  },
+  {
+    "id": "92619daa572161b243e93bbde737777d",
+    "source": "movie",
+    "type": "title",
+    "answer": "GOAT",
+    "normalizedAnswer": "GOAT",
+    "category": "Movie",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "metadata": {
+      "year": "2026",
+      "popularity": 39.2,
+      "rating": 8.116
+    }
+  },
+  {
+    "id": "0d0f737606e22fa5ab53cb50e86fdcbe",
+    "source": "movie",
+    "type": "title",
+    "answer": "Voicemails for Isabelle",
+    "normalizedAnswer": "VOICEMAILS FOR ISABELLE",
+    "category": "Romance",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 21,
+    "uniqueLetterCount": 12,
+    "metadata": {
+      "year": "2026",
+      "popularity": 39.1974,
+      "rating": 8.388
+    }
+  },
+  {
+    "id": "49ae029dc0fbd10231ffafb329a649c5",
+    "source": "movie",
+    "type": "title",
+    "answer": "Harry Potter and the Philosopher's Stone",
+    "normalizedAnswer": "HARRY POTTER AND THE PHILOSOPHERS STONE",
+    "category": "Movie",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 6,
+    "letterCount": 34,
+    "uniqueLetterCount": 13,
+    "metadata": {
+      "year": "2001",
+      "popularity": 39.0247,
+      "rating": 7.901
+    }
+  },
+  {
+    "id": "cd866bcf1ab760c039bf0c2baef4ac61",
+    "source": "movie",
+    "type": "title",
+    "answer": "The Devil Wears Prada",
+    "normalizedAnswer": "THE DEVIL WEARS PRADA",
+    "category": "Drama",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 18,
+    "uniqueLetterCount": 12,
+    "metadata": {
+      "year": "2006",
+      "popularity": 38.9067,
+      "rating": 7.441
+    }
+  },
+  {
+    "id": "0ecea871234b1c81d7fd91222903a08b",
+    "source": "movie",
+    "type": "title",
+    "answer": "Predator: Badlands",
+    "normalizedAnswer": "PREDATOR BADLANDS",
+    "category": "Action",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 11,
+    "metadata": {
+      "year": "2025",
+      "popularity": 38.7031,
+      "rating": 7.826
+    }
+  },
+  {
+    "id": "b6b57871c6eed3058b0b3c765a48a338",
+    "source": "movie",
+    "type": "title",
+    "answer": "Saccharine",
+    "normalizedAnswer": "SACCHARINE",
+    "category": "Horror",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "metadata": {
+      "year": "2026",
+      "popularity": 38.6216,
+      "rating": 6.333
+    }
+  },
+  {
+    "id": "6bc5b03c0fefaffec0779fc1dd2359fb",
+    "source": "movie",
+    "type": "title",
+    "answer": "Spider-Man: Across the Spider-Verse",
+    "normalizedAnswer": "SPIDERMAN ACROSS THE SPIDERVERSE",
+    "category": "Movie",
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 29,
+    "uniqueLetterCount": 14,
+    "metadata": {
+      "year": "2023",
+      "popularity": 38.6127,
+      "rating": 8.34
+    }
+  },
+  {
+    "id": "20137ce96647338d854aaa7df9c2ad93",
+    "source": "movie",
+    "type": "title",
+    "answer": "The Godfather",
+    "normalizedAnswer": "THE GODFATHER",
+    "category": "Drama",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "metadata": {
+      "year": "1972",
+      "popularity": 38.2677,
+      "rating": 8.687
+    }
+  },
+  {
+    "id": "6849474ffed76e7d6f5e915a8b5b82aa",
+    "source": "movie",
+    "type": "title",
+    "answer": "Avatar: The Way of Water",
+    "normalizedAnswer": "AVATAR THE WAY OF WATER",
+    "category": "Action",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 19,
+    "uniqueLetterCount": 10,
+    "metadata": {
+      "year": "2022",
+      "popularity": 38.2309,
+      "rating": 7.594
+    }
+  },
+  {
+    "id": "babde3fb3316ad47248357a68bd2bfe2",
+    "source": "movie",
+    "type": "title",
+    "answer": "Spider-Man",
+    "normalizedAnswer": "SPIDERMAN",
+    "category": "Action",
+    "difficulty": 70.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 9,
+    "metadata": {
+      "year": "2002",
+      "popularity": 37.9724,
+      "rating": 7.3
+    }
+  },
+  {
+    "id": "296090d981839a123f28fa275d05900c",
+    "source": "movie",
+    "type": "title",
+    "answer": "Coraline",
+    "normalizedAnswer": "CORALINE",
+    "category": "Movie",
+    "difficulty": 74.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "metadata": {
+      "year": "2009",
+      "popularity": 37.4464,
+      "rating": 7.924
+    }
+  },
+  {
+    "id": "f1fb92e97c8fe6ecc0257d50df4d6e45",
+    "source": "movie",
+    "type": "title",
+    "answer": "The Fantastic 4: First Steps",
+    "normalizedAnswer": "THE FANTASTIC 4 FIRST STEPS",
+    "category": "Sci-Fi",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 23,
+    "uniqueLetterCount": 11,
+    "metadata": {
+      "year": "2025",
+      "popularity": 37.1923,
+      "rating": 6.955
+    }
+  },
+  {
+    "id": "3605e0c4b72ee327c70563a6e16280fe",
+    "source": "movie",
+    "type": "title",
+    "answer": "Dune",
+    "normalizedAnswer": "DUNE",
+    "category": "Sci-Fi",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "metadata": {
+      "year": "2021",
+      "popularity": 36.8046,
+      "rating": 7.8
+    }
+  },
+  {
+    "id": "37a800b09219e28bdc1abb24ec5c86ac",
+    "source": "movie",
+    "type": "title",
+    "answer": "The Breadwinner",
+    "normalizedAnswer": "THE BREADWINNER",
+    "category": "Comedy",
+    "difficulty": 64.4,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "metadata": {
+      "year": "2026",
+      "popularity": 36.7079,
+      "rating": 7.197
+    }
+  },
+  {
+    "id": "ba7370f2176f5e2877357ac89261c318",
+    "source": "movie",
+    "type": "title",
+    "answer": "Hibla 2",
+    "normalizedAnswer": "HIBLA 2",
+    "category": "Drama",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "metadata": {
+      "year": "2026",
+      "popularity": 36.614,
+      "rating": 3
+    }
+  },
+  {
+    "id": "7388f579d142f794342ab07f43581e80",
+    "source": "movie",
+    "type": "title",
+    "answer": "Shaolin Soccer",
+    "normalizedAnswer": "SHAOLIN SOCCER",
+    "category": "Action",
+    "difficulty": 64.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "metadata": {
+      "year": "2001",
+      "popularity": 36.2751,
+      "rating": 7.187
+    }
+  },
+  {
+    "id": "6a48c7571adffc2f15f9c47afee66a29",
+    "source": "movie",
+    "type": "title",
+    "answer": "28 Years Later: The Bone Temple",
+    "normalizedAnswer": "28 YEARS LATER THE BONE TEMPLE",
+    "category": "Horror",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 6,
+    "letterCount": 25,
+    "uniqueLetterCount": 13,
+    "metadata": {
+      "year": "2026",
+      "popularity": 36.1789,
+      "rating": 7.117
+    }
+  },
+  {
+    "id": "bd20e8fba0d8ec6f7ed01eac204b9e78",
+    "source": "movie",
+    "type": "title",
+    "answer": "Toy Story",
+    "normalizedAnswer": "TOY STORY",
+    "category": "Movie",
+    "difficulty": 86.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 5,
+    "metadata": {
+      "year": "1995",
+      "popularity": 35.9587,
+      "rating": 7.984
+    }
+  },
+  {
+    "id": "b5867138c6b6aa47d461730bdb9d57ab",
+    "source": "movie",
+    "type": "title",
+    "answer": "The Lord of the Rings: The Fellowship of the Ring",
+    "normalizedAnswer": "THE LORD OF THE RINGS THE FELLOWSHIP OF THE RING",
+    "category": "Movie",
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 10,
+    "letterCount": 39,
+    "uniqueLetterCount": 14,
+    "metadata": {
+      "year": "2001",
+      "popularity": 35.7366,
+      "rating": 8.4
+    }
+  },
+  {
+    "id": "32d5468f596acad1a345733cdd4758fb",
+    "source": "movie",
+    "type": "title",
+    "answer": "Parasite",
+    "normalizedAnswer": "PARASITE",
+    "category": "Comedy",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "metadata": {
+      "year": "2019",
+      "popularity": 35.4478,
+      "rating": 8.491
+    }
+  },
+  {
+    "id": "696df1ba870ff21ffbb07731f44bae26",
+    "source": "movie",
+    "type": "title",
+    "answer": "Seven Snipers",
+    "normalizedAnswer": "SEVEN SNIPERS",
+    "category": "Action",
+    "difficulty": 77.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 7,
+    "metadata": {
+      "year": "2026",
+      "popularity": 35.4029,
+      "rating": 5.815
+    }
+  },
+  {
+    "id": "0e1d010c5eb6bf2a5ab64de9f9051a32",
+    "source": "movie",
+    "type": "title",
+    "answer": "The Wild Robot",
+    "normalizedAnswer": "THE WILD ROBOT",
+    "category": "Movie",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "metadata": {
+      "year": "2024",
+      "popularity": 35.3571,
+      "rating": 8.313
+    }
+  },
+  {
+    "id": "dd62122ab8cd251cab10e5dea3a8ca78",
+    "source": "movie",
+    "type": "title",
+    "answer": "Enola Holmes 3",
+    "normalizedAnswer": "ENOLA HOLMES 3",
+    "category": "Movie",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "metadata": {
+      "year": "2026",
+      "popularity": 35.3239,
+      "rating": 6.969
+    }
+  },
+  {
+    "id": "05648756cb70ce0dbd2d2c853e5e78aa",
+    "source": "movie",
+    "type": "title",
+    "answer": "Send Help",
+    "normalizedAnswer": "SEND HELP",
+    "category": "Horror",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "metadata": {
+      "year": "2026",
+      "popularity": 35.2196,
+      "rating": 7.05
+    }
+  },
+  {
+    "id": "1f7237d92fed3d8fddff7cc5b5fe49e4",
+    "source": "movie",
+    "type": "title",
+    "answer": "The Bodyguard",
+    "normalizedAnswer": "THE BODYGUARD",
+    "category": "Action",
+    "difficulty": 61.2,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 11,
+    "metadata": {
+      "year": "1992",
+      "popularity": 34.725,
+      "rating": 6.704
+    }
+  },
+  {
+    "id": "e79f7f0240f9ff9d6d01eb0d9751ded8",
+    "source": "movie",
+    "type": "title",
+    "answer": "Spider-Man: Homecoming",
+    "normalizedAnswer": "SPIDERMAN HOMECOMING",
+    "category": "Action",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 19,
+    "uniqueLetterCount": 13,
+    "metadata": {
+      "year": "2017",
+      "popularity": 34.7067,
+      "rating": 7.331
+    }
+  },
+  {
+    "id": "b312329262000d00c20792146e63637a",
+    "source": "movie",
+    "type": "title",
+    "answer": "A Great Love",
+    "normalizedAnswer": "A GREAT LOVE",
+    "category": "Drama",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "metadata": {
+      "year": "1995",
+      "popularity": 34.6626,
+      "rating": 5
+    }
+  },
+  {
+    "id": "34b95f1b679bfa6b320faa33892623fc",
+    "source": "movie",
+    "type": "title",
+    "answer": "Avengers: Endgame",
+    "normalizedAnswer": "AVENGERS ENDGAME",
+    "category": "Movie",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 9,
+    "metadata": {
+      "year": "2019",
+      "popularity": 33.9866,
+      "rating": 8.2
+    }
+  },
+  {
+    "id": "09f5af20c5fe72418da6d89e5eb46867",
+    "source": "movie",
+    "type": "title",
+    "answer": "Crime 101",
+    "normalizedAnswer": "CRIME 101",
+    "category": "Movie",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 5,
+    "metadata": {
+      "year": "2026",
+      "popularity": 33.905,
+      "rating": 7
+    }
+  },
+  {
+    "id": "36f7a9597ab77c42d10c16460d01ac71",
+    "source": "movie",
+    "type": "title",
+    "answer": "Vampire Princess Miyu",
+    "normalizedAnswer": "VAMPIRE PRINCESS MIYU",
+    "category": "Movie",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 19,
+    "uniqueLetterCount": 12,
+    "metadata": {
+      "year": "1988",
+      "popularity": 33.7353,
+      "rating": 6.8
+    }
+  },
+  {
+    "id": "d3f2480bcdeedba4acad8554b0c5f424",
+    "source": "movie",
+    "type": "title",
+    "answer": "Powerless King",
+    "normalizedAnswer": "POWERLESS KING",
+    "category": "Movie",
+    "difficulty": 60.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 11,
+    "metadata": {
+      "year": "1981",
+      "popularity": 33.5352,
+      "rating": 6.5
+    }
+  },
+  {
+    "id": "ea3f4c1301f411451b86a374cdec00ed",
+    "source": "movie",
+    "type": "title",
+    "answer": "The Matrix",
+    "normalizedAnswer": "THE MATRIX",
+    "category": "Action",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "metadata": {
+      "year": "1999",
+      "popularity": 33.4511,
+      "rating": 8.3
+    }
+  },
+  {
+    "id": "b756176e28a07409cc3061e066186ed6",
+    "source": "movie",
+    "type": "title",
+    "answer": "Peddi",
+    "normalizedAnswer": "PEDDI",
+    "category": "Action",
+    "difficulty": 92,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "metadata": {
+      "year": "2026",
+      "popularity": 33.2306,
+      "rating": 5.905
+    }
+  },
+  {
+    "id": "cfa4ec37905b888c1f2fce13946acccc",
+    "source": "movie",
+    "type": "title",
+    "answer": "Poppea's Hot Nights",
+    "normalizedAnswer": "POPPEAS HOT NIGHTS",
+    "category": "Comedy",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 16,
+    "uniqueLetterCount": 10,
+    "metadata": {
+      "year": "1969",
+      "popularity": 33.1842,
+      "rating": 4.7
+    }
+  },
+  {
+    "id": "f826d043e0dfd261a6cd73163576931d",
+    "source": "movie",
+    "type": "title",
+    "answer": "Avatar",
+    "normalizedAnswer": "AVATAR",
+    "category": "Action",
+    "difficulty": 91.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 4,
+    "metadata": {
+      "year": "2009",
+      "popularity": 32.6902,
+      "rating": 7.6
+    }
+  },
+  {
+    "id": "88f91689937cf34b8f68383b1b7b7b84",
+    "source": "movie",
+    "type": "title",
+    "answer": "Spider-Man: Into the Spider-Verse",
+    "normalizedAnswer": "SPIDERMAN INTO THE SPIDERVERSE",
+    "category": "Movie",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 27,
+    "uniqueLetterCount": 13,
+    "metadata": {
+      "year": "2018",
+      "popularity": 32.5457,
+      "rating": 8.393
+    }
+  },
+  {
+    "id": "8e1e5d2c77d4ed875fe163c5c44f09fb",
+    "source": "movie",
+    "type": "title",
+    "answer": "Spirited Away",
+    "normalizedAnswer": "SPIRITED AWAY",
+    "category": "Movie",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "metadata": {
+      "year": "2001",
+      "popularity": 32.5442,
+      "rating": 8.5
+    }
+  },
+  {
+    "id": "b1a035740a788c483619fb38a5130943",
+    "source": "movie",
+    "type": "title",
+    "answer": "Accidental Partners",
+    "normalizedAnswer": "ACCIDENTAL PARTNERS",
+    "category": "Comedy",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 18,
+    "uniqueLetterCount": 11,
+    "metadata": {
+      "year": "2026",
+      "popularity": 32.4485,
+      "rating": 9
+    }
+  },
+  {
+    "id": "0408cec859cfe82bb1517714e982fbcc",
+    "source": "movie",
+    "type": "title",
+    "answer": "Superman",
+    "normalizedAnswer": "SUPERMAN",
+    "category": "Sci-Fi",
+    "difficulty": 74.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "metadata": {
+      "year": "2025",
+      "popularity": 32.1029,
+      "rating": 7.331
+    }
+  },
+  {
+    "id": "de40daf445944d1d54b2f0387d28a3b4",
+    "source": "movie",
+    "type": "title",
+    "answer": "Titanic",
+    "normalizedAnswer": "TITANIC",
+    "category": "Drama",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "metadata": {
+      "year": "1997",
+      "popularity": 31.713,
+      "rating": 7.902
+    }
+  },
+  {
+    "id": "c09527700a01ebffb1a9f3d0fe9732b7",
+    "source": "movie",
+    "type": "title",
+    "answer": "Nothing Between Us",
+    "normalizedAnswer": "NOTHING BETWEEN US",
+    "category": "Romance",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 16,
+    "uniqueLetterCount": 11,
+    "metadata": {
+      "year": "2026",
+      "popularity": 31.6424,
+      "rating": 6.556
+    }
+  },
+  {
+    "id": "bc4a77f56e838276c6be7f4eb8289491",
+    "source": "movie",
+    "type": "title",
+    "answer": "Sniper: No Nation",
+    "normalizedAnswer": "SNIPER NO NATION",
+    "category": "Action",
+    "difficulty": 68.4,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 14,
+    "uniqueLetterCount": 9,
+    "metadata": {
+      "year": "2026",
+      "popularity": 31.6066,
+      "rating": 6.7
+    }
+  },
+  {
+    "id": "f8c0b317ab07f941cf0a0132a2574f94",
+    "source": "movie",
+    "type": "title",
+    "answer": "My Fault",
+    "normalizedAnswer": "MY FAULT",
+    "category": "Drama",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "metadata": {
+      "year": "2023",
+      "popularity": 31.5752,
+      "rating": 7.735
+    }
+  },
+  {
+    "id": "751fa86f705d19fa4678e1a2680591cd",
+    "source": "movie",
+    "type": "title",
+    "answer": "Top Gun: Maverick",
+    "normalizedAnswer": "TOP GUN MAVERICK",
+    "category": "Action",
+    "difficulty": 48.4,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 14,
+    "uniqueLetterCount": 14,
+    "metadata": {
+      "year": "2022",
+      "popularity": 31.451,
+      "rating": 8.159
+    }
+  },
+  {
+    "id": "21e3670fad51d72f9a3e3b7db742ff16",
+    "source": "movie",
+    "type": "title",
+    "answer": "The Batman",
+    "normalizedAnswer": "THE BATMAN",
+    "category": "Movie",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "metadata": {
+      "year": "2022",
+      "popularity": 31.4258,
+      "rating": 7.665
+    }
+  },
+  {
+    "id": "623f624e8ac9ef179df3addb01d25689",
+    "source": "movie",
+    "type": "title",
+    "answer": "Hope",
+    "normalizedAnswer": "HOPE",
+    "category": "Sci-Fi",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "metadata": {
+      "year": "2026",
+      "popularity": 31.2435,
+      "rating": 7.75
+    }
+  },
+  {
+    "id": "ee893b34e7377d8bbb2baf379812cbc8",
+    "source": "movie",
+    "type": "title",
+    "answer": "Fight Club",
+    "normalizedAnswer": "FIGHT CLUB",
+    "category": "Drama",
+    "difficulty": 70.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 9,
+    "metadata": {
+      "year": "1999",
+      "popularity": 31.2093,
+      "rating": 8.438
+    }
+  },
+  {
+    "id": "7ba6aa5c71e8a496d0a7757579f02224",
+    "source": "movie",
+    "type": "title",
+    "answer": "Keep Real",
+    "normalizedAnswer": "KEEP REAL",
+    "category": "Drama",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "metadata": {
+      "year": "2026",
+      "popularity": 31.0727,
+      "rating": 1.8
+    }
+  },
+  {
+    "id": "4a1578c78becfec67fbf8d0596a7c6e9",
+    "source": "movie",
+    "type": "title",
+    "answer": "Idhayam Murali",
+    "normalizedAnswer": "IDHAYAM MURALI",
+    "category": "Romance",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "metadata": {
+      "year": "2026",
+      "popularity": 30.9652,
+      "rating": 7.5
+    }
+  },
+  {
+    "id": "3055cfa81477de83a475d93599121d29",
+    "source": "movie",
+    "type": "title",
+    "answer": "Fast X",
+    "normalizedAnswer": "FAST X",
+    "category": "Action",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "metadata": {
+      "year": "2023",
+      "popularity": 30.9227,
+      "rating": 7
+    }
+  },
+  {
+    "id": "af0baab7a806745dfa9a0e30af854953",
+    "source": "movie",
+    "type": "title",
+    "answer": "The Lord of the Rings: The Two Towers",
+    "normalizedAnswer": "THE LORD OF THE RINGS THE TWO TOWERS",
+    "category": "Movie",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 8,
+    "letterCount": 29,
+    "uniqueLetterCount": 13,
+    "metadata": {
+      "year": "2002",
+      "popularity": 30.9102,
+      "rating": 8.423
+    }
+  },
+  {
+    "id": "db5fdc7d6c2c5dad1f0b03157f78d5e5",
+    "source": "movie",
+    "type": "title",
+    "answer": "Pulp Fiction",
+    "normalizedAnswer": "PULP FICTION",
+    "category": "Movie",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "metadata": {
+      "year": "1994",
+      "popularity": 30.8901,
+      "rating": 8.481
+    }
+  },
+  {
+    "id": "b3a665616d52805e4fa2ea95784f4add",
+    "source": "movie",
+    "type": "title",
+    "answer": "The Green Mile",
+    "normalizedAnswer": "THE GREEN MILE",
+    "category": "Movie",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "metadata": {
+      "year": "1999",
+      "popularity": 30.8693,
+      "rating": 8.506
+    }
+  },
+  {
+    "id": "bc6e273f2d78eaa670fa86c449c20cad",
+    "source": "movie",
+    "type": "title",
+    "answer": "Dune: Part Two",
+    "normalizedAnswer": "DUNE PART TWO",
+    "category": "Sci-Fi",
+    "difficulty": 65.6,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 11,
+    "uniqueLetterCount": 10,
+    "metadata": {
+      "year": "2024",
+      "popularity": 30.7358,
+      "rating": 8.1
+    }
+  },
+  {
+    "id": "af0b77ed864a0c886f2e06fae87f4e4d",
+    "source": "movie",
+    "type": "title",
+    "answer": "Mission: Impossible - The Final Reckoning",
+    "normalizedAnswer": "MISSION IMPOSSIBLE THE FINAL RECKONING",
+    "category": "Action",
+    "difficulty": 36,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 34,
+    "uniqueLetterCount": 17,
+    "metadata": {
+      "year": "2025",
+      "popularity": 30.6872,
+      "rating": 7.2
+    }
+  },
+  {
+    "id": "21d35f17ad150ef5f6db10c6f692c974",
+    "source": "movie",
+    "type": "title",
+    "answer": "The Super Mario Bros. Movie",
+    "normalizedAnswer": "THE SUPER MARIO BROS MOVIE",
+    "category": "Movie",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 22,
+    "uniqueLetterCount": 13,
+    "metadata": {
+      "year": "2023",
+      "popularity": 30.5478,
+      "rating": 7.602
+    }
+  },
+  {
+    "id": "b874fe2886613dd52451ee9ae7f91aab",
+    "source": "movie",
+    "type": "title",
+    "answer": "Beast",
+    "normalizedAnswer": "BEAST",
+    "category": "Action",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "metadata": {
+      "year": "2026",
+      "popularity": 30.4257,
+      "rating": 6.278
+    }
+  },
+  {
+    "id": "9c19bab3d8ad76cbc1ee2a86c099cbb1",
+    "source": "movie",
+    "type": "title",
+    "answer": "Captain America: Brave New World",
+    "normalizedAnswer": "CAPTAIN AMERICA BRAVE NEW WORLD",
+    "category": "Action",
+    "difficulty": 44,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 27,
+    "uniqueLetterCount": 15,
+    "metadata": {
+      "year": "2025",
+      "popularity": 30.3624,
+      "rating": 5.965
+    }
+  },
+  {
+    "id": "71811be8ecd3fa74d06d3e266cb43630",
+    "source": "movie",
+    "type": "title",
+    "answer": "The Intouchables",
+    "normalizedAnswer": "THE INTOUCHABLES",
+    "category": "Drama",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 12,
+    "metadata": {
+      "year": "2011",
+      "popularity": 30.3277,
+      "rating": 8.273
+    }
+  },
+  {
+    "id": "a1f52994857c1ac1cc997755aaa2c939",
+    "source": "movie",
+    "type": "title",
+    "answer": "Morte Cucina",
+    "normalizedAnswer": "MORTE CUCINA",
+    "category": "Movie",
+    "difficulty": 65.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 10,
+    "metadata": {
+      "year": "2026",
+      "popularity": 30.3257,
+      "rating": 3.833
+    }
+  },
+  {
+    "id": "494b8e20483a26e8b576500e1991ddd4",
+    "source": "movie",
+    "type": "title",
+    "answer": "Vengeance",
+    "normalizedAnswer": "VENGEANCE",
+    "category": "Action",
+    "difficulty": 82.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "metadata": {
+      "year": "2026",
+      "popularity": 30.2382,
+      "rating": 7.548
+    }
+  },
+  {
+    "id": "b22e0dee64f61791bc1a6fa77ead9938",
+    "source": "movie",
+    "type": "title",
+    "answer": "Sinners",
+    "normalizedAnswer": "SINNERS",
+    "category": "Horror",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "metadata": {
+      "year": "2025",
+      "popularity": 30.2149,
+      "rating": 7.499
+    }
+  },
+  {
+    "id": "945f384e2a3cd6588d5629607e49426c",
+    "source": "movie",
+    "type": "title",
+    "answer": "Hokum",
+    "normalizedAnswer": "HOKUM",
+    "category": "Horror",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "metadata": {
+      "year": "2026",
+      "popularity": 30.1559,
+      "rating": 6.9
+    }
+  },
+  {
+    "id": "8a60abd8246ea875977fa88bb4bb5545",
+    "source": "movie",
+    "type": "title",
+    "answer": "Chinese Four Given Names People Prostitute: Li Xiangjun",
+    "normalizedAnswer": "CHINESE FOUR GIVEN NAMES PEOPLE PROSTITUTE LI XIANGJUN",
+    "category": "Romance",
+    "difficulty": 28,
+    "difficultyTier": "easy",
+    "wordCount": 8,
+    "letterCount": 47,
+    "uniqueLetterCount": 19,
+    "metadata": {
+      "year": "2005",
+      "popularity": 29.2529,
+      "rating": 2.5
+    }
+  },
+  {
+    "id": "e8386477896964e78911dcff045d56e7",
+    "source": "movie",
+    "type": "title",
+    "answer": "It Follows",
+    "normalizedAnswer": "IT FOLLOWS",
+    "category": "Horror",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "metadata": {
+      "year": "2015",
+      "popularity": 25.9476,
+      "rating": 6.584
+    }
+  },
+  {
+    "id": "854527026c3482be4edabd8862c29b04",
+    "source": "movie",
+    "type": "title",
+    "answer": "Lola's Secret",
+    "normalizedAnswer": "LOLAS SECRET",
+    "category": "Drama",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "metadata": {
+      "year": "1984",
+      "popularity": 33.2171,
+      "rating": 7.049
+    }
+  },
+  {
+    "id": "2f2038729a4263151af5ae8c66629eee",
+    "source": "movie",
+    "type": "title",
+    "answer": "A Minecraft Movie",
+    "normalizedAnswer": "A MINECRAFT MOVIE",
+    "category": "Movie",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "metadata": {
+      "year": "2025",
+      "popularity": 33.4328,
+      "rating": 6.252
+    }
+  },
+  {
+    "id": "5551a6d001e86c6846469d0d06a57059",
+    "source": "movie",
+    "type": "title",
+    "answer": "F1",
+    "normalizedAnswer": "F1",
+    "category": "Action",
+    "difficulty": 105.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 2,
+    "uniqueLetterCount": 1,
+    "metadata": {
+      "year": "2025",
+      "popularity": 30.7004,
+      "rating": 7.816
+    }
+  },
+  {
+    "id": "174fbc5889d995eceddb9445c552ecd7",
+    "source": "movie",
+    "type": "title",
+    "answer": "Monsters, Inc.",
+    "normalizedAnswer": "MONSTERS INC",
+    "category": "Movie",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "metadata": {
+      "year": "2001",
+      "popularity": 28.8728,
+      "rating": 7.9
+    }
+  },
+  {
+    "id": "f5ba30f9970caef613c4656502f06809",
+    "source": "movie",
+    "type": "title",
+    "answer": "Normal",
+    "normalizedAnswer": "NORMAL",
+    "category": "Action",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "metadata": {
+      "year": "2026",
+      "popularity": 25.0745,
+      "rating": 7.131
+    }
+  },
+  {
+    "id": "d76e56686dc99f60b3efa6d4888f6c20",
+    "source": "movie",
+    "type": "title",
+    "answer": "Big Hero 6",
+    "normalizedAnswer": "BIG HERO 6",
+    "category": "Movie",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "metadata": {
+      "year": "2014",
+      "popularity": 28.4464,
+      "rating": 7.7
+    }
+  },
+  {
+    "id": "106f8355d0242bb0d565052f89ab7819",
+    "source": "movie",
+    "type": "title",
+    "answer": "OK! Madam: Bon Voyage",
+    "normalizedAnswer": "OK MADAM BON VOYAGE",
+    "category": "Action",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 16,
+    "uniqueLetterCount": 11,
+    "metadata": {
+      "year": "2026",
+      "popularity": 26.738,
+      "rating": 0
+    }
+  },
+  {
+    "id": "52d87d1ea3f13faabee66a07c55ec61d",
+    "source": "movie",
+    "type": "title",
+    "answer": "Avengers: Age of Ultron",
+    "normalizedAnswer": "AVENGERS AGE OF ULTRON",
+    "category": "Action",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 19,
+    "uniqueLetterCount": 12,
+    "metadata": {
+      "year": "2015",
+      "popularity": 30.0774,
+      "rating": 7.275
+    }
+  },
+  {
+    "id": "728b3f0c0fcadf64a8d49889b4df0352",
+    "source": "movie",
+    "type": "title",
+    "answer": "Madness",
+    "normalizedAnswer": "MADNESS",
+    "category": "Movie",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "metadata": {
+      "year": "1980",
+      "popularity": 34.2941,
+      "rating": 5.265
+    }
+  },
+  {
+    "id": "10dc7dbb2383506ed0834f656199ff7d",
+    "source": "movie",
+    "type": "title",
+    "answer": "Toy Story 4",
+    "normalizedAnswer": "TOY STORY 4",
+    "category": "Movie",
+    "difficulty": 86.8,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 9,
+    "uniqueLetterCount": 5,
+    "metadata": {
+      "year": "2019",
+      "popularity": 28.0346,
+      "rating": 7.5
+    }
+  },
+  {
+    "id": "78debb257c324217bf787f40b69b5f7d",
+    "source": "movie",
+    "type": "title",
+    "answer": "The Invite",
+    "normalizedAnswer": "THE INVITE",
+    "category": "Drama",
+    "difficulty": 82.4,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "metadata": {
+      "year": "2026",
+      "popularity": 30.2559,
+      "rating": 7.8
+    }
+  },
+  {
+    "id": "3ad2d6aa946705bd4e2a6ae1a313cb37",
+    "source": "movie",
+    "type": "title",
+    "answer": "A Garden Without Birds",
+    "normalizedAnswer": "A GARDEN WITHOUT BIRDS",
+    "category": "Horror",
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 19,
+    "uniqueLetterCount": 14,
+    "metadata": {
+      "year": "1992",
+      "popularity": 25.5556,
+      "rating": 4.9
+    }
+  },
+  {
+    "id": "dff25c79f4cffb5e6285273d1d1d07ea",
+    "source": "movie",
+    "type": "title",
+    "answer": "Elize: Shadows of a Woman",
+    "normalizedAnswer": "ELIZE SHADOWS OF A WOMAN",
+    "category": "Movie",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 20,
+    "uniqueLetterCount": 13,
+    "metadata": {
+      "year": "2026",
+      "popularity": 45.2828,
+      "rating": 6.1
+    }
+  },
+  {
+    "id": "f6a7dea752f019a26d5128bc59c35a04",
+    "source": "movie",
+    "type": "title",
+    "answer": "The Amazing Spider-Man",
+    "normalizedAnswer": "THE AMAZING SPIDERMAN",
+    "category": "Action",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 19,
+    "uniqueLetterCount": 13,
+    "metadata": {
+      "year": "2012",
+      "popularity": 29.1255,
+      "rating": 6.742
+    }
+  },
+  {
+    "id": "d61e36b2b4e65bd65f3769df504c7254",
+    "source": "movie",
+    "type": "title",
+    "answer": "Infiltrate",
+    "normalizedAnswer": "INFILTRATE",
+    "category": "Action",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "metadata": {
+      "year": "2026",
+      "popularity": 24.929,
+      "rating": 0
+    }
+  },
+  {
+    "id": "6f7238d2fca9c26fae0a3972f943792a",
+    "source": "movie",
+    "type": "title",
+    "answer": "Pacific Rim",
+    "normalizedAnswer": "PACIFIC RIM",
+    "category": "Action",
+    "difficulty": 78,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "metadata": {
+      "year": "2013",
+      "popularity": 25.0699,
+      "rating": 6.937
+    }
+  },
+  {
+    "id": "ab30063bf16ac6b49a61624736f85e87",
+    "source": "movie",
+    "type": "title",
+    "answer": "WALL·E",
+    "normalizedAnswer": "WALLE",
+    "category": "Movie",
+    "difficulty": 92,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "metadata": {
+      "year": "2008",
+      "popularity": 29.3343,
+      "rating": 8.117
+    }
+  },
+  {
+    "id": "d5a96592e6464948945995e3e22d7f9e",
+    "source": "movie",
+    "type": "title",
+    "answer": "Whiplash",
+    "normalizedAnswer": "WHIPLASH",
+    "category": "Drama",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "metadata": {
+      "year": "2014",
+      "popularity": 28.841,
+      "rating": 8.375
+    }
+  },
+  {
+    "id": "710728b507e09e19053914ffb32af5b1",
+    "source": "movie",
+    "type": "title",
+    "answer": "Harry Potter and the Chamber of Secrets",
+    "normalizedAnswer": "HARRY POTTER AND THE CHAMBER OF SECRETS",
+    "category": "Movie",
+    "difficulty": 44,
+    "difficultyTier": "easy",
+    "wordCount": 7,
+    "letterCount": 33,
+    "uniqueLetterCount": 15,
+    "metadata": {
+      "year": "2002",
+      "popularity": 27.965,
+      "rating": 7.706
+    }
+  },
+  {
+    "id": "5e8a20fca356691d3312cd329385f426",
+    "source": "movie",
+    "type": "title",
+    "answer": "The Godfather Part II",
+    "normalizedAnswer": "THE GODFATHER PART II",
+    "category": "Drama",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 18,
+    "uniqueLetterCount": 11,
+    "metadata": {
+      "year": "1974",
+      "popularity": 27.8225,
+      "rating": 8.572
+    }
+  },
+  {
+    "id": "292a58111cb3f9fb2bc1a126e9ce2af6",
+    "source": "movie",
+    "type": "title",
+    "answer": "Power Ballad",
+    "normalizedAnswer": "POWER BALLAD",
+    "category": "Comedy",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "metadata": {
+      "year": "2026",
+      "popularity": 27.6184,
+      "rating": 7
+    }
+  },
+  {
+    "id": "cdb26a9145fbb3aaa67b633a9c432648",
+    "source": "movie",
+    "type": "title",
+    "answer": "Gladiator",
+    "normalizedAnswer": "GLADIATOR",
+    "category": "Action",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "metadata": {
+      "year": "2000",
+      "popularity": 27.5663,
+      "rating": 8.229
+    }
+  },
+  {
+    "id": "74ed765e736ae66198d99232aa74cde3",
+    "source": "movie",
+    "type": "title",
+    "answer": "Star Wars",
+    "normalizedAnswer": "STAR WARS",
+    "category": "Movie",
+    "difficulty": 86.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 5,
+    "metadata": {
+      "year": "1977",
+      "popularity": 27.4932,
+      "rating": 8.206
+    }
+  },
+  {
+    "id": "1b3bb40549743a58574a2e249b0fe1b6",
+    "source": "movie",
+    "type": "title",
+    "answer": "\"Wuthering Heights\"",
+    "normalizedAnswer": "WUTHERING HEIGHTS",
+    "category": "Romance",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 10,
+    "metadata": {
+      "year": "2026",
+      "popularity": 27.4333,
+      "rating": 6.659
+    }
+  },
+  {
+    "id": "a3dbefa8721ae5091dd3c6f3a56fbbdb",
+    "source": "movie",
+    "type": "title",
+    "answer": "Susana and Elvira: No Plan B",
+    "normalizedAnswer": "SUSANA AND ELVIRA NO PLAN B",
+    "category": "Romance",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 6,
+    "letterCount": 22,
+    "uniqueLetterCount": 13,
+    "metadata": {
+      "year": "2026",
+      "popularity": 27.2969,
+      "rating": 6.667
+    }
+  },
+  {
+    "id": "41c9ae9cfd9bf25498ffb6870c35b7b3",
+    "source": "movie",
+    "type": "title",
+    "answer": "Your Fault: London",
+    "normalizedAnswer": "YOUR FAULT LONDON",
+    "category": "Romance",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "metadata": {
+      "year": "2026",
+      "popularity": 27.2925,
+      "rating": 7.456
+    }
+  },
+  {
+    "id": "07d9631c22c7ddd954f3547b0394e65f",
+    "source": "movie",
+    "type": "title",
+    "answer": "The Gorge",
+    "normalizedAnswer": "THE GORGE",
+    "category": "Romance",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "metadata": {
+      "year": "2025",
+      "popularity": 27.2109,
+      "rating": 7.673
+    }
+  },
+  {
+    "id": "2a527a0d09b5503d4720d218c78fd156",
+    "source": "movie",
+    "type": "title",
+    "answer": "Triangle",
+    "normalizedAnswer": "TRIANGLE",
+    "category": "Horror",
+    "difficulty": 74.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "metadata": {
+      "year": "2009",
+      "popularity": 27.1694,
+      "rating": 6.916
+    }
+  },
+  {
+    "id": "8cf8820c1c8e6dec80c21dbb0b5eabe8",
+    "source": "movie",
+    "type": "title",
+    "answer": "Mad Max: Fury Road",
+    "normalizedAnswer": "MAD MAX FURY ROAD",
+    "category": "Action",
+    "difficulty": 68.4,
+    "difficultyTier": "medium",
+    "wordCount": 4,
+    "letterCount": 14,
+    "uniqueLetterCount": 9,
+    "metadata": {
+      "year": "2015",
+      "popularity": 27.0082,
+      "rating": 7.635
+    }
+  },
+  {
+    "id": "9c8b9dd95e737a4bf07826bff4597815",
+    "source": "movie",
+    "type": "title",
+    "answer": "Evil Dead",
+    "normalizedAnswer": "EVIL DEAD",
+    "category": "Horror",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "metadata": {
+      "year": "2013",
+      "popularity": 26.9448,
+      "rating": 6.621
+    }
+  },
+  {
+    "id": "3b4bec3037bfaf3f4d3ab098908da40c",
+    "source": "movie",
+    "type": "title",
+    "answer": "The Return",
+    "normalizedAnswer": "THE RETURN",
+    "category": "Movie",
+    "difficulty": 82.4,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "metadata": {
+      "year": "2024",
+      "popularity": 26.7346,
+      "rating": 6.495
+    }
+  },
+  {
+    "id": "e7127630f2e6aa823aaf01585e91ef9f",
+    "source": "movie",
+    "type": "title",
+    "answer": "The Wolf of Wall Street",
+    "normalizedAnswer": "THE WOLF OF WALL STREET",
+    "category": "Movie",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 19,
+    "uniqueLetterCount": 10,
+    "metadata": {
+      "year": "2013",
+      "popularity": 26.5622,
+      "rating": 8.027
+    }
+  },
+  {
+    "id": "bf8317b1438d9d53c7871f33c4a871bc",
+    "source": "movie",
+    "type": "title",
+    "answer": "Schindler's List",
+    "normalizedAnswer": "SCHINDLERS LIST",
+    "category": "Drama",
+    "difficulty": 64.4,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "metadata": {
+      "year": "1993",
+      "popularity": 26.5366,
+      "rating": 8.57
+    }
+  },
+  {
+    "id": "211ae6249663134b1cbdadcd0e5ee017",
+    "source": "movie",
+    "type": "title",
+    "answer": "Me Before Me",
+    "normalizedAnswer": "ME BEFORE ME",
+    "category": "Drama",
+    "difficulty": 82,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 10,
+    "uniqueLetterCount": 6,
+    "metadata": {
+      "year": "2026",
+      "popularity": 26.5309,
+      "rating": 6.214
+    }
+  },
+  {
+    "id": "79cc38385c58700b85efd5bb3c753cf6",
+    "source": "movie",
+    "type": "title",
+    "answer": "The Wrecking Crew",
+    "normalizedAnswer": "THE WRECKING CREW",
+    "category": "Action",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "metadata": {
+      "year": "2026",
+      "popularity": 26.4334,
+      "rating": 7.071
+    }
+  },
+  {
+    "id": "ab495726478e36b8fbe16b34f8b08acf",
+    "source": "movie",
+    "type": "title",
+    "answer": "The Hobbit: The Battle of the Five Armies",
+    "normalizedAnswer": "THE HOBBIT THE BATTLE OF THE FIVE ARMIES",
+    "category": "Action",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 8,
+    "letterCount": 33,
+    "uniqueLetterCount": 13,
+    "metadata": {
+      "year": "2014",
+      "popularity": 26.3341,
+      "rating": 7.338
+    }
+  },
+  {
+    "id": "48fac7299df725666cc112fd5c7e026d",
+    "source": "movie",
+    "type": "title",
+    "answer": "Remarkably Bright Creatures",
+    "normalizedAnswer": "REMARKABLY BRIGHT CREATURES",
+    "category": "Drama",
+    "difficulty": 44,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 25,
+    "uniqueLetterCount": 15,
+    "metadata": {
+      "year": "2026",
+      "popularity": 26.3305,
+      "rating": 8.515
+    }
+  },
+  {
+    "id": "d365b911c99fa458a3a0e741d5131bb6",
+    "source": "movie",
+    "type": "title",
+    "answer": "The Amazing Spider-Man 2",
+    "normalizedAnswer": "THE AMAZING SPIDERMAN 2",
+    "category": "Action",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 20,
+    "uniqueLetterCount": 13,
+    "metadata": {
+      "year": "2014",
+      "popularity": 26.3243,
+      "rating": 6.547
+    }
+  }
+]

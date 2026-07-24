@@ -1,6 +1,6 @@
 export * from './gameModes'
 
-export type PuzzleSource = 'wheel' | 'jeopardy' | 'movie' | 'tv' | 'music-band' | 'music-song' | 'geography' | 'theme'
+export type PuzzleSource = 'phrases' | 'trivia' | 'movie' | 'tv' | 'music-band' | 'music-song' | 'geography' | 'theme' | 'custom'
 
 export type Puzzle = {
   id: string

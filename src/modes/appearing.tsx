@@ -3,17 +3,16 @@ import Svg from 'react-native-svg'
 
 import type { GameMode } from '@/types/gameModes'
 
-import { Body, GallowsNoRope, LeftArm, LeftLeg, RightArm, RightLeg, RopeAndHead } from './shared/classicParts'
+import { CenteredBody, CenteredLeftArm, CenteredLeftLeg, CenteredRightArm, CenteredRightLeg, CenteredRopeAndHead } from './shared/classicParts'
 
-// Reverse psychology: figure builds bottom-up, head+rope last.
-// Gallows shows but no rope until the final part appears.
-const PARTS = [LeftLeg, RightLeg, Body, LeftArm, RightArm, RopeAndHead]
+// Reverse psychology: figure builds bottom-up, head+rope last. No gallows frame, so the
+// figure is horizontally centered rather than offset to clear a gallows pole.
+const PARTS = [CenteredLeftLeg, CenteredRightLeg, CenteredBody, CenteredLeftArm, CenteredRightArm, CenteredRopeAndHead]
 
 const AppearingVisual = ({ mistakes, color, width, height }: { mistakes: number; color: string; width: number; height: number }) => {
   const count = Math.min(Math.max(0, mistakes), PARTS.length)
   return (
     <Svg width={width} height={height} viewBox='0 0 100 100'>
-      <GallowsNoRope color={color} />
       {PARTS.slice(0, count).map((Part, i) => (
         <Part key={i} color={color} />
       ))}
@@ -24,7 +23,7 @@ const AppearingVisual = ({ mistakes, color, width, height }: { mistakes: number;
 export const appearingMode: GameMode = {
   id: 'appearing',
   label: 'Appearing',
-  description: 'The figure builds from the ground up — head appears last',
+  description: 'The figure builds from the ground up, head appears last',
   category: 'parts',
   behavior: 'additive',
   maxMistakes: 6,

@@ -1,14 +1,15 @@
 import { JSX, useEffect, useMemo, useState } from 'react'
 import { ScrollView, StyleSheet, View } from 'react-native'
-import { Avatar, Card, Chip, ProgressBar, Text, useTheme } from 'react-native-paper'
+import { Avatar, Card, Icon, ProgressBar, Text, useTheme } from 'react-native-paper'
 
 import { ACHIEVEMENT_DEFINITIONS, type AchievementStats, DEFAULT_ACHIEVEMENT_STATS, getAchievementStats } from '@/utils/achievements'
 import { commaString } from '@/utils/commaString'
-import { horizontalWheelScrollProps } from '@/utils/horizontalWheelScroll'
-import { getPuzzleManifest, getPuzzlesForCategory } from '@/utils/puzzleCatalog'
+import { getPuzzleManifest } from '@/utils/puzzleCatalog'
 import { getPuzzleUnlockMap, getUnlockedCountForPack, PuzzleUnlockMap } from '@/utils/unlocks'
 
 import { DialogShell } from './DialogShell'
+import { PackDetailDialog } from './PackDetailDialog'
+import { PackRow } from './PackRow'
 
 export type AchievementsDialogProps = {
   visible: boolean
@@ -20,7 +21,7 @@ export const AchievementsDialog = ({ visible, onDismiss, unlockVersion }: Achiev
   const theme = useTheme()
   const manifest = useMemo(() => getPuzzleManifest().filter((item) => item.count > 0), [])
   const [unlockMap, setUnlockMap] = useState<PuzzleUnlockMap>({})
-  const [selectedPackKey, setSelectedPackKey] = useState(manifest[0]?.key ?? '')
+  const [detailPackKey, setDetailPackKey] = useState<string | null>(null)
   const [achievementStats, setAchievementStats] = useState<AchievementStats>(DEFAULT_ACHIEVEMENT_STATS)
 
   useEffect(() => {
@@ -46,18 +47,6 @@ export const AchievementsDialog = ({ visible, onDismiss, unlockVersion }: Achiev
     }, 0)
   }, [manifest, unlockMap])
 
-  const selectedPack = useMemo(() => manifest.find((item) => item.key === selectedPackKey), [manifest, selectedPackKey])
-
-  const unlockedPreview = useMemo(() => {
-    if (!selectedPack) return []
-    const unlockedIds = new Set(unlockMap[selectedPack.key] ?? [])
-    if (unlockedIds.size === 0) return []
-    const puzzles = getPuzzlesForCategory(selectedPack.key)
-    return puzzles.filter((p) => unlockedIds.has(p.id))
-  }, [selectedPack, unlockMap])
-
-  const packUnlocked = selectedPack ? getUnlockedCountForPack(unlockMap, selectedPack.key) : 0
-  const packProgress = selectedPack && selectedPack.count > 0 ? packUnlocked / selectedPack.count : 0
   const overallProgress = totalAvailable > 0 ? totalUnlocked / totalAvailable : 0
 
   return (
@@ -112,46 +101,15 @@ export const AchievementsDialog = ({ visible, onDismiss, unlockVersion }: Achiev
         <Text variant='titleMedium' style={styles.sectionLabel}>
           Browse by pack
         </Text>
-        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.chipRow} {...horizontalWheelScrollProps}>
-          {manifest.map((item) => {
-            const unlocked = getUnlockedCountForPack(unlockMap, item.key)
-            const complete = item.count > 0 && unlocked >= item.count
-            return (
-              <Chip key={item.key} selected={selectedPackKey === item.key} onPress={() => setSelectedPackKey(item.key)} icon={complete ? 'trophy' : undefined}>
-                {item.label} {commaString(unlocked)}/{commaString(item.count)}
-              </Chip>
-            )
-          })}
-        </ScrollView>
-
-        {selectedPack ? (
-          <Card style={styles.card} mode='contained'>
-            <Card.Content>
-              <Text variant='titleMedium'>{selectedPack.label}</Text>
-              <Text variant='bodySmall' style={styles.muted}>
-                {commaString(packUnlocked)} of {commaString(selectedPack.count)} unlocked
-              </Text>
-              <View style={styles.progressBarWrapper}>
-                <ProgressBar progress={packProgress} style={[styles.progressBar, { backgroundColor: theme.colors.background }]} />
-              </View>
-
-              {unlockedPreview.length === 0 ? (
-                <Text variant='bodySmall' style={styles.emptyText}>
-                  Win puzzles in this pack to reveal and collect them here.
-                </Text>
-              ) : (
-                <View style={styles.previewList}>
-                  {unlockedPreview.map((puzzle) => (
-                    <Text key={`${selectedPack.key}-${puzzle.id}`} variant='bodyMedium' style={styles.previewItem}>
-                      {puzzle.answer}
-                    </Text>
-                  ))}
-                </View>
-              )}
-            </Card.Content>
-          </Card>
-        ) : null}
+        {manifest.map((item) => {
+          const unlocked = getUnlockedCountForPack(unlockMap, item.key)
+          const complete = item.count > 0 && unlocked >= item.count
+          const progress = item.count > 0 ? unlocked / item.count : 0
+          return <PackRow key={item.key} label={item.label} subtitle={`${commaString(unlocked)} of ${commaString(item.count)} unlocked`} progress={progress} onPress={() => setDetailPackKey(item.key)} trailing={<Icon source={complete ? 'trophy' : 'chevron-right'} size={24} color={complete ? theme.colors.primary : theme.colors.onSurfaceVariant} />} />
+        })}
       </ScrollView>
+
+      <PackDetailDialog visible={detailPackKey !== null} onDismiss={() => setDetailPackKey(null)} packKey={detailPackKey} />
     </DialogShell>
   )
 }
@@ -163,15 +121,8 @@ const styles = StyleSheet.create({
   achievementText: { flex: 1, flexShrink: 1 },
   bigNumber: { fontWeight: '800', marginTop: 4 },
   card: { marginBottom: 4 },
-  chipRow: {
-    columnGap: 8,
-    paddingVertical: 4
-  },
-  emptyText: { marginTop: 12, opacity: 0.7 },
   muted: { opacity: 0.7 },
   overline: { letterSpacing: 1, opacity: 0.7, textTransform: 'uppercase' },
-  previewItem: { marginBottom: 6 },
-  previewList: { marginTop: 12 },
   progressBar: {
     borderRadius: 6,
     height: 8

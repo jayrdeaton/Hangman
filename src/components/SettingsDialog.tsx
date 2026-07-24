@@ -1,9 +1,10 @@
 import { AppearancePicker, ColorPicker, useThemeSettings } from '@rific/auto-paper'
 import { JSX, useState } from 'react'
 import { Platform, ScrollView, Share, StyleSheet, View } from 'react-native'
-import { Button, Card, List, Switch, Text, TextInput } from 'react-native-paper'
+import { Button, Card, List, SegmentedButtons, Switch, Text, TextInput } from 'react-native-paper'
 
 import { release } from '@/constants/release'
+import { useKeyboardLayout } from '@/hooks/useKeyboardLayout'
 import { clearAchievements } from '@/utils/achievements'
 import { alert, confirm } from '@/utils/alert'
 import { clearPuzzleUnlocks, exportPuzzleUnlocks, mergePuzzleUnlocks } from '@/utils/unlocks'
@@ -18,6 +19,7 @@ export type SettingsDialogProps = {
 
 export const SettingsDialog = ({ visible, onDismiss, onUnlocksChanged }: SettingsDialogProps): JSX.Element => {
   const { settings, set } = useThemeSettings()
+  const { layout, setLayout } = useKeyboardLayout()
   const [importText, setImportText] = useState('')
 
   const handleExport = async () => {
@@ -74,6 +76,20 @@ export const SettingsDialog = ({ visible, onDismiss, onUnlocksChanged }: Setting
           </View>
 
           <List.Item title='Blur effects' description='Frosted dialogs and menus' right={() => <Switch value={settings.blur} onValueChange={(blur) => set({ blur })} />} />
+        </List.Section>
+
+        <List.Section>
+          <List.Subheader>Keyboard</List.Subheader>
+          <View style={styles.block}>
+            <SegmentedButtons
+              value={layout}
+              onValueChange={(value) => setLayout(value as typeof layout)}
+              buttons={[
+                { value: 'qwerty', label: 'QWERTY' },
+                { value: 'abc', label: 'ABC' }
+              ]}
+            />
+          </View>
         </List.Section>
 
         <List.Section>

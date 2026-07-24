@@ -22,7 +22,7 @@ const fetchTopTracks = async (page: number): Promise<Track[]> => {
     api_key: API_KEY,
     format: 'json',
     limit: '200',
-    page: String(page),
+    page: String(page)
   })
 
   const res = await fetch(`${BASE}?${params}`)
@@ -65,8 +65,8 @@ const main = async () => {
         metadata: {
           artist: t.artist.name,
           listeners: parseInt(t.listeners, 10),
-          playcount: parseInt(t.playcount, 10),
-        },
+          playcount: parseInt(t.playcount, 10)
+        }
       })
     }
   }

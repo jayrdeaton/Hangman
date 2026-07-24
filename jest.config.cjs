@@ -7,6 +7,7 @@ module.exports = {
   moduleNameMapper: {
     '^@/components/(.*)$': '<rootDir>/src/components/$1',
     '^@/constants/(.*)$': '<rootDir>/src/constants/$1',
+    '^@/effects/(.*)$': '<rootDir>/src/effects/$1',
     '^@/hooks/(.*)$': '<rootDir>/src/hooks/$1',
     '^@/modes/(.*)$': '<rootDir>/src/modes/$1',
     '^@/redux/(.*)$': '<rootDir>/src/redux/$1',

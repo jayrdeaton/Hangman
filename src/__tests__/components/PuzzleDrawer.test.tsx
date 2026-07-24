@@ -13,7 +13,7 @@ jest.mock('@/utils/alert', () => ({
 const baseConfig: PuzzleConfig = {
   sourceMode: 'random',
   difficulty: 'any',
-  packKey: '',
+  packKeys: [],
   mode: DEFAULT_MODE,
   customPhrase: '',
   customHint: ''
@@ -32,20 +32,21 @@ describe('PuzzleDrawer', () => {
     announceSpy.mockRestore()
   })
 
-  it('shows Difficulty and hides the custom form for the default Random source', async () => {
+  it('shows Choose packs and Difficulty together, and hides the custom form, for the default Random source', async () => {
     const { getByText, queryByTestId } = await renderDrawer()
 
+    expect(getByText('Choose packs')).toBeTruthy()
     expect(getByText('Difficulty')).toBeTruthy()
     expect(queryByTestId('phrase-input')).toBeNull()
   })
 
-  it('renames the category section header so it does not repeat "Category" from the segmented button', async () => {
-    const { getByText, getAllByText } = await renderDrawer()
+  it('hides Choose packs and Difficulty for Custom', async () => {
+    const { getByText, queryByText } = await renderDrawer()
 
-    await fireEvent.press(getByText('Category'))
+    await fireEvent.press(getByText('Custom'))
 
-    expect(getByText('Choose a pack')).toBeTruthy()
-    expect(getAllByText('Category')).toHaveLength(1)
+    expect(queryByText('Choose packs')).toBeNull()
+    expect(queryByText('Difficulty')).toBeNull()
   })
 
   it('shows the secret-word and hint fields (not Difficulty) for Custom, revealed by default', async () => {
