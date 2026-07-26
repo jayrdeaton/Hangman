@@ -189,27 +189,6 @@
     }
   },
   {
-    "id": "e50b6516ec0a755c08ab18e343c203c9",
-    "source": "theme",
-    "type": "title",
-    "answer": "San Francisco 49ersN",
-    "normalizedAnswer": "SAN FRANCISCO 49ERSN",
-    "category": "Sports Team",
-    "difficulty": 68,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 18,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "sports",
-      "team"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_Super_Bowl_champions"
-    }
-  },
-  {
     "id": "737f76726c1f56eac02ba3df5e3bfc89",
     "source": "theme",
     "type": "title",
@@ -515,90 +494,6 @@
     "wordCount": 2,
     "letterCount": 8,
     "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "sports",
-      "team"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_Super_Bowl_champions"
-    }
-  },
-  {
-    "id": "844c84dc912b4c3ff68a2e16c9363616",
-    "source": "theme",
-    "type": "title",
-    "answer": "2026–27 AFC championA",
-    "normalizedAnswer": "202627 AFC CHAMPIONA",
-    "category": "Sports Team",
-    "difficulty": 69.2,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 18,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "sports",
-      "team"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_Super_Bowl_champions"
-    }
-  },
-  {
-    "id": "0e6e8497523d69d70ff937e8c232831d",
-    "source": "theme",
-    "type": "title",
-    "answer": "2027–28 NFC championN",
-    "normalizedAnswer": "202728 NFC CHAMPIONN",
-    "category": "Sports Team",
-    "difficulty": 69.2,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 18,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "sports",
-      "team"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_Super_Bowl_champions"
-    }
-  },
-  {
-    "id": "2d20d746379fa64818a35775105e4cf8",
-    "source": "theme",
-    "type": "title",
-    "answer": "2028–29 AFC championA",
-    "normalizedAnswer": "202829 AFC CHAMPIONA",
-    "category": "Sports Team",
-    "difficulty": 69.2,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 18,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "sports",
-      "team"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_Super_Bowl_champions"
-    }
-  },
-  {
-    "id": "3e1f8a32668d95f9566027e5fec49b1b",
-    "source": "theme",
-    "type": "title",
-    "answer": "2029–30 NFC championN",
-    "normalizedAnswer": "202930 NFC CHAMPIONN",
-    "category": "Sports Team",
-    "difficulty": 69.2,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 18,
-    "uniqueLetterCount": 9,
     "tags": [
       "theme",
       "sports",
@@ -1827,48 +1722,6 @@
     }
   },
   {
-    "id": "45453de3ded3269e5623b81961f6569b",
-    "source": "theme",
-    "type": "title",
-    "answer": "1896 MHA champion",
-    "normalizedAnswer": "1896 MHA CHAMPION",
-    "category": "Sports Team",
-    "difficulty": 73.6,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 15,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "sports",
-      "team"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
-    }
-  },
-  {
-    "id": "0f29a47e8152a0e6284df35bfd4b03c3",
-    "source": "theme",
-    "type": "title",
-    "answer": "1897 AHAC Champion",
-    "normalizedAnswer": "1897 AHAC CHAMPION",
-    "category": "Sports Team",
-    "difficulty": 73.2,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 16,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "sports",
-      "team"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
-    }
-  },
-  {
     "id": "cdc20b0e9ce673c5afa7549285b59b5a",
     "source": "theme",
     "type": "title",
@@ -1974,27 +1827,6 @@
     }
   },
   {
-    "id": "6a53e35c40b1fe44618dd8ff9e0135cf",
-    "source": "theme",
-    "type": "title",
-    "answer": "1900 CAHL Champion",
-    "normalizedAnswer": "1900 CAHL CHAMPION",
-    "category": "Sports Team",
-    "difficulty": 69.2,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 16,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "sports",
-      "team"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
-    }
-  },
-  {
     "id": "6d563ae9a0295f2b05b6ef10c1a8e311",
     "source": "theme",
     "type": "title",
@@ -2027,27 +1859,6 @@
     "wordCount": 2,
     "letterCount": 18,
     "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "sports",
-      "team"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
-    }
-  },
-  {
-    "id": "3699562c55a038173af86c6d9c445964",
-    "source": "theme",
-    "type": "title",
-    "answer": "1902 MHA Champion",
-    "normalizedAnswer": "1902 MHA CHAMPION",
-    "category": "Sports Team",
-    "difficulty": 73.6,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 15,
-    "uniqueLetterCount": 8,
     "tags": [
       "theme",
       "sports",
@@ -2184,27 +1995,6 @@
     }
   },
   {
-    "id": "ea62fd237332e280c6f6249237b309f3",
-    "source": "theme",
-    "type": "title",
-    "answer": "1905 FAHL Champion",
-    "normalizedAnswer": "1905 FAHL CHAMPION",
-    "category": "Sports Team",
-    "difficulty": 65.2,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 16,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "sports",
-      "team"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
-    }
-  },
-  {
     "id": "7483da1e0b4e4a88976c5c3a9dedda30",
     "source": "theme",
     "type": "title",
@@ -2279,27 +2069,6 @@
     "wordCount": 2,
     "letterCount": 14,
     "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "sports",
-      "team"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_Stanley_Cup_champions"
-    }
-  },
-  {
-    "id": "dce4d8848ba21a15078fe6ed23a8cc74",
-    "source": "theme",
-    "type": "title",
-    "answer": "1908 ECAHA Champions",
-    "normalizedAnswer": "1908 ECAHA CHAMPIONS",
-    "category": "Sports Team",
-    "difficulty": 64.4,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 18,
-    "uniqueLetterCount": 10,
     "tags": [
       "theme",
       "sports",

@@ -61,27 +61,6 @@
     }
   },
   {
-    "id": "72b06cef8362c26969ac25fb4760e970",
-    "source": "geography",
-    "type": "title",
-    "answer": "mi2",
-    "normalizedAnswer": "MI2",
-    "category": "US State Capital",
-    "difficulty": 101.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 3,
-    "uniqueLetterCount": 2,
-    "tags": [
-      "geography",
-      "capital",
-      "us"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
-    }
-  },
-  {
     "id": "690d4a7e62c96db8f93c38351d0a8251",
     "source": "geography",
     "type": "title",
@@ -2167,26 +2146,6 @@
       "geography",
       "capital",
       "us"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
-    }
-  },
-  {
-    "id": "17e5cf50cb73d1c133b56fbac92cd4b6",
-    "source": "geography",
-    "type": "title",
-    "answer": "mi2",
-    "normalizedAnswer": "MI2",
-    "category": "US State",
-    "difficulty": 101.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 3,
-    "uniqueLetterCount": 2,
-    "tags": [
-      "geography",
-      "us-state"
     ],
     "metadata": {
       "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"

@@ -660,26 +660,6 @@
     }
   },
   {
-    "id": "2113d440c3c7e2a068983d2afb30c31e",
-    "source": "theme",
-    "type": "title",
-    "answer": "Brainiac 5",
-    "normalizedAnswer": "BRAINIAC 5",
-    "category": "Superhero",
-    "difficulty": 82.8,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "superhero"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
     "id": "a693063f39484b3be565672c937ea8e3",
     "source": "theme",
     "type": "title",
@@ -991,26 +971,6 @@
     "wordCount": 5,
     "letterCount": 22,
     "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "superhero"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
-    "id": "9ab23d694f7f477e83242cd06b353651",
-    "source": "theme",
-    "type": "title",
-    "answer": "Chris KL-99",
-    "normalizedAnswer": "CHRIS KL99",
-    "category": "Superhero",
-    "difficulty": 79.2,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 7,
     "tags": [
       "theme",
       "superhero"
@@ -2651,26 +2611,6 @@
     "wordCount": 1,
     "letterCount": 4,
     "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "superhero"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
-    "id": "e813ce5ee0d7f650aa9a92727fe9ca6c",
-    "source": "theme",
-    "type": "title",
-    "answer": "Brainiac 8",
-    "normalizedAnswer": "BRAINIAC 8",
-    "category": "Superhero",
-    "difficulty": 82.8,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 6,
     "tags": [
       "theme",
       "superhero"
@@ -5680,26 +5620,6 @@
     }
   },
   {
-    "id": "866fc1343e9ddb20374e03a2dcde693d",
-    "source": "theme",
-    "type": "title",
-    "answer": "Doom 2099",
-    "normalizedAnswer": "DOOM 2099",
-    "category": "Superhero",
-    "difficulty": 96.4,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 3,
-    "tags": [
-      "theme",
-      "superhero"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
     "id": "e38da929a988a5264cd86dc48fa5dcda",
     "source": "theme",
     "type": "title",
@@ -6680,26 +6600,6 @@
     }
   },
   {
-    "id": "3d9948416c06062b969f49a12f4a00e7",
-    "source": "theme",
-    "type": "title",
-    "answer": "Hulk 2099",
-    "normalizedAnswer": "HULK 2099",
-    "category": "Superhero",
-    "difficulty": 92.4,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "superhero"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
     "id": "5c9e5e6a3945ee7e094f3813aa918940",
     "source": "theme",
     "type": "title",
@@ -7010,26 +6910,6 @@
     "difficultyTier": "hard",
     "wordCount": 2,
     "letterCount": 7,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "superhero"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
-    "id": "596dab1458227a1c5da01e1364674f6d",
-    "source": "theme",
-    "type": "title",
-    "answer": "Iron Man 2020",
-    "normalizedAnswer": "IRON MAN 2020",
-    "category": "Superhero",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 3,
-    "letterCount": 11,
     "uniqueLetterCount": 6,
     "tags": [
       "theme",

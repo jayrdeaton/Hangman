@@ -8,6 +8,7 @@ import { PersistGate } from 'redux-persist/integration/react'
 import { persistor, store } from '@/redux/store'
 
 import { KeyboardLayoutProvider } from './KeyboardLayoutProvider'
+import { PackSelectionProvider } from './PackSelectionProvider'
 import { Theme } from './Theme'
 
 export type ProvidersProps = { children: ReactNode }
@@ -21,7 +22,9 @@ export const Providers = ({ children }: ProvidersProps): JSX.Element => (
       <ReduxProvider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           <Theme>
-            <KeyboardLayoutProvider>{children}</KeyboardLayoutProvider>
+            <KeyboardLayoutProvider>
+              <PackSelectionProvider>{children}</PackSelectionProvider>
+            </KeyboardLayoutProvider>
           </Theme>
         </PersistGate>
       </ReduxProvider>

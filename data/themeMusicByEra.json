@@ -966,27 +966,6 @@
     }
   },
   {
-    "id": "727e7efa8e857a3a54b2338336768f39",
-    "source": "theme",
-    "type": "title",
-    "answer": "Maroon 5",
-    "normalizedAnswer": "MAROON 5",
-    "category": "Music Artist by Era",
-    "difficulty": 87.6,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 7,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "music",
-      "era"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
-    }
-  },
-  {
     "id": "d3cd7f98debf7adce6356bbad2d3d272",
     "source": "theme",
     "type": "title",

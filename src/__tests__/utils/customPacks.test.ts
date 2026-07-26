@@ -1,4 +1,4 @@
-import { buildCustomPuzzle, deleteCustomPack, exportCustomPack, getCustomPackPuzzles, getCustomPacks, getCustomPackSummaries, getCustomPacksVersion, getStoredCustomPacks, importCustomPack, isCustomPackKey, loadCustomPacksCache, MAX_ENTRIES_PER_PACK, saveCustomPack } from '@/utils/customPacks'
+import { buildCustomPuzzle, deleteCustomPack, exportCustomPack, getCustomPackPuzzles, getCustomPacks, getCustomPackSummaries, getCustomPacksVersion, getStoredCustomPacks, importCustomPack, isCustomPackKey, loadCustomPacksCache, saveCustomPack } from '@/utils/customPacks'
 
 let mockStore: Record<string, string>
 
@@ -31,15 +31,15 @@ describe('isCustomPackKey', () => {
 
 describe('buildCustomPuzzle', () => {
   it('returns null for a blank answer', () => {
-    expect(buildCustomPuzzle('custom:1', 'My Pack', { answer: '   ' }, 0)).toBeNull()
+    expect(buildCustomPuzzle('custom:1', 'My Pack', { answer: '   ' })).toBeNull()
   })
 
   it('returns null for an all-punctuation answer', () => {
-    expect(buildCustomPuzzle('custom:1', 'My Pack', { answer: '!!! 123' }, 0)).toBeNull()
+    expect(buildCustomPuzzle('custom:1', 'My Pack', { answer: '!!! 123' })).toBeNull()
   })
 
   it('scores a low-letter-diversity word as hard (few unique letters means many guaranteed misses)', () => {
-    const puzzle = buildCustomPuzzle('custom:1', 'My Pack', { answer: 'cat' }, 0)
+    const puzzle = buildCustomPuzzle('custom:1', 'My Pack', { answer: 'cat' })
 
     expect(puzzle?.difficultyTier).toBe('hard')
     expect(puzzle?.normalizedAnswer).toBe('CAT')
@@ -49,28 +49,37 @@ describe('buildCustomPuzzle', () => {
   })
 
   it('scores a phrase with broad alphabet coverage as easy, even with unusual letters', () => {
-    const puzzle = buildCustomPuzzle('custom:1', 'My Pack', { answer: 'quixotic jazz vortex' }, 0)
+    const puzzle = buildCustomPuzzle('custom:1', 'My Pack', { answer: 'quixotic jazz vortex' })
 
     expect(puzzle?.difficultyTier).toBe('easy')
   })
 
   it('sets metadata.hint when a hint is given', () => {
-    const puzzle = buildCustomPuzzle('custom:1', 'My Pack', { answer: 'cat', hint: 'A pet' }, 0)
+    const puzzle = buildCustomPuzzle('custom:1', 'My Pack', { answer: 'cat', hint: 'A pet' })
 
     expect(puzzle?.metadata).toEqual({ hint: 'A pet' })
   })
 
   it('leaves metadata undefined when no hint is given', () => {
-    const puzzle = buildCustomPuzzle('custom:1', 'My Pack', { answer: 'cat' }, 0)
+    const puzzle = buildCustomPuzzle('custom:1', 'My Pack', { answer: 'cat' })
 
     expect(puzzle?.metadata).toBeUndefined()
   })
 
   it('sets source to custom and category to the pack label', () => {
-    const puzzle = buildCustomPuzzle('custom:1', 'My Pack', { answer: 'cat' }, 0)
+    const puzzle = buildCustomPuzzle('custom:1', 'My Pack', { answer: 'cat' })
 
     expect(puzzle?.source).toBe('custom')
     expect(puzzle?.category).toBe('My Pack')
+  })
+
+  it('derives id from the answer content, not position, so reordering never changes it', () => {
+    const first = buildCustomPuzzle('custom:1', 'My Pack', { answer: 'cat' })
+    const second = buildCustomPuzzle('custom:1', 'My Pack', { answer: 'dog' })
+
+    // Same answer, same pack -> same id regardless of where it appears in the entry list.
+    expect(buildCustomPuzzle('custom:1', 'My Pack', { answer: 'cat' })?.id).toBe(first?.id)
+    expect(first?.id).not.toBe(second?.id)
   })
 })
 
@@ -93,11 +102,11 @@ describe('saveCustomPack', () => {
     expect(pack.puzzles[0].answer).toBe('cat')
   })
 
-  it('truncates entries beyond the per-pack cap', async () => {
-    const entries = Array.from({ length: MAX_ENTRIES_PER_PACK + 5 }, (_, i) => ({ answer: `word${i}` }))
+  it('does not truncate large packs (no per-pack entry cap)', async () => {
+    const entries = Array.from({ length: 250 }, (_, i) => ({ answer: `word${i}` }))
     const pack = await saveCustomPack({ label: 'Big', entries })
 
-    expect(pack.puzzles).toHaveLength(MAX_ENTRIES_PER_PACK)
+    expect(pack.puzzles).toHaveLength(250)
   })
 
   it('bumps the version counter on every save', async () => {
@@ -156,18 +165,65 @@ describe('exportCustomPack / importCustomPack', () => {
     expect(await exportCustomPack('custom:nonexistent')).toBeNull()
   })
 
-  it('round-trips a pack through export and import with a fresh key', async () => {
+  it('round-trips a pack through export and import, reusing the same key', async () => {
     const pack = await saveCustomPack({ label: 'Shareable', entries: [{ answer: 'cat', hint: 'A pet' }] })
     const exported = await exportCustomPack(pack.key)
     expect(exported).not.toBeNull()
 
     const imported = await importCustomPack(exported as string)
 
-    expect(imported.key).not.toBe(pack.key)
+    // Re-importing your own export is an update, not a duplicate: same key, still one pack.
+    expect(imported.key).toBe(pack.key)
     expect(imported.label).toBe('Shareable')
     expect(imported.puzzles[0].answer).toBe('cat')
     expect(imported.puzzles[0].metadata).toEqual({ hint: 'A pet' })
-    expect(getCustomPacks()).toHaveLength(2)
+    expect(getCustomPacks()).toHaveLength(1)
+  })
+
+  it('imports an external payload using its own key rather than minting a random one', async () => {
+    const payload = JSON.stringify({
+      version: 1,
+      exportedAt: '2026-01-01T00:00:00.000Z',
+      pack: { key: 'custom:studio-ghibli', label: 'Studio Ghibli', createdAt: '2026-01-01T00:00:00.000Z', updatedAt: '2026-01-01T00:00:00.000Z', puzzles: [{ id: 'x', source: 'custom', type: 'phrase', answer: 'Totoro', normalizedAnswer: 'TOTORO', category: 'Studio Ghibli', difficulty: 0, difficultyTier: 'easy', wordCount: 1, letterCount: 6, uniqueLetterCount: 4 }] }
+    })
+
+    const imported = await importCustomPack(payload)
+
+    expect(imported.key).toBe('custom:studio-ghibli')
+  })
+
+  it('merges an updated re-import in place: unchanged entries keep their id, new entries are added, no duplicate pack is created', async () => {
+    const v1 = JSON.stringify({
+      version: 1,
+      exportedAt: '2026-01-01T00:00:00.000Z',
+      pack: { key: 'custom:studio-ghibli', label: 'Studio Ghibli', createdAt: '2026-01-01T00:00:00.000Z', updatedAt: '2026-01-01T00:00:00.000Z', puzzles: [{ id: 'x', source: 'custom', type: 'phrase', answer: 'Totoro', normalizedAnswer: 'TOTORO', category: 'Studio Ghibli', difficulty: 0, difficultyTier: 'easy', wordCount: 1, letterCount: 6, uniqueLetterCount: 4 }] }
+    })
+    const first = await importCustomPack(v1)
+    const totoroId = first.puzzles[0].id
+
+    // A later regeneration adds "Kiki" and keeps "Totoro" -- simulates the private scraper repo
+    // pushing an update with new entries.
+    const v2 = JSON.stringify({
+      version: 1,
+      exportedAt: '2026-02-01T00:00:00.000Z',
+      pack: {
+        key: 'custom:studio-ghibli',
+        label: 'Studio Ghibli',
+        createdAt: '2026-01-01T00:00:00.000Z',
+        updatedAt: '2026-02-01T00:00:00.000Z',
+        puzzles: [
+          { id: 'x', source: 'custom', type: 'phrase', answer: 'Kiki', normalizedAnswer: 'KIKI', category: 'Studio Ghibli', difficulty: 0, difficultyTier: 'easy', wordCount: 1, letterCount: 4, uniqueLetterCount: 3 },
+          { id: 'x', source: 'custom', type: 'phrase', answer: 'Totoro', normalizedAnswer: 'TOTORO', category: 'Studio Ghibli', difficulty: 0, difficultyTier: 'easy', wordCount: 1, letterCount: 6, uniqueLetterCount: 4 }
+        ]
+      }
+    })
+    const second = await importCustomPack(v2)
+
+    expect(second.key).toBe(first.key)
+    expect(getCustomPacks()).toHaveLength(1)
+    expect(second.puzzles).toHaveLength(2)
+    expect(second.puzzles.find((p) => p.answer === 'Totoro')?.id).toBe(totoroId)
+    expect(second.puzzles.find((p) => p.answer === 'Kiki')?.id).not.toBe(totoroId)
   })
 
   it('rejects invalid JSON', async () => {

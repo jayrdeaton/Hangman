@@ -40,26 +40,6 @@
     }
   },
   {
-    "id": "2f814a86db4df7bedb9d5dffe2988caf",
-    "source": "theme",
-    "type": "title",
-    "answer": "Red Dead Redemption 2",
-    "normalizedAnswer": "RED DEAD REDEMPTION 2",
-    "category": "Video Game",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 18,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "c689e36264d425ad6f7a0fabad6116f0",
     "source": "theme",
     "type": "title",
@@ -71,26 +51,6 @@
     "wordCount": 2,
     "letterCount": 9,
     "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "e60f8ea911bc40267f921442e71c7243",
-    "source": "theme",
-    "type": "title",
-    "answer": "Mario Kart 8 / Deluxe",
-    "normalizedAnswer": "MARIO KART 8 DELUXE",
-    "category": "Video Game",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 16,
-    "uniqueLetterCount": 12,
     "tags": [
       "theme",
       "video-game"
@@ -380,26 +340,6 @@
     }
   },
   {
-    "id": "c5ddedc7a533bdb9267c4e78e6020dfb",
-    "source": "theme",
-    "type": "title",
-    "answer": "Fallout 4",
-    "normalizedAnswer": "FALLOUT 4",
-    "category": "Video Game",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "66549c994586666dbb9d0fc1654aea67",
     "source": "theme",
     "type": "title",
@@ -491,26 +431,6 @@
     "wordCount": 4,
     "letterCount": 23,
     "uniqueLetterCount": 17,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "7cb92e354ebb205afe2f5f46e7f8405d",
-    "source": "theme",
-    "type": "title",
-    "answer": "Borderlands 2",
-    "normalizedAnswer": "BORDERLANDS 2",
-    "category": "Video Game",
-    "difficulty": 69.6,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 12,
-    "uniqueLetterCount": 9,
     "tags": [
       "theme",
       "video-game"
@@ -631,26 +551,6 @@
     "wordCount": 3,
     "letterCount": 17,
     "uniqueLetterCount": 13,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "280e2f82557712bfe90e318b86bde49f",
-    "source": "theme",
-    "type": "title",
-    "answer": "Call of Duty: Modern Warfare 3",
-    "normalizedAnswer": "CALL OF DUTY MODERN WARFARE 3",
-    "category": "Video Game",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 24,
-    "uniqueLetterCount": 14,
     "tags": [
       "theme",
       "video-game"
@@ -800,26 +700,6 @@
     }
   },
   {
-    "id": "bdf6c09b2df29c984e0c1e541a8848ba",
-    "source": "theme",
-    "type": "title",
-    "answer": "Euro Truck Simulator 2",
-    "normalizedAnswer": "EURO TRUCK SIMULATOR 2",
-    "category": "Video Game",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 19,
-    "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "7979a37f5bff2b18d2922f8c698428a4",
     "source": "theme",
     "type": "title",
@@ -940,66 +820,6 @@
     }
   },
   {
-    "id": "d88f9bf807554102ea5ab0a795c46e0f",
-    "source": "theme",
-    "type": "title",
-    "answer": "Helldivers 2",
-    "normalizedAnswer": "HELLDIVERS 2",
-    "category": "Video Game",
-    "difficulty": 74,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "7cc5303c3353e115d873448c4109d501",
-    "source": "theme",
-    "type": "title",
-    "answer": "Half-Life 2",
-    "normalizedAnswer": "HALFLIFE 2",
-    "category": "Video Game",
-    "difficulty": 82.8,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "7dc3d2568bb6cc73cec14da583f00250",
-    "source": "theme",
-    "type": "title",
-    "answer": "The Witcher 3: Wild Hunt",
-    "normalizedAnswer": "THE WITCHER 3 WILD HUNT",
-    "category": "Video Game",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 19,
-    "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "afd06590ddfc5f1210628f613615f2fa",
     "source": "theme",
     "type": "title",
@@ -1071,26 +891,6 @@
     "wordCount": 3,
     "letterCount": 22,
     "uniqueLetterCount": 13,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "349fd5a73c4a47035fbccc3884cbe37b",
-    "source": "theme",
-    "type": "title",
-    "answer": "RollerCoaster Tycoon 3",
-    "normalizedAnswer": "ROLLERCOASTER TYCOON 3",
-    "category": "Video Game",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 20,
-    "uniqueLetterCount": 10,
     "tags": [
       "theme",
       "video-game"
@@ -1180,46 +980,6 @@
     }
   },
   {
-    "id": "d2f0ec1fdd07154218de2fdb863c8832",
-    "source": "theme",
-    "type": "title",
-    "answer": "Cyberpunk 2077",
-    "normalizedAnswer": "CYBERPUNK 2077",
-    "category": "Video Game",
-    "difficulty": 70.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 13,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "db67ae108857af4883eefff31e9b6bc7",
-    "source": "theme",
-    "type": "title",
-    "answer": "The Sims 3",
-    "normalizedAnswer": "THE SIMS 3",
-    "category": "Video Game",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 3,
-    "letterCount": 8,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "6aae1defbc4ab91fd7a77b53f449c153",
     "source": "theme",
     "type": "title",
@@ -1251,26 +1011,6 @@
     "wordCount": 2,
     "letterCount": 9,
     "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "5db51a04ffb08adc61c403b1945d2c96",
-    "source": "theme",
-    "type": "title",
-    "answer": "The Sims 2",
-    "normalizedAnswer": "THE SIMS 2",
-    "category": "Video Game",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 3,
-    "letterCount": 8,
-    "uniqueLetterCount": 6,
     "tags": [
       "theme",
       "video-game"
@@ -1360,46 +1100,6 @@
     }
   },
   {
-    "id": "464a56c6f7ac8804dcad20edd7149129",
-    "source": "theme",
-    "type": "title",
-    "answer": "Last Ninja 2",
-    "normalizedAnswer": "LAST NINJA 2",
-    "category": "Video Game",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 10,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "672cee90239102c63d1c504535e1e258",
-    "source": "theme",
-    "type": "title",
-    "answer": "ARMA 3",
-    "normalizedAnswer": "ARMA 3",
-    "category": "Video Game",
-    "difficulty": 96.4,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 5,
-    "uniqueLetterCount": 3,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "c7e246b2ac59340fa680e0ebdf073735",
     "source": "theme",
     "type": "title",
@@ -1480,26 +1180,6 @@
     }
   },
   {
-    "id": "7517281d6315c6ed7210ceebfe30f38e",
-    "source": "theme",
-    "type": "title",
-    "answer": "Baldur's Gate 3",
-    "normalizedAnswer": "BALDURS GATE 3",
-    "category": "Video Game",
-    "difficulty": 65.6,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 12,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "d6b6897815d70e3b3f860da365403683",
     "source": "theme",
     "type": "title",
@@ -1511,66 +1191,6 @@
     "wordCount": 3,
     "letterCount": 12,
     "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "727a7f54e9250e61661b921300954606",
-    "source": "theme",
-    "type": "title",
-    "answer": "SimCity 3000",
-    "normalizedAnswer": "SIMCITY 3000",
-    "category": "Video Game",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "7a154920945c5b45f043abe58cc84e06",
-    "source": "theme",
-    "type": "title",
-    "answer": "Guild Wars 2",
-    "normalizedAnswer": "GUILD WARS 2",
-    "category": "Video Game",
-    "difficulty": 70.4,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 10,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "8ef006637640e8fa72c40dd9094d2ca6",
-    "source": "theme",
-    "type": "title",
-    "answer": "Arma 2: Operation Arrowhead",
-    "normalizedAnswer": "ARMA 2 OPERATION ARROWHEAD",
-    "category": "Video Game",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 23,
-    "uniqueLetterCount": 12,
     "tags": [
       "theme",
       "video-game"
@@ -1651,26 +1271,6 @@
     "wordCount": 3,
     "letterCount": 12,
     "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "0a77f5dfc047d60fe18642bc9e9c497a",
-    "source": "theme",
-    "type": "title",
-    "answer": "Risk of Rain 2",
-    "normalizedAnswer": "RISK OF RAIN 2",
-    "category": "Video Game",
-    "difficulty": 74,
-    "difficultyTier": "medium",
-    "wordCount": 4,
-    "letterCount": 11,
-    "uniqueLetterCount": 8,
     "tags": [
       "theme",
       "video-game"
@@ -1800,26 +1400,6 @@
     }
   },
   {
-    "id": "1009629a34d667ec495c609150fb8e17",
-    "source": "theme",
-    "type": "title",
-    "answer": "Warhammer 40,000: Dawn of War",
-    "normalizedAnswer": "WARHAMMER 40000 DAWN OF WAR",
-    "category": "Video Game",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 23,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "011842fb9f3abd32519ff2b73982a3e4",
     "source": "theme",
     "type": "title",
@@ -1931,26 +1511,6 @@
     "wordCount": 3,
     "letterCount": 20,
     "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "dee6a6b4f1be9934b9ea677679375133",
-    "source": "theme",
-    "type": "title",
-    "answer": "Resident Evil 4: Ultimate HD Edition",
-    "normalizedAnswer": "RESIDENT EVIL 4 ULTIMATE HD EDITION",
-    "category": "Video Game",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 30,
-    "uniqueLetterCount": 14,
     "tags": [
       "theme",
       "video-game"
@@ -2500,26 +2060,6 @@
     }
   },
   {
-    "id": "81b3e9683d958a378547647fa10615b0",
-    "source": "theme",
-    "type": "title",
-    "answer": "Anno 1602",
-    "normalizedAnswer": "ANNO 1602",
-    "category": "Video Game",
-    "difficulty": 96.4,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 3,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "5020dff6d9ffad38c4d858987b3ecec1",
     "source": "theme",
     "type": "title",
@@ -2591,26 +2131,6 @@
     "wordCount": 5,
     "letterCount": 19,
     "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "6b93728bd66443d3a4ffab0dbcb42772",
-    "source": "theme",
-    "type": "title",
-    "answer": "Battlefield 1942",
-    "normalizedAnswer": "BATTLEFIELD 1942",
-    "category": "Video Game",
-    "difficulty": 73.6,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 15,
-    "uniqueLetterCount": 8,
     "tags": [
       "theme",
       "video-game"
@@ -2811,26 +2331,6 @@
     "wordCount": 1,
     "letterCount": 8,
     "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "726e1c5ce1b25b66893e6b8398b3ba51",
-    "source": "theme",
-    "type": "title",
-    "answer": "IL-2 Sturmovik",
-    "normalizedAnswer": "IL2 STURMOVIK",
-    "category": "Video Game",
-    "difficulty": 65.6,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 12,
-    "uniqueLetterCount": 10,
     "tags": [
       "theme",
       "video-game"
@@ -3140,46 +2640,6 @@
     }
   },
   {
-    "id": "a7cf2b1b4c5d04c2acbea95a38d62ad5",
-    "source": "theme",
-    "type": "title",
-    "answer": "SimCity 4",
-    "normalizedAnswer": "SIMCITY 4",
-    "category": "Video Game",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "2570fd20c99c0e5962fb8c68808f58d4",
-    "source": "theme",
-    "type": "title",
-    "answer": "Anno 1503",
-    "normalizedAnswer": "ANNO 1503",
-    "category": "Video Game",
-    "difficulty": 96.4,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 3,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "26108b32b295d400f47757c74a923143",
     "source": "theme",
     "type": "title",
@@ -3280,26 +2740,6 @@
     }
   },
   {
-    "id": "6ba66b380733e3f6b5d1a7de06decb36",
-    "source": "theme",
-    "type": "title",
-    "answer": "The 7th Guest",
-    "normalizedAnswer": "THE 7TH GUEST",
-    "category": "Video Game",
-    "difficulty": 82,
-    "difficultyTier": "hard",
-    "wordCount": 3,
-    "letterCount": 11,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "dcb74815877b05ec2791e090a153a63b",
     "source": "theme",
     "type": "title",
@@ -3311,26 +2751,6 @@
     "wordCount": 2,
     "letterCount": 10,
     "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "012323794eac9a5debd1d35f7f9227bf",
-    "source": "theme",
-    "type": "title",
-    "answer": "The Witcher 2: Assassins of Kings",
-    "normalizedAnswer": "THE WITCHER 2 ASSASSINS OF KINGS",
-    "category": "Video Game",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 27,
-    "uniqueLetterCount": 14,
     "tags": [
       "theme",
       "video-game"
@@ -3391,66 +2811,6 @@
     "wordCount": 1,
     "letterCount": 7,
     "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "af64ce9e4ad6ba90bf0716aa071b9c51",
-    "source": "theme",
-    "type": "title",
-    "answer": "Battlefield 2",
-    "normalizedAnswer": "BATTLEFIELD 2",
-    "category": "Video Game",
-    "difficulty": 73.6,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 12,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "82bf89d95b5334d915a49cafc6117fbf",
-    "source": "theme",
-    "type": "title",
-    "answer": "7 Days to Die",
-    "normalizedAnswer": "7 DAYS TO DIE",
-    "category": "Video Game",
-    "difficulty": 74.4,
-    "difficultyTier": "medium",
-    "wordCount": 4,
-    "letterCount": 10,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "f8fcb53766650410d6e7e5761810c998",
-    "source": "theme",
-    "type": "title",
-    "answer": "Metro 2033 Redux",
-    "normalizedAnswer": "METRO 2033 REDUX",
-    "category": "Video Game",
-    "difficulty": 74,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 14,
-    "uniqueLetterCount": 8,
     "tags": [
       "theme",
       "video-game"
@@ -3600,26 +2960,6 @@
     }
   },
   {
-    "id": "edf1cc050d21af2175b01525c7773eb7",
-    "source": "theme",
-    "type": "title",
-    "answer": "Max Payne 3",
-    "normalizedAnswer": "MAX PAYNE 3",
-    "category": "Video Game",
-    "difficulty": 78.8,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 9,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "da0495da872141f8ca9355fe1760f6f8",
     "source": "theme",
     "type": "title",
@@ -3690,26 +3030,6 @@
     "difficultyTier": "medium",
     "wordCount": 2,
     "letterCount": 7,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "4abfb30f9b0fae19b0298a08f46099e9",
-    "source": "theme",
-    "type": "title",
-    "answer": "BioShock 2",
-    "normalizedAnswer": "BIOSHOCK 2",
-    "category": "Video Game",
-    "difficulty": 78.8,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 9,
     "uniqueLetterCount": 7,
     "tags": [
       "theme",
@@ -3880,26 +3200,6 @@
     }
   },
   {
-    "id": "b257edc87c8e7e7a15f8ff3c00327151",
-    "source": "theme",
-    "type": "title",
-    "answer": "Dead Rising 3 Apocalypse Edition",
-    "normalizedAnswer": "DEAD RISING 3 APOCALYPSE EDITION",
-    "category": "Video Game",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 28,
-    "uniqueLetterCount": 14,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "f867a1c8c87d4c30d64099c5917f640d",
     "source": "theme",
     "type": "title",
@@ -3991,46 +3291,6 @@
     "wordCount": 1,
     "letterCount": 5,
     "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "93da8df392b1e2e0d57ff3cf1b8825ce",
-    "source": "theme",
-    "type": "title",
-    "answer": "Resident Evil 6",
-    "normalizedAnswer": "RESIDENT EVIL 6",
-    "category": "Video Game",
-    "difficulty": 69.2,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 13,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "e99d605598bd880f8380cb091c363080",
-    "source": "theme",
-    "type": "title",
-    "answer": "Gujian 3",
-    "normalizedAnswer": "GUJIAN 3",
-    "category": "Video Game",
-    "difficulty": 83.6,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 7,
-    "uniqueLetterCount": 6,
     "tags": [
       "theme",
       "video-game"
@@ -4160,26 +3420,6 @@
     }
   },
   {
-    "id": "d7d28c68c3d6000b2db1d170961045ac",
-    "source": "theme",
-    "type": "title",
-    "answer": "SimCity 2000",
-    "normalizedAnswer": "SIMCITY 2000",
-    "category": "Video Game",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "a7e4304dfbe2e20583abc7015115c5cb",
     "source": "theme",
     "type": "title",
@@ -4251,26 +3491,6 @@
     "wordCount": 5,
     "letterCount": 23,
     "uniqueLetterCount": 13,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "c3c9cc77d2cb694f9b4bb3e460d33c99",
-    "source": "theme",
-    "type": "title",
-    "answer": "Hotline Miami 2: Wrong Number",
-    "normalizedAnswer": "HOTLINE MIAMI 2 WRONG NUMBER",
-    "category": "Video Game",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 24,
-    "uniqueLetterCount": 14,
     "tags": [
       "theme",
       "video-game"
@@ -4620,26 +3840,6 @@
     }
   },
   {
-    "id": "497ba64bf7b3dccc7e197e7f786714eb",
-    "source": "theme",
-    "type": "title",
-    "answer": "Wing Commander 3: Heart of the Tiger",
-    "normalizedAnswer": "WING COMMANDER 3 HEART OF THE TIGER",
-    "category": "Video Game",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 7,
-    "letterCount": 29,
-    "uniqueLetterCount": 14,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "faa2b6eed5aff3860495648c73e80dfa",
     "source": "theme",
     "type": "title",
@@ -4800,26 +4000,6 @@
     }
   },
   {
-    "id": "6a78228a981b22d6246d048b1fdb7648",
-    "source": "theme",
-    "type": "title",
-    "answer": "Duke Nukem 3D",
-    "normalizedAnswer": "DUKE NUKEM 3D",
-    "category": "Video Game",
-    "difficulty": 82,
-    "difficultyTier": "hard",
-    "wordCount": 3,
-    "letterCount": 11,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "057381963dd41709feebca18da720090",
     "source": "theme",
     "type": "title",
@@ -4951,26 +4131,6 @@
     "wordCount": 3,
     "letterCount": 23,
     "uniqueLetterCount": 13,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "4bac5a5ff1125b3e45324ba36f9a217c",
-    "source": "theme",
-    "type": "title",
-    "answer": "Grand Prix 2",
-    "normalizedAnswer": "GRAND PRIX 2",
-    "category": "Video Game",
-    "difficulty": 74.4,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 10,
-    "uniqueLetterCount": 8,
     "tags": [
       "theme",
       "video-game"
@@ -5131,26 +4291,6 @@
     "wordCount": 6,
     "letterCount": 28,
     "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "13cfc0948729ef3ba892d917781f6a23",
-    "source": "theme",
-    "type": "title",
-    "answer": "Deer Hunter 3: The Legend Continues",
-    "normalizedAnswer": "DEER HUNTER 3 THE LEGEND CONTINUES",
-    "category": "Video Game",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 29,
-    "uniqueLetterCount": 13,
     "tags": [
       "theme",
       "video-game"
@@ -5480,26 +4620,6 @@
     }
   },
   {
-    "id": "f5133c70dd3d64b2a2bb249789ff1740",
-    "source": "theme",
-    "type": "title",
-    "answer": "Command & Conquer: Red Alert 2",
-    "normalizedAnswer": "COMMAND CONQUER RED ALERT 2",
-    "category": "Video Game",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 23,
-    "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "77052c43cd0416aed49520b6fd87c170",
     "source": "theme",
     "type": "title",
@@ -5800,26 +4920,6 @@
     }
   },
   {
-    "id": "d461b4777ea69d3a7684bfaccb312855",
-    "source": "theme",
-    "type": "title",
-    "answer": "Among Us 3D: VR",
-    "normalizedAnswer": "AMONG US 3D VR",
-    "category": "Video Game",
-    "difficulty": 66,
-    "difficultyTier": "medium",
-    "wordCount": 4,
-    "letterCount": 11,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "520e0d5e4a07d5633788e4817a0224b3",
     "source": "theme",
     "type": "title",
@@ -5831,26 +4931,6 @@
     "wordCount": 2,
     "letterCount": 15,
     "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "a8becfed4e66ffa1e6cfcc56dd0de481",
-    "source": "theme",
-    "type": "title",
-    "answer": "Persona 4 Golden",
-    "normalizedAnswer": "PERSONA 4 GOLDEN",
-    "category": "Video Game",
-    "difficulty": 64.8,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 14,
-    "uniqueLetterCount": 10,
     "tags": [
       "theme",
       "video-game"
@@ -5931,66 +5011,6 @@
     "wordCount": 1,
     "letterCount": 8,
     "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "5a89f122cf5fb0b5f740d2a9ea3b87b9",
-    "source": "theme",
-    "type": "title",
-    "answer": "The Legend of Sword and Fairy 3",
-    "normalizedAnswer": "THE LEGEND OF SWORD AND FAIRY 3",
-    "category": "Video Game",
-    "difficulty": 44,
-    "difficultyTier": "easy",
-    "wordCount": 7,
-    "letterCount": 25,
-    "uniqueLetterCount": 15,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "63a0fdbc0aab78a2379937d0aa86c38a",
-    "source": "theme",
-    "type": "title",
-    "answer": "Anno 2070",
-    "normalizedAnswer": "ANNO 2070",
-    "category": "Video Game",
-    "difficulty": 96.4,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 3,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "fecaab512add3586f78955e08650f8e7",
-    "source": "theme",
-    "type": "title",
-    "answer": "Hidden & Dangerous 2",
-    "normalizedAnswer": "HIDDEN DANGEROUS 2",
-    "category": "Video Game",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 16,
-    "uniqueLetterCount": 11,
     "tags": [
       "theme",
       "video-game"
@@ -6220,26 +5240,6 @@
     }
   },
   {
-    "id": "15cad7ad36f9a3406f8f13afa56fd4e2",
-    "source": "theme",
-    "type": "title",
-    "answer": "F-15 Strike Eagle",
-    "normalizedAnswer": "F15 STRIKE EAGLE",
-    "category": "Video Game",
-    "difficulty": 65.2,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 14,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "66c481ee2fb94f85a4c521293cff245b",
     "source": "theme",
     "type": "title",
@@ -6251,26 +5251,6 @@
     "wordCount": 4,
     "letterCount": 16,
     "uniqueLetterCount": 13,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "c2c5243a1f2f76788dbc10c07c1764bc",
-    "source": "theme",
-    "type": "title",
-    "answer": "Metro 2033",
-    "normalizedAnswer": "METRO 2033",
-    "category": "Video Game",
-    "difficulty": 88,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 5,
     "tags": [
       "theme",
       "video-game"
@@ -6311,26 +5291,6 @@
     "wordCount": 1,
     "letterCount": 4,
     "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "bd14031329a211024e1a34d81c8ed15c",
-    "source": "theme",
-    "type": "title",
-    "answer": "Command & Conquer 3: Tiberium Wars",
-    "normalizedAnswer": "COMMAND CONQUER 3 TIBERIUM WARS",
-    "category": "Video Game",
-    "difficulty": 44,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 27,
-    "uniqueLetterCount": 15,
     "tags": [
       "theme",
       "video-game"
@@ -6520,26 +5480,6 @@
     }
   },
   {
-    "id": "ab708b844ced7f03eb34162c6b2baa68",
-    "source": "theme",
-    "type": "title",
-    "answer": "Resident Evil 5",
-    "normalizedAnswer": "RESIDENT EVIL 5",
-    "category": "Video Game",
-    "difficulty": 69.2,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 13,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "0feba7f5f5504c4924ab081ef6235d26",
     "source": "theme",
     "type": "title",
@@ -6571,26 +5511,6 @@
     "wordCount": 1,
     "letterCount": 8,
     "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "94103e67e6d06b21d6bfdddb7bfa6fcb",
-    "source": "theme",
-    "type": "title",
-    "answer": "The Legend of Sword and Fairy 5",
-    "normalizedAnswer": "THE LEGEND OF SWORD AND FAIRY 5",
-    "category": "Video Game",
-    "difficulty": 44,
-    "difficultyTier": "easy",
-    "wordCount": 7,
-    "letterCount": 25,
-    "uniqueLetterCount": 15,
     "tags": [
       "theme",
       "video-game"
@@ -6780,26 +5700,6 @@
     }
   },
   {
-    "id": "17f335ed1e4a3b38b8f1ae985cca5cf0",
-    "source": "theme",
-    "type": "title",
-    "answer": "Danganronpa 2: Goodbye Despair",
-    "normalizedAnswer": "DANGANRONPA 2 GOODBYE DESPAIR",
-    "category": "Video Game",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 26,
-    "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "7c86ae71280311c2fdd41391aa7571a3",
     "source": "theme",
     "type": "title",
@@ -6920,26 +5820,6 @@
     }
   },
   {
-    "id": "293fbff6ac2bb42f796fcc5f920d16f3",
-    "source": "theme",
-    "type": "title",
-    "answer": "Gran Turismo 2",
-    "normalizedAnswer": "GRAN TURISMO 2",
-    "category": "Video Game",
-    "difficulty": 65.6,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 12,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "03076b9c8deb41419b3ae290c3d018b2",
     "source": "theme",
     "type": "title",
@@ -6951,46 +5831,6 @@
     "wordCount": 3,
     "letterCount": 16,
     "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "5c206061c440e360f8e89391ff1af298",
-    "source": "theme",
-    "type": "title",
-    "answer": "Tekken 3",
-    "normalizedAnswer": "TEKKEN 3",
-    "category": "Video Game",
-    "difficulty": 91.6,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 7,
-    "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "7f28d6fd50f2b9f4dbe405cb42190761",
-    "source": "theme",
-    "type": "title",
-    "answer": "Crash Bandicoot 2: Cortex Strikes Back",
-    "normalizedAnswer": "CRASH BANDICOOT 2 CORTEX STRIKES BACK",
-    "category": "Video Game",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 32,
-    "uniqueLetterCount": 14,
     "tags": [
       "theme",
       "video-game"
@@ -7091,46 +5931,6 @@
     "wordCount": 3,
     "letterCount": 13,
     "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "3a128c53e6d1edcff169e52fc975a709",
-    "source": "theme",
-    "type": "title",
-    "answer": "Resident Evil 2",
-    "normalizedAnswer": "RESIDENT EVIL 2",
-    "category": "Video Game",
-    "difficulty": 69.2,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 13,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "8efb83def7aa1d3eaf67b7d8631d005c",
-    "source": "theme",
-    "type": "title",
-    "answer": "Tekken 2",
-    "normalizedAnswer": "TEKKEN 2",
-    "category": "Video Game",
-    "difficulty": 91.6,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 7,
-    "uniqueLetterCount": 4,
     "tags": [
       "theme",
       "video-game"
@@ -7320,46 +6120,6 @@
     }
   },
   {
-    "id": "cbecb6f213012499b76931d81a8c8452",
-    "source": "theme",
-    "type": "title",
-    "answer": "Resident Evil 3: Nemesis",
-    "normalizedAnswer": "RESIDENT EVIL 3 NEMESIS",
-    "category": "Video Game",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 20,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "c251df11c80a399aa28e26b9139dacc4",
-    "source": "theme",
-    "type": "title",
-    "answer": "Spyro 2: Ripto's Rage",
-    "normalizedAnswer": "SPYRO 2 RIPTOS RAGE",
-    "category": "Video Game",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 16,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "5776d46d7882d2872b8986bc0035d09e",
     "source": "theme",
     "type": "title",
@@ -7420,26 +6180,6 @@
     }
   },
   {
-    "id": "ec59cee69302b9d9142ecc275e355ea1",
-    "source": "theme",
-    "type": "title",
-    "answer": "Tony Hawk's Pro Skater 2",
-    "normalizedAnswer": "TONY HAWKS PRO SKATER 2",
-    "category": "Video Game",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 19,
-    "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "140df1beac5d127b13b01f911d0122da",
     "source": "theme",
     "type": "title",
@@ -7451,26 +6191,6 @@
     "wordCount": 5,
     "letterCount": 21,
     "uniqueLetterCount": 13,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "1aaab475fc5ac4d148604865fe33f24d",
-    "source": "theme",
-    "type": "title",
-    "answer": "Driver 2",
-    "normalizedAnswer": "DRIVER 2",
-    "category": "Video Game",
-    "difficulty": 87.6,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 7,
-    "uniqueLetterCount": 5,
     "tags": [
       "theme",
       "video-game"
@@ -7511,26 +6231,6 @@
     "wordCount": 2,
     "letterCount": 10,
     "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "f07e17b22fc552179e37b22c32686fa4",
-    "source": "theme",
-    "type": "title",
-    "answer": "Namco Museum Vol. 3",
-    "normalizedAnswer": "NAMCO MUSEUM VOL 3",
-    "category": "Video Game",
-    "difficulty": 64.4,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 15,
-    "uniqueLetterCount": 10,
     "tags": [
       "theme",
       "video-game"
@@ -7620,26 +6320,6 @@
     }
   },
   {
-    "id": "25a79a39917cb6a887fdb58d8b97dfda",
-    "source": "theme",
-    "type": "title",
-    "answer": "Tony Hawk's Pro Skater 3",
-    "normalizedAnswer": "TONY HAWKS PRO SKATER 3",
-    "category": "Video Game",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 19,
-    "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "4d8f174ac1de0d9900386e353ee184a5",
     "source": "theme",
     "type": "title",
@@ -7700,26 +6380,6 @@
     }
   },
   {
-    "id": "92645fe7be605ab37b634609b368a3cf",
-    "source": "theme",
-    "type": "title",
-    "answer": "Frogger 2: Swampy's Revenge",
-    "normalizedAnswer": "FROGGER 2 SWAMPYS REVENGE",
-    "category": "Video Game",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 22,
-    "uniqueLetterCount": 13,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "0aa1c15a3711cea3c9a7e77d1c029a4b",
     "source": "theme",
     "type": "title",
@@ -7751,26 +6411,6 @@
     "wordCount": 2,
     "letterCount": 12,
     "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "568fc349a769d96ab7cce02bc60c25ac",
-    "source": "theme",
-    "type": "title",
-    "answer": "WWF SmackDown! 2: Know Your Role",
-    "normalizedAnswer": "WWF SMACKDOWN 2 KNOW YOUR ROLE",
-    "category": "Video Game",
-    "difficulty": 44,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 25,
-    "uniqueLetterCount": 15,
     "tags": [
       "theme",
       "video-game"
@@ -7820,26 +6460,6 @@
     }
   },
   {
-    "id": "481b34d8a2f4febefca9163bf02ac813",
-    "source": "theme",
-    "type": "title",
-    "answer": "Namco Museum Vol. 1",
-    "normalizedAnswer": "NAMCO MUSEUM VOL 1",
-    "category": "Video Game",
-    "difficulty": 64.4,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 15,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "02cc6355c30212114d0a8a7911f50b3d",
     "source": "theme",
     "type": "title",
@@ -7880,26 +6500,6 @@
     }
   },
   {
-    "id": "2e2c30826bf40f6211b5747f0dc4d3b1",
-    "source": "theme",
-    "type": "title",
-    "answer": "Twisted Metal 2",
-    "normalizedAnswer": "TWISTED METAL 2",
-    "category": "Video Game",
-    "difficulty": 69.2,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 13,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "890e120cdba8c326d50cf4091cd80949",
     "source": "theme",
     "type": "title",
@@ -7911,46 +6511,6 @@
     "wordCount": 1,
     "letterCount": 6,
     "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "b5ad7b557762b84e23e3ea701e552363",
-    "source": "theme",
-    "type": "title",
-    "answer": "007: Tomorrow Never Dies",
-    "normalizedAnswer": "007 TOMORROW NEVER DIES",
-    "category": "Video Game",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 20,
-    "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "935ae5d2da37a9bd4d8d8a3385c0a355",
-    "source": "theme",
-    "type": "title",
-    "answer": "Formula 1",
-    "normalizedAnswer": "FORMULA 1",
-    "category": "Video Game",
-    "difficulty": 79.2,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 7,
     "tags": [
       "theme",
       "video-game"
@@ -8020,26 +6580,6 @@
     }
   },
   {
-    "id": "261df6cfa69007768ff3ea451492cfdf",
-    "source": "theme",
-    "type": "title",
-    "answer": "Everybody's Golf 2",
-    "normalizedAnswer": "EVERYBODYS GOLF 2",
-    "category": "Video Game",
-    "difficulty": 60.4,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 15,
-    "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "445dba91abbca21c9685ed4c6e8ee18c",
     "source": "theme",
     "type": "title",
@@ -8060,26 +6600,6 @@
     }
   },
   {
-    "id": "d62be79bd4380e56d1723e0584e044d4",
-    "source": "theme",
-    "type": "title",
-    "answer": "Madden NFL 99",
-    "normalizedAnswer": "MADDEN NFL 99",
-    "category": "Video Game",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 11,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "9d17c9ac681f9e56fad14120f55ad6be",
     "source": "theme",
     "type": "title",
@@ -8091,26 +6611,6 @@
     "wordCount": 3,
     "letterCount": 9,
     "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "a62ff11822c4768112518e51e1d2dede",
-    "source": "theme",
-    "type": "title",
-    "answer": "007: The World Is Not Enough",
-    "normalizedAnswer": "007 THE WORLD IS NOT ENOUGH",
-    "category": "Video Game",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 22,
-    "uniqueLetterCount": 13,
     "tags": [
       "theme",
       "video-game"
@@ -8160,46 +6660,6 @@
     }
   },
   {
-    "id": "e621c5c2cdcc3db5e9cafe783ca6ab24",
-    "source": "theme",
-    "type": "title",
-    "answer": "Madden NFL 2000",
-    "normalizedAnswer": "MADDEN NFL 2000",
-    "category": "Video Game",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 13,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "cd5e56db9108578212227417978eca3a",
-    "source": "theme",
-    "type": "title",
-    "answer": "NFL GameDay 98",
-    "normalizedAnswer": "NFL GAMEDAY 98",
-    "category": "Video Game",
-    "difficulty": 70,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 12,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "719288c150ef369cceaea65572419967",
     "source": "theme",
     "type": "title",
@@ -8230,66 +6690,6 @@
     "difficultyTier": "easy",
     "wordCount": 4,
     "letterCount": 22,
-    "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "a5d83a5def5820b0c976a12bcea7863c",
-    "source": "theme",
-    "type": "title",
-    "answer": "Grand Theft Auto 2",
-    "normalizedAnswer": "GRAND THEFT AUTO 2",
-    "category": "Video Game",
-    "difficulty": 60.4,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 15,
-    "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "f2260e275e7badcfdd90fb23ce78fb92",
-    "source": "theme",
-    "type": "title",
-    "answer": "Cool Boarders 3",
-    "normalizedAnswer": "COOL BOARDERS 3",
-    "category": "Video Game",
-    "difficulty": 69.2,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 13,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "31659d40fd5ff71688807790772ba881",
-    "source": "theme",
-    "type": "title",
-    "answer": "Syphon Filter 2",
-    "normalizedAnswer": "SYPHON FILTER 2",
-    "category": "Video Game",
-    "difficulty": 57.2,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 13,
     "uniqueLetterCount": 12,
     "tags": [
       "theme",
@@ -8420,26 +6820,6 @@
     }
   },
   {
-    "id": "2900f819a93a8589867414826522dc55",
-    "source": "theme",
-    "type": "title",
-    "answer": "Jet Moto 2",
-    "normalizedAnswer": "JET MOTO 2",
-    "category": "Video Game",
-    "difficulty": 87.2,
-    "difficultyTier": "hard",
-    "wordCount": 3,
-    "letterCount": 8,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "e39e0f94b69a3928be19e30b35fe7f4e",
     "source": "theme",
     "type": "title",
@@ -8540,26 +6920,6 @@
     }
   },
   {
-    "id": "3c3d7a07ce7018d30fc202a51bdde842",
-    "source": "theme",
-    "type": "title",
-    "answer": "Madden NFL 98",
-    "normalizedAnswer": "MADDEN NFL 98",
-    "category": "Video Game",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 11,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "f4551fe68a2313de0fe5e59f04b095e8",
     "source": "theme",
     "type": "title",
@@ -8620,26 +6980,6 @@
     }
   },
   {
-    "id": "032bb99ac1a56202dc7c50ddc5518a3b",
-    "source": "theme",
-    "type": "title",
-    "answer": "Cool Boarders 2",
-    "normalizedAnswer": "COOL BOARDERS 2",
-    "category": "Video Game",
-    "difficulty": 69.2,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 13,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "fd8c587677921112023dc1e542dbbe6f",
     "source": "theme",
     "type": "title",
@@ -8651,26 +6991,6 @@
     "wordCount": 1,
     "letterCount": 9,
     "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "8792efeed9fe6bcd82426ce728ca4a77",
-    "source": "theme",
-    "type": "title",
-    "answer": "Dino Crisis 2",
-    "normalizedAnswer": "DINO CRISIS 2",
-    "category": "Video Game",
-    "difficulty": 78,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 11,
-    "uniqueLetterCount": 7,
     "tags": [
       "theme",
       "video-game"
@@ -8740,66 +7060,6 @@
     }
   },
   {
-    "id": "9cbf26a9178728d4863f3852b1d8753e",
-    "source": "theme",
-    "type": "title",
-    "answer": "Ace Combat 3: Electrosphere",
-    "normalizedAnswer": "ACE COMBAT 3 ELECTROSPHERE",
-    "category": "Video Game",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 23,
-    "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "7f8079b8981b4aef2950cba286d2fe3f",
-    "source": "theme",
-    "type": "title",
-    "answer": "NASCAR 98",
-    "normalizedAnswer": "NASCAR 98",
-    "category": "Video Game",
-    "difficulty": 87.6,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "d0dc8fca4eedc75d9fc7f2c6c29aff36",
-    "source": "theme",
-    "type": "title",
-    "answer": "NBA Live 98",
-    "normalizedAnswer": "NBA LIVE 98",
-    "category": "Video Game",
-    "difficulty": 79.2,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 9,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "ba12dac497e8d991a2b3561073130241",
     "source": "theme",
     "type": "title",
@@ -8820,26 +7080,6 @@
     }
   },
   {
-    "id": "09d51f5eeac4d996c80224e0995c7f0e",
-    "source": "theme",
-    "type": "title",
-    "answer": "NASCAR 99",
-    "normalizedAnswer": "NASCAR 99",
-    "category": "Video Game",
-    "difficulty": 87.6,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "6cace39b44316237bd998e7bbcdbf60c",
     "source": "theme",
     "type": "title",
@@ -8851,26 +7091,6 @@
     "wordCount": 3,
     "letterCount": 14,
     "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "90102cacc45e95cc33d21e19ca8279e5",
-    "source": "theme",
-    "type": "title",
-    "answer": "NFL GameDay 99",
-    "normalizedAnswer": "NFL GAMEDAY 99",
-    "category": "Video Game",
-    "difficulty": 70,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 12,
-    "uniqueLetterCount": 9,
     "tags": [
       "theme",
       "video-game"
@@ -8940,26 +7160,6 @@
     }
   },
   {
-    "id": "79e7a97c9d0340294759d2a6168a6e25",
-    "source": "theme",
-    "type": "title",
-    "answer": "Derby Stallion 99",
-    "normalizedAnswer": "DERBY STALLION 99",
-    "category": "Video Game",
-    "difficulty": 56.8,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 15,
-    "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "7bff47809ae2152c25a9268919b1b1ad",
     "source": "theme",
     "type": "title",
@@ -8971,46 +7171,6 @@
     "wordCount": 5,
     "letterCount": 23,
     "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "fe19b730c2d674390c6815df525c344a",
-    "source": "theme",
-    "type": "title",
-    "answer": "Ace Combat 2",
-    "normalizedAnswer": "ACE COMBAT 2",
-    "category": "Video Game",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 10,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "a3236824dee1ea85dfd82e5510bfaf4d",
-    "source": "theme",
-    "type": "title",
-    "answer": "2Xtreme",
-    "normalizedAnswer": "2XTREME",
-    "category": "Video Game",
-    "difficulty": 87.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 5,
     "tags": [
       "theme",
       "video-game"
@@ -9060,46 +7220,6 @@
     }
   },
   {
-    "id": "f8f4ce52ae858c91eb9437efa64421df",
-    "source": "theme",
-    "type": "title",
-    "answer": "Test Drive 5",
-    "normalizedAnswer": "TEST DRIVE 5",
-    "category": "Video Game",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 10,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "85ccaf0c7fdd665b5fb0245f6e41158d",
-    "source": "theme",
-    "type": "title",
-    "answer": "Twisted Metal 4",
-    "normalizedAnswer": "TWISTED METAL 4",
-    "category": "Video Game",
-    "difficulty": 69.2,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 13,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "a84b8838dc21bfaa3e63805566100166",
     "source": "theme",
     "type": "title",
@@ -9120,26 +7240,6 @@
     }
   },
   {
-    "id": "9b048960ec1a024d6cd261f452cc2120",
-    "source": "theme",
-    "type": "title",
-    "answer": "R4: Ridge Racer Type 4",
-    "normalizedAnswer": "R4 RIDGE RACER TYPE 4",
-    "category": "Video Game",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 17,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "d1905061574241ff3149e738e291f74b",
     "source": "theme",
     "type": "title",
@@ -9151,26 +7251,6 @@
     "wordCount": 3,
     "letterCount": 10,
     "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "7272256ee58c6df51c11a1f1a566a9ea",
-    "source": "theme",
-    "type": "title",
-    "answer": "Dance Dance Revolution 2nd ReMix",
-    "normalizedAnswer": "DANCE DANCE REVOLUTION 2ND REMIX",
-    "category": "Video Game",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 28,
-    "uniqueLetterCount": 14,
     "tags": [
       "theme",
       "video-game"
@@ -9260,46 +7340,6 @@
     }
   },
   {
-    "id": "47fe22791e67d23325fc9e7f651dc8b4",
-    "source": "theme",
-    "type": "title",
-    "answer": "Simple 1500 Series Vol. 1: The Mahjong",
-    "normalizedAnswer": "SIMPLE 1500 SERIES VOL 1 THE MAHJONG",
-    "category": "Video Game",
-    "difficulty": 44,
-    "difficultyTier": "easy",
-    "wordCount": 7,
-    "letterCount": 30,
-    "uniqueLetterCount": 15,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "c2e72a1afbd3c1d92d3ba082343c0685",
-    "source": "theme",
-    "type": "title",
-    "answer": "Street Fighter Alpha 3",
-    "normalizedAnswer": "STREET FIGHTER ALPHA 3",
-    "category": "Video Game",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 19,
-    "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "ce438420675083580a339b04026e26fa",
     "source": "theme",
     "type": "title",
@@ -9320,26 +7360,6 @@
     }
   },
   {
-    "id": "e505a0a4931d915a825d44f9e447cb94",
-    "source": "theme",
-    "type": "title",
-    "answer": "NBA Live 2000",
-    "normalizedAnswer": "NBA LIVE 2000",
-    "category": "Video Game",
-    "difficulty": 79.2,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 11,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "61edc6efbee773e975abf1f29410ae2e",
     "source": "theme",
     "type": "title",
@@ -9350,26 +7370,6 @@
     "difficultyTier": "easy",
     "wordCount": 4,
     "letterCount": 24,
-    "uniqueLetterCount": 13,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "f277a8d326821c22b88420371ebdfd6b",
-    "source": "theme",
-    "type": "title",
-    "answer": "Gran Turismo 3: A-Spec",
-    "normalizedAnswer": "GRAN TURISMO 3 ASPEC",
-    "category": "Video Game",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 17,
     "uniqueLetterCount": 13,
     "tags": [
       "theme",
@@ -9400,26 +7400,6 @@
     }
   },
   {
-    "id": "c85798e532de90cb2902c5be5b11ac1a",
-    "source": "theme",
-    "type": "title",
-    "answer": "Gran Turismo 4",
-    "normalizedAnswer": "GRAN TURISMO 4",
-    "category": "Video Game",
-    "difficulty": 65.6,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 12,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "2f9cee657bfa0db1cece4feeaf37fa75",
     "source": "theme",
     "type": "title",
@@ -9440,26 +7420,6 @@
     }
   },
   {
-    "id": "1a2b372234a9d9ecb04d5d52dc479f0c",
-    "source": "theme",
-    "type": "title",
-    "answer": "Tekken 5",
-    "normalizedAnswer": "TEKKEN 5",
-    "category": "Video Game",
-    "difficulty": 91.6,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 7,
-    "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "7e17a1720ca2ebae09f83fd1ecb101c1",
     "source": "theme",
     "type": "title",
@@ -9471,26 +7431,6 @@
     "wordCount": 3,
     "letterCount": 13,
     "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "b1210182765090f78081015ec1a2e120",
-    "source": "theme",
-    "type": "title",
-    "answer": "Metal Gear Solid 2: Sons of Liberty",
-    "normalizedAnswer": "METAL GEAR SOLID 2 SONS OF LIBERTY",
-    "category": "Video Game",
-    "difficulty": 44,
-    "difficultyTier": "easy",
-    "wordCount": 7,
-    "letterCount": 28,
-    "uniqueLetterCount": 15,
     "tags": [
       "theme",
       "video-game"
@@ -9531,26 +7471,6 @@
     "wordCount": 2,
     "letterCount": 13,
     "uniqueLetterCount": 13,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "e1bb701b045d2930729efe46c377cd97",
-    "source": "theme",
-    "type": "title",
-    "answer": "Final Fantasy X-2",
-    "normalizedAnswer": "FINAL FANTASY X2",
-    "category": "Video Game",
-    "difficulty": 68.8,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 14,
-    "uniqueLetterCount": 9,
     "tags": [
       "theme",
       "video-game"
@@ -9620,46 +7540,6 @@
     }
   },
   {
-    "id": "b246ee2451fe315cbd2681442bfaadeb",
-    "source": "theme",
-    "type": "title",
-    "answer": "Madden NFL 2005",
-    "normalizedAnswer": "MADDEN NFL 2005",
-    "category": "Video Game",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 13,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "235859a43dd87cec16aa53a1b1a5a7fb",
-    "source": "theme",
-    "type": "title",
-    "answer": "Tekken 4",
-    "normalizedAnswer": "TEKKEN 4",
-    "category": "Video Game",
-    "difficulty": 91.6,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 7,
-    "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "c1c983e968262ad89841a4a721f28782",
     "source": "theme",
     "type": "title",
@@ -9700,26 +7580,6 @@
     }
   },
   {
-    "id": "be49493ebe19036385cfbc8597613bcf",
-    "source": "theme",
-    "type": "title",
-    "answer": "Metal Gear Solid 3: Snake Eater",
-    "normalizedAnswer": "METAL GEAR SOLID 3 SNAKE EATER",
-    "category": "Video Game",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 25,
-    "uniqueLetterCount": 13,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "c73692dc71d5c02ea1ac3810ae602ce5",
     "source": "theme",
     "type": "title",
@@ -9750,46 +7610,6 @@
     "difficultyTier": "medium",
     "wordCount": 2,
     "letterCount": 10,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "f3caa969331f17c72c587d509fecabea",
-    "source": "theme",
-    "type": "title",
-    "answer": "Madden NFL 2004",
-    "normalizedAnswer": "MADDEN NFL 2004",
-    "category": "Video Game",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 13,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "9a8bbbc8ef419d093ff46966a344b73f",
-    "source": "theme",
-    "type": "title",
-    "answer": "Madden NFL 06",
-    "normalizedAnswer": "MADDEN NFL 06",
-    "category": "Video Game",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 11,
     "uniqueLetterCount": 7,
     "tags": [
       "theme",
@@ -9940,26 +7760,6 @@
     }
   },
   {
-    "id": "9d1502e3455feac76e51df1fb4d3a5fe",
-    "source": "theme",
-    "type": "title",
-    "answer": "Pro Evolution Soccer 3",
-    "normalizedAnswer": "PRO EVOLUTION SOCCER 3",
-    "category": "Video Game",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 19,
-    "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "40b155cfff4003086c6fc89b71ac9aa7",
     "source": "theme",
     "type": "title",
@@ -10011,46 +7811,6 @@
     "wordCount": 5,
     "letterCount": 25,
     "uniqueLetterCount": 14,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "4a355dd8aaac35d21f9486f15b5f48ed",
-    "source": "theme",
-    "type": "title",
-    "answer": "Madden NFL 2003",
-    "normalizedAnswer": "MADDEN NFL 2003",
-    "category": "Video Game",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 13,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "4f6eb5901ee4a34b5e41920787d3a63e",
-    "source": "theme",
-    "type": "title",
-    "answer": "Pro Evolution Soccer 4",
-    "normalizedAnswer": "PRO EVOLUTION SOCCER 4",
-    "category": "Video Game",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 19,
-    "uniqueLetterCount": 12,
     "tags": [
       "theme",
       "video-game"
@@ -10120,86 +7880,6 @@
     }
   },
   {
-    "id": "c40fa8594ad14443a476f194e2e68b7e",
-    "source": "theme",
-    "type": "title",
-    "answer": "WWE SmackDown! vs. Raw 2006",
-    "normalizedAnswer": "WWE SMACKDOWN VS RAW 2006",
-    "category": "Video Game",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 21,
-    "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "416f129052f0abab60648c991ae08198",
-    "source": "theme",
-    "type": "title",
-    "answer": "Pro Evolution Soccer 2008",
-    "normalizedAnswer": "PRO EVOLUTION SOCCER 2008",
-    "category": "Video Game",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 22,
-    "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "60f34f660b9a4bc1de8b190bd6148fa3",
-    "source": "theme",
-    "type": "title",
-    "answer": "Pro Evolution Soccer 2",
-    "normalizedAnswer": "PRO EVOLUTION SOCCER 2",
-    "category": "Video Game",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 19,
-    "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "1ed30608bc009ee3418b3a4e9aca26bf",
-    "source": "theme",
-    "type": "title",
-    "answer": "Madden NFL 07",
-    "normalizedAnswer": "MADDEN NFL 07",
-    "category": "Video Game",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 11,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "be9893a7e402b24f48f69233d4ab9187",
     "source": "theme",
     "type": "title",
@@ -10231,26 +7911,6 @@
     "wordCount": 6,
     "letterCount": 30,
     "uniqueLetterCount": 15,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "f832377e019c2185f4d4a16304867d28",
-    "source": "theme",
-    "type": "title",
-    "answer": "Ace Combat 04: Shattered Skies",
-    "normalizedAnswer": "ACE COMBAT 04 SHATTERED SKIES",
-    "category": "Video Game",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 25,
-    "uniqueLetterCount": 13,
     "tags": [
       "theme",
       "video-game"
@@ -10360,46 +8020,6 @@
     }
   },
   {
-    "id": "943b15700ac712dd515f52620d487193",
-    "source": "theme",
-    "type": "title",
-    "answer": "Driver 3",
-    "normalizedAnswer": "DRIVER 3",
-    "category": "Video Game",
-    "difficulty": 87.6,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 7,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "78b9d4e92ee38a3adb45f608de00a2fc",
-    "source": "theme",
-    "type": "title",
-    "answer": "Dynasty Warriors 4",
-    "normalizedAnswer": "DYNASTY WARRIORS 4",
-    "category": "Video Game",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 16,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "cf93c4f20db4368838ff0992716d9553",
     "source": "theme",
     "type": "title",
@@ -10411,86 +8031,6 @@
     "wordCount": 3,
     "letterCount": 20,
     "uniqueLetterCount": 14,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "52ea8c5bc8fd03ad443803d03c99fd33",
-    "source": "theme",
-    "type": "title",
-    "answer": "Devil May Cry 3: Dante's Awakening",
-    "normalizedAnswer": "DEVIL MAY CRY 3 DANTES AWAKENING",
-    "category": "Video Game",
-    "difficulty": 40,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 27,
-    "uniqueLetterCount": 16,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "6a100536fa4c9702c4a2f814e473e883",
-    "source": "theme",
-    "type": "title",
-    "answer": "Madden NFL 2002",
-    "normalizedAnswer": "MADDEN NFL 2002",
-    "category": "Video Game",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 13,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "9bad87d5844bc101aaa7ae16196fbabd",
-    "source": "theme",
-    "type": "title",
-    "answer": "Resident Evil 4",
-    "normalizedAnswer": "RESIDENT EVIL 4",
-    "category": "Video Game",
-    "difficulty": 69.2,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 13,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "676568f53f2c380a7497c961e0eb209f",
-    "source": "theme",
-    "type": "title",
-    "answer": "Dynasty Warriors 3",
-    "normalizedAnswer": "DYNASTY WARRIORS 3",
-    "category": "Video Game",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 16,
-    "uniqueLetterCount": 10,
     "tags": [
       "theme",
       "video-game"
@@ -10580,26 +8120,6 @@
     }
   },
   {
-    "id": "72d4920cf743df220bda5b3fb093ac4b",
-    "source": "theme",
-    "type": "title",
-    "answer": "Hot Shot Golf 3",
-    "normalizedAnswer": "HOT SHOT GOLF 3",
-    "category": "Video Game",
-    "difficulty": 77.6,
-    "difficultyTier": "medium",
-    "wordCount": 4,
-    "letterCount": 12,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "966f928344fc462705f68fce80f18080",
     "source": "theme",
     "type": "title",
@@ -10620,66 +8140,6 @@
     }
   },
   {
-    "id": "c783837c9cf497374d4219b0a39bb319",
-    "source": "theme",
-    "type": "title",
-    "answer": "Need for Speed: Underground 2",
-    "normalizedAnswer": "NEED FOR SPEED UNDERGROUND 2",
-    "category": "Video Game",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 24,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "37f19cf279e9c7843229ee5c0869a77f",
-    "source": "theme",
-    "type": "title",
-    "answer": "Onimusha 2: Samurai's Destiny",
-    "normalizedAnswer": "ONIMUSHA 2 SAMURAIS DESTINY",
-    "category": "Video Game",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 24,
-    "uniqueLetterCount": 13,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "939ae16a83b8e1885c249429c4b74221",
-    "source": "theme",
-    "type": "title",
-    "answer": "Dragon Ball Z: Budokai 2",
-    "normalizedAnswer": "DRAGON BALL Z BUDOKAI 2",
-    "category": "Video Game",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 19,
-    "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "f2d7c0dd8fb6a7642e3e1c1fe3e68f53",
     "source": "theme",
     "type": "title",
@@ -10691,26 +8151,6 @@
     "wordCount": 5,
     "letterCount": 20,
     "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "bf892456cbaea45f455fbb680af8b0aa",
-    "source": "theme",
-    "type": "title",
-    "answer": "007: Agent Under Fire",
-    "normalizedAnswer": "007 AGENT UNDER FIRE",
-    "category": "Video Game",
-    "difficulty": 64.4,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 17,
-    "uniqueLetterCount": 10,
     "tags": [
       "theme",
       "video-game"
@@ -10760,26 +8200,6 @@
     }
   },
   {
-    "id": "ff84443123515a52a97bdaa7f39293df",
-    "source": "theme",
-    "type": "title",
-    "answer": "ESPN NFL 2K5",
-    "normalizedAnswer": "ESPN NFL 2K5",
-    "category": "Video Game",
-    "difficulty": 78.8,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 10,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "019727caeca5df523c0542f0d21dbf87",
     "source": "theme",
     "type": "title",
@@ -10791,26 +8211,6 @@
     "wordCount": 1,
     "letterCount": 8,
     "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "a0c94ec777ab3ed0cd49aee13d9c2788",
-    "source": "theme",
-    "type": "title",
-    "answer": "Pro Evolution Soccer 5",
-    "normalizedAnswer": "PRO EVOLUTION SOCCER 5",
-    "category": "Video Game",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 19,
-    "uniqueLetterCount": 12,
     "tags": [
       "theme",
       "video-game"
@@ -10860,26 +8260,6 @@
     }
   },
   {
-    "id": "881db992810241910109afabf9786f2d",
-    "source": "theme",
-    "type": "title",
-    "answer": "NBA Live 2005",
-    "normalizedAnswer": "NBA LIVE 2005",
-    "category": "Video Game",
-    "difficulty": 79.2,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 11,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "2e4357f8601ac6727e9fb1f5c26e2bd8",
     "source": "theme",
     "type": "title",
@@ -10891,66 +8271,6 @@
     "wordCount": 4,
     "letterCount": 24,
     "uniqueLetterCount": 15,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "a13e1f561934b90e18f90e29f338bb1c",
-    "source": "theme",
-    "type": "title",
-    "answer": "Spider-Man 2",
-    "normalizedAnswer": "SPIDERMAN 2",
-    "category": "Video Game",
-    "difficulty": 70.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 10,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "4abf41a851ee5a49b936d31a56f3c8c0",
-    "source": "theme",
-    "type": "title",
-    "answer": "Madden NFL 08",
-    "normalizedAnswer": "MADDEN NFL 08",
-    "category": "Video Game",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 11,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "f56a39ccad2387077176544df517cb65",
-    "source": "theme",
-    "type": "title",
-    "answer": "Pro Evolution Soccer 6",
-    "normalizedAnswer": "PRO EVOLUTION SOCCER 6",
-    "category": "Video Game",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 19,
-    "uniqueLetterCount": 12,
     "tags": [
       "theme",
       "video-game"
@@ -10980,26 +8300,6 @@
     }
   },
   {
-    "id": "57419daf2f7f30c98686c6be17a94fe7",
-    "source": "theme",
-    "type": "title",
-    "answer": "Dragon Ball Z: Budokai 3",
-    "normalizedAnswer": "DRAGON BALL Z BUDOKAI 3",
-    "category": "Video Game",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 19,
-    "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "ecfbf18a1afa12dea18fda096c5c3d0a",
     "source": "theme",
     "type": "title",
@@ -11020,46 +8320,6 @@
     }
   },
   {
-    "id": "6c0703c25b52350fee601ccbce4fa989",
-    "source": "theme",
-    "type": "title",
-    "answer": "007: Nightfire",
-    "normalizedAnswer": "007 NIGHTFIRE",
-    "category": "Video Game",
-    "difficulty": 74.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 12,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "2cfc0ff36d7d6e0de060c6418004500f",
-    "source": "theme",
-    "type": "title",
-    "answer": "Ace Combat 5: The Unsung War",
-    "normalizedAnswer": "ACE COMBAT 5 THE UNSUNG WAR",
-    "category": "Video Game",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 22,
-    "uniqueLetterCount": 14,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "6130b4a3a891a5b43496437937a02252",
     "source": "theme",
     "type": "title",
@@ -11071,26 +8331,6 @@
     "wordCount": 2,
     "letterCount": 11,
     "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "4bc8ee82658f7102556568d2d7199071",
-    "source": "theme",
-    "type": "title",
-    "answer": "ATV Offroad Fury 2",
-    "normalizedAnswer": "ATV OFFROAD FURY 2",
-    "category": "Video Game",
-    "difficulty": 68.4,
-    "difficultyTier": "medium",
-    "wordCount": 4,
-    "letterCount": 15,
-    "uniqueLetterCount": 9,
     "tags": [
       "theme",
       "video-game"
@@ -11180,26 +8420,6 @@
     }
   },
   {
-    "id": "4f6a07395ba62c9997a5a12326db5662",
-    "source": "theme",
-    "type": "title",
-    "answer": "Devil May Cry 2",
-    "normalizedAnswer": "DEVIL MAY CRY 2",
-    "category": "Video Game",
-    "difficulty": 65.6,
-    "difficultyTier": "medium",
-    "wordCount": 4,
-    "letterCount": 12,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "57649934d274f71f0b18715b723d3a61",
     "source": "theme",
     "type": "title",
@@ -11260,26 +8480,6 @@
     }
   },
   {
-    "id": "7135388c21ab53d86338432597924d54",
-    "source": "theme",
-    "type": "title",
-    "answer": "Virtua Fighter 4",
-    "normalizedAnswer": "VIRTUA FIGHTER 4",
-    "category": "Video Game",
-    "difficulty": 64.8,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 14,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "57d7be41528c607b6c367895bf46badd",
     "source": "theme",
     "type": "title",
@@ -11300,26 +8500,6 @@
     }
   },
   {
-    "id": "e1eccf17c763304e01a7c13092114370",
-    "source": "theme",
-    "type": "title",
-    "answer": "Need for Speed: Hot Pursuit 2",
-    "normalizedAnswer": "NEED FOR SPEED HOT PURSUIT 2",
-    "category": "Video Game",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 23,
-    "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "a6657c7ee1b15d2ac2d783cc12a752bb",
     "source": "theme",
     "type": "title",
@@ -11331,26 +8511,6 @@
     "wordCount": 2,
     "letterCount": 5,
     "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "9c5ef8270b4865bde1b177cf5f848844",
-    "source": "theme",
-    "type": "title",
-    "answer": "NBA Street Vol. 2",
-    "normalizedAnswer": "NBA STREET VOL 2",
-    "category": "Video Game",
-    "difficulty": 65.2,
-    "difficultyTier": "medium",
-    "wordCount": 4,
-    "letterCount": 13,
-    "uniqueLetterCount": 10,
     "tags": [
       "theme",
       "video-game"
@@ -11400,26 +8560,6 @@
     }
   },
   {
-    "id": "da164a95240f54f4f26f67a747deda44",
-    "source": "theme",
-    "type": "title",
-    "answer": "Dynasty Warriors 5",
-    "normalizedAnswer": "DYNASTY WARRIORS 5",
-    "category": "Video Game",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 16,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "a7c0bd55bb18978ec208897e4815c744",
     "source": "theme",
     "type": "title",
@@ -11431,46 +8571,6 @@
     "wordCount": 2,
     "letterCount": 10,
     "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "e8754e06b5d42004f09349c7b93a5d28",
-    "source": "theme",
-    "type": "title",
-    "answer": "WWE SmackDown vs. Raw 2007",
-    "normalizedAnswer": "WWE SMACKDOWN VS RAW 2007",
-    "category": "Video Game",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 21,
-    "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "ee75b5b3d74aabe4e61c7f61d2e49f76",
-    "source": "theme",
-    "type": "title",
-    "answer": "Onimusha 3: Demon Siege",
-    "normalizedAnswer": "ONIMUSHA 3 DEMON SIEGE",
-    "category": "Video Game",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 19,
-    "uniqueLetterCount": 11,
     "tags": [
       "theme",
       "video-game"
@@ -11531,46 +8631,6 @@
     "wordCount": 2,
     "letterCount": 15,
     "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "3c5397e63bdefe3031630f3eea1a1c5f",
-    "source": "theme",
-    "type": "title",
-    "answer": "Tony Hawk's Underground 2",
-    "normalizedAnswer": "TONY HAWKS UNDERGROUND 2",
-    "category": "Video Game",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 21,
-    "uniqueLetterCount": 14,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "705258727d9d767ace31e07d04b47987",
-    "source": "theme",
-    "type": "title",
-    "answer": "NBA Live 2004",
-    "normalizedAnswer": "NBA LIVE 2004",
-    "category": "Video Game",
-    "difficulty": 79.2,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 11,
-    "uniqueLetterCount": 7,
     "tags": [
       "theme",
       "video-game"
@@ -11660,106 +8720,6 @@
     }
   },
   {
-    "id": "be3bd83e9931452ce2182de4d20e72e0",
-    "source": "theme",
-    "type": "title",
-    "answer": "Tiger Woods PGA Tour 2004",
-    "normalizedAnswer": "TIGER WOODS PGA TOUR 2004",
-    "category": "Video Game",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 21,
-    "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "fb7470bb05b65bd857a88af3b797bf84",
-    "source": "theme",
-    "type": "title",
-    "answer": "Tony Hawk's Pro Skater 4",
-    "normalizedAnswer": "TONY HAWKS PRO SKATER 4",
-    "category": "Video Game",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 19,
-    "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "713c2b86de5c57428000effdb232a7b8",
-    "source": "theme",
-    "type": "title",
-    "answer": "Hitman 2: Silent Assassin",
-    "normalizedAnswer": "HITMAN 2 SILENT ASSASSIN",
-    "category": "Video Game",
-    "difficulty": 68,
-    "difficultyTier": "medium",
-    "wordCount": 4,
-    "letterCount": 21,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "8598063dcc1cb516c037b7378a821288",
-    "source": "theme",
-    "type": "title",
-    "answer": "Gran Turismo 4 Prologue",
-    "normalizedAnswer": "GRAN TURISMO 4 PROLOGUE",
-    "category": "Video Game",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 20,
-    "uniqueLetterCount": 13,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "cdce09ed9a580369a80e8dab0053de96",
-    "source": "theme",
-    "type": "title",
-    "answer": "NCAA Football 06",
-    "normalizedAnswer": "NCAA FOOTBALL 06",
-    "category": "Video Game",
-    "difficulty": 73.2,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 14,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "3c3ba282670e7d2f6707990819fb65bf",
     "source": "theme",
     "type": "title",
@@ -11840,66 +8800,6 @@
     }
   },
   {
-    "id": "02b8ad2d8ffa2f8518ad3bcbf551c883",
-    "source": "theme",
-    "type": "title",
-    "answer": "Burnout 3: Takedown",
-    "normalizedAnswer": "BURNOUT 3 TAKEDOWN",
-    "category": "Video Game",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 16,
-    "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "027fad72149de3195a243ed4329c1b5d",
-    "source": "theme",
-    "type": "title",
-    "answer": "Jak 3",
-    "normalizedAnswer": "JAK 3",
-    "category": "Video Game",
-    "difficulty": 96.8,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 4,
-    "uniqueLetterCount": 3,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "f0aa66eacbfaae5ef1a19a64991b6675",
-    "source": "theme",
-    "type": "title",
-    "answer": "NCAA Football 07",
-    "normalizedAnswer": "NCAA FOOTBALL 07",
-    "category": "Video Game",
-    "difficulty": 73.2,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 14,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "58dec1d9c49ec0f308d56dc74b033b6b",
     "source": "theme",
     "type": "title",
@@ -11940,26 +8840,6 @@
     }
   },
   {
-    "id": "84593ceb5bd90e03031bc7b03791cf2e",
-    "source": "theme",
-    "type": "title",
-    "answer": "Shrek 2",
-    "normalizedAnswer": "SHREK 2",
-    "category": "Video Game",
-    "difficulty": 88,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 6,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "2c9ab0133ebd8f669f10b9c777ef87fd",
     "source": "theme",
     "type": "title",
@@ -11971,46 +8851,6 @@
     "wordCount": 3,
     "letterCount": 14,
     "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "7a40280beab8165a817a9b568e6a86a6",
-    "source": "theme",
-    "type": "title",
-    "answer": "NCAA Football 2004",
-    "normalizedAnswer": "NCAA FOOTBALL 2004",
-    "category": "Video Game",
-    "difficulty": 73.2,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 16,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "51c2ae7e238cd51c08dfee4a1d97f924",
-    "source": "theme",
-    "type": "title",
-    "answer": "NBA Live 06",
-    "normalizedAnswer": "NBA LIVE 06",
-    "category": "Video Game",
-    "difficulty": 79.2,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 9,
-    "uniqueLetterCount": 7,
     "tags": [
       "theme",
       "video-game"
@@ -12080,26 +8920,6 @@
     }
   },
   {
-    "id": "605c92fd26c0ccacf09204024457d6e9",
-    "source": "theme",
-    "type": "title",
-    "answer": "Madden NFL 2001",
-    "normalizedAnswer": "MADDEN NFL 2001",
-    "category": "Video Game",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 13,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "3880fcaee79b9ff272b30933e9500d74",
     "source": "theme",
     "type": "title",
@@ -12120,26 +8940,6 @@
     }
   },
   {
-    "id": "b027f3e264cf9686ba714147635d87b1",
-    "source": "theme",
-    "type": "title",
-    "answer": "Pac-Man World 2",
-    "normalizedAnswer": "PACMAN WORLD 2",
-    "category": "Video Game",
-    "difficulty": 65.6,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 12,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "4b912deec86d9e619cb3e869b6a809e4",
     "source": "theme",
     "type": "title",
@@ -12151,66 +8951,6 @@
     "wordCount": 2,
     "letterCount": 9,
     "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "2e57741077b075307ded3a86eef7eb3b",
-    "source": "theme",
-    "type": "title",
-    "answer": "NBA Live 2003",
-    "normalizedAnswer": "NBA LIVE 2003",
-    "category": "Video Game",
-    "difficulty": 79.2,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 11,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "8a5bc6f3241c3f9bd714ba1f43cb2cbb",
-    "source": "theme",
-    "type": "title",
-    "answer": "ESPN NBA 2K5",
-    "normalizedAnswer": "ESPN NBA 2K5",
-    "category": "Video Game",
-    "difficulty": 78.8,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 10,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "cf60d467e1618b2d7d28425a6802ec51",
-    "source": "theme",
-    "type": "title",
-    "answer": "Scooby-Doo! Night of 100 Frights",
-    "normalizedAnswer": "SCOOBYDOO NIGHT OF 100 FRIGHTS",
-    "category": "Video Game",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 26,
-    "uniqueLetterCount": 13,
     "tags": [
       "theme",
       "video-game"
@@ -12260,26 +9000,6 @@
     }
   },
   {
-    "id": "e27d696cc980be86af0f9f0ddc3225f2",
-    "source": "theme",
-    "type": "title",
-    "answer": "MVP Baseball 2005",
-    "normalizedAnswer": "MVP BASEBALL 2005",
-    "category": "Video Game",
-    "difficulty": 73.6,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 15,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "9ed7d24bc34c41d2511b001300c55d7c",
     "source": "theme",
     "type": "title",
@@ -12300,66 +9020,6 @@
     }
   },
   {
-    "id": "adc4bf638381c1e6095f3c8805f61496",
-    "source": "theme",
-    "type": "title",
-    "answer": "Fight Night 2004",
-    "normalizedAnswer": "FIGHT NIGHT 2004",
-    "category": "Video Game",
-    "difficulty": 82,
-    "difficultyTier": "hard",
-    "wordCount": 3,
-    "letterCount": 14,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "a647db98cfc8e93e47d2298c5af02b8e",
-    "source": "theme",
-    "type": "title",
-    "answer": "Midnight Club 3: DUB Edition",
-    "normalizedAnswer": "MIDNIGHT CLUB 3 DUB EDITION",
-    "category": "Video Game",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 23,
-    "uniqueLetterCount": 13,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "01de398a573807fc2ff2d0a4e692b276",
-    "source": "theme",
-    "type": "title",
-    "answer": "DDRMAX2 Dance Dance Revolution 7thMix",
-    "normalizedAnswer": "DDRMAX2 DANCE DANCE REVOLUTION 7THMIX",
-    "category": "Video Game",
-    "difficulty": 44,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 33,
-    "uniqueLetterCount": 15,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "fefa0e029247abe5152db1a51bd7ff19",
     "source": "theme",
     "type": "title",
@@ -12371,26 +9031,6 @@
     "wordCount": 1,
     "letterCount": 9,
     "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "f8858bcc00ee2cded4bc68a2cd85e67f",
-    "source": "theme",
-    "type": "title",
-    "answer": "Naruto: Ultimate Ninja 2",
-    "normalizedAnswer": "NARUTO ULTIMATE NINJA 2",
-    "category": "Video Game",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 20,
-    "uniqueLetterCount": 11,
     "tags": [
       "theme",
       "video-game"
@@ -12440,26 +9080,6 @@
     }
   },
   {
-    "id": "5f01dd40a9a2ea8af9138ec7022087a6",
-    "source": "theme",
-    "type": "title",
-    "answer": "MVP Baseball 2004",
-    "normalizedAnswer": "MVP BASEBALL 2004",
-    "category": "Video Game",
-    "difficulty": 73.6,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 15,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "b194054cdfdf144b9597a84d25165f38",
     "source": "theme",
     "type": "title",
@@ -12471,86 +9091,6 @@
     "wordCount": 2,
     "letterCount": 15,
     "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "967cf4be067db503c05fddef2afc42ab",
-    "source": "theme",
-    "type": "title",
-    "answer": "Dead or Alive 2",
-    "normalizedAnswer": "DEAD OR ALIVE 2",
-    "category": "Video Game",
-    "difficulty": 73.6,
-    "difficultyTier": "medium",
-    "wordCount": 4,
-    "letterCount": 12,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "6a66f9f42777eba67822b4e1f05dcbc8",
-    "source": "theme",
-    "type": "title",
-    "answer": "Guitar Hero Encore: Rocks the 80s",
-    "normalizedAnswer": "GUITAR HERO ENCORE ROCKS THE 80S",
-    "category": "Video Game",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 27,
-    "uniqueLetterCount": 13,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "c08f80a53a89921822a850101b3e88e1",
-    "source": "theme",
-    "type": "title",
-    "answer": "NCAA Football 2003",
-    "normalizedAnswer": "NCAA FOOTBALL 2003",
-    "category": "Video Game",
-    "difficulty": 73.2,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 16,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "d6b8787da49ae568a9f6f921a7dce5e6",
-    "source": "theme",
-    "type": "title",
-    "answer": "Silent Hill 2",
-    "normalizedAnswer": "SILENT HILL 2",
-    "category": "Video Game",
-    "difficulty": 78,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 11,
-    "uniqueLetterCount": 7,
     "tags": [
       "theme",
       "video-game"
@@ -12820,26 +9360,6 @@
     }
   },
   {
-    "id": "179638fc49b4d64e0cd7c9d6d87956aa",
-    "source": "theme",
-    "type": "title",
-    "answer": "Luigi's Mansion 3",
-    "normalizedAnswer": "LUIGIS MANSION 3",
-    "category": "Video Game",
-    "difficulty": 68.8,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 14,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "6f17bc1e88c9c9a77552c940d7171aa0",
     "source": "theme",
     "type": "title",
@@ -12851,66 +9371,6 @@
     "wordCount": 3,
     "letterCount": 20,
     "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "fd3de22f3e22896fd71e225a7daa553d",
-    "source": "theme",
-    "type": "title",
-    "answer": "Splatoon 2",
-    "normalizedAnswer": "SPLATOON 2",
-    "category": "Video Game",
-    "difficulty": 78.8,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "b5a2959d84161533f3b3614087a14827",
-    "source": "theme",
-    "type": "title",
-    "answer": "Super Mario 3D World + Bowser's Fury",
-    "normalizedAnswer": "SUPER MARIO 3D WORLD BOWSERS FURY",
-    "category": "Video Game",
-    "difficulty": 44,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 28,
-    "uniqueLetterCount": 15,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "17ab9597b657577be0328d8805c05887",
-    "source": "theme",
-    "type": "title",
-    "answer": "Splatoon 3",
-    "normalizedAnswer": "SPLATOON 3",
-    "category": "Video Game",
-    "difficulty": 78.8,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 7,
     "tags": [
       "theme",
       "video-game"
@@ -12940,26 +9400,6 @@
     }
   },
   {
-    "id": "acac7ba921ef3e319d84a8345b9ceb39",
-    "source": "theme",
-    "type": "title",
-    "answer": "Super Mario 3D All-Stars",
-    "normalizedAnswer": "SUPER MARIO 3D ALLSTARS",
-    "category": "Video Game",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 20,
-    "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "221aee8c76e31bf19a2e05882e9ca22d",
     "source": "theme",
     "type": "title",
@@ -12971,26 +9411,6 @@
     "wordCount": 3,
     "letterCount": 15,
     "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "840a5c63fd73d1b3c5f79fff7042dd9e",
-    "source": "theme",
-    "type": "title",
-    "answer": "Super Mario Maker 2",
-    "normalizedAnswer": "SUPER MARIO MAKER 2",
-    "category": "Video Game",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 16,
-    "uniqueLetterCount": 10,
     "tags": [
       "theme",
       "video-game"
@@ -13070,26 +9490,6 @@
     "difficultyTier": "easy",
     "wordCount": 6,
     "letterCount": 30,
-    "uniqueLetterCount": 15,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "524c182a4bb764f86f127d98d22d6712",
-    "source": "theme",
-    "type": "title",
-    "answer": "Clubhouse Games: 51 Worldwide Classics",
-    "normalizedAnswer": "CLUBHOUSE GAMES 51 WORLDWIDE CLASSICS",
-    "category": "Video Game",
-    "difficulty": 44,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 33,
     "uniqueLetterCount": 15,
     "tags": [
       "theme",
@@ -13300,46 +9700,6 @@
     }
   },
   {
-    "id": "2b4d9bac5e50bb2d244b53706a605675",
-    "source": "theme",
-    "type": "title",
-    "answer": "1-2-Switch",
-    "normalizedAnswer": "12SWITCH",
-    "category": "Video Game",
-    "difficulty": 83.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "839fe6a20d8324724533d93c150dbf76",
-    "source": "theme",
-    "type": "title",
-    "answer": "Pikmin 4",
-    "normalizedAnswer": "PIKMIN 4",
-    "category": "Video Game",
-    "difficulty": 87.6,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 7,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "f2c34e31198aff3a427d2f86a72e2fb5",
     "source": "theme",
     "type": "title",
@@ -13460,26 +9820,6 @@
     }
   },
   {
-    "id": "ef2de0673d50e501005ed2b288c3fd7f",
-    "source": "theme",
-    "type": "title",
-    "answer": "Super Mario Galaxy 2",
-    "normalizedAnswer": "SUPER MARIO GALAXY 2",
-    "category": "Video Game",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 17,
-    "uniqueLetterCount": 13,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "3ce45283c60fbf58490275c7c03a85c5",
     "source": "theme",
     "type": "title",
@@ -13511,26 +9851,6 @@
     "wordCount": 1,
     "letterCount": 4,
     "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "98b81f85fe73238d7a67fe5a2fa6f957",
-    "source": "theme",
-    "type": "title",
-    "answer": "Xenoblade Chronicles 2",
-    "normalizedAnswer": "XENOBLADE CHRONICLES 2",
-    "category": "Video Game",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 20,
-    "uniqueLetterCount": 13,
     "tags": [
       "theme",
       "video-game"
@@ -13611,26 +9931,6 @@
     "wordCount": 3,
     "letterCount": 18,
     "uniqueLetterCount": 14,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "72019e792de639c06b6294ee3136a56f",
-    "source": "theme",
-    "type": "title",
-    "answer": "Pikmin 3 Deluxe",
-    "normalizedAnswer": "PIKMIN 3 DELUXE",
-    "category": "Video Game",
-    "difficulty": 65.2,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 13,
-    "uniqueLetterCount": 10,
     "tags": [
       "theme",
       "video-game"
@@ -13820,26 +10120,6 @@
     }
   },
   {
-    "id": "fefd60ef9e7cd6f8fa7c4b927a37526d",
-    "source": "theme",
-    "type": "title",
-    "answer": "Luigi's Mansion 2 HD",
-    "normalizedAnswer": "LUIGIS MANSION 2 HD",
-    "category": "Video Game",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 16,
-    "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "eb3aad525b2a4c4b57126d913912072d",
     "source": "theme",
     "type": "title",
@@ -13851,46 +10131,6 @@
     "wordCount": 4,
     "letterCount": 36,
     "uniqueLetterCount": 16,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "2479d3442f39e3911be6c4658d726e4f",
-    "source": "theme",
-    "type": "title",
-    "answer": "Xenoblade Chronicles 3",
-    "normalizedAnswer": "XENOBLADE CHRONICLES 3",
-    "category": "Video Game",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 20,
-    "uniqueLetterCount": 13,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "3b3d306c225159a0e0d4683bbe629e19",
-    "source": "theme",
-    "type": "title",
-    "answer": "Dragon Ball Xenoverse 2",
-    "normalizedAnswer": "DRAGON BALL XENOVERSE 2",
-    "category": "Video Game",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 20,
-    "uniqueLetterCount": 12,
     "tags": [
       "theme",
       "video-game"
@@ -13980,26 +10220,6 @@
     }
   },
   {
-    "id": "a4140a80c41fc0b220fbf9c718620887",
-    "source": "theme",
-    "type": "title",
-    "answer": "Marvel Ultimate Alliance 3: The Black Order",
-    "normalizedAnswer": "MARVEL ULTIMATE ALLIANCE 3 THE BLACK ORDER",
-    "category": "Video Game",
-    "difficulty": 40,
-    "difficultyTier": "easy",
-    "wordCount": 7,
-    "letterCount": 36,
-    "uniqueLetterCount": 16,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "5db9c8f1ada223f0b3c285796ff09163",
     "source": "theme",
     "type": "title",
@@ -14051,26 +10271,6 @@
     "wordCount": 6,
     "letterCount": 29,
     "uniqueLetterCount": 16,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "c914346efec359d64b4e0e0298a1f40f",
-    "source": "theme",
-    "type": "title",
-    "answer": "Nintendo Labo Toy-Con 01: Variety Kit",
-    "normalizedAnswer": "NINTENDO LABO TOYCON 01 VARIETY KIT",
-    "category": "Video Game",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 30,
-    "uniqueLetterCount": 14,
     "tags": [
       "theme",
       "video-game"
@@ -14220,26 +10420,6 @@
     }
   },
   {
-    "id": "5e63f2035fb96b78504c7ce6be64fd48",
-    "source": "theme",
-    "type": "title",
-    "answer": "Bayonetta 2",
-    "normalizedAnswer": "BAYONETTA 2",
-    "category": "Video Game",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 10,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "09693c47bf618301e0605c84b36dd131",
     "source": "theme",
     "type": "title",
@@ -14340,66 +10520,6 @@
     }
   },
   {
-    "id": "ae3f5427ace29be84e1e961d70ad7fcb",
-    "source": "theme",
-    "type": "title",
-    "answer": "Bayonetta 3",
-    "normalizedAnswer": "BAYONETTA 3",
-    "category": "Video Game",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 10,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "97102129fb04017b682956208ed74c2e",
-    "source": "theme",
-    "type": "title",
-    "answer": "Mario & Sonic at the Olympic Games Tokyo 2020",
-    "normalizedAnswer": "MARIO SONIC AT THE OLYMPIC GAMES TOKYO 2020",
-    "category": "Video Game",
-    "difficulty": 40,
-    "difficultyTier": "easy",
-    "wordCount": 8,
-    "letterCount": 36,
-    "uniqueLetterCount": 16,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "58937f672838bf5cd03e4438d9ee97ff",
-    "source": "theme",
-    "type": "title",
-    "answer": "Dragon Quest III HD-2D Remake",
-    "normalizedAnswer": "DRAGON QUEST III HD2D REMAKE",
-    "category": "Video Game",
-    "difficulty": 44,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 24,
-    "uniqueLetterCount": 15,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "f6d854203933bc4cd8fc717138383766",
     "source": "theme",
     "type": "title",
@@ -14471,26 +10591,6 @@
     "wordCount": 2,
     "letterCount": 13,
     "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "7a0de4288a18df4d54735f931a2a05e0",
-    "source": "theme",
-    "type": "title",
-    "answer": "Fitness Boxing 2: Rhythm and Exercise",
-    "normalizedAnswer": "FITNESS BOXING 2 RHYTHM AND EXERCISE",
-    "category": "Video Game",
-    "difficulty": 36,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 31,
-    "uniqueLetterCount": 17,
     "tags": [
       "theme",
       "video-game"
@@ -14940,26 +11040,6 @@
     }
   },
   {
-    "id": "da63be4938a59596a99eb2bdbc842a98",
-    "source": "theme",
-    "type": "title",
-    "answer": "Robotron: 2084",
-    "normalizedAnswer": "ROBOTRON 2084",
-    "category": "Video Game",
-    "difficulty": 86.8,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 12,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "29b0675b76210d996a0369df53b940cb",
     "source": "theme",
     "type": "title",
@@ -15380,26 +11460,6 @@
     }
   },
   {
-    "id": "02affc1330486631721128ab92525c28",
-    "source": "theme",
-    "type": "title",
-    "answer": "Mega Man 2",
-    "normalizedAnswer": "MEGA MAN 2",
-    "category": "Video Game",
-    "difficulty": 87.2,
-    "difficultyTier": "hard",
-    "wordCount": 3,
-    "letterCount": 8,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "5a3f49a8a09d005b510449a7d8b6903f",
     "source": "theme",
     "type": "title",
@@ -15411,26 +11471,6 @@
     "wordCount": 2,
     "letterCount": 11,
     "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "21d646a456babe93dd71639febbf112b",
-    "source": "theme",
-    "type": "title",
-    "answer": "Super Mario Bros. 3",
-    "normalizedAnswer": "SUPER MARIO BROS 3",
-    "category": "Video Game",
-    "difficulty": 64.4,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 15,
-    "uniqueLetterCount": 10,
     "tags": [
       "theme",
       "video-game"
@@ -15491,26 +11531,6 @@
     "wordCount": 5,
     "letterCount": 23,
     "uniqueLetterCount": 16,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "32c196b4693456cd7593342f531d41aa",
-    "source": "theme",
-    "type": "title",
-    "answer": "Speedball 2: Brutal Deluxe",
-    "normalizedAnswer": "SPEEDBALL 2 BRUTAL DELUXE",
-    "category": "Video Game",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 22,
-    "uniqueLetterCount": 11,
     "tags": [
       "theme",
       "video-game"
@@ -15671,26 +11691,6 @@
     "wordCount": 2,
     "letterCount": 13,
     "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "d184ddc05ecacfe26827f65f8f6e6b3a",
-    "source": "theme",
-    "type": "title",
-    "answer": "Monkey Island 2: LeChuck's Revenge",
-    "normalizedAnswer": "MONKEY ISLAND 2 LECHUCKS REVENGE",
-    "category": "Video Game",
-    "difficulty": 36,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 28,
-    "uniqueLetterCount": 17,
     "tags": [
       "theme",
       "video-game"
@@ -15880,26 +11880,6 @@
     }
   },
   {
-    "id": "5ca57a9b9111c3d08a58e028d3716efd",
-    "source": "theme",
-    "type": "title",
-    "answer": "Sonic the Hedgehog 2",
-    "normalizedAnswer": "SONIC THE HEDGEHOG 2",
-    "category": "Video Game",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 17,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "651c6d35d3a55698114804281ad3ae71",
     "source": "theme",
     "type": "title",
@@ -15911,26 +11891,6 @@
     "wordCount": 3,
     "letterCount": 13,
     "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "829febb741ecacaf9627bbc9f25a0234",
-    "source": "theme",
-    "type": "title",
-    "answer": "Streets of Rage 2",
-    "normalizedAnswer": "STREETS OF RAGE 2",
-    "category": "Video Game",
-    "difficulty": 72.8,
-    "difficultyTier": "medium",
-    "wordCount": 4,
-    "letterCount": 14,
-    "uniqueLetterCount": 8,
     "tags": [
       "theme",
       "video-game"
@@ -15991,26 +11951,6 @@
     "wordCount": 2,
     "letterCount": 12,
     "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "b267db20acae58b3c330d50b2cffaf68",
-    "source": "theme",
-    "type": "title",
-    "answer": "Wolfenstein 3D",
-    "normalizedAnswer": "WOLFENSTEIN 3D",
-    "category": "Video Game",
-    "difficulty": 65.2,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 13,
-    "uniqueLetterCount": 10,
     "tags": [
       "theme",
       "video-game"
@@ -16400,26 +12340,6 @@
     }
   },
   {
-    "id": "2762fc3e274fe0185e1f4a44b6e80b85",
-    "source": "theme",
-    "type": "title",
-    "answer": "Tempest 2000",
-    "normalizedAnswer": "TEMPEST 2000",
-    "category": "Video Game",
-    "difficulty": 87.2,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "c78eb394b7a85d1146a5a7ae25c881d3",
     "source": "theme",
     "type": "title",
@@ -16431,26 +12351,6 @@
     "wordCount": 2,
     "letterCount": 9,
     "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "88a835f86dc7c2a494a51c0ae0c494cf",
-    "source": "theme",
-    "type": "title",
-    "answer": "Virtua Fighter 2",
-    "normalizedAnswer": "VIRTUA FIGHTER 2",
-    "category": "Video Game",
-    "difficulty": 64.8,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 14,
-    "uniqueLetterCount": 10,
     "tags": [
       "theme",
       "video-game"
@@ -16491,26 +12391,6 @@
     "wordCount": 2,
     "letterCount": 13,
     "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "0eb618cbadb0c01e2b4ef63bc332d21d",
-    "source": "theme",
-    "type": "title",
-    "answer": "MechWarrior 2: 31st Century Combat",
-    "normalizedAnswer": "MECHWARRIOR 2 31ST CENTURY COMBAT",
-    "category": "Video Game",
-    "difficulty": 44,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 29,
-    "uniqueLetterCount": 15,
     "tags": [
       "theme",
       "video-game"
@@ -16600,26 +12480,6 @@
     }
   },
   {
-    "id": "c4c45fdaf08f119f3d8d87b5f38a7ad7",
-    "source": "theme",
-    "type": "title",
-    "answer": "Mario Kart 64",
-    "normalizedAnswer": "MARIO KART 64",
-    "category": "Video Game",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 11,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "f6d7e54c55357ef3ee026415c7ef2580",
     "source": "theme",
     "type": "title",
@@ -16651,66 +12511,6 @@
     "wordCount": 4,
     "letterCount": 16,
     "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "7ce18ed2e5c951a75572174675304d31",
-    "source": "theme",
-    "type": "title",
-    "answer": "Super Mario 64",
-    "normalizedAnswer": "SUPER MARIO 64",
-    "category": "Video Game",
-    "difficulty": 70,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 12,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "58d7081cb2e1f661dc8b48e3aa7c0015",
-    "source": "theme",
-    "type": "title",
-    "answer": "Wave Race 64",
-    "normalizedAnswer": "WAVE RACE 64",
-    "category": "Video Game",
-    "difficulty": 82.8,
-    "difficultyTier": "hard",
-    "wordCount": 3,
-    "letterCount": 10,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "d87108920d13edd6bd3aa9a3dcd40c7b",
-    "source": "theme",
-    "type": "title",
-    "answer": "Wipeout 2097",
-    "normalizedAnswer": "WIPEOUT 2097",
-    "category": "Video Game",
-    "difficulty": 79.2,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 7,
     "tags": [
       "theme",
       "video-game"
@@ -16760,26 +12560,6 @@
     }
   },
   {
-    "id": "57b969d7dab9415c77d362f8b088d86a",
-    "source": "theme",
-    "type": "title",
-    "answer": "GoldenEye 007",
-    "normalizedAnswer": "GOLDENEYE 007",
-    "category": "Video Game",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 12,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "04c53f3ec324607bc8a543323991c3c7",
     "source": "theme",
     "type": "title",
@@ -16791,26 +12571,6 @@
     "wordCount": 3,
     "letterCount": 14,
     "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "5a372c6c28edf80d6ede5f5f9f64174b",
-    "source": "theme",
-    "type": "title",
-    "answer": "Star Fox 64",
-    "normalizedAnswer": "STAR FOX 64",
-    "category": "Video Game",
-    "difficulty": 79.2,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 9,
-    "uniqueLetterCount": 7,
     "tags": [
       "theme",
       "video-game"
@@ -16871,26 +12631,6 @@
     "wordCount": 1,
     "letterCount": 12,
     "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "53c1cfe570bbb04ce77f21faefe7d378",
-    "source": "theme",
-    "type": "title",
-    "answer": "Fallout 2",
-    "normalizedAnswer": "FALLOUT 2",
-    "category": "Video Game",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 6,
     "tags": [
       "theme",
       "video-game"
@@ -17040,26 +12780,6 @@
     }
   },
   {
-    "id": "ee55a65cebc6465f5ddfb106772625da",
-    "source": "theme",
-    "type": "title",
-    "answer": "Freespace 2",
-    "normalizedAnswer": "FREESPACE 2",
-    "category": "Video Game",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 10,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "43cb50cd393c464ece7159e33e748be5",
     "source": "theme",
     "type": "title",
@@ -17180,26 +12900,6 @@
     }
   },
   {
-    "id": "9e0a4e15f0f1e51b118fe06b438b6a06",
-    "source": "theme",
-    "type": "title",
-    "answer": "System Shock 2",
-    "normalizedAnswer": "SYSTEM SHOCK 2",
-    "category": "Video Game",
-    "difficulty": 69.6,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 12,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "a3cf2fd51a4e36b3e0e6848194600a63",
     "source": "theme",
     "type": "title",
@@ -17291,26 +12991,6 @@
     "wordCount": 2,
     "letterCount": 11,
     "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "69ddbd7eba753ae3f8e45483b327124b",
-    "source": "theme",
-    "type": "title",
-    "answer": "Marvel vs. Capcom 2: New Age of Heroes",
-    "normalizedAnswer": "MARVEL VS CAPCOM 2 NEW AGE OF HEROES",
-    "category": "Video Game",
-    "difficulty": 44,
-    "difficultyTier": "easy",
-    "wordCount": 8,
-    "letterCount": 29,
-    "uniqueLetterCount": 15,
     "tags": [
       "theme",
       "video-game"
@@ -17640,26 +13320,6 @@
     }
   },
   {
-    "id": "3a47c780f009aff259e0ccd1be637ff2",
-    "source": "theme",
-    "type": "title",
-    "answer": "Max Payne 2: The Fall of Max Payne",
-    "normalizedAnswer": "MAX PAYNE 2 THE FALL OF MAX PAYNE",
-    "category": "Video Game",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 8,
-    "letterCount": 26,
-    "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "38e5c2618325099308250ad3ecf6e9c8",
     "source": "theme",
     "type": "title",
@@ -17760,26 +13420,6 @@
     }
   },
   {
-    "id": "4b684abc44dc14a08b5f74db7a23dee9",
-    "source": "theme",
-    "type": "title",
-    "answer": "Halo 2",
-    "normalizedAnswer": "HALO 2",
-    "category": "Video Game",
-    "difficulty": 92.4,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 5,
-    "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "e797e81b725bf93273644e5fc8e0073b",
     "source": "theme",
     "type": "title",
@@ -17811,26 +13451,6 @@
     "wordCount": 3,
     "letterCount": 19,
     "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "498d11f2aae234ea46a9ec3c1c7509d9",
-    "source": "theme",
-    "type": "title",
-    "answer": "Call of Duty 2",
-    "normalizedAnswer": "CALL OF DUTY 2",
-    "category": "Video Game",
-    "difficulty": 70,
-    "difficultyTier": "medium",
-    "wordCount": 4,
-    "letterCount": 11,
-    "uniqueLetterCount": 9,
     "tags": [
       "theme",
       "video-game"
@@ -18000,46 +13620,6 @@
     }
   },
   {
-    "id": "73f5fc4addb227dc66cf4a367f1c5980",
-    "source": "theme",
-    "type": "title",
-    "answer": "Call of Duty 4: Modern Warfare",
-    "normalizedAnswer": "CALL OF DUTY 4 MODERN WARFARE",
-    "category": "Video Game",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 24,
-    "uniqueLetterCount": 14,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "9df2d44ec7b138ac2707cfd4ce808e14",
-    "source": "theme",
-    "type": "title",
-    "answer": "Halo 3",
-    "normalizedAnswer": "HALO 3",
-    "category": "Video Game",
-    "difficulty": 92.4,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 5,
-    "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "2386d5d178d7bf89b8006ef03fa232d1",
     "source": "theme",
     "type": "title",
@@ -18110,26 +13690,6 @@
     "difficultyTier": "medium",
     "wordCount": 2,
     "letterCount": 8,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "9ddec3e960e2a132a6a9eafc7e2306e3",
-    "source": "theme",
-    "type": "title",
-    "answer": "Team Fortress 2",
-    "normalizedAnswer": "TEAM FORTRESS 2",
-    "category": "Video Game",
-    "difficulty": 73.2,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 13,
     "uniqueLetterCount": 8,
     "tags": [
       "theme",
@@ -18220,66 +13780,6 @@
     }
   },
   {
-    "id": "bef205c753effbd8f2366e78452a935b",
-    "source": "theme",
-    "type": "title",
-    "answer": "Fallout 3",
-    "normalizedAnswer": "FALLOUT 3",
-    "category": "Video Game",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "4aaeb9e6b3f340263355fe412ba0c1ca",
-    "source": "theme",
-    "type": "title",
-    "answer": "Gears of War 2",
-    "normalizedAnswer": "GEARS OF WAR 2",
-    "category": "Video Game",
-    "difficulty": 74,
-    "difficultyTier": "medium",
-    "wordCount": 4,
-    "letterCount": 11,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "4711381f177d91b2bd1d019963379ae1",
-    "source": "theme",
-    "type": "title",
-    "answer": "Left 4 Dead",
-    "normalizedAnswer": "LEFT 4 DEAD",
-    "category": "Video Game",
-    "difficulty": 82.8,
-    "difficultyTier": "hard",
-    "wordCount": 3,
-    "letterCount": 9,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "1feb27e7f243a7b51a2a7b4f9f29509e",
     "source": "theme",
     "type": "title",
@@ -18291,46 +13791,6 @@
     "wordCount": 1,
     "letterCount": 15,
     "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "24bb7132fc61276a862e61ac6e2de4d2",
-    "source": "theme",
-    "type": "title",
-    "answer": "Persona 4",
-    "normalizedAnswer": "PERSONA 4",
-    "category": "Video Game",
-    "difficulty": 79.2,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "62c33ed03485be4b2f990fecb6d73e3b",
-    "source": "theme",
-    "type": "title",
-    "answer": "Rock Band 2",
-    "normalizedAnswer": "ROCK BAND 2",
-    "category": "Video Game",
-    "difficulty": 74.8,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 9,
-    "uniqueLetterCount": 8,
     "tags": [
       "theme",
       "video-game"
@@ -18560,26 +14020,6 @@
     }
   },
   {
-    "id": "a33564096cef04dbd585f38e0f0e8140",
-    "source": "theme",
-    "type": "title",
-    "answer": "Left 4 Dead 2",
-    "normalizedAnswer": "LEFT 4 DEAD 2",
-    "category": "Video Game",
-    "difficulty": 82.8,
-    "difficultyTier": "hard",
-    "wordCount": 4,
-    "letterCount": 10,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "19afdf79b8ef73eaa804551ba11034e3",
     "source": "theme",
     "type": "title",
@@ -18591,26 +14031,6 @@
     "wordCount": 3,
     "letterCount": 15,
     "uniqueLetterCount": 13,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "c5dc4ed1e9526098e84b25ca515d1044",
-    "source": "theme",
-    "type": "title",
-    "answer": "Uncharted 2: Among Thieves",
-    "normalizedAnswer": "UNCHARTED 2 AMONG THIEVES",
-    "category": "Video Game",
-    "difficulty": 44,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 22,
-    "uniqueLetterCount": 15,
     "tags": [
       "theme",
       "video-game"
@@ -18680,26 +14100,6 @@
     }
   },
   {
-    "id": "01b1bb6925b88837fe1d47019b49c4cd",
-    "source": "theme",
-    "type": "title",
-    "answer": "Mass Effect 2",
-    "normalizedAnswer": "MASS EFFECT 2",
-    "category": "Video Game",
-    "difficulty": 78,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 11,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "807a5540da6705844e7777a0e4c0c74a",
     "source": "theme",
     "type": "title",
@@ -18711,26 +14111,6 @@
     "wordCount": 3,
     "letterCount": 17,
     "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "a8379014e49f42f9f320e23cffa4e82f",
-    "source": "theme",
-    "type": "title",
-    "answer": "Rock Band 3",
-    "normalizedAnswer": "ROCK BAND 3",
-    "category": "Video Game",
-    "difficulty": 74.8,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 9,
-    "uniqueLetterCount": 8,
     "tags": [
       "theme",
       "video-game"
@@ -18780,26 +14160,6 @@
     }
   },
   {
-    "id": "0ef11bff803a5347656dc3fcd69c45bb",
-    "source": "theme",
-    "type": "title",
-    "answer": "Portal 2",
-    "normalizedAnswer": "PORTAL 2",
-    "category": "Video Game",
-    "difficulty": 83.6,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 7,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "e2e686b240feeb7941f3c1817d0a7da7",
     "source": "theme",
     "type": "title",
@@ -18831,26 +14191,6 @@
     "wordCount": 1,
     "letterCount": 10,
     "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "88e7593658817b8ace2040cddda3ddb9",
-    "source": "theme",
-    "type": "title",
-    "answer": "Far Cry 3",
-    "normalizedAnswer": "FAR CRY 3",
-    "category": "Video Game",
-    "difficulty": 87.6,
-    "difficultyTier": "hard",
-    "wordCount": 3,
-    "letterCount": 7,
-    "uniqueLetterCount": 5,
     "tags": [
       "theme",
       "video-game"
@@ -18911,26 +14251,6 @@
     "wordCount": 3,
     "letterCount": 16,
     "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "82d876e353a7d2e64b08cc13b5d4a63f",
-    "source": "theme",
-    "type": "title",
-    "answer": "Dota 2",
-    "normalizedAnswer": "DOTA 2",
-    "category": "Video Game",
-    "difficulty": 92.4,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 5,
-    "uniqueLetterCount": 4,
     "tags": [
       "theme",
       "video-game"
@@ -19040,26 +14360,6 @@
     }
   },
   {
-    "id": "802f17e734fdb17c93cbc6722a9199bb",
-    "source": "theme",
-    "type": "title",
-    "answer": "Mario Kart 8",
-    "normalizedAnswer": "MARIO KART 8",
-    "category": "Video Game",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 10,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "5b755772102e3f57d0866e15d8752590",
     "source": "theme",
     "type": "title",
@@ -19140,26 +14440,6 @@
     }
   },
   {
-    "id": "edddeef64e55e713584805ed1c02bbce",
-    "source": "theme",
-    "type": "title",
-    "answer": "Dishonored 2",
-    "normalizedAnswer": "DISHONORED 2",
-    "category": "Video Game",
-    "difficulty": 74,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
     "id": "97c2ee20355f6a85c2e404fa19ff4299",
     "source": "theme",
     "type": "title",
@@ -19191,46 +14471,6 @@
     "wordCount": 1,
     "letterCount": 9,
     "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "4b7405293734d3960c03ec558b75777f",
-    "source": "theme",
-    "type": "title",
-    "answer": "Persona 5",
-    "normalizedAnswer": "PERSONA 5",
-    "category": "Video Game",
-    "difficulty": 79.2,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "video-game"
-    ],
-    "metadata": {
-      "source": "wikipedia-bestsellers"
-    }
-  },
-  {
-    "id": "71867c65c62d669d7c3202348c3c633a",
-    "source": "theme",
-    "type": "title",
-    "answer": "Uncharted 4: A Thief's End",
-    "normalizedAnswer": "UNCHARTED 4 A THIEFS END",
-    "category": "Video Game",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 20,
-    "uniqueLetterCount": 12,
     "tags": [
       "theme",
       "video-game"

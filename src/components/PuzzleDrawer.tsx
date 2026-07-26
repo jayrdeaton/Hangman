@@ -6,6 +6,7 @@ import { Button, IconButton, SegmentedButtons, Text, TextInput } from 'react-nat
 import { useSharedValue } from 'react-native-reanimated'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
+import { usePackSelection } from '@/hooks/usePackSelection'
 import type { GameMode } from '@/types/gameModes'
 import type { GameStartPayload, PuzzleSourceMode } from '@/types/gameSession'
 import { alert } from '@/utils/alert'
@@ -14,7 +15,7 @@ import { buildPuzzleLink } from '@/utils/puzzleLink'
 import { type PuzzleConfig, resolvePuzzle } from '@/utils/puzzlePicker'
 
 import { ModeSelector } from './ModeSelector'
-import { PackPickerDialog } from './PackPickerDialog'
+import { PacksScreen } from './PacksScreen'
 
 const SOURCE_OPTIONS: { label: string; value: PuzzleSourceMode }[] = [
   { label: 'Random', value: 'random' },
@@ -55,20 +56,24 @@ export const PuzzleDrawer = ({ visible, onDismiss, onRequestOpen, initialConfig,
   // eslint-disable-next-line react-hooks/exhaustive-deps -- packsVersion is an intentional external invalidation trigger, not a value the memo body reads
   const manifest = useMemo(() => getPuzzleManifest().filter((item) => item.count > 0), [packsVersion])
   const translateX = useSharedValue(-DRAWER_WIDTH)
+  // The persisted default (see usePackSelection) — read and written live, not staged in `draft`
+  // like the rest of this config, so toggling a pack takes effect immediately for every future
+  // round rather than only once "New puzzle" is pressed.
+  const { selectedPackKeys, setSelectedPackKeys } = usePackSelection()
 
   const [draft, setDraft] = useState<PuzzleConfig>(initialConfig)
   // Starts revealed — this is the player composing their own word, not hiding it from themselves,
   // so masking by default only made typos harder to catch. The toggle still lets them hide it
   // afterward (e.g. before handing the device to whoever's guessing).
   const [isRevealed, setIsRevealed] = useState(true)
-  const [packPickerVisible, setPackPickerVisible] = useState(false)
+  const [packsScreenVisible, setPacksScreenVisible] = useState(false)
   const hasAnnouncedRef = useRef(false)
 
   const packSummaryLabel = useMemo(() => {
-    if (draft.packKeys.length === 0) return 'No packs selected'
-    if (draft.packKeys.length === manifest.length) return 'All packs'
-    return `${draft.packKeys.length} of ${manifest.length} packs`
-  }, [draft.packKeys, manifest.length])
+    if (selectedPackKeys.length === 0) return 'No packs selected'
+    if (selectedPackKeys.length === manifest.length) return 'All packs'
+    return `${selectedPackKeys.length} of ${manifest.length} packs`
+  }, [selectedPackKeys, manifest.length])
 
   const updateDraft = useCallback((patch: Partial<PuzzleConfig>) => setDraft((d) => ({ ...d, ...patch })), [])
 
@@ -106,16 +111,16 @@ export const PuzzleDrawer = ({ visible, onDismiss, onRequestOpen, initialConfig,
   }, [draft.sourceMode])
 
   const handleConfirm = useCallback(() => {
-    const result = resolvePuzzle(draft)
+    const result = resolvePuzzle(draft, selectedPackKeys)
     if (!result.ok) {
       void alert(draft.sourceMode === 'custom' ? 'Enter a valid word' : 'No puzzles available', result.error)
       return
     }
     onConfirm(result.payload, draft)
-  }, [draft, onConfirm])
+  }, [draft, onConfirm, selectedPackKeys])
 
   const handleShare = useCallback(async () => {
-    const result = resolvePuzzle({ ...draft, sourceMode: 'custom' })
+    const result = resolvePuzzle({ ...draft, sourceMode: 'custom' }, selectedPackKeys)
     if (!result.ok) {
       void alert("Can't share this puzzle", result.error)
       return
@@ -131,7 +136,7 @@ export const PuzzleDrawer = ({ visible, onDismiss, onRequestOpen, initialConfig,
     } catch {
       void alert("Couldn't share", 'Something went wrong sharing this puzzle. Please try again.')
     }
-  }, [draft])
+  }, [draft, selectedPackKeys])
 
   const handleSelectMode = useCallback((mode: GameMode) => updateDraft({ mode }), [updateDraft])
 
@@ -139,7 +144,13 @@ export const PuzzleDrawer = ({ visible, onDismiss, onRequestOpen, initialConfig,
     <>
       <DrawerEdgeSwipe enabled={!visible} onOpen={onRequestOpen} translateX={translateX} width={DRAWER_WIDTH} />
       <Drawer open={visible} onClose={onDismiss} translateX={translateX} width={DRAWER_WIDTH}>
-        <View testID='puzzle-drawer-panel' style={[styles.panelContent, { paddingTop: insets.top, paddingBottom: insets.bottom }]} accessibilityViewIsModal={visible} accessibilityElementsHidden={!visible} importantForAccessibility={visible ? 'yes' : 'no-hide-descendants'} onAccessibilityEscape={visible ? onDismiss : undefined}>
+        {/* PacksScreen renders as a full-width Drawer of its own, stacked on top of this one while
+            "Choose packs" is open — visually complete coverage, but this panel's own content stays
+            mounted underneath it (Drawer never unmounts on close, just translates). Without
+            factoring packsScreenVisible in here too, this panel's title/close button/fields would
+            stay reachable by screen readers and keyboard focus while invisible behind the screen
+            covering them. */}
+        <View testID='puzzle-drawer-panel' style={[styles.panelContent, { paddingTop: insets.top, paddingBottom: insets.bottom }]} accessibilityViewIsModal={visible && !packsScreenVisible} accessibilityElementsHidden={!visible || packsScreenVisible} importantForAccessibility={visible && !packsScreenVisible ? 'yes' : 'no-hide-descendants'} onAccessibilityEscape={visible && !packsScreenVisible ? onDismiss : undefined}>
           <BlurView blur={blur} style={StyleSheet.absoluteFill} />
           <View style={styles.headerRow}>
             <Text variant='titleLarge'>Change puzzle</Text>
@@ -167,7 +178,7 @@ export const PuzzleDrawer = ({ visible, onDismiss, onRequestOpen, initialConfig,
                 <Text variant='titleMedium' style={styles.sectionLabel}>
                   Choose packs
                 </Text>
-                <Button mode='outlined' icon='format-list-checks' onPress={() => setPackPickerVisible(true)} contentStyle={styles.packPickerContent}>
+                <Button mode='outlined' icon='format-list-checks' onPress={() => setPacksScreenVisible(true)} contentStyle={styles.choosePacksContent}>
                   {packSummaryLabel}
                 </Button>
 
@@ -182,27 +193,29 @@ export const PuzzleDrawer = ({ visible, onDismiss, onRequestOpen, initialConfig,
               Game mode
             </Text>
             <ModeSelector selected={draft.mode} color={settings.color} onSelect={handleSelectMode} />
-          </RNScrollView>
 
-          <View style={styles.footer}>
-            <Button mode='contained' icon='play' onPress={handleConfirm} contentStyle={styles.confirmContent} labelStyle={styles.confirmLabel}>
+            {/* Part of the scrollable content (not a fixed bottom footer) so the button follows
+                directly after Game mode instead of leaving a gap of unused ScrollView height
+                between them on screens taller than the form itself. */}
+            <Button mode='contained' icon='play' onPress={handleConfirm} style={styles.confirmButton} contentStyle={styles.confirmContent} labelStyle={styles.confirmLabel}>
               {draft.sourceMode === 'custom' ? 'Start this puzzle' : 'New puzzle'}
             </Button>
-          </View>
+          </RNScrollView>
         </View>
       </Drawer>
 
-      <PackPickerDialog visible={packPickerVisible} onDismiss={() => setPackPickerVisible(false)} selectedKeys={draft.packKeys} onChangeSelectedKeys={(packKeys) => updateDraft({ packKeys })} packsVersion={packsVersion} onPacksChanged={onPacksChanged} />
+      <PacksScreen visible={packsScreenVisible} onDismiss={() => setPacksScreenVisible(false)} selectedKeys={selectedPackKeys} onChangeSelectedKeys={setSelectedPackKeys} packsVersion={packsVersion} onPacksChanged={onPacksChanged} />
     </>
   )
 }
 
 const styles = StyleSheet.create({
+  choosePacksContent: { justifyContent: 'flex-start' },
+  confirmButton: { marginTop: 28 },
   confirmContent: { height: 52 },
   confirmLabel: { fontSize: 16, fontWeight: '700' },
   customForm: { paddingTop: 16 },
   flex: { flex: 1 },
-  footer: { padding: 16 },
   headerRow: {
     alignItems: 'center',
     flexDirection: 'row',
@@ -211,7 +224,6 @@ const styles = StyleSheet.create({
     paddingVertical: 12
   },
   hintInput: { marginTop: 8 },
-  packPickerContent: { justifyContent: 'flex-start' },
   panelContent: {
     elevation: 8,
     flex: 1,
@@ -222,7 +234,7 @@ const styles = StyleSheet.create({
     shadowRadius: 8
   },
   scrollContent: {
-    paddingBottom: 24,
+    paddingBottom: 32,
     paddingHorizontal: 16
   },
   sectionLabel: {

@@ -1,26 +1,5 @@
 [
   {
-    "id": "78dbdb3264c22cee38e794ba6efad4cc",
-    "source": "theme",
-    "type": "title",
-    "answer": "B-17, Queen of the Skies",
-    "normalizedAnswer": "B17 QUEEN OF THE SKIES",
-    "category": "Board Game or Toy",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 18,
-    "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "d761e0c47a51454e2105625a60456c8c",
     "source": "theme",
     "type": "title",
@@ -452,27 +431,6 @@
     "wordCount": 2,
     "letterCount": 11,
     "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "68959bf4f072ba33eae00272b1425c53",
-    "source": "theme",
-    "type": "title",
-    "answer": "Connect6",
-    "normalizedAnswer": "CONNECT6",
-    "category": "Board Game or Toy",
-    "difficulty": 87.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 5,
     "tags": [
       "theme",
       "board-game",
@@ -1617,27 +1575,6 @@
     }
   },
   {
-    "id": "3d8750f271d53cc3da58b9663ac773b2",
-    "source": "theme",
-    "type": "title",
-    "answer": "Sector 41",
-    "normalizedAnswer": "SECTOR 41",
-    "category": "Board Game or Toy",
-    "difficulty": 83.6,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "57bb166d7b60704e03f85af04409d882",
     "source": "theme",
     "type": "title",
@@ -2079,27 +2016,6 @@
     }
   },
   {
-    "id": "30b109a0fc998d159a853ea816e6097f",
-    "source": "theme",
-    "type": "title",
-    "answer": "Twilight Struggle: The Cold War, 1945–1989",
-    "normalizedAnswer": "TWILIGHT STRUGGLE THE COLD WAR 19451989",
-    "category": "Board Game or Toy",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 34,
-    "uniqueLetterCount": 14,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "6f05218de94459ed14ab97b0549a2129",
     "source": "theme",
     "type": "title",
@@ -2174,48 +2090,6 @@
     "wordCount": 1,
     "letterCount": 4,
     "uniqueLetterCount": 3,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "4f57a9974bef85b05f53095ea07559f8",
-    "source": "theme",
-    "type": "title",
-    "answer": "13 Dead End Drive",
-    "normalizedAnswer": "13 DEAD END DRIVE",
-    "category": "Board Game or Toy",
-    "difficulty": 77.2,
-    "difficultyTier": "medium",
-    "wordCount": 4,
-    "letterCount": 14,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "803db8661980570c35ec5c5794a53d1d",
-    "source": "theme",
-    "type": "title",
-    "answer": "1313 Dead End Drive",
-    "normalizedAnswer": "1313 DEAD END DRIVE",
-    "category": "Board Game or Toy",
-    "difficulty": 77.2,
-    "difficultyTier": "medium",
-    "wordCount": 4,
-    "letterCount": 16,
-    "uniqueLetterCount": 7,
     "tags": [
       "theme",
       "board-game",
@@ -3455,27 +3329,6 @@
     "wordCount": 1,
     "letterCount": 12,
     "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "5774a64e77f3ea88d11c9f46d1c27d9a",
-    "source": "theme",
-    "type": "title",
-    "answer": "30 Seconds",
-    "normalizedAnswer": "30 SECONDS",
-    "category": "Board Game or Toy",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 6,
     "tags": [
       "theme",
       "board-game",
@@ -7875,27 +7728,6 @@
     }
   },
   {
-    "id": "ac402ce2cac0c48a4e1d995af8b2705d",
-    "source": "theme",
-    "type": "title",
-    "answer": "Risk 2210 A.D",
-    "normalizedAnswer": "RISK 2210 AD",
-    "category": "Board Game or Toy",
-    "difficulty": 83.6,
-    "difficultyTier": "hard",
-    "wordCount": 3,
-    "letterCount": 10,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "0a937afbff59c9699e372b790fec6f50",
     "source": "theme",
     "type": "title",
@@ -8789,27 +8621,6 @@
     "wordCount": 1,
     "letterCount": 4,
     "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "3a8f5293a0b2cc6c3c6d90b4e2b6e335",
-    "source": "theme",
-    "type": "title",
-    "answer": "25 Words or Less",
-    "normalizedAnswer": "25 WORDS OR LESS",
-    "category": "Board Game or Toy",
-    "difficulty": 77.6,
-    "difficultyTier": "medium",
-    "wordCount": 4,
-    "letterCount": 13,
-    "uniqueLetterCount": 7,
     "tags": [
       "theme",
       "board-game",
@@ -9765,27 +9576,6 @@
     }
   },
   {
-    "id": "b2ad2b585dc5afafca7d130651c4408b",
-    "source": "theme",
-    "type": "title",
-    "answer": "Atari 2600",
-    "normalizedAnswer": "ATARI 2600",
-    "category": "Board Game or Toy",
-    "difficulty": 92,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "5c5ab3c30caeebc3fd1ea2ffe54cb916",
     "source": "theme",
     "type": "title",
@@ -10311,27 +10101,6 @@
     }
   },
   {
-    "id": "3b82598a43bd04095a7f91939a386a38",
-    "source": "theme",
-    "type": "title",
-    "answer": "Magic 8 Ball",
-    "normalizedAnswer": "MAGIC 8 BALL",
-    "category": "Board Game or Toy",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 10,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "bd70b87754a27a9b998ea08deba7ed61",
     "source": "theme",
     "type": "title",
@@ -10700,27 +10469,6 @@
     "wordCount": 3,
     "letterCount": 25,
     "uniqueLetterCount": 13,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "c6d89a1de7c7b14ef53f14e7a0482f8c",
-    "source": "theme",
-    "type": "title",
-    "answer": "Phase 10 card game",
-    "normalizedAnswer": "PHASE 10 CARD GAME",
-    "category": "Board Game or Toy",
-    "difficulty": 64.8,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 15,
-    "uniqueLetterCount": 10,
     "tags": [
       "theme",
       "board-game",

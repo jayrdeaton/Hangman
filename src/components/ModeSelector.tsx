@@ -101,7 +101,7 @@ export const ModeSelector = React.memo(({ selected, color, onSelect }: Props) =>
   )
 
   return (
-    <View testID='mode-selector-container' onLayout={handleContainerLayout}>
+    <View testID='mode-selector-container' style={styles.container} onLayout={handleContainerLayout}>
       {/* initialNumToRender covers the full list — with only 16 lightweight cards, windowing buys
           nothing but risks scrollToOffset (above) targeting a card that hasn't measured yet. */}
       {containerWidth > 0 && <FlatList ref={listRef} data={ALL_MODES} renderItem={renderCard} keyExtractor={(item) => item.id} horizontal showsHorizontalScrollIndicator={false} snapToInterval={snapInterval} decelerationRate='fast' initialNumToRender={ALL_MODES.length} style={styles.list} contentContainerStyle={{ paddingHorizontal: sidePadding }} {...horizontalWheelScrollProps} />}
@@ -129,6 +129,13 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     marginHorizontal: CARD_MARGIN,
     overflow: 'hidden'
+  },
+  // Without this, the carousel's peek cards (see cardWidth/sidePadding above) paint past the
+  // drawer panel's own edge on web instead of clipping there — every ancestor up to the drawer
+  // clips correctly, but this container had no style at all, so it defaulted to overflow: visible.
+  container: {
+    overflow: 'hidden',
+    width: '100%'
   },
   description: {
     lineHeight: 16

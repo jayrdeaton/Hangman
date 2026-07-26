@@ -203,18 +203,6 @@ describe('Game', () => {
     expect(onSolved).toHaveBeenCalledWith({ wrongGuesses: 1, hintRevealed: true })
   })
 
-  it('shows a difficulty badge when difficultyTier is provided', async () => {
-    const { getByLabelText } = await render(<Game phrase='CAT' onStop={jest.fn()} difficultyTier='medium' />)
-
-    expect(getByLabelText('Difficulty: Medium')).toBeTruthy()
-  })
-
-  it('omits the difficulty badge when no difficultyTier is provided', async () => {
-    const { queryByLabelText } = await render(<Game phrase='CAT' onStop={jest.fn()} />)
-
-    expect(queryByLabelText(/^Difficulty:/)).toBeNull()
-  })
-
   it('hides the hint behind a reveal button until pressed, and omits both when no hint is provided', async () => {
     const { getByText, queryByText, rerender } = await render(<Game phrase='CAT' onStop={jest.fn()} hint='A furry pet' />)
 

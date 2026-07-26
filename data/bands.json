@@ -746,49 +746,6 @@
     ]
   },
   {
-    "id": "d6def74be6eb2117f84b049db0a0c41a",
-    "source": "music-band",
-    "type": "band",
-    "answer": "U2",
-    "normalizedAnswer": "U2",
-    "category": "Political Band",
-    "difficulty": 105.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 2,
-    "uniqueLetterCount": 1,
-    "tags": [
-      "political",
-      "rock",
-      "electronic",
-      "alternative rock",
-      "irish",
-      "post-punk",
-      "new wave",
-      "band",
-      "indie rock",
-      "irlande",
-      "ireland",
-      "irlandais",
-      "college rock",
-      "pop rock",
-      "arena rock",
-      "alternative pop",
-      "alternative dance",
-      "1980",
-      "classic pop and rock",
-      "éire",
-      "grammy winner",
-      "pop/rock",
-      "dance-rock",
-      "clean up",
-      "aternative dance",
-      "seconds",
-      "big music",
-      "vyrzukhisuc-artiest"
-    ]
-  },
-  {
     "id": "6eead4f0ab607c960d1f4d1ee8bf0b3f",
     "source": "music-band",
     "type": "band",
@@ -2269,47 +2226,6 @@
       "wifebeater",
       "murdered",
       "aln-sh"
-    ]
-  },
-  {
-    "id": "a4445dea37a21571ebe3a86304735391",
-    "source": "music-band",
-    "type": "band",
-    "answer": "植松伸夫",
-    "normalizedAnswer": "",
-    "category": "Rock Band",
-    "difficulty": 110,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 0,
-    "uniqueLetterCount": 0,
-    "tags": [
-      "rock",
-      "electronic",
-      "soundtrack",
-      "progressive rock",
-      "metal",
-      "japanese",
-      "orchestral",
-      "game",
-      "conductor",
-      "video game",
-      "new age",
-      "composer",
-      "neo-classical metal",
-      "symphonic rock",
-      "vgm",
-      "video game music",
-      "orchestral music",
-      "chiptune",
-      "modern classical",
-      "final fantasy",
-      "16-bit",
-      "orchestral soundtrack",
-      "cinematic classical",
-      "sequencer & tracker",
-      "japanese classical",
-      "japanese vgm"
     ]
   },
   {
@@ -4609,27 +4525,6 @@
     ]
   },
   {
-    "id": "b196d0961d289f3927686d0e20113dea",
-    "source": "music-band",
-    "type": "band",
-    "answer": "桜庭統",
-    "normalizedAnswer": "",
-    "category": "Pop Band",
-    "difficulty": 110,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 0,
-    "uniqueLetterCount": 0,
-    "tags": [
-      "pop",
-      "progressive rock",
-      "vgm",
-      "video game music",
-      "soundtracks",
-      "stage & screen"
-    ]
-  },
-  {
     "id": "9e0cef6a7ac8c1a002150cff5b7a5bba",
     "source": "music-band",
     "type": "band",
@@ -6037,30 +5932,6 @@
       "pop reggae",
       "new york punk",
       "cbgb scene"
-    ]
-  },
-  {
-    "id": "2dd2a5fa1281ae48d453a0a42f0e9a27",
-    "source": "music-band",
-    "type": "band",
-    "answer": "鷺巣詩郎",
-    "normalizedAnswer": "",
-    "category": "Rock Band",
-    "difficulty": 110,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 0,
-    "uniqueLetterCount": 0,
-    "tags": [
-      "rock",
-      "electronic",
-      "pop",
-      "japanese",
-      "j-pop",
-      "composer",
-      "j-rock",
-      "clean up",
-      "likedis auto"
     ]
   },
   {
@@ -8694,40 +8565,6 @@
     ]
   },
   {
-    "id": "5c762f9dfed4f2461f939349246b7f73",
-    "source": "music-band",
-    "type": "band",
-    "answer": "10cc",
-    "normalizedAnswer": "10CC",
-    "category": "Rock Band",
-    "difficulty": 105.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 4,
-    "uniqueLetterCount": 1,
-    "tags": [
-      "rock",
-      "pop",
-      "progressive rock",
-      "british",
-      "uk",
-      "art rock",
-      "classic rock",
-      "1980s",
-      "1990s",
-      "1970s",
-      "soft rock",
-      "experimental rock",
-      "pop rock",
-      "english",
-      "classic pop and rock",
-      "progressive pop",
-      "art pop",
-      "pop reggae",
-      "aln-sh"
-    ]
-  },
-  {
     "id": "408db92031b39eac24a0497d4a37f1cd",
     "source": "music-band",
     "type": "band",
@@ -9898,35 +9735,6 @@
     ]
   },
   {
-    "id": "b41b90990e80603ccf93be844f74c0c1",
-    "source": "music-band",
-    "type": "band",
-    "answer": "初音ミク",
-    "normalizedAnswer": "",
-    "category": "Electronic Band",
-    "difficulty": 110,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 0,
-    "uniqueLetterCount": 0,
-    "tags": [
-      "electronic",
-      "pop",
-      "bogus artist",
-      "covers",
-      "j-pop",
-      "j-rock",
-      "pop rock",
-      "vocaloid",
-      "hatsune miku",
-      "meme",
-      "instrument as artist",
-      "software as artist",
-      "likedis auto",
-      "vocal synth"
-    ]
-  },
-  {
     "id": "a5482b96a32d2239e633fd9446971532",
     "source": "music-band",
     "type": "band",
@@ -10483,44 +10291,6 @@
     ]
   },
   {
-    "id": "ee50cb48def778b7b07c64da2bda9aee",
-    "source": "music-band",
-    "type": "band",
-    "answer": "Maroon 5",
-    "normalizedAnswer": "MAROON 5",
-    "category": "Rock Band",
-    "difficulty": 87.6,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 7,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "rock",
-      "pop",
-      "alternative rock",
-      "dance",
-      "grunge",
-      "indie rock",
-      "power pop",
-      "funk rock",
-      "electropop",
-      "psychedelic rock",
-      "dance-pop",
-      "adult contemporary",
-      "pop rock",
-      "pop punk",
-      "neo-psychedelia",
-      "rock and indie",
-      "slow pop",
-      "pop/rock",
-      "2010s",
-      "automod ng",
-      "fixme label mess",
-      "music for soccer moms",
-      "late 2000s"
-    ]
-  },
-  {
     "id": "f92cf949990e708d7f09775629b3808e",
     "source": "music-band",
     "type": "band",
@@ -10643,23 +10413,6 @@
       "coldwave",
       "factory records",
       "the lost generation"
-    ]
-  },
-  {
-    "id": "a9ca2a11ae252ffa2add35055c854198",
-    "source": "music-band",
-    "type": "band",
-    "answer": "אריק איינשטיין",
-    "normalizedAnswer": "",
-    "category": "Folk rock Band",
-    "difficulty": 110,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 0,
-    "uniqueLetterCount": 0,
-    "tags": [
-      "folk rock",
-      "rock"
     ]
   },
   {
@@ -11100,26 +10853,6 @@
       "dance-rock",
       "alphaville",
       "euro-rock"
-    ]
-  },
-  {
-    "id": "fa763961f868f7d56e789fd268776fcf",
-    "source": "music-band",
-    "type": "band",
-    "answer": "澤野弘之",
-    "normalizedAnswer": "",
-    "category": "Rock Band",
-    "difficulty": 110,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 0,
-    "uniqueLetterCount": 0,
-    "tags": [
-      "rock",
-      "electronic",
-      "jazz",
-      "orchestra",
-      "soundrack"
     ]
   },
   {
@@ -12854,26 +12587,6 @@
     ]
   },
   {
-    "id": "223cd6f9b0a899558b2b977bb442726a",
-    "source": "music-band",
-    "type": "band",
-    "answer": "Аквариум",
-    "normalizedAnswer": "",
-    "category": "Rock Band",
-    "difficulty": 110,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 0,
-    "uniqueLetterCount": 0,
-    "tags": [
-      "rock",
-      "russian",
-      "fusion",
-      "russian rock",
-      "russia"
-    ]
-  },
-  {
     "id": "e60ee14ec8ae83b5cd22122d5d05c44d",
     "source": "music-band",
     "type": "band",
@@ -13623,36 +13336,6 @@
     ]
   },
   {
-    "id": "0065026af84adcc6cc2f9391c9411c47",
-    "source": "music-band",
-    "type": "band",
-    "answer": "Кино",
-    "normalizedAnswer": "",
-    "category": "Punk Band",
-    "difficulty": 110,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 0,
-    "uniqueLetterCount": 0,
-    "tags": [
-      "punk",
-      "post-punk",
-      "new wave",
-      "russian",
-      "gothic rock",
-      "russian rock",
-      "soviet",
-      "russia",
-      "st petersburg",
-      "saint petersburg",
-      "rock 'n' roll",
-      "coldwave",
-      "soviet rock",
-      "рок-н-ролл",
-      "_private tag 1"
-    ]
-  },
-  {
     "id": "0d38601b43c5d8f08833c3ab7f6cc553",
     "source": "music-band",
     "type": "band",
@@ -13712,34 +13395,6 @@
       "arena rock",
       "aor",
       "adult orientated rock"
-    ]
-  },
-  {
-    "id": "17727b4872c3d1d0b8f5cacd7f74eb2e",
-    "source": "music-band",
-    "type": "band",
-    "answer": "Level 42",
-    "normalizedAnswer": "LEVEL 42",
-    "category": "Rock Band",
-    "difficulty": 96,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 7,
-    "uniqueLetterCount": 3,
-    "tags": [
-      "rock",
-      "pop",
-      "jazz",
-      "british",
-      "new wave",
-      "funk",
-      "jazz fusion",
-      "jazz-funk fusion",
-      "jazz-funk",
-      "classic pop and rock",
-      "sophisti-pop",
-      "dance-rock",
-      "britfunk"
     ]
   },
   {
@@ -14134,29 +13789,6 @@
     ]
   },
   {
-    "id": "4bb20d81412e518112eb4bb1486f14c0",
-    "source": "music-band",
-    "type": "band",
-    "answer": "目黒将司",
-    "normalizedAnswer": "",
-    "category": "Electronic Band",
-    "difficulty": 110,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 0,
-    "uniqueLetterCount": 0,
-    "tags": [
-      "electronic",
-      "j-pop",
-      "hip hop",
-      "jazz",
-      "classical",
-      "composer",
-      "rock",
-      "clean up"
-    ]
-  },
-  {
     "id": "31828d322502b5ff40f1eb4d900d6e3c",
     "source": "music-band",
     "type": "band",
@@ -14340,37 +13972,6 @@
       "roots reggae",
       "rocksteady",
       "soul and reggae"
-    ]
-  },
-  {
-    "id": "a16a14e9141e86933a689e07db032b69",
-    "source": "music-band",
-    "type": "band",
-    "answer": "譚詠麟",
-    "normalizedAnswer": "",
-    "category": "Pop Band",
-    "difficulty": 110,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 0,
-    "uniqueLetterCount": 0,
-    "tags": [
-      "pop",
-      "chinese",
-      "vocalist",
-      "hong kong",
-      "actor",
-      "ballad",
-      "1980s",
-      "1990s",
-      "1970s",
-      "2000s",
-      "c-pop",
-      "mandopop",
-      "cantopop",
-      "1970s hong kong debut",
-      "hong kong actor",
-      "hong kong rock band lead vocalist"
     ]
   },
   {
@@ -15099,29 +14700,6 @@
     ]
   },
   {
-    "id": "7f9d0616bb6063df7cd4edb88a58fbd7",
-    "source": "music-band",
-    "type": "band",
-    "answer": "Гражданская оборона",
-    "normalizedAnswer": "",
-    "category": "Rock Band",
-    "difficulty": 110,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 0,
-    "uniqueLetterCount": 0,
-    "tags": [
-      "rock",
-      "punk",
-      "punk rock",
-      "psychedelic rock",
-      "russia",
-      "siberia",
-      "omsk",
-      "siberian punk"
-    ]
-  },
-  {
     "id": "43c427eb4930199940eb99ade93cf83d",
     "source": "music-band",
     "type": "band",
@@ -15287,42 +14865,6 @@
       "pop and chart",
       "n2",
       "hard alternative"
-    ]
-  },
-  {
-    "id": "0ab098ba601d4ae46bcd18ef0829c3f3",
-    "source": "music-band",
-    "type": "band",
-    "answer": "blink‐182",
-    "normalizedAnswer": "BLINK182",
-    "category": "Rock Band",
-    "difficulty": 88,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "rock",
-      "alternative rock",
-      "punk",
-      "american",
-      "punk rock",
-      "usa",
-      "alternative",
-      "fun-punk",
-      "américain",
-      "pop rock",
-      "pop punk",
-      "skate punk",
-      "california",
-      "travis barker",
-      "pop and chart",
-      "united states",
-      "emo pop",
-      "classic pop punk",
-      "california punk",
-      "2008 universal fire victim",
-      "_add named after"
     ]
   },
   {
@@ -16561,33 +16103,6 @@
     ]
   },
   {
-    "id": "0e98669a63023a285fb28d5c71a9f9d1",
-    "source": "music-band",
-    "type": "band",
-    "answer": "UB40",
-    "normalizedAnswer": "UB40",
-    "category": "Pop Band",
-    "difficulty": 101.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 4,
-    "uniqueLetterCount": 2,
-    "tags": [
-      "pop",
-      "british",
-      "uk",
-      "reggae",
-      "dub",
-      "roots reggae",
-      "english",
-      "birmingham",
-      "classic pop and rock",
-      "soul and reggae",
-      "reggae-pop",
-      "pop reggae"
-    ]
-  },
-  {
     "id": "cab36bfde9a9c2a0d38e8ad0f334e40b",
     "source": "music-band",
     "type": "band",
@@ -16792,37 +16307,6 @@
       "j-pop",
       "j-rock",
       "pop rock"
-    ]
-  },
-  {
-    "id": "10a97963a50125b8a6bb2ec35013e7a5",
-    "source": "music-band",
-    "type": "band",
-    "answer": "10,000 Maniacs",
-    "normalizedAnswer": "10000 MANIACS",
-    "category": "Alternative rock Band",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 12,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "alternative rock",
-      "indie rock",
-      "americana",
-      "indie pop",
-      "1980s",
-      "1990s",
-      "college rock",
-      "post punk",
-      "acoustic rock",
-      "jangle pop",
-      "pop rock",
-      "twee pop",
-      "alternative country",
-      "folk pop",
-      "rock and indie",
-      "+usa new york"
     ]
   },
   {
@@ -17400,25 +16884,6 @@
       "love's a loaded gun",
       "rebellious",
       "estados unidos"
-    ]
-  },
-  {
-    "id": "c875a57813d49229e927051acced376a",
-    "source": "music-band",
-    "type": "band",
-    "answer": "私立恵比寿中学",
-    "normalizedAnswer": "",
-    "category": "Dance Band",
-    "difficulty": 110,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 0,
-    "uniqueLetterCount": 0,
-    "tags": [
-      "dance",
-      "rock",
-      "j-pop",
-      "pop"
     ]
   },
   {
@@ -18055,24 +17520,6 @@
       "los angeles punk",
       "90s punk",
       "80s punk"
-    ]
-  },
-  {
-    "id": "038c20e81f6ae7938936baea3d550e85",
-    "source": "music-band",
-    "type": "band",
-    "answer": "Алиса",
-    "normalizedAnswer": "",
-    "category": "Hard rock Band",
-    "difficulty": 110,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 0,
-    "uniqueLetterCount": 0,
-    "tags": [
-      "hard rock",
-      "russian rock",
-      "russian"
     ]
   },
   {
@@ -19417,56 +18864,6 @@
     ]
   },
   {
-    "id": "1792c608469d5b9506ab6928b1005fd2",
-    "source": "music-band",
-    "type": "band",
-    "answer": "The B‐52s",
-    "normalizedAnswer": "THE B52S",
-    "category": "Pop Band",
-    "difficulty": 88,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 7,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "pop",
-      "alternative rock",
-      "punk",
-      "post-punk",
-      "new wave",
-      "dance-pop",
-      "pop rock",
-      "dance-punk",
-      "classic pop and rock",
-      "united states",
-      "queer",
-      "b-52 s",
-      "dance-rock"
-    ]
-  },
-  {
-    "id": "c9d9b77830103bf8718c7b496ae5fe72",
-    "source": "music-band",
-    "type": "band",
-    "answer": "Γιώργος Νταλάρας",
-    "normalizedAnswer": "",
-    "category": "Singer Band",
-    "difficulty": 110,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 0,
-    "uniqueLetterCount": 0,
-    "tags": [
-      "singer",
-      "greek",
-      "greek folk",
-      "greek rock",
-      "laiko",
-      "rebetiko",
-      "greek artistic music"
-    ]
-  },
-  {
     "id": "74832ddb87c9dd6858256d4c8a6b633e",
     "source": "music-band",
     "type": "band",
@@ -20032,36 +19429,6 @@
       "post-alternative",
       "cocktail nation",
       "the lost generation"
-    ]
-  },
-  {
-    "id": "585b29606a1ca4cd37cad573c813684d",
-    "source": "music-band",
-    "type": "band",
-    "answer": "311",
-    "normalizedAnswer": "311",
-    "category": "Rock Band",
-    "difficulty": 110,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 3,
-    "uniqueLetterCount": 0,
-    "tags": [
-      "rock",
-      "alternative rock",
-      "american",
-      "ska",
-      "ska punk",
-      "hip hop",
-      "reggae",
-      "funk rock",
-      "1990s",
-      "2000s",
-      "alternative metal",
-      "rapcore",
-      "reggae rock",
-      "rap rock",
-      "pop reggae"
     ]
   },
   {
@@ -21280,25 +20647,6 @@
     ]
   },
   {
-    "id": "c252e8056923b98475aae311a13069b6",
-    "source": "music-band",
-    "type": "band",
-    "answer": "13th Floor Elevators",
-    "normalizedAnswer": "13TH FLOOR ELEVATORS",
-    "category": "Psychedelic rock Band",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 18,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "psychedelic rock",
-      "garage rock",
-      "acid rock",
-      "garage psych"
-    ]
-  },
-  {
     "id": "b3b22d4fb3424ffb7df6d14d1c55b0d5",
     "source": "music-band",
     "type": "band",
@@ -21365,22 +20713,6 @@
       "c81",
       "avant-garage",
       "weird america"
-    ]
-  },
-  {
-    "id": "a1f12eb555647e901ad6cd7c6805136e",
-    "source": "music-band",
-    "type": "band",
-    "answer": "水田直志",
-    "normalizedAnswer": "",
-    "category": "Rock Band",
-    "difficulty": 110,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 0,
-    "uniqueLetterCount": 0,
-    "tags": [
-      "rock"
     ]
   },
   {
@@ -21485,22 +20817,6 @@
       "pop punk",
       "alternative rock",
       "indie rock"
-    ]
-  },
-  {
-    "id": "a1f12eb555647e901ad6cd7c6805136e",
-    "source": "music-band",
-    "type": "band",
-    "answer": "水田直志",
-    "normalizedAnswer": "",
-    "category": "Rock Band",
-    "difficulty": 110,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 0,
-    "uniqueLetterCount": 0,
-    "tags": [
-      "rock"
     ]
   },
   {
@@ -21680,25 +20996,6 @@
     ]
   },
   {
-    "id": "73aba660091682ab2d7cbac3d6ab0fd3",
-    "source": "music-band",
-    "type": "band",
-    "answer": "Би-2",
-    "normalizedAnswer": "2",
-    "category": "Pop rock Band",
-    "difficulty": 110,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 1,
-    "uniqueLetterCount": 0,
-    "tags": [
-      "pop rock",
-      "rock",
-      "alternative rock",
-      "russian"
-    ]
-  },
-  {
     "id": "2161fe174abac4281b0cea1e099b6a9b",
     "source": "music-band",
     "type": "band",
@@ -21805,41 +21102,6 @@
       "blues",
       "folk",
       "2008 universal fire victim"
-    ]
-  },
-  {
-    "id": "699d1e9c6913a7843ce25fa52730bb5e",
-    "source": "music-band",
-    "type": "band",
-    "answer": "Машина времени",
-    "normalizedAnswer": "",
-    "category": "Russian Band",
-    "difficulty": 110,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 0,
-    "uniqueLetterCount": 0,
-    "tags": [
-      "russian",
-      "russian rock",
-      "свеча",
-      "rock"
-    ]
-  },
-  {
-    "id": "c1f71909c86335d2ed8c7b521a8666e2",
-    "source": "music-band",
-    "type": "band",
-    "answer": "石元丈晴",
-    "normalizedAnswer": "",
-    "category": "Rock Band",
-    "difficulty": 110,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 0,
-    "uniqueLetterCount": 0,
-    "tags": [
-      "rock"
     ]
   },
   {
@@ -24196,22 +23458,6 @@
     ]
   },
   {
-    "id": "d9203084730ff2febd933bdaeb18dffa",
-    "source": "music-band",
-    "type": "band",
-    "answer": "和楽器バンド",
-    "normalizedAnswer": "",
-    "category": "J-rock Band",
-    "difficulty": 110,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 0,
-    "uniqueLetterCount": 0,
-    "tags": [
-      "j-rock"
-    ]
-  },
-  {
     "id": "c2497cc9c40233f502671b6ad1db12e9",
     "source": "music-band",
     "type": "band",
@@ -25038,39 +24284,6 @@
     ]
   },
   {
-    "id": "c00bbd3cda4a321fe67d467bdf9ceab8",
-    "source": "music-band",
-    "type": "band",
-    "answer": "Current 93",
-    "normalizedAnswer": "CURRENT 93",
-    "category": "Alternative rock Band",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "alternative rock",
-      "industrial",
-      "noise",
-      "folk",
-      "british",
-      "uk",
-      "alternative",
-      "psychedelic rock",
-      "poetry",
-      "drone",
-      "post-industrial",
-      "dark ambient",
-      "english",
-      "neofolk",
-      "apocalyptic folk",
-      "dark folk",
-      "avant-folk",
-      "current 93"
-    ]
-  },
-  {
     "id": "21dbc4d2f0e513b63eb051cf00e5c0e1",
     "source": "music-band",
     "type": "band",
@@ -25161,27 +24374,6 @@
     ]
   },
   {
-    "id": "c76a05415e5c64174be5a225c04271c4",
-    "source": "music-band",
-    "type": "band",
-    "answer": "Ария",
-    "normalizedAnswer": "",
-    "category": "Russian Band",
-    "difficulty": 110,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 0,
-    "uniqueLetterCount": 0,
-    "tags": [
-      "russian",
-      "heavy metal",
-      "rock",
-      "hard rock",
-      "russian rock",
-      "metal"
-    ]
-  },
-  {
     "id": "e6305d17c8fa75cec66946d2c3751049",
     "source": "music-band",
     "type": "band",
@@ -25245,35 +24437,6 @@
       "acid rock",
       "aor",
       "classic pop and rock"
-    ]
-  },
-  {
-    "id": "d0545a7d9782e2a4217457449e517676",
-    "source": "music-band",
-    "type": "band",
-    "answer": "38 Special",
-    "normalizedAnswer": "38 SPECIAL",
-    "category": "Rock Band",
-    "difficulty": 79.2,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "rock",
-      "hard rock",
-      "blues rock",
-      "southern rock",
-      "classic rock",
-      "1980s",
-      "1970s",
-      "soft rock",
-      "pop rock",
-      "arena rock",
-      "aor",
-      "classic pop and rock",
-      "sescond chance",
-      "2008 universal fire victim"
     ]
   },
   {
@@ -25818,30 +24981,6 @@
     ]
   },
   {
-    "id": "b804d62e36f2614fe8e9007c90046d73",
-    "source": "music-band",
-    "type": "band",
-    "answer": "Мумий Тролль",
-    "normalizedAnswer": "",
-    "category": "Britpop Band",
-    "difficulty": 110,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 0,
-    "uniqueLetterCount": 0,
-    "tags": [
-      "britpop",
-      "rock",
-      "indie rock",
-      "мумий тролль",
-      "pop rock",
-      "alternative rock",
-      "soft rock",
-      "russian rock",
-      "russian"
-    ]
-  },
-  {
     "id": "a31a5930b90a280b13b5b3d0561dd453",
     "source": "music-band",
     "type": "band",
@@ -26052,27 +25191,6 @@
       "r&b",
       "philly soul",
       "2008 universal fire victim"
-    ]
-  },
-  {
-    "id": "6089a350d6259c0a61e4e5d9909468a5",
-    "source": "music-band",
-    "type": "band",
-    "answer": "吉田拓郎",
-    "normalizedAnswer": "",
-    "category": "Singer-songwriter Band",
-    "difficulty": 110,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 0,
-    "uniqueLetterCount": 0,
-    "tags": [
-      "singer-songwriter",
-      "folk rock",
-      "contemporary folk",
-      "jasrac lost iswc",
-      "likedis auto",
-      "nyū myūjikku"
     ]
   },
   {
@@ -26301,32 +25419,6 @@
       "pop",
       "latin rock",
       "latin"
-    ]
-  },
-  {
-    "id": "2a3fc6ee1223b28ab4403405ad798114",
-    "source": "music-band",
-    "type": "band",
-    "answer": "3 Doors Down",
-    "normalizedAnswer": "3 DOORS DOWN",
-    "category": "Rock Band",
-    "difficulty": 82.4,
-    "difficultyTier": "hard",
-    "wordCount": 3,
-    "letterCount": 10,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "rock",
-      "alternative rock",
-      "hard rock",
-      "southern rock",
-      "post-grunge",
-      "2000s",
-      "acoustic rock",
-      "alternative metal",
-      "pop rock",
-      "pro trump",
-      "vyrzukhisuc-artiest"
     ]
   },
   {
@@ -27404,48 +26496,6 @@
     ]
   },
   {
-    "id": "c3703e750c28e93ffd5ae483e8e0e686",
-    "source": "music-band",
-    "type": "band",
-    "answer": "浜田麻里",
-    "normalizedAnswer": "",
-    "category": "Singer-songwriter Band",
-    "difficulty": 110,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 0,
-    "uniqueLetterCount": 0,
-    "tags": [
-      "singer-songwriter",
-      "pop rock",
-      "heavy metal",
-      "c’était mieux avant"
-    ]
-  },
-  {
-    "id": "a67a26fa6eeec727b0010776766e3377",
-    "source": "music-band",
-    "type": "band",
-    "answer": "布袋寅泰",
-    "normalizedAnswer": "",
-    "category": "Rock Band",
-    "difficulty": 110,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 0,
-    "uniqueLetterCount": 0,
-    "tags": [
-      "rock",
-      "alternative rock",
-      "guitarist",
-      "japan",
-      "guitar virtuoso",
-      "fixme label mess",
-      "zainichi korean",
-      "likedis auto"
-    ]
-  },
-  {
     "id": "7c5a300cabf803910eeba17d9e5e40e2",
     "source": "music-band",
     "type": "band",
@@ -28031,28 +27081,6 @@
     ]
   },
   {
-    "id": "91ed14cbbb6123ff2589ae2c655677e9",
-    "source": "music-band",
-    "type": "band",
-    "answer": "Sham 69",
-    "normalizedAnswer": "SHAM 69",
-    "category": "Punk Band",
-    "difficulty": 92.4,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 6,
-    "uniqueLetterCount": 4,
-    "tags": [
-      "punk",
-      "punk rock",
-      "british",
-      "uk",
-      "english",
-      "classic pop and rock",
-      "street punk"
-    ]
-  },
-  {
     "id": "e6d488f0cfc982e3f1161f8bf60d68ee",
     "source": "music-band",
     "type": "band",
@@ -28073,22 +27101,6 @@
       "italian",
       "soul",
       "beat"
-    ]
-  },
-  {
-    "id": "88498c058faf247cdae796b17f2bded0",
-    "source": "music-band",
-    "type": "band",
-    "answer": "Крематорий",
-    "normalizedAnswer": "",
-    "category": "Rock Band",
-    "difficulty": 110,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 0,
-    "uniqueLetterCount": 0,
-    "tags": [
-      "rock"
     ]
   },
   {
@@ -28139,56 +27151,6 @@
       "christian rock",
       "christian punk",
       "alt punk"
-    ]
-  },
-  {
-    "id": "0262378e590237cf290dc058017a6092",
-    "source": "music-band",
-    "type": "band",
-    "answer": "Heaven 17",
-    "normalizedAnswer": "HEAVEN 17",
-    "category": "Electronic Band",
-    "difficulty": 87.6,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "electronic",
-      "synthpop",
-      "pop",
-      "british",
-      "new wave",
-      "uk",
-      "synth-pop",
-      "new romantic",
-      "english",
-      "england",
-      "classic pop and rock",
-      "dance-rock"
-    ]
-  },
-  {
-    "id": "39fe79abf2fcff55610516a60a518100",
-    "source": "music-band",
-    "type": "band",
-    "answer": "周杰倫",
-    "normalizedAnswer": "",
-    "category": "Rock Band",
-    "difficulty": 110,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 0,
-    "uniqueLetterCount": 0,
-    "tags": [
-      "rock",
-      "pop",
-      "chinese",
-      "pop rap",
-      "mandopop",
-      "r&b",
-      "contemporary r&b",
-      "zhongguo feng"
     ]
   },
   {
@@ -28678,31 +27640,6 @@
       "glam rock",
       "finland",
       "classic pop and rock"
-    ]
-  },
-  {
-    "id": "fce711135a925c92250e74213613e6d2",
-    "source": "music-band",
-    "type": "band",
-    "answer": "Front 242",
-    "normalizedAnswer": "FRONT 242",
-    "category": "Rock Band",
-    "difficulty": 88,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "rock",
-      "electronic",
-      "industrial",
-      "belgian",
-      "belgium",
-      "ebm",
-      "techno",
-      "electro-industrial",
-      "minimal synth",
-      "arvika"
     ]
   },
   {

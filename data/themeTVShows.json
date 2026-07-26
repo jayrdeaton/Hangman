@@ -800,26 +800,6 @@
     }
   },
   {
-    "id": "8a75fb29be0bf3bf29a8d619cdd72d59",
-    "source": "theme",
-    "type": "title",
-    "answer": "7th Heaven",
-    "normalizedAnswer": "7TH HEAVEN",
-    "category": "TV Show",
-    "difficulty": 82.8,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "tv"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_longest-running_scripted_American_primetime_television_series"
-    }
-  },
-  {
     "id": "aa453f8471413f8e4f75e25280c1545b",
     "source": "theme",
     "type": "title",
@@ -851,46 +831,6 @@
     "wordCount": 2,
     "letterCount": 10,
     "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "tv"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_longest-running_scripted_American_primetime_television_series"
-    }
-  },
-  {
-    "id": "259dc98d643f2e0fa3f55c801e0a0c3e",
-    "source": "theme",
-    "type": "title",
-    "answer": "Beverly Hills, 90210",
-    "normalizedAnswer": "BEVERLY HILLS 90210",
-    "category": "TV Show",
-    "difficulty": 69.2,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 17,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "tv"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_longest-running_scripted_American_primetime_television_series"
-    }
-  },
-  {
-    "id": "e8299107b7d413a41afa9d4019a54586",
-    "source": "theme",
-    "type": "title",
-    "answer": "Hawaii Five-0",
-    "normalizedAnswer": "HAWAII FIVE0",
-    "category": "TV Show",
-    "difficulty": 78,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 7,
     "tags": [
       "theme",
       "tv"
@@ -1840,26 +1780,6 @@
     }
   },
   {
-    "id": "6c7150b0f2c804b95dee2cf491daad82",
-    "source": "theme",
-    "type": "title",
-    "answer": "That '70s Show",
-    "normalizedAnswer": "THAT 70S SHOW",
-    "category": "TV Show",
-    "difficulty": 82.4,
-    "difficultyTier": "hard",
-    "wordCount": 3,
-    "letterCount": 11,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "tv"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_longest-running_scripted_American_primetime_television_series"
-    }
-  },
-  {
     "id": "96f5bed95328e02514ca471809bc0844",
     "source": "theme",
     "type": "title",
@@ -2640,26 +2560,6 @@
     }
   },
   {
-    "id": "141f909b6d739000585e160fcaa90c1d",
-    "source": "theme",
-    "type": "title",
-    "answer": "Adam-12",
-    "normalizedAnswer": "ADAM12",
-    "category": "TV Show",
-    "difficulty": 96.4,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 3,
-    "tags": [
-      "theme",
-      "tv"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_longest-running_scripted_American_primetime_television_series"
-    }
-  },
-  {
     "id": "146e5f03ee88e53faa7fd1930e136120",
     "source": "theme",
     "type": "title",
@@ -3320,26 +3220,6 @@
     }
   },
   {
-    "id": "df2f0c92f3b26b71979dde30136df552",
-    "source": "theme",
-    "type": "title",
-    "answer": "30 Rock",
-    "normalizedAnswer": "30 ROCK",
-    "category": "TV Show",
-    "difficulty": 92.4,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 6,
-    "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "tv"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_longest-running_scripted_American_primetime_television_series"
-    }
-  },
-  {
     "id": "52ac93f4b5b51b38156ca5c26a51f52e",
     "source": "theme",
     "type": "title",
@@ -3560,26 +3440,6 @@
     }
   },
   {
-    "id": "a4f694944a330e12aaff91568af5451b",
-    "source": "theme",
-    "type": "title",
-    "answer": "Station 19",
-    "normalizedAnswer": "STATION 19",
-    "category": "TV Show",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "tv"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_longest-running_scripted_American_primetime_television_series"
-    }
-  },
-  {
     "id": "fbe0c9b33294dc76b8981d173bc8bf9c",
     "source": "theme",
     "type": "title",
@@ -3591,26 +3451,6 @@
     "wordCount": 3,
     "letterCount": 17,
     "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "tv"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_longest-running_scripted_American_primetime_television_series"
-    }
-  },
-  {
-    "id": "cb81ac4f03a852bd0751e99c7de4e607",
-    "source": "theme",
-    "type": "title",
-    "answer": "The 100",
-    "normalizedAnswer": "THE 100",
-    "category": "TV Show",
-    "difficulty": 96.8,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 6,
-    "uniqueLetterCount": 3,
     "tags": [
       "theme",
       "tv"

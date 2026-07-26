@@ -1428,27 +1428,6 @@
     }
   },
   {
-    "id": "67d8dfe72fcd80d05f8686ed7e8b7bcc",
-    "source": "theme",
-    "type": "title",
-    "answer": "The 7 Habits of Highly Effective People",
-    "normalizedAnswer": "THE 7 HABITS OF HIGHLY EFFECTIVE PEOPLE",
-    "category": "Book Title",
-    "difficulty": 44,
-    "difficultyTier": "easy",
-    "wordCount": 7,
-    "letterCount": 33,
-    "uniqueLetterCount": 15,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
     "id": "c58ddecaaf7aa5449921bcb0bb443f1c",
     "source": "theme",
     "type": "title",
@@ -1922,27 +1901,6 @@
     "wordCount": 4,
     "letterCount": 27,
     "uniqueLetterCount": 18,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
-    "id": "e2242fc17389459efe09e8accf3ef3bb",
-    "source": "theme",
-    "type": "title",
-    "answer": "The Secret Diary of Adrian Mole, Aged 13",
-    "normalizedAnswer": "THE SECRET DIARY OF ADRIAN MOLE AGED 13",
-    "category": "Book Title",
-    "difficulty": 40,
-    "difficultyTier": "easy",
-    "wordCount": 8,
-    "letterCount": 32,
-    "uniqueLetterCount": 16,
     "tags": [
       "theme",
       "literature",
@@ -3150,27 +3108,6 @@
     }
   },
   {
-    "id": "c49a1d726372273a69c86d27fbd3eac5",
-    "source": "theme",
-    "type": "title",
-    "answer": "Catch-22",
-    "normalizedAnswer": "CATCH22",
-    "category": "Book Title",
-    "difficulty": 92,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
     "id": "b34b2d0c551efbe2749660bcc7b9bded",
     "source": "theme",
     "type": "title",
@@ -3528,27 +3465,6 @@
     }
   },
   {
-    "id": "e380990da14875762724a4343db6e26b",
-    "source": "theme",
-    "type": "title",
-    "answer": "Fahrenheit 451",
-    "normalizedAnswer": "FAHRENHEIT 451",
-    "category": "Book Title",
-    "difficulty": 74,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 13,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
     "id": "a528b82005567044ff8badc12dea6bef",
     "source": "theme",
     "type": "title",
@@ -3665,6 +3581,27 @@
     "wordCount": 2,
     "letterCount": 10,
     "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "literature",
+      "book"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
+    }
+  },
+  {
+    "id": "8a19179c163f9ac01ef862f1cf68883a",
+    "source": "theme",
+    "type": "title",
+    "answer": "One Piece",
+    "normalizedAnswer": "ONE PIECE",
+    "category": "Book Title",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
     "tags": [
       "theme",
       "literature",
@@ -4547,27 +4484,6 @@
     "wordCount": 3,
     "letterCount": 20,
     "uniqueLetterCount": 14,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
-    "id": "929241db13893d074147a25216b87db1",
-    "source": "theme",
-    "type": "title",
-    "answer": "OSS 117",
-    "normalizedAnswer": "OSS 117",
-    "category": "Book Title",
-    "difficulty": 100.8,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 6,
-    "uniqueLetterCount": 2,
     "tags": [
       "theme",
       "literature",
@@ -5765,27 +5681,6 @@
     "wordCount": 2,
     "letterCount": 12,
     "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
-    "id": "8aaee9c7f8fd862ef738eb7c5c480b20",
-    "source": "theme",
-    "type": "title",
-    "answer": "The No. 1 Ladies Detective Agency",
-    "normalizedAnswer": "THE NO 1 LADIES DETECTIVE AGENCY",
-    "category": "Book Title",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 27,
-    "uniqueLetterCount": 14,
     "tags": [
       "theme",
       "literature",

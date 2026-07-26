@@ -144,24 +144,6 @@
     }
   },
   {
-    "id": "789abd09205beb4fb060dd8b1f421ed5",
-    "source": "movie",
-    "type": "title",
-    "answer": "Toy Story 5",
-    "normalizedAnswer": "TOY STORY 5",
-    "category": "Movie",
-    "difficulty": 86.8,
-    "difficultyTier": "hard",
-    "wordCount": 3,
-    "letterCount": 9,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "year": "2026",
-      "popularity": 372.2682,
-      "rating": 7.415
-    }
-  },
-  {
     "id": "64afae94cd7526e6aa9e09f09043c52e",
     "source": "movie",
     "type": "title",
@@ -267,24 +249,6 @@
       "year": "2026",
       "popularity": 195.7052,
       "rating": 7
-    }
-  },
-  {
-    "id": "dbacdb5fe44670d859fe8ef141adcb02",
-    "source": "movie",
-    "type": "title",
-    "answer": "The Devil Wears Prada 2",
-    "normalizedAnswer": "THE DEVIL WEARS PRADA 2",
-    "category": "Comedy",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 19,
-    "uniqueLetterCount": 12,
-    "metadata": {
-      "year": "2026",
-      "popularity": 182.5897,
-      "rating": 7.129
     }
   },
   {
@@ -1062,24 +1026,6 @@
     }
   },
   {
-    "id": "f8bf180b21d67f05e8b55143e38a5acc",
-    "source": "movie",
-    "type": "title",
-    "answer": "23 000 Lives",
-    "normalizedAnswer": "23 000 LIVES",
-    "category": "Drama",
-    "difficulty": 88,
-    "difficultyTier": "hard",
-    "wordCount": 3,
-    "letterCount": 10,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "year": "2026",
-      "popularity": 58.1534,
-      "rating": 5.198
-    }
-  },
-  {
     "id": "0e0993bc5b08600af59cd2e12a9d8082",
     "source": "movie",
     "type": "title",
@@ -1314,42 +1260,6 @@
     }
   },
   {
-    "id": "9f85beb3a9f625e67edcfbe5521be53b",
-    "source": "movie",
-    "type": "title",
-    "answer": "Zootopia 2",
-    "normalizedAnswer": "ZOOTOPIA 2",
-    "category": "Movie",
-    "difficulty": 82.8,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "2025",
-      "popularity": 50.0274,
-      "rating": 7.683
-    }
-  },
-  {
-    "id": "202ead4925e89a38bdc37ae3184a08ad",
-    "source": "movie",
-    "type": "title",
-    "answer": "Moana 2",
-    "normalizedAnswer": "MOANA 2",
-    "category": "Movie",
-    "difficulty": 92,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 6,
-    "uniqueLetterCount": 4,
-    "metadata": {
-      "year": "2024",
-      "popularity": 45.0109,
-      "rating": 6.992
-    }
-  },
-  {
     "id": "b2a652077ce2081aacdbc1d7d2deb54a",
     "source": "movie",
     "type": "title",
@@ -1455,24 +1365,6 @@
       "year": "2025",
       "popularity": 45.8237,
       "rating": 4.084
-    }
-  },
-  {
-    "id": "b30d0da34cfeb176dd158a45478643a3",
-    "source": "movie",
-    "type": "title",
-    "answer": "The Bad Guys 2",
-    "normalizedAnswer": "THE BAD GUYS 2",
-    "category": "Movie",
-    "difficulty": 66,
-    "difficultyTier": "medium",
-    "wordCount": 4,
-    "letterCount": 11,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "year": "2025",
-      "popularity": 44.7504,
-      "rating": 7.634
     }
   },
   {
@@ -1638,24 +1530,6 @@
     }
   },
   {
-    "id": "190758c91680a5b961a7d83a1479a476",
-    "source": "movie",
-    "type": "title",
-    "answer": "Greenland 2: Migration",
-    "normalizedAnswer": "GREENLAND 2 MIGRATION",
-    "category": "Movie",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 19,
-    "uniqueLetterCount": 11,
-    "metadata": {
-      "year": "2026",
-      "popularity": 40.3412,
-      "rating": 6.45
-    }
-  },
-  {
     "id": "1fe77723a8fa30d59bef269318ffa1df",
     "source": "movie",
     "type": "title",
@@ -1725,24 +1599,6 @@
       "year": "2026",
       "popularity": 39.3345,
       "rating": 7.426
-    }
-  },
-  {
-    "id": "87299074f82273581ec3163dd5e7f320",
-    "source": "movie",
-    "type": "title",
-    "answer": "Being 14",
-    "normalizedAnswer": "BEING 14",
-    "category": "Drama",
-    "difficulty": 88,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 7,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "year": "2015",
-      "popularity": 39.2945,
-      "rating": 4.1
     }
   },
   {
@@ -1944,24 +1800,6 @@
     }
   },
   {
-    "id": "f1fb92e97c8fe6ecc0257d50df4d6e45",
-    "source": "movie",
-    "type": "title",
-    "answer": "The Fantastic 4: First Steps",
-    "normalizedAnswer": "THE FANTASTIC 4 FIRST STEPS",
-    "category": "Sci-Fi",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 23,
-    "uniqueLetterCount": 11,
-    "metadata": {
-      "year": "2025",
-      "popularity": 37.1923,
-      "rating": 6.955
-    }
-  },
-  {
     "id": "3605e0c4b72ee327c70563a6e16280fe",
     "source": "movie",
     "type": "title",
@@ -1998,24 +1836,6 @@
     }
   },
   {
-    "id": "ba7370f2176f5e2877357ac89261c318",
-    "source": "movie",
-    "type": "title",
-    "answer": "Hibla 2",
-    "normalizedAnswer": "HIBLA 2",
-    "category": "Drama",
-    "difficulty": 88,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 6,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "year": "2026",
-      "popularity": 36.614,
-      "rating": 3
-    }
-  },
-  {
     "id": "7388f579d142f794342ab07f43581e80",
     "source": "movie",
     "type": "title",
@@ -2031,24 +1851,6 @@
       "year": "2001",
       "popularity": 36.2751,
       "rating": 7.187
-    }
-  },
-  {
-    "id": "6a48c7571adffc2f15f9c47afee66a29",
-    "source": "movie",
-    "type": "title",
-    "answer": "28 Years Later: The Bone Temple",
-    "normalizedAnswer": "28 YEARS LATER THE BONE TEMPLE",
-    "category": "Horror",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 25,
-    "uniqueLetterCount": 13,
-    "metadata": {
-      "year": "2026",
-      "popularity": 36.1789,
-      "rating": 7.117
     }
   },
   {
@@ -2142,24 +1944,6 @@
     }
   },
   {
-    "id": "dd62122ab8cd251cab10e5dea3a8ca78",
-    "source": "movie",
-    "type": "title",
-    "answer": "Enola Holmes 3",
-    "normalizedAnswer": "ENOLA HOLMES 3",
-    "category": "Movie",
-    "difficulty": 73.6,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 12,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "year": "2026",
-      "popularity": 35.3239,
-      "rating": 6.969
-    }
-  },
-  {
     "id": "05648756cb70ce0dbd2d2c853e5e78aa",
     "source": "movie",
     "type": "title",
@@ -2247,24 +2031,6 @@
       "year": "2019",
       "popularity": 33.9866,
       "rating": 8.2
-    }
-  },
-  {
-    "id": "09f5af20c5fe72418da6d89e5eb46867",
-    "source": "movie",
-    "type": "title",
-    "answer": "Crime 101",
-    "normalizedAnswer": "CRIME 101",
-    "category": "Movie",
-    "difficulty": 88,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "year": "2026",
-      "popularity": 33.905,
-      "rating": 7
     }
   },
   {
@@ -2952,24 +2718,6 @@
     }
   },
   {
-    "id": "5551a6d001e86c6846469d0d06a57059",
-    "source": "movie",
-    "type": "title",
-    "answer": "F1",
-    "normalizedAnswer": "F1",
-    "category": "Action",
-    "difficulty": 105.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 2,
-    "uniqueLetterCount": 1,
-    "metadata": {
-      "year": "2025",
-      "popularity": 30.7004,
-      "rating": 7.816
-    }
-  },
-  {
     "id": "174fbc5889d995eceddb9445c552ecd7",
     "source": "movie",
     "type": "title",
@@ -3003,24 +2751,6 @@
       "year": "2026",
       "popularity": 25.0745,
       "rating": 7.131
-    }
-  },
-  {
-    "id": "d76e56686dc99f60b3efa6d4888f6c20",
-    "source": "movie",
-    "type": "title",
-    "answer": "Big Hero 6",
-    "normalizedAnswer": "BIG HERO 6",
-    "category": "Movie",
-    "difficulty": 79.2,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 8,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2014",
-      "popularity": 28.4464,
-      "rating": 7.7
     }
   },
   {
@@ -3075,24 +2805,6 @@
       "year": "1980",
       "popularity": 34.2941,
       "rating": 5.265
-    }
-  },
-  {
-    "id": "10dc7dbb2383506ed0834f656199ff7d",
-    "source": "movie",
-    "type": "title",
-    "answer": "Toy Story 4",
-    "normalizedAnswer": "TOY STORY 4",
-    "category": "Movie",
-    "difficulty": 86.8,
-    "difficultyTier": "hard",
-    "wordCount": 3,
-    "letterCount": 9,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "year": "2019",
-      "popularity": 28.0346,
-      "rating": 7.5
     }
   },
   {
@@ -3579,24 +3291,6 @@
       "year": "2026",
       "popularity": 26.3305,
       "rating": 8.515
-    }
-  },
-  {
-    "id": "d365b911c99fa458a3a0e741d5131bb6",
-    "source": "movie",
-    "type": "title",
-    "answer": "The Amazing Spider-Man 2",
-    "normalizedAnswer": "THE AMAZING SPIDERMAN 2",
-    "category": "Action",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 20,
-    "uniqueLetterCount": 13,
-    "metadata": {
-      "year": "2014",
-      "popularity": 26.3243,
-      "rating": 6.547
     }
   }
 ]

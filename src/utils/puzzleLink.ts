@@ -43,7 +43,6 @@ export const parseSharedPuzzle = (url: string): PuzzleConfig | null => {
   return {
     sourceMode: 'custom',
     difficulty: 'any',
-    packKeys: [],
     mode: findMode(queryParams?.mode),
     customPhrase: phrase,
     customHint

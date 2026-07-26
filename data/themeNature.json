@@ -16560,26 +16560,6 @@
     }
   },
   {
-    "id": "ce10f9aad20e1ef6ebff5dc0304ef634",
-    "source": "theme",
-    "type": "title",
-    "answer": "Kuchinotsu No.37",
-    "normalizedAnswer": "KUCHINOTSU NO37",
-    "category": "Nature",
-    "difficulty": 69.2,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 14,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "nature"
-    ],
-    "metadata": {
-      "source": "wikipedia-fauna-and-flora"
-    }
-  },
-  {
     "id": "067fe7ea310c28593621ced067026aec",
     "source": "theme",
     "type": "title",

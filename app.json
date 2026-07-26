@@ -51,6 +51,9 @@
       "expo-font",
       "expo-asset"
     ],
+    "runtimeVersion": {
+      "policy": "fingerprint"
+    },
     "extra": {
       "eas": {
         "projectId": "470e8522-592d-4311-b726-ea0bf8827144"

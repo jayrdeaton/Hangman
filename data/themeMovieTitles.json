@@ -420,26 +420,6 @@
     }
   },
   {
-    "id": "901bcfd7a5d8bc25b4613dca486b03c2",
-    "source": "theme",
-    "type": "title",
-    "answer": "2001: A Space Odyssey",
-    "normalizedAnswer": "2001 A SPACE ODYSSEY",
-    "category": "Movie Title",
-    "difficulty": 72.8,
-    "difficultyTier": "medium",
-    "wordCount": 4,
-    "letterCount": 17,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "movie"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
-    }
-  },
-  {
     "id": "18194f59fd7168500e94d016dcbd983b",
     "source": "theme",
     "type": "title",
@@ -2291,26 +2271,6 @@
     "wordCount": 5,
     "letterCount": 16,
     "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "movie"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies"
-    }
-  },
-  {
-    "id": "5185adc92109635a363f40f0d97ccbae",
-    "source": "theme",
-    "type": "title",
-    "answer": "12 Angry Men",
-    "normalizedAnswer": "12 ANGRY MEN",
-    "category": "Movie Title",
-    "difficulty": 78.8,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 10,
-    "uniqueLetterCount": 7,
     "tags": [
       "theme",
       "movie"

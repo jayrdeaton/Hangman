@@ -60,86 +60,6 @@
     }
   },
   {
-    "id": "aebe14ef80aa9b3c927315549de42962",
-    "source": "theme",
-    "type": "title",
-    "answer": "Atari 2600",
-    "normalizedAnswer": "ATARI 2600",
-    "category": "Technology",
-    "difficulty": 92,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "technology"
-    ],
-    "metadata": {
-      "source": "wikipedia-consoles-plus-curated"
-    }
-  },
-  {
-    "id": "98fc02c3c2514f3e1d155da17c824e8d",
-    "source": "theme",
-    "type": "title",
-    "answer": "APF-MP1000",
-    "normalizedAnswer": "APFMP1000",
-    "category": "Technology",
-    "difficulty": 92,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 9,
-    "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "technology"
-    ],
-    "metadata": {
-      "source": "wikipedia-consoles-plus-curated"
-    }
-  },
-  {
-    "id": "132017fa58dc996a0d31f13f2954897a",
-    "source": "theme",
-    "type": "title",
-    "answer": "Champion 2711",
-    "normalizedAnswer": "CHAMPION 2711",
-    "category": "Technology",
-    "difficulty": 74.8,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 12,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "technology"
-    ],
-    "metadata": {
-      "source": "wikipedia-consoles-plus-curated"
-    }
-  },
-  {
-    "id": "86d4a73cb45cac464591a757af1ace21",
-    "source": "theme",
-    "type": "title",
-    "answer": "Interton VC 4000",
-    "normalizedAnswer": "INTERTON VC 4000",
-    "category": "Technology",
-    "difficulty": 74,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 14,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "technology"
-    ],
-    "metadata": {
-      "source": "wikipedia-consoles-plus-curated"
-    }
-  },
-  {
     "id": "6f994c6b809494a937f8a0a5bc864cc0",
     "source": "theme",
     "type": "title",
@@ -160,46 +80,6 @@
     }
   },
   {
-    "id": "8a5df4b9e53d7c64095c6c0d966f7eb6",
-    "source": "theme",
-    "type": "title",
-    "answer": "1292 Advanced Programmable Video System",
-    "normalizedAnswer": "1292 ADVANCED PROGRAMMABLE VIDEO SYSTEM",
-    "category": "Technology",
-    "difficulty": 36,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 35,
-    "uniqueLetterCount": 17,
-    "tags": [
-      "theme",
-      "technology"
-    ],
-    "metadata": {
-      "source": "wikipedia-consoles-plus-curated"
-    }
-  },
-  {
-    "id": "819c1e5c94403c38311963b5eed62f24",
-    "source": "theme",
-    "type": "title",
-    "answer": "Odyssey 2",
-    "normalizedAnswer": "ODYSSEY 2",
-    "category": "Technology",
-    "difficulty": 87.2,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "technology"
-    ],
-    "metadata": {
-      "source": "wikipedia-consoles-plus-curated"
-    }
-  },
-  {
     "id": "ba99f45ffb97b3c1440748ec2545648a",
     "source": "theme",
     "type": "title",
@@ -209,26 +89,6 @@
     "difficulty": 56,
     "difficultyTier": "easy",
     "wordCount": 3,
-    "letterCount": 21,
-    "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "technology"
-    ],
-    "metadata": {
-      "source": "wikipedia-consoles-plus-curated"
-    }
-  },
-  {
-    "id": "42d70f41f40a6a6047e08f674bcc267e",
-    "source": "theme",
-    "type": "title",
-    "answer": "Bandai Super Vision 8000",
-    "normalizedAnswer": "BANDAI SUPER VISION 8000",
-    "category": "Technology",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 4,
     "letterCount": 21,
     "uniqueLetterCount": 12,
     "tags": [
@@ -300,26 +160,6 @@
     }
   },
   {
-    "id": "b3427e5e69c7b22a186f760d8f6cb485",
-    "source": "theme",
-    "type": "title",
-    "answer": "Arcadia 2001 and its variants and clones",
-    "normalizedAnswer": "ARCADIA 2001 AND ITS VARIANTS AND CLONES",
-    "category": "Technology",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 7,
-    "letterCount": 34,
-    "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "technology"
-    ],
-    "metadata": {
-      "source": "wikipedia-consoles-plus-curated"
-    }
-  },
-  {
     "id": "76b243033817c2e0728172fb2987391e",
     "source": "theme",
     "type": "title",
@@ -351,26 +191,6 @@
     "wordCount": 1,
     "letterCount": 12,
     "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "technology"
-    ],
-    "metadata": {
-      "source": "wikipedia-consoles-plus-curated"
-    }
-  },
-  {
-    "id": "a015b7722885cbe2e1a0eab698b1775e",
-    "source": "theme",
-    "type": "title",
-    "answer": "Atari 5200",
-    "normalizedAnswer": "ATARI 5200",
-    "category": "Technology",
-    "difficulty": 92,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 4,
     "tags": [
       "theme",
       "technology"
@@ -420,26 +240,6 @@
     }
   },
   {
-    "id": "9c4cf55f690ad8259cc84d903afb5afc",
-    "source": "theme",
-    "type": "title",
-    "answer": "Videopac+ G7400",
-    "normalizedAnswer": "VIDEOPAC G7400",
-    "category": "Technology",
-    "difficulty": 70.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 13,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "technology"
-    ],
-    "metadata": {
-      "source": "wikipedia-consoles-plus-curated"
-    }
-  },
-  {
     "id": "5653274585ba3d8aefedeb05764faeb6",
     "source": "theme",
     "type": "title",
@@ -480,26 +280,6 @@
     }
   },
   {
-    "id": "aaef68654663e910527c70f56c451e6d",
-    "source": "theme",
-    "type": "title",
-    "answer": "SG-1000",
-    "normalizedAnswer": "SG1000",
-    "category": "Technology",
-    "difficulty": 101.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 2,
-    "tags": [
-      "theme",
-      "technology"
-    ],
-    "metadata": {
-      "source": "wikipedia-consoles-plus-curated"
-    }
-  },
-  {
     "id": "acd2a8250d60154f32befa4492b96a86",
     "source": "theme",
     "type": "title",
@@ -511,26 +291,6 @@
     "wordCount": 1,
     "letterCount": 3,
     "uniqueLetterCount": 3,
-    "tags": [
-      "theme",
-      "technology"
-    ],
-    "metadata": {
-      "source": "wikipedia-consoles-plus-curated"
-    }
-  },
-  {
-    "id": "c9cc910364e9f6ef2a75dfbd10abe68e",
-    "source": "theme",
-    "type": "title",
-    "answer": "PV-1000",
-    "normalizedAnswer": "PV1000",
-    "category": "Technology",
-    "difficulty": 101.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 2,
     "tags": [
       "theme",
       "technology"
@@ -680,26 +440,6 @@
     }
   },
   {
-    "id": "6cebdcf4bced1fe869f1fa86ed35cead",
-    "source": "theme",
-    "type": "title",
-    "answer": "Atari 7800",
-    "normalizedAnswer": "ATARI 7800",
-    "category": "Technology",
-    "difficulty": 92,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "technology"
-    ],
-    "metadata": {
-      "source": "wikipedia-consoles-plus-curated"
-    }
-  },
-  {
     "id": "c732737d243ec312bdbf53b729e1e8eb",
     "source": "theme",
     "type": "title",
@@ -840,46 +580,6 @@
     }
   },
   {
-    "id": "055ed427dd21a08f9a1f58c971b6f983",
-    "source": "theme",
-    "type": "title",
-    "answer": "GX4000",
-    "normalizedAnswer": "GX4000",
-    "category": "Technology",
-    "difficulty": 101.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 2,
-    "tags": [
-      "theme",
-      "technology"
-    ],
-    "metadata": {
-      "source": "wikipedia-consoles-plus-curated"
-    }
-  },
-  {
-    "id": "902a9954fee2115f41802c7599badc36",
-    "source": "theme",
-    "type": "title",
-    "answer": "Commodore 64 Games System",
-    "normalizedAnswer": "COMMODORE 64 GAMES SYSTEM",
-    "category": "Technology",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 22,
-    "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "technology"
-    ],
-    "metadata": {
-      "source": "wikipedia-consoles-plus-curated"
-    }
-  },
-  {
     "id": "8aeaa01e47942dba90902e04bc99a5a2",
     "source": "theme",
     "type": "title",
@@ -931,26 +631,6 @@
     "wordCount": 1,
     "letterCount": 12,
     "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "technology"
-    ],
-    "metadata": {
-      "source": "wikipedia-consoles-plus-curated"
-    }
-  },
-  {
-    "id": "3d510a55db04c819143eb7b9021605f3",
-    "source": "theme",
-    "type": "title",
-    "answer": "PC Engine2",
-    "normalizedAnswer": "PC ENGINE2",
-    "category": "Technology",
-    "difficulty": 82.8,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 6,
     "tags": [
       "theme",
       "technology"
@@ -1151,46 +831,6 @@
     "wordCount": 2,
     "letterCount": 18,
     "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "technology"
-    ],
-    "metadata": {
-      "source": "wikipedia-consoles-plus-curated"
-    }
-  },
-  {
-    "id": "7766b7dd02a9294922d19d851032f420",
-    "source": "theme",
-    "type": "title",
-    "answer": "Amiga CD32",
-    "normalizedAnswer": "AMIGA CD32",
-    "category": "Technology",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "technology"
-    ],
-    "metadata": {
-      "source": "wikipedia-consoles-plus-curated"
-    }
-  },
-  {
-    "id": "b15c1121c7c05f56ef112144944e21e2",
-    "source": "theme",
-    "type": "title",
-    "answer": "3DO",
-    "normalizedAnswer": "3DO",
-    "category": "Technology",
-    "difficulty": 101.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 3,
-    "uniqueLetterCount": 2,
     "tags": [
       "theme",
       "technology"
@@ -1440,26 +1080,6 @@
     }
   },
   {
-    "id": "c76282cd7fb20efbb0a038276af2721e",
-    "source": "theme",
-    "type": "title",
-    "answer": "Nintendo 64",
-    "normalizedAnswer": "NINTENDO 64",
-    "category": "Technology",
-    "difficulty": 82.8,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 10,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "technology"
-    ],
-    "metadata": {
-      "source": "wikipedia-consoles-plus-curated"
-    }
-  },
-  {
     "id": "a32fb3d438fe1944119b78cc2670ff14",
     "source": "theme",
     "type": "title",
@@ -1480,26 +1100,6 @@
     }
   },
   {
-    "id": "e691c3b5c524e86a0bc950fe668767e0",
-    "source": "theme",
-    "type": "title",
-    "answer": "Nintendo 64DD",
-    "normalizedAnswer": "NINTENDO 64DD",
-    "category": "Technology",
-    "difficulty": 82,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 12,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "technology"
-    ],
-    "metadata": {
-      "source": "wikipedia-consoles-plus-curated"
-    }
-  },
-  {
     "id": "b9fc2ca016d7871bf7ac5b732fc134dd",
     "source": "theme",
     "type": "title",
@@ -1511,26 +1111,6 @@
     "wordCount": 1,
     "letterCount": 4,
     "uniqueLetterCount": 3,
-    "tags": [
-      "theme",
-      "technology"
-    ],
-    "metadata": {
-      "source": "wikipedia-consoles-plus-curated"
-    }
-  },
-  {
-    "id": "b3e03325536a784a3ea993be399ec418",
-    "source": "theme",
-    "type": "title",
-    "answer": "PlayStation 2",
-    "normalizedAnswer": "PLAYSTATION 2",
-    "category": "Technology",
-    "difficulty": 69.6,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 12,
-    "uniqueLetterCount": 9,
     "tags": [
       "theme",
       "technology"
@@ -1700,26 +1280,6 @@
     }
   },
   {
-    "id": "48d3a843249df502975d9a81314ff27f",
-    "source": "theme",
-    "type": "title",
-    "answer": "Xbox 360",
-    "normalizedAnswer": "XBOX 360",
-    "category": "Technology",
-    "difficulty": 96.4,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 7,
-    "uniqueLetterCount": 3,
-    "tags": [
-      "theme",
-      "technology"
-    ],
-    "metadata": {
-      "source": "wikipedia-consoles-plus-curated"
-    }
-  },
-  {
     "id": "cf13d5fd2289bc28181e6e6c5fee6b6f",
     "source": "theme",
     "type": "title",
@@ -1750,26 +1310,6 @@
     "difficultyTier": "medium",
     "wordCount": 1,
     "letterCount": 9,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "technology"
-    ],
-    "metadata": {
-      "source": "wikipedia-consoles-plus-curated"
-    }
-  },
-  {
-    "id": "ee501fb1108d3527fe098551634da41e",
-    "source": "theme",
-    "type": "title",
-    "answer": "PlayStation 3",
-    "normalizedAnswer": "PLAYSTATION 3",
-    "category": "Technology",
-    "difficulty": 69.6,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 12,
     "uniqueLetterCount": 9,
     "tags": [
       "theme",
@@ -1860,26 +1400,6 @@
     }
   },
   {
-    "id": "bc0e92152d8da4fb651ecf06a7d0da00",
-    "source": "theme",
-    "type": "title",
-    "answer": "CT510",
-    "normalizedAnswer": "CT510",
-    "category": "Technology",
-    "difficulty": 101.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 2,
-    "tags": [
-      "theme",
-      "technology"
-    ],
-    "metadata": {
-      "source": "wikipedia-consoles-plus-curated"
-    }
-  },
-  {
     "id": "ae2a5a16f6ea6396b68d464bf422295f",
     "source": "theme",
     "type": "title",
@@ -1920,26 +1440,6 @@
     }
   },
   {
-    "id": "e3e17c5386a46e55c7d523b36a2f76f5",
-    "source": "theme",
-    "type": "title",
-    "answer": "PlayStation 4",
-    "normalizedAnswer": "PLAYSTATION 4",
-    "category": "Technology",
-    "difficulty": 69.6,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 12,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "technology"
-    ],
-    "metadata": {
-      "source": "wikipedia-consoles-plus-curated"
-    }
-  },
-  {
     "id": "651ffa420bb2b3db4c24401b214aa7e8",
     "source": "theme",
     "type": "title",
@@ -1951,26 +1451,6 @@
     "wordCount": 2,
     "letterCount": 7,
     "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "technology"
-    ],
-    "metadata": {
-      "source": "wikipedia-consoles-plus-curated"
-    }
-  },
-  {
-    "id": "d78ef23a28f9c2ebda614f6564743417",
-    "source": "theme",
-    "type": "title",
-    "answer": "Fuze Tomahawk F1",
-    "normalizedAnswer": "FUZE TOMAHAWK F1",
-    "category": "Technology",
-    "difficulty": 60.8,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 14,
-    "uniqueLetterCount": 11,
     "tags": [
       "theme",
       "technology"
@@ -2011,26 +1491,6 @@
     "wordCount": 3,
     "letterCount": 11,
     "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "technology"
-    ],
-    "metadata": {
-      "source": "wikipedia-consoles-plus-curated"
-    }
-  },
-  {
-    "id": "1bc5c189a6860b0679508deb2bfe61df",
-    "source": "theme",
-    "type": "title",
-    "answer": "PlayStation 5",
-    "normalizedAnswer": "PLAYSTATION 5",
-    "category": "Technology",
-    "difficulty": 69.6,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 12,
-    "uniqueLetterCount": 9,
     "tags": [
       "theme",
       "technology"
@@ -2130,46 +1590,6 @@
     "difficultyTier": "medium",
     "wordCount": 2,
     "letterCount": 11,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "technology"
-    ],
-    "metadata": {
-      "source": "wikipedia-consoles-plus-curated"
-    }
-  },
-  {
-    "id": "ab26cf174503eea3a30d6830961364ec",
-    "source": "theme",
-    "type": "title",
-    "answer": "Nintendo Switch 2",
-    "normalizedAnswer": "NINTENDO SWITCH 2",
-    "category": "Technology",
-    "difficulty": 64.4,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 15,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "technology"
-    ],
-    "metadata": {
-      "source": "wikipedia-consoles-plus-curated"
-    }
-  },
-  {
-    "id": "55f94cc400734ad1b328403b2efec3c6",
-    "source": "theme",
-    "type": "title",
-    "answer": "Analogue 3D",
-    "normalizedAnswer": "ANALOGUE 3D",
-    "category": "Technology",
-    "difficulty": 74.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 10,
     "uniqueLetterCount": 8,
     "tags": [
       "theme",

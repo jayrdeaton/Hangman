@@ -55,7 +55,6 @@ const buildHint = (puzzle: Pick<Puzzle, 'category' | 'source' | 'metadata'>): st
 export type PuzzleConfig = {
   sourceMode: PuzzleSourceMode
   difficulty: 'any' | PuzzleDifficultyTier
-  packKeys: string[]
   mode: GameMode
   customPhrase: string
   customHint: string
@@ -89,7 +88,13 @@ const pickRandomPackPuzzle = (allowedKeys: Set<string>, difficultyFilter?: Puzzl
 
 // Shared by the initial auto-start (Main mounts straight into a game, no setup screen) and the
 // drawer's "New Puzzle" confirm — one place picks the word so both stay in sync.
-export const resolvePuzzle = (config: PuzzleConfig): PuzzleResolution => {
+//
+// packKeys is a separate argument, not a PuzzleConfig field: it's not something the caller stages
+// and confirms like the rest of config — it's normally the live, persisted pack-selection default
+// (see usePackSelection), except for the one deliberate override "Another in category" makes to
+// narrow a single draw to just the pack just won. Keeping it explicit here makes that override
+// visible at the call site instead of hidden inside a config object that's otherwise all-staged.
+export const resolvePuzzle = (config: PuzzleConfig, packKeys: string[]): PuzzleResolution => {
   const difficultyFilter = config.difficulty === 'any' ? undefined : config.difficulty
 
   if (config.sourceMode === 'custom') {
@@ -102,9 +107,9 @@ export const resolvePuzzle = (config: PuzzleConfig): PuzzleResolution => {
     return { ok: true, payload: { phrase: normalized, mode: config.mode, sourceMode: 'custom', hint: hint || undefined } }
   }
 
-  if (config.packKeys.length === 0) return { ok: false, error: 'Choose at least one pack to start.' }
+  if (packKeys.length === 0) return { ok: false, error: 'Choose at least one pack to start.' }
 
-  const randomPick = pickRandomPackPuzzle(new Set(config.packKeys), difficultyFilter)
+  const randomPick = pickRandomPackPuzzle(new Set(packKeys), difficultyFilter)
   if (!randomPick) return { ok: false, error: 'No puzzles available for the selected packs and difficulty.' }
 
   return {

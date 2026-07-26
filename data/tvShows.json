@@ -90,24 +90,6 @@
     }
   },
   {
-    "id": "970bf7f2f7cd0bbfc5e62297d5533294",
-    "source": "tv",
-    "type": "title",
-    "answer": "7de Laan",
-    "normalizedAnswer": "7DE LAAN",
-    "category": "TV Show",
-    "difficulty": 87.6,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 7,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "year": "2000",
-      "popularity": 282.0262,
-      "rating": 8.333
-    }
-  },
-  {
     "id": "c44339f7f20c79311c19de03e3174578",
     "source": "tv",
     "type": "title",
@@ -303,24 +285,6 @@
       "year": "2008",
       "popularity": 234.2865,
       "rating": 8.363
-    }
-  },
-  {
-    "id": "acc5746a96d04e0fd4d902dbae5a51ac",
-    "source": "tv",
-    "type": "title",
-    "answer": "凤凰大视野",
-    "normalizedAnswer": "",
-    "category": "TV Show",
-    "difficulty": 110,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 0,
-    "uniqueLetterCount": 0,
-    "metadata": {
-      "year": "2004",
-      "popularity": 228.4218,
-      "rating": 10
     }
   },
   {
@@ -1098,24 +1062,6 @@
     }
   },
   {
-    "id": "125f9c252affc4b2c91da8264cc8bca1",
-    "source": "tv",
-    "type": "title",
-    "answer": "3000 Whys of Blue Cat",
-    "normalizedAnswer": "3000 WHYS OF BLUE CAT",
-    "category": "TV Show",
-    "difficulty": 52.8,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 17,
-    "uniqueLetterCount": 13,
-    "metadata": {
-      "year": "1999",
-      "popularity": 148.5718,
-      "rating": 8.5
-    }
-  },
-  {
     "id": "5f79fd154e9d6a50d3ed33a12f40514a",
     "source": "tv",
     "type": "title",
@@ -1131,24 +1077,6 @@
       "year": "2000",
       "popularity": 147.4481,
       "rating": 3.417
-    }
-  },
-  {
-    "id": "6e32ece08beae01df588ab46586cc6b8",
-    "source": "tv",
-    "type": "title",
-    "answer": "锵锵三人行",
-    "normalizedAnswer": "",
-    "category": "TV Show",
-    "difficulty": 110,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 0,
-    "uniqueLetterCount": 0,
-    "metadata": {
-      "year": "1998",
-      "popularity": 144.8816,
-      "rating": 8.833
     }
   },
   {
@@ -1692,24 +1620,6 @@
     }
   },
   {
-    "id": "b7c108ee23eb3dd8d4a68b0dcc21049d",
-    "source": "tv",
-    "type": "title",
-    "answer": "Division 4",
-    "normalizedAnswer": "DIVISION 4",
-    "category": "TV Show",
-    "difficulty": 82.8,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "1969",
-      "popularity": 124.9198,
-      "rating": 6
-    }
-  },
-  {
     "id": "b5c1bc7b4dcafab89ca7e8a1e3df52f5",
     "source": "tv",
     "type": "title",
@@ -2160,24 +2070,6 @@
     }
   },
   {
-    "id": "50e9ec7671c7329d86fb0ed3ea540768",
-    "source": "tv",
-    "type": "title",
-    "answer": "MDR um 4",
-    "normalizedAnswer": "MDR UM 4",
-    "category": "TV Show",
-    "difficulty": 92,
-    "difficultyTier": "hard",
-    "wordCount": 3,
-    "letterCount": 6,
-    "uniqueLetterCount": 4,
-    "metadata": {
-      "year": "2014",
-      "popularity": 112.2994,
-      "rating": 5
-    }
-  },
-  {
     "id": "3fcff0504870437d8ce9d8970a96ecca",
     "source": "tv",
     "type": "title",
@@ -2301,24 +2193,6 @@
       "year": "2023",
       "popularity": 110.6167,
       "rating": 8.028
-    }
-  },
-  {
-    "id": "e33753f14026cc2345a8b6416e2e659a",
-    "source": "tv",
-    "type": "title",
-    "answer": "מערכוני ארץ נהדרת",
-    "normalizedAnswer": "",
-    "category": "TV Show",
-    "difficulty": 110,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 0,
-    "uniqueLetterCount": 0,
-    "metadata": {
-      "year": "2017",
-      "popularity": 110.3702,
-      "rating": 0
     }
   },
   {
@@ -3186,24 +3060,6 @@
     }
   },
   {
-    "id": "5ae82b073d0b174836c06821f9db52c5",
-    "source": "tv",
-    "type": "title",
-    "answer": "House of 72 Tenants",
-    "normalizedAnswer": "HOUSE OF 72 TENANTS",
-    "category": "Comedy",
-    "difficulty": 68.4,
-    "difficultyTier": "medium",
-    "wordCount": 4,
-    "letterCount": 16,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "2008",
-      "popularity": 62.3635,
-      "rating": 8.7
-    }
-  },
-  {
     "id": "265692bbdd0b2abf65fc3d62043e6518",
     "source": "tv",
     "type": "title",
@@ -3291,24 +3147,6 @@
       "year": "2018",
       "popularity": 67.9454,
       "rating": 9
-    }
-  },
-  {
-    "id": "fa43ccc09d8584024c61582e63f6d21e",
-    "source": "tv",
-    "type": "title",
-    "answer": "HK 80's",
-    "normalizedAnswer": "HK 80S",
-    "category": "Comedy",
-    "difficulty": 96.8,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 5,
-    "uniqueLetterCount": 3,
-    "metadata": {
-      "year": "1981",
-      "popularity": 73.5627,
-      "rating": 0
     }
   },
   {
@@ -3417,24 +3255,6 @@
       "year": "2026",
       "popularity": 124.5909,
       "rating": 9.6
-    }
-  },
-  {
-    "id": "e8299107b7d413a41afa9d4019a54586",
-    "source": "tv",
-    "type": "title",
-    "answer": "Hawaii Five-0",
-    "normalizedAnswer": "HAWAII FIVE0",
-    "category": "TV Show",
-    "difficulty": 78,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2010",
-      "popularity": 97.935,
-      "rating": 7.731
     }
   },
   {

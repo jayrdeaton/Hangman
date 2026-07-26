@@ -1,18 +1,25 @@
 import { useThemeSettings } from '@rific/auto-paper'
 import * as haptics from 'expo-haptics'
 import { JSX, useEffect, useMemo, useRef, useState } from 'react'
-import { Platform, StyleSheet, View } from 'react-native'
+import { LayoutChangeEvent, Platform, StyleSheet, View } from 'react-native'
 import { Button, Portal, Text, useTheme } from 'react-native-paper'
 
 import { type CelebrationEffect, DEFAULT_CELEBRATION } from '@/effects/registry'
 import { useKeyboardLayout } from '@/hooks/useKeyboardLayout'
 import { DEFAULT_MODE } from '@/modes/registry'
 import type { GameMode } from '@/types/gameModes'
-import type { PuzzleDifficultyTier } from '@/utils/puzzleCatalog'
 
 import { GameVisual } from './GameVisual'
 import { Keyboard } from './Keyboard'
 import { type CategoryProgress, RoundEndDialog } from './RoundEndDialog'
+
+// Base sizes for the word display (also referenced by the shrink-to-fit calculation below).
+const WORD_FONT_SIZE = 30
+const WORD_FONT_SIZE_LARGE = 56
+const MIN_WORD_FONT_SIZE = 16
+// Fraction of fontSize a monospace glyph cell (Menlo / Android monospace) occupies. Approximate,
+// so the fitted size leaves a little slack rather than exactly grazing the measured width.
+const MONOSPACE_CHAR_WIDTH_RATIO = 0.62
 
 export type SolveDetails = { wrongGuesses: number; hintRevealed: boolean }
 
@@ -23,25 +30,12 @@ export type GameProps = {
   phrase: string
   mode?: GameMode
   hint?: string
-  difficultyTier?: PuzzleDifficultyTier
   celebration?: CelebrationEffect
   categoryProgress?: CategoryProgress | null
   onAnotherInCategory?: () => void
 }
 
-const DIFFICULTY_LABELS: Record<PuzzleDifficultyTier, string> = {
-  easy: 'Easy',
-  medium: 'Medium',
-  hard: 'Hard'
-}
-
-const DIFFICULTY_COLORS: Record<PuzzleDifficultyTier, string> = {
-  easy: '#2E7D32',
-  medium: '#B8860B',
-  hard: '#B00020'
-}
-
-export const Game = ({ onStop, onSolved, onLost, phrase, mode = DEFAULT_MODE, hint, difficultyTier, celebration = DEFAULT_CELEBRATION, categoryProgress, onAnotherInCategory }: GameProps): JSX.Element => {
+export const Game = ({ onStop, onSolved, onLost, phrase, mode = DEFAULT_MODE, hint, celebration = DEFAULT_CELEBRATION, categoryProgress, onAnotherInCategory }: GameProps): JSX.Element => {
   const { settings } = useThemeSettings()
   const { layout } = useKeyboardLayout()
   const theme = useTheme()
@@ -125,41 +119,28 @@ export const Game = ({ onStop, onSolved, onLost, phrase, mode = DEFAULT_MODE, hi
 
   const CelebrationView = celebration.Component
 
+  const hasVisual = mode.hasVisual !== false
+
+  // Measured rather than Dimensions-derived (module-scope window width is 0 on web - see the
+  // same pattern in ModeSelector). 0 means "not measured yet"; the base size is used until then.
+  const [rowWidth, setRowWidth] = useState(0)
+  const handleWordRowLayout = (e: LayoutChangeEvent) => setRowWidth(e.nativeEvent.layout.width)
+
+  const fittedWordFontSize = useMemo(() => {
+    const baseFontSize = hasVisual ? WORD_FONT_SIZE : WORD_FONT_SIZE_LARGE
+    if (!rowWidth) return baseFontSize
+    // Letters render as N glyphs joined by N-1 non-breaking-space glyphs (see guessWords above),
+    // so a word of N letters occupies 2N-1 monospace cells on its line.
+    const longestWordLength = Math.max(...phrase.split(' ').map((word) => word.length))
+    const renderedCells = longestWordLength * 2 - 1
+    const maxFittingSize = Math.floor(rowWidth / (renderedCells * MONOSPACE_CHAR_WIDTH_RATIO))
+    return Math.max(MIN_WORD_FONT_SIZE, Math.min(baseFontSize, maxFittingSize))
+  }, [rowWidth, hasVisual, phrase])
+  const pipsLabel = `Wrong guesses: ${wrongGuesses} of ${maxWrong}`
+
   return (
-    <View style={StyleSheet.absoluteFill}>
+    <View style={styles.root}>
       <View style={styles.gameContainer}>
-        {difficultyTier ? (
-          <View style={[styles.difficultyBadge, { borderColor: DIFFICULTY_COLORS[difficultyTier] }]} accessibilityLabel={`Difficulty: ${DIFFICULTY_LABELS[difficultyTier]}`}>
-            <Text style={[styles.difficultyText, { color: DIFFICULTY_COLORS[difficultyTier] }]}>{DIFFICULTY_LABELS[difficultyTier]}</Text>
-          </View>
-        ) : null}
-        {mode.hasVisual === false ? (
-          <View style={[styles.visual, styles.lettersOnly]}>
-            <View style={styles.wordRowLarge} accessible accessibilityLabel='Secret word display'>
-              {guessWords.map((word, i) => (
-                <Text key={i} style={styles.textLarge}>
-                  {word}
-                </Text>
-              ))}
-            </View>
-          </View>
-        ) : (
-          <>
-            <GameVisual mode={mode} mistakes={wrongGuesses} color={color} style={styles.visual} />
-            <View style={styles.wordRow} accessible accessibilityLabel='Secret word display'>
-              {guessWords.map((word, i) => (
-                <Text key={i} style={styles.text}>
-                  {word}
-                </Text>
-              ))}
-            </View>
-          </>
-        )}
-        <View style={styles.pipRow} accessibilityLabel={`Wrong guesses: ${wrongGuesses} of ${maxWrong}`}>
-          {Array.from({ length: maxWrong }, (_, i) => (
-            <View key={i} style={[styles.pip, { borderColor: tertiaryColor }, i < wrongGuesses ? { backgroundColor: tertiaryColor } : null]} />
-          ))}
-        </View>
         {hint ? (
           <View style={styles.hintSlot}>
             {hintRevealed ? (
@@ -167,12 +148,42 @@ export const Game = ({ onStop, onSolved, onLost, phrase, mode = DEFAULT_MODE, hi
                 {hint}
               </Text>
             ) : (
-              <Button mode='text' icon='lightbulb-outline' compact onPress={() => setHintRevealed(true)}>
+              <Button mode='text' icon='lightbulb-outline' compact textColor={tertiaryColor} onPress={() => setHintRevealed(true)}>
                 Show hint
               </Button>
             )}
           </View>
         ) : null}
+        <View style={styles.visualArea}>
+          {hasVisual ? (
+            <GameVisual mode={mode} mistakes={wrongGuesses} color={color} style={styles.visual} />
+          ) : (
+            // No artwork to carry the "how many guesses left" tension in this mode, so the pips
+            // take over the artwork's own slot (and its size) instead of trailing after the word
+            // as a row of barely-there dots.
+            <View style={styles.pipClusterWrap} accessibilityLabel={pipsLabel}>
+              <View style={styles.pipClusterRow}>
+                {Array.from({ length: maxWrong }, (_, i) => (
+                  <View key={i} style={[styles.pipLarge, { borderColor: tertiaryColor }, i < wrongGuesses ? { backgroundColor: tertiaryColor } : null]} />
+                ))}
+              </View>
+            </View>
+          )}
+        </View>
+        {hasVisual ? (
+          <View style={styles.pipRow} accessibilityLabel={pipsLabel}>
+            {Array.from({ length: maxWrong }, (_, i) => (
+              <View key={i} style={[styles.pip, { borderColor: tertiaryColor }, i < wrongGuesses ? { backgroundColor: tertiaryColor } : null]} />
+            ))}
+          </View>
+        ) : null}
+        <View style={hasVisual ? styles.wordRow : styles.wordRowLarge} accessible accessibilityLabel='Secret word display' onLayout={handleWordRowLayout}>
+          {guessWords.map((word, i) => (
+            <Text key={i} style={[hasVisual ? styles.text : styles.textLarge, { fontSize: fittedWordFontSize }]}>
+              {word}
+            </Text>
+          ))}
+        </View>
         <Keyboard guessedLetters={guessedLetters} disabled={outcome !== null} layout={layout} onGuess={handleGuess} />
       </View>
       {outcome === 'win' ? (
@@ -181,12 +192,7 @@ export const Game = ({ onStop, onSolved, onLost, phrase, mode = DEFAULT_MODE, hi
         // RoundEndDialog's Dialog uses for its full-screen backdrop — so the celebration covers
         // the entire screen (header, keyboard, everything) rather than just Game's local area.
         <Portal>
-          <CelebrationView
-            key={celebrationCycle}
-            colors={[theme.colors.primary, theme.colors.secondary, theme.colors.tertiary]}
-            dark={theme.dark}
-            onComplete={() => setCelebrationCycle((c) => c + 1)}
-          />
+          <CelebrationView key={celebrationCycle} colors={[theme.colors.primary, theme.colors.secondary, theme.colors.tertiary]} dark={theme.dark} onComplete={() => setCelebrationCycle((c) => c + 1)} />
         </Portal>
       ) : null}
       <RoundEndDialog visible={outcome !== null} outcome={outcome} phrase={phrase} categoryProgress={categoryProgress} onDismiss={onStop} onAnotherInCategory={onAnotherInCategory} />
@@ -195,23 +201,19 @@ export const Game = ({ onStop, onSolved, onLost, phrase, mode = DEFAULT_MODE, hi
 }
 
 const styles = StyleSheet.create({
-  difficultyBadge: {
-    borderRadius: 12,
-    borderWidth: 1.5,
-    marginTop: 8,
-    paddingHorizontal: 10,
-    paddingVertical: 3
-  },
-  difficultyText: { fontSize: 12, fontWeight: '700', letterSpacing: 0.5, textTransform: 'uppercase' },
   gameContainer: { alignItems: 'center', flex: 1 },
   hint: { textAlign: 'center' },
-  hintSlot: { alignItems: 'center', alignSelf: 'stretch', justifyContent: 'center', marginBottom: 8, minHeight: 38, paddingHorizontal: 24 },
-  lettersOnly: { alignItems: 'center', justifyContent: 'center' },
+  hintSlot: { alignItems: 'center', alignSelf: 'stretch', justifyContent: 'center', marginBottom: 4, marginTop: 4, minHeight: 38, paddingHorizontal: 24 },
   pip: { borderRadius: 6, borderWidth: 1.5, height: 12, width: 12 },
-  pipRow: { flexDirection: 'row', gap: 8, marginBottom: 12, marginTop: 12 },
-  text: { fontFamily: Platform.OS === 'android' ? 'monospace' : 'Menlo', fontSize: 30, textAlign: 'center' },
-  textLarge: { fontFamily: Platform.OS === 'android' ? 'monospace' : 'Menlo', fontSize: 56, textAlign: 'center' },
+  pipClusterRow: { columnGap: 18, flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', paddingHorizontal: 24, rowGap: 18 },
+  pipClusterWrap: { alignItems: 'center', flex: 1, justifyContent: 'center', width: '100%' },
+  pipLarge: { borderRadius: 16, borderWidth: 3, height: 32, width: 32 },
+  pipRow: { flexDirection: 'row', gap: 8, marginBottom: 12, marginTop: 4 },
+  root: { flex: 1 },
+  text: { fontFamily: Platform.OS === 'android' ? 'monospace' : 'Menlo', fontSize: WORD_FONT_SIZE, textAlign: 'center' },
+  textLarge: { fontFamily: Platform.OS === 'android' ? 'monospace' : 'Menlo', fontSize: WORD_FONT_SIZE_LARGE, textAlign: 'center' },
   visual: { flex: 1, width: '100%' },
-  wordRow: { columnGap: 34, flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', rowGap: 4 },
-  wordRowLarge: { columnGap: 60, flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', rowGap: 8 }
+  visualArea: { flex: 1, width: '100%' },
+  wordRow: { columnGap: 34, flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', marginBottom: 12, rowGap: 4 },
+  wordRowLarge: { columnGap: 60, flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', marginBottom: 12, rowGap: 8 }
 })

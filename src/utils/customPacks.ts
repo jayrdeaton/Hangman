@@ -7,7 +7,6 @@ import { normalizePhrase } from './normalizePhrase'
 
 const CUSTOM_PACKS_KEY = 'custom_packs_v1'
 const CUSTOM_KEY_PREFIX = 'custom:'
-export const MAX_ENTRIES_PER_PACK = 100
 
 export type CustomPackEntryInput = { answer: string; hint?: string }
 
@@ -50,7 +49,22 @@ const scoreDifficulty = (normalizedAnswer: string): { difficulty: number; diffic
   return { difficulty, difficultyTier }
 }
 
-export const buildCustomPuzzle = (packKey: string, packLabel: string, entry: CustomPackEntryInput, index: number): Puzzle | null => {
+// Dependency-free hash (no native crypto module in the RN bundle) -- not cryptographic, just needs
+// to be a stable function of the answer text so a puzzle's id survives reordering/insertion. Custom
+// packs (including ones the private scraper repo regenerates and re-shares as an update, see
+// importCustomPack) are keyed by content rather than position: re-saving the same answer always
+// produces the same id, so existing win records in puzzle_unlocks_v1 survive new entries being
+// added or the list being reordered -- only if the answer text itself changes does the id change.
+const hashAnswer = (text: string): string => {
+  let hash = 0x811c9dc5 // FNV-1a 32-bit offset basis
+  for (let i = 0; i < text.length; i++) {
+    hash ^= text.charCodeAt(i)
+    hash = Math.imul(hash, 0x01000193) // FNV prime
+  }
+  return (hash >>> 0).toString(36)
+}
+
+export const buildCustomPuzzle = (packKey: string, packLabel: string, entry: CustomPackEntryInput): Puzzle | null => {
   const answer = entry.answer.trim()
   const normalizedAnswer = normalizePhrase(answer)
   if (!normalizedAnswer || normalizedAnswer.replace(/ /g, '').length === 0) return null
@@ -60,7 +74,7 @@ export const buildCustomPuzzle = (packKey: string, packLabel: string, entry: Cus
   const hint = entry.hint?.replace(/\s+/g, ' ').trim()
 
   return {
-    id: `${packKey}:${index}`,
+    id: `${packKey}:${hashAnswer(normalizedAnswer)}`,
     source: 'custom',
     type: 'phrase',
     answer,
@@ -127,10 +141,7 @@ export type SaveCustomPackInput = { key?: string; label: string; entries: Custom
 export const saveCustomPack = async (input: SaveCustomPackInput): Promise<CustomPack> => {
   const key = input.key && isCustomPackKey(input.key) ? input.key : generateKey()
   const label = input.label.trim()
-  const puzzles = input.entries
-    .slice(0, MAX_ENTRIES_PER_PACK)
-    .map((entry, index) => buildCustomPuzzle(key, label, entry, index))
-    .filter((puzzle): puzzle is Puzzle => puzzle !== null)
+  const puzzles = input.entries.map((entry) => buildCustomPuzzle(key, label, entry)).filter((puzzle): puzzle is Puzzle => puzzle !== null)
 
   const now = new Date().toISOString()
   const existing = cache.find((pack) => pack.key === key)
@@ -163,8 +174,14 @@ export const exportCustomPack = async (key: string): Promise<string | null> => {
   return JSON.stringify(payload, null, 2)
 }
 
-// Always assigns a fresh key on import — otherwise re-importing a pack shared by someone else
-// could silently collide with (and overwrite) a same-keyed pack already on this device.
+// Reuses the incoming key when it's a valid custom-pack key, rather than always minting a fresh
+// one -- this is what makes re-importing an UPDATED export of a pack you already have (e.g. the
+// private scraper repo regenerating a pack with new entries) land as an update instead of a
+// disconnected duplicate: saveCustomPack below preserves createdAt for a matching key, and because
+// buildCustomPuzzle's ids are content-derived (see hashAnswer), every unchanged entry resolves to
+// the exact same id it had before, so existing win records in puzzle_unlocks_v1 survive. A pack
+// whose key has never been seen locally is simply saved under that key rather than a random one
+// (harmless either way), so a FUTURE re-import of that same pack can match it too.
 export const importCustomPack = async (raw: string): Promise<CustomPack> => {
   const parsed: unknown = JSON.parse(raw)
   const rawPack = parsed && typeof parsed === 'object' && 'pack' in (parsed as Record<string, unknown>) ? (parsed as CustomPackExportPayload).pack : (parsed as CustomPack)
@@ -174,6 +191,7 @@ export const importCustomPack = async (raw: string): Promise<CustomPack> => {
   }
 
   const entries: CustomPackEntryInput[] = rawPack.puzzles.map((puzzle) => ({ answer: puzzle.answer, hint: typeof puzzle.metadata?.hint === 'string' ? puzzle.metadata.hint : undefined }))
+  const key = isCustomPackKey(rawPack.key) ? rawPack.key : undefined
 
-  return saveCustomPack({ label: rawPack.label, entries })
+  return saveCustomPack({ key, label: rawPack.label, entries })
 }

@@ -9394,28 +9394,6 @@
     }
   },
   {
-    "id": "9e88e6f0e4f649ac0345eb97470d99b1",
-    "source": "geography",
-    "type": "title",
-    "answer": "Earliest 16th-Century Monasteries on the Slopes of Popocatepetl",
-    "normalizedAnswer": "EARLIEST 16THCENTURY MONASTERIES ON THE SLOPES OF POPOCATEPETL",
-    "category": "World Heritage Site",
-    "difficulty": 40,
-    "difficultyTier": "easy",
-    "wordCount": 8,
-    "letterCount": 55,
-    "uniqueLetterCount": 16,
-    "tags": [
-      "geography",
-      "landmark",
-      "unesco"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_World_Heritage_Sites_by_year_of_inscription",
-      "country": "Mexico"
-    }
-  },
-  {
     "id": "321dc87c76e3446acd98005d93681cb6",
     "source": "geography",
     "type": "title",
@@ -11459,28 +11437,6 @@
     "metadata": {
       "source": "https://en.wikipedia.org/wiki/List_of_World_Heritage_Sites_by_year_of_inscription",
       "country": "France Spain"
-    }
-  },
-  {
-    "id": "2329732a959b562e904d434fa01cf09b",
-    "source": "geography",
-    "type": "title",
-    "answer": "18th-Century Royal Palace at Caserta with the Park, the Aqueduct of Vanvitelli, and the San Leucio Complex",
-    "normalizedAnswer": "18THCENTURY ROYAL PALACE AT CASERTA WITH THE PARK THE AQUEDUCT OF VANVITELLI AND THE SAN LEUCIO COMPLEX",
-    "category": "World Heritage Site",
-    "difficulty": 16,
-    "difficultyTier": "easy",
-    "wordCount": 17,
-    "letterCount": 87,
-    "uniqueLetterCount": 22,
-    "tags": [
-      "geography",
-      "landmark",
-      "unesco"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_World_Heritage_Sites_by_year_of_inscription",
-      "country": "Italy"
     }
   },
   {
@@ -23320,28 +23276,6 @@
     }
   },
   {
-    "id": "738f66e7f1034f087efcb9b7478525c5",
-    "source": "geography",
-    "type": "title",
-    "answer": "Venetian Works of Defence between the 16th and 17th centuries: Stato da Terra - western Stato da Mar",
-    "normalizedAnswer": "VENETIAN WORKS OF DEFENCE BETWEEN THE 16TH AND 17TH CENTURIES STATO DA TERRA WESTERN STATO DA MAR",
-    "category": "World Heritage Site",
-    "difficulty": 32,
-    "difficultyTier": "easy",
-    "wordCount": 17,
-    "letterCount": 81,
-    "uniqueLetterCount": 18,
-    "tags": [
-      "geography",
-      "landmark",
-      "unesco"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_World_Heritage_Sites_by_year_of_inscription",
-      "country": "Croatia Italy Montenegro"
-    }
-  },
-  {
     "id": "8131c9250ab61fba7bb3c7313f20ea31",
     "source": "geography",
     "type": "title",
@@ -23845,28 +23779,6 @@
     "metadata": {
       "source": "https://en.wikipedia.org/wiki/List_of_World_Heritage_Sites_by_year_of_inscription",
       "country": "Iran"
-    }
-  },
-  {
-    "id": "e23aee91316cce6b82657be79f9218ef",
-    "source": "geography",
-    "type": "title",
-    "answer": "Ivrea, Industrial City of the 20th Century",
-    "normalizedAnswer": "IVREA INDUSTRIAL CITY OF THE 20TH CENTURY",
-    "category": "World Heritage Site",
-    "difficulty": 40,
-    "difficultyTier": "easy",
-    "wordCount": 7,
-    "letterCount": 35,
-    "uniqueLetterCount": 16,
-    "tags": [
-      "geography",
-      "landmark",
-      "unesco"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_World_Heritage_Sites_by_year_of_inscription",
-      "country": "Italy"
     }
   },
   {
@@ -24681,28 +24593,6 @@
     "metadata": {
       "source": "https://en.wikipedia.org/wiki/List_of_World_Heritage_Sites_by_year_of_inscription",
       "country": "United Kingdom"
-    }
-  },
-  {
-    "id": "1923ac4d866b199a8704adf0b2f0df3b",
-    "source": "geography",
-    "type": "title",
-    "answer": "The 20th-Century Architecture of Frank Lloyd Wright",
-    "normalizedAnswer": "THE 20THCENTURY ARCHITECTURE OF FRANK LLOYD WRIGHT",
-    "category": "World Heritage Site",
-    "difficulty": 36,
-    "difficultyTier": "easy",
-    "wordCount": 7,
-    "letterCount": 44,
-    "uniqueLetterCount": 17,
-    "tags": [
-      "geography",
-      "landmark",
-      "unesco"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_World_Heritage_Sites_by_year_of_inscription",
-      "country": "United States"
     }
   },
   {
@@ -26048,28 +25938,6 @@
     }
   },
   {
-    "id": "206f87851d69545018894762e28f3009",
-    "source": "geography",
-    "type": "title",
-    "answer": "Modernist Kaunas: Architecture of Optimism, 1919-1939",
-    "normalizedAnswer": "MODERNIST KAUNAS ARCHITECTURE OF OPTIMISM 19191939",
-    "category": "World Heritage Site",
-    "difficulty": 40,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 45,
-    "uniqueLetterCount": 16,
-    "tags": [
-      "geography",
-      "landmark",
-      "unesco"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_World_Heritage_Sites_by_year_of_inscription",
-      "country": "Lithuania"
-    }
-  },
-  {
     "id": "c87fe65dd6e4d94c38b5b8dfd753a4c0",
     "source": "geography",
     "type": "title",
@@ -27321,28 +27189,6 @@
     "metadata": {
       "source": "https://en.wikipedia.org/wiki/List_of_World_Heritage_Sites_by_year_of_inscription",
       "country": "Italy"
-    }
-  },
-  {
-    "id": "91ad32aa06745d13359f61f41c4d7c52",
-    "source": "geography",
-    "type": "title",
-    "answer": "The Archaeological Ensemble of 17th Century Port Royal",
-    "normalizedAnswer": "THE ARCHAEOLOGICAL ENSEMBLE OF 17TH CENTURY PORT ROYAL",
-    "category": "World Heritage Site",
-    "difficulty": 32,
-    "difficultyTier": "easy",
-    "wordCount": 8,
-    "letterCount": 47,
-    "uniqueLetterCount": 18,
-    "tags": [
-      "geography",
-      "landmark",
-      "unesco"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_World_Heritage_Sites_by_year_of_inscription",
-      "country": "Jamaica"
     }
   },
   {

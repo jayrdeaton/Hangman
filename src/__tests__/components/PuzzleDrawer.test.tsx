@@ -13,7 +13,6 @@ jest.mock('@/utils/alert', () => ({
 const baseConfig: PuzzleConfig = {
   sourceMode: 'random',
   difficulty: 'any',
-  packKeys: [],
   mode: DEFAULT_MODE,
   customPhrase: '',
   customHint: ''

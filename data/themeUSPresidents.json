@@ -462,17 +462,17 @@
     }
   },
   {
-    "id": "24cde0c89c791e5f87ef0ce7c1012a16",
+    "id": "90261a8741437f79c589cbfe135630a6",
     "source": "theme",
     "type": "title",
-    "answer": "Grover Cleveland 1st term",
-    "normalizedAnswer": "GROVER CLEVELAND 1ST TERM",
+    "answer": "Grover Cleveland",
+    "normalizedAnswer": "GROVER CLEVELAND",
     "category": "US President",
-    "difficulty": 52,
+    "difficulty": 64,
     "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 22,
-    "uniqueLetterCount": 13,
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
     "tags": [
       "theme",
       "history",
@@ -494,27 +494,6 @@
     "wordCount": 2,
     "letterCount": 16,
     "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "history",
-      "us-president"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States"
-    }
-  },
-  {
-    "id": "8a2202035d5d028e3ae06bed760e3e52",
-    "source": "theme",
-    "type": "title",
-    "answer": "Grover Cleveland 2nd term",
-    "normalizedAnswer": "GROVER CLEVELAND 2ND TERM",
-    "category": "US President",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 22,
-    "uniqueLetterCount": 12,
     "tags": [
       "theme",
       "history",
@@ -945,17 +924,17 @@
     }
   },
   {
-    "id": "3b1b420e2f3fec0504ddc4a7f097c9d8",
+    "id": "1e12d5b6a82c0fe0b207c4ac57c9f1df",
     "source": "theme",
     "type": "title",
-    "answer": "Donald Trump 1st term",
-    "normalizedAnswer": "DONALD TRUMP 1ST TERM",
+    "answer": "Donald Trump",
+    "normalizedAnswer": "DONALD TRUMP",
     "category": "US President",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 18,
-    "uniqueLetterCount": 12,
+    "difficulty": 65.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 10,
     "tags": [
       "theme",
       "history",
@@ -977,27 +956,6 @@
     "wordCount": 2,
     "letterCount": 8,
     "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "history",
-      "us-president"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States"
-    }
-  },
-  {
-    "id": "ff93e56449b3c8329d5576383c28e7d4",
-    "source": "theme",
-    "type": "title",
-    "answer": "Donald Trump 2nd term",
-    "normalizedAnswer": "DONALD TRUMP 2ND TERM",
-    "category": "US President",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 18,
-    "uniqueLetterCount": 11,
     "tags": [
       "theme",
       "history",

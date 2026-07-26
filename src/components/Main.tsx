@@ -1,14 +1,15 @@
 import * as Linking from 'expo-linking'
 import { JSX, useCallback, useEffect, useRef, useState } from 'react'
 import { StyleSheet, View } from 'react-native'
-import { Appbar, Snackbar } from 'react-native-paper'
+import { Appbar, Snackbar, Text } from 'react-native-paper'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
+import { usePackSelection } from '@/hooks/usePackSelection'
 import { DEFAULT_MODE } from '@/modes/registry'
 import type { GameStartPayload } from '@/types/gameSession'
 import { ACHIEVEMENT_DEFINITIONS_BY_ID, type AchievementId, recordLoss, recordSolve } from '@/utils/achievements'
 import { loadCustomPacksCache } from '@/utils/customPacks'
-import { getPuzzleManifest } from '@/utils/puzzleCatalog'
+import { getPuzzleManifest, type PuzzleDifficultyTier } from '@/utils/puzzleCatalog'
 import { parseSharedPuzzle } from '@/utils/puzzleLink'
 import { type PuzzleConfig, resolvePuzzle } from '@/utils/puzzlePicker'
 import { getPuzzleUnlockMap, getUnlockedCountForPack, markPuzzleUnlocked } from '@/utils/unlocks'
@@ -23,24 +24,29 @@ import { SettingsDialog } from './SettingsDialog'
 const DEFAULT_CONFIG: PuzzleConfig = {
   sourceMode: 'random',
   difficulty: 'any',
-  packKeys: [],
   mode: DEFAULT_MODE,
   customPhrase: '',
   customHint: ''
 }
 
-// Every pack starts checked — the initial config needs a non-empty selection to fall back on if
-// the player switches to Category mode without narrowing it down first, and "everything" is the
-// least surprising default (it behaves just like Random until they deselect something).
-const buildInitialConfig = (): PuzzleConfig => ({
-  ...DEFAULT_CONFIG,
-  packKeys: getPuzzleManifest()
-    .filter((item) => item.count > 0)
-    .map((item) => item.key)
-})
+const DIFFICULTY_LABELS: Record<PuzzleDifficultyTier, string> = {
+  easy: 'Easy',
+  medium: 'Medium',
+  hard: 'Hard'
+}
+
+const DIFFICULTY_COLORS: Record<PuzzleDifficultyTier, string> = {
+  easy: '#2E7D32',
+  medium: '#B8860B',
+  hard: '#B00020'
+}
 
 export const Main = (): JSX.Element => {
   const insets = useSafeAreaInsets()
+  // The persisted default pack selection (see usePackSelection) — read here, before the lazy
+  // state initializers below, so it's already available (synchronously — see
+  // PackSelectionProvider) the moment they run.
+  const { selectedPackKeys } = usePackSelection()
   // Resolved synchronously (not via a hook side effect) on web and read from the native module's
   // cache on native — see expo-linking's getLinkingURL — so a cold-started shared-puzzle link is
   // already known by the time the lazy state initializers below run.
@@ -51,10 +57,10 @@ export const Main = (): JSX.Element => {
   // initializers (not an effect) so the first paint already shows the right game.
   const [config, setConfig] = useState<PuzzleConfig>(() => {
     const shared = incomingUrl ? parseSharedPuzzle(incomingUrl) : null
-    return shared ?? buildInitialConfig()
+    return shared ?? DEFAULT_CONFIG
   })
   const [session, setSession] = useState<GameStartPayload | null>(() => {
-    const result = resolvePuzzle(config)
+    const result = resolvePuzzle(config, selectedPackKeys)
     return result.ok ? result.payload : null
   })
   // Game is keyed on this counter (not session.phrase) so it always remounts on a new round —
@@ -161,9 +167,9 @@ export const Main = (): JSX.Element => {
   // category" (drawing from a one-off config narrowed to just the pack just won) — both leave a
   // round and want a puzzle pulled from *some* config, they just disagree on which one.
   const startNextRound = useCallback(
-    (nextConfig: PuzzleConfig) => {
+    (nextConfig: PuzzleConfig, packKeys: string[]) => {
       surfacePendingAchievements()
-      const result = resolvePuzzle(nextConfig)
+      const result = resolvePuzzle(nextConfig, packKeys)
       if (result.ok) {
         setSession(result.payload)
         setRoundKey((k) => k + 1)
@@ -180,14 +186,16 @@ export const Main = (): JSX.Element => {
       setDrawerVisible(true)
       return
     }
-    startNextRound(config)
-  }, [config, startNextRound, surfacePendingAchievements])
+    // The live selection, not whatever config.packKeys used to be — a pack toggled off in Choose
+    // Packs and never confirmed via "New puzzle" should still apply to this automatic next round.
+    startNextRound(config, selectedPackKeys)
+  }, [config, selectedPackKeys, startNextRound, surfacePendingAchievements])
 
   // Only ever wired up while categoryProgress is set, which only happens for a pack-sourced win
   // (see handleSolved) — session.packKey is guaranteed non-null whenever this can be called.
   const handlePlayAnotherInCategory = useCallback(() => {
     if (!session?.packKey) return
-    startNextRound({ ...config, packKeys: [session.packKey] })
+    startNextRound(config, [session.packKey])
   }, [config, session, startNextRound])
 
   /* eslint-disable react-hooks/set-state-in-effect --
@@ -208,12 +216,19 @@ export const Main = (): JSX.Element => {
     <View style={styles.flex}>
       <Appbar.Header elevated>
         <Appbar.Action icon='menu' onPress={() => setDrawerVisible(true)} accessibilityLabel='Change puzzle' />
-        <Appbar.Content title='Hangman' />
+        <View style={styles.appbarSpacer} />
         <Appbar.Action icon='trophy-outline' onPress={() => setAchievementsVisible(true)} accessibilityLabel='Achievements' />
         <Appbar.Action icon='cog-outline' onPress={() => setSettingsVisible(true)} accessibilityLabel='Settings' />
+        <View style={styles.appbarCenter} pointerEvents='none'>
+          {session?.difficultyTier ? (
+            <View style={[styles.difficultyBadge, { borderColor: DIFFICULTY_COLORS[session.difficultyTier] }]} accessibilityLabel={`Difficulty: ${DIFFICULTY_LABELS[session.difficultyTier]}`}>
+              <Text style={[styles.difficultyText, { color: DIFFICULTY_COLORS[session.difficultyTier] }]}>{DIFFICULTY_LABELS[session.difficultyTier]}</Text>
+            </View>
+          ) : null}
+        </View>
       </Appbar.Header>
 
-      <View style={[styles.flex, gameShell, { paddingBottom: insets.bottom }]}>{session ? <Game key={roundKey} onStop={handleRoundEnd} onSolved={handleSolved} onLost={handleLost} phrase={session.phrase} mode={session.mode} hint={session.hint} difficultyTier={session.difficultyTier} categoryProgress={categoryProgress} onAnotherInCategory={handlePlayAnotherInCategory} /> : null}</View>
+      <View style={[styles.flex, gameShell, { paddingBottom: insets.bottom }]}>{session ? <Game key={roundKey} onStop={handleRoundEnd} onSolved={handleSolved} onLost={handleLost} phrase={session.phrase} mode={session.mode} hint={session.hint} categoryProgress={categoryProgress} onAnotherInCategory={handlePlayAnotherInCategory} /> : null}</View>
 
       <PuzzleDrawer visible={drawerVisible} onDismiss={handleDismissDrawer} onRequestOpen={() => setDrawerVisible(true)} initialConfig={pendingShare ?? config} onConfirm={handleConfirmPuzzle} packsVersion={customPacksVersion} onPacksChanged={refreshCustomPacks} />
       <AchievementsDialog visible={achievementsVisible} onDismiss={() => setAchievementsVisible(false)} unlockVersion={unlockVersion} />
@@ -226,5 +241,9 @@ export const Main = (): JSX.Element => {
 }
 
 const styles = StyleSheet.create({
+  appbarCenter: { alignItems: 'center', bottom: 0, justifyContent: 'center', left: 0, position: 'absolute', right: 0, top: 0 },
+  appbarSpacer: { flex: 1 },
+  difficultyBadge: { borderRadius: 12, borderWidth: 1.5, paddingHorizontal: 10, paddingVertical: 3 },
+  difficultyText: { fontSize: 12, fontWeight: '700', letterSpacing: 0.5, textTransform: 'uppercase' },
   flex: { flex: 1 }
 })

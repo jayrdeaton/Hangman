@@ -60,26 +60,6 @@
     }
   },
   {
-    "id": "7589324d5ffbfed152436d74d94129a5",
-    "source": "theme",
-    "type": "title",
-    "answer": "Genesis G90",
-    "normalizedAnswer": "GENESIS G90",
-    "category": "Vehicle",
-    "difficulty": 86.8,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 10,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "vehicle"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
-    }
-  },
-  {
     "id": "c1722754d7658fd48d3831d8c829dd5e",
     "source": "theme",
     "type": "title",
@@ -131,26 +111,6 @@
     "wordCount": 3,
     "letterCount": 25,
     "uniqueLetterCount": 14,
-    "tags": [
-      "theme",
-      "vehicle"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
-    }
-  },
-  {
-    "id": "d1a0aaef13f149585f80362911849fc1",
-    "source": "theme",
-    "type": "title",
-    "answer": "Genesis G70",
-    "normalizedAnswer": "GENESIS G70",
-    "category": "Vehicle",
-    "difficulty": 86.8,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 10,
-    "uniqueLetterCount": 5,
     "tags": [
       "theme",
       "vehicle"
@@ -400,46 +360,6 @@
     }
   },
   {
-    "id": "8949e99657d513a93b19d1d0da0e5a0e",
-    "source": "theme",
-    "type": "title",
-    "answer": "Chrysler 300",
-    "normalizedAnswer": "CHRYSLER 300",
-    "category": "Vehicle",
-    "difficulty": 78.8,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "vehicle"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
-    }
-  },
-  {
-    "id": "fba997c26563efbcb6ed9415d1b899f2",
-    "source": "theme",
-    "type": "title",
-    "answer": "Infiniti G35",
-    "normalizedAnswer": "INFINITI G35",
-    "category": "Vehicle",
-    "difficulty": 86.4,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "vehicle"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
-    }
-  },
-  {
     "id": "b4853934093ea5480f0b5c4b733444f5",
     "source": "theme",
     "type": "title",
@@ -491,26 +411,6 @@
     "wordCount": 2,
     "letterCount": 9,
     "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "vehicle"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
-    }
-  },
-  {
-    "id": "b6e95e2131b91f05e5a36625225624fc",
-    "source": "theme",
-    "type": "title",
-    "answer": "Chrysler 300M",
-    "normalizedAnswer": "CHRYSLER 300M",
-    "category": "Vehicle",
-    "difficulty": 74.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 12,
-    "uniqueLetterCount": 8,
     "tags": [
       "theme",
       "vehicle"
@@ -820,26 +720,6 @@
     }
   },
   {
-    "id": "8ced2e681355de0f50d258a8e657d0b3",
-    "source": "theme",
-    "type": "title",
-    "answer": "Chevrolet Camaro Z28",
-    "normalizedAnswer": "CHEVROLET CAMARO Z28",
-    "category": "Vehicle",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 18,
-    "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "vehicle"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
-    }
-  },
-  {
     "id": "db1c6b3a291f499fb5d1664ffc52225d",
     "source": "theme",
     "type": "title",
@@ -951,26 +831,6 @@
     "wordCount": 2,
     "letterCount": 10,
     "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "vehicle"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
-    }
-  },
-  {
-    "id": "571955d7f81871990617dc84eaeabe6b",
-    "source": "theme",
-    "type": "title",
-    "answer": "Chevrolet Monza 2+2",
-    "normalizedAnswer": "CHEVROLET MONZA 22",
-    "category": "Vehicle",
-    "difficulty": 56.4,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 16,
-    "uniqueLetterCount": 12,
     "tags": [
       "theme",
       "vehicle"

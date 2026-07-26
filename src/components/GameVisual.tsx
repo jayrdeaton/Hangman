@@ -27,5 +27,5 @@ export const GameVisual = ({ mode, mistakes, color, style }: Props) => {
 }
 
 const styles = StyleSheet.create({
-  container: { alignItems: 'center', justifyContent: 'center' }
+  container: { alignItems: 'center', justifyContent: 'flex-start' }
 })

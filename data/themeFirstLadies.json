@@ -1,141 +1,15 @@
 [
   {
-    "id": "3cd5f677148831e5e023bf65d478b854",
+    "id": "a5ca4ee101b19e5119a5afa17c761e6a",
     "source": "theme",
     "type": "title",
-    "answer": "Name",
-    "normalizedAnswer": "NAME",
-    "category": "First Lady",
-    "difficulty": 92.4,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 4,
-    "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "history",
-      "first-lady"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
-    }
-  },
-  {
-    "id": "1d47f1c27b96f1d696375ef29a2b6964",
-    "source": "theme",
-    "type": "title",
-    "answer": "Martha WashingtonJune 2, 1731",
-    "normalizedAnswer": "MARTHA WASHINGTONJUNE 2 1731",
-    "category": "First Lady",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 25,
-    "uniqueLetterCount": 14,
-    "tags": [
-      "theme",
-      "history",
-      "first-lady"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
-    }
-  },
-  {
-    "id": "58d1579dd9a8402b98b34408004c0d3e",
-    "source": "theme",
-    "type": "title",
-    "answer": "Abigail AdamsNovember 22, 1744",
-    "normalizedAnswer": "ABIGAIL ADAMSNOVEMBER 22 1744",
-    "category": "First Lady",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 26,
-    "uniqueLetterCount": 13,
-    "tags": [
-      "theme",
-      "history",
-      "first-lady"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
-    }
-  },
-  {
-    "id": "8dbe68fcbc7dd16c6eea31c625bbdf05",
-    "source": "theme",
-    "type": "title",
-    "answer": "Martha RandolphSeptember 27, 1772",
-    "normalizedAnswer": "MARTHA RANDOLPHSEPTEMBER 27 1772",
-    "category": "First Lady",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 29,
-    "uniqueLetterCount": 13,
-    "tags": [
-      "theme",
-      "history",
-      "first-lady"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
-    }
-  },
-  {
-    "id": "e208d059b1779ac39409c564dcc87ad5",
-    "source": "theme",
-    "type": "title",
-    "answer": "Dolley MadisonMay 20, 1768",
-    "normalizedAnswer": "DOLLEY MADISONMAY 20 1768",
-    "category": "First Lady",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 22,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "history",
-      "first-lady"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
-    }
-  },
-  {
-    "id": "7a1b2dcb3bbd8469d9d86ee715c273ad",
-    "source": "theme",
-    "type": "title",
-    "answer": "Elizabeth MonroeJune 30, 1768",
-    "normalizedAnswer": "ELIZABETH MONROEJUNE 30 1768",
-    "category": "First Lady",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 25,
-    "uniqueLetterCount": 14,
-    "tags": [
-      "theme",
-      "history",
-      "first-lady"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
-    }
-  },
-  {
-    "id": "5add17c248ddca72c24d6a4955dfc24b",
-    "source": "theme",
-    "type": "title",
-    "answer": "Emily Donelson June 1, 1807",
-    "normalizedAnswer": "EMILY DONELSON JUNE 1 1807",
+    "answer": "Martha Washington",
+    "normalizedAnswer": "MARTHA WASHINGTON",
     "category": "First Lady",
     "difficulty": 60,
     "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 22,
+    "wordCount": 2,
+    "letterCount": 16,
     "uniqueLetterCount": 11,
     "tags": [
       "theme",
@@ -147,100 +21,16 @@
     }
   },
   {
-    "id": "219400079edbf3875242cce1d16dfa99",
+    "id": "ee2f979896c1052fe1bca675dad50068",
     "source": "theme",
     "type": "title",
-    "answer": "November 26, 1834–March 4, 1837",
-    "normalizedAnswer": "NOVEMBER 26 1834MARCH 4 1837",
+    "answer": "Abigail Adams",
+    "normalizedAnswer": "ABIGAIL ADAMS",
     "category": "First Lady",
-    "difficulty": 64.8,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 24,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "history",
-      "first-lady"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
-    }
-  },
-  {
-    "id": "374a882c59c02ef7683ed1538010fb47",
-    "source": "theme",
-    "type": "title",
-    "answer": "March 4, 1837–November 27, 1838",
-    "normalizedAnswer": "MARCH 4 1837NOVEMBER 27 1838",
-    "category": "First Lady",
-    "difficulty": 64.8,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 24,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "history",
-      "first-lady"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
-    }
-  },
-  {
-    "id": "262a26cdbb8f7552082a9fcea339e856",
-    "source": "theme",
-    "type": "title",
-    "answer": "November 27, 1838–March 4, 1841",
-    "normalizedAnswer": "NOVEMBER 27 1838MARCH 4 1841",
-    "category": "First Lady",
-    "difficulty": 64.8,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 24,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "history",
-      "first-lady"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
-    }
-  },
-  {
-    "id": "afcf716493cf62f366fa2a84da0b62bb",
-    "source": "theme",
-    "type": "title",
-    "answer": "Anna HarrisonJuly 25, 1775",
-    "normalizedAnswer": "ANNA HARRISONJULY 25 1775",
-    "category": "First Lady",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 22,
-    "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "history",
-      "first-lady"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
-    }
-  },
-  {
-    "id": "fcd07cbbc43286287e966aca795ba360",
-    "source": "theme",
-    "type": "title",
-    "answer": "March 4, 1841–April 4, 1841",
-    "normalizedAnswer": "MARCH 4 1841APRIL 4 1841",
-    "category": "First Lady",
-    "difficulty": 74,
+    "difficulty": 73.2,
     "difficultyTier": "medium",
-    "wordCount": 5,
-    "letterCount": 20,
+    "wordCount": 2,
+    "letterCount": 12,
     "uniqueLetterCount": 8,
     "tags": [
       "theme",
@@ -252,163 +42,16 @@
     }
   },
   {
-    "id": "bb8443fff8617e253335ade347a576a8",
+    "id": "9650232a986ed8d59edc5ee7cb8351d4",
     "source": "theme",
     "type": "title",
-    "answer": "Letitia TylerNovember 12, 1790",
-    "normalizedAnswer": "LETITIA TYLERNOVEMBER 12 1790",
-    "category": "First Lady",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 26,
-    "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "history",
-      "first-lady"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
-    }
-  },
-  {
-    "id": "93f25fe628a8a3532bceb21f5ac506fd",
-    "source": "theme",
-    "type": "title",
-    "answer": "September 10, 1842–June 26, 1844",
-    "normalizedAnswer": "SEPTEMBER 10 1842JUNE 26 1844",
-    "category": "First Lady",
-    "difficulty": 64.8,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 25,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "history",
-      "first-lady"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
-    }
-  },
-  {
-    "id": "9246637b2831532fcdf05c4ce5831bc4",
-    "source": "theme",
-    "type": "title",
-    "answer": "June 26, 1844–March 4, 1845",
-    "normalizedAnswer": "JUNE 26 1844MARCH 4 1845",
-    "category": "First Lady",
-    "difficulty": 70.4,
-    "difficultyTier": "medium",
-    "wordCount": 5,
-    "letterCount": 20,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "history",
-      "first-lady"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
-    }
-  },
-  {
-    "id": "901c91e965d62a55748b8b47a28de1e1",
-    "source": "theme",
-    "type": "title",
-    "answer": "Sarah PolkSeptember 4, 1803",
-    "normalizedAnswer": "SARAH POLKSEPTEMBER 4 1803",
-    "category": "First Lady",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 23,
-    "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "history",
-      "first-lady"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
-    }
-  },
-  {
-    "id": "4c78e1ec10fb6f32f2be990238c3043c",
-    "source": "theme",
-    "type": "title",
-    "answer": "Margaret \"Peggy\" TaylorSeptember 21, 1788",
-    "normalizedAnswer": "MARGARET PEGGY TAYLORSEPTEMBER 21 1788",
-    "category": "First Lady",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 34,
-    "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "history",
-      "first-lady"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
-    }
-  },
-  {
-    "id": "6cd2f5acccdeec4302928efe30db233c",
-    "source": "theme",
-    "type": "title",
-    "answer": "Abigail FillmoreMarch 13, 1798",
-    "normalizedAnswer": "ABIGAIL FILLMOREMARCH 13 1798",
-    "category": "First Lady",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 26,
-    "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "history",
-      "first-lady"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
-    }
-  },
-  {
-    "id": "bab9d0a1dce65d0296fa1b92359c8382",
-    "source": "theme",
-    "type": "title",
-    "answer": "Jane PierceMarch 12, 1806",
-    "normalizedAnswer": "JANE PIERCEMARCH 12 1806",
-    "category": "First Lady",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 21,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "history",
-      "first-lady"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
-    }
-  },
-  {
-    "id": "8d6b4dca8bd8b206ae316a108653c3aa",
-    "source": "theme",
-    "type": "title",
-    "answer": "Harriet LaneMay 9, 1830",
-    "normalizedAnswer": "HARRIET LANEMAY 9 1830",
+    "answer": "Martha Randolph",
+    "normalizedAnswer": "MARTHA RANDOLPH",
     "category": "First Lady",
     "difficulty": 64.4,
     "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 19,
+    "wordCount": 2,
+    "letterCount": 14,
     "uniqueLetterCount": 10,
     "tags": [
       "theme",
@@ -420,16 +63,37 @@
     }
   },
   {
-    "id": "54b64664bdbdd5b1a7a89eaa9c85d89c",
+    "id": "63cb515859de704b53cf5202369961df",
     "source": "theme",
     "type": "title",
-    "answer": "Mary LincolnDecember 13, 1818",
-    "normalizedAnswer": "MARY LINCOLNDECEMBER 13 1818",
+    "answer": "Dolley Madison",
+    "normalizedAnswer": "DOLLEY MADISON",
+    "category": "First Lady",
+    "difficulty": 64.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "7ac91ac643cbeda754071dcbaa6fd6d8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Elizabeth Monroe",
+    "normalizedAnswer": "ELIZABETH MONROE",
     "category": "First Lady",
     "difficulty": 56,
     "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 25,
+    "wordCount": 2,
+    "letterCount": 15,
     "uniqueLetterCount": 12,
     "tags": [
       "theme",
@@ -441,142 +105,37 @@
     }
   },
   {
-    "id": "a4974e6372a49af19a5da75be70cbbe4",
+    "id": "3859e641f232d65ec5aebc01395be0d1",
     "source": "theme",
     "type": "title",
-    "answer": "Eliza JohnsonOctober 4, 1810",
-    "normalizedAnswer": "ELIZA JOHNSONOCTOBER 4 1810",
+    "answer": "Louisa Adams",
+    "normalizedAnswer": "LOUISA ADAMS",
     "category": "First Lady",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 24,
-    "uniqueLetterCount": 14,
-    "tags": [
-      "theme",
-      "history",
-      "first-lady"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
-    }
-  },
-  {
-    "id": "b82f856be4afb36cfa9b1a1fed6ee5e8",
-    "source": "theme",
-    "type": "title",
-    "answer": "Julia GrantJanuary 26, 1826",
-    "normalizedAnswer": "JULIA GRANTJANUARY 26 1826",
-    "category": "First Lady",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 23,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "history",
-      "first-lady"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
-    }
-  },
-  {
-    "id": "64f3c8d8de6a3d7894cf28b4fd1f0e91",
-    "source": "theme",
-    "type": "title",
-    "answer": "Lucy HayesAugust 28, 1831",
-    "normalizedAnswer": "LUCY HAYESAUGUST 28 1831",
-    "category": "First Lady",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 21,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "history",
-      "first-lady"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
-    }
-  },
-  {
-    "id": "87d2057f270c258775b6171e72e2462f",
-    "source": "theme",
-    "type": "title",
-    "answer": "Lucretia GarfieldApril 19, 1832",
-    "normalizedAnswer": "LUCRETIA GARFIELDAPRIL 19 1832",
-    "category": "First Lady",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 27,
-    "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "history",
-      "first-lady"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
-    }
-  },
-  {
-    "id": "37eb94b9053f92a28adb3433ab457eaf",
-    "source": "theme",
-    "type": "title",
-    "answer": "Mary McElroyJuly 5, 1841",
-    "normalizedAnswer": "MARY MCELROYJULY 5 1841",
-    "category": "First Lady",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 20,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "history",
-      "first-lady"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
-    }
-  },
-  {
-    "id": "da15c48cb13bbdb9b25638fc0a4666ac",
-    "source": "theme",
-    "type": "title",
-    "answer": "Rose ClevelandJune 13, 1846",
-    "normalizedAnswer": "ROSE CLEVELANDJUNE 13 1846",
-    "category": "First Lady",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 23,
-    "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "history",
-      "first-lady"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
-    }
-  },
-  {
-    "id": "765c8b901a4bf5c6051800dcae3c34f8",
-    "source": "theme",
-    "type": "title",
-    "answer": "June 2, 1886–March 4, 1889",
-    "normalizedAnswer": "JUNE 2 1886MARCH 4 1889",
-    "category": "First Lady",
-    "difficulty": 70.4,
+    "difficulty": 73.6,
     "difficultyTier": "medium",
-    "wordCount": 5,
-    "letterCount": 19,
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "93873f5a4d61c8de171ae6c08bec3f28",
+    "source": "theme",
+    "type": "title",
+    "answer": "Emily Donelson",
+    "normalizedAnswer": "EMILY DONELSON",
+    "category": "First Lady",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
     "uniqueLetterCount": 9,
     "tags": [
       "theme",
@@ -588,37 +147,16 @@
     }
   },
   {
-    "id": "d7a5ea50627b7569c1eb791ebe4135d8",
+    "id": "99e35b21f0a29bb47f61e0f5ea72af6e",
     "source": "theme",
     "type": "title",
-    "answer": "Caroline HarrisonOctober 1, 1832",
-    "normalizedAnswer": "CAROLINE HARRISONOCTOBER 1 1832",
-    "category": "First Lady",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 28,
-    "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "history",
-      "first-lady"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
-    }
-  },
-  {
-    "id": "746055b8812a483a528925a9446f644b",
-    "source": "theme",
-    "type": "title",
-    "answer": "October 25, 1892–March 4, 1893",
-    "normalizedAnswer": "OCTOBER 25 1892MARCH 4 1893",
+    "answer": "Sarah Jackson",
+    "normalizedAnswer": "SARAH JACKSON",
     "category": "First Lady",
     "difficulty": 69.2,
     "difficultyTier": "medium",
-    "wordCount": 5,
-    "letterCount": 23,
+    "wordCount": 2,
+    "letterCount": 12,
     "uniqueLetterCount": 9,
     "tags": [
       "theme",
@@ -630,16 +168,16 @@
     }
   },
   {
-    "id": "457bab110ad00b948162386917bd6891",
+    "id": "d472c2ffc6c5ef6428548060c58a517c",
     "source": "theme",
     "type": "title",
-    "answer": "Frances ClevelandJuly 21, 1864",
-    "normalizedAnswer": "FRANCES CLEVELANDJULY 21 1864",
+    "answer": "Angelica “Sarah” Van Buren",
+    "normalizedAnswer": "ANGELICA SARAH VAN BUREN",
     "category": "First Lady",
     "difficulty": 52,
     "difficultyTier": "easy",
     "wordCount": 4,
-    "letterCount": 26,
+    "letterCount": 21,
     "uniqueLetterCount": 13,
     "tags": [
       "theme",
@@ -651,17 +189,17 @@
     }
   },
   {
-    "id": "5b842c70397f825477609e14eba28b6d",
+    "id": "e594b352c54ff3ae708ad9deb367d771",
     "source": "theme",
     "type": "title",
-    "answer": "Ida McKinleyJune 8, 1847",
-    "normalizedAnswer": "IDA MCKINLEYJUNE 8 1847",
+    "answer": "Anna Harrison",
+    "normalizedAnswer": "ANNA HARRISON",
     "category": "First Lady",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 20,
-    "uniqueLetterCount": 12,
+    "difficulty": 77.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 7,
     "tags": [
       "theme",
       "history",
@@ -672,17 +210,17 @@
     }
   },
   {
-    "id": "78da9bcd468d2ddbd4fbde6fa2fc0653",
+    "id": "1fae1d2ecc105d78ac394ce607e15b01",
     "source": "theme",
     "type": "title",
-    "answer": "Edith RooseveltAugust 6, 1861",
-    "normalizedAnswer": "EDITH ROOSEVELTAUGUST 6 1861",
+    "answer": "Jane Harrison",
+    "normalizedAnswer": "JANE HARRISON",
     "category": "First Lady",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 25,
-    "uniqueLetterCount": 13,
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
     "tags": [
       "theme",
       "history",
@@ -693,17 +231,17 @@
     }
   },
   {
-    "id": "afce45301f2e9bd49f967fe155df9985",
+    "id": "35d23d601103b985f95e4c71617d0d5d",
     "source": "theme",
     "type": "title",
-    "answer": "Helen \"Nellie\" TaftJune 2, 1861",
-    "normalizedAnswer": "HELEN NELLIE TAFTJUNE 2 1861",
+    "answer": "Letitia Tyler",
+    "normalizedAnswer": "LETITIA TYLER",
     "category": "First Lady",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 24,
-    "uniqueLetterCount": 10,
+    "difficulty": 77.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 7,
     "tags": [
       "theme",
       "history",
@@ -714,16 +252,16 @@
     }
   },
   {
-    "id": "2d65a06e0c5ca8de6b2e54e399750fda",
+    "id": "a95c53a4d85de436040da5345b33473e",
     "source": "theme",
     "type": "title",
-    "answer": "Ellen WilsonMay 15, 1860",
-    "normalizedAnswer": "ELLEN WILSONMAY 15 1860",
+    "answer": "Priscilla Tyler",
+    "normalizedAnswer": "PRISCILLA TYLER",
     "category": "First Lady",
     "difficulty": 64.4,
     "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 20,
+    "wordCount": 2,
+    "letterCount": 14,
     "uniqueLetterCount": 10,
     "tags": [
       "theme",
@@ -735,17 +273,17 @@
     }
   },
   {
-    "id": "ec1a9cabeb67396bccce0cf9177b5c8c",
+    "id": "2b3d4117db099dfacaa19a3d4e67d86f",
     "source": "theme",
     "type": "title",
-    "answer": "August 6, 1914–December 18, 1915",
-    "normalizedAnswer": "AUGUST 6 1914DECEMBER 18 1915",
+    "answer": "Julia Tyler",
+    "normalizedAnswer": "JULIA TYLER",
     "category": "First Lady",
-    "difficulty": 60.4,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 25,
-    "uniqueLetterCount": 11,
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
     "tags": [
       "theme",
       "history",
@@ -756,16 +294,16 @@
     }
   },
   {
-    "id": "7217e6c7e770b21d6007e05b1508f7ac",
+    "id": "0837cd21dd49d4ab2cf45b10311ab78b",
     "source": "theme",
     "type": "title",
-    "answer": "December 18, 1915–March 4, 1921",
-    "normalizedAnswer": "DECEMBER 18 1915MARCH 4 1921",
+    "answer": "Sarah Polk",
+    "normalizedAnswer": "SARAH POLK",
     "category": "First Lady",
-    "difficulty": 72.8,
+    "difficulty": 74.4,
     "difficultyTier": "medium",
-    "wordCount": 5,
-    "letterCount": 24,
+    "wordCount": 2,
+    "letterCount": 9,
     "uniqueLetterCount": 8,
     "tags": [
       "theme",
@@ -777,247 +315,16 @@
     }
   },
   {
-    "id": "3e6a373127a574f7ba71f8b858a2a62b",
+    "id": "9a335ca94d192fa7c8b82ddce163a9f7",
     "source": "theme",
     "type": "title",
-    "answer": "Florence HardingAugust 15, 1860",
-    "normalizedAnswer": "FLORENCE HARDINGAUGUST 15 1860",
-    "category": "First Lady",
-    "difficulty": 44,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 27,
-    "uniqueLetterCount": 15,
-    "tags": [
-      "theme",
-      "history",
-      "first-lady"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
-    }
-  },
-  {
-    "id": "26647f21176c9b6f5dbd95276093e531",
-    "source": "theme",
-    "type": "title",
-    "answer": "Grace CoolidgeJanuary 3, 1879",
-    "normalizedAnswer": "GRACE COOLIDGEJANUARY 3 1879",
-    "category": "First Lady",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 25,
-    "uniqueLetterCount": 13,
-    "tags": [
-      "theme",
-      "history",
-      "first-lady"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
-    }
-  },
-  {
-    "id": "9791f1c14df1c0cef16d37dd005b3fd5",
-    "source": "theme",
-    "type": "title",
-    "answer": "Lou HooverMarch 29, 1874",
-    "normalizedAnswer": "LOU HOOVERMARCH 29 1874",
-    "category": "First Lady",
-    "difficulty": 64.4,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 20,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "history",
-      "first-lady"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
-    }
-  },
-  {
-    "id": "148d3e38db31b24fd0ef265ca93e9d0d",
-    "source": "theme",
-    "type": "title",
-    "answer": "Eleanor RooseveltOctober 11, 1884",
-    "normalizedAnswer": "ELEANOR ROOSEVELTOCTOBER 11 1884",
-    "category": "First Lady",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 29,
-    "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "history",
-      "first-lady"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
-    }
-  },
-  {
-    "id": "96da10ec2ca939b57b5af9e5bc50a76c",
-    "source": "theme",
-    "type": "title",
-    "answer": "Elizabeth \"Bess\" TrumanFebruary 13, 1885",
-    "normalizedAnswer": "ELIZABETH BESS TRUMANFEBRUARY 13 1885",
-    "category": "First Lady",
-    "difficulty": 44,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 33,
-    "uniqueLetterCount": 15,
-    "tags": [
-      "theme",
-      "history",
-      "first-lady"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
-    }
-  },
-  {
-    "id": "57985bb2c5431465cd42572596faed61",
-    "source": "theme",
-    "type": "title",
-    "answer": "Mary \"Mamie\" EisenhowerNovember 14, 1896",
-    "normalizedAnswer": "MARY MAMIE EISENHOWERNOVEMBER 14 1896",
-    "category": "First Lady",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 33,
-    "uniqueLetterCount": 13,
-    "tags": [
-      "theme",
-      "history",
-      "first-lady"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
-    }
-  },
-  {
-    "id": "e01c78e835e778062b0ee137727aa288",
-    "source": "theme",
-    "type": "title",
-    "answer": "Jacqueline \"Jackie\" KennedyJuly 28, 1929",
-    "normalizedAnswer": "JACQUELINE JACKIE KENNEDYJULY 28 1929",
-    "category": "First Lady",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 33,
-    "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "history",
-      "first-lady"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
-    }
-  },
-  {
-    "id": "16bf595270807bfe544a394c3072798b",
-    "source": "theme",
-    "type": "title",
-    "answer": "Claudia \"Lady Bird\" JohnsonDecember 22, 1912",
-    "normalizedAnswer": "CLAUDIA LADY BIRD JOHNSONDECEMBER 22 1912",
-    "category": "First Lady",
-    "difficulty": 40,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 36,
-    "uniqueLetterCount": 16,
-    "tags": [
-      "theme",
-      "history",
-      "first-lady"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
-    }
-  },
-  {
-    "id": "f1d3d7d9aed2e606cf1f536dd7c149d2",
-    "source": "theme",
-    "type": "title",
-    "answer": "Thelma \"Pat\" NixonMarch 16, 1912",
-    "normalizedAnswer": "THELMA PAT NIXONMARCH 16 1912",
-    "category": "First Lady",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 25,
-    "uniqueLetterCount": 13,
-    "tags": [
-      "theme",
-      "history",
-      "first-lady"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
-    }
-  },
-  {
-    "id": "58af646e8ffa8f74ecc4f010acc10dd1",
-    "source": "theme",
-    "type": "title",
-    "answer": "Elizabeth \"Betty\" FordApril 8, 1918",
-    "normalizedAnswer": "ELIZABETH BETTY FORDAPRIL 8 1918",
-    "category": "First Lady",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 28,
-    "uniqueLetterCount": 14,
-    "tags": [
-      "theme",
-      "history",
-      "first-lady"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
-    }
-  },
-  {
-    "id": "a95499de64354b7d58766990a4116282",
-    "source": "theme",
-    "type": "title",
-    "answer": "Rosalynn CarterAugust 18, 1927",
-    "normalizedAnswer": "ROSALYNN CARTERAUGUST 18 1927",
-    "category": "First Lady",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 26,
-    "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "history",
-      "first-lady"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
-    }
-  },
-  {
-    "id": "ff019c50b96f5503bc6c2e6ccdad29fd",
-    "source": "theme",
-    "type": "title",
-    "answer": "Nancy ReaganJuly 6, 1921",
-    "normalizedAnswer": "NANCY REAGANJULY 6 1921",
+    "answer": "Margaret \"Peggy\" Taylor",
+    "normalizedAnswer": "MARGARET PEGGY TAYLOR",
     "category": "First Lady",
     "difficulty": 64,
     "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 20,
+    "wordCount": 3,
+    "letterCount": 19,
     "uniqueLetterCount": 10,
     "tags": [
       "theme",
@@ -1029,16 +336,79 @@
     }
   },
   {
-    "id": "ae8dc3a8bcc98ed4330400c73e870e7a",
+    "id": "ac969310786699fc3f751a9dd41701cf",
     "source": "theme",
     "type": "title",
-    "answer": "Barbara BushJune 8, 1925",
-    "normalizedAnswer": "BARBARA BUSHJUNE 8 1925",
+    "answer": "Abigail Fillmore",
+    "normalizedAnswer": "ABIGAIL FILLMORE",
     "category": "First Lady",
-    "difficulty": 68,
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "e2c217a9b5c2e27e5185de1e0cb0c2dd",
+    "source": "theme",
+    "type": "title",
+    "answer": "Jane Pierce",
+    "normalizedAnswer": "JANE PIERCE",
+    "category": "First Lady",
+    "difficulty": 74,
     "difficultyTier": "medium",
-    "wordCount": 4,
-    "letterCount": 20,
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "6dd19cafd59e7217dfd6b8374d0be365",
+    "source": "theme",
+    "type": "title",
+    "answer": "Harriet Lane",
+    "normalizedAnswer": "HARRIET LANE",
+    "category": "First Lady",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "6914a81cb5e2bcb6cac7492bb7e22cde",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mary Lincoln",
+    "normalizedAnswer": "MARY LINCOLN",
+    "category": "First Lady",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
     "uniqueLetterCount": 9,
     "tags": [
       "theme",
@@ -1050,16 +420,184 @@
     }
   },
   {
-    "id": "9c7436dc53a821a6cb1456447ba1233b",
+    "id": "53fb3780307d1a260a4d9c890fd5d64f",
     "source": "theme",
     "type": "title",
-    "answer": "Hillary ClintonBorn October 26, 1947",
-    "normalizedAnswer": "HILLARY CLINTONBORN OCTOBER 26 1947",
+    "answer": "Eliza Johnson",
+    "normalizedAnswer": "ELIZA JOHNSON",
+    "category": "First Lady",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "6a51cf9ad17c7fdc874d9f18c7cece7c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Julia Grant",
+    "normalizedAnswer": "JULIA GRANT",
+    "category": "First Lady",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "d09adbab32b9ead7c741768c744ce804",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lucy Hayes",
+    "normalizedAnswer": "LUCY HAYES",
+    "category": "First Lady",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "37d246b3fada9fa2ffd90a24930150a2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lucretia Garfield",
+    "normalizedAnswer": "LUCRETIA GARFIELD",
+    "category": "First Lady",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "7112bedeee829376d219de898e198608",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mary McElroy",
+    "normalizedAnswer": "MARY MCELROY",
+    "category": "First Lady",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "9a50fc3b15fcc4781c045a148f20f644",
+    "source": "theme",
+    "type": "title",
+    "answer": "Rose Cleveland",
+    "normalizedAnswer": "ROSE CLEVELAND",
+    "category": "First Lady",
+    "difficulty": 64.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "c3022e2beb0657c7b023dac8c5977322",
+    "source": "theme",
+    "type": "title",
+    "answer": "Frances Cleveland",
+    "normalizedAnswer": "FRANCES CLEVELAND",
+    "category": "First Lady",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "ef46f3dde65f2de18ec82a32fd56e364",
+    "source": "theme",
+    "type": "title",
+    "answer": "Caroline Harrison",
+    "normalizedAnswer": "CAROLINE HARRISON",
+    "category": "First Lady",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "9751901e09c5d8df92b3d931f66ef41a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mary Harrison McKee",
+    "normalizedAnswer": "MARY HARRISON MCKEE",
     "category": "First Lady",
     "difficulty": 56,
     "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 31,
+    "wordCount": 3,
+    "letterCount": 17,
     "uniqueLetterCount": 12,
     "tags": [
       "theme",
@@ -1071,16 +609,100 @@
     }
   },
   {
-    "id": "7a6dd0c016ebd41042d52454c6660e64",
+    "id": "8deda5274e9f51e42c06924a1d26d9f8",
     "source": "theme",
     "type": "title",
-    "answer": "Laura BushBorn November 4, 1946",
-    "normalizedAnswer": "LAURA BUSHBORN NOVEMBER 4 1946",
+    "answer": "Ida McKinley",
+    "normalizedAnswer": "IDA MCKINLEY",
     "category": "First Lady",
-    "difficulty": 56,
+    "difficulty": 65.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "21b5e1e652a4d5a9e2ccf481a59af476",
+    "source": "theme",
+    "type": "title",
+    "answer": "Edith Roosevelt",
+    "normalizedAnswer": "EDITH ROOSEVELT",
+    "category": "First Lady",
+    "difficulty": 64.4,
     "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 26,
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "698a21ebc98ed7d64833eb1ca2b36074",
+    "source": "theme",
+    "type": "title",
+    "answer": "Helen \"Nellie\" Taft",
+    "normalizedAnswer": "HELEN NELLIE TAFT",
+    "category": "First Lady",
+    "difficulty": 72,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "f8c1bef2aeb71fe8e587dd4586f8f991",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ellen Wilson",
+    "normalizedAnswer": "ELLEN WILSON",
+    "category": "First Lady",
+    "difficulty": 77.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "0ad031b8e6034fcf122cba73bae4c52c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Margaret Wilson",
+    "normalizedAnswer": "MARGARET WILSON",
+    "category": "First Lady",
+    "difficulty": 56.4,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 14,
     "uniqueLetterCount": 12,
     "tags": [
       "theme",
@@ -1092,16 +714,184 @@
     }
   },
   {
-    "id": "29a994c1d7e921796fbd063a763eb32d",
+    "id": "db285f00801b0987efd4b89669074a68",
     "source": "theme",
     "type": "title",
-    "answer": "Michelle ObamaBorn January 17, 1964",
-    "normalizedAnswer": "MICHELLE OBAMABORN JANUARY 17 1964",
+    "answer": "Edith Wilson",
+    "normalizedAnswer": "EDITH WILSON",
+    "category": "First Lady",
+    "difficulty": 65.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "81b14793929d8b63436f67c51c0b0ec1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Florence Harding",
+    "normalizedAnswer": "FLORENCE HARDING",
+    "category": "First Lady",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "0b5961ad8807fdcd6e34e7edca5077fc",
+    "source": "theme",
+    "type": "title",
+    "answer": "Grace Coolidge",
+    "normalizedAnswer": "GRACE COOLIDGE",
+    "category": "First Lady",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "4f3b3f09ec7310d4c98ac1617f657bb3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lou Hoover",
+    "normalizedAnswer": "LOU HOOVER",
+    "category": "First Lady",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "d53ce3f3b0b6c0bc4fa8169a2350aefa",
+    "source": "theme",
+    "type": "title",
+    "answer": "Eleanor Roosevelt",
+    "normalizedAnswer": "ELEANOR ROOSEVELT",
+    "category": "First Lady",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "e906d12662907c79f3947a2a360158c8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Elizabeth \"Bess\" Truman",
+    "normalizedAnswer": "ELIZABETH BESS TRUMAN",
+    "category": "First Lady",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 19,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "81a371ddc1d366daba3316b9f55621ff",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mary \"Mamie\" Eisenhower",
+    "normalizedAnswer": "MARY MAMIE EISENHOWER",
+    "category": "First Lady",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 19,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "22e5a7afc021a2376a61041e75fde2eb",
+    "source": "theme",
+    "type": "title",
+    "answer": "Jacqueline \"Jackie\" Kennedy",
+    "normalizedAnswer": "JACQUELINE JACKIE KENNEDY",
+    "category": "First Lady",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 23,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "c18431bb65c3cd739626dde60cfd3523",
+    "source": "theme",
+    "type": "title",
+    "answer": "Claudia \"Lady Bird\" Johnson",
+    "normalizedAnswer": "CLAUDIA LADY BIRD JOHNSON",
     "category": "First Lady",
     "difficulty": 48,
     "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 30,
+    "wordCount": 4,
+    "letterCount": 22,
     "uniqueLetterCount": 14,
     "tags": [
       "theme",
@@ -1113,17 +903,206 @@
     }
   },
   {
-    "id": "46846b905bb42a1f469a8c434e8a1d89",
+    "id": "389195081f78ac8b88a8c686425b2f8f",
     "source": "theme",
     "type": "title",
-    "answer": "Jill BidenBorn June 3, 1951",
-    "normalizedAnswer": "JILL BIDENBORN JUNE 3 1951",
+    "answer": "Thelma \"Pat\" Nixon",
+    "normalizedAnswer": "THELMA PAT NIXON",
     "category": "First Lady",
-    "difficulty": 64,
+    "difficulty": 60.4,
     "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 22,
+    "wordCount": 3,
+    "letterCount": 14,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "577462cf74a6215c541b41c5c16c0693",
+    "source": "theme",
+    "type": "title",
+    "answer": "Elizabeth \"Betty\" Ford",
+    "normalizedAnswer": "ELIZABETH BETTY FORD",
+    "category": "First Lady",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 18,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "2512eaa18aca9ce6354b1480ac5b1e45",
+    "source": "theme",
+    "type": "title",
+    "answer": "Rosalynn Carter",
+    "normalizedAnswer": "ROSALYNN CARTER",
+    "category": "First Lady",
+    "difficulty": 64.4,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 14,
     "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "6f76aa22b05b7f4cd5cd1b271c2b1390",
+    "source": "theme",
+    "type": "title",
+    "answer": "Nancy Reagan",
+    "normalizedAnswer": "NANCY REAGAN",
+    "category": "First Lady",
+    "difficulty": 77.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "e9ad7ff6ebd7f9c432545e367119663d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Barbara Bush",
+    "normalizedAnswer": "BARBARA BUSH",
+    "category": "First Lady",
+    "difficulty": 81.6,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "443a25223612d6138df3a338cf228d46",
+    "source": "theme",
+    "type": "title",
+    "answer": "Hillary Clinton",
+    "normalizedAnswer": "HILLARY CLINTON",
+    "category": "First Lady",
+    "difficulty": 64.4,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "e866fe01f40af36ad4dc3e3c4b7f2081",
+    "source": "theme",
+    "type": "title",
+    "answer": "Laura Bush",
+    "normalizedAnswer": "LAURA BUSH",
+    "category": "First Lady",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "9d27d04ef213e1b9d38b1006de31f0fc",
+    "source": "theme",
+    "type": "title",
+    "answer": "Michelle Obama",
+    "normalizedAnswer": "MICHELLE OBAMA",
+    "category": "First Lady",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "a30fddf0569c929b09301919dd358d2a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Melania Trump",
+    "normalizedAnswer": "MELANIA TRUMP",
+    "category": "First Lady",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "history",
+      "first-lady"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_first_ladies_of_the_United_States"
+    }
+  },
+  {
+    "id": "8b53b3d319be52c1742b99df7033d9b2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Jill Biden",
+    "normalizedAnswer": "JILL BIDEN",
+    "category": "First Lady",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
     "tags": [
       "theme",
       "history",

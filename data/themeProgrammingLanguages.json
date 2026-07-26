@@ -20,26 +20,6 @@
     }
   },
   {
-    "id": "f85de4b4844b4c4be2fc43f3654dd122",
-    "source": "theme",
-    "type": "title",
-    "answer": "A-0 System",
-    "normalizedAnswer": "A0 SYSTEM",
-    "category": "Programming Language",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "programming"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_programming_languages"
-    }
-  },
-  {
     "id": "f75fc684fcd6273053702635a28aa2ab",
     "source": "theme",
     "type": "title",
@@ -360,66 +340,6 @@
     }
   },
   {
-    "id": "e67504a4de611583d79d90d15aac8772",
-    "source": "theme",
-    "type": "title",
-    "answer": "ALGOL 58",
-    "normalizedAnswer": "ALGOL 58",
-    "category": "Programming Language",
-    "difficulty": 92,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 7,
-    "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "programming"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_programming_languages"
-    }
-  },
-  {
-    "id": "cc092a245f5a1965fb414147c2445063",
-    "source": "theme",
-    "type": "title",
-    "answer": "ALGOL 60",
-    "normalizedAnswer": "ALGOL 60",
-    "category": "Programming Language",
-    "difficulty": 92,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 7,
-    "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "programming"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_programming_languages"
-    }
-  },
-  {
-    "id": "1a6878a39884c96ccdb67aee008e2b23",
-    "source": "theme",
-    "type": "title",
-    "answer": "ALGOL 68",
-    "normalizedAnswer": "ALGOL 68",
-    "category": "Programming Language",
-    "difficulty": 92,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 7,
-    "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "programming"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_programming_languages"
-    }
-  },
-  {
     "id": "e05899b2e2302d4e6ad7df7dd42996e6",
     "source": "theme",
     "type": "title",
@@ -451,26 +371,6 @@
     "wordCount": 2,
     "letterCount": 7,
     "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "programming"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_programming_languages"
-    }
-  },
-  {
-    "id": "7ab63c63cd522bc805d948ff63fca8e3",
-    "source": "theme",
-    "type": "title",
-    "answer": "Alma-0",
-    "normalizedAnswer": "ALMA0",
-    "category": "Programming Language",
-    "difficulty": 96.4,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 3,
     "tags": [
       "theme",
       "programming"
@@ -1580,26 +1480,6 @@
     }
   },
   {
-    "id": "74f7efcc434db1d1b18c956f0df2dbf5",
-    "source": "theme",
-    "type": "title",
-    "answer": "CHIP-8",
-    "normalizedAnswer": "CHIP8",
-    "category": "Programming Language",
-    "difficulty": 92.4,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "programming"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_programming_languages"
-    }
-  },
-  {
     "id": "155e93e6015b412525b75ae625413b51",
     "source": "theme",
     "type": "title",
@@ -1790,26 +1670,6 @@
     "difficultyTier": "hard",
     "wordCount": 1,
     "letterCount": 3,
-    "uniqueLetterCount": 3,
-    "tags": [
-      "theme",
-      "programming"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_programming_languages"
-    }
-  },
-  {
-    "id": "376c2ce76b808c7f5985a1417744c040",
-    "source": "theme",
-    "type": "title",
-    "answer": "CMS-2",
-    "normalizedAnswer": "CMS2",
-    "category": "Programming Language",
-    "difficulty": 96.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 4,
     "uniqueLetterCount": 3,
     "tags": [
       "theme",
@@ -2131,26 +1991,6 @@
     "wordCount": 3,
     "letterCount": 14,
     "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "programming"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_programming_languages"
-    }
-  },
-  {
-    "id": "5afcb1e2571ac8ff3a75271e75846d0f",
-    "source": "theme",
-    "type": "title",
-    "answer": "CORAL, Coral 66",
-    "normalizedAnswer": "CORAL CORAL 66",
-    "category": "Programming Language",
-    "difficulty": 86,
-    "difficultyTier": "hard",
-    "wordCount": 3,
-    "letterCount": 12,
-    "uniqueLetterCount": 5,
     "tags": [
       "theme",
       "programming"
@@ -3211,26 +3051,6 @@
     "wordCount": 2,
     "letterCount": 7,
     "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "programming"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_programming_languages"
-    }
-  },
-  {
-    "id": "d5bf856ba5ce5c68cea3794808705d96",
-    "source": "theme",
-    "type": "title",
-    "answer": "EXEC 2",
-    "normalizedAnswer": "EXEC 2",
-    "category": "Programming Language",
-    "difficulty": 96.4,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 5,
-    "uniqueLetterCount": 3,
     "tags": [
       "theme",
       "programming"
@@ -4600,26 +4420,6 @@
     }
   },
   {
-    "id": "9113b776123fb055abd22a8d52ed9814",
-    "source": "theme",
-    "type": "title",
-    "answer": "IBM Informix-4GL",
-    "normalizedAnswer": "IBM INFORMIX4GL",
-    "category": "Programming Language",
-    "difficulty": 64.8,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 14,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "programming"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_programming_languages"
-    }
-  },
-  {
     "id": "5e90e93da6f0a883e05a38a7cfb03df7",
     "source": "theme",
     "type": "title",
@@ -5500,26 +5300,6 @@
     }
   },
   {
-    "id": "74032709c4dfb0e16953c359419d7d21",
-    "source": "theme",
-    "type": "title",
-    "answer": "LC-3",
-    "normalizedAnswer": "LC3",
-    "category": "Programming Language",
-    "difficulty": 101.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 3,
-    "uniqueLetterCount": 2,
-    "tags": [
-      "theme",
-      "programming"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_programming_languages"
-    }
-  },
-  {
     "id": "20e9c9a327b230699e261cd12b869b64",
     "source": "theme",
     "type": "title",
@@ -6240,26 +6020,6 @@
     }
   },
   {
-    "id": "f7a9948e6eecf3179e0ec1a320a96d2b",
-    "source": "theme",
-    "type": "title",
-    "answer": "MASM Microsoft Assembly x86",
-    "normalizedAnswer": "MASM MICROSOFT ASSEMBLY X86",
-    "category": "Programming Language",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 24,
-    "uniqueLetterCount": 14,
-    "tags": [
-      "theme",
-      "programming"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_programming_languages"
-    }
-  },
-  {
     "id": "5e6f76cfe53c0cf7c004dbf9b6da897d",
     "source": "theme",
     "type": "title",
@@ -6440,26 +6200,6 @@
     }
   },
   {
-    "id": "dc28a5a35b1e7346c2af9e721868153e",
-    "source": "theme",
-    "type": "title",
-    "answer": "MHEG-5",
-    "normalizedAnswer": "MHEG5",
-    "category": "Programming Language",
-    "difficulty": 92.4,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "programming"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_programming_languages"
-    }
-  },
-  {
     "id": "d91349f88e35b933107f56e93c60e787",
     "source": "theme",
     "type": "title",
@@ -6600,26 +6340,6 @@
     }
   },
   {
-    "id": "82fb01be9bca8a3c62150ab4b7516e41",
-    "source": "theme",
-    "type": "title",
-    "answer": "Model 204",
-    "normalizedAnswer": "MODEL 204",
-    "category": "Programming Language",
-    "difficulty": 88,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "programming"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_programming_languages"
-    }
-  },
-  {
     "id": "436598f8f0e3053732c2c038a9b3dd5a",
     "source": "theme",
     "type": "title",
@@ -6650,46 +6370,6 @@
     "difficultyTier": "hard",
     "wordCount": 1,
     "letterCount": 6,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "programming"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_programming_languages"
-    }
-  },
-  {
-    "id": "fa4513933374fc2c2e7e6b69fba0e991",
-    "source": "theme",
-    "type": "title",
-    "answer": "Modula-2",
-    "normalizedAnswer": "MODULA2",
-    "category": "Programming Language",
-    "difficulty": 83.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "programming"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_programming_languages"
-    }
-  },
-  {
-    "id": "416b1767079b4ad262bd874e342a360c",
-    "source": "theme",
-    "type": "title",
-    "answer": "Modula-3",
-    "normalizedAnswer": "MODULA3",
-    "category": "Programming Language",
-    "difficulty": 83.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
     "uniqueLetterCount": 6,
     "tags": [
       "theme",
@@ -6891,26 +6571,6 @@
     "wordCount": 3,
     "letterCount": 25,
     "uniqueLetterCount": 15,
-    "tags": [
-      "theme",
-      "programming"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_programming_languages"
-    }
-  },
-  {
-    "id": "640149a7cbe11333f87d82207780e093",
-    "source": "theme",
-    "type": "title",
-    "answer": "Napier88",
-    "normalizedAnswer": "NAPIER88",
-    "category": "Programming Language",
-    "difficulty": 83.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 6,
     "tags": [
       "theme",
       "programming"
@@ -7400,26 +7060,6 @@
     }
   },
   {
-    "id": "7a5a5d8c1a37ad79838c064ebf26b8d6",
-    "source": "theme",
-    "type": "title",
-    "answer": "OBJ2",
-    "normalizedAnswer": "OBJ2",
-    "category": "Programming Language",
-    "difficulty": 96.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 4,
-    "uniqueLetterCount": 3,
-    "tags": [
-      "theme",
-      "programming"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_programming_languages"
-    }
-  },
-  {
     "id": "d1e9bec25edd3d845dd54934c5fabebb",
     "source": "theme",
     "type": "title",
@@ -7720,26 +7360,6 @@
     }
   },
   {
-    "id": "ecba18553f742f87dc6e3f74350c2bbc",
-    "source": "theme",
-    "type": "title",
-    "answer": "OPS5",
-    "normalizedAnswer": "OPS5",
-    "category": "Programming Language",
-    "difficulty": 96.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 4,
-    "uniqueLetterCount": 3,
-    "tags": [
-      "theme",
-      "programming"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_programming_languages"
-    }
-  },
-  {
     "id": "513f8c39a8edcdebb5e29e42f9b5c80e",
     "source": "theme",
     "type": "title",
@@ -7771,26 +7391,6 @@
     "wordCount": 1,
     "letterCount": 3,
     "uniqueLetterCount": 3,
-    "tags": [
-      "theme",
-      "programming"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_programming_languages"
-    }
-  },
-  {
-    "id": "c7f5792866cb7ec83e99a9b2a964cc4f",
-    "source": "theme",
-    "type": "title",
-    "answer": "ORCA/Modula-2",
-    "normalizedAnswer": "ORCAMODULA2",
-    "category": "Programming Language",
-    "difficulty": 74,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 11,
-    "uniqueLetterCount": 8,
     "tags": [
       "theme",
       "programming"
@@ -8240,46 +7840,6 @@
     }
   },
   {
-    "id": "17cb662e0991700fa2e7a9b0ced02c79",
-    "source": "theme",
-    "type": "title",
-    "answer": "PL-11",
-    "normalizedAnswer": "PL11",
-    "category": "Programming Language",
-    "difficulty": 101.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 4,
-    "uniqueLetterCount": 2,
-    "tags": [
-      "theme",
-      "programming"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_programming_languages"
-    }
-  },
-  {
-    "id": "840805225a5f271451ff0e440e92530f",
-    "source": "theme",
-    "type": "title",
-    "answer": "PL/0",
-    "normalizedAnswer": "PL0",
-    "category": "Programming Language",
-    "difficulty": 101.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 3,
-    "uniqueLetterCount": 2,
-    "tags": [
-      "theme",
-      "programming"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_programming_languages"
-    }
-  },
-  {
     "id": "de564a057e2ae6601c78d9d4a9ae6c06",
     "source": "theme",
     "type": "title",
@@ -8411,26 +7971,6 @@
     "wordCount": 1,
     "letterCount": 5,
     "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "programming"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_programming_languages"
-    }
-  },
-  {
-    "id": "0eb030e91c35dbf8db0be81ba510bcca",
-    "source": "theme",
-    "type": "title",
-    "answer": "PL360",
-    "normalizedAnswer": "PL360",
-    "category": "Programming Language",
-    "difficulty": 101.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 2,
     "tags": [
       "theme",
       "programming"
@@ -8580,46 +8120,6 @@
     }
   },
   {
-    "id": "aabccf3362d99c4e41b3896b78c1e075",
-    "source": "theme",
-    "type": "title",
-    "answer": "POP-11",
-    "normalizedAnswer": "POP11",
-    "category": "Programming Language",
-    "difficulty": 100.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 2,
-    "tags": [
-      "theme",
-      "programming"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_programming_languages"
-    }
-  },
-  {
-    "id": "f89940c21a6a45fc9e69799e77ab4dc0",
-    "source": "theme",
-    "type": "title",
-    "answer": "POP-2",
-    "normalizedAnswer": "POP2",
-    "category": "Programming Language",
-    "difficulty": 100.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 4,
-    "uniqueLetterCount": 2,
-    "tags": [
-      "theme",
-      "programming"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_programming_languages"
-    }
-  },
-  {
     "id": "4e09e6b5abaf457dfd724cd2180ce548",
     "source": "theme",
     "type": "title",
@@ -8740,17 +8240,17 @@
     }
   },
   {
-    "id": "9c44802a9c259071df3c01a0c78bd922",
+    "id": "9c00cb99fafe35a83e4d8fe864534a89",
     "source": "theme",
     "type": "title",
-    "answer": "PPL",
-    "normalizedAnswer": "PPL",
+    "answer": "Polymorphic Programming Language",
+    "normalizedAnswer": "POLYMORPHIC PROGRAMMING LANGUAGE",
     "category": "Programming Language",
-    "difficulty": 100.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 3,
-    "uniqueLetterCount": 2,
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 30,
+    "uniqueLetterCount": 14,
     "tags": [
       "theme",
       "programming"
@@ -8760,36 +8260,16 @@
     }
   },
   {
-    "id": "016ee8f21e396ecf327bd2ceb4d7f58b",
+    "id": "c54fc8e53b8e08b059a25d5be4aa543a",
     "source": "theme",
     "type": "title",
-    "answer": "Processing",
-    "normalizedAnswer": "PROCESSING",
+    "answer": "Processing, Processing.js",
+    "normalizedAnswer": "PROCESSING PROCESSINGJS",
     "category": "Programming Language",
-    "difficulty": 70,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 10,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "programming"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_programming_languages"
-    }
-  },
-  {
-    "id": "acbedac22eb26cf9b488e455e02ea0ae",
-    "source": "theme",
-    "type": "title",
-    "answer": "Processing.js",
-    "normalizedAnswer": "PROCESSINGJS",
-    "category": "Programming Language",
-    "difficulty": 65.2,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 12,
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 22,
     "uniqueLetterCount": 10,
     "tags": [
       "theme",
@@ -9480,26 +8960,6 @@
     }
   },
   {
-    "id": "155f99f100d91d26841df57b80f526db",
-    "source": "theme",
-    "type": "title",
-    "answer": "RTL/2",
-    "normalizedAnswer": "RTL2",
-    "category": "Programming Language",
-    "difficulty": 96.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 4,
-    "uniqueLetterCount": 3,
-    "tags": [
-      "theme",
-      "programming"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_programming_languages"
-    }
-  },
-  {
     "id": "1ccd516886433a1ea7f0a90dc086c6bc",
     "source": "theme",
     "type": "title",
@@ -9890,26 +9350,6 @@
     "difficultyTier": "hard",
     "wordCount": 1,
     "letterCount": 3,
-    "uniqueLetterCount": 3,
-    "tags": [
-      "theme",
-      "programming"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_programming_languages"
-    }
-  },
-  {
-    "id": "7d6557c0a416fd8c986a7d28aed5f3b9",
-    "source": "theme",
-    "type": "title",
-    "answer": "Seed7",
-    "normalizedAnswer": "SEED7",
-    "category": "Programming Language",
-    "difficulty": 96.4,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
     "uniqueLetterCount": 3,
     "tags": [
       "theme",
@@ -10940,50 +10380,10 @@
     }
   },
   {
-    "id": "0ac9d4957d8ca7b53a00bfc74dda0947",
+    "id": "b8056169fc0fc1ea465ce32da26bd13f",
     "source": "theme",
     "type": "title",
-    "answer": "TADS",
-    "normalizedAnswer": "TADS",
-    "category": "Programming Language",
-    "difficulty": 92.4,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 4,
-    "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "programming"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_programming_languages"
-    }
-  },
-  {
-    "id": "5b62d545d5fe503c776c1e50e6fa26b3",
-    "source": "theme",
-    "type": "title",
-    "answer": "TAL",
-    "normalizedAnswer": "TAL",
-    "category": "Programming Language",
-    "difficulty": 96.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 3,
-    "uniqueLetterCount": 3,
-    "tags": [
-      "theme",
-      "programming"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_programming_languages"
-    }
-  },
-  {
-    "id": "f1837ee862ce3a4376e7e942b2640725",
-    "source": "theme",
-    "type": "title",
-    "answer": "tcl",
+    "answer": "Tcl",
     "normalizedAnswer": "TCL",
     "category": "Programming Language",
     "difficulty": 96.8,
@@ -11020,26 +10420,6 @@
     }
   },
   {
-    "id": "4347b889cd120578becb045905a33069",
-    "source": "theme",
-    "type": "title",
-    "answer": "TECO",
-    "normalizedAnswer": "TECO",
-    "category": "Programming Language",
-    "difficulty": 92.4,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 4,
-    "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "programming"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_programming_languages"
-    }
-  },
-  {
     "id": "73993e0107cfd146e2dd20d66062e811",
     "source": "theme",
     "type": "title",
@@ -11051,6 +10431,26 @@
     "wordCount": 1,
     "letterCount": 7,
     "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "programming"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_programming_languages"
+    }
+  },
+  {
+    "id": "1bcf2d29db3be092949cd9e1e1e7c484",
+    "source": "theme",
+    "type": "title",
+    "answer": "Tensilica Instruction Extension",
+    "normalizedAnswer": "TENSILICA INSTRUCTION EXTENSION",
+    "category": "Programming Language",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 29,
+    "uniqueLetterCount": 12,
     "tags": [
       "theme",
       "programming"
@@ -11080,17 +10480,57 @@
     }
   },
   {
-    "id": "457876219b86ca9d42f0036061e6dd24",
+    "id": "5a9d5f26f693c5781c33005f074a0e18",
     "source": "theme",
     "type": "title",
-    "answer": "TIE",
-    "normalizedAnswer": "TIE",
+    "answer": "Text Adventure Development System",
+    "normalizedAnswer": "TEXT ADVENTURE DEVELOPMENT SYSTEM",
     "category": "Programming Language",
-    "difficulty": 96.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 3,
-    "uniqueLetterCount": 3,
+    "difficulty": 44,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 30,
+    "uniqueLetterCount": 15,
+    "tags": [
+      "theme",
+      "programming"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_programming_languages"
+    }
+  },
+  {
+    "id": "06e61f2096beb18e7ec95f1a62a3b19b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Text Editor and Corrector",
+    "normalizedAnswer": "TEXT EDITOR AND CORRECTOR",
+    "category": "Programming Language",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 22,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "programming"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_programming_languages"
+    }
+  },
+  {
+    "id": "b6914d5743cf3ecc3bdcc4dd018b3cff",
+    "source": "theme",
+    "type": "title",
+    "answer": "Text Processing Utility",
+    "normalizedAnswer": "TEXT PROCESSING UTILITY",
+    "category": "Programming Language",
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 21,
+    "uniqueLetterCount": 14,
     "tags": [
       "theme",
       "programming"
@@ -11160,30 +10600,10 @@
     }
   },
   {
-    "id": "8440c1c576bc12abedf251ab9d2227a8",
+    "id": "a911a35436d181352bf20ccb36e17541",
     "source": "theme",
     "type": "title",
-    "answer": "TPU",
-    "normalizedAnswer": "TPU",
-    "category": "Programming Language",
-    "difficulty": 96.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 3,
-    "uniqueLetterCount": 3,
-    "tags": [
-      "theme",
-      "programming"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_programming_languages"
-    }
-  },
-  {
-    "id": "89393b1e5f36e463a21efb2a828bfea9",
-    "source": "theme",
-    "type": "title",
-    "answer": "Trac",
+    "answer": "TRAC",
     "normalizedAnswer": "TRAC",
     "category": "Programming Language",
     "difficulty": 92.4,
@@ -11200,17 +10620,17 @@
     }
   },
   {
-    "id": "4d7ecc9a3d48de996241848365d98779",
+    "id": "9a3e153f9d07af7000fc603e5d3f5aba",
     "source": "theme",
     "type": "title",
-    "answer": "T-SQL",
-    "normalizedAnswer": "TSQL",
+    "answer": "Transact-SQL",
+    "normalizedAnswer": "TRANSACTSQL",
     "category": "Programming Language",
-    "difficulty": 92.4,
-    "difficultyTier": "hard",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
     "wordCount": 1,
-    "letterCount": 4,
-    "uniqueLetterCount": 4,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
     "tags": [
       "theme",
       "programming"
@@ -11220,17 +10640,17 @@
     }
   },
   {
-    "id": "c2c7713f98ed9df583a2da0c9cb69bf3",
+    "id": "ac3a552d1de661ae8103a94072ba6554",
     "source": "theme",
     "type": "title",
-    "answer": "TTM",
-    "normalizedAnswer": "TTM",
+    "answer": "Transaction Application Language",
+    "normalizedAnswer": "TRANSACTION APPLICATION LANGUAGE",
     "category": "Programming Language",
-    "difficulty": 100.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 3,
-    "uniqueLetterCount": 2,
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 30,
+    "uniqueLetterCount": 13,
     "tags": [
       "theme",
       "programming"
@@ -11271,6 +10691,26 @@
     "wordCount": 1,
     "letterCount": 4,
     "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "programming"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_programming_languages"
+    }
+  },
+  {
+    "id": "c2c7713f98ed9df583a2da0c9cb69bf3",
+    "source": "theme",
+    "type": "title",
+    "answer": "TTM",
+    "normalizedAnswer": "TTM",
+    "category": "Programming Language",
+    "difficulty": 100.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 2,
     "tags": [
       "theme",
       "programming"
@@ -11940,26 +11380,6 @@
     }
   },
   {
-    "id": "9506f811d39c10f01db1e29fca3f8b84",
-    "source": "theme",
-    "type": "title",
-    "answer": "XPL0",
-    "normalizedAnswer": "XPL0",
-    "category": "Programming Language",
-    "difficulty": 96.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 4,
-    "uniqueLetterCount": 3,
-    "tags": [
-      "theme",
-      "programming"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_programming_languages"
-    }
-  },
-  {
     "id": "77f3b36f55b6997b01f70be75264ac77",
     "source": "theme",
     "type": "title",
@@ -12091,26 +11511,6 @@
     "wordCount": 2,
     "letterCount": 6,
     "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "programming"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_programming_languages"
-    }
-  },
-  {
-    "id": "8d76ea05429b65fb8e3f4bccac785e46",
-    "source": "theme",
-    "type": "title",
-    "answer": "Zebra, ZPL, ZPL2",
-    "normalizedAnswer": "ZEBRA ZPL ZPL2",
-    "category": "Programming Language",
-    "difficulty": 77.6,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 12,
-    "uniqueLetterCount": 7,
     "tags": [
       "theme",
       "programming"

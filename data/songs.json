@@ -414,24 +414,6 @@
     }
   },
   {
-    "id": "ac13e4a2f04403a2671be8182b69b5cc",
-    "source": "music-song",
-    "type": "song",
-    "answer": "505",
-    "normalizedAnswer": "505",
-    "category": "Song",
-    "difficulty": 110,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 3,
-    "uniqueLetterCount": 0,
-    "metadata": {
-      "artist": "Arctic Monkeys",
-      "listeners": 3055122,
-      "playcount": 58916910
-    }
-  },
-  {
     "id": "92293a72b565b8842ab9a606f59f9612",
     "source": "music-song",
     "type": "song",
@@ -483,42 +465,6 @@
       "artist": "BTS",
       "listeners": 382657,
       "playcount": 56152016
-    }
-  },
-  {
-    "id": "77d52626fb9d953d0fbd1c17ddae5e75",
-    "source": "music-song",
-    "type": "song",
-    "answer": "2.0",
-    "normalizedAnswer": "20",
-    "category": "Song",
-    "difficulty": 110,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 2,
-    "uniqueLetterCount": 0,
-    "metadata": {
-      "artist": "BTS",
-      "listeners": 352303,
-      "playcount": 55580900
-    }
-  },
-  {
-    "id": "e9e6eb1eb3bb7b14b20213b0cba5fee1",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Dreams - 2004 Remaster",
-    "normalizedAnswer": "DREAMS 2004 REMASTER",
-    "category": "Song",
-    "difficulty": 76.4,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 18,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "artist": "Fleetwood Mac",
-      "listeners": 2026574,
-      "playcount": 29166081
     }
   },
   {
@@ -627,24 +573,6 @@
       "artist": "BTS",
       "listeners": 357784,
       "playcount": 53655275
-    }
-  },
-  {
-    "id": "4ccd5a539913d5abd22fcd5d2d24a302",
-    "source": "music-song",
-    "type": "song",
-    "answer": "SS26",
-    "normalizedAnswer": "SS26",
-    "category": "Song",
-    "difficulty": 105.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 4,
-    "uniqueLetterCount": 1,
-    "metadata": {
-      "artist": "Charli xcx",
-      "listeners": 193423,
-      "playcount": 791328
     }
   },
   {
@@ -1458,24 +1386,6 @@
     }
   },
   {
-    "id": "6f51477e4e340c0d718ba4f6fa53328a",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Smooth Criminal - 2012 Remaster",
-    "normalizedAnswer": "SMOOTH CRIMINAL 2012 REMASTER",
-    "category": "Song",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 26,
-    "uniqueLetterCount": 12,
-    "metadata": {
-      "artist": "Michael Jackson",
-      "listeners": 1368508,
-      "playcount": 9220121
-    }
-  },
-  {
     "id": "f30fba8dd1bfc6c49386fee4dbafec4f",
     "source": "music-song",
     "type": "song",
@@ -1728,42 +1638,6 @@
     }
   },
   {
-    "id": "fa2e5edfae5fc63421414b5ebe6757e4",
-    "source": "music-song",
-    "type": "song",
-    "answer": "There Is a Light That Never Goes Out - 2011 Remaster",
-    "normalizedAnswer": "THERE IS A LIGHT THAT NEVER GOES OUT 2011 REMASTER",
-    "category": "Song",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 10,
-    "letterCount": 41,
-    "uniqueLetterCount": 14,
-    "metadata": {
-      "artist": "The Smiths",
-      "listeners": 1939896,
-      "playcount": 31257973
-    }
-  },
-  {
-    "id": "9f0691516a78b0deaa12a52a320b229c",
-    "source": "music-song",
-    "type": "song",
-    "answer": "E85",
-    "normalizedAnswer": "E85",
-    "category": "Song",
-    "difficulty": 105.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 3,
-    "uniqueLetterCount": 1,
-    "metadata": {
-      "artist": "Don Toliver",
-      "listeners": 503181,
-      "playcount": 5068545
-    }
-  },
-  {
     "id": "ff8ff635caaa7354893718f709b880a7",
     "source": "music-song",
     "type": "song",
@@ -1869,24 +1743,6 @@
       "artist": "Radiohead",
       "listeners": 2488311,
       "playcount": 42153625
-    }
-  },
-  {
-    "id": "22b5b44a6bcb1fd824275f23561c263e",
-    "source": "music-song",
-    "type": "song",
-    "answer": "The Chain - 2004 Remaster",
-    "normalizedAnswer": "THE CHAIN 2004 REMASTER",
-    "category": "Song",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 20,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "artist": "Fleetwood Mac",
-      "listeners": 1800588,
-      "playcount": 23282859
     }
   },
   {
@@ -2034,24 +1890,6 @@
     }
   },
   {
-    "id": "da19410225ed2f29ecf6764f8111dbbc",
-    "source": "music-song",
-    "type": "song",
-    "answer": "party 4 u",
-    "normalizedAnswer": "PARTY 4 U",
-    "category": "Song",
-    "difficulty": 83.6,
-    "difficultyTier": "hard",
-    "wordCount": 3,
-    "letterCount": 7,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "artist": "Charli xcx",
-      "listeners": 1217194,
-      "playcount": 21192158
-    }
-  },
-  {
     "id": "75fda8fe90f77b19126a0a532aa49abb",
     "source": "music-song",
     "type": "song",
@@ -2103,24 +1941,6 @@
       "artist": "Laufey",
       "listeners": 1561103,
       "playcount": 28612236
-    }
-  },
-  {
-    "id": "8d3f15745128892b805e821dea801f17",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Heaven Knows I'm Miserable Now - 2011 Remaster",
-    "normalizedAnswer": "HEAVEN KNOWS IM MISERABLE NOW 2011 REMASTER",
-    "category": "Song",
-    "difficulty": 44,
-    "difficultyTier": "easy",
-    "wordCount": 7,
-    "letterCount": 37,
-    "uniqueLetterCount": 15,
-    "metadata": {
-      "artist": "The Smiths",
-      "listeners": 1723566,
-      "playcount": 26077383
     }
   },
   {
@@ -2211,24 +2031,6 @@
       "artist": "Bad Bunny",
       "listeners": 967222,
       "playcount": 14071157
-    }
-  },
-  {
-    "id": "b91562754bfca8462d828f020a6b90af",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Bad - 2012 Remaster",
-    "normalizedAnswer": "BAD 2012 REMASTER",
-    "category": "Song",
-    "difficulty": 73.6,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 15,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "artist": "Michael Jackson",
-      "listeners": 801321,
-      "playcount": 4568254
     }
   },
   {
@@ -2556,24 +2358,6 @@
     }
   },
   {
-    "id": "22ecf9a01860435173bc5dd69ae96011",
-    "source": "music-song",
-    "type": "song",
-    "answer": "No. 29",
-    "normalizedAnswer": "NO 29",
-    "category": "Song",
-    "difficulty": 101.2,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 4,
-    "uniqueLetterCount": 2,
-    "metadata": {
-      "artist": "BTS",
-      "listeners": 295749,
-      "playcount": 52083891
-    }
-  },
-  {
     "id": "3855c7e80ceee38dd80cbf85967c0d75",
     "source": "music-song",
     "type": "song",
@@ -2697,24 +2481,6 @@
       "artist": "Charli xcx",
       "listeners": 1458017,
       "playcount": 32449324
-    }
-  },
-  {
-    "id": "36dc89cf2d905c09703df583e28cb6e8",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Linger - Remastered 2026",
-    "normalizedAnswer": "LINGER REMASTERED 2026",
-    "category": "Song",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 20,
-    "uniqueLetterCount": 11,
-    "metadata": {
-      "artist": "The Cranberries",
-      "listeners": 88291,
-      "playcount": 125432
     }
   },
   {
@@ -3222,24 +2988,6 @@
     }
   },
   {
-    "id": "5bffd7b106ed3a6691ab5159552a8b4c",
-    "source": "music-song",
-    "type": "song",
-    "answer": "12 to 12",
-    "normalizedAnswer": "12 TO 12",
-    "category": "Song",
-    "difficulty": 101.2,
-    "difficultyTier": "hard",
-    "wordCount": 3,
-    "letterCount": 6,
-    "uniqueLetterCount": 2,
-    "metadata": {
-      "artist": "sombr",
-      "listeners": 835961,
-      "playcount": 10144212
-    }
-  },
-  {
     "id": "f2971ac8ee89a9d104d94c47f875aa92",
     "source": "music-song",
     "type": "song",
@@ -3312,24 +3060,6 @@
     }
   },
   {
-    "id": "1aef8c7d954af8e9fe134ac2c9b34dab",
-    "source": "music-song",
-    "type": "song",
-    "answer": "360",
-    "normalizedAnswer": "360",
-    "category": "Song",
-    "difficulty": 110,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 3,
-    "uniqueLetterCount": 0,
-    "metadata": {
-      "artist": "Charli xcx",
-      "listeners": 1648034,
-      "playcount": 34490925
-    }
-  },
-  {
     "id": "f2dd5ab61586b92987b6a21fe87a923d",
     "source": "music-song",
     "type": "song",
@@ -3399,24 +3129,6 @@
       "artist": "Prince",
       "listeners": 1360586,
       "playcount": 8948710
-    }
-  },
-  {
-    "id": "4659530228ff90f681e2e56a06226011",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Back to the Old House - 2011 Remaster",
-    "normalizedAnswer": "BACK TO THE OLD HOUSE 2011 REMASTER",
-    "category": "Song",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 7,
-    "letterCount": 29,
-    "uniqueLetterCount": 14,
-    "metadata": {
-      "artist": "The Smiths",
-      "listeners": 1467363,
-      "playcount": 23316037
     }
   },
   {
@@ -3618,24 +3330,6 @@
     }
   },
   {
-    "id": "9db866edc3331b42105e0655cb044f17",
-    "source": "music-song",
-    "type": "song",
-    "answer": "2 Hard 4 The Radio",
-    "normalizedAnswer": "2 HARD 4 THE RADIO",
-    "category": "Song",
-    "difficulty": 73.2,
-    "difficultyTier": "medium",
-    "wordCount": 5,
-    "letterCount": 14,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "artist": "Drake",
-      "listeners": 218440,
-      "playcount": 1039234
-    }
-  },
-  {
     "id": "cbe13076b001f8dc63672c8f5be79818",
     "source": "music-song",
     "type": "song",
@@ -3831,24 +3525,6 @@
       "artist": "Muse",
       "listeners": 2954099,
       "playcount": 36249631
-    }
-  },
-  {
-    "id": "873aeec5a590270247b889ad26c2cd0d",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Dirty Diana - 2012 Remaster",
-    "normalizedAnswer": "DIRTY DIANA 2012 REMASTER",
-    "category": "Song",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 22,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "artist": "Michael Jackson",
-      "listeners": 593565,
-      "playcount": 3264031
     }
   },
   {
@@ -4194,24 +3870,6 @@
     }
   },
   {
-    "id": "2b1903e7511800ab4ec366c1b3d692d1",
-    "source": "music-song",
-    "type": "song",
-    "answer": "No. 1 Party Anthem",
-    "normalizedAnswer": "NO 1 PARTY ANTHEM",
-    "category": "Song",
-    "difficulty": 64.8,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 14,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "artist": "Arctic Monkeys",
-      "listeners": 1663476,
-      "playcount": 25248526
-    }
-  },
-  {
     "id": "ea0a293c5bd99572f4715e1807ead957",
     "source": "music-song",
     "type": "song",
@@ -4425,24 +4083,6 @@
       "artist": "Milky",
       "listeners": 445680,
       "playcount": 3324179
-    }
-  },
-  {
-    "id": "ae7003fd6e1e9ef7bbc09cec561b7a4f",
-    "source": "music-song",
-    "type": "song",
-    "answer": "20 Min",
-    "normalizedAnswer": "20 MIN",
-    "category": "Song",
-    "difficulty": 96.8,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 5,
-    "uniqueLetterCount": 3,
-    "metadata": {
-      "artist": "Lil Uzi Vert",
-      "listeners": 1366456,
-      "playcount": 25063490
     }
   },
   {
@@ -4695,24 +4335,6 @@
       "artist": "Kanye West",
       "listeners": 2889074,
       "playcount": 34920409
-    }
-  },
-  {
-    "id": "ace71492666d63961de920efec4a9816",
-    "source": "music-song",
-    "type": "song",
-    "answer": "The Way You Make Me Feel - 2012 Remaster",
-    "normalizedAnswer": "THE WAY YOU MAKE ME FEEL 2012 REMASTER",
-    "category": "Song",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 8,
-    "letterCount": 31,
-    "uniqueLetterCount": 14,
-    "metadata": {
-      "artist": "Michael Jackson",
-      "listeners": 898396,
-      "playcount": 5079961
     }
   },
   {
@@ -5022,24 +4644,6 @@
     }
   },
   {
-    "id": "02817c61cd09a88a3c5d50859eef2301",
-    "source": "music-song",
-    "type": "song",
-    "answer": "This Charming Man - 2011 Remaster",
-    "normalizedAnswer": "THIS CHARMING MAN 2011 REMASTER",
-    "category": "Song",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 27,
-    "uniqueLetterCount": 11,
-    "metadata": {
-      "artist": "The Smiths",
-      "listeners": 1683759,
-      "playcount": 25537311
-    }
-  },
-  {
     "id": "366add81cb8e7e0cf14236d762c40b86",
     "source": "music-song",
     "type": "song",
@@ -5127,24 +4731,6 @@
       "artist": "BTS",
       "listeners": 870322,
       "playcount": 133144417
-    }
-  },
-  {
-    "id": "b1d6b43bf56ae84c0e7c43aa0046e559",
-    "source": "music-song",
-    "type": "song",
-    "answer": "3005",
-    "normalizedAnswer": "3005",
-    "category": "Song",
-    "difficulty": 110,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 4,
-    "uniqueLetterCount": 0,
-    "metadata": {
-      "artist": "Childish Gambino",
-      "listeners": 1545974,
-      "playcount": 23168160
     }
   },
   {
@@ -5505,24 +5091,6 @@
       "artist": "Britney Spears",
       "listeners": 2090417,
       "playcount": 17253515
-    }
-  },
-  {
-    "id": "1803a7c0b7e9f0e807a61996b6619fde",
-    "source": "music-song",
-    "type": "song",
-    "answer": "4 Raws",
-    "normalizedAnswer": "4 RAWS",
-    "category": "Song",
-    "difficulty": 92.4,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 5,
-    "uniqueLetterCount": 4,
-    "metadata": {
-      "artist": "EsDeeKid",
-      "listeners": 736741,
-      "playcount": 9995040
     }
   },
   {
@@ -5958,42 +5526,6 @@
     }
   },
   {
-    "id": "d3ec0f402a2a2459b2423859cd448106",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Bound 2",
-    "normalizedAnswer": "BOUND 2",
-    "category": "Song",
-    "difficulty": 88,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 6,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "artist": "Kanye West",
-      "listeners": 1946671,
-      "playcount": 30990429
-    }
-  },
-  {
-    "id": "d5d324503737d402393f36d89d32427a",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Silver Springs - 2004 Remaster",
-    "normalizedAnswer": "SILVER SPRINGS 2004 REMASTER",
-    "category": "Song",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 25,
-    "uniqueLetterCount": 12,
-    "metadata": {
-      "artist": "Fleetwood Mac",
-      "listeners": 958233,
-      "playcount": 12665888
-    }
-  },
-  {
     "id": "b0a746ef7507fbdbfde1b8339a4e122a",
     "source": "music-song",
     "type": "song",
@@ -6390,24 +5922,6 @@
     }
   },
   {
-    "id": "b1dd703c0ce5bed7b5dbba0bb7bee2a3",
-    "source": "music-song",
-    "type": "song",
-    "answer": "good 4 u",
-    "normalizedAnswer": "GOOD 4 U",
-    "category": "Song",
-    "difficulty": 92,
-    "difficultyTier": "hard",
-    "wordCount": 3,
-    "letterCount": 6,
-    "uniqueLetterCount": 4,
-    "metadata": {
-      "artist": "Olivia Rodrigo",
-      "listeners": 1824960,
-      "playcount": 36600032
-    }
-  },
-  {
     "id": "b3d11be5f4f3f1290a9292cc62a5c3ca",
     "source": "music-song",
     "type": "song",
@@ -6750,24 +6264,6 @@
     }
   },
   {
-    "id": "157b20d69bd146e2502c6b2f5b73759b",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Please, Please, Please, Let Me Get What I Want - 2011 Remaster",
-    "normalizedAnswer": "PLEASE PLEASE PLEASE LET ME GET WHAT I WANT 2011 REMASTER",
-    "category": "Song",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 11,
-    "letterCount": 47,
-    "uniqueLetterCount": 13,
-    "metadata": {
-      "artist": "The Smiths",
-      "listeners": 1487602,
-      "playcount": 21551285
-    }
-  },
-  {
     "id": "18bc02c60cc28b7da6b294a02f3c9adf",
     "source": "music-song",
     "type": "song",
@@ -7020,24 +6516,6 @@
     }
   },
   {
-    "id": "ae8a0bf0df7c9fdd68968457cb57b6bc",
-    "source": "music-song",
-    "type": "song",
-    "answer": "1979 - Remastered 2012",
-    "normalizedAnswer": "1979 REMASTERED 2012",
-    "category": "Song",
-    "difficulty": 78,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 18,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "artist": "The Smashing Pumpkins",
-      "listeners": 1403398,
-      "playcount": 17971805
-    }
-  },
-  {
     "id": "6edf3dc0b70ec83c3a2341d3ccd33c52",
     "source": "music-song",
     "type": "song",
@@ -7143,24 +6621,6 @@
       "artist": "ILLIT",
       "listeners": 1011050,
       "playcount": 23695995
-    }
-  },
-  {
-    "id": "719325f4ab1f3ca4481af718843f1e45",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Father Stretch My Hands Pt. 1",
-    "normalizedAnswer": "FATHER STRETCH MY HANDS PT 1",
-    "category": "Song",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 23,
-    "uniqueLetterCount": 13,
-    "metadata": {
-      "artist": "Kanye West",
-      "listeners": 1741285,
-      "playcount": 36373742
     }
   },
   {
@@ -7359,24 +6819,6 @@
       "artist": "Harry Styles",
       "listeners": 597666,
       "playcount": 6468271
-    }
-  },
-  {
-    "id": "7c97fe2d45ba79f7d420888a592d2665",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Hotel California - 2013 Remaster",
-    "normalizedAnswer": "HOTEL CALIFORNIA 2013 REMASTER",
-    "category": "Song",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 27,
-    "uniqueLetterCount": 13,
-    "metadata": {
-      "artist": "Eagles",
-      "listeners": 1412436,
-      "playcount": 14197436
     }
   },
   {
@@ -7647,24 +7089,6 @@
       "artist": "Lana Del Rey",
       "listeners": 1732455,
       "playcount": 30649394
-    }
-  },
-  {
-    "id": "2125df913a968534c4d368e19cbe5c7c",
-    "source": "music-song",
-    "type": "song",
-    "answer": "4Me 4Me",
-    "normalizedAnswer": "4ME 4ME",
-    "category": "Song",
-    "difficulty": 100.4,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 6,
-    "uniqueLetterCount": 2,
-    "metadata": {
-      "artist": "Malcolm Todd",
-      "listeners": 405793,
-      "playcount": 4747839
     }
   },
   {
@@ -8064,24 +7488,6 @@
     }
   },
   {
-    "id": "c8cd85b72de92007b9ddaaea5983f617",
-    "source": "music-song",
-    "type": "song",
-    "answer": "365",
-    "normalizedAnswer": "365",
-    "category": "Song",
-    "difficulty": 110,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 3,
-    "uniqueLetterCount": 0,
-    "metadata": {
-      "artist": "Charli xcx",
-      "listeners": 1316987,
-      "playcount": 23039809
-    }
-  },
-  {
     "id": "e815f602697283932a40730fc73463cf",
     "source": "music-song",
     "type": "song",
@@ -8280,24 +7686,6 @@
     }
   },
   {
-    "id": "0877a19ebd084c270b67c7fe61883b76",
-    "source": "music-song",
-    "type": "song",
-    "answer": "B's On The Table (feat. 21 Savage)",
-    "normalizedAnswer": "BS ON THE TABLE FEAT 21 SAVAGE",
-    "category": "Song",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 7,
-    "letterCount": 24,
-    "uniqueLetterCount": 12,
-    "metadata": {
-      "artist": "Drake",
-      "listeners": 211532,
-      "playcount": 797928
-    }
-  },
-  {
     "id": "7ca95b5032019940217f162cfd39a80a",
     "source": "music-song",
     "type": "song",
@@ -8475,24 +7863,6 @@
       "artist": "Panic! at the Disco",
       "listeners": 693314,
       "playcount": 8701981
-    }
-  },
-  {
-    "id": "80955704eb29ed94f01704be46a7a84f",
-    "source": "music-song",
-    "type": "song",
-    "answer": "404 (New Era)",
-    "normalizedAnswer": "404 NEW ERA",
-    "category": "Song",
-    "difficulty": 87.6,
-    "difficultyTier": "hard",
-    "wordCount": 3,
-    "letterCount": 9,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "artist": "KiiiKiii",
-      "listeners": 243894,
-      "playcount": 3706892
     }
   },
   {
@@ -8820,24 +8190,6 @@
     }
   },
   {
-    "id": "2e8c8f39dcaa95e3dc106ca372439f16",
-    "source": "music-song",
-    "type": "song",
-    "answer": "\"Heroes\" - 2017 Remaster",
-    "normalizedAnswer": "HEROES 2017 REMASTER",
-    "category": "Song",
-    "difficulty": 72.4,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 18,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "artist": "David Bowie",
-      "listeners": 446963,
-      "playcount": 2283246
-    }
-  },
-  {
     "id": "d8836841c8bc1aff864ed28c2c095d95",
     "source": "music-song",
     "type": "song",
@@ -8979,24 +8331,6 @@
       "artist": "ABBA",
       "listeners": 2574381,
       "playcount": 21568315
-    }
-  },
-  {
-    "id": "993928dc40cee9363f536041442f6b72",
-    "source": "music-song",
-    "type": "song",
-    "answer": "This Night Has Opened My Eyes - 2011 Remaster",
-    "normalizedAnswer": "THIS NIGHT HAS OPENED MY EYES 2011 REMASTER",
-    "category": "Song",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 8,
-    "letterCount": 36,
-    "uniqueLetterCount": 14,
-    "metadata": {
-      "artist": "The Smiths",
-      "listeners": 1339395,
-      "playcount": 20328879
     }
   },
   {
@@ -9303,24 +8637,6 @@
       "artist": "Coldplay",
       "listeners": 1414247,
       "playcount": 12892608
-    }
-  },
-  {
-    "id": "9a4aa6e9785f7096f910c42a6ddf2cd3",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Bitter Sweet Symphony - Remastered 2016",
-    "normalizedAnswer": "BITTER SWEET SYMPHONY REMASTERED 2016",
-    "category": "Song",
-    "difficulty": 44,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 33,
-    "uniqueLetterCount": 15,
-    "metadata": {
-      "artist": "The Verve",
-      "listeners": 972778,
-      "playcount": 7424742
     }
   },
   {
@@ -9900,24 +9216,6 @@
     }
   },
   {
-    "id": "b82a0dff822f83a869d143f566bb5dbe",
-    "source": "music-song",
-    "type": "song",
-    "answer": "7 rings",
-    "normalizedAnswer": "7 RINGS",
-    "category": "Song",
-    "difficulty": 88,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 6,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "artist": "Ariana Grande",
-      "listeners": 1732620,
-      "playcount": 29115734
-    }
-  },
-  {
     "id": "c0c262241fcf6b8df9d0c610f7cf2b99",
     "source": "music-song",
     "type": "song",
@@ -10134,24 +9432,6 @@
     }
   },
   {
-    "id": "cb35832622f849d79f0258fcd29c860a",
-    "source": "music-song",
-    "type": "song",
-    "answer": "B2b",
-    "normalizedAnswer": "B2B",
-    "category": "Song",
-    "difficulty": 105.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 3,
-    "uniqueLetterCount": 1,
-    "metadata": {
-      "artist": "Charli xcx",
-      "listeners": 1097241,
-      "playcount": 19216748
-    }
-  },
-  {
     "id": "967d7622d4c1ecc77d8fd677fedd7092",
     "source": "music-song",
     "type": "song",
@@ -10188,24 +9468,6 @@
     }
   },
   {
-    "id": "6da2c89dcdcbeb6760611e4b092c141e",
-    "source": "music-song",
-    "type": "song",
-    "answer": "90210 (feat. Kacy Hill)",
-    "normalizedAnswer": "90210 FEAT KACY HILL",
-    "category": "Song",
-    "difficulty": 65.2,
-    "difficultyTier": "medium",
-    "wordCount": 4,
-    "letterCount": 17,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "artist": "Travis Scott",
-      "listeners": 1171266,
-      "playcount": 25939037
-    }
-  },
-  {
     "id": "a6fbae66a599c585d2541f7a74c4cfc5",
     "source": "music-song",
     "type": "song",
@@ -10239,24 +9501,6 @@
       "artist": "Playboi Carti",
       "listeners": 1188323,
       "playcount": 25925444
-    }
-  },
-  {
-    "id": "b83fb365d9062edb03e168885bfcdb89",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Starman - 2012 Remaster",
-    "normalizedAnswer": "STARMAN 2012 REMASTER",
-    "category": "Song",
-    "difficulty": 76,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 19,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "artist": "David Bowie",
-      "listeners": 1271566,
-      "playcount": 13691670
     }
   },
   {
@@ -10491,24 +9735,6 @@
       "artist": "BTS",
       "listeners": 681775,
       "playcount": 19266023
-    }
-  },
-  {
-    "id": "cc9cec5642892b596004c1db1c0bbe74",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Everywhere - 2017 Remaster",
-    "normalizedAnswer": "EVERYWHERE 2017 REMASTER",
-    "category": "Song",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 22,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "artist": "Fleetwood Mac",
-      "listeners": 1192139,
-      "playcount": 11168319
     }
   },
   {
@@ -11178,24 +10404,6 @@
     }
   },
   {
-    "id": "4634ccb1c09941a135ef2aca609a7532",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Just Keep Watching (From F1® The Movie)",
-    "normalizedAnswer": "JUST KEEP WATCHING FROM F1 THE MOVIE",
-    "category": "Song",
-    "difficulty": 28,
-    "difficultyTier": "easy",
-    "wordCount": 7,
-    "letterCount": 30,
-    "uniqueLetterCount": 19,
-    "metadata": {
-      "artist": "Tate McRae",
-      "listeners": 678989,
-      "playcount": 10358377
-    }
-  },
-  {
     "id": "51de17200ce6284cf9fdd361a1f31867",
     "source": "music-song",
     "type": "song",
@@ -11538,24 +10746,6 @@
     }
   },
   {
-    "id": "54902eade8a44ef39fe1fbd936d4fba3",
-    "source": "music-song",
-    "type": "song",
-    "answer": "4EVER",
-    "normalizedAnswer": "4EVER",
-    "category": "Song",
-    "difficulty": 96.4,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 3,
-    "metadata": {
-      "artist": "Clairo",
-      "listeners": 1180299,
-      "playcount": 16896349
-    }
-  },
-  {
     "id": "8aef530fd406cc584bf133602dd55aed",
     "source": "music-song",
     "type": "song",
@@ -11823,24 +11013,6 @@
       "artist": "EsDeeKid",
       "listeners": 571192,
       "playcount": 8904705
-    }
-  },
-  {
-    "id": "0fa303be0b39982f01b6da328a46e4f0",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Boy's a liar Pt. 2",
-    "normalizedAnswer": "BOYS A LIAR PT 2",
-    "category": "Song",
-    "difficulty": 65.6,
-    "difficultyTier": "medium",
-    "wordCount": 5,
-    "letterCount": 12,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "artist": "PinkPantheress",
-      "listeners": 1637959,
-      "playcount": 23199827
     }
   },
   {
@@ -12222,42 +11394,6 @@
     }
   },
   {
-    "id": "769e7b8aca2ed366615931d47ac384f9",
-    "source": "music-song",
-    "type": "song",
-    "answer": "XO TOUR Llif3",
-    "normalizedAnswer": "XO TOUR LLIF3",
-    "category": "Song",
-    "difficulty": 74,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 11,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "artist": "Lil Uzi Vert",
-      "listeners": 1515876,
-      "playcount": 26804825
-    }
-  },
-  {
-    "id": "ee2f1850040e14ad8d92526302ed917f",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Under Pressure - Remastered 2011",
-    "normalizedAnswer": "UNDER PRESSURE REMASTERED 2011",
-    "category": "Song",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 27,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "artist": "Queen",
-      "listeners": 1414242,
-      "playcount": 11935591
-    }
-  },
-  {
     "id": "84102ce57ba070450f4238ecc9f37439",
     "source": "music-song",
     "type": "song",
@@ -12363,24 +11499,6 @@
       "artist": "Slayyyter",
       "listeners": 248001,
       "playcount": 3499230
-    }
-  },
-  {
-    "id": "67ca63f45b82df5adb8d12a5ced33f21",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Song 2 - 2012 Remaster",
-    "normalizedAnswer": "SONG 2 2012 REMASTER",
-    "category": "Song",
-    "difficulty": 69.2,
-    "difficultyTier": "medium",
-    "wordCount": 4,
-    "letterCount": 17,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "artist": "Blur",
-      "listeners": 1347276,
-      "playcount": 12340459
     }
   },
   {
@@ -13194,24 +12312,6 @@
     }
   },
   {
-    "id": "8f390b2be30a55c8eef5678cd8c4d277",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Don't Stop Me Now - Remastered 2011",
-    "normalizedAnswer": "DONT STOP ME NOW REMASTERED 2011",
-    "category": "Song",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 27,
-    "uniqueLetterCount": 11,
-    "metadata": {
-      "artist": "Queen",
-      "listeners": 1659492,
-      "playcount": 13986107
-    }
-  },
-  {
     "id": "a079797db8a80395d5b56467584b73a4",
     "source": "music-song",
     "type": "song",
@@ -13482,24 +12582,6 @@
     }
   },
   {
-    "id": "3dffadf545b6ec828cb328b865e6cb6d",
-    "source": "music-song",
-    "type": "song",
-    "answer": "I Know It's Over - 2011 Remaster",
-    "normalizedAnswer": "I KNOW ITS OVER 2011 REMASTER",
-    "category": "Song",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 24,
-    "uniqueLetterCount": 12,
-    "metadata": {
-      "artist": "The Smiths",
-      "listeners": 1078979,
-      "playcount": 13536069
-    }
-  },
-  {
     "id": "a064a2d9f4596e7212e00d8f85151aa8",
     "source": "music-song",
     "type": "song",
@@ -13659,24 +12741,6 @@
       "artist": "Noah Kahan",
       "listeners": 148650,
       "playcount": 1258063
-    }
-  },
-  {
-    "id": "19176563f1120c53f177a2aa34a76352",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Prophecy At 1420 MHz",
-    "normalizedAnswer": "PROPHECY AT 1420 MHZ",
-    "category": "Song",
-    "difficulty": 60.8,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 17,
-    "uniqueLetterCount": 11,
-    "metadata": {
-      "artist": "Boards of Canada",
-      "listeners": 67722,
-      "playcount": 228071
     }
   },
   {
@@ -14382,24 +13446,6 @@
     }
   },
   {
-    "id": "d67539cd1ae355908de322d238957578",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Bigmouth Strikes Again - 2011 Remaster",
-    "normalizedAnswer": "BIGMOUTH STRIKES AGAIN 2011 REMASTER",
-    "category": "Song",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 32,
-    "uniqueLetterCount": 14,
-    "metadata": {
-      "artist": "The Smiths",
-      "listeners": 1124284,
-      "playcount": 13959062
-    }
-  },
-  {
     "id": "105190c4a40eeb99a39c992486c48e32",
     "source": "music-song",
     "type": "song",
@@ -14433,24 +13479,6 @@
       "artist": "The Weeknd",
       "listeners": 1878319,
       "playcount": 27664595
-    }
-  },
-  {
-    "id": "2a4a688e348a4bf127949aa79cdb9f9a",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Bohemian Rhapsody - Remastered 2011",
-    "normalizedAnswer": "BOHEMIAN RHAPSODY REMASTERED 2011",
-    "category": "Song",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 30,
-    "uniqueLetterCount": 14,
-    "metadata": {
-      "artist": "Queen",
-      "listeners": 1729865,
-      "playcount": 13701096
     }
   },
   {
@@ -14577,24 +13605,6 @@
       "artist": "Alice in Chains",
       "listeners": 1406194,
       "playcount": 15412596
-    }
-  },
-  {
-    "id": "b11d7fc47fb0174033b6812b5dba454f",
-    "source": "music-song",
-    "type": "song",
-    "answer": "How Soon Is Now? - 2011 Remaster",
-    "normalizedAnswer": "HOW SOON IS NOW 2011 REMASTER",
-    "category": "Song",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 24,
-    "uniqueLetterCount": 11,
-    "metadata": {
-      "artist": "The Smiths",
-      "listeners": 1107662,
-      "playcount": 11479419
     }
   },
   {
@@ -14739,24 +13749,6 @@
       "artist": "JAŸ-Z",
       "listeners": 280238,
       "playcount": 732433
-    }
-  },
-  {
-    "id": "4dd40f56a0a1c80fcec2799a086c687e",
-    "source": "music-song",
-    "type": "song",
-    "answer": "STAY HERE 4 LIFE (feat. Brent Faiyaz)",
-    "normalizedAnswer": "STAY HERE 4 LIFE FEAT BRENT FAIYAZ",
-    "category": "Song",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 7,
-    "letterCount": 28,
-    "uniqueLetterCount": 13,
-    "metadata": {
-      "artist": "A$AP Rocky",
-      "listeners": 407619,
-      "playcount": 2523133
     }
   },
   {
@@ -15387,24 +14379,6 @@
       "artist": "Lana Del Rey",
       "listeners": 1852556,
       "playcount": 25312904
-    }
-  },
-  {
-    "id": "248bfb318bf9c992d17c4b2cd8db8c22",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Man In The Mirror - 2012 Remaster",
-    "normalizedAnswer": "MAN IN THE MIRROR 2012 REMASTER",
-    "category": "Song",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 26,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "artist": "Michael Jackson",
-      "listeners": 549594,
-      "playcount": 2821868
     }
   },
   {
@@ -16434,24 +15408,6 @@
     }
   },
   {
-    "id": "7354fbac703c6dea325efa8c7cede892",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Airplane pt.2",
-    "normalizedAnswer": "AIRPLANE PT2",
-    "category": "Song",
-    "difficulty": 74,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "artist": "BTS",
-      "listeners": 590080,
-      "playcount": 18070933
-    }
-  },
-  {
     "id": "557b854e2ab3bace64a16c8114b4fc39",
     "source": "music-song",
     "type": "song",
@@ -16866,24 +15822,6 @@
     }
   },
   {
-    "id": "cd8e403e82235cfbefbeeabd8fdb4b36",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Long Way 2 Go",
-    "normalizedAnswer": "LONG WAY 2 GO",
-    "category": "Song",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 4,
-    "letterCount": 10,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "artist": "Cassie",
-      "listeners": 872043,
-      "playcount": 7664213
-    }
-  },
-  {
     "id": "a11b2599d3157b956d3c4743676486e1",
     "source": "music-song",
     "type": "song",
@@ -17043,24 +15981,6 @@
       "artist": "Post Malone",
       "listeners": 1541398,
       "playcount": 22364614
-    }
-  },
-  {
-    "id": "c247919a14bf5b1a4b033a10580e2d3d",
-    "source": "music-song",
-    "type": "song",
-    "answer": "500 Miles",
-    "normalizedAnswer": "500 MILES",
-    "category": "Song",
-    "difficulty": 88,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "artist": "Peter, Paul and Mary",
-      "listeners": 225305,
-      "playcount": 2078182
     }
   },
   {
@@ -17280,24 +16200,6 @@
     }
   },
   {
-    "id": "8fba761ddebc944ba49d0c38cce591bf",
-    "source": "music-song",
-    "type": "song",
-    "answer": "24K Magic",
-    "normalizedAnswer": "24K MAGIC",
-    "category": "Song",
-    "difficulty": 83.6,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "artist": "Bruno Mars",
-      "listeners": 1508787,
-      "playcount": 12326589
-    }
-  },
-  {
     "id": "94fc497433191ff53df3fa6d3d0e2703",
     "source": "music-song",
     "type": "song",
@@ -17439,24 +16341,6 @@
       "artist": "Olivia Rodrigo",
       "listeners": 1201043,
       "playcount": 19236696
-    }
-  },
-  {
-    "id": "2ab096d8fba978b0554c83192b5251a2",
-    "source": "music-song",
-    "type": "song",
-    "answer": "All Too Well (10 Minute Version) (Taylor's Version) (From the Vault)",
-    "normalizedAnswer": "ALL TOO WELL 10 MINUTE VERSION TAYLORS VERSION FROM THE VAULT",
-    "category": "Song",
-    "difficulty": 40,
-    "difficultyTier": "easy",
-    "wordCount": 11,
-    "letterCount": 51,
-    "uniqueLetterCount": 16,
-    "metadata": {
-      "artist": "Taylor Swift",
-      "listeners": 980367,
-      "playcount": 29337618
     }
   },
   {
@@ -17871,24 +16755,6 @@
       "artist": "Harry Styles",
       "listeners": 322499,
       "playcount": 2719069
-    }
-  },
-  {
-    "id": "8117f23c298f159f2d9fb26644bd2af5",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Zombie - 2025 Remastered",
-    "normalizedAnswer": "ZOMBIE 2025 REMASTERED",
-    "category": "Song",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 20,
-    "uniqueLetterCount": 11,
-    "metadata": {
-      "artist": "The Cranberries",
-      "listeners": 504752,
-      "playcount": 2225190
     }
   },
   {
@@ -18501,24 +17367,6 @@
       "artist": "Clairo",
       "listeners": 951065,
       "playcount": 10838971
-    }
-  },
-  {
-    "id": "ffaa79d5cbd11cbee91cbfd5cb50f2f9",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Need 2",
-    "normalizedAnswer": "NEED 2",
-    "category": "Song",
-    "difficulty": 96.4,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 5,
-    "uniqueLetterCount": 3,
-    "metadata": {
-      "artist": "Pinegrove",
-      "listeners": 1075693,
-      "playcount": 19390176
     }
   },
   {
@@ -19224,42 +18072,6 @@
     }
   },
   {
-    "id": "618b00602435912d4afcb00e0500c786",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Here Comes the Sun - Remastered 2009",
-    "normalizedAnswer": "HERE COMES THE SUN REMASTERED 2009",
-    "category": "Song",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 29,
-    "uniqueLetterCount": 12,
-    "metadata": {
-      "artist": "The Beatles",
-      "listeners": 1546378,
-      "playcount": 13330258
-    }
-  },
-  {
-    "id": "2bd9bd6bb5a0eed251dcb35597451694",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Sk8er Boi",
-    "normalizedAnswer": "SK8ER BOI",
-    "category": "Song",
-    "difficulty": 79.2,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "artist": "Avril Lavigne",
-      "listeners": 1741962,
-      "playcount": 13681351
-    }
-  },
-  {
     "id": "d4e3264d5ce2e4ae023a4e247ae6e347",
     "source": "music-song",
     "type": "song",
@@ -19275,24 +18087,6 @@
       "artist": "Ariana Grande",
       "listeners": 788429,
       "playcount": 9366998
-    }
-  },
-  {
-    "id": "70ba763fd67fa93fc58912e96a8bc0c3",
-    "source": "music-song",
-    "type": "song",
-    "answer": "2 On (feat. Schoolboy Q)",
-    "normalizedAnswer": "2 ON FEAT SCHOOLBOY Q",
-    "category": "Song",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 17,
-    "uniqueLetterCount": 13,
-    "metadata": {
-      "artist": "Tinashe",
-      "listeners": 743331,
-      "playcount": 8432438
     }
   },
   {
@@ -19584,24 +18378,6 @@
     }
   },
   {
-    "id": "bf9721a5931d2c9e38893c16afd242c1",
-    "source": "music-song",
-    "type": "song",
-    "answer": "3D (feat. Jack Harlow)",
-    "normalizedAnswer": "3D FEAT JACK HARLOW",
-    "category": "Song",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 16,
-    "uniqueLetterCount": 13,
-    "metadata": {
-      "artist": "Jung Kook",
-      "listeners": 697271,
-      "playcount": 66553172
-    }
-  },
-  {
     "id": "892ef9a4c7b2b5b0e79417d995b8369a",
     "source": "music-song",
     "type": "song",
@@ -19836,24 +18612,6 @@
     }
   },
   {
-    "id": "9e07a3a252b7a566df143890d16065bd",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Would? (2022 remaster)",
-    "normalizedAnswer": "WOULD 2022 REMASTER",
-    "category": "Song",
-    "difficulty": 60.8,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 17,
-    "uniqueLetterCount": 11,
-    "metadata": {
-      "artist": "Alice in Chains",
-      "listeners": 774149,
-      "playcount": 9915426
-    }
-  },
-  {
     "id": "419e478ecbd6311e9e7094ed8be62352",
     "source": "music-song",
     "type": "song",
@@ -19887,24 +18645,6 @@
       "artist": "One Direction",
       "listeners": 1019177,
       "playcount": 9031024
-    }
-  },
-  {
-    "id": "0a52a665411175b7331f56c95ad11fd8",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Where Is My Mind? - 2007 Remaster",
-    "normalizedAnswer": "WHERE IS MY MIND 2007 REMASTER",
-    "category": "Song",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 25,
-    "uniqueLetterCount": 12,
-    "metadata": {
-      "artist": "Pixies",
-      "listeners": 926314,
-      "playcount": 6307444
     }
   },
   {
@@ -20157,24 +18897,6 @@
       "artist": "Noah Kahan",
       "listeners": 128307,
       "playcount": 1008838
-    }
-  },
-  {
-    "id": "1ec7cdf43e085662575c2cb77ce076db",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Season 2 Weight Loss",
-    "normalizedAnswer": "SEASON 2 WEIGHT LOSS",
-    "category": "Song",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 17,
-    "uniqueLetterCount": 11,
-    "metadata": {
-      "artist": "Harry Styles",
-      "listeners": 294245,
-      "playcount": 2672600
     }
   },
   {
@@ -20625,24 +19347,6 @@
       "artist": "Kim Petras",
       "listeners": 39830,
       "playcount": 125618
-    }
-  },
-  {
-    "id": "67fe7fc9fac0e09712ff5cf84d407b5c",
-    "source": "music-song",
-    "type": "song",
-    "answer": "16",
-    "normalizedAnswer": "16",
-    "category": "Song",
-    "difficulty": 110,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 2,
-    "uniqueLetterCount": 0,
-    "metadata": {
-      "artist": "Baby Keem",
-      "listeners": 867086,
-      "playcount": 18834850
     }
   },
   {
@@ -21129,24 +19833,6 @@
       "artist": "Two Door Cinema Club",
       "listeners": 1579793,
       "playcount": 16776412
-    }
-  },
-  {
-    "id": "cc60407ab2b858aceb75d8dfed12557a",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Go Your Own Way - 2004 Remaster",
-    "normalizedAnswer": "GO YOUR OWN WAY 2004 REMASTER",
-    "category": "Song",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 24,
-    "uniqueLetterCount": 12,
-    "metadata": {
-      "artist": "Fleetwood Mac",
-      "listeners": 1121527,
-      "playcount": 9933794
     }
   },
   {
@@ -21888,24 +20574,6 @@
     }
   },
   {
-    "id": "73f9430b40bad375d1824a238055def2",
-    "source": "music-song",
-    "type": "song",
-    "answer": "3 Nights",
-    "normalizedAnswer": "3 NIGHTS",
-    "category": "Song",
-    "difficulty": 83.6,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 7,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "artist": "Dominic Fike",
-      "listeners": 1015261,
-      "playcount": 12663001
-    }
-  },
-  {
     "id": "27565840fb4280d1a45476df3ba9591c",
     "source": "music-song",
     "type": "song",
@@ -22086,24 +20754,6 @@
     }
   },
   {
-    "id": "fecc35b1633ee6ed575c12f8a1a462ea",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Come Back - Buddha Remastered 2001",
-    "normalizedAnswer": "COME BACK BUDDHA REMASTERED 2001",
-    "category": "Song",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 28,
-    "uniqueLetterCount": 13,
-    "metadata": {
-      "artist": "The Five Stairsteps",
-      "listeners": 395998,
-      "playcount": 3368890
-    }
-  },
-  {
     "id": "0fae5b19c519d3dc7dece171f409c3b8",
     "source": "music-song",
     "type": "song",
@@ -22137,42 +20787,6 @@
       "artist": "Arctic Monkeys",
       "listeners": 1389737,
       "playcount": 15666282
-    }
-  },
-  {
-    "id": "ad51cf305ff9e2618a265706fffe8dde",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Popular (with Playboi Carti & Madonna) - From The Idol Vol. 1 (Music from the HBO Original Series)",
-    "normalizedAnswer": "POPULAR WITH PLAYBOI CARTI MADONNA FROM THE IDOL VOL 1 MUSIC FROM THE HBO ORIGINAL SERIES",
-    "category": "Song",
-    "difficulty": 20,
-    "difficultyTier": "easy",
-    "wordCount": 16,
-    "letterCount": 74,
-    "uniqueLetterCount": 21,
-    "metadata": {
-      "artist": "The Weeknd",
-      "listeners": 966763,
-      "playcount": 9004745
-    }
-  },
-  {
-    "id": "ea18f99faca2a0b5a10c41b73037c907",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Back on 74",
-    "normalizedAnswer": "BACK ON 74",
-    "category": "Song",
-    "difficulty": 83.6,
-    "difficultyTier": "hard",
-    "wordCount": 3,
-    "letterCount": 8,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "artist": "Jungle",
-      "listeners": 849595,
-      "playcount": 9236455
     }
   },
   {
@@ -22245,24 +20859,6 @@
       "artist": "RAYE",
       "listeners": 1050916,
       "playcount": 13994059
-    }
-  },
-  {
-    "id": "6add2c33e17fdc0806b6ebd9c705c3c6",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Hypnotize - 2014 Remaster",
-    "normalizedAnswer": "HYPNOTIZE 2014 REMASTER",
-    "category": "Song",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 21,
-    "uniqueLetterCount": 13,
-    "metadata": {
-      "artist": "The Notorious B.I.G.",
-      "listeners": 1194694,
-      "playcount": 8808392
     }
   },
   {
@@ -22461,24 +21057,6 @@
       "artist": "Slayyyter",
       "listeners": 170433,
       "playcount": 1557737
-    }
-  },
-  {
-    "id": "b7494587475a728a84ed6eb2e53b7cd0",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Beautiful Boy (Darling Boy) - Remastered 2010",
-    "normalizedAnswer": "BEAUTIFUL BOY DARLING BOY REMASTERED 2010",
-    "category": "Song",
-    "difficulty": 40,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 36,
-    "uniqueLetterCount": 16,
-    "metadata": {
-      "artist": "John Lennon",
-      "listeners": 678951,
-      "playcount": 5437196
     }
   },
   {
@@ -23058,24 +21636,6 @@
     }
   },
   {
-    "id": "3dc5c132a451b902dc0acfa2eb399dba",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Bullet With Butterfly Wings - remastered 2012",
-    "normalizedAnswer": "BULLET WITH BUTTERFLY WINGS REMASTERED 2012",
-    "category": "Song",
-    "difficulty": 36,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 38,
-    "uniqueLetterCount": 17,
-    "metadata": {
-      "artist": "The Smashing Pumpkins",
-      "listeners": 980703,
-      "playcount": 10034646
-    }
-  },
-  {
     "id": "aae2154683c3cb5d4622cc14f54100b1",
     "source": "music-song",
     "type": "song",
@@ -23400,24 +21960,6 @@
     }
   },
   {
-    "id": "4243c76ab300ceabf20d4b079d076560",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Something - Remastered 2009",
-    "normalizedAnswer": "SOMETHING REMASTERED 2009",
-    "category": "Song",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 23,
-    "uniqueLetterCount": 12,
-    "metadata": {
-      "artist": "The Beatles",
-      "listeners": 1024403,
-      "playcount": 10140039
-    }
-  },
-  {
     "id": "7ee2175f631048cbb1ab6fb936dee3a5",
     "source": "music-song",
     "type": "song",
@@ -23451,24 +21993,6 @@
       "artist": "Taylor Swift",
       "listeners": 955226,
       "playcount": 29047814
-    }
-  },
-  {
-    "id": "c21a0ef61becf67597253d787dc5de66",
-    "source": "music-song",
-    "type": "song",
-    "answer": "My Sweet Lord - 2014 Remaster",
-    "normalizedAnswer": "MY SWEET LORD 2014 REMASTER",
-    "category": "Song",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 23,
-    "uniqueLetterCount": 11,
-    "metadata": {
-      "artist": "George Harrison",
-      "listeners": 351314,
-      "playcount": 1631586
     }
   },
   {
@@ -23796,24 +22320,6 @@
     }
   },
   {
-    "id": "2349f1d9352a31fffc875befa7ba1b35",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Big Poppa - 2005 Remaster",
-    "normalizedAnswer": "BIG POPPA 2005 REMASTER",
-    "category": "Song",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 20,
-    "uniqueLetterCount": 11,
-    "metadata": {
-      "artist": "The Notorious B.I.G.",
-      "listeners": 1238187,
-      "playcount": 9319591
-    }
-  },
-  {
     "id": "c6584a5deda24a7dc625b96de6de6a34",
     "source": "music-song",
     "type": "song",
@@ -23865,24 +22371,6 @@
       "artist": "Doechii",
       "listeners": 1257369,
       "playcount": 16176107
-    }
-  },
-  {
-    "id": "72e0b093c1c76e9cf87f0fb42219b398",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Dreams - Remastered 2026",
-    "normalizedAnswer": "DREAMS REMASTERED 2026",
-    "category": "Song",
-    "difficulty": 76,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 20,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "artist": "The Cranberries",
-      "listeners": 37594,
-      "playcount": 52494
     }
   },
   {
@@ -24045,24 +22533,6 @@
       "artist": "Fleetwood Mac",
       "listeners": 1397919,
       "playcount": 11982505
-    }
-  },
-  {
-    "id": "a2d8ad786f96548016ba59cfd2c99778",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Velvet Ring - 2023 Remaster",
-    "normalizedAnswer": "VELVET RING 2023 REMASTER",
-    "category": "Song",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 22,
-    "uniqueLetterCount": 11,
-    "metadata": {
-      "artist": "Big Thief",
-      "listeners": 718189,
-      "playcount": 9223650
     }
   },
   {
@@ -24624,24 +23094,6 @@
     }
   },
   {
-    "id": "4f85452ece13c0999c8fc6b7c909d17b",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Enter Sandman - Remastered 2021",
-    "normalizedAnswer": "ENTER SANDMAN REMASTERED 2021",
-    "category": "Song",
-    "difficulty": 72,
-    "difficultyTier": "medium",
-    "wordCount": 4,
-    "letterCount": 26,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "artist": "Metallica",
-      "listeners": 520476,
-      "playcount": 3679861
-    }
-  },
-  {
     "id": "78ce1c0e48bfad5d69b9609e9afc59e8",
     "source": "music-song",
     "type": "song",
@@ -24966,24 +23418,6 @@
     }
   },
   {
-    "id": "b2d0c3ed4f2ea5df16c22ad5a326c6bf",
-    "source": "music-song",
-    "type": "song",
-    "answer": "34+35",
-    "normalizedAnswer": "3435",
-    "category": "Song",
-    "difficulty": 110,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 4,
-    "uniqueLetterCount": 0,
-    "metadata": {
-      "artist": "Ariana Grande",
-      "listeners": 1075243,
-      "playcount": 12051894
-    }
-  },
-  {
     "id": "1586b16d8ee6a481cc79434baf8eafec",
     "source": "music-song",
     "type": "song",
@@ -25107,24 +23541,6 @@
       "artist": "Guns N' Roses",
       "listeners": 1717082,
       "playcount": 13725456
-    }
-  },
-  {
-    "id": "b2e6cd4baf2b62f6871b1190144ef162",
-    "source": "music-song",
-    "type": "song",
-    "answer": "400 Lux",
-    "normalizedAnswer": "400 LUX",
-    "category": "Song",
-    "difficulty": 96.8,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 6,
-    "uniqueLetterCount": 3,
-    "metadata": {
-      "artist": "Lorde",
-      "listeners": 931111,
-      "playcount": 11739524
     }
   },
   {
@@ -25344,24 +23760,6 @@
     }
   },
   {
-    "id": "de45f42ed88ace920986bd984c08a6c2",
-    "source": "music-song",
-    "type": "song",
-    "answer": "the 1",
-    "normalizedAnswer": "THE 1",
-    "category": "Song",
-    "difficulty": 96.8,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 4,
-    "uniqueLetterCount": 3,
-    "metadata": {
-      "artist": "Taylor Swift",
-      "listeners": 991143,
-      "playcount": 27903821
-    }
-  },
-  {
     "id": "9e56a71497dc662581086ddc15e58165",
     "source": "music-song",
     "type": "song",
@@ -25557,24 +23955,6 @@
       "artist": "Linkin Park",
       "listeners": 1717835,
       "playcount": 18850351
-    }
-  },
-  {
-    "id": "95443e6a55986af9dfb46f3b51a779a3",
-    "source": "music-song",
-    "type": "song",
-    "answer": "the kill 2",
-    "normalizedAnswer": "THE KILL 2",
-    "category": "Song",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 3,
-    "letterCount": 8,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "artist": "Lex Amarni",
-      "listeners": 134575,
-      "playcount": 1216071
     }
   },
   {
@@ -25920,24 +24300,6 @@
     }
   },
   {
-    "id": "155d3f08373612d412d94c8cfae57901",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Pretty Girls Make Graves - 2011 Remaster",
-    "normalizedAnswer": "PRETTY GIRLS MAKE GRAVES 2011 REMASTER",
-    "category": "Song",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 33,
-    "uniqueLetterCount": 13,
-    "metadata": {
-      "artist": "The Smiths",
-      "listeners": 886903,
-      "playcount": 8768183
-    }
-  },
-  {
     "id": "1a259ba6d90381987dd3de5d8cb4214b",
     "source": "music-song",
     "type": "song",
@@ -26172,24 +24534,6 @@
     }
   },
   {
-    "id": "62213323f5c2868437f5c463c09fff06",
-    "source": "music-song",
-    "type": "song",
-    "answer": "15 Minutes",
-    "normalizedAnswer": "15 MINUTES",
-    "category": "Song",
-    "difficulty": 79.2,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "artist": "Sabrina Carpenter",
-      "listeners": 596016,
-      "playcount": 9507795
-    }
-  },
-  {
     "id": "2b7f56b8d46b3ef972e79e4bde04b598",
     "source": "music-song",
     "type": "song",
@@ -26223,24 +24567,6 @@
       "artist": "Twenty One Pilots",
       "listeners": 1429840,
       "playcount": 13147252
-    }
-  },
-  {
-    "id": "683e74e7e6d75fb2c9ef2905e53b8de7",
-    "source": "music-song",
-    "type": "song",
-    "answer": "West End Girls - 2018 Remaster",
-    "normalizedAnswer": "WEST END GIRLS 2018 REMASTER",
-    "category": "Song",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 24,
-    "uniqueLetterCount": 12,
-    "metadata": {
-      "artist": "Pet Shop Boys",
-      "listeners": 675352,
-      "playcount": 5062388
     }
   },
   {
@@ -26478,24 +24804,6 @@
     }
   },
   {
-    "id": "d13ce030611c5a2dcf58f62d0dff6116",
-    "source": "music-song",
-    "type": "song",
-    "answer": "9",
-    "normalizedAnswer": "9",
-    "category": "Song",
-    "difficulty": 110,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 1,
-    "uniqueLetterCount": 0,
-    "metadata": {
-      "artist": "Drake",
-      "listeners": 584921,
-      "playcount": 7167719
-    }
-  },
-  {
     "id": "85b1fd652cdff15e0ac34d83b3dbdf60",
     "source": "music-song",
     "type": "song",
@@ -26529,24 +24837,6 @@
       "artist": "Boards of Canada",
       "listeners": 34653,
       "playcount": 71930
-    }
-  },
-  {
-    "id": "f560db18dddd645ca1a638808e87d1b9",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Today - 2011 Remaster",
-    "normalizedAnswer": "TODAY 2011 REMASTER",
-    "category": "Song",
-    "difficulty": 68.8,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 17,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "artist": "The Smashing Pumpkins",
-      "listeners": 828687,
-      "playcount": 7919922
     }
   },
   {
@@ -26730,24 +25020,6 @@
     }
   },
   {
-    "id": "2a02a352db3abe6889c2756d362c166e",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Luna - 2011 Remaster",
-    "normalizedAnswer": "LUNA 2011 REMASTER",
-    "category": "Song",
-    "difficulty": 69.2,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 16,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "artist": "The Smashing Pumpkins",
-      "listeners": 694149,
-      "playcount": 7395740
-    }
-  },
-  {
     "id": "f3a38cdb4256a8677217c7d8190ef23a",
     "source": "music-song",
     "type": "song",
@@ -26871,24 +25143,6 @@
       "artist": "Kid Cudi",
       "listeners": 1226483,
       "playcount": 13019157
-    }
-  },
-  {
-    "id": "476a88d8c0b7c817a0b5dad6157d593b",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Virtual Insanity - Remastered 2006",
-    "normalizedAnswer": "VIRTUAL INSANITY REMASTERED 2006",
-    "category": "Song",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 29,
-    "uniqueLetterCount": 13,
-    "metadata": {
-      "artist": "Jamiroquai",
-      "listeners": 544173,
-      "playcount": 3555574
     }
   },
   {
@@ -27141,24 +25395,6 @@
       "artist": "Luvcat",
       "listeners": 237891,
       "playcount": 2740523
-    }
-  },
-  {
-    "id": "9600af154e58c6b75b58a060c7642fb8",
-    "source": "music-song",
-    "type": "song",
-    "answer": "This Must Be the Place (Naive Melody) - 2005 Remaster",
-    "normalizedAnswer": "THIS MUST BE THE PLACE NAIVE MELODY 2005 REMASTER",
-    "category": "Song",
-    "difficulty": 32,
-    "difficultyTier": "easy",
-    "wordCount": 9,
-    "letterCount": 41,
-    "uniqueLetterCount": 18,
-    "metadata": {
-      "artist": "Talking Heads",
-      "listeners": 748784,
-      "playcount": 8576571
     }
   },
   {
@@ -27774,42 +26010,6 @@
     }
   },
   {
-    "id": "deb65ac7c0f1871831e3331ad429379b",
-    "source": "music-song",
-    "type": "song",
-    "answer": "1 step forward, 3 steps back",
-    "normalizedAnswer": "1 STEP FORWARD 3 STEPS BACK",
-    "category": "Song",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 22,
-    "uniqueLetterCount": 13,
-    "metadata": {
-      "artist": "Olivia Rodrigo",
-      "listeners": 966856,
-      "playcount": 15159011
-    }
-  },
-  {
-    "id": "684997d2171ccf4c39f4df5132191122",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Please Please Please Let Me Get What I Want - 2005 Remaster",
-    "normalizedAnswer": "PLEASE PLEASE PLEASE LET ME GET WHAT I WANT 2005 REMASTER",
-    "category": "Song",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 11,
-    "letterCount": 47,
-    "uniqueLetterCount": 13,
-    "metadata": {
-      "artist": "Deftones",
-      "listeners": 959676,
-      "playcount": 16015955
-    }
-  },
-  {
     "id": "fa905fde75379bd0f5ab4e4e57e1ca6c",
     "source": "music-song",
     "type": "song",
@@ -28365,24 +26565,6 @@
       "artist": "2Pac",
       "listeners": 1057059,
       "playcount": 8293683
-    }
-  },
-  {
-    "id": "f85850bb0457b34e040930d5bb5b4d15",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Like a G6",
-    "normalizedAnswer": "LIKE A G6",
-    "category": "Song",
-    "difficulty": 83.6,
-    "difficultyTier": "hard",
-    "wordCount": 3,
-    "letterCount": 7,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "artist": "Far East Movement",
-      "listeners": 1509404,
-      "playcount": 10695922
     }
   },
   {
@@ -29160,24 +27342,6 @@
     }
   },
   {
-    "id": "37a6a7e962ec53a63789cc771d7b4bad",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Talk To You (ft. 54 Ultra)",
-    "normalizedAnswer": "TALK TO YOU FT 54 ULTRA",
-    "category": "Song",
-    "difficulty": 68,
-    "difficultyTier": "medium",
-    "wordCount": 6,
-    "letterCount": 18,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "artist": "ANOTR",
-      "listeners": 42187,
-      "playcount": 82978
-    }
-  },
-  {
     "id": "cd746afc8add965b621473efc18a8061",
     "source": "music-song",
     "type": "song",
@@ -29427,24 +27591,6 @@
       "artist": "Faye Webster",
       "listeners": 796165,
       "playcount": 10979000
-    }
-  },
-  {
-    "id": "d0a5aaeb0825c400a80d8e598aa63c3f",
-    "source": "music-song",
-    "type": "song",
-    "answer": "EVIL J0RDAN",
-    "normalizedAnswer": "EVIL J0RDAN",
-    "category": "Song",
-    "difficulty": 70.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 10,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "artist": "Playboi Carti",
-      "listeners": 753203,
-      "playcount": 9901064
     }
   },
   {
@@ -29898,24 +28044,6 @@
     }
   },
   {
-    "id": "475b288028773bca6cedccfda7d196f4",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Jimmy Cooks (feat. 21 Savage)",
-    "normalizedAnswer": "JIMMY COOKS FEAT 21 SAVAGE",
-    "category": "Song",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 22,
-    "uniqueLetterCount": 14,
-    "metadata": {
-      "artist": "Drake",
-      "listeners": 1054619,
-      "playcount": 17839464
-    }
-  },
-  {
     "id": "856e5b805eec677e6d58dfaf73b65c52",
     "source": "music-song",
     "type": "song",
@@ -30150,24 +28278,6 @@
     }
   },
   {
-    "id": "0cc5788bb75d28903007338e1e1fd51a",
-    "source": "music-song",
-    "type": "song",
-    "answer": "51 Ttashpel Pony Ave .",
-    "normalizedAnswer": "51 TTASHPEL PONY AVE",
-    "category": "Song",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 17,
-    "uniqueLetterCount": 11,
-    "metadata": {
-      "artist": "fakemink",
-      "listeners": 49662,
-      "playcount": 183007
-    }
-  },
-  {
     "id": "ca8301ab5e0dd6980ac9511be2510a97",
     "source": "music-song",
     "type": "song",
@@ -30276,24 +28386,6 @@
     }
   },
   {
-    "id": "4a88dfb1960aba184d9899bdc01e6fad",
-    "source": "music-song",
-    "type": "song",
-    "answer": "101",
-    "normalizedAnswer": "101",
-    "category": "Song",
-    "difficulty": 110,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 3,
-    "uniqueLetterCount": 0,
-    "metadata": {
-      "artist": "Kim Petras",
-      "listeners": 31949,
-      "playcount": 143542
-    }
-  },
-  {
     "id": "182a7b55f36be64413c6fd382cdea2a7",
     "source": "music-song",
     "type": "song",
@@ -30399,24 +28491,6 @@
       "artist": "2Pac",
       "listeners": 988743,
       "playcount": 9321232
-    }
-  },
-  {
-    "id": "ad47c83540af077a4d1409dfeba13990",
-    "source": "music-song",
-    "type": "song",
-    "answer": "500lbs",
-    "normalizedAnswer": "500LBS",
-    "category": "Song",
-    "difficulty": 96.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 3,
-    "metadata": {
-      "artist": "Lil Tecca",
-      "listeners": 812456,
-      "playcount": 13807129
     }
   },
   {
@@ -30690,24 +28764,6 @@
     }
   },
   {
-    "id": "2b7e4c6584671a2e09c8fa8a763c33b6",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Little Lies - 2017 Remaster",
-    "normalizedAnswer": "LITTLE LIES 2017 REMASTER",
-    "category": "Song",
-    "difficulty": 72,
-    "difficultyTier": "medium",
-    "wordCount": 4,
-    "letterCount": 22,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "artist": "Fleetwood Mac",
-      "listeners": 784301,
-      "playcount": 6137374
-    }
-  },
-  {
     "id": "230bb8b7939ec4935ecfb5399505aeed",
     "source": "music-song",
     "type": "song",
@@ -30924,24 +28980,6 @@
     }
   },
   {
-    "id": "8e0a300f6feb23a2e314c7db36d51a79",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Blackbird - Remastered 2009",
-    "normalizedAnswer": "BLACKBIRD REMASTERED 2009",
-    "category": "Song",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 23,
-    "uniqueLetterCount": 12,
-    "metadata": {
-      "artist": "The Beatles",
-      "listeners": 1033592,
-      "playcount": 8882414
-    }
-  },
-  {
     "id": "bd74bd5f99afffd93f46d3f49cbc5c68",
     "source": "music-song",
     "type": "song",
@@ -31029,24 +29067,6 @@
       "artist": "SZA",
       "listeners": 1090966,
       "playcount": 16666518
-    }
-  },
-  {
-    "id": "37bfaf2123741b6534c60d6188cc0787",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Tonight, Tonight - Remastered 2012",
-    "normalizedAnswer": "TONIGHT TONIGHT REMASTERED 2012",
-    "category": "Song",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 28,
-    "uniqueLetterCount": 12,
-    "metadata": {
-      "artist": "The Smashing Pumpkins",
-      "listeners": 735078,
-      "playcount": 5898245
     }
   },
   {
@@ -31410,24 +29430,6 @@
     }
   },
   {
-    "id": "a5942fc7962519ce73e8292c8a246c7d",
-    "source": "music-song",
-    "type": "song",
-    "answer": "100",
-    "normalizedAnswer": "100",
-    "category": "Song",
-    "difficulty": 110,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 3,
-    "uniqueLetterCount": 0,
-    "metadata": {
-      "artist": "Dean Blunt",
-      "listeners": 562099,
-      "playcount": 8249964
-    }
-  },
-  {
     "id": "27786881baa173cf87ad7d7acd42ee5c",
     "source": "music-song",
     "type": "song",
@@ -31572,42 +29574,6 @@
     }
   },
   {
-    "id": "523010901e3058ce56107133542047aa",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Another Brick in the Wall, Pt. 2",
-    "normalizedAnswer": "ANOTHER BRICK IN THE WALL PT 2",
-    "category": "Song",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 7,
-    "letterCount": 24,
-    "uniqueLetterCount": 14,
-    "metadata": {
-      "artist": "Pink Floyd",
-      "listeners": 1202794,
-      "playcount": 8671473
-    }
-  },
-  {
-    "id": "f36aea9111581144d76c815a207e984b",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Another One Bites The Dust - Remastered 2011",
-    "normalizedAnswer": "ANOTHER ONE BITES THE DUST REMASTERED 2011",
-    "category": "Song",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 7,
-    "letterCount": 36,
-    "uniqueLetterCount": 13,
-    "metadata": {
-      "artist": "Queen",
-      "listeners": 1513593,
-      "playcount": 11164188
-    }
-  },
-  {
     "id": "d18250e072b9635529f5b90abfc9ec74",
     "source": "music-song",
     "type": "song",
@@ -31659,24 +29625,6 @@
       "artist": "Olivia Dean",
       "listeners": 377835,
       "playcount": 3346325
-    }
-  },
-  {
-    "id": "a5e5dc1eb67839cf01a51a4b10c0e7d4",
-    "source": "music-song",
-    "type": "song",
-    "answer": "In My Life - Remastered 2009",
-    "normalizedAnswer": "IN MY LIFE REMASTERED 2009",
-    "category": "Song",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 22,
-    "uniqueLetterCount": 12,
-    "metadata": {
-      "artist": "The Beatles",
-      "listeners": 1001537,
-      "playcount": 9112133
     }
   },
   {
@@ -31821,24 +29769,6 @@
       "artist": "Mac Miller",
       "listeners": 640660,
       "playcount": 7575292
-    }
-  },
-  {
-    "id": "30a3560df1b28cba53f2ae07b5096130",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Killer Queen - Remastered 2011",
-    "normalizedAnswer": "KILLER QUEEN REMASTERED 2011",
-    "category": "Song",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 25,
-    "uniqueLetterCount": 13,
-    "metadata": {
-      "artist": "Queen",
-      "listeners": 1285724,
-      "playcount": 10848800
     }
   },
   {
@@ -32580,24 +30510,6 @@
     }
   },
   {
-    "id": "d319690cc0264a5364529ddb599783fe",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Bennie And The Jets - Remastered 2014",
-    "normalizedAnswer": "BENNIE AND THE JETS REMASTERED 2014",
-    "category": "Song",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 30,
-    "uniqueLetterCount": 12,
-    "metadata": {
-      "artist": "Elton John",
-      "listeners": 761053,
-      "playcount": 5443878
-    }
-  },
-  {
     "id": "a80b95e2914566dbf3454b3f6bf43ec6",
     "source": "music-song",
     "type": "song",
@@ -32703,24 +30615,6 @@
       "artist": "Jhené Aiko",
       "listeners": 707109,
       "playcount": 8978799
-    }
-  },
-  {
-    "id": "ac6de643ec4636fd504dd01cb6b5b6cf",
-    "source": "music-song",
-    "type": "song",
-    "answer": "23",
-    "normalizedAnswer": "23",
-    "category": "Song",
-    "difficulty": 110,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 2,
-    "uniqueLetterCount": 0,
-    "metadata": {
-      "artist": "Noah Kahan",
-      "listeners": 113498,
-      "playcount": 792252
     }
   },
   {
@@ -33336,24 +31230,6 @@
     }
   },
   {
-    "id": "7e38dc907950fb085e189c070adbe8ed",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Don't Let Me Down - Remastered 2009",
-    "normalizedAnswer": "DONT LET ME DOWN REMASTERED 2009",
-    "category": "Song",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 27,
-    "uniqueLetterCount": 11,
-    "metadata": {
-      "artist": "The Beatles",
-      "listeners": 621432,
-      "playcount": 4528672
-    }
-  },
-  {
     "id": "a9af0c377fd8cadbd9f72ade11b310e2",
     "source": "music-song",
     "type": "song",
@@ -33966,24 +31842,6 @@
     }
   },
   {
-    "id": "bca0f67876d9e64bb683aa34e3730a8c",
-    "source": "music-song",
-    "type": "song",
-    "answer": "We Are Bulletproof PT.2",
-    "normalizedAnswer": "WE ARE BULLETPROOF PT2",
-    "category": "Song",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 19,
-    "uniqueLetterCount": 11,
-    "metadata": {
-      "artist": "BTS",
-      "listeners": 412246,
-      "playcount": 6851773
-    }
-  },
-  {
     "id": "1395383d8326b22dae83e73e038847c4",
     "source": "music-song",
     "type": "song",
@@ -33999,24 +31857,6 @@
       "artist": "Crystal Castles",
       "listeners": 971768,
       "playcount": 10077351
-    }
-  },
-  {
-    "id": "97a191347cc6239d774d763a5b1e4196",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Track 10",
-    "normalizedAnswer": "TRACK 10",
-    "category": "Song",
-    "difficulty": 88,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 7,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "artist": "Charli xcx",
-      "listeners": 589446,
-      "playcount": 7858843
     }
   },
   {
@@ -34179,24 +32019,6 @@
       "artist": "Modern Baseball",
       "listeners": 578121,
       "playcount": 10678618
-    }
-  },
-  {
-    "id": "7d768a2716b3a0e48cea471c95ff8b1b",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Paranoid - 2009 Remaster",
-    "normalizedAnswer": "PARANOID 2009 REMASTER",
-    "category": "Song",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 20,
-    "uniqueLetterCount": 11,
-    "metadata": {
-      "artist": "Black Sabbath",
-      "listeners": 619237,
-      "playcount": 3882092
     }
   },
   {
@@ -34452,24 +32274,6 @@
     }
   },
   {
-    "id": "a8d3cfd74a28866605256a2c6e675260",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Interstate Love Song - 2019 Remaster",
-    "normalizedAnswer": "INTERSTATE LOVE SONG 2019 REMASTER",
-    "category": "Song",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 30,
-    "uniqueLetterCount": 12,
-    "metadata": {
-      "artist": "Stone Temple Pilots",
-      "listeners": 569018,
-      "playcount": 5562845
-    }
-  },
-  {
     "id": "ffe31daf05d6b2e207389e9b5553218c",
     "source": "music-song",
     "type": "song",
@@ -34650,24 +32454,6 @@
     }
   },
   {
-    "id": "1788fd526f8e7a4e4acce14824cbd8de",
-    "source": "music-song",
-    "type": "song",
-    "answer": "top 5",
-    "normalizedAnswer": "TOP 5",
-    "category": "Song",
-    "difficulty": 96.8,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 4,
-    "uniqueLetterCount": 3,
-    "metadata": {
-      "artist": "ZEROBASEONE",
-      "listeners": 36323,
-      "playcount": 412860
-    }
-  },
-  {
     "id": "b5f83f04949e183661c897d7568e0ea5",
     "source": "music-song",
     "type": "song",
@@ -34776,24 +32562,6 @@
     }
   },
   {
-    "id": "e8127a3eb5bc07ff35e835b17ebcdb03",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Creepin' (with The Weeknd & 21 Savage)",
-    "normalizedAnswer": "CREEPIN WITH THE WEEKND 21 SAVAGE",
-    "category": "Song",
-    "difficulty": 44,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 28,
-    "uniqueLetterCount": 15,
-    "metadata": {
-      "artist": "Metro Boomin",
-      "listeners": 1241627,
-      "playcount": 18436604
-    }
-  },
-  {
     "id": "039c1101962e9cd74b7de40da97e54cf",
     "source": "music-song",
     "type": "song",
@@ -34809,24 +32577,6 @@
       "artist": "Clairo",
       "listeners": 1139909,
       "playcount": 14515627
-    }
-  },
-  {
-    "id": "e6c5b25a66f40610c6d20f5d23ec5092",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Mayonaise - 2011 Remaster",
-    "normalizedAnswer": "MAYONAISE 2011 REMASTER",
-    "category": "Song",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 21,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "artist": "The Smashing Pumpkins",
-      "listeners": 542095,
-      "playcount": 5977312
     }
   },
   {
@@ -34899,24 +32649,6 @@
       "artist": "Coldplay",
       "listeners": 871290,
       "playcount": 58767717
-    }
-  },
-  {
-    "id": "cd9a9c6dea7c31234c6336f3745196fa",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Lord Pretty Flacko Jodye 2 (LPFJ2)",
-    "normalizedAnswer": "LORD PRETTY FLACKO JODYE 2 LPFJ2",
-    "category": "Song",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 27,
-    "uniqueLetterCount": 13,
-    "metadata": {
-      "artist": "A$AP Rocky",
-      "listeners": 829250,
-      "playcount": 10422241
     }
   },
   {
@@ -35295,24 +33027,6 @@
       "artist": "The Weeknd",
       "listeners": 1008994,
       "playcount": 12146318
-    }
-  },
-  {
-    "id": "a000179db098f2f96b4d7c5ae3140e67",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Well I Wonder - 2011 Remaster",
-    "normalizedAnswer": "WELL I WONDER 2011 REMASTER",
-    "category": "Song",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 23,
-    "uniqueLetterCount": 12,
-    "metadata": {
-      "artist": "The Smiths",
-      "listeners": 804788,
-      "playcount": 6883543
     }
   },
   {

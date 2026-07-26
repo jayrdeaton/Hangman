@@ -23,7 +23,6 @@ const fakeMode: GameMode = {
 const baseConfig: PuzzleConfig = {
   sourceMode: 'custom',
   difficulty: 'any',
-  packKeys: [],
   mode: fakeMode,
   customPhrase: '',
   customHint: ''
@@ -53,7 +52,7 @@ describe('normalizePhrase', () => {
 
 describe('resolvePuzzle - custom source mode', () => {
   it('returns ok:true with the normalized phrase for a valid custom phrase', () => {
-    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'custom', customPhrase: 'hello world' })
+    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'custom', customPhrase: 'hello world' }, [])
 
     expect(result.ok).toBe(true)
     if (result.ok) {
@@ -64,42 +63,42 @@ describe('resolvePuzzle - custom source mode', () => {
   })
 
   it('returns ok:false for an empty phrase', () => {
-    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'custom', customPhrase: '' })
+    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'custom', customPhrase: '' }, [])
 
     expect(result.ok).toBe(false)
     if (!result.ok) expect(result.error.length).toBeGreaterThan(0)
   })
 
   it('returns ok:false for a whitespace-only phrase', () => {
-    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'custom', customPhrase: '     ' })
+    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'custom', customPhrase: '     ' }, [])
 
     expect(result.ok).toBe(false)
     if (!result.ok) expect(result.error.length).toBeGreaterThan(0)
   })
 
   it('returns ok:false for an all-punctuation phrase', () => {
-    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'custom', customPhrase: '!!! 123 ???' })
+    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'custom', customPhrase: '!!! 123 ???' }, [])
 
     expect(result.ok).toBe(false)
     if (!result.ok) expect(result.error.length).toBeGreaterThan(0)
   })
 
   it('sets payload.hint when a hint is provided', () => {
-    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'custom', customPhrase: 'hello world', customHint: 'a greeting' })
+    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'custom', customPhrase: 'hello world', customHint: 'a greeting' }, [])
 
     expect(result.ok).toBe(true)
     if (result.ok) expect(result.payload.hint).toBe('a greeting')
   })
 
   it('leaves payload.hint undefined when the hint is omitted', () => {
-    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'custom', customPhrase: 'hello world', customHint: '' })
+    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'custom', customPhrase: 'hello world', customHint: '' }, [])
 
     expect(result.ok).toBe(true)
     if (result.ok) expect(result.payload.hint).toBeUndefined()
   })
 
   it('leaves payload.hint undefined when the hint is only whitespace', () => {
-    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'custom', customPhrase: 'hello world', customHint: '   ' })
+    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'custom', customPhrase: 'hello world', customHint: '   ' }, [])
 
     expect(result.ok).toBe(true)
     if (result.ok) expect(result.payload.hint).toBeUndefined()
@@ -142,7 +141,7 @@ describe('resolvePuzzle - random source mode, scoped to selected packs', () => {
     mockGetPuzzleManifest.mockReturnValue(fakeManifest)
     mockGetPuzzlesForCategory.mockReturnValue([fakePuzzle])
 
-    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random', packKeys: ['bands'] })
+    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random' }, ['bands'])
 
     expect(result.ok).toBe(true)
     if (result.ok) {
@@ -159,7 +158,7 @@ describe('resolvePuzzle - random source mode, scoped to selected packs', () => {
     mockGetPuzzleManifest.mockReturnValue(fakeManifest)
     mockGetPuzzlesForCategory.mockReturnValue([fakePuzzle])
 
-    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random', packKeys: ['nonexistent'] })
+    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random' }, ['nonexistent'])
 
     expect(result.ok).toBe(false)
     if (!result.ok) expect(result.error.length).toBeGreaterThan(0)
@@ -169,7 +168,7 @@ describe('resolvePuzzle - random source mode, scoped to selected packs', () => {
     mockGetPuzzleManifest.mockReturnValue(fakeManifest)
     mockGetPuzzlesForCategory.mockReturnValue([fakePuzzle])
 
-    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random', packKeys: [] })
+    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random' }, [])
 
     expect(result.ok).toBe(false)
     if (!result.ok) expect(result.error.length).toBeGreaterThan(0)
@@ -179,7 +178,7 @@ describe('resolvePuzzle - random source mode, scoped to selected packs', () => {
     mockGetPuzzleManifest.mockReturnValue(fakeManifest)
     mockGetPuzzlesForCategory.mockReturnValue([])
 
-    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random', packKeys: ['bands'], difficulty: 'hard' })
+    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random', difficulty: 'hard' }, ['bands'])
 
     expect(result.ok).toBe(false)
     if (!result.ok) expect(result.error.length).toBeGreaterThan(0)
@@ -195,7 +194,7 @@ describe('resolvePuzzle - random source mode, scoped to selected packs', () => {
       return []
     })
 
-    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random', packKeys: ['movies'] })
+    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random' }, ['movies'])
 
     expect(result.ok).toBe(true)
     if (result.ok) expect(result.payload.packKey).toBe('movies')
@@ -205,7 +204,7 @@ describe('resolvePuzzle - random source mode, scoped to selected packs', () => {
     mockGetPuzzleManifest.mockReturnValue([{ ...fakeManifest[0], label: 'Theme Technology', categories: ['Technology'] }])
     mockGetPuzzlesForCategory.mockReturnValue([{ ...fakePuzzle, category: 'Technology' }])
 
-    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random', packKeys: ['bands'] })
+    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random' }, ['bands'])
 
     expect(result.ok).toBe(true)
     if (result.ok) expect(result.payload.hint).toBe('Technology')
@@ -215,17 +214,17 @@ describe('resolvePuzzle - random source mode, scoped to selected packs', () => {
     mockGetPuzzleManifest.mockReturnValue([{ ...fakeManifest[0], label: 'Trivia', categories: ['JACK BE HOMONYM-BLE', 'OTHER'] }])
     mockGetPuzzlesForCategory.mockReturnValue([{ ...fakePuzzle, category: 'JACK BE HOMONYM-BLE' }])
 
-    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random', packKeys: ['bands'] })
+    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random' }, ['bands'])
 
     expect(result.ok).toBe(true)
     if (result.ok) expect(result.payload.hint).toBe('Jack Be Homonym-Ble')
   })
 
   it('still fully title-cases an ALL CAPS category with an incidental lowercase ordinal suffix', () => {
-    mockGetPuzzleManifest.mockReturnValue([{ ...fakeManifest[0], label: 'Trivia', categories: ["20th CENTURY WOMEN", 'OTHER'] }])
+    mockGetPuzzleManifest.mockReturnValue([{ ...fakeManifest[0], label: 'Trivia', categories: ['20th CENTURY WOMEN', 'OTHER'] }])
     mockGetPuzzlesForCategory.mockReturnValue([{ ...fakePuzzle, category: '20th CENTURY WOMEN' }])
 
-    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random', packKeys: ['bands'] })
+    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random' }, ['bands'])
 
     expect(result.ok).toBe(true)
     if (result.ok) expect(result.payload.hint).toBe('20th Century Women')
@@ -235,7 +234,7 @@ describe('resolvePuzzle - random source mode, scoped to selected packs', () => {
     mockGetPuzzleManifest.mockReturnValue([{ ...fakeManifest[0], label: 'Theme USPresidents', categories: ['US President'] }])
     mockGetPuzzlesForCategory.mockReturnValue([{ ...fakePuzzle, category: 'US President' }])
 
-    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random', packKeys: ['bands'] })
+    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random' }, ['bands'])
 
     expect(result.ok).toBe(true)
     if (result.ok) expect(result.payload.hint).toBe('US President')
@@ -245,7 +244,7 @@ describe('resolvePuzzle - random source mode, scoped to selected packs', () => {
     mockGetPuzzleManifest.mockReturnValue([{ ...fakeManifest[0], label: 'Phrases', categories: ['food-and-drink', 'what-are-you-doing'] }])
     mockGetPuzzlesForCategory.mockReturnValue([{ ...fakePuzzle, category: 'what-are-you-doing' }])
 
-    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random', packKeys: ['bands'] })
+    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random' }, ['bands'])
 
     expect(result.ok).toBe(true)
     if (result.ok) expect(result.payload.hint).toBe('What-Are-You-Doing')
@@ -255,7 +254,7 @@ describe('resolvePuzzle - random source mode, scoped to selected packs', () => {
     mockGetPuzzleManifest.mockReturnValue([{ ...fakeManifest[0], label: 'Movies', categories: ['Action', 'Comedy'] }])
     mockGetPuzzlesForCategory.mockReturnValue([{ ...fakePuzzle, source: 'movie', category: 'Action' }])
 
-    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random', packKeys: ['bands'] })
+    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random' }, ['bands'])
 
     expect(result.ok).toBe(true)
     if (result.ok) expect(result.payload.hint).toBe('Action Movies')
@@ -265,7 +264,7 @@ describe('resolvePuzzle - random source mode, scoped to selected packs', () => {
     mockGetPuzzleManifest.mockReturnValue([{ ...fakeManifest[0], label: 'Tv Shows', categories: ['TV Show'] }])
     mockGetPuzzlesForCategory.mockReturnValue([{ ...fakePuzzle, source: 'tv', category: 'TV Show' }])
 
-    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random', packKeys: ['bands'] })
+    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random' }, ['bands'])
 
     expect(result.ok).toBe(true)
     if (result.ok) expect(result.payload.hint).toBe('TV Show')
@@ -275,7 +274,7 @@ describe('resolvePuzzle - random source mode, scoped to selected packs', () => {
     mockGetPuzzleManifest.mockReturnValue(fakeManifest)
     mockGetPuzzlesForCategory.mockReturnValue([{ ...fakePuzzle, metadata: { hint: 'A famous rock band' } }])
 
-    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random', packKeys: ['bands'] })
+    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random' }, ['bands'])
 
     expect(result.ok).toBe(true)
     if (result.ok) expect(result.payload.hint).toBe('A famous rock band')
@@ -285,7 +284,7 @@ describe('resolvePuzzle - random source mode, scoped to selected packs', () => {
     mockGetPuzzleManifest.mockReturnValue(fakeManifest)
     mockGetPuzzlesForCategory.mockReturnValue([{ ...fakePuzzle, metadata: { hint: '   ' } }])
 
-    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random', packKeys: ['bands'] })
+    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random' }, ['bands'])
 
     expect(result.ok).toBe(true)
     if (result.ok) expect(result.payload.hint).toBe('Classic Rock')
@@ -356,7 +355,7 @@ describe('resolvePuzzle - random source mode, multiple packs selected', () => {
       return []
     })
 
-    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random', packKeys: allPackKeys })
+    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random' }, allPackKeys)
 
     expect(result.ok).toBe(true)
     if (result.ok) {
@@ -373,7 +372,7 @@ describe('resolvePuzzle - random source mode, multiple packs selected', () => {
       return []
     })
 
-    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random', packKeys: allPackKeys })
+    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random' }, allPackKeys)
 
     expect(result.ok).toBe(true)
     if (result.ok) {
@@ -392,7 +391,7 @@ describe('resolvePuzzle - random source mode, multiple packs selected', () => {
     })
 
     // Only packB's difficultyTiers includes 'hard', so it is the sole eligible pack.
-    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random', packKeys: allPackKeys, difficulty: 'hard' })
+    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random', difficulty: 'hard' }, allPackKeys)
 
     expect(result.ok).toBe(true)
     if (result.ok) expect(result.payload.packKey).toBe('movies')
@@ -402,7 +401,7 @@ describe('resolvePuzzle - random source mode, multiple packs selected', () => {
     mockGetPuzzleManifest.mockReturnValue([packA])
     mockGetPuzzlesForCategory.mockReturnValue([bandPuzzle])
 
-    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random', packKeys: [packA.key], difficulty: 'hard' })
+    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random', difficulty: 'hard' }, [packA.key])
 
     expect(result.ok).toBe(false)
     if (!result.ok) expect(result.error.length).toBeGreaterThan(0)
@@ -412,7 +411,7 @@ describe('resolvePuzzle - random source mode, multiple packs selected', () => {
     mockGetPuzzleManifest.mockReturnValue([{ ...packA, count: 0 }])
     mockGetPuzzlesForCategory.mockReturnValue([])
 
-    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random', packKeys: [packA.key] })
+    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random' }, [packA.key])
 
     expect(result.ok).toBe(false)
     if (!result.ok) expect(result.error.length).toBeGreaterThan(0)
