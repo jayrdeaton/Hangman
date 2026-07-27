@@ -1,0 +1,642 @@
+[
+  {
+    "id": "434849471bea8c9d2fd5cfb1570d66d6",
+    "source": "theme",
+    "type": "title",
+    "answer": "Akshaya Tritiya",
+    "normalizedAnswer": "AKSHAYA TRITIYA",
+    "category": "Holiday and Celebration",
+    "difficulty": 72.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "holiday"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Lists_of_holidays"
+    }
+  },
+  {
+    "id": "042d02b53995a9b8e3be0b9b6dddd4d8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bhogi",
+    "normalizedAnswer": "BHOGI",
+    "category": "Holiday and Celebration",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "holiday"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Lists_of_holidays"
+    }
+  },
+  {
+    "id": "7d47948e9a7e8ba0f8804398073c928c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Diwali",
+    "normalizedAnswer": "DIWALI",
+    "category": "Holiday and Celebration",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "holiday"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Lists_of_holidays"
+    }
+  },
+  {
+    "id": "ee62559dfb9b4ce9d866e0f1a8e073e1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bhaubeej",
+    "normalizedAnswer": "BHAUBEEJ",
+    "category": "Holiday and Celebration",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "holiday"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Lists_of_holidays"
+    }
+  },
+  {
+    "id": "7311dcf002b3021f25e1d94886cfda42",
+    "source": "theme",
+    "type": "title",
+    "answer": "Durga Puja",
+    "normalizedAnswer": "DURGA PUJA",
+    "category": "Holiday and Celebration",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "holiday"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Lists_of_holidays"
+    }
+  },
+  {
+    "id": "b7d85509a4b559d3e8f08905243e36ac",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ekadasi",
+    "normalizedAnswer": "EKADASI",
+    "category": "Holiday and Celebration",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "holiday"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Lists_of_holidays"
+    }
+  },
+  {
+    "id": "8bc5d09211476d2948b27e2919f6e64b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ganesh Chaturthi",
+    "normalizedAnswer": "GANESH CHATURTHI",
+    "category": "Holiday and Celebration",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "holiday"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Lists_of_holidays"
+    }
+  },
+  {
+    "id": "4fd01e11a33b06b81a451e98fd03de84",
+    "source": "theme",
+    "type": "title",
+    "answer": "Gokul Ashtami",
+    "normalizedAnswer": "GOKUL ASHTAMI",
+    "category": "Holiday and Celebration",
+    "difficulty": 61.2,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "holiday"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Lists_of_holidays"
+    }
+  },
+  {
+    "id": "8641062a37456fca924735c906c29779",
+    "source": "theme",
+    "type": "title",
+    "answer": "Gudhi Padwa",
+    "normalizedAnswer": "GUDHI PADWA",
+    "category": "Holiday and Celebration",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "holiday"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Lists_of_holidays"
+    }
+  },
+  {
+    "id": "f54a175486636f2b75d4cd6f514a57e2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Guru Purnima",
+    "normalizedAnswer": "GURU PURNIMA",
+    "category": "Holiday and Celebration",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "holiday"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Lists_of_holidays"
+    }
+  },
+  {
+    "id": "8377d9d66e86cba44f77a0d29d2b6034",
+    "source": "theme",
+    "type": "title",
+    "answer": "Holi",
+    "normalizedAnswer": "HOLI",
+    "category": "Holiday and Celebration",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "holiday"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Lists_of_holidays"
+    }
+  },
+  {
+    "id": "4ba90b6c81acb30e05f46e283961ffa7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Karthikai Deepam",
+    "normalizedAnswer": "KARTHIKAI DEEPAM",
+    "category": "Holiday and Celebration",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "holiday"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Lists_of_holidays"
+    }
+  },
+  {
+    "id": "f0a92e4475575ee1113e9cc6e33e8d24",
+    "source": "theme",
+    "type": "title",
+    "answer": "Karva Chauth",
+    "normalizedAnswer": "KARVA CHAUTH",
+    "category": "Holiday and Celebration",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "holiday"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Lists_of_holidays"
+    }
+  },
+  {
+    "id": "23296dea57817346143332f4604d9192",
+    "source": "theme",
+    "type": "title",
+    "answer": "Krishna Janmaashtami",
+    "normalizedAnswer": "KRISHNA JANMAASHTAMI",
+    "category": "Holiday and Celebration",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 19,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "holiday"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Lists_of_holidays"
+    }
+  },
+  {
+    "id": "b919748c872c3e2326d3af0deada650c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lohri",
+    "normalizedAnswer": "LOHRI",
+    "category": "Holiday and Celebration",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "holiday"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Lists_of_holidays"
+    }
+  },
+  {
+    "id": "b36af1528f98966c53aec8177af8b2e1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mahalakshmi Vrata",
+    "normalizedAnswer": "MAHALAKSHMI VRATA",
+    "category": "Holiday and Celebration",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "holiday"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Lists_of_holidays"
+    }
+  },
+  {
+    "id": "7ed8ae4c524fe53071d47dedde73174d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mahashivratri",
+    "normalizedAnswer": "MAHASHIVRATRI",
+    "category": "Holiday and Celebration",
+    "difficulty": 72.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 13,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "holiday"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Lists_of_holidays"
+    }
+  },
+  {
+    "id": "cd2e9177c03a00b0e596d526477f76d6",
+    "source": "theme",
+    "type": "title",
+    "answer": "Makar Sankranti",
+    "normalizedAnswer": "MAKAR SANKRANTI",
+    "category": "Holiday and Celebration",
+    "difficulty": 72.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "holiday"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Lists_of_holidays"
+    }
+  },
+  {
+    "id": "902f3a885ecd0cbfc8539c068d610401",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mysore Dasara",
+    "normalizedAnswer": "MYSORE DASARA",
+    "category": "Holiday and Celebration",
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "holiday"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Lists_of_holidays"
+    }
+  },
+  {
+    "id": "6661bce0155d5f2d03087896a55f31ee",
+    "source": "theme",
+    "type": "title",
+    "answer": "Naga Panchami",
+    "normalizedAnswer": "NAGA PANCHAMI",
+    "category": "Holiday and Celebration",
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "holiday"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Lists_of_holidays"
+    }
+  },
+  {
+    "id": "84fc070c527b9786a4f49b70c395481a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Navratri",
+    "normalizedAnswer": "NAVRATRI",
+    "category": "Holiday and Celebration",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "holiday"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Lists_of_holidays"
+    }
+  },
+  {
+    "id": "ab8d0c0317bae44857421a5832d73db3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Nyepi",
+    "normalizedAnswer": "NYEPI",
+    "category": "Holiday and Celebration",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "holiday"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Lists_of_holidays"
+    }
+  },
+  {
+    "id": "967162d00d6b4c42f23de07ad33fdd96",
+    "source": "theme",
+    "type": "title",
+    "answer": "Onam",
+    "normalizedAnswer": "ONAM",
+    "category": "Holiday and Celebration",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "holiday"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Lists_of_holidays"
+    }
+  },
+  {
+    "id": "1898a226e988d5e8b150c61cc81068f3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Pongal",
+    "normalizedAnswer": "PONGAL",
+    "category": "Holiday and Celebration",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "holiday"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Lists_of_holidays"
+    }
+  },
+  {
+    "id": "b8a0c3968e73e46d0ee4211451ad3b26",
+    "source": "theme",
+    "type": "title",
+    "answer": "Raksha Bandhan",
+    "normalizedAnswer": "RAKSHA BANDHAN",
+    "category": "Holiday and Celebration",
+    "difficulty": 72.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "holiday"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Lists_of_holidays"
+    }
+  },
+  {
+    "id": "eefa23180479729e00a3f5099be0b4d5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Rama-Lilas",
+    "normalizedAnswer": "RAMALILAS",
+    "category": "Holiday and Celebration",
+    "difficulty": 82.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "holiday"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Lists_of_holidays"
+    }
+  },
+  {
+    "id": "ef89dd04c28725734230eea96e150eb7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ram Navami",
+    "normalizedAnswer": "RAM NAVAMI",
+    "category": "Holiday and Celebration",
+    "difficulty": 82.4,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "holiday"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Lists_of_holidays"
+    }
+  },
+  {
+    "id": "38ae0e0f917605086a4237bae064f623",
+    "source": "theme",
+    "type": "title",
+    "answer": "Thaipusam",
+    "normalizedAnswer": "THAIPUSAM",
+    "category": "Holiday and Celebration",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "holiday"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Lists_of_holidays"
+    }
+  },
+  {
+    "id": "c38841b810ed5398a94f5c7cf43af391",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ugadi/ Vishu",
+    "normalizedAnswer": "UGADI VISHU",
+    "category": "Holiday and Celebration",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "holiday"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Lists_of_holidays"
+    }
+  },
+  {
+    "id": "c14a180f4b430a80214f2b9f272823ca",
+    "source": "theme",
+    "type": "title",
+    "answer": "Vaikunta Ekadasi",
+    "normalizedAnswer": "VAIKUNTA EKADASI",
+    "category": "Holiday and Celebration",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "holiday"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Lists_of_holidays"
+    }
+  },
+  {
+    "id": "c745ccad2ead797be4224ff818f8e6e7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Vaisakhi",
+    "normalizedAnswer": "VAISAKHI",
+    "category": "Holiday and Celebration",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "holiday"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Lists_of_holidays"
+    }
+  },
+  {
+    "id": "8e06fd9dc0ea445dd0796cfa02f29da2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Vijayadashami",
+    "normalizedAnswer": "VIJAYADASHAMI",
+    "category": "Holiday and Celebration",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "holiday"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/Lists_of_holidays"
+    }
+  }
+]

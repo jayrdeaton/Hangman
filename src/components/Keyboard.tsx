@@ -50,7 +50,6 @@ export const Keyboard: React.FC<KeyboardProps> = ({ disabled = false, guessedLet
 
 const styles = StyleSheet.create({
   key: {
-    alignItems: 'center',
     borderRadius: 8,
     marginHorizontal: KEY_MARGIN,
     minWidth: 0

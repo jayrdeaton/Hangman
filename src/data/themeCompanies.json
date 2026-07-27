@@ -1,0 +1,982 @@
+[
+  {
+    "id": "2998207f10f93d32a4d33ea739126fbe",
+    "source": "theme",
+    "type": "title",
+    "answer": "Amazon",
+    "normalizedAnswer": "AMAZON",
+    "category": "Company",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_companies_by_revenue"
+    }
+  },
+  {
+    "id": "cfdd1e3a6ba39424373b08164e089ff6",
+    "source": "theme",
+    "type": "title",
+    "answer": "Walmart",
+    "normalizedAnswer": "WALMART",
+    "category": "Company",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_companies_by_revenue"
+    }
+  },
+  {
+    "id": "11f2682af1c2330beba39d8d055d71e7",
+    "source": "theme",
+    "type": "title",
+    "answer": "State Grid Corporation of China",
+    "normalizedAnswer": "STATE GRID CORPORATION OF CHINA",
+    "category": "Company",
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 27,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_companies_by_revenue"
+    }
+  },
+  {
+    "id": "4c5dba0c5900ea67e33081500c4896dd",
+    "source": "theme",
+    "type": "title",
+    "answer": "Saudi Aramco",
+    "normalizedAnswer": "SAUDI ARAMCO",
+    "category": "Company",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_companies_by_revenue"
+    }
+  },
+  {
+    "id": "83d6ad65a1889cebf252ad8bce467e6e",
+    "source": "theme",
+    "type": "title",
+    "answer": "China National Petroleum Corporation",
+    "normalizedAnswer": "CHINA NATIONAL PETROLEUM CORPORATION",
+    "category": "Company",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 33,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_companies_by_revenue"
+    }
+  },
+  {
+    "id": "95a209ed76193c89632c7f2c93dd87d9",
+    "source": "theme",
+    "type": "title",
+    "answer": "China Petrochemical Corporation",
+    "normalizedAnswer": "CHINA PETROCHEMICAL CORPORATION",
+    "category": "Company",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 29,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_companies_by_revenue"
+    }
+  },
+  {
+    "id": "94f79792a1cf00e16246fcda6df70b40",
+    "source": "theme",
+    "type": "title",
+    "answer": "Apple",
+    "normalizedAnswer": "APPLE",
+    "category": "Company",
+    "difficulty": 92,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_companies_by_revenue"
+    }
+  },
+  {
+    "id": "9b47f51aaf0cb3a4e2f1a67f18cee21c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Alphabet",
+    "normalizedAnswer": "ALPHABET",
+    "category": "Company",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_companies_by_revenue"
+    }
+  },
+  {
+    "id": "022b96c127c82d6d9657f9bf22604c47",
+    "source": "theme",
+    "type": "title",
+    "answer": "UnitedHealth Group",
+    "normalizedAnswer": "UNITEDHEALTH GROUP",
+    "category": "Company",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 17,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_companies_by_revenue"
+    }
+  },
+  {
+    "id": "604eec1cdb7152d18fded185fc98c6d7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Berkshire Hathaway",
+    "normalizedAnswer": "BERKSHIRE HATHAWAY",
+    "category": "Company",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 17,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_companies_by_revenue"
+    }
+  },
+  {
+    "id": "3b83e3d30fcc9e79eee538eeda4db9b7",
+    "source": "theme",
+    "type": "title",
+    "answer": "CVS Health",
+    "normalizedAnswer": "CVS HEALTH",
+    "category": "Company",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_companies_by_revenue"
+    }
+  },
+  {
+    "id": "ddae5926f1e8d21956aafe9c5d8399e9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Volkswagen Group",
+    "normalizedAnswer": "VOLKSWAGEN GROUP",
+    "category": "Company",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_companies_by_revenue"
+    }
+  },
+  {
+    "id": "c108be3242fe6a6c122fc6c291b7bc93",
+    "source": "theme",
+    "type": "title",
+    "answer": "ExxonMobil",
+    "normalizedAnswer": "EXXONMOBIL",
+    "category": "Company",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_companies_by_revenue"
+    }
+  },
+  {
+    "id": "3ee50d32cfaab5555dc0bf130e397f27",
+    "source": "theme",
+    "type": "title",
+    "answer": "Vitol",
+    "normalizedAnswer": "VITOL",
+    "category": "Company",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_companies_by_revenue"
+    }
+  },
+  {
+    "id": "78a89910f351597989f0fe333e33771a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Shell",
+    "normalizedAnswer": "SHELL",
+    "category": "Company",
+    "difficulty": 92,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_companies_by_revenue"
+    }
+  },
+  {
+    "id": "a04842065c18a5cc191773b5f511f330",
+    "source": "theme",
+    "type": "title",
+    "answer": "China State Construction Engineering",
+    "normalizedAnswer": "CHINA STATE CONSTRUCTION ENGINEERING",
+    "category": "Company",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 33,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_companies_by_revenue"
+    }
+  },
+  {
+    "id": "cdac7f761a851ea4babe0c856be9b4f3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Toyota",
+    "normalizedAnswer": "TOYOTA",
+    "category": "Company",
+    "difficulty": 91.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_companies_by_revenue"
+    }
+  },
+  {
+    "id": "c6e855c483d2e0f5e21d77d010b2d802",
+    "source": "theme",
+    "type": "title",
+    "answer": "McKesson",
+    "normalizedAnswer": "MCKESSON",
+    "category": "Company",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_companies_by_revenue"
+    }
+  },
+  {
+    "id": "970298b279d36995dcf223c0adba6812",
+    "source": "theme",
+    "type": "title",
+    "answer": "Microsoft",
+    "normalizedAnswer": "MICROSOFT",
+    "category": "Company",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_companies_by_revenue"
+    }
+  },
+  {
+    "id": "f2a2afde95c7e03736f09df863914296",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cencora",
+    "normalizedAnswer": "CENCORA",
+    "category": "Company",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_companies_by_revenue"
+    }
+  },
+  {
+    "id": "6af24a1ed8ead0d071e1d00f408b8177",
+    "source": "theme",
+    "type": "title",
+    "answer": "Trafigura",
+    "normalizedAnswer": "TRAFIGURA",
+    "category": "Company",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_companies_by_revenue"
+    }
+  },
+  {
+    "id": "4a44282d08b3839e656846a3a207a286",
+    "source": "theme",
+    "type": "title",
+    "answer": "Costco",
+    "normalizedAnswer": "COSTCO",
+    "category": "Company",
+    "difficulty": 91.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_companies_by_revenue"
+    }
+  },
+  {
+    "id": "5dcd1b36b72ecf55fcbf2b283fa169cd",
+    "source": "theme",
+    "type": "title",
+    "answer": "JPMorgan Chase",
+    "normalizedAnswer": "JPMORGAN CHASE",
+    "category": "Company",
+    "difficulty": 56.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_companies_by_revenue"
+    }
+  },
+  {
+    "id": "363d815995eb58a955b42a995c6c5dfb",
+    "source": "theme",
+    "type": "title",
+    "answer": "Industrial and Commercial Bank of China",
+    "normalizedAnswer": "INDUSTRIAL AND COMMERCIAL BANK OF CHINA",
+    "category": "Company",
+    "difficulty": 36,
+    "difficultyTier": "easy",
+    "wordCount": 6,
+    "letterCount": 34,
+    "uniqueLetterCount": 17,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_companies_by_revenue"
+    }
+  },
+  {
+    "id": "b72ff2ce0637850b15fe0d59bd45ea95",
+    "source": "theme",
+    "type": "title",
+    "answer": "Schwarz Gruppe",
+    "normalizedAnswer": "SCHWARZ GRUPPE",
+    "category": "Company",
+    "difficulty": 60.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_companies_by_revenue"
+    }
+  },
+  {
+    "id": "8ae86f1d3169ad339c7fa6f68cf004da",
+    "source": "theme",
+    "type": "title",
+    "answer": "TotalEnergies",
+    "normalizedAnswer": "TOTALENERGIES",
+    "category": "Company",
+    "difficulty": 64.8,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_companies_by_revenue"
+    }
+  },
+  {
+    "id": "9a474169aca751f907f3d21cd5af5cc7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Glencore",
+    "normalizedAnswer": "GLENCORE",
+    "category": "Company",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_companies_by_revenue"
+    }
+  },
+  {
+    "id": "4808ef32b5825ea6c63527dbbb51dbf9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Nvidia",
+    "normalizedAnswer": "NVIDIA",
+    "category": "Company",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_companies_by_revenue"
+    }
+  },
+  {
+    "id": "13d8cdc8a77fec155a7c5f70adebd0c5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cardinal Health",
+    "normalizedAnswer": "CARDINAL HEALTH",
+    "category": "Company",
+    "difficulty": 64.4,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_companies_by_revenue"
+    }
+  },
+  {
+    "id": "6a8b38889c31cd025c6a986a9d37d025",
+    "source": "theme",
+    "type": "title",
+    "answer": "Stellantis",
+    "normalizedAnswer": "STELLANTIS",
+    "category": "Company",
+    "difficulty": 78,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_companies_by_revenue"
+    }
+  },
+  {
+    "id": "a39ca8f1a481082c19151cb9daec0923",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chevron",
+    "normalizedAnswer": "CHEVRON",
+    "category": "Company",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_companies_by_revenue"
+    }
+  },
+  {
+    "id": "2d9c1cbc6e9be19b111aabaf9ef8d87b",
+    "source": "theme",
+    "type": "title",
+    "answer": "China Construction Bank",
+    "normalizedAnswer": "CHINA CONSTRUCTION BANK",
+    "category": "Company",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 21,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_companies_by_revenue"
+    }
+  },
+  {
+    "id": "93c509c34e6f39aa02930ccd2ffdfeef",
+    "source": "theme",
+    "type": "title",
+    "answer": "Samsung Electronics",
+    "normalizedAnswer": "SAMSUNG ELECTRONICS",
+    "category": "Company",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 18,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_companies_by_revenue"
+    }
+  },
+  {
+    "id": "522a014930fbe04eab0797372200bbfd",
+    "source": "theme",
+    "type": "title",
+    "answer": "Foxconn",
+    "normalizedAnswer": "FOXCONN",
+    "category": "Company",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_companies_by_revenue"
+    }
+  },
+  {
+    "id": "5915552fac5ed8ec7dd2fd417a11f2af",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cigna",
+    "normalizedAnswer": "CIGNA",
+    "category": "Company",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_companies_by_revenue"
+    }
+  },
+  {
+    "id": "cdfe043381ae93a9883ee7ce1d1ff578",
+    "source": "theme",
+    "type": "title",
+    "answer": "Agricultural Bank of China",
+    "normalizedAnswer": "AGRICULTURAL BANK OF CHINA",
+    "category": "Company",
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 23,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_companies_by_revenue"
+    }
+  },
+  {
+    "id": "44654c950fd89b2f1d4e78a208155379",
+    "source": "theme",
+    "type": "title",
+    "answer": "China Railway Engineering Corporation",
+    "normalizedAnswer": "CHINA RAILWAY ENGINEERING CORPORATION",
+    "category": "Company",
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 34,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_companies_by_revenue"
+    }
+  },
+  {
+    "id": "b2dbb0ccf2cab6f8d7217787044d809d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cargill",
+    "normalizedAnswer": "CARGILL",
+    "category": "Company",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_companies_by_revenue"
+    }
+  },
+  {
+    "id": "c79514db679b64573c9f11a082743795",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ford Motor Company",
+    "normalizedAnswer": "FORD MOTOR COMPANY",
+    "category": "Company",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 16,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_companies_by_revenue"
+    }
+  },
+  {
+    "id": "00ee3885d0f81db651c7643474086f4a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bank of China",
+    "normalizedAnswer": "BANK OF CHINA",
+    "category": "Company",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_companies_by_revenue"
+    }
+  },
+  {
+    "id": "2349b2524f1df3ff0571f6d6d04632d8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bank of America",
+    "normalizedAnswer": "BANK OF AMERICA",
+    "category": "Company",
+    "difficulty": 60.8,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 13,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_companies_by_revenue"
+    }
+  },
+  {
+    "id": "9097497a2905e12cabdc4bab039075f1",
+    "source": "theme",
+    "type": "title",
+    "answer": "General Motors",
+    "normalizedAnswer": "GENERAL MOTORS",
+    "category": "Company",
+    "difficulty": 64.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_companies_by_revenue"
+    }
+  },
+  {
+    "id": "eb2d76106be2cb94d94a15527cc6065c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Elevance Health",
+    "normalizedAnswer": "ELEVANCE HEALTH",
+    "category": "Company",
+    "difficulty": 72.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_companies_by_revenue"
+    }
+  },
+  {
+    "id": "35f253c9855a5932bed1cac9a27d893a",
+    "source": "theme",
+    "type": "title",
+    "answer": "BMW Group",
+    "normalizedAnswer": "BMW GROUP",
+    "category": "Company",
+    "difficulty": 74.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_companies_by_revenue"
+    }
+  },
+  {
+    "id": "6bfdef29131ca332c4da643bc6975fc2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mercedes-Benz Group",
+    "normalizedAnswer": "MERCEDESBENZ GROUP",
+    "category": "Company",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 17,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_companies_by_revenue"
+    }
+  },
+  {
+    "id": "84b25253acb22deaa15b02fd6de2d081",
+    "source": "theme",
+    "type": "title",
+    "answer": "Meta Platforms",
+    "normalizedAnswer": "META PLATFORMS",
+    "category": "Company",
+    "difficulty": 64.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_companies_by_revenue"
+    }
+  },
+  {
+    "id": "fc4d7930631bc8cf0b6c815b876e73f0",
+    "source": "theme",
+    "type": "title",
+    "answer": "China Railway Construction Corporation",
+    "normalizedAnswer": "CHINA RAILWAY CONSTRUCTION CORPORATION",
+    "category": "Company",
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 35,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_companies_by_revenue"
+    }
+  },
+  {
+    "id": "5bd0c4c1e60eb65cfff2598b70a87f12",
+    "source": "theme",
+    "type": "title",
+    "answer": "Baowu",
+    "normalizedAnswer": "BAOWU",
+    "category": "Company",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_companies_by_revenue"
+    }
+  },
+  {
+    "id": "eaab07f808a1e5f26803fe562286a094",
+    "source": "theme",
+    "type": "title",
+    "answer": "Citigroup",
+    "normalizedAnswer": "CITIGROUP",
+    "category": "Company",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "company"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_companies_by_revenue"
+    }
+  }
+]

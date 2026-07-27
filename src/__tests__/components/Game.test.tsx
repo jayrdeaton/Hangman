@@ -1,5 +1,6 @@
 import { act, fireEvent, render as rtlRender } from '@testing-library/react-native'
 import type { ReactElement } from 'react'
+import { StyleSheet } from 'react-native'
 import { PaperProvider } from 'react-native-paper'
 
 import { Game } from '@/components/Game'
@@ -29,12 +30,40 @@ const shortMode: GameMode = {
   Visual: (() => null) as unknown as GameMode['Visual']
 }
 
+// Two more fixtures, used together to test a live mode swap mid-round (the player picking a new
+// art style from the drawer while a round is already in progress — see PuzzleDrawer's
+// onModeChange). Different maxMistakes from each other so a swap's effect on the mistake limit is
+// unambiguous, and different hasVisual so the layout change itself is also observable.
+const roomyVisualMode: GameMode = {
+  id: 'test-roomy-visual',
+  label: 'Test Roomy Visual',
+  description: 'A test mode with a generous mistake limit and artwork',
+  category: 'parts',
+  behavior: 'additive',
+  maxMistakes: 3,
+  Visual: (() => null) as unknown as GameMode['Visual']
+}
+const tightNoVisualMode: GameMode = {
+  id: 'test-tight-no-visual',
+  label: 'Test Tight No Visual',
+  description: 'A test mode with a tighter mistake limit and no artwork',
+  category: 'minimal',
+  behavior: 'none',
+  maxMistakes: 1,
+  hasVisual: false,
+  Visual: (() => null) as unknown as GameMode['Visual']
+}
+
 type GetByText = Awaited<ReturnType<typeof render>>['getByText']
 type Root = Awaited<ReturnType<typeof render>>['root']
 
 const guessLetter = async (getByText: GetByText, letter: string) => {
   await fireEvent.press(getByText(letter))
 }
+
+// Letters render joined by non-breaking spaces, not regular ones (see Game.tsx's guessWords) — a
+// plain ' '.join equivalent here would silently never match the rendered text.
+const nbWord = (letters: string) => letters.split('').join(' ')
 
 const FIREWORKS_LAYOUT_EVENT = { nativeEvent: { layout: { x: 0, y: 0, width: 320, height: 480 } } }
 
@@ -215,5 +244,89 @@ describe('Game', () => {
 
     expect(queryByText('Show hint')).toBeNull()
     expect(queryByText('A furry pet')).toBeNull()
+  })
+
+  it('shows the difficulty badge immediately, side by side with the hint reveal control', async () => {
+    const { getByText, getByLabelText } = await render(<Game phrase='CAT' onStop={jest.fn()} hint='Drama · 1994' packLabel='Movies' difficultyTier='hard' />)
+
+    expect(getByText('Hard')).toBeTruthy()
+    expect(getByLabelText('Difficulty: Hard')).toBeTruthy()
+    expect(getByText('Show hint')).toBeTruthy()
+  })
+
+  it('does not count peeking at the always-visible difficulty badge as revealing the hint', async () => {
+    const onSolved = jest.fn()
+    const { getByText } = await render(<Game phrase='CAT' onStop={jest.fn()} onSolved={onSolved} hint='Drama · 1994' packLabel='Movies' difficultyTier='hard' />)
+
+    // Difficulty is visible without any reveal action — glancing at it isn't "using a hint" for
+    // achievement purposes (see achievements.ts's no_hints achievement), unlike pressing "Show hint".
+    await guessLetter(getByText, 'C')
+    await guessLetter(getByText, 'A')
+    await guessLetter(getByText, 'T')
+
+    expect(onSolved).toHaveBeenCalledWith({ wrongGuesses: 0, hintRevealed: false })
+  })
+
+  it('reveals the pack and hint together as their own pill, splitting a "<Group> <Specific>" pack label on "|"', async () => {
+    const { getByText, queryByText, getByLabelText } = await render(<Game phrase='CAT' onStop={jest.fn()} hint='Wikipedia category' packLabel='Theme Superheroes' difficultyTier='easy' />)
+
+    expect(queryByText(/Theme/)).toBeNull()
+
+    await fireEvent.press(getByText('Show hint'))
+
+    expect(getByText('Theme | Superheroes  |  Wikipedia category')).toBeTruthy()
+    expect(getByLabelText('Theme | Superheroes. Wikipedia category')).toBeTruthy()
+  })
+
+  it('reveals just the difficulty badge when there is no pack label or derived hint to go with it', async () => {
+    const { getByText, queryByText } = await render(<Game phrase='CAT' onStop={jest.fn()} difficultyTier='easy' />)
+
+    expect(getByText('Easy')).toBeTruthy()
+    expect(queryByText('Show hint')).toBeNull()
+  })
+
+  it('switches art style immediately on a live mode prop change, without resetting guessed letters or wrong guesses', async () => {
+    const { getByText, getByLabelText, rerender } = await render(<Game phrase='CAT' onStop={jest.fn()} mode={roomyVisualMode} />)
+
+    await guessLetter(getByText, 'C')
+    await guessLetter(getByText, 'Q')
+
+    const displayBefore = getByLabelText('Secret word display')
+    expect(displayBefore.props.children[0].props.children).toBe(nbWord('C__'))
+    expect(getByLabelText('Wrong guesses: 1 of 3')).toBeTruthy()
+    // hasVisual defaults true, and the letter display uses the smaller of the two font sizes
+    // reserved for it (see Game.tsx's WORD_FONT_SIZE) while there's still room for artwork.
+    expect(StyleSheet.flatten(displayBefore.props.children[0].props.style).fontSize).toBe(30)
+
+    // Simulates PuzzleDrawer's onModeChange pushing a freshly picked art style straight into the
+    // session mid-round (see Main.tsx's handleModeChange) — the same Game instance, just a new
+    // mode prop, not a remount.
+    await rerender(<Game phrase='CAT' onStop={jest.fn()} mode={tightNoVisualMode} />)
+
+    const displayAfter = getByLabelText('Secret word display')
+    expect(displayAfter.props.children[0].props.children).toBe(nbWord('C__'))
+    expect(getByLabelText('Wrong guesses: 1 of 3')).toBeTruthy()
+    // The new mode has hasVisual: false, which enlarges the letter display to fill the space
+    // artwork would have used (see Game.tsx's WORD_FONT_SIZE_LARGE) — reflected the instant the
+    // mode prop changes, with no further interaction needed.
+    expect(StyleSheet.flatten(displayAfter.props.children[0].props.style).fontSize).toBe(56)
+  })
+
+  it("keeps the round's mistake limit fixed at whatever mode it started with, even after a live mode swap to a mode with a different maxMistakes", async () => {
+    const { getByText, queryByText, findByText, rerender } = await render(<Game phrase='CAT' onStop={jest.fn()} mode={roomyVisualMode} />)
+
+    await guessLetter(getByText, 'Q')
+    await guessLetter(getByText, 'W')
+
+    // 2 wrong guesses already — at or past tightNoVisualMode's own maxMistakes (1), but the round
+    // started under roomyVisualMode (maxMistakes 3), so swapping mid-round must not retroactively
+    // end it just because the new mode's limit would already have been exceeded.
+    await rerender(<Game phrase='CAT' onStop={jest.fn()} mode={tightNoVisualMode} />)
+    expect(queryByText('You lost!')).toBeNull()
+
+    // The round is still governed by the ORIGINAL mode's limit (3) — one more wrong guess reaches
+    // it and the round ends now, not one guess ago and not never.
+    await guessLetter(getByText, 'Z')
+    expect(await findByText('You lost!')).toBeTruthy()
   })
 })

@@ -1,0 +1,1662 @@
+[
+  {
+    "id": "3ea70fcdae532435ea2179ae547af663",
+    "source": "geography",
+    "type": "title",
+    "answer": "Jakarta",
+    "normalizedAnswer": "JAKARTA",
+    "category": "World City",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "060d7efa40c5167a68afb27ede500fad",
+    "source": "geography",
+    "type": "title",
+    "answer": "Dhaka",
+    "normalizedAnswer": "DHAKA",
+    "category": "World City",
+    "difficulty": 92,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "1eecf5eea2f4b33b492fd85f4caeb642",
+    "source": "geography",
+    "type": "title",
+    "answer": "Tokyo",
+    "normalizedAnswer": "TOKYO",
+    "category": "World City",
+    "difficulty": 92,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "af9e48b37f4bbc8a089fdeae09f38e54",
+    "source": "geography",
+    "type": "title",
+    "answer": "Delhi",
+    "normalizedAnswer": "DELHI",
+    "category": "World City",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "ef4df62ae5f988404551c484e9767862",
+    "source": "geography",
+    "type": "title",
+    "answer": "Shanghai",
+    "normalizedAnswer": "SHANGHAI",
+    "category": "World City",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "6c459ccf599e23a27a4a54087a4f3e2d",
+    "source": "geography",
+    "type": "title",
+    "answer": "Guangzhou",
+    "normalizedAnswer": "GUANGZHOU",
+    "category": "World City",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "e537a9672c373b20828e3b3a0f2acb4a",
+    "source": "geography",
+    "type": "title",
+    "answer": "Cairo",
+    "normalizedAnswer": "CAIRO",
+    "category": "World City",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "dc12094309407d0e971b562b62dd2be2",
+    "source": "geography",
+    "type": "title",
+    "answer": "Manila",
+    "normalizedAnswer": "MANILA",
+    "category": "World City",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "d708f5d4d184aebcaa054ad14c1a8b98",
+    "source": "geography",
+    "type": "title",
+    "answer": "Kolkata",
+    "normalizedAnswer": "KOLKATA",
+    "category": "World City",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "3b06940da90b8217f8e661cdfb6020b2",
+    "source": "geography",
+    "type": "title",
+    "answer": "Seoul",
+    "normalizedAnswer": "SEOUL",
+    "category": "World City",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "f2f5550a6c6fb3dddb927eb6b37ee27f",
+    "source": "geography",
+    "type": "title",
+    "answer": "Karachi",
+    "normalizedAnswer": "KARACHI",
+    "category": "World City",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "1eefe726b05ff95506b0a367bf28c7de",
+    "source": "geography",
+    "type": "title",
+    "answer": "Mumbai",
+    "normalizedAnswer": "MUMBAI",
+    "category": "World City",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "47cddbbe650c4d7f791dfa0dbe88ca25",
+    "source": "geography",
+    "type": "title",
+    "answer": "São Paulo",
+    "normalizedAnswer": "SO PAULO",
+    "category": "World City",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "7605ea1c2e10798b1d6fb369daddfd85",
+    "source": "geography",
+    "type": "title",
+    "answer": "Bangkok",
+    "normalizedAnswer": "BANGKOK",
+    "category": "World City",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "bf8797185aac1746c8d30c5a3b8966c5",
+    "source": "geography",
+    "type": "title",
+    "answer": "Mexico City",
+    "normalizedAnswer": "MEXICO CITY",
+    "category": "World City",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "a6d735c5e5a66a1d4412c0a4c84fe96d",
+    "source": "geography",
+    "type": "title",
+    "answer": "Beijing",
+    "normalizedAnswer": "BEIJING",
+    "category": "World City",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "d4656feb3fddd54116233c04eddcd8e5",
+    "source": "geography",
+    "type": "title",
+    "answer": "Lahore",
+    "normalizedAnswer": "LAHORE",
+    "category": "World City",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "378f286c7b6c473f7be28f7ed4cb2f66",
+    "source": "geography",
+    "type": "title",
+    "answer": "Istanbul",
+    "normalizedAnswer": "ISTANBUL",
+    "category": "World City",
+    "difficulty": 74.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "f1311565c921423b1a3f8ca92ed52e69",
+    "source": "geography",
+    "type": "title",
+    "answer": "Moscow",
+    "normalizedAnswer": "MOSCOW",
+    "category": "World City",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "68e82037ea87d3be0c00addf679e7d6c",
+    "source": "geography",
+    "type": "title",
+    "answer": "Ho Chi Minh City",
+    "normalizedAnswer": "HO CHI MINH CITY",
+    "category": "World City",
+    "difficulty": 72.8,
+    "difficultyTier": "medium",
+    "wordCount": 4,
+    "letterCount": 13,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "2bcfaa7d02d682e8d7551838f381969e",
+    "source": "geography",
+    "type": "title",
+    "answer": "Buenos Aires",
+    "normalizedAnswer": "BUENOS AIRES",
+    "category": "World City",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "427de608620c7318b19071871cd4555e",
+    "source": "geography",
+    "type": "title",
+    "answer": "New York City",
+    "normalizedAnswer": "NEW YORK CITY",
+    "category": "World City",
+    "difficulty": 65.6,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 11,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "735d1113bcbe0a8c397f3d1d45306cea",
+    "source": "geography",
+    "type": "title",
+    "answer": "Shenzhen",
+    "normalizedAnswer": "SHENZHEN",
+    "category": "World City",
+    "difficulty": 86.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "65cebe31b1228550709cbc44bb5cb9ad",
+    "source": "geography",
+    "type": "title",
+    "answer": "Bengaluru",
+    "normalizedAnswer": "BENGALURU",
+    "category": "World City",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "c6481de650e3bc0a513e4f71e51ff30a",
+    "source": "geography",
+    "type": "title",
+    "answer": "Osaka",
+    "normalizedAnswer": "OSAKA",
+    "category": "World City",
+    "difficulty": 92,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "7051cac5557014088d4f03291d6abb32",
+    "source": "geography",
+    "type": "title",
+    "answer": "Lagos",
+    "normalizedAnswer": "LAGOS",
+    "category": "World City",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "1bfe48eccc4661cfbf6c5e38f4a78581",
+    "source": "geography",
+    "type": "title",
+    "answer": "Los Angeles",
+    "normalizedAnswer": "LOS ANGELES",
+    "category": "World City",
+    "difficulty": 78,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "632e10047e78aeb2d797448def5753e2",
+    "source": "geography",
+    "type": "title",
+    "answer": "Chennai",
+    "normalizedAnswer": "CHENNAI",
+    "category": "World City",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "0108636eb611240e0fb30fb77ecc0733",
+    "source": "geography",
+    "type": "title",
+    "answer": "Kinshasa",
+    "normalizedAnswer": "KINSHASA",
+    "category": "World City",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "86624b1c23d0aabbe0928e863d75eda9",
+    "source": "geography",
+    "type": "title",
+    "answer": "Bogot",
+    "normalizedAnswer": "BOGOT",
+    "category": "World City",
+    "difficulty": 92,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "b431dd4d4640a3f93aa3f825e4a406ac",
+    "source": "geography",
+    "type": "title",
+    "answer": "Lima",
+    "normalizedAnswer": "LIMA",
+    "category": "World City",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "cd3ea52ccb0cea36bc290153633a3c3b",
+    "source": "geography",
+    "type": "title",
+    "answer": "London",
+    "normalizedAnswer": "LONDON",
+    "category": "World City",
+    "difficulty": 91.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "71795e682d15f46738bea269f897e8ab",
+    "source": "geography",
+    "type": "title",
+    "answer": "Rio de Janeiro",
+    "normalizedAnswer": "RIO DE JANEIRO",
+    "category": "World City",
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "76122b1b0d78c4503e93794886d5bc14",
+    "source": "geography",
+    "type": "title",
+    "answer": "Paris",
+    "normalizedAnswer": "PARIS",
+    "category": "World City",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "fab136e62733eb57aa64eec9ad38788e",
+    "source": "geography",
+    "type": "title",
+    "answer": "Hyderabad",
+    "normalizedAnswer": "HYDERABAD",
+    "category": "World City",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "2f28f5117540933d2e0970ef167821dd",
+    "source": "geography",
+    "type": "title",
+    "answer": "Tehran",
+    "normalizedAnswer": "TEHRAN",
+    "category": "World City",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "fd181884574a040cefadba27e74178e5",
+    "source": "geography",
+    "type": "title",
+    "answer": "Luanda",
+    "normalizedAnswer": "LUANDA",
+    "category": "World City",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "732554cdbd318faa2e25b023d2b49839",
+    "source": "geography",
+    "type": "title",
+    "answer": "Bandung",
+    "normalizedAnswer": "BANDUNG",
+    "category": "World City",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "c7f36c721248a4d2ca794e70de48d995",
+    "source": "geography",
+    "type": "title",
+    "answer": "Kuala Lumpur",
+    "normalizedAnswer": "KUALA LUMPUR",
+    "category": "World City",
+    "difficulty": 77.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "293eacd63ca96237e70dc5163d8dcfe5",
+    "source": "geography",
+    "type": "title",
+    "answer": "Dar es Salaam",
+    "normalizedAnswer": "DAR ES SALAAM",
+    "category": "World City",
+    "difficulty": 77.6,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "ec1b1f61e3b89a8f716481657594f4d4",
+    "source": "geography",
+    "type": "title",
+    "answer": "Suzhou",
+    "normalizedAnswer": "SUZHOU",
+    "category": "World City",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "e79feba97b1f1dfe1de51a3fe95ae6aa",
+    "source": "geography",
+    "type": "title",
+    "answer": "Ahmedabad",
+    "normalizedAnswer": "AHMEDABAD",
+    "category": "World City",
+    "difficulty": 82.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "b29b5415fe303c5d4219c29f76f2ab1a",
+    "source": "geography",
+    "type": "title",
+    "answer": "Hangzhou",
+    "normalizedAnswer": "HANGZHOU",
+    "category": "World City",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "87e5af837f579d89eab35366b7d69949",
+    "source": "geography",
+    "type": "title",
+    "answer": "Wuhan",
+    "normalizedAnswer": "WUHAN",
+    "category": "World City",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "76e9f8bc202eafd732a4f718783d8c2d",
+    "source": "geography",
+    "type": "title",
+    "answer": "Tianjin",
+    "normalizedAnswer": "TIANJIN",
+    "category": "World City",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "46ce427a19dc6651cead76a0edf752ee",
+    "source": "geography",
+    "type": "title",
+    "answer": "Alexandria",
+    "normalizedAnswer": "ALEXANDRIA",
+    "category": "World City",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "41d7731ffc670f11b5196e52374053d5",
+    "source": "geography",
+    "type": "title",
+    "answer": "Nagoya",
+    "normalizedAnswer": "NAGOYA",
+    "category": "World City",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "4da0ef978cbf08d0926c02ebd2fb8252",
+    "source": "geography",
+    "type": "title",
+    "answer": "Johannesburg",
+    "normalizedAnswer": "JOHANNESBURG",
+    "category": "World City",
+    "difficulty": 61.2,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 12,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "c2e5b43a3062b3cf03d966a65454afae",
+    "source": "geography",
+    "type": "title",
+    "answer": "Chongqing",
+    "normalizedAnswer": "CHONGQING",
+    "category": "World City",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "3a6f4941022d78fadd056612ae900dc2",
+    "source": "geography",
+    "type": "title",
+    "answer": "Riyadh",
+    "normalizedAnswer": "RIYADH",
+    "category": "World City",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "142654ec129e5b282a9c1be93806b7f6",
+    "source": "geography",
+    "type": "title",
+    "answer": "Surat",
+    "normalizedAnswer": "SURAT",
+    "category": "World City",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "ead0ca34fcd534571e5b6736db291cdc",
+    "source": "geography",
+    "type": "title",
+    "answer": "Surabaya",
+    "normalizedAnswer": "SURABAYA",
+    "category": "World City",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "55545c0c6b00b5f9d8cc2e8fe436da85",
+    "source": "geography",
+    "type": "title",
+    "answer": "Pune",
+    "normalizedAnswer": "PUNE",
+    "category": "World City",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "28a820d7a370024dc60d3cb4190ee256",
+    "source": "geography",
+    "type": "title",
+    "answer": "Khartoum",
+    "normalizedAnswer": "KHARTOUM",
+    "category": "World City",
+    "difficulty": 74.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "3f2a43390a54620a6a280bdbc1a12623",
+    "source": "geography",
+    "type": "title",
+    "answer": "Nanjing",
+    "normalizedAnswer": "NANJING",
+    "category": "World City",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "1479e542b3e13373dce66b94e008b616",
+    "source": "geography",
+    "type": "title",
+    "answer": "Santiago",
+    "normalizedAnswer": "SANTIAGO",
+    "category": "World City",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "fcecc9634fa6a21a3328ade6b296d847",
+    "source": "geography",
+    "type": "title",
+    "answer": "Chicago",
+    "normalizedAnswer": "CHICAGO",
+    "category": "World City",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "6c0b0646165dbf5799ba3d813e286914",
+    "source": "geography",
+    "type": "title",
+    "answer": "Chengdu",
+    "normalizedAnswer": "CHENGDU",
+    "category": "World City",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "cb0e226cb2e8df85bca6c924ce1121cb",
+    "source": "geography",
+    "type": "title",
+    "answer": "Xi'an",
+    "normalizedAnswer": "XIAN",
+    "category": "World City",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "503f828493b8ae6221a5488c8a2fc396",
+    "source": "geography",
+    "type": "title",
+    "answer": "Hong Kong",
+    "normalizedAnswer": "HONG KONG",
+    "category": "World City",
+    "difficulty": 86.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "60559d467615bd39af10e27593bbb683",
+    "source": "geography",
+    "type": "title",
+    "answer": "Dongguan",
+    "normalizedAnswer": "DONGGUAN",
+    "category": "World City",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "14e18f3591baf8814aec043321eb77f4",
+    "source": "geography",
+    "type": "title",
+    "answer": "Foshan",
+    "normalizedAnswer": "FOSHAN",
+    "category": "World City",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "63bdfc65daae32b84e9e696df7131b2a",
+    "source": "geography",
+    "type": "title",
+    "answer": "Shenyang",
+    "normalizedAnswer": "SHENYANG",
+    "category": "World City",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "b7d5b09d5b2249826ce641f882989f1b",
+    "source": "geography",
+    "type": "title",
+    "answer": "Baghdad",
+    "normalizedAnswer": "BAGHDAD",
+    "category": "World City",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "85e9702a2b419688cd625af6b9ab6454",
+    "source": "geography",
+    "type": "title",
+    "answer": "Madrid",
+    "normalizedAnswer": "MADRID",
+    "category": "World City",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "3f850d3252056811781cf400a694776d",
+    "source": "geography",
+    "type": "title",
+    "answer": "Harbin",
+    "normalizedAnswer": "HARBIN",
+    "category": "World City",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "a99b247cb8086e2ea9b1b9c55d931d4c",
+    "source": "geography",
+    "type": "title",
+    "answer": "Houston",
+    "normalizedAnswer": "HOUSTON",
+    "category": "World City",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "af21dff742b6d1ee07ab1906f66198f9",
+    "source": "geography",
+    "type": "title",
+    "answer": "Dallas",
+    "normalizedAnswer": "DALLAS",
+    "category": "World City",
+    "difficulty": 91.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "344e95eb4fa78f62ffef1f84badf18c0",
+    "source": "geography",
+    "type": "title",
+    "answer": "Toronto",
+    "normalizedAnswer": "TORONTO",
+    "category": "World City",
+    "difficulty": 91.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "07854b4cffd246ff190334c0bedb1380",
+    "source": "geography",
+    "type": "title",
+    "answer": "Miami",
+    "normalizedAnswer": "MIAMI",
+    "category": "World City",
+    "difficulty": 96,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "bd85304607d6ff00e30e1f40d5c277a7",
+    "source": "geography",
+    "type": "title",
+    "answer": "Belo Horizonte",
+    "normalizedAnswer": "BELO HORIZONTE",
+    "category": "World City",
+    "difficulty": 64.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "c31ef6656638dcd47ae59c038a92645e",
+    "source": "geography",
+    "type": "title",
+    "answer": "Singapore",
+    "normalizedAnswer": "SINGAPORE",
+    "category": "World City",
+    "difficulty": 70.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "5f1b04a75af15dd990bf41b57dc525c5",
+    "source": "geography",
+    "type": "title",
+    "answer": "Philadelphia",
+    "normalizedAnswer": "PHILADELPHIA",
+    "category": "World City",
+    "difficulty": 77.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 12,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "da135a2e9de30354ce0f8e7baabff79d",
+    "source": "geography",
+    "type": "title",
+    "answer": "Atlanta",
+    "normalizedAnswer": "ATLANTA",
+    "category": "World City",
+    "difficulty": 91.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "2f5052cec2353593952c0ed118a1fe5b",
+    "source": "geography",
+    "type": "title",
+    "answer": "Fukuoka",
+    "normalizedAnswer": "FUKUOKA",
+    "category": "World City",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "e966c202928eb458a1376f4d6081dfc6",
+    "source": "geography",
+    "type": "title",
+    "answer": "Barcelona",
+    "normalizedAnswer": "BARCELONA",
+    "category": "World City",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "53b41a4e2b48f4b11bed62e4079b5cd7",
+    "source": "geography",
+    "type": "title",
+    "answer": "Saint Petersburg",
+    "normalizedAnswer": "SAINT PETERSBURG",
+    "category": "World City",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "a5a6276fd6e806b3cb6f29a6cbe8d967",
+    "source": "geography",
+    "type": "title",
+    "answer": "Qingdao",
+    "normalizedAnswer": "QINGDAO",
+    "category": "World City",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "f2bf4bf7f7b1e22b4276b82e880f8fcb",
+    "source": "geography",
+    "type": "title",
+    "answer": "Dalian",
+    "normalizedAnswer": "DALIAN",
+    "category": "World City",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "d0e9d8bd822dd4a3c98a0e8c2c5d9d95",
+    "source": "geography",
+    "type": "title",
+    "answer": "Washington, D.C",
+    "normalizedAnswer": "WASHINGTON DC",
+    "category": "World City",
+    "difficulty": 61.2,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "0dba5f36f7388522a046ef3bf1976d90",
+    "source": "geography",
+    "type": "title",
+    "answer": "Yangon",
+    "normalizedAnswer": "YANGON",
+    "category": "World City",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "27187d78e96b7f8ee9841e72ff51261a",
+    "source": "geography",
+    "type": "title",
+    "answer": "Jinan",
+    "normalizedAnswer": "JINAN",
+    "category": "World City",
+    "difficulty": 92,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  },
+  {
+    "id": "243a3351aaf9e0f543237cb57673d1ee",
+    "source": "geography",
+    "type": "title",
+    "answer": "Guadalajara",
+    "normalizedAnswer": "GUADALAJARA",
+    "category": "World City",
+    "difficulty": 77.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "city"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_largest_cities"
+    }
+  }
+]

@@ -157,6 +157,23 @@ export const saveCustomPack = async (input: SaveCustomPackInput): Promise<Custom
   return pack
 }
 
+// The drawer's one-off "Custom" entry point (see PuzzleDrawer.tsx) no longer plays a typed word
+// as a throwaway round — every confirmed custom word lands here too, so it's still around to
+// replay later instead of being forgotten the moment the round ends. Found by label rather than a
+// fixed key since a fresh install has no pack yet and generateKey() mints a new one on first use;
+// re-adding the identical word (retyped, or the same shared link opened twice) replaces its old
+// entry instead of piling up a duplicate, but keeps the position of every other word untouched.
+export const CUSTOM_QUICK_PACK_LABEL = 'Custom'
+
+export const addCustomPuzzle = async (entry: CustomPackEntryInput): Promise<CustomPack> => {
+  const existing = cache.find((pack) => pack.label === CUSTOM_QUICK_PACK_LABEL)
+  const existingEntries: CustomPackEntryInput[] = existing ? existing.puzzles.map((puzzle) => ({ answer: puzzle.answer, hint: typeof puzzle.metadata?.hint === 'string' ? puzzle.metadata.hint : undefined })) : []
+  const normalizedNewAnswer = normalizePhrase(entry.answer)
+  const withoutDuplicate = existingEntries.filter((existingEntry) => normalizePhrase(existingEntry.answer) !== normalizedNewAnswer)
+
+  return saveCustomPack({ key: existing?.key, label: CUSTOM_QUICK_PACK_LABEL, entries: [...withoutDuplicate, entry] })
+}
+
 export const deleteCustomPack = async (key: string): Promise<void> => {
   const stored = await getStoredCustomPacks()
   const next = stored.filter((pack) => pack.key !== key)

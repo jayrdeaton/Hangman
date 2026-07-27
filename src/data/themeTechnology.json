@@ -1,0 +1,2142 @@
+[
+  {
+    "id": "aa4bd65053f1684c12e7c5da03f5d2f1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Channel F",
+    "normalizedAnswer": "CHANNEL F",
+    "category": "Technology",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "128009d5830fe96310ca8f9afe006bfe",
+    "source": "theme",
+    "type": "title",
+    "answer": "RCA Studio II",
+    "normalizedAnswer": "RCA STUDIO II",
+    "category": "Technology",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "495b62937314e714410f4fe982e11248",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bally Astrocade",
+    "normalizedAnswer": "BALLY ASTROCADE",
+    "category": "Technology",
+    "difficulty": 60.4,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "6f994c6b809494a937f8a0a5bc864cc0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Palladium Tele-Cassetten Game",
+    "normalizedAnswer": "PALLADIUM TELECASSETTEN GAME",
+    "category": "Technology",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 26,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "ba99f45ffb97b3c1440748ec2545648a",
+    "source": "theme",
+    "type": "title",
+    "answer": "APF Imagination Machine",
+    "normalizedAnswer": "APF IMAGINATION MACHINE",
+    "category": "Technology",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 21,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "0cfa56c7adad2c77344a141d018ffece",
+    "source": "theme",
+    "type": "title",
+    "answer": "Intellivision",
+    "normalizedAnswer": "INTELLIVISION",
+    "category": "Technology",
+    "difficulty": 72.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 13,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "ecb7d6d94967ed654444014556c4b911",
+    "source": "theme",
+    "type": "title",
+    "answer": "VTech CreatiVision",
+    "normalizedAnswer": "VTECH CREATIVISION",
+    "category": "Technology",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 17,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "1ec83f95d306ac95dfb87bb91f864a98",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cassette Vision",
+    "normalizedAnswer": "CASSETTE VISION",
+    "category": "Technology",
+    "difficulty": 68.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "76b243033817c2e0728172fb2987391e",
+    "source": "theme",
+    "type": "title",
+    "answer": "SHG Black Point",
+    "normalizedAnswer": "SHG BLACK POINT",
+    "category": "Technology",
+    "difficulty": 52.8,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 13,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "9a4610557d6a3a07e8fc0a3ee694cf35",
+    "source": "theme",
+    "type": "title",
+    "answer": "ColecoVision",
+    "normalizedAnswer": "COLECOVISION",
+    "category": "Technology",
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "a84eb5ca1b1aa1e66cfcb013ec1dcc2d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Vectrex",
+    "normalizedAnswer": "VECTREX",
+    "category": "Technology",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "e3ed155ad1561c7c045a476d92c88221",
+    "source": "theme",
+    "type": "title",
+    "answer": "Compact Vision TV Boy",
+    "normalizedAnswer": "COMPACT VISION TV BOY",
+    "category": "Technology",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 18,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "5653274585ba3d8aefedeb05764faeb6",
+    "source": "theme",
+    "type": "title",
+    "answer": "My Vision",
+    "normalizedAnswer": "MY VISION",
+    "category": "Technology",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "e1bbf8eb914668c4ef736ec63925ef43",
+    "source": "theme",
+    "type": "title",
+    "answer": "Pyuuta Jr",
+    "normalizedAnswer": "PYUUTA JR",
+    "category": "Technology",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "acd2a8250d60154f32befa4492b96a86",
+    "source": "theme",
+    "type": "title",
+    "answer": "NES",
+    "normalizedAnswer": "NES",
+    "category": "Technology",
+    "difficulty": 96.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "85b46c7fc63ae55ddbebd3efd05e431c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Super Cassette Vision",
+    "normalizedAnswer": "SUPER CASSETTE VISION",
+    "category": "Technology",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 19,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "fab8878f5440467937ae39f33d56004f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bridge Companion",
+    "normalizedAnswer": "BRIDGE COMPANION",
+    "category": "Technology",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "a5d68fcff7540a792fc71e0433faef31",
+    "source": "theme",
+    "type": "title",
+    "answer": "Video Art",
+    "normalizedAnswer": "VIDEO ART",
+    "category": "Technology",
+    "difficulty": 74.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "803347b5f2a58ce90d4db54c1a5d0962",
+    "source": "theme",
+    "type": "title",
+    "answer": "Zemmix",
+    "normalizedAnswer": "ZEMMIX",
+    "category": "Technology",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "7609ff8dab61421d1877b33e6f836dcf",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sega Mark III",
+    "normalizedAnswer": "SEGA MARK III",
+    "category": "Technology",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "6512863d775bd0f9fe0cfb831779b642",
+    "source": "theme",
+    "type": "title",
+    "answer": "Family Computer Disk System",
+    "normalizedAnswer": "FAMILY COMPUTER DISK SYSTEM",
+    "category": "Technology",
+    "difficulty": 40,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 24,
+    "uniqueLetterCount": 16,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "306de1ef0843483c91d7b6ca61e32ad8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Videosmarts",
+    "normalizedAnswer": "VIDEOSMARTS",
+    "category": "Technology",
+    "difficulty": 65.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "c732737d243ec312bdbf53b729e1e8eb",
+    "source": "theme",
+    "type": "title",
+    "answer": "Atari XEGS",
+    "normalizedAnswer": "ATARI XEGS",
+    "category": "Technology",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "8cf434659d03b409770a9cf0eb62d3d1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Video Challenger",
+    "normalizedAnswer": "VIDEO CHALLENGER",
+    "category": "Technology",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "18a6f432aa32eb04b44455b7c0c1d72e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Action Max",
+    "normalizedAnswer": "ACTION MAX",
+    "category": "Technology",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "551dee6f038f366446377547f008054b",
+    "source": "theme",
+    "type": "title",
+    "answer": "View-Master Interactive Vision",
+    "normalizedAnswer": "VIEWMASTER INTERACTIVE VISION",
+    "category": "Technology",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 27,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "776602dbda01bd621684019292acfa40",
+    "source": "theme",
+    "type": "title",
+    "answer": "Terebikko",
+    "normalizedAnswer": "TEREBIKKO",
+    "category": "Technology",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "6ca54fad325fcba39b23d22d474c7b4e",
+    "source": "theme",
+    "type": "title",
+    "answer": "VTech Socrates",
+    "normalizedAnswer": "VTECH SOCRATES",
+    "category": "Technology",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "4344987167ac0d4fed4a0e166d5ca29c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Video Driver",
+    "normalizedAnswer": "VIDEO DRIVER",
+    "category": "Technology",
+    "difficulty": 81.6,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "8aeaa01e47942dba90902e04bc99a5a2",
+    "source": "theme",
+    "type": "title",
+    "answer": "PC Engine",
+    "normalizedAnswer": "PC ENGINE",
+    "category": "Technology",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "13173a4fe4b2a8aa1f7bffd323a31f69",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sega Genesis",
+    "normalizedAnswer": "SEGA GENESIS",
+    "category": "Technology",
+    "difficulty": 81.6,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "968864cfb925948df1967900a7ff5c43",
+    "source": "theme",
+    "type": "title",
+    "answer": "TurboGrafx-CD",
+    "normalizedAnswer": "TURBOGRAFXCD",
+    "category": "Technology",
+    "difficulty": 61.2,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 12,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "eda6330a02ca5515150ad0b70ac3fcea",
+    "source": "theme",
+    "type": "title",
+    "answer": "Neo Geo AES",
+    "normalizedAnswer": "NEO GEO AES",
+    "category": "Technology",
+    "difficulty": 82.4,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "0cbe4c7c953b3a110024d798bbbffdf2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Super NES",
+    "normalizedAnswer": "SUPER NES",
+    "category": "Technology",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "c4d67ffb776ff9adb991395b18d3efca",
+    "source": "theme",
+    "type": "title",
+    "answer": "CDTV",
+    "normalizedAnswer": "CDTV",
+    "category": "Technology",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "1992956d6204e3c70be707c002965c33",
+    "source": "theme",
+    "type": "title",
+    "answer": "CD-i",
+    "normalizedAnswer": "CDI",
+    "category": "Technology",
+    "difficulty": 96.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "af10d69d8065cc627001d5c4a8fcf3bf",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sega CD",
+    "normalizedAnswer": "SEGA CD",
+    "category": "Technology",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "bee426f791b4c2ef9ac2b875c8ecf9c9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Picno",
+    "normalizedAnswer": "PICNO",
+    "category": "Technology",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "dfd9c94caee31d4bdb92dc833cb095d9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Memorex VIS",
+    "normalizedAnswer": "MEMOREX VIS",
+    "category": "Technology",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "1d49fe9986a62c6ede6808c6256394ad",
+    "source": "theme",
+    "type": "title",
+    "answer": "FM Towns Marty",
+    "normalizedAnswer": "FM TOWNS MARTY",
+    "category": "Technology",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "8ae890e148b0399353fb09126bfac964",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sega Pico",
+    "normalizedAnswer": "SEGA PICO",
+    "category": "Technology",
+    "difficulty": 74.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "1d43128014a490aba2e6343bd52de165",
+    "source": "theme",
+    "type": "title",
+    "answer": "Pioneer LaserActive",
+    "normalizedAnswer": "PIONEER LASERACTIVE",
+    "category": "Technology",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 18,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "8e7db1e78be7760892a4edc2d6ae01e5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Atari Jaguar",
+    "normalizedAnswer": "ATARI JAGUAR",
+    "category": "Technology",
+    "difficulty": 77.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "5180564237cd7a7635b029ff9d478774",
+    "source": "theme",
+    "type": "title",
+    "answer": "CPS Changer",
+    "normalizedAnswer": "CPS CHANGER",
+    "category": "Technology",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "add2343bb10f9ec8e8936187c199c418",
+    "source": "theme",
+    "type": "title",
+    "answer": "Neo Geo CD",
+    "normalizedAnswer": "NEO GEO CD",
+    "category": "Technology",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "6fe5f5a28881bdcbdc6040e7f40bd06c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Playdia",
+    "normalizedAnswer": "PLAYDIA",
+    "category": "Technology",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "f87dd7fe271bfba2c736376857503ddb",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sega Saturn",
+    "normalizedAnswer": "SEGA SATURN",
+    "category": "Technology",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "93c58ad1c628e744d9565bd745efba4b",
+    "source": "theme",
+    "type": "title",
+    "answer": "PlayStation",
+    "normalizedAnswer": "PLAYSTATION",
+    "category": "Technology",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "7abcde814d913390cb2f55742509c353",
+    "source": "theme",
+    "type": "title",
+    "answer": "PC-FX",
+    "normalizedAnswer": "PCFX",
+    "category": "Technology",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "5206676cf140b76fdb86151ca7164965",
+    "source": "theme",
+    "type": "title",
+    "answer": "Pippin",
+    "normalizedAnswer": "PIPPIN",
+    "category": "Technology",
+    "difficulty": 95.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "e8a551477b008af358e2a37e7df88826",
+    "source": "theme",
+    "type": "title",
+    "answer": "Satellaview",
+    "normalizedAnswer": "SATELLAVIEW",
+    "category": "Technology",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "a72854d6d6ab34d94e022495678d13b2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Atari Jaguar CD",
+    "normalizedAnswer": "ATARI JAGUAR CD",
+    "category": "Technology",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "11fab973c6398e141c9dee0f17ae5373",
+    "source": "theme",
+    "type": "title",
+    "answer": "Casio Loopy",
+    "normalizedAnswer": "CASIO LOOPY",
+    "category": "Technology",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "769db8a1aa7398826597e5d02975bfd2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Super A'Can",
+    "normalizedAnswer": "SUPER ACAN",
+    "category": "Technology",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "a32fb3d438fe1944119b78cc2670ff14",
+    "source": "theme",
+    "type": "title",
+    "answer": "Dreamcast",
+    "normalizedAnswer": "DREAMCAST",
+    "category": "Technology",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "b9fc2ca016d7871bf7ac5b732fc134dd",
+    "source": "theme",
+    "type": "title",
+    "answer": "Nuon",
+    "normalizedAnswer": "NUON",
+    "category": "Technology",
+    "difficulty": 96.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "9848a2e276c8f56d587f31d746308ec1",
+    "source": "theme",
+    "type": "title",
+    "answer": "GameCube",
+    "normalizedAnswer": "GAMECUBE",
+    "category": "Technology",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "4aeafdf9a5a6f5d0b6d474c9e4a8079d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Xbox",
+    "normalizedAnswer": "XBOX",
+    "category": "Technology",
+    "difficulty": 96.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "6f6346254ba1298fa7ca32b026bdcaba",
+    "source": "theme",
+    "type": "title",
+    "answer": "DVD Kids",
+    "normalizedAnswer": "DVD KIDS",
+    "category": "Technology",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "dbb039aafa6dc0892e6ab999f28382ec",
+    "source": "theme",
+    "type": "title",
+    "answer": "Xavix PORT",
+    "normalizedAnswer": "XAVIX PORT",
+    "category": "Technology",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "f54ca2458f3ad21eac04a16ed707a7f5",
+    "source": "theme",
+    "type": "title",
+    "answer": "V.Smile",
+    "normalizedAnswer": "VSMILE",
+    "category": "Technology",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "463073d70ab1f562ba9613f3c9cb81e1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Advanced Pico Beena",
+    "normalizedAnswer": "ADVANCED PICO BEENA",
+    "category": "Technology",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 17,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "c6ebf285a6b38b40de3b5182070c5297",
+    "source": "theme",
+    "type": "title",
+    "answer": "V.Smile Baby Infant Development System",
+    "normalizedAnswer": "VSMILE BABY INFANT DEVELOPMENT SYSTEM",
+    "category": "Technology",
+    "difficulty": 44,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 33,
+    "uniqueLetterCount": 15,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "0535b984ab22e31ebfb364b6f5a394a0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Game Wave Family Entertainment System",
+    "normalizedAnswer": "GAME WAVE FAMILY ENTERTAINMENT SYSTEM",
+    "category": "Technology",
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 33,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "cf13d5fd2289bc28181e6e6c5fee6b6f",
+    "source": "theme",
+    "type": "title",
+    "answer": "V.Flash",
+    "normalizedAnswer": "VFLASH",
+    "category": "Technology",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "68ea5c691c91f934291236150b20b559",
+    "source": "theme",
+    "type": "title",
+    "answer": "HyperScan",
+    "normalizedAnswer": "HYPERSCAN",
+    "category": "Technology",
+    "difficulty": 70.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "5ee7aaf90b0afdabfbebbeeb58bba128",
+    "source": "theme",
+    "type": "title",
+    "answer": "Wii",
+    "normalizedAnswer": "WII",
+    "category": "Technology",
+    "difficulty": 100.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 2,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "5c8e37581a53015658b1b55cfd38ad66",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sport Vii",
+    "normalizedAnswer": "SPORT VII",
+    "category": "Technology",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "6c077f98c74011c38540ed304774f3d2",
+    "source": "theme",
+    "type": "title",
+    "answer": "EVO Smart Console",
+    "normalizedAnswer": "EVO SMART CONSOLE",
+    "category": "Technology",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "7edc197257a40de9f29fd3e8425fee33",
+    "source": "theme",
+    "type": "title",
+    "answer": "Zeebo",
+    "normalizedAnswer": "ZEEBO",
+    "category": "Technology",
+    "difficulty": 92,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "ae2a5a16f6ea6396b68d464bf422295f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Wii U",
+    "normalizedAnswer": "WII U",
+    "category": "Technology",
+    "difficulty": 96.4,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 4,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "ffb90ae571d8b31d0cbbe384ea912ba8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ouya",
+    "normalizedAnswer": "OUYA",
+    "category": "Technology",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "651ffa420bb2b3db4c24401b214aa7e8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Xbox One",
+    "normalizedAnswer": "XBOX ONE",
+    "category": "Technology",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "30b1d348c3c0748d9d7bb256a3077137",
+    "source": "theme",
+    "type": "title",
+    "answer": "Nintendo Switch",
+    "normalizedAnswer": "NINTENDO SWITCH",
+    "category": "Technology",
+    "difficulty": 64.4,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "3a78366a48f72697d5e994b079c0799c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Xbox Series X",
+    "normalizedAnswer": "XBOX SERIES X",
+    "category": "Technology",
+    "difficulty": 77.6,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "12209ea3c7ab0d89b18af3610b6f5a89",
+    "source": "theme",
+    "type": "title",
+    "answer": "Atari VCS",
+    "normalizedAnswer": "ATARI VCS",
+    "category": "Technology",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "fa70e77e484b154f87e284cb4ea553f3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Polymega",
+    "normalizedAnswer": "POLYMEGA",
+    "category": "Technology",
+    "difficulty": 74.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "9ce05016e7cd2dcce965b2d428c57970",
+    "source": "theme",
+    "type": "title",
+    "answer": "Evercade VS",
+    "normalizedAnswer": "EVERCADE VS",
+    "category": "Technology",
+    "difficulty": 78,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "d993b91439ed1cda3c3206c2f4e23294",
+    "source": "theme",
+    "type": "title",
+    "answer": "Nex Playground",
+    "normalizedAnswer": "NEX PLAYGROUND",
+    "category": "Technology",
+    "difficulty": 56.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "79506e0e9457fd1d4694cd5a87f94c2e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Analogue Duo",
+    "normalizedAnswer": "ANALOGUE DUO",
+    "category": "Technology",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "7b4b4bf4c8e685953b2167673e492fd3",
+    "source": "theme",
+    "type": "title",
+    "answer": "SuperStation One",
+    "normalizedAnswer": "SUPERSTATION ONE",
+    "category": "Technology",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "a342c7c64caca171dd717767cb96a46b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Steam Machine",
+    "normalizedAnswer": "STEAM MACHINE",
+    "category": "Technology",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "fa67fee1ef2b08dfe8b2eb2eec6d4594",
+    "source": "theme",
+    "type": "title",
+    "answer": "iPhone",
+    "normalizedAnswer": "IPHONE",
+    "category": "Technology",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "532e4390d7e3c576e39459ae6d8656d6",
+    "source": "theme",
+    "type": "title",
+    "answer": "iPad",
+    "normalizedAnswer": "IPAD",
+    "category": "Technology",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "1f5961916e925291e3d1a7af4396c640",
+    "source": "theme",
+    "type": "title",
+    "answer": "MacBook",
+    "normalizedAnswer": "MACBOOK",
+    "category": "Technology",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "89f7e5416ecab68d7ac05b58a336026c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Apple Watch",
+    "normalizedAnswer": "APPLE WATCH",
+    "category": "Technology",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "9c96137a83a1e07185457c21d38f3c13",
+    "source": "theme",
+    "type": "title",
+    "answer": "AirPods",
+    "normalizedAnswer": "AIRPODS",
+    "category": "Technology",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "eb9138a479103d88cf439a455edff372",
+    "source": "theme",
+    "type": "title",
+    "answer": "Kindle",
+    "normalizedAnswer": "KINDLE",
+    "category": "Technology",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "9e535019841427c70679a61be34118f7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chromebook",
+    "normalizedAnswer": "CHROMEBOOK",
+    "category": "Technology",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "d6fd00f491d0b055dd3269ca4c0cfc87",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bluetooth",
+    "normalizedAnswer": "BLUETOOTH",
+    "category": "Technology",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "cc6f99bf161cbf4942dca7ec321dc006",
+    "source": "theme",
+    "type": "title",
+    "answer": "Wi-Fi",
+    "normalizedAnswer": "WIFI",
+    "category": "Technology",
+    "difficulty": 96.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "9b276c06fdbd3b76547957261eb44f93",
+    "source": "theme",
+    "type": "title",
+    "answer": "GPS",
+    "normalizedAnswer": "GPS",
+    "category": "Technology",
+    "difficulty": 96.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "0945fc2a0134d26c55f5d2e16a0368eb",
+    "source": "theme",
+    "type": "title",
+    "answer": "Roomba",
+    "normalizedAnswer": "ROOMBA",
+    "category": "Technology",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "fff0af1d0764ee82d3bf06d8694d67b4",
+    "source": "theme",
+    "type": "title",
+    "answer": "GoPro",
+    "normalizedAnswer": "GOPRO",
+    "category": "Technology",
+    "difficulty": 92,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "72091632509ed8863d55a848ee3cb526",
+    "source": "theme",
+    "type": "title",
+    "answer": "Fitbit",
+    "normalizedAnswer": "FITBIT",
+    "category": "Technology",
+    "difficulty": 91.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "fed4cff8917d292fedc57e06c6131fe2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Amazon Echo",
+    "normalizedAnswer": "AMAZON ECHO",
+    "category": "Technology",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "7f38dbcbc1951ff8320c60d8f83c93a0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Smartwatch",
+    "normalizedAnswer": "SMARTWATCH",
+    "category": "Technology",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "a2019da596eae18c1ab00b9b515c7204",
+    "source": "theme",
+    "type": "title",
+    "answer": "Drone",
+    "normalizedAnswer": "DRONE",
+    "category": "Technology",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "3d20b49f8de3c804133bfe314078bc01",
+    "source": "theme",
+    "type": "title",
+    "answer": "VR Headset",
+    "normalizedAnswer": "VR HEADSET",
+    "category": "Technology",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "476cf09960bf7c274296a977e7af5752",
+    "source": "theme",
+    "type": "title",
+    "answer": "Smart TV",
+    "normalizedAnswer": "SMART TV",
+    "category": "Technology",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "807e9e871619d57fa5f6b3285fbc7a5d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Webcam",
+    "normalizedAnswer": "WEBCAM",
+    "category": "Technology",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "336c2a4a13acd57808854d50a34fa1ad",
+    "source": "theme",
+    "type": "title",
+    "answer": "Router",
+    "normalizedAnswer": "ROUTER",
+    "category": "Technology",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "2903d83ae4b40d70137f413405332d53",
+    "source": "theme",
+    "type": "title",
+    "answer": "Flash Drive",
+    "normalizedAnswer": "FLASH DRIVE",
+    "category": "Technology",
+    "difficulty": 66,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "061fa614f409c35d5a2d055096f1bfeb",
+    "source": "theme",
+    "type": "title",
+    "answer": "Wireless Charger",
+    "normalizedAnswer": "WIRELESS CHARGER",
+    "category": "Technology",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "7b751cf7b6a03dfa5d8dc10d08da16ec",
+    "source": "theme",
+    "type": "title",
+    "answer": "Dash Cam",
+    "normalizedAnswer": "DASH CAM",
+    "category": "Technology",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "6a316af34373d12af43c116543151f94",
+    "source": "theme",
+    "type": "title",
+    "answer": "Smart Speaker",
+    "normalizedAnswer": "SMART SPEAKER",
+    "category": "Technology",
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  },
+  {
+    "id": "fc9245c32baec2d04ae29c965d4a1b94",
+    "source": "theme",
+    "type": "title",
+    "answer": "E-Reader",
+    "normalizedAnswer": "EREADER",
+    "category": "Technology",
+    "difficulty": 91.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "technology"
+    ],
+    "metadata": {
+      "source": "wikipedia-consoles-plus-curated"
+    }
+  }
+]

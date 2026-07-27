@@ -201,13 +201,43 @@ describe('resolvePuzzle - random source mode, scoped to selected packs', () => {
   })
 
   it('sets hint to just the humanized category, without the pack label', () => {
-    mockGetPuzzleManifest.mockReturnValue([{ ...fakeManifest[0], label: 'Theme Technology', categories: ['Technology'] }])
+    mockGetPuzzleManifest.mockReturnValue([{ ...fakeManifest[0], label: 'Technology & Trivia', categories: ['Technology', 'Trivia'] }])
     mockGetPuzzlesForCategory.mockReturnValue([{ ...fakePuzzle, category: 'Technology' }])
 
     const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random' }, ['bands'])
 
     expect(result.ok).toBe(true)
     if (result.ok) expect(result.payload.hint).toBe('Technology')
+  })
+
+  it('omits the hint when the pack has only one category, since it would just repeat the pack the player already picked', () => {
+    mockGetPuzzleManifest.mockReturnValue([{ ...fakeManifest[0], label: 'Theme Technology', categories: ['Technology'] }])
+    mockGetPuzzlesForCategory.mockReturnValue([{ ...fakePuzzle, category: 'Technology' }])
+
+    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random' }, ['bands'])
+
+    expect(result.ok).toBe(true)
+    if (result.ok) expect(result.payload.hint).toBeUndefined()
+  })
+
+  it('uses the release year as the hint on top of a single-category pack, since it is not redundant with the pack', () => {
+    mockGetPuzzleManifest.mockReturnValue([{ ...fakeManifest[0], label: 'Songs', categories: ['Song'] }])
+    mockGetPuzzlesForCategory.mockReturnValue([{ ...fakePuzzle, category: 'Song', metadata: { artist: 'The Beatles' } }])
+
+    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random' }, ['bands'])
+
+    expect(result.ok).toBe(true)
+    if (result.ok) expect(result.payload.hint).toBe('by The Beatles')
+  })
+
+  it('appends the release year to a multi-category hint for movies/TV', () => {
+    mockGetPuzzleManifest.mockReturnValue([{ ...fakeManifest[0], label: 'Movies', categories: ['Drama', 'Comedy'] }])
+    mockGetPuzzlesForCategory.mockReturnValue([{ ...fakePuzzle, source: 'movie', category: 'Drama', metadata: { year: '1994' } }])
+
+    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random' }, ['bands'])
+
+    expect(result.ok).toBe(true)
+    if (result.ok) expect(result.payload.hint).toBe('Drama · 1994')
   })
 
   it('title-cases ALL CAPS categories without altering punctuation', () => {
@@ -231,7 +261,7 @@ describe('resolvePuzzle - random source mode, scoped to selected packs', () => {
   })
 
   it('preserves a real acronym in an otherwise mixed-case category', () => {
-    mockGetPuzzleManifest.mockReturnValue([{ ...fakeManifest[0], label: 'Theme USPresidents', categories: ['US President'] }])
+    mockGetPuzzleManifest.mockReturnValue([{ ...fakeManifest[0], label: 'Theme USPresidents', categories: ['US President', 'Other'] }])
     mockGetPuzzlesForCategory.mockReturnValue([{ ...fakePuzzle, category: 'US President' }])
 
     const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random' }, ['bands'])
@@ -250,18 +280,18 @@ describe('resolvePuzzle - random source mode, scoped to selected packs', () => {
     if (result.ok) expect(result.payload.hint).toBe('What-Are-You-Doing')
   })
 
-  it('appends the pack subject to bare movie/TV genre categories to resolve ambiguity', () => {
+  it('leaves a bare movie/TV genre category unsuffixed, since the pack name shown alongside it already supplies the subject', () => {
     mockGetPuzzleManifest.mockReturnValue([{ ...fakeManifest[0], label: 'Movies', categories: ['Action', 'Comedy'] }])
     mockGetPuzzlesForCategory.mockReturnValue([{ ...fakePuzzle, source: 'movie', category: 'Action' }])
 
     const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random' }, ['bands'])
 
     expect(result.ok).toBe(true)
-    if (result.ok) expect(result.payload.hint).toBe('Action Movies')
+    if (result.ok) expect(result.payload.hint).toBe('Action')
   })
 
-  it('does not double up the subject suffix for the ungenred movie/TV fallback category', () => {
-    mockGetPuzzleManifest.mockReturnValue([{ ...fakeManifest[0], label: 'Tv Shows', categories: ['TV Show'] }])
+  it('does not repeat the ungenred movie/TV fallback category', () => {
+    mockGetPuzzleManifest.mockReturnValue([{ ...fakeManifest[0], label: 'Tv Shows', categories: ['TV Show', 'Comedy'] }])
     mockGetPuzzlesForCategory.mockReturnValue([{ ...fakePuzzle, source: 'tv', category: 'TV Show' }])
 
     const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random' }, ['bands'])
@@ -281,7 +311,7 @@ describe('resolvePuzzle - random source mode, scoped to selected packs', () => {
   })
 
   it('falls back to the category-derived hint when the explicit hint is blank', () => {
-    mockGetPuzzleManifest.mockReturnValue(fakeManifest)
+    mockGetPuzzleManifest.mockReturnValue([{ ...fakeManifest[0], categories: ['Classic Rock', 'Pop'] }])
     mockGetPuzzlesForCategory.mockReturnValue([{ ...fakePuzzle, metadata: { hint: '   ' } }])
 
     const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random' }, ['bands'])

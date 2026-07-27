@@ -1,0 +1,785 @@
+[
+  {
+    "key": "bands",
+    "file": "bands.json",
+    "label": "Bands",
+    "count": 958,
+    "difficultyTiers": [
+      "easy",
+      "hard",
+      "medium"
+    ],
+    "sources": [
+      "music-band"
+    ],
+    "categories": [
+      "Actor Band",
+      "Adult alternative pop/rock Band",
+      "Aln-sh Band",
+      "Alternative rock Band",
+      "American Band",
+      "American idol Band",
+      "Anime Band",
+      "Aor Band",
+      "Ballad Band",
+      "Bluegrass Band",
+      "Blues Band",
+      "Blues rock Band",
+      "Boogie rock Band",
+      "British Band",
+      "Christian rock Band",
+      "Classic pop and rock Band",
+      "Classic rock Band",
+      "Classical Band",
+      "Contemporary folk Band",
+      "Country Band",
+      "Country rock Band",
+      "Crossover prog Band",
+      "Death by breast cancer Band",
+      "Downtempo Band",
+      "Eclectic prog Band",
+      "Electronic Band",
+      "Electronic rock Band",
+      "English Band",
+      "Experimental Band",
+      "Film soundtrack Band",
+      "Finnish rock Band",
+      "Folk Band",
+      "Folk rock Band",
+      "French Band",
+      "Funk Band",
+      "German Band",
+      "Germany Band",
+      "Girl group Band",
+      "Greek Band",
+      "Guitarist Band",
+      "Hard rock Band",
+      "Heartland rock Band",
+      "Heavy metal Band",
+      "Indie pop Band",
+      "Indie rock Band",
+      "Industrial Band",
+      "Industrial rock Band",
+      "Instrumental rock Band",
+      "Italian Band",
+      "Japanese Band",
+      "Jazz Band",
+      "Jazz and blues Band",
+      "Jefferson airplane Band",
+      "Latin ballad Band",
+      "Metal Band",
+      "Minimalism Band",
+      "Mpb Band",
+      "Neo-medieval folk Band",
+      "New age Band",
+      "New wave Band",
+      "Noise Band",
+      "Polish Band",
+      "Political Band",
+      "Pop Band",
+      "Pop rock Band",
+      "Pop/rock Band",
+      "Post-punk Band",
+      "Post-rock Band",
+      "Progressive metal Band",
+      "Progressive rock Band",
+      "Psychedelic pop Band",
+      "Psychedelic rock Band",
+      "Psychedelic soul Band",
+      "Punk Band",
+      "Punk rock Band",
+      "R&b Band",
+      "Rap Band",
+      "Reggae Band",
+      "Rock & roll Band",
+      "Rock Band",
+      "Rock and indie Band",
+      "Rock and roll Band",
+      "Rockabilly Band",
+      "Singer-songwriter Band",
+      "Ska Band",
+      "Slowcore Band",
+      "Soul Band",
+      "Soundtrack Band",
+      "Southern rock Band",
+      "Spanish Band",
+      "Symphonic metal Band",
+      "Symphonic prog Band",
+      "Synthpop Band",
+      "Texas Band",
+      "Traditional pop Band",
+      "Trance Band",
+      "Trip-hop Band"
+    ]
+  },
+  {
+    "key": "geographyCities",
+    "file": "geographyCities.json",
+    "label": "Geography Cities",
+    "count": 83,
+    "difficultyTiers": [
+      "easy",
+      "hard",
+      "medium"
+    ],
+    "sources": [
+      "geography"
+    ],
+    "categories": [
+      "World City"
+    ]
+  },
+  {
+    "key": "geographyCountries",
+    "file": "geographyCountries.json",
+    "label": "Geography Countries",
+    "count": 239,
+    "difficultyTiers": [
+      "easy",
+      "hard",
+      "medium"
+    ],
+    "sources": [
+      "geography"
+    ],
+    "categories": [
+      "Country"
+    ]
+  },
+  {
+    "key": "geographyNationalParks",
+    "file": "geographyNationalParks.json",
+    "label": "Geography National Parks",
+    "count": 63,
+    "difficultyTiers": [
+      "easy",
+      "hard",
+      "medium"
+    ],
+    "sources": [
+      "geography"
+    ],
+    "categories": [
+      "National Park"
+    ]
+  },
+  {
+    "key": "geographyUSStates",
+    "file": "geographyUSStates.json",
+    "label": "Geography USStates",
+    "count": 128,
+    "difficultyTiers": [
+      "easy",
+      "hard",
+      "medium"
+    ],
+    "sources": [
+      "geography"
+    ],
+    "categories": [
+      "US State",
+      "US State Capital"
+    ]
+  },
+  {
+    "key": "geographyWorldWonders",
+    "file": "geographyWorldWonders.json",
+    "label": "Geography World Wonders",
+    "count": 21,
+    "difficultyTiers": [
+      "easy",
+      "hard",
+      "medium"
+    ],
+    "sources": [
+      "geography"
+    ],
+    "categories": [
+      "World Wonder"
+    ]
+  },
+  {
+    "key": "movies",
+    "file": "movies.json",
+    "label": "Movies",
+    "count": 9091,
+    "difficultyTiers": [
+      "easy",
+      "hard",
+      "medium"
+    ],
+    "sources": [
+      "movie"
+    ],
+    "categories": [
+      "Action",
+      "Adventure",
+      "Animation",
+      "Biography",
+      "Comedy",
+      "Crime",
+      "Documentary",
+      "Drama",
+      "Family",
+      "Fantasy",
+      "History",
+      "Horror",
+      "Music",
+      "Musical",
+      "Mystery",
+      "Romance",
+      "Sci-Fi",
+      "Thriller",
+      "Western"
+    ]
+  },
+  {
+    "key": "phrases",
+    "file": "phrases.json",
+    "label": "Phrases",
+    "count": 438,
+    "difficultyTiers": [
+      "easy",
+      "hard",
+      "medium"
+    ],
+    "sources": [
+      "phrases"
+    ],
+    "categories": [
+      "food-and-drink",
+      "people",
+      "phrase",
+      "place",
+      "thing",
+      "what-are-you-doing"
+    ]
+  },
+  {
+    "key": "songs",
+    "file": "songs.json",
+    "label": "Songs",
+    "count": 1848,
+    "difficultyTiers": [
+      "easy",
+      "hard",
+      "medium"
+    ],
+    "sources": [
+      "music-song"
+    ],
+    "categories": [
+      "Song"
+    ]
+  },
+  {
+    "key": "themeActors",
+    "file": "themeActors.json",
+    "label": "Theme Actors",
+    "count": 50,
+    "difficultyTiers": [
+      "easy",
+      "hard",
+      "medium"
+    ],
+    "sources": [
+      "theme"
+    ],
+    "categories": [
+      "Actor"
+    ]
+  },
+  {
+    "key": "themeAirplanes",
+    "file": "themeAirplanes.json",
+    "label": "Theme Airplanes",
+    "count": 93,
+    "difficultyTiers": [
+      "easy",
+      "hard",
+      "medium"
+    ],
+    "sources": [
+      "theme"
+    ],
+    "categories": [
+      "Aircraft"
+    ]
+  },
+  {
+    "key": "themeAnimeTitles",
+    "file": "themeAnimeTitles.json",
+    "label": "Theme Anime Titles",
+    "count": 106,
+    "difficultyTiers": [
+      "easy",
+      "hard",
+      "medium"
+    ],
+    "sources": [
+      "theme"
+    ],
+    "categories": [
+      "Anime"
+    ]
+  },
+  {
+    "key": "themeBoardGamesToys",
+    "file": "themeBoardGamesToys.json",
+    "label": "Theme Board Games Toys",
+    "count": 502,
+    "difficultyTiers": [
+      "easy",
+      "hard",
+      "medium"
+    ],
+    "sources": [
+      "theme"
+    ],
+    "categories": [
+      "Board Game or Toy"
+    ]
+  },
+  {
+    "key": "themeBrandsProducts",
+    "file": "themeBrandsProducts.json",
+    "label": "Theme Brands Products",
+    "count": 485,
+    "difficultyTiers": [
+      "easy",
+      "hard",
+      "medium"
+    ],
+    "sources": [
+      "theme"
+    ],
+    "categories": [
+      "Brand"
+    ]
+  },
+  {
+    "key": "themeCartoons",
+    "file": "themeCartoons.json",
+    "label": "Theme Cartoons",
+    "count": 68,
+    "difficultyTiers": [
+      "easy",
+      "hard",
+      "medium"
+    ],
+    "sources": [
+      "theme"
+    ],
+    "categories": [
+      "Cartoon Character"
+    ]
+  },
+  {
+    "key": "themeCompanies",
+    "file": "themeCompanies.json",
+    "label": "Theme Companies",
+    "count": 49,
+    "difficultyTiers": [
+      "easy",
+      "hard",
+      "medium"
+    ],
+    "sources": [
+      "theme"
+    ],
+    "categories": [
+      "Company"
+    ]
+  },
+  {
+    "key": "themeFirstLadies",
+    "file": "themeFirstLadies.json",
+    "label": "Theme First Ladies",
+    "count": 53,
+    "difficultyTiers": [
+      "easy",
+      "hard",
+      "medium"
+    ],
+    "sources": [
+      "theme"
+    ],
+    "categories": [
+      "First Lady"
+    ]
+  },
+  {
+    "key": "themeFoodAndDrink",
+    "file": "themeFoodAndDrink.json",
+    "label": "Theme Food And Drink",
+    "count": 459,
+    "difficultyTiers": [
+      "easy",
+      "hard",
+      "medium"
+    ],
+    "sources": [
+      "theme"
+    ],
+    "categories": [
+      "Food and Drink"
+    ]
+  },
+  {
+    "key": "themeGreekRomanGods",
+    "file": "themeGreekRomanGods.json",
+    "label": "Theme Greek Roman Gods",
+    "count": 54,
+    "difficultyTiers": [
+      "easy",
+      "hard",
+      "medium"
+    ],
+    "sources": [
+      "theme"
+    ],
+    "categories": [
+      "Greek/Roman God"
+    ]
+  },
+  {
+    "key": "themeHistory",
+    "file": "themeHistory.json",
+    "label": "Theme History",
+    "count": 173,
+    "difficultyTiers": [
+      "easy",
+      "hard",
+      "medium"
+    ],
+    "sources": [
+      "theme"
+    ],
+    "categories": [
+      "History"
+    ]
+  },
+  {
+    "key": "themeHolidaysCelebrations",
+    "file": "themeHolidaysCelebrations.json",
+    "label": "Theme Holidays Celebrations",
+    "count": 32,
+    "difficultyTiers": [
+      "easy",
+      "hard",
+      "medium"
+    ],
+    "sources": [
+      "theme"
+    ],
+    "categories": [
+      "Holiday and Celebration"
+    ]
+  },
+  {
+    "key": "themeLiterature",
+    "file": "themeLiterature.json",
+    "label": "Theme Literature",
+    "count": 299,
+    "difficultyTiers": [
+      "easy",
+      "hard",
+      "medium"
+    ],
+    "sources": [
+      "theme"
+    ],
+    "categories": [
+      "Book Title"
+    ]
+  },
+  {
+    "key": "themeMovieTitles",
+    "file": "themeMovieTitles.json",
+    "label": "Theme Movie Titles",
+    "count": 121,
+    "difficultyTiers": [
+      "easy",
+      "hard",
+      "medium"
+    ],
+    "sources": [
+      "theme"
+    ],
+    "categories": [
+      "Movie Title"
+    ]
+  },
+  {
+    "key": "themeMusicByEra",
+    "file": "themeMusicByEra.json",
+    "label": "Theme Music By Era",
+    "count": 67,
+    "difficultyTiers": [
+      "easy",
+      "hard",
+      "medium"
+    ],
+    "sources": [
+      "theme"
+    ],
+    "categories": [
+      "Music Artist by Era"
+    ]
+  },
+  {
+    "key": "themeMythology",
+    "file": "themeMythology.json",
+    "label": "Theme Mythology",
+    "count": 753,
+    "difficultyTiers": [
+      "easy",
+      "hard",
+      "medium"
+    ],
+    "sources": [
+      "theme"
+    ],
+    "categories": [
+      "Mythology Figure"
+    ]
+  },
+  {
+    "key": "themeNature",
+    "file": "themeNature.json",
+    "label": "Theme Nature",
+    "count": 1097,
+    "difficultyTiers": [
+      "easy",
+      "hard",
+      "medium"
+    ],
+    "sources": [
+      "theme"
+    ],
+    "categories": [
+      "Nature"
+    ]
+  },
+  {
+    "key": "themeProgrammingLanguages",
+    "file": "themeProgrammingLanguages.json",
+    "label": "Theme Programming Languages",
+    "count": 581,
+    "difficultyTiers": [
+      "easy",
+      "hard",
+      "medium"
+    ],
+    "sources": [
+      "theme"
+    ],
+    "categories": [
+      "Programming Language"
+    ]
+  },
+  {
+    "key": "themeScienceSpace",
+    "file": "themeScienceSpace.json",
+    "label": "Theme Science Space",
+    "count": 14,
+    "difficultyTiers": [
+      "easy",
+      "hard",
+      "medium"
+    ],
+    "sources": [
+      "theme"
+    ],
+    "categories": [
+      "Planet",
+      "Space Mission"
+    ]
+  },
+  {
+    "key": "themeSportsTeams",
+    "file": "themeSportsTeams.json",
+    "label": "Theme Sports Teams",
+    "count": 153,
+    "difficultyTiers": [
+      "easy",
+      "hard",
+      "medium"
+    ],
+    "sources": [
+      "theme"
+    ],
+    "categories": [
+      "Sports Team"
+    ]
+  },
+  {
+    "key": "themeSuperheroes",
+    "file": "themeSuperheroes.json",
+    "label": "Theme Superheroes",
+    "count": 200,
+    "difficultyTiers": [
+      "easy",
+      "hard",
+      "medium"
+    ],
+    "sources": [
+      "theme"
+    ],
+    "categories": [
+      "Superhero"
+    ]
+  },
+  {
+    "key": "themeTechnology",
+    "file": "themeTechnology.json",
+    "label": "Theme Technology",
+    "count": 107,
+    "difficultyTiers": [
+      "easy",
+      "hard",
+      "medium"
+    ],
+    "sources": [
+      "theme"
+    ],
+    "categories": [
+      "Technology"
+    ]
+  },
+  {
+    "key": "themeTravel",
+    "file": "themeTravel.json",
+    "label": "Theme Travel",
+    "count": 50,
+    "difficultyTiers": [
+      "easy",
+      "medium"
+    ],
+    "sources": [
+      "theme"
+    ],
+    "categories": [
+      "Travel"
+    ]
+  },
+  {
+    "key": "themeTVShows",
+    "file": "themeTVShows.json",
+    "label": "Theme TVShows",
+    "count": 173,
+    "difficultyTiers": [
+      "easy",
+      "hard",
+      "medium"
+    ],
+    "sources": [
+      "theme"
+    ],
+    "categories": [
+      "TV Show"
+    ]
+  },
+  {
+    "key": "themeUSPresidents",
+    "file": "themeUSPresidents.json",
+    "label": "Theme USPresidents",
+    "count": 46,
+    "difficultyTiers": [
+      "easy",
+      "hard",
+      "medium"
+    ],
+    "sources": [
+      "theme"
+    ],
+    "categories": [
+      "US President"
+    ]
+  },
+  {
+    "key": "themeVehicles",
+    "file": "themeVehicles.json",
+    "label": "Theme Vehicles",
+    "count": 59,
+    "difficultyTiers": [
+      "easy",
+      "hard",
+      "medium"
+    ],
+    "sources": [
+      "theme"
+    ],
+    "categories": [
+      "Vehicle"
+    ]
+  },
+  {
+    "key": "themeVideoGames",
+    "file": "themeVideoGames.json",
+    "label": "Theme Video Games",
+    "count": 733,
+    "difficultyTiers": [
+      "easy",
+      "hard",
+      "medium"
+    ],
+    "sources": [
+      "theme"
+    ],
+    "categories": [
+      "Video Game"
+    ]
+  },
+  {
+    "key": "themeWordplay",
+    "file": "themeWordplay.json",
+    "label": "Theme Wordplay",
+    "count": 26,
+    "difficultyTiers": [
+      "easy",
+      "hard",
+      "medium"
+    ],
+    "sources": [
+      "theme"
+    ],
+    "categories": [
+      "Wordplay"
+    ]
+  },
+  {
+    "key": "tvShows",
+    "file": "tvShows.json",
+    "label": "Tv Shows",
+    "count": 4294,
+    "difficultyTiers": [
+      "easy",
+      "hard",
+      "medium"
+    ],
+    "sources": [
+      "tv"
+    ],
+    "categories": [
+      "Action",
+      "Adventure",
+      "Animation",
+      "Biography",
+      "Comedy",
+      "Crime",
+      "Documentary",
+      "Drama",
+      "Family",
+      "Fantasy",
+      "Horror",
+      "Music",
+      "Mystery",
+      "Romance",
+      "Sci-Fi",
+      "TV Show",
+      "Thriller",
+      "Western"
+    ]
+  }
+]

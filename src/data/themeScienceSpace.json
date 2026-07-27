@@ -1,0 +1,310 @@
+[
+  {
+    "id": "4645f1a2f3e0ace5feef4f34158e4e6e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Jupiter",
+    "normalizedAnswer": "JUPITER",
+    "category": "Planet",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "planet"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size"
+    }
+  },
+  {
+    "id": "e96bdd2085d6e21e92e707600c86966e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Saturn",
+    "normalizedAnswer": "SATURN",
+    "category": "Planet",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "planet"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size"
+    }
+  },
+  {
+    "id": "e7ed8f36e72fc0c2582612a81599fb27",
+    "source": "theme",
+    "type": "title",
+    "answer": "Uranus",
+    "normalizedAnswer": "URANUS",
+    "category": "Planet",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "planet"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size"
+    }
+  },
+  {
+    "id": "e82a890ff86facd2aecd25ae5ec7b026",
+    "source": "theme",
+    "type": "title",
+    "answer": "Neptune",
+    "normalizedAnswer": "NEPTUNE",
+    "category": "Planet",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "planet"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size"
+    }
+  },
+  {
+    "id": "f52bc0cb87f943f364d2edc25b8acbc8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Earth",
+    "normalizedAnswer": "EARTH",
+    "category": "Planet",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "planet"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size"
+    }
+  },
+  {
+    "id": "fbabdb345650b9bf93978e897c07c9ed",
+    "source": "theme",
+    "type": "title",
+    "answer": "Venus",
+    "normalizedAnswer": "VENUS",
+    "category": "Planet",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "planet"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size"
+    }
+  },
+  {
+    "id": "430a7d44cb615e410a8c21aeb3d9a2c7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mars",
+    "normalizedAnswer": "MARS",
+    "category": "Planet",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "planet"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size"
+    }
+  },
+  {
+    "id": "7ffcb9709617a9dc0b46fdc142e37bbd",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mercury",
+    "normalizedAnswer": "MERCURY",
+    "category": "Planet",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "planet"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size"
+    }
+  },
+  {
+    "id": "39853c46a5f21e137506f2a6d2582eb8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cassini-Huygens",
+    "normalizedAnswer": "CASSINIHUYGENS",
+    "category": "Space Mission",
+    "difficulty": 64.4,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "mission"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ceb8f9c755a673d83dbcd10a04352ce9",
+    "source": "theme",
+    "type": "title",
+    "answer": "New Horizons",
+    "normalizedAnswer": "NEW HORIZONS",
+    "category": "Space Mission",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "mission"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ff62f1c918c35311f14a71170fef712f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mars Pathfinder",
+    "normalizedAnswer": "MARS PATHFINDER",
+    "category": "Space Mission",
+    "difficulty": 56.4,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "mission"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "250da8d280d80d09dc47e834d7cdcbf6",
+    "source": "theme",
+    "type": "title",
+    "answer": "Curiosity Rover",
+    "normalizedAnswer": "CURIOSITY ROVER",
+    "category": "Space Mission",
+    "difficulty": 64.4,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "mission"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "b644267ae2b698551c11eb706be01e44",
+    "source": "theme",
+    "type": "title",
+    "answer": "Perseverance Rover",
+    "normalizedAnswer": "PERSEVERANCE ROVER",
+    "category": "Space Mission",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 17,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "mission"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "67aae55eb892f780134d7d1c1b33cd2e",
+    "source": "theme",
+    "type": "title",
+    "answer": "International Space Station",
+    "normalizedAnswer": "INTERNATIONAL SPACE STATION",
+    "category": "Space Mission",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 25,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "mission"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  }
+]

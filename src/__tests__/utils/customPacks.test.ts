@@ -1,4 +1,4 @@
-import { buildCustomPuzzle, deleteCustomPack, exportCustomPack, getCustomPackPuzzles, getCustomPacks, getCustomPackSummaries, getCustomPacksVersion, getStoredCustomPacks, importCustomPack, isCustomPackKey, loadCustomPacksCache, saveCustomPack } from '@/utils/customPacks'
+import { addCustomPuzzle, buildCustomPuzzle, CUSTOM_QUICK_PACK_LABEL, deleteCustomPack, exportCustomPack, getCustomPackPuzzles, getCustomPacks, getCustomPackSummaries, getCustomPacksVersion, getStoredCustomPacks, importCustomPack, isCustomPackKey, loadCustomPacksCache, saveCustomPack } from '@/utils/customPacks'
 
 let mockStore: Record<string, string>
 
@@ -139,6 +139,45 @@ describe('saveCustomPack', () => {
 
     expect(getCustomPackPuzzles(pack.key)).toHaveLength(1)
     expect(getCustomPackPuzzles('custom:nonexistent')).toEqual([])
+  })
+})
+
+describe('addCustomPuzzle', () => {
+  it('creates the Custom pack on the first call', async () => {
+    const pack = await addCustomPuzzle({ answer: 'cat', hint: 'A pet' })
+
+    expect(pack.label).toBe(CUSTOM_QUICK_PACK_LABEL)
+    expect(isCustomPackKey(pack.key)).toBe(true)
+    expect(pack.puzzles).toHaveLength(1)
+    expect(pack.puzzles[0].answer).toBe('cat')
+  })
+
+  it('appends to the same Custom pack on later calls, keeping earlier entries', async () => {
+    const first = await addCustomPuzzle({ answer: 'cat' })
+    const second = await addCustomPuzzle({ answer: 'dog' })
+
+    expect(second.key).toBe(first.key)
+    expect(second.puzzles.map((puzzle) => puzzle.answer)).toEqual(['cat', 'dog'])
+
+    const stored = await getStoredCustomPacks()
+    expect(stored.filter((pack) => pack.label === CUSTOM_QUICK_PACK_LABEL)).toHaveLength(1)
+  })
+
+  it('replaces the existing entry (rather than duplicating it) when the same word is added again', async () => {
+    await addCustomPuzzle({ answer: 'cat', hint: 'Old hint' })
+    const pack = await addCustomPuzzle({ answer: 'CAT', hint: 'New hint' })
+
+    expect(pack.puzzles).toHaveLength(1)
+    expect(pack.puzzles[0].metadata).toEqual({ hint: 'New hint' })
+  })
+
+  it('does not disturb an unrelated custom pack that also happens to contain the same word', async () => {
+    const other = await saveCustomPack({ label: 'My Own Pack', entries: [{ answer: 'cat' }] })
+    const custom = await addCustomPuzzle({ answer: 'cat' })
+
+    expect(custom.key).not.toBe(other.key)
+    expect(getCustomPackPuzzles(other.key)).toHaveLength(1)
+    expect(getCustomPacks().filter((pack) => pack.label === 'My Own Pack')).toHaveLength(1)
   })
 })
 

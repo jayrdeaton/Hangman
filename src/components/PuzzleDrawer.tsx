@@ -8,19 +8,15 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
 import { usePackSelection } from '@/hooks/usePackSelection'
 import type { GameMode } from '@/types/gameModes'
-import type { GameStartPayload, PuzzleSourceMode } from '@/types/gameSession'
+import type { GameStartPayload } from '@/types/gameSession'
 import { alert } from '@/utils/alert'
+import { addCustomPuzzle, buildCustomPuzzle } from '@/utils/customPacks'
 import { getPuzzleManifest, PuzzleDifficultyTier } from '@/utils/puzzleCatalog'
 import { buildPuzzleLink } from '@/utils/puzzleLink'
 import { type PuzzleConfig, resolvePuzzle } from '@/utils/puzzlePicker'
 
 import { ModeSelector } from './ModeSelector'
 import { PacksScreen } from './PacksScreen'
-
-const SOURCE_OPTIONS: { label: string; value: PuzzleSourceMode }[] = [
-  { label: 'Random', value: 'random' },
-  { label: 'Custom', value: 'custom' }
-]
 
 const DIFFICULTY_OPTIONS: { label: string; value: 'any' | PuzzleDifficultyTier }[] = [
   { label: 'Any', value: 'any' },
@@ -29,9 +25,18 @@ const DIFFICULTY_OPTIONS: { label: string; value: 'any' | PuzzleDifficultyTier }
   { label: 'Hard', value: 'hard' }
 ]
 
-const SOURCE_MODE_ANNOUNCEMENT: Record<PuzzleSourceMode, string> = {
-  random: 'Pack picker and difficulty options shown',
-  custom: 'Custom puzzle form shown'
+// Read-only in Custom mode — a single typed word doesn't have a difficulty to filter by, it just
+// IS a difficulty (the same scoring buildCustomPuzzle already applies when the word gets saved),
+// so there's no "Any" here and every button is disabled; value alone drives which one lights up.
+const CUSTOM_DIFFICULTY_OPTIONS: { label: string; value: PuzzleDifficultyTier; disabled: true }[] = [
+  { label: 'Easy', value: 'easy', disabled: true },
+  { label: 'Medium', value: 'medium', disabled: true },
+  { label: 'Hard', value: 'hard', disabled: true }
+]
+
+const CUSTOM_FORM_ANNOUNCEMENT = {
+  shown: 'Custom puzzle form shown',
+  hidden: 'Pack picker and difficulty options shown'
 }
 
 const DRAWER_WIDTH = 380
@@ -45,9 +50,15 @@ export type PuzzleDrawerProps = {
   onConfirm: (payload: GameStartPayload, config: PuzzleConfig) => void
   packsVersion?: number
   onPacksChanged?: () => void
+  // Fired live, on every change — not staged behind the confirm button — so the art style updates
+  // the round already in progress immediately, and the difficulty filter is already in effect the
+  // moment the current round ends, without the player having to also press New Puzzle/Start Puzzle
+  // just to save what they picked. See Main.tsx's handleModeChange/handleDifficultyChange.
+  onModeChange?: (mode: GameMode) => void
+  onDifficultyChange?: (difficulty: 'any' | PuzzleDifficultyTier) => void
 }
 
-export const PuzzleDrawer = ({ visible, onDismiss, onRequestOpen, initialConfig, onConfirm, packsVersion = 0, onPacksChanged = () => {} }: PuzzleDrawerProps): JSX.Element => {
+export const PuzzleDrawer = ({ visible, onDismiss, onRequestOpen, initialConfig, onConfirm, packsVersion = 0, onPacksChanged = () => {}, onModeChange = () => {}, onDifficultyChange = () => {} }: PuzzleDrawerProps): JSX.Element => {
   const { settings } = useThemeSettings()
   const blur = useBlur()
   const insets = useSafeAreaInsets()
@@ -67,6 +78,12 @@ export const PuzzleDrawer = ({ visible, onDismiss, onRequestOpen, initialConfig,
   // afterward (e.g. before handing the device to whoever's guessing).
   const [isRevealed, setIsRevealed] = useState(true)
   const [packsScreenVisible, setPacksScreenVisible] = useState(false)
+  // Whether the secret-word form (opened via "Custom", backed out of via "Cancel" — see below) is
+  // showing. Decoupled from draft.sourceMode (which only matters at confirm time, below) so
+  // opening and canceling it doesn't touch the pack/difficulty selection sitting right above it —
+  // the two are independent choices now, not one mode you switch between.
+  const [customFormOpen, setCustomFormOpen] = useState(initialConfig.sourceMode === 'custom')
+  const [savingCustom, setSavingCustom] = useState(false)
   const hasAnnouncedRef = useRef(false)
 
   const packSummaryLabel = useMemo(() => {
@@ -75,49 +92,76 @@ export const PuzzleDrawer = ({ visible, onDismiss, onRequestOpen, initialConfig,
     return `${selectedPackKeys.length} of ${manifest.length} packs`
   }, [selectedPackKeys, manifest.length])
 
+  // null for a blank/unscoreable phrase (same validation buildCustomPuzzle already applies before
+  // a word can be saved) — doubles as both "what tier does this word score as" for the read-only
+  // Difficulty display below, and "is there actually a valid word yet" for gating the confirm
+  // button, so the two can never disagree about what's typed.
+  const customPreviewPuzzle = useMemo(() => buildCustomPuzzle('preview', '', { answer: draft.customPhrase }), [draft.customPhrase])
+
   const updateDraft = useCallback((patch: Partial<PuzzleConfig>) => setDraft((d) => ({ ...d, ...patch })), [])
 
   // Resets the draft from whatever's currently playing each time the drawer opens, and also
-  // whenever initialConfig itself changes while already open — the only way that happens is a
-  // fresh shared-puzzle link arriving (Main.tsx swaps in a new pendingShare), since the drawer's
-  // own confirm action changes config and closes the drawer in the same step. Without reacting to
-  // initialConfig here, a share link opened while the drawer was already open silently failed to
-  // update the draft. Drawer/DrawerEdgeSwipe (from @rific/drawer) own the actual open/close
-  // animation, so this effect only has to mirror the prop into editable local state — a
-  // legitimate external-system sync.
+  // whenever initialConfig's sourceMode/customPhrase/customHint change while already open — that
+  // combination only changes on a fresh shared-puzzle link arriving (Main.tsx swaps in a new
+  // pendingShare), since the drawer's own confirm action changes config and closes the drawer in
+  // the same step. Without reacting to those fields here, a share link opened while the drawer was
+  // already open silently failed to update the draft. Drawer/DrawerEdgeSwipe (from @rific/drawer)
+  // own the actual open/close animation, so this effect only has to mirror the prop into editable
+  // local state — a legitimate external-system sync.
+  //
+  // Deliberately narrower than "any initialConfig change": mode and difficulty are now also live
+  // (see onModeChange/onDifficultyChange below), which mutates Main.tsx's config — and therefore
+  // this same initialConfig prop — while the drawer is still open. Resetting the whole draft on
+  // every one of those echoes would wipe an in-progress custom word the player hasn't confirmed yet
+  // just because they tapped a different mode card.
   /* eslint-disable react-hooks/set-state-in-effect -- syncs the draft from an external prop, not derived from other state */
   useEffect(() => {
     if (!visible) return
-    // An unconfirmed sourceMode edit gets discarded right here on reopen. That reversion is not
+    const initialCustomFormOpen = initialConfig.sourceMode === 'custom'
+    // An unconfirmed Custom-toggle edit gets discarded right here on reopen. That reversion is not
     // something the user just did, so treat it like the very first run below and skip the
     // announcement it would otherwise trigger.
-    if (draft.sourceMode !== initialConfig.sourceMode) hasAnnouncedRef.current = false
+    if (customFormOpen !== initialCustomFormOpen) hasAnnouncedRef.current = false
     setDraft(initialConfig)
+    setCustomFormOpen(initialCustomFormOpen)
     setIsRevealed(true)
-    /* eslint-disable-next-line react-hooks/exhaustive-deps -- draft is read only to detect a discarded
-       edit on reopen, not to resync; including it would re-run this on every keystroke. */
-  }, [visible, initialConfig])
+    /* eslint-disable-next-line react-hooks/exhaustive-deps -- customFormOpen is read only to detect a
+       discarded edit on reopen, not to resync; including it would re-run this on every toggle. */
+  }, [visible, initialConfig.sourceMode, initialConfig.customPhrase, initialConfig.customHint])
   /* eslint-enable react-hooks/set-state-in-effect */
 
-  // Announces the newly-shown section to screen readers when Puzzle source changes — skipped on
-  // the very first run (and on any reset-driven reversion above) so opening the drawer doesn't
+  // Announces the newly-shown section to screen readers when the Custom toggle changes — skipped
+  // on the very first run (and on any reset-driven reversion above) so opening the drawer doesn't
   // announce anything before the user has acted.
   useEffect(() => {
     if (!hasAnnouncedRef.current) {
       hasAnnouncedRef.current = true
       return
     }
-    AccessibilityInfo.announceForAccessibility(SOURCE_MODE_ANNOUNCEMENT[draft.sourceMode])
-  }, [draft.sourceMode])
+    AccessibilityInfo.announceForAccessibility(customFormOpen ? CUSTOM_FORM_ANNOUNCEMENT.shown : CUSTOM_FORM_ANNOUNCEMENT.hidden)
+  }, [customFormOpen])
 
-  const handleConfirm = useCallback(() => {
-    const result = resolvePuzzle(draft, selectedPackKeys)
+  const handleConfirm = useCallback(async () => {
+    const configToResolve: PuzzleConfig = { ...draft, sourceMode: customFormOpen ? 'custom' : 'random' }
+    const result = resolvePuzzle(configToResolve, selectedPackKeys)
     if (!result.ok) {
-      void alert(draft.sourceMode === 'custom' ? 'Enter a valid word' : 'No puzzles available', result.error)
+      void alert(customFormOpen ? 'Enter a valid word' : 'No puzzles available', result.error)
       return
     }
-    onConfirm(result.payload, draft)
-  }, [draft, onConfirm, selectedPackKeys])
+    if (customFormOpen) {
+      // Saved under the raw typed text (not result.payload.phrase, already normalized/upper-cased)
+      // so it lands in the Custom pack the same way a word typed straight into the pack editor
+      // would — see PackEditorStep in PacksScreen.tsx.
+      setSavingCustom(true)
+      try {
+        await addCustomPuzzle({ answer: draft.customPhrase, hint: draft.customHint || undefined })
+      } finally {
+        setSavingCustom(false)
+      }
+      onPacksChanged()
+    }
+    onConfirm(result.payload, configToResolve)
+  }, [draft, customFormOpen, onConfirm, onPacksChanged, selectedPackKeys])
 
   const handleShare = useCallback(async () => {
     const result = resolvePuzzle({ ...draft, sourceMode: 'custom' }, selectedPackKeys)
@@ -138,7 +182,33 @@ export const PuzzleDrawer = ({ visible, onDismiss, onRequestOpen, initialConfig,
     }
   }, [draft, selectedPackKeys])
 
-  const handleSelectMode = useCallback((mode: GameMode) => updateDraft({ mode }), [updateDraft])
+  const handleSelectMode = useCallback(
+    (mode: GameMode) => {
+      updateDraft({ mode })
+      onModeChange(mode)
+    },
+    [updateDraft, onModeChange]
+  )
+
+  const handleSelectDifficulty = useCallback(
+    (value: 'any' | PuzzleDifficultyTier) => {
+      updateDraft({ difficulty: value })
+      onDifficultyChange(value)
+    },
+    [updateDraft, onDifficultyChange]
+  )
+
+  const handleOpenCustom = useCallback(() => setCustomFormOpen(true), [])
+
+  // A distinct action from opening, not the same button toggled back off — un-pressing an
+  // already-pressed toggle silently changed what the confirm button at the bottom would do
+  // (play the typed word vs. draw from packs) without making that obvious, and left it unclear
+  // whether the typed word survived. "Cancel" is unambiguous about both: it backs out AND clears
+  // the draft, matching PackEditorStep's own Cancel in PacksScreen.tsx.
+  const handleCancelCustom = useCallback(() => {
+    setCustomFormOpen(false)
+    updateDraft({ customPhrase: '', customHint: '' })
+  }, [updateDraft])
 
   return (
     <>
@@ -153,54 +223,58 @@ export const PuzzleDrawer = ({ visible, onDismiss, onRequestOpen, initialConfig,
         <View testID='puzzle-drawer-panel' style={[styles.panelContent, { paddingTop: insets.top, paddingBottom: insets.bottom }]} accessibilityViewIsModal={visible && !packsScreenVisible} accessibilityElementsHidden={!visible || packsScreenVisible} importantForAccessibility={visible && !packsScreenVisible ? 'yes' : 'no-hide-descendants'} onAccessibilityEscape={visible && !packsScreenVisible ? onDismiss : undefined}>
           <BlurView blur={blur} style={StyleSheet.absoluteFill} />
           <View style={styles.headerRow}>
-            <Text variant='titleLarge'>Change puzzle</Text>
+            <Text variant='titleLarge'>Game Menu</Text>
             <IconButton icon='close' onPress={onDismiss} accessibilityLabel='Close' />
           </View>
 
           <RNScrollView style={styles.flex} contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps='handled'>
-            <Text variant='titleMedium' style={styles.sectionLabel}>
-              Puzzle source
-            </Text>
-            <SegmentedButtons value={draft.sourceMode} onValueChange={(value) => updateDraft({ sourceMode: value as PuzzleSourceMode })} buttons={SOURCE_OPTIONS} />
+            {/* The hero: the visual/tactile choice (what the round looks and feels like) leads,
+                ahead of the more utilitarian pack/difficulty/custom-word controls below it. No
+                label — the mode cards are self-explanatory without one. */}
+            <ModeSelector selected={draft.mode} color={settings.color} onSelect={handleSelectMode} />
 
-            {/* Custom inputs and the Random controls are mutually exclusive, so they share this one
-                slot right under Puzzle source — whichever is relevant appears in the same place. */}
-            {draft.sourceMode === 'custom' ? (
+            <Text variant='titleMedium' style={styles.heroAdjacentSectionLabel}>
+              Difficulty
+            </Text>
+            {/* A filter to pick from in pack mode; a live read-out of the typed word's own scored
+                tier in Custom mode (blank/unscoreable text just leaves nothing selected). */}
+            {customFormOpen ? <SegmentedButtons value={customPreviewPuzzle?.difficultyTier ?? ''} onValueChange={() => {}} buttons={CUSTOM_DIFFICULTY_OPTIONS} /> : <SegmentedButtons value={draft.difficulty} onValueChange={(value) => handleSelectDifficulty(value as 'any' | PuzzleDifficultyTier)} buttons={DIFFICULTY_OPTIONS} />}
+
+            <Text variant='titleMedium' style={styles.sectionLabel}>
+              Puzzle
+            </Text>
+            <Button mode='outlined' icon='format-list-checks' onPress={() => setPacksScreenVisible(true)} contentStyle={styles.choosePacksContent}>
+              {packSummaryLabel}
+            </Button>
+            {/* Opens the form below; pack/difficulty selection above stays untouched either way.
+                Backing out is a separate, explicitly-labeled action (Cancel) — not this same
+                button un-pressed — so what it does is never ambiguous. */}
+            <Button mode='outlined' icon={customFormOpen ? 'close' : 'pencil-plus-outline'} onPress={customFormOpen ? handleCancelCustom : handleOpenCustom} style={styles.customToggleButton} contentStyle={styles.choosePacksContent}>
+              {customFormOpen ? 'Cancel' : 'Custom'}
+            </Button>
+
+            {/* The custom word form, when open, sits below the Custom toggle. */}
+            {customFormOpen ? (
               <View style={styles.customForm}>
                 <TextInput testID='phrase-input' value={draft.customPhrase} onChangeText={(customPhrase) => updateDraft({ customPhrase })} label='Secret word (letters and spaces)' autoCapitalize='characters' secureTextEntry={!isRevealed} maxLength={128} mode='outlined' right={<TextInput.Icon icon={isRevealed ? 'eye-off' : 'eye'} onPress={() => setIsRevealed((r) => !r)} accessibilityLabel={isRevealed ? 'Hide secret word' : 'Show secret word'} accessibilityState={{ selected: isRevealed }} />} />
                 <TextInput testID='hint-input' style={styles.hintInput} value={draft.customHint} onChangeText={(customHint) => updateDraft({ customHint })} label='Hint for the guesser (optional)' maxLength={80} mode='outlined' />
-                <Button mode='outlined' icon='share-variant' onPress={() => void handleShare()} style={styles.shareButton}>
+                <Button mode='outlined' icon='share-variant' onPress={() => void handleShare()} disabled={!customPreviewPuzzle} style={styles.shareButton}>
                   Share this puzzle
                 </Button>
               </View>
-            ) : (
-              <>
-                <Text variant='titleMedium' style={styles.sectionLabel}>
-                  Choose packs
-                </Text>
-                <Button mode='outlined' icon='format-list-checks' onPress={() => setPacksScreenVisible(true)} contentStyle={styles.choosePacksContent}>
-                  {packSummaryLabel}
-                </Button>
-
-                <Text variant='titleMedium' style={styles.sectionLabel}>
-                  Difficulty
-                </Text>
-                <SegmentedButtons value={draft.difficulty} onValueChange={(value) => updateDraft({ difficulty: value as 'any' | PuzzleDifficultyTier })} buttons={DIFFICULTY_OPTIONS} />
-              </>
-            )}
-
-            <Text variant='titleMedium' style={styles.sectionLabel}>
-              Game mode
-            </Text>
-            <ModeSelector selected={draft.mode} color={settings.color} onSelect={handleSelectMode} />
-
-            {/* Part of the scrollable content (not a fixed bottom footer) so the button follows
-                directly after Game mode instead of leaving a gap of unused ScrollView height
-                between them on screens taller than the form itself. */}
-            <Button mode='contained' icon='play' onPress={handleConfirm} style={styles.confirmButton} contentStyle={styles.confirmContent} labelStyle={styles.confirmLabel}>
-              {draft.sourceMode === 'custom' ? 'Start this puzzle' : 'New puzzle'}
-            </Button>
+            ) : null}
           </RNScrollView>
+
+          {/* A fixed footer, not part of the scrollable content — leaving the button inline at the
+              end of a form this short left a large dead gap below it instead of avoiding one.
+              Docking it here closes that gap and keeps the primary action reachable without
+              scrolling. No divider above it — the padding alone reads as separate from the
+              content without adding a hard line. */}
+          <View style={styles.footer}>
+            <Button mode='contained' icon='play' onPress={() => void handleConfirm()} loading={savingCustom} disabled={savingCustom || (customFormOpen && !customPreviewPuzzle)} contentStyle={styles.confirmContent} labelStyle={styles.confirmLabel}>
+              {customFormOpen ? 'Start puzzle' : 'New puzzle'}
+            </Button>
+          </View>
         </View>
       </Drawer>
 
@@ -211,17 +285,29 @@ export const PuzzleDrawer = ({ visible, onDismiss, onRequestOpen, initialConfig,
 
 const styles = StyleSheet.create({
   choosePacksContent: { justifyContent: 'flex-start' },
-  confirmButton: { marginTop: 28 },
   confirmContent: { height: 52 },
   confirmLabel: { fontSize: 16, fontWeight: '700' },
   customForm: { paddingTop: 16 },
+  customToggleButton: { marginTop: 8 },
   flex: { flex: 1 },
+  footer: {
+    paddingBottom: 16,
+    paddingHorizontal: 16,
+    paddingTop: 16
+  },
   headerRow: {
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingHorizontal: 16,
     paddingVertical: 12
+  },
+  // A tighter top margin than a standalone section would use — right under the mode cards, so it
+  // reads as "here's what you just picked" rather than a new, unrelated block starting.
+  heroAdjacentSectionLabel: {
+    fontWeight: '700',
+    marginBottom: 8,
+    marginTop: 12
   },
   hintInput: { marginTop: 8 },
   panelContent: {
@@ -234,8 +320,9 @@ const styles = StyleSheet.create({
     shadowRadius: 8
   },
   scrollContent: {
-    paddingBottom: 32,
-    paddingHorizontal: 16
+    paddingBottom: 16,
+    paddingHorizontal: 16,
+    paddingTop: 8
   },
   sectionLabel: {
     fontWeight: '700',

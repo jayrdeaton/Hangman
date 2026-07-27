@@ -1,0 +1,2620 @@
+[
+  {
+    "id": "b8e361152920ef818a73fff4fdbf502c",
+    "source": "geography",
+    "type": "title",
+    "answer": "Flag, name andpostal abbreviation",
+    "normalizedAnswer": "FLAG NAME ANDPOSTAL ABBREVIATION",
+    "category": "US State",
+    "difficulty": 40,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 29,
+    "uniqueLetterCount": 16,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "78ce5268bd17bc085dab637659d64d36",
+    "source": "geography",
+    "type": "title",
+    "answer": "Ratification oradmission",
+    "normalizedAnswer": "RATIFICATION ORADMISSION",
+    "category": "US State Capital",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 23,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "620d39fadfa091410f8ca6a8e071df02",
+    "source": "geography",
+    "type": "title",
+    "answer": "Capital",
+    "normalizedAnswer": "CAPITAL",
+    "category": "US State",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "690d4a7e62c96db8f93c38351d0a8251",
+    "source": "geography",
+    "type": "title",
+    "answer": "Alabama",
+    "normalizedAnswer": "ALABAMA",
+    "category": "US State",
+    "difficulty": 91.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "d9c068a15455f24022bf568c99ac5426",
+    "source": "geography",
+    "type": "title",
+    "answer": "Montgomery",
+    "normalizedAnswer": "MONTGOMERY",
+    "category": "US State Capital",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "9329aa07790bbed3071e1f3f95e99f28",
+    "source": "geography",
+    "type": "title",
+    "answer": "Alaska",
+    "normalizedAnswer": "ALASKA",
+    "category": "US State",
+    "difficulty": 91.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "abeda8a453b4a1ece24a2fb8fd189dce",
+    "source": "geography",
+    "type": "title",
+    "answer": "Juneau",
+    "normalizedAnswer": "JUNEAU",
+    "category": "US State Capital",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "84bf179d7093cf15e1b1f33a517c1505",
+    "source": "geography",
+    "type": "title",
+    "answer": "Arizona",
+    "normalizedAnswer": "ARIZONA",
+    "category": "US State",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "0520d6874e9f7af6226566eb9edc8673",
+    "source": "geography",
+    "type": "title",
+    "answer": "Phoenix",
+    "normalizedAnswer": "PHOENIX",
+    "category": "US State Capital",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "28f6759469a53ae08cff44c3f8f00975",
+    "source": "geography",
+    "type": "title",
+    "answer": "Arkansas",
+    "normalizedAnswer": "ARKANSAS",
+    "category": "US State",
+    "difficulty": 86.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "41bc57353c24c013c0ade7150ac5b40a",
+    "source": "geography",
+    "type": "title",
+    "answer": "Little Rock",
+    "normalizedAnswer": "LITTLE ROCK",
+    "category": "US State Capital",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "dbe77e9e8d728d4316792cab01762d57",
+    "source": "geography",
+    "type": "title",
+    "answer": "California",
+    "normalizedAnswer": "CALIFORNIA",
+    "category": "US State",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "f2c19e3159fbcf9b047b063d6aeaffc6",
+    "source": "geography",
+    "type": "title",
+    "answer": "Sacramento",
+    "normalizedAnswer": "SACRAMENTO",
+    "category": "US State Capital",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "0749de98fe0d327ed0818c7f68721411",
+    "source": "geography",
+    "type": "title",
+    "answer": "Colorado",
+    "normalizedAnswer": "COLORADO",
+    "category": "US State",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "b32512d5e651ec63824beebb49dbf60f",
+    "source": "geography",
+    "type": "title",
+    "answer": "Denver",
+    "normalizedAnswer": "DENVER",
+    "category": "US State Capital",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "cd3fcd70e34f6b5d02d861505c9df003",
+    "source": "geography",
+    "type": "title",
+    "answer": "Connecticut",
+    "normalizedAnswer": "CONNECTICUT",
+    "category": "US State",
+    "difficulty": 77.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "db20e6a806a9e7bf526d36b5ea55b96e",
+    "source": "geography",
+    "type": "title",
+    "answer": "Hartford",
+    "normalizedAnswer": "HARTFORD",
+    "category": "US State Capital",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "0fbd75da61d48aefddc6f6f4f9f54e22",
+    "source": "geography",
+    "type": "title",
+    "answer": "Delaware",
+    "normalizedAnswer": "DELAWARE",
+    "category": "US State",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "9e12fc0c6a6ee6fd4b32a34da48e15d1",
+    "source": "geography",
+    "type": "title",
+    "answer": "Dover",
+    "normalizedAnswer": "DOVER",
+    "category": "US State Capital",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "cada2d8ef7a6459bc5ca7821f8a07854",
+    "source": "geography",
+    "type": "title",
+    "answer": "Florida",
+    "normalizedAnswer": "FLORIDA",
+    "category": "US State",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "4cd965056f47d1a8c82962c38930d0c1",
+    "source": "geography",
+    "type": "title",
+    "answer": "Tallahassee",
+    "normalizedAnswer": "TALLAHASSEE",
+    "category": "US State Capital",
+    "difficulty": 81.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "7132d020a5ce13cb320206083c8b8e00",
+    "source": "geography",
+    "type": "title",
+    "answer": "Georgia",
+    "normalizedAnswer": "GEORGIA",
+    "category": "US State",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "a67c823ceb81ba2b883998af0b98c7a0",
+    "source": "geography",
+    "type": "title",
+    "answer": "Atlanta",
+    "normalizedAnswer": "ATLANTA",
+    "category": "US State Capital",
+    "difficulty": 91.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "d439649a6ecdc9446e0031701026937b",
+    "source": "geography",
+    "type": "title",
+    "answer": "Hawaii",
+    "normalizedAnswer": "HAWAII",
+    "category": "US State",
+    "difficulty": 91.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "67de94cd03db76b666b13f4ead7a59d8",
+    "source": "geography",
+    "type": "title",
+    "answer": "Honolulu",
+    "normalizedAnswer": "HONOLULU",
+    "category": "US State Capital",
+    "difficulty": 86.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "3eda8f10a8bc80a3050b9f70643799a6",
+    "source": "geography",
+    "type": "title",
+    "answer": "Idaho",
+    "normalizedAnswer": "IDAHO",
+    "category": "US State",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "73c0b9298d80b81f9ba117478859b8e5",
+    "source": "geography",
+    "type": "title",
+    "answer": "Boise",
+    "normalizedAnswer": "BOISE",
+    "category": "US State Capital",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "710e02616eac6c14475c1d06c6e8c0f9",
+    "source": "geography",
+    "type": "title",
+    "answer": "Illinois",
+    "normalizedAnswer": "ILLINOIS",
+    "category": "US State",
+    "difficulty": 86.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "807e9a282e237ef2d594895455b05d94",
+    "source": "geography",
+    "type": "title",
+    "answer": "Springfield",
+    "normalizedAnswer": "SPRINGFIELD",
+    "category": "US State Capital",
+    "difficulty": 65.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "ff648d4d928a546954b6ab6f436ce023",
+    "source": "geography",
+    "type": "title",
+    "answer": "Indiana",
+    "normalizedAnswer": "INDIANA",
+    "category": "US State",
+    "difficulty": 91.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "d190790f48c24cf400b12b4b90e572dd",
+    "source": "geography",
+    "type": "title",
+    "answer": "Indianapolis",
+    "normalizedAnswer": "INDIANAPOLIS",
+    "category": "US State Capital",
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "3bf32b652db7734435454e1acdfb8e5e",
+    "source": "geography",
+    "type": "title",
+    "answer": "Iowa",
+    "normalizedAnswer": "IOWA",
+    "category": "US State",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "9e4aa36f2d440a2d03ab74e86b514346",
+    "source": "geography",
+    "type": "title",
+    "answer": "Des Moines",
+    "normalizedAnswer": "DES MOINES",
+    "category": "US State Capital",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "cef0b6b924d8908a06edfb38ac77b477",
+    "source": "geography",
+    "type": "title",
+    "answer": "Kansas",
+    "normalizedAnswer": "KANSAS",
+    "category": "US State",
+    "difficulty": 91.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "689966c4d7503ce5a77cbf2a264b36c7",
+    "source": "geography",
+    "type": "title",
+    "answer": "Topeka",
+    "normalizedAnswer": "TOPEKA",
+    "category": "US State Capital",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "41cd7792a25c1c93f7b25b50cf90ec29",
+    "source": "geography",
+    "type": "title",
+    "answer": "Kentucky",
+    "normalizedAnswer": "KENTUCKY",
+    "category": "US State",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "12b84c649884d42351577ea22bed2475",
+    "source": "geography",
+    "type": "title",
+    "answer": "Frankfort",
+    "normalizedAnswer": "FRANKFORT",
+    "category": "US State Capital",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "7971b7ca04348a34e975fba89f4f4d7a",
+    "source": "geography",
+    "type": "title",
+    "answer": "Louisiana",
+    "normalizedAnswer": "LOUISIANA",
+    "category": "US State",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "3700ace60f277f334d100cbb2f072f5a",
+    "source": "geography",
+    "type": "title",
+    "answer": "Baton Rouge",
+    "normalizedAnswer": "BATON ROUGE",
+    "category": "US State Capital",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "d9f94051136e8a13344498dc4ce71f43",
+    "source": "geography",
+    "type": "title",
+    "answer": "Maine",
+    "normalizedAnswer": "MAINE",
+    "category": "US State",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "3472e415529311f7af339d376999b20a",
+    "source": "geography",
+    "type": "title",
+    "answer": "Augusta",
+    "normalizedAnswer": "AUGUSTA",
+    "category": "US State Capital",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "4ad5750aaf73e2739e05c5e9d543fa75",
+    "source": "geography",
+    "type": "title",
+    "answer": "Maryland",
+    "normalizedAnswer": "MARYLAND",
+    "category": "US State",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "78efb445d4e3994f3bd1a5f6cfc706c1",
+    "source": "geography",
+    "type": "title",
+    "answer": "Annapolis",
+    "normalizedAnswer": "ANNAPOLIS",
+    "category": "US State Capital",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "5c62105b8b2c104afe356309c4f52067",
+    "source": "geography",
+    "type": "title",
+    "answer": "Massachusetts",
+    "normalizedAnswer": "MASSACHUSETTS",
+    "category": "US State",
+    "difficulty": 72.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 13,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "225bf871d3966d51cc4f877c1728d4d1",
+    "source": "geography",
+    "type": "title",
+    "answer": "Boston",
+    "normalizedAnswer": "BOSTON",
+    "category": "US State Capital",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "602df5164daaa7591fef4e9cff83d68f",
+    "source": "geography",
+    "type": "title",
+    "answer": "Michigan",
+    "normalizedAnswer": "MICHIGAN",
+    "category": "US State",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "2bb31ba5df49851c8d07ba35caa70cd6",
+    "source": "geography",
+    "type": "title",
+    "answer": "Lansing",
+    "normalizedAnswer": "LANSING",
+    "category": "US State Capital",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "123b482a3d1513624677c5093d6cc4dc",
+    "source": "geography",
+    "type": "title",
+    "answer": "Minnesota",
+    "normalizedAnswer": "MINNESOTA",
+    "category": "US State",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "91e6cc179fafd5247b33e6056b66f357",
+    "source": "geography",
+    "type": "title",
+    "answer": "Saint Paul",
+    "normalizedAnswer": "SAINT PAUL",
+    "category": "US State Capital",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "6f4fb7e9db328abe945fd2f13d7ec4ba",
+    "source": "geography",
+    "type": "title",
+    "answer": "Mississippi",
+    "normalizedAnswer": "MISSISSIPPI",
+    "category": "US State",
+    "difficulty": 89.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "6fd99eaad4d840f20f6c9fb67061de12",
+    "source": "geography",
+    "type": "title",
+    "answer": "Jackson",
+    "normalizedAnswer": "JACKSON",
+    "category": "US State Capital",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "ceff98a738f8b3851d6c4dce74eacac8",
+    "source": "geography",
+    "type": "title",
+    "answer": "Missouri",
+    "normalizedAnswer": "MISSOURI",
+    "category": "US State",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "6a0b6f73edc91b64a7a912bb0ae69e6a",
+    "source": "geography",
+    "type": "title",
+    "answer": "Jefferson City",
+    "normalizedAnswer": "JEFFERSON CITY",
+    "category": "US State Capital",
+    "difficulty": 60.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "75a6316e547c9c806d271c9e0f6f4c78",
+    "source": "geography",
+    "type": "title",
+    "answer": "Montana",
+    "normalizedAnswer": "MONTANA",
+    "category": "US State",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "4ea2f266b4daacb85bf59fa700926a2e",
+    "source": "geography",
+    "type": "title",
+    "answer": "Helena",
+    "normalizedAnswer": "HELENA",
+    "category": "US State Capital",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "c88cc84159c89fa261ad4892e9dc79c3",
+    "source": "geography",
+    "type": "title",
+    "answer": "Nebraska",
+    "normalizedAnswer": "NEBRASKA",
+    "category": "US State",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "b6c57287585ea5053677724dbe18a624",
+    "source": "geography",
+    "type": "title",
+    "answer": "Lincoln",
+    "normalizedAnswer": "LINCOLN",
+    "category": "US State Capital",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "0b30611fadfd7977f578413a8d7ddbbf",
+    "source": "geography",
+    "type": "title",
+    "answer": "Nevada",
+    "normalizedAnswer": "NEVADA",
+    "category": "US State",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "be88828e62be4a69902cd38e85eee4f3",
+    "source": "geography",
+    "type": "title",
+    "answer": "Carson City",
+    "normalizedAnswer": "CARSON CITY",
+    "category": "US State Capital",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "6674b3aab949aafa268d6410f18bd720",
+    "source": "geography",
+    "type": "title",
+    "answer": "New Hampshire",
+    "normalizedAnswer": "NEW HAMPSHIRE",
+    "category": "US State",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "f10ec912eb5da841f121582dbfb582cd",
+    "source": "geography",
+    "type": "title",
+    "answer": "Concord",
+    "normalizedAnswer": "CONCORD",
+    "category": "US State Capital",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "80502336d7721865957359123f953b90",
+    "source": "geography",
+    "type": "title",
+    "answer": "New Jersey",
+    "normalizedAnswer": "NEW JERSEY",
+    "category": "US State",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "b9394e8e8debdd64679e0e9abb1b64bb",
+    "source": "geography",
+    "type": "title",
+    "answer": "Trenton",
+    "normalizedAnswer": "TRENTON",
+    "category": "US State Capital",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "d72cd612854265d1526c586afa50ba0c",
+    "source": "geography",
+    "type": "title",
+    "answer": "New Mexico",
+    "normalizedAnswer": "NEW MEXICO",
+    "category": "US State",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "1e2a3e9624bd265fe079b47e3a2821e0",
+    "source": "geography",
+    "type": "title",
+    "answer": "Santa Fe",
+    "normalizedAnswer": "SANTA FE",
+    "category": "US State Capital",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "02bd5c7998dc20b76baf01dee542e466",
+    "source": "geography",
+    "type": "title",
+    "answer": "New York",
+    "normalizedAnswer": "NEW YORK",
+    "category": "US State",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "a93fecb82af16cbec12c7f2f9f26e49c",
+    "source": "geography",
+    "type": "title",
+    "answer": "Albany",
+    "normalizedAnswer": "ALBANY",
+    "category": "US State Capital",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "7b13f2adf1b6cbecccfecf1b12939c5c",
+    "source": "geography",
+    "type": "title",
+    "answer": "North Carolina",
+    "normalizedAnswer": "NORTH CAROLINA",
+    "category": "US State",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "0ea7859a08eef844be9918282bd1be75",
+    "source": "geography",
+    "type": "title",
+    "answer": "Raleigh",
+    "normalizedAnswer": "RALEIGH",
+    "category": "US State Capital",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "4ba856947a0ee8a4e5a87d38153af416",
+    "source": "geography",
+    "type": "title",
+    "answer": "North Dakota",
+    "normalizedAnswer": "NORTH DAKOTA",
+    "category": "US State",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "968212d29a431a4714b3dbc18d62765a",
+    "source": "geography",
+    "type": "title",
+    "answer": "Bismarck",
+    "normalizedAnswer": "BISMARCK",
+    "category": "US State Capital",
+    "difficulty": 74.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "d4b2ffbc03c64055f6066591fd4daa7f",
+    "source": "geography",
+    "type": "title",
+    "answer": "Ohio",
+    "normalizedAnswer": "OHIO",
+    "category": "US State",
+    "difficulty": 96.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "9dd79897494d03a74dd540b9b43ef32a",
+    "source": "geography",
+    "type": "title",
+    "answer": "Columbus",
+    "normalizedAnswer": "COLUMBUS",
+    "category": "US State Capital",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "b1e0ce2dd617ee0cfbdb4e1e39a7a38b",
+    "source": "geography",
+    "type": "title",
+    "answer": "Oklahoma",
+    "normalizedAnswer": "OKLAHOMA",
+    "category": "US State",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "308f10e314afa76e3cbe7ddbd2a87c5b",
+    "source": "geography",
+    "type": "title",
+    "answer": "Oklahoma City",
+    "normalizedAnswer": "OKLAHOMA CITY",
+    "category": "US State Capital",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "ef1ec49827e732072ec14570afdb3e2b",
+    "source": "geography",
+    "type": "title",
+    "answer": "Oregon",
+    "normalizedAnswer": "OREGON",
+    "category": "US State",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "4d8221fb32711476c57f6d1766a42936",
+    "source": "geography",
+    "type": "title",
+    "answer": "Salem",
+    "normalizedAnswer": "SALEM",
+    "category": "US State Capital",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "9cdd15571c66e49afa687c20b331675a",
+    "source": "geography",
+    "type": "title",
+    "answer": "Pennsylvania",
+    "normalizedAnswer": "PENNSYLVANIA",
+    "category": "US State",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "4ff4a1b326dcf0fb3ba0b55d286f89c2",
+    "source": "geography",
+    "type": "title",
+    "answer": "Harrisburg",
+    "normalizedAnswer": "HARRISBURG",
+    "category": "US State Capital",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "eea85e8f4852a18d1db1009771a4b1a5",
+    "source": "geography",
+    "type": "title",
+    "answer": "Rhode Island",
+    "normalizedAnswer": "RHODE ISLAND",
+    "category": "US State",
+    "difficulty": 65.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "950de1aa6d84d1f59af6735f31090674",
+    "source": "geography",
+    "type": "title",
+    "answer": "Providence",
+    "normalizedAnswer": "PROVIDENCE",
+    "category": "US State Capital",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "c3b63fc8a82687b77a431dce02e5abf4",
+    "source": "geography",
+    "type": "title",
+    "answer": "South Carolina",
+    "normalizedAnswer": "SOUTH CAROLINA",
+    "category": "US State",
+    "difficulty": 60.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "3ab41c72f1db3eb040d62a5a310ff6a8",
+    "source": "geography",
+    "type": "title",
+    "answer": "Columbia",
+    "normalizedAnswer": "COLUMBIA",
+    "category": "US State Capital",
+    "difficulty": 74.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "78ce12d5b2a3e3b72d87b4f33f8c8bd2",
+    "source": "geography",
+    "type": "title",
+    "answer": "South Dakota",
+    "normalizedAnswer": "SOUTH DAKOTA",
+    "category": "US State",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "506ff7bb61267cda329388e32c0da1e6",
+    "source": "geography",
+    "type": "title",
+    "answer": "Pierre",
+    "normalizedAnswer": "PIERRE",
+    "category": "US State Capital",
+    "difficulty": 91.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "e73676e6677f75594eaaef48980fe7e6",
+    "source": "geography",
+    "type": "title",
+    "answer": "Tennessee",
+    "normalizedAnswer": "TENNESSEE",
+    "category": "US State",
+    "difficulty": 90.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "964040ee4e3e6b3fdbdcde529720db6a",
+    "source": "geography",
+    "type": "title",
+    "answer": "Nashville",
+    "normalizedAnswer": "NASHVILLE",
+    "category": "US State Capital",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "15d80c11cce0b14b5a108b7108bc9f92",
+    "source": "geography",
+    "type": "title",
+    "answer": "Texas",
+    "normalizedAnswer": "TEXAS",
+    "category": "US State",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "0f666a410190017ce9344a1567d4f07f",
+    "source": "geography",
+    "type": "title",
+    "answer": "Austin",
+    "normalizedAnswer": "AUSTIN",
+    "category": "US State Capital",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "f2229ecd98d8c3bfd2d299f4271cbd1a",
+    "source": "geography",
+    "type": "title",
+    "answer": "Utah",
+    "normalizedAnswer": "UTAH",
+    "category": "US State",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "9ccda494ee32e7fb65930e4448ce7605",
+    "source": "geography",
+    "type": "title",
+    "answer": "Salt Lake City",
+    "normalizedAnswer": "SALT LAKE CITY",
+    "category": "US State Capital",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "9d5012ded84bf01006d24811eac860ce",
+    "source": "geography",
+    "type": "title",
+    "answer": "Vermont",
+    "normalizedAnswer": "VERMONT",
+    "category": "US State",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "dd17cd53d07e657966627c1e46918f01",
+    "source": "geography",
+    "type": "title",
+    "answer": "Montpelier",
+    "normalizedAnswer": "MONTPELIER",
+    "category": "US State Capital",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "a1b6e6928ad14c378a721bef02174fce",
+    "source": "geography",
+    "type": "title",
+    "answer": "Virginia",
+    "normalizedAnswer": "VIRGINIA",
+    "category": "US State",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "9de9fbe786f600fad2c58ec29c9cbe9d",
+    "source": "geography",
+    "type": "title",
+    "answer": "Richmond",
+    "normalizedAnswer": "RICHMOND",
+    "category": "US State Capital",
+    "difficulty": 74.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "c71258259ff44493d110bcdcc3ba6fbb",
+    "source": "geography",
+    "type": "title",
+    "answer": "Washington",
+    "normalizedAnswer": "WASHINGTON",
+    "category": "US State",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "4b0d0b810250227bd75188dd651dba1e",
+    "source": "geography",
+    "type": "title",
+    "answer": "Olympia",
+    "normalizedAnswer": "OLYMPIA",
+    "category": "US State Capital",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "b36851c1bc694e476612dad1ff48a2c5",
+    "source": "geography",
+    "type": "title",
+    "answer": "West Virginia",
+    "normalizedAnswer": "WEST VIRGINIA",
+    "category": "US State",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "c063a6c3020037701502492979156fd4",
+    "source": "geography",
+    "type": "title",
+    "answer": "Charleston",
+    "normalizedAnswer": "CHARLESTON",
+    "category": "US State Capital",
+    "difficulty": 66,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "dfc3bd61da4b4d7e1d5d96cc19f184aa",
+    "source": "geography",
+    "type": "title",
+    "answer": "Wisconsin",
+    "normalizedAnswer": "WISCONSIN",
+    "category": "US State",
+    "difficulty": 82.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "f9180b39d70962488874e3a7bdf3fb30",
+    "source": "geography",
+    "type": "title",
+    "answer": "Madison",
+    "normalizedAnswer": "MADISON",
+    "category": "US State Capital",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "e5d93ecfa440b3d2e97547b4407eaf96",
+    "source": "geography",
+    "type": "title",
+    "answer": "Wyoming",
+    "normalizedAnswer": "WYOMING",
+    "category": "US State",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "2cd2a8efe89f98ef1d6383f61654b0b4",
+    "source": "geography",
+    "type": "title",
+    "answer": "Cheyenne",
+    "normalizedAnswer": "CHEYENNE",
+    "category": "US State Capital",
+    "difficulty": 86.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "731e08c8537e9ae460e8a2229ad16676",
+    "source": "geography",
+    "type": "title",
+    "answer": "Name andpostal abbreviation",
+    "normalizedAnswer": "NAME ANDPOSTAL ABBREVIATION",
+    "category": "US State",
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 25,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "6899778805512315611e4cda36d7848d",
+    "source": "geography",
+    "type": "title",
+    "answer": "Acquired",
+    "normalizedAnswer": "ACQUIRED",
+    "category": "US State Capital",
+    "difficulty": 74.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "89361c892e1e28676c4608cfc2e37fc0",
+    "source": "geography",
+    "type": "title",
+    "answer": "American Samoa",
+    "normalizedAnswer": "AMERICAN SAMOA",
+    "category": "US State",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "448689b09876c724c4d00079ac7381a3",
+    "source": "geography",
+    "type": "title",
+    "answer": "Pago Pago",
+    "normalizedAnswer": "PAGO PAGO",
+    "category": "US State Capital",
+    "difficulty": 90.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "e6f412edac576d8ff4c7b43269decc33",
+    "source": "geography",
+    "type": "title",
+    "answer": "Guam",
+    "normalizedAnswer": "GUAM",
+    "category": "US State",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "8d6af8a008484cbcc6ccf2f01bb11fb4",
+    "source": "geography",
+    "type": "title",
+    "answer": "Hagåtña",
+    "normalizedAnswer": "HAGTA",
+    "category": "US State Capital",
+    "difficulty": 92,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "36faaba914398bf4fa4f052242837d6a",
+    "source": "geography",
+    "type": "title",
+    "answer": "Northern Mariana Islands",
+    "normalizedAnswer": "NORTHERN MARIANA ISLANDS",
+    "category": "US State",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 22,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "cca572f611df00ac33ed79df6560937f",
+    "source": "geography",
+    "type": "title",
+    "answer": "Saipan",
+    "normalizedAnswer": "SAIPAN",
+    "category": "US State Capital",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "c7159bfcd5e7ad2d52469f9c273320ef",
+    "source": "geography",
+    "type": "title",
+    "answer": "Puerto Rico",
+    "normalizedAnswer": "PUERTO RICO",
+    "category": "US State",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "bc324c312d472fb85a12b5244c9f2462",
+    "source": "geography",
+    "type": "title",
+    "answer": "San Juan",
+    "normalizedAnswer": "SAN JUAN",
+    "category": "US State Capital",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "68028c8d5a023e67a74b9643b5cdb69c",
+    "source": "geography",
+    "type": "title",
+    "answer": "U.S. Virgin Islands",
+    "normalizedAnswer": "US VIRGIN ISLANDS",
+    "category": "US State",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "fafc42ea843bfe5ee2822b70f7b62e18",
+    "source": "geography",
+    "type": "title",
+    "answer": "Charlotte Amalie",
+    "normalizedAnswer": "CHARLOTTE AMALIE",
+    "category": "US State Capital",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "95d868f0d721ea6c399d2324e6cf7dc3",
+    "source": "geography",
+    "type": "title",
+    "answer": "Name",
+    "normalizedAnswer": "NAME",
+    "category": "US State",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "a41dc8ede26d3b0ff8aa1ebcf0efddf9",
+    "source": "geography",
+    "type": "title",
+    "answer": "Territorial status",
+    "normalizedAnswer": "TERRITORIAL STATUS",
+    "category": "US State Capital",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 17,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "1e85fc068bb9febc4a7392f86c0450c2",
+    "source": "geography",
+    "type": "title",
+    "answer": "Baker Island",
+    "normalizedAnswer": "BAKER ISLAND",
+    "category": "US State",
+    "difficulty": 65.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "ccaa299a055db6df2c2585d4a6c94b33",
+    "source": "geography",
+    "type": "title",
+    "answer": "Howland Island",
+    "normalizedAnswer": "HOWLAND ISLAND",
+    "category": "US State",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "f9a6483a52790b744ae79b760fe7d16f",
+    "source": "geography",
+    "type": "title",
+    "answer": "Jarvis Island",
+    "normalizedAnswer": "JARVIS ISLAND",
+    "category": "US State",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "64d7f033741bfea5016d033878583607",
+    "source": "geography",
+    "type": "title",
+    "answer": "Johnston Atoll",
+    "normalizedAnswer": "JOHNSTON ATOLL",
+    "category": "US State",
+    "difficulty": 72.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "7ddaf16b3bd3d9f5148a039fc9bdc4af",
+    "source": "geography",
+    "type": "title",
+    "answer": "Kingman Reef",
+    "normalizedAnswer": "KINGMAN REEF",
+    "category": "US State",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "0a6e0a929a38f2629999bf60d8ab0c61",
+    "source": "geography",
+    "type": "title",
+    "answer": "Midway Atoll",
+    "normalizedAnswer": "MIDWAY ATOLL",
+    "category": "US State",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "d15f47bf7192e4c519d3ee0fcb2dcb1b",
+    "source": "geography",
+    "type": "title",
+    "answer": "Navassa Island",
+    "normalizedAnswer": "NAVASSA ISLAND",
+    "category": "US State",
+    "difficulty": 76.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "77a96fa88327745027717a3da80fc66b",
+    "source": "geography",
+    "type": "title",
+    "answer": "Palmyra Atoll",
+    "normalizedAnswer": "PALMYRA ATOLL",
+    "category": "US State",
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "e78018f5f016577437dd53c638e94cc3",
+    "source": "geography",
+    "type": "title",
+    "answer": "Wake Island",
+    "normalizedAnswer": "WAKE ISLAND",
+    "category": "US State",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "14ef8751e24f641cb7079de7400a3cdb",
+    "source": "geography",
+    "type": "title",
+    "answer": "Bajo Nuevo Bank (Petrel Island",
+    "normalizedAnswer": "BAJO NUEVO BANK PETREL ISLAND",
+    "category": "US State",
+    "difficulty": 40,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 25,
+    "uniqueLetterCount": 16,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "51f193151433c2610c7d569a2c8788cb",
+    "source": "geography",
+    "type": "title",
+    "answer": "Serranilla Bank",
+    "normalizedAnswer": "SERRANILLA BANK",
+    "category": "US State",
+    "difficulty": 68.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "us-state"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  }
+]

@@ -1,15 +1,16 @@
 import * as Linking from 'expo-linking'
 import { JSX, useCallback, useEffect, useRef, useState } from 'react'
 import { StyleSheet, View } from 'react-native'
-import { Appbar, Snackbar, Text } from 'react-native-paper'
+import { Appbar, Snackbar } from 'react-native-paper'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
 import { usePackSelection } from '@/hooks/usePackSelection'
 import { DEFAULT_MODE } from '@/modes/registry'
+import type { GameMode } from '@/types/gameModes'
 import type { GameStartPayload } from '@/types/gameSession'
 import { ACHIEVEMENT_DEFINITIONS_BY_ID, type AchievementId, recordLoss, recordSolve } from '@/utils/achievements'
 import { loadCustomPacksCache } from '@/utils/customPacks'
-import { getPuzzleManifest, type PuzzleDifficultyTier } from '@/utils/puzzleCatalog'
+import { getPuzzleManifest } from '@/utils/puzzleCatalog'
 import { parseSharedPuzzle } from '@/utils/puzzleLink'
 import { type PuzzleConfig, resolvePuzzle } from '@/utils/puzzlePicker'
 import { getPuzzleUnlockMap, getUnlockedCountForPack, markPuzzleUnlocked } from '@/utils/unlocks'
@@ -27,18 +28,6 @@ const DEFAULT_CONFIG: PuzzleConfig = {
   mode: DEFAULT_MODE,
   customPhrase: '',
   customHint: ''
-}
-
-const DIFFICULTY_LABELS: Record<PuzzleDifficultyTier, string> = {
-  easy: 'Easy',
-  medium: 'Medium',
-  hard: 'Hard'
-}
-
-const DIFFICULTY_COLORS: Record<PuzzleDifficultyTier, string> = {
-  easy: '#2E7D32',
-  medium: '#B8860B',
-  hard: '#B00020'
 }
 
 export const Main = (): JSX.Element => {
@@ -116,6 +105,24 @@ export const Main = (): JSX.Element => {
   const handleDismissDrawer = useCallback(() => {
     setDrawerVisible(false)
     setPendingShare(null)
+  }, [])
+
+  // Live, not staged behind the drawer's confirm button — an art style is purely cosmetic, so it
+  // applies to the round already on screen the instant it's picked, not just future ones. Session
+  // stays otherwise untouched (same phrase/hint/outcome/guessedLetters), so this never disturbs a
+  // round in progress; Game.tsx separately freezes the mistake limit itself at round start so a
+  // mode with a different maxMistakes (see modes/stars.tsx) can't shift the difficulty mid-round.
+  const handleModeChange = useCallback((mode: GameMode) => {
+    setConfig((c) => ({ ...c, mode }))
+    setSession((s) => (s ? { ...s, mode } : s))
+  }, [])
+
+  // Also live, but deliberately left out of `session` — a difficulty filter only shapes which
+  // puzzle gets drawn NEXT, so touching the config that startNextRound reads from is enough for it
+  // to apply the moment the current round ends, without retroactively touching the puzzle already
+  // on screen (which was already drawn under whatever filter was active at the time).
+  const handleDifficultyChange = useCallback((difficulty: PuzzleConfig['difficulty']) => {
+    setConfig((c) => ({ ...c, difficulty }))
   }, [])
 
   const handleSolved = useCallback(
@@ -215,22 +222,15 @@ export const Main = (): JSX.Element => {
   return (
     <View style={styles.flex}>
       <Appbar.Header elevated>
-        <Appbar.Action icon='menu' onPress={() => setDrawerVisible(true)} accessibilityLabel='Change puzzle' />
+        <Appbar.Action icon='menu' onPress={() => setDrawerVisible(true)} accessibilityLabel='Game Menu' />
         <View style={styles.appbarSpacer} />
         <Appbar.Action icon='trophy-outline' onPress={() => setAchievementsVisible(true)} accessibilityLabel='Achievements' />
         <Appbar.Action icon='cog-outline' onPress={() => setSettingsVisible(true)} accessibilityLabel='Settings' />
-        <View style={styles.appbarCenter} pointerEvents='none'>
-          {session?.difficultyTier ? (
-            <View style={[styles.difficultyBadge, { borderColor: DIFFICULTY_COLORS[session.difficultyTier] }]} accessibilityLabel={`Difficulty: ${DIFFICULTY_LABELS[session.difficultyTier]}`}>
-              <Text style={[styles.difficultyText, { color: DIFFICULTY_COLORS[session.difficultyTier] }]}>{DIFFICULTY_LABELS[session.difficultyTier]}</Text>
-            </View>
-          ) : null}
-        </View>
       </Appbar.Header>
 
-      <View style={[styles.flex, gameShell, { paddingBottom: insets.bottom }]}>{session ? <Game key={roundKey} onStop={handleRoundEnd} onSolved={handleSolved} onLost={handleLost} phrase={session.phrase} mode={session.mode} hint={session.hint} categoryProgress={categoryProgress} onAnotherInCategory={handlePlayAnotherInCategory} /> : null}</View>
+      <View style={[styles.flex, gameShell, { paddingBottom: insets.bottom }]}>{session ? <Game key={roundKey} onStop={handleRoundEnd} onSolved={handleSolved} onLost={handleLost} phrase={session.phrase} mode={session.mode} hint={session.hint} packLabel={session.packLabel} difficultyTier={session.difficultyTier} categoryProgress={categoryProgress} onAnotherInCategory={handlePlayAnotherInCategory} /> : null}</View>
 
-      <PuzzleDrawer visible={drawerVisible} onDismiss={handleDismissDrawer} onRequestOpen={() => setDrawerVisible(true)} initialConfig={pendingShare ?? config} onConfirm={handleConfirmPuzzle} packsVersion={customPacksVersion} onPacksChanged={refreshCustomPacks} />
+      <PuzzleDrawer visible={drawerVisible} onDismiss={handleDismissDrawer} onRequestOpen={() => setDrawerVisible(true)} initialConfig={pendingShare ?? config} onConfirm={handleConfirmPuzzle} packsVersion={customPacksVersion} onPacksChanged={refreshCustomPacks} onModeChange={handleModeChange} onDifficultyChange={handleDifficultyChange} />
       <AchievementsDialog visible={achievementsVisible} onDismiss={() => setAchievementsVisible(false)} unlockVersion={unlockVersion} />
       <SettingsDialog visible={settingsVisible} onDismiss={() => setSettingsVisible(false)} onUnlocksChanged={refreshUnlocks} />
       <Snackbar visible={snackbarQueue.length > 0} onDismiss={() => setSnackbarQueue((q) => q.slice(1))} duration={3000} icon='trophy-outline'>
@@ -241,9 +241,6 @@ export const Main = (): JSX.Element => {
 }
 
 const styles = StyleSheet.create({
-  appbarCenter: { alignItems: 'center', bottom: 0, justifyContent: 'center', left: 0, position: 'absolute', right: 0, top: 0 },
   appbarSpacer: { flex: 1 },
-  difficultyBadge: { borderRadius: 12, borderWidth: 1.5, paddingHorizontal: 10, paddingVertical: 3 },
-  difficultyText: { fontSize: 12, fontWeight: '700', letterSpacing: 0.5, textTransform: 'uppercase' },
   flex: { flex: 1 }
 })

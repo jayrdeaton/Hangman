@@ -14,6 +14,6 @@ export type CelebrationEffect = {
   Component: (props: CelebrationProps) => JSX.Element
 }
 
-export const ALL_CELEBRATIONS: CelebrationEffect[] = [{ id: 'fireworks', label: 'Fireworks', Component: Fireworks }]
+const ALL_CELEBRATIONS: CelebrationEffect[] = [{ id: 'fireworks', label: 'Fireworks', Component: Fireworks }]
 
 export const DEFAULT_CELEBRATION: CelebrationEffect = ALL_CELEBRATIONS[0]

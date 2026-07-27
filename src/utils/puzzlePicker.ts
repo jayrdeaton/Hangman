@@ -1,8 +1,9 @@
 import type { GameMode } from '@/types/gameModes'
 import type { GameStartPayload, PuzzleSourceMode } from '@/types/gameSession'
-import type { Puzzle, PuzzleSource } from '@/types/puzzle'
+import type { Puzzle } from '@/types/puzzle'
 import { getPuzzleManifest, getPuzzlesForCategory, PuzzleDifficultyTier } from '@/utils/puzzleCatalog'
 
+import type { PuzzleManifestItem } from '../data/puzzleCatalog.generated'
 import { normalizePhrase } from './normalizePhrase'
 
 export { normalizePhrase }
@@ -36,20 +37,36 @@ const humanizeCategory = (category: string): string => {
   })
 }
 
-// Movie/TV genres ("Action", "Comedy") are scraped as bare genre words shared by both packs —
-// alone they read as ambiguous (an "Action" hint could be anything), so the pack's own subject
-// gets folded in as a suffix, e.g. "Action Movies". Skipped when the category is already the
-// ungenred fallback bucket ("Movie", "TV Show") so it doesn't double up into "Movie Movies".
-const SUBJECT_SUFFIX: Partial<Record<PuzzleSource, string>> = { movie: 'Movies', tv: 'Shows' }
+const readMetaString = (metadata: Record<string, unknown> | undefined, key: string): string | undefined => {
+  const value = metadata?.[key]
+  return typeof value === 'string' && value.trim().length > 0 ? value.trim() : undefined
+}
 
-const buildHint = (puzzle: Pick<Puzzle, 'category' | 'source' | 'metadata'>): string => {
-  const explicitHint = puzzle.metadata?.hint
-  if (typeof explicitHint === 'string' && explicitHint.trim().length > 0) return explicitHint.trim()
+// This is the *extra* hint shown alongside the pack itself (see GameStartPayload.packLabel,
+// always surfaced next to it in the UI) — so a category only earns a place here when it tells
+// the player something the pack name doesn't already. Most theme/geography packs are scraped
+// one-category-per-pack (every puzzle in "Theme Superheroes" has category "Superhero"), so
+// repeating it would just parrot back the pack they already know they're in. Bands, movies, TV
+// and the mixed Phrases pack are the packs where a category is actually informative on its own —
+// no "Movies"/"Shows" suffix needed to disambiguate a bare genre like "Action" anymore, since the
+// pack name sitting right next to it already supplies that context.
+const buildHint = (puzzle: Pick<Puzzle, 'category' | 'metadata'>, pack: Pick<PuzzleManifestItem, 'categories'>): string | undefined => {
+  const explicitHint = readMetaString(puzzle.metadata, 'hint')
+  if (explicitHint) return explicitHint
 
-  const category = humanizeCategory(puzzle.category)
-  const suffix = SUBJECT_SUFFIX[puzzle.source]
-  if (!suffix || category.toLowerCase().includes(suffix.toLowerCase().slice(0, -1))) return category
-  return `${category} ${suffix}`
+  const parts: string[] = []
+
+  if (pack.categories.length > 1) parts.push(humanizeCategory(puzzle.category))
+
+  // Scraped per-item metadata that's more specific than any category — an artist name pins a
+  // song down far more than the pack-wide "Song" category ever could, and a release year adds
+  // real information on top of a genre that's shared by hundreds of other movies/shows.
+  const artist = readMetaString(puzzle.metadata, 'artist')
+  if (artist) parts.push(`by ${artist}`)
+  const year = readMetaString(puzzle.metadata, 'year')
+  if (year) parts.push(year)
+
+  return parts.length > 0 ? parts.join(' · ') : undefined
 }
 
 export type PuzzleConfig = {
@@ -122,7 +139,7 @@ export const resolvePuzzle = (config: PuzzleConfig, packKeys: string[]): PuzzleR
       packLabel: randomPick.pack.label,
       puzzleId: randomPick.puzzle.id,
       difficultyTier: randomPick.puzzle.difficultyTier,
-      hint: buildHint(randomPick.puzzle)
+      hint: buildHint(randomPick.puzzle, randomPick.pack)
     }
   }
 }
