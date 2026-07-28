@@ -68,6 +68,13 @@ export const Main = (): JSX.Element => {
   // Puzzle button follows. Distinct from `config`, which only ever reflects the last CONFIRMED
   // puzzle, so dismissing without confirming leaves the active game untouched.
   const [pendingShare, setPendingShare] = useState<PuzzleConfig | null>(null)
+  // Bumped every time a genuinely new shared-puzzle link is parsed, whether or not the drawer was
+  // already open — see PuzzleDrawer's resync effect, which depends on this (not on comparing
+  // pendingShare's field values) to tell "a fresh share just arrived" apart from "the mode/
+  // difficulty live-update callbacks just echoed a change back through config". Two different
+  // shares can carry the identical phrase/hint but a different mode (see puzzleLink.ts), so
+  // comparing values alone can't reliably distinguish "new share" from "no new share".
+  const [shareVersion, setShareVersion] = useState(0)
   const [handledUrl, setHandledUrl] = useState(incomingUrl)
   const [snackbarQueue, setSnackbarQueue] = useState<AchievementId[]>([])
   const pendingAchievementsRef = useRef<AchievementId[]>([])
@@ -112,18 +119,35 @@ export const Main = (): JSX.Element => {
   // stays otherwise untouched (same phrase/hint/outcome/guessedLetters), so this never disturbs a
   // round in progress; Game.tsx separately freezes the mistake limit itself at round start so a
   // mode with a different maxMistakes (see modes/stars.tsx) can't shift the difficulty mid-round.
-  const handleModeChange = useCallback((mode: GameMode) => {
-    setConfig((c) => ({ ...c, mode }))
-    setSession((s) => (s ? { ...s, mode } : s))
-  }, [])
+  //
+  // Skipped entirely while a share is pending (drawer open, previewing an incoming shared puzzle
+  // the player hasn't accepted or declined yet): the drawer's mode selector is showing the SHARED
+  // puzzle's mode at that point, not the round already playing behind it, so applying the pick to
+  // `session`/`config` would silently reskin the wrong (hidden, still-active) round. The pick still
+  // reaches PuzzleDrawer's own local draft either way, so it's used correctly if "Start puzzle" is
+  // pressed to accept the share.
+  const handleModeChange = useCallback(
+    (mode: GameMode) => {
+      if (pendingShare) return
+      setConfig((c) => ({ ...c, mode }))
+      setSession((s) => (s ? { ...s, mode } : s))
+    },
+    [pendingShare]
+  )
 
   // Also live, but deliberately left out of `session` — a difficulty filter only shapes which
   // puzzle gets drawn NEXT, so touching the config that startNextRound reads from is enough for it
   // to apply the moment the current round ends, without retroactively touching the puzzle already
-  // on screen (which was already drawn under whatever filter was active at the time).
-  const handleDifficultyChange = useCallback((difficulty: PuzzleConfig['difficulty']) => {
-    setConfig((c) => ({ ...c, difficulty }))
-  }, [])
+  // on screen (which was already drawn under whatever filter was active at the time). Same
+  // pending-share guard as handleModeChange above, for the same reason — belt and suspenders, since
+  // the drawer's own Difficulty control is already read-only whenever a share is pending.
+  const handleDifficultyChange = useCallback(
+    (difficulty: PuzzleConfig['difficulty']) => {
+      if (pendingShare) return
+      setConfig((c) => ({ ...c, difficulty }))
+    },
+    [pendingShare]
+  )
 
   const handleSolved = useCallback(
     async (details: SolveDetails) => {
@@ -214,6 +238,7 @@ export const Main = (): JSX.Element => {
     const shared = parseSharedPuzzle(incomingUrl)
     if (shared) {
       setPendingShare(shared)
+      setShareVersion((v) => v + 1)
       setDrawerVisible(true)
     }
   }, [incomingUrl, handledUrl])
@@ -230,7 +255,7 @@ export const Main = (): JSX.Element => {
 
       <View style={[styles.flex, gameShell, { paddingBottom: insets.bottom }]}>{session ? <Game key={roundKey} onStop={handleRoundEnd} onSolved={handleSolved} onLost={handleLost} phrase={session.phrase} mode={session.mode} hint={session.hint} packLabel={session.packLabel} difficultyTier={session.difficultyTier} categoryProgress={categoryProgress} onAnotherInCategory={handlePlayAnotherInCategory} /> : null}</View>
 
-      <PuzzleDrawer visible={drawerVisible} onDismiss={handleDismissDrawer} onRequestOpen={() => setDrawerVisible(true)} initialConfig={pendingShare ?? config} onConfirm={handleConfirmPuzzle} packsVersion={customPacksVersion} onPacksChanged={refreshCustomPacks} onModeChange={handleModeChange} onDifficultyChange={handleDifficultyChange} />
+      <PuzzleDrawer visible={drawerVisible} onDismiss={handleDismissDrawer} onRequestOpen={() => setDrawerVisible(true)} initialConfig={pendingShare ?? config} shareVersion={shareVersion} onConfirm={handleConfirmPuzzle} packsVersion={customPacksVersion} onPacksChanged={refreshCustomPacks} onModeChange={handleModeChange} onDifficultyChange={handleDifficultyChange} />
       <AchievementsDialog visible={achievementsVisible} onDismiss={() => setAchievementsVisible(false)} unlockVersion={unlockVersion} />
       <SettingsDialog visible={settingsVisible} onDismiss={() => setSettingsVisible(false)} onUnlocksChanged={refreshUnlocks} />
       <Snackbar visible={snackbarQueue.length > 0} onDismiss={() => setSnackbarQueue((q) => q.slice(1))} duration={3000} icon='trophy-outline'>

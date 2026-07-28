@@ -2,7 +2,7 @@ import { fireEvent, render } from '@testing-library/react-native'
 import { AccessibilityInfo } from 'react-native'
 
 import { PuzzleDrawer } from '@/components/PuzzleDrawer'
-import { DEFAULT_MODE } from '@/modes/registry'
+import { ALL_MODES, DEFAULT_MODE } from '@/modes/registry'
 import { addCustomPuzzle } from '@/utils/customPacks'
 import type { PuzzleConfig } from '@/utils/puzzlePicker'
 
@@ -216,13 +216,33 @@ describe('PuzzleDrawer', () => {
   it('re-syncs the draft when initialConfig changes while the drawer is already open (a fresh shared link arriving)', async () => {
     const customA: PuzzleConfig = { ...baseConfig, sourceMode: 'custom', customPhrase: 'FIRST' }
     const customB: PuzzleConfig = { ...baseConfig, sourceMode: 'custom', customPhrase: 'SECOND' }
-    const { getByTestId, rerender } = await renderDrawer({ initialConfig: customA })
+    // shareVersion bumps exactly when Main.tsx parses a new share — see the resync effect's own
+    // comment for why the drawer keys off this instead of comparing initialConfig's field values.
+    const { getByTestId, rerender } = await renderDrawer({ initialConfig: customA, shareVersion: 1 })
 
     expect(getByTestId('phrase-input').props.value).toBe('FIRST')
 
-    await rerender(<PuzzleDrawer visible onDismiss={jest.fn()} onRequestOpen={jest.fn()} initialConfig={customB} onConfirm={jest.fn()} />)
+    await rerender(<PuzzleDrawer visible onDismiss={jest.fn()} onRequestOpen={jest.fn()} initialConfig={customB} shareVersion={2} onConfirm={jest.fn()} />)
 
     expect(getByTestId('phrase-input').props.value).toBe('SECOND')
+  })
+
+  it('re-syncs the draft on a second shared link that repeats the same phrase/hint but picks a different mode', async () => {
+    // The scenario the value-comparison approach couldn't handle: sourceMode/customPhrase/
+    // customHint are IDENTICAL across both shares, so only shareVersion signals the second one
+    // actually arrived — see the resync effect's comment on PuzzleDrawer.tsx.
+    const sharedClassic: PuzzleConfig = { ...baseConfig, sourceMode: 'custom', customPhrase: 'PIZZA NIGHT', customHint: '', mode: DEFAULT_MODE }
+    const sharedLettersOnly: PuzzleConfig = { ...sharedClassic, mode: ALL_MODES.find((m) => m.id === 'letters')! }
+    const { getByTestId, getByLabelText, rerender } = await renderDrawer({ initialConfig: sharedClassic, shareVersion: 1 })
+    await fireEvent(getByTestId('mode-selector-container'), 'layout', MODE_SELECTOR_LAYOUT_EVENT)
+
+    expect(getByTestId('phrase-input').props.value).toBe('PIZZA NIGHT')
+    expect(getByLabelText(/^Classic mode, /).props.accessibilityState).toEqual({ selected: true })
+
+    await rerender(<PuzzleDrawer visible onDismiss={jest.fn()} onRequestOpen={jest.fn()} initialConfig={sharedLettersOnly} shareVersion={2} onConfirm={jest.fn()} />)
+
+    expect(getByTestId('phrase-input').props.value).toBe('PIZZA NIGHT')
+    expect(getByLabelText(/^Letters Only mode, /).props.accessibilityState).toEqual({ selected: true })
   })
 
   it('opens straight into the custom form when initialConfig carries a shared custom puzzle', async () => {

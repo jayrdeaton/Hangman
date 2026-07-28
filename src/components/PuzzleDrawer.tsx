@@ -47,18 +47,26 @@ export type PuzzleDrawerProps = {
   onDismiss: () => void
   onRequestOpen: () => void
   initialConfig: PuzzleConfig
+  // Bumped by Main.tsx every time a genuinely new shared-puzzle link is parsed — see the draft
+  // resync effect below for why this, and not comparing initialConfig's own field values, is what
+  // it depends on to detect "a fresh share arrived" versus "onModeChange/onDifficultyChange echoed
+  // a live edit back through config".
+  shareVersion?: number
   onConfirm: (payload: GameStartPayload, config: PuzzleConfig) => void
   packsVersion?: number
   onPacksChanged?: () => void
   // Fired live, on every change — not staged behind the confirm button — so the art style updates
   // the round already in progress immediately, and the difficulty filter is already in effect the
   // moment the current round ends, without the player having to also press New Puzzle/Start Puzzle
-  // just to save what they picked. See Main.tsx's handleModeChange/handleDifficultyChange.
+  // just to save what they picked. See Main.tsx's handleModeChange/handleDifficultyChange — Main
+  // deliberately skips applying these while a shared-puzzle link is pending/unconfirmed, since this
+  // drawer would then be showing the SHARED puzzle's mode/difficulty, not the round already
+  // playing behind it.
   onModeChange?: (mode: GameMode) => void
   onDifficultyChange?: (difficulty: 'any' | PuzzleDifficultyTier) => void
 }
 
-export const PuzzleDrawer = ({ visible, onDismiss, onRequestOpen, initialConfig, onConfirm, packsVersion = 0, onPacksChanged = () => {}, onModeChange = () => {}, onDifficultyChange = () => {} }: PuzzleDrawerProps): JSX.Element => {
+export const PuzzleDrawer = ({ visible, onDismiss, onRequestOpen, initialConfig, shareVersion = 0, onConfirm, packsVersion = 0, onPacksChanged = () => {}, onModeChange = () => {}, onDifficultyChange = () => {} }: PuzzleDrawerProps): JSX.Element => {
   const { settings } = useThemeSettings()
   const blur = useBlur()
   const insets = useSafeAreaInsets()
@@ -101,19 +109,22 @@ export const PuzzleDrawer = ({ visible, onDismiss, onRequestOpen, initialConfig,
   const updateDraft = useCallback((patch: Partial<PuzzleConfig>) => setDraft((d) => ({ ...d, ...patch })), [])
 
   // Resets the draft from whatever's currently playing each time the drawer opens, and also
-  // whenever initialConfig's sourceMode/customPhrase/customHint change while already open — that
-  // combination only changes on a fresh shared-puzzle link arriving (Main.tsx swaps in a new
-  // pendingShare), since the drawer's own confirm action changes config and closes the drawer in
-  // the same step. Without reacting to those fields here, a share link opened while the drawer was
-  // already open silently failed to update the draft. Drawer/DrawerEdgeSwipe (from @rific/drawer)
-  // own the actual open/close animation, so this effect only has to mirror the prop into editable
-  // local state — a legitimate external-system sync.
+  // whenever a genuinely new shared-puzzle link is parsed while already open (shareVersion bumps —
+  // see Main.tsx). Without reacting to that here, a share link opened while the drawer was already
+  // open silently failed to update the draft. Drawer/DrawerEdgeSwipe (from @rific/drawer) own the
+  // actual open/close animation, so this effect only has to mirror the prop into editable local
+  // state — a legitimate external-system sync.
   //
-  // Deliberately narrower than "any initialConfig change": mode and difficulty are now also live
-  // (see onModeChange/onDifficultyChange below), which mutates Main.tsx's config — and therefore
-  // this same initialConfig prop — while the drawer is still open. Resetting the whole draft on
+  // Deliberately keyed on shareVersion, NOT on comparing initialConfig's own field values (e.g.
+  // sourceMode/customPhrase/customHint): mode and difficulty are now also live (see
+  // onModeChange/onDifficultyChange below), which mutates Main.tsx's config — and therefore this
+  // same initialConfig prop — while the drawer is still open, and resetting the whole draft on
   // every one of those echoes would wipe an in-progress custom word the player hasn't confirmed yet
-  // just because they tapped a different mode card.
+  // just because they tapped a different mode card. A value-comparison approach was tried and
+  // reverted: two different shared links can carry the identical phrase/hint but a different mode,
+  // so comparing field values can't reliably tell "a new share arrived" apart from "nothing new
+  // happened" — shareVersion is bumped by Main.tsx exactly once per real incoming share, regardless
+  // of whether its fields happen to match the previous one.
   /* eslint-disable react-hooks/set-state-in-effect -- syncs the draft from an external prop, not derived from other state */
   useEffect(() => {
     if (!visible) return
@@ -127,7 +138,7 @@ export const PuzzleDrawer = ({ visible, onDismiss, onRequestOpen, initialConfig,
     setIsRevealed(true)
     /* eslint-disable-next-line react-hooks/exhaustive-deps -- customFormOpen is read only to detect a
        discarded edit on reopen, not to resync; including it would re-run this on every toggle. */
-  }, [visible, initialConfig.sourceMode, initialConfig.customPhrase, initialConfig.customHint])
+  }, [visible, shareVersion])
   /* eslint-enable react-hooks/set-state-in-effect */
 
   // Announces the newly-shown section to screen readers when the Custom toggle changes — skipped

@@ -20,7 +20,7 @@ export const GameVisual = ({ mode, mistakes, color, style }: Props) => {
   }
 
   return (
-    <View style={[styles.container, style]} onLayout={handleLayout}>
+    <View testID='game-visual-container' style={[styles.container, style]} onLayout={handleLayout}>
       {size.width > 0 && <Visual mistakes={mistakes} color={color} width={size.width} height={size.height} />}
     </View>
   )

@@ -22,6 +22,16 @@ const MIN_WORD_FONT_SIZE = 16
 // Fraction of fontSize a monospace glyph cell (Menlo / Android monospace) occupies. Approximate,
 // so the fitted size leaves a little slack rather than exactly grazing the measured width.
 const MONOSPACE_CHAR_WIDTH_RATIO = 0.62
+// Breathing room kept either side of the longest word, so a word that does need shrinking stops
+// short of the screen edges instead of running right up against them. Applied as real padding on
+// the word row and subtracted back out of the measurement below, since onLayout reports the
+// padded (border-box) width.
+const WORD_ROW_PADDING_HORIZONTAL = 12
+// Space reserved below the word row itself (wordRow/wordRowLarge's own marginBottom) — the word
+// row's own onLayout height doesn't include its OWN margin (a view's margin is space around its
+// box, not part of it), so this is added back in wherever that measured height is used to budget
+// space for something else, or the artwork would end up sized as if this margin didn't exist.
+const WORD_ROW_MARGIN_BOTTOM = 12
 
 const DIFFICULTY_LABELS: Record<PuzzleDifficultyTier, string> = {
   easy: 'Easy',
@@ -67,6 +77,13 @@ export const Game = ({ onStop, onSolved, onLost, phrase, mode = DEFAULT_MODE, hi
   const theme = useTheme()
   const color = settings.color
   const tertiaryColor = theme.colors.tertiary
+  // The hint pill is FILLED with tertiary and draws its icon/text in onTertiary, rather than
+  // tinting them tertiary against the surface the way the pips below do. tertiary is derived from
+  // whatever accent the player picked (see Theme.tsx / @rific/auto-paper), and at the pale end of
+  // that range — yellows especially — tertiary-on-surface text washes out to nearly unreadable.
+  // onTertiary is the one color the palette guarantees is legible against tertiary, in both the
+  // light and dark variants, so pairing them keeps the label readable for every accent choice.
+  const onTertiaryColor = theme.colors.onTertiary
   const [guessedLetters, setGuessedLetters] = useState<string[]>([])
   const [wrongGuesses, setWrongGuesses] = useState(0)
   const [hintRevealed, setHintRevealed] = useState(false)
@@ -151,11 +168,45 @@ export const Game = ({ onStop, onSolved, onLost, phrase, mode = DEFAULT_MODE, hi
   const CelebrationView = celebration.Component
 
   const hasVisual = mode.hasVisual !== false
+  // Every mode's Visual (see src/modes/*.tsx) independently clamps its own `mistakes` prop against
+  // its OWN stage count, sized 1:1 to that mode's own maxMistakes (e.g. classic.tsx's 6 parts,
+  // stars.tsx's 8 stars) — it has no way to know the round's real ceiling is the frozen `maxWrong`
+  // above, which can be LARGER when the round started under a mode with a bigger maxMistakes (again,
+  // only modes/stars.tsx differs). Handing a newly-selected mode the raw wrongGuesses could then
+  // render that mode's own fully-"lost" stage — indistinguishable from an actual loss — while the
+  // round is still mechanically alive and the keyboard still enabled. Capped one stage short of the
+  // CURRENT mode's own maximum unless the round has truly ended, so a live art-style swap can never
+  // make an in-progress round look already lost.
+  //
+  // Keyed on wrongGuesses reaching maxWrong, NOT on `outcome === 'loss'` — outcome is deliberately
+  // set 450ms late (see handleGuess's lossTimeoutRef below) so the final stage has time to draw
+  // before the loss dialog interrupts, and gating the cap on outcome would undo exactly that: the
+  // fatal guess would render one stage short until the delayed setOutcome caught up, snapping to
+  // full 450ms later instead of instantly. wrongGuesses/maxWrong are both already reactive state
+  // updated in the very same batch as the fatal guess, so this uncaps in the correct render with no
+  // such delay, while still capping correctly for a mode swapped in mid-round (wrongGuesses can only
+  // reach maxWrong via an actual loss — handleGuess ignores every guess once roundOverRef is set, so
+  // this can never spuriously go true on a win).
+  const visualMistakes = wrongGuesses >= maxWrong ? Math.min(wrongGuesses, mode.maxMistakes) : Math.min(wrongGuesses, Math.max(0, mode.maxMistakes - 1))
 
   // Measured rather than Dimensions-derived (module-scope window width is 0 on web - see the
-  // same pattern in ModeSelector). 0 means "not measured yet"; the base size is used until then.
-  const [rowWidth, setRowWidth] = useState(0)
-  const handleWordRowLayout = (e: LayoutChangeEvent) => setRowWidth(e.nativeEvent.layout.width)
+  // same pattern in ModeSelector). {0,0} means "not measured yet"; the base size is used until then.
+  //
+  // This measures the space the word row is ALLOWED, which is why the row stretches to its parent's
+  // full width (see wordRow/wordRowLarge's alignSelf below) rather than centering at its own
+  // intrinsic content width. A content-width measurement here would feed the fitted size back into
+  // its own input: MONOSPACE_CHAR_WIDTH_RATIO deliberately overstates a real monospace advance
+  // (~0.6023em for Menlo) to leave slack, so each pass would measure the row it just sized, compute
+  // ~3% smaller, re-measure narrower, and ratchet every word — however short — down to
+  // MIN_WORD_FONT_SIZE over a handful of layout passes.
+  //
+  // Height is measured too (not just width, despite the fitting logic below only needing width) —
+  // see visualHeight's own comment for why: a multi-word phrase can wrap into several lines, and
+  // nothing about that depends on how much height the artwork ends up claiming (wordRow's WIDTH is
+  // fixed by its own alignSelf:'stretch', independent of visualArea's height), so this converges to
+  // the row's true rendered height regardless of what visualHeight below does with it.
+  const [wordRowSize, setWordRowSize] = useState({ width: 0, height: 0 })
+  const handleWordRowLayout = (e: LayoutChangeEvent) => setWordRowSize(e.nativeEvent.layout)
 
   // The artwork's viewBox is a fixed square (see e.g. classic.tsx's `viewBox='0 0 100 100'`), so
   // handing it an uncapped box just leaves the SVG's own default "meet" scaling centering a
@@ -167,22 +218,32 @@ export const Game = ({ onStop, onSolved, onLost, phrase, mode = DEFAULT_MODE, hi
   // cap, so that reallocation never triggers and the artwork sits well under the size it's allowed
   // — the same dead-space bug in a smaller dose. So this measures the *combined* region the two
   // share (artAndWordArea below) once, up front, and gives the artwork an explicit
-  // min(width, combined height) instead — greedy up to its square cap. wordArea, the only
-  // remaining flexible sibling, then unambiguously absorbs whatever's actually left over.
+  // min(width, combined height) instead — greedy up to its square cap.
+  //
+  // But greedy still has to leave room for whatever the word row actually needs: a multi-word
+  // phrase wraps onto as many lines as it takes (see guessWords above), and that line count isn't
+  // bounded — a long phrase on a device where the combined area isn't much taller than it is wide
+  // (a big keyboard, a small screen) could need more height than an even split, or even the
+  // artwork's whole square cap, would leave it. Without subtracting the word row's own measured
+  // height here, the artwork happily claims up to its full square regardless, and the word text —
+  // which nothing clips — visibly overflows wordArea's flex-constrained box into the pips/keyboard
+  // below it. wordArea, the only remaining flexible sibling, absorbs whatever's left after that.
   const [combinedAreaSize, setCombinedAreaSize] = useState({ width: 0, height: 0 })
   const handleCombinedAreaLayout = (e: LayoutChangeEvent) => setCombinedAreaSize(e.nativeEvent.layout)
-  const visualHeight = combinedAreaSize.width && combinedAreaSize.height ? Math.min(combinedAreaSize.width, combinedAreaSize.height) : undefined
+  const visualHeight = combinedAreaSize.width && combinedAreaSize.height ? Math.max(0, Math.min(combinedAreaSize.width, combinedAreaSize.height - (wordRowSize.height ? wordRowSize.height + WORD_ROW_MARGIN_BOTTOM : 0))) : undefined
 
   const fittedWordFontSize = useMemo(() => {
     const baseFontSize = hasVisual ? WORD_FONT_SIZE : WORD_FONT_SIZE_LARGE
-    if (!rowWidth) return baseFontSize
+    const availableWidth = wordRowSize.width - WORD_ROW_PADDING_HORIZONTAL * 2
+    if (availableWidth <= 0) return baseFontSize
     // Letters render as N glyphs joined by N-1 non-breaking-space glyphs (see guessWords above),
-    // so a word of N letters occupies 2N-1 monospace cells on its line.
+    // so a word of N letters occupies 2N-1 monospace cells on its line. Only the longest word
+    // matters: words are separate flex items that wrap onto their own lines rather than splitting.
     const longestWordLength = Math.max(...phrase.split(' ').map((word) => word.length))
     const renderedCells = longestWordLength * 2 - 1
-    const maxFittingSize = Math.floor(rowWidth / (renderedCells * MONOSPACE_CHAR_WIDTH_RATIO))
+    const maxFittingSize = Math.floor(availableWidth / (renderedCells * MONOSPACE_CHAR_WIDTH_RATIO))
     return Math.max(MIN_WORD_FONT_SIZE, Math.min(baseFontSize, maxFittingSize))
-  }, [rowWidth, hasVisual, phrase])
+  }, [wordRowSize.width, hasVisual, phrase])
   const pipsLabel = `Wrong guesses: ${wrongGuesses} of ${maxWrong}`
 
   // Difficulty sits in its own pill, always visible when known — unlike the hint, glancing at it
@@ -215,10 +276,10 @@ export const Game = ({ onStop, onSolved, onLost, phrase, mode = DEFAULT_MODE, hi
                 // its own, so it still matches the difficulty pill's geometry exactly. The
                 // @rific/haptic-press wrapper (not react-native-paper's own) fires the app's
                 // haptic-setting-aware selection tap on top of that for free.
-                <TouchableRipple onPress={() => setHintRevealed(true)} disabled={hintRevealed} accessibilityRole='button' accessibilityLabel={hintRevealed ? hintAccessibilityLabel : 'Show hint'} hitSlop={8} style={[styles.pill, { borderColor: tertiaryColor }]}>
+                <TouchableRipple onPress={() => setHintRevealed(true)} disabled={hintRevealed} accessibilityRole='button' accessibilityLabel={hintRevealed ? hintAccessibilityLabel : 'Show hint'} hitSlop={8} style={[styles.pill, { backgroundColor: tertiaryColor, borderColor: tertiaryColor }]}>
                   <View style={styles.hintPill}>
-                    <Icon source={hintRevealed ? 'lightbulb-on' : 'lightbulb-outline'} size={15} color={tertiaryColor} />
-                    <Text style={[styles.pillText, { color: tertiaryColor }]} numberOfLines={2}>
+                    <Icon source={hintRevealed ? 'lightbulb-on' : 'lightbulb-outline'} size={15} color={onTertiaryColor} />
+                    <Text style={[styles.pillText, { color: onTertiaryColor }]} numberOfLines={2}>
                       {hintRevealed ? hintSegments.join('  |  ') : 'Show hint'}
                     </Text>
                   </View>
@@ -230,10 +291,10 @@ export const Game = ({ onStop, onSolved, onLost, phrase, mode = DEFAULT_MODE, hi
         {/* The one flex:1 region shared by the artwork and the word blanks — measured as a whole
             (see visualHeight above) so the artwork can claim its square greedily, up to this
             region's own width, and wordArea can unambiguously take whatever's left. */}
-        <View style={styles.artAndWordArea} onLayout={handleCombinedAreaLayout}>
-          <View style={[styles.visualArea, visualHeight ? { height: visualHeight } : styles.visualAreaFallback]}>
+        <View testID='art-and-word-area' style={styles.artAndWordArea} onLayout={handleCombinedAreaLayout}>
+          <View testID='visual-area' style={[styles.visualArea, visualHeight ? { height: visualHeight } : styles.visualAreaFallback]}>
             {hasVisual ? (
-              <GameVisual mode={mode} mistakes={wrongGuesses} color={color} style={styles.visual} />
+              <GameVisual mode={mode} mistakes={visualMistakes} color={color} style={styles.visual} />
             ) : (
               // No artwork to carry the "how many guesses left" tension in this mode, so the pips
               // take over the artwork's own slot (and its size) instead of trailing after the word
@@ -311,6 +372,10 @@ const styles = StyleSheet.create({
   // pop into place a moment later instead of just being there from the start.
   visualAreaFallback: { flex: 1 },
   wordArea: { alignItems: 'center', flex: 1, justifyContent: 'center', width: '100%' },
-  wordRow: { columnGap: 34, flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', marginBottom: 12, rowGap: 4 },
-  wordRowLarge: { columnGap: 60, flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', marginBottom: 12, rowGap: 8 }
+  // alignSelf overrides wordArea's alignItems: 'center' so the row spans the full width it's
+  // allowed instead of hugging its own letters — what makes onLayout above an available-width
+  // measurement rather than a self-referential one. justifyContent keeps the letters centered
+  // within that full-width row, so this is invisible on screen.
+  wordRow: { alignSelf: 'stretch', columnGap: 34, flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', marginBottom: WORD_ROW_MARGIN_BOTTOM, paddingHorizontal: WORD_ROW_PADDING_HORIZONTAL, rowGap: 4 },
+  wordRowLarge: { alignSelf: 'stretch', columnGap: 60, flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', marginBottom: WORD_ROW_MARGIN_BOTTOM, paddingHorizontal: WORD_ROW_PADDING_HORIZONTAL, rowGap: 8 }
 })
