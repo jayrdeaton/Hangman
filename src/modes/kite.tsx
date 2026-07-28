@@ -3,6 +3,8 @@ import Svg, { Circle, G, Line, Path } from 'react-native-svg'
 
 import type { GameMode } from '@/types/gameModes'
 
+import { clampStage } from './shared/clampStage'
+
 // Parts/subtractive mode: 7 discrete stages (0=fresh flight, 6=torn loose).
 // Kite tilt/tail/string all live in one STAGES entry per mistake count since a
 // wrong guess should visibly shift all three together (more tilt, less tail,
@@ -96,7 +98,7 @@ function frayedStringPath(from: [number, number], to: [number, number]): string 
 }
 
 const KiteVisual = ({ mistakes, color, width, height }: { mistakes: number; color: string; width: number; height: number }) => {
-  const idx = Math.min(Math.max(0, mistakes), STAGES.length - 1)
+  const idx = clampStage(mistakes, STAGES.length - 1)
   const s = STAGES[idx]
   const isFinalStage = idx === STAGES.length - 1
 

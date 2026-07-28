@@ -3,6 +3,8 @@ import Svg, { Ellipse, G, Path } from 'react-native-svg'
 
 import type { GameMode } from '@/types/gameModes'
 
+import { clampStage } from './shared/clampStage'
+
 // Quantitative/depletion: N balloons generated at game start, one popped per wrong guess.
 // Positions are stable per game (generated once in useState initializer).
 
@@ -31,7 +33,7 @@ function makeBalloons(): BalloonData[] {
 
 const BalloonVisual = ({ mistakes, color, width, height }: { mistakes: number; color: string; width: number; height: number }) => {
   const [balloons] = useState<BalloonData[]>(makeBalloons)
-  const visible = balloons.slice(Math.min(mistakes, balloons.length))
+  const visible = balloons.slice(clampStage(mistakes, balloons.length))
 
   return (
     <Svg width={width} height={height} viewBox='0 0 100 100'>

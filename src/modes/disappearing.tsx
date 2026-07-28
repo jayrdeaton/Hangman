@@ -3,6 +3,7 @@ import Svg from 'react-native-svg'
 
 import type { GameMode } from '@/types/gameModes'
 
+import { clampStage } from './shared/clampStage'
 import { CenteredBody, CenteredLeftArm, CenteredLeftLeg, CenteredRightArm, CenteredRightLeg, CenteredRopeAndHead } from './shared/classicParts'
 
 // Starts complete. Parts are removed in removal order on each wrong guess.
@@ -11,7 +12,7 @@ import { CenteredBody, CenteredLeftArm, CenteredLeftLeg, CenteredRightArm, Cente
 const REMOVAL_ORDER = [CenteredRopeAndHead, CenteredBody, CenteredLeftArm, CenteredRightArm, CenteredLeftLeg, CenteredRightLeg]
 
 const DisappearingVisual = ({ mistakes, color, width, height }: { mistakes: number; color: string; width: number; height: number }) => {
-  const removed = Math.min(Math.max(0, mistakes), REMOVAL_ORDER.length)
+  const removed = clampStage(mistakes, REMOVAL_ORDER.length)
   const visible = REMOVAL_ORDER.slice(removed)
   return (
     <Svg width={width} height={height} viewBox='0 0 100 100'>

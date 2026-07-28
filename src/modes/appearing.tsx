@@ -3,6 +3,7 @@ import Svg from 'react-native-svg'
 
 import type { GameMode } from '@/types/gameModes'
 
+import { clampStage } from './shared/clampStage'
 import { CenteredBody, CenteredLeftArm, CenteredLeftLeg, CenteredRightArm, CenteredRightLeg, CenteredRopeAndHead } from './shared/classicParts'
 
 // Reverse psychology: figure builds bottom-up, head+rope last. No gallows frame, so the
@@ -10,7 +11,7 @@ import { CenteredBody, CenteredLeftArm, CenteredLeftLeg, CenteredRightArm, Cente
 const PARTS = [CenteredLeftLeg, CenteredRightLeg, CenteredBody, CenteredLeftArm, CenteredRightArm, CenteredRopeAndHead]
 
 const AppearingVisual = ({ mistakes, color, width, height }: { mistakes: number; color: string; width: number; height: number }) => {
-  const count = Math.min(Math.max(0, mistakes), PARTS.length)
+  const count = clampStage(mistakes, PARTS.length)
   return (
     <Svg width={width} height={height} viewBox='0 0 100 100'>
       {PARTS.slice(0, count).map((Part, i) => (

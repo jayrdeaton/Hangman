@@ -3,6 +3,8 @@ import Svg, { Line, Path, Rect } from 'react-native-svg'
 
 import type { GameMode } from '@/types/gameModes'
 
+import { clampStage } from './shared/clampStage'
+
 // Frame mode: 7 discrete stages (0=full castle, 6=eroded mound). A single scene morphs
 // continuously through STAGES rather than parts being added/removed — towers shrink,
 // decorations drop off, and the tide creeps higher up the base with every wrong guess.
@@ -64,7 +66,7 @@ function tidePath(y: number): string {
 }
 
 const SandcastleVisual = ({ mistakes, color, width, height }: { mistakes: number; color: string; width: number; height: number }) => {
-  const idx = Math.min(Math.max(0, mistakes), STAGES.length - 1)
+  const idx = clampStage(mistakes, STAGES.length - 1)
   const s = STAGES[idx]
   const isFinalStage = idx === STAGES.length - 1
 

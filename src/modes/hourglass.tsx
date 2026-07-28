@@ -3,6 +3,8 @@ import Svg, { G, Line, Path, Rect } from 'react-native-svg'
 
 import type { GameMode } from '@/types/gameModes'
 
+import { clampStage } from './shared/clampStage'
+
 // Frame mode: 7 discrete stages (0=full, 6=empty), but rendered as a single continuous
 // scene (one glass, one stand) rather than parts being added/removed. Sand drains from
 // the top bulb into the bottom bulb; topSandLevel and bottomSandLevel always move in
@@ -75,7 +77,7 @@ function bottomMoundPath(level: number): string | null {
 }
 
 const HourglassVisual = ({ mistakes, color, width, height }: { mistakes: number; color: string; width: number; height: number }) => {
-  const index = Math.min(Math.max(0, mistakes), STAGES.length - 1)
+  const index = clampStage(mistakes, STAGES.length - 1)
   const s = STAGES[index]
   const finalStage = index === STAGES.length - 1
   const tilt = finalStage ? TILT_DEG : 0

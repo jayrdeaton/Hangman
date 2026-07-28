@@ -3,6 +3,8 @@ import Svg, { Circle, Ellipse, G, Line, Path } from 'react-native-svg'
 
 import type { GameMode } from '@/types/gameModes'
 
+import { clampStage } from './shared/clampStage'
+
 // Snowman centered at x=50, viewBox 0 0 100 100.
 // Core: three stacked circles (bottom r19 cy78, middle r14 cy50, head r9.5 cy25)
 // with a permanent cute face baked into the head — this face is part of the
@@ -85,7 +87,7 @@ const Puddle = ({ color }: { color: string }) => (
 )
 
 const SnowmanVisual = ({ mistakes, color, width, height }: { mistakes: number; color: string; width: number; height: number }) => {
-  const removed = Math.min(Math.max(0, mistakes), REMOVAL_ORDER.length)
+  const removed = clampStage(mistakes, REMOVAL_ORDER.length)
   const visible = REMOVAL_ORDER.slice(removed)
   const isDead = removed >= REMOVAL_ORDER.length
 

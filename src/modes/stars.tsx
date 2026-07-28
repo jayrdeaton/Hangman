@@ -3,6 +3,8 @@ import Svg, { G, Line } from 'react-native-svg'
 
 import type { GameMode } from '@/types/gameModes'
 
+import { clampStage } from './shared/clampStage'
+
 // Quantitative/depletion: night sky fades star by star.
 // maxMistakes=8 so the sky starts fuller. Stars are 4-pointed doodle style.
 
@@ -38,7 +40,7 @@ const StarShape = ({ x, y, size, color }: { x: number; y: number; size: number; 
 
 const StarsVisual = ({ mistakes, color, width, height }: { mistakes: number; color: string; width: number; height: number }) => {
   const [stars] = useState<StarData[]>(makeStars)
-  const visible = stars.slice(Math.min(mistakes, stars.length))
+  const visible = stars.slice(clampStage(mistakes, stars.length))
 
   return (
     <Svg width={width} height={height} viewBox='0 0 100 100'>

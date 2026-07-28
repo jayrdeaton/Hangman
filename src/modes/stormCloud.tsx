@@ -3,6 +3,8 @@ import Svg, { Circle, G, Line, Path } from 'react-native-svg'
 
 import type { GameMode } from '@/types/gameModes'
 
+import { clampStage } from './shared/clampStage'
+
 // Quantitative/accumulation: a clear sky clouds over and a storm builds with every wrong
 // guess. Unlike Balloons/Stars (depletion — things disappear), Storm Cloud is the opposite:
 // the cloud, rain, and lightning all grow/appear as mistakes pile up. The sun is a small
@@ -59,7 +61,7 @@ function boltPath(x: number, yTop: number): string {
 }
 
 const StormCloudVisual = ({ mistakes, color, width, height }: { mistakes: number; color: string; width: number; height: number }) => {
-  const s = STAGES[Math.min(Math.max(0, mistakes), STAGES.length - 1)]
+  const s = STAGES[clampStage(mistakes, STAGES.length - 1)]
 
   // Cloud drifts in as a tiny wisp off to the side, then grows and moves in to fully cover the sun.
   const scale = 0.25 + s.cloudCoverage * 0.75

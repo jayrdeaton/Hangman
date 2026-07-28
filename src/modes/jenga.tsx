@@ -3,6 +3,8 @@ import Svg, { G, Rect } from 'react-native-svg'
 
 import type { GameMode } from '@/types/gameModes'
 
+import { clampStage } from './shared/clampStage'
+
 // Quantitative/depletion: a stack of 6 blocks, generated once at game start.
 // Blocks are ordered bottom-to-top; wrong guesses pull a block from the top,
 // and the shrinking remainder tilts a little further off-balance each time.
@@ -39,7 +41,7 @@ function makeBlocks(): BlockData[] {
 
 const JengaVisual = ({ mistakes, color, width, height }: { mistakes: number; color: string; width: number; height: number }) => {
   const [blocks] = useState<BlockData[]>(makeBlocks)
-  const removed = Math.min(Math.max(0, mistakes), blocks.length)
+  const removed = clampStage(mistakes, blocks.length)
   const visible = blocks.slice(0, blocks.length - removed)
   const toppled = removed >= blocks.length
   const tilt = removed * 3

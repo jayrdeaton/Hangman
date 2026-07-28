@@ -3,6 +3,8 @@ import Svg, { Circle, Line, Path, Rect } from 'react-native-svg'
 
 import type { GameMode } from '@/types/gameModes'
 
+import { clampStage } from './shared/clampStage'
+
 // Quantitative/accumulation: a windowpane takes a hit and cracks radiate a little further
 // out from the same fixed impact point with every wrong guess. Unlike Jenga/Balloons
 // (depletion — things disappear/shrink), Cracking Window is additive like Storm Cloud:
@@ -79,7 +81,7 @@ function forkPath(cx: number, cy: number, angleDeg: number, length: number, seed
 }
 
 const CrackingWindowVisual = ({ mistakes, color, width, height }: { mistakes: number; color: string; width: number; height: number }) => {
-  const s = STAGES[Math.min(Math.max(0, mistakes), STAGES.length - 1)]
+  const s = STAGES[clampStage(mistakes, STAGES.length - 1)]
   const branches = CRACK_BRANCHES.slice(0, s.branchCount)
   const shattered = mistakes >= 6
 

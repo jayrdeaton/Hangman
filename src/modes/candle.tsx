@@ -3,6 +3,8 @@ import Svg, { Line, Path, Rect } from 'react-native-svg'
 
 import type { GameMode } from '@/types/gameModes'
 
+import { clampStage } from './shared/clampStage'
+
 // Frame mode: 7 discrete stages (0=healthy, 6=dead).
 // Base plate always at y=82 so the candle "sits" in place as it shrinks.
 // All coordinates in 100x100 viewBox.
@@ -33,7 +35,7 @@ function flamePath(wickTop: number, flameH: number): string {
 }
 
 const CandleVisual = ({ mistakes, color, width, height }: { mistakes: number; color: string; width: number; height: number }) => {
-  const s = STAGES[Math.min(Math.max(0, mistakes), STAGES.length - 1)]
+  const s = STAGES[clampStage(mistakes, STAGES.length - 1)]
   const wickTop = s.bodyTop - s.wickLen
 
   return (

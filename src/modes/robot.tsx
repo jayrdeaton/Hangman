@@ -3,6 +3,8 @@ import Svg, { Circle, G, Line, Rect } from 'react-native-svg'
 
 import type { GameMode } from '@/types/gameModes'
 
+import { clampStage } from './shared/clampStage'
+
 // Robot centered at x=50, viewBox 0 0 100 100.
 // Body: rect 37-63 x, 54-76 y
 // Head: rect 35-65 x, 30-50 y
@@ -59,7 +61,7 @@ const XEyes = ({ color }: { color: string }) => (
 const REMOVAL_ORDER = [Antenna, LeftArm, RightArm, LeftLeg, RightLeg, Eyes]
 
 const RobotVisual = ({ mistakes, color, width, height }: { mistakes: number; color: string; width: number; height: number }) => {
-  const removed = Math.min(Math.max(0, mistakes), REMOVAL_ORDER.length)
+  const removed = clampStage(mistakes, REMOVAL_ORDER.length)
   const visible = REMOVAL_ORDER.slice(removed)
   const isDead = removed >= REMOVAL_ORDER.length
 

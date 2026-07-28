@@ -3,6 +3,8 @@ import Svg, { Circle, Ellipse, G, Path } from 'react-native-svg'
 
 import type { GameMode } from '@/types/gameModes'
 
+import { clampStage } from './shared/clampStage'
+
 // Parts/subtractive mode: 7 stages indexed by mistakes (0=full bloom, 6=wilted).
 // Stem grows from a fixed ground point and bends further over as stemBend
 // grows, while petals drop away — the two change continuously together so
@@ -72,7 +74,7 @@ const Leaf = ({ x, y, angle, color }: { x: number; y: number; angle: number; col
 )
 
 const FlowerVisual = ({ mistakes, color, width, height }: { mistakes: number; color: string; width: number; height: number }) => {
-  const s = STAGES[Math.min(Math.max(0, mistakes), STAGES.length - 1)]
+  const s = STAGES[clampStage(mistakes, STAGES.length - 1)]
   const { cx, cy } = flowerCenter(s.stemBend)
   // Kept close to the ground end of the stem (well short of the flower head at t=1) so the
   // leaves stay clear of the petals even at the highest droop, instead of swinging into them.
