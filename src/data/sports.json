@@ -1,0 +1,6272 @@
+[
+  {
+    "id": "e79df4db917e727fb888ed43b3f76f71",
+    "source": "sports",
+    "type": "title",
+    "answer": "Pittsburgh Steelers",
+    "normalizedAnswer": "PITTSBURGH STEELERS",
+    "category": "NFL Team",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 18,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "06bc9d32c21a3a166e654508bd99790e",
+    "source": "sports",
+    "type": "title",
+    "answer": "Las Vegas Raiders",
+    "normalizedAnswer": "LAS VEGAS RAIDERS",
+    "category": "NFL Team",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "2b42460b8cdb5f048cb06f3ca623729f",
+    "source": "sports",
+    "type": "title",
+    "answer": "Kansas City Chiefs",
+    "normalizedAnswer": "KANSAS CITY CHIEFS",
+    "category": "NFL Team",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 16,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "f71b43f65454461d65bc4a337da8de5c",
+    "source": "sports",
+    "type": "title",
+    "answer": "Dallas Cowboys",
+    "normalizedAnswer": "DALLAS COWBOYS",
+    "category": "NFL Team",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "141c3dbd4e037b6f01dc82f7388a946a",
+    "source": "sports",
+    "type": "title",
+    "answer": "Carolina Panthers",
+    "normalizedAnswer": "CAROLINA PANTHERS",
+    "category": "NFL Team",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "f92a447ef614b011936dc18ed5f5cb09",
+    "source": "sports",
+    "type": "title",
+    "answer": "New Orleans Saints",
+    "normalizedAnswer": "NEW ORLEANS SAINTS",
+    "category": "NFL Team",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 16,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "58377e1c3b9d0cb192648f831f22c830",
+    "source": "sports",
+    "type": "title",
+    "answer": "Denver Broncos",
+    "normalizedAnswer": "DENVER BRONCOS",
+    "category": "NFL Team",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "372656053fc49d59dfd1efaa2194e2fe",
+    "source": "sports",
+    "type": "title",
+    "answer": "Jacksonville Jaguars",
+    "normalizedAnswer": "JACKSONVILLE JAGUARS",
+    "category": "NFL Team",
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 19,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "2239eb34bdba96f41aa9abd2c58b7e7a",
+    "source": "sports",
+    "type": "title",
+    "answer": "Detroit Lions",
+    "normalizedAnswer": "DETROIT LIONS",
+    "category": "NFL Team",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "9bdc83a7c2720472599a56854f187514",
+    "source": "sports",
+    "type": "title",
+    "answer": "New England Patriots",
+    "normalizedAnswer": "NEW ENGLAND PATRIOTS",
+    "category": "NFL Team",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 18,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "e2082dc592f65a9c104544ac2d1e19f9",
+    "source": "sports",
+    "type": "title",
+    "answer": "Miami Dolphins",
+    "normalizedAnswer": "MIAMI DOLPHINS",
+    "category": "NFL Team",
+    "difficulty": 64.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "e36f85be574604854bf713a85e300200",
+    "source": "sports",
+    "type": "title",
+    "answer": "Buffalo Bills",
+    "normalizedAnswer": "BUFFALO BILLS",
+    "category": "NFL Team",
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "e6c413b9e05de3599a2f3c458673ea43",
+    "source": "sports",
+    "type": "title",
+    "answer": "Cleveland Browns",
+    "normalizedAnswer": "CLEVELAND BROWNS",
+    "category": "NFL Team",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "882de8c150d786728dd45838e4f5e476",
+    "source": "sports",
+    "type": "title",
+    "answer": "Green Bay Packers",
+    "normalizedAnswer": "GREEN BAY PACKERS",
+    "category": "NFL Team",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "7220ed960e14cb7a1de9229720fe21d4",
+    "source": "sports",
+    "type": "title",
+    "answer": "San Francisco 49ers",
+    "normalizedAnswer": "SAN FRANCISCO 49ERS",
+    "category": "NFL Team",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 17,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "055041f7f2059c7007ed567fdcb613b5",
+    "source": "sports",
+    "type": "title",
+    "answer": "Philadelphia Eagles",
+    "normalizedAnswer": "PHILADELPHIA EAGLES",
+    "category": "NFL Team",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 18,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "f1d1499d18a90c4d05700a48de8fe5fe",
+    "source": "sports",
+    "type": "title",
+    "answer": "Indianapolis Colts",
+    "normalizedAnswer": "INDIANAPOLIS COLTS",
+    "category": "NFL Team",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 17,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "44fb84d2b8f50e20e5a5ab4b607da257",
+    "source": "sports",
+    "type": "title",
+    "answer": "Seattle Seahawks",
+    "normalizedAnswer": "SEATTLE SEAHAWKS",
+    "category": "NFL Team",
+    "difficulty": 72,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "a08c50b11630fe9407954cec0d42cddf",
+    "source": "sports",
+    "type": "title",
+    "answer": "Baltimore Ravens",
+    "normalizedAnswer": "BALTIMORE RAVENS",
+    "category": "NFL Team",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "6e2c57bc5aff35a678804ce6b049f196",
+    "source": "sports",
+    "type": "title",
+    "answer": "Atlanta Falcons",
+    "normalizedAnswer": "ATLANTA FALCONS",
+    "category": "NFL Team",
+    "difficulty": 72.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "0444874d97c4097cb07ca87fcf5aa2e1",
+    "source": "sports",
+    "type": "title",
+    "answer": "New York Giants",
+    "normalizedAnswer": "NEW YORK GIANTS",
+    "category": "NFL Team",
+    "difficulty": 56.8,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 13,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "72bedf784681df33e06131f396495d1d",
+    "source": "sports",
+    "type": "title",
+    "answer": "New York Jets",
+    "normalizedAnswer": "NEW YORK JETS",
+    "category": "NFL Team",
+    "difficulty": 65.6,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 11,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "a1cb1000dfda5ccae35a35858e50f208",
+    "source": "sports",
+    "type": "title",
+    "answer": "Tennessee Titans",
+    "normalizedAnswer": "TENNESSEE TITANS",
+    "category": "NFL Team",
+    "difficulty": 80,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "5812bcf2907d9b82b8614285d1153c01",
+    "source": "sports",
+    "type": "title",
+    "answer": "Washington Commanders",
+    "normalizedAnswer": "WASHINGTON COMMANDERS",
+    "category": "NFL Team",
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 20,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "65caa4cb0f6eb5ddc9bfc0b64b1472bd",
+    "source": "sports",
+    "type": "title",
+    "answer": "Cincinnati Bengals",
+    "normalizedAnswer": "CINCINNATI BENGALS",
+    "category": "NFL Team",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 17,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "624f7787e4b8c4fea7431a95fe14591a",
+    "source": "sports",
+    "type": "title",
+    "answer": "Tampa Bay Buccaneers",
+    "normalizedAnswer": "TAMPA BAY BUCCANEERS",
+    "category": "NFL Team",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 18,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "688c026ea92e0fa3deda48a0d583f7dd",
+    "source": "sports",
+    "type": "title",
+    "answer": "Houston Texans",
+    "normalizedAnswer": "HOUSTON TEXANS",
+    "category": "NFL Team",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "ebc26be77acfce8ccd956539bd12266f",
+    "source": "sports",
+    "type": "title",
+    "answer": "Los Angeles Rams",
+    "normalizedAnswer": "LOS ANGELES RAMS",
+    "category": "NFL Team",
+    "difficulty": 68.4,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 14,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "e7baf9fdd9edbe833907d25ee2f1603e",
+    "source": "sports",
+    "type": "title",
+    "answer": "Los Angeles Chargers",
+    "normalizedAnswer": "LOS ANGELES CHARGERS",
+    "category": "NFL Team",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 18,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "bb1e033c40135fd83b95ddef9577def1",
+    "source": "sports",
+    "type": "title",
+    "answer": "Chicago Bears",
+    "normalizedAnswer": "CHICAGO BEARS",
+    "category": "NFL Team",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "9eba5648040fc9f5154c2a55fbd6f4c5",
+    "source": "sports",
+    "type": "title",
+    "answer": "Arizona Cardinals",
+    "normalizedAnswer": "ARIZONA CARDINALS",
+    "category": "NFL Team",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "0bc398b12ae9e548c55d32bb52dd5dc2",
+    "source": "sports",
+    "type": "title",
+    "answer": "Minnesota Vikings",
+    "normalizedAnswer": "MINNESOTA VIKINGS",
+    "category": "NFL Team",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "b68e2ff215a74cdbc737683f6f1eb2c3",
+    "source": "sports",
+    "type": "title",
+    "answer": "Dallas Mavericks",
+    "normalizedAnswer": "DALLAS MAVERICKS",
+    "category": "NBA Team",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "e48c06806c40f52b1faac148d1114575",
+    "source": "sports",
+    "type": "title",
+    "answer": "Denver Nuggets",
+    "normalizedAnswer": "DENVER NUGGETS",
+    "category": "NBA Team",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "751bde7768d7be069291a1a67f2fc289",
+    "source": "sports",
+    "type": "title",
+    "answer": "Brooklyn Nets",
+    "normalizedAnswer": "BROOKLYN NETS",
+    "category": "NBA Team",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "4196668458f06a128c9278e07294de77",
+    "source": "sports",
+    "type": "title",
+    "answer": "Washington Wizards",
+    "normalizedAnswer": "WASHINGTON WIZARDS",
+    "category": "NBA Team",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 17,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "a577f4e5c815564b27247317c3ae9683",
+    "source": "sports",
+    "type": "title",
+    "answer": "Golden State Warriors",
+    "normalizedAnswer": "GOLDEN STATE WARRIORS",
+    "category": "NBA Team",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 19,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "a1d071dad1b72c8a42891836b88db595",
+    "source": "sports",
+    "type": "title",
+    "answer": "Los Angeles Lakers",
+    "normalizedAnswer": "LOS ANGELES LAKERS",
+    "category": "NBA Team",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 16,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "af4013a68277d53fee97ddf001a6b082",
+    "source": "sports",
+    "type": "title",
+    "answer": "Utah Jazz",
+    "normalizedAnswer": "UTAH JAZZ",
+    "category": "NBA Team",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "18083e981fab08038ac130d2dee4cf46",
+    "source": "sports",
+    "type": "title",
+    "answer": "Memphis Grizzlies",
+    "normalizedAnswer": "MEMPHIS GRIZZLIES",
+    "category": "NBA Team",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "022c44e0305c541b9255574c050278a4",
+    "source": "sports",
+    "type": "title",
+    "answer": "Milwaukee Bucks",
+    "normalizedAnswer": "MILWAUKEE BUCKS",
+    "category": "NBA Team",
+    "difficulty": 60.4,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "9abd01c05a5903f4c31b72553b8d461c",
+    "source": "sports",
+    "type": "title",
+    "answer": "San Antonio Spurs",
+    "normalizedAnswer": "SAN ANTONIO SPURS",
+    "category": "NBA Team",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "e9fde05c4a2d45ebf6e756055ff5ce74",
+    "source": "sports",
+    "type": "title",
+    "answer": "Indiana Pacers",
+    "normalizedAnswer": "INDIANA PACERS",
+    "category": "NBA Team",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "799dc6b4b0d02e836ca07047fbf2abf6",
+    "source": "sports",
+    "type": "title",
+    "answer": "Sacramento Kings",
+    "normalizedAnswer": "SACRAMENTO KINGS",
+    "category": "NBA Team",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "03e8fc42b9a3d04e4602210272b219c4",
+    "source": "sports",
+    "type": "title",
+    "answer": "Los Angeles Clippers",
+    "normalizedAnswer": "LOS ANGELES CLIPPERS",
+    "category": "NBA Team",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 18,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "25034a7c487d8e265d9ce42054a7ee29",
+    "source": "sports",
+    "type": "title",
+    "answer": "Miami Heat",
+    "normalizedAnswer": "MIAMI HEAT",
+    "category": "NBA Team",
+    "difficulty": 82.4,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "6e3d2549015bdf7ce7a31c7eebc2d2a4",
+    "source": "sports",
+    "type": "title",
+    "answer": "Orlando Magic",
+    "normalizedAnswer": "ORLANDO MAGIC",
+    "category": "NBA Team",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "048a765fd9d7a3467a737ba3291d928a",
+    "source": "sports",
+    "type": "title",
+    "answer": "Detroit Pistons",
+    "normalizedAnswer": "DETROIT PISTONS",
+    "category": "NBA Team",
+    "difficulty": 68.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "359bbdcbc40e75037c12045dda0a1cd5",
+    "source": "sports",
+    "type": "title",
+    "answer": "New York Knicks",
+    "normalizedAnswer": "NEW YORK KNICKS",
+    "category": "NBA Team",
+    "difficulty": 64.8,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "c13999db711acded1c6e1e99d53334e9",
+    "source": "sports",
+    "type": "title",
+    "answer": "Portland Trail Blazers",
+    "normalizedAnswer": "PORTLAND TRAIL BLAZERS",
+    "category": "NBA Team",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 20,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "d90e3a6d3a7721d842b6825048abd26c",
+    "source": "sports",
+    "type": "title",
+    "answer": "Phoenix Suns",
+    "normalizedAnswer": "PHOENIX SUNS",
+    "category": "NBA Team",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "24778d7de9be18ee9de705fd645eb29d",
+    "source": "sports",
+    "type": "title",
+    "answer": "Oklahoma City Thunder",
+    "normalizedAnswer": "OKLAHOMA CITY THUNDER",
+    "category": "NBA Team",
+    "difficulty": 44,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 19,
+    "uniqueLetterCount": 15,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "a96fe5170c0564e2f3d6dc869f4a7c5d",
+    "source": "sports",
+    "type": "title",
+    "answer": "Cleveland Cavaliers",
+    "normalizedAnswer": "CLEVELAND CAVALIERS",
+    "category": "NBA Team",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 18,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "7ce42dd7bf03038e32306f27c818889d",
+    "source": "sports",
+    "type": "title",
+    "answer": "Toronto Raptors",
+    "normalizedAnswer": "TORONTO RAPTORS",
+    "category": "NBA Team",
+    "difficulty": 76.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "2d91bb4766cf8c57ecab13f16eeaa565",
+    "source": "sports",
+    "type": "title",
+    "answer": "New Orleans Pelicans",
+    "normalizedAnswer": "NEW ORLEANS PELICANS",
+    "category": "NBA Team",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 18,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "6dde9ad7464a71d45ad627f9df276682",
+    "source": "sports",
+    "type": "title",
+    "answer": "Charlotte Hornets",
+    "normalizedAnswer": "CHARLOTTE HORNETS",
+    "category": "NBA Team",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "8bc52d48c499bf6c4a4abd73811bb122",
+    "source": "sports",
+    "type": "title",
+    "answer": "Atlanta Hawks",
+    "normalizedAnswer": "ATLANTA HAWKS",
+    "category": "NBA Team",
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "65be06899a26576db610871ceea279bd",
+    "source": "sports",
+    "type": "title",
+    "answer": "Minnesota Timberwolves",
+    "normalizedAnswer": "MINNESOTA TIMBERWOLVES",
+    "category": "NBA Team",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 21,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "365420250f24812b338f1699741b67e2",
+    "source": "sports",
+    "type": "title",
+    "answer": "Boston Celtics",
+    "normalizedAnswer": "BOSTON CELTICS",
+    "category": "NBA Team",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "437324ac1311fae914a02e6588fc0a89",
+    "source": "sports",
+    "type": "title",
+    "answer": "Houston Rockets",
+    "normalizedAnswer": "HOUSTON ROCKETS",
+    "category": "NBA Team",
+    "difficulty": 64.4,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "8350fa4a1137c43326a2cb0dbc05a6b4",
+    "source": "sports",
+    "type": "title",
+    "answer": "Chicago Bulls",
+    "normalizedAnswer": "CHICAGO BULLS",
+    "category": "NBA Team",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "947b3f4914c0962fd175ad63076ec7bf",
+    "source": "sports",
+    "type": "title",
+    "answer": "Philadelphia 76ers",
+    "normalizedAnswer": "PHILADELPHIA 76ERS",
+    "category": "NBA Team",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 17,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "e70095ccfdf3d928d7839c661fb66435",
+    "source": "sports",
+    "type": "title",
+    "answer": "Milwaukee Brewers",
+    "normalizedAnswer": "MILWAUKEE BREWERS",
+    "category": "MLB Team",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "fe64eac8e394d06ed797ee3729f8526a",
+    "source": "sports",
+    "type": "title",
+    "answer": "Los Angeles Angels",
+    "normalizedAnswer": "LOS ANGELES ANGELS",
+    "category": "MLB Team",
+    "difficulty": 76,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 16,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "740d4d34a8bb2c2867d7e9336783ac24",
+    "source": "sports",
+    "type": "title",
+    "answer": "St. Louis Cardinals",
+    "normalizedAnswer": "ST LOUIS CARDINALS",
+    "category": "MLB Team",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 16,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "9f3910264f49518a95b6b3e18890d3ba",
+    "source": "sports",
+    "type": "title",
+    "answer": "Arizona Diamondbacks",
+    "normalizedAnswer": "ARIZONA DIAMONDBACKS",
+    "category": "MLB Team",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 19,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "4c387cfd91865ed5aa0f13099e7a22dc",
+    "source": "sports",
+    "type": "title",
+    "answer": "New York Mets",
+    "normalizedAnswer": "NEW YORK METS",
+    "category": "MLB Team",
+    "difficulty": 65.6,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 11,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "d205d1d293977ff3faa71b87d06e755e",
+    "source": "sports",
+    "type": "title",
+    "answer": "Philadelphia Phillies",
+    "normalizedAnswer": "PHILADELPHIA PHILLIES",
+    "category": "MLB Team",
+    "difficulty": 72,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 20,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "eedb3626278497cc83f491580ad21475",
+    "source": "sports",
+    "type": "title",
+    "answer": "Detroit Tigers",
+    "normalizedAnswer": "DETROIT TIGERS",
+    "category": "MLB Team",
+    "difficulty": 72.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "e8beac36d88a9eed180c98e901df94ac",
+    "source": "sports",
+    "type": "title",
+    "answer": "Colorado Rockies",
+    "normalizedAnswer": "COLORADO ROCKIES",
+    "category": "MLB Team",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "17dcb9fea519ffee02aa393836156123",
+    "source": "sports",
+    "type": "title",
+    "answer": "Houston Astros",
+    "normalizedAnswer": "HOUSTON ASTROS",
+    "category": "MLB Team",
+    "difficulty": 72.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "0815eeca01c38a097bd9987bc0d93a74",
+    "source": "sports",
+    "type": "title",
+    "answer": "Los Angeles Dodgers",
+    "normalizedAnswer": "LOS ANGELES DODGERS",
+    "category": "MLB Team",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 17,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "e4ef90daa60376a670ca83b0fa0ba0f3",
+    "source": "sports",
+    "type": "title",
+    "answer": "Boston Red Sox",
+    "normalizedAnswer": "BOSTON RED SOX",
+    "category": "MLB Team",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "57923d4a90009feb7cf814d734b306a2",
+    "source": "sports",
+    "type": "title",
+    "answer": "Texas Rangers",
+    "normalizedAnswer": "TEXAS RANGERS",
+    "category": "MLB Team",
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "845a2ff44fe04d1e62ff52dbee9cf9a2",
+    "source": "sports",
+    "type": "title",
+    "answer": "Cincinnati Reds",
+    "normalizedAnswer": "CINCINNATI REDS",
+    "category": "MLB Team",
+    "difficulty": 68.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "4c832b48f317f4f86540d66c54048a25",
+    "source": "sports",
+    "type": "title",
+    "answer": "Kansas City Royals",
+    "normalizedAnswer": "KANSAS CITY ROYALS",
+    "category": "MLB Team",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 16,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "91102dd0c67241235f9689d71ae37628",
+    "source": "sports",
+    "type": "title",
+    "answer": "Miami Marlins",
+    "normalizedAnswer": "MIAMI MARLINS",
+    "category": "MLB Team",
+    "difficulty": 77.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "3e72e8c316487690bc15a832e830a454",
+    "source": "sports",
+    "type": "title",
+    "answer": "Washington Nationals",
+    "normalizedAnswer": "WASHINGTON NATIONALS",
+    "category": "MLB Team",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 19,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "12f7e194c0087dab7dbab74196225060",
+    "source": "sports",
+    "type": "title",
+    "answer": "San Francisco Giants",
+    "normalizedAnswer": "SAN FRANCISCO GIANTS",
+    "category": "MLB Team",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 18,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "be379d4866ef312671151810adf0aea1",
+    "source": "sports",
+    "type": "title",
+    "answer": "Baltimore Orioles",
+    "normalizedAnswer": "BALTIMORE ORIOLES",
+    "category": "MLB Team",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "355405a4a3021f50b04c33107089b9a2",
+    "source": "sports",
+    "type": "title",
+    "answer": "San Diego Padres",
+    "normalizedAnswer": "SAN DIEGO PADRES",
+    "category": "MLB Team",
+    "difficulty": 64.4,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "9c76769a7ed75190ca0ded441f2b3ca4",
+    "source": "sports",
+    "type": "title",
+    "answer": "Pittsburgh Pirates",
+    "normalizedAnswer": "PITTSBURGH PIRATES",
+    "category": "MLB Team",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 17,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "5e4e9e595c581242a3120c14099abb0d",
+    "source": "sports",
+    "type": "title",
+    "answer": "Cleveland Guardians",
+    "normalizedAnswer": "CLEVELAND GUARDIANS",
+    "category": "MLB Team",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 18,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "a8946eb36ade0e6d105f603e58afa887",
+    "source": "sports",
+    "type": "title",
+    "answer": "Chicago White Sox",
+    "normalizedAnswer": "CHICAGO WHITE SOX",
+    "category": "MLB Team",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "5ad1140adff211eccf5c8557d1ff3bea",
+    "source": "sports",
+    "type": "title",
+    "answer": "Toronto Blue Jays",
+    "normalizedAnswer": "TORONTO BLUE JAYS",
+    "category": "MLB Team",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "06258377daafc917667759511f27a3d5",
+    "source": "sports",
+    "type": "title",
+    "answer": "Athletics",
+    "normalizedAnswer": "ATHLETICS",
+    "category": "MLB Team",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "7ff7846d35a81e80831176ec0f9146a2",
+    "source": "sports",
+    "type": "title",
+    "answer": "Seattle Mariners",
+    "normalizedAnswer": "SEATTLE MARINERS",
+    "category": "MLB Team",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "ff349e8462a861916fc494489a587bc4",
+    "source": "sports",
+    "type": "title",
+    "answer": "Minnesota Twins",
+    "normalizedAnswer": "MINNESOTA TWINS",
+    "category": "MLB Team",
+    "difficulty": 68.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "767edd64e0189b260091a385a19e696e",
+    "source": "sports",
+    "type": "title",
+    "answer": "Tampa Bay Rays",
+    "normalizedAnswer": "TAMPA BAY RAYS",
+    "category": "MLB Team",
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "d8704239950735ab358749c71f68517d",
+    "source": "sports",
+    "type": "title",
+    "answer": "Atlanta Braves",
+    "normalizedAnswer": "ATLANTA BRAVES",
+    "category": "MLB Team",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "f78be85f993fc9a7b3f657558c754555",
+    "source": "sports",
+    "type": "title",
+    "answer": "Chicago Cubs",
+    "normalizedAnswer": "CHICAGO CUBS",
+    "category": "MLB Team",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "e37224137a413b9b9ae77478a5915cdb",
+    "source": "sports",
+    "type": "title",
+    "answer": "New York Yankees",
+    "normalizedAnswer": "NEW YORK YANKEES",
+    "category": "MLB Team",
+    "difficulty": 68.4,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 14,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "41ad05dd95046cf5f87f556ac04345c9",
+    "source": "sports",
+    "type": "title",
+    "answer": "Florida Panthers",
+    "normalizedAnswer": "FLORIDA PANTHERS",
+    "category": "NHL Team",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "8395b0bd5d3421bf1a828292126f8f28",
+    "source": "sports",
+    "type": "title",
+    "answer": "Dallas Stars",
+    "normalizedAnswer": "DALLAS STARS",
+    "category": "NHL Team",
+    "difficulty": 81.6,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "9b1529aeb17c68aef762bdfd2a4081fd",
+    "source": "sports",
+    "type": "title",
+    "answer": "Colorado Avalanche",
+    "normalizedAnswer": "COLORADO AVALANCHE",
+    "category": "NHL Team",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 17,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "99b09a14edb2d29fe22fc11fdb88d6bb",
+    "source": "sports",
+    "type": "title",
+    "answer": "Montreal Canadiens",
+    "normalizedAnswer": "MONTREAL CANADIENS",
+    "category": "NHL Team",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 17,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "2b90d65e1f3dc5249b7daeecba329350",
+    "source": "sports",
+    "type": "title",
+    "answer": "Tampa Bay Lightning",
+    "normalizedAnswer": "TAMPA BAY LIGHTNING",
+    "category": "NHL Team",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 17,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "90d6e012ea97433dc05dfd09bc859ea8",
+    "source": "sports",
+    "type": "title",
+    "answer": "Nashville Predators",
+    "normalizedAnswer": "NASHVILLE PREDATORS",
+    "category": "NHL Team",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 18,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "c5d619608eb5d81ac71363d1d2d1d3d9",
+    "source": "sports",
+    "type": "title",
+    "answer": "Winnipeg Jets",
+    "normalizedAnswer": "WINNIPEG JETS",
+    "category": "NHL Team",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "9437a436b028bef66efc13c652a9e560",
+    "source": "sports",
+    "type": "title",
+    "answer": "Ottawa Senators",
+    "normalizedAnswer": "OTTAWA SENATORS",
+    "category": "NHL Team",
+    "difficulty": 72.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "2464407ec1b12711762cf191835bb755",
+    "source": "sports",
+    "type": "title",
+    "answer": "Washington Capitals",
+    "normalizedAnswer": "WASHINGTON CAPITALS",
+    "category": "NHL Team",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 18,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "35631426550d0da10801a099a48d5e1f",
+    "source": "sports",
+    "type": "title",
+    "answer": "Seattle Kraken",
+    "normalizedAnswer": "SEATTLE KRAKEN",
+    "category": "NHL Team",
+    "difficulty": 72.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "e5c861094ac78bd2996185815141b61c",
+    "source": "sports",
+    "type": "title",
+    "answer": "Los Angeles Kings",
+    "normalizedAnswer": "LOS ANGELES KINGS",
+    "category": "NHL Team",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "dd561c0647d3e0a8c6d6ac31c0d186eb",
+    "source": "sports",
+    "type": "title",
+    "answer": "Utah Mammoth",
+    "normalizedAnswer": "UTAH MAMMOTH",
+    "category": "NHL Team",
+    "difficulty": 81.6,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "5f48d56ccffdfaeac2ece7783df4fb8b",
+    "source": "sports",
+    "type": "title",
+    "answer": "St. Louis Blues",
+    "normalizedAnswer": "ST LOUIS BLUES",
+    "category": "NHL Team",
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "bd96438b4209d56de5cdd138e60902cf",
+    "source": "sports",
+    "type": "title",
+    "answer": "Minnesota Wild",
+    "normalizedAnswer": "MINNESOTA WILD",
+    "category": "NHL Team",
+    "difficulty": 60.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "bb269d2867e982a3c62f610d986ccef5",
+    "source": "sports",
+    "type": "title",
+    "answer": "Anaheim Ducks",
+    "normalizedAnswer": "ANAHEIM DUCKS",
+    "category": "NHL Team",
+    "difficulty": 61.2,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "f39661f0b0dfe0162815784fb384c1c8",
+    "source": "sports",
+    "type": "title",
+    "answer": "Buffalo Sabres",
+    "normalizedAnswer": "BUFFALO SABRES",
+    "category": "NHL Team",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "dce1d39cd87487f4f03376913ce61ea1",
+    "source": "sports",
+    "type": "title",
+    "answer": "Carolina Hurricanes",
+    "normalizedAnswer": "CAROLINA HURRICANES",
+    "category": "NHL Team",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 18,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "ea11f3a226d4a7deccfb245c293bf730",
+    "source": "sports",
+    "type": "title",
+    "answer": "Detroit Red Wings",
+    "normalizedAnswer": "DETROIT RED WINGS",
+    "category": "NHL Team",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "3468105ce90ee64913a93c644f5f76c2",
+    "source": "sports",
+    "type": "title",
+    "answer": "New York Rangers",
+    "normalizedAnswer": "NEW YORK RANGERS",
+    "category": "NHL Team",
+    "difficulty": 64.4,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "83785e94d3b772b896b0b8bebb97651d",
+    "source": "sports",
+    "type": "title",
+    "answer": "Columbus Blue Jackets",
+    "normalizedAnswer": "COLUMBUS BLUE JACKETS",
+    "category": "NHL Team",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 19,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "2064d4a116148f1c4304fe47c6f472ed",
+    "source": "sports",
+    "type": "title",
+    "answer": "Pittsburgh Penguins",
+    "normalizedAnswer": "PITTSBURGH PENGUINS",
+    "category": "NHL Team",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 18,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "f2bba083b221bf91f8aa08d851a39731",
+    "source": "sports",
+    "type": "title",
+    "answer": "New Jersey Devils",
+    "normalizedAnswer": "NEW JERSEY DEVILS",
+    "category": "NHL Team",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "9e34ac93f65c00c91a5ea0344b7955bc",
+    "source": "sports",
+    "type": "title",
+    "answer": "Vancouver Canucks",
+    "normalizedAnswer": "VANCOUVER CANUCKS",
+    "category": "NHL Team",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "ee694b9345f232cad0cb7b881178a7d4",
+    "source": "sports",
+    "type": "title",
+    "answer": "Edmonton Oilers",
+    "normalizedAnswer": "EDMONTON OILERS",
+    "category": "NHL Team",
+    "difficulty": 64.4,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "517908531ca052d0f4ee1348648f17d1",
+    "source": "sports",
+    "type": "title",
+    "answer": "San Jose Sharks",
+    "normalizedAnswer": "SAN JOSE SHARKS",
+    "category": "NHL Team",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "771f0f276a06c1de75a4485fd55dc2c4",
+    "source": "sports",
+    "type": "title",
+    "answer": "Toronto Maple Leafs",
+    "normalizedAnswer": "TORONTO MAPLE LEAFS",
+    "category": "NHL Team",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 17,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "c90255c44c8dfd19773843cc6c7490fd",
+    "source": "sports",
+    "type": "title",
+    "answer": "Calgary Flames",
+    "normalizedAnswer": "CALGARY FLAMES",
+    "category": "NHL Team",
+    "difficulty": 64.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "be11bc81af70992565dc6a4bde6c02b2",
+    "source": "sports",
+    "type": "title",
+    "answer": "Boston Bruins",
+    "normalizedAnswer": "BOSTON BRUINS",
+    "category": "NHL Team",
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "09f9285a532d802b50df682452a608d3",
+    "source": "sports",
+    "type": "title",
+    "answer": "Vegas Golden Knights",
+    "normalizedAnswer": "VEGAS GOLDEN KNIGHTS",
+    "category": "NHL Team",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 18,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "3bcb4120ab1a05c8ef1f7f7f1958e3ec",
+    "source": "sports",
+    "type": "title",
+    "answer": "New York Islanders",
+    "normalizedAnswer": "NEW YORK ISLANDERS",
+    "category": "NHL Team",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 16,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "22ebc6ecf6b25278c05d7e1241322b71",
+    "source": "sports",
+    "type": "title",
+    "answer": "Chicago Blackhawks",
+    "normalizedAnswer": "CHICAGO BLACKHAWKS",
+    "category": "NHL Team",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 17,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "b13a5b6d1124140fa9cce14330eaf8ac",
+    "source": "sports",
+    "type": "title",
+    "answer": "Philadelphia Flyers",
+    "normalizedAnswer": "PHILADELPHIA FLYERS",
+    "category": "NHL Team",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 18,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "fc2b5a164d6223d06037d1bd50ccadd6",
+    "source": "sports",
+    "type": "title",
+    "answer": "Minnesota United FC",
+    "normalizedAnswer": "MINNESOTA UNITED FC",
+    "category": "MLS Team",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 17,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "3f1501b16b07ff047fcd8e151b7d8a16",
+    "source": "sports",
+    "type": "title",
+    "answer": "Real Salt Lake",
+    "normalizedAnswer": "REAL SALT LAKE",
+    "category": "MLS Team",
+    "difficulty": 77.2,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 12,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "9b124cbf84c279d30a66e366bde98b89",
+    "source": "sports",
+    "type": "title",
+    "answer": "D.C. United",
+    "normalizedAnswer": "DC UNITED",
+    "category": "MLS Team",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "3ac777c79a591fa849ace72b7757ac72",
+    "source": "sports",
+    "type": "title",
+    "answer": "Charlotte FC",
+    "normalizedAnswer": "CHARLOTTE FC",
+    "category": "MLS Team",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "e2883091d23f1478b0bc1c4bfdf3e68d",
+    "source": "sports",
+    "type": "title",
+    "answer": "Vancouver Whitecaps FC",
+    "normalizedAnswer": "VANCOUVER WHITECAPS FC",
+    "category": "MLS Team",
+    "difficulty": 44,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 20,
+    "uniqueLetterCount": 15,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "74979faae8054b8051ff4ce78f2cc118",
+    "source": "sports",
+    "type": "title",
+    "answer": "Toronto FC",
+    "normalizedAnswer": "TORONTO FC",
+    "category": "MLS Team",
+    "difficulty": 82.4,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "d735cd44841c2da18cf4e81fb1e259c3",
+    "source": "sports",
+    "type": "title",
+    "answer": "Los Angeles FC",
+    "normalizedAnswer": "LOS ANGELES FC",
+    "category": "MLS Team",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "41488dcbdbf4158656aeb6e540cb5922",
+    "source": "sports",
+    "type": "title",
+    "answer": "Colorado Rapids",
+    "normalizedAnswer": "COLORADO RAPIDS",
+    "category": "MLS Team",
+    "difficulty": 68.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "c1ea37ae421256fbfe634e374b471eeb",
+    "source": "sports",
+    "type": "title",
+    "answer": "Los Angeles Galaxy",
+    "normalizedAnswer": "LOS ANGELES GALAXY",
+    "category": "MLS Team",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 16,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "2a2e35ecb477ddb0f48df494e51bfee6",
+    "source": "sports",
+    "type": "title",
+    "answer": "St. Louis City SC",
+    "normalizedAnswer": "ST LOUIS CITY SC",
+    "category": "MLS Team",
+    "difficulty": 72.8,
+    "difficultyTier": "medium",
+    "wordCount": 4,
+    "letterCount": 13,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "3b2847adf1db9272d83c64cf49a68fab",
+    "source": "sports",
+    "type": "title",
+    "answer": "New England Revolution",
+    "normalizedAnswer": "NEW ENGLAND REVOLUTION",
+    "category": "MLS Team",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 20,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "64d9127b9296ddfaf56914a2dd13a159",
+    "source": "sports",
+    "type": "title",
+    "answer": "Nashville SC",
+    "normalizedAnswer": "NASHVILLE SC",
+    "category": "MLS Team",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "6450db9caa654d722c1822b839a3b71d",
+    "source": "sports",
+    "type": "title",
+    "answer": "Orlando City SC",
+    "normalizedAnswer": "ORLANDO CITY SC",
+    "category": "MLS Team",
+    "difficulty": 60.8,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 13,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "112b8c50c307f5b82f9d397994a82269",
+    "source": "sports",
+    "type": "title",
+    "answer": "Seattle Sounders FC",
+    "normalizedAnswer": "SEATTLE SOUNDERS FC",
+    "category": "MLS Team",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 17,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "6f187a389b125c2ee1728e652f33dd6a",
+    "source": "sports",
+    "type": "title",
+    "answer": "Atlanta United FC",
+    "normalizedAnswer": "ATLANTA UNITED FC",
+    "category": "MLS Team",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "5ad0f525aa66b7f971387467433c5626",
+    "source": "sports",
+    "type": "title",
+    "answer": "Inter Miami CF",
+    "normalizedAnswer": "INTER MIAMI CF",
+    "category": "MLS Team",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "27bd31755722f98948f0b8fe43d9d54f",
+    "source": "sports",
+    "type": "title",
+    "answer": "San Jose Earthquakes",
+    "normalizedAnswer": "SAN JOSE EARTHQUAKES",
+    "category": "MLS Team",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 18,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "7fe41f207d0e94c908a8b53ef95c45bc",
+    "source": "sports",
+    "type": "title",
+    "answer": "Portland Timbers",
+    "normalizedAnswer": "PORTLAND TIMBERS",
+    "category": "MLS Team",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "5b6ebe9e02f83ac2c8c9a812663b0751",
+    "source": "sports",
+    "type": "title",
+    "answer": "Austin FC",
+    "normalizedAnswer": "AUSTIN FC",
+    "category": "MLS Team",
+    "difficulty": 74.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "3ccd879dc8c53a6204be242b8ca571d0",
+    "source": "sports",
+    "type": "title",
+    "answer": "CF Montreal",
+    "normalizedAnswer": "CF MONTREAL",
+    "category": "MLS Team",
+    "difficulty": 66,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "69d2b960a374344536f673414a1298fe",
+    "source": "sports",
+    "type": "title",
+    "answer": "Columbus Crew",
+    "normalizedAnswer": "COLUMBUS CREW",
+    "category": "MLS Team",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "0cdf2a99bff71ae0afb85ec43791bfdb",
+    "source": "sports",
+    "type": "title",
+    "answer": "Houston Dynamo FC",
+    "normalizedAnswer": "HOUSTON DYNAMO FC",
+    "category": "MLS Team",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "771da207ac9b7696afd32f9e7284ba09",
+    "source": "sports",
+    "type": "title",
+    "answer": "San Diego FC",
+    "normalizedAnswer": "SAN DIEGO FC",
+    "category": "MLS Team",
+    "difficulty": 66,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 10,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "b902fd6785b0d94c2bd688b4c84ac3f8",
+    "source": "sports",
+    "type": "title",
+    "answer": "Chicago Fire FC",
+    "normalizedAnswer": "CHICAGO FIRE FC",
+    "category": "MLS Team",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "2f455b0c36911631dfd7617e4d05283d",
+    "source": "sports",
+    "type": "title",
+    "answer": "Sporting Kansas City",
+    "normalizedAnswer": "SPORTING KANSAS CITY",
+    "category": "MLS Team",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 18,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "dba10f26b92745737daeff87a7b537eb",
+    "source": "sports",
+    "type": "title",
+    "answer": "New York Red Bulls",
+    "normalizedAnswer": "NEW YORK RED BULLS",
+    "category": "MLS Team",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 15,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "5d16405f1f2ab7ec110bf4c7e60a4303",
+    "source": "sports",
+    "type": "title",
+    "answer": "Philadelphia Union",
+    "normalizedAnswer": "PHILADELPHIA UNION",
+    "category": "MLS Team",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 17,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "8b17971c91f3fab753d27f612dc11ee0",
+    "source": "sports",
+    "type": "title",
+    "answer": "FC Dallas",
+    "normalizedAnswer": "FC DALLAS",
+    "category": "MLS Team",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "5bc32395d10f63f7ba2ae791b4891c2d",
+    "source": "sports",
+    "type": "title",
+    "answer": "FC Cincinnati",
+    "normalizedAnswer": "FC CINCINNATI",
+    "category": "MLS Team",
+    "difficulty": 81.2,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "d1b8c39ff226f437986b3d6a493b6cd5",
+    "source": "sports",
+    "type": "title",
+    "answer": "New York City FC",
+    "normalizedAnswer": "NEW YORK CITY FC",
+    "category": "MLS Team",
+    "difficulty": 60.8,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 13,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "a408e60cd408cbaf1ac185b253b79849",
+    "source": "sports",
+    "type": "title",
+    "answer": "Air Force",
+    "normalizedAnswer": "AIR FORCE",
+    "category": "NCAA Football",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "8f0ce40a1bb9999a028bf6ce8c82afbf",
+    "source": "sports",
+    "type": "title",
+    "answer": "Akron",
+    "normalizedAnswer": "AKRON",
+    "category": "NCAA Football",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "24d534acdf53b8d8999b50eafd995424",
+    "source": "sports",
+    "type": "title",
+    "answer": "Alabama",
+    "normalizedAnswer": "ALABAMA",
+    "category": "NCAA Football",
+    "difficulty": 91.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "1d047d94390f12f533c757f8a431ec1a",
+    "source": "sports",
+    "type": "title",
+    "answer": "Appalachian State",
+    "normalizedAnswer": "APPALACHIAN STATE",
+    "category": "NCAA Football",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "282bd0ae6f1d1752e7251a29cb4e4e28",
+    "source": "sports",
+    "type": "title",
+    "answer": "Arizona",
+    "normalizedAnswer": "ARIZONA",
+    "category": "NCAA Football",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "464373442d2d49bda308de09846b6cc9",
+    "source": "sports",
+    "type": "title",
+    "answer": "Arizona State",
+    "normalizedAnswer": "ARIZONA STATE",
+    "category": "NCAA Football",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "febe0d187c7d43c937e74e070ed3067c",
+    "source": "sports",
+    "type": "title",
+    "answer": "Arkansas",
+    "normalizedAnswer": "ARKANSAS",
+    "category": "NCAA Football",
+    "difficulty": 86.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "5f39a68f3f5adf1926c0934bfaf1d8fc",
+    "source": "sports",
+    "type": "title",
+    "answer": "Arkansas State",
+    "normalizedAnswer": "ARKANSAS STATE",
+    "category": "NCAA Football",
+    "difficulty": 76.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "3dbbe8bbbfc7e3eb66955c1378048a08",
+    "source": "sports",
+    "type": "title",
+    "answer": "Army",
+    "normalizedAnswer": "ARMY",
+    "category": "NCAA Football",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "00d343ac9309c3d13c1fa1e599391efb",
+    "source": "sports",
+    "type": "title",
+    "answer": "Auburn",
+    "normalizedAnswer": "AUBURN",
+    "category": "NCAA Football",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "3bb8c26f6ca9ae4bdc937584412ed651",
+    "source": "sports",
+    "type": "title",
+    "answer": "Ball State",
+    "normalizedAnswer": "BALL STATE",
+    "category": "NCAA Football",
+    "difficulty": 82.4,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "33aed1cdddd6dd887c8e3057848d948a",
+    "source": "sports",
+    "type": "title",
+    "answer": "Baylor",
+    "normalizedAnswer": "BAYLOR",
+    "category": "NCAA Football",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "95adf922ad3992b3c46acd0214b4a16c",
+    "source": "sports",
+    "type": "title",
+    "answer": "Boise State",
+    "normalizedAnswer": "BOISE STATE",
+    "category": "NCAA Football",
+    "difficulty": 78,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "44f64d0f14ec35af06423606d6f4188c",
+    "source": "sports",
+    "type": "title",
+    "answer": "Boston College",
+    "normalizedAnswer": "BOSTON COLLEGE",
+    "category": "NCAA Football",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "e42ebe91c2b74f7461c91e8348b9c2e3",
+    "source": "sports",
+    "type": "title",
+    "answer": "Bowling Green",
+    "normalizedAnswer": "BOWLING GREEN",
+    "category": "NCAA Football",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "664835868c8d9429a88727e229034cae",
+    "source": "sports",
+    "type": "title",
+    "answer": "Buffalo",
+    "normalizedAnswer": "BUFFALO",
+    "category": "NCAA Football",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "335e12b1eca44c8c90a60ad1f767e02f",
+    "source": "sports",
+    "type": "title",
+    "answer": "BYU",
+    "normalizedAnswer": "BYU",
+    "category": "NCAA Football",
+    "difficulty": 96.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "f8c111d4caf00aeb87216de75730cdb3",
+    "source": "sports",
+    "type": "title",
+    "answer": "California",
+    "normalizedAnswer": "CALIFORNIA",
+    "category": "NCAA Football",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "0894ba1d94b0becc478694e4137b2f08",
+    "source": "sports",
+    "type": "title",
+    "answer": "Central Michigan",
+    "normalizedAnswer": "CENTRAL MICHIGAN",
+    "category": "NCAA Football",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "8e7c82b6c0e7e9d615ddf912514f4ed0",
+    "source": "sports",
+    "type": "title",
+    "answer": "Charlotte",
+    "normalizedAnswer": "CHARLOTTE",
+    "category": "NCAA Football",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "c1f8751192fa2b7bddfb1a3cee12283a",
+    "source": "sports",
+    "type": "title",
+    "answer": "Cincinnati",
+    "normalizedAnswer": "CINCINNATI",
+    "category": "NCAA Football",
+    "difficulty": 86,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "1cb4b4833914d53cf6dcfb15a1da4a37",
+    "source": "sports",
+    "type": "title",
+    "answer": "Clemson",
+    "normalizedAnswer": "CLEMSON",
+    "category": "NCAA Football",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "c1d772971827cad085836168b5d487ea",
+    "source": "sports",
+    "type": "title",
+    "answer": "Coastal Carolina",
+    "normalizedAnswer": "COASTAL CAROLINA",
+    "category": "NCAA Football",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "e85cc6f4638ffe38b2e004b0106660c8",
+    "source": "sports",
+    "type": "title",
+    "answer": "Colorado",
+    "normalizedAnswer": "COLORADO",
+    "category": "NCAA Football",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "0d20790a28901b1f9069cc1552fd6142",
+    "source": "sports",
+    "type": "title",
+    "answer": "Colorado State",
+    "normalizedAnswer": "COLORADO STATE",
+    "category": "NCAA Football",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "7d38ab4730226803194c1ac3f8c1f460",
+    "source": "sports",
+    "type": "title",
+    "answer": "Delaware",
+    "normalizedAnswer": "DELAWARE",
+    "category": "NCAA Football",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "cf3c3bf1f692fc737cc512d902b3d3ff",
+    "source": "sports",
+    "type": "title",
+    "answer": "Duke",
+    "normalizedAnswer": "DUKE",
+    "category": "NCAA Football",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "8abf96483bf58deebbf0e832748aa1a5",
+    "source": "sports",
+    "type": "title",
+    "answer": "East Carolina",
+    "normalizedAnswer": "EAST CAROLINA",
+    "category": "NCAA Football",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "0d720906634e8beb78a908f2bf060ade",
+    "source": "sports",
+    "type": "title",
+    "answer": "Eastern Michigan",
+    "normalizedAnswer": "EASTERN MICHIGAN",
+    "category": "NCAA Football",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "5c4fc97270a775c28b5681bf1513c190",
+    "source": "sports",
+    "type": "title",
+    "answer": "Florida Atlantic",
+    "normalizedAnswer": "FLORIDA ATLANTIC",
+    "category": "NCAA Football",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "35254ae2f378bbec3ab1830cebecd659",
+    "source": "sports",
+    "type": "title",
+    "answer": "FIU",
+    "normalizedAnswer": "FIU",
+    "category": "NCAA Football",
+    "difficulty": 96.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "efbef7a7dc6681073e2f76ae74f29a25",
+    "source": "sports",
+    "type": "title",
+    "answer": "Florida",
+    "normalizedAnswer": "FLORIDA",
+    "category": "NCAA Football",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "81ad24282f98acc10d2c1ce8573667cf",
+    "source": "sports",
+    "type": "title",
+    "answer": "Florida State",
+    "normalizedAnswer": "FLORIDA STATE",
+    "category": "NCAA Football",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "ae2977c588df9514c69220948ac8329b",
+    "source": "sports",
+    "type": "title",
+    "answer": "Fresno State",
+    "normalizedAnswer": "FRESNO STATE",
+    "category": "NCAA Football",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "f00599d202b1bdaf3379ab0e0e4a5797",
+    "source": "sports",
+    "type": "title",
+    "answer": "Georgia",
+    "normalizedAnswer": "GEORGIA",
+    "category": "NCAA Football",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "55ef92b090873d0eb9d18ad33b477cae",
+    "source": "sports",
+    "type": "title",
+    "answer": "Georgia Southern",
+    "normalizedAnswer": "GEORGIA SOUTHERN",
+    "category": "NCAA Football",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "fb2ac6ad50a5147c7810661b8ba6c0c4",
+    "source": "sports",
+    "type": "title",
+    "answer": "Georgia State",
+    "normalizedAnswer": "GEORGIA STATE",
+    "category": "NCAA Football",
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "b3fa56ba72dcf764eb6cfbaed5590dec",
+    "source": "sports",
+    "type": "title",
+    "answer": "Georgia Tech",
+    "normalizedAnswer": "GEORGIA TECH",
+    "category": "NCAA Football",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "9b3890eb599b6d8585e6b4ac8de33b94",
+    "source": "sports",
+    "type": "title",
+    "answer": "Hawaii",
+    "normalizedAnswer": "HAWAII",
+    "category": "NCAA Football",
+    "difficulty": 91.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "b9d7ea8ab705e469a718cb64e395a597",
+    "source": "sports",
+    "type": "title",
+    "answer": "Houston",
+    "normalizedAnswer": "HOUSTON",
+    "category": "NCAA Football",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "9a205d345adbc2a5630561be84ba9d38",
+    "source": "sports",
+    "type": "title",
+    "answer": "Illinois",
+    "normalizedAnswer": "ILLINOIS",
+    "category": "NCAA Football",
+    "difficulty": 86.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "4ed6280d7d2402c9041f6626f18dddcd",
+    "source": "sports",
+    "type": "title",
+    "answer": "Indiana",
+    "normalizedAnswer": "INDIANA",
+    "category": "NCAA Football",
+    "difficulty": 91.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "7fb1014a21d2fbc6a21c1eec1d30a2a5",
+    "source": "sports",
+    "type": "title",
+    "answer": "Iowa",
+    "normalizedAnswer": "IOWA",
+    "category": "NCAA Football",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "51a5fa44aabd78a62e72e99e9fbe18dc",
+    "source": "sports",
+    "type": "title",
+    "answer": "Iowa State",
+    "normalizedAnswer": "IOWA STATE",
+    "category": "NCAA Football",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "8bc7e8ae4c05127068fd6c046ee7f3e4",
+    "source": "sports",
+    "type": "title",
+    "answer": "Jacksonville State",
+    "normalizedAnswer": "JACKSONVILLE STATE",
+    "category": "NCAA Football",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 17,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "0f6ae0741261ceeb810ddf16d8a12fbb",
+    "source": "sports",
+    "type": "title",
+    "answer": "James Madison",
+    "normalizedAnswer": "JAMES MADISON",
+    "category": "NCAA Football",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "2bae1ff519f6692cff8ad121795f60a4",
+    "source": "sports",
+    "type": "title",
+    "answer": "Kansas",
+    "normalizedAnswer": "KANSAS",
+    "category": "NCAA Football",
+    "difficulty": 91.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "17467e37a9225cc5220d8cea13d98f46",
+    "source": "sports",
+    "type": "title",
+    "answer": "Kansas State",
+    "normalizedAnswer": "KANSAS STATE",
+    "category": "NCAA Football",
+    "difficulty": 81.6,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "0d098a0647d4dd59b9800566975ef7bd",
+    "source": "sports",
+    "type": "title",
+    "answer": "Kennesaw State",
+    "normalizedAnswer": "KENNESAW STATE",
+    "category": "NCAA Football",
+    "difficulty": 76.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "916f6cf2c00c7b499b96b8017a959d14",
+    "source": "sports",
+    "type": "title",
+    "answer": "Kent State",
+    "normalizedAnswer": "KENT STATE",
+    "category": "NCAA Football",
+    "difficulty": 82.4,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "19bef747508d519a40e0a99e1da9a86e",
+    "source": "sports",
+    "type": "title",
+    "answer": "Kentucky",
+    "normalizedAnswer": "KENTUCKY",
+    "category": "NCAA Football",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "f12c1d57859b67be724b1207750ca750",
+    "source": "sports",
+    "type": "title",
+    "answer": "Liberty",
+    "normalizedAnswer": "LIBERTY",
+    "category": "NCAA Football",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "864822e4ef7c37189144a8ddfd3108ba",
+    "source": "sports",
+    "type": "title",
+    "answer": "Louisiana",
+    "normalizedAnswer": "LOUISIANA",
+    "category": "NCAA Football",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "59037743a516a0e76e5f85f02904bcb3",
+    "source": "sports",
+    "type": "title",
+    "answer": "Louisiana Tech",
+    "normalizedAnswer": "LOUISIANA TECH",
+    "category": "NCAA Football",
+    "difficulty": 60.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "33727a8098b84e83f774bda0a50cb192",
+    "source": "sports",
+    "type": "title",
+    "answer": "Louisville",
+    "normalizedAnswer": "LOUISVILLE",
+    "category": "NCAA Football",
+    "difficulty": 78,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "e6069724fa8fcaff59d1ac4bda070170",
+    "source": "sports",
+    "type": "title",
+    "answer": "LSU",
+    "normalizedAnswer": "LSU",
+    "category": "NCAA Football",
+    "difficulty": 96.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "257084bb84de5842e65b1140ec1d13c8",
+    "source": "sports",
+    "type": "title",
+    "answer": "Marshall",
+    "normalizedAnswer": "MARSHALL",
+    "category": "NCAA Football",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "5e3f0f1d1502b1f91e1d612e6410f466",
+    "source": "sports",
+    "type": "title",
+    "answer": "Maryland",
+    "normalizedAnswer": "MARYLAND",
+    "category": "NCAA Football",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "a11d399e87c86d75964f8ec1a301d1a0",
+    "source": "sports",
+    "type": "title",
+    "answer": "Memphis",
+    "normalizedAnswer": "MEMPHIS",
+    "category": "NCAA Football",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "ee8bb123c8e931c1c8ddeec3b0f06cd1",
+    "source": "sports",
+    "type": "title",
+    "answer": "Miami",
+    "normalizedAnswer": "MIAMI",
+    "category": "NCAA Football",
+    "difficulty": 96,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "63205449f81fb283da0d29f5dc4b7f81",
+    "source": "sports",
+    "type": "title",
+    "answer": "Miami of Ohio",
+    "normalizedAnswer": "MIAMI OF OHIO",
+    "category": "NCAA Football",
+    "difficulty": 81.6,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 11,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "dbf49faa43881de22cc62b7d4c84c4e1",
+    "source": "sports",
+    "type": "title",
+    "answer": "Michigan",
+    "normalizedAnswer": "MICHIGAN",
+    "category": "NCAA Football",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "86b76a60f33b34115990e943622e1526",
+    "source": "sports",
+    "type": "title",
+    "answer": "Michigan State",
+    "normalizedAnswer": "MICHIGAN STATE",
+    "category": "NCAA Football",
+    "difficulty": 64.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "387ba182578b1bf3205552669f36b75e",
+    "source": "sports",
+    "type": "title",
+    "answer": "Middle Tennessee",
+    "normalizedAnswer": "MIDDLE TENNESSEE",
+    "category": "NCAA Football",
+    "difficulty": 72,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "f89da38fa0552178f5172057585b60e0",
+    "source": "sports",
+    "type": "title",
+    "answer": "Minnesota",
+    "normalizedAnswer": "MINNESOTA",
+    "category": "NCAA Football",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "3ef8fd41dbf9303861a9a31b180f8251",
+    "source": "sports",
+    "type": "title",
+    "answer": "Mississippi State",
+    "normalizedAnswer": "MISSISSIPPI STATE",
+    "category": "NCAA Football",
+    "difficulty": 76,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "1f9d10d5d880e80198473c5049a0f99b",
+    "source": "sports",
+    "type": "title",
+    "answer": "Missouri",
+    "normalizedAnswer": "MISSOURI",
+    "category": "NCAA Football",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "1bce5065858952020f0ee12cfe51b293",
+    "source": "sports",
+    "type": "title",
+    "answer": "Missouri State",
+    "normalizedAnswer": "MISSOURI STATE",
+    "category": "NCAA Football",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "73b9a90c73a4d6d146e033b60733d032",
+    "source": "sports",
+    "type": "title",
+    "answer": "Navy",
+    "normalizedAnswer": "NAVY",
+    "category": "NCAA Football",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "6504b61d700af9d43671f4abe739e68f",
+    "source": "sports",
+    "type": "title",
+    "answer": "NC State",
+    "normalizedAnswer": "NC STATE",
+    "category": "NCAA Football",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "72c7b17ac334811a097eea26ff3ce32c",
+    "source": "sports",
+    "type": "title",
+    "answer": "Nebraska",
+    "normalizedAnswer": "NEBRASKA",
+    "category": "NCAA Football",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "cd7932217bb16cd8cdb305d9a93d1613",
+    "source": "sports",
+    "type": "title",
+    "answer": "Nevada",
+    "normalizedAnswer": "NEVADA",
+    "category": "NCAA Football",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "eedc0ac22576b32b821bac6741a1f843",
+    "source": "sports",
+    "type": "title",
+    "answer": "New Mexico",
+    "normalizedAnswer": "NEW MEXICO",
+    "category": "NCAA Football",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "86169e87ec975d044d3819338b8b6c15",
+    "source": "sports",
+    "type": "title",
+    "answer": "New Mexico State",
+    "normalizedAnswer": "NEW MEXICO STATE",
+    "category": "NCAA Football",
+    "difficulty": 60.4,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 14,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "605a36b9d92757aae0b640db5323c066",
+    "source": "sports",
+    "type": "title",
+    "answer": "North Carolina",
+    "normalizedAnswer": "NORTH CAROLINA",
+    "category": "NCAA Football",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "17464f78b7dfbabdcabeec09c6383b76",
+    "source": "sports",
+    "type": "title",
+    "answer": "North Dakota State",
+    "normalizedAnswer": "NORTH DAKOTA STATE",
+    "category": "NCAA Football",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 16,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "d0da25143f32e5537a95fb7622500768",
+    "source": "sports",
+    "type": "title",
+    "answer": "North Texas",
+    "normalizedAnswer": "NORTH TEXAS",
+    "category": "NCAA Football",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "ff9be369865e70947e899c82bc8cbe20",
+    "source": "sports",
+    "type": "title",
+    "answer": "Northern Illinois",
+    "normalizedAnswer": "NORTHERN ILLINOIS",
+    "category": "NCAA Football",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "5573ee69fefae78ada6ea3bb4d1f2c57",
+    "source": "sports",
+    "type": "title",
+    "answer": "Northwestern",
+    "normalizedAnswer": "NORTHWESTERN",
+    "category": "NCAA Football",
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "cdc36a73adfe02670d429f0fa50f14f2",
+    "source": "sports",
+    "type": "title",
+    "answer": "Notre Dame",
+    "normalizedAnswer": "NOTRE DAME",
+    "category": "NCAA Football",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "7a63d15beef99ceb7d08ff6a59c1191f",
+    "source": "sports",
+    "type": "title",
+    "answer": "Ohio",
+    "normalizedAnswer": "OHIO",
+    "category": "NCAA Football",
+    "difficulty": 96.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "bce0a6a45ce4f0541d6e22e6f2c5097a",
+    "source": "sports",
+    "type": "title",
+    "answer": "Ohio State",
+    "normalizedAnswer": "OHIO STATE",
+    "category": "NCAA Football",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "6cd7458a0009179ad55e9273828d8d37",
+    "source": "sports",
+    "type": "title",
+    "answer": "Oklahoma",
+    "normalizedAnswer": "OKLAHOMA",
+    "category": "NCAA Football",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "70391eac5780b3c7b6c5525a4c70dddd",
+    "source": "sports",
+    "type": "title",
+    "answer": "Oklahoma State",
+    "normalizedAnswer": "OKLAHOMA STATE",
+    "category": "NCAA Football",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "3032b67641c3955b6558b2892dbb3ebe",
+    "source": "sports",
+    "type": "title",
+    "answer": "Old Dominion",
+    "normalizedAnswer": "OLD DOMINION",
+    "category": "NCAA Football",
+    "difficulty": 81.6,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "a734336d5c35144449defc9144812b15",
+    "source": "sports",
+    "type": "title",
+    "answer": "Ole Miss",
+    "normalizedAnswer": "OLE MISS",
+    "category": "NCAA Football",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "f3ac0e01f94e76e524b45f74b610b874",
+    "source": "sports",
+    "type": "title",
+    "answer": "Oregon",
+    "normalizedAnswer": "OREGON",
+    "category": "NCAA Football",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "cd29ee137c944a1f0bab040972d27081",
+    "source": "sports",
+    "type": "title",
+    "answer": "Oregon State",
+    "normalizedAnswer": "OREGON STATE",
+    "category": "NCAA Football",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "a77063575d8af32c929b86ba28475901",
+    "source": "sports",
+    "type": "title",
+    "answer": "Penn State",
+    "normalizedAnswer": "PENN STATE",
+    "category": "NCAA Football",
+    "difficulty": 82.4,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "481be1e0c5c51f7a6fbc7ee997410233",
+    "source": "sports",
+    "type": "title",
+    "answer": "Pittsburgh",
+    "normalizedAnswer": "PITTSBURGH",
+    "category": "NCAA Football",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "83df14f9b7d42ac8bf4ea44d25c99b19",
+    "source": "sports",
+    "type": "title",
+    "answer": "Purdue",
+    "normalizedAnswer": "PURDUE",
+    "category": "NCAA Football",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "93c257cba7d3f11a77b1425db098c94f",
+    "source": "sports",
+    "type": "title",
+    "answer": "Rice",
+    "normalizedAnswer": "RICE",
+    "category": "NCAA Football",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "1d5fdcd2412076e44759fd519c7255e9",
+    "source": "sports",
+    "type": "title",
+    "answer": "Rutgers",
+    "normalizedAnswer": "RUTGERS",
+    "category": "NCAA Football",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "a0f8af47b2dd7cfee0501f5064524174",
+    "source": "sports",
+    "type": "title",
+    "answer": "Sacramento State",
+    "normalizedAnswer": "SACRAMENTO STATE",
+    "category": "NCAA Football",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "1edc247e8fb0856dc3bec183ed265b11",
+    "source": "sports",
+    "type": "title",
+    "answer": "Sam Houston",
+    "normalizedAnswer": "SAM HOUSTON",
+    "category": "NCAA Football",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "345d438abef1312a25335977f172b50b",
+    "source": "sports",
+    "type": "title",
+    "answer": "San Diego State",
+    "normalizedAnswer": "SAN DIEGO STATE",
+    "category": "NCAA Football",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "89e93c47813acdbfb97ed946e49d08e9",
+    "source": "sports",
+    "type": "title",
+    "answer": "San Jose State",
+    "normalizedAnswer": "SAN JOSE STATE",
+    "category": "NCAA Football",
+    "difficulty": 77.2,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 12,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "71d6e1acbfbbbf88ff06529bb6ac40c7",
+    "source": "sports",
+    "type": "title",
+    "answer": "SMU",
+    "normalizedAnswer": "SMU",
+    "category": "NCAA Football",
+    "difficulty": 96.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "a4a2cd4f0afd17e0738e40b8dd29089a",
+    "source": "sports",
+    "type": "title",
+    "answer": "South Alabama",
+    "normalizedAnswer": "SOUTH ALABAMA",
+    "category": "NCAA Football",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "4faf59fecd21fbd636575de5436760ef",
+    "source": "sports",
+    "type": "title",
+    "answer": "South Carolina",
+    "normalizedAnswer": "SOUTH CAROLINA",
+    "category": "NCAA Football",
+    "difficulty": 60.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "fe1adfbfd2543ef06c7d8b9b9fe2f580",
+    "source": "sports",
+    "type": "title",
+    "answer": "South Florida",
+    "normalizedAnswer": "SOUTH FLORIDA",
+    "category": "NCAA Football",
+    "difficulty": 61.2,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "8987110b5ac28765142aef18d5a86ecc",
+    "source": "sports",
+    "type": "title",
+    "answer": "Southern Miss",
+    "normalizedAnswer": "SOUTHERN MISS",
+    "category": "NCAA Football",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "d24e578cc1aecee4a6a9b80718cd1e0f",
+    "source": "sports",
+    "type": "title",
+    "answer": "Stanford",
+    "normalizedAnswer": "STANFORD",
+    "category": "NCAA Football",
+    "difficulty": 74.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "96fc4ccc5014396e99e6f2475b18fa00",
+    "source": "sports",
+    "type": "title",
+    "answer": "Syracuse",
+    "normalizedAnswer": "SYRACUSE",
+    "category": "NCAA Football",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "5e7e55091ff20e84ea93d90e0c3dff34",
+    "source": "sports",
+    "type": "title",
+    "answer": "TCU",
+    "normalizedAnswer": "TCU",
+    "category": "NCAA Football",
+    "difficulty": 96.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "5aee92b8734b85ff4053dbcf26340892",
+    "source": "sports",
+    "type": "title",
+    "answer": "Temple",
+    "normalizedAnswer": "TEMPLE",
+    "category": "NCAA Football",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "2d845f1c5ada0e91002b3be03353e2ba",
+    "source": "sports",
+    "type": "title",
+    "answer": "Tennessee",
+    "normalizedAnswer": "TENNESSEE",
+    "category": "NCAA Football",
+    "difficulty": 90.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "c5844fb30d6447668645da9168e5c7b9",
+    "source": "sports",
+    "type": "title",
+    "answer": "Texas",
+    "normalizedAnswer": "TEXAS",
+    "category": "NCAA Football",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "bff4f800fa7c9a08559a1f91fe7f3085",
+    "source": "sports",
+    "type": "title",
+    "answer": "Texas A&M",
+    "normalizedAnswer": "TEXAS AM",
+    "category": "NCAA Football",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "d22fbba180335a8950cc670700bf0a8f",
+    "source": "sports",
+    "type": "title",
+    "answer": "Texas State",
+    "normalizedAnswer": "TEXAS STATE",
+    "category": "NCAA Football",
+    "difficulty": 86,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "0771fa88bacf1099aa55315bdb02590d",
+    "source": "sports",
+    "type": "title",
+    "answer": "Texas Tech",
+    "normalizedAnswer": "TEXAS TECH",
+    "category": "NCAA Football",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "1c0b2282d5b7ea2cdbb7ccf1e63c25f9",
+    "source": "sports",
+    "type": "title",
+    "answer": "Toledo",
+    "normalizedAnswer": "TOLEDO",
+    "category": "NCAA Football",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "2223cca55e565b7ce38142a249e74589",
+    "source": "sports",
+    "type": "title",
+    "answer": "Troy",
+    "normalizedAnswer": "TROY",
+    "category": "NCAA Football",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "9cf5cb2f23fa3520d596426dc14b47c1",
+    "source": "sports",
+    "type": "title",
+    "answer": "Tulane",
+    "normalizedAnswer": "TULANE",
+    "category": "NCAA Football",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "e2766717496f3d77f176b31e7e48a898",
+    "source": "sports",
+    "type": "title",
+    "answer": "Tulsa",
+    "normalizedAnswer": "TULSA",
+    "category": "NCAA Football",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "80487389aef1b3c2ab9d1f15b1d909e4",
+    "source": "sports",
+    "type": "title",
+    "answer": "UAB",
+    "normalizedAnswer": "UAB",
+    "category": "NCAA Football",
+    "difficulty": 96.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "e2bb6d6fb6eb5e9b820095a55ecb6216",
+    "source": "sports",
+    "type": "title",
+    "answer": "UCF",
+    "normalizedAnswer": "UCF",
+    "category": "NCAA Football",
+    "difficulty": 96.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "9a5b6a1fc701fc72576b787ef91d8ab1",
+    "source": "sports",
+    "type": "title",
+    "answer": "UCLA",
+    "normalizedAnswer": "UCLA",
+    "category": "NCAA Football",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "5b0e9cb4a9bd663510519987265e5106",
+    "source": "sports",
+    "type": "title",
+    "answer": "UConn",
+    "normalizedAnswer": "UCONN",
+    "category": "NCAA Football",
+    "difficulty": 92,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "f4ec29ee388eb8ea4f554a96dd589f6a",
+    "source": "sports",
+    "type": "title",
+    "answer": "ULM",
+    "normalizedAnswer": "ULM",
+    "category": "NCAA Football",
+    "difficulty": 96.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "d0a859b334eae9412c5a8b9a50ac5ff6",
+    "source": "sports",
+    "type": "title",
+    "answer": "UMass",
+    "normalizedAnswer": "UMASS",
+    "category": "NCAA Football",
+    "difficulty": 92,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "939167d3f364764d4a7725888f51274b",
+    "source": "sports",
+    "type": "title",
+    "answer": "UNLV",
+    "normalizedAnswer": "UNLV",
+    "category": "NCAA Football",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "d59608f824753dd611e16b1f6e071f33",
+    "source": "sports",
+    "type": "title",
+    "answer": "USC",
+    "normalizedAnswer": "USC",
+    "category": "NCAA Football",
+    "difficulty": 96.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "59cf9882a15aec38f83a413d19d813b9",
+    "source": "sports",
+    "type": "title",
+    "answer": "Utah",
+    "normalizedAnswer": "UTAH",
+    "category": "NCAA Football",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "ba3722c52084a751735ca94acd9ab6ae",
+    "source": "sports",
+    "type": "title",
+    "answer": "Utah State",
+    "normalizedAnswer": "UTAH STATE",
+    "category": "NCAA Football",
+    "difficulty": 82.4,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "19d7ca12b0c6b2bd180c9d39d18745ab",
+    "source": "sports",
+    "type": "title",
+    "answer": "UTEP",
+    "normalizedAnswer": "UTEP",
+    "category": "NCAA Football",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "1514ff592c31e6916af0262866544012",
+    "source": "sports",
+    "type": "title",
+    "answer": "UTSA",
+    "normalizedAnswer": "UTSA",
+    "category": "NCAA Football",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "9f1b9fad1b1e06458727f7535cfc1d29",
+    "source": "sports",
+    "type": "title",
+    "answer": "Vanderbilt",
+    "normalizedAnswer": "VANDERBILT",
+    "category": "NCAA Football",
+    "difficulty": 66,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "840ae5e56befe6f33608a21d8ddc548e",
+    "source": "sports",
+    "type": "title",
+    "answer": "Virginia",
+    "normalizedAnswer": "VIRGINIA",
+    "category": "NCAA Football",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "531937b6244ec07919e2160a6d224e6b",
+    "source": "sports",
+    "type": "title",
+    "answer": "Virginia Tech",
+    "normalizedAnswer": "VIRGINIA TECH",
+    "category": "NCAA Football",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "b92ef47401b8ad19db145d77b202a0e6",
+    "source": "sports",
+    "type": "title",
+    "answer": "Wake Forest",
+    "normalizedAnswer": "WAKE FOREST",
+    "category": "NCAA Football",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "6c7e54914c1a24ecf6823c0acee55381",
+    "source": "sports",
+    "type": "title",
+    "answer": "Washington",
+    "normalizedAnswer": "WASHINGTON",
+    "category": "NCAA Football",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "ebe2deb34933c2e65d95d5acdeedd343",
+    "source": "sports",
+    "type": "title",
+    "answer": "Washington State",
+    "normalizedAnswer": "WASHINGTON STATE",
+    "category": "NCAA Football",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "ed5c5d0c79508023b2a2b4e437bb7cd3",
+    "source": "sports",
+    "type": "title",
+    "answer": "West Virginia",
+    "normalizedAnswer": "WEST VIRGINIA",
+    "category": "NCAA Football",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "6a04f7120f79fc25d989805ba8680fa4",
+    "source": "sports",
+    "type": "title",
+    "answer": "Western Kentucky",
+    "normalizedAnswer": "WESTERN KENTUCKY",
+    "category": "NCAA Football",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "2b36da8de2b80e5bc6ce06126e944183",
+    "source": "sports",
+    "type": "title",
+    "answer": "Western Michigan",
+    "normalizedAnswer": "WESTERN MICHIGAN",
+    "category": "NCAA Football",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "7db751275a117c91a82dfb9029f41ce4",
+    "source": "sports",
+    "type": "title",
+    "answer": "Wisconsin",
+    "normalizedAnswer": "WISCONSIN",
+    "category": "NCAA Football",
+    "difficulty": 82.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "3317cc9c869bea107a47e298e52aa78e",
+    "source": "sports",
+    "type": "title",
+    "answer": "Wyoming",
+    "normalizedAnswer": "WYOMING",
+    "category": "NCAA Football",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  }
+]

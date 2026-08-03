@@ -80,26 +80,6 @@
     }
   },
   {
-    "id": "89333bfb42c9a9da2ccfde83c46fffe9",
-    "source": "theme",
-    "type": "title",
-    "answer": "Mercedes Benz E-Class",
-    "normalizedAnswer": "MERCEDES BENZ ECLASS",
-    "category": "Vehicle",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 18,
-    "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "vehicle"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
-    }
-  },
-  {
     "id": "4d65b1ac1cc1943c0f84a1d1e699e2cf",
     "source": "theme",
     "type": "title",
@@ -720,17 +700,17 @@
     }
   },
   {
-    "id": "db1c6b3a291f499fb5d1664ffc52225d",
+    "id": "181312c633e3455606a2a58045b7bf10",
     "source": "theme",
     "type": "title",
-    "answer": "Chrysler K Cars (Dodge Aries",
-    "normalizedAnswer": "CHRYSLER K CARS DODGE ARIES",
+    "answer": "Chrysler K Cars",
+    "normalizedAnswer": "CHRYSLER K CARS",
     "category": "Vehicle",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 23,
-    "uniqueLetterCount": 13,
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
     "tags": [
       "theme",
       "vehicle"
@@ -864,13 +844,13 @@
     "source": "theme",
     "type": "title",
     "answer": "Citroën SM",
-    "normalizedAnswer": "CITRON SM",
+    "normalizedAnswer": "CITROEN SM",
     "category": "Vehicle",
-    "difficulty": 74.8,
+    "difficulty": 70.4,
     "difficultyTier": "medium",
     "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 8,
+    "letterCount": 9,
+    "uniqueLetterCount": 9,
     "tags": [
       "theme",
       "vehicle"

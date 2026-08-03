@@ -1,0 +1,443 @@
+[
+  {
+    "id": "61ed3098f90f42c0c3f31c1fd4442642",
+    "source": "theme",
+    "type": "title",
+    "answer": "Nirvana",
+    "normalizedAnswer": "NIRVANA",
+    "category": "1990s Band",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "band",
+      "1990s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "52ec8a2b9ed71100da4f7360333cbd21",
+    "source": "theme",
+    "type": "title",
+    "answer": "Pearl Jam",
+    "normalizedAnswer": "PEARL JAM",
+    "category": "1990s Band",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "band",
+      "1990s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "374a57db614365e85fc2b1d37357cdab",
+    "source": "theme",
+    "type": "title",
+    "answer": "Soundgarden",
+    "normalizedAnswer": "SOUNDGARDEN",
+    "category": "1990s Band",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "band",
+      "1990s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "b80da29a81e6b7f807904a8b91e4a0d4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Radiohead",
+    "normalizedAnswer": "RADIOHEAD",
+    "category": "1990s Band",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "band",
+      "1990s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "dc7fa6997c5e71b4a8b8912e56486abf",
+    "source": "theme",
+    "type": "title",
+    "answer": "Oasis",
+    "normalizedAnswer": "OASIS",
+    "category": "1990s Band",
+    "difficulty": 92,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "band",
+      "1990s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "676a7e3acdb924341cb61181967ef44e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Blur",
+    "normalizedAnswer": "BLUR",
+    "category": "1990s Band",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "band",
+      "1990s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "b1eb670a66eeee6206db205caced0fb4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Green Day",
+    "normalizedAnswer": "GREEN DAY",
+    "category": "1990s Band",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "band",
+      "1990s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "92037e28e56eddf616f8dae8db08ff26",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Smashing Pumpkins",
+    "normalizedAnswer": "THE SMASHING PUMPKINS",
+    "category": "1990s Band",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 19,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "band",
+      "1990s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "47f138f8566db1b06bbfa7f97765cad8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Red Hot Chili Peppers",
+    "normalizedAnswer": "RED HOT CHILI PEPPERS",
+    "category": "1990s Band",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 18,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "band",
+      "1990s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "08a2e5dfaa65c5f9902cd294020f54fe",
+    "source": "theme",
+    "type": "title",
+    "answer": "Alice in Chains",
+    "normalizedAnswer": "ALICE IN CHAINS",
+    "category": "1990s Band",
+    "difficulty": 72.8,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 13,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "band",
+      "1990s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "e3bce4412894155cf1de60a02f824a93",
+    "source": "theme",
+    "type": "title",
+    "answer": "Foo Fighters",
+    "normalizedAnswer": "FOO FIGHTERS",
+    "category": "1990s Band",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "band",
+      "1990s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "83880ebfe7185de8d85650bcbc787bc3",
+    "source": "theme",
+    "type": "title",
+    "answer": "No Doubt",
+    "normalizedAnswer": "NO DOUBT",
+    "category": "1990s Band",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "band",
+      "1990s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "088896b204530210bbb6d22c555873ab",
+    "source": "theme",
+    "type": "title",
+    "answer": "Weezer",
+    "normalizedAnswer": "WEEZER",
+    "category": "1990s Band",
+    "difficulty": 91.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "band",
+      "1990s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "3dd3526e04a3a8d6e56ebe1620fe3def",
+    "source": "theme",
+    "type": "title",
+    "answer": "Backstreet Boys",
+    "normalizedAnswer": "BACKSTREET BOYS",
+    "category": "1990s Band",
+    "difficulty": 64.4,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "band",
+      "1990s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "3e66cbcf3fe0609a0f6bda2a09e8138b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Spice Girls",
+    "normalizedAnswer": "SPICE GIRLS",
+    "category": "1990s Band",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "band",
+      "1990s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "822f27bc6d07b0a45d38ec3eee04f350",
+    "source": "theme",
+    "type": "title",
+    "answer": "TLC",
+    "normalizedAnswer": "TLC",
+    "category": "1990s Band",
+    "difficulty": 96.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "band",
+      "1990s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "20d50a8dd001938907a2439d7b68d24d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Boyz II Men",
+    "normalizedAnswer": "BOYZ II MEN",
+    "category": "1990s Band",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "band",
+      "1990s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "3698576aecfdf6a8a063d056703d6354",
+    "source": "theme",
+    "type": "title",
+    "answer": "Rage Against the Machine",
+    "normalizedAnswer": "RAGE AGAINST THE MACHINE",
+    "category": "1990s Band",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 21,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "band",
+      "1990s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a7681ca2ca35b18942f644a672729164",
+    "source": "theme",
+    "type": "title",
+    "answer": "Stone Temple Pilots",
+    "normalizedAnswer": "STONE TEMPLE PILOTS",
+    "category": "1990s Band",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 17,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "band",
+      "1990s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "77982f389468d1afde2355be869a7b65",
+    "source": "theme",
+    "type": "title",
+    "answer": "Counting Crows",
+    "normalizedAnswer": "COUNTING CROWS",
+    "category": "1990s Band",
+    "difficulty": 64.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "band",
+      "1990s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "8793384cda3c96e8b7c4a36b642d912d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Matchbox Twenty",
+    "normalizedAnswer": "MATCHBOX TWENTY",
+    "category": "1990s Band",
+    "difficulty": 56.4,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "band",
+      "1990s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  }
+]

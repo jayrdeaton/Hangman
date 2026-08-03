@@ -1,0 +1,376 @@
+[
+  {
+    "id": "4645f1a2f3e0ace5feef4f34158e4e6e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Jupiter",
+    "normalizedAnswer": "JUPITER",
+    "category": "Planet",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "planet"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size"
+    }
+  },
+  {
+    "id": "e96bdd2085d6e21e92e707600c86966e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Saturn",
+    "normalizedAnswer": "SATURN",
+    "category": "Planet",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "planet"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size"
+    }
+  },
+  {
+    "id": "e7ed8f36e72fc0c2582612a81599fb27",
+    "source": "theme",
+    "type": "title",
+    "answer": "Uranus",
+    "normalizedAnswer": "URANUS",
+    "category": "Planet",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "planet"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size"
+    }
+  },
+  {
+    "id": "e82a890ff86facd2aecd25ae5ec7b026",
+    "source": "theme",
+    "type": "title",
+    "answer": "Neptune",
+    "normalizedAnswer": "NEPTUNE",
+    "category": "Planet",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "planet"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size"
+    }
+  },
+  {
+    "id": "f52bc0cb87f943f364d2edc25b8acbc8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Earth",
+    "normalizedAnswer": "EARTH",
+    "category": "Planet",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "planet"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size"
+    }
+  },
+  {
+    "id": "fbabdb345650b9bf93978e897c07c9ed",
+    "source": "theme",
+    "type": "title",
+    "answer": "Venus",
+    "normalizedAnswer": "VENUS",
+    "category": "Planet",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "planet"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size"
+    }
+  },
+  {
+    "id": "430a7d44cb615e410a8c21aeb3d9a2c7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mars",
+    "normalizedAnswer": "MARS",
+    "category": "Planet",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "planet"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size"
+    }
+  },
+  {
+    "id": "7ffcb9709617a9dc0b46fdc142e37bbd",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mercury",
+    "normalizedAnswer": "MERCURY",
+    "category": "Planet",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "planet"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size"
+    }
+  },
+  {
+    "id": "69819687c380bf31f379cdf6f8485f3a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Pluto",
+    "normalizedAnswer": "PLUTO",
+    "category": "Planet",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "planet"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size"
+    }
+  },
+  {
+    "id": "4d120927296ec5b3c895bf23be56e387",
+    "source": "theme",
+    "type": "title",
+    "answer": "Eris",
+    "normalizedAnswer": "ERIS",
+    "category": "Planet",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "planet"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size"
+    }
+  },
+  {
+    "id": "7109084fbda825a5f8e099b030491c28",
+    "source": "theme",
+    "type": "title",
+    "answer": "Haumea",
+    "normalizedAnswer": "HAUMEA",
+    "category": "Planet",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "planet"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size"
+    }
+  },
+  {
+    "id": "028dabedf0d651c01edf7ff4885dd325",
+    "source": "theme",
+    "type": "title",
+    "answer": "Makemake",
+    "normalizedAnswer": "MAKEMAKE",
+    "category": "Planet",
+    "difficulty": 90.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "planet"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size"
+    }
+  },
+  {
+    "id": "4e5ed120ac05031a11b2160780209324",
+    "source": "theme",
+    "type": "title",
+    "answer": "Gonggong",
+    "normalizedAnswer": "GONGGONG",
+    "category": "Planet",
+    "difficulty": 94.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "planet"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size"
+    }
+  },
+  {
+    "id": "b6d5802ea1802f5cd1b55b0c7d8470fa",
+    "source": "theme",
+    "type": "title",
+    "answer": "Quaoar",
+    "normalizedAnswer": "QUAOAR",
+    "category": "Planet",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "planet"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size"
+    }
+  },
+  {
+    "id": "d45e926f0b900e08eca260525fc5dcd7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ceres",
+    "normalizedAnswer": "CERES",
+    "category": "Planet",
+    "difficulty": 92,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "planet"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size"
+    }
+  },
+  {
+    "id": "bd9797298b8aca0baee768814cf6b12b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Orcus",
+    "normalizedAnswer": "ORCUS",
+    "category": "Planet",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "planet"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size"
+    }
+  },
+  {
+    "id": "374e433d921fada1ee18737f44ff8e5a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sedna",
+    "normalizedAnswer": "SEDNA",
+    "category": "Planet",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "planet"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size"
+    }
+  }
+]

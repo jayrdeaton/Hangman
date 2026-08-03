@@ -1,6 +1,7 @@
+import { Button } from '@rific/haptic-press'
 import React, { useState } from 'react'
 import { StyleProp, StyleSheet, View, ViewStyle } from 'react-native'
-import { Button, useTheme } from 'react-native-paper'
+import { useTheme } from 'react-native-paper'
 
 import type { KeyboardLayout } from '@/hooks/useKeyboardLayout'
 

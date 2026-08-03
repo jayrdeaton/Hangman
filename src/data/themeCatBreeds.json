@@ -1,0 +1,2081 @@
+[
+  {
+    "id": "1844eaeb3802426d2e4b51a31b04f45c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Abyssinian",
+    "normalizedAnswer": "ABYSSINIAN",
+    "category": "Cat Breed",
+    "difficulty": 82,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "d175427b95c40f32f2ecd87b50776301",
+    "source": "theme",
+    "type": "title",
+    "answer": "Aegean",
+    "normalizedAnswer": "AEGEAN",
+    "category": "Cat Breed",
+    "difficulty": 91.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "b5ab822d4cfb0458efbada6cec796a52",
+    "source": "theme",
+    "type": "title",
+    "answer": "American Bobtail",
+    "normalizedAnswer": "AMERICAN BOBTAIL",
+    "category": "Cat Breed",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "7f1d88000d0095c356c97d5d44052cfb",
+    "source": "theme",
+    "type": "title",
+    "answer": "American Curl",
+    "normalizedAnswer": "AMERICAN CURL",
+    "category": "Cat Breed",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "5647dfacbef615cc0464ee349320c6cc",
+    "source": "theme",
+    "type": "title",
+    "answer": "American Shorthair",
+    "normalizedAnswer": "AMERICAN SHORTHAIR",
+    "category": "Cat Breed",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 17,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "bb3da274ea552d60d877f0213e951d8f",
+    "source": "theme",
+    "type": "title",
+    "answer": "American Wirehair",
+    "normalizedAnswer": "AMERICAN WIREHAIR",
+    "category": "Cat Breed",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "481d27b8c294ff6309c428bd9d35cf2e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Aphrodite's Giant",
+    "normalizedAnswer": "APHRODITES GIANT",
+    "category": "Cat Breed",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "d2455ee69f2dba154ca37608a0b62135",
+    "source": "theme",
+    "type": "title",
+    "answer": "Arabian Mau",
+    "normalizedAnswer": "ARABIAN MAU",
+    "category": "Cat Breed",
+    "difficulty": 78,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "b827a5823f354eb9df3d57239dfef9ed",
+    "source": "theme",
+    "type": "title",
+    "answer": "Asian",
+    "normalizedAnswer": "ASIAN",
+    "category": "Cat Breed",
+    "difficulty": 92,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "45ffa7bef0805e9a5d2892002bfad49e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Australian Mist",
+    "normalizedAnswer": "AUSTRALIAN MIST",
+    "category": "Cat Breed",
+    "difficulty": 68.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "920581fc5a14c07fc0f232b1f8394fdf",
+    "source": "theme",
+    "type": "title",
+    "answer": "Balinese",
+    "normalizedAnswer": "BALINESE",
+    "category": "Cat Breed",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "b8566e5fc4c1a31d20cc424560f7794f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bambino",
+    "normalizedAnswer": "BAMBINO",
+    "category": "Cat Breed",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "e83d5e8eb0a008d54f23b82d45dec3c0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bengal",
+    "normalizedAnswer": "BENGAL",
+    "category": "Cat Breed",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "8d6e38302b57a51560edaef9835441e1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Birman",
+    "normalizedAnswer": "BIRMAN",
+    "category": "Cat Breed",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "a5b27cacd5602628c6f4cdc7717f06b5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bombay",
+    "normalizedAnswer": "BOMBAY",
+    "category": "Cat Breed",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "f1a08d33e5a8580f8695ea30cb646d84",
+    "source": "theme",
+    "type": "title",
+    "answer": "Brazilian Shorthair",
+    "normalizedAnswer": "BRAZILIAN SHORTHAIR",
+    "category": "Cat Breed",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 18,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "dfb2e67ac0f210484e394ff8a00241fa",
+    "source": "theme",
+    "type": "title",
+    "answer": "British Longhair",
+    "normalizedAnswer": "BRITISH LONGHAIR",
+    "category": "Cat Breed",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "8cbc8e463160852799bfb8ef9c394627",
+    "source": "theme",
+    "type": "title",
+    "answer": "British Shorthair",
+    "normalizedAnswer": "BRITISH SHORTHAIR",
+    "category": "Cat Breed",
+    "difficulty": 72,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "4978564f63094603ed33ffd4a7e66773",
+    "source": "theme",
+    "type": "title",
+    "answer": "Burmese",
+    "normalizedAnswer": "BURMESE",
+    "category": "Cat Breed",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "183ad39c4ad205bed764a0b1c111e43b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Burmilla",
+    "normalizedAnswer": "BURMILLA",
+    "category": "Cat Breed",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "0084841a178d025d73d3aff7049cc61c",
+    "source": "theme",
+    "type": "title",
+    "answer": "California Spangled",
+    "normalizedAnswer": "CALIFORNIA SPANGLED",
+    "category": "Cat Breed",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 18,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "334e7d61ef830aa51f7fd4b5d3d38005",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chantilly-Tiffany",
+    "normalizedAnswer": "CHANTILLYTIFFANY",
+    "category": "Cat Breed",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 16,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "c1439a4cfe40d134e2881b39096b091d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chartreux",
+    "normalizedAnswer": "CHARTREUX",
+    "category": "Cat Breed",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "94156395207e4dbd53edf50bf2ca1adf",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chausie",
+    "normalizedAnswer": "CHAUSIE",
+    "category": "Cat Breed",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "b755cb0a26b188997ab4524c7c6a61b5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Colorpoint Shorthair",
+    "normalizedAnswer": "COLORPOINT SHORTHAIR",
+    "category": "Cat Breed",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 19,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "73db5a969ebfe60944a485d266ac14e4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cornish Rex",
+    "normalizedAnswer": "CORNISH REX",
+    "category": "Cat Breed",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "e5e37dad08eb09b9b43713f6d8796f0a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cymric",
+    "normalizedAnswer": "CYMRIC",
+    "category": "Cat Breed",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "1d1a94e949c8af6cad8f9015e5d4902a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Devon Rex",
+    "normalizedAnswer": "DEVON REX",
+    "category": "Cat Breed",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "79ca7e964f8ec7bcd5788839ab1c420f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Donskoy",
+    "normalizedAnswer": "DONSKOY",
+    "category": "Cat Breed",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "663fde8f4049835abfcbe7d6da5841be",
+    "source": "theme",
+    "type": "title",
+    "answer": "Dragon Li",
+    "normalizedAnswer": "DRAGON LI",
+    "category": "Cat Breed",
+    "difficulty": 74.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "79e60eb47d22fe28393724e16101082e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Dwelf",
+    "normalizedAnswer": "DWELF",
+    "category": "Cat Breed",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "a92275ef823969a53cd7041455ca0cd1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Egyptian Mau",
+    "normalizedAnswer": "EGYPTIAN MAU",
+    "category": "Cat Breed",
+    "difficulty": 65.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "b8e4ac958995adc953b55d9982c6f8a2",
+    "source": "theme",
+    "type": "title",
+    "answer": "European Shorthair",
+    "normalizedAnswer": "EUROPEAN SHORTHAIR",
+    "category": "Cat Breed",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 17,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "559c9b0e9707341191d7c0df6a9c4e7e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Exotic Shorthair",
+    "normalizedAnswer": "EXOTIC SHORTHAIR",
+    "category": "Cat Breed",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "b4930d8a554528afc52785975f586f4a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Foldex",
+    "normalizedAnswer": "FOLDEX",
+    "category": "Cat Breed",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "d3b5980a8fe2c29be51680c082052ec8",
+    "source": "theme",
+    "type": "title",
+    "answer": "German Rex",
+    "normalizedAnswer": "GERMAN REX",
+    "category": "Cat Breed",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "a87b09606ec7aa8fe8ecb9101f15696a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Havana Brown",
+    "normalizedAnswer": "HAVANA BROWN",
+    "category": "Cat Breed",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "6f67d016f849d05ca54a560623f69463",
+    "source": "theme",
+    "type": "title",
+    "answer": "Highlander",
+    "normalizedAnswer": "HIGHLANDER",
+    "category": "Cat Breed",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "14258c5c17446228b0692b7e5dcbc015",
+    "source": "theme",
+    "type": "title",
+    "answer": "Himalayan",
+    "normalizedAnswer": "HIMALAYAN",
+    "category": "Cat Breed",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "8ecf28a142b37635e07e0528c7595d08",
+    "source": "theme",
+    "type": "title",
+    "answer": "Jianzhou cat",
+    "normalizedAnswer": "JIANZHOU CAT",
+    "category": "Cat Breed",
+    "difficulty": 65.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "fb75de0a4ff135d0ff0f841350163638",
+    "source": "theme",
+    "type": "title",
+    "answer": "Japanese Bobtail",
+    "normalizedAnswer": "JAPANESE BOBTAIL",
+    "category": "Cat Breed",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "2223653f16f7cdc7ea7543576e8513e8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Javanese",
+    "normalizedAnswer": "JAVANESE",
+    "category": "Cat Breed",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "4c9d8f17ce6602609bdcf1aa41090177",
+    "source": "theme",
+    "type": "title",
+    "answer": "Kanaani",
+    "normalizedAnswer": "KANAANI",
+    "category": "Cat Breed",
+    "difficulty": 91.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "fa96b8907c0bdfd14340d0d149350335",
+    "source": "theme",
+    "type": "title",
+    "answer": "Karelian Bobtail",
+    "normalizedAnswer": "KARELIAN BOBTAIL",
+    "category": "Cat Breed",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "9c990c35085d96723f79f46da101da35",
+    "source": "theme",
+    "type": "title",
+    "answer": "Khao Manee",
+    "normalizedAnswer": "KHAO MANEE",
+    "category": "Cat Breed",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "9f30af387628a07f70a70cebc7a8b0d2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Kinkalow",
+    "normalizedAnswer": "KINKALOW",
+    "category": "Cat Breed",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "958074d6599c8e2868a5ac6df31552e3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Korat",
+    "normalizedAnswer": "KORAT",
+    "category": "Cat Breed",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "4e3d696d1bb18aa3f6b37d320c68709a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Korean Bobtail",
+    "normalizedAnswer": "KOREAN BOBTAIL",
+    "category": "Cat Breed",
+    "difficulty": 64.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "15942d8c1049a6fa2f527c2c723b2bb8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Korn Ja",
+    "normalizedAnswer": "KORN JA",
+    "category": "Cat Breed",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "ffb6e2729de9e39df7987421d33e00b4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Kurilian Bobtail",
+    "normalizedAnswer": "KURILIAN BOBTAIL",
+    "category": "Cat Breed",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "81d2693c83be707fa996464c61221c13",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lambkin",
+    "normalizedAnswer": "LAMBKIN",
+    "category": "Cat Breed",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "a1ae906aa168961e245fda2fd97052b3",
+    "source": "theme",
+    "type": "title",
+    "answer": "LaPerm",
+    "normalizedAnswer": "LAPERM",
+    "category": "Cat Breed",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "bf8b0068505177b6d93b8d4273e8f45b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lykoi",
+    "normalizedAnswer": "LYKOI",
+    "category": "Cat Breed",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "a7ba8bcc8d0571b8f84dd3c7a32835c5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Maine Coon",
+    "normalizedAnswer": "MAINE COON",
+    "category": "Cat Breed",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "f6ee07ce9ee25c641ad9f65a5b0dadb4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Manx",
+    "normalizedAnswer": "MANX",
+    "category": "Cat Breed",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "94107239f770a5761064232c7fd21b37",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mekong Bobtail",
+    "normalizedAnswer": "MEKONG BOBTAIL",
+    "category": "Cat Breed",
+    "difficulty": 60.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "17c2a47214ac63f98b5436ee984dc287",
+    "source": "theme",
+    "type": "title",
+    "answer": "Minskin",
+    "normalizedAnswer": "MINSKIN",
+    "category": "Cat Breed",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "198403fff19ed1395f82490b80d3a703",
+    "source": "theme",
+    "type": "title",
+    "answer": "Minuet",
+    "normalizedAnswer": "MINUET",
+    "category": "Cat Breed",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "1dab4e2530faa5b83c8649da35223a9e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Munchkin",
+    "normalizedAnswer": "MUNCHKIN",
+    "category": "Cat Breed",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "228ba0e3812c26b16250db1b7b154a47",
+    "source": "theme",
+    "type": "title",
+    "answer": "Nebelung",
+    "normalizedAnswer": "NEBELUNG",
+    "category": "Cat Breed",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "c0582c7ffe369ee164959a44b85dcc3a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Neva Masquerade",
+    "normalizedAnswer": "NEVA MASQUERADE",
+    "category": "Cat Breed",
+    "difficulty": 64.4,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "cfd432214cdea9fd26be74e28f51f8d8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Norwegian Forest cat",
+    "normalizedAnswer": "NORWEGIAN FOREST CAT",
+    "category": "Cat Breed",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 18,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "90de3b255b216e494e490e4d2fd7e65a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ocicat",
+    "normalizedAnswer": "OCICAT",
+    "category": "Cat Breed",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "386c851284efe6353e0344f9e94b472e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ojos Azules",
+    "normalizedAnswer": "OJOS AZULES",
+    "category": "Cat Breed",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "d3d96deac592cb908de6a056963904a9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Oriental Bicolour",
+    "normalizedAnswer": "ORIENTAL BICOLOUR",
+    "category": "Cat Breed",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "e394de5fd2902ddcda443e4a477a2c10",
+    "source": "theme",
+    "type": "title",
+    "answer": "Oriental Longhair",
+    "normalizedAnswer": "ORIENTAL LONGHAIR",
+    "category": "Cat Breed",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "6bfd9f85c0be668b04aa353ff7ef1598",
+    "source": "theme",
+    "type": "title",
+    "answer": "Oriental Shorthair",
+    "normalizedAnswer": "ORIENTAL SHORTHAIR",
+    "category": "Cat Breed",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 17,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "b9c5a5979b0e0f94b2815a52b0834b00",
+    "source": "theme",
+    "type": "title",
+    "answer": "Persian",
+    "normalizedAnswer": "PERSIAN",
+    "category": "Cat Breed",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "031bd64c558d9ccb26adf5d53894640c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Peterbald",
+    "normalizedAnswer": "PETERBALD",
+    "category": "Cat Breed",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "ff010323f7dfcc5341167d8a3f0b7114",
+    "source": "theme",
+    "type": "title",
+    "answer": "Pixie-bob",
+    "normalizedAnswer": "PIXIEBOB",
+    "category": "Cat Breed",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "c5622ad0ee6cfbcaf8a8bca0ef4e737e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ragamuffin",
+    "normalizedAnswer": "RAGAMUFFIN",
+    "category": "Cat Breed",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "9c94764ae47cac7c80d3035c194d3d9e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ragdoll",
+    "normalizedAnswer": "RAGDOLL",
+    "category": "Cat Breed",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "3e1cc4692c4dca814677d5c7ec47f0a6",
+    "source": "theme",
+    "type": "title",
+    "answer": "Raas",
+    "normalizedAnswer": "RAAS",
+    "category": "Cat Breed",
+    "difficulty": 96.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "2b5865b9c9d4d8ffb3975a1564170978",
+    "source": "theme",
+    "type": "title",
+    "answer": "Russian Blue",
+    "normalizedAnswer": "RUSSIAN BLUE",
+    "category": "Cat Breed",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "cd27f39e24f64775150d43ee460d3d9b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Russian White",
+    "normalizedAnswer": "RUSSIAN WHITE",
+    "category": "Cat Breed",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "2bb1896e52580bb7b87f8402e3de3c5e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sam Sawet",
+    "normalizedAnswer": "SAM SAWET",
+    "category": "Cat Breed",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "4820e4b5d45751ce4e1c43b92ed359a7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Savannah",
+    "normalizedAnswer": "SAVANNAH",
+    "category": "Cat Breed",
+    "difficulty": 86.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "df755410bf07bfac1993c50c3cc44792",
+    "source": "theme",
+    "type": "title",
+    "answer": "Scottish Fold",
+    "normalizedAnswer": "SCOTTISH FOLD",
+    "category": "Cat Breed",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "5ce2ebb5dfaa304b744dbb6425c71b49",
+    "source": "theme",
+    "type": "title",
+    "answer": "Selkirk Rex",
+    "normalizedAnswer": "SELKIRK REX",
+    "category": "Cat Breed",
+    "difficulty": 78,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "f3c76573cce21c4846cf5856317d8848",
+    "source": "theme",
+    "type": "title",
+    "answer": "Serengeti",
+    "normalizedAnswer": "SERENGETI",
+    "category": "Cat Breed",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "1326a38687ff925f58c536a46ba86635",
+    "source": "theme",
+    "type": "title",
+    "answer": "Siamese",
+    "normalizedAnswer": "SIAMESE",
+    "category": "Cat Breed",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "847156ba213a60eaab36b255b34af0c4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Siberian",
+    "normalizedAnswer": "SIBERIAN",
+    "category": "Cat Breed",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "30f5c93734e0f739c1019f246b79cb2c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Singapura",
+    "normalizedAnswer": "SINGAPURA",
+    "category": "Cat Breed",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "13e559f1232d65f108fe63ffa964a7b7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Snowshoe",
+    "normalizedAnswer": "SNOWSHOE",
+    "category": "Cat Breed",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "b18e3c449858a0afa90c1cb5d0089059",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sokoke",
+    "normalizedAnswer": "SOKOKE",
+    "category": "Cat Breed",
+    "difficulty": 91.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "220e94a48b895d50916f36d70e51a484",
+    "source": "theme",
+    "type": "title",
+    "answer": "Somali",
+    "normalizedAnswer": "SOMALI",
+    "category": "Cat Breed",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "c4c45c0bddad631a055787ef5b4dcec8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sphynx",
+    "normalizedAnswer": "SPHYNX",
+    "category": "Cat Breed",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "50f6607464728fc3317e23b8e59dc625",
+    "source": "theme",
+    "type": "title",
+    "answer": "Suphalak",
+    "normalizedAnswer": "SUPHALAK",
+    "category": "Cat Breed",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "f02e4c4a18f50737e04a7e483bbaeca3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Thai",
+    "normalizedAnswer": "THAI",
+    "category": "Cat Breed",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "3588a34548412937c7a60e97fd677f7b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Thai Lilac",
+    "normalizedAnswer": "THAI LILAC",
+    "category": "Cat Breed",
+    "difficulty": 82.4,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "40a7c1638d1d20c245cef24e9ab31162",
+    "source": "theme",
+    "type": "title",
+    "answer": "Tiffanie",
+    "normalizedAnswer": "TIFFANIE",
+    "category": "Cat Breed",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "84db928c71fc1e0f4059081cd3f6bdba",
+    "source": "theme",
+    "type": "title",
+    "answer": "Tonkinese",
+    "normalizedAnswer": "TONKINESE",
+    "category": "Cat Breed",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "6efeab8f49e745284db618371598daba",
+    "source": "theme",
+    "type": "title",
+    "answer": "Toybob",
+    "normalizedAnswer": "TOYBOB",
+    "category": "Cat Breed",
+    "difficulty": 91.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "8ccce58926f6012fe2d6208b8e438b88",
+    "source": "theme",
+    "type": "title",
+    "answer": "Toyger",
+    "normalizedAnswer": "TOYGER",
+    "category": "Cat Breed",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "69a23679e60d39141cf04bc251b7737a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Turkish Angora",
+    "normalizedAnswer": "TURKISH ANGORA",
+    "category": "Cat Breed",
+    "difficulty": 60.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "c6f940b95fbc3610b2619dbd9578b3e2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Turkish Van",
+    "normalizedAnswer": "TURKISH VAN",
+    "category": "Cat Breed",
+    "difficulty": 66,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "d8c2a432c917bbbff462294ac598196d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Van cat",
+    "normalizedAnswer": "VAN CAT",
+    "category": "Cat Breed",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "5746f3e91555869d582a111da4b30dd0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ukrainian Levkoy",
+    "normalizedAnswer": "UKRAINIAN LEVKOY",
+    "category": "Cat Breed",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  },
+  {
+    "id": "afb8370a434e1d37513e4ea781e41f91",
+    "source": "theme",
+    "type": "title",
+    "answer": "York Chocolate",
+    "normalizedAnswer": "YORK CHOCOLATE",
+    "category": "Cat Breed",
+    "difficulty": 64.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "animal",
+      "cat"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_cat_breeds"
+    }
+  }
+]

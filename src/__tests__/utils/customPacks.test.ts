@@ -1,4 +1,4 @@
-import { addCustomPuzzle, buildCustomPuzzle, CUSTOM_QUICK_PACK_LABEL, deleteCustomPack, exportCustomPack, getCustomPackPuzzles, getCustomPacks, getCustomPackSummaries, getCustomPacksVersion, getStoredCustomPacks, importCustomPack, isCustomPackKey, loadCustomPacksCache, saveCustomPack } from '@/utils/customPacks'
+import { addCustomPuzzle, buildCustomPuzzle, CUSTOM_QUICK_PACK_LABEL, deleteCustomPack, exportCustomPack, getCustomPackPuzzles, getCustomPacks, getCustomPackSummaries, getCustomPacksVersion, getStoredCustomPacks, importCustomPack, isCustomPackKey, loadCustomPacksCache, parseCustomPackImport, saveCustomPack } from '@/utils/customPacks'
 
 let mockStore: Record<string, string>
 
@@ -271,5 +271,28 @@ describe('exportCustomPack / importCustomPack', () => {
 
   it('rejects a payload missing the expected pack shape', async () => {
     await expect(importCustomPack(JSON.stringify({ foo: 'bar' }))).rejects.toThrow()
+  })
+})
+
+describe('parseCustomPackImport', () => {
+  it('reads the label and entries without saving anything — the incoming-file-share preview relies on this', () => {
+    const payload = JSON.stringify({ pack: { key: 'custom:preview', label: 'Preview Pack', puzzles: [{ answer: 'cat', metadata: { hint: 'A pet' } }, { answer: 'dog' }] } })
+
+    const parsed = parseCustomPackImport(payload)
+
+    expect(parsed).toEqual({
+      key: 'custom:preview',
+      label: 'Preview Pack',
+      entries: [
+        { answer: 'cat', hint: 'A pet' },
+        { answer: 'dog', hint: undefined }
+      ]
+    })
+    expect(getCustomPacks()).toHaveLength(0)
+  })
+
+  it('rejects the same malformed payloads importCustomPack itself does', () => {
+    expect(() => parseCustomPackImport('not json')).toThrow()
+    expect(() => parseCustomPackImport(JSON.stringify({ foo: 'bar' }))).toThrow()
   })
 })

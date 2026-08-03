@@ -1,0 +1,800 @@
+[
+  {
+    "id": "d63391c5b0055ade6653d8448753ee01",
+    "source": "theme",
+    "type": "title",
+    "answer": "Meryl Streep",
+    "normalizedAnswer": "MERYL STREEP",
+    "category": "Modern Actor",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "actor",
+      "modern"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "b0925cc8bcd081f31a5cb17c8b509eb1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Denzel Washington",
+    "normalizedAnswer": "DENZEL WASHINGTON",
+    "category": "Modern Actor",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "actor",
+      "modern"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "40ea96943d3183a195c824665cc43373",
+    "source": "theme",
+    "type": "title",
+    "answer": "Tom Hanks",
+    "normalizedAnswer": "TOM HANKS",
+    "category": "Modern Actor",
+    "difficulty": 74.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "actor",
+      "modern"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "eae124568e92bfbe7101dcf20e1c3b47",
+    "source": "theme",
+    "type": "title",
+    "answer": "Julia Roberts",
+    "normalizedAnswer": "JULIA ROBERTS",
+    "category": "Modern Actor",
+    "difficulty": 61.2,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "actor",
+      "modern"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6efe6006cd3590df95d82e8ace93d293",
+    "source": "theme",
+    "type": "title",
+    "answer": "Leonardo DiCaprio",
+    "normalizedAnswer": "LEONARDO DICAPRIO",
+    "category": "Modern Actor",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "actor",
+      "modern"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6d1682fa8f9065f2174223c9b9f11b6d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Viola Davis",
+    "normalizedAnswer": "VIOLA DAVIS",
+    "category": "Modern Actor",
+    "difficulty": 78,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "actor",
+      "modern"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "39779873aebc1af1e06e402129d8dfff",
+    "source": "theme",
+    "type": "title",
+    "answer": "Morgan Freeman",
+    "normalizedAnswer": "MORGAN FREEMAN",
+    "category": "Modern Actor",
+    "difficulty": 72.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "actor",
+      "modern"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "1660879590a0a58351c21399803d8e9d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Brad Pitt",
+    "normalizedAnswer": "BRAD PITT",
+    "category": "Modern Actor",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "actor",
+      "modern"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "276aecbe9c550c450ba67ea5d8ac0521",
+    "source": "theme",
+    "type": "title",
+    "answer": "Angelina Jolie",
+    "normalizedAnswer": "ANGELINA JOLIE",
+    "category": "Modern Actor",
+    "difficulty": 72.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "actor",
+      "modern"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6932a8d6c66f149615cd60d25210106f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Will Smith",
+    "normalizedAnswer": "WILL SMITH",
+    "category": "Modern Actor",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "actor",
+      "modern"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "176e5918fb060a72329f233b4379254d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Johnny Depp",
+    "normalizedAnswer": "JOHNNY DEPP",
+    "category": "Modern Actor",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "actor",
+      "modern"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "b86954ed2c3803a5903c43660ba1902b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Scarlett Johansson",
+    "normalizedAnswer": "SCARLETT JOHANSSON",
+    "category": "Modern Actor",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 17,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "actor",
+      "modern"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "28d93147d984336b49061d9dfe51c384",
+    "source": "theme",
+    "type": "title",
+    "answer": "Robert Downey Jr.",
+    "normalizedAnswer": "ROBERT DOWNEY JR",
+    "category": "Modern Actor",
+    "difficulty": 64.4,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "actor",
+      "modern"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "fe289aca62096669d729a0e9122a88d9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Natalie Portman",
+    "normalizedAnswer": "NATALIE PORTMAN",
+    "category": "Modern Actor",
+    "difficulty": 64.4,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "actor",
+      "modern"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "f8a62733956a98d9a33c5da8cc4393ef",
+    "source": "theme",
+    "type": "title",
+    "answer": "Christian Bale",
+    "normalizedAnswer": "CHRISTIAN BALE",
+    "category": "Modern Actor",
+    "difficulty": 60.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "actor",
+      "modern"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "21c73fdee79c73c6d68830ceb788968b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cate Blanchett",
+    "normalizedAnswer": "CATE BLANCHETT",
+    "category": "Modern Actor",
+    "difficulty": 72.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "actor",
+      "modern"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "d35a369ed039b0f381e5756c81ddc3ce",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sandra Bullock",
+    "normalizedAnswer": "SANDRA BULLOCK",
+    "category": "Modern Actor",
+    "difficulty": 60.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "actor",
+      "modern"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "904f9adcfbc1c94df03c61bba987c5c2",
+    "source": "theme",
+    "type": "title",
+    "answer": "George Clooney",
+    "normalizedAnswer": "GEORGE CLOONEY",
+    "category": "Modern Actor",
+    "difficulty": 72.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "actor",
+      "modern"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "3fe11064c5f39de2efc3197db6121256",
+    "source": "theme",
+    "type": "title",
+    "answer": "Nicole Kidman",
+    "normalizedAnswer": "NICOLE KIDMAN",
+    "category": "Modern Actor",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "actor",
+      "modern"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "3f0e4c6a441c6721d141d435d606fc04",
+    "source": "theme",
+    "type": "title",
+    "answer": "Tom Cruise",
+    "normalizedAnswer": "TOM CRUISE",
+    "category": "Modern Actor",
+    "difficulty": 70.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "actor",
+      "modern"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "73ada35b5d3d82a33dfdec1c0659f2f4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Charlize Theron",
+    "normalizedAnswer": "CHARLIZE THERON",
+    "category": "Modern Actor",
+    "difficulty": 60.4,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "actor",
+      "modern"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "32ca9bc8f4b5e1525397f325dbd4db72",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ryan Gosling",
+    "normalizedAnswer": "RYAN GOSLING",
+    "category": "Modern Actor",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "actor",
+      "modern"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "b7bbe1bf561c8589db261aa7b4c73e43",
+    "source": "theme",
+    "type": "title",
+    "answer": "Emma Stone",
+    "normalizedAnswer": "EMMA STONE",
+    "category": "Modern Actor",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "actor",
+      "modern"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "377c84249282e6bda3528b22c7cbebb9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Jennifer Lawrence",
+    "normalizedAnswer": "JENNIFER LAWRENCE",
+    "category": "Modern Actor",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "actor",
+      "modern"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "1c8d0db9cd48e51472112b8aadc2a5a8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Idris Elba",
+    "normalizedAnswer": "IDRIS ELBA",
+    "category": "Modern Actor",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "actor",
+      "modern"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "14349d76184c4668e5b72fd9d7707a64",
+    "source": "theme",
+    "type": "title",
+    "answer": "Zendaya",
+    "normalizedAnswer": "ZENDAYA",
+    "category": "Modern Actor",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "actor",
+      "modern"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ec9994e025401f75d30dab9b578d73b5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Timothee Chalamet",
+    "normalizedAnswer": "TIMOTHEE CHALAMET",
+    "category": "Modern Actor",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "actor",
+      "modern"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a608637e9b7fbd6b48d31840211df799",
+    "source": "theme",
+    "type": "title",
+    "answer": "Margot Robbie",
+    "normalizedAnswer": "MARGOT ROBBIE",
+    "category": "Modern Actor",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "actor",
+      "modern"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "057312bc683af1235d5cc3da5be728cd",
+    "source": "theme",
+    "type": "title",
+    "answer": "Dwayne Johnson",
+    "normalizedAnswer": "DWAYNE JOHNSON",
+    "category": "Modern Actor",
+    "difficulty": 64.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "actor",
+      "modern"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "822e453816b29acb15d46b181ea3ef7f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Samuel L. Jackson",
+    "normalizedAnswer": "SAMUEL L JACKSON",
+    "category": "Modern Actor",
+    "difficulty": 60.4,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 14,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "actor",
+      "modern"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6b644b546e42992903f2d049ad6ae8b4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Anthony Hopkins",
+    "normalizedAnswer": "ANTHONY HOPKINS",
+    "category": "Modern Actor",
+    "difficulty": 64.4,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "actor",
+      "modern"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a2bea8cd0870a58b77e8fa7f68a49193",
+    "source": "theme",
+    "type": "title",
+    "answer": "Michael B. Jordan",
+    "normalizedAnswer": "MICHAEL B JORDAN",
+    "category": "Modern Actor",
+    "difficulty": 52.4,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 14,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "actor",
+      "modern"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a917445c4fc442f233ce635a547cab60",
+    "source": "theme",
+    "type": "title",
+    "answer": "Octavia Spencer",
+    "normalizedAnswer": "OCTAVIA SPENCER",
+    "category": "Modern Actor",
+    "difficulty": 60.4,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "actor",
+      "modern"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "b3463e80da74c4960c6f282f6d27e64b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Regina King",
+    "normalizedAnswer": "REGINA KING",
+    "category": "Modern Actor",
+    "difficulty": 78,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "actor",
+      "modern"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "8f4f4e8b5c43fb563b038ed5f6394f68",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lupita Nyong'o",
+    "normalizedAnswer": "LUPITA NYONGO",
+    "category": "Modern Actor",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "actor",
+      "modern"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "0094144ceeaddb11a2fc6d674aae94a1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Daniel Kaluuya",
+    "normalizedAnswer": "DANIEL KALUUYA",
+    "category": "Modern Actor",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "actor",
+      "modern"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "0bb99b48aa30a722c1b0ee2822c4f11d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Florence Pugh",
+    "normalizedAnswer": "FLORENCE PUGH",
+    "category": "Modern Actor",
+    "difficulty": 61.2,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "actor",
+      "modern"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "d0fd526d4ab27ce6f078f7fb97ba7a94",
+    "source": "theme",
+    "type": "title",
+    "answer": "Saoirse Ronan",
+    "normalizedAnswer": "SAOIRSE RONAN",
+    "category": "Modern Actor",
+    "difficulty": 77.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "actor",
+      "modern"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  }
+]

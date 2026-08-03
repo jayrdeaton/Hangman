@@ -61,14 +61,17 @@ function pointOnStem(t: number, cx: number, cy: number): { x: number; y: number 
   }
 }
 
+// transform (not rotation+origin) — react-native-svg's web renderer sets origin as a raw
+// `transform-origin` DOM attribute, which isn't a valid one (React warns about it); folding the
+// pivot into the transform string itself avoids that path entirely, same result.
 const Petal = ({ cx, cy, angle, color }: { cx: number; cy: number; angle: number; color: string }) => (
-  <G rotation={angle} origin={`${cx},${cy}`}>
+  <G transform={`rotate(${angle}, ${cx}, ${cy})`}>
     <Ellipse cx={cx} cy={cy - 8.5} rx='4.5' ry='7.5' stroke={color} strokeWidth='2' fill='none' />
   </G>
 )
 
 const Leaf = ({ x, y, angle, color }: { x: number; y: number; angle: number; color: string }) => (
-  <G rotation={angle} origin={`${x},${y}`}>
+  <G transform={`rotate(${angle}, ${x}, ${y})`}>
     <Ellipse cx={x + 6} cy={y} rx='6' ry='2.5' stroke={color} strokeWidth='2' fill='none' />
   </G>
 )

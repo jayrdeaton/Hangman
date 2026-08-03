@@ -46,6 +46,22 @@ export const exportPuzzleUnlocks = async (): Promise<string> => {
   return JSON.stringify(payload, null, 2)
 }
 
+// Stricter than importPuzzleUnlocks/mergePuzzleUnlocks below on purpose: those two accept a bare
+// unlocks-map with no wrapper (a deliberate leniency for the old paste-a-blob flow, still relied on
+// by their own tests), but this one is for disambiguating an incoming .hangman file from a custom
+// pack file (see hangmanFile.ts) — requiring the `unlocks` key is what lets a caller tell "this is
+// a progress backup" apart from "this is a pack" (which has a `pack` key instead) before deciding
+// which import path to run.
+export const parseProgressBackup = (raw: string): PuzzleUnlockMap => {
+  const parsed: unknown = JSON.parse(raw)
+
+  if (!parsed || typeof parsed !== 'object' || !('unlocks' in (parsed as Record<string, unknown>))) {
+    throw new Error('Invalid progress backup.')
+  }
+
+  return normalizeUnlockMap((parsed as Record<string, unknown>).unlocks)
+}
+
 export const importPuzzleUnlocks = async (raw: string): Promise<{ importedCount: number }> => {
   const parsed: unknown = JSON.parse(raw)
 

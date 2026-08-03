@@ -1,5 +1,5 @@
 import { ALL_MODES } from '@/modes/registry'
-import { clearAchievements, DEFAULT_ACHIEVEMENT_STATS, getAchievementStats, recordLoss, recordSolve, type SolveResult } from '@/utils/achievements'
+import { clearAchievements, DEFAULT_ACHIEVEMENT_STATS, getAchievementStats, recordLoss, recordPnpLoss, recordPnpWin, recordSolve, type SolveResult } from '@/utils/achievements'
 
 let mockStore: Record<string, string>
 
@@ -17,11 +17,12 @@ jest.mock('@react-native-async-storage/async-storage', () => ({
 
 const ACHIEVEMENTS_KEY = 'achievements_v1'
 
-// A minimal neutral solve payload — no hint, no pack, one wrong guess — that on its own
-// shouldn't unlock anything besides milestones/streaks.
+// A minimal neutral solve payload — no hint, no pack, one wrong guess out of six total guesses —
+// that on its own shouldn't unlock anything besides milestones/streaks.
 const neutralSolve = (modeId = 'neutral-mode'): SolveResult => ({
   modeId,
   wrongGuesses: 1,
+  guessCount: 6,
   hintWasAvailable: false,
   hintRevealed: false
 })
@@ -49,6 +50,23 @@ describe('getAchievementStats', () => {
     const stats = await getAchievementStats()
     expect(stats).toEqual(DEFAULT_ACHIEVEMENT_STATS)
   })
+
+  it('defaults totalLost/letters/pnp counters to 0 when reading an older stored shape that predates them', async () => {
+    mockStore[ACHIEVEMENTS_KEY] = JSON.stringify({ unlockedIds: [], wonModeIds: [], currentStreak: 2, bestStreak: 4, totalSolved: 9 })
+
+    const stats = await getAchievementStats()
+    expect(stats.totalLost).toBe(0)
+    expect(stats.lettersGuessed).toBe(0)
+    expect(stats.lettersCorrect).toBe(0)
+    expect(stats.pnpWins).toBe(0)
+    expect(stats.pnpLosses).toBe(0)
+    expect(stats.flawlessWins).toBe(0)
+    expect(stats.noHintWins).toBe(0)
+    // Untouched fields from the older shape still come through.
+    expect(stats.currentStreak).toBe(2)
+    expect(stats.bestStreak).toBe(4)
+    expect(stats.totalSolved).toBe(9)
+  })
 })
 
 describe('recordSolve — streaks and totals', () => {
@@ -62,7 +80,7 @@ describe('recordSolve — streaks and totals', () => {
     expect(stats.currentStreak).toBe(3)
     expect(stats.bestStreak).toBe(3)
 
-    await recordLoss()
+    await recordLoss({ wrongGuesses: 6, guessCount: 6 })
     await recordSolve(neutralSolve())
 
     stats = await getAchievementStats()
@@ -76,6 +94,17 @@ describe('recordSolve — streaks and totals', () => {
     stats = await getAchievementStats()
     expect(stats.currentStreak).toBe(2)
     expect(stats.bestStreak).toBe(3)
+  })
+})
+
+describe('recordSolve — letters guessed/correct', () => {
+  it('accumulates lettersGuessed and lettersCorrect (guessCount minus wrongGuesses) across calls', async () => {
+    await recordSolve({ modeId: 'm', wrongGuesses: 1, guessCount: 6, hintWasAvailable: false, hintRevealed: false })
+    await recordSolve({ modeId: 'm', wrongGuesses: 0, guessCount: 4, hintWasAvailable: false, hintRevealed: false })
+
+    const stats = await getAchievementStats()
+    expect(stats.lettersGuessed).toBe(10)
+    expect(stats.lettersCorrect).toBe(9)
   })
 })
 
@@ -94,41 +123,61 @@ describe('recordSolve — mode_master', () => {
 
 describe('recordSolve — flawless', () => {
   it('unlocks flawless when wrongGuesses is 0', async () => {
-    const unlocked = await recordSolve({ modeId: 'm', wrongGuesses: 0, hintWasAvailable: false, hintRevealed: false })
+    const unlocked = await recordSolve({ modeId: 'm', wrongGuesses: 0, guessCount: 5, hintWasAvailable: false, hintRevealed: false })
     expect(unlocked).toContain('flawless')
   })
 
   it('does not unlock flawless when wrongGuesses is greater than 0', async () => {
-    const unlocked = await recordSolve({ modeId: 'm', wrongGuesses: 1, hintWasAvailable: false, hintRevealed: false })
+    const unlocked = await recordSolve({ modeId: 'm', wrongGuesses: 1, guessCount: 6, hintWasAvailable: false, hintRevealed: false })
     expect(unlocked).not.toContain('flawless')
+  })
+
+  it('tallies flawlessWins on every qualifying win, not just the first (unlike the unlockedIds badge)', async () => {
+    await recordSolve({ modeId: 'm', wrongGuesses: 0, guessCount: 4, hintWasAvailable: false, hintRevealed: false })
+    await recordSolve({ modeId: 'm', wrongGuesses: 1, guessCount: 5, hintWasAvailable: false, hintRevealed: false })
+    await recordSolve({ modeId: 'm', wrongGuesses: 0, guessCount: 6, hintWasAvailable: false, hintRevealed: false })
+
+    const stats = await getAchievementStats()
+    expect(stats.flawlessWins).toBe(2)
+    expect(stats.unlockedIds.filter((id) => id === 'flawless')).toHaveLength(1)
   })
 })
 
 describe('recordSolve — no_hints', () => {
   it('unlocks no_hints when hintWasAvailable is true and hintRevealed is false', async () => {
-    const unlocked = await recordSolve({ modeId: 'm', wrongGuesses: 1, hintWasAvailable: true, hintRevealed: false })
+    const unlocked = await recordSolve({ modeId: 'm', wrongGuesses: 1, guessCount: 6, hintWasAvailable: true, hintRevealed: false })
     expect(unlocked).toContain('no_hints')
   })
 
   it('does not unlock no_hints when no hint existed at all', async () => {
-    const unlocked = await recordSolve({ modeId: 'm', wrongGuesses: 1, hintWasAvailable: false, hintRevealed: false })
+    const unlocked = await recordSolve({ modeId: 'm', wrongGuesses: 1, guessCount: 6, hintWasAvailable: false, hintRevealed: false })
     expect(unlocked).not.toContain('no_hints')
   })
 
   it('does not unlock no_hints when the hint was revealed', async () => {
-    const unlocked = await recordSolve({ modeId: 'm', wrongGuesses: 1, hintWasAvailable: true, hintRevealed: true })
+    const unlocked = await recordSolve({ modeId: 'm', wrongGuesses: 1, guessCount: 6, hintWasAvailable: true, hintRevealed: true })
     expect(unlocked).not.toContain('no_hints')
+  })
+
+  it('tallies noHintWins on every qualifying win, not just the first (unlike the unlockedIds badge)', async () => {
+    await recordSolve({ modeId: 'm', wrongGuesses: 1, guessCount: 6, hintWasAvailable: true, hintRevealed: false })
+    await recordSolve({ modeId: 'm', wrongGuesses: 1, guessCount: 6, hintWasAvailable: true, hintRevealed: true })
+    await recordSolve({ modeId: 'm', wrongGuesses: 1, guessCount: 6, hintWasAvailable: true, hintRevealed: false })
+
+    const stats = await getAchievementStats()
+    expect(stats.noHintWins).toBe(2)
+    expect(stats.unlockedIds.filter((id) => id === 'no_hints')).toHaveLength(1)
   })
 })
 
 describe('recordSolve — pack_complete', () => {
   it('unlocks pack_complete when packUnlockedCount >= packTotalCount > 0', async () => {
-    const unlocked = await recordSolve({ modeId: 'm', wrongGuesses: 1, hintWasAvailable: false, hintRevealed: false, packKey: 'animals', packUnlockedCount: 5, packTotalCount: 5 })
+    const unlocked = await recordSolve({ modeId: 'm', wrongGuesses: 1, guessCount: 6, hintWasAvailable: false, hintRevealed: false, packKey: 'animals', packUnlockedCount: 5, packTotalCount: 5 })
     expect(unlocked).toContain('pack_complete')
   })
 
   it('does not unlock pack_complete when packUnlockedCount < packTotalCount', async () => {
-    const unlocked = await recordSolve({ modeId: 'm', wrongGuesses: 1, hintWasAvailable: false, hintRevealed: false, packKey: 'animals', packUnlockedCount: 4, packTotalCount: 5 })
+    const unlocked = await recordSolve({ modeId: 'm', wrongGuesses: 1, guessCount: 6, hintWasAvailable: false, hintRevealed: false, packKey: 'animals', packUnlockedCount: 4, packTotalCount: 5 })
     expect(unlocked).not.toContain('pack_complete')
   })
 
@@ -151,7 +200,7 @@ describe('recordSolve — win_streak_5', () => {
     for (let i = 0; i < 4; i++) {
       await recordSolve(neutralSolve())
     }
-    await recordLoss()
+    await recordLoss({ wrongGuesses: 6, guessCount: 6 })
 
     let unlocked: string[] = []
     for (let i = 0; i < 4; i++) {
@@ -166,13 +215,13 @@ describe('recordSolve — win_streak_5', () => {
 
 describe('recordLoss', () => {
   it('resets currentStreak to 0 but leaves totalSolved, bestStreak, and unlockedIds untouched', async () => {
-    await recordSolve({ modeId: 'm', wrongGuesses: 0, hintWasAvailable: false, hintRevealed: false })
+    await recordSolve({ modeId: 'm', wrongGuesses: 0, guessCount: 5, hintWasAvailable: false, hintRevealed: false })
     await recordSolve(neutralSolve())
 
     const before = await getAchievementStats()
     expect(before.currentStreak).toBe(2)
 
-    await recordLoss()
+    await recordLoss({ wrongGuesses: 6, guessCount: 6 })
 
     const after = await getAchievementStats()
     expect(after.currentStreak).toBe(0)
@@ -181,14 +230,36 @@ describe('recordLoss', () => {
     expect(after.unlockedIds).toEqual(before.unlockedIds)
   })
 
-  it('is a no-op (does not write to storage) when currentStreak is already 0', async () => {
-    await recordLoss()
+  it("increments totalLost, and adds this round's guesses to lettersGuessed/lettersCorrect, on every call — even when currentStreak is already 0", async () => {
+    await recordLoss({ wrongGuesses: 6, guessCount: 6 })
     const first = await getAchievementStats()
+    expect(first.totalLost).toBe(1)
+    expect(first.lettersGuessed).toBe(6)
+    expect(first.lettersCorrect).toBe(0)
 
-    await recordLoss()
+    await recordLoss({ wrongGuesses: 6, guessCount: 9 })
     const second = await getAchievementStats()
+    expect(second.totalLost).toBe(2)
+    expect(second.lettersGuessed).toBe(15)
+    expect(second.lettersCorrect).toBe(3)
+  })
+})
 
-    expect(second).toEqual(first)
+describe('recordPnpWin / recordPnpLoss', () => {
+  it('increments pnpWins/pnpLosses independently of every solo stat', async () => {
+    await recordSolve(neutralSolve())
+    await recordPnpWin()
+    await recordPnpWin()
+    await recordPnpLoss()
+
+    const stats = await getAchievementStats()
+    expect(stats.pnpWins).toBe(2)
+    expect(stats.pnpLosses).toBe(1)
+    // A pnp result never touches the solo counters.
+    expect(stats.totalSolved).toBe(1)
+    expect(stats.totalLost).toBe(0)
+    expect(stats.currentStreak).toBe(1)
+    expect(stats.lettersGuessed).toBe(6)
   })
 })
 
@@ -247,10 +318,10 @@ describe('clearAchievements', () => {
 
 describe('recordSolve — no re-adding already-unlocked ids', () => {
   it('only returns flawless in the returned array on the first of two qualifying calls', async () => {
-    const first = await recordSolve({ modeId: 'm', wrongGuesses: 0, hintWasAvailable: false, hintRevealed: false })
+    const first = await recordSolve({ modeId: 'm', wrongGuesses: 0, guessCount: 5, hintWasAvailable: false, hintRevealed: false })
     expect(first).toContain('flawless')
 
-    const second = await recordSolve({ modeId: 'm', wrongGuesses: 0, hintWasAvailable: false, hintRevealed: false })
+    const second = await recordSolve({ modeId: 'm', wrongGuesses: 0, guessCount: 5, hintWasAvailable: false, hintRevealed: false })
     expect(second).not.toContain('flawless')
 
     const stats = await getAchievementStats()

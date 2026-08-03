@@ -33,6 +33,13 @@ export type AchievementStats = {
   currentStreak: number
   bestStreak: number
   totalSolved: number
+  totalLost: number
+  lettersGuessed: number
+  lettersCorrect: number
+  pnpWins: number
+  pnpLosses: number
+  flawlessWins: number
+  noHintWins: number
 }
 
 export const DEFAULT_ACHIEVEMENT_STATS: AchievementStats = {
@@ -40,7 +47,14 @@ export const DEFAULT_ACHIEVEMENT_STATS: AchievementStats = {
   wonModeIds: [],
   currentStreak: 0,
   bestStreak: 0,
-  totalSolved: 0
+  totalSolved: 0,
+  totalLost: 0,
+  lettersGuessed: 0,
+  lettersCorrect: 0,
+  pnpWins: 0,
+  pnpLosses: 0,
+  flawlessWins: 0,
+  noHintWins: 0
 }
 
 const VALID_IDS = new Set<string>(ACHIEVEMENT_DEFINITIONS.map((def) => def.id))
@@ -59,8 +73,15 @@ const normalizeStats = (raw: unknown): AchievementStats => {
   const currentStreak = typeof input.currentStreak === 'number' && Number.isFinite(input.currentStreak) ? input.currentStreak : 0
   const bestStreak = typeof input.bestStreak === 'number' && Number.isFinite(input.bestStreak) ? input.bestStreak : 0
   const totalSolved = typeof input.totalSolved === 'number' && Number.isFinite(input.totalSolved) ? input.totalSolved : 0
+  const totalLost = typeof input.totalLost === 'number' && Number.isFinite(input.totalLost) ? input.totalLost : 0
+  const lettersGuessed = typeof input.lettersGuessed === 'number' && Number.isFinite(input.lettersGuessed) ? input.lettersGuessed : 0
+  const lettersCorrect = typeof input.lettersCorrect === 'number' && Number.isFinite(input.lettersCorrect) ? input.lettersCorrect : 0
+  const pnpWins = typeof input.pnpWins === 'number' && Number.isFinite(input.pnpWins) ? input.pnpWins : 0
+  const pnpLosses = typeof input.pnpLosses === 'number' && Number.isFinite(input.pnpLosses) ? input.pnpLosses : 0
+  const flawlessWins = typeof input.flawlessWins === 'number' && Number.isFinite(input.flawlessWins) ? input.flawlessWins : 0
+  const noHintWins = typeof input.noHintWins === 'number' && Number.isFinite(input.noHintWins) ? input.noHintWins : 0
 
-  return { unlockedIds: [...new Set(unlockedIds)], wonModeIds: [...new Set(wonModeIds)], currentStreak, bestStreak, totalSolved }
+  return { unlockedIds: [...new Set(unlockedIds)], wonModeIds: [...new Set(wonModeIds)], currentStreak, bestStreak, totalSolved, totalLost, lettersGuessed, lettersCorrect, pnpWins, pnpLosses, flawlessWins, noHintWins }
 }
 
 export const getAchievementStats = async (): Promise<AchievementStats> => {
@@ -84,6 +105,7 @@ export const clearAchievements = async (): Promise<void> => {
 export type SolveResult = {
   modeId: string
   wrongGuesses: number
+  guessCount: number
   hintWasAvailable: boolean
   hintRevealed: boolean
   packKey?: string
@@ -105,12 +127,24 @@ export const recordSolve = async (result: SolveResult): Promise<AchievementId[]>
   stats.totalSolved += 1
   stats.currentStreak += 1
   stats.bestStreak = Math.max(stats.bestStreak, stats.currentStreak)
+  stats.lettersGuessed += result.guessCount
+  stats.lettersCorrect += result.guessCount - result.wrongGuesses
 
   if (!stats.wonModeIds.includes(result.modeId)) stats.wonModeIds.push(result.modeId)
   if (stats.wonModeIds.length >= ALL_MODES.length) unlock('mode_master')
 
-  if (result.wrongGuesses === 0) unlock('flawless')
-  if (result.hintWasAvailable && !result.hintRevealed) unlock('no_hints')
+  // Tallied every qualifying win, not just the first — unlike unlock() above, which only ever
+  // fires once per id. These are what the Achievements list's per-badge counts (see
+  // AchievementsDrawer.tsx) are reading, so "Flawless Victory" and "No Hints Needed" can show how
+  // many times each was actually earned rather than just a locked/unlocked state.
+  if (result.wrongGuesses === 0) {
+    stats.flawlessWins += 1
+    unlock('flawless')
+  }
+  if (result.hintWasAvailable && !result.hintRevealed) {
+    stats.noHintWins += 1
+    unlock('no_hints')
+  }
   if (result.packKey && result.packTotalCount && result.packTotalCount > 0 && (result.packUnlockedCount ?? 0) >= result.packTotalCount) unlock('pack_complete')
 
   if (stats.currentStreak >= 5) unlock('win_streak_5')
@@ -123,9 +157,32 @@ export const recordSolve = async (result: SolveResult): Promise<AchievementId[]>
   return newlyUnlocked
 }
 
-export const recordLoss = async (): Promise<void> => {
+export type LossResult = {
+  wrongGuesses: number
+  guessCount: number
+}
+
+export const recordLoss = async (result: LossResult): Promise<void> => {
   const stats = await getAchievementStats()
-  if (stats.currentStreak === 0) return
+  stats.totalLost += 1
   stats.currentStreak = 0
+  stats.lettersGuessed += result.guessCount
+  stats.lettersCorrect += result.guessCount - result.wrongGuesses
+  await saveStats(stats)
+}
+
+// Pass-and-play results are tracked in their own counters, entirely separate from the solo stats
+// above — a friend's win or loss shouldn't move the solo streak, feed the milestone achievements,
+// or count toward totalSolved/totalLost (see Main.tsx's handleSolved/handleLost for the same
+// split).
+export const recordPnpWin = async (): Promise<void> => {
+  const stats = await getAchievementStats()
+  stats.pnpWins += 1
+  await saveStats(stats)
+}
+
+export const recordPnpLoss = async (): Promise<void> => {
+  const stats = await getAchievementStats()
+  stats.pnpLosses += 1
   await saveStats(stats)
 }

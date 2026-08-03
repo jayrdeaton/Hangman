@@ -1,0 +1,338 @@
+[
+  {
+    "id": "0a9cf292f6ef80f114217e043b825a24",
+    "source": "theme",
+    "type": "title",
+    "answer": "BTS",
+    "normalizedAnswer": "BTS",
+    "category": "2020s Band",
+    "difficulty": 96.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "band",
+      "2020s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "0ca257e0c4bfad0923141a8fc9a2d44a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Maneskin",
+    "normalizedAnswer": "MANESKIN",
+    "category": "2020s Band",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "band",
+      "2020s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "2f720affb710f241c52c7e617840f888",
+    "source": "theme",
+    "type": "title",
+    "answer": "Wet Leg",
+    "normalizedAnswer": "WET LEG",
+    "category": "2020s Band",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "band",
+      "2020s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "de35525bab1e65e7eabc1a76700e30cd",
+    "source": "theme",
+    "type": "title",
+    "answer": "Fontaines D.C.",
+    "normalizedAnswer": "FONTAINES DC",
+    "category": "2020s Band",
+    "difficulty": 65.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "band",
+      "2020s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "272241b430db4d542e86027de9006f16",
+    "source": "theme",
+    "type": "title",
+    "answer": "Boygenius",
+    "normalizedAnswer": "BOYGENIUS",
+    "category": "2020s Band",
+    "difficulty": 70.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "band",
+      "2020s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c6553f382614554e1d4557739a7445df",
+    "source": "theme",
+    "type": "title",
+    "answer": "Turnstile",
+    "normalizedAnswer": "TURNSTILE",
+    "category": "2020s Band",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "band",
+      "2020s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "b265e20b663ec7ffc17d675977ccb4b1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Glass Animals",
+    "normalizedAnswer": "GLASS ANIMALS",
+    "category": "2020s Band",
+    "difficulty": 77.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "band",
+      "2020s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a44d2eeb0080e5d38157d638771b6934",
+    "source": "theme",
+    "type": "title",
+    "answer": "Idles",
+    "normalizedAnswer": "IDLES",
+    "category": "2020s Band",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "band",
+      "2020s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "f18e623bf7f112d39bc2b3801208a160",
+    "source": "theme",
+    "type": "title",
+    "answer": "Wallows",
+    "normalizedAnswer": "WALLOWS",
+    "category": "2020s Band",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "band",
+      "2020s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "e115d4c6dffd0bb2d4ded5f02bc9e88d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Big Thief",
+    "normalizedAnswer": "BIG THIEF",
+    "category": "2020s Band",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "band",
+      "2020s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "320b1a7e8a2773f187419d50dc1dccfb",
+    "source": "theme",
+    "type": "title",
+    "answer": "King Gizzard and the Lizard Wizard",
+    "normalizedAnswer": "KING GIZZARD AND THE LIZARD WIZARD",
+    "category": "2020s Band",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 6,
+    "letterCount": 29,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "band",
+      "2020s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "f87aa08da26a25dfadc9eb2d5525a54c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Greta Van Fleet",
+    "normalizedAnswer": "GRETA VAN FLEET",
+    "category": "2020s Band",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "band",
+      "2020s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "5a42c10a9acd9cb1fd4d6486f27486da",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Linda Lindas",
+    "normalizedAnswer": "THE LINDA LINDAS",
+    "category": "2020s Band",
+    "difficulty": 68.4,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 14,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "band",
+      "2020s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c634c3e0cffa5e809cdfd48b878d35e1",
+    "source": "theme",
+    "type": "title",
+    "answer": "MUNA",
+    "normalizedAnswer": "MUNA",
+    "category": "2020s Band",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "band",
+      "2020s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "3f567a243e3ec99fa1f5ac9d21f37bc7",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Backseat Lovers",
+    "normalizedAnswer": "THE BACKSEAT LOVERS",
+    "category": "2020s Band",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 17,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "band",
+      "2020s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "7773865c89148596155db1c30db97d8b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Geese",
+    "normalizedAnswer": "GEESE",
+    "category": "2020s Band",
+    "difficulty": 96,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "band",
+      "2020s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  }
+]

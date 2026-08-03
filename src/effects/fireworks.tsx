@@ -76,7 +76,6 @@ const Burst = ({ originX, originY, color, outline }: BurstSpec & { outline: stri
       })
     }
     return specs
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   /* eslint-enable react-hooks/purity */
 
@@ -140,7 +139,7 @@ export const Fireworks = ({ colors, dark = false }: CelebrationProps): JSX.Eleme
   }, [size.width, size.height])
 
   return (
-    <View style={StyleSheet.absoluteFill} onLayout={handleLayout} pointerEvents='none'>
+    <View style={[StyleSheet.absoluteFill, styles.inert]} onLayout={handleLayout}>
       {size.width > 0 && (
         <Svg width={size.width} height={size.height}>
           {bursts.map((b) => (
@@ -151,3 +150,8 @@ export const Fireworks = ({ colors, dark = false }: CelebrationProps): JSX.Eleme
     </View>
   )
 }
+
+const styles = StyleSheet.create({
+  // Not a bare `pointerEvents` prop — that's deprecated in favor of the style property.
+  inert: { pointerEvents: 'none' }
+})

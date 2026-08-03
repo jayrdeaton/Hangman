@@ -88,7 +88,10 @@ const HourglassVisual = ({ mistakes, color, width, height }: { mistakes: number;
 
   return (
     <Svg width={width} height={height} viewBox='0 0 100 100'>
-      <G rotation={tilt} origin={`${NECK_X},${NECK_Y}`}>
+      {/* transform (not rotation+origin) — react-native-svg's web renderer sets origin as a raw
+          `transform-origin` DOM attribute, which isn't a valid one (React warns about it); folding
+          the pivot into the transform string itself avoids that path entirely, same result. */}
+      <G transform={`rotate(${tilt}, ${NECK_X}, ${NECK_Y})`}>
         {/* Stand frame: top/bottom cap plates + corner posts */}
         <Rect x={CAP_LEFT_X} y={CAP_TOP_Y} width={CAP_RIGHT_X - CAP_LEFT_X} height={CAP_H} rx='1.5' stroke={color} strokeWidth='3' fill='none' strokeLinejoin='round' />
         <Rect x={CAP_LEFT_X} y={CAP_BOTTOM_Y} width={CAP_RIGHT_X - CAP_LEFT_X} height={CAP_H} rx='1.5' stroke={color} strokeWidth='3' fill='none' strokeLinejoin='round' />

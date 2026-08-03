@@ -1484,13 +1484,13 @@
     "source": "theme",
     "type": "title",
     "answer": "Extraño",
-    "normalizedAnswer": "EXTRAO",
+    "normalizedAnswer": "EXTRANO",
     "category": "Superhero",
-    "difficulty": 83.6,
-    "difficultyTier": "hard",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
     "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 6,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
     "tags": [
       "theme",
       "superhero"

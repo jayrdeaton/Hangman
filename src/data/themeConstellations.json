@@ -1,0 +1,1938 @@
+[
+  {
+    "id": "efbfbd60c265f1d24c9f4cb6a0ccb933",
+    "source": "theme",
+    "type": "title",
+    "answer": "Andromeda",
+    "normalizedAnswer": "ANDROMEDA",
+    "category": "Constellation",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "d34aa2cf4aec1f4fdef8ea56f8fd3c75",
+    "source": "theme",
+    "type": "title",
+    "answer": "Antlia",
+    "normalizedAnswer": "ANTLIA",
+    "category": "Constellation",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "322d2623f18e17d3c85335f1b51cd7bf",
+    "source": "theme",
+    "type": "title",
+    "answer": "Apus",
+    "normalizedAnswer": "APUS",
+    "category": "Constellation",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "962b2dfd1ec7ff18a1b994207704ee13",
+    "source": "theme",
+    "type": "title",
+    "answer": "Aquarius",
+    "normalizedAnswer": "AQUARIUS",
+    "category": "Constellation",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "e6761e32da0f9e81e31a64552b424df1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Aquila",
+    "normalizedAnswer": "AQUILA",
+    "category": "Constellation",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "fcd28ae69d6bbd010eeec56a4cd79a39",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ara",
+    "normalizedAnswer": "ARA",
+    "category": "Constellation",
+    "difficulty": 100.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 2,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "2dc60876dc945899282b3bbc750f234f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Aries",
+    "normalizedAnswer": "ARIES",
+    "category": "Constellation",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "0a142be9cf4ea730f6c30640e7bab13d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Auriga",
+    "normalizedAnswer": "AURIGA",
+    "category": "Constellation",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "d625f70ea5e0d0939d22357e5e69eef1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Boötes",
+    "normalizedAnswer": "BOOTES",
+    "category": "Constellation",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "1c3399a05c937e0237125461b2dba8d2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Caelum",
+    "normalizedAnswer": "CAELUM",
+    "category": "Constellation",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "9eeaf3e9bff9942073899fde46f3c37f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Camelopardalis",
+    "normalizedAnswer": "CAMELOPARDALIS",
+    "category": "Constellation",
+    "difficulty": 60.4,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 14,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "aaa33ecf7194ff2e7317d58ed365070a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cancer",
+    "normalizedAnswer": "CANCER",
+    "category": "Constellation",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "7dffe15576b7b54df381abf36967e03b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Canes Venatici",
+    "normalizedAnswer": "CANES VENATICI",
+    "category": "Constellation",
+    "difficulty": 72.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "aeced4b85c8ec6c0d61925f705fcb5e6",
+    "source": "theme",
+    "type": "title",
+    "answer": "Canis Major",
+    "normalizedAnswer": "CANIS MAJOR",
+    "category": "Constellation",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "31cbc72e1b5f709beeed6bfe39e760a5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Canis Minor",
+    "normalizedAnswer": "CANIS MINOR",
+    "category": "Constellation",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "54299c6f80b7b9b8bd68ccfa54ad166d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Capricornus",
+    "normalizedAnswer": "CAPRICORNUS",
+    "category": "Constellation",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "220d0ec531bbce0e28a443e5309e8481",
+    "source": "theme",
+    "type": "title",
+    "answer": "Carina",
+    "normalizedAnswer": "CARINA",
+    "category": "Constellation",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "15a9c39d8f0f05a67b1062fd30eb9095",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cassiopeia",
+    "normalizedAnswer": "CASSIOPEIA",
+    "category": "Constellation",
+    "difficulty": 78,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "77eed269d5e9766a13c2d007641ffcac",
+    "source": "theme",
+    "type": "title",
+    "answer": "Centaurus",
+    "normalizedAnswer": "CENTAURUS",
+    "category": "Constellation",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "dacbe29e6783c4f30268214736db155a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cepheus",
+    "normalizedAnswer": "CEPHEUS",
+    "category": "Constellation",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "a6d43845921c50970b4eb51af5fbf65d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cetus",
+    "normalizedAnswer": "CETUS",
+    "category": "Constellation",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "20da6122a88e1d39e0f27df8e6ef6790",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chamaeleon",
+    "normalizedAnswer": "CHAMAELEON",
+    "category": "Constellation",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "cdd8af59a48a861a2aaf4d4fa2539a8a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Circinus",
+    "normalizedAnswer": "CIRCINUS",
+    "category": "Constellation",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "b81bd963c6dc70d6b9fb641d44200ca4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Columba",
+    "normalizedAnswer": "COLUMBA",
+    "category": "Constellation",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "b48029c92317627e248a82d10aed8968",
+    "source": "theme",
+    "type": "title",
+    "answer": "Coma Berenices",
+    "normalizedAnswer": "COMA BERENICES",
+    "category": "Constellation",
+    "difficulty": 64.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "3beab893b8555e2083de8f5b1c054c0a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Corona Australis",
+    "normalizedAnswer": "CORONA AUSTRALIS",
+    "category": "Constellation",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "a037add67abd51c38519fa9050dccdaa",
+    "source": "theme",
+    "type": "title",
+    "answer": "Corona Borealis",
+    "normalizedAnswer": "CORONA BOREALIS",
+    "category": "Constellation",
+    "difficulty": 64.4,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "a947fc0b2850657e83b969ed8327c6ea",
+    "source": "theme",
+    "type": "title",
+    "answer": "Corvus",
+    "normalizedAnswer": "CORVUS",
+    "category": "Constellation",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "57c43f4c745a7b550f3ec060f8e40442",
+    "source": "theme",
+    "type": "title",
+    "answer": "Crater",
+    "normalizedAnswer": "CRATER",
+    "category": "Constellation",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "e1ac049a9e62ad0add59b414d17b525f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Crux",
+    "normalizedAnswer": "CRUX",
+    "category": "Constellation",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "642ed2e8b79cbc6c9bd32a0b59495240",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cygnus",
+    "normalizedAnswer": "CYGNUS",
+    "category": "Constellation",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "a7d053f87f138ced3dece83606c11e57",
+    "source": "theme",
+    "type": "title",
+    "answer": "Delphinus",
+    "normalizedAnswer": "DELPHINUS",
+    "category": "Constellation",
+    "difficulty": 70.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "2ad60757e42a1ea620f8fe1e3af5d22e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Dorado",
+    "normalizedAnswer": "DORADO",
+    "category": "Constellation",
+    "difficulty": 91.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "199b2c2ecf39bd42a5944c4e1a2dc628",
+    "source": "theme",
+    "type": "title",
+    "answer": "Draco",
+    "normalizedAnswer": "DRACO",
+    "category": "Constellation",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "53c324ec41c964aadaf7f2539377beaa",
+    "source": "theme",
+    "type": "title",
+    "answer": "Equuleus",
+    "normalizedAnswer": "EQUULEUS",
+    "category": "Constellation",
+    "difficulty": 86.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "7796b656d54ffcc18e6415540699825b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Eridanus",
+    "normalizedAnswer": "ERIDANUS",
+    "category": "Constellation",
+    "difficulty": 74.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "2f2d4c945b6d6c1de82b9a83a2aaf259",
+    "source": "theme",
+    "type": "title",
+    "answer": "Fornax",
+    "normalizedAnswer": "FORNAX",
+    "category": "Constellation",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "a708887990edb0666a1730184cbd15c0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Gemini",
+    "normalizedAnswer": "GEMINI",
+    "category": "Constellation",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "01b4c1671e1bc175324b742c1925e6d6",
+    "source": "theme",
+    "type": "title",
+    "answer": "Grus",
+    "normalizedAnswer": "GRUS",
+    "category": "Constellation",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "b033e701282d119a7b05d6de5315f02e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Hercules",
+    "normalizedAnswer": "HERCULES",
+    "category": "Constellation",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "b2eca6e9ca62c92488d1253c0ea567e8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Horologium",
+    "normalizedAnswer": "HOROLOGIUM",
+    "category": "Constellation",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "eb386066014f0fff1b3edb52f5d497fb",
+    "source": "theme",
+    "type": "title",
+    "answer": "Hydra",
+    "normalizedAnswer": "HYDRA",
+    "category": "Constellation",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "f57df9b4230bb1b7d56b14ee63ec3b09",
+    "source": "theme",
+    "type": "title",
+    "answer": "Hydrus",
+    "normalizedAnswer": "HYDRUS",
+    "category": "Constellation",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "768f6bb78c6aa05918a09d866b20f697",
+    "source": "theme",
+    "type": "title",
+    "answer": "Indus",
+    "normalizedAnswer": "INDUS",
+    "category": "Constellation",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "01d1ed49013f243cda8fc314e26e52be",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lacerta",
+    "normalizedAnswer": "LACERTA",
+    "category": "Constellation",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "43a9768d0d7e6da4645a5a5565d3a688",
+    "source": "theme",
+    "type": "title",
+    "answer": "Leo",
+    "normalizedAnswer": "LEO",
+    "category": "Constellation",
+    "difficulty": 96.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "b88e045be2345f5851481f3569d02bbc",
+    "source": "theme",
+    "type": "title",
+    "answer": "Leo Minor",
+    "normalizedAnswer": "LEO MINOR",
+    "category": "Constellation",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "6d2655bdadb3d16ee79d848082ebea86",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lepus",
+    "normalizedAnswer": "LEPUS",
+    "category": "Constellation",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "5d87c1c69b7b08752d2fd45be3da1e51",
+    "source": "theme",
+    "type": "title",
+    "answer": "Libra",
+    "normalizedAnswer": "LIBRA",
+    "category": "Constellation",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "9adff82e4f1697154e64e8b4d37ec6d5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lupus",
+    "normalizedAnswer": "LUPUS",
+    "category": "Constellation",
+    "difficulty": 92,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "e196eaa1ee36b314457453b6978a3027",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lynx",
+    "normalizedAnswer": "LYNX",
+    "category": "Constellation",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "92815d0392124584aecf9459c7402e64",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lyra",
+    "normalizedAnswer": "LYRA",
+    "category": "Constellation",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "bdeb953a2092ee64fedfbae608b345c6",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mensa",
+    "normalizedAnswer": "MENSA",
+    "category": "Constellation",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "2285dce28f4a0f7363a33f12fc770de3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Microscopium",
+    "normalizedAnswer": "MICROSCOPIUM",
+    "category": "Constellation",
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "9a374da83c5672c12618c7b1bf927646",
+    "source": "theme",
+    "type": "title",
+    "answer": "Monoceros",
+    "normalizedAnswer": "MONOCEROS",
+    "category": "Constellation",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "43ec5447bf4c1eaffdf208e1043e9d71",
+    "source": "theme",
+    "type": "title",
+    "answer": "Musca",
+    "normalizedAnswer": "MUSCA",
+    "category": "Constellation",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "9ac746d2aec17d0338d850d13ae6c6b3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Norma",
+    "normalizedAnswer": "NORMA",
+    "category": "Constellation",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "3141d72699e9b3a0f38a9126f64b70fa",
+    "source": "theme",
+    "type": "title",
+    "answer": "Octans",
+    "normalizedAnswer": "OCTANS",
+    "category": "Constellation",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "1e0bd84f8a02f4e066cce2617ec7e50e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ophiuchus",
+    "normalizedAnswer": "OPHIUCHUS",
+    "category": "Constellation",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "d0c771aefffc1b75d10323c4b58d1b6c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Orion",
+    "normalizedAnswer": "ORION",
+    "category": "Constellation",
+    "difficulty": 92,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "e42c678d56a1de2d54d025c636777e98",
+    "source": "theme",
+    "type": "title",
+    "answer": "Pavo",
+    "normalizedAnswer": "PAVO",
+    "category": "Constellation",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "311cbc10a4d34dcd684770cea5765b14",
+    "source": "theme",
+    "type": "title",
+    "answer": "Pegasus",
+    "normalizedAnswer": "PEGASUS",
+    "category": "Constellation",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "264acb945d72bc87ae131824f8e31999",
+    "source": "theme",
+    "type": "title",
+    "answer": "Perseus",
+    "normalizedAnswer": "PERSEUS",
+    "category": "Constellation",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "7fda1a6f7ff44b6050435009a8f8350f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Phoenix",
+    "normalizedAnswer": "PHOENIX",
+    "category": "Constellation",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "f7d07c8df8ca30370aaccbd4e7c47d5c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Pictor",
+    "normalizedAnswer": "PICTOR",
+    "category": "Constellation",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "8113c37927e6391c4686aca598ab2f89",
+    "source": "theme",
+    "type": "title",
+    "answer": "Pisces",
+    "normalizedAnswer": "PISCES",
+    "category": "Constellation",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "4739fb5b2c19426154cd65406f709e96",
+    "source": "theme",
+    "type": "title",
+    "answer": "Piscis Austrinus",
+    "normalizedAnswer": "PISCIS AUSTRINUS",
+    "category": "Constellation",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "37ab9a4ef30c2c89d34c0fc85dde4e58",
+    "source": "theme",
+    "type": "title",
+    "answer": "Puppis",
+    "normalizedAnswer": "PUPPIS",
+    "category": "Constellation",
+    "difficulty": 91.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "727d17be13f910342a5f0a8d6be57619",
+    "source": "theme",
+    "type": "title",
+    "answer": "Pyxis",
+    "normalizedAnswer": "PYXIS",
+    "category": "Constellation",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "bc227a2818ff9f90f83e77a57eabb8be",
+    "source": "theme",
+    "type": "title",
+    "answer": "Reticulum",
+    "normalizedAnswer": "RETICULUM",
+    "category": "Constellation",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "b1fe6fd46eefccc21ae495cd2dff5cef",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sagitta",
+    "normalizedAnswer": "SAGITTA",
+    "category": "Constellation",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "92337dcd81d665a7587b3d2d03c06792",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sagittarius",
+    "normalizedAnswer": "SAGITTARIUS",
+    "category": "Constellation",
+    "difficulty": 77.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "526d6518f1b28a54ed7716837ce7175c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Scorpius",
+    "normalizedAnswer": "SCORPIUS",
+    "category": "Constellation",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "4a9df9f6e9e434b24a12a2b17da3ac25",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sculptor",
+    "normalizedAnswer": "SCULPTOR",
+    "category": "Constellation",
+    "difficulty": 74.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "ad0ac78db34bbe5d40d6d90528cb6213",
+    "source": "theme",
+    "type": "title",
+    "answer": "Scutum",
+    "normalizedAnswer": "SCUTUM",
+    "category": "Constellation",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "c9afacd31b09c280873a4ea49c179b96",
+    "source": "theme",
+    "type": "title",
+    "answer": "Serpens",
+    "normalizedAnswer": "SERPENS",
+    "category": "Constellation",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "7dbd9e7006344707f69e68c0c25fc512",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sextans",
+    "normalizedAnswer": "SEXTANS",
+    "category": "Constellation",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "3025b2987692119b76c193b1d96d666a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Taurus",
+    "normalizedAnswer": "TAURUS",
+    "category": "Constellation",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "b32f2a377fde2466507a381e322b8534",
+    "source": "theme",
+    "type": "title",
+    "answer": "Telescopium",
+    "normalizedAnswer": "TELESCOPIUM",
+    "category": "Constellation",
+    "difficulty": 65.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "48ccbe2edd6605be21e153dcfe5601db",
+    "source": "theme",
+    "type": "title",
+    "answer": "Triangulum",
+    "normalizedAnswer": "TRIANGULUM",
+    "category": "Constellation",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "3d7ddeeaabdd9764f4419438949ef9c4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Triangulum Australe",
+    "normalizedAnswer": "TRIANGULUM AUSTRALE",
+    "category": "Constellation",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 18,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "c04b0989d133eac86f8ad94f52d473b0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Tucana",
+    "normalizedAnswer": "TUCANA",
+    "category": "Constellation",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "86d780f7318b8af1f30ab9ef9aa0ba53",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ursa Major",
+    "normalizedAnswer": "URSA MAJOR",
+    "category": "Constellation",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "3dd0af821ffd09a3728e8703f20571fc",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ursa Minor",
+    "normalizedAnswer": "URSA MINOR",
+    "category": "Constellation",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "2c45ffba910481cf83030bd66fc2d366",
+    "source": "theme",
+    "type": "title",
+    "answer": "Vela",
+    "normalizedAnswer": "VELA",
+    "category": "Constellation",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "d9feb336990c8a2d200e59c7b555016e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Virgo",
+    "normalizedAnswer": "VIRGO",
+    "category": "Constellation",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "4d716ace98713b2c22f8550ccd50dd6b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Volans",
+    "normalizedAnswer": "VOLANS",
+    "category": "Constellation",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  },
+  {
+    "id": "770542f0571e894c2b8010aebce92036",
+    "source": "theme",
+    "type": "title",
+    "answer": "Vulpecula",
+    "normalizedAnswer": "VULPECULA",
+    "category": "Constellation",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "constellation"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/IAU_designated_constellations"
+    }
+  }
+]

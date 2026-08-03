@@ -1,63 +1,15 @@
-import { getRgb, getTonalColor } from '@rific/auto-paper'
 import { TouchableRipple } from '@rific/haptic-press'
-import { JSX, useMemo } from 'react'
+import { JSX } from 'react'
 import { StyleSheet, View } from 'react-native'
 import { Icon, Text, useTheme } from 'react-native-paper'
 
+import { useDifficultyColors } from '@/hooks/useDifficultyColors'
 import type { PuzzleDifficultyTier } from '@/utils/puzzleCatalog'
 
 const DIFFICULTY_LABELS: Record<PuzzleDifficultyTier, string> = {
   easy: 'Easy',
   medium: 'Medium',
   hard: 'Hard'
-}
-
-// Fixed hue and saturation (a real, semantic green/amber/red — never touched, so "easy" always
-// reads as safe and "hard" always reads as danger, independent of theme). Only LIGHTNESS is
-// re-tuned per theme below, via getTonalColor (the same tool the theme itself is built from —
-// see @rific/auto-paper's useComputedTheme) — so a saturated, dark-toned green/amber/red doesn't
-// visually clash sitting next to a much lighter or much more muted accent color.
-// Exported for src/__tests__/components/PuzzleInfoRow.test.tsx, which directly checks contrast at
-// DIFFICULTY_LIGHTNESS's own declared boundary values — not just at whatever lightness a real
-// accent color happens to reach today — since that boundary-safety guarantee is exactly the thing
-// that's easy to silently break by tuning THEME_LIGHTNESS_NUDGE later without revisiting it.
-export const DIFFICULTY_BASE_COLORS: Record<PuzzleDifficultyTier, string> = {
-  easy: '#2E7D32',
-  medium: '#B8860B',
-  hard: '#B00020'
-}
-
-// How dark (light mode) or light (dark mode) these badges land by default, and how far a theme's
-// own lightness is allowed to nudge that — clamped to a narrow band, not blended freely toward
-// the theme's raw lightness. An earlier version tried a straight blend toward
-// theme.colors.primary's own lightness and it read fine for typical accents, but broke down at
-// the extremes: a very pale pastel accent in light mode dragged the badges light enough to drop
-// below 3:1 contrast against the (light) surface, and a very dark accent in dark mode had the same
-// problem in reverse.
-//
-// The risky bound in each mode — light's max (pushing toward the light surface) and dark's min
-// (pushing toward the dark surface) — is chosen to itself guarantee at least ~4.6:1 contrast for
-// all three tiers against react-native-paper's actual MD3 surface tokens (#FFFBFE light,
-// #1C1B1F dark), verified by computing real WCAG contrast ratios rather than eyeballing it, so the
-// guarantee holds no matter what THEME_LIGHTNESS_NUDGE below is set to — NOT merely because the
-// current nudge value happens to be too small to ever reach it. (The other bound in each mode —
-// light's min, dark's max — only pushes further AWAY from its surface, so it's safe by
-// construction and was picked for a reasonable-looking floor/ceiling rather than a contrast limit.)
-export const DIFFICULTY_LIGHTNESS = {
-  light: { baseline: 0.24, min: 0.18, max: 0.3 },
-  dark: { baseline: 0.7, min: 0.66, max: 0.82 }
-}
-const THEME_LIGHTNESS_NUDGE = 0.12
-
-// HSL lightness only (not hue/saturation, unlike getTonalColor which also needs those to rebuild
-// the color) — mirrors the same extraction getTonalColor and getTriadicPalette already do
-// internally in @rific/auto-paper, just returning the one component this needs.
-const getLightness = (hex: string): number => {
-  const rgb = getRgb(hex)
-  if (!rgb) return 0.5
-  const max = Math.max(rgb.r, rgb.g, rgb.b) / 255
-  const min = Math.min(rgb.r, rgb.g, rgb.b) / 255
-  return (max + min) / 2
 }
 
 // Some pack labels are generated as "<Group> <Specific>" (e.g. "Theme Superheroes", "Geography
@@ -88,20 +40,10 @@ export const PuzzleInfoRow = ({ difficultyTier, packLabel, hint, hintRevealed, o
   // onTertiary is the one color the palette guarantees is legible against tertiary, in both the
   // light and dark variants, so pairing them keeps the label readable for every accent choice.
   const onTertiaryColor = theme.colors.onTertiary
-
-  // See DIFFICULTY_BASE_COLORS/DIFFICULTY_LIGHTNESS above for the reasoning — re-lightened per
-  // theme, hue/saturation untouched. Only recomputes when the theme's mode or accent actually
-  // changes, not on every guess.
-  const difficultyColors = useMemo((): Record<PuzzleDifficultyTier, string> => {
-    const range = theme.dark ? DIFFICULTY_LIGHTNESS.dark : DIFFICULTY_LIGHTNESS.light
-    const nudge = (getLightness(theme.colors.primary) - 0.5) * THEME_LIGHTNESS_NUDGE
-    const targetLightness = Math.min(range.max, Math.max(range.min, range.baseline + nudge))
-    return {
-      easy: getTonalColor(DIFFICULTY_BASE_COLORS.easy, targetLightness),
-      medium: getTonalColor(DIFFICULTY_BASE_COLORS.medium, targetLightness),
-      hard: getTonalColor(DIFFICULTY_BASE_COLORS.hard, targetLightness)
-    }
-  }, [theme.dark, theme.colors.primary])
+  // easy/medium/hard map onto @rific/auto-paper's success/warning/danger theme roles — see
+  // useDifficultyColors. Shared with PuzzleDrawer's difficulty picker, so both reflect the exact
+  // same colors.
+  const difficultyColors = useDifficultyColors()
 
   // Difficulty sits in its own pill, always visible when known — unlike the hint, glancing at it
   // isn't "getting help", so it doesn't route through hintRevealed (which onSolved reports for the

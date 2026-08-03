@@ -1,4 +1,4 @@
-import { clearPuzzleUnlocks, exportPuzzleUnlocks, getPuzzleUnlockMap, getTotalUnlockedCount, getUnlockedCountForPack, importPuzzleUnlocks, markPuzzleUnlocked, mergePuzzleUnlocks } from '@/utils/unlocks'
+import { clearPuzzleUnlocks, exportPuzzleUnlocks, getPuzzleUnlockMap, getTotalUnlockedCount, getUnlockedCountForPack, importPuzzleUnlocks, markPuzzleUnlocked, mergePuzzleUnlocks, parseProgressBackup } from '@/utils/unlocks'
 
 let mockStore: Record<string, string>
 
@@ -98,6 +98,37 @@ describe('exportPuzzleUnlocks', () => {
       animals: ['lion'],
       countries: ['france']
     })
+  })
+})
+
+describe('parseProgressBackup', () => {
+  it('reads the unlocks map out of a full export-payload shape', () => {
+    const payload = JSON.stringify({
+      version: 1,
+      exportedAt: new Date().toISOString(),
+      unlocks: { animals: ['lion', 'tiger'], countries: ['france'] }
+    })
+
+    expect(parseProgressBackup(payload)).toEqual({ animals: ['lion', 'tiger'], countries: ['france'] })
+  })
+
+  // Unlike importPuzzleUnlocks/mergePuzzleUnlocks, a bare unlocks-map with no wrapper key is
+  // rejected — this function's job is telling a progress backup apart from a custom pack file
+  // (which has a `pack` key instead), and a bare map is indistinguishable from neither.
+  it('rejects a bare unlocks-map shape with no unlocks key', () => {
+    const payload = JSON.stringify({ animals: ['lion'] })
+
+    expect(() => parseProgressBackup(payload)).toThrow('Invalid progress backup.')
+  })
+
+  it('rejects a custom pack export payload', () => {
+    const payload = JSON.stringify({ version: 1, exportedAt: new Date().toISOString(), pack: { key: 'custom:abc', label: 'My Pack', puzzles: [] } })
+
+    expect(() => parseProgressBackup(payload)).toThrow('Invalid progress backup.')
+  })
+
+  it('rejects invalid JSON', () => {
+    expect(() => parseProgressBackup('not valid json')).toThrow()
   })
 })
 

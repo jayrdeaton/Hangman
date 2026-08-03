@@ -1,0 +1,332 @@
+[
+  {
+    "id": "36139c67d44c947c3c6357690120afc7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Apollo Program",
+    "normalizedAnswer": "APOLLO PROGRAM",
+    "category": "Space Mission",
+    "difficulty": 76.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "mission"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "50f0d727c21a6e7894629e75c632bcdd",
+    "source": "theme",
+    "type": "title",
+    "answer": "Voyager Program",
+    "normalizedAnswer": "VOYAGER PROGRAM",
+    "category": "Space Mission",
+    "difficulty": 68.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "mission"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "39853c46a5f21e137506f2a6d2582eb8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cassini-Huygens",
+    "normalizedAnswer": "CASSINIHUYGENS",
+    "category": "Space Mission",
+    "difficulty": 64.4,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "mission"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ceb8f9c755a673d83dbcd10a04352ce9",
+    "source": "theme",
+    "type": "title",
+    "answer": "New Horizons",
+    "normalizedAnswer": "NEW HORIZONS",
+    "category": "Space Mission",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "mission"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ff62f1c918c35311f14a71170fef712f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mars Pathfinder",
+    "normalizedAnswer": "MARS PATHFINDER",
+    "category": "Space Mission",
+    "difficulty": 56.4,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "mission"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "250da8d280d80d09dc47e834d7cdcbf6",
+    "source": "theme",
+    "type": "title",
+    "answer": "Curiosity Rover",
+    "normalizedAnswer": "CURIOSITY ROVER",
+    "category": "Space Mission",
+    "difficulty": 64.4,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "mission"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "b644267ae2b698551c11eb706be01e44",
+    "source": "theme",
+    "type": "title",
+    "answer": "Perseverance Rover",
+    "normalizedAnswer": "PERSEVERANCE ROVER",
+    "category": "Space Mission",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 17,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "mission"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "67aae55eb892f780134d7d1c1b33cd2e",
+    "source": "theme",
+    "type": "title",
+    "answer": "International Space Station",
+    "normalizedAnswer": "INTERNATIONAL SPACE STATION",
+    "category": "Space Mission",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 25,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "mission"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "4e1a4710311caf03bb4a3562a2c7a7c0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Hubble Space Telescope",
+    "normalizedAnswer": "HUBBLE SPACE TELESCOPE",
+    "category": "Space Mission",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 20,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "mission"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "27079b1c46b83f37d440c723148dec6c",
+    "source": "theme",
+    "type": "title",
+    "answer": "James Webb Space Telescope",
+    "normalizedAnswer": "JAMES WEBB SPACE TELESCOPE",
+    "category": "Space Mission",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 23,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "mission"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "89bd351eff14b51d847f76786a798589",
+    "source": "theme",
+    "type": "title",
+    "answer": "Space Shuttle",
+    "normalizedAnswer": "SPACE SHUTTLE",
+    "category": "Space Mission",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "mission"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "da0e1bcc714c99575de5dd1458788948",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sputnik",
+    "normalizedAnswer": "SPUTNIK",
+    "category": "Space Mission",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "mission"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "0b9d76e9c2b71adb52f32cc82b48479c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Gemini Program",
+    "normalizedAnswer": "GEMINI PROGRAM",
+    "category": "Space Mission",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "mission"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6827319c89bbe1b6522e574c0d39db7e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mercury Program",
+    "normalizedAnswer": "MERCURY PROGRAM",
+    "category": "Space Mission",
+    "difficulty": 64.4,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "mission"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "43d2b03b827415d70dc152aacdb5cbf6",
+    "source": "theme",
+    "type": "title",
+    "answer": "Artemis Program",
+    "normalizedAnswer": "ARTEMIS PROGRAM",
+    "category": "Space Mission",
+    "difficulty": 64.4,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "mission"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  }
+]

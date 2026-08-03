@@ -1,0 +1,3038 @@
+[
+  {
+    "id": "a408e60cd408cbaf1ac185b253b79849",
+    "source": "sports",
+    "type": "title",
+    "answer": "Air Force",
+    "normalizedAnswer": "AIR FORCE",
+    "category": "NCAA Football",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "8f0ce40a1bb9999a028bf6ce8c82afbf",
+    "source": "sports",
+    "type": "title",
+    "answer": "Akron",
+    "normalizedAnswer": "AKRON",
+    "category": "NCAA Football",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "24d534acdf53b8d8999b50eafd995424",
+    "source": "sports",
+    "type": "title",
+    "answer": "Alabama",
+    "normalizedAnswer": "ALABAMA",
+    "category": "NCAA Football",
+    "difficulty": 91.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "1d047d94390f12f533c757f8a431ec1a",
+    "source": "sports",
+    "type": "title",
+    "answer": "Appalachian State",
+    "normalizedAnswer": "APPALACHIAN STATE",
+    "category": "NCAA Football",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "282bd0ae6f1d1752e7251a29cb4e4e28",
+    "source": "sports",
+    "type": "title",
+    "answer": "Arizona",
+    "normalizedAnswer": "ARIZONA",
+    "category": "NCAA Football",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "464373442d2d49bda308de09846b6cc9",
+    "source": "sports",
+    "type": "title",
+    "answer": "Arizona State",
+    "normalizedAnswer": "ARIZONA STATE",
+    "category": "NCAA Football",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "febe0d187c7d43c937e74e070ed3067c",
+    "source": "sports",
+    "type": "title",
+    "answer": "Arkansas",
+    "normalizedAnswer": "ARKANSAS",
+    "category": "NCAA Football",
+    "difficulty": 86.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "5f39a68f3f5adf1926c0934bfaf1d8fc",
+    "source": "sports",
+    "type": "title",
+    "answer": "Arkansas State",
+    "normalizedAnswer": "ARKANSAS STATE",
+    "category": "NCAA Football",
+    "difficulty": 76.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "3dbbe8bbbfc7e3eb66955c1378048a08",
+    "source": "sports",
+    "type": "title",
+    "answer": "Army",
+    "normalizedAnswer": "ARMY",
+    "category": "NCAA Football",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "00d343ac9309c3d13c1fa1e599391efb",
+    "source": "sports",
+    "type": "title",
+    "answer": "Auburn",
+    "normalizedAnswer": "AUBURN",
+    "category": "NCAA Football",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "3bb8c26f6ca9ae4bdc937584412ed651",
+    "source": "sports",
+    "type": "title",
+    "answer": "Ball State",
+    "normalizedAnswer": "BALL STATE",
+    "category": "NCAA Football",
+    "difficulty": 82.4,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "33aed1cdddd6dd887c8e3057848d948a",
+    "source": "sports",
+    "type": "title",
+    "answer": "Baylor",
+    "normalizedAnswer": "BAYLOR",
+    "category": "NCAA Football",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "95adf922ad3992b3c46acd0214b4a16c",
+    "source": "sports",
+    "type": "title",
+    "answer": "Boise State",
+    "normalizedAnswer": "BOISE STATE",
+    "category": "NCAA Football",
+    "difficulty": 78,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "44f64d0f14ec35af06423606d6f4188c",
+    "source": "sports",
+    "type": "title",
+    "answer": "Boston College",
+    "normalizedAnswer": "BOSTON COLLEGE",
+    "category": "NCAA Football",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "e42ebe91c2b74f7461c91e8348b9c2e3",
+    "source": "sports",
+    "type": "title",
+    "answer": "Bowling Green",
+    "normalizedAnswer": "BOWLING GREEN",
+    "category": "NCAA Football",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "664835868c8d9429a88727e229034cae",
+    "source": "sports",
+    "type": "title",
+    "answer": "Buffalo",
+    "normalizedAnswer": "BUFFALO",
+    "category": "NCAA Football",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "335e12b1eca44c8c90a60ad1f767e02f",
+    "source": "sports",
+    "type": "title",
+    "answer": "BYU",
+    "normalizedAnswer": "BYU",
+    "category": "NCAA Football",
+    "difficulty": 96.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "f8c111d4caf00aeb87216de75730cdb3",
+    "source": "sports",
+    "type": "title",
+    "answer": "California",
+    "normalizedAnswer": "CALIFORNIA",
+    "category": "NCAA Football",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "0894ba1d94b0becc478694e4137b2f08",
+    "source": "sports",
+    "type": "title",
+    "answer": "Central Michigan",
+    "normalizedAnswer": "CENTRAL MICHIGAN",
+    "category": "NCAA Football",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "8e7c82b6c0e7e9d615ddf912514f4ed0",
+    "source": "sports",
+    "type": "title",
+    "answer": "Charlotte",
+    "normalizedAnswer": "CHARLOTTE",
+    "category": "NCAA Football",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "c1f8751192fa2b7bddfb1a3cee12283a",
+    "source": "sports",
+    "type": "title",
+    "answer": "Cincinnati",
+    "normalizedAnswer": "CINCINNATI",
+    "category": "NCAA Football",
+    "difficulty": 86,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "1cb4b4833914d53cf6dcfb15a1da4a37",
+    "source": "sports",
+    "type": "title",
+    "answer": "Clemson",
+    "normalizedAnswer": "CLEMSON",
+    "category": "NCAA Football",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "c1d772971827cad085836168b5d487ea",
+    "source": "sports",
+    "type": "title",
+    "answer": "Coastal Carolina",
+    "normalizedAnswer": "COASTAL CAROLINA",
+    "category": "NCAA Football",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "e85cc6f4638ffe38b2e004b0106660c8",
+    "source": "sports",
+    "type": "title",
+    "answer": "Colorado",
+    "normalizedAnswer": "COLORADO",
+    "category": "NCAA Football",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "0d20790a28901b1f9069cc1552fd6142",
+    "source": "sports",
+    "type": "title",
+    "answer": "Colorado State",
+    "normalizedAnswer": "COLORADO STATE",
+    "category": "NCAA Football",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "7d38ab4730226803194c1ac3f8c1f460",
+    "source": "sports",
+    "type": "title",
+    "answer": "Delaware",
+    "normalizedAnswer": "DELAWARE",
+    "category": "NCAA Football",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "cf3c3bf1f692fc737cc512d902b3d3ff",
+    "source": "sports",
+    "type": "title",
+    "answer": "Duke",
+    "normalizedAnswer": "DUKE",
+    "category": "NCAA Football",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "8abf96483bf58deebbf0e832748aa1a5",
+    "source": "sports",
+    "type": "title",
+    "answer": "East Carolina",
+    "normalizedAnswer": "EAST CAROLINA",
+    "category": "NCAA Football",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "0d720906634e8beb78a908f2bf060ade",
+    "source": "sports",
+    "type": "title",
+    "answer": "Eastern Michigan",
+    "normalizedAnswer": "EASTERN MICHIGAN",
+    "category": "NCAA Football",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "5c4fc97270a775c28b5681bf1513c190",
+    "source": "sports",
+    "type": "title",
+    "answer": "Florida Atlantic",
+    "normalizedAnswer": "FLORIDA ATLANTIC",
+    "category": "NCAA Football",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "35254ae2f378bbec3ab1830cebecd659",
+    "source": "sports",
+    "type": "title",
+    "answer": "FIU",
+    "normalizedAnswer": "FIU",
+    "category": "NCAA Football",
+    "difficulty": 96.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "efbef7a7dc6681073e2f76ae74f29a25",
+    "source": "sports",
+    "type": "title",
+    "answer": "Florida",
+    "normalizedAnswer": "FLORIDA",
+    "category": "NCAA Football",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "81ad24282f98acc10d2c1ce8573667cf",
+    "source": "sports",
+    "type": "title",
+    "answer": "Florida State",
+    "normalizedAnswer": "FLORIDA STATE",
+    "category": "NCAA Football",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "ae2977c588df9514c69220948ac8329b",
+    "source": "sports",
+    "type": "title",
+    "answer": "Fresno State",
+    "normalizedAnswer": "FRESNO STATE",
+    "category": "NCAA Football",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "f00599d202b1bdaf3379ab0e0e4a5797",
+    "source": "sports",
+    "type": "title",
+    "answer": "Georgia",
+    "normalizedAnswer": "GEORGIA",
+    "category": "NCAA Football",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "55ef92b090873d0eb9d18ad33b477cae",
+    "source": "sports",
+    "type": "title",
+    "answer": "Georgia Southern",
+    "normalizedAnswer": "GEORGIA SOUTHERN",
+    "category": "NCAA Football",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "fb2ac6ad50a5147c7810661b8ba6c0c4",
+    "source": "sports",
+    "type": "title",
+    "answer": "Georgia State",
+    "normalizedAnswer": "GEORGIA STATE",
+    "category": "NCAA Football",
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "b3fa56ba72dcf764eb6cfbaed5590dec",
+    "source": "sports",
+    "type": "title",
+    "answer": "Georgia Tech",
+    "normalizedAnswer": "GEORGIA TECH",
+    "category": "NCAA Football",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "9b3890eb599b6d8585e6b4ac8de33b94",
+    "source": "sports",
+    "type": "title",
+    "answer": "Hawaii",
+    "normalizedAnswer": "HAWAII",
+    "category": "NCAA Football",
+    "difficulty": 91.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "b9d7ea8ab705e469a718cb64e395a597",
+    "source": "sports",
+    "type": "title",
+    "answer": "Houston",
+    "normalizedAnswer": "HOUSTON",
+    "category": "NCAA Football",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "9a205d345adbc2a5630561be84ba9d38",
+    "source": "sports",
+    "type": "title",
+    "answer": "Illinois",
+    "normalizedAnswer": "ILLINOIS",
+    "category": "NCAA Football",
+    "difficulty": 86.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "4ed6280d7d2402c9041f6626f18dddcd",
+    "source": "sports",
+    "type": "title",
+    "answer": "Indiana",
+    "normalizedAnswer": "INDIANA",
+    "category": "NCAA Football",
+    "difficulty": 91.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "7fb1014a21d2fbc6a21c1eec1d30a2a5",
+    "source": "sports",
+    "type": "title",
+    "answer": "Iowa",
+    "normalizedAnswer": "IOWA",
+    "category": "NCAA Football",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "51a5fa44aabd78a62e72e99e9fbe18dc",
+    "source": "sports",
+    "type": "title",
+    "answer": "Iowa State",
+    "normalizedAnswer": "IOWA STATE",
+    "category": "NCAA Football",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "8bc7e8ae4c05127068fd6c046ee7f3e4",
+    "source": "sports",
+    "type": "title",
+    "answer": "Jacksonville State",
+    "normalizedAnswer": "JACKSONVILLE STATE",
+    "category": "NCAA Football",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 17,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "0f6ae0741261ceeb810ddf16d8a12fbb",
+    "source": "sports",
+    "type": "title",
+    "answer": "James Madison",
+    "normalizedAnswer": "JAMES MADISON",
+    "category": "NCAA Football",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "2bae1ff519f6692cff8ad121795f60a4",
+    "source": "sports",
+    "type": "title",
+    "answer": "Kansas",
+    "normalizedAnswer": "KANSAS",
+    "category": "NCAA Football",
+    "difficulty": 91.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "17467e37a9225cc5220d8cea13d98f46",
+    "source": "sports",
+    "type": "title",
+    "answer": "Kansas State",
+    "normalizedAnswer": "KANSAS STATE",
+    "category": "NCAA Football",
+    "difficulty": 81.6,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "0d098a0647d4dd59b9800566975ef7bd",
+    "source": "sports",
+    "type": "title",
+    "answer": "Kennesaw State",
+    "normalizedAnswer": "KENNESAW STATE",
+    "category": "NCAA Football",
+    "difficulty": 76.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "916f6cf2c00c7b499b96b8017a959d14",
+    "source": "sports",
+    "type": "title",
+    "answer": "Kent State",
+    "normalizedAnswer": "KENT STATE",
+    "category": "NCAA Football",
+    "difficulty": 82.4,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "19bef747508d519a40e0a99e1da9a86e",
+    "source": "sports",
+    "type": "title",
+    "answer": "Kentucky",
+    "normalizedAnswer": "KENTUCKY",
+    "category": "NCAA Football",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "f12c1d57859b67be724b1207750ca750",
+    "source": "sports",
+    "type": "title",
+    "answer": "Liberty",
+    "normalizedAnswer": "LIBERTY",
+    "category": "NCAA Football",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "864822e4ef7c37189144a8ddfd3108ba",
+    "source": "sports",
+    "type": "title",
+    "answer": "Louisiana",
+    "normalizedAnswer": "LOUISIANA",
+    "category": "NCAA Football",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "59037743a516a0e76e5f85f02904bcb3",
+    "source": "sports",
+    "type": "title",
+    "answer": "Louisiana Tech",
+    "normalizedAnswer": "LOUISIANA TECH",
+    "category": "NCAA Football",
+    "difficulty": 60.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "33727a8098b84e83f774bda0a50cb192",
+    "source": "sports",
+    "type": "title",
+    "answer": "Louisville",
+    "normalizedAnswer": "LOUISVILLE",
+    "category": "NCAA Football",
+    "difficulty": 78,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "e6069724fa8fcaff59d1ac4bda070170",
+    "source": "sports",
+    "type": "title",
+    "answer": "LSU",
+    "normalizedAnswer": "LSU",
+    "category": "NCAA Football",
+    "difficulty": 96.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "257084bb84de5842e65b1140ec1d13c8",
+    "source": "sports",
+    "type": "title",
+    "answer": "Marshall",
+    "normalizedAnswer": "MARSHALL",
+    "category": "NCAA Football",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "5e3f0f1d1502b1f91e1d612e6410f466",
+    "source": "sports",
+    "type": "title",
+    "answer": "Maryland",
+    "normalizedAnswer": "MARYLAND",
+    "category": "NCAA Football",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "a11d399e87c86d75964f8ec1a301d1a0",
+    "source": "sports",
+    "type": "title",
+    "answer": "Memphis",
+    "normalizedAnswer": "MEMPHIS",
+    "category": "NCAA Football",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "ee8bb123c8e931c1c8ddeec3b0f06cd1",
+    "source": "sports",
+    "type": "title",
+    "answer": "Miami",
+    "normalizedAnswer": "MIAMI",
+    "category": "NCAA Football",
+    "difficulty": 96,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "63205449f81fb283da0d29f5dc4b7f81",
+    "source": "sports",
+    "type": "title",
+    "answer": "Miami of Ohio",
+    "normalizedAnswer": "MIAMI OF OHIO",
+    "category": "NCAA Football",
+    "difficulty": 81.6,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 11,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "dbf49faa43881de22cc62b7d4c84c4e1",
+    "source": "sports",
+    "type": "title",
+    "answer": "Michigan",
+    "normalizedAnswer": "MICHIGAN",
+    "category": "NCAA Football",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "86b76a60f33b34115990e943622e1526",
+    "source": "sports",
+    "type": "title",
+    "answer": "Michigan State",
+    "normalizedAnswer": "MICHIGAN STATE",
+    "category": "NCAA Football",
+    "difficulty": 64.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "387ba182578b1bf3205552669f36b75e",
+    "source": "sports",
+    "type": "title",
+    "answer": "Middle Tennessee",
+    "normalizedAnswer": "MIDDLE TENNESSEE",
+    "category": "NCAA Football",
+    "difficulty": 72,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "f89da38fa0552178f5172057585b60e0",
+    "source": "sports",
+    "type": "title",
+    "answer": "Minnesota",
+    "normalizedAnswer": "MINNESOTA",
+    "category": "NCAA Football",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "3ef8fd41dbf9303861a9a31b180f8251",
+    "source": "sports",
+    "type": "title",
+    "answer": "Mississippi State",
+    "normalizedAnswer": "MISSISSIPPI STATE",
+    "category": "NCAA Football",
+    "difficulty": 76,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "1f9d10d5d880e80198473c5049a0f99b",
+    "source": "sports",
+    "type": "title",
+    "answer": "Missouri",
+    "normalizedAnswer": "MISSOURI",
+    "category": "NCAA Football",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "1bce5065858952020f0ee12cfe51b293",
+    "source": "sports",
+    "type": "title",
+    "answer": "Missouri State",
+    "normalizedAnswer": "MISSOURI STATE",
+    "category": "NCAA Football",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "73b9a90c73a4d6d146e033b60733d032",
+    "source": "sports",
+    "type": "title",
+    "answer": "Navy",
+    "normalizedAnswer": "NAVY",
+    "category": "NCAA Football",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "6504b61d700af9d43671f4abe739e68f",
+    "source": "sports",
+    "type": "title",
+    "answer": "NC State",
+    "normalizedAnswer": "NC STATE",
+    "category": "NCAA Football",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "72c7b17ac334811a097eea26ff3ce32c",
+    "source": "sports",
+    "type": "title",
+    "answer": "Nebraska",
+    "normalizedAnswer": "NEBRASKA",
+    "category": "NCAA Football",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "cd7932217bb16cd8cdb305d9a93d1613",
+    "source": "sports",
+    "type": "title",
+    "answer": "Nevada",
+    "normalizedAnswer": "NEVADA",
+    "category": "NCAA Football",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "eedc0ac22576b32b821bac6741a1f843",
+    "source": "sports",
+    "type": "title",
+    "answer": "New Mexico",
+    "normalizedAnswer": "NEW MEXICO",
+    "category": "NCAA Football",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "86169e87ec975d044d3819338b8b6c15",
+    "source": "sports",
+    "type": "title",
+    "answer": "New Mexico State",
+    "normalizedAnswer": "NEW MEXICO STATE",
+    "category": "NCAA Football",
+    "difficulty": 60.4,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 14,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "605a36b9d92757aae0b640db5323c066",
+    "source": "sports",
+    "type": "title",
+    "answer": "North Carolina",
+    "normalizedAnswer": "NORTH CAROLINA",
+    "category": "NCAA Football",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "17464f78b7dfbabdcabeec09c6383b76",
+    "source": "sports",
+    "type": "title",
+    "answer": "North Dakota State",
+    "normalizedAnswer": "NORTH DAKOTA STATE",
+    "category": "NCAA Football",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 16,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "d0da25143f32e5537a95fb7622500768",
+    "source": "sports",
+    "type": "title",
+    "answer": "North Texas",
+    "normalizedAnswer": "NORTH TEXAS",
+    "category": "NCAA Football",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "ff9be369865e70947e899c82bc8cbe20",
+    "source": "sports",
+    "type": "title",
+    "answer": "Northern Illinois",
+    "normalizedAnswer": "NORTHERN ILLINOIS",
+    "category": "NCAA Football",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "5573ee69fefae78ada6ea3bb4d1f2c57",
+    "source": "sports",
+    "type": "title",
+    "answer": "Northwestern",
+    "normalizedAnswer": "NORTHWESTERN",
+    "category": "NCAA Football",
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "cdc36a73adfe02670d429f0fa50f14f2",
+    "source": "sports",
+    "type": "title",
+    "answer": "Notre Dame",
+    "normalizedAnswer": "NOTRE DAME",
+    "category": "NCAA Football",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "7a63d15beef99ceb7d08ff6a59c1191f",
+    "source": "sports",
+    "type": "title",
+    "answer": "Ohio",
+    "normalizedAnswer": "OHIO",
+    "category": "NCAA Football",
+    "difficulty": 96.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "bce0a6a45ce4f0541d6e22e6f2c5097a",
+    "source": "sports",
+    "type": "title",
+    "answer": "Ohio State",
+    "normalizedAnswer": "OHIO STATE",
+    "category": "NCAA Football",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "6cd7458a0009179ad55e9273828d8d37",
+    "source": "sports",
+    "type": "title",
+    "answer": "Oklahoma",
+    "normalizedAnswer": "OKLAHOMA",
+    "category": "NCAA Football",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "70391eac5780b3c7b6c5525a4c70dddd",
+    "source": "sports",
+    "type": "title",
+    "answer": "Oklahoma State",
+    "normalizedAnswer": "OKLAHOMA STATE",
+    "category": "NCAA Football",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "3032b67641c3955b6558b2892dbb3ebe",
+    "source": "sports",
+    "type": "title",
+    "answer": "Old Dominion",
+    "normalizedAnswer": "OLD DOMINION",
+    "category": "NCAA Football",
+    "difficulty": 81.6,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "a734336d5c35144449defc9144812b15",
+    "source": "sports",
+    "type": "title",
+    "answer": "Ole Miss",
+    "normalizedAnswer": "OLE MISS",
+    "category": "NCAA Football",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "f3ac0e01f94e76e524b45f74b610b874",
+    "source": "sports",
+    "type": "title",
+    "answer": "Oregon",
+    "normalizedAnswer": "OREGON",
+    "category": "NCAA Football",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "cd29ee137c944a1f0bab040972d27081",
+    "source": "sports",
+    "type": "title",
+    "answer": "Oregon State",
+    "normalizedAnswer": "OREGON STATE",
+    "category": "NCAA Football",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "a77063575d8af32c929b86ba28475901",
+    "source": "sports",
+    "type": "title",
+    "answer": "Penn State",
+    "normalizedAnswer": "PENN STATE",
+    "category": "NCAA Football",
+    "difficulty": 82.4,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "481be1e0c5c51f7a6fbc7ee997410233",
+    "source": "sports",
+    "type": "title",
+    "answer": "Pittsburgh",
+    "normalizedAnswer": "PITTSBURGH",
+    "category": "NCAA Football",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "83df14f9b7d42ac8bf4ea44d25c99b19",
+    "source": "sports",
+    "type": "title",
+    "answer": "Purdue",
+    "normalizedAnswer": "PURDUE",
+    "category": "NCAA Football",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "93c257cba7d3f11a77b1425db098c94f",
+    "source": "sports",
+    "type": "title",
+    "answer": "Rice",
+    "normalizedAnswer": "RICE",
+    "category": "NCAA Football",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "1d5fdcd2412076e44759fd519c7255e9",
+    "source": "sports",
+    "type": "title",
+    "answer": "Rutgers",
+    "normalizedAnswer": "RUTGERS",
+    "category": "NCAA Football",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "a0f8af47b2dd7cfee0501f5064524174",
+    "source": "sports",
+    "type": "title",
+    "answer": "Sacramento State",
+    "normalizedAnswer": "SACRAMENTO STATE",
+    "category": "NCAA Football",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "1edc247e8fb0856dc3bec183ed265b11",
+    "source": "sports",
+    "type": "title",
+    "answer": "Sam Houston",
+    "normalizedAnswer": "SAM HOUSTON",
+    "category": "NCAA Football",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "345d438abef1312a25335977f172b50b",
+    "source": "sports",
+    "type": "title",
+    "answer": "San Diego State",
+    "normalizedAnswer": "SAN DIEGO STATE",
+    "category": "NCAA Football",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "89e93c47813acdbfb97ed946e49d08e9",
+    "source": "sports",
+    "type": "title",
+    "answer": "San Jose State",
+    "normalizedAnswer": "SAN JOSE STATE",
+    "category": "NCAA Football",
+    "difficulty": 77.2,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 12,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "71d6e1acbfbbbf88ff06529bb6ac40c7",
+    "source": "sports",
+    "type": "title",
+    "answer": "SMU",
+    "normalizedAnswer": "SMU",
+    "category": "NCAA Football",
+    "difficulty": 96.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "a4a2cd4f0afd17e0738e40b8dd29089a",
+    "source": "sports",
+    "type": "title",
+    "answer": "South Alabama",
+    "normalizedAnswer": "SOUTH ALABAMA",
+    "category": "NCAA Football",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "4faf59fecd21fbd636575de5436760ef",
+    "source": "sports",
+    "type": "title",
+    "answer": "South Carolina",
+    "normalizedAnswer": "SOUTH CAROLINA",
+    "category": "NCAA Football",
+    "difficulty": 60.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "fe1adfbfd2543ef06c7d8b9b9fe2f580",
+    "source": "sports",
+    "type": "title",
+    "answer": "South Florida",
+    "normalizedAnswer": "SOUTH FLORIDA",
+    "category": "NCAA Football",
+    "difficulty": 61.2,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "8987110b5ac28765142aef18d5a86ecc",
+    "source": "sports",
+    "type": "title",
+    "answer": "Southern Miss",
+    "normalizedAnswer": "SOUTHERN MISS",
+    "category": "NCAA Football",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "d24e578cc1aecee4a6a9b80718cd1e0f",
+    "source": "sports",
+    "type": "title",
+    "answer": "Stanford",
+    "normalizedAnswer": "STANFORD",
+    "category": "NCAA Football",
+    "difficulty": 74.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "96fc4ccc5014396e99e6f2475b18fa00",
+    "source": "sports",
+    "type": "title",
+    "answer": "Syracuse",
+    "normalizedAnswer": "SYRACUSE",
+    "category": "NCAA Football",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "5e7e55091ff20e84ea93d90e0c3dff34",
+    "source": "sports",
+    "type": "title",
+    "answer": "TCU",
+    "normalizedAnswer": "TCU",
+    "category": "NCAA Football",
+    "difficulty": 96.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "5aee92b8734b85ff4053dbcf26340892",
+    "source": "sports",
+    "type": "title",
+    "answer": "Temple",
+    "normalizedAnswer": "TEMPLE",
+    "category": "NCAA Football",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "2d845f1c5ada0e91002b3be03353e2ba",
+    "source": "sports",
+    "type": "title",
+    "answer": "Tennessee",
+    "normalizedAnswer": "TENNESSEE",
+    "category": "NCAA Football",
+    "difficulty": 90.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "c5844fb30d6447668645da9168e5c7b9",
+    "source": "sports",
+    "type": "title",
+    "answer": "Texas",
+    "normalizedAnswer": "TEXAS",
+    "category": "NCAA Football",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "bff4f800fa7c9a08559a1f91fe7f3085",
+    "source": "sports",
+    "type": "title",
+    "answer": "Texas A&M",
+    "normalizedAnswer": "TEXAS AM",
+    "category": "NCAA Football",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "d22fbba180335a8950cc670700bf0a8f",
+    "source": "sports",
+    "type": "title",
+    "answer": "Texas State",
+    "normalizedAnswer": "TEXAS STATE",
+    "category": "NCAA Football",
+    "difficulty": 86,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "0771fa88bacf1099aa55315bdb02590d",
+    "source": "sports",
+    "type": "title",
+    "answer": "Texas Tech",
+    "normalizedAnswer": "TEXAS TECH",
+    "category": "NCAA Football",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "1c0b2282d5b7ea2cdbb7ccf1e63c25f9",
+    "source": "sports",
+    "type": "title",
+    "answer": "Toledo",
+    "normalizedAnswer": "TOLEDO",
+    "category": "NCAA Football",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "2223cca55e565b7ce38142a249e74589",
+    "source": "sports",
+    "type": "title",
+    "answer": "Troy",
+    "normalizedAnswer": "TROY",
+    "category": "NCAA Football",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "9cf5cb2f23fa3520d596426dc14b47c1",
+    "source": "sports",
+    "type": "title",
+    "answer": "Tulane",
+    "normalizedAnswer": "TULANE",
+    "category": "NCAA Football",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "e2766717496f3d77f176b31e7e48a898",
+    "source": "sports",
+    "type": "title",
+    "answer": "Tulsa",
+    "normalizedAnswer": "TULSA",
+    "category": "NCAA Football",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "80487389aef1b3c2ab9d1f15b1d909e4",
+    "source": "sports",
+    "type": "title",
+    "answer": "UAB",
+    "normalizedAnswer": "UAB",
+    "category": "NCAA Football",
+    "difficulty": 96.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "e2bb6d6fb6eb5e9b820095a55ecb6216",
+    "source": "sports",
+    "type": "title",
+    "answer": "UCF",
+    "normalizedAnswer": "UCF",
+    "category": "NCAA Football",
+    "difficulty": 96.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "9a5b6a1fc701fc72576b787ef91d8ab1",
+    "source": "sports",
+    "type": "title",
+    "answer": "UCLA",
+    "normalizedAnswer": "UCLA",
+    "category": "NCAA Football",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "5b0e9cb4a9bd663510519987265e5106",
+    "source": "sports",
+    "type": "title",
+    "answer": "UConn",
+    "normalizedAnswer": "UCONN",
+    "category": "NCAA Football",
+    "difficulty": 92,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "f4ec29ee388eb8ea4f554a96dd589f6a",
+    "source": "sports",
+    "type": "title",
+    "answer": "ULM",
+    "normalizedAnswer": "ULM",
+    "category": "NCAA Football",
+    "difficulty": 96.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "d0a859b334eae9412c5a8b9a50ac5ff6",
+    "source": "sports",
+    "type": "title",
+    "answer": "UMass",
+    "normalizedAnswer": "UMASS",
+    "category": "NCAA Football",
+    "difficulty": 92,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "939167d3f364764d4a7725888f51274b",
+    "source": "sports",
+    "type": "title",
+    "answer": "UNLV",
+    "normalizedAnswer": "UNLV",
+    "category": "NCAA Football",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "d59608f824753dd611e16b1f6e071f33",
+    "source": "sports",
+    "type": "title",
+    "answer": "USC",
+    "normalizedAnswer": "USC",
+    "category": "NCAA Football",
+    "difficulty": 96.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "59cf9882a15aec38f83a413d19d813b9",
+    "source": "sports",
+    "type": "title",
+    "answer": "Utah",
+    "normalizedAnswer": "UTAH",
+    "category": "NCAA Football",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "ba3722c52084a751735ca94acd9ab6ae",
+    "source": "sports",
+    "type": "title",
+    "answer": "Utah State",
+    "normalizedAnswer": "UTAH STATE",
+    "category": "NCAA Football",
+    "difficulty": 82.4,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "19d7ca12b0c6b2bd180c9d39d18745ab",
+    "source": "sports",
+    "type": "title",
+    "answer": "UTEP",
+    "normalizedAnswer": "UTEP",
+    "category": "NCAA Football",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "1514ff592c31e6916af0262866544012",
+    "source": "sports",
+    "type": "title",
+    "answer": "UTSA",
+    "normalizedAnswer": "UTSA",
+    "category": "NCAA Football",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "9f1b9fad1b1e06458727f7535cfc1d29",
+    "source": "sports",
+    "type": "title",
+    "answer": "Vanderbilt",
+    "normalizedAnswer": "VANDERBILT",
+    "category": "NCAA Football",
+    "difficulty": 66,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "840ae5e56befe6f33608a21d8ddc548e",
+    "source": "sports",
+    "type": "title",
+    "answer": "Virginia",
+    "normalizedAnswer": "VIRGINIA",
+    "category": "NCAA Football",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "531937b6244ec07919e2160a6d224e6b",
+    "source": "sports",
+    "type": "title",
+    "answer": "Virginia Tech",
+    "normalizedAnswer": "VIRGINIA TECH",
+    "category": "NCAA Football",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "b92ef47401b8ad19db145d77b202a0e6",
+    "source": "sports",
+    "type": "title",
+    "answer": "Wake Forest",
+    "normalizedAnswer": "WAKE FOREST",
+    "category": "NCAA Football",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "6c7e54914c1a24ecf6823c0acee55381",
+    "source": "sports",
+    "type": "title",
+    "answer": "Washington",
+    "normalizedAnswer": "WASHINGTON",
+    "category": "NCAA Football",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "ebe2deb34933c2e65d95d5acdeedd343",
+    "source": "sports",
+    "type": "title",
+    "answer": "Washington State",
+    "normalizedAnswer": "WASHINGTON STATE",
+    "category": "NCAA Football",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "ed5c5d0c79508023b2a2b4e437bb7cd3",
+    "source": "sports",
+    "type": "title",
+    "answer": "West Virginia",
+    "normalizedAnswer": "WEST VIRGINIA",
+    "category": "NCAA Football",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "6a04f7120f79fc25d989805ba8680fa4",
+    "source": "sports",
+    "type": "title",
+    "answer": "Western Kentucky",
+    "normalizedAnswer": "WESTERN KENTUCKY",
+    "category": "NCAA Football",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "2b36da8de2b80e5bc6ce06126e944183",
+    "source": "sports",
+    "type": "title",
+    "answer": "Western Michigan",
+    "normalizedAnswer": "WESTERN MICHIGAN",
+    "category": "NCAA Football",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "7db751275a117c91a82dfb9029f41ce4",
+    "source": "sports",
+    "type": "title",
+    "answer": "Wisconsin",
+    "normalizedAnswer": "WISCONSIN",
+    "category": "NCAA Football",
+    "difficulty": 82.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  },
+  {
+    "id": "3317cc9c869bea107a47e298e52aa78e",
+    "source": "sports",
+    "type": "title",
+    "answer": "Wyoming",
+    "normalizedAnswer": "WYOMING",
+    "category": "NCAA Football",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "sports",
+      "ncaa",
+      "college-football",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+    }
+  }
+]

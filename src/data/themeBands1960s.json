@@ -1,0 +1,422 @@
+[
+  {
+    "id": "68659daf17309774d1d21385f340f622",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Beatles",
+    "normalizedAnswer": "THE BEATLES",
+    "category": "1960s Band",
+    "difficulty": 78,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "band",
+      "1960s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6a4a7c956a863fc6029e74224caaaa1e",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Rolling Stones",
+    "normalizedAnswer": "THE ROLLING STONES",
+    "category": "1960s Band",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 16,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "band",
+      "1960s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "453473064f698db7efc6597fcfb1777a",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Beach Boys",
+    "normalizedAnswer": "THE BEACH BOYS",
+    "category": "1960s Band",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "band",
+      "1960s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "575437dabb7fa85950a6ba6ae3733f09",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Who",
+    "normalizedAnswer": "THE WHO",
+    "category": "1960s Band",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "band",
+      "1960s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "8bd88ba844e01de7557bd74c9cbfce33",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Doors",
+    "normalizedAnswer": "THE DOORS",
+    "category": "1960s Band",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "band",
+      "1960s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "012dd4799ccd28f44082f76bf2afb26f",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Kinks",
+    "normalizedAnswer": "THE KINKS",
+    "category": "1960s Band",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "band",
+      "1960s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "7a38fe1e4ce2be2c9c1e4cab3731b279",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Byrds",
+    "normalizedAnswer": "THE BYRDS",
+    "category": "1960s Band",
+    "difficulty": 74.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "band",
+      "1960s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "87b74ea36e75c732ce54091376687382",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Animals",
+    "normalizedAnswer": "THE ANIMALS",
+    "category": "1960s Band",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "band",
+      "1960s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "326daaa2751be54d529dfdc04e7c1440",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Zombies",
+    "normalizedAnswer": "THE ZOMBIES",
+    "category": "1960s Band",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "band",
+      "1960s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "d05c0ddcc28337a549e2d76ec77ef2d4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Creedence Clearwater Revival",
+    "normalizedAnswer": "CREEDENCE CLEARWATER REVIVAL",
+    "category": "1960s Band",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 26,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "band",
+      "1960s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "efb7dac5e8cdd586ba3abb08a2c0e190",
+    "source": "theme",
+    "type": "title",
+    "answer": "Jefferson Airplane",
+    "normalizedAnswer": "JEFFERSON AIRPLANE",
+    "category": "1960s Band",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 17,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "band",
+      "1960s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "b4e4c8c0be8ac99dbc9e6c514e3eedb5",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Velvet Underground",
+    "normalizedAnswer": "THE VELVET UNDERGROUND",
+    "category": "1960s Band",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 20,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "band",
+      "1960s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "386c8261530be97f944dc2155a4c90a9",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Mamas and the Papas",
+    "normalizedAnswer": "THE MAMAS AND THE PAPAS",
+    "category": "1960s Band",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 5,
+    "letterCount": 19,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "band",
+      "1960s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "b5b451e74e5ec47bd66960289567a5d6",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Supremes",
+    "normalizedAnswer": "THE SUPREMES",
+    "category": "1960s Band",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "band",
+      "1960s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "0fff90c2cb1ff3363136eb3afb86fbfd",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Temptations",
+    "normalizedAnswer": "THE TEMPTATIONS",
+    "category": "1960s Band",
+    "difficulty": 64.4,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "band",
+      "1960s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "b90eb374a1a596d5cc202c26582d409d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Simon and Garfunkel",
+    "normalizedAnswer": "SIMON AND GARFUNKEL",
+    "category": "1960s Band",
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 17,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "band",
+      "1960s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "984c4a73d0412a2247ac87421b1d3cd0",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Yardbirds",
+    "normalizedAnswer": "THE YARDBIRDS",
+    "category": "1960s Band",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "band",
+      "1960s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "46957ef7c693a871339f7f3851a6f96a",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Monkees",
+    "normalizedAnswer": "THE MONKEES",
+    "category": "1960s Band",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "band",
+      "1960s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a8333020a0ccfb41dedd1f88280c4fb5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sly and the Family Stone",
+    "normalizedAnswer": "SLY AND THE FAMILY STONE",
+    "category": "1960s Band",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 20,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "band",
+      "1960s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "edd83ef09e6d51deec9e001b04eb2ed6",
+    "source": "theme",
+    "type": "title",
+    "answer": "Booker T and the MGs",
+    "normalizedAnswer": "BOOKER T AND THE MGS",
+    "category": "1960s Band",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 16,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "band",
+      "1960s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  }
+]

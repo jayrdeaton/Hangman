@@ -1,16 +1,20 @@
 import { Drawer } from '@rific/drawer'
+import { Button, Checkbox, IconButton } from '@rific/haptic-press'
 import { JSX, useEffect, useMemo, useState } from 'react'
-import { Platform, ScrollView, Share, StyleSheet, useWindowDimensions, View } from 'react-native'
-import { Button, Checkbox, IconButton, Text, TextInput } from 'react-native-paper'
+import { ScrollView, StyleSheet, useWindowDimensions, View } from 'react-native'
+import { Text } from 'react-native-paper'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
-import { alert, confirm } from '@/utils/alert'
+import { DRAWER_HEADER_ROW_STYLE, DRAWER_HEADER_TITLE_WRAP_STYLE } from '@/constants/drawerHeader'
+import { alert } from '@/utils/alert'
 import { commaString } from '@/utils/commaString'
-import { type CustomPack, type CustomPackEntryInput, deleteCustomPack, exportCustomPack, getCustomPackPuzzles, importCustomPack, isCustomPackKey, saveCustomPack } from '@/utils/customPacks'
-import { normalizePhrase } from '@/utils/normalizePhrase'
+import { type CustomPack, deleteCustomPack, importCustomPack, isCustomPackKey } from '@/utils/customPacks'
+import { pickHangmanFile, shareCustomPackFile } from '@/utils/hangmanFile'
 import { getPuzzleManifest } from '@/utils/puzzleCatalog'
+import { getPuzzleUnlockMap, getUnlockedCountForPack, PuzzleUnlockMap } from '@/utils/unlocks'
 
-import { PackDetailContent } from './PackDetailContent'
+import { PackEditorDrawer } from './PackEditorDrawer'
+import { PackPuzzlesDrawer } from './PackPuzzlesDrawer'
 import { PackRow } from './PackRow'
 
 export type PacksScreenProps = {
@@ -21,11 +25,6 @@ export type PacksScreenProps = {
   packsVersion: number
   onPacksChanged: () => void
 }
-
-type PacksStep = { screen: 'list' } | { screen: 'detail'; key: string } | { screen: 'editor'; key: string | null }
-
-const EMPTY_ENTRY: CustomPackEntryInput = { answer: '', hint: '' }
-const LIST_STEP: PacksStep = { screen: 'list' }
 
 export const PacksScreen = ({ visible, onDismiss, selectedKeys, onChangeSelectedKeys, packsVersion, onPacksChanged }: PacksScreenProps): JSX.Element => {
   const insets = useSafeAreaInsets()
@@ -39,17 +38,48 @@ export const PacksScreen = ({ visible, onDismiss, selectedKeys, onChangeSelected
   const builtInPacks = useMemo(() => manifest.filter((item) => !isCustomPackKey(item.key)), [manifest])
   const selectedSet = useMemo(() => new Set(selectedKeys), [selectedKeys])
 
-  const [step, setStep] = useState<PacksStep>(LIST_STEP)
-  const [importVisible, setImportVisible] = useState(false)
-  const [importText, setImportText] = useState('')
+  // A built-in pack's own read-only puzzle list (PackPuzzlesDrawer, mode/difficulty/onConfirm all
+  // omitted) and the create/edit form (PackEditorDrawer) each stack on top of this screen as their
+  // own animated Drawer — same as PackPuzzlesDrawer already stacks on top of PuzzleDrawer — rather
+  // than swapping in as an unanimated step within this same panel. detailKey/editingKey are
+  // deliberately separate from their own drawer's visible flag (detailVisible/editorVisible) —
+  // dismissing only flips visible, never the key — so the content survives the close-translate
+  // animation instead of blanking out mid-slide (see PackPuzzlesDrawer/PackEditorDrawer's own doc
+  // comments on why, and PuzzleDrawer's identical playPackKey/playDrawerVisible split). Both
+  // visible flags reset together below whenever this screen reopens; the keys themselves are left
+  // alone since they're always overwritten before either drawer next opens anyway.
+  const [detailVisible, setDetailVisible] = useState(false)
+  const [detailKey, setDetailKey] = useState<string | null>(null)
+  const [editorVisible, setEditorVisible] = useState(false)
+  const [editingKey, setEditingKey] = useState<string | null>(null)
+  const anyOverlayVisible = detailVisible || editorVisible
 
-  // Always reopens at the list, same as the puzzle drawer resetting its own draft on open —
-  // otherwise a screen left mid-edit on last close would silently resume there next time.
+  const [unlockMap, setUnlockMap] = useState<PuzzleUnlockMap>({})
+
+  // Always reopens on the list, with neither overlay open — otherwise a screen left mid-edit or
+  // mid-detail on last close would silently resume there next time.
   /* eslint-disable react-hooks/set-state-in-effect -- resets local UI state on an external prop transition, not derived from other state */
   useEffect(() => {
-    if (visible) setStep(LIST_STEP)
+    if (visible) {
+      setDetailVisible(false)
+      setEditorVisible(false)
+    }
   }, [visible])
   /* eslint-enable react-hooks/set-state-in-effect */
+
+  // Re-fetched each time this screen opens, not subscribed to live — good enough for a summary
+  // count sitting in a list row, and matches the one-shot fetch every other pack-progress display
+  // in this app already does (PackPuzzleList, AchievementsDrawer).
+  useEffect(() => {
+    if (!visible) return
+    let mounted = true
+    void getPuzzleUnlockMap().then((map) => {
+      if (mounted) setUnlockMap(map)
+    })
+    return () => {
+      mounted = false
+    }
+  }, [visible])
 
   const toggle = (key: string) => {
     const next = new Set(selectedSet)
@@ -66,262 +96,201 @@ export const PacksScreen = ({ visible, onDismiss, selectedKeys, onChangeSelected
   const handleSaved = (pack: CustomPack) => {
     selectKey(pack.key)
     onPacksChanged()
-    setStep(LIST_STEP)
+    setEditorVisible(false)
   }
 
-  const handleDelete = async (key: string, label: string) => {
-    const confirmed = await confirm('Delete pack?', `This permanently deletes "${label}" and any unlock progress for it. This cannot be undone.`, 'Delete')
-    if (!confirmed) return
-
+  // No confirm() here — PackEditorDrawer's own ConfirmDialog gates the call to this, so by the time
+  // it runs the player has already agreed. Unconditional and side-effecting only.
+  const handleDelete = async (key: string) => {
     await deleteCustomPack(key)
     if (selectedSet.has(key)) onChangeSelectedKeys(selectedKeys.filter((k) => k !== key))
     onPacksChanged()
   }
 
   const handleShare = async (key: string, label: string) => {
-    const payload = await exportCustomPack(key)
-    if (!payload) return
-
     try {
-      if (Platform.OS === 'web') {
-        await navigator.clipboard.writeText(payload)
-        void alert('Copied to clipboard', `Send this to a friend. Pasting it into "Import pack" adds "${label}" to their packs.`)
-        return
-      }
-      await Share.share({ message: payload })
+      const shared = await shareCustomPackFile(key, label)
+      if (!shared) void alert("Couldn't share", 'Sharing is not available on this device.')
     } catch {
       void alert("Couldn't share", 'Something went wrong sharing this pack. Please try again.')
     }
   }
 
-  const handleImport = async () => {
-    if (!importText.trim()) {
-      void alert('Paste a pack first', 'Paste a pack backup, then tap Import.')
-      return
-    }
+  // Reads a file straight off the device (a real "pick a .hangman file" flow) rather than a
+  // paste-text box — see hangmanFile.ts's own doc comments for why: the old clipboard-and-paste
+  // round trip also depended on alert() to tell the player it worked, which isn't reliable on web.
+  const handleImportFile = async () => {
+    const raw = await pickHangmanFile()
+    if (!raw) return
+
     try {
-      const pack = await importCustomPack(importText)
-      setImportText('')
-      setImportVisible(false)
+      const pack = await importCustomPack(raw)
       selectKey(pack.key)
       onPacksChanged()
       void alert('Pack imported', `Added "${pack.label}" (${commaString(pack.puzzles.length)} puzzles) to your packs.`)
     } catch (_error) {
-      void alert('Invalid pack', 'Could not parse that backup. Please paste a valid pack backup.')
+      void alert('Invalid pack', 'Could not read that as a Hangman pack file.')
     }
   }
 
-  const title = step.screen === 'list' ? 'Choose packs' : step.screen === 'detail' ? (getPuzzleManifest().find((item) => item.key === step.key)?.label ?? '') : step.key ? 'Edit pack' : 'New pack'
-
   return (
-    <Drawer open={visible} onClose={onDismiss} width={windowWidth}>
-      <View testID='packs-screen-panel' style={[styles.panel, { paddingTop: insets.top, paddingBottom: insets.bottom }]} accessibilityViewIsModal={visible} accessibilityElementsHidden={!visible} importantForAccessibility={visible ? 'yes' : 'no-hide-descendants'}>
-        <View style={styles.headerRow}>
-          {step.screen === 'list' ? <IconButton icon='close' onPress={onDismiss} accessibilityLabel='Close' /> : <IconButton icon='arrow-left' onPress={() => setStep(LIST_STEP)} accessibilityLabel='Back to packs' />}
-          <Text variant='titleLarge' style={styles.title} numberOfLines={1}>
-            {title}
-          </Text>
-          {/* Balances the header row so the title stays visually centered against the leading icon. */}
-          <View style={styles.headerSpacer} />
-        </View>
-
-        {step.screen === 'list' ? (
-          <>
-            <View style={styles.selectionRow}>
-              <Text variant='bodySmall' style={styles.muted}>
-                {commaString(selectedSet.size)} of {commaString(manifest.length)} selected
+    <>
+      <Drawer open={visible} onClose={onDismiss} width={windowWidth}>
+        {/* Gated on anyOverlayVisible the same way PuzzleDrawer gates itself against PacksScreen/
+            PackPuzzlesDrawer stacked on top of it — PackPuzzlesDrawer/PackEditorDrawer translate in
+            over this panel's own content, which stays mounted underneath (Drawer never unmounts on
+            close, just translates). Without this, this panel's title/close button/rows would stay
+            reachable by screen readers and keyboard focus while invisible behind whichever drawer
+            is covering them. */}
+        <View testID='packs-screen-panel' style={[styles.panel, { paddingTop: insets.top, paddingBottom: insets.bottom }]} accessibilityViewIsModal={visible && !anyOverlayVisible} accessibilityElementsHidden={!visible || anyOverlayVisible} importantForAccessibility={visible && !anyOverlayVisible ? 'yes' : 'no-hide-descendants'} onAccessibilityEscape={visible && !anyOverlayVisible ? onDismiss : undefined}>
+          {/* Close sits on the LEADING (left) side — this screen is reached from the Game Menu's
+              hamburger icon (top-left of the game screen), same left-anchored lineage as
+              PuzzleDrawer/PackPuzzlesDrawer, so closing it lands back under the same thumb that
+              opened the chain. arrow-left (not X) — see PuzzleDrawer's own header comment for why. */}
+          <View style={styles.headerRow}>
+            <IconButton icon='arrow-left' onPress={onDismiss} accessibilityLabel='Close' />
+            {/* Absolutely positioned (see DRAWER_HEADER_TITLE_WRAP_STYLE) so it centers on the
+                row's true center, independent of the icon/spacer widths on either side. */}
+            <View style={DRAWER_HEADER_TITLE_WRAP_STYLE}>
+              <Text variant='titleLarge' style={styles.title} numberOfLines={1}>
+                Choose packs
               </Text>
-              <View style={styles.quickActions}>
-                <Button compact onPress={() => onChangeSelectedKeys(manifest.map((item) => item.key))}>
-                  Select all
+            </View>
+            <View style={styles.headerSpacer} />
+          </View>
+
+          <ScrollView showsVerticalScrollIndicator={false} style={styles.scroll} contentContainerStyle={styles.scrollContent} keyboardShouldPersistTaps='handled'>
+            <View style={styles.sectionHeaderRow}>
+              <Text variant='titleSmall' style={styles.sectionHeader}>
+                My packs
+              </Text>
+              <View style={styles.sectionActions}>
+                <Button
+                  compact
+                  icon='plus'
+                  onPress={() => {
+                    setEditingKey(null)
+                    setEditorVisible(true)
+                  }}
+                >
+                  Create
                 </Button>
-                <Button compact onPress={() => onChangeSelectedKeys([])}>
-                  Clear
+                <Button compact icon='import' onPress={() => void handleImportFile()}>
+                  Import
                 </Button>
               </View>
             </View>
 
-            <ScrollView showsVerticalScrollIndicator={false} style={styles.scroll} contentContainerStyle={styles.scrollContent} keyboardShouldPersistTaps='handled'>
-              <View style={styles.sectionHeaderRow}>
-                <Text variant='titleSmall' style={styles.sectionHeader}>
-                  My packs
-                </Text>
-                <View style={styles.sectionActions}>
-                  <Button compact icon='plus' onPress={() => setStep({ screen: 'editor', key: null })}>
-                    Create
-                  </Button>
-                  <Button compact icon='import' onPress={() => setImportVisible((v) => !v)}>
-                    Import
-                  </Button>
-                </View>
-              </View>
-
-              {importVisible ? (
-                <View style={styles.importBlock}>
-                  <TextInput testID='pack-import-input' mode='outlined' label='Paste a pack backup' value={importText} onChangeText={setImportText} multiline style={styles.importInput} />
-                  <Button mode='contained-tonal' onPress={() => void handleImport()} style={styles.importButton}>
-                    Import pack
-                  </Button>
-                </View>
-              ) : null}
-
-              {customPacks.length === 0 ? (
-                <Text variant='bodySmall' style={styles.emptyText}>
-                  No custom packs yet — tap Create to build your own.
-                </Text>
-              ) : (
-                customPacks.map((item) => (
+            {customPacks.length === 0 ? (
+              <Text variant='bodySmall' style={styles.emptyText}>
+                No custom packs yet.
+              </Text>
+            ) : (
+              customPacks.map((item) => {
+                const unlocked = getUnlockedCountForPack(unlockMap, item.key)
+                const progress = item.count > 0 ? unlocked / item.count : 0
+                return (
                   <PackRow
                     key={item.key}
                     label={item.label}
-                    subtitle={`${commaString(item.count)} puzzles`}
+                    group={item.group}
+                    subtitle={`${commaString(unlocked)} of ${commaString(item.count)} unlocked`}
+                    progress={progress}
                     onPress={() => toggle(item.key)}
                     leading={<Checkbox status={selectedSet.has(item.key) ? 'checked' : 'unchecked'} onPress={() => toggle(item.key)} />}
+                    // Share and Delete both live in the editor header now (Edit -> pack name ->
+                    // Share/Delete) — this row used to be 3 icons deep with no real gap between
+                    // them. Edit is the one thing this row itself needs: everything else about
+                    // managing a specific pack happens once you're actually in it.
                     trailing={
-                      <View style={styles.rowActions}>
-                        <IconButton icon='pencil-outline' size={20} onPress={() => setStep({ screen: 'editor', key: item.key })} accessibilityLabel={`Edit ${item.label}`} />
-                        <IconButton icon='share-variant' size={20} onPress={() => void handleShare(item.key, item.label)} accessibilityLabel={`Share ${item.label}`} />
-                        <IconButton icon='delete-outline' size={20} onPress={() => void handleDelete(item.key, item.label)} accessibilityLabel={`Delete ${item.label}`} />
-                      </View>
+                      <IconButton
+                        icon='pencil-outline'
+                        size={20}
+                        onPress={() => {
+                          setEditingKey(item.key)
+                          setEditorVisible(true)
+                        }}
+                        accessibilityLabel={`Edit ${item.label}`}
+                      />
                     }
                   />
-                ))
-              )}
+                )
+              })
+            )}
 
-              <Text variant='titleSmall' style={styles.sectionHeader}>
-                Built-in packs
-              </Text>
-              {builtInPacks.map((item) => (
-                <PackRow key={item.key} label={item.label} subtitle={`${commaString(item.count)} puzzles`} onPress={() => toggle(item.key)} leading={<Checkbox status={selectedSet.has(item.key) ? 'checked' : 'unchecked'} onPress={() => toggle(item.key)} />} trailing={<IconButton icon='information-outline' size={20} onPress={() => setStep({ screen: 'detail', key: item.key })} accessibilityLabel={`View ${item.label} contents`} />} />
-              ))}
-            </ScrollView>
-          </>
-        ) : null}
+            <Text variant='titleSmall' style={styles.sectionHeader}>
+              Built-in packs
+            </Text>
+            {builtInPacks.map((item) => {
+              const unlocked = getUnlockedCountForPack(unlockMap, item.key)
+              const progress = item.count > 0 ? unlocked / item.count : 0
+              return (
+                <PackRow
+                  key={item.key}
+                  label={item.label}
+                  group={item.group}
+                  subtitle={`${commaString(unlocked)} of ${commaString(item.count)} unlocked`}
+                  progress={progress}
+                  onPress={() => toggle(item.key)}
+                  leading={<Checkbox status={selectedSet.has(item.key) ? 'checked' : 'unchecked'} onPress={() => toggle(item.key)} />}
+                  trailing={
+                    <IconButton
+                      icon='information-outline'
+                      size={20}
+                      onPress={() => {
+                        setDetailKey(item.key)
+                        setDetailVisible(true)
+                      }}
+                      accessibilityLabel={`View ${item.label} contents`}
+                    />
+                  }
+                />
+              )
+            })}
+          </ScrollView>
 
-        {step.screen === 'detail' ? (
-          <View style={styles.stepBody}>
-            <PackDetailContent packKey={step.key} />
+          {/* A fixed footer, not part of the scrollable content — matches PuzzleDrawer's own
+              quick-start list, and keeps Select all/Clear reachable without scrolling back up past
+              however many custom and built-in packs are in between. */}
+          <View style={styles.listFooter}>
+            <Text variant='bodySmall' style={styles.muted}>
+              {commaString(selectedSet.size)} of {commaString(manifest.length)} selected
+            </Text>
+            <View style={styles.quickActions}>
+              <Button compact onPress={() => onChangeSelectedKeys(manifest.map((item) => item.key))}>
+                Select all
+              </Button>
+              <Button compact onPress={() => onChangeSelectedKeys([])}>
+                Clear
+              </Button>
+            </View>
           </View>
-        ) : null}
-
-        {/* Keyed on the pack being edited (or 'new') so switching which pack you're editing — or
-            from editing into creating — always starts the form fresh, without needing an effect to
-            resync it the way the old dialog-based builder did. */}
-        {step.screen === 'editor' ? <PackEditorStep key={step.key ?? 'new'} editingKey={step.key} onSaved={handleSaved} onCancel={() => setStep(LIST_STEP)} /> : null}
-      </View>
-    </Drawer>
-  )
-}
-
-type PackEditorStepProps = {
-  editingKey: string | null
-  onSaved: (pack: CustomPack) => void
-  onCancel: () => void
-}
-
-const PackEditorStep = ({ editingKey, onSaved, onCancel }: PackEditorStepProps): JSX.Element => {
-  const editingPack = useMemo((): CustomPack | null => {
-    if (!editingKey) return null
-    const pack = getPuzzleManifest().find((item) => item.key === editingKey)
-    if (!pack) return null
-    // The list only ever needs the manifest summary, but the editor needs the full puzzle list to
-    // prefill entries — createdAt/updatedAt aren't used by the editor so they're left blank rather
-    // than looking up the full CustomPack record just for two unused timestamps.
-    return { key: pack.key, label: pack.label, createdAt: '', updatedAt: '', puzzles: getCustomPackPuzzles(editingKey) }
-  }, [editingKey])
-
-  const [label, setLabel] = useState(editingPack?.label ?? '')
-  const [entries, setEntries] = useState<CustomPackEntryInput[]>(editingPack && editingPack.puzzles.length > 0 ? editingPack.puzzles.map((puzzle) => ({ answer: puzzle.answer, hint: typeof puzzle.metadata?.hint === 'string' ? puzzle.metadata.hint : '' })) : [EMPTY_ENTRY])
-  const [saving, setSaving] = useState(false)
-
-  const updateEntry = (index: number, patch: Partial<CustomPackEntryInput>) => setEntries((prev) => prev.map((entry, i) => (i === index ? { ...entry, ...patch } : entry)))
-  const removeEntry = (index: number) => setEntries((prev) => (prev.length > 1 ? prev.filter((_, i) => i !== index) : prev))
-  const addEntry = () => setEntries((prev) => [...prev, EMPTY_ENTRY])
-
-  const handleSave = async () => {
-    const trimmedLabel = label.trim()
-    if (!trimmedLabel) {
-      void alert('Name this pack', 'Give your pack a name before saving.')
-      return
-    }
-
-    const validEntries = entries.filter((entry) => normalizePhrase(entry.answer).replace(/ /g, '').length > 0)
-    if (validEntries.length === 0) {
-      void alert('Add a word', 'Add at least one word or phrase using letters A-Z to this pack.')
-      return
-    }
-
-    setSaving(true)
-    try {
-      const pack = await saveCustomPack({ key: editingPack?.key, label: trimmedLabel, entries: validEntries })
-      onSaved(pack)
-    } finally {
-      setSaving(false)
-    }
-  }
-
-  return (
-    <ScrollView showsVerticalScrollIndicator={false} style={styles.scroll} contentContainerStyle={styles.scrollContent} keyboardShouldPersistTaps='handled'>
-      <TextInput testID='pack-label-input' value={label} onChangeText={setLabel} label='Pack name' mode='outlined' maxLength={60} />
-
-      {entries.map((entry, index) => (
-        <View key={index} style={styles.entryRow}>
-          <View style={styles.entryInputs}>
-            <TextInput testID={`entry-answer-${index}`} value={entry.answer} onChangeText={(answer) => updateEntry(index, { answer })} label='Word or phrase' autoCapitalize='characters' mode='outlined' dense maxLength={128} />
-            <TextInput testID={`entry-hint-${index}`} style={styles.hintInput} value={entry.hint} onChangeText={(hint) => updateEntry(index, { hint })} label='Hint (optional)' mode='outlined' dense maxLength={80} />
-          </View>
-          <IconButton icon='close' size={20} onPress={() => removeEntry(index)} disabled={entries.length === 1} accessibilityLabel={`Remove entry ${index + 1}`} />
         </View>
-      ))}
+      </Drawer>
 
-      <Button icon='plus' onPress={addEntry} style={styles.addButton}>
-        Add word
-      </Button>
-
-      <View style={styles.footer}>
-        <Button mode='outlined' onPress={onCancel} style={styles.footerButton}>
-          Cancel
-        </Button>
-        <Button mode='contained' onPress={() => void handleSave()} loading={saving} disabled={saving} style={styles.footerButton}>
-          Save pack
-        </Button>
-      </View>
-    </ScrollView>
+      <PackPuzzlesDrawer visible={detailVisible} packKey={detailKey} onDismiss={() => setDetailVisible(false)} />
+      <PackEditorDrawer visible={editorVisible} editingKey={editingKey} onDismiss={() => setEditorVisible(false)} onSaved={handleSaved} onDelete={handleDelete} onShare={handleShare} />
+    </>
   )
 }
 
 const styles = StyleSheet.create({
-  addButton: { marginTop: 4 },
   emptyText: { marginBottom: 12, opacity: 0.7 },
-  entryInputs: { flex: 1, gap: 8 },
-  entryRow: {
-    alignItems: 'center',
-    flexDirection: 'row',
-    gap: 4,
-    marginTop: 12
-  },
-  footer: {
-    flexDirection: 'row',
-    gap: 12,
-    marginTop: 20
-  },
-  footerButton: { flex: 1 },
-  headerRow: {
+  headerRow: DRAWER_HEADER_ROW_STYLE,
+  headerSpacer: { width: 40 },
+  // Matches PuzzleDrawer's own fixed footer padding — a fixed, non-scrolling row pinned to the
+  // panel's bottom edge, not part of the scrollable list above it.
+  listFooter: {
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingHorizontal: 8,
-    paddingVertical: 8
+    paddingBottom: 16,
+    paddingHorizontal: 16,
+    paddingTop: 16
   },
-  headerSpacer: { width: 40 },
-  hintInput: { marginTop: 0 },
-  importBlock: { marginBottom: 12 },
-  importButton: { marginTop: 8 },
-  importInput: { minHeight: 80 },
   muted: { opacity: 0.7 },
   panel: { flex: 1 },
   quickActions: { flexDirection: 'row' },
-  rowActions: { flexDirection: 'row' },
   scroll: { flex: 1 },
   scrollContent: { paddingBottom: 24, paddingHorizontal: 16 },
   sectionActions: { flexDirection: 'row' },
@@ -335,13 +304,5 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between'
   },
-  selectionRow: {
-    alignItems: 'center',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    paddingBottom: 4,
-    paddingHorizontal: 16
-  },
-  stepBody: { flex: 1, paddingHorizontal: 16 },
-  title: { flex: 1, textAlign: 'center' }
+  title: { textAlign: 'center' }
 })

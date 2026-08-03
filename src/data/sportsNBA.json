@@ -1,0 +1,611 @@
+[
+  {
+    "id": "b68e2ff215a74cdbc737683f6f1eb2c3",
+    "source": "sports",
+    "type": "title",
+    "answer": "Dallas Mavericks",
+    "normalizedAnswer": "DALLAS MAVERICKS",
+    "category": "NBA Team",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "e48c06806c40f52b1faac148d1114575",
+    "source": "sports",
+    "type": "title",
+    "answer": "Denver Nuggets",
+    "normalizedAnswer": "DENVER NUGGETS",
+    "category": "NBA Team",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "751bde7768d7be069291a1a67f2fc289",
+    "source": "sports",
+    "type": "title",
+    "answer": "Brooklyn Nets",
+    "normalizedAnswer": "BROOKLYN NETS",
+    "category": "NBA Team",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "4196668458f06a128c9278e07294de77",
+    "source": "sports",
+    "type": "title",
+    "answer": "Washington Wizards",
+    "normalizedAnswer": "WASHINGTON WIZARDS",
+    "category": "NBA Team",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 17,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "a577f4e5c815564b27247317c3ae9683",
+    "source": "sports",
+    "type": "title",
+    "answer": "Golden State Warriors",
+    "normalizedAnswer": "GOLDEN STATE WARRIORS",
+    "category": "NBA Team",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 19,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "a1d071dad1b72c8a42891836b88db595",
+    "source": "sports",
+    "type": "title",
+    "answer": "Los Angeles Lakers",
+    "normalizedAnswer": "LOS ANGELES LAKERS",
+    "category": "NBA Team",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 16,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "af4013a68277d53fee97ddf001a6b082",
+    "source": "sports",
+    "type": "title",
+    "answer": "Utah Jazz",
+    "normalizedAnswer": "UTAH JAZZ",
+    "category": "NBA Team",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "18083e981fab08038ac130d2dee4cf46",
+    "source": "sports",
+    "type": "title",
+    "answer": "Memphis Grizzlies",
+    "normalizedAnswer": "MEMPHIS GRIZZLIES",
+    "category": "NBA Team",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "022c44e0305c541b9255574c050278a4",
+    "source": "sports",
+    "type": "title",
+    "answer": "Milwaukee Bucks",
+    "normalizedAnswer": "MILWAUKEE BUCKS",
+    "category": "NBA Team",
+    "difficulty": 60.4,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "9abd01c05a5903f4c31b72553b8d461c",
+    "source": "sports",
+    "type": "title",
+    "answer": "San Antonio Spurs",
+    "normalizedAnswer": "SAN ANTONIO SPURS",
+    "category": "NBA Team",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "e9fde05c4a2d45ebf6e756055ff5ce74",
+    "source": "sports",
+    "type": "title",
+    "answer": "Indiana Pacers",
+    "normalizedAnswer": "INDIANA PACERS",
+    "category": "NBA Team",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "799dc6b4b0d02e836ca07047fbf2abf6",
+    "source": "sports",
+    "type": "title",
+    "answer": "Sacramento Kings",
+    "normalizedAnswer": "SACRAMENTO KINGS",
+    "category": "NBA Team",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "03e8fc42b9a3d04e4602210272b219c4",
+    "source": "sports",
+    "type": "title",
+    "answer": "Los Angeles Clippers",
+    "normalizedAnswer": "LOS ANGELES CLIPPERS",
+    "category": "NBA Team",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 18,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "25034a7c487d8e265d9ce42054a7ee29",
+    "source": "sports",
+    "type": "title",
+    "answer": "Miami Heat",
+    "normalizedAnswer": "MIAMI HEAT",
+    "category": "NBA Team",
+    "difficulty": 82.4,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "6e3d2549015bdf7ce7a31c7eebc2d2a4",
+    "source": "sports",
+    "type": "title",
+    "answer": "Orlando Magic",
+    "normalizedAnswer": "ORLANDO MAGIC",
+    "category": "NBA Team",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "048a765fd9d7a3467a737ba3291d928a",
+    "source": "sports",
+    "type": "title",
+    "answer": "Detroit Pistons",
+    "normalizedAnswer": "DETROIT PISTONS",
+    "category": "NBA Team",
+    "difficulty": 68.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "359bbdcbc40e75037c12045dda0a1cd5",
+    "source": "sports",
+    "type": "title",
+    "answer": "New York Knicks",
+    "normalizedAnswer": "NEW YORK KNICKS",
+    "category": "NBA Team",
+    "difficulty": 64.8,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "c13999db711acded1c6e1e99d53334e9",
+    "source": "sports",
+    "type": "title",
+    "answer": "Portland Trail Blazers",
+    "normalizedAnswer": "PORTLAND TRAIL BLAZERS",
+    "category": "NBA Team",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 20,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "d90e3a6d3a7721d842b6825048abd26c",
+    "source": "sports",
+    "type": "title",
+    "answer": "Phoenix Suns",
+    "normalizedAnswer": "PHOENIX SUNS",
+    "category": "NBA Team",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "24778d7de9be18ee9de705fd645eb29d",
+    "source": "sports",
+    "type": "title",
+    "answer": "Oklahoma City Thunder",
+    "normalizedAnswer": "OKLAHOMA CITY THUNDER",
+    "category": "NBA Team",
+    "difficulty": 44,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 19,
+    "uniqueLetterCount": 15,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "a96fe5170c0564e2f3d6dc869f4a7c5d",
+    "source": "sports",
+    "type": "title",
+    "answer": "Cleveland Cavaliers",
+    "normalizedAnswer": "CLEVELAND CAVALIERS",
+    "category": "NBA Team",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 18,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "7ce42dd7bf03038e32306f27c818889d",
+    "source": "sports",
+    "type": "title",
+    "answer": "Toronto Raptors",
+    "normalizedAnswer": "TORONTO RAPTORS",
+    "category": "NBA Team",
+    "difficulty": 76.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "2d91bb4766cf8c57ecab13f16eeaa565",
+    "source": "sports",
+    "type": "title",
+    "answer": "New Orleans Pelicans",
+    "normalizedAnswer": "NEW ORLEANS PELICANS",
+    "category": "NBA Team",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 18,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "6dde9ad7464a71d45ad627f9df276682",
+    "source": "sports",
+    "type": "title",
+    "answer": "Charlotte Hornets",
+    "normalizedAnswer": "CHARLOTTE HORNETS",
+    "category": "NBA Team",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "8bc52d48c499bf6c4a4abd73811bb122",
+    "source": "sports",
+    "type": "title",
+    "answer": "Atlanta Hawks",
+    "normalizedAnswer": "ATLANTA HAWKS",
+    "category": "NBA Team",
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "65be06899a26576db610871ceea279bd",
+    "source": "sports",
+    "type": "title",
+    "answer": "Minnesota Timberwolves",
+    "normalizedAnswer": "MINNESOTA TIMBERWOLVES",
+    "category": "NBA Team",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 21,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "365420250f24812b338f1699741b67e2",
+    "source": "sports",
+    "type": "title",
+    "answer": "Boston Celtics",
+    "normalizedAnswer": "BOSTON CELTICS",
+    "category": "NBA Team",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "437324ac1311fae914a02e6588fc0a89",
+    "source": "sports",
+    "type": "title",
+    "answer": "Houston Rockets",
+    "normalizedAnswer": "HOUSTON ROCKETS",
+    "category": "NBA Team",
+    "difficulty": 64.4,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  },
+  {
+    "id": "8350fa4a1137c43326a2cb0dbc05a6b4",
+    "source": "sports",
+    "type": "title",
+    "answer": "Chicago Bulls",
+    "normalizedAnswer": "CHICAGO BULLS",
+    "category": "NBA Team",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "nba",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas"
+    }
+  }
+]

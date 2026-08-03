@@ -2060,17 +2060,17 @@
     }
   },
   {
-    "id": "03d764e3e618436ad36dc1abdb5401a7",
+    "id": "4d93e1d6024c272be91626b708f4d2e6",
     "source": "geography",
     "type": "title",
-    "answer": "Hong Kong (China",
-    "normalizedAnswer": "HONG KONG CHINA",
+    "answer": "Hong Kong",
+    "normalizedAnswer": "HONG KONG",
     "category": "Country",
-    "difficulty": 72.8,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 13,
-    "uniqueLetterCount": 8,
+    "difficulty": 86.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 5,
     "tags": [
       "geography",
       "country"
@@ -2720,17 +2720,17 @@
     }
   },
   {
-    "id": "d59b8ab71d9f08595058fec1834b0042",
+    "id": "c37fae0567c153a8ae4a9b39d4387f83",
     "source": "geography",
     "type": "title",
-    "answer": "Puerto Rico (US",
-    "normalizedAnswer": "PUERTO RICO US",
+    "answer": "Puerto Rico",
+    "normalizedAnswer": "PUERTO RICO",
     "category": "Country",
-    "difficulty": 69.2,
+    "difficulty": 74,
     "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 12,
-    "uniqueLetterCount": 9,
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
     "tags": [
       "geography",
       "country"
@@ -3340,17 +3340,17 @@
     }
   },
   {
-    "id": "af56228dbe1d760434f11153d9bec5bb",
+    "id": "9c25d726e9408ab109e800bda1fa4d4b",
     "source": "geography",
     "type": "title",
-    "answer": "Macau (China",
-    "normalizedAnswer": "MACAU CHINA",
+    "answer": "Macau",
+    "normalizedAnswer": "MACAU",
     "category": "Country",
-    "difficulty": 78,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 10,
-    "uniqueLetterCount": 7,
+    "difficulty": 92,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
     "tags": [
       "geography",
       "country"
@@ -3400,17 +3400,17 @@
     }
   },
   {
-    "id": "1a73df057f597deb83bab4903c203124",
+    "id": "7183e9c4d2329987d0408fca3f4d3001",
     "source": "geography",
     "type": "title",
-    "answer": "Western Sahara (disputed",
-    "normalizedAnswer": "WESTERN SAHARA DISPUTED",
+    "answer": "Western Sahara",
+    "normalizedAnswer": "WESTERN SAHARA",
     "category": "Country",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 21,
-    "uniqueLetterCount": 12,
+    "difficulty": 72.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 8,
     "tags": [
       "geography",
       "country"
@@ -3620,16 +3620,16 @@
     }
   },
   {
-    "id": "0e9b61d3cfc8eb50f5eceb38d6017a99",
+    "id": "36626e866fc812f5c799a262fbe8159b",
     "source": "geography",
     "type": "title",
-    "answer": "French Polynesia (France",
-    "normalizedAnswer": "FRENCH POLYNESIA FRANCE",
+    "answer": "French Polynesia",
+    "normalizedAnswer": "FRENCH POLYNESIA",
     "category": "Country",
     "difficulty": 52,
     "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 21,
+    "wordCount": 2,
+    "letterCount": 15,
     "uniqueLetterCount": 13,
     "tags": [
       "geography",
@@ -3640,17 +3640,17 @@
     }
   },
   {
-    "id": "f05c75b0412f1b7d945f5538b1e69730",
+    "id": "bd70d848fd52db2f030db066faa9a895",
     "source": "geography",
     "type": "title",
-    "answer": "New Caledonia (France",
-    "normalizedAnswer": "NEW CALEDONIA FRANCE",
+    "answer": "New Caledonia",
+    "normalizedAnswer": "NEW CALEDONIA",
     "category": "Country",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 18,
-    "uniqueLetterCount": 11,
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
     "tags": [
       "geography",
       "country"
@@ -3704,12 +3704,12 @@
     "source": "geography",
     "type": "title",
     "answer": "São Tomé and Príncipe",
-    "normalizedAnswer": "SO TOM AND PRNCIPE",
+    "normalizedAnswer": "SAO TOME AND PRINCIPE",
     "category": "Country",
     "difficulty": 56,
     "difficultyTier": "easy",
     "wordCount": 4,
-    "letterCount": 15,
+    "letterCount": 18,
     "uniqueLetterCount": 12,
     "tags": [
       "geography",
@@ -3760,17 +3760,17 @@
     }
   },
   {
-    "id": "fb8866914bc920ab298a0a271e64183d",
+    "id": "3f351ebf78a36da5769c358dc5673052",
     "source": "geography",
     "type": "title",
-    "answer": "Curaçao (Netherlands",
-    "normalizedAnswer": "CURAAO NETHERLANDS",
+    "answer": "Curaçao",
+    "normalizedAnswer": "CURACAO",
     "category": "Country",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 17,
-    "uniqueLetterCount": 12,
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
     "tags": [
       "geography",
       "country"
@@ -3780,17 +3780,17 @@
     }
   },
   {
-    "id": "a08535c3697b8756d80a18905313a158",
+    "id": "20a8c9ad4e260dd1a27f4de002132f8d",
     "source": "geography",
     "type": "title",
-    "answer": "Guam (US",
-    "normalizedAnswer": "GUAM US",
+    "answer": "Guam",
+    "normalizedAnswer": "GUAM",
     "category": "Country",
-    "difficulty": 87.6,
+    "difficulty": 92.4,
     "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 6,
-    "uniqueLetterCount": 5,
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
     "tags": [
       "geography",
       "country"
@@ -3840,17 +3840,17 @@
     }
   },
   {
-    "id": "9f6592bf5a59bf8a2c2c67f76010f7a0",
+    "id": "e413e5425453f51d5b042a2264274d27",
     "source": "geography",
     "type": "title",
-    "answer": "Aruba (Netherlands",
-    "normalizedAnswer": "ARUBA NETHERLANDS",
+    "answer": "Aruba",
+    "normalizedAnswer": "ARUBA",
     "category": "Country",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 16,
-    "uniqueLetterCount": 11,
+    "difficulty": 92,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
     "tags": [
       "geography",
       "country"
@@ -3920,17 +3920,17 @@
     }
   },
   {
-    "id": "8b887496c03830f5aaa50ae2d2a37183",
+    "id": "3ee1b27f8ebcd66bcd28eaaf48fcb0c3",
     "source": "geography",
     "type": "title",
-    "answer": "Jersey (UK",
-    "normalizedAnswer": "JERSEY UK",
+    "answer": "Jersey",
+    "normalizedAnswer": "JERSEY",
     "category": "Country",
-    "difficulty": 78.8,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 7,
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
     "tags": [
       "geography",
       "country"
@@ -3980,17 +3980,17 @@
     }
   },
   {
-    "id": "0f8358ae7314046ddce17afb34c686a8",
+    "id": "ac79f5af63faab3c685b4982a06d8e33",
     "source": "geography",
     "type": "title",
-    "answer": "Cayman Islands (UK",
-    "normalizedAnswer": "CAYMAN ISLANDS UK",
+    "answer": "Cayman Islands",
+    "normalizedAnswer": "CAYMAN ISLANDS",
     "category": "Country",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 15,
-    "uniqueLetterCount": 11,
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
     "tags": [
       "geography",
       "country"
@@ -4000,16 +4000,16 @@
     }
   },
   {
-    "id": "b29bf80eac0fd2707f59fe6f5b8a05f1",
+    "id": "61054fc0379d5b69f4984022d78a11a0",
     "source": "geography",
     "type": "title",
-    "answer": "U.S. Virgin Islands (US",
-    "normalizedAnswer": "US VIRGIN ISLANDS US",
+    "answer": "U.S. Virgin Islands",
+    "normalizedAnswer": "US VIRGIN ISLANDS",
     "category": "Country",
     "difficulty": 64,
     "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 17,
+    "wordCount": 3,
+    "letterCount": 15,
     "uniqueLetterCount": 10,
     "tags": [
       "geography",
@@ -4020,17 +4020,17 @@
     }
   },
   {
-    "id": "95d1637f9546f532ebe0fd916cda2e02",
+    "id": "68225bccbfe5c68cab167b1b518c059a",
     "source": "geography",
     "type": "title",
-    "answer": "Isle of Man (UK",
-    "normalizedAnswer": "ISLE OF MAN UK",
+    "answer": "Isle of Man",
+    "normalizedAnswer": "ISLE OF MAN",
     "category": "Country",
-    "difficulty": 61.6,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 11,
-    "uniqueLetterCount": 11,
+    "difficulty": 70.4,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 9,
+    "uniqueLetterCount": 9,
     "tags": [
       "geography",
       "country"
@@ -4080,17 +4080,17 @@
     }
   },
   {
-    "id": "6196405e3afd4cd4b7b83611704b7237",
+    "id": "f24d8c0e8d3381cf48fc04d73ea41ebe",
     "source": "geography",
     "type": "title",
-    "answer": "Guernsey (UK",
-    "normalizedAnswer": "GUERNSEY UK",
+    "answer": "Guernsey",
+    "normalizedAnswer": "GUERNSEY",
     "category": "Country",
-    "difficulty": 74,
+    "difficulty": 78.8,
     "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 10,
-    "uniqueLetterCount": 8,
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
     "tags": [
       "geography",
       "country"
@@ -4100,37 +4100,37 @@
     }
   },
   {
-    "id": "004c168c55478c454751aa4fda3439fa",
+    "id": "8633f06bc78ef60b77f375815f5792e4",
     "source": "geography",
     "type": "title",
-    "answer": "Bermuda (UK",
-    "normalizedAnswer": "BERMUDA UK",
+    "answer": "Bermuda",
+    "normalizedAnswer": "BERMUDA",
     "category": "Country",
-    "difficulty": 74.4,
+    "difficulty": 79.2,
     "difficultyTier": "medium",
-    "wordCount": 2,
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "country"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population"
+    }
+  },
+  {
+    "id": "23197d23b298679228257ed5d5be3a31",
+    "source": "geography",
+    "type": "title",
+    "answer": "Greenland",
+    "normalizedAnswer": "GREENLAND",
+    "category": "Country",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
     "letterCount": 9,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "geography",
-      "country"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population"
-    }
-  },
-  {
-    "id": "e4c4854992cdaa7fc16a22fe63bb56cf",
-    "source": "geography",
-    "type": "title",
-    "answer": "Greenland (Denmark",
-    "normalizedAnswer": "GREENLAND DENMARK",
-    "category": "Country",
-    "difficulty": 68,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 16,
-    "uniqueLetterCount": 9,
+    "uniqueLetterCount": 7,
     "tags": [
       "geography",
       "country"
@@ -4160,17 +4160,17 @@
     }
   },
   {
-    "id": "219ffb4bb78d57ce0cf1bc0e1fc8442c",
+    "id": "e1554254ad1dc5d1f988d2b765b18058",
     "source": "geography",
     "type": "title",
-    "answer": "Faroe Islands (Denmark",
-    "normalizedAnswer": "FAROE ISLANDS DENMARK",
+    "answer": "Faroe Islands",
+    "normalizedAnswer": "FAROE ISLANDS",
     "category": "Country",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 19,
-    "uniqueLetterCount": 12,
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
     "tags": [
       "geography",
       "country"
@@ -4200,16 +4200,16 @@
     }
   },
   {
-    "id": "1ce356f3d6853f4fbe06434e63dc0389",
+    "id": "373d303a98e3da81229db02dc05d1e98",
     "source": "geography",
     "type": "title",
-    "answer": "Turks and Caicos Islands (UK",
-    "normalizedAnswer": "TURKS AND CAICOS ISLANDS UK",
+    "answer": "Turks and Caicos Islands",
+    "normalizedAnswer": "TURKS AND CAICOS ISLANDS",
     "category": "Country",
     "difficulty": 56,
     "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 23,
+    "wordCount": 4,
+    "letterCount": 21,
     "uniqueLetterCount": 12,
     "tags": [
       "geography",
@@ -4220,17 +4220,17 @@
     }
   },
   {
-    "id": "1767becc47e85977e9770c57b750fb11",
+    "id": "782e0c90d7511cc90dc41d74f14e35ce",
     "source": "geography",
     "type": "title",
-    "answer": "American Samoa (US",
-    "normalizedAnswer": "AMERICAN SAMOA US",
+    "answer": "American Samoa",
+    "normalizedAnswer": "AMERICAN SAMOA",
     "category": "Country",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 15,
-    "uniqueLetterCount": 10,
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
     "tags": [
       "geography",
       "country"
@@ -4240,17 +4240,17 @@
     }
   },
   {
-    "id": "db5c241e817282feb9a4251318e03080",
+    "id": "fd088851b909ea3e570ea38c1341dfbd",
     "source": "geography",
     "type": "title",
-    "answer": "Northern Mariana Islands (US",
-    "normalizedAnswer": "NORTHERN MARIANA ISLANDS US",
+    "answer": "Northern Mariana Islands",
+    "normalizedAnswer": "NORTHERN MARIANA ISLANDS",
     "category": "Country",
-    "difficulty": 52,
+    "difficulty": 56,
     "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 24,
-    "uniqueLetterCount": 13,
+    "wordCount": 3,
+    "letterCount": 22,
+    "uniqueLetterCount": 12,
     "tags": [
       "geography",
       "country"
@@ -4280,17 +4280,17 @@
     }
   },
   {
-    "id": "cc20e66e408d28ad1476fa26297ae99b",
+    "id": "541a87cc58e99b841e7a0faaf00d83b4",
     "source": "geography",
     "type": "title",
-    "answer": "Sint Maarten (Netherlands",
-    "normalizedAnswer": "SINT MAARTEN NETHERLANDS",
+    "answer": "Sint Maarten",
+    "normalizedAnswer": "SINT MAARTEN",
     "category": "Country",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 22,
-    "uniqueLetterCount": 11,
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
     "tags": [
       "geography",
       "country"
@@ -4320,17 +4320,17 @@
     }
   },
   {
-    "id": "d6c9df1bc50e5de3fb3a18278c83665e",
+    "id": "6ccf0921e7cd7c8aec8019146300811e",
     "source": "geography",
     "type": "title",
-    "answer": "British Virgin Islands (UK",
-    "normalizedAnswer": "BRITISH VIRGIN ISLANDS UK",
+    "answer": "British Virgin Islands",
+    "normalizedAnswer": "BRITISH VIRGIN ISLANDS",
     "category": "Country",
-    "difficulty": 48,
+    "difficulty": 56,
     "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 22,
-    "uniqueLetterCount": 14,
+    "wordCount": 3,
+    "letterCount": 20,
+    "uniqueLetterCount": 12,
     "tags": [
       "geography",
       "country"
@@ -4360,17 +4360,17 @@
     }
   },
   {
-    "id": "cb4b1c02d097bc32326f77bdc5bc7ffd",
+    "id": "991efe5128cd0c82c6b73c719f05edd5",
     "source": "geography",
     "type": "title",
-    "answer": "Gibraltar (UK",
-    "normalizedAnswer": "GIBRALTAR UK",
+    "answer": "Gibraltar",
+    "normalizedAnswer": "GIBRALTAR",
     "category": "Country",
-    "difficulty": 69.6,
+    "difficulty": 78.4,
     "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 9,
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
     "tags": [
       "geography",
       "country"
@@ -4400,17 +4400,17 @@
     }
   },
   {
-    "id": "c11119a62653c45a0d810dc246cfee9b",
+    "id": "c5a4fbbe8d79346b37bfa7a64ea5a971",
     "source": "geography",
     "type": "title",
-    "answer": "Saint Martin (France",
-    "normalizedAnswer": "SAINT MARTIN FRANCE",
+    "answer": "Saint Martin",
+    "normalizedAnswer": "SAINT MARTIN",
     "category": "Country",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 17,
-    "uniqueLetterCount": 10,
+    "difficulty": 77.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
     "tags": [
       "geography",
       "country"
@@ -4440,17 +4440,17 @@
     }
   },
   {
-    "id": "b072af4b0087d386dcf19d0e9e67c843",
+    "id": "62115cef6a6916a44e23fd135005dfc8",
     "source": "geography",
     "type": "title",
-    "answer": "Anguilla (UK",
-    "normalizedAnswer": "ANGUILLA UK",
+    "answer": "Anguilla",
+    "normalizedAnswer": "ANGUILLA",
     "category": "Country",
-    "difficulty": 78,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 10,
-    "uniqueLetterCount": 7,
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
     "tags": [
       "geography",
       "country"
@@ -4460,17 +4460,17 @@
     }
   },
   {
-    "id": "001794ad700b8637f9deba873432cf87",
+    "id": "50d6823b09f7924fe7c2514c3a9fb287",
     "source": "geography",
     "type": "title",
-    "answer": "Cook Islands (New Zealand",
-    "normalizedAnswer": "COOK ISLANDS NEW ZEALAND",
+    "answer": "Cook Islands",
+    "normalizedAnswer": "COOK ISLANDS",
     "category": "Country",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 21,
-    "uniqueLetterCount": 12,
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
     "tags": [
       "geography",
       "country"
@@ -4500,17 +4500,17 @@
     }
   },
   {
-    "id": "97383d2039d09b6900dc6a3161b67586",
+    "id": "540954c3b7473c2cb8cf7db01c1111c6",
     "source": "geography",
     "type": "title",
-    "answer": "Wallis and Futuna (France",
-    "normalizedAnswer": "WALLIS AND FUTUNA FRANCE",
+    "answer": "Wallis and Futuna",
+    "normalizedAnswer": "WALLIS AND FUTUNA",
     "category": "Country",
-    "difficulty": 52,
+    "difficulty": 64,
     "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 21,
-    "uniqueLetterCount": 13,
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
     "tags": [
       "geography",
       "country"
@@ -4540,16 +4540,36 @@
     }
   },
   {
-    "id": "31be26accaab3b883e8233685f8b20c3",
+    "id": "c265847972a0a74b867388648afdbf5d",
     "source": "geography",
     "type": "title",
-    "answer": "Saint Barthélemy (France",
-    "normalizedAnswer": "SAINT BARTHLEMY FRANCE",
+    "answer": "Saint Barthélemy",
+    "normalizedAnswer": "SAINT BARTHELEMY",
+    "category": "Country",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "geography",
+      "country"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population"
+    }
+  },
+  {
+    "id": "626d6cf0eeec5d4e3eb3e6d0b6b23463",
+    "source": "geography",
+    "type": "title",
+    "answer": "Saint Pierre and Miquelon",
+    "normalizedAnswer": "SAINT PIERRE AND MIQUELON",
     "category": "Country",
     "difficulty": 48,
     "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 20,
+    "wordCount": 4,
+    "letterCount": 22,
     "uniqueLetterCount": 14,
     "tags": [
       "geography",
@@ -4560,17 +4580,17 @@
     }
   },
   {
-    "id": "7fc022a2a8f05372317c1592602c8724",
+    "id": "e1a165d5d9fb054876c986cda78169d9",
     "source": "geography",
     "type": "title",
-    "answer": "Saint Pierre and Miquelon (France",
-    "normalizedAnswer": "SAINT PIERRE AND MIQUELON FRANCE",
+    "answer": "Saint Helena, Ascension and Tristan da Cunha",
+    "normalizedAnswer": "SAINT HELENA ASCENSION AND TRISTAN DA CUNHA",
     "category": "Country",
-    "difficulty": 40,
+    "difficulty": 52,
     "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 28,
-    "uniqueLetterCount": 16,
+    "wordCount": 7,
+    "letterCount": 37,
+    "uniqueLetterCount": 13,
     "tags": [
       "geography",
       "country"
@@ -4580,17 +4600,17 @@
     }
   },
   {
-    "id": "88977f8e74243146c605c7c4f4c30f2e",
+    "id": "dcc51b5f013994a47e3d714e3eddac0e",
     "source": "geography",
     "type": "title",
-    "answer": "Saint Helena, Ascension and Tristan da Cunha (UK",
-    "normalizedAnswer": "SAINT HELENA ASCENSION AND TRISTAN DA CUNHA UK",
+    "answer": "Montserrat",
+    "normalizedAnswer": "MONTSERRAT",
     "category": "Country",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 8,
-    "letterCount": 39,
-    "uniqueLetterCount": 14,
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
     "tags": [
       "geography",
       "country"
@@ -4600,16 +4620,56 @@
     }
   },
   {
-    "id": "6a273bc27158dbc91443ea2b2dd88bf1",
+    "id": "85711b2203fe683590392527e306730d",
     "source": "geography",
     "type": "title",
-    "answer": "Montserrat (UK",
-    "normalizedAnswer": "MONTSERRAT UK",
+    "answer": "Falkland Islands",
+    "normalizedAnswer": "FALKLAND ISLANDS",
     "category": "Country",
-    "difficulty": 65.2,
+    "difficulty": 72,
     "difficultyTier": "medium",
     "wordCount": 2,
-    "letterCount": 12,
+    "letterCount": 15,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "country"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population"
+    }
+  },
+  {
+    "id": "78637b2c1f70fe40573fba850ddcfcd0",
+    "source": "geography",
+    "type": "title",
+    "answer": "Tokelau",
+    "normalizedAnswer": "TOKELAU",
+    "category": "Country",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "country"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population"
+    }
+  },
+  {
+    "id": "b764012609e98ffd395feb3c6852f6c5",
+    "source": "geography",
+    "type": "title",
+    "answer": "Norfolk Island",
+    "normalizedAnswer": "NORFOLK ISLAND",
+    "category": "Country",
+    "difficulty": 64.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
     "uniqueLetterCount": 10,
     "tags": [
       "geography",
@@ -4620,36 +4680,16 @@
     }
   },
   {
-    "id": "1f30e27891572cc0786c779c11068e1e",
+    "id": "3e5a505a85e3d6bb610624267b9dfaa6",
     "source": "geography",
     "type": "title",
-    "answer": "Falkland Islands (UK",
-    "normalizedAnswer": "FALKLAND ISLANDS UK",
-    "category": "Country",
-    "difficulty": 68,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 17,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "geography",
-      "country"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population"
-    }
-  },
-  {
-    "id": "ef76b071e926c7eced9c96ffe5d9186f",
-    "source": "geography",
-    "type": "title",
-    "answer": "Tokelau (New Zealand",
-    "normalizedAnswer": "TOKELAU NEW ZEALAND",
+    "answer": "Christmas Island",
+    "normalizedAnswer": "CHRISTMAS ISLAND",
     "category": "Country",
     "difficulty": 60,
     "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 17,
+    "wordCount": 2,
+    "letterCount": 15,
     "uniqueLetterCount": 11,
     "tags": [
       "geography",
@@ -4660,57 +4700,17 @@
     }
   },
   {
-    "id": "54b5e7d965ad842e71b70402e7ab39a6",
+    "id": "2287fac34109e06690419e836c38719a",
     "source": "geography",
     "type": "title",
-    "answer": "Norfolk Island (Australia",
-    "normalizedAnswer": "NORFOLK ISLAND AUSTRALIA",
+    "answer": "Niue",
+    "normalizedAnswer": "NIUE",
     "category": "Country",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 22,
-    "uniqueLetterCount": 12,
-    "tags": [
-      "geography",
-      "country"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population"
-    }
-  },
-  {
-    "id": "d7c0046cf8389f4bd59ce359545053c2",
-    "source": "geography",
-    "type": "title",
-    "answer": "Christmas Island (Australia",
-    "normalizedAnswer": "CHRISTMAS ISLAND AUSTRALIA",
-    "category": "Country",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 24,
-    "uniqueLetterCount": 12,
-    "tags": [
-      "geography",
-      "country"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population"
-    }
-  },
-  {
-    "id": "06daa0800efb1d147ab49b0866ed861f",
-    "source": "geography",
-    "type": "title",
-    "answer": "Niue (New Zealand",
-    "normalizedAnswer": "NIUE NEW ZEALAND",
-    "category": "Country",
-    "difficulty": 68.4,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 14,
-    "uniqueLetterCount": 9,
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
     "tags": [
       "geography",
       "country"
@@ -4740,17 +4740,17 @@
     }
   },
   {
-    "id": "79d313cb84ffc4828860aaf8854a7e78",
+    "id": "b0baaadf76924c31341b687e35b436e8",
     "source": "geography",
     "type": "title",
-    "answer": "Cocos (Keeling) Islands (Australia",
-    "normalizedAnswer": "COCOS KEELING ISLANDS AUSTRALIA",
+    "answer": "Cocos Islands",
+    "normalizedAnswer": "COCOS ISLANDS",
     "category": "Country",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 28,
-    "uniqueLetterCount": 14,
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
     "tags": [
       "geography",
       "country"
@@ -4760,17 +4760,17 @@
     }
   },
   {
-    "id": "c65026878f55012169fa7661a87779fb",
+    "id": "615e22bbf20ead00e9327261a86b6805",
     "source": "geography",
     "type": "title",
-    "answer": "Pitcairn Islands (UK",
-    "normalizedAnswer": "PITCAIRN ISLANDS UK",
+    "answer": "Pitcairn Islands",
+    "normalizedAnswer": "PITCAIRN ISLANDS",
     "category": "Country",
-    "difficulty": 56,
+    "difficulty": 64,
     "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 17,
-    "uniqueLetterCount": 12,
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
     "tags": [
       "geography",
       "country"
@@ -7038,13 +7038,13 @@
     "source": "geography",
     "type": "title",
     "answer": "Hagåtña",
-    "normalizedAnswer": "HAGTA",
+    "normalizedAnswer": "HAGATNA",
     "category": "US State Capital",
-    "difficulty": 92,
+    "difficulty": 87.2,
     "difficultyTier": "hard",
     "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 4,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
     "tags": [
       "geography",
       "capital",
@@ -7399,17 +7399,17 @@
     }
   },
   {
-    "id": "14ef8751e24f641cb7079de7400a3cdb",
+    "id": "6c1157a094059c84231992c077e326d1",
     "source": "geography",
     "type": "title",
-    "answer": "Bajo Nuevo Bank (Petrel Island",
-    "normalizedAnswer": "BAJO NUEVO BANK PETREL ISLAND",
+    "answer": "Bajo Nuevo Bank",
+    "normalizedAnswer": "BAJO NUEVO BANK",
     "category": "US State",
-    "difficulty": 40,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 25,
-    "uniqueLetterCount": 16,
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
     "tags": [
       "geography",
       "us-state"
@@ -7683,12 +7683,12 @@
     "source": "geography",
     "type": "title",
     "answer": "São Paulo",
-    "normalizedAnswer": "SO PAULO",
+    "normalizedAnswer": "SAO PAULO",
     "category": "World City",
-    "difficulty": 83.2,
+    "difficulty": 82.8,
     "difficultyTier": "hard",
     "wordCount": 2,
-    "letterCount": 7,
+    "letterCount": 8,
     "uniqueLetterCount": 6,
     "tags": [
       "geography",
@@ -8019,17 +8019,17 @@
     }
   },
   {
-    "id": "86624b1c23d0aabbe0928e863d75eda9",
+    "id": "8b48ebe90ee6740327e91b91c1bef0de",
     "source": "geography",
     "type": "title",
-    "answer": "Bogot",
-    "normalizedAnswer": "BOGOT",
+    "answer": "Bogotá",
+    "normalizedAnswer": "BOGOTA",
     "category": "World City",
-    "difficulty": 92,
+    "difficulty": 87.6,
     "difficultyTier": "hard",
     "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 4,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
     "tags": [
       "geography",
       "city"

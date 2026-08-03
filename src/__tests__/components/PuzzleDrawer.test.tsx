@@ -1,14 +1,33 @@
+import { type AutoPaperTheme, Provider, useAutoPaperTheme } from '@rific/auto-paper'
+import { useUpdater } from '@rific/updater'
 import { fireEvent, render } from '@testing-library/react-native'
-import { AccessibilityInfo } from 'react-native'
+import { useEffect } from 'react'
+import { StyleSheet } from 'react-native'
 
 import { PuzzleDrawer } from '@/components/PuzzleDrawer'
-import { ALL_MODES, DEFAULT_MODE } from '@/modes/registry'
-import { addCustomPuzzle } from '@/utils/customPacks'
+import { PackSelectionContext, type PackSelectionContextType } from '@/hooks/usePackSelection'
+import { DEFAULT_MODE } from '@/modes/registry'
+import { alert } from '@/utils/alert'
+import { commaString } from '@/utils/commaString'
+import { getPuzzleManifest, getPuzzlesForCategory } from '@/utils/puzzleCatalog'
 import type { PuzzleConfig } from '@/utils/puzzlePicker'
 
 // Any mode other than DEFAULT_MODE (baseConfig.mode below) — used to prove a mode change was
 // actually applied, not just re-confirmed as the same value.
 const OTHER_MODE_ACCESSIBILITY_LABEL = /Letters Only mode/
+
+// This file renders PuzzleDrawer without a PaperProvider — react-native-paper's useTheme() falls
+// back to its context default, which is MD3LightTheme itself (see react-native-paper's own
+// core/theming.tsx: `createTheming<unknown>(MD3LightTheme)`), so every theme-derived color
+// assertion below can compare directly against MD3LightTheme's real values. The difficulty-color
+// tests are the exception — success/warning only exist on a theme @rific/auto-paper's own Provider
+// actually computed (see renderDrawerWithRealTheme below), not on this fallback default.
+const colorChannels = (color: string): [number, number, number] => {
+  const rgbaMatch = color.match(/rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)/)
+  if (rgbaMatch) return [Number(rgbaMatch[1]), Number(rgbaMatch[2]), Number(rgbaMatch[3])]
+  const n = parseInt(color.replace('#', ''), 16)
+  return [(n >> 16) & 255, (n >> 8) & 255, n & 255]
+}
 
 // ModeSelector's cards render from a measured container width (see ModeSelector.test.tsx) — with
 // no layout event, its FlatList never renders a single card and mode-card queries below would
@@ -20,15 +39,16 @@ jest.mock('@/utils/alert', () => ({
   confirm: jest.fn().mockResolvedValue(true)
 }))
 
-// PuzzleDrawer also renders PacksScreen, which pulls in several other exports from this same
-// module (isCustomPackKey, saveCustomPack, etc.) — spreading the real module keeps those working
-// and only overrides the one export this file actually asserts on.
-jest.mock('@/utils/customPacks', () => ({
-  ...jest.requireActual('@/utils/customPacks'),
-  addCustomPuzzle: jest.fn().mockResolvedValue({ key: 'custom:test', label: 'Custom', createdAt: '', updatedAt: '', puzzles: [] })
+// The real hook is exercised on its own turf (its own package); here it's just a dependency whose
+// checking/updateReady states this file wants to drive directly, without faking AppState changes
+// or a real expo-updates manifest fetch.
+jest.mock('@rific/updater', () => ({
+  useUpdater: jest.fn()
 }))
 
-const mockAddCustomPuzzle = jest.mocked(addCustomPuzzle)
+const mockUseUpdater = jest.mocked(useUpdater)
+const mockCheck = jest.fn().mockResolvedValue(undefined)
+const mockAlert = jest.mocked(alert)
 
 const baseConfig: PuzzleConfig = {
   sourceMode: 'random',
@@ -38,232 +58,135 @@ const baseConfig: PuzzleConfig = {
   customHint: ''
 }
 
-const renderDrawer = (overrides: Partial<React.ComponentProps<typeof PuzzleDrawer>> = {}) => render(<PuzzleDrawer visible onDismiss={jest.fn()} onRequestOpen={jest.fn()} initialConfig={baseConfig} onConfirm={jest.fn()} {...overrides} />)
+// Real packs from the real manifest, not fixtures — matches PacksScreen.test.tsx's own convention,
+// so these tests don't drift from whatever pack keys/labels the catalog actually ships with.
+const builtInPacks = () => getPuzzleManifest().filter((item) => item.count > 0)
+
+// selectedPacks is supplied via the context directly rather than through PackSelectionProvider, so
+// a test can pick a value without going through the provider's own persisted-default plumbing.
+// Omitting it exercises the real shipped default (no packs selected) via the context's own
+// fallback.
+const renderDrawer = (overrides: Partial<React.ComponentProps<typeof PuzzleDrawer>> = {}, packSelection?: Partial<PackSelectionContextType>) => {
+  const drawer = <PuzzleDrawer visible onDismiss={jest.fn()} onRequestOpen={jest.fn()} initialConfig={baseConfig} onConfirm={jest.fn()} {...overrides} />
+  if (!packSelection) return render(drawer)
+  return render(<PackSelectionContext.Provider value={{ selectedPackKeys: [], setSelectedPackKeys: jest.fn(), ...packSelection }}>{drawer}</PackSelectionContext.Provider>)
+}
+
+// success/warning/danger only exist on a theme @rific/auto-paper's Provider actually computed (see
+// useComputedTheme.ts) — renderDrawer's bare-fallback MD3LightTheme doesn't have them. This wraps
+// PuzzleDrawer in the real Provider and captures the resulting theme via a sibling probe, so the
+// difficulty-color tests can assert against the exact values the app itself would compute rather
+// than a hardcoded guess.
+let capturedTheme: AutoPaperTheme | null = null
+const ThemeCapture = () => {
+  const theme = useAutoPaperTheme()
+  useEffect(() => {
+    capturedTheme = theme
+  }, [theme])
+  return null
+}
+const renderDrawerWithRealTheme = async (overrides: Partial<React.ComponentProps<typeof PuzzleDrawer>> = {}, packSelection?: Partial<PackSelectionContextType>) => {
+  capturedTheme = null
+  const drawer = <PuzzleDrawer visible onDismiss={jest.fn()} onRequestOpen={jest.fn()} initialConfig={baseConfig} onConfirm={jest.fn()} {...overrides} />
+  const wrapped = packSelection ? <PackSelectionContext.Provider value={{ selectedPackKeys: [], setSelectedPackKeys: jest.fn(), ...packSelection }}>{drawer}</PackSelectionContext.Provider> : drawer
+  const utils = await render(
+    <Provider initialValue={{ appearance: 'light' }}>
+      <ThemeCapture />
+      {wrapped}
+    </Provider>
+  )
+  return { ...utils, theme: capturedTheme! }
+}
 
 describe('PuzzleDrawer', () => {
-  let announceSpy: jest.SpiedFunction<typeof AccessibilityInfo.announceForAccessibility>
-
   beforeEach(() => {
-    announceSpy = jest.spyOn(AccessibilityInfo, 'announceForAccessibility').mockImplementation(() => {})
-    mockAddCustomPuzzle.mockClear()
+    mockCheck.mockClear()
+    mockAlert.mockClear()
+    mockUseUpdater.mockReturnValue({ check: mockCheck, checking: false, updateReady: false })
   })
 
-  afterEach(() => {
-    announceSpy.mockRestore()
-  })
-
-  it('shows Choose packs, Custom, and Difficulty together by default, with the custom form hidden', async () => {
-    const { getByText, queryByTestId } = await renderDrawer()
-
-    expect(getByText('No packs selected')).toBeTruthy()
-    expect(getByText('Custom')).toBeTruthy()
-    expect(getByText('Difficulty')).toBeTruthy()
-    expect(queryByTestId('phrase-input')).toBeNull()
-  })
-
-  it('shows the custom form alongside Choose packs and Difficulty (not in place of either) when Custom is toggled on', async () => {
-    const { getByText } = await renderDrawer()
-
-    await fireEvent.press(getByText('Custom'))
+  it('shows Choose packs and Difficulty with no Custom option — pass and play is how a word gets authored now — and always offers both Random and Pass & play', async () => {
+    const { getByText, queryByText } = await renderDrawer()
 
     expect(getByText('No packs selected')).toBeTruthy()
     expect(getByText('Difficulty')).toBeTruthy()
+    expect(queryByText('Custom')).toBeNull()
+    expect(getByText('Random')).toBeTruthy()
+    expect(getByText('Pass & play')).toBeTruthy()
   })
 
-  it('leaves every Difficulty option unselected and the confirm button disabled while the custom word is still blank', async () => {
-    const { getByText } = await renderDrawer()
+  it('shows no quick-start pack rows when nothing is selected', async () => {
+    const pack = builtInPacks()[0]
+    const { queryByText } = await renderDrawer()
 
-    await fireEvent.press(getByText('Custom'))
-
-    for (const label of ['Easy', 'Medium', 'Hard']) {
-      expect(getByText(label).parent?.parent?.props.accessibilityState.checked).toBe(false)
-    }
-    expect(getByText('Start puzzle').parent?.parent?.props.accessibilityState.disabled).toBe(true)
+    expect(queryByText(pack.label)).toBeNull()
   })
 
-  it("reflects the typed word's own scored tier in the (now read-only) Difficulty picker, and enables the confirm button", async () => {
-    const { getByText, getByTestId } = await renderDrawer()
+  it('shows a row for each pack in the current selection, with its label, unlock progress, and puzzle count', async () => {
+    const pack = builtInPacks()[0]
+    const { getByText, findByText } = await renderDrawer({}, { selectedPackKeys: [pack.key] })
 
-    await fireEvent.press(getByText('Custom'))
+    expect(getByText(pack.label)).toBeTruthy()
+    expect(await findByText(`${commaString(0)} of ${commaString(pack.count)} unlocked`)).toBeTruthy()
+  })
 
-    // Same low-letter-diversity-scores-hard example already covered for the underlying scorer in
-    // customPacks.test.ts — this is checking the drawer wires that scorer up, not re-deriving it.
-    await fireEvent.changeText(getByTestId('phrase-input'), 'cat')
+  it('hides a pack from the quick list via its trailing icon — unselecting it (same selectedPackKeys Choose packs itself toggles) rather than opening it', async () => {
+    const [packA, packB] = builtInPacks()
+    const onConfirm = jest.fn()
+    const setSelectedPackKeys = jest.fn()
+    const { getByLabelText } = await renderDrawer({ onConfirm }, { selectedPackKeys: [packA.key, packB.key], setSelectedPackKeys })
+
+    await fireEvent.press(getByLabelText(`Hide ${packA.label}`))
+
+    expect(setSelectedPackKeys).toHaveBeenCalledWith([packB.key])
+    // A distinct action from tapping the row body — hiding a pack shouldn't also open its puzzle list.
+    expect(onConfirm).not.toHaveBeenCalled()
+  })
+
+  it("opens that pack's own puzzle list, scoped to the specific pack tapped — not just any drawer, and not another pack in the selection", async () => {
+    const [packA, packB] = builtInPacks()
+    const onConfirm = jest.fn()
+    const { getByText, findByText, queryByTestId } = await renderDrawer({ onConfirm }, { selectedPackKeys: [packA.key, packB.key] })
+
+    await fireEvent.press(getByText(packA.label))
+
+    // Specific to packA's own count — proves packA's own list opened, not packB's or an
+    // unresolved one, which a bare accessibilityViewIsModal check can't distinguish.
+    expect(await findByText(`${commaString(0)} of ${commaString(packA.count)} unlocked`)).toBeTruthy()
+    const puzzleFromA = getPuzzlesForCategory(packA.key)[0]
+    const puzzleFromB = getPuzzlesForCategory(packB.key)[0]
+    expect(queryByTestId(`puzzle-row-${puzzleFromA.id}`)).toBeTruthy()
+    expect(queryByTestId(`puzzle-row-${puzzleFromB.id}`)).toBeNull()
+    // Picking a specific puzzle or a pack-scoped Random both happen from within the opened list
+    // now — tapping the quick-start row itself no longer resolves anything on its own.
+    expect(onConfirm).not.toHaveBeenCalled()
+  })
+
+  it('does not reset an in-progress draft edit on a rerender that keeps the drawer open, even when initialConfig changes underneath it', async () => {
+    const { getByText, rerender } = await renderDrawer()
+
+    await fireEvent.press(getByText('Hard'))
+    expect(getByText('Hard').parent?.parent?.props.accessibilityState.checked).toBe(true)
+
+    // Simulates a live update elsewhere in Main.tsx (e.g. a mode pick echoing back through config)
+    // arriving while the drawer is still open — this must not resync the draft, or an in-progress
+    // pick here would get silently discarded by an unrelated live update.
+    await rerender(<PuzzleDrawer visible onDismiss={jest.fn()} onRequestOpen={jest.fn()} initialConfig={{ ...baseConfig, difficulty: 'easy' }} onConfirm={jest.fn()} />)
 
     expect(getByText('Hard').parent?.parent?.props.accessibilityState.checked).toBe(true)
-    expect(getByText('Easy').parent?.parent?.props.accessibilityState.checked).toBe(false)
-    expect(getByText('Start puzzle').parent?.parent?.props.accessibilityState.disabled).toBe(false)
   })
 
-  it('keeps every Difficulty option disabled (read-only) while the custom form is open', async () => {
-    const { getByText, getByTestId } = await renderDrawer()
+  it('re-syncs the draft from initialConfig each time the drawer transitions from closed to open', async () => {
+    const { getByText, rerender } = await renderDrawer()
 
-    await fireEvent.press(getByText('Custom'))
-    await fireEvent.changeText(getByTestId('phrase-input'), 'cat')
-
-    for (const label of ['Easy', 'Medium', 'Hard']) {
-      expect(getByText(label).parent?.parent?.props.accessibilityState.disabled).toBe(true)
-    }
-  })
-
-  it('shows the secret-word and hint fields for Custom, revealed by default', async () => {
-    const { getByText, getByTestId, getByLabelText } = await renderDrawer()
-
-    await fireEvent.press(getByText('Custom'))
-
-    expect(getByTestId('phrase-input')).toBeTruthy()
-    expect(getByTestId('hint-input')).toBeTruthy()
-    expect(getByLabelText('Hide secret word')).toBeTruthy()
-  })
-
-  it('replaces the Custom button with Cancel once open, rather than un-pressing the same button', async () => {
-    const { getByText, queryByTestId } = await renderDrawer()
-
-    await fireEvent.press(getByText('Custom'))
-    expect(queryByTestId('phrase-input')).toBeTruthy()
-
-    // "Custom" is gone once open — replaced by "Cancel" — so there's no same-button un-press to
-    // (mis)fire here even by accident.
-    expect(() => getByText('Custom')).toThrow()
-    expect(getByText('Cancel')).toBeTruthy()
-  })
-
-  it('closes the custom form and discards the typed word and hint when Cancel is pressed, leaving Difficulty as an editable filter again', async () => {
-    const { getByText, getByTestId, queryByTestId } = await renderDrawer()
-
-    await fireEvent.press(getByText('Custom'))
-    await fireEvent.changeText(getByTestId('phrase-input'), 'PIZZA NIGHT')
-    await fireEvent.changeText(getByTestId('hint-input'), 'Friday tradition')
-
-    await fireEvent.press(getByText('Cancel'))
-
-    expect(queryByTestId('phrase-input')).toBeNull()
-    expect(getByText('Difficulty')).toBeTruthy()
-    expect(getByText('Easy').parent?.parent?.props.accessibilityState.disabled).toBe(false)
-
-    // Reopening confirms the draft was actually cleared, not just hidden.
-    await fireEvent.press(getByText('Custom'))
-    expect(getByTestId('phrase-input').props.value).toBe('')
-    expect(getByTestId('hint-input').props.value).toBe('')
-  })
-
-  it('toggles the reveal label and hidden state when the eye icon is pressed', async () => {
-    const { getByText, getByTestId, getByLabelText, queryByLabelText } = await renderDrawer()
-
-    await fireEvent.press(getByText('Custom'))
-    expect(getByTestId('phrase-input').props.secureTextEntry).toBe(false)
-
-    await fireEvent.press(getByLabelText('Hide secret word'))
-
-    expect(getByLabelText('Show secret word')).toBeTruthy()
-    expect(queryByLabelText('Hide secret word')).toBeNull()
-    expect(getByTestId('phrase-input').props.secureTextEntry).toBe(true)
-  })
-
-  it('labels the confirm button "Start puzzle" for Custom and "New puzzle" otherwise', async () => {
-    const { getByText } = await renderDrawer()
-
-    expect(getByText('New puzzle')).toBeTruthy()
-
-    await fireEvent.press(getByText('Custom'))
-
-    expect(getByText('Start puzzle')).toBeTruthy()
-  })
-
-  it('saves the typed word and hint to the Custom pack, and calls onConfirm, when confirming a custom puzzle', async () => {
-    const onConfirm = jest.fn()
-    const onPacksChanged = jest.fn()
-    const { getByText, getByTestId } = await renderDrawer({ onConfirm, onPacksChanged })
-
-    await fireEvent.press(getByText('Custom'))
-    await fireEvent.changeText(getByTestId('phrase-input'), 'CAT DOG')
-    await fireEvent.changeText(getByTestId('hint-input'), 'Two pets')
-    await fireEvent.press(getByText('Start puzzle'))
-
-    expect(mockAddCustomPuzzle).toHaveBeenCalledWith({ answer: 'CAT DOG', hint: 'Two pets' })
-    expect(onPacksChanged).toHaveBeenCalledTimes(1)
-
-    expect(onConfirm).toHaveBeenCalledTimes(1)
-    const [payload, config] = onConfirm.mock.calls[0]
-    expect(payload.phrase).toBe('CAT DOG')
-    expect(payload.hint).toBe('Two pets')
-    expect(config.sourceMode).toBe('custom')
-  })
-
-  it('does not save anything to the Custom pack when confirming a normal (non-custom) puzzle', async () => {
-    // usePackSelection has no Provider here, so it falls back to its default empty selection —
-    // resolving fails ("Choose at least one pack") and onConfirm never fires either way. That's
-    // fine: this test only cares that the custom-pack save is gated on customFormOpen, not on
-    // whether the (unrelated) random draw itself succeeds.
-    const { getByText } = await renderDrawer()
-
-    await fireEvent.press(getByText('New puzzle'))
-
-    expect(mockAddCustomPuzzle).not.toHaveBeenCalled()
-  })
-
-  it('does not reset user edits on an unrelated rerender when initialConfig stays referentially the same', async () => {
-    const { getByText, getByTestId, rerender } = await renderDrawer()
-
-    await fireEvent.press(getByText('Custom'))
-    await fireEvent.changeText(getByTestId('phrase-input'), 'HELLO')
-
-    await rerender(<PuzzleDrawer visible onDismiss={jest.fn()} onRequestOpen={jest.fn()} initialConfig={baseConfig} onConfirm={jest.fn()} />)
-
-    expect(getByTestId('phrase-input').props.value).toBe('HELLO')
-  })
-
-  it('re-syncs the draft when initialConfig changes while the drawer is already open (a fresh shared link arriving)', async () => {
-    const customA: PuzzleConfig = { ...baseConfig, sourceMode: 'custom', customPhrase: 'FIRST' }
-    const customB: PuzzleConfig = { ...baseConfig, sourceMode: 'custom', customPhrase: 'SECOND' }
-    // shareVersion bumps exactly when Main.tsx parses a new share — see the resync effect's own
-    // comment for why the drawer keys off this instead of comparing initialConfig's field values.
-    const { getByTestId, rerender } = await renderDrawer({ initialConfig: customA, shareVersion: 1 })
-
-    expect(getByTestId('phrase-input').props.value).toBe('FIRST')
-
-    await rerender(<PuzzleDrawer visible onDismiss={jest.fn()} onRequestOpen={jest.fn()} initialConfig={customB} shareVersion={2} onConfirm={jest.fn()} />)
-
-    expect(getByTestId('phrase-input').props.value).toBe('SECOND')
-  })
-
-  it('re-syncs the draft on a second shared link that repeats the same phrase/hint but picks a different mode', async () => {
-    // The scenario the value-comparison approach couldn't handle: sourceMode/customPhrase/
-    // customHint are IDENTICAL across both shares, so only shareVersion signals the second one
-    // actually arrived — see the resync effect's comment on PuzzleDrawer.tsx.
-    const sharedClassic: PuzzleConfig = { ...baseConfig, sourceMode: 'custom', customPhrase: 'PIZZA NIGHT', customHint: '', mode: DEFAULT_MODE }
-    const sharedLettersOnly: PuzzleConfig = { ...sharedClassic, mode: ALL_MODES.find((m) => m.id === 'letters')! }
-    const { getByTestId, getByLabelText, rerender } = await renderDrawer({ initialConfig: sharedClassic, shareVersion: 1 })
-    await fireEvent(getByTestId('mode-selector-container'), 'layout', MODE_SELECTOR_LAYOUT_EVENT)
-
-    expect(getByTestId('phrase-input').props.value).toBe('PIZZA NIGHT')
-    expect(getByLabelText(/^Classic mode, /).props.accessibilityState).toEqual({ selected: true })
-
-    await rerender(<PuzzleDrawer visible onDismiss={jest.fn()} onRequestOpen={jest.fn()} initialConfig={sharedLettersOnly} shareVersion={2} onConfirm={jest.fn()} />)
-
-    expect(getByTestId('phrase-input').props.value).toBe('PIZZA NIGHT')
-    expect(getByLabelText(/^Letters Only mode, /).props.accessibilityState).toEqual({ selected: true })
-  })
-
-  it('opens straight into the custom form when initialConfig carries a shared custom puzzle', async () => {
-    const shared: PuzzleConfig = { ...baseConfig, sourceMode: 'custom', customPhrase: 'SHARED' }
-    const { getByTestId } = await renderDrawer({ initialConfig: shared })
-
-    expect(getByTestId('phrase-input').props.value).toBe('SHARED')
-  })
-
-  it('resets the secret word back to revealed each time the drawer reopens, even if the user had hidden it', async () => {
-    const { getByText, getByLabelText, rerender } = await renderDrawer()
-
-    await fireEvent.press(getByText('Custom'))
-    await fireEvent.press(getByLabelText('Hide secret word'))
-    expect(getByLabelText('Show secret word')).toBeTruthy()
+    await fireEvent.press(getByText('Hard'))
+    expect(getByText('Hard').parent?.parent?.props.accessibilityState.checked).toBe(true)
 
     await rerender(<PuzzleDrawer visible={false} onDismiss={jest.fn()} onRequestOpen={jest.fn()} initialConfig={baseConfig} onConfirm={jest.fn()} />)
     await rerender(<PuzzleDrawer visible onDismiss={jest.fn()} onRequestOpen={jest.fn()} initialConfig={baseConfig} onConfirm={jest.fn()} />)
-    await fireEvent.press(getByText('Custom'))
 
-    expect(getByLabelText('Hide secret word')).toBeTruthy()
+    // baseConfig.difficulty is 'any' — reopening should have discarded the unconfirmed Hard pick.
+    expect(getByText('Any').parent?.parent?.props.accessibilityState.checked).toBe(true)
   })
 
   it('only marks the drawer as a modal accessibility view while visible', async () => {
@@ -281,28 +204,6 @@ describe('PuzzleDrawer', () => {
     expect(closedPanel.props.accessibilityViewIsModal).toBe(false)
     expect(closedPanel.props.accessibilityElementsHidden).toBe(true)
     expect(closedPanel.props.importantForAccessibility).toBe('no-hide-descendants')
-  })
-
-  it('announces the newly shown section when the Custom toggle changes, but not on first open', async () => {
-    const { getByText } = await renderDrawer()
-
-    expect(announceSpy).not.toHaveBeenCalled()
-
-    await fireEvent.press(getByText('Custom'))
-
-    expect(announceSpy).toHaveBeenCalledWith('Custom puzzle form shown')
-  })
-
-  it('does not announce when reopening discards an unconfirmed Custom-toggle edit', async () => {
-    const { getByText, rerender } = await renderDrawer()
-
-    await fireEvent.press(getByText('Custom'))
-    announceSpy.mockClear()
-
-    await rerender(<PuzzleDrawer visible={false} onDismiss={jest.fn()} onRequestOpen={jest.fn()} initialConfig={baseConfig} onConfirm={jest.fn()} />)
-    await rerender(<PuzzleDrawer visible onDismiss={jest.fn()} onRequestOpen={jest.fn()} initialConfig={baseConfig} onConfirm={jest.fn()} />)
-
-    expect(announceSpy).not.toHaveBeenCalled()
   })
 
   it('fires onModeChange immediately when a different mode card is tapped, without requiring confirm', async () => {
@@ -332,36 +233,131 @@ describe('PuzzleDrawer', () => {
     expect(onConfirm).not.toHaveBeenCalled()
   })
 
-  it('does not fire onDifficultyChange from the read-only Difficulty reflection while the custom form is open', async () => {
-    const onDifficultyChange = jest.fn()
-    const { getByText, getByTestId } = await renderDrawer({ onDifficultyChange })
+  it('colors the selected difficulty segment with its own theme role (easy/medium/hard -> success/warning/danger — see useDifficultyColors), and moves the color when the selection changes', async () => {
+    const { getByText, theme } = await renderDrawerWithRealTheme()
 
-    await fireEvent.press(getByText('Custom'))
-    await fireEvent.changeText(getByTestId('phrase-input'), 'cat')
-    // "Hard" is the tier a low-letter-diversity word like "cat" scores as (see customPacks.test.ts)
-    // — pressing it here is pressing the read-only reflection, not a real filter.
     await fireEvent.press(getByText('Hard'))
+    expect(StyleSheet.flatten(getByText('Hard').props.style).color).toBe(theme.colors.onDangerContainer)
+    // Red channel clearly dominant — hard is a red, whatever the exact shade.
+    const [hr, hg, hb] = colorChannels(theme.colors.onDangerContainer)
+    expect(hr).toBeGreaterThan(hg)
+    expect(hr).toBeGreaterThan(hb)
+    // The previously-checked segment ("Any", checked by default per baseConfig) is back to plain
+    // unchecked/onSurface — not primary, and not any of the difficulty colors either.
+    expect(StyleSheet.flatten(getByText('Any').props.style).color).toBe(theme.colors.onSurface)
 
-    expect(onDifficultyChange).not.toHaveBeenCalled()
+    await fireEvent.press(getByText('Easy'))
+    expect(StyleSheet.flatten(getByText('Easy').props.style).color).toBe(theme.colors.onSuccessContainer)
+    // Green channel clearly dominant, and Hard goes back to plain onSurface now that it's no
+    // longer checked — its red doesn't linger.
+    const [er, eg, eb] = colorChannels(theme.colors.onSuccessContainer)
+    expect(eg).toBeGreaterThan(er)
+    expect(eg).toBeGreaterThan(eb)
+    expect(StyleSheet.flatten(getByText('Hard').props.style).color).toBe(theme.colors.onSurface)
   })
 
-  it('keeps an unsaved custom word draft intact when a live mode change echoes back through initialConfig', async () => {
-    const onModeChange = jest.fn()
-    const { getByText, getByTestId, getByLabelText, rerender } = await renderDrawer({ onModeChange })
+  it("fills the selected difficulty segment's own background with its theme role's container color, and clears it once the selection moves elsewhere", async () => {
+    const { getByText, theme } = await renderDrawerWithRealTheme()
+    // react-native-paper's SegmentedButtons has no per-segment checked-background prop (checkedColor
+    // only ever reaches the text/icon/border) — PuzzleDrawer applies this as a plain style override
+    // on whichever button is currently checked (see difficultyOptions), which lands on the segment's
+    // outer View, three parents up from its label Text.
+    const fillOf = (label: string) => StyleSheet.flatten(getByText(label).parent?.parent?.parent?.props.style).backgroundColor
 
-    await fireEvent.press(getByText('Custom'))
-    await fireEvent.changeText(getByTestId('phrase-input'), 'PIZZA NIGHT')
+    await fireEvent.press(getByText('Hard'))
+    expect(fillOf('Hard')).toBe(theme.colors.dangerContainer)
+    const [hr, hg, hb] = colorChannels(theme.colors.dangerContainer)
+    expect(hr).toBeGreaterThan(hg)
+    expect(hr).toBeGreaterThan(hb)
+    // "Any" (checked by default) goes back to the theme's own plain unchecked background
+    // (transparent) once it's no longer checked — not a lingering tint.
+    expect(fillOf('Any')).toBe('transparent')
 
-    await fireEvent(getByTestId('mode-selector-container'), 'layout', MODE_SELECTOR_LAYOUT_EVENT)
-    await fireEvent.press(getByLabelText(OTHER_MODE_ACCESSIBILITY_LABEL))
-    const newMode = onModeChange.mock.calls[0][0]
+    await fireEvent.press(getByText('Easy'))
+    expect(fillOf('Easy')).toBe(theme.colors.successContainer)
+    const [er, eg, eb] = colorChannels(theme.colors.successContainer)
+    expect(eg).toBeGreaterThan(er)
+    expect(eg).toBeGreaterThan(eb)
+    expect(fillOf('Hard')).toBe('transparent')
+  })
 
-    // Simulates Main.tsx's handleModeChange writing the new mode into config, which flows back
-    // down here as a changed initialConfig while the drawer is still open — this must NOT reset
-    // the draft (see the drawer's narrowed resync effect), or picking a new art style mid-typing
-    // would silently erase whatever custom word the player hadn't confirmed yet.
-    await rerender(<PuzzleDrawer visible onDismiss={jest.fn()} onRequestOpen={jest.fn()} initialConfig={{ ...baseConfig, mode: newMode }} onConfirm={jest.fn()} onModeChange={onModeChange} />)
+  it("colors 'Any' with the theme's own primary color when selected, since it isn't a difficulty tier with a semantic role of its own", async () => {
+    const { getByText, theme } = await renderDrawerWithRealTheme()
 
-    expect(getByTestId('phrase-input').props.value).toBe('PIZZA NIGHT')
+    // baseConfig.difficulty is 'any', so it's already checked on first render — no press needed.
+    expect(StyleSheet.flatten(getByText('Any').props.style).color).toBe(theme.colors.primary)
+  })
+
+  it('shows the Appearance and Keyboard controls, now that Settings has been folded into this drawer', async () => {
+    const { getByText, getByLabelText } = await renderDrawer()
+
+    expect(getByText('Appearance')).toBeTruthy()
+    // Icon-only (showLabels={false}) — "System" truncates as visible text at this width, so the
+    // accessible name is what's asserted on instead of the (intentionally hidden) label.
+    expect(getByLabelText('System')).toBeTruthy()
+    expect(getByLabelText('Light')).toBeTruthy()
+    expect(getByLabelText('Dark')).toBeTruthy()
+
+    // No "Keyboard" heading — QWERTY vs ABC is self-explanatory without one.
+    expect(getByText('QWERTY')).toBeTruthy()
+    expect(getByText('ABC')).toBeTruthy()
+  })
+
+  it('titles the drawer with the app name and its version, not a generic "Game Menu" the hamburger icon already implies or the "OTA" jargon a player wouldn\'t recognize', async () => {
+    const { getByText, queryByText } = await renderDrawer()
+
+    expect(getByText('Hangman')).toBeTruthy()
+    expect(getByText(/^v\d+$/)).toBeTruthy()
+    expect(queryByText(/OTA/)).toBeNull()
+  })
+
+  // Jest runs with __DEV__ true, same as this app's own dev/web guard checks for — so this
+  // exercises the actual real-world behavior of running the app from a dev build or the web dev
+  // server, not a simulated one.
+  it("shows an in-app alert instead of calling check() while running in dev, since react-native-web's Alert.alert — what check() falls back to on its own — is a silent no-op there", async () => {
+    const { getByLabelText } = await renderDrawer()
+
+    await fireEvent.press(getByLabelText('Check for updates'))
+
+    expect(mockAlert).toHaveBeenCalledWith('Updates unavailable', 'Update checks are disabled in development mode.')
+    expect(mockCheck).not.toHaveBeenCalled()
+  })
+
+  it('calls the real check() on a platform the hook actually supports, from pressing either the version text or "Hangman" itself', async () => {
+    // __DEV__ is declared `const` (see react-native's own globals.d.ts) purely so app code can't
+    // reassign it by accident — real value, real global, genuinely swappable at runtime, which is
+    // exactly what simulating a production build here needs. The `any` cast is what sidesteps the
+    // same const-ness that's the whole reason this override works truthfully instead of mocking a
+    // module.
+    const globalWithDev = globalThis as unknown as { __DEV__: boolean }
+    const originalDev = globalWithDev.__DEV__
+    globalWithDev.__DEV__ = false
+    try {
+      const { getByLabelText, getByText } = await renderDrawer()
+
+      await fireEvent.press(getByText('Hangman'))
+      await fireEvent.press(getByLabelText('Check for updates'))
+
+      expect(mockCheck).toHaveBeenCalledTimes(2)
+      expect(mockAlert).not.toHaveBeenCalled()
+    } finally {
+      globalWithDev.__DEV__ = originalDev
+    }
+  })
+
+  it('shows a checking state on the version text while a check is in flight, and disables it against a second tap', async () => {
+    mockUseUpdater.mockReturnValue({ check: mockCheck, checking: true, updateReady: false })
+    const { getByLabelText, getByText } = await renderDrawer()
+
+    expect(getByText(/v\d+ · checking…/)).toBeTruthy()
+    const versionText = getByLabelText('Checking for updates')
+    expect(versionText.props.accessibilityState?.disabled ?? versionText.props.disabled).toBe(true)
+  })
+
+  it('flags a silently-staged update on the version text, from the same background check every other game on this hook relies on', async () => {
+    mockUseUpdater.mockReturnValue({ check: mockCheck, checking: false, updateReady: true })
+    const { getByText } = await renderDrawer()
+
+    expect(getByText(/v\d+ · update ready/)).toBeTruthy()
   })
 })

@@ -1,7 +1,8 @@
 import { Dialog } from '@rific/auto-paper'
+import { IconButton } from '@rific/haptic-press'
 import { JSX, ReactNode } from 'react'
 import { StyleSheet, View } from 'react-native'
-import { IconButton, Text } from 'react-native-paper'
+import { Text } from 'react-native-paper'
 
 export type DialogShellProps = {
   visible: boolean

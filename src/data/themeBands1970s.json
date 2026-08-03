@@ -1,0 +1,506 @@
+[
+  {
+    "id": "ace83bbfbc1debbf29b3ec556119c296",
+    "source": "theme",
+    "type": "title",
+    "answer": "Led Zeppelin",
+    "normalizedAnswer": "LED ZEPPELIN",
+    "category": "1970s Band",
+    "difficulty": 77.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "band",
+      "1970s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "46fb6d5521dac7078a6ea037fef316d9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Pink Floyd",
+    "normalizedAnswer": "PINK FLOYD",
+    "category": "1970s Band",
+    "difficulty": 70.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "band",
+      "1970s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "55b82e7f3482f875b72cc51c1538c201",
+    "source": "theme",
+    "type": "title",
+    "answer": "Fleetwood Mac",
+    "normalizedAnswer": "FLEETWOOD MAC",
+    "category": "1970s Band",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "band",
+      "1970s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a89f8da1c6baeaba063bfb331aeaaaef",
+    "source": "theme",
+    "type": "title",
+    "answer": "Queen",
+    "normalizedAnswer": "QUEEN",
+    "category": "1970s Band",
+    "difficulty": 92,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "band",
+      "1970s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "8dfd9f9fd0f8bee66147d04919759477",
+    "source": "theme",
+    "type": "title",
+    "answer": "Eagles",
+    "normalizedAnswer": "EAGLES",
+    "category": "1970s Band",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "band",
+      "1970s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c2a68b6f95732fc5ad9a977ad8fa5834",
+    "source": "theme",
+    "type": "title",
+    "answer": "Aerosmith",
+    "normalizedAnswer": "AEROSMITH",
+    "category": "1970s Band",
+    "difficulty": 70.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "band",
+      "1970s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "77602bb0a99a34ee5192b8b980077e32",
+    "source": "theme",
+    "type": "title",
+    "answer": "AC/DC",
+    "normalizedAnswer": "ACDC",
+    "category": "1970s Band",
+    "difficulty": 96.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "band",
+      "1970s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "f317c35e1d5123d4b2d274052f0f4029",
+    "source": "theme",
+    "type": "title",
+    "answer": "Black Sabbath",
+    "normalizedAnswer": "BLACK SABBATH",
+    "category": "1970s Band",
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "band",
+      "1970s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "46b86ec3596167f20b429c6926d4f92f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Earth Wind and Fire",
+    "normalizedAnswer": "EARTH WIND AND FIRE",
+    "category": "1970s Band",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 16,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "band",
+      "1970s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "dad66f537f8d755bcf44384a89809743",
+    "source": "theme",
+    "type": "title",
+    "answer": "ABBA",
+    "normalizedAnswer": "ABBA",
+    "category": "1970s Band",
+    "difficulty": 100.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 2,
+    "tags": [
+      "theme",
+      "band",
+      "1970s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "1a7f307916b5cba4ab2b8dc55c93cf05",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bee Gees",
+    "normalizedAnswer": "BEE GEES",
+    "category": "1970s Band",
+    "difficulty": 91.2,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 7,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "band",
+      "1970s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "30f7f5ae6c02e8b807935e2ab22a0053",
+    "source": "theme",
+    "type": "title",
+    "answer": "Kiss",
+    "normalizedAnswer": "KISS",
+    "category": "1970s Band",
+    "difficulty": 96.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "band",
+      "1970s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a3feaf8de5611d5b5787f9d93b156ed3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Rush",
+    "normalizedAnswer": "RUSH",
+    "category": "1970s Band",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "band",
+      "1970s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "42f6d7c783632c09f3e138a6764ab866",
+    "source": "theme",
+    "type": "title",
+    "answer": "Genesis",
+    "normalizedAnswer": "GENESIS",
+    "category": "1970s Band",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "band",
+      "1970s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "5b7efb7fd0165cf0ff79ef8442153dc7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Yes",
+    "normalizedAnswer": "YES",
+    "category": "1970s Band",
+    "difficulty": 96.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "band",
+      "1970s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "58eacc799803cd5c553a64be04dddf2f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Steely Dan",
+    "normalizedAnswer": "STEELY DAN",
+    "category": "1970s Band",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "band",
+      "1970s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "25a45ea6088c8b57c139382e273a4b34",
+    "source": "theme",
+    "type": "title",
+    "answer": "Boston",
+    "normalizedAnswer": "BOSTON",
+    "category": "1970s Band",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "band",
+      "1970s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ecbb57188da545640540b56bc7157b84",
+    "source": "theme",
+    "type": "title",
+    "answer": "Journey",
+    "normalizedAnswer": "JOURNEY",
+    "category": "1970s Band",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "band",
+      "1970s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ec949aee74b50bb9aa97e7435ae47255",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Ramones",
+    "normalizedAnswer": "THE RAMONES",
+    "category": "1970s Band",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "band",
+      "1970s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "991edcd4a97fd5d97435700448622c6e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Talking Heads",
+    "normalizedAnswer": "TALKING HEADS",
+    "category": "1970s Band",
+    "difficulty": 61.2,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "band",
+      "1970s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "5121727f27ab7a1acea9ac611980b043",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chicago",
+    "normalizedAnswer": "CHICAGO",
+    "category": "1970s Band",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "band",
+      "1970s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "42e4c0668683b35fa590a7e353ef293d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Electric Light Orchestra",
+    "normalizedAnswer": "ELECTRIC LIGHT ORCHESTRA",
+    "category": "1970s Band",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 22,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "band",
+      "1970s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "610a224c1fb4b2340480e00d2abc8e32",
+    "source": "theme",
+    "type": "title",
+    "answer": "Emerson Lake and Palmer",
+    "normalizedAnswer": "EMERSON LAKE AND PALMER",
+    "category": "1970s Band",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 20,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "band",
+      "1970s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "3a6db36c742007345dec6219c1f59bff",
+    "source": "theme",
+    "type": "title",
+    "answer": "Parliament-Funkadelic",
+    "normalizedAnswer": "PARLIAMENTFUNKADELIC",
+    "category": "1970s Band",
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 20,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "band",
+      "1970s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  }
+]

@@ -10,7 +10,26 @@
       "supportsTablet": true,
       "bundleIdentifier": "com.infinitetoken.Hangman",
       "infoPlist": {
-        "ITSAppUsesNonExemptEncryption": false
+        "ITSAppUsesNonExemptEncryption": false,
+        "UTExportedTypeDeclarations": [
+          {
+            "UTTypeIdentifier": "com.infinitetoken.hangman.pack",
+            "UTTypeDescription": "Hangman Puzzle Pack",
+            "UTTypeConformsTo": ["public.json"],
+            "UTTypeTagSpecification": {
+              "public.filename-extension": ["hangman"],
+              "public.mime-type": "application/x-hangman"
+            }
+          }
+        ],
+        "CFBundleDocumentTypes": [
+          {
+            "CFBundleTypeName": "Hangman Puzzle Pack",
+            "CFBundleTypeRole": "Editor",
+            "LSHandlerRank": "Owner",
+            "LSItemContentTypes": ["com.infinitetoken.hangman.pack"]
+          }
+        ]
       },
       "icon": {
         "dark": "./assets/images/dark-icon.png",
@@ -26,6 +45,17 @@
       "permissions": [
         "android.permission.RECORD_AUDIO",
         "android.permission.MODIFY_AUDIO_SETTINGS"
+      ],
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "data": [
+            { "mimeType": "application/x-hangman" },
+            { "scheme": "file", "host": "*", "pathPattern": ".*\\.hangman" },
+            { "scheme": "content", "host": "*", "pathPattern": ".*\\.hangman" }
+          ],
+          "category": ["DEFAULT", "BROWSABLE"]
+        }
       ]
     },
     "web": {
@@ -49,7 +79,8 @@
       ],
       "expo-status-bar",
       "expo-font",
-      "expo-asset"
+      "expo-asset",
+      "expo-sharing"
     ],
     "runtimeVersion": {
       "policy": "fingerprint"

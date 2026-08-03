@@ -1,0 +1,401 @@
+[
+  {
+    "id": "263aa700ab3debc817bd5a505ae825e9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Imagine Dragons",
+    "normalizedAnswer": "IMAGINE DRAGONS",
+    "category": "2010s Band",
+    "difficulty": 64.4,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "band",
+      "2010s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "b856bf0653a1ac3b3b32c86df3cb6793",
+    "source": "theme",
+    "type": "title",
+    "answer": "Twenty One Pilots",
+    "normalizedAnswer": "TWENTY ONE PILOTS",
+    "category": "2010s Band",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "band",
+      "2010s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "2f0be8d77ed74dd75e07dbd919ca8d19",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mumford and Sons",
+    "normalizedAnswer": "MUMFORD AND SONS",
+    "category": "2010s Band",
+    "difficulty": 68.4,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 14,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "band",
+      "2010s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ab6f785b283612137ddb797363e3b890",
+    "source": "theme",
+    "type": "title",
+    "answer": "Foster the People",
+    "normalizedAnswer": "FOSTER THE PEOPLE",
+    "category": "2010s Band",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "band",
+      "2010s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "8fa4675befec345f4635058147f30c69",
+    "source": "theme",
+    "type": "title",
+    "answer": "OneRepublic",
+    "normalizedAnswer": "ONEREPUBLIC",
+    "category": "2010s Band",
+    "difficulty": 65.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "band",
+      "2010s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "3b3e0f309db0318c23905d26dee7e997",
+    "source": "theme",
+    "type": "title",
+    "answer": "Florence and the Machine",
+    "normalizedAnswer": "FLORENCE AND THE MACHINE",
+    "category": "2010s Band",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 21,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "band",
+      "2010s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "882b2ab869097fd6f5d15a224308ccf9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Vampire Weekend",
+    "normalizedAnswer": "VAMPIRE WEEKEND",
+    "category": "2010s Band",
+    "difficulty": 60.4,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "band",
+      "2010s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "d91742bb8eeda95db093d56ee2437f46",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bastille",
+    "normalizedAnswer": "BASTILLE",
+    "category": "2010s Band",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "band",
+      "2010s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "75f39fae6f936bbba19798ee2292bda2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Walk the Moon",
+    "normalizedAnswer": "WALK THE MOON",
+    "category": "2010s Band",
+    "difficulty": 65.6,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 11,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "band",
+      "2010s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "7fe16d08dbc093ee1f7cd618d4901bc4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Fun",
+    "normalizedAnswer": "FUN",
+    "category": "2010s Band",
+    "difficulty": 96.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "band",
+      "2010s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "d3b8b044b583eaea679417892b849d7f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Alt-J",
+    "normalizedAnswer": "ALTJ",
+    "category": "2010s Band",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "band",
+      "2010s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "efc939194a108cf487965addfcb39c78",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Lumineers",
+    "normalizedAnswer": "THE LUMINEERS",
+    "category": "2010s Band",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "band",
+      "2010s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "afaa6a4fa44e70a25b8a3dc770aad081",
+    "source": "theme",
+    "type": "title",
+    "answer": "Haim",
+    "normalizedAnswer": "HAIM",
+    "category": "2010s Band",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "band",
+      "2010s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a32af77c3efe3ddb32665ba3f50f7164",
+    "source": "theme",
+    "type": "title",
+    "answer": "CHVRCHES",
+    "normalizedAnswer": "CHVRCHES",
+    "category": "2010s Band",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "band",
+      "2010s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "64eab44c13417302903ca4cc5298c92f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Tame Impala",
+    "normalizedAnswer": "TAME IMPALA",
+    "category": "2010s Band",
+    "difficulty": 78,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "band",
+      "2010s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "7c059149ac7cf1a99984b67d520047bf",
+    "source": "theme",
+    "type": "title",
+    "answer": "Portugal The Man",
+    "normalizedAnswer": "PORTUGAL THE MAN",
+    "category": "2010s Band",
+    "difficulty": 56.4,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 14,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "band",
+      "2010s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "4c8d5bdd94e0bdf77f33fc7b8619fa87",
+    "source": "theme",
+    "type": "title",
+    "answer": "MGMT",
+    "normalizedAnswer": "MGMT",
+    "category": "2010s Band",
+    "difficulty": 96.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "band",
+      "2010s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6afc5d7616bcbb1d1867c3b0a2e5af66",
+    "source": "theme",
+    "type": "title",
+    "answer": "Two Door Cinema Club",
+    "normalizedAnswer": "TWO DOOR CINEMA CLUB",
+    "category": "2010s Band",
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 17,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "band",
+      "2010s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "16fd3a5c89ae9112ee81819b07c6e4b1",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Neighbourhood",
+    "normalizedAnswer": "THE NEIGHBOURHOOD",
+    "category": "2010s Band",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "band",
+      "2010s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  }
+]

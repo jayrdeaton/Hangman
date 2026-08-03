@@ -3,7 +3,7 @@ import type { ReactElement } from 'react'
 import { StyleSheet, Text } from 'react-native'
 import { PaperProvider } from 'react-native-paper'
 
-import { Game } from '@/components/Game'
+import { Game, WIN_DIALOG_DELAY_MS } from '@/components/Game'
 import { BURST_LIFETIME_MS, MAX_BURST_INTERVAL_MS } from '@/effects/fireworks'
 import type { GameMode } from '@/types/gameModes'
 
@@ -111,9 +111,18 @@ const FIREWORKS_LAYOUT_EVENT = { nativeEvent: { layout: { x: 0, y: 0, width: 320
 // src/effects/fireworks.tsx) — in the app this happens automatically once RN measures the
 // view, but the test renderer never fires layout events on its own, so the win path would
 // otherwise hang forever waiting for the celebration to finish. It's the only node in Game's
-// tree with pointerEvents='none', so that's how we find it.
+// tree styled with pointerEvents: 'none' (a bare `pointerEvents` prop there would trip the same
+// "props.pointerEvents is deprecated" warning fireworks.tsx itself was just fixed to avoid), so
+// that's how we find it. style is an array (StyleSheet.absoluteFill plus its own inert style),
+// not a single object, so every entry needs checking rather than just the last one.
+const isFireworksView = (node: { props: { style?: unknown } }): boolean => {
+  const style = node.props.style
+  const entries = Array.isArray(style) ? style : [style]
+  return entries.some((entry) => Boolean(entry) && typeof entry === 'object' && (entry as { pointerEvents?: string }).pointerEvents === 'none')
+}
+
 const fireFireworksLayout = async (root: Root) => {
-  const [fireworksView] = root!.queryAll((node) => node.props.pointerEvents === 'none')
+  const [fireworksView] = root!.queryAll(isFireworksView)
   await fireEvent(fireworksView, 'layout', FIREWORKS_LAYOUT_EVENT)
 }
 
@@ -161,7 +170,7 @@ describe('Game', () => {
     expect(onStop).toHaveBeenCalledTimes(1)
   })
 
-  it('calls onLost once wrong guesses reach the mode maxMistakes', async () => {
+  it('calls onLost once wrong guesses reach the mode maxMistakes, reporting the final wrong-guess and total-guess counts', async () => {
     const onLost = jest.fn()
     const { getByText } = await render(<Game phrase='CAT' onStop={jest.fn()} onLost={onLost} mode={shortMode} />)
 
@@ -169,27 +178,39 @@ describe('Game', () => {
     await guessLetter(getByText, 'W')
 
     expect(onLost).toHaveBeenCalledTimes(1)
+    expect(onLost).toHaveBeenCalledWith({ wrongGuesses: 2, guessCount: 2 })
   })
 
-  it('triggers a win once every letter has been guessed, showing the dialog immediately alongside the celebration, and calls onStop when dismissed', async () => {
+  it('triggers a win once every letter has been guessed, starting the celebration immediately but holding RoundEndDialog back for WIN_DIALOG_DELAY_MS, and calls onStop when dismissed', async () => {
+    jest.useFakeTimers()
     const onStop = jest.fn()
     const onSolved = jest.fn()
-    const { getByText, findByText, root } = await render(<Game phrase='CAT' onStop={onStop} onSolved={onSolved} />)
+    const { getByText, queryByText, root } = await render(<Game phrase='CAT' onStop={onStop} onSolved={onSolved} />)
 
     await guessLetter(getByText, 'C')
     await guessLetter(getByText, 'A')
     await guessLetter(getByText, 'T')
 
-    expect(onSolved).toHaveBeenCalledWith({ wrongGuesses: 0, hintRevealed: false })
-    // The dialog no longer waits on the celebration to finish — both appear together.
-    expect(await findByText('You win!')).toBeTruthy()
-    const [fireworksView] = root!.queryAll((node) => node.props.pointerEvents === 'none')
+    expect(onSolved).toHaveBeenCalledWith({ wrongGuesses: 0, hintRevealed: false, guessCount: 3 })
+    // The celebration starts the instant the round is won...
+    const [fireworksView] = root!.queryAll(isFireworksView)
     expect(fireworksView).toBeTruthy()
+    // ...but the dialog itself waits (see Game.tsx's WIN_DIALOG_DELAY_MS), so it doesn't cut the
+    // moment off the instant the last letter lands.
+    expect(queryByText('You win!')).toBeNull()
 
     await fireFireworksLayout(root)
+    await act(async () => {
+      jest.advanceTimersByTime(WIN_DIALOG_DELAY_MS)
+    })
+
+    expect(getByText('You win!')).toBeTruthy()
+
     await fireEvent.press(getByText('Next puzzle'))
 
     expect(onStop).toHaveBeenCalledTimes(1)
+
+    jest.useRealTimers()
   })
 
   it('keeps the celebration effect spawning bursts for as long as the win dialog stays open', async () => {
@@ -216,13 +237,20 @@ describe('Game', () => {
   })
 
   it('shows the category progress on a win when provided', async () => {
-    const { getByText, findByText } = await render(<Game phrase='CAT' onStop={jest.fn()} categoryProgress={{ label: 'Animals', unlockedCount: 4, totalCount: 10 }} />)
+    jest.useFakeTimers()
+    const { getByText } = await render(<Game phrase='CAT' onStop={jest.fn()} categoryProgress={{ label: 'Animals', unlockedCount: 4, totalCount: 10 }} />)
 
     await guessLetter(getByText, 'C')
     await guessLetter(getByText, 'A')
     await guessLetter(getByText, 'T')
 
-    expect(await findByText('4 of 10 unlocked in Animals')).toBeTruthy()
+    await act(async () => {
+      jest.advanceTimersByTime(WIN_DIALOG_DELAY_MS)
+    })
+
+    expect(getByText('4 of 10 unlocked in Animals')).toBeTruthy()
+
+    jest.useRealTimers()
   })
 
   it('omits category progress on a loss even when provided', async () => {
@@ -235,30 +263,6 @@ describe('Game', () => {
     expect(queryByText(/unlocked in Animals/)).toBeNull()
   })
 
-  it('shows an "Another" button on a win when both categoryProgress and the handler are provided, and calls it on press', async () => {
-    const onAnotherInCategory = jest.fn()
-    const { getByText, findByLabelText } = await render(<Game phrase='CAT' onStop={jest.fn()} categoryProgress={{ label: 'Animals', unlockedCount: 4, totalCount: 10 }} onAnotherInCategory={onAnotherInCategory} />)
-
-    await guessLetter(getByText, 'C')
-    await guessLetter(getByText, 'A')
-    await guessLetter(getByText, 'T')
-
-    await fireEvent.press(await findByLabelText('Another puzzle in this category'))
-
-    expect(onAnotherInCategory).toHaveBeenCalledTimes(1)
-  })
-
-  it('omits the "Another" button when no handler is provided', async () => {
-    const { getByText, findByText, queryByLabelText } = await render(<Game phrase='CAT' onStop={jest.fn()} categoryProgress={{ label: 'Animals', unlockedCount: 4, totalCount: 10 }} />)
-
-    await guessLetter(getByText, 'C')
-    await guessLetter(getByText, 'A')
-    await guessLetter(getByText, 'T')
-
-    expect(await findByText('You win!')).toBeTruthy()
-    expect(queryByLabelText('Another puzzle in this category')).toBeNull()
-  })
-
   it('reports the wrong-guess count and hint-revealed state to onSolved', async () => {
     const onSolved = jest.fn()
     const { getByText } = await render(<Game phrase='CAT' onStop={jest.fn()} onSolved={onSolved} hint='A furry pet' />)
@@ -269,7 +273,7 @@ describe('Game', () => {
     await guessLetter(getByText, 'A')
     await guessLetter(getByText, 'T')
 
-    expect(onSolved).toHaveBeenCalledWith({ wrongGuesses: 1, hintRevealed: true })
+    expect(onSolved).toHaveBeenCalledWith({ wrongGuesses: 1, hintRevealed: true, guessCount: 4 })
   })
 
   it('hides the hint behind a reveal button until pressed, and omits both when no hint is provided', async () => {
@@ -304,7 +308,7 @@ describe('Game', () => {
     await guessLetter(getByText, 'A')
     await guessLetter(getByText, 'T')
 
-    expect(onSolved).toHaveBeenCalledWith({ wrongGuesses: 0, hintRevealed: false })
+    expect(onSolved).toHaveBeenCalledWith({ wrongGuesses: 0, hintRevealed: false, guessCount: 3 })
   })
 
   it('reveals the pack and hint together as their own pill, splitting a "<Group> <Specific>" pack label on "|"', async () => {

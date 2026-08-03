@@ -7,6 +7,7 @@ import { PersistGate } from 'redux-persist/integration/react'
 
 import { persistor, store } from '@/redux/store'
 
+import { AutoSaveCustomProvider } from './AutoSaveCustomProvider'
 import { KeyboardLayoutProvider } from './KeyboardLayoutProvider'
 import { PackSelectionProvider } from './PackSelectionProvider'
 import { Theme } from './Theme'
@@ -23,7 +24,9 @@ export const Providers = ({ children }: ProvidersProps): JSX.Element => (
         <PersistGate loading={null} persistor={persistor}>
           <Theme>
             <KeyboardLayoutProvider>
-              <PackSelectionProvider>{children}</PackSelectionProvider>
+              <AutoSaveCustomProvider>
+                <PackSelectionProvider>{children}</PackSelectionProvider>
+              </AutoSaveCustomProvider>
             </KeyboardLayoutProvider>
           </Theme>
         </PersistGate>

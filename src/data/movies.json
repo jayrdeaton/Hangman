@@ -112,12 +112,12 @@
     "source": "movie",
     "type": "title",
     "answer": "Häxan",
-    "normalizedAnswer": "HXAN",
+    "normalizedAnswer": "HAXAN",
     "category": "Documentary",
-    "difficulty": 92.4,
+    "difficulty": 92,
     "difficultyTier": "hard",
     "wordCount": 1,
-    "letterCount": 4,
+    "letterCount": 5,
     "uniqueLetterCount": 4,
     "metadata": {
       "year": "1922",
@@ -5742,24 +5742,6 @@
     }
   },
   {
-    "id": "e08ba270cb0396a9eb92f9effa02c6f9",
-    "source": "movie",
-    "type": "title",
-    "answer": "A Christmas Carol",
-    "normalizedAnswer": "A CHRISTMAS CAROL",
-    "category": "Drama",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 15,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "year": "1951",
-      "rating": 8.1,
-      "votes": 29247
-    }
-  },
-  {
     "id": "15f4f48060772cf73b1f523b04e124a9",
     "source": "movie",
     "type": "title",
@@ -6009,24 +5991,6 @@
       "year": "1951",
       "rating": 7.2,
       "votes": 11746
-    }
-  },
-  {
-    "id": "e03f14ce7a1af29d97dc75493e1248f2",
-    "source": "movie",
-    "type": "title",
-    "answer": "Monkey Business",
-    "normalizedAnswer": "MONKEY BUSINESS",
-    "category": "Comedy",
-    "difficulty": 64.4,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 14,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "year": "1952",
-      "rating": 6.9,
-      "votes": 16852
     }
   },
   {
@@ -7038,24 +7002,6 @@
     }
   },
   {
-    "id": "42fe78594bd9e0aaece5339770796816",
-    "source": "movie",
-    "type": "title",
-    "answer": "A Star Is Born",
-    "normalizedAnswer": "A STAR IS BORN",
-    "category": "Drama",
-    "difficulty": 73.6,
-    "difficultyTier": "medium",
-    "wordCount": 4,
-    "letterCount": 11,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "year": "1954",
-      "rating": 7.5,
-      "votes": 21121
-    }
-  },
-  {
     "id": "05c45233674e712a84c90ed1fa0de8ea",
     "source": "movie",
     "type": "title",
@@ -8007,24 +7953,6 @@
       "year": "1956",
       "rating": 7.3,
       "votes": 13190
-    }
-  },
-  {
-    "id": "23c22cbe6f7970d7f1d8a005472ee490",
-    "source": "movie",
-    "type": "title",
-    "answer": "The Man Who Knew Too Much",
-    "normalizedAnswer": "THE MAN WHO KNEW TOO MUCH",
-    "category": "Crime",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 20,
-    "uniqueLetterCount": 11,
-    "metadata": {
-      "year": "1956",
-      "rating": 7.4,
-      "votes": 76502
     }
   },
   {
@@ -10980,24 +10908,6 @@
     }
   },
   {
-    "id": "50b3734b0e2f0044a7346c793433d93e",
-    "source": "movie",
-    "type": "title",
-    "answer": "Mutiny on the Bounty",
-    "normalizedAnswer": "MUTINY ON THE BOUNTY",
-    "category": "Adventure",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 17,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "year": "1962",
-      "rating": 7.2,
-      "votes": 19552
-    }
-  },
-  {
     "id": "952bdb9072288ad6316f6afa6e49ff81",
     "source": "movie",
     "type": "title",
@@ -12003,24 +11913,6 @@
       "year": "1964",
       "rating": 7.3,
       "votes": 10591
-    }
-  },
-  {
-    "id": "1b4c5ca3481485c3bc1ca597fc9eec6f",
-    "source": "movie",
-    "type": "title",
-    "answer": "The Killers",
-    "normalizedAnswer": "THE KILLERS",
-    "category": "Crime",
-    "difficulty": 74,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 10,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "year": "1964",
-      "rating": 7,
-      "votes": 10501
     }
   },
   {
@@ -14188,13 +14080,13 @@
     "source": "movie",
     "type": "title",
     "answer": "Le Samouraï",
-    "normalizedAnswer": "LE SAMOURA",
+    "normalizedAnswer": "LE SAMOURAI",
     "category": "Crime",
-    "difficulty": 74.4,
+    "difficulty": 70,
     "difficultyTier": "medium",
     "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 8,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
     "metadata": {
       "year": "1967",
       "rating": 8,
@@ -17079,24 +16971,6 @@
       "year": "1972",
       "rating": 7.8,
       "votes": 68532
-    }
-  },
-  {
-    "id": "ce519d5e33236dad02ab6728b5caf39f",
-    "source": "movie",
-    "type": "title",
-    "answer": "Love in the Afternoon",
-    "normalizedAnswer": "LOVE IN THE AFTERNOON",
-    "category": "Comedy",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 18,
-    "uniqueLetterCount": 11,
-    "metadata": {
-      "year": "1972",
-      "rating": 7.6,
-      "votes": 10482
     }
   },
   {
@@ -20182,13 +20056,13 @@
     "source": "movie",
     "type": "title",
     "answer": "Cría Cuervos",
-    "normalizedAnswer": "CRA CUERVOS",
+    "normalizedAnswer": "CRIA CUERVOS",
     "category": "Drama",
-    "difficulty": 74,
+    "difficulty": 69.6,
     "difficultyTier": "medium",
     "wordCount": 2,
-    "letterCount": 10,
-    "uniqueLetterCount": 8,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
     "metadata": {
       "year": "1976",
       "rating": 7.9,
@@ -20337,24 +20211,6 @@
       "year": "1976",
       "rating": 7.2,
       "votes": 16512
-    }
-  },
-  {
-    "id": "18b661335d5a2910aac39ca5fdc013c8",
-    "source": "movie",
-    "type": "title",
-    "answer": "King Kong",
-    "normalizedAnswer": "KING KONG",
-    "category": "Adventure",
-    "difficulty": 86.8,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "year": "1976",
-      "rating": 6,
-      "votes": 38532
     }
   },
   {
@@ -20646,24 +20502,6 @@
     }
   },
   {
-    "id": "5ac8a5e2ef3bd18d6f04c9176d9e1c02",
-    "source": "movie",
-    "type": "title",
-    "answer": "The Message",
-    "normalizedAnswer": "THE MESSAGE",
-    "category": "Biography",
-    "difficulty": 78,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 10,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "1976",
-      "rating": 8.9,
-      "votes": 12052
-    }
-  },
-  {
     "id": "88ae934e9dc3614478585a0695634b87",
     "source": "movie",
     "type": "title",
@@ -20751,24 +20589,6 @@
       "year": "1976",
       "rating": 6.9,
       "votes": 23594
-    }
-  },
-  {
-    "id": "42fe78594bd9e0aaece5339770796816",
-    "source": "movie",
-    "type": "title",
-    "answer": "A Star Is Born",
-    "normalizedAnswer": "A STAR IS BORN",
-    "category": "Drama",
-    "difficulty": 73.6,
-    "difficultyTier": "medium",
-    "wordCount": 4,
-    "letterCount": 11,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "year": "1976",
-      "rating": 6.1,
-      "votes": 14471
     }
   },
   {
@@ -21996,24 +21816,6 @@
     }
   },
   {
-    "id": "9404250e4915012aa91a46da1b0875a9",
-    "source": "movie",
-    "type": "title",
-    "answer": "Heaven Can Wait",
-    "normalizedAnswer": "HEAVEN CAN WAIT",
-    "category": "Comedy",
-    "difficulty": 68.8,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 13,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "1978",
-      "rating": 6.9,
-      "votes": 25819
-    }
-  },
-  {
     "id": "d9324f8f4560bc4ec752c437edc117d5",
     "source": "movie",
     "type": "title",
@@ -22551,24 +22353,6 @@
       "year": "1979",
       "rating": 7.4,
       "votes": 36036
-    }
-  },
-  {
-    "id": "26eddeeb5ca814a304d4f63808b64317",
-    "source": "movie",
-    "type": "title",
-    "answer": "Dracula",
-    "normalizedAnswer": "DRACULA",
-    "category": "Drama",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "1979",
-      "rating": 6.5,
-      "votes": 12617
     }
   },
   {
@@ -24426,24 +24210,6 @@
     }
   },
   {
-    "id": "1f3b5089a3578268827689c8098f4c54",
-    "source": "movie",
-    "type": "title",
-    "answer": "The Party",
-    "normalizedAnswer": "THE PARTY",
-    "category": "Comedy",
-    "difficulty": 78.8,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "1980",
-      "rating": 6.7,
-      "votes": 11960
-    }
-  },
-  {
     "id": "c71f2fa00e957547e7591af2409b13f6",
     "source": "movie",
     "type": "title",
@@ -24520,12 +24286,12 @@
     "source": "movie",
     "type": "title",
     "answer": "La Chèvre",
-    "normalizedAnswer": "LA CHVRE",
+    "normalizedAnswer": "LA CHEVRE",
     "category": "Adventure",
-    "difficulty": 79.2,
+    "difficulty": 78.8,
     "difficultyTier": "medium",
     "wordCount": 2,
-    "letterCount": 7,
+    "letterCount": 8,
     "uniqueLetterCount": 7,
     "metadata": {
       "year": "1981",
@@ -25182,24 +24948,6 @@
     }
   },
   {
-    "id": "935e870b629105ae36d153fc21f63498",
-    "source": "movie",
-    "type": "title",
-    "answer": "The Postman Always Rings Twice",
-    "normalizedAnswer": "THE POSTMAN ALWAYS RINGS TWICE",
-    "category": "Crime",
-    "difficulty": 40,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 26,
-    "uniqueLetterCount": 16,
-    "metadata": {
-      "year": "1981",
-      "rating": 6.6,
-      "votes": 27945
-    }
-  },
-  {
     "id": "75d4e6a4b3cfdc977f8866814f577a5b",
     "source": "movie",
     "type": "title",
@@ -25575,24 +25323,6 @@
       "year": "1982",
       "rating": 8.1,
       "votes": 885514
-    }
-  },
-  {
-    "id": "e30b54b7b212281247acc31c480812bb",
-    "source": "movie",
-    "type": "title",
-    "answer": "Cat People",
-    "normalizedAnswer": "CAT PEOPLE",
-    "category": "Fantasy",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "1982",
-      "rating": 6.2,
-      "votes": 26714
     }
   },
   {
@@ -27396,24 +27126,6 @@
     }
   },
   {
-    "id": "2fa63530158c4f5a4dd97cc5595ad3e2",
-    "source": "movie",
-    "type": "title",
-    "answer": "To Be or Not to Be",
-    "normalizedAnswer": "TO BE OR NOT TO BE",
-    "category": "Comedy",
-    "difficulty": 80.8,
-    "difficultyTier": "hard",
-    "wordCount": 6,
-    "letterCount": 13,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "1983",
-      "rating": 6.9,
-      "votes": 12976
-    }
-  },
-  {
     "id": "b3177dbe782b44987241fc29e3537e55",
     "source": "movie",
     "type": "title",
@@ -28084,12 +27796,12 @@
     "source": "movie",
     "type": "title",
     "answer": "Nausicaä of the Valley of the Wind",
-    "normalizedAnswer": "NAUSICA OF THE VALLEY OF THE WIND",
+    "normalizedAnswer": "NAUSICAA OF THE VALLEY OF THE WIND",
     "category": "Adventure",
     "difficulty": 40,
     "difficultyTier": "easy",
     "wordCount": 7,
-    "letterCount": 27,
+    "letterCount": 28,
     "uniqueLetterCount": 16,
     "metadata": {
       "year": "1984",
@@ -30654,24 +30366,6 @@
     }
   },
   {
-    "id": "9e2c6371ef638ca69b4f7e361ab4b5f0",
-    "source": "movie",
-    "type": "title",
-    "answer": "The Fly",
-    "normalizedAnswer": "THE FLY",
-    "category": "Drama",
-    "difficulty": 83.6,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 6,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "1986",
-      "rating": 7.6,
-      "votes": 225926
-    }
-  },
-  {
     "id": "12cb1ab6838b8bc185ed85341a474123",
     "source": "movie",
     "type": "title",
@@ -30849,24 +30543,6 @@
       "year": "1986",
       "rating": 7.4,
       "votes": 57448
-    }
-  },
-  {
-    "id": "54b2650f22c0e0edf5ce6490807080ba",
-    "source": "movie",
-    "type": "title",
-    "answer": "House",
-    "normalizedAnswer": "HOUSE",
-    "category": "Comedy",
-    "difficulty": 88,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "year": "1985",
-      "rating": 6.1,
-      "votes": 32981
     }
   },
   {
@@ -33657,24 +33333,6 @@
       "year": "1988",
       "rating": 7.1,
       "votes": 14435
-    }
-  },
-  {
-    "id": "69decff5a1cd32e9367116450baca7b6",
-    "source": "movie",
-    "type": "title",
-    "answer": "The Blob",
-    "normalizedAnswer": "THE BLOB",
-    "category": "Horror",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 7,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "1988",
-      "rating": 6.7,
-      "votes": 49456
     }
   },
   {
@@ -36522,24 +36180,6 @@
     }
   },
   {
-    "id": "c7a316867872da0a4d095ef83f6eba19",
-    "source": "movie",
-    "type": "title",
-    "answer": "We're No Angels",
-    "normalizedAnswer": "WERE NO ANGELS",
-    "category": "Comedy",
-    "difficulty": 69.2,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 12,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "1989",
-      "rating": 6.1,
-      "votes": 26350
-    }
-  },
-  {
     "id": "bdf3dd09b880d4aff4597db2b41ebb30",
     "source": "movie",
     "type": "title",
@@ -37116,24 +36756,6 @@
     }
   },
   {
-    "id": "196af03a02579e285305e1a49345bc1f",
-    "source": "movie",
-    "type": "title",
-    "answer": "Hamlet",
-    "normalizedAnswer": "HAMLET",
-    "category": "Drama",
-    "difficulty": 83.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "1990",
-      "rating": 6.7,
-      "votes": 25155
-    }
-  },
-  {
     "id": "a20297cb5932869084b824ee5a626e4c",
     "source": "movie",
     "type": "title",
@@ -37440,24 +37062,6 @@
     }
   },
   {
-    "id": "f89a07a9c050a1e9f289efc2826349ea",
-    "source": "movie",
-    "type": "title",
-    "answer": "Lord of the Flies",
-    "normalizedAnswer": "LORD OF THE FLIES",
-    "category": "Adventure",
-    "difficulty": 64.4,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 14,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "year": "1990",
-      "rating": 6.4,
-      "votes": 35751
-    }
-  },
-  {
     "id": "a9065d6047ae44cd677c469ffb532a23",
     "source": "movie",
     "type": "title",
@@ -37689,24 +37293,6 @@
       "year": "1990",
       "rating": 8.2,
       "votes": 27134
-    }
-  },
-  {
-    "id": "53e549873555221a67004af2775d5b39",
-    "source": "movie",
-    "type": "title",
-    "answer": "Night of the Living Dead",
-    "normalizedAnswer": "NIGHT OF THE LIVING DEAD",
-    "category": "Horror",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 20,
-    "uniqueLetterCount": 12,
-    "metadata": {
-      "year": "1990",
-      "rating": 6.8,
-      "votes": 49295
     }
   },
   {
@@ -38668,12 +38254,12 @@
     "source": "movie",
     "type": "title",
     "answer": "The Double Life of Véronique",
-    "normalizedAnswer": "THE DOUBLE LIFE OF VRONIQUE",
+    "normalizedAnswer": "THE DOUBLE LIFE OF VERONIQUE",
     "category": "Drama",
     "difficulty": 48,
     "difficultyTier": "easy",
     "wordCount": 5,
-    "letterCount": 23,
+    "letterCount": 24,
     "uniqueLetterCount": 14,
     "metadata": {
       "year": "1991",
@@ -38751,24 +38337,6 @@
       "year": "1991",
       "rating": 7.5,
       "votes": 24750
-    }
-  },
-  {
-    "id": "91c5b1d0c353bd329da6efba85df4655",
-    "source": "movie",
-    "type": "title",
-    "answer": "Father of the Bride",
-    "normalizedAnswer": "FATHER OF THE BRIDE",
-    "category": "Comedy",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 16,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "year": "1991",
-      "rating": 6.6,
-      "votes": 93851
     }
   },
   {
@@ -40335,24 +39903,6 @@
       "year": "1992",
       "rating": 7,
       "votes": 16686
-    }
-  },
-  {
-    "id": "b8082344592c5c6eee012a317b962d20",
-    "source": "movie",
-    "type": "title",
-    "answer": "Wuthering Heights",
-    "normalizedAnswer": "WUTHERING HEIGHTS",
-    "category": "Drama",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 16,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "year": "1992",
-      "rating": 6.6,
-      "votes": 16546
     }
   },
   {
@@ -43434,24 +42984,6 @@
     }
   },
   {
-    "id": "5ed8ee8fa9a422be44ebb1b2ac038817",
-    "source": "movie",
-    "type": "title",
-    "answer": "The Three Musketeers",
-    "normalizedAnswer": "THE THREE MUSKETEERS",
-    "category": "Action",
-    "difficulty": 72,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 18,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "year": "1993",
-      "rating": 6.4,
-      "votes": 64381
-    }
-  },
-  {
     "id": "12adb8d45d616479aa12f9adae99d901",
     "source": "movie",
     "type": "title",
@@ -44532,24 +44064,6 @@
     }
   },
   {
-    "id": "5feb02ad61987c7f77d256e2741f9bca",
-    "source": "movie",
-    "type": "title",
-    "answer": "The Jungle Book",
-    "normalizedAnswer": "THE JUNGLE BOOK",
-    "category": "Adventure",
-    "difficulty": 60.8,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 13,
-    "uniqueLetterCount": 11,
-    "metadata": {
-      "year": "1994",
-      "rating": 6.1,
-      "votes": 20157
-    }
-  },
-  {
     "id": "53fdea608f7fc13c39f889bcd39bbab5",
     "source": "movie",
     "type": "title",
@@ -44734,12 +44248,12 @@
     "source": "movie",
     "type": "title",
     "answer": "Léon: The Professional",
-    "normalizedAnswer": "LON THE PROFESSIONAL",
+    "normalizedAnswer": "LEON THE PROFESSIONAL",
     "category": "Action",
     "difficulty": 56,
     "difficultyTier": "easy",
     "wordCount": 3,
-    "letterCount": 18,
+    "letterCount": 19,
     "uniqueLetterCount": 12,
     "metadata": {
       "year": "1994",
@@ -46228,12 +45742,12 @@
     "source": "movie",
     "type": "title",
     "answer": "La cérémonie",
-    "normalizedAnswer": "LA CRMONIE",
+    "normalizedAnswer": "LA CEREMONIE",
     "category": "Crime",
-    "difficulty": 70.4,
+    "difficulty": 69.6,
     "difficultyTier": "medium",
     "wordCount": 2,
-    "letterCount": 9,
+    "letterCount": 11,
     "uniqueLetterCount": 9,
     "metadata": {
       "year": "1995",
@@ -46980,24 +46494,6 @@
     }
   },
   {
-    "id": "932354bf6c41b4e740ac72aec4ae5f34",
-    "source": "movie",
-    "type": "title",
-    "answer": "Kiss of Death",
-    "normalizedAnswer": "KISS OF DEATH",
-    "category": "Crime",
-    "difficulty": 65.6,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 11,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "year": "1995",
-      "rating": 6,
-      "votes": 20115
-    }
-  },
-  {
     "id": "20c873f690cf4abd79e9b497e886249a",
     "source": "movie",
     "type": "title",
@@ -47304,24 +46800,6 @@
     }
   },
   {
-    "id": "5f10e5975649e23391f827952eab771f",
-    "source": "movie",
-    "type": "title",
-    "answer": "Othello",
-    "normalizedAnswer": "OTHELLO",
-    "category": "Drama",
-    "difficulty": 87.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "year": "1995",
-      "rating": 6.8,
-      "votes": 10656
-    }
-  },
-  {
     "id": "315d99b0c529212e14eeddaee7100a42",
     "source": "movie",
     "type": "title",
@@ -47517,24 +46995,6 @@
       "year": "1995",
       "rating": 6.9,
       "votes": 49685
-    }
-  },
-  {
-    "id": "2ff2e41ccb3d57de2f8f870b3bd06944",
-    "source": "movie",
-    "type": "title",
-    "answer": "Sabrina",
-    "normalizedAnswer": "SABRINA",
-    "category": "Comedy",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "1995",
-      "rating": 6.3,
-      "votes": 47680
     }
   },
   {
@@ -48906,24 +48366,6 @@
     }
   },
   {
-    "id": "196af03a02579e285305e1a49345bc1f",
-    "source": "movie",
-    "type": "title",
-    "answer": "Hamlet",
-    "normalizedAnswer": "HAMLET",
-    "category": "Drama",
-    "difficulty": 83.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "1996",
-      "rating": 7.7,
-      "votes": 42067
-    }
-  },
-  {
     "id": "3477bb9ec968f18b7b399f1a714d9d0c",
     "source": "movie",
     "type": "title",
@@ -49065,24 +48507,6 @@
       "year": "1996",
       "rating": 6.7,
       "votes": 78974
-    }
-  },
-  {
-    "id": "8effbfc7da9064bbff805ac4eb30406f",
-    "source": "movie",
-    "type": "title",
-    "answer": "Jane Eyre",
-    "normalizedAnswer": "JANE EYRE",
-    "category": "Drama",
-    "difficulty": 82.8,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "1996",
-      "rating": 6.8,
-      "votes": 10819
     }
   },
   {
@@ -51052,13 +50476,13 @@
     "source": "movie",
     "type": "title",
     "answer": "Le Dîner de Cons",
-    "normalizedAnswer": "LE DNER DE CONS",
+    "normalizedAnswer": "LE DINER DE CONS",
     "category": "Comedy",
-    "difficulty": 73.2,
+    "difficulty": 68.8,
     "difficultyTier": "medium",
     "wordCount": 4,
-    "letterCount": 12,
-    "uniqueLetterCount": 8,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
     "metadata": {
       "year": "1998",
       "rating": 7.6,
@@ -51988,12 +51412,12 @@
     "source": "movie",
     "type": "title",
     "answer": "Les Misérables",
-    "normalizedAnswer": "LES MISRABLES",
+    "normalizedAnswer": "LES MISERABLES",
     "category": "Crime",
-    "difficulty": 73.2,
+    "difficulty": 72.8,
     "difficultyTier": "medium",
     "wordCount": 2,
-    "letterCount": 12,
+    "letterCount": 13,
     "uniqueLetterCount": 8,
     "metadata": {
       "year": "1998",
@@ -56862,24 +56286,6 @@
     }
   },
   {
-    "id": "cb71b939fb67ba61e359dcdd27abb33b",
-    "source": "movie",
-    "type": "title",
-    "answer": "The Thomas Crown Affair",
-    "normalizedAnswer": "THE THOMAS CROWN AFFAIR",
-    "category": "Crime",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 20,
-    "uniqueLetterCount": 13,
-    "metadata": {
-      "year": "1999",
-      "rating": 6.9,
-      "votes": 109778
-    }
-  },
-  {
     "id": "51c2fc00af7ce0db5e41d71ea40d5597",
     "source": "movie",
     "type": "title",
@@ -57399,24 +56805,6 @@
       "year": "1999",
       "rating": 6.3,
       "votes": 10673
-    }
-  },
-  {
-    "id": "8903cbc12957bce78d951280a2d80554",
-    "source": "movie",
-    "type": "title",
-    "answer": "Shaft",
-    "normalizedAnswer": "SHAFT",
-    "category": "Action",
-    "difficulty": 88,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "year": "2000",
-      "rating": 6,
-      "votes": 85689
     }
   },
   {
@@ -58299,24 +57687,6 @@
       "year": "1999",
       "rating": 7.3,
       "votes": 235177
-    }
-  },
-  {
-    "id": "cdb26a9145fbb3aaa67b633a9c432648",
-    "source": "movie",
-    "type": "title",
-    "answer": "Gladiator",
-    "normalizedAnswer": "GLADIATOR",
-    "category": "Action",
-    "difficulty": 74.4,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 9,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "year": "2000",
-      "rating": 8.5,
-      "votes": 1863894
     }
   },
   {
@@ -59278,12 +58648,12 @@
     "source": "movie",
     "type": "title",
     "answer": "Pokémon: The First Movie - Mewtwo Strikes Back",
-    "normalizedAnswer": "POKMON THE FIRST MOVIE MEWTWO STRIKES BACK",
+    "normalizedAnswer": "POKEMON THE FIRST MOVIE MEWTWO STRIKES BACK",
     "category": "Action",
     "difficulty": 36,
     "difficultyTier": "easy",
     "wordCount": 7,
-    "letterCount": 36,
+    "letterCount": 37,
     "uniqueLetterCount": 17,
     "metadata": {
       "year": "1998",
@@ -60286,12 +59656,12 @@
     "source": "movie",
     "type": "title",
     "answer": "Amélie",
-    "normalizedAnswer": "AMLIE",
+    "normalizedAnswer": "AMELIE",
     "category": "Comedy",
-    "difficulty": 88,
+    "difficulty": 87.6,
     "difficultyTier": "hard",
     "wordCount": 1,
-    "letterCount": 5,
+    "letterCount": 6,
     "uniqueLetterCount": 5,
     "metadata": {
       "year": "2001",
@@ -60822,24 +60192,6 @@
     }
   },
   {
-    "id": "f628806259d9df4dcc33690d36c3f1d2",
-    "source": "movie",
-    "type": "title",
-    "answer": "The Kid",
-    "normalizedAnswer": "THE KID",
-    "category": "Comedy",
-    "difficulty": 83.6,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 6,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "2000",
-      "rating": 6.1,
-      "votes": 46518
-    }
-  },
-  {
     "id": "dcaa7a55a1464a7f29e37b7a595bba10",
     "source": "movie",
     "type": "title",
@@ -60966,24 +60318,6 @@
     }
   },
   {
-    "id": "03768afe82519206b0e6094df9663538",
-    "source": "movie",
-    "type": "title",
-    "answer": "Brother",
-    "normalizedAnswer": "BROTHER",
-    "category": "Crime",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "2000",
-      "rating": 7.1,
-      "votes": 26007
-    }
-  },
-  {
     "id": "06f7ad6d85eceab67ebc191d702015f9",
     "source": "movie",
     "type": "title",
@@ -61089,24 +60423,6 @@
       "year": "2001",
       "rating": 6.9,
       "votes": 148951
-    }
-  },
-  {
-    "id": "ea00c7110607d8f89ab78a22b063b2a6",
-    "source": "movie",
-    "type": "title",
-    "answer": "Bedazzled",
-    "normalizedAnswer": "BEDAZZLED",
-    "category": "Comedy",
-    "difficulty": 82.4,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 9,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "2000",
-      "rating": 6.1,
-      "votes": 119786
     }
   },
   {
@@ -61978,13 +61294,13 @@
     "source": "movie",
     "type": "title",
     "answer": "Y tu mamá también",
-    "normalizedAnswer": "Y TU MAM TAMBIN",
+    "normalizedAnswer": "Y TU MAMA TAMBIEN",
     "category": "Drama",
-    "difficulty": 73.2,
+    "difficulty": 68.4,
     "difficultyTier": "medium",
     "wordCount": 4,
-    "letterCount": 12,
-    "uniqueLetterCount": 8,
+    "letterCount": 14,
+    "uniqueLetterCount": 9,
     "metadata": {
       "year": "2001",
       "rating": 7.7,
@@ -63022,13 +62338,13 @@
     "source": "movie",
     "type": "title",
     "answer": "Zübük",
-    "normalizedAnswer": "ZBK",
+    "normalizedAnswer": "ZUBUK",
     "category": "Comedy",
-    "difficulty": 96.8,
+    "difficulty": 92,
     "difficultyTier": "hard",
     "wordCount": 1,
-    "letterCount": 3,
-    "uniqueLetterCount": 3,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
     "metadata": {
       "year": "1980",
       "rating": 8.5,
@@ -63058,13 +62374,13 @@
     "source": "movie",
     "type": "title",
     "answer": "Sex and Lucía",
-    "normalizedAnswer": "SEX AND LUCA",
+    "normalizedAnswer": "SEX AND LUCIA",
     "category": "Drama",
-    "difficulty": 70,
+    "difficulty": 65.6,
     "difficultyTier": "medium",
     "wordCount": 3,
-    "letterCount": 10,
-    "uniqueLetterCount": 9,
+    "letterCount": 11,
+    "uniqueLetterCount": 10,
     "metadata": {
       "year": "2001",
       "rating": 7,
@@ -63195,24 +62511,6 @@
       "year": "2001",
       "rating": 6,
       "votes": 14197
-    }
-  },
-  {
-    "id": "3d1b4cc3d728cb8d946879f1b8f5c6aa",
-    "source": "movie",
-    "type": "title",
-    "answer": "Possession",
-    "normalizedAnswer": "POSSESSION",
-    "category": "Drama",
-    "difficulty": 82,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 10,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "2002",
-      "rating": 6.3,
-      "votes": 14034
     }
   },
   {
@@ -66366,24 +65664,6 @@
     }
   },
   {
-    "id": "d2072c1fa5a388dfd4890ea7f6cd08f4",
-    "source": "movie",
-    "type": "title",
-    "answer": "The Ring",
-    "normalizedAnswer": "THE RING",
-    "category": "Horror",
-    "difficulty": 79.2,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 7,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2002",
-      "rating": 7.1,
-      "votes": 404478
-    }
-  },
-  {
     "id": "a5782c2bb9bb2f016cce78dad936b8d9",
     "source": "movie",
     "type": "title",
@@ -67716,24 +66996,6 @@
     }
   },
   {
-    "id": "fc3b07917a3c2511c3dd2b3269704de4",
-    "source": "movie",
-    "type": "title",
-    "answer": "Peter Pan",
-    "normalizedAnswer": "PETER PAN",
-    "category": "Adventure",
-    "difficulty": 82.8,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "2003",
-      "rating": 6.8,
-      "votes": 85370
-    }
-  },
-  {
     "id": "80c649a536f3b794ea5370fcb26ba211",
     "source": "movie",
     "type": "title",
@@ -67860,24 +67122,6 @@
     }
   },
   {
-    "id": "32aa7a2925048626a828f7436b10b42c",
-    "source": "movie",
-    "type": "title",
-    "answer": "The Italian Job",
-    "normalizedAnswer": "THE ITALIAN JOB",
-    "category": "Action",
-    "difficulty": 64.8,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 13,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "year": "2003",
-      "rating": 7,
-      "votes": 408884
-    }
-  },
-  {
     "id": "8bf916b9901804aa99e7f3175dbe0640",
     "source": "movie",
     "type": "title",
@@ -68001,24 +67245,6 @@
       "year": "2004",
       "rating": 6.1,
       "votes": 222537
-    }
-  },
-  {
-    "id": "489da8cbd1b45bbf9f74accc5abfcf01",
-    "source": "movie",
-    "type": "title",
-    "answer": "Sahara",
-    "normalizedAnswer": "SAHARA",
-    "category": "Action",
-    "difficulty": 91.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 4,
-    "metadata": {
-      "year": "2005",
-      "rating": 6.1,
-      "votes": 109945
     }
   },
   {
@@ -68235,24 +67461,6 @@
       "year": "2003",
       "rating": 7,
       "votes": 301982
-    }
-  },
-  {
-    "id": "c0b8197516735d6c28dbbb73835a66e7",
-    "source": "movie",
-    "type": "title",
-    "answer": "Freaky Friday",
-    "normalizedAnswer": "FREAKY FRIDAY",
-    "category": "Comedy",
-    "difficulty": 73.2,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 12,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "year": "2003",
-      "rating": 6.4,
-      "votes": 178713
     }
   },
   {
@@ -68904,24 +68112,6 @@
     }
   },
   {
-    "id": "e7d2bbe6965aabd919419fe3f95d5ac8",
-    "source": "movie",
-    "type": "title",
-    "answer": "Fever Pitch",
-    "normalizedAnswer": "FEVER PITCH",
-    "category": "Comedy",
-    "difficulty": 70,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 10,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "2005",
-      "rating": 6.3,
-      "votes": 50124
-    }
-  },
-  {
     "id": "22bcb938fef53fdd22b168c439850c54",
     "source": "movie",
     "type": "title",
@@ -69081,24 +68271,6 @@
       "year": "2003",
       "rating": 6.9,
       "votes": 84626
-    }
-  },
-  {
-    "id": "2f22d816a5cc81022f0e9fcf1b454ab4",
-    "source": "movie",
-    "type": "title",
-    "answer": "The Ladykillers",
-    "normalizedAnswer": "THE LADYKILLERS",
-    "category": "Comedy",
-    "difficulty": 60.4,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 14,
-    "uniqueLetterCount": 11,
-    "metadata": {
-      "year": "2004",
-      "rating": 6.2,
-      "votes": 112846
     }
   },
   {
@@ -70794,24 +69966,6 @@
     }
   },
   {
-    "id": "f4811b16b8ce1b7cf335fbc01aafdbe9",
-    "source": "movie",
-    "type": "title",
-    "answer": "Shall We Dance?",
-    "normalizedAnswer": "SHALL WE DANCE",
-    "category": "Comedy",
-    "difficulty": 69.2,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 12,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "2004",
-      "rating": 6.2,
-      "votes": 52853
-    }
-  },
-  {
     "id": "80517e22c301924a04de83322e5ebe16",
     "source": "movie",
     "type": "title",
@@ -72000,24 +71154,6 @@
     }
   },
   {
-    "id": "16262dc6e54c03652b82ac181ef651e1",
-    "source": "movie",
-    "type": "title",
-    "answer": "The Manchurian Candidate",
-    "normalizedAnswer": "THE MANCHURIAN CANDIDATE",
-    "category": "Drama",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 22,
-    "uniqueLetterCount": 11,
-    "metadata": {
-      "year": "2004",
-      "rating": 6.6,
-      "votes": 123365
-    }
-  },
-  {
     "id": "01ba851b379c43301a5984a1023eb46e",
     "source": "movie",
     "type": "title",
@@ -72594,24 +71730,6 @@
     }
   },
   {
-    "id": "78f4b941af9ea45f27f36796e0d095be",
-    "source": "movie",
-    "type": "title",
-    "answer": "Halloween",
-    "normalizedAnswer": "HALLOWEEN",
-    "category": "Horror",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 9,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2007",
-      "rating": 6.1,
-      "votes": 139429
-    }
-  },
-  {
     "id": "72b0bc7b5ad2e3200a5893bcfd8fff17",
     "source": "movie",
     "type": "title",
@@ -72825,24 +71943,6 @@
       "year": "2006",
       "rating": 6.8,
       "votes": 56338
-    }
-  },
-  {
-    "id": "2dbf9eb2f56f3e7c5d36d675d3840258",
-    "source": "movie",
-    "type": "title",
-    "answer": "Alfie",
-    "normalizedAnswer": "ALFIE",
-    "category": "Comedy",
-    "difficulty": 88,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "year": "2004",
-      "rating": 6.2,
-      "votes": 56718
     }
   },
   {
@@ -74326,13 +73426,13 @@
     "source": "movie",
     "type": "title",
     "answer": "Caché",
-    "normalizedAnswer": "CACH",
+    "normalizedAnswer": "CACHE",
     "category": "Drama",
-    "difficulty": 96.4,
+    "difficulty": 92,
     "difficultyTier": "hard",
     "wordCount": 1,
-    "letterCount": 4,
-    "uniqueLetterCount": 3,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
     "metadata": {
       "year": "2005",
       "rating": 7.3,
@@ -74754,24 +73854,6 @@
     }
   },
   {
-    "id": "b3aa2cad713e5e6d2fab8905b52a014b",
-    "source": "movie",
-    "type": "title",
-    "answer": "The Producers",
-    "normalizedAnswer": "THE PRODUCERS",
-    "category": "Comedy",
-    "difficulty": 65.2,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 12,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "year": "2005",
-      "rating": 6.4,
-      "votes": 47206
-    }
-  },
-  {
     "id": "db2247c82ba0f448e3576ed1ecc0557d",
     "source": "movie",
     "type": "title",
@@ -75057,24 +74139,6 @@
       "year": "2005",
       "rating": 6.3,
       "votes": 19551
-    }
-  },
-  {
-    "id": "1550e25a20992266777cf253c346a528",
-    "source": "movie",
-    "type": "title",
-    "answer": "The Longest Yard",
-    "normalizedAnswer": "THE LONGEST YARD",
-    "category": "Comedy",
-    "difficulty": 56.4,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 14,
-    "uniqueLetterCount": 12,
-    "metadata": {
-      "year": "2005",
-      "rating": 6.4,
-      "votes": 212580
     }
   },
   {
@@ -75654,42 +74718,6 @@
     }
   },
   {
-    "id": "be49f7f40ee4e50d688061757d81b6c4",
-    "source": "movie",
-    "type": "title",
-    "answer": "My Sassy Girl",
-    "normalizedAnswer": "MY SASSY GIRL",
-    "category": "Comedy",
-    "difficulty": 73.6,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 11,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "year": "2008",
-      "rating": 6.2,
-      "votes": 21001
-    }
-  },
-  {
-    "id": "86110e85e592090d780af0aa81ad403e",
-    "source": "movie",
-    "type": "title",
-    "answer": "Running Scared",
-    "normalizedAnswer": "RUNNING SCARED",
-    "category": "Action",
-    "difficulty": 64.8,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 13,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "year": "2006",
-      "rating": 7.3,
-      "votes": 107157
-    }
-  },
-  {
     "id": "2e538eab9150bcded9232aedf0d2f84c",
     "source": "movie",
     "type": "title",
@@ -75795,24 +74823,6 @@
       "year": "2006",
       "rating": 8.1,
       "votes": 126981
-    }
-  },
-  {
-    "id": "27cef370123c3e7f8a3b0965005edf4c",
-    "source": "movie",
-    "type": "title",
-    "answer": "All the King's Men",
-    "normalizedAnswer": "ALL THE KINGS MEN",
-    "category": "Drama",
-    "difficulty": 60.4,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 14,
-    "uniqueLetterCount": 11,
-    "metadata": {
-      "year": "2006",
-      "rating": 6.1,
-      "votes": 26699
     }
   },
   {
@@ -76497,24 +75507,6 @@
       "year": "2007",
       "rating": 6.1,
       "votes": 362956
-    }
-  },
-  {
-    "id": "8f09fbeffce3a5f005291c7767d4c00e",
-    "source": "movie",
-    "type": "title",
-    "answer": "Charlotte's Web",
-    "normalizedAnswer": "CHARLOTTES WEB",
-    "category": "Adventure",
-    "difficulty": 60.8,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 13,
-    "uniqueLetterCount": 11,
-    "metadata": {
-      "year": "2006",
-      "rating": 6.3,
-      "votes": 50246
     }
   },
   {
@@ -78099,24 +77091,6 @@
       "year": "2005",
       "rating": 7.7,
       "votes": 68027
-    }
-  },
-  {
-    "id": "3aa70049b0017c2f7dedfc2e6da3870b",
-    "source": "movie",
-    "type": "title",
-    "answer": "Hairspray",
-    "normalizedAnswer": "HAIRSPRAY",
-    "category": "Comedy",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 9,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2007",
-      "rating": 6.7,
-      "votes": 146271
     }
   },
   {
@@ -80568,24 +79542,6 @@
     }
   },
   {
-    "id": "d9324f8f4560bc4ec752c437edc117d5",
-    "source": "movie",
-    "type": "title",
-    "answer": "The Hills Have Eyes",
-    "normalizedAnswer": "THE HILLS HAVE EYES",
-    "category": "Horror",
-    "difficulty": 68,
-    "difficultyTier": "medium",
-    "wordCount": 4,
-    "letterCount": 16,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "2006",
-      "rating": 6.4,
-      "votes": 196659
-    }
-  },
-  {
     "id": "c4d324b65465cf69f26fda07966986ba",
     "source": "movie",
     "type": "title",
@@ -81321,24 +80277,6 @@
       "year": "2007",
       "rating": 7.1,
       "votes": 226013
-    }
-  },
-  {
-    "id": "cd35093d3d26ad81a4f237e78b49ef6c",
-    "source": "movie",
-    "type": "title",
-    "answer": "Don",
-    "normalizedAnswer": "DON",
-    "category": "Action",
-    "difficulty": 96.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 3,
-    "uniqueLetterCount": 3,
-    "metadata": {
-      "year": "2006",
-      "rating": 7.2,
-      "votes": 44804
     }
   },
   {
@@ -82347,24 +81285,6 @@
       "year": "2009",
       "rating": 6.7,
       "votes": 48131
-    }
-  },
-  {
-    "id": "b04b9b64c559c4a754f4a87088083eb1",
-    "source": "movie",
-    "type": "title",
-    "answer": "The Mechanic",
-    "normalizedAnswer": "THE MECHANIC",
-    "category": "Action",
-    "difficulty": 73.6,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "year": "2011",
-      "rating": 6.5,
-      "votes": 183637
     }
   },
   {
@@ -83754,24 +82674,6 @@
     }
   },
   {
-    "id": "e642542df425730cdca86d415a4214c1",
-    "source": "movie",
-    "type": "title",
-    "answer": "Shattered",
-    "normalizedAnswer": "SHATTERED",
-    "category": "Crime",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 9,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2007",
-      "rating": 6.6,
-      "votes": 35172
-    }
-  },
-  {
     "id": "09c50ae2d3ab960c85677d4e275022bd",
     "source": "movie",
     "type": "title",
@@ -84582,24 +83484,6 @@
     }
   },
   {
-    "id": "7a09d089226d0234ca4e72e45c47b878",
-    "source": "movie",
-    "type": "title",
-    "answer": "Brothers",
-    "normalizedAnswer": "BROTHERS",
-    "category": "Drama",
-    "difficulty": 78.8,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2009",
-      "rating": 7.1,
-      "votes": 174583
-    }
-  },
-  {
     "id": "cf7a75ecdee1286945b4de8aebd9bd03",
     "source": "movie",
     "type": "title",
@@ -84867,24 +83751,6 @@
       "year": "2009",
       "rating": 7.1,
       "votes": 67821
-    }
-  },
-  {
-    "id": "51c2fc00af7ce0db5e41d71ea40d5597",
-    "source": "movie",
-    "type": "title",
-    "answer": "Flawless",
-    "normalizedAnswer": "FLAWLESS",
-    "category": "Crime",
-    "difficulty": 82.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "2007",
-      "rating": 6.7,
-      "votes": 28531
     }
   },
   {
@@ -85932,24 +84798,6 @@
     }
   },
   {
-    "id": "277fdfc4b4ec42ba259ba1600fe7dfeb",
-    "source": "movie",
-    "type": "title",
-    "answer": "Funny Games",
-    "normalizedAnswer": "FUNNY GAMES",
-    "category": "Crime",
-    "difficulty": 70,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 10,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "2007",
-      "rating": 6.5,
-      "votes": 110745
-    }
-  },
-  {
     "id": "7e712c71fbeca5c0527d38609043b337",
     "source": "movie",
     "type": "title",
@@ -86649,24 +85497,6 @@
       "year": "2006",
       "rating": 6.7,
       "votes": 12672
-    }
-  },
-  {
-    "id": "cd599527c63cd042f64c92c08da4633f",
-    "source": "movie",
-    "type": "title",
-    "answer": "The Magician",
-    "normalizedAnswer": "THE MAGICIAN",
-    "category": "Comedy",
-    "difficulty": 69.6,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "2006",
-      "rating": 7.4,
-      "votes": 36717
     }
   },
   {
@@ -88312,13 +87142,13 @@
     "source": "movie",
     "type": "title",
     "answer": "Suite Française",
-    "normalizedAnswer": "SUITE FRANAISE",
+    "normalizedAnswer": "SUITE FRANCAISE",
     "category": "Drama",
-    "difficulty": 68.8,
-    "difficultyTier": "medium",
+    "difficulty": 64.4,
+    "difficultyTier": "easy",
     "wordCount": 2,
-    "letterCount": 13,
-    "uniqueLetterCount": 9,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
     "metadata": {
       "year": "2014",
       "rating": 7,
@@ -88431,24 +87261,6 @@
       "year": "2014",
       "rating": 7.4,
       "votes": 45833
-    }
-  },
-  {
-    "id": "d1c9b355c17fc32ca39dfab005bff36f",
-    "source": "movie",
-    "type": "title",
-    "answer": "The Thing",
-    "normalizedAnswer": "THE THING",
-    "category": "Horror",
-    "difficulty": 82.8,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "2011",
-      "rating": 6.3,
-      "votes": 155178
     }
   },
   {
@@ -90216,24 +89028,6 @@
     }
   },
   {
-    "id": "ca4be9987d7e3f9dce94d6acc334dec8",
-    "source": "movie",
-    "type": "title",
-    "answer": "The Experiment",
-    "normalizedAnswer": "THE EXPERIMENT",
-    "category": "Drama",
-    "difficulty": 68.8,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 13,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "2010",
-      "rating": 6.4,
-      "votes": 59996
-    }
-  },
-  {
     "id": "e8a22f6d157acef8ec267e2af26bacbf",
     "source": "movie",
     "type": "title",
@@ -90612,24 +89406,6 @@
     }
   },
   {
-    "id": "924263abb11b0a145c74ecce9e120122",
-    "source": "movie",
-    "type": "title",
-    "answer": "Alice in Wonderland",
-    "normalizedAnswer": "ALICE IN WONDERLAND",
-    "category": "Adventure",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 17,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "year": "2010",
-      "rating": 6.4,
-      "votes": 470122
-    }
-  },
-  {
     "id": "a3be638ea9e198205120f3396474e7a9",
     "source": "movie",
     "type": "title",
@@ -90645,24 +89421,6 @@
       "year": "2009",
       "rating": 8.5,
       "votes": 23313
-    }
-  },
-  {
-    "id": "b86d286c0ba59dfc3e5ca55a81738add",
-    "source": "movie",
-    "type": "title",
-    "answer": "All Quiet on the Western Front",
-    "normalizedAnswer": "ALL QUIET ON THE WESTERN FRONT",
-    "category": "Drama",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 25,
-    "uniqueLetterCount": 14,
-    "metadata": {
-      "year": "2022",
-      "rating": 7.8,
-      "votes": 342201
     }
   },
   {
@@ -90897,24 +89655,6 @@
       "year": "2019",
       "rating": 6.7,
       "votes": 11241
-    }
-  },
-  {
-    "id": "1419b251e74fb4a3eb4718d2b69a4ed4",
-    "source": "movie",
-    "type": "title",
-    "answer": "Les Misérables",
-    "normalizedAnswer": "LES MISRABLES",
-    "category": "Crime",
-    "difficulty": 73.2,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 12,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "year": "2019",
-      "rating": 7.6,
-      "votes": 30662
     }
   },
   {
@@ -93474,24 +92214,6 @@
     }
   },
   {
-    "id": "935e9a01bb82a714938e34731dea42de",
-    "source": "movie",
-    "type": "title",
-    "answer": "The Class",
-    "normalizedAnswer": "THE CLASS",
-    "category": "Drama",
-    "difficulty": 78.8,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2008",
-      "rating": 7.5,
-      "votes": 37574
-    }
-  },
-  {
     "id": "c7ceb251063dda20bd33607ea75e8a4f",
     "source": "movie",
     "type": "title",
@@ -94209,24 +92931,6 @@
       "year": "2008",
       "rating": 6.6,
       "votes": 54230
-    }
-  },
-  {
-    "id": "f94ecdfe31d29956546bb95cd44ad156",
-    "source": "movie",
-    "type": "title",
-    "answer": "Wanted",
-    "normalizedAnswer": "WANTED",
-    "category": "Action",
-    "difficulty": 83.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "2009",
-      "rating": 6.6,
-      "votes": 29686
     }
   },
   {
@@ -95634,24 +94338,6 @@
     }
   },
   {
-    "id": "1e6859482fa7ff5ad3538e56fadf9d43",
-    "source": "movie",
-    "type": "title",
-    "answer": "Scream",
-    "normalizedAnswer": "SCREAM",
-    "category": "Horror",
-    "difficulty": 83.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "2022",
-      "rating": 6.3,
-      "votes": 189686
-    }
-  },
-  {
     "id": "e14dac5a75b61853b97f1320b8546224",
     "source": "movie",
     "type": "title",
@@ -96372,42 +95058,6 @@
     }
   },
   {
-    "id": "413c3ee024cbd0ba9c64d1873bcdbc55",
-    "source": "movie",
-    "type": "title",
-    "answer": "The Killer",
-    "normalizedAnswer": "THE KILLER",
-    "category": "Action",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2023",
-      "rating": 6.7,
-      "votes": 225516
-    }
-  },
-  {
-    "id": "7faefd82b9e6336db978c6a963a0f308",
-    "source": "movie",
-    "type": "title",
-    "answer": "Death Wish",
-    "normalizedAnswer": "DEATH WISH",
-    "category": "Action",
-    "difficulty": 74.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "year": "2018",
-      "rating": 6.3,
-      "votes": 83772
-    }
-  },
-  {
     "id": "1672a18c314aeeef820e5c4e22a52a7b",
     "source": "movie",
     "type": "title",
@@ -97002,24 +95652,6 @@
     }
   },
   {
-    "id": "7c57a6e03fb3bc7c0df360ae4f844b47",
-    "source": "movie",
-    "type": "title",
-    "answer": "The Karate Kid",
-    "normalizedAnswer": "THE KARATE KID",
-    "category": "Action",
-    "difficulty": 73.2,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 12,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "year": "2010",
-      "rating": 6.3,
-      "votes": 228612
-    }
-  },
-  {
     "id": "56098f9941322fe8a17226a351ace504",
     "source": "movie",
     "type": "title",
@@ -97359,24 +95991,6 @@
       "year": "2021",
       "rating": 7.2,
       "votes": 55388
-    }
-  },
-  {
-    "id": "bb8697d4b87a16af63aa6591cbfac80d",
-    "source": "movie",
-    "type": "title",
-    "answer": "Ghajini",
-    "normalizedAnswer": "GHAJINI",
-    "category": "Action",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "2008",
-      "rating": 7.4,
-      "votes": 72491
     }
   },
   {
@@ -97960,12 +96574,12 @@
     "source": "movie",
     "type": "title",
     "answer": "The Extraordinary Adventures of Adèle Blanc-Sec",
-    "normalizedAnswer": "THE EXTRAORDINARY ADVENTURES OF ADLE BLANCSEC",
+    "normalizedAnswer": "THE EXTRAORDINARY ADVENTURES OF ADELE BLANCSEC",
     "category": "Action",
     "difficulty": 32,
     "difficultyTier": "easy",
     "wordCount": 6,
-    "letterCount": 40,
+    "letterCount": 41,
     "uniqueLetterCount": 18,
     "metadata": {
       "year": "2010",
@@ -98032,13 +96646,13 @@
     "source": "movie",
     "type": "title",
     "answer": "Chéri",
-    "normalizedAnswer": "CHRI",
+    "normalizedAnswer": "CHERI",
     "category": "Comedy",
-    "difficulty": 92.4,
+    "difficulty": 88,
     "difficultyTier": "hard",
     "wordCount": 1,
-    "letterCount": 4,
-    "uniqueLetterCount": 4,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
     "metadata": {
       "year": "2009",
       "rating": 6.1,
@@ -98133,24 +96747,6 @@
       "year": "2022",
       "rating": 7.6,
       "votes": 297893
-    }
-  },
-  {
-    "id": "b8082344592c5c6eee012a317b962d20",
-    "source": "movie",
-    "type": "title",
-    "answer": "Wuthering Heights",
-    "normalizedAnswer": "WUTHERING HEIGHTS",
-    "category": "Drama",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 16,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "year": "2011",
-      "rating": 6,
-      "votes": 12649
     }
   },
   {
@@ -98676,24 +97272,6 @@
     }
   },
   {
-    "id": "7619cd58668c7b2e913a299f1a5ac202",
-    "source": "movie",
-    "type": "title",
-    "answer": "The Stranger",
-    "normalizedAnswer": "THE STRANGER",
-    "category": "Crime",
-    "difficulty": 73.6,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "year": "2022",
-      "rating": 6.6,
-      "votes": 30895
-    }
-  },
-  {
     "id": "21cd337c0f19ef9794d11c2ff8c3665e",
     "source": "movie",
     "type": "title",
@@ -99195,24 +97773,6 @@
       "year": "2025",
       "rating": 6.5,
       "votes": 90299
-    }
-  },
-  {
-    "id": "ed6571e9c817c9d25aaaf7b4417bd569",
-    "source": "movie",
-    "type": "title",
-    "answer": "The Color Purple",
-    "normalizedAnswer": "THE COLOR PURPLE",
-    "category": "Drama",
-    "difficulty": 68.4,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 14,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "2023",
-      "rating": 6.8,
-      "votes": 20652
     }
   },
   {
@@ -99936,24 +98496,6 @@
     }
   },
   {
-    "id": "20c873f690cf4abd79e9b497e886249a",
-    "source": "movie",
-    "type": "title",
-    "answer": "Ghost in the Shell",
-    "normalizedAnswer": "GHOST IN THE SHELL",
-    "category": "Action",
-    "difficulty": 68,
-    "difficultyTier": "medium",
-    "wordCount": 4,
-    "letterCount": 15,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "2017",
-      "rating": 6.3,
-      "votes": 240531
-    }
-  },
-  {
     "id": "8befcf60455b5af89b64da27cb3cb425",
     "source": "movie",
     "type": "title",
@@ -100278,24 +98820,6 @@
     }
   },
   {
-    "id": "8effbfc7da9064bbff805ac4eb30406f",
-    "source": "movie",
-    "type": "title",
-    "answer": "Jane Eyre",
-    "normalizedAnswer": "JANE EYRE",
-    "category": "Drama",
-    "difficulty": 82.8,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "2011",
-      "rating": 7.3,
-      "votes": 98051
-    }
-  },
-  {
     "id": "399a3f0eca78c004796827ff3a61f01d",
     "source": "movie",
     "type": "title",
@@ -100617,24 +99141,6 @@
       "year": "2010",
       "rating": 6.1,
       "votes": 40369
-    }
-  },
-  {
-    "id": "09efd5f9ec3e3eba2d00755eab509e32",
-    "source": "movie",
-    "type": "title",
-    "answer": "RoboCop",
-    "normalizedAnswer": "ROBOCOP",
-    "category": "Action",
-    "difficulty": 87.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "year": "2014",
-      "rating": 6.1,
-      "votes": 249776
     }
   },
   {
@@ -101682,24 +100188,6 @@
     }
   },
   {
-    "id": "aabe53c3ddb4bdaea19da0fd160ef092",
-    "source": "movie",
-    "type": "title",
-    "answer": "Hercules",
-    "normalizedAnswer": "HERCULES",
-    "category": "Action",
-    "difficulty": 78.8,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2014",
-      "rating": 6,
-      "votes": 173078
-    }
-  },
-  {
     "id": "ad8409f4b101ad07f3a39470a89f9831",
     "source": "movie",
     "type": "title",
@@ -102438,24 +100926,6 @@
     }
   },
   {
-    "id": "d294e5e5e51aecb42fd7ffc2c8e763a8",
-    "source": "movie",
-    "type": "title",
-    "answer": "Ghostbusters",
-    "normalizedAnswer": "GHOSTBUSTERS",
-    "category": "Action",
-    "difficulty": 69.2,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 12,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "2016",
-      "rating": 6.8,
-      "votes": 259581
-    }
-  },
-  {
     "id": "ebec389d1fe00f8fdbcaf3e30e834cd4",
     "source": "movie",
     "type": "title",
@@ -103083,24 +101553,6 @@
       "year": "2013",
       "rating": 6.4,
       "votes": 43527
-    }
-  },
-  {
-    "id": "1500d4f75df1fac2c1a8fd392cca1ca6",
-    "source": "movie",
-    "type": "title",
-    "answer": "Frankenstein",
-    "normalizedAnswer": "FRANKENSTEIN",
-    "category": "Drama",
-    "difficulty": 69.2,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 12,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "2025",
-      "rating": 7.4,
-      "votes": 327350
     }
   },
   {
@@ -104490,24 +102942,6 @@
     }
   },
   {
-    "id": "923bd9e3a1c4427c329177888bc5cb71",
-    "source": "movie",
-    "type": "title",
-    "answer": "The Great Gatsby",
-    "normalizedAnswer": "THE GREAT GATSBY",
-    "category": "Drama",
-    "difficulty": 68.4,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 14,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "2013",
-      "rating": 7.2,
-      "votes": 646092
-    }
-  },
-  {
     "id": "565d9efc784b6878c3a30924ca69e265",
     "source": "movie",
     "type": "title",
@@ -105606,24 +104040,6 @@
     }
   },
   {
-    "id": "74f618dea3d097f2e97e571a6061584b",
-    "source": "movie",
-    "type": "title",
-    "answer": "Total Recall",
-    "normalizedAnswer": "TOTAL RECALL",
-    "category": "Action",
-    "difficulty": 77.6,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2012",
-      "rating": 6.2,
-      "votes": 277019
-    }
-  },
-  {
     "id": "0ed16a4ede68e4c9f101180ac4547bba",
     "source": "movie",
     "type": "title",
@@ -106395,24 +104811,6 @@
       "year": "2011",
       "rating": 7.5,
       "votes": 58585
-    }
-  },
-  {
-    "id": "caa058344e3d853c42736ec51ef4f37d",
-    "source": "movie",
-    "type": "title",
-    "answer": "The Running Man",
-    "normalizedAnswer": "THE RUNNING MAN",
-    "category": "Action",
-    "difficulty": 64.8,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 13,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "year": "2025",
-      "rating": 6.4,
-      "votes": 116903
     }
   },
   {
@@ -108130,13 +106528,13 @@
     "source": "movie",
     "type": "title",
     "answer": "Tár",
-    "normalizedAnswer": "TR",
+    "normalizedAnswer": "TAR",
     "category": "Drama",
-    "difficulty": 101.2,
+    "difficulty": 96.8,
     "difficultyTier": "hard",
     "wordCount": 1,
-    "letterCount": 2,
-    "uniqueLetterCount": 2,
+    "letterCount": 3,
+    "uniqueLetterCount": 3,
     "metadata": {
       "year": "2022",
       "rating": 7.4,
@@ -108177,24 +106575,6 @@
       "year": "2022",
       "rating": 6.4,
       "votes": 15562
-    }
-  },
-  {
-    "id": "3269c11004c54d6698bbed5603b33caa",
-    "source": "movie",
-    "type": "title",
-    "answer": "The Son",
-    "normalizedAnswer": "THE SON",
-    "category": "Drama",
-    "difficulty": 83.6,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 6,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "2022",
-      "rating": 6.5,
-      "votes": 21149
     }
   },
   {
@@ -110286,24 +108666,6 @@
     }
   },
   {
-    "id": "42fe78594bd9e0aaece5339770796816",
-    "source": "movie",
-    "type": "title",
-    "answer": "A Star Is Born",
-    "normalizedAnswer": "A STAR IS BORN",
-    "category": "Drama",
-    "difficulty": 73.6,
-    "difficultyTier": "medium",
-    "wordCount": 4,
-    "letterCount": 11,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "year": "2018",
-      "rating": 7.6,
-      "votes": 450811
-    }
-  },
-  {
     "id": "740ceed29fdee6a316a0c5095f614818",
     "source": "movie",
     "type": "title",
@@ -110416,13 +108778,13 @@
     "source": "movie",
     "type": "title",
     "answer": "Kolpaçino",
-    "normalizedAnswer": "KOLPAINO",
+    "normalizedAnswer": "KOLPACINO",
     "category": "Comedy",
-    "difficulty": 78.8,
+    "difficulty": 74.4,
     "difficultyTier": "medium",
     "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 7,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
     "metadata": {
       "year": "2009",
       "rating": 6.6,
@@ -111514,12 +109876,12 @@
     "source": "movie",
     "type": "title",
     "answer": "Café de Flore",
-    "normalizedAnswer": "CAF DE FLORE",
+    "normalizedAnswer": "CAFE DE FLORE",
     "category": "Drama",
-    "difficulty": 74,
+    "difficulty": 73.6,
     "difficultyTier": "medium",
     "wordCount": 3,
-    "letterCount": 10,
+    "letterCount": 11,
     "uniqueLetterCount": 8,
     "metadata": {
       "year": "2011",
@@ -111852,24 +110214,6 @@
     }
   },
   {
-    "id": "69b8601795e063dc990b89df5942608c",
-    "source": "movie",
-    "type": "title",
-    "answer": "Overboard",
-    "normalizedAnswer": "OVERBOARD",
-    "category": "Comedy",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 9,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2018",
-      "rating": 6,
-      "votes": 45271
-    }
-  },
-  {
     "id": "1c55a8d38426582b6f6382ff188ef8f6",
     "source": "movie",
     "type": "title",
@@ -112119,24 +110463,6 @@
       "year": "2012",
       "rating": 6.6,
       "votes": 162581
-    }
-  },
-  {
-    "id": "5be373243857b3cd3b2809ba3d5ea1c1",
-    "source": "movie",
-    "type": "title",
-    "answer": "The Girl with the Dragon Tattoo",
-    "normalizedAnswer": "THE GIRL WITH THE DRAGON TATTOO",
-    "category": "Crime",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 26,
-    "uniqueLetterCount": 12,
-    "metadata": {
-      "year": "2011",
-      "rating": 7.8,
-      "votes": 530707
     }
   },
   {
@@ -112839,24 +111165,6 @@
       "year": "2012",
       "rating": 6.1,
       "votes": 103651
-    }
-  },
-  {
-    "id": "84a90f6962331d1531168c9430758457",
-    "source": "movie",
-    "type": "title",
-    "answer": "Blitz",
-    "normalizedAnswer": "BLITZ",
-    "category": "Action",
-    "difficulty": 88,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "year": "2024",
-      "rating": 6.2,
-      "votes": 18974
     }
   },
   {
@@ -114117,24 +112425,6 @@
       "year": "2024",
       "rating": 6,
       "votes": 159455
-    }
-  },
-  {
-    "id": "9b0273dc5645a3d851aa6766c8284996",
-    "source": "movie",
-    "type": "title",
-    "answer": "Project X",
-    "normalizedAnswer": "PROJECT X",
-    "category": "Comedy",
-    "difficulty": 74.8,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "year": "2012",
-      "rating": 6.7,
-      "votes": 259864
     }
   },
   {
@@ -115744,13 +114034,13 @@
     "source": "movie",
     "type": "title",
     "answer": "Kokowääh",
-    "normalizedAnswer": "KOKOWH",
+    "normalizedAnswer": "KOKOWAAH",
     "category": "Comedy",
-    "difficulty": 91.6,
+    "difficulty": 86.8,
     "difficultyTier": "hard",
     "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 4,
+    "letterCount": 8,
+    "uniqueLetterCount": 5,
     "metadata": {
       "year": "2011",
       "rating": 6.2,
@@ -116104,12 +114394,12 @@
     "source": "movie",
     "type": "title",
     "answer": "Les Misérables",
-    "normalizedAnswer": "LES MISRABLES",
+    "normalizedAnswer": "LES MISERABLES",
     "category": "Drama",
-    "difficulty": 73.2,
+    "difficulty": 72.8,
     "difficultyTier": "medium",
     "wordCount": 2,
-    "letterCount": 12,
+    "letterCount": 13,
     "uniqueLetterCount": 8,
     "metadata": {
       "year": "2012",
@@ -116421,24 +114711,6 @@
       "year": "2024",
       "rating": 6.2,
       "votes": 13281
-    }
-  },
-  {
-    "id": "bff611f59d17300b1d0508015217d896",
-    "source": "movie",
-    "type": "title",
-    "answer": "Shame",
-    "normalizedAnswer": "SHAME",
-    "category": "Drama",
-    "difficulty": 88,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "year": "2011",
-      "rating": 7.2,
-      "votes": 218130
     }
   },
   {
@@ -117576,24 +115848,6 @@
     }
   },
   {
-    "id": "18ec76eeecfc4d810e8c95404783e805",
-    "source": "movie",
-    "type": "title",
-    "answer": "No Escape",
-    "normalizedAnswer": "NO ESCAPE",
-    "category": "Action",
-    "difficulty": 78.8,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2015",
-      "rating": 6.8,
-      "votes": 99139
-    }
-  },
-  {
     "id": "8f0b6d002d6aefca7e534ec50af977e0",
     "source": "movie",
     "type": "title",
@@ -118066,12 +116320,12 @@
     "source": "movie",
     "type": "title",
     "answer": "Incir Reçeli",
-    "normalizedAnswer": "INCIR REELI",
+    "normalizedAnswer": "INCIR RECELI",
     "category": "Drama",
-    "difficulty": 82,
+    "difficulty": 81.6,
     "difficultyTier": "hard",
     "wordCount": 2,
-    "letterCount": 10,
+    "letterCount": 11,
     "uniqueLetterCount": 6,
     "metadata": {
       "year": "2011",
@@ -118368,24 +116622,6 @@
     }
   },
   {
-    "id": "c888ce25c8a19f97bbe9c7bb231b0264",
-    "source": "movie",
-    "type": "title",
-    "answer": "About Last Night",
-    "normalizedAnswer": "ABOUT LAST NIGHT",
-    "category": "Comedy",
-    "difficulty": 60.4,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 14,
-    "uniqueLetterCount": 11,
-    "metadata": {
-      "year": "2014",
-      "rating": 6,
-      "votes": 26031
-    }
-  },
-  {
     "id": "ae2631552bc4e50ac5ddf86c7d4e48d6",
     "source": "movie",
     "type": "title",
@@ -118509,24 +116745,6 @@
       "year": "2012",
       "rating": 6.2,
       "votes": 18571
-    }
-  },
-  {
-    "id": "c71182bf0224f29dd49b15a27bf73bba",
-    "source": "movie",
-    "type": "title",
-    "answer": "Great Expectations",
-    "normalizedAnswer": "GREAT EXPECTATIONS",
-    "category": "Drama",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 17,
-    "uniqueLetterCount": 12,
-    "metadata": {
-      "year": "2012",
-      "rating": 6.3,
-      "votes": 14335
     }
   },
   {
@@ -118944,24 +117162,6 @@
     }
   },
   {
-    "id": "5e4caa9e78ad8b781c4660eaf873a0f1",
-    "source": "movie",
-    "type": "title",
-    "answer": "Agneepath",
-    "normalizedAnswer": "AGNEEPATH",
-    "category": "Action",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 9,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2012",
-      "rating": 6.9,
-      "votes": 28942
-    }
-  },
-  {
     "id": "3bbfccd18d94600236012867a0bac679",
     "source": "movie",
     "type": "title",
@@ -119308,13 +117508,13 @@
     "source": "movie",
     "type": "title",
     "answer": "Çalgi Çengi",
-    "normalizedAnswer": "ALGI ENGI",
+    "normalizedAnswer": "CALGI CENGI",
     "category": "Comedy",
-    "difficulty": 82.8,
-    "difficultyTier": "hard",
+    "difficulty": 78,
+    "difficultyTier": "medium",
     "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 6,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
     "metadata": {
       "year": "2011",
       "rating": 7,
@@ -119841,24 +118041,6 @@
       "year": "2012",
       "rating": 6.6,
       "votes": 18929
-    }
-  },
-  {
-    "id": "f33f29ac4d5df122e1185e3044c31b4d",
-    "source": "movie",
-    "type": "title",
-    "answer": "The Call",
-    "normalizedAnswer": "THE CALL",
-    "category": "Crime",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 7,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "2013",
-      "rating": 6.7,
-      "votes": 135112
     }
   },
   {
@@ -121612,13 +119794,13 @@
     "source": "movie",
     "type": "title",
     "answer": "Behzat Ç.: I Buried You in My Heart",
-    "normalizedAnswer": "BEHZAT I BURIED YOU IN MY HEART",
+    "normalizedAnswer": "BEHZAT C I BURIED YOU IN MY HEART",
     "category": "Action",
-    "difficulty": 48,
+    "difficulty": 44,
     "difficultyTier": "easy",
-    "wordCount": 7,
-    "letterCount": 25,
-    "uniqueLetterCount": 14,
+    "wordCount": 8,
+    "letterCount": 26,
+    "uniqueLetterCount": 15,
     "metadata": {
       "year": "2011",
       "rating": 7.5,
@@ -122526,24 +120708,6 @@
     }
   },
   {
-    "id": "aa5174000f2aeee3f5721acdd27f44f0",
-    "source": "movie",
-    "type": "title",
-    "answer": "Shanghai",
-    "normalizedAnswer": "SHANGHAI",
-    "category": "Crime",
-    "difficulty": 82.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "2012",
-      "rating": 7.2,
-      "votes": 11319
-    }
-  },
-  {
     "id": "581845c027c25f421cdd005e1b4a134e",
     "source": "movie",
     "type": "title",
@@ -122886,24 +121050,6 @@
     }
   },
   {
-    "id": "17278e228cd71fc7685bd7b3cb984006",
-    "source": "movie",
-    "type": "title",
-    "answer": "Much Ado About Nothing",
-    "normalizedAnswer": "MUCH ADO ABOUT NOTHING",
-    "category": "Comedy",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 19,
-    "uniqueLetterCount": 12,
-    "metadata": {
-      "year": "2012",
-      "rating": 7,
-      "votes": 17452
-    }
-  },
-  {
     "id": "1b9e66c7a963ccc4d66420d3f2a477b2",
     "source": "movie",
     "type": "title",
@@ -123063,24 +121209,6 @@
       "year": "2023",
       "rating": 7.2,
       "votes": 36982
-    }
-  },
-  {
-    "id": "43e9736f8225e795e8c278681722d3fc",
-    "source": "movie",
-    "type": "title",
-    "answer": "Maniac",
-    "normalizedAnswer": "MANIAC",
-    "category": "Crime",
-    "difficulty": 87.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "year": "2012",
-      "rating": 6.1,
-      "votes": 42950
     }
   },
   {
@@ -123984,24 +122112,6 @@
     }
   },
   {
-    "id": "9d00728afe99c23d46c543c54b313779",
-    "source": "movie",
-    "type": "title",
-    "answer": "Cocktail",
-    "normalizedAnswer": "COCKTAIL",
-    "category": "Comedy",
-    "difficulty": 78.8,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2012",
-      "rating": 6.3,
-      "votes": 16803
-    }
-  },
-  {
     "id": "6a462af7ae46dbd13a7490bd21acd590",
     "source": "movie",
     "type": "title",
@@ -124650,24 +122760,6 @@
     }
   },
   {
-    "id": "1dbfa138bcac6957046100ba4b3f036e",
-    "source": "movie",
-    "type": "title",
-    "answer": "The Passenger",
-    "normalizedAnswer": "THE PASSENGER",
-    "category": "Drama",
-    "difficulty": 69.2,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 12,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "2023",
-      "rating": 6.4,
-      "votes": 13550
-    }
-  },
-  {
     "id": "5d0d171549c68779898f1f6913acd056",
     "source": "movie",
     "type": "title",
@@ -125244,24 +123336,6 @@
     }
   },
   {
-    "id": "b5cd58d604ffa90db6e8e2a8e71f46b5",
-    "source": "movie",
-    "type": "title",
-    "answer": "Rampage",
-    "normalizedAnswer": "RAMPAGE",
-    "category": "Action",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "2018",
-      "rating": 6.1,
-      "votes": 203116
-    }
-  },
-  {
     "id": "c4f37eded04a83cac222a3aea8763cd4",
     "source": "movie",
     "type": "title",
@@ -125313,24 +123387,6 @@
       "year": "2014",
       "rating": 6.1,
       "votes": 27301
-    }
-  },
-  {
-    "id": "3c572427a75584808da446d7134b8357",
-    "source": "movie",
-    "type": "title",
-    "answer": "Rebecca",
-    "normalizedAnswer": "REBECCA",
-    "category": "Drama",
-    "difficulty": 87.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "year": "2020",
-      "rating": 6.1,
-      "votes": 50737
     }
   },
   {
@@ -125709,24 +123765,6 @@
       "year": "2014",
       "rating": 7.2,
       "votes": 85159
-    }
-  },
-  {
-    "id": "b96bf28898faa186e8eb019987cf849e",
-    "source": "movie",
-    "type": "title",
-    "answer": "The Good Neighbor",
-    "normalizedAnswer": "THE GOOD NEIGHBOR",
-    "category": "Crime",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 15,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "year": "2016",
-      "rating": 6.3,
-      "votes": 20130
     }
   },
   {
@@ -126234,24 +124272,6 @@
     }
   },
   {
-    "id": "775e3f0c646e6b68aaa8f292a7caa499",
-    "source": "movie",
-    "type": "title",
-    "answer": "Frozen",
-    "normalizedAnswer": "FROZEN",
-    "category": "Adventure",
-    "difficulty": 83.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "2013",
-      "rating": 7.4,
-      "votes": 717378
-    }
-  },
-  {
     "id": "369ed06de9e77f92e9275446688ff1b4",
     "source": "movie",
     "type": "title",
@@ -126591,24 +124611,6 @@
       "year": "2013",
       "rating": 6.8,
       "votes": 242409
-    }
-  },
-  {
-    "id": "d8eee77f257bc43718e90d09f230b3b9",
-    "source": "movie",
-    "type": "title",
-    "answer": "Beauty and the Beast",
-    "normalizedAnswer": "BEAUTY AND THE BEAST",
-    "category": "Drama",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 17,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "year": "2014",
-      "rating": 6.4,
-      "votes": 24524
     }
   },
   {
@@ -127170,24 +125172,6 @@
     }
   },
   {
-    "id": "4d65c29a38e705369b332418a0b538da",
-    "source": "movie",
-    "type": "title",
-    "answer": "Barefoot",
-    "normalizedAnswer": "BAREFOOT",
-    "category": "Comedy",
-    "difficulty": 78.8,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2014",
-      "rating": 6.5,
-      "votes": 29149
-    }
-  },
-  {
     "id": "84cc54d720868f71cd7302103a9c3f6b",
     "source": "movie",
     "type": "title",
@@ -127599,24 +125583,6 @@
       "year": "2024",
       "rating": 7.8,
       "votes": 26158
-    }
-  },
-  {
-    "id": "cc3abd6dfefa5da5b0d290a423755c1e",
-    "source": "movie",
-    "type": "title",
-    "answer": "Deliver Us from Evil",
-    "normalizedAnswer": "DELIVER US FROM EVIL",
-    "category": "Crime",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 17,
-    "uniqueLetterCount": 11,
-    "metadata": {
-      "year": "2014",
-      "rating": 6.2,
-      "votes": 91453
     }
   },
   {
@@ -128430,24 +126396,6 @@
     }
   },
   {
-    "id": "c16834831a097b56f98dfd9e9da25755",
-    "source": "movie",
-    "type": "title",
-    "answer": "The Magnificent Seven",
-    "normalizedAnswer": "THE MAGNIFICENT SEVEN",
-    "category": "Action",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 19,
-    "uniqueLetterCount": 12,
-    "metadata": {
-      "year": "2016",
-      "rating": 6.9,
-      "votes": 247325
-    }
-  },
-  {
     "id": "b1e2d6af41628a6049f415be3b11c9fb",
     "source": "movie",
     "type": "title",
@@ -128895,24 +126843,6 @@
       "year": "2024",
       "rating": 6.7,
       "votes": 32461
-    }
-  },
-  {
-    "id": "cb013dd7309075ba6c5c372c52858220",
-    "source": "movie",
-    "type": "title",
-    "answer": "Joy",
-    "normalizedAnswer": "JOY",
-    "category": "Biography",
-    "difficulty": 96.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 3,
-    "uniqueLetterCount": 3,
-    "metadata": {
-      "year": "2015",
-      "rating": 6.6,
-      "votes": 152873
     }
   },
   {
@@ -130536,35 +128466,17 @@
     }
   },
   {
-    "id": "3aa7c75804a2c246e74cd5d7976ab785",
-    "source": "movie",
-    "type": "title",
-    "answer": "The Count of Monte Cristo",
-    "normalizedAnswer": "THE COUNT OF MONTE CRISTO",
-    "category": "Action",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 21,
-    "uniqueLetterCount": 12,
-    "metadata": {
-      "year": "2024",
-      "rating": 7.6,
-      "votes": 49459
-    }
-  },
-  {
     "id": "507dc49b9571a139aa9fe19bf50e4fe1",
     "source": "movie",
     "type": "title",
     "answer": "Hükümet Kadin",
-    "normalizedAnswer": "HKMET KADIN",
+    "normalizedAnswer": "HUKUMET KADIN",
     "category": "Comedy",
-    "difficulty": 70,
+    "difficulty": 65.2,
     "difficultyTier": "medium",
     "wordCount": 2,
-    "letterCount": 10,
-    "uniqueLetterCount": 9,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
     "metadata": {
       "year": "2013",
       "rating": 6.5,
@@ -131055,24 +128967,6 @@
       "year": "2025",
       "rating": 7.9,
       "votes": 14078
-    }
-  },
-  {
-    "id": "e12b562d2e09b7560928ab1f927c3e5d",
-    "source": "movie",
-    "type": "title",
-    "answer": "How to Train Your Dragon",
-    "normalizedAnswer": "HOW TO TRAIN YOUR DRAGON",
-    "category": "Action",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 20,
-    "uniqueLetterCount": 12,
-    "metadata": {
-      "year": "2025",
-      "rating": 7.7,
-      "votes": 138356
     }
   },
   {
@@ -131958,24 +129852,6 @@
     }
   },
   {
-    "id": "5d3aa9554eb9ee98b07460c3b476ff1f",
-    "source": "movie",
-    "type": "title",
-    "answer": "Speak No Evil",
-    "normalizedAnswer": "SPEAK NO EVIL",
-    "category": "Drama",
-    "difficulty": 65.6,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 11,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "year": "2024",
-      "rating": 6.8,
-      "votes": 142429
-    }
-  },
-  {
     "id": "647820a1d4a8fa542d9f40d7ade14a10",
     "source": "movie",
     "type": "title",
@@ -132045,24 +129921,6 @@
       "year": "2025",
       "rating": 6.5,
       "votes": 50038
-    }
-  },
-  {
-    "id": "6f9cddb336dd47e595c18d5db81cc35d",
-    "source": "movie",
-    "type": "title",
-    "answer": "The Housemaid",
-    "normalizedAnswer": "THE HOUSEMAID",
-    "category": "Drama",
-    "difficulty": 65.2,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 12,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "year": "2025",
-      "rating": 6.7,
-      "votes": 177224
     }
   },
   {
@@ -133758,24 +131616,6 @@
     }
   },
   {
-    "id": "6d57ad32e89c2301d8cb536cc30994d3",
-    "source": "movie",
-    "type": "title",
-    "answer": "Macbeth",
-    "normalizedAnswer": "MACBETH",
-    "category": "Drama",
-    "difficulty": 79.2,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2015",
-      "rating": 6.6,
-      "votes": 61940
-    }
-  },
-  {
     "id": "f35bb7a196f6a4e4cd8318c5ff9066d1",
     "source": "movie",
     "type": "title",
@@ -134482,12 +132322,12 @@
     "source": "movie",
     "type": "title",
     "answer": "Steins;Gate: The Movie - Load Region of Déjà Vu",
-    "normalizedAnswer": "STEINSGATE THE MOVIE LOAD REGION OF DJ VU",
+    "normalizedAnswer": "STEINSGATE THE MOVIE LOAD REGION OF DEJA VU",
     "category": "Animation",
     "difficulty": 36,
     "difficultyTier": "easy",
     "wordCount": 8,
-    "letterCount": 34,
+    "letterCount": 36,
     "uniqueLetterCount": 17,
     "metadata": {
       "year": "2013",
@@ -135022,12 +132862,12 @@
     "source": "movie",
     "type": "title",
     "answer": "Dìdi",
-    "normalizedAnswer": "DDI",
+    "normalizedAnswer": "DIDI",
     "category": "Comedy",
-    "difficulty": 100.8,
+    "difficulty": 100.4,
     "difficultyTier": "hard",
     "wordCount": 1,
-    "letterCount": 3,
+    "letterCount": 4,
     "uniqueLetterCount": 2,
     "metadata": {
       "year": "2024",
@@ -135792,24 +133632,6 @@
     }
   },
   {
-    "id": "e01fece9b5a865be326686d1d91ff218",
-    "source": "movie",
-    "type": "title",
-    "answer": "Deep Cover",
-    "normalizedAnswer": "DEEP COVER",
-    "category": "Action",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2025",
-      "rating": 6.7,
-      "votes": 46303
-    }
-  },
-  {
     "id": "f7d7803c5d97af2977b1a3ef95204102",
     "source": "movie",
     "type": "title",
@@ -136167,24 +133989,6 @@
       "year": "2014",
       "rating": 7.1,
       "votes": 11827
-    }
-  },
-  {
-    "id": "b21b8a2df274dce303279632059a548d",
-    "source": "movie",
-    "type": "title",
-    "answer": "Dracula",
-    "normalizedAnswer": "DRACULA",
-    "category": "Fantasy",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "2025",
-      "rating": 6.2,
-      "votes": 41295
     }
   },
   {
@@ -137790,24 +135594,6 @@
     }
   },
   {
-    "id": "962741b69c722c779b9f6309d183097e",
-    "source": "movie",
-    "type": "title",
-    "answer": "Heist",
-    "normalizedAnswer": "HEIST",
-    "category": "Action",
-    "difficulty": 88,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "year": "2015",
-      "rating": 6.1,
-      "votes": 34591
-    }
-  },
-  {
     "id": "5602c09c8de581dcbb09bf25b90bdb7f",
     "source": "movie",
     "type": "title",
@@ -137823,24 +135609,6 @@
       "year": "2015",
       "rating": 6.4,
       "votes": 33574
-    }
-  },
-  {
-    "id": "471eb65a62fb609fd9525a8d2e1b215a",
-    "source": "movie",
-    "type": "title",
-    "answer": "Little Women",
-    "normalizedAnswer": "LITTLE WOMEN",
-    "category": "Drama",
-    "difficulty": 73.6,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "year": "2019",
-      "rating": 7.7,
-      "votes": 286390
     }
   },
   {
@@ -137866,13 +135634,13 @@
     "source": "movie",
     "type": "title",
     "answer": "Behzat Ç.: Ankara Is on Fire",
-    "normalizedAnswer": "BEHZAT ANKARA IS ON FIRE",
+    "normalizedAnswer": "BEHZAT C ANKARA IS ON FIRE",
     "category": "Action",
-    "difficulty": 52,
+    "difficulty": 48,
     "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 20,
-    "uniqueLetterCount": 13,
+    "wordCount": 6,
+    "letterCount": 21,
+    "uniqueLetterCount": 14,
     "metadata": {
       "year": "2013",
       "rating": 7.4,
@@ -137949,24 +135717,6 @@
       "year": "2015",
       "rating": 6,
       "votes": 34551
-    }
-  },
-  {
-    "id": "b8082344592c5c6eee012a317b962d20",
-    "source": "movie",
-    "type": "title",
-    "answer": "Wuthering Heights",
-    "normalizedAnswer": "WUTHERING HEIGHTS",
-    "category": "Drama",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 16,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "year": "2026",
-      "rating": 6.1,
-      "votes": 85591
     }
   },
   {
@@ -138586,13 +136336,13 @@
     "source": "movie",
     "type": "title",
     "answer": "Dügün Dernek",
-    "normalizedAnswer": "DGN DERNEK",
+    "normalizedAnswer": "DUGUN DERNEK",
     "category": "Comedy",
-    "difficulty": 82.4,
-    "difficultyTier": "hard",
+    "difficulty": 77.6,
+    "difficultyTier": "medium",
     "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 6,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
     "metadata": {
       "year": "2013",
       "rating": 6.9,
@@ -138633,24 +136383,6 @@
       "year": "2025",
       "rating": 6.2,
       "votes": 14700
-    }
-  },
-  {
-    "id": "3160fee8582058e443164c7e58ef8573",
-    "source": "movie",
-    "type": "title",
-    "answer": "Road House",
-    "normalizedAnswer": "ROAD HOUSE",
-    "category": "Action",
-    "difficulty": 74.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "year": "2024",
-      "rating": 6.2,
-      "votes": 188499
     }
   },
   {
@@ -140080,12 +137812,12 @@
     "source": "movie",
     "type": "title",
     "answer": "The Bélier Family",
-    "normalizedAnswer": "THE BLIER FAMILY",
+    "normalizedAnswer": "THE BELIER FAMILY",
     "category": "Comedy",
-    "difficulty": 60.4,
+    "difficulty": 60,
     "difficultyTier": "easy",
     "wordCount": 3,
-    "letterCount": 14,
+    "letterCount": 15,
     "uniqueLetterCount": 11,
     "metadata": {
       "year": "2014",
@@ -140325,24 +138057,6 @@
       "year": "2015",
       "rating": 6.8,
       "votes": 24707
-    }
-  },
-  {
-    "id": "b31438267c8d303b2ba91e77fe4523a3",
-    "source": "movie",
-    "type": "title",
-    "answer": "West Side Story",
-    "normalizedAnswer": "WEST SIDE STORY",
-    "category": "Crime",
-    "difficulty": 68.8,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 13,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "2021",
-      "rating": 7.1,
-      "votes": 144302
     }
   },
   {
@@ -141574,12 +139288,12 @@
     "source": "movie",
     "type": "title",
     "answer": "Astérix: The Mansions of the Gods",
-    "normalizedAnswer": "ASTRIX THE MANSIONS OF THE GODS",
+    "normalizedAnswer": "ASTERIX THE MANSIONS OF THE GODS",
     "category": "Adventure",
     "difficulty": 48,
     "difficultyTier": "easy",
     "wordCount": 6,
-    "letterCount": 26,
+    "letterCount": 27,
     "uniqueLetterCount": 14,
     "metadata": {
       "year": "2014",
@@ -142398,42 +140112,6 @@
     }
   },
   {
-    "id": "74d198807c2a4a00d5a25149a12918c2",
-    "source": "movie",
-    "type": "title",
-    "answer": "Cargo",
-    "normalizedAnswer": "CARGO",
-    "category": "Drama",
-    "difficulty": 88,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "year": "2017",
-      "rating": 6.3,
-      "votes": 52815
-    }
-  },
-  {
-    "id": "89836ff228de8f21ace068064219144b",
-    "source": "movie",
-    "type": "title",
-    "answer": "Dumbo",
-    "normalizedAnswer": "DUMBO",
-    "category": "Adventure",
-    "difficulty": 88,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "year": "2019",
-      "rating": 6.2,
-      "votes": 88800
-    }
-  },
-  {
     "id": "da1cbec06df419f8adbaa1f5d2c6eb13",
     "source": "movie",
     "type": "title",
@@ -143010,24 +140688,6 @@
     }
   },
   {
-    "id": "58b398bb3db4fedbfec9f1d48280cfe7",
-    "source": "movie",
-    "type": "title",
-    "answer": "The Innocents",
-    "normalizedAnswer": "THE INNOCENTS",
-    "category": "Drama",
-    "difficulty": 73.2,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 12,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "year": "2021",
-      "rating": 7,
-      "votes": 30197
-    }
-  },
-  {
     "id": "618f00f27d3e312597ff86ba2df72d2f",
     "source": "movie",
     "type": "title",
@@ -143298,24 +140958,6 @@
     }
   },
   {
-    "id": "cc1bc7524a9d67c68317c165cfc4da89",
-    "source": "movie",
-    "type": "title",
-    "answer": "The Valet",
-    "normalizedAnswer": "THE VALET",
-    "category": "Comedy",
-    "difficulty": 82.8,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "2022",
-      "rating": 6.7,
-      "votes": 18958
-    }
-  },
-  {
     "id": "d29a2a375a2a83b3c101c98fb7d706a0",
     "source": "movie",
     "type": "title",
@@ -143493,24 +141135,6 @@
       "year": "2017",
       "rating": 7.3,
       "votes": 195561
-    }
-  },
-  {
-    "id": "c351fccd96557f10a4e9e0f334de065c",
-    "source": "movie",
-    "type": "title",
-    "answer": "Things to Come",
-    "normalizedAnswer": "THINGS TO COME",
-    "category": "Drama",
-    "difficulty": 65.2,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 12,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "year": "2016",
-      "rating": 6.9,
-      "votes": 15443
     }
   },
   {
@@ -143817,24 +141441,6 @@
       "year": "2015",
       "rating": 7,
       "votes": 54317
-    }
-  },
-  {
-    "id": "471b39df8a626554ecd8a66b043d88f4",
-    "source": "movie",
-    "type": "title",
-    "answer": "The Gift",
-    "normalizedAnswer": "THE GIFT",
-    "category": "Drama",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 7,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "2015",
-      "rating": 7,
-      "votes": 186563
     }
   },
   {
@@ -144720,24 +142326,6 @@
     }
   },
   {
-    "id": "58b398bb3db4fedbfec9f1d48280cfe7",
-    "source": "movie",
-    "type": "title",
-    "answer": "The Innocents",
-    "normalizedAnswer": "THE INNOCENTS",
-    "category": "Drama",
-    "difficulty": 73.2,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 12,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "year": "2016",
-      "rating": 7.3,
-      "votes": 12319
-    }
-  },
-  {
     "id": "a5feaa883c639d1961929b01babdc421",
     "source": "movie",
     "type": "title",
@@ -144864,24 +142452,6 @@
     }
   },
   {
-    "id": "a0dcc95076dcc49288c6c99f4ff44331",
-    "source": "movie",
-    "type": "title",
-    "answer": "Drishyam",
-    "normalizedAnswer": "DRISHYAM",
-    "category": "Crime",
-    "difficulty": 74.8,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "year": "2015",
-      "rating": 8.2,
-      "votes": 110062
-    }
-  },
-  {
     "id": "711fd18b03e0d6b340e65a9e6d714d68",
     "source": "movie",
     "type": "title",
@@ -144951,24 +142521,6 @@
       "year": "2017",
       "rating": 6.3,
       "votes": 10414
-    }
-  },
-  {
-    "id": "8903cbc12957bce78d951280a2d80554",
-    "source": "movie",
-    "type": "title",
-    "answer": "Shaft",
-    "normalizedAnswer": "SHAFT",
-    "category": "Action",
-    "difficulty": 88,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "year": "2019",
-      "rating": 6.4,
-      "votes": 62549
     }
   },
   {
@@ -145120,12 +142672,12 @@
     "source": "movie",
     "type": "title",
     "answer": "Café Society",
-    "normalizedAnswer": "CAF SOCIETY",
+    "normalizedAnswer": "CAFE SOCIETY",
     "category": "Comedy",
-    "difficulty": 70,
+    "difficulty": 69.6,
     "difficultyTier": "medium",
     "wordCount": 2,
-    "letterCount": 10,
+    "letterCount": 11,
     "uniqueLetterCount": 9,
     "metadata": {
       "year": "2016",
@@ -147744,24 +145296,6 @@
     }
   },
   {
-    "id": "81d6346585a6f6cabf635aa13dd20b0d",
-    "source": "movie",
-    "type": "title",
-    "answer": "Nosferatu",
-    "normalizedAnswer": "NOSFERATU",
-    "category": "Fantasy",
-    "difficulty": 70.4,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 9,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "2024",
-      "rating": 7.1,
-      "votes": 271286
-    }
-  },
-  {
     "id": "a998c385c259ad0547add27f9ae68134",
     "source": "movie",
     "type": "title",
@@ -150066,24 +147600,6 @@
     }
   },
   {
-    "id": "9266be69e8abff3865c00c1a6b4c88a1",
-    "source": "movie",
-    "type": "title",
-    "answer": "The Beguiled",
-    "normalizedAnswer": "THE BEGUILED",
-    "category": "Drama",
-    "difficulty": 69.6,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "2017",
-      "rating": 6.3,
-      "votes": 66376
-    }
-  },
-  {
     "id": "a92edb2c50be7f0b27cba2d05c63996b",
     "source": "movie",
     "type": "title",
@@ -151074,24 +148590,6 @@
     }
   },
   {
-    "id": "1f3b5089a3578268827689c8098f4c54",
-    "source": "movie",
-    "type": "title",
-    "answer": "The Party",
-    "normalizedAnswer": "THE PARTY",
-    "category": "Comedy",
-    "difficulty": 78.8,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2017",
-      "rating": 6.6,
-      "votes": 22966
-    }
-  },
-  {
     "id": "7f12dc9547bdd5042ae1365e3cef31c1",
     "source": "movie",
     "type": "title",
@@ -151348,12 +148846,12 @@
     "source": "movie",
     "type": "title",
     "answer": "Pokémon: Detective Pikachu",
-    "normalizedAnswer": "POKMON DETECTIVE PIKACHU",
+    "normalizedAnswer": "POKEMON DETECTIVE PIKACHU",
     "category": "Adventure",
     "difficulty": 48,
     "difficultyTier": "easy",
     "wordCount": 3,
-    "letterCount": 22,
+    "letterCount": 23,
     "uniqueLetterCount": 14,
     "metadata": {
       "year": "2019",
@@ -151650,24 +149148,6 @@
     }
   },
   {
-    "id": "49c9bf577591f7d1cbdf2e5bdce2def6",
-    "source": "movie",
-    "type": "title",
-    "answer": "Superman",
-    "normalizedAnswer": "SUPERMAN",
-    "category": "Action",
-    "difficulty": 74.8,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "year": "2025",
-      "rating": 7,
-      "votes": 431333
-    }
-  },
-  {
     "id": "cbe9ab98277c3f8b015cc9c48aeb1b7f",
     "source": "movie",
     "type": "title",
@@ -151791,24 +149271,6 @@
       "year": "2019",
       "rating": 6,
       "votes": 60640
-    }
-  },
-  {
-    "id": "47c7c8c97150429ba4fe9ba054d6e6a7",
-    "source": "movie",
-    "type": "title",
-    "answer": "The Little Mermaid",
-    "normalizedAnswer": "THE LITTLE MERMAID",
-    "category": "Adventure",
-    "difficulty": 68,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 16,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "2023",
-      "rating": 7.2,
-      "votes": 179465
     }
   },
   {
@@ -152194,12 +149656,12 @@
     "source": "movie",
     "type": "title",
     "answer": "The Protégé",
-    "normalizedAnswer": "THE PROTG",
+    "normalizedAnswer": "THE PROTEGE",
     "category": "Action",
-    "difficulty": 78.8,
+    "difficulty": 78,
     "difficultyTier": "medium",
     "wordCount": 2,
-    "letterCount": 8,
+    "letterCount": 10,
     "uniqueLetterCount": 7,
     "metadata": {
       "year": "2021",
@@ -152241,42 +149703,6 @@
       "year": "2017",
       "rating": 6.2,
       "votes": 22495
-    }
-  },
-  {
-    "id": "1a9f3c80acd44fad962fc6e65df3df73",
-    "source": "movie",
-    "type": "title",
-    "answer": "Perfect Strangers",
-    "normalizedAnswer": "PERFECT STRANGERS",
-    "category": "Comedy",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 16,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "year": "2017",
-      "rating": 6.9,
-      "votes": 16553
-    }
-  },
-  {
-    "id": "b9e0ea02551a69e801840635fbce2aa8",
-    "source": "movie",
-    "type": "title",
-    "answer": "The Lion King",
-    "normalizedAnswer": "THE LION KING",
-    "category": "Adventure",
-    "difficulty": 69.6,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 11,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "2019",
-      "rating": 6.8,
-      "votes": 293449
     }
   },
   {
@@ -152424,24 +149850,6 @@
     }
   },
   {
-    "id": "265ece3bd6010486cddcd7e4ba75e3ea",
-    "source": "movie",
-    "type": "title",
-    "answer": "Aladdin",
-    "normalizedAnswer": "ALADDIN",
-    "category": "Adventure",
-    "difficulty": 87.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "year": "2019",
-      "rating": 6.9,
-      "votes": 316955
-    }
-  },
-  {
     "id": "0a0dc983056b29b3073e0cd7a2fd6c6c",
     "source": "movie",
     "type": "title",
@@ -152457,24 +149865,6 @@
       "year": "2019",
       "rating": 6.6,
       "votes": 40243
-    }
-  },
-  {
-    "id": "529db61195ea45233851ee2a71c073e0",
-    "source": "movie",
-    "type": "title",
-    "answer": "Vikram Vedha",
-    "normalizedAnswer": "VIKRAM VEDHA",
-    "category": "Action",
-    "difficulty": 69.6,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "2017",
-      "rating": 8.2,
-      "votes": 55746
     }
   },
   {
@@ -154386,24 +151776,6 @@
     }
   },
   {
-    "id": "0472558bbce8c20e812e0e8b0eebf7f8",
-    "source": "movie",
-    "type": "title",
-    "answer": "Revenge",
-    "normalizedAnswer": "REVENGE",
-    "category": "Action",
-    "difficulty": 87.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "year": "2017",
-      "rating": 6.4,
-      "votes": 65969
-    }
-  },
-  {
     "id": "21e1ffe626ffb2ef84606832de216486",
     "source": "movie",
     "type": "title",
@@ -154563,24 +151935,6 @@
       "year": "2018",
       "rating": 7.5,
       "votes": 11788
-    }
-  },
-  {
-    "id": "6a35db78fd43be0058ae6cdf5a63cf80",
-    "source": "movie",
-    "type": "title",
-    "answer": "Champions",
-    "normalizedAnswer": "CHAMPIONS",
-    "category": "Comedy",
-    "difficulty": 70.4,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 9,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "2018",
-      "rating": 7.2,
-      "votes": 13098
     }
   },
   {
@@ -155214,24 +152568,6 @@
     }
   },
   {
-    "id": "f940f83b5bb5ff02e3c5a05682492f3c",
-    "source": "movie",
-    "type": "title",
-    "answer": "Midway",
-    "normalizedAnswer": "MIDWAY",
-    "category": "Action",
-    "difficulty": 83.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "2019",
-      "rating": 6.7,
-      "votes": 106047
-    }
-  },
-  {
     "id": "31181aa5ab5d82a227fa1db19777b270",
     "source": "movie",
     "type": "title",
@@ -155790,24 +153126,6 @@
     }
   },
   {
-    "id": "afc0ec2ca422ebb1c9a2b9994e08ec5f",
-    "source": "movie",
-    "type": "title",
-    "answer": "The Candidate",
-    "normalizedAnswer": "THE CANDIDATE",
-    "category": "Drama",
-    "difficulty": 73.2,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 12,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "year": "2018",
-      "rating": 7.1,
-      "votes": 10365
-    }
-  },
-  {
     "id": "083b9aa09097cfad433b72f926440b80",
     "source": "movie",
     "type": "title",
@@ -156111,24 +153429,6 @@
       "year": "2018",
       "rating": 6.1,
       "votes": 24628
-    }
-  },
-  {
-    "id": "29fc247f4002264e2341ce51a87a46da",
-    "source": "movie",
-    "type": "title",
-    "answer": "Ballerina",
-    "normalizedAnswer": "BALLERINA",
-    "category": "Action",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 9,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2025",
-      "rating": 6.8,
-      "votes": 158639
     }
   },
   {
@@ -156834,24 +154134,6 @@
     }
   },
   {
-    "id": "9359313be0eccfb556570659c1cc0606",
-    "source": "movie",
-    "type": "title",
-    "answer": "War",
-    "normalizedAnswer": "WAR",
-    "category": "Action",
-    "difficulty": 96.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 3,
-    "uniqueLetterCount": 3,
-    "metadata": {
-      "year": "2019",
-      "rating": 6.6,
-      "votes": 40517
-    }
-  },
-  {
     "id": "f0ee6d10add02864610ed00d2488086c",
     "source": "movie",
     "type": "title",
@@ -157554,24 +154836,6 @@
     }
   },
   {
-    "id": "d00afc022ac4bb4d12e760eb9d2d8a72",
-    "source": "movie",
-    "type": "title",
-    "answer": "Death on the Nile",
-    "normalizedAnswer": "DEATH ON THE NILE",
-    "category": "Crime",
-    "difficulty": 68.4,
-    "difficultyTier": "medium",
-    "wordCount": 4,
-    "letterCount": 14,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "2022",
-      "rating": 6.3,
-      "votes": 212710
-    }
-  },
-  {
     "id": "e5f6c084c89c7298d78daa1e63ab68b9",
     "source": "movie",
     "type": "title",
@@ -157749,24 +155013,6 @@
       "year": "2018",
       "rating": 7.6,
       "votes": 21150
-    }
-  },
-  {
-    "id": "4fc3dcf1678c749baec8c7afe89b6e76",
-    "source": "movie",
-    "type": "title",
-    "answer": "Alone",
-    "normalizedAnswer": "ALONE",
-    "category": "Drama",
-    "difficulty": 88,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "year": "2020",
-      "rating": 6.2,
-      "votes": 36381
     }
   },
   {
@@ -158242,13 +155488,13 @@
     "source": "movie",
     "type": "title",
     "answer": "Müslüm",
-    "normalizedAnswer": "MSLM",
+    "normalizedAnswer": "MUSLUM",
     "category": "Biography",
-    "difficulty": 96.4,
+    "difficulty": 91.6,
     "difficultyTier": "hard",
     "wordCount": 1,
-    "letterCount": 4,
-    "uniqueLetterCount": 3,
+    "letterCount": 6,
+    "uniqueLetterCount": 4,
     "metadata": {
       "year": "2018",
       "rating": 7.6,
@@ -158847,24 +156093,6 @@
       "year": "2022",
       "rating": 6.9,
       "votes": 83672
-    }
-  },
-  {
-    "id": "89f0f9d4e583dd196db5e7c44815e297",
-    "source": "movie",
-    "type": "title",
-    "answer": "Lady and the Tramp",
-    "normalizedAnswer": "LADY AND THE TRAMP",
-    "category": "Adventure",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 15,
-    "uniqueLetterCount": 11,
-    "metadata": {
-      "year": "2019",
-      "rating": 6.2,
-      "votes": 26729
     }
   },
   {
@@ -160902,24 +158130,6 @@
     }
   },
   {
-    "id": "ec51d9a445561135bbf270f0f8da04a3",
-    "source": "movie",
-    "type": "title",
-    "answer": "Freaks",
-    "normalizedAnswer": "FREAKS",
-    "category": "Drama",
-    "difficulty": 83.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "2018",
-      "rating": 6.7,
-      "votes": 44981
-    }
-  },
-  {
     "id": "5a1ef3e3fc7b098c042e26800b95f3fc",
     "source": "movie",
     "type": "title",
@@ -161277,24 +158487,6 @@
       "year": "2019",
       "rating": 7.9,
       "votes": 884053
-    }
-  },
-  {
-    "id": "28ea14b61b4515ab18636dc2c69c5b16",
-    "source": "movie",
-    "type": "title",
-    "answer": "Jersey",
-    "normalizedAnswer": "JERSEY",
-    "category": "Drama",
-    "difficulty": 87.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "year": "2019",
-      "rating": 8.5,
-      "votes": 29971
     }
   },
   {
@@ -161878,12 +159070,12 @@
     "source": "movie",
     "type": "title",
     "answer": "La belle époque",
-    "normalizedAnswer": "LA BELLE POQUE",
+    "normalizedAnswer": "LA BELLE EPOQUE",
     "category": "Comedy",
-    "difficulty": 73.2,
+    "difficulty": 72.8,
     "difficultyTier": "medium",
     "wordCount": 3,
-    "letterCount": 12,
+    "letterCount": 13,
     "uniqueLetterCount": 8,
     "metadata": {
       "year": "2019",
@@ -162540,24 +159732,6 @@
     }
   },
   {
-    "id": "21e1ffe626ffb2ef84606832de216486",
-    "source": "movie",
-    "type": "title",
-    "answer": "The Guilty",
-    "normalizedAnswer": "THE GUILTY",
-    "category": "Crime",
-    "difficulty": 74.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "year": "2021",
-      "rating": 6.3,
-      "votes": 177717
-    }
-  },
-  {
     "id": "985a994dd891c974b3d14321cc3ded1c",
     "source": "movie",
     "type": "title",
@@ -162670,12 +159844,12 @@
     "source": "movie",
     "type": "title",
     "answer": "Pocket Hercules: Naim Süleymanoglu",
-    "normalizedAnswer": "POCKET HERCULES NAIM SLEYMANOGLU",
+    "normalizedAnswer": "POCKET HERCULES NAIM SULEYMANOGLU",
     "category": "Biography",
     "difficulty": 36,
     "difficultyTier": "easy",
     "wordCount": 4,
-    "letterCount": 29,
+    "letterCount": 30,
     "uniqueLetterCount": 17,
     "metadata": {
       "year": "2019",
@@ -162976,13 +160150,13 @@
     "source": "movie",
     "type": "title",
     "answer": "Cinayet Süsü",
-    "normalizedAnswer": "CINAYET SS",
+    "normalizedAnswer": "CINAYET SUSU",
     "category": "Comedy",
-    "difficulty": 74.4,
+    "difficulty": 69.6,
     "difficultyTier": "medium",
     "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 8,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
     "metadata": {
       "year": "2019",
       "rating": 6.7,

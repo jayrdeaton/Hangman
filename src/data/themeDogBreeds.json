@@ -1,0 +1,1535 @@
+[
+  {
+    "id": "146cddc5cb347b44a783572e89a28be5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Labrador Retriever",
+    "normalizedAnswer": "LABRADOR RETRIEVER",
+    "category": "Dog Breed",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 17,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "2c1ffda8a8772099e5468ad6df64c9cc",
+    "source": "theme",
+    "type": "title",
+    "answer": "German Shepherd",
+    "normalizedAnswer": "GERMAN SHEPHERD",
+    "category": "Dog Breed",
+    "difficulty": 64.4,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "b673e631928a787d48d07199ec9a8112",
+    "source": "theme",
+    "type": "title",
+    "answer": "Golden Retriever",
+    "normalizedAnswer": "GOLDEN RETRIEVER",
+    "category": "Dog Breed",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "f0b63142dcd4680845419937d3e780fe",
+    "source": "theme",
+    "type": "title",
+    "answer": "French Bulldog",
+    "normalizedAnswer": "FRENCH BULLDOG",
+    "category": "Dog Breed",
+    "difficulty": 56.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "3db598a981437803ac7f40c0e5f6a94f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bulldog",
+    "normalizedAnswer": "BULLDOG",
+    "category": "Dog Breed",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "2722bb85b823fd4a9637c3dc7f341dd8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Poodle",
+    "normalizedAnswer": "POODLE",
+    "category": "Dog Breed",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c4753177d39790d4d870ceb624b9d1a5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Beagle",
+    "normalizedAnswer": "BEAGLE",
+    "category": "Dog Breed",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "dc7af38941bd26d141115e06384ecb67",
+    "source": "theme",
+    "type": "title",
+    "answer": "Rottweiler",
+    "normalizedAnswer": "ROTTWEILER",
+    "category": "Dog Breed",
+    "difficulty": 78,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c1c54d064ecd8545737c3866929f00d3",
+    "source": "theme",
+    "type": "title",
+    "answer": "German Shorthaired Pointer",
+    "normalizedAnswer": "GERMAN SHORTHAIRED POINTER",
+    "category": "Dog Breed",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 24,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "773af4753ecfe152492ec75eeccae3a3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Dachshund",
+    "normalizedAnswer": "DACHSHUND",
+    "category": "Dog Breed",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "aca37cbfc5e2ef01566f469e5b7e3bd2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Siberian Husky",
+    "normalizedAnswer": "SIBERIAN HUSKY",
+    "category": "Dog Breed",
+    "difficulty": 60.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "2dab7fe1c0674ae563404c36b548d970",
+    "source": "theme",
+    "type": "title",
+    "answer": "Great Dane",
+    "normalizedAnswer": "GREAT DANE",
+    "category": "Dog Breed",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6e13eb961a8a103e3a4f2074884898f7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Doberman Pinscher",
+    "normalizedAnswer": "DOBERMAN PINSCHER",
+    "category": "Dog Breed",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a2549660b713852bf13999e14161b0ef",
+    "source": "theme",
+    "type": "title",
+    "answer": "Boxer",
+    "normalizedAnswer": "BOXER",
+    "category": "Dog Breed",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "1580b3d680c3cf0782bf9aa37936542f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Australian Shepherd",
+    "normalizedAnswer": "AUSTRALIAN SHEPHERD",
+    "category": "Dog Breed",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 18,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "15011e8add943f257c7a824a0a70ee8c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cavalier King Charles Spaniel",
+    "normalizedAnswer": "CAVALIER KING CHARLES SPANIEL",
+    "category": "Dog Breed",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 26,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "bf708d1250a55836dc47383589bea542",
+    "source": "theme",
+    "type": "title",
+    "answer": "Miniature Schnauzer",
+    "normalizedAnswer": "MINIATURE SCHNAUZER",
+    "category": "Dog Breed",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 18,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "2adb0d6f1555b02dff0853fdd5cf99de",
+    "source": "theme",
+    "type": "title",
+    "answer": "Yorkshire Terrier",
+    "normalizedAnswer": "YORKSHIRE TERRIER",
+    "category": "Dog Breed",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "b5ef96665da301041f340d1c0199ae95",
+    "source": "theme",
+    "type": "title",
+    "answer": "Boston Terrier",
+    "normalizedAnswer": "BOSTON TERRIER",
+    "category": "Dog Breed",
+    "difficulty": 72.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "9324fde6f8555c571ef75034928b3d0d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Pomeranian",
+    "normalizedAnswer": "POMERANIAN",
+    "category": "Dog Breed",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "37c8945fdb4e0c9aa14ca10285436dbb",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cane Corso",
+    "normalizedAnswer": "CANE CORSO",
+    "category": "Dog Breed",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c2bf2aa0a0dde4ea75d730d7c3f9f3ce",
+    "source": "theme",
+    "type": "title",
+    "answer": "Shih Tzu",
+    "normalizedAnswer": "SHIH TZU",
+    "category": "Dog Breed",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6e3f1340e580de5e762924b240d789be",
+    "source": "theme",
+    "type": "title",
+    "answer": "Havanese",
+    "normalizedAnswer": "HAVANESE",
+    "category": "Dog Breed",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "cc17119309a6e5cdd9a97025e6381cdd",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bernese Mountain Dog",
+    "normalizedAnswer": "BERNESE MOUNTAIN DOG",
+    "category": "Dog Breed",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 18,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "15ffee20ab32798ea942692936fdb9ea",
+    "source": "theme",
+    "type": "title",
+    "answer": "Border Collie",
+    "normalizedAnswer": "BORDER COLLIE",
+    "category": "Dog Breed",
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "2ad2299f63dc127eb90c2f596691a705",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chihuahua",
+    "normalizedAnswer": "CHIHUAHUA",
+    "category": "Dog Breed",
+    "difficulty": 86.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "135fc0df95ab7d6dc03ffc9d7db7ab5d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Pembroke Welsh Corgi",
+    "normalizedAnswer": "PEMBROKE WELSH CORGI",
+    "category": "Dog Breed",
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 18,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "2a29d9ea39a7d59aee24ade60d5c0fe9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Vizsla",
+    "normalizedAnswer": "VIZSLA",
+    "category": "Dog Breed",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "07fd4455e7ff290d22a0259cce39525d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Belgian Malinois",
+    "normalizedAnswer": "BELGIAN MALINOIS",
+    "category": "Dog Breed",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "1212144cd3f22e8e528393f02a373670",
+    "source": "theme",
+    "type": "title",
+    "answer": "Shetland Sheepdog",
+    "normalizedAnswer": "SHETLAND SHEEPDOG",
+    "category": "Dog Breed",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "712fca5c815fe9520e021390aa1674f1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Brittany",
+    "normalizedAnswer": "BRITTANY",
+    "category": "Dog Breed",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "175d5549657bfc52f292436b743f81cd",
+    "source": "theme",
+    "type": "title",
+    "answer": "English Springer Spaniel",
+    "normalizedAnswer": "ENGLISH SPRINGER SPANIEL",
+    "category": "Dog Breed",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 22,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6202bb6dc6343cfcdfba4af0fa0bef93",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bloodhound",
+    "normalizedAnswer": "BLOODHOUND",
+    "category": "Dog Breed",
+    "difficulty": 78,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "9893fd87ab834e8a59235659e8987559",
+    "source": "theme",
+    "type": "title",
+    "answer": "Basset Hound",
+    "normalizedAnswer": "BASSET HOUND",
+    "category": "Dog Breed",
+    "difficulty": 65.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "27facf28abd7f885de06fd5764e53be1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Newfoundland",
+    "normalizedAnswer": "NEWFOUNDLAND",
+    "category": "Dog Breed",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "0c19d7947ab45f5665f8e38c4e7ec4e1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Akita",
+    "normalizedAnswer": "AKITA",
+    "category": "Dog Breed",
+    "difficulty": 92,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "2da4a9d8a96904031a6b892421be063e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chow Chow",
+    "normalizedAnswer": "CHOW CHOW",
+    "category": "Dog Breed",
+    "difficulty": 90.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "2a8bce93c605b3f28e0ad2ca09796d59",
+    "source": "theme",
+    "type": "title",
+    "answer": "Portuguese Water Dog",
+    "normalizedAnswer": "PORTUGUESE WATER DOG",
+    "category": "Dog Breed",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 18,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "3c307b6591800d972b593a358865f06f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cocker Spaniel",
+    "normalizedAnswer": "COCKER SPANIEL",
+    "category": "Dog Breed",
+    "difficulty": 60.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "bb85c11569e14a29e1d28528d1dd3358",
+    "source": "theme",
+    "type": "title",
+    "answer": "Weimaraner",
+    "normalizedAnswer": "WEIMARANER",
+    "category": "Dog Breed",
+    "difficulty": 78,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "06204b018c275ce6966eef024b7702b1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Collie",
+    "normalizedAnswer": "COLLIE",
+    "category": "Dog Breed",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "9de1db723b831fe98fb11f459deefaaa",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mastiff",
+    "normalizedAnswer": "MASTIFF",
+    "category": "Dog Breed",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "70c4f7494eede9b17d44d23a970e731b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Saint Bernard",
+    "normalizedAnswer": "SAINT BERNARD",
+    "category": "Dog Breed",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "44eddacb17782258f857ae32d6235998",
+    "source": "theme",
+    "type": "title",
+    "answer": "Alaskan Malamute",
+    "normalizedAnswer": "ALASKAN MALAMUTE",
+    "category": "Dog Breed",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "879064572030b30f10b02aead2a40ed5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Maltese",
+    "normalizedAnswer": "MALTESE",
+    "category": "Dog Breed",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "63b561877c3afa1749b1acccff9b9596",
+    "source": "theme",
+    "type": "title",
+    "answer": "West Highland White Terrier",
+    "normalizedAnswer": "WEST HIGHLAND WHITE TERRIER",
+    "category": "Dog Breed",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 24,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "b35210a0b7e4773db090a03add06393b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Scottish Terrier",
+    "normalizedAnswer": "SCOTTISH TERRIER",
+    "category": "Dog Breed",
+    "difficulty": 72,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "00dfbb734bf76b7a9e2e12217bf8f75e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Jack Russell Terrier",
+    "normalizedAnswer": "JACK RUSSELL TERRIER",
+    "category": "Dog Breed",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 18,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a0da3e7a8b26320334d062b7b4b5743c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bull Terrier",
+    "normalizedAnswer": "BULL TERRIER",
+    "category": "Dog Breed",
+    "difficulty": 77.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "0953ec454c6a24ff17bf2d8816eedc06",
+    "source": "theme",
+    "type": "title",
+    "answer": "Airedale Terrier",
+    "normalizedAnswer": "AIREDALE TERRIER",
+    "category": "Dog Breed",
+    "difficulty": 76,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "bbe52ca70db59d840befd4d5f7e062d8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cairn Terrier",
+    "normalizedAnswer": "CAIRN TERRIER",
+    "category": "Dog Breed",
+    "difficulty": 77.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "bc6989a51346e2f3a6c3c123e53cf75d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Whippet",
+    "normalizedAnswer": "WHIPPET",
+    "category": "Dog Breed",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "53bef2c9f82f94398fc831b59deade91",
+    "source": "theme",
+    "type": "title",
+    "answer": "Greyhound",
+    "normalizedAnswer": "GREYHOUND",
+    "category": "Dog Breed",
+    "difficulty": 70.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "e0407aad24748f08250880f8f3566f33",
+    "source": "theme",
+    "type": "title",
+    "answer": "Afghan Hound",
+    "normalizedAnswer": "AFGHAN HOUND",
+    "category": "Dog Breed",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a6a838fb4304f0d20e9d9af369807831",
+    "source": "theme",
+    "type": "title",
+    "answer": "Basenji",
+    "normalizedAnswer": "BASENJI",
+    "category": "Dog Breed",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "fb92554055bf763e75cb5cca85bcfa27",
+    "source": "theme",
+    "type": "title",
+    "answer": "Rhodesian Ridgeback",
+    "normalizedAnswer": "RHODESIAN RIDGEBACK",
+    "category": "Dog Breed",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 18,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "da74244223b38b0a6587d8391013f10c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Samoyed",
+    "normalizedAnswer": "SAMOYED",
+    "category": "Dog Breed",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "e31b3ea694e731736ee09ca89e2a06bf",
+    "source": "theme",
+    "type": "title",
+    "answer": "Old English Sheepdog",
+    "normalizedAnswer": "OLD ENGLISH SHEEPDOG",
+    "category": "Dog Breed",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 18,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "75fc7dce65fe282f464059764e2bb86a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Australian Cattle Dog",
+    "normalizedAnswer": "AUSTRALIAN CATTLE DOG",
+    "category": "Dog Breed",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 19,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "8f8f9d1428b4311f80a11c55676addf4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Dalmatian",
+    "normalizedAnswer": "DALMATIAN",
+    "category": "Dog Breed",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "10b6d8407909813863bcafacc0a17ad8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Shiba Inu",
+    "normalizedAnswer": "SHIBA INU",
+    "category": "Dog Breed",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "564ba18a42fbb88d4e24e0dd99799912",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lhasa Apso",
+    "normalizedAnswer": "LHASA APSO",
+    "category": "Dog Breed",
+    "difficulty": 82.4,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "53a2205860ae837fd36cc9ea05e0b137",
+    "source": "theme",
+    "type": "title",
+    "answer": "Pekingese",
+    "normalizedAnswer": "PEKINGESE",
+    "category": "Dog Breed",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "080c5560e3646a8e62f730d885ea4896",
+    "source": "theme",
+    "type": "title",
+    "answer": "Papillon",
+    "normalizedAnswer": "PAPILLON",
+    "category": "Dog Breed",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "84e159f6b643aa6cdf385dbaa84013ba",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bichon Frise",
+    "normalizedAnswer": "BICHON FRISE",
+    "category": "Dog Breed",
+    "difficulty": 65.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "0ae13ed88a43dd932f9f48951bf7d9fb",
+    "source": "theme",
+    "type": "title",
+    "answer": "Shar Pei",
+    "normalizedAnswer": "SHAR PEI",
+    "category": "Dog Breed",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "03ba55df663c55d7d8631524468885a3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bullmastiff",
+    "normalizedAnswer": "BULLMASTIFF",
+    "category": "Dog Breed",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "057600395330c8c6addba6f3dee12d94",
+    "source": "theme",
+    "type": "title",
+    "answer": "Great Pyrenees",
+    "normalizedAnswer": "GREAT PYRENEES",
+    "category": "Dog Breed",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "831e9de5a327ba9e51d65b1bfe3f6089",
+    "source": "theme",
+    "type": "title",
+    "answer": "Irish Setter",
+    "normalizedAnswer": "IRISH SETTER",
+    "category": "Dog Breed",
+    "difficulty": 81.6,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c6e5490c3a149dbe463a9d11660172a8",
+    "source": "theme",
+    "type": "title",
+    "answer": "English Setter",
+    "normalizedAnswer": "ENGLISH SETTER",
+    "category": "Dog Breed",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "1f03ec542df82c5416abb80f9bfdf0bb",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chesapeake Bay Retriever",
+    "normalizedAnswer": "CHESAPEAKE BAY RETRIEVER",
+    "category": "Dog Breed",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 22,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "fc064936b313a2515bc4339b9a19bbff",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bluetick Coonhound",
+    "normalizedAnswer": "BLUETICK COONHOUND",
+    "category": "Dog Breed",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 17,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "cda4daf141f293bb266129779bd4c404",
+    "source": "theme",
+    "type": "title",
+    "answer": "Pug",
+    "normalizedAnswer": "PUG",
+    "category": "Dog Breed",
+    "difficulty": 96.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "animal",
+      "dog"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  }
+]

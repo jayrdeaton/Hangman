@@ -1,0 +1,632 @@
+[
+  {
+    "id": "fc2b5a164d6223d06037d1bd50ccadd6",
+    "source": "sports",
+    "type": "title",
+    "answer": "Minnesota United FC",
+    "normalizedAnswer": "MINNESOTA UNITED FC",
+    "category": "MLS Team",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 17,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "3f1501b16b07ff047fcd8e151b7d8a16",
+    "source": "sports",
+    "type": "title",
+    "answer": "Real Salt Lake",
+    "normalizedAnswer": "REAL SALT LAKE",
+    "category": "MLS Team",
+    "difficulty": 77.2,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 12,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "9b124cbf84c279d30a66e366bde98b89",
+    "source": "sports",
+    "type": "title",
+    "answer": "D.C. United",
+    "normalizedAnswer": "DC UNITED",
+    "category": "MLS Team",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "3ac777c79a591fa849ace72b7757ac72",
+    "source": "sports",
+    "type": "title",
+    "answer": "Charlotte FC",
+    "normalizedAnswer": "CHARLOTTE FC",
+    "category": "MLS Team",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "e2883091d23f1478b0bc1c4bfdf3e68d",
+    "source": "sports",
+    "type": "title",
+    "answer": "Vancouver Whitecaps FC",
+    "normalizedAnswer": "VANCOUVER WHITECAPS FC",
+    "category": "MLS Team",
+    "difficulty": 44,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 20,
+    "uniqueLetterCount": 15,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "74979faae8054b8051ff4ce78f2cc118",
+    "source": "sports",
+    "type": "title",
+    "answer": "Toronto FC",
+    "normalizedAnswer": "TORONTO FC",
+    "category": "MLS Team",
+    "difficulty": 82.4,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "d735cd44841c2da18cf4e81fb1e259c3",
+    "source": "sports",
+    "type": "title",
+    "answer": "Los Angeles FC",
+    "normalizedAnswer": "LOS ANGELES FC",
+    "category": "MLS Team",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "41488dcbdbf4158656aeb6e540cb5922",
+    "source": "sports",
+    "type": "title",
+    "answer": "Colorado Rapids",
+    "normalizedAnswer": "COLORADO RAPIDS",
+    "category": "MLS Team",
+    "difficulty": 68.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "c1ea37ae421256fbfe634e374b471eeb",
+    "source": "sports",
+    "type": "title",
+    "answer": "Los Angeles Galaxy",
+    "normalizedAnswer": "LOS ANGELES GALAXY",
+    "category": "MLS Team",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 16,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "2a2e35ecb477ddb0f48df494e51bfee6",
+    "source": "sports",
+    "type": "title",
+    "answer": "St. Louis City SC",
+    "normalizedAnswer": "ST LOUIS CITY SC",
+    "category": "MLS Team",
+    "difficulty": 72.8,
+    "difficultyTier": "medium",
+    "wordCount": 4,
+    "letterCount": 13,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "3b2847adf1db9272d83c64cf49a68fab",
+    "source": "sports",
+    "type": "title",
+    "answer": "New England Revolution",
+    "normalizedAnswer": "NEW ENGLAND REVOLUTION",
+    "category": "MLS Team",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 20,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "64d9127b9296ddfaf56914a2dd13a159",
+    "source": "sports",
+    "type": "title",
+    "answer": "Nashville SC",
+    "normalizedAnswer": "NASHVILLE SC",
+    "category": "MLS Team",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "6450db9caa654d722c1822b839a3b71d",
+    "source": "sports",
+    "type": "title",
+    "answer": "Orlando City SC",
+    "normalizedAnswer": "ORLANDO CITY SC",
+    "category": "MLS Team",
+    "difficulty": 60.8,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 13,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "112b8c50c307f5b82f9d397994a82269",
+    "source": "sports",
+    "type": "title",
+    "answer": "Seattle Sounders FC",
+    "normalizedAnswer": "SEATTLE SOUNDERS FC",
+    "category": "MLS Team",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 17,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "6f187a389b125c2ee1728e652f33dd6a",
+    "source": "sports",
+    "type": "title",
+    "answer": "Atlanta United FC",
+    "normalizedAnswer": "ATLANTA UNITED FC",
+    "category": "MLS Team",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "5ad0f525aa66b7f971387467433c5626",
+    "source": "sports",
+    "type": "title",
+    "answer": "Inter Miami CF",
+    "normalizedAnswer": "INTER MIAMI CF",
+    "category": "MLS Team",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "27bd31755722f98948f0b8fe43d9d54f",
+    "source": "sports",
+    "type": "title",
+    "answer": "San Jose Earthquakes",
+    "normalizedAnswer": "SAN JOSE EARTHQUAKES",
+    "category": "MLS Team",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 18,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "7fe41f207d0e94c908a8b53ef95c45bc",
+    "source": "sports",
+    "type": "title",
+    "answer": "Portland Timbers",
+    "normalizedAnswer": "PORTLAND TIMBERS",
+    "category": "MLS Team",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "5b6ebe9e02f83ac2c8c9a812663b0751",
+    "source": "sports",
+    "type": "title",
+    "answer": "Austin FC",
+    "normalizedAnswer": "AUSTIN FC",
+    "category": "MLS Team",
+    "difficulty": 74.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "3ccd879dc8c53a6204be242b8ca571d0",
+    "source": "sports",
+    "type": "title",
+    "answer": "CF Montreal",
+    "normalizedAnswer": "CF MONTREAL",
+    "category": "MLS Team",
+    "difficulty": 66,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "69d2b960a374344536f673414a1298fe",
+    "source": "sports",
+    "type": "title",
+    "answer": "Columbus Crew",
+    "normalizedAnswer": "COLUMBUS CREW",
+    "category": "MLS Team",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "0cdf2a99bff71ae0afb85ec43791bfdb",
+    "source": "sports",
+    "type": "title",
+    "answer": "Houston Dynamo FC",
+    "normalizedAnswer": "HOUSTON DYNAMO FC",
+    "category": "MLS Team",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "771da207ac9b7696afd32f9e7284ba09",
+    "source": "sports",
+    "type": "title",
+    "answer": "San Diego FC",
+    "normalizedAnswer": "SAN DIEGO FC",
+    "category": "MLS Team",
+    "difficulty": 66,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 10,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "b902fd6785b0d94c2bd688b4c84ac3f8",
+    "source": "sports",
+    "type": "title",
+    "answer": "Chicago Fire FC",
+    "normalizedAnswer": "CHICAGO FIRE FC",
+    "category": "MLS Team",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "2f455b0c36911631dfd7617e4d05283d",
+    "source": "sports",
+    "type": "title",
+    "answer": "Sporting Kansas City",
+    "normalizedAnswer": "SPORTING KANSAS CITY",
+    "category": "MLS Team",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 18,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "dba10f26b92745737daeff87a7b537eb",
+    "source": "sports",
+    "type": "title",
+    "answer": "New York Red Bulls",
+    "normalizedAnswer": "NEW YORK RED BULLS",
+    "category": "MLS Team",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 15,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "5d16405f1f2ab7ec110bf4c7e60a4303",
+    "source": "sports",
+    "type": "title",
+    "answer": "Philadelphia Union",
+    "normalizedAnswer": "PHILADELPHIA UNION",
+    "category": "MLS Team",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 17,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "8b17971c91f3fab753d27f612dc11ee0",
+    "source": "sports",
+    "type": "title",
+    "answer": "FC Dallas",
+    "normalizedAnswer": "FC DALLAS",
+    "category": "MLS Team",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "5bc32395d10f63f7ba2ae791b4891c2d",
+    "source": "sports",
+    "type": "title",
+    "answer": "FC Cincinnati",
+    "normalizedAnswer": "FC CINCINNATI",
+    "category": "MLS Team",
+    "difficulty": 81.2,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  },
+  {
+    "id": "d1b8c39ff226f437986b3d6a493b6cd5",
+    "source": "sports",
+    "type": "title",
+    "answer": "New York City FC",
+    "normalizedAnswer": "NEW YORK CITY FC",
+    "category": "MLS Team",
+    "difficulty": 60.8,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 13,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "mls",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Soccer_stadiums"
+    }
+  }
+]

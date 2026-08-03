@@ -48,8 +48,11 @@ const JengaVisual = ({ mistakes, color, width, height }: { mistakes: number; col
 
   return (
     <Svg width={width} height={height} viewBox='0 0 100 100'>
+      {/* transform (not rotation+origin) — react-native-svg's web renderer sets origin as a raw
+          `transform-origin` DOM attribute, which isn't a valid one (React warns about it); folding
+          the pivot into the transform string itself avoids that path entirely, same result. */}
       {!toppled && (
-        <G rotation={tilt} origin={TOWER_ORIGIN}>
+        <G transform={`rotate(${tilt}, ${TOWER_ORIGIN})`}>
           {visible.map((b) => (
             <Rect key={b.key} x={50 - b.width / 2 + b.xOffset} y={b.y} width={b.width} height={BLOCK_H} rx='1.5' stroke={color} strokeWidth='2.5' fill='none' strokeLinejoin='round' />
           ))}
@@ -57,7 +60,7 @@ const JengaVisual = ({ mistakes, color, width, height }: { mistakes: number; col
       )}
       {toppled &&
         TOPPLED.map((t) => (
-          <G key={t.key} rotation={t.rotation} origin={`${t.x + t.width / 2},${t.y + BLOCK_H / 2}`}>
+          <G key={t.key} transform={`rotate(${t.rotation}, ${t.x + t.width / 2}, ${t.y + BLOCK_H / 2})`}>
             <Rect x={t.x} y={t.y} width={t.width} height={BLOCK_H} rx='1.5' stroke={color} strokeWidth='2.5' fill='none' strokeLinejoin='round' />
           </G>
         ))}

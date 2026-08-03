@@ -1,5 +1,4 @@
 import { fireEvent, render } from '@testing-library/react-native'
-import * as Linking from 'expo-linking'
 import { StyleSheet } from 'react-native'
 
 import { Main } from '@/components/Main'
@@ -15,39 +14,7 @@ jest.mock('@/utils/puzzlePicker', () => ({
   resolvePuzzle: jest.fn()
 }))
 
-// jest.setup.ts globally mocks useLinkingURL to always return null (no incoming link) — overridden
-// here so the pending-share test below can simulate a link arriving after mount by changing what
-// this returns and forcing a rerender. createURL/parse are real expo-linking calls in production
-// but need a configured native manifest (app.json's scheme) that isn't available in this test
-// environment — reimplemented with plain URL parsing instead, same approach as puzzleLink.test.ts.
-jest.mock('expo-linking', () => {
-  const createURL = (path: string, options?: { queryParams?: Record<string, string | undefined> }): string => {
-    const url = new URL(path, 'https://test.example')
-    Object.entries(options?.queryParams ?? {}).forEach(([key, value]) => {
-      if (value !== undefined) url.searchParams.set(key, value)
-    })
-    return url.toString()
-  }
-
-  const parse = (urlString: string) => {
-    const url = new URL(urlString)
-    const queryParams: Record<string, string> = {}
-    url.searchParams.forEach((value, key) => {
-      queryParams[key] = value
-    })
-    return { scheme: url.protocol.replace(':', ''), hostname: url.hostname || null, path: url.pathname, queryParams: Object.keys(queryParams).length > 0 ? queryParams : null }
-  }
-
-  return {
-    useLinkingURL: jest.fn(() => null),
-    clearInitialURL: jest.fn(),
-    createURL,
-    parse
-  }
-})
-
 const mockResolvePuzzle = jest.mocked(puzzlePicker.resolvePuzzle)
-const mockUseLinkingURL = jest.mocked(Linking.useLinkingURL)
 
 // hasVisual defaults true — used for the "before" state in the live-mode-swap test.
 const visualMode: GameMode = {
@@ -86,10 +53,9 @@ const renderApp = () =>
 describe('Main', () => {
   beforeEach(() => {
     mockResolvePuzzle.mockReset()
-    mockUseLinkingURL.mockReturnValue(null)
   })
 
-  it('reflects a newly picked art style in the round already on screen immediately, without pressing New puzzle or ending the round', async () => {
+  it('reflects a newly picked art style in the round already on screen immediately, without pressing Random or ending the round', async () => {
     mockResolvePuzzle.mockReturnValue({ ok: true, payload: payload({ mode: visualMode }) })
     const { getByLabelText, getByTestId } = await renderApp()
 
@@ -110,7 +76,7 @@ describe('Main', () => {
     expect(mockResolvePuzzle).toHaveBeenCalledTimes(1)
   })
 
-  it('keeps a live difficulty change out of the round already on screen, but applies it to the next round the moment this one ends — no New puzzle press required', async () => {
+  it('keeps a live difficulty change out of the round already on screen, but applies it to the next round the moment this one ends — no Random press required', async () => {
     mockResolvePuzzle.mockReturnValueOnce({ ok: true, payload: payload({ mode: oneMistakeMode, phrase: 'DOG', puzzleId: 'puzzle-1' }) }).mockReturnValueOnce({ ok: true, payload: payload({ mode: oneMistakeMode, phrase: 'FISH', puzzleId: 'puzzle-2' }) })
     const { getByLabelText, getByText, findByText } = await renderApp()
 
@@ -135,38 +101,31 @@ describe('Main', () => {
     expect(mockResolvePuzzle.mock.calls[1][0].difficulty).toBe('hard')
   })
 
-  it('does not apply a live mode pick to the round already on screen while a shared-puzzle link is pending, unconfirmed, in the drawer', async () => {
-    mockResolvePuzzle.mockReturnValue({ ok: true, payload: payload({ mode: visualMode }) })
-    const { getByLabelText, getByTestId, rerender } = await renderApp()
+  it('keeps the single continue button inside the same pack for the automatic next round, when the finished puzzle came from a single-pack draw', async () => {
+    mockResolvePuzzle.mockReturnValueOnce({ ok: true, payload: payload({ mode: oneMistakeMode, phrase: 'DOG', packKey: 'pack-1', packScope: 'single' }) }).mockReturnValueOnce({ ok: true, payload: payload({ mode: oneMistakeMode, phrase: 'FISH', packKey: 'pack-1', packScope: 'single' }) })
+    const { getByText, findByText } = await renderApp()
 
-    const displayBefore = getByLabelText('Secret word display')
-    expect(StyleSheet.flatten(displayBefore.props.children[0].props.style).fontSize).toBe(30)
+    await fireEvent.press(getByText('Q'))
+    expect(await findByText('You lost!')).toBeTruthy()
 
-    // A friend's shared-puzzle link arrives while the app is already running — Main.tsx opens the
-    // drawer on its own to preview it (see the incoming-URL effect), deliberately leaving the round
-    // already on screen (drawn above, from the mocked resolvePuzzle) untouched until the player
-    // explicitly accepts or declines the share.
-    const sharedUrl = Linking.createURL('play', { queryParams: { phrase: 'SURPRISE PARTY', hint: '', mode: 'classic' } })
-    mockUseLinkingURL.mockReturnValue(sharedUrl)
-    await rerender(
-      <Providers>
-        <Main />
-      </Providers>
-    )
+    await fireEvent.press(getByText('Next puzzle'))
 
-    // The drawer opened on its own, previewing the SHARED word (not round A's) — confirms the
-    // preview really is the pending share.
-    expect(getByTestId('phrase-input').props.value).toBe('SURPRISE PARTY')
+    expect(mockResolvePuzzle).toHaveBeenCalledTimes(2)
+    expect(mockResolvePuzzle.mock.calls[1][1]).toEqual(['pack-1'])
+  })
 
-    // The player previews a different art style before deciding whether to accept the share — the
-    // mode selector here is showing the share's mode, not round A's, so this must not reach round A.
-    await fireEvent(getByTestId('mode-selector-container'), 'layout', MODE_SELECTOR_LAYOUT_EVENT)
-    await fireEvent.press(getByLabelText(OTHER_MODE_ACCESSIBILITY_LABEL))
+  it("draws the automatic next round from the player's whole pack selection, when the finished puzzle came from a selection-wide draw", async () => {
+    mockResolvePuzzle.mockReturnValueOnce({ ok: true, payload: payload({ mode: oneMistakeMode, phrase: 'DOG', packKey: 'pack-1', packScope: 'selection' }) }).mockReturnValueOnce({ ok: true, payload: payload({ mode: oneMistakeMode, phrase: 'FISH', packKey: 'pack-2', packScope: 'selection' }) })
+    const { getByText, findByText } = await renderApp()
 
-    // Round A, still playing behind the drawer, is completely unaffected — no new resolvePuzzle
-    // call, and its own art style untouched.
-    const displayAfter = getByLabelText('Secret word display')
-    expect(StyleSheet.flatten(displayAfter.props.children[0].props.style).fontSize).toBe(30)
-    expect(mockResolvePuzzle).toHaveBeenCalledTimes(1)
+    await fireEvent.press(getByText('Q'))
+    expect(await findByText('You lost!')).toBeTruthy()
+
+    await fireEvent.press(getByText('Next puzzle'))
+
+    expect(mockResolvePuzzle).toHaveBeenCalledTimes(2)
+    // Same packKeys the initial auto-start itself drew from (the live selection) — not narrowed to
+    // the single pack the just-finished puzzle happened to land on.
+    expect(mockResolvePuzzle.mock.calls[1][1]).toEqual(mockResolvePuzzle.mock.calls[0][1])
   })
 })

@@ -584,13 +584,13 @@
     "source": "theme",
     "type": "title",
     "answer": "Pokémon",
-    "normalizedAnswer": "POKMON",
+    "normalizedAnswer": "POKEMON",
     "category": "Anime",
-    "difficulty": 87.6,
+    "difficulty": 83.2,
     "difficultyTier": "hard",
     "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 5,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
     "tags": [
       "theme",
       "anime"

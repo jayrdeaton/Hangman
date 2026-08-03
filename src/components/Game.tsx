@@ -14,12 +14,27 @@ import { PuzzleInfoRow } from './PuzzleInfoRow'
 import { PuzzleStage } from './PuzzleStage'
 import { type CategoryProgress, RoundEndDialog } from './RoundEndDialog'
 
-export type SolveDetails = { wrongGuesses: number; hintRevealed: boolean }
+export type SolveDetails = { wrongGuesses: number; hintRevealed: boolean; guessCount: number }
+export type LossDetails = { wrongGuesses: number; guessCount: number }
+
+// How long a win holds off showing RoundEndDialog after the last letter lands — long enough for
+// the finished word to actually register and for a couple of the celebration's firework bursts to
+// go off (each burst runs ~1200ms and a new one starts every 180-420ms — see fireworks.tsx's
+// BURST_LIFETIME_MS/MIN_BURST_INTERVAL_MS/MAX_BURST_INTERVAL_MS), rather than the dialog cutting
+// the moment off immediately. Longer than the loss path's own 450ms delay below, which only needs
+// to cover the final stage of the artwork drawing, not a whole show. Exported so tests can assert
+// against the real value instead of a hand-copied magic number.
+export const WIN_DIALOG_DELAY_MS = 2000
 
 export type GameProps = {
   onStop: () => void
   onSolved?: (details: SolveDetails) => void
-  onLost?: () => void
+  onLost?: (details: LossDetails) => void
+  // Fired whenever the guessed-letter set changes, mid-round — lets a caller track "has the
+  // player guessed anything yet" and "how many wrong guesses so far" for THIS round without
+  // lifting the full guessedLetters state, e.g. to decide whether starting a different puzzle
+  // should count as an abandoned loss (see Main.tsx's shouldConfirmAbandon).
+  onGuessProgress?: (details: LossDetails) => void
   phrase: string
   mode?: GameMode
   hint?: string
@@ -27,10 +42,20 @@ export type GameProps = {
   difficultyTier?: PuzzleDifficultyTier
   celebration?: CelebrationEffect
   categoryProgress?: CategoryProgress | null
-  onAnotherInCategory?: () => void
+  // Passed straight through to RoundEndDialog — Game plays a pass-and-play round exactly like any
+  // other, it just needs the continue button to say "write the next word" instead of "next puzzle".
+  continueLabel?: string
+  // True while a dialog covers the board — currently only pass-and-play's handoff step, which
+  // mounts the real round underneath itself rather than a blank screen (see Main.tsx), so that
+  // there's nothing left to reveal once the dialog closes. Guards handleGuess only, deliberately
+  // NOT the Keyboard's own `disabled` styling below — greying it out would repaint the board the
+  // instant the dialog disappears, which is the exact flash mounting it early was meant to avoid.
+  // The dialog's backdrop already blocks on-screen taps; this only needs to catch the
+  // physical-keyboard listener, which isn't gated by touch at all.
+  locked?: boolean
 }
 
-export const Game = ({ onStop, onSolved, onLost, phrase, mode = DEFAULT_MODE, hint, packLabel, difficultyTier, celebration = DEFAULT_CELEBRATION, categoryProgress, onAnotherInCategory }: GameProps): JSX.Element => {
+export const Game = ({ onStop, onSolved, onLost, onGuessProgress, phrase, mode = DEFAULT_MODE, hint, packLabel, difficultyTier, celebration = DEFAULT_CELEBRATION, categoryProgress, continueLabel, locked = false }: GameProps): JSX.Element => {
   const { layout } = useKeyboardLayout()
   const theme = useTheme()
   const tertiaryColor = theme.colors.tertiary
@@ -38,6 +63,12 @@ export const Game = ({ onStop, onSolved, onLost, phrase, mode = DEFAULT_MODE, hi
   const [wrongGuesses, setWrongGuesses] = useState(0)
   const [hintRevealed, setHintRevealed] = useState(false)
   const [outcome, setOutcome] = useState<'win' | 'loss' | null>(null)
+  // Separate from `outcome` itself — outcome flips the instant the round is decided (disabling the
+  // keyboard, starting the celebration), but RoundEndDialog's own visibility waits on this too, so
+  // a win doesn't get cut off by the dialog popping up over the celebration that just started (see
+  // WIN_DIALOG_DELAY_MS above). A loss sets this true in the same tick as its own already-delayed
+  // setOutcome('loss') below — nothing extra to wait for there beyond what that delay already covers.
+  const [dialogReady, setDialogReady] = useState(false)
   // Bumped every time the celebration effect finishes a cycle, which remounts CelebrationView
   // (keyed on this value below) to start a fresh cycle — keeping the effect running for as long
   // as outcome stays 'win', i.e. for as long as the win dialog is open.
@@ -55,16 +86,22 @@ export const Game = ({ onStop, onSolved, onLost, phrase, mode = DEFAULT_MODE, hi
   // setOutcome('loss') below, either of which could otherwise flip a decided round's outcome.
   const roundOverRef = useRef(false)
   const lossTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const winDialogTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   useEffect(
     () => () => {
       if (lossTimeoutRef.current) clearTimeout(lossTimeoutRef.current)
+      if (winDialogTimeoutRef.current) clearTimeout(winDialogTimeoutRef.current)
     },
     []
   )
 
+  useEffect(() => {
+    onGuessProgress?.({ wrongGuesses, guessCount: guessedLetters.length })
+  }, [guessedLetters, wrongGuesses, onGuessProgress])
+
   const handleGuess = (letter: string) => {
-    if (roundOverRef.current) return
+    if (locked || roundOverRef.current) return
     const L = letter.toUpperCase()
     if (guessedLetters.includes(L)) return
     const next = [...guessedLetters, L]
@@ -75,16 +112,20 @@ export const Game = ({ onStop, onSolved, onLost, phrase, mode = DEFAULT_MODE, hi
       void haptics.selectionAsync()
       if (w >= maxWrong) {
         roundOverRef.current = true
-        onLost?.()
-        lossTimeoutRef.current = setTimeout(() => setOutcome('loss'), 450)
+        onLost?.({ wrongGuesses: w, guessCount: next.length })
+        lossTimeoutRef.current = setTimeout(() => {
+          setOutcome('loss')
+          setDialogReady(true)
+        }, 450)
       }
     } else {
       void haptics.impactAsync()
       const allRevealed = phrase.split('').every((c) => c === ' ' || next.includes(c))
       if (allRevealed) {
         roundOverRef.current = true
-        onSolved?.({ wrongGuesses, hintRevealed })
+        onSolved?.({ wrongGuesses, hintRevealed, guessCount: next.length })
         setOutcome('win')
+        winDialogTimeoutRef.current = setTimeout(() => setDialogReady(true), WIN_DIALOG_DELAY_MS)
       }
     }
   }
@@ -132,7 +173,7 @@ export const Game = ({ onStop, onSolved, onLost, phrase, mode = DEFAULT_MODE, hi
           <CelebrationView key={celebrationCycle} colors={[theme.colors.primary, theme.colors.secondary, theme.colors.tertiary]} dark={theme.dark} onComplete={() => setCelebrationCycle((c) => c + 1)} />
         </Portal>
       ) : null}
-      <RoundEndDialog visible={outcome !== null} outcome={outcome} phrase={phrase} categoryProgress={categoryProgress} onDismiss={onStop} onAnotherInCategory={onAnotherInCategory} />
+      <RoundEndDialog visible={outcome !== null && dialogReady} outcome={outcome} phrase={phrase} categoryProgress={categoryProgress} onDismiss={onStop} continueLabel={continueLabel} />
     </View>
   )
 }

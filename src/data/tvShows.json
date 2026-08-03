@@ -3834,24 +3834,6 @@
     }
   },
   {
-    "id": "1f19c09fb669aef8b3381e7cacca82cb",
-    "source": "tv",
-    "type": "title",
-    "answer": "The Twilight Zone",
-    "normalizedAnswer": "THE TWILIGHT ZONE",
-    "category": "Drama",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 15,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "year": "1985",
-      "rating": 7.7,
-      "votes": 13305
-    }
-  },
-  {
     "id": "bb50e7d33ed718cea56a31a5619b5508",
     "source": "tv",
     "type": "title",
@@ -6772,13 +6754,13 @@
     "source": "tv",
     "type": "title",
     "answer": "Æon Flux",
-    "normalizedAnswer": "ON FLUX",
+    "normalizedAnswer": "AEON FLUX",
     "category": "Action",
-    "difficulty": 83.6,
-    "difficultyTier": "hard",
+    "difficulty": 74.8,
+    "difficultyTier": "medium",
     "wordCount": 2,
-    "letterCount": 6,
-    "uniqueLetterCount": 6,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
     "metadata": {
       "year": "1991",
       "rating": 7.8,
@@ -7092,24 +7074,6 @@
     }
   },
   {
-    "id": "183abe3f28f024464d475e5da6b6e0f1",
-    "source": "tv",
-    "type": "title",
-    "answer": "The Outer Limits",
-    "normalizedAnswer": "THE OUTER LIMITS",
-    "category": "Drama",
-    "difficulty": 64.4,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 14,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "year": "1995",
-      "rating": 7.7,
-      "votes": 15037
-    }
-  },
-  {
     "id": "9e704ee4ec65ffff6c61fddf580969d4",
     "source": "tv",
     "type": "title",
@@ -7341,24 +7305,6 @@
       "year": "1995",
       "rating": 6.8,
       "votes": 52314
-    }
-  },
-  {
-    "id": "675fd9f692359746c7d0f011b9e134b3",
-    "source": "tv",
-    "type": "title",
-    "answer": "Sailor Moon",
-    "normalizedAnswer": "SAILOR MOON",
-    "category": "Action",
-    "difficulty": 74,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 10,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "year": "1995",
-      "rating": 7.6,
-      "votes": 13809
     }
   },
   {
@@ -8838,24 +8784,6 @@
     }
   },
   {
-    "id": "5bf52e491d678e7e7d24dbe48bcc9d49",
-    "source": "tv",
-    "type": "title",
-    "answer": "Whose Line Is It Anyway?",
-    "normalizedAnswer": "WHOSE LINE IS IT ANYWAY",
-    "category": "Comedy",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 19,
-    "uniqueLetterCount": 11,
-    "metadata": {
-      "year": "1998",
-      "rating": 8.5,
-      "votes": 49389
-    }
-  },
-  {
     "id": "e0c4905c885e524819720ce8d8c9e88c",
     "source": "tv",
     "type": "title",
@@ -9022,13 +8950,13 @@
     "source": "tv",
     "type": "title",
     "answer": "Pokémon",
-    "normalizedAnswer": "POKMON",
+    "normalizedAnswer": "POKEMON",
     "category": "Action",
-    "difficulty": 87.6,
+    "difficulty": 83.2,
     "difficultyTier": "hard",
     "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 5,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
     "metadata": {
       "year": "1997",
       "rating": 7.6,
@@ -9972,24 +9900,6 @@
     }
   },
   {
-    "id": "8a4308095a3f08c89b1cb4129c8031a0",
-    "source": "tv",
-    "type": "title",
-    "answer": "Dragon Ball Z",
-    "normalizedAnswer": "DRAGON BALL Z",
-    "category": "Action",
-    "difficulty": 69.6,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 11,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "1996",
-      "rating": 8.8,
-      "votes": 178706
-    }
-  },
-  {
     "id": "b77d961f17856ce4f2d42f4bf1d1c0b4",
     "source": "tv",
     "type": "title",
@@ -10404,24 +10314,6 @@
     }
   },
   {
-    "id": "e6d567a10da2d6d3f55c2f2790df8a4b",
-    "source": "tv",
-    "type": "title",
-    "answer": "The Tick",
-    "normalizedAnswer": "THE TICK",
-    "category": "Action",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 7,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "2001",
-      "rating": 7.7,
-      "votes": 6333
-    }
-  },
-  {
     "id": "4ebd1e39876026e3f76fa92819ca9cfa",
     "source": "tv",
     "type": "title",
@@ -10804,13 +10696,13 @@
     "source": "tv",
     "type": "title",
     "answer": "Napoléon",
-    "normalizedAnswer": "NAPOLON",
+    "normalizedAnswer": "NAPOLEON",
     "category": "Adventure",
-    "difficulty": 87.2,
+    "difficulty": 82.8,
     "difficultyTier": "hard",
     "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 5,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
     "metadata": {
       "year": "2002",
       "rating": 7.3,
@@ -11301,24 +11193,6 @@
       "year": "2001",
       "rating": 7.5,
       "votes": 155333
-    }
-  },
-  {
-    "id": "91825ab395b768f43823e9787806f0ac",
-    "source": "tv",
-    "type": "title",
-    "answer": "Dragon Ball",
-    "normalizedAnswer": "DRAGON BALL",
-    "category": "Action",
-    "difficulty": 74,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 10,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "year": "1995",
-      "rating": 8.5,
-      "votes": 76394
     }
   },
   {
@@ -12042,24 +11916,6 @@
     }
   },
   {
-    "id": "1378c22de17bf9ba50ab576d97b901df",
-    "source": "tv",
-    "type": "title",
-    "answer": "Battlestar Galactica",
-    "normalizedAnswer": "BATTLESTAR GALACTICA",
-    "category": "Action",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 19,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "year": "2003",
-      "rating": 8.5,
-      "votes": 85395
-    }
-  },
-  {
     "id": "b3c46c020d6c11191f07485c37bc4971",
     "source": "tv",
     "type": "title",
@@ -12114,24 +11970,6 @@
     }
   },
   {
-    "id": "1f19c09fb669aef8b3381e7cacca82cb",
-    "source": "tv",
-    "type": "title",
-    "answer": "The Twilight Zone",
-    "normalizedAnswer": "THE TWILIGHT ZONE",
-    "category": "Drama",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 15,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "year": "2002",
-      "rating": 7.2,
-      "votes": 7150
-    }
-  },
-  {
     "id": "26dd9918838a29e9a70bd2b2dba6be7c",
     "source": "tv",
     "type": "title",
@@ -12168,24 +12006,6 @@
     }
   },
   {
-    "id": "fc27b6c3bc8985f1745e3e6bbcddbfa9",
-    "source": "tv",
-    "type": "title",
-    "answer": "Teenage Mutant Ninja Turtles",
-    "normalizedAnswer": "TEENAGE MUTANT NINJA TURTLES",
-    "category": "Action",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 25,
-    "uniqueLetterCount": 12,
-    "metadata": {
-      "year": "2003",
-      "rating": 7.9,
-      "votes": 15122
-    }
-  },
-  {
     "id": "75ecd3ad4ead615e83212bd25c2094cb",
     "source": "tv",
     "type": "title",
@@ -12208,12 +12028,12 @@
     "source": "tv",
     "type": "title",
     "answer": "Carnivàle",
-    "normalizedAnswer": "CARNIVLE",
+    "normalizedAnswer": "CARNIVALE",
     "category": "Drama",
-    "difficulty": 74.8,
+    "difficulty": 74.4,
     "difficultyTier": "medium",
     "wordCount": 1,
-    "letterCount": 8,
+    "letterCount": 9,
     "uniqueLetterCount": 8,
     "metadata": {
       "year": "2003",
@@ -13590,24 +13410,6 @@
     }
   },
   {
-    "id": "1dd63d557893f8fa7fba7978db52e7de",
-    "source": "tv",
-    "type": "title",
-    "answer": "The Office",
-    "normalizedAnswer": "THE OFFICE",
-    "category": "Comedy",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2005",
-      "rating": 9,
-      "votes": 841010
-    }
-  },
-  {
     "id": "ddad933b62cacff97df1782a95838d20",
     "source": "tv",
     "type": "title",
@@ -14019,24 +13821,6 @@
       "year": "2004",
       "rating": 7.4,
       "votes": 20877
-    }
-  },
-  {
-    "id": "1378c22de17bf9ba50ab576d97b901df",
-    "source": "tv",
-    "type": "title",
-    "answer": "Battlestar Galactica",
-    "normalizedAnswer": "BATTLESTAR GALACTICA",
-    "category": "Action",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 19,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "year": "2004",
-      "rating": 8.7,
-      "votes": 187709
     }
   },
   {
@@ -14883,24 +14667,6 @@
       "year": "2003",
       "rating": 7.9,
       "votes": 5771
-    }
-  },
-  {
-    "id": "09590710384b9def2ee7df40015377e6",
-    "source": "tv",
-    "type": "title",
-    "answer": "Doctor Who",
-    "normalizedAnswer": "DOCTOR WHO",
-    "category": "Adventure",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2005",
-      "rating": 8.5,
-      "votes": 263339
     }
   },
   {
@@ -16596,24 +16362,6 @@
     }
   },
   {
-    "id": "dbf734e2c2c45b7664d24b59f5207e12",
-    "source": "tv",
-    "type": "title",
-    "answer": "Life on Mars",
-    "normalizedAnswer": "LIFE ON MARS",
-    "category": "Crime",
-    "difficulty": 66,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 10,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "year": "2008",
-      "rating": 7.5,
-      "votes": 11216
-    }
-  },
-  {
     "id": "da44f7d8c81017c4e5913ed636435b38",
     "source": "tv",
     "type": "title",
@@ -16881,24 +16629,6 @@
       "year": "2006",
       "rating": 7.1,
       "votes": 12394
-    }
-  },
-  {
-    "id": "7724dbb0150b13513a48431318b162de",
-    "source": "tv",
-    "type": "title",
-    "answer": "Ugly Betty",
-    "normalizedAnswer": "UGLY BETTY",
-    "category": "Comedy",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2006",
-      "rating": 6.8,
-      "votes": 50874
     }
   },
   {
@@ -19872,24 +19602,6 @@
     }
   },
   {
-    "id": "16937d649e5848f09be9e9cb543907c6",
-    "source": "tv",
-    "type": "title",
-    "answer": "The Prisoner",
-    "normalizedAnswer": "THE PRISONER",
-    "category": "Drama",
-    "difficulty": 69.6,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "2009",
-      "rating": 6.1,
-      "votes": 8284
-    }
-  },
-  {
     "id": "aca453b50aef9569438f5d0314fd144b",
     "source": "tv",
     "type": "title",
@@ -20445,24 +20157,6 @@
       "year": "2020",
       "rating": 6.5,
       "votes": 5735
-    }
-  },
-  {
-    "id": "457eb480ef90039de59f340b483c2854",
-    "source": "tv",
-    "type": "title",
-    "answer": "All Creatures Great & Small",
-    "normalizedAnswer": "ALL CREATURES GREAT SMALL",
-    "category": "Comedy",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 22,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "year": "2020",
-      "rating": 8.6,
-      "votes": 23228
     }
   },
   {
@@ -23616,24 +23310,6 @@
     }
   },
   {
-    "id": "e3eebe69ab289f8f5192413f71eafbbf",
-    "source": "tv",
-    "type": "title",
-    "answer": "One Piece",
-    "normalizedAnswer": "ONE PIECE",
-    "category": "Action",
-    "difficulty": 82.8,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "2023",
-      "rating": 8.3,
-      "votes": 209239
-    }
-  },
-  {
     "id": "ee651f12a013a84083a0053f5f629d74",
     "source": "tv",
     "type": "title",
@@ -23775,24 +23451,6 @@
       "year": "2008",
       "rating": 8.1,
       "votes": 11701
-    }
-  },
-  {
-    "id": "846fa31176d5af5e09ee0464544eb6aa",
-    "source": "tv",
-    "type": "title",
-    "answer": "Wallander",
-    "normalizedAnswer": "WALLANDER",
-    "category": "Crime",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 9,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2008",
-      "rating": 7.8,
-      "votes": 17624
     }
   },
   {
@@ -24970,12 +24628,12 @@
     "source": "tv",
     "type": "title",
     "answer": "Tunna blå linjen",
-    "normalizedAnswer": "TUNNA BL LINJEN",
+    "normalizedAnswer": "TUNNA BLA LINJEN",
     "category": "Crime",
-    "difficulty": 68.8,
+    "difficulty": 68.4,
     "difficultyTier": "medium",
     "wordCount": 3,
-    "letterCount": 13,
+    "letterCount": 14,
     "uniqueLetterCount": 9,
     "metadata": {
       "year": "2021",
@@ -25902,24 +25560,6 @@
     }
   },
   {
-    "id": "39f9739cc22849ff40059feea82c291d",
-    "source": "tv",
-    "type": "title",
-    "answer": "Cowboy Bebop",
-    "normalizedAnswer": "COWBOY BEBOP",
-    "category": "Action",
-    "difficulty": 77.6,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2021",
-      "rating": 6.7,
-      "votes": 46385
-    }
-  },
-  {
     "id": "4e3073bb0d723241d548d0a7a0e9d091",
     "source": "tv",
     "type": "title",
@@ -25935,42 +25575,6 @@
       "year": "2021",
       "rating": 7.7,
       "votes": 12764
-    }
-  },
-  {
-    "id": "4b77a56c75d7de874ac761a6087253aa",
-    "source": "tv",
-    "type": "title",
-    "answer": "The Wonder Years",
-    "normalizedAnswer": "THE WONDER YEARS",
-    "category": "Comedy",
-    "difficulty": 60.4,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 14,
-    "uniqueLetterCount": 11,
-    "metadata": {
-      "year": "2021",
-      "rating": 6.6,
-      "votes": 6060
-    }
-  },
-  {
-    "id": "fda9cc4151abe2b89587c77143834c94",
-    "source": "tv",
-    "type": "title",
-    "answer": "Scenes from a Marriage",
-    "normalizedAnswer": "SCENES FROM A MARRIAGE",
-    "category": "Drama",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 19,
-    "uniqueLetterCount": 11,
-    "metadata": {
-      "year": "2021",
-      "rating": 8,
-      "votes": 34384
     }
   },
   {
@@ -26626,12 +26230,12 @@
     "source": "tv",
     "type": "title",
     "answer": "Good Morning, Verônica",
-    "normalizedAnswer": "GOOD MORNING VERNICA",
+    "normalizedAnswer": "GOOD MORNING VERONICA",
     "category": "Crime",
     "difficulty": 60,
     "difficultyTier": "easy",
     "wordCount": 3,
-    "letterCount": 18,
+    "letterCount": 19,
     "uniqueLetterCount": 11,
     "metadata": {
       "year": "2020",
@@ -26770,13 +26374,13 @@
     "source": "tv",
     "type": "title",
     "answer": "La Révolution",
-    "normalizedAnswer": "LA RVOLUTION",
+    "normalizedAnswer": "LA REVOLUTION",
     "category": "Adventure",
-    "difficulty": 69.6,
+    "difficulty": 65.2,
     "difficultyTier": "medium",
     "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 9,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
     "metadata": {
       "year": "2020",
       "rating": 6.6,
@@ -26842,13 +26446,13 @@
     "source": "tv",
     "type": "title",
     "answer": "Glória",
-    "normalizedAnswer": "GLRIA",
+    "normalizedAnswer": "GLORIA",
     "category": "Drama",
-    "difficulty": 88,
+    "difficulty": 83.6,
     "difficultyTier": "hard",
     "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 5,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
     "metadata": {
       "year": "2021",
       "rating": 7.8,
@@ -28764,24 +28368,6 @@
     }
   },
   {
-    "id": "0d4b519ab2d5d0be67e514806829c996",
-    "source": "tv",
-    "type": "title",
-    "answer": "iCarly",
-    "normalizedAnswer": "ICARLY",
-    "category": "Comedy",
-    "difficulty": 83.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "2021",
-      "rating": 6.7,
-      "votes": 6813
-    }
-  },
-  {
     "id": "52fa139e1939d197c78cfd50eed217a8",
     "source": "tv",
     "type": "title",
@@ -29283,24 +28869,6 @@
       "year": "2009",
       "rating": 6.8,
       "votes": 60575
-    }
-  },
-  {
-    "id": "866681ed9aed55b0d1d1db610582fb7e",
-    "source": "tv",
-    "type": "title",
-    "answer": "Fantasy Island",
-    "normalizedAnswer": "FANTASY ISLAND",
-    "category": "Adventure",
-    "difficulty": 68.8,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 13,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "2021",
-      "rating": 6.3,
-      "votes": 5921
     }
   },
   {
@@ -30111,24 +29679,6 @@
       "year": "2022",
       "rating": 7.7,
       "votes": 15669
-    }
-  },
-  {
-    "id": "939ebf9956f35a025008ad03efc2abda",
-    "source": "tv",
-    "type": "title",
-    "answer": "Frasier",
-    "normalizedAnswer": "FRASIER",
-    "category": "Comedy",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "2023",
-      "rating": 6.8,
-      "votes": 11533
     }
   },
   {
@@ -31284,24 +30834,6 @@
     }
   },
   {
-    "id": "ab0615350453c40a1d5acdd12ae32a98",
-    "source": "tv",
-    "type": "title",
-    "answer": "Spartacus",
-    "normalizedAnswer": "SPARTACUS",
-    "category": "Action",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 9,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2010",
-      "rating": 8.4,
-      "votes": 296765
-    }
-  },
-  {
     "id": "8afcf24a131269d99c21f35a3e9ccdcc",
     "source": "tv",
     "type": "title",
@@ -32206,13 +31738,13 @@
     "source": "tv",
     "type": "title",
     "answer": "Çok Güzel Hareketler Bunlar",
-    "normalizedAnswer": "OK GZEL HAREKETLER BUNLAR",
+    "normalizedAnswer": "COK GUZEL HAREKETLER BUNLAR",
     "category": "Comedy",
-    "difficulty": 52,
+    "difficulty": 48,
     "difficultyTier": "easy",
     "wordCount": 4,
-    "letterCount": 22,
-    "uniqueLetterCount": 13,
+    "letterCount": 24,
+    "uniqueLetterCount": 14,
     "metadata": {
       "year": "2008",
       "rating": 6.6,
@@ -34078,12 +33610,12 @@
     "source": "tv",
     "type": "title",
     "answer": "The Law According to Lidia Poët",
-    "normalizedAnswer": "THE LAW ACCORDING TO LIDIA POT",
+    "normalizedAnswer": "THE LAW ACCORDING TO LIDIA POET",
     "category": "Biography",
     "difficulty": 48,
     "difficultyTier": "easy",
     "wordCount": 6,
-    "letterCount": 25,
+    "letterCount": 26,
     "uniqueLetterCount": 14,
     "metadata": {
       "year": "2023",
@@ -35262,24 +34794,6 @@
     }
   },
   {
-    "id": "d6d5304ace394b5f6a311042de8224e9",
-    "source": "tv",
-    "type": "title",
-    "answer": "Shameless",
-    "normalizedAnswer": "SHAMELESS",
-    "category": "Comedy",
-    "difficulty": 82.4,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 9,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "2011",
-      "rating": 8.5,
-      "votes": 335832
-    }
-  },
-  {
     "id": "e3a122c8af9f21607ee15313cddd13c9",
     "source": "tv",
     "type": "title",
@@ -35896,13 +35410,13 @@
     "source": "tv",
     "type": "title",
     "answer": "Gönülçelen",
-    "normalizedAnswer": "GNLELEN",
+    "normalizedAnswer": "GONULCELEN",
     "category": "Drama",
-    "difficulty": 91.2,
-    "difficultyTier": "hard",
+    "difficulty": 78,
+    "difficultyTier": "medium",
     "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 4,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
     "metadata": {
       "year": "2010",
       "rating": 8.1,
@@ -36357,24 +35871,6 @@
       "year": "2010",
       "rating": 8.2,
       "votes": 25643
-    }
-  },
-  {
-    "id": "7f4ae2c86c092053bc0dc850531db33d",
-    "source": "tv",
-    "type": "title",
-    "answer": "The Killing",
-    "normalizedAnswer": "THE KILLING",
-    "category": "Crime",
-    "difficulty": 74,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 10,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "year": "2011",
-      "rating": 8.3,
-      "votes": 134783
     }
   },
   {
@@ -37224,24 +36720,6 @@
     }
   },
   {
-    "id": "7db4ff06141ae4821e9ab3fbf645555c",
-    "source": "tv",
-    "type": "title",
-    "answer": "Quantum Leap",
-    "normalizedAnswer": "QUANTUM LEAP",
-    "category": "Action",
-    "difficulty": 69.6,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "2022",
-      "rating": 6.3,
-      "votes": 14577
-    }
-  },
-  {
     "id": "aa7843fda5aa8f16333fafb545b56a5a",
     "source": "tv",
     "type": "title",
@@ -37455,24 +36933,6 @@
       "year": "2012",
       "rating": 7.2,
       "votes": 16788
-    }
-  },
-  {
-    "id": "3f96a601dc353610bb07248cc07d1f15",
-    "source": "tv",
-    "type": "title",
-    "answer": "Dallas",
-    "normalizedAnswer": "DALLAS",
-    "category": "Drama",
-    "difficulty": 91.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 4,
-    "metadata": {
-      "year": "2012",
-      "rating": 7.2,
-      "votes": 11137
     }
   },
   {
@@ -38308,12 +37768,12 @@
     "source": "tv",
     "type": "title",
     "answer": "Behzat Ç: An Ankara Detective Story",
-    "normalizedAnswer": "BEHZAT AN ANKARA DETECTIVE STORY",
+    "normalizedAnswer": "BEHZAT C AN ANKARA DETECTIVE STORY",
     "category": "Comedy",
     "difficulty": 40,
     "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 28,
+    "wordCount": 6,
+    "letterCount": 29,
     "uniqueLetterCount": 16,
     "metadata": {
       "year": "2010",
@@ -39564,24 +39024,6 @@
     }
   },
   {
-    "id": "baae5528e2fe5a595e2322f79c030bd5",
-    "source": "tv",
-    "type": "title",
-    "answer": "House of Cards",
-    "normalizedAnswer": "HOUSE OF CARDS",
-    "category": "Drama",
-    "difficulty": 65.2,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 12,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "year": "2013",
-      "rating": 8.6,
-      "votes": 561223
-    }
-  },
-  {
     "id": "c996c7f453a8a0e5a23ce00d4677f57c",
     "source": "tv",
     "type": "title",
@@ -39759,24 +39201,6 @@
       "year": "2017",
       "rating": 9.1,
       "votes": 37076
-    }
-  },
-  {
-    "id": "fc27b6c3bc8985f1745e3e6bbcddbfa9",
-    "source": "tv",
-    "type": "title",
-    "answer": "Teenage Mutant Ninja Turtles",
-    "normalizedAnswer": "TEENAGE MUTANT NINJA TURTLES",
-    "category": "Action",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 25,
-    "uniqueLetterCount": 12,
-    "metadata": {
-      "year": "2012",
-      "rating": 7.9,
-      "votes": 18441
     }
   },
   {
@@ -41350,12 +40774,12 @@
     "source": "tv",
     "type": "title",
     "answer": "Kuzey Güney",
-    "normalizedAnswer": "KUZEY GNEY",
+    "normalizedAnswer": "KUZEY GUNEY",
     "category": "Drama",
-    "difficulty": 78.4,
+    "difficulty": 78,
     "difficultyTier": "medium",
     "wordCount": 2,
-    "letterCount": 9,
+    "letterCount": 10,
     "uniqueLetterCount": 7,
     "metadata": {
       "year": "2011",
@@ -41631,24 +41055,6 @@
       "year": "2009",
       "rating": 7.6,
       "votes": 6063
-    }
-  },
-  {
-    "id": "578b165e86c6c0791bff43905b2052d7",
-    "source": "tv",
-    "type": "title",
-    "answer": "Perry Mason",
-    "normalizedAnswer": "PERRY MASON",
-    "category": "Crime",
-    "difficulty": 70,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 10,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "2020",
-      "rating": 7.6,
-      "votes": 31398
     }
   },
   {
@@ -43240,12 +42646,12 @@
     "source": "tv",
     "type": "title",
     "answer": "Pablo Escobar: El Patrón del Mal",
-    "normalizedAnswer": "PABLO ESCOBAR EL PATRN DEL MAL",
+    "normalizedAnswer": "PABLO ESCOBAR EL PATRON DEL MAL",
     "category": "Biography",
     "difficulty": 52,
     "difficultyTier": "easy",
     "wordCount": 6,
-    "letterCount": 25,
+    "letterCount": 26,
     "uniqueLetterCount": 13,
     "metadata": {
       "year": "2012",
@@ -45058,13 +44464,13 @@
     "source": "tv",
     "type": "title",
     "answer": "Isler Güçler",
-    "normalizedAnswer": "ISLER GLER",
+    "normalizedAnswer": "ISLER GUCLER",
     "category": "Comedy",
-    "difficulty": 82.4,
-    "difficultyTier": "hard",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
     "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 6,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
     "metadata": {
       "year": "2012",
       "rating": 8.6,
@@ -45670,13 +45076,13 @@
     "source": "tv",
     "type": "title",
     "answer": "The Åre Murders",
-    "normalizedAnswer": "THE RE MURDERS",
+    "normalizedAnswer": "THE ARE MURDERS",
     "category": "Crime",
-    "difficulty": 73.2,
+    "difficulty": 68.8,
     "difficultyTier": "medium",
     "wordCount": 3,
-    "letterCount": 12,
-    "uniqueLetterCount": 8,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
     "metadata": {
       "year": "2025",
       "rating": 6.7,
@@ -46206,24 +45612,6 @@
     }
   },
   {
-    "id": "1cb8909ecf94b0fe2b6312e46daa22e2",
-    "source": "tv",
-    "type": "title",
-    "answer": "The Bridge",
-    "normalizedAnswer": "THE BRIDGE",
-    "category": "Crime",
-    "difficulty": 74.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "year": "2013",
-      "rating": 7.6,
-      "votes": 21689
-    }
-  },
-  {
     "id": "45b592d58704e1bd71bce88611f5bf2e",
     "source": "tv",
     "type": "title",
@@ -46365,24 +45753,6 @@
       "year": "2013",
       "rating": 7.3,
       "votes": 14343
-    }
-  },
-  {
-    "id": "d34d3d62b082ac20d8f820d41e4948d0",
-    "source": "tv",
-    "type": "title",
-    "answer": "Little House on the Prairie",
-    "normalizedAnswer": "LITTLE HOUSE ON THE PRAIRIE",
-    "category": "Drama",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 23,
-    "uniqueLetterCount": 12,
-    "metadata": {
-      "year": "2026",
-      "rating": 7.3,
-      "votes": 5182
     }
   },
   {
@@ -47088,24 +46458,6 @@
     }
   },
   {
-    "id": "1f19c09fb669aef8b3381e7cacca82cb",
-    "source": "tv",
-    "type": "title",
-    "answer": "The Twilight Zone",
-    "normalizedAnswer": "THE TWILIGHT ZONE",
-    "category": "Drama",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 15,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "year": "2019",
-      "rating": 6.1,
-      "votes": 20692
-    }
-  },
-  {
     "id": "781e5d371f2d82935daf58a6f9d86af8",
     "source": "tv",
     "type": "title",
@@ -47808,24 +47160,6 @@
     }
   },
   {
-    "id": "3ef1e41b553d7fedf6ff2cd9019c6e85",
-    "source": "tv",
-    "type": "title",
-    "answer": "Matlock",
-    "normalizedAnswer": "MATLOCK",
-    "category": "Crime",
-    "difficulty": 79.2,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2024",
-      "rating": 7.5,
-      "votes": 16934
-    }
-  },
-  {
     "id": "cbea7472d30619841d395d5762925c78",
     "source": "tv",
     "type": "title",
@@ -48154,35 +47488,17 @@
     "source": "tv",
     "type": "title",
     "answer": "Kübra",
-    "normalizedAnswer": "KBRA",
+    "normalizedAnswer": "KUBRA",
     "category": "Drama",
-    "difficulty": 92.4,
+    "difficulty": 88,
     "difficultyTier": "hard",
     "wordCount": 1,
-    "letterCount": 4,
-    "uniqueLetterCount": 4,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
     "metadata": {
       "year": "2024",
       "rating": 6.2,
       "votes": 5007
-    }
-  },
-  {
-    "id": "daf04dfa40146ee21682e3c9bae8723c",
-    "source": "tv",
-    "type": "title",
-    "answer": "The Frog",
-    "normalizedAnswer": "THE FROG",
-    "category": "Crime",
-    "difficulty": 79.2,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 7,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2024",
-      "rating": 6.8,
-      "votes": 6307
     }
   },
   {
@@ -49216,12 +48532,12 @@
     "source": "tv",
     "type": "title",
     "answer": "Étoile",
-    "normalizedAnswer": "TOILE",
+    "normalizedAnswer": "ETOILE",
     "category": "Comedy",
-    "difficulty": 88,
+    "difficulty": 87.6,
     "difficultyTier": "hard",
     "wordCount": 1,
-    "letterCount": 5,
+    "letterCount": 6,
     "uniqueLetterCount": 5,
     "metadata": {
       "year": "2025",
@@ -49522,13 +48838,13 @@
     "source": "tv",
     "type": "title",
     "answer": "Shōgun",
-    "normalizedAnswer": "SHGUN",
+    "normalizedAnswer": "SHOGUN",
     "category": "Action",
-    "difficulty": 88,
+    "difficulty": 83.6,
     "difficultyTier": "hard",
     "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 5,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
     "metadata": {
       "year": "2024",
       "rating": 8.6,
@@ -49803,24 +49119,6 @@
       "year": "2014",
       "rating": 8.1,
       "votes": 52413
-    }
-  },
-  {
-    "id": "7fc15fb8f2c82fc553b94a8e1a86ae6c",
-    "source": "tv",
-    "type": "title",
-    "answer": "Mad Dogs",
-    "normalizedAnswer": "MAD DOGS",
-    "category": "Comedy",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 7,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "2015",
-      "rating": 7.5,
-      "votes": 9379
     }
   },
   {
@@ -50544,24 +49842,6 @@
     }
   },
   {
-    "id": "5bf52e491d678e7e7d24dbe48bcc9d49",
-    "source": "tv",
-    "type": "title",
-    "answer": "Whose Line Is It Anyway?",
-    "normalizedAnswer": "WHOSE LINE IS IT ANYWAY",
-    "category": "Comedy",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 19,
-    "uniqueLetterCount": 11,
-    "metadata": {
-      "year": "2013",
-      "rating": 8.4,
-      "votes": 10536
-    }
-  },
-  {
     "id": "f081b980e476ce121d4c863d1a0361a0",
     "source": "tv",
     "type": "title",
@@ -50811,24 +50091,6 @@
       "year": "2022",
       "rating": 7.4,
       "votes": 24390
-    }
-  },
-  {
-    "id": "0a4b8d70cae7d0d8c11eb2e5c204647d",
-    "source": "tv",
-    "type": "title",
-    "answer": "The Count of Monte Cristo",
-    "normalizedAnswer": "THE COUNT OF MONTE CRISTO",
-    "category": "Adventure",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 21,
-    "uniqueLetterCount": 12,
-    "metadata": {
-      "year": "2024",
-      "rating": 7.9,
-      "votes": 12316
     }
   },
   {
@@ -51984,24 +51246,6 @@
     }
   },
   {
-    "id": "8e7d231c5c12e7137c66e2363297b7bf",
-    "source": "tv",
-    "type": "title",
-    "answer": "The Flash",
-    "normalizedAnswer": "THE FLASH",
-    "category": "Action",
-    "difficulty": 78.8,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2014",
-      "rating": 7.5,
-      "votes": 387061
-    }
-  },
-  {
     "id": "a618e0dad8640ded6017ebd2ccf6b2ea",
     "source": "tv",
     "type": "title",
@@ -52485,42 +51729,6 @@
       "year": "2013",
       "rating": 7.4,
       "votes": 6203
-    }
-  },
-  {
-    "id": "7930e86b4a72e774fc50f2f260d3b362",
-    "source": "tv",
-    "type": "title",
-    "answer": "Sirens",
-    "normalizedAnswer": "SIRENS",
-    "category": "Comedy",
-    "difficulty": 87.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "year": "2025",
-      "rating": 6.7,
-      "votes": 40912
-    }
-  },
-  {
-    "id": "09590710384b9def2ee7df40015377e6",
-    "source": "tv",
-    "type": "title",
-    "answer": "Doctor Who",
-    "normalizedAnswer": "DOCTOR WHO",
-    "category": "Adventure",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2023",
-      "rating": 6.1,
-      "votes": 26445
     }
   },
   {
@@ -53655,24 +52863,6 @@
       "year": "2024",
       "rating": 6.2,
       "votes": 5511
-    }
-  },
-  {
-    "id": "76f842dacec09a4f063444980b17cd28",
-    "source": "tv",
-    "type": "title",
-    "answer": "The Returned",
-    "normalizedAnswer": "THE RETURNED",
-    "category": "Drama",
-    "difficulty": 77.6,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2015",
-      "rating": 7,
-      "votes": 12507
     }
   },
   {
@@ -55084,12 +54274,12 @@
     "source": "tv",
     "type": "title",
     "answer": "Cold Case: Who Killed JonBenét Ramsey",
-    "normalizedAnswer": "COLD CASE WHO KILLED JONBENT RAMSEY",
+    "normalizedAnswer": "COLD CASE WHO KILLED JONBENET RAMSEY",
     "category": "Crime",
     "difficulty": 32,
     "difficultyTier": "easy",
     "wordCount": 6,
-    "letterCount": 30,
+    "letterCount": 31,
     "uniqueLetterCount": 18,
     "metadata": {
       "year": "2024",
@@ -55786,13 +54976,13 @@
     "source": "tv",
     "type": "title",
     "answer": "Esref Rüya",
-    "normalizedAnswer": "ESREF RYA",
+    "normalizedAnswer": "ESREF RUYA",
     "category": "Action",
-    "difficulty": 82.8,
-    "difficultyTier": "hard",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
     "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 6,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
     "metadata": {
       "year": "2025",
       "rating": 6.8,
@@ -56661,24 +55851,6 @@
       "year": "2026",
       "rating": 7.4,
       "votes": 6520
-    }
-  },
-  {
-    "id": "63987a84a4b2e4461dd09582953ed102",
-    "source": "tv",
-    "type": "title",
-    "answer": "The Odd Couple",
-    "normalizedAnswer": "THE ODD COUPLE",
-    "category": "Comedy",
-    "difficulty": 69.2,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 12,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "2015",
-      "rating": 6.3,
-      "votes": 10087
     }
   },
   {
@@ -58356,24 +57528,6 @@
     }
   },
   {
-    "id": "6c8ed371abede3b0c92ae43b5c91f1f2",
-    "source": "tv",
-    "type": "title",
-    "answer": "Scrubs",
-    "normalizedAnswer": "SCRUBS",
-    "category": "Comedy",
-    "difficulty": 87.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "year": "2026",
-      "rating": 8.3,
-      "votes": 11281
-    }
-  },
-  {
     "id": "184c51d0b44c821eaa2d14ebb2063dcc",
     "source": "tv",
     "type": "title",
@@ -58605,24 +57759,6 @@
       "year": "2005",
       "rating": 8.4,
       "votes": 5759
-    }
-  },
-  {
-    "id": "fb32dfbce4551136e5f1d31519825ad0",
-    "source": "tv",
-    "type": "title",
-    "answer": "Twin Peaks",
-    "normalizedAnswer": "TWIN PEAKS",
-    "category": "Crime",
-    "difficulty": 70.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "2017",
-      "rating": 8.5,
-      "votes": 90897
     }
   },
   {
@@ -59976,24 +59112,6 @@
     }
   },
   {
-    "id": "48ea9cbad63eaefd3ed90d6a7cf12f6a",
-    "source": "tv",
-    "type": "title",
-    "answer": "The Family",
-    "normalizedAnswer": "THE FAMILY",
-    "category": "Drama",
-    "difficulty": 70.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "2016",
-      "rating": 7.5,
-      "votes": 5556
-    }
-  },
-  {
     "id": "ef8729c4f734456eb86b4354f5003ee0",
     "source": "tv",
     "type": "title",
@@ -60358,13 +59476,13 @@
     "source": "tv",
     "type": "title",
     "answer": "Merlí",
-    "normalizedAnswer": "MERL",
+    "normalizedAnswer": "MERLI",
     "category": "Comedy",
-    "difficulty": 92.4,
+    "difficulty": 88,
     "difficultyTier": "hard",
     "wordCount": 1,
-    "letterCount": 4,
-    "uniqueLetterCount": 4,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
     "metadata": {
       "year": "2015",
       "rating": 8.6,
@@ -62478,24 +61596,6 @@
     }
   },
   {
-    "id": "aa42afd186a1a55d9d1fbca7d175c31b",
-    "source": "tv",
-    "type": "title",
-    "answer": "Lost in Space",
-    "normalizedAnswer": "LOST IN SPACE",
-    "category": "Adventure",
-    "difficulty": 65.6,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 11,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "year": "2018",
-      "rating": 7.3,
-      "votes": 114011
-    }
-  },
-  {
     "id": "f6cdeb6f410538d81774daec1c53950c",
     "source": "tv",
     "type": "title",
@@ -62583,24 +61683,6 @@
       "year": "2017",
       "rating": 8.6,
       "votes": 401269
-    }
-  },
-  {
-    "id": "3aa761a46b9a0ffe21e7428211888a3a",
-    "source": "tv",
-    "type": "title",
-    "answer": "Crashing",
-    "normalizedAnswer": "CRASHING",
-    "category": "Comedy",
-    "difficulty": 74.8,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "year": "2016",
-      "rating": 7.6,
-      "votes": 29374
     }
   },
   {
@@ -62709,24 +61791,6 @@
       "year": "2017",
       "rating": 7.2,
       "votes": 6618
-    }
-  },
-  {
-    "id": "8995348c6906647060a6f07972212631",
-    "source": "tv",
-    "type": "title",
-    "answer": "One Day at a Time",
-    "normalizedAnswer": "ONE DAY AT A TIME",
-    "category": "Comedy",
-    "difficulty": 68.8,
-    "difficultyTier": "medium",
-    "wordCount": 5,
-    "letterCount": 13,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "2017",
-      "rating": 8.1,
-      "votes": 20033
     }
   },
   {
@@ -63162,24 +62226,6 @@
     }
   },
   {
-    "id": "09883545c124c064b342e13fb9e12e5c",
-    "source": "tv",
-    "type": "title",
-    "answer": "DuckTales",
-    "normalizedAnswer": "DUCKTALES",
-    "category": "Action",
-    "difficulty": 70.4,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 9,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "2017",
-      "rating": 8.3,
-      "votes": 14386
-    }
-  },
-  {
     "id": "4f4bd40612b5b0f907bb3a24ea498764",
     "source": "tv",
     "type": "title",
@@ -63231,24 +62277,6 @@
       "year": "2016",
       "rating": 7.5,
       "votes": 8026
-    }
-  },
-  {
-    "id": "e6d567a10da2d6d3f55c2f2790df8a4b",
-    "source": "tv",
-    "type": "title",
-    "answer": "The Tick",
-    "normalizedAnswer": "THE TICK",
-    "category": "Action",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 7,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "2016",
-      "rating": 7.4,
-      "votes": 21373
     }
   },
   {
@@ -63634,13 +62662,13 @@
     "source": "tv",
     "type": "title",
     "answer": "Çarkifelek",
-    "normalizedAnswer": "ARKIFELEK",
+    "normalizedAnswer": "CARKIFELEK",
     "category": "TV Show",
-    "difficulty": 78.4,
+    "difficulty": 74,
     "difficultyTier": "medium",
     "wordCount": 1,
-    "letterCount": 9,
-    "uniqueLetterCount": 7,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
     "metadata": {
       "year": "1975",
       "rating": 6.8,
@@ -64566,24 +63594,6 @@
     }
   },
   {
-    "id": "dfd95bbcb808c539e0a28ba26893312f",
-    "source": "tv",
-    "type": "title",
-    "answer": "Das Boot",
-    "normalizedAnswer": "DAS BOOT",
-    "category": "Drama",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 7,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "2018",
-      "rating": 7.6,
-      "votes": 11795
-    }
-  },
-  {
     "id": "a20297cb5932869084b824ee5a626e4c",
     "source": "tv",
     "type": "title",
@@ -64653,24 +63663,6 @@
       "year": "2016",
       "rating": 7.7,
       "votes": 6377
-    }
-  },
-  {
-    "id": "26dd9918838a29e9a70bd2b2dba6be7c",
-    "source": "tv",
-    "type": "title",
-    "answer": "Berserk",
-    "normalizedAnswer": "BERSERK",
-    "category": "Action",
-    "difficulty": 87.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "year": "2016",
-      "rating": 6.7,
-      "votes": 9447
     }
   },
   {
@@ -64786,12 +63778,12 @@
     "source": "tv",
     "type": "title",
     "answer": "Les Misérables",
-    "normalizedAnswer": "LES MISRABLES",
+    "normalizedAnswer": "LES MISERABLES",
     "category": "Drama",
-    "difficulty": 73.2,
+    "difficulty": 72.8,
     "difficultyTier": "medium",
     "wordCount": 2,
-    "letterCount": 12,
+    "letterCount": 13,
     "uniqueLetterCount": 8,
     "metadata": {
       "year": "2018",
@@ -65358,24 +64350,6 @@
     }
   },
   {
-    "id": "fc8f54fb57a4baa5a0055ac7ba312970",
-    "source": "tv",
-    "type": "title",
-    "answer": "High Maintenance",
-    "normalizedAnswer": "HIGH MAINTENANCE",
-    "category": "Comedy",
-    "difficulty": 68,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 15,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "2016",
-      "rating": 8.1,
-      "votes": 12047
-    }
-  },
-  {
     "id": "b1fce900d7214f76be88eaf8be16a998",
     "source": "tv",
     "type": "title",
@@ -65571,24 +64545,6 @@
       "year": "2017",
       "rating": 6.5,
       "votes": 12850
-    }
-  },
-  {
-    "id": "077e07dcfd0597c0946efeadf0184fed",
-    "source": "tv",
-    "type": "title",
-    "answer": "Dynasty",
-    "normalizedAnswer": "DYNASTY",
-    "category": "Drama",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "2017",
-      "rating": 7.2,
-      "votes": 27232
     }
   },
   {
@@ -66780,24 +65736,6 @@
     }
   },
   {
-    "id": "d12a23e92a2e35bbd72183c8fb1523df",
-    "source": "tv",
-    "type": "title",
-    "answer": "Innocent",
-    "normalizedAnswer": "INNOCENT",
-    "category": "Crime",
-    "difficulty": 82.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "2017",
-      "rating": 8.3,
-      "votes": 21785
-    }
-  },
-  {
     "id": "9edf0d431f61289729ba763cdc01c9de",
     "source": "tv",
     "type": "title",
@@ -67191,24 +66129,6 @@
       "year": "2016",
       "rating": 6.7,
       "votes": 6742
-    }
-  },
-  {
-    "id": "19b2019a23ce3d2fb6d18103a3c15703",
-    "source": "tv",
-    "type": "title",
-    "answer": "Kingdom",
-    "normalizedAnswer": "KINGDOM",
-    "category": "Action",
-    "difficulty": 79.2,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2019",
-      "rating": 8.3,
-      "votes": 64363
     }
   },
   {
@@ -70524,24 +69444,6 @@
     }
   },
   {
-    "id": "8cb43865e27908792fc16d93f76c437e",
-    "source": "tv",
-    "type": "title",
-    "answer": "Manhunt",
-    "normalizedAnswer": "MANHUNT",
-    "category": "Biography",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "2019",
-      "rating": 7.6,
-      "votes": 12438
-    }
-  },
-  {
     "id": "c71628e66fc6642d3fa77e8123300f8d",
     "source": "tv",
     "type": "title",
@@ -73080,24 +71982,6 @@
     }
   },
   {
-    "id": "7918e93b12319b07cb4cafd01864ea6b",
-    "source": "tv",
-    "type": "title",
-    "answer": "Ghosts",
-    "normalizedAnswer": "GHOSTS",
-    "category": "Comedy",
-    "difficulty": 87.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "year": "2019",
-      "rating": 8.4,
-      "votes": 33529
-    }
-  },
-  {
     "id": "330f588cfb4eef0dabe7fe31e583781e",
     "source": "tv",
     "type": "title",
@@ -74391,24 +73275,6 @@
       "year": "2021",
       "rating": 7.7,
       "votes": 40771
-    }
-  },
-  {
-    "id": "4208abe31f2de8c39eba3cf003087245",
-    "source": "tv",
-    "type": "title",
-    "answer": "Avatar: The Last Airbender",
-    "normalizedAnswer": "AVATAR THE LAST AIRBENDER",
-    "category": "Action",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 22,
-    "uniqueLetterCount": 12,
-    "metadata": {
-      "year": "2024",
-      "rating": 7.1,
-      "votes": 90738
     }
   },
   {
@@ -75744,24 +74610,6 @@
     }
   },
   {
-    "id": "ae95032c6c4cd9d48cea24c0e7ae2fc4",
-    "source": "tv",
-    "type": "title",
-    "answer": "Fruits Basket",
-    "normalizedAnswer": "FRUITS BASKET",
-    "category": "Animation",
-    "difficulty": 65.2,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 12,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "year": "2019",
-      "rating": 8.5,
-      "votes": 13752
-    }
-  },
-  {
     "id": "81fe070b07959f82aa3c30a05fec3a70",
     "source": "tv",
     "type": "title",
@@ -76536,24 +75384,6 @@
     }
   },
   {
-    "id": "ae5f53af70a41dc44b416c0ea989f47c",
-    "source": "tv",
-    "type": "title",
-    "answer": "Unsolved Mysteries",
-    "normalizedAnswer": "UNSOLVED MYSTERIES",
-    "category": "Crime",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 17,
-    "uniqueLetterCount": 13,
-    "metadata": {
-      "year": "2020",
-      "rating": 7.3,
-      "votes": 14197
-    }
-  },
-  {
     "id": "ba55bc972d9d60730979ce3e3c1eb377",
     "source": "tv",
     "type": "title",
@@ -76767,24 +75597,6 @@
       "year": "2021",
       "rating": 8.9,
       "votes": 37472
-    }
-  },
-  {
-    "id": "128f7cdcb3d911f99b8fe22f3afe7692",
-    "source": "tv",
-    "type": "title",
-    "answer": "Invasion",
-    "normalizedAnswer": "INVASION",
-    "category": "Drama",
-    "difficulty": 82.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "2021",
-      "rating": 6.2,
-      "votes": 58072
     }
   },
   {
@@ -77206,13 +76018,13 @@
     "source": "tv",
     "type": "title",
     "answer": "Çilgin Dersane at the University",
-    "normalizedAnswer": "ILGIN DERSANE AT THE UNIVERSITY",
+    "normalizedAnswer": "CILGIN DERSANE AT THE UNIVERSITY",
     "category": "Comedy",
-    "difficulty": 48,
+    "difficulty": 44,
     "difficultyTier": "easy",
     "wordCount": 5,
-    "letterCount": 27,
-    "uniqueLetterCount": 14,
+    "letterCount": 28,
+    "uniqueLetterCount": 15,
     "metadata": {
       "year": "2014",
       "rating": 7.8,

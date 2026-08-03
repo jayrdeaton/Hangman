@@ -2,8 +2,10 @@ import type { GameMode } from '@/types/gameModes'
 import type { GameStartPayload, PuzzleSourceMode } from '@/types/gameSession'
 import type { Puzzle } from '@/types/puzzle'
 import { getPuzzleManifest, getPuzzlesForCategory, PuzzleDifficultyTier } from '@/utils/puzzleCatalog'
+import type { PuzzleUnlockMap } from '@/utils/unlocks'
 
 import type { PuzzleManifestItem } from '../data/puzzleCatalog.generated'
+import { scoreDifficulty } from './customPacks'
 import { normalizePhrase } from './normalizePhrase'
 
 export { normalizePhrase }
@@ -79,28 +81,32 @@ export type PuzzleConfig = {
 
 export type PuzzleResolution = { ok: true; payload: GameStartPayload } | { ok: false; error: string }
 
-const pickPuzzleFromPack = (packKey: string, difficultyFilter?: PuzzleDifficultyTier) => {
-  const sourcePuzzles = getPuzzlesForCategory(packKey, difficultyFilter)
-  const normalizedPuzzles = sourcePuzzles.map((puzzle) => ({ puzzle, normalized: normalizePhrase(puzzle.answer) })).filter((item) => item.normalized.length > 0)
-
-  if (normalizedPuzzles.length === 0) return null
-
-  const picked = normalizedPuzzles[Math.floor(Math.random() * normalizedPuzzles.length)]
-  return { puzzle: picked.puzzle, normalizedAnswer: picked.normalized }
-}
-
-// A random draw, scoped to whichever packs the player has checked (defaults to all of them).
-const pickRandomPackPuzzle = (allowedKeys: Set<string>, difficultyFilter?: PuzzleDifficultyTier) => {
+// A random draw, scoped to whichever packs the player has checked (defaults to all of them),
+// preferring a puzzle the player hasn't unlocked yet over one they have. Flattened across every
+// eligible pack into one pool rather than picked per-pack — a puzzle in ANY eligible pack that's
+// still unsolved beats a repeat, not just an unsolved puzzle in whichever pack happened to be
+// tried first. Falls back to the full (repeats-allowed) pool only once every eligible puzzle
+// across the whole selection is already unlocked — without this, a solved puzzle and an unsolved
+// one were served with equal odds forever, so a player hitting Random could never actually work
+// through and finish a pack.
+const pickRandomPackPuzzle = (allowedKeys: Set<string>, unlockedByPack: PuzzleUnlockMap, difficultyFilter?: PuzzleDifficultyTier) => {
   const manifest = getPuzzleManifest().filter((item) => item.count > 0 && allowedKeys.has(item.key))
   const candidatePacks = manifest.filter((item) => (difficultyFilter ? item.difficultyTiers.includes(difficultyFilter) : true))
 
-  const shuffled = [...candidatePacks].sort(() => Math.random() - 0.5)
-  for (const pack of shuffled) {
-    const picked = pickPuzzleFromPack(pack.key, difficultyFilter)
-    if (picked) return { ...picked, pack }
-  }
+  const candidates = candidatePacks.flatMap((pack) => {
+    const unlockedIds = new Set(unlockedByPack[pack.key] ?? [])
+    return getPuzzlesForCategory(pack.key, difficultyFilter)
+      .map((puzzle) => ({ puzzle, normalized: normalizePhrase(puzzle.answer), pack, unlocked: unlockedIds.has(puzzle.id) }))
+      .filter((item) => item.normalized.length > 0)
+  })
 
-  return null
+  if (candidates.length === 0) return null
+
+  const unsolved = candidates.filter((item) => !item.unlocked)
+  const pool = unsolved.length > 0 ? unsolved : candidates
+
+  const picked = pool[Math.floor(Math.random() * pool.length)]
+  return { puzzle: picked.puzzle, normalizedAnswer: picked.normalized, pack: picked.pack }
 }
 
 // Shared by the initial auto-start (Main mounts straight into a game, no setup screen) and the
@@ -108,10 +114,15 @@ const pickRandomPackPuzzle = (allowedKeys: Set<string>, difficultyFilter?: Puzzl
 //
 // packKeys is a separate argument, not a PuzzleConfig field: it's not something the caller stages
 // and confirms like the rest of config — it's normally the live, persisted pack-selection default
-// (see usePackSelection), except for the one deliberate override "Another in category" makes to
-// narrow a single draw to just the pack just won. Keeping it explicit here makes that override
-// visible at the call site instead of hidden inside a config object that's otherwise all-staged.
-export const resolvePuzzle = (config: PuzzleConfig, packKeys: string[]): PuzzleResolution => {
+// (see usePackSelection), except for the one deliberate override Main's round-end handler makes to
+// narrow a single draw to just the pack the player was already browsing (see
+// GameStartPayload.packScope). Keeping it explicit here makes that override visible at the call
+// site instead of hidden inside a config object that's otherwise all-staged.
+//
+// unlockedByPack defaults to {} (nothing unlocked) rather than being required — a caller that
+// doesn't have it handy yet degrades to picking with no preference at all, same as before this
+// existed, instead of failing outright.
+export const resolvePuzzle = (config: PuzzleConfig, packKeys: string[], unlockedByPack: PuzzleUnlockMap = {}): PuzzleResolution => {
   const difficultyFilter = config.difficulty === 'any' ? undefined : config.difficulty
 
   if (config.sourceMode === 'custom') {
@@ -121,12 +132,17 @@ export const resolvePuzzle = (config: PuzzleConfig, packKeys: string[]): PuzzleR
     }
 
     const hint = config.customHint.replace(/\s+/g, ' ').trim()
-    return { ok: true, payload: { phrase: normalized, mode: config.mode, sourceMode: 'custom', hint: hint || undefined } }
+    // Same scorer the drawer's custom form already previews live (see PuzzleDrawer's
+    // customPreviewPuzzle) — without this, the difficulty pill a player watched update while
+    // typing would vanish the instant the round actually starts, on both the drawer's own Custom
+    // flow and pass-and-play's compose screen.
+    const { difficultyTier } = scoreDifficulty(normalized)
+    return { ok: true, payload: { phrase: normalized, mode: config.mode, sourceMode: 'custom', hint: hint || undefined, difficultyTier } }
   }
 
   if (packKeys.length === 0) return { ok: false, error: 'Choose at least one pack to start.' }
 
-  const randomPick = pickRandomPackPuzzle(new Set(packKeys), difficultyFilter)
+  const randomPick = pickRandomPackPuzzle(new Set(packKeys), unlockedByPack, difficultyFilter)
   if (!randomPick) return { ok: false, error: 'No puzzles available for the selected packs and difficulty.' }
 
   return {
@@ -139,7 +155,44 @@ export const resolvePuzzle = (config: PuzzleConfig, packKeys: string[]): PuzzleR
       packLabel: randomPick.pack.label,
       puzzleId: randomPick.puzzle.id,
       difficultyTier: randomPick.puzzle.difficultyTier,
-      hint: buildHint(randomPick.puzzle, randomPick.pack)
+      hint: buildHint(randomPick.puzzle, randomPick.pack),
+      // A draw narrowed to exactly one pack (PackPuzzlesDrawer/AchievementsDrawer's own Random,
+      // or a selection of exactly one pack) means the player was intentionally browsing that pack
+      // — the round-end handler keeps drawing from just it. More than one means this came from the
+      // player's whole standing selection (PuzzleDrawer's bottom Random), so the next round should
+      // draw from that same selection again, not get pinned to whichever pack happened to win.
+      packScope: packKeys.length === 1 ? 'single' : 'selection'
+    }
+  }
+}
+
+// A player-picked puzzle rather than a random draw — PackPuzzlesDrawer's own "browse and tap one"
+// list. Deliberately narrow (just packKey/puzzleId/mode, not a whole PuzzleConfig): which exact
+// puzzle to play is already decided by the caller, so difficulty/sourceMode/customPhrase have
+// nothing left to contribute here the way they do for resolvePuzzle's random draw.
+export const resolveChosenPuzzle = (packKey: string, puzzleId: string, mode: GameMode): PuzzleResolution => {
+  const pack = getPuzzleManifest().find((item) => item.key === packKey)
+  const puzzle = pack ? getPuzzlesForCategory(packKey).find((item) => item.id === puzzleId) : undefined
+
+  if (!pack || !puzzle) return { ok: false, error: 'That puzzle is no longer available.' }
+
+  const normalized = normalizePhrase(puzzle.answer)
+  if (!normalized || normalized.replace(/ /g, '').length === 0) return { ok: false, error: 'That puzzle is no longer available.' }
+
+  return {
+    ok: true,
+    payload: {
+      phrase: normalized,
+      mode,
+      sourceMode: 'random',
+      packKey: pack.key,
+      packLabel: pack.label,
+      puzzleId: puzzle.id,
+      difficultyTier: puzzle.difficultyTier,
+      hint: buildHint(puzzle, pack),
+      // A player-picked puzzle is always from one specific pack the player was already browsing —
+      // see GameStartPayload.packScope.
+      packScope: 'single'
     }
   }
 }

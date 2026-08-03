@@ -1,0 +1,464 @@
+[
+  {
+    "id": "d297edcd754d16ab6ff217ff1038aa5f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Duran Duran",
+    "normalizedAnswer": "DURAN DURAN",
+    "category": "1980s Band",
+    "difficulty": 86,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "band",
+      "1980s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "b5b4908d1bf64adec934aa6f734fa02e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Depeche Mode",
+    "normalizedAnswer": "DEPECHE MODE",
+    "category": "1980s Band",
+    "difficulty": 77.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "band",
+      "1980s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "b4cb9700d06cbdb3985626dcc4a1161e",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Police",
+    "normalizedAnswer": "THE POLICE",
+    "category": "1980s Band",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "band",
+      "1980s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "1fdcd4325c2266df510abf1d9a2c5785",
+    "source": "theme",
+    "type": "title",
+    "answer": "Van Halen",
+    "normalizedAnswer": "VAN HALEN",
+    "category": "1980s Band",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "band",
+      "1980s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "8a70cae1d86a4115ee521511770f508b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bon Jovi",
+    "normalizedAnswer": "BON JOVI",
+    "category": "1980s Band",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "band",
+      "1980s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6641d3cbfc150fa2e0dd4a53f6d42848",
+    "source": "theme",
+    "type": "title",
+    "answer": "Guns N Roses",
+    "normalizedAnswer": "GUNS N ROSES",
+    "category": "1980s Band",
+    "difficulty": 78,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "band",
+      "1980s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "4580e7e66377261557604cb64b3651a9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Metallica",
+    "normalizedAnswer": "METALLICA",
+    "category": "1980s Band",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "band",
+      "1980s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "0e3e50013b27732f20394422bbc8130e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Def Leppard",
+    "normalizedAnswer": "DEF LEPPARD",
+    "category": "1980s Band",
+    "difficulty": 78,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "band",
+      "1980s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "4c98825249b4d1fd1022741dd53a4e83",
+    "source": "theme",
+    "type": "title",
+    "answer": "INXS",
+    "normalizedAnswer": "INXS",
+    "category": "1980s Band",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "band",
+      "1980s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "81689099e7a169a33ea77a98461e0f98",
+    "source": "theme",
+    "type": "title",
+    "answer": "R.E.M.",
+    "normalizedAnswer": "REM",
+    "category": "1980s Band",
+    "difficulty": 96.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "band",
+      "1980s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c76f84c0925957227049f13955f05ca7",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Cure",
+    "normalizedAnswer": "THE CURE",
+    "category": "1980s Band",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "band",
+      "1980s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "e41be67fe4f57db19bbee6c520c8ff33",
+    "source": "theme",
+    "type": "title",
+    "answer": "New Order",
+    "normalizedAnswer": "NEW ORDER",
+    "category": "1980s Band",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "band",
+      "1980s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "5a0c7eeedf8ff7aaf86eaa055bfe93e9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Eurythmics",
+    "normalizedAnswer": "EURYTHMICS",
+    "category": "1980s Band",
+    "difficulty": 66,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "band",
+      "1980s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "2888a8234fade286fb1cccdebf123b91",
+    "source": "theme",
+    "type": "title",
+    "answer": "Culture Club",
+    "normalizedAnswer": "CULTURE CLUB",
+    "category": "1980s Band",
+    "difficulty": 77.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "band",
+      "1980s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c54672f87b681dd1cf1a0bfa16fc4d24",
+    "source": "theme",
+    "type": "title",
+    "answer": "Whitesnake",
+    "normalizedAnswer": "WHITESNAKE",
+    "category": "1980s Band",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "band",
+      "1980s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a9c7de94b0c4f489dc4b116ed7342487",
+    "source": "theme",
+    "type": "title",
+    "answer": "Iron Maiden",
+    "normalizedAnswer": "IRON MAIDEN",
+    "category": "1980s Band",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "band",
+      "1980s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c22a3eb6673cc417cd52769c2c950de9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Motley Crue",
+    "normalizedAnswer": "MOTLEY CRUE",
+    "category": "1980s Band",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "band",
+      "1980s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "503643da18527743c4b2e2cb0b35453a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Simple Minds",
+    "normalizedAnswer": "SIMPLE MINDS",
+    "category": "1980s Band",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "band",
+      "1980s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c8ead1762f251d0557a1738833a24e21",
+    "source": "theme",
+    "type": "title",
+    "answer": "Tears for Fears",
+    "normalizedAnswer": "TEARS FOR FEARS",
+    "category": "1980s Band",
+    "difficulty": 76.8,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 13,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "band",
+      "1980s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "18012f6320d92980e4149942dd4e9fab",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Smiths",
+    "normalizedAnswer": "THE SMITHS",
+    "category": "1980s Band",
+    "difficulty": 82.4,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "band",
+      "1980s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "334cb6ae6a1ded3dc5c037fc1f6a1737",
+    "source": "theme",
+    "type": "title",
+    "answer": "Talking Heads",
+    "normalizedAnswer": "TALKING HEADS",
+    "category": "1980s Band",
+    "difficulty": 61.2,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "band",
+      "1980s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "7770648bca39d15bc46cb8af3050f5a2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Journey",
+    "normalizedAnswer": "JOURNEY",
+    "category": "1980s Band",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "band",
+      "1980s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  }
+]

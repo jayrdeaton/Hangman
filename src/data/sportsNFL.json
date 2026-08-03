@@ -1,0 +1,653 @@
+[
+  {
+    "id": "e79df4db917e727fb888ed43b3f76f71",
+    "source": "sports",
+    "type": "title",
+    "answer": "Pittsburgh Steelers",
+    "normalizedAnswer": "PITTSBURGH STEELERS",
+    "category": "NFL Team",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 18,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "06bc9d32c21a3a166e654508bd99790e",
+    "source": "sports",
+    "type": "title",
+    "answer": "Las Vegas Raiders",
+    "normalizedAnswer": "LAS VEGAS RAIDERS",
+    "category": "NFL Team",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "2b42460b8cdb5f048cb06f3ca623729f",
+    "source": "sports",
+    "type": "title",
+    "answer": "Kansas City Chiefs",
+    "normalizedAnswer": "KANSAS CITY CHIEFS",
+    "category": "NFL Team",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 16,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "f71b43f65454461d65bc4a337da8de5c",
+    "source": "sports",
+    "type": "title",
+    "answer": "Dallas Cowboys",
+    "normalizedAnswer": "DALLAS COWBOYS",
+    "category": "NFL Team",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "141c3dbd4e037b6f01dc82f7388a946a",
+    "source": "sports",
+    "type": "title",
+    "answer": "Carolina Panthers",
+    "normalizedAnswer": "CAROLINA PANTHERS",
+    "category": "NFL Team",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "f92a447ef614b011936dc18ed5f5cb09",
+    "source": "sports",
+    "type": "title",
+    "answer": "New Orleans Saints",
+    "normalizedAnswer": "NEW ORLEANS SAINTS",
+    "category": "NFL Team",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 16,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "58377e1c3b9d0cb192648f831f22c830",
+    "source": "sports",
+    "type": "title",
+    "answer": "Denver Broncos",
+    "normalizedAnswer": "DENVER BRONCOS",
+    "category": "NFL Team",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "372656053fc49d59dfd1efaa2194e2fe",
+    "source": "sports",
+    "type": "title",
+    "answer": "Jacksonville Jaguars",
+    "normalizedAnswer": "JACKSONVILLE JAGUARS",
+    "category": "NFL Team",
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 19,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "2239eb34bdba96f41aa9abd2c58b7e7a",
+    "source": "sports",
+    "type": "title",
+    "answer": "Detroit Lions",
+    "normalizedAnswer": "DETROIT LIONS",
+    "category": "NFL Team",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "9bdc83a7c2720472599a56854f187514",
+    "source": "sports",
+    "type": "title",
+    "answer": "New England Patriots",
+    "normalizedAnswer": "NEW ENGLAND PATRIOTS",
+    "category": "NFL Team",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 18,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "e2082dc592f65a9c104544ac2d1e19f9",
+    "source": "sports",
+    "type": "title",
+    "answer": "Miami Dolphins",
+    "normalizedAnswer": "MIAMI DOLPHINS",
+    "category": "NFL Team",
+    "difficulty": 64.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "e36f85be574604854bf713a85e300200",
+    "source": "sports",
+    "type": "title",
+    "answer": "Buffalo Bills",
+    "normalizedAnswer": "BUFFALO BILLS",
+    "category": "NFL Team",
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "e6c413b9e05de3599a2f3c458673ea43",
+    "source": "sports",
+    "type": "title",
+    "answer": "Cleveland Browns",
+    "normalizedAnswer": "CLEVELAND BROWNS",
+    "category": "NFL Team",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "882de8c150d786728dd45838e4f5e476",
+    "source": "sports",
+    "type": "title",
+    "answer": "Green Bay Packers",
+    "normalizedAnswer": "GREEN BAY PACKERS",
+    "category": "NFL Team",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "055041f7f2059c7007ed567fdcb613b5",
+    "source": "sports",
+    "type": "title",
+    "answer": "Philadelphia Eagles",
+    "normalizedAnswer": "PHILADELPHIA EAGLES",
+    "category": "NFL Team",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 18,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "f1d1499d18a90c4d05700a48de8fe5fe",
+    "source": "sports",
+    "type": "title",
+    "answer": "Indianapolis Colts",
+    "normalizedAnswer": "INDIANAPOLIS COLTS",
+    "category": "NFL Team",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 17,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "44fb84d2b8f50e20e5a5ab4b607da257",
+    "source": "sports",
+    "type": "title",
+    "answer": "Seattle Seahawks",
+    "normalizedAnswer": "SEATTLE SEAHAWKS",
+    "category": "NFL Team",
+    "difficulty": 72,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "a08c50b11630fe9407954cec0d42cddf",
+    "source": "sports",
+    "type": "title",
+    "answer": "Baltimore Ravens",
+    "normalizedAnswer": "BALTIMORE RAVENS",
+    "category": "NFL Team",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "6e2c57bc5aff35a678804ce6b049f196",
+    "source": "sports",
+    "type": "title",
+    "answer": "Atlanta Falcons",
+    "normalizedAnswer": "ATLANTA FALCONS",
+    "category": "NFL Team",
+    "difficulty": 72.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "0444874d97c4097cb07ca87fcf5aa2e1",
+    "source": "sports",
+    "type": "title",
+    "answer": "New York Giants",
+    "normalizedAnswer": "NEW YORK GIANTS",
+    "category": "NFL Team",
+    "difficulty": 56.8,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 13,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "72bedf784681df33e06131f396495d1d",
+    "source": "sports",
+    "type": "title",
+    "answer": "New York Jets",
+    "normalizedAnswer": "NEW YORK JETS",
+    "category": "NFL Team",
+    "difficulty": 65.6,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 11,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "a1cb1000dfda5ccae35a35858e50f208",
+    "source": "sports",
+    "type": "title",
+    "answer": "Tennessee Titans",
+    "normalizedAnswer": "TENNESSEE TITANS",
+    "category": "NFL Team",
+    "difficulty": 80,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "5812bcf2907d9b82b8614285d1153c01",
+    "source": "sports",
+    "type": "title",
+    "answer": "Washington Commanders",
+    "normalizedAnswer": "WASHINGTON COMMANDERS",
+    "category": "NFL Team",
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 20,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "65caa4cb0f6eb5ddc9bfc0b64b1472bd",
+    "source": "sports",
+    "type": "title",
+    "answer": "Cincinnati Bengals",
+    "normalizedAnswer": "CINCINNATI BENGALS",
+    "category": "NFL Team",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 17,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "624f7787e4b8c4fea7431a95fe14591a",
+    "source": "sports",
+    "type": "title",
+    "answer": "Tampa Bay Buccaneers",
+    "normalizedAnswer": "TAMPA BAY BUCCANEERS",
+    "category": "NFL Team",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 18,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "688c026ea92e0fa3deda48a0d583f7dd",
+    "source": "sports",
+    "type": "title",
+    "answer": "Houston Texans",
+    "normalizedAnswer": "HOUSTON TEXANS",
+    "category": "NFL Team",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "ebc26be77acfce8ccd956539bd12266f",
+    "source": "sports",
+    "type": "title",
+    "answer": "Los Angeles Rams",
+    "normalizedAnswer": "LOS ANGELES RAMS",
+    "category": "NFL Team",
+    "difficulty": 68.4,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 14,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "e7baf9fdd9edbe833907d25ee2f1603e",
+    "source": "sports",
+    "type": "title",
+    "answer": "Los Angeles Chargers",
+    "normalizedAnswer": "LOS ANGELES CHARGERS",
+    "category": "NFL Team",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 18,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "bb1e033c40135fd83b95ddef9577def1",
+    "source": "sports",
+    "type": "title",
+    "answer": "Chicago Bears",
+    "normalizedAnswer": "CHICAGO BEARS",
+    "category": "NFL Team",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "9eba5648040fc9f5154c2a55fbd6f4c5",
+    "source": "sports",
+    "type": "title",
+    "answer": "Arizona Cardinals",
+    "normalizedAnswer": "ARIZONA CARDINALS",
+    "category": "NFL Team",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  },
+  {
+    "id": "0bc398b12ae9e548c55d32bb52dd5dc2",
+    "source": "sports",
+    "type": "title",
+    "answer": "Minnesota Vikings",
+    "normalizedAnswer": "MINNESOTA VIKINGS",
+    "category": "NFL Team",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
+  }
+]

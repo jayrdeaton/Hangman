@@ -38,7 +38,7 @@ const generateKey = (): string => `${CUSTOM_KEY_PREFIX}${Date.now().toString(36)
 // are ABSENT — more alphabet coverage can only ever reduce guaranteed misses, so it makes a puzzle
 // EASIER, never harder. Length is folded in only as a small, saturating secondary nudge (zero once
 // the answer has 15+ letters) so it can never dominate the primary miss-risk term.
-const scoreDifficulty = (normalizedAnswer: string): { difficulty: number; difficultyTier: Puzzle['difficultyTier'] } => {
+export const scoreDifficulty = (normalizedAnswer: string): { difficulty: number; difficultyTier: Puzzle['difficultyTier'] } => {
   const letters = normalizedAnswer.replace(/[^A-Z]/g, '')
   const uniqueLetterCount = new Set(letters).size
   const absentLetterCount = 26 - uniqueLetterCount
@@ -157,12 +157,12 @@ export const saveCustomPack = async (input: SaveCustomPackInput): Promise<Custom
   return pack
 }
 
-// The drawer's one-off "Custom" entry point (see PuzzleDrawer.tsx) no longer plays a typed word
-// as a throwaway round — every confirmed custom word lands here too, so it's still around to
-// replay later instead of being forgotten the moment the round ends. Found by label rather than a
-// fixed key since a fresh install has no pack yet and generateKey() mints a new one on first use;
-// re-adding the identical word (retyped, or the same shared link opened twice) replaces its old
-// entry instead of piling up a duplicate, but keeps the position of every other word untouched.
+// Where a pass-and-play word lands when its author opts to keep it (see PnpWordPrompt.tsx's "Keep
+// this word" toggle) — so it's still around to replay later instead of being forgotten the moment
+// the round ends. Found by label rather than a fixed key since a fresh install has no pack yet and
+// generateKey() mints a new one on first use; re-adding the identical word (retyped, or the same
+// shared link opened twice) replaces its old entry instead of piling up a duplicate, but keeps the
+// position of every other word untouched.
 export const CUSTOM_QUICK_PACK_LABEL = 'Custom'
 
 export const addCustomPuzzle = async (entry: CustomPackEntryInput): Promise<CustomPack> => {
@@ -191,6 +191,13 @@ export const exportCustomPack = async (key: string): Promise<string | null> => {
   return JSON.stringify(payload, null, 2)
 }
 
+export type ParsedCustomPackImport = { key: string | undefined; label: string; entries: CustomPackEntryInput[] }
+
+// Split out from importCustomPack below so a caller can preview what a backup/file actually
+// contains (label, word count) before committing to saveCustomPack — the incoming-file-share flow
+// shows the player a confirm dialog with that preview rather than importing sight-unseen the
+// moment a .hangman file is opened.
+//
 // Reuses the incoming key when it's a valid custom-pack key, rather than always minting a fresh
 // one -- this is what makes re-importing an UPDATED export of a pack you already have (e.g. the
 // private scraper repo regenerating a pack with new entries) land as an update instead of a
@@ -199,7 +206,7 @@ export const exportCustomPack = async (key: string): Promise<string | null> => {
 // the exact same id it had before, so existing win records in puzzle_unlocks_v1 survive. A pack
 // whose key has never been seen locally is simply saved under that key rather than a random one
 // (harmless either way), so a FUTURE re-import of that same pack can match it too.
-export const importCustomPack = async (raw: string): Promise<CustomPack> => {
+export const parseCustomPackImport = (raw: string): ParsedCustomPackImport => {
   const parsed: unknown = JSON.parse(raw)
   const rawPack = parsed && typeof parsed === 'object' && 'pack' in (parsed as Record<string, unknown>) ? (parsed as CustomPackExportPayload).pack : (parsed as CustomPack)
 
@@ -210,5 +217,10 @@ export const importCustomPack = async (raw: string): Promise<CustomPack> => {
   const entries: CustomPackEntryInput[] = rawPack.puzzles.map((puzzle) => ({ answer: puzzle.answer, hint: typeof puzzle.metadata?.hint === 'string' ? puzzle.metadata.hint : undefined }))
   const key = isCustomPackKey(rawPack.key) ? rawPack.key : undefined
 
-  return saveCustomPack({ key, label: rawPack.label, entries })
+  return { key, label: rawPack.label, entries }
+}
+
+export const importCustomPack = async (raw: string): Promise<CustomPack> => {
+  const { key, label, entries } = parseCustomPackImport(raw)
+  return saveCustomPack({ key, label, entries })
 }

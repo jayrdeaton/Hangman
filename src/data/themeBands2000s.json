@@ -1,0 +1,401 @@
+[
+  {
+    "id": "e2a291819fa11704ad617bcf4f8c4595",
+    "source": "theme",
+    "type": "title",
+    "answer": "Coldplay",
+    "normalizedAnswer": "COLDPLAY",
+    "category": "2000s Band",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "band",
+      "2000s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "7cc46e8e588950ad8627d09f2d2181ca",
+    "source": "theme",
+    "type": "title",
+    "answer": "Linkin Park",
+    "normalizedAnswer": "LINKIN PARK",
+    "category": "2000s Band",
+    "difficulty": 78,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "band",
+      "2000s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "bf20b6602b1d09e66a0d6ea5d48c30fc",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Killers",
+    "normalizedAnswer": "THE KILLERS",
+    "category": "2000s Band",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "band",
+      "2000s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "f86af252a421dafce25cbfdcf1596695",
+    "source": "theme",
+    "type": "title",
+    "answer": "Arctic Monkeys",
+    "normalizedAnswer": "ARCTIC MONKEYS",
+    "category": "2000s Band",
+    "difficulty": 56.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "band",
+      "2000s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6091864b0e2f7abbcd9ef1b046e1e0bd",
+    "source": "theme",
+    "type": "title",
+    "answer": "My Chemical Romance",
+    "normalizedAnswer": "MY CHEMICAL ROMANCE",
+    "category": "2000s Band",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 17,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "band",
+      "2000s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "de763299974ac90b8aace66dae0d7516",
+    "source": "theme",
+    "type": "title",
+    "answer": "Fall Out Boy",
+    "normalizedAnswer": "FALL OUT BOY",
+    "category": "2000s Band",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "band",
+      "2000s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "2a9d0f475570e6fde66e89275e3e3ee1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Paramore",
+    "normalizedAnswer": "PARAMORE",
+    "category": "2000s Band",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "band",
+      "2000s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "87941407060100f9049e89c4acf0078a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Kings of Leon",
+    "normalizedAnswer": "KINGS OF LEON",
+    "category": "2000s Band",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "band",
+      "2000s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "76d1132b66cfc5a353d1c746b4e61f67",
+    "source": "theme",
+    "type": "title",
+    "answer": "Muse",
+    "normalizedAnswer": "MUSE",
+    "category": "2000s Band",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "band",
+      "2000s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "f77eea334a9f55157e59c3e126ebd96f",
+    "source": "theme",
+    "type": "title",
+    "answer": "The White Stripes",
+    "normalizedAnswer": "THE WHITE STRIPES",
+    "category": "2000s Band",
+    "difficulty": 72,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "band",
+      "2000s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "92af2bbe0e0e573dc71b379db500c012",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Strokes",
+    "normalizedAnswer": "THE STROKES",
+    "category": "2000s Band",
+    "difficulty": 78,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "band",
+      "2000s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "e0b6c2e353d2aaa3ca345b500c186686",
+    "source": "theme",
+    "type": "title",
+    "answer": "Evanescence",
+    "normalizedAnswer": "EVANESCENCE",
+    "category": "2000s Band",
+    "difficulty": 81.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "band",
+      "2000s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "db01c4718f3ba9080e6b68d604bc2a85",
+    "source": "theme",
+    "type": "title",
+    "answer": "Nickelback",
+    "normalizedAnswer": "NICKELBACK",
+    "category": "2000s Band",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "band",
+      "2000s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "3408251cd731247c2c811046522710a5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Gorillaz",
+    "normalizedAnswer": "GORILLAZ",
+    "category": "2000s Band",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "band",
+      "2000s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "3d208aa0aa1bcfa6309d92c96d72d681",
+    "source": "theme",
+    "type": "title",
+    "answer": "System of a Down",
+    "normalizedAnswer": "SYSTEM OF A DOWN",
+    "category": "2000s Band",
+    "difficulty": 60.8,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 13,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "band",
+      "2000s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "74b93cca4fe7274697bbd15a1f3d3965",
+    "source": "theme",
+    "type": "title",
+    "answer": "Panic at the Disco",
+    "normalizedAnswer": "PANIC AT THE DISCO",
+    "category": "2000s Band",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "band",
+      "2000s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ab57789aae9817cd9b22585cb5b8c019",
+    "source": "theme",
+    "type": "title",
+    "answer": "Death Cab for Cutie",
+    "normalizedAnswer": "DEATH CAB FOR CUTIE",
+    "category": "2000s Band",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 16,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "band",
+      "2000s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "da3e9c345157e0ed9c445a75b4f46ed8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Jimmy Eat World",
+    "normalizedAnswer": "JIMMY EAT WORLD",
+    "category": "2000s Band",
+    "difficulty": 56.8,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 13,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "band",
+      "2000s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "d5518ca34d9c74414d7554147e17c258",
+    "source": "theme",
+    "type": "title",
+    "answer": "OK Go",
+    "normalizedAnswer": "OK GO",
+    "category": "2000s Band",
+    "difficulty": 96.4,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 4,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "band",
+      "2000s"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  }
+]

@@ -1,0 +1,2480 @@
+[
+  {
+    "id": "9fed47e9db9383269d8f15c3f43922cc",
+    "source": "theme",
+    "type": "title",
+    "answer": "Hydrogen",
+    "normalizedAnswer": "HYDROGEN",
+    "category": "Periodic Element",
+    "difficulty": 74.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "2f62c24c2b2316a521a1feef0ad37f04",
+    "source": "theme",
+    "type": "title",
+    "answer": "Helium",
+    "normalizedAnswer": "HELIUM",
+    "category": "Periodic Element",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "c6688edc6e260307c1a9d2e564b39420",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lithium",
+    "normalizedAnswer": "LITHIUM",
+    "category": "Periodic Element",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "d7c347cb0a4f6a19cdcd1af1dd78f21c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Beryllium",
+    "normalizedAnswer": "BERYLLIUM",
+    "category": "Periodic Element",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "12e0da18be5f5881cfe3892846574b72",
+    "source": "theme",
+    "type": "title",
+    "answer": "Boron",
+    "normalizedAnswer": "BORON",
+    "category": "Periodic Element",
+    "difficulty": 92,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "c88a6f1dc60f6143605d0a63072294fe",
+    "source": "theme",
+    "type": "title",
+    "answer": "Carbon",
+    "normalizedAnswer": "CARBON",
+    "category": "Periodic Element",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "220f27cdaece429ef1bc787d009dcfee",
+    "source": "theme",
+    "type": "title",
+    "answer": "Nitrogen",
+    "normalizedAnswer": "NITROGEN",
+    "category": "Periodic Element",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "b9c459da05f92e9eb4112e061c3cc19c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Oxygen",
+    "normalizedAnswer": "OXYGEN",
+    "category": "Periodic Element",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "ee0e223ad9385b3d0d8a24808cddacb9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Fluorine",
+    "normalizedAnswer": "FLUORINE",
+    "category": "Periodic Element",
+    "difficulty": 74.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "1b6816d4bf896ba0d3e3c454596800c0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Neon",
+    "normalizedAnswer": "NEON",
+    "category": "Periodic Element",
+    "difficulty": 96.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "fb0d7cd04180586c02f121b0775e623b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sodium",
+    "normalizedAnswer": "SODIUM",
+    "category": "Periodic Element",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "0604164f478fee832c31f795cc27684d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Magnesium",
+    "normalizedAnswer": "MAGNESIUM",
+    "category": "Periodic Element",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "ddb3bbe51e02e06ccfccc054c8174e15",
+    "source": "theme",
+    "type": "title",
+    "answer": "Aluminium",
+    "normalizedAnswer": "ALUMINIUM",
+    "category": "Periodic Element",
+    "difficulty": 82.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "c21afb5bf768140861af4bcc5c6379f3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Silicon",
+    "normalizedAnswer": "SILICON",
+    "category": "Periodic Element",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "ef702675db5ad54336f2fee8d215fc8c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Phosphorus",
+    "normalizedAnswer": "PHOSPHORUS",
+    "category": "Periodic Element",
+    "difficulty": 82,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "52efe06ed2dc52a671dfa982e3afbe9f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sulfur",
+    "normalizedAnswer": "SULFUR",
+    "category": "Periodic Element",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "3bd4401fed6bda8ef58a8aae6100e15e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chlorine",
+    "normalizedAnswer": "CHLORINE",
+    "category": "Periodic Element",
+    "difficulty": 74.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "68e335bd456589d2869781b2038ff7b9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Argon",
+    "normalizedAnswer": "ARGON",
+    "category": "Periodic Element",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "fcc112a56abeb7bd6692e8ea3ef3c1a0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Potassium",
+    "normalizedAnswer": "POTASSIUM",
+    "category": "Periodic Element",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "891532d7bd3bb30fbb124500df0da4d1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Calcium",
+    "normalizedAnswer": "CALCIUM",
+    "category": "Periodic Element",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "70ebe86abddf96172eab6099788c7e6d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Scandium",
+    "normalizedAnswer": "SCANDIUM",
+    "category": "Periodic Element",
+    "difficulty": 74.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "80c4af14c78df296cc5459c0f104a2ec",
+    "source": "theme",
+    "type": "title",
+    "answer": "Titanium",
+    "normalizedAnswer": "TITANIUM",
+    "category": "Periodic Element",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "dc06c401dd796a75fb4453b9c734ba5d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Vanadium",
+    "normalizedAnswer": "VANADIUM",
+    "category": "Periodic Element",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "dce92819a0882e00455360953f588de1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chromium",
+    "normalizedAnswer": "CHROMIUM",
+    "category": "Periodic Element",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "cbce0c113f73895de5f308d759b1de64",
+    "source": "theme",
+    "type": "title",
+    "answer": "Manganese",
+    "normalizedAnswer": "MANGANESE",
+    "category": "Periodic Element",
+    "difficulty": 82.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "38078e5219a23f34619f93a0e12b948d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Iron",
+    "normalizedAnswer": "IRON",
+    "category": "Periodic Element",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "3c12257d20fb1cf34945cd025192616c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cobalt",
+    "normalizedAnswer": "COBALT",
+    "category": "Periodic Element",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "0e5879f5fedf9e6b81e51380bae7e94a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Nickel",
+    "normalizedAnswer": "NICKEL",
+    "category": "Periodic Element",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "d0ac336871ebc27006b340f394879bf9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Copper",
+    "normalizedAnswer": "COPPER",
+    "category": "Periodic Element",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "48d7c51e7be4c8ff40c0522a928a5c99",
+    "source": "theme",
+    "type": "title",
+    "answer": "Zinc",
+    "normalizedAnswer": "ZINC",
+    "category": "Periodic Element",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "8948a6c7bd9b35d48d1add9e6290c462",
+    "source": "theme",
+    "type": "title",
+    "answer": "Gallium",
+    "normalizedAnswer": "GALLIUM",
+    "category": "Periodic Element",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "9e95fe798c4416a20b314e2d625ca6f1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Germanium",
+    "normalizedAnswer": "GERMANIUM",
+    "category": "Periodic Element",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "719857eb9ec5ebf97d8980d49500c28f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Arsenic",
+    "normalizedAnswer": "ARSENIC",
+    "category": "Periodic Element",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "ae4fa31ccd28b63c0bed045dab50c690",
+    "source": "theme",
+    "type": "title",
+    "answer": "Selenium",
+    "normalizedAnswer": "SELENIUM",
+    "category": "Periodic Element",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "03d5f5c621b0f4e543643c2d8be45f77",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bromine",
+    "normalizedAnswer": "BROMINE",
+    "category": "Periodic Element",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "1c79055e93dd514b70f26b75e782310d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Krypton",
+    "normalizedAnswer": "KRYPTON",
+    "category": "Periodic Element",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "d73efc750abaabb9a81f50639155a4e2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Rubidium",
+    "normalizedAnswer": "RUBIDIUM",
+    "category": "Periodic Element",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "ce76c3d2e33cb4570562ed21b2f74151",
+    "source": "theme",
+    "type": "title",
+    "answer": "Strontium",
+    "normalizedAnswer": "STRONTIUM",
+    "category": "Periodic Element",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "be0608c0854475ead90a8f4344f510ed",
+    "source": "theme",
+    "type": "title",
+    "answer": "Yttrium",
+    "normalizedAnswer": "YTTRIUM",
+    "category": "Periodic Element",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "270cd3c7994cec8faf5d38b91f12249a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Zirconium",
+    "normalizedAnswer": "ZIRCONIUM",
+    "category": "Periodic Element",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "05edbb8e13bffda602d4ca2bdd206a32",
+    "source": "theme",
+    "type": "title",
+    "answer": "Niobium",
+    "normalizedAnswer": "NIOBIUM",
+    "category": "Periodic Element",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "ddfae2869fc97cc5c961c499f4b8491c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Molybdenum",
+    "normalizedAnswer": "MOLYBDENUM",
+    "category": "Periodic Element",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "1857070b4e928428aa2c0e65c051dc1c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Technetium",
+    "normalizedAnswer": "TECHNETIUM",
+    "category": "Periodic Element",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "b639909f4a538b2119a7939ef26c5921",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ruthenium",
+    "normalizedAnswer": "RUTHENIUM",
+    "category": "Periodic Element",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "1fbb90376ec882008b9efe3a0e50d3c5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Rhodium",
+    "normalizedAnswer": "RHODIUM",
+    "category": "Periodic Element",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "9600af2b6f23fafbfcac9a7b59f8a2d8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Palladium",
+    "normalizedAnswer": "PALLADIUM",
+    "category": "Periodic Element",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "bb83d84546c17b498dcc10d8eabe690d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Silver",
+    "normalizedAnswer": "SILVER",
+    "category": "Periodic Element",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "ac708f3d13d80f0b7e8a62c81417c312",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cadmium",
+    "normalizedAnswer": "CADMIUM",
+    "category": "Periodic Element",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "8dffb9af07fbc357fe768a0c24ccd4fe",
+    "source": "theme",
+    "type": "title",
+    "answer": "Indium",
+    "normalizedAnswer": "INDIUM",
+    "category": "Periodic Element",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "f80f093beba9c1ccb863a9bb39b911a8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Tin",
+    "normalizedAnswer": "TIN",
+    "category": "Periodic Element",
+    "difficulty": 96.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "1a4706c2b8842d9f58167483a87bf7fe",
+    "source": "theme",
+    "type": "title",
+    "answer": "Antimony",
+    "normalizedAnswer": "ANTIMONY",
+    "category": "Periodic Element",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "e9c7e8abbd056bb15dd8b0b16f5f213d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Tellurium",
+    "normalizedAnswer": "TELLURIUM",
+    "category": "Periodic Element",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "995472e7ca41eda7654eb7f6a4dc1fbd",
+    "source": "theme",
+    "type": "title",
+    "answer": "Iodine",
+    "normalizedAnswer": "IODINE",
+    "category": "Periodic Element",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "545f16633589ed458ffce59bcdda1fe9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Xenon",
+    "normalizedAnswer": "XENON",
+    "category": "Periodic Element",
+    "difficulty": 92,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "44192c3be0f156ad1d3dae77ef9af289",
+    "source": "theme",
+    "type": "title",
+    "answer": "Caesium",
+    "normalizedAnswer": "CAESIUM",
+    "category": "Periodic Element",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "5dc4fc0afc340241a1195d2401a56d43",
+    "source": "theme",
+    "type": "title",
+    "answer": "Barium",
+    "normalizedAnswer": "BARIUM",
+    "category": "Periodic Element",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "b0c7a2b7494eeb6e8a54bce0a605fcef",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lanthanum",
+    "normalizedAnswer": "LANTHANUM",
+    "category": "Periodic Element",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "250b4fb085608285dfd95515cb5863cb",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cerium",
+    "normalizedAnswer": "CERIUM",
+    "category": "Periodic Element",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "9876ae34d637ccb0f76a5abf15ef9aa2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Praseodymium",
+    "normalizedAnswer": "PRASEODYMIUM",
+    "category": "Periodic Element",
+    "difficulty": 61.2,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 12,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "8ba25d3bb7f4ef89a7ad66c570121241",
+    "source": "theme",
+    "type": "title",
+    "answer": "Neodymium",
+    "normalizedAnswer": "NEODYMIUM",
+    "category": "Periodic Element",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "2e47b42218b336d18a49d0177a964f4e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Promethium",
+    "normalizedAnswer": "PROMETHIUM",
+    "category": "Periodic Element",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "0d5707dc6c9baf9b193795074742a7e6",
+    "source": "theme",
+    "type": "title",
+    "answer": "Samarium",
+    "normalizedAnswer": "SAMARIUM",
+    "category": "Periodic Element",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "3794cb306ef4e4dc8a019eb0cd4322c3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Europium",
+    "normalizedAnswer": "EUROPIUM",
+    "category": "Periodic Element",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "a8ac85dd0d52ce6fea453d7f02d87e52",
+    "source": "theme",
+    "type": "title",
+    "answer": "Gadolinium",
+    "normalizedAnswer": "GADOLINIUM",
+    "category": "Periodic Element",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "f86fd88787156be01c222a5ab6c4b9d7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Terbium",
+    "normalizedAnswer": "TERBIUM",
+    "category": "Periodic Element",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "83c28656e341c1f2bbe39e8f2dee2cd9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Dysprosium",
+    "normalizedAnswer": "DYSPROSIUM",
+    "category": "Periodic Element",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "7bebc2b831f70d71fcacedab1cdfcd14",
+    "source": "theme",
+    "type": "title",
+    "answer": "Holmium",
+    "normalizedAnswer": "HOLMIUM",
+    "category": "Periodic Element",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "ffa6f535ecff1493a8827d8797eb199c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Erbium",
+    "normalizedAnswer": "ERBIUM",
+    "category": "Periodic Element",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "3b77a11eeb1e55067af6e05a69dfd941",
+    "source": "theme",
+    "type": "title",
+    "answer": "Thulium",
+    "normalizedAnswer": "THULIUM",
+    "category": "Periodic Element",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "984773160eba6436f59d5ecba71b6941",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ytterbium",
+    "normalizedAnswer": "YTTERBIUM",
+    "category": "Periodic Element",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "8cc4b62ee550741c16d6ed1c03a210ec",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lutetium",
+    "normalizedAnswer": "LUTETIUM",
+    "category": "Periodic Element",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "9b2e432ea17c9e8e389fd9ff5c2159c6",
+    "source": "theme",
+    "type": "title",
+    "answer": "Hafnium",
+    "normalizedAnswer": "HAFNIUM",
+    "category": "Periodic Element",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "e6fde0f101ccf2c893f78d6ceb28cdfd",
+    "source": "theme",
+    "type": "title",
+    "answer": "Tantalum",
+    "normalizedAnswer": "TANTALUM",
+    "category": "Periodic Element",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "257493d42380cc8bc48cbf5594631aed",
+    "source": "theme",
+    "type": "title",
+    "answer": "Tungsten",
+    "normalizedAnswer": "TUNGSTEN",
+    "category": "Periodic Element",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "68e6f740e17300882c136f938a5f1aaf",
+    "source": "theme",
+    "type": "title",
+    "answer": "Rhenium",
+    "normalizedAnswer": "RHENIUM",
+    "category": "Periodic Element",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "6ace646188525e93a4e0b8f532b997e2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Osmium",
+    "normalizedAnswer": "OSMIUM",
+    "category": "Periodic Element",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "e3da546676767067723c9e299d7e0383",
+    "source": "theme",
+    "type": "title",
+    "answer": "Iridium",
+    "normalizedAnswer": "IRIDIUM",
+    "category": "Periodic Element",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "8413ec6f667cfe6b7fb95ce4d953e91c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Platinum",
+    "normalizedAnswer": "PLATINUM",
+    "category": "Periodic Element",
+    "difficulty": 74.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "747c0a5f2682cbcd418c7a7966d9cbc9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Gold",
+    "normalizedAnswer": "GOLD",
+    "category": "Periodic Element",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "5754b9f8ddca4deb8e21bac6711387b2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mercury",
+    "normalizedAnswer": "MERCURY",
+    "category": "Periodic Element",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "0e94e2df2375a44e19d1dd4fe483cf12",
+    "source": "theme",
+    "type": "title",
+    "answer": "Thallium",
+    "normalizedAnswer": "THALLIUM",
+    "category": "Periodic Element",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "ba3f74f6c97a75f363c9230d05adb4c0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lead",
+    "normalizedAnswer": "LEAD",
+    "category": "Periodic Element",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "0b99f5283f52aaacacc85ed42f7d989c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bismuth",
+    "normalizedAnswer": "BISMUTH",
+    "category": "Periodic Element",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "7bbe3afa0be096c665fc6e869274fa1d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Polonium",
+    "normalizedAnswer": "POLONIUM",
+    "category": "Periodic Element",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "4d2fd413f2dace52b61a2d2a17e2140f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Astatine",
+    "normalizedAnswer": "ASTATINE",
+    "category": "Periodic Element",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "0e35cdd866345b8e27b9cc32f8052d21",
+    "source": "theme",
+    "type": "title",
+    "answer": "Radon",
+    "normalizedAnswer": "RADON",
+    "category": "Periodic Element",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "63a5050a17fec34745b2b337b973561a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Francium",
+    "normalizedAnswer": "FRANCIUM",
+    "category": "Periodic Element",
+    "difficulty": 74.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "158529de93c9f7095c46b95f513d40ca",
+    "source": "theme",
+    "type": "title",
+    "answer": "Radium",
+    "normalizedAnswer": "RADIUM",
+    "category": "Periodic Element",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "abcb2a9aa5345e4375e645f9bff45b22",
+    "source": "theme",
+    "type": "title",
+    "answer": "Actinium",
+    "normalizedAnswer": "ACTINIUM",
+    "category": "Periodic Element",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "4a9ed38e1d05265af21f9a6686a2df11",
+    "source": "theme",
+    "type": "title",
+    "answer": "Thorium",
+    "normalizedAnswer": "THORIUM",
+    "category": "Periodic Element",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "55548426d0ac3da16e21faf5a37ff977",
+    "source": "theme",
+    "type": "title",
+    "answer": "Protactinium",
+    "normalizedAnswer": "PROTACTINIUM",
+    "category": "Periodic Element",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "b1d6adf50aa7b481c374cc26e76f4fa0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Uranium",
+    "normalizedAnswer": "URANIUM",
+    "category": "Periodic Element",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "56585693541443d9ded97a5052a7a34e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Neptunium",
+    "normalizedAnswer": "NEPTUNIUM",
+    "category": "Periodic Element",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "0a644c7619479f5263bada8a67803ffe",
+    "source": "theme",
+    "type": "title",
+    "answer": "Plutonium",
+    "normalizedAnswer": "PLUTONIUM",
+    "category": "Periodic Element",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "e3bf501d457b513014e5dc7443d916ac",
+    "source": "theme",
+    "type": "title",
+    "answer": "Americium",
+    "normalizedAnswer": "AMERICIUM",
+    "category": "Periodic Element",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "3db0ca68cb267a1e2dde00d32e844149",
+    "source": "theme",
+    "type": "title",
+    "answer": "Curium",
+    "normalizedAnswer": "CURIUM",
+    "category": "Periodic Element",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "ee8279e65a7d10e92be1cdc94274060f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Berkelium",
+    "normalizedAnswer": "BERKELIUM",
+    "category": "Periodic Element",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "0227a132c252d168eb9b4a576f53f000",
+    "source": "theme",
+    "type": "title",
+    "answer": "Californium",
+    "normalizedAnswer": "CALIFORNIUM",
+    "category": "Periodic Element",
+    "difficulty": 65.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "f9c53fb9be2ac8dc805702cbce355e2a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Einsteinium",
+    "normalizedAnswer": "EINSTEINIUM",
+    "category": "Periodic Element",
+    "difficulty": 77.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "c0e0aa0b3240318b283573817d70e7c2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Fermium",
+    "normalizedAnswer": "FERMIUM",
+    "category": "Periodic Element",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "c9b7cf300e8d6ace271563ef06c91cfa",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mendelevium",
+    "normalizedAnswer": "MENDELEVIUM",
+    "category": "Periodic Element",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "ac49781159780c742ab831143d08d9c1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Nobelium",
+    "normalizedAnswer": "NOBELIUM",
+    "category": "Periodic Element",
+    "difficulty": 74.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "e7d1e08663adc272dbf6f6e75aeb0cfd",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lawrencium",
+    "normalizedAnswer": "LAWRENCIUM",
+    "category": "Periodic Element",
+    "difficulty": 66,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "77539c154dfdb567a8e521fb8a1aabe5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Rutherfordium",
+    "normalizedAnswer": "RUTHERFORDIUM",
+    "category": "Periodic Element",
+    "difficulty": 64.8,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "9ddc7b0e10987fc1b83a385f01153c4f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Dubnium",
+    "normalizedAnswer": "DUBNIUM",
+    "category": "Periodic Element",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "bca43b940dce9981d3eb685d69db2bf3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Seaborgium",
+    "normalizedAnswer": "SEABORGIUM",
+    "category": "Periodic Element",
+    "difficulty": 66,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "284416aae14cb3f457e16c74f4838753",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bohrium",
+    "normalizedAnswer": "BOHRIUM",
+    "category": "Periodic Element",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "e3b2ffbb47f223beea2b8970763cbf00",
+    "source": "theme",
+    "type": "title",
+    "answer": "Hassium",
+    "normalizedAnswer": "HASSIUM",
+    "category": "Periodic Element",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "add24bea75da04c5bd07548fbfceb4cc",
+    "source": "theme",
+    "type": "title",
+    "answer": "Meitnerium",
+    "normalizedAnswer": "MEITNERIUM",
+    "category": "Periodic Element",
+    "difficulty": 78,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "a56a8b031869e6cacef642069a403246",
+    "source": "theme",
+    "type": "title",
+    "answer": "Darmstadtium",
+    "normalizedAnswer": "DARMSTADTIUM",
+    "category": "Periodic Element",
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "b91929a8ecb0fa84b914e67ff0f45378",
+    "source": "theme",
+    "type": "title",
+    "answer": "Roentgenium",
+    "normalizedAnswer": "ROENTGENIUM",
+    "category": "Periodic Element",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "a9dd9e4e036626a78eb296949d6cb4e0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Copernicium",
+    "normalizedAnswer": "COPERNICIUM",
+    "category": "Periodic Element",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "3bb839864e8b1f7f3eb1316258946f69",
+    "source": "theme",
+    "type": "title",
+    "answer": "Nihonium",
+    "normalizedAnswer": "NIHONIUM",
+    "category": "Periodic Element",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "e127764e7bd6c7e4ac5524e6bcfd4e26",
+    "source": "theme",
+    "type": "title",
+    "answer": "Flerovium",
+    "normalizedAnswer": "FLEROVIUM",
+    "category": "Periodic Element",
+    "difficulty": 70.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "a89f68fc8c8dde6781a98356acbc041f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Moscovium",
+    "normalizedAnswer": "MOSCOVIUM",
+    "category": "Periodic Element",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "b7f90cd21cca66d36f3ddd4e575ea0ab",
+    "source": "theme",
+    "type": "title",
+    "answer": "Livermorium",
+    "normalizedAnswer": "LIVERMORIUM",
+    "category": "Periodic Element",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "3bf060e63b3ddcd36ce360a9e582428d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Tennessine",
+    "normalizedAnswer": "TENNESSINE",
+    "category": "Periodic Element",
+    "difficulty": 86,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  },
+  {
+    "id": "7e732a5a3332759ca26aa337a9d0b69c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Oganesson",
+    "normalizedAnswer": "OGANESSON",
+    "category": "Periodic Element",
+    "difficulty": 82.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "element"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    }
+  }
+]

@@ -1,0 +1,632 @@
+[
+  {
+    "id": "e70095ccfdf3d928d7839c661fb66435",
+    "source": "sports",
+    "type": "title",
+    "answer": "Milwaukee Brewers",
+    "normalizedAnswer": "MILWAUKEE BREWERS",
+    "category": "MLB Team",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "fe64eac8e394d06ed797ee3729f8526a",
+    "source": "sports",
+    "type": "title",
+    "answer": "Los Angeles Angels",
+    "normalizedAnswer": "LOS ANGELES ANGELS",
+    "category": "MLB Team",
+    "difficulty": 76,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 16,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "740d4d34a8bb2c2867d7e9336783ac24",
+    "source": "sports",
+    "type": "title",
+    "answer": "St. Louis Cardinals",
+    "normalizedAnswer": "ST LOUIS CARDINALS",
+    "category": "MLB Team",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 16,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "9f3910264f49518a95b6b3e18890d3ba",
+    "source": "sports",
+    "type": "title",
+    "answer": "Arizona Diamondbacks",
+    "normalizedAnswer": "ARIZONA DIAMONDBACKS",
+    "category": "MLB Team",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 19,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "4c387cfd91865ed5aa0f13099e7a22dc",
+    "source": "sports",
+    "type": "title",
+    "answer": "New York Mets",
+    "normalizedAnswer": "NEW YORK METS",
+    "category": "MLB Team",
+    "difficulty": 65.6,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 11,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "d205d1d293977ff3faa71b87d06e755e",
+    "source": "sports",
+    "type": "title",
+    "answer": "Philadelphia Phillies",
+    "normalizedAnswer": "PHILADELPHIA PHILLIES",
+    "category": "MLB Team",
+    "difficulty": 72,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 20,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "eedb3626278497cc83f491580ad21475",
+    "source": "sports",
+    "type": "title",
+    "answer": "Detroit Tigers",
+    "normalizedAnswer": "DETROIT TIGERS",
+    "category": "MLB Team",
+    "difficulty": 72.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "e8beac36d88a9eed180c98e901df94ac",
+    "source": "sports",
+    "type": "title",
+    "answer": "Colorado Rockies",
+    "normalizedAnswer": "COLORADO ROCKIES",
+    "category": "MLB Team",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "17dcb9fea519ffee02aa393836156123",
+    "source": "sports",
+    "type": "title",
+    "answer": "Houston Astros",
+    "normalizedAnswer": "HOUSTON ASTROS",
+    "category": "MLB Team",
+    "difficulty": 72.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "0815eeca01c38a097bd9987bc0d93a74",
+    "source": "sports",
+    "type": "title",
+    "answer": "Los Angeles Dodgers",
+    "normalizedAnswer": "LOS ANGELES DODGERS",
+    "category": "MLB Team",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 17,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "e4ef90daa60376a670ca83b0fa0ba0f3",
+    "source": "sports",
+    "type": "title",
+    "answer": "Boston Red Sox",
+    "normalizedAnswer": "BOSTON RED SOX",
+    "category": "MLB Team",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "57923d4a90009feb7cf814d734b306a2",
+    "source": "sports",
+    "type": "title",
+    "answer": "Texas Rangers",
+    "normalizedAnswer": "TEXAS RANGERS",
+    "category": "MLB Team",
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "845a2ff44fe04d1e62ff52dbee9cf9a2",
+    "source": "sports",
+    "type": "title",
+    "answer": "Cincinnati Reds",
+    "normalizedAnswer": "CINCINNATI REDS",
+    "category": "MLB Team",
+    "difficulty": 68.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "4c832b48f317f4f86540d66c54048a25",
+    "source": "sports",
+    "type": "title",
+    "answer": "Kansas City Royals",
+    "normalizedAnswer": "KANSAS CITY ROYALS",
+    "category": "MLB Team",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 16,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "91102dd0c67241235f9689d71ae37628",
+    "source": "sports",
+    "type": "title",
+    "answer": "Miami Marlins",
+    "normalizedAnswer": "MIAMI MARLINS",
+    "category": "MLB Team",
+    "difficulty": 77.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "3e72e8c316487690bc15a832e830a454",
+    "source": "sports",
+    "type": "title",
+    "answer": "Washington Nationals",
+    "normalizedAnswer": "WASHINGTON NATIONALS",
+    "category": "MLB Team",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 19,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "12f7e194c0087dab7dbab74196225060",
+    "source": "sports",
+    "type": "title",
+    "answer": "San Francisco Giants",
+    "normalizedAnswer": "SAN FRANCISCO GIANTS",
+    "category": "MLB Team",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 18,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "be379d4866ef312671151810adf0aea1",
+    "source": "sports",
+    "type": "title",
+    "answer": "Baltimore Orioles",
+    "normalizedAnswer": "BALTIMORE ORIOLES",
+    "category": "MLB Team",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "355405a4a3021f50b04c33107089b9a2",
+    "source": "sports",
+    "type": "title",
+    "answer": "San Diego Padres",
+    "normalizedAnswer": "SAN DIEGO PADRES",
+    "category": "MLB Team",
+    "difficulty": 64.4,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "9c76769a7ed75190ca0ded441f2b3ca4",
+    "source": "sports",
+    "type": "title",
+    "answer": "Pittsburgh Pirates",
+    "normalizedAnswer": "PITTSBURGH PIRATES",
+    "category": "MLB Team",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 17,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "5e4e9e595c581242a3120c14099abb0d",
+    "source": "sports",
+    "type": "title",
+    "answer": "Cleveland Guardians",
+    "normalizedAnswer": "CLEVELAND GUARDIANS",
+    "category": "MLB Team",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 18,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "a8946eb36ade0e6d105f603e58afa887",
+    "source": "sports",
+    "type": "title",
+    "answer": "Chicago White Sox",
+    "normalizedAnswer": "CHICAGO WHITE SOX",
+    "category": "MLB Team",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "5ad1140adff211eccf5c8557d1ff3bea",
+    "source": "sports",
+    "type": "title",
+    "answer": "Toronto Blue Jays",
+    "normalizedAnswer": "TORONTO BLUE JAYS",
+    "category": "MLB Team",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "06258377daafc917667759511f27a3d5",
+    "source": "sports",
+    "type": "title",
+    "answer": "Athletics",
+    "normalizedAnswer": "ATHLETICS",
+    "category": "MLB Team",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "7ff7846d35a81e80831176ec0f9146a2",
+    "source": "sports",
+    "type": "title",
+    "answer": "Seattle Mariners",
+    "normalizedAnswer": "SEATTLE MARINERS",
+    "category": "MLB Team",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "ff349e8462a861916fc494489a587bc4",
+    "source": "sports",
+    "type": "title",
+    "answer": "Minnesota Twins",
+    "normalizedAnswer": "MINNESOTA TWINS",
+    "category": "MLB Team",
+    "difficulty": 68.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "767edd64e0189b260091a385a19e696e",
+    "source": "sports",
+    "type": "title",
+    "answer": "Tampa Bay Rays",
+    "normalizedAnswer": "TAMPA BAY RAYS",
+    "category": "MLB Team",
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "d8704239950735ab358749c71f68517d",
+    "source": "sports",
+    "type": "title",
+    "answer": "Atlanta Braves",
+    "normalizedAnswer": "ATLANTA BRAVES",
+    "category": "MLB Team",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "f78be85f993fc9a7b3f657558c754555",
+    "source": "sports",
+    "type": "title",
+    "answer": "Chicago Cubs",
+    "normalizedAnswer": "CHICAGO CUBS",
+    "category": "MLB Team",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  },
+  {
+    "id": "e37224137a413b9b9ae77478a5915cdb",
+    "source": "sports",
+    "type": "title",
+    "answer": "New York Yankees",
+    "normalizedAnswer": "NEW YORK YANKEES",
+    "category": "MLB Team",
+    "difficulty": 68.4,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 14,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "mlb",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_stadiums"
+    }
+  }
+]

@@ -1,0 +1,3803 @@
+[
+  {
+    "id": "92caae37dd0da1d03be1ac799738de8f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Albatross",
+    "normalizedAnswer": "ALBATROSS",
+    "category": "Fauna",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "e5e92ccd357db165568396791d3b49db",
+    "source": "theme",
+    "type": "title",
+    "answer": "Alligator",
+    "normalizedAnswer": "ALLIGATOR",
+    "category": "Fauna",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "6cb7a3a1a3fb0f2bd64fc4cdb30978e5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Alpaca",
+    "normalizedAnswer": "ALPACA",
+    "category": "Fauna",
+    "difficulty": 91.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "b428e59646d93d8d1497a2f5569d0c8f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ant",
+    "normalizedAnswer": "ANT",
+    "category": "Fauna",
+    "difficulty": 96.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "cdc4444cc2c16b09c800cb9fcd3fa310",
+    "source": "theme",
+    "type": "title",
+    "answer": "Antelope",
+    "normalizedAnswer": "ANTELOPE",
+    "category": "Fauna",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "3d4c01e58ab66eb3ec6e4e89b8c42182",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ape",
+    "normalizedAnswer": "APE",
+    "category": "Fauna",
+    "difficulty": 96.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "11fa15cf3a44aed5bf13c2b5d1bd127d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Armadillo",
+    "normalizedAnswer": "ARMADILLO",
+    "category": "Fauna",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "93112e978d8c2eb698c3b4e43f23cdd9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Donkey",
+    "normalizedAnswer": "DONKEY",
+    "category": "Fauna",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "854a7f4ea00d767d455adfa15ea44824",
+    "source": "theme",
+    "type": "title",
+    "answer": "Baboon",
+    "normalizedAnswer": "BABOON",
+    "category": "Fauna",
+    "difficulty": 91.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "88cdacb3fe291a5826b3d7830ed0518f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Badger",
+    "normalizedAnswer": "BADGER",
+    "category": "Fauna",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "d7dd9165b7bce959b65a499968e66e99",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bat",
+    "normalizedAnswer": "BAT",
+    "category": "Fauna",
+    "difficulty": 96.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "1113758648413484e52577c0fe121274",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bear",
+    "normalizedAnswer": "BEAR",
+    "category": "Fauna",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "3e7da1e4fa39fb9d45ce5cb1e6b4eda7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Beaver",
+    "normalizedAnswer": "BEAVER",
+    "category": "Fauna",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "97e5069b4cd83f507b7da8771bd593e8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bee",
+    "normalizedAnswer": "BEE",
+    "category": "Fauna",
+    "difficulty": 100.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 2,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "77d7f996078dcbdb239a341f3254d132",
+    "source": "theme",
+    "type": "title",
+    "answer": "Beetle",
+    "normalizedAnswer": "BEETLE",
+    "category": "Fauna",
+    "difficulty": 91.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "2db5ef46e1cb8b63f19b7d581f27b6d7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Binturong",
+    "normalizedAnswer": "BINTURONG",
+    "category": "Fauna",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "24b2b6414ba7a3aea1d3f25990038809",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bison",
+    "normalizedAnswer": "BISON",
+    "category": "Fauna",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "f31688c00bacc01890747efb1899cf70",
+    "source": "theme",
+    "type": "title",
+    "answer": "Boar",
+    "normalizedAnswer": "BOAR",
+    "category": "Fauna",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "9e835dadb5b117fdcfd5da1e9526a808",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bobcat",
+    "normalizedAnswer": "BOBCAT",
+    "category": "Fauna",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "48f7502574a25b41e81e9ecfa759adfe",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bull",
+    "normalizedAnswer": "BULL",
+    "category": "Fauna",
+    "difficulty": 96.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "657f6f67a709c7d3a2d394f5e84bb496",
+    "source": "theme",
+    "type": "title",
+    "answer": "Butterfly",
+    "normalizedAnswer": "BUTTERFLY",
+    "category": "Fauna",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "afc4a375643e7b8e1e62fa4716d87adf",
+    "source": "theme",
+    "type": "title",
+    "answer": "Camel",
+    "normalizedAnswer": "CAMEL",
+    "category": "Fauna",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "1c6fd3e366a9a81bba8775b1739eedd4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cardinal",
+    "normalizedAnswer": "CARDINAL",
+    "category": "Fauna",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "af3937436f9b7fa2dbcb7f3272c7af87",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cat",
+    "normalizedAnswer": "CAT",
+    "category": "Fauna",
+    "difficulty": 96.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "3e3bb8e1fbc124fd69cb96ef4f656b52",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cattle",
+    "normalizedAnswer": "CATTLE",
+    "category": "Fauna",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "d625aaf1f866fface3f7fd41f4b2d6bb",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cheetah",
+    "normalizedAnswer": "CHEETAH",
+    "category": "Fauna",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "a38b6224e71a3e8410dbb2d9231636fc",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chicken",
+    "normalizedAnswer": "CHICKEN",
+    "category": "Fauna",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "d9f765386687a77df4a9465bae775aad",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chinchilla",
+    "normalizedAnswer": "CHINCHILLA",
+    "category": "Fauna",
+    "difficulty": 82,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "6a556e83268649656fa3577ad536572c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chough",
+    "normalizedAnswer": "CHOUGH",
+    "category": "Fauna",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "d9480b431257bb53380946244a973576",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cobra",
+    "normalizedAnswer": "COBRA",
+    "category": "Fauna",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "3677a7d1986d935dbad269b5106b8316",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cockroach",
+    "normalizedAnswer": "COCKROACH",
+    "category": "Fauna",
+    "difficulty": 82.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "0c50a137397272f51eb15678e9e7690f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cod",
+    "normalizedAnswer": "COD",
+    "category": "Fauna",
+    "difficulty": 96.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "5f98da7d93c1c6d1fdeb2ab2eb3d3386",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cormorant",
+    "normalizedAnswer": "CORMORANT",
+    "category": "Fauna",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "e21a879fdc0e4fd688b11321344cb49e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cow",
+    "normalizedAnswer": "COW",
+    "category": "Fauna",
+    "difficulty": 96.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "ce3e30fa06dc936edd8fbcd0c9d9977f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Crab",
+    "normalizedAnswer": "CRAB",
+    "category": "Fauna",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "3927eb1ee20173ebf402f77019251e0f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Crane",
+    "normalizedAnswer": "CRANE",
+    "category": "Fauna",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "9b00a3fd9c1fa3a82dfdee12c32043d6",
+    "source": "theme",
+    "type": "title",
+    "answer": "Crocodile",
+    "normalizedAnswer": "CROCODILE",
+    "category": "Fauna",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "70679ba3a5f7f2d1b3625b1f02ef81d1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Crow",
+    "normalizedAnswer": "CROW",
+    "category": "Fauna",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "15407629ce320ba2608cd97bae8fd32f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Deer",
+    "normalizedAnswer": "DEER",
+    "category": "Fauna",
+    "difficulty": 96.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "a82e95496c2da7f4ef4bdb111bea3b29",
+    "source": "theme",
+    "type": "title",
+    "answer": "Dog",
+    "normalizedAnswer": "DOG",
+    "category": "Fauna",
+    "difficulty": 96.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "15353ef83280e6d73dc0aff5c39c27b7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Dogfish",
+    "normalizedAnswer": "DOGFISH",
+    "category": "Fauna",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "5787bae62bba2672a934ebbb76bbfa12",
+    "source": "theme",
+    "type": "title",
+    "answer": "Dolphin",
+    "normalizedAnswer": "DOLPHIN",
+    "category": "Fauna",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "d81cc413700c38277e8825e6887be3ea",
+    "source": "theme",
+    "type": "title",
+    "answer": "Dove",
+    "normalizedAnswer": "DOVE",
+    "category": "Fauna",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "ed6f216a0a1dc9e8e5a67f70c310e982",
+    "source": "theme",
+    "type": "title",
+    "answer": "Duck",
+    "normalizedAnswer": "DUCK",
+    "category": "Fauna",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "57f9d40a3301fad0a82d8ede7dd35e79",
+    "source": "theme",
+    "type": "title",
+    "answer": "Dunlin",
+    "normalizedAnswer": "DUNLIN",
+    "category": "Fauna",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "6b058bca44341d919f09484b7537daa2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Eagle",
+    "normalizedAnswer": "EAGLE",
+    "category": "Fauna",
+    "difficulty": 92,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "9415d5efafd7751adad9232f4f8abdf5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Echidna",
+    "normalizedAnswer": "ECHIDNA",
+    "category": "Fauna",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "c8eb1d5942ae3ccc709d5e598dd662d2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Eel",
+    "normalizedAnswer": "EEL",
+    "category": "Fauna",
+    "difficulty": 100.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 2,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "64e5a05e64c5d7cf2754fb448b42ed60",
+    "source": "theme",
+    "type": "title",
+    "answer": "Elephant",
+    "normalizedAnswer": "ELEPHANT",
+    "category": "Fauna",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "3752eb35e70348522cdab5e309faf403",
+    "source": "theme",
+    "type": "title",
+    "answer": "Elk",
+    "normalizedAnswer": "ELK",
+    "category": "Fauna",
+    "difficulty": 96.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "bc0b92370a94ad09629d781a73ebfb50",
+    "source": "theme",
+    "type": "title",
+    "answer": "Emu",
+    "normalizedAnswer": "EMU",
+    "category": "Fauna",
+    "difficulty": 96.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "dac27431164b713136ac4860ef5394b7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Falcon",
+    "normalizedAnswer": "FALCON",
+    "category": "Fauna",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "748b3292d8118229c04fa09070fbac16",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ferret",
+    "normalizedAnswer": "FERRET",
+    "category": "Fauna",
+    "difficulty": 91.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "85ca691f36a48259a5c97d75b60d07d1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Finch",
+    "normalizedAnswer": "FINCH",
+    "category": "Fauna",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "affb8c725204b4653a0f4252b85a0493",
+    "source": "theme",
+    "type": "title",
+    "answer": "Flamingo",
+    "normalizedAnswer": "FLAMINGO",
+    "category": "Fauna",
+    "difficulty": 74.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "186f00111c1fdb5569f8818065968f1d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Fly",
+    "normalizedAnswer": "FLY",
+    "category": "Fauna",
+    "difficulty": 96.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "bd296b89df18948c340b8196828e71b1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Fox",
+    "normalizedAnswer": "FOX",
+    "category": "Fauna",
+    "difficulty": 96.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "084cfb428adbf00839f628e67dd7a307",
+    "source": "theme",
+    "type": "title",
+    "answer": "Frog",
+    "normalizedAnswer": "FROG",
+    "category": "Fauna",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "3cae90903858b817b72fe421e4003df9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Gecko",
+    "normalizedAnswer": "GECKO",
+    "category": "Fauna",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "5c8896e405dae8e1dda141cdd78f8a5e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Gerbil",
+    "normalizedAnswer": "GERBIL",
+    "category": "Fauna",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "4e66b3325a845a58de4c4de88ea9173a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Giant panda",
+    "normalizedAnswer": "GIANT PANDA",
+    "category": "Fauna",
+    "difficulty": 78,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "4f1892be1a0a19ae50ccd444cbb4ec7d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Giraffe",
+    "normalizedAnswer": "GIRAFFE",
+    "category": "Fauna",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "d3560a3c16cc85bf8750fe9be6812fbd",
+    "source": "theme",
+    "type": "title",
+    "answer": "Gnat",
+    "normalizedAnswer": "GNAT",
+    "category": "Fauna",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "69f32d4eaba19798a4af0fb6e1cd5c53",
+    "source": "theme",
+    "type": "title",
+    "answer": "Gnu",
+    "normalizedAnswer": "GNU",
+    "category": "Fauna",
+    "difficulty": 96.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "0e2491aab6ee0be083d7e1bc381e02af",
+    "source": "theme",
+    "type": "title",
+    "answer": "Goat",
+    "normalizedAnswer": "GOAT",
+    "category": "Fauna",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "8d51a94124916b7ab990c6831403cb63",
+    "source": "theme",
+    "type": "title",
+    "answer": "Goldfinch",
+    "normalizedAnswer": "GOLDFINCH",
+    "category": "Fauna",
+    "difficulty": 70.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "9762dcc1b15e524868bcb1e82cde334a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Goosander",
+    "normalizedAnswer": "GOOSANDER",
+    "category": "Fauna",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "eee5211333dc4022ee748ac1c8b39192",
+    "source": "theme",
+    "type": "title",
+    "answer": "Goose",
+    "normalizedAnswer": "GOOSE",
+    "category": "Fauna",
+    "difficulty": 92,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "17c53f0cbb051ead83993c4a8685be14",
+    "source": "theme",
+    "type": "title",
+    "answer": "Gorilla",
+    "normalizedAnswer": "GORILLA",
+    "category": "Fauna",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "a6046bb151c9fbbe2685951c377fd9a0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Goshawk",
+    "normalizedAnswer": "GOSHAWK",
+    "category": "Fauna",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "ed96394fcec52d70da552c5fd9608095",
+    "source": "theme",
+    "type": "title",
+    "answer": "Grasshopper",
+    "normalizedAnswer": "GRASSHOPPER",
+    "category": "Fauna",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "88d95df12b7d7323e606dc681393e9d1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Grouse",
+    "normalizedAnswer": "GROUSE",
+    "category": "Fauna",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "42057addcd71ba7dbfe05445a3850702",
+    "source": "theme",
+    "type": "title",
+    "answer": "Guanaco",
+    "normalizedAnswer": "GUANACO",
+    "category": "Fauna",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "8e28f43bc4e44f4b91a04aa2b60b5008",
+    "source": "theme",
+    "type": "title",
+    "answer": "Guinea fowl",
+    "normalizedAnswer": "GUINEA FOWL",
+    "category": "Fauna",
+    "difficulty": 66,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "0cd31c139c4ef132bc21f2428cd6f561",
+    "source": "theme",
+    "type": "title",
+    "answer": "Guinea pig",
+    "normalizedAnswer": "GUINEA PIG",
+    "category": "Fauna",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "47cfeaf8eeda115d3f08c3907a74e50c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Hamster",
+    "normalizedAnswer": "HAMSTER",
+    "category": "Fauna",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "1055ca0dccb5ef03234dd21d3a710583",
+    "source": "theme",
+    "type": "title",
+    "answer": "Hare",
+    "normalizedAnswer": "HARE",
+    "category": "Fauna",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "3db00ba1d4703c4f86f25c171cb6641b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Hawk",
+    "normalizedAnswer": "HAWK",
+    "category": "Fauna",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "483e255665cff8071f348d6ae2eea8cf",
+    "source": "theme",
+    "type": "title",
+    "answer": "Hedgehog",
+    "normalizedAnswer": "HEDGEHOG",
+    "category": "Fauna",
+    "difficulty": 86.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "5200292de15ecafacc8271fa6c95fa18",
+    "source": "theme",
+    "type": "title",
+    "answer": "Heron",
+    "normalizedAnswer": "HERON",
+    "category": "Fauna",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "7d2bf81f8a3547505942244ea3d44ad5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Herring",
+    "normalizedAnswer": "HERRING",
+    "category": "Fauna",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "f30fdfca9d6e7b681ebee1012a19e114",
+    "source": "theme",
+    "type": "title",
+    "answer": "Hippopotamus",
+    "normalizedAnswer": "HIPPOPOTAMUS",
+    "category": "Fauna",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "57d96e69903f249989f0be59a5e3b1fb",
+    "source": "theme",
+    "type": "title",
+    "answer": "Hornet",
+    "normalizedAnswer": "HORNET",
+    "category": "Fauna",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "fd8220df127c81ec121de81c8facc60e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Horse",
+    "normalizedAnswer": "HORSE",
+    "category": "Fauna",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "ad234b651da1633fdaa7cd17ef30cad3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Human",
+    "normalizedAnswer": "HUMAN",
+    "category": "Fauna",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "881c828850cd2a916d9635f4de4820c9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Hyena",
+    "normalizedAnswer": "HYENA",
+    "category": "Fauna",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "cd0dcf0bf32148699cd20334dc6b4b5e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Jaguar",
+    "normalizedAnswer": "JAGUAR",
+    "category": "Fauna",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "0bfcc1e239e85464e4259a72c5646e3d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Jay",
+    "normalizedAnswer": "JAY",
+    "category": "Fauna",
+    "difficulty": 96.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "84b05422b71b259b2bb65e81daba9e16",
+    "source": "theme",
+    "type": "title",
+    "answer": "Jellyfish",
+    "normalizedAnswer": "JELLYFISH",
+    "category": "Fauna",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "34b1f32a9edf47a41767b562a69ed608",
+    "source": "theme",
+    "type": "title",
+    "answer": "Junglefowl",
+    "normalizedAnswer": "JUNGLEFOWL",
+    "category": "Fauna",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "8ca6576429cef2976be13ad1bf776e57",
+    "source": "theme",
+    "type": "title",
+    "answer": "Kangaroo",
+    "normalizedAnswer": "KANGAROO",
+    "category": "Fauna",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "31bbbee084ac2a05b307a3723fc656e7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Kingbird",
+    "normalizedAnswer": "KINGBIRD",
+    "category": "Fauna",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "8593453e6076d382583afc9dc84ab227",
+    "source": "theme",
+    "type": "title",
+    "answer": "Kinkajou",
+    "normalizedAnswer": "KINKAJOU",
+    "category": "Fauna",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "c146a30c41acf2858963521cd0857fa1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Koala",
+    "normalizedAnswer": "KOALA",
+    "category": "Fauna",
+    "difficulty": 92,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "ddeef2f427916bb9f11cb5518c49fce2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ladybug",
+    "normalizedAnswer": "LADYBUG",
+    "category": "Fauna",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "b3b2dbf10d27d949ff8addd98f7ce851",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lapwing",
+    "normalizedAnswer": "LAPWING",
+    "category": "Fauna",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "82c720c0a6652c9c68374e55d0835707",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lark",
+    "normalizedAnswer": "LARK",
+    "category": "Fauna",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "df5cfaf9e50d526ff3d0004a68103536",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lemur",
+    "normalizedAnswer": "LEMUR",
+    "category": "Fauna",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "fc973856bb5197b1d412463e1630a24b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Leopard",
+    "normalizedAnswer": "LEOPARD",
+    "category": "Fauna",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "c9dc3edbf121ea25f87c6bf04d248a01",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lion",
+    "normalizedAnswer": "LION",
+    "category": "Fauna",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "1d890a255036f707ababc3c48bf3e2c5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lizard",
+    "normalizedAnswer": "LIZARD",
+    "category": "Fauna",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "15528565ec968269cafca79cd81ceb26",
+    "source": "theme",
+    "type": "title",
+    "answer": "Llama",
+    "normalizedAnswer": "LLAMA",
+    "category": "Fauna",
+    "difficulty": 96,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "1ad076bd386a75b33abc377496c88703",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lobster",
+    "normalizedAnswer": "LOBSTER",
+    "category": "Fauna",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "dcb29666d06b52c17edc477e3202a36f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Locust",
+    "normalizedAnswer": "LOCUST",
+    "category": "Fauna",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "f775e030ef04112c3cb7e5cae21baf68",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lyrebird",
+    "normalizedAnswer": "LYREBIRD",
+    "category": "Fauna",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "c26bdad1865db8fab6daf64203fcdd1a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mallard",
+    "normalizedAnswer": "MALLARD",
+    "category": "Fauna",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "bab3cfbdbd904a3365fe791b17868c75",
+    "source": "theme",
+    "type": "title",
+    "answer": "Meerkat",
+    "normalizedAnswer": "MEERKAT",
+    "category": "Fauna",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "00d835cc00997a13ebb0e43de2549794",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mole",
+    "normalizedAnswer": "MOLE",
+    "category": "Fauna",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "c3d10773237dcbc4ad5dbf43012c7ba3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mongoose",
+    "normalizedAnswer": "MONGOOSE",
+    "category": "Fauna",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "3b2e8a4aef8595c34c08c1af9b3d3512",
+    "source": "theme",
+    "type": "title",
+    "answer": "Monkey",
+    "normalizedAnswer": "MONKEY",
+    "category": "Fauna",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "f2b3e38dcdfff247282ce194cb9217df",
+    "source": "theme",
+    "type": "title",
+    "answer": "Moose",
+    "normalizedAnswer": "MOOSE",
+    "category": "Fauna",
+    "difficulty": 92,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "d4762d1f1bd64c63a346aa6ff3974ce3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mosquito",
+    "normalizedAnswer": "MOSQUITO",
+    "category": "Fauna",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "938f70d2fa4879cead2c907e27fd423c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Moth",
+    "normalizedAnswer": "MOTH",
+    "category": "Fauna",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "4597b736459df9a5ff79cac6504cbc78",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mouse",
+    "normalizedAnswer": "MOUSE",
+    "category": "Fauna",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "1f6dcab4cad037bba496ede3dffe4fc5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Narwhal",
+    "normalizedAnswer": "NARWHAL",
+    "category": "Fauna",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "088e274f6cfdc78271aa4bf8cdab7068",
+    "source": "theme",
+    "type": "title",
+    "answer": "Newt",
+    "normalizedAnswer": "NEWT",
+    "category": "Fauna",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "318736d38e95d49da93f4e90c7f9a677",
+    "source": "theme",
+    "type": "title",
+    "answer": "Nightingale",
+    "normalizedAnswer": "NIGHTINGALE",
+    "category": "Fauna",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "59ef8c74504cd87b209bb188735d58d8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Octopus",
+    "normalizedAnswer": "OCTOPUS",
+    "category": "Fauna",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "eba4c8b15eef3903e398ddb4e80c5079",
+    "source": "theme",
+    "type": "title",
+    "answer": "Opossum",
+    "normalizedAnswer": "OPOSSUM",
+    "category": "Fauna",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "1428bca711b7e7e481045da166fe710d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Otter",
+    "normalizedAnswer": "OTTER",
+    "category": "Fauna",
+    "difficulty": 92,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "14ac295658a67886324cc66909557e3c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Owl",
+    "normalizedAnswer": "OWL",
+    "category": "Fauna",
+    "difficulty": 96.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "97814c5195e2aa879286e11937ec8542",
+    "source": "theme",
+    "type": "title",
+    "answer": "Oyster",
+    "normalizedAnswer": "OYSTER",
+    "category": "Fauna",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "3778f7f13f45037700497836bb705623",
+    "source": "theme",
+    "type": "title",
+    "answer": "Panda",
+    "normalizedAnswer": "PANDA",
+    "category": "Fauna",
+    "difficulty": 92,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "b798180a69266afdd0d7a6ad2b2201dd",
+    "source": "theme",
+    "type": "title",
+    "answer": "Partridge",
+    "normalizedAnswer": "PARTRIDGE",
+    "category": "Fauna",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "5689be5b97bb23de1cdeaba1af54b84b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Peafowl",
+    "normalizedAnswer": "PEAFOWL",
+    "category": "Fauna",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "b2080758ae054ae12b7c3ea2d815eda5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Peccary",
+    "normalizedAnswer": "PECCARY",
+    "category": "Fauna",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "d4ea1d018f4a92b69295d51c3cc50b9e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Pelican",
+    "normalizedAnswer": "PELICAN",
+    "category": "Fauna",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "3adf624315867005e9d5625caeaa8393",
+    "source": "theme",
+    "type": "title",
+    "answer": "Penguin",
+    "normalizedAnswer": "PENGUIN",
+    "category": "Fauna",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "37e12febb76aab18e96cf0b704d56b12",
+    "source": "theme",
+    "type": "title",
+    "answer": "Pheasant",
+    "normalizedAnswer": "PHEASANT",
+    "category": "Fauna",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "c59fc8df7068abdbeaf948352b93900a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Pig",
+    "normalizedAnswer": "PIG",
+    "category": "Fauna",
+    "difficulty": 96.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "bffd8d2fd38f0dfb8a491c5513e60e04",
+    "source": "theme",
+    "type": "title",
+    "answer": "Pigeon",
+    "normalizedAnswer": "PIGEON",
+    "category": "Fauna",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "490e80cbcf4ac3cd31624da032ec3f99",
+    "source": "theme",
+    "type": "title",
+    "answer": "Platypus",
+    "normalizedAnswer": "PLATYPUS",
+    "category": "Fauna",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "886419f7ed7768cd229db8351c1d47d5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Polar bear",
+    "normalizedAnswer": "POLAR BEAR",
+    "category": "Fauna",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "3d21d258f3fa7d7b1a8322cbcd16f1a4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Pony",
+    "normalizedAnswer": "PONY",
+    "category": "Fauna",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "84621aee12fc65f31e5122e3e7e55dc9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Porcupine",
+    "normalizedAnswer": "PORCUPINE",
+    "category": "Fauna",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "33af98528cce11c79fd32f4e294b21b9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Prairie dog",
+    "normalizedAnswer": "PRAIRIE DOG",
+    "category": "Fauna",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "0f9b77b419816494673d82f6c0cb4809",
+    "source": "theme",
+    "type": "title",
+    "answer": "Pug",
+    "normalizedAnswer": "PUG",
+    "category": "Fauna",
+    "difficulty": 96.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "47daae756be316b2a3e85d544b0a5252",
+    "source": "theme",
+    "type": "title",
+    "answer": "Quail",
+    "normalizedAnswer": "QUAIL",
+    "category": "Fauna",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "f35b04caf4b8358e2195f6c3f21d4382",
+    "source": "theme",
+    "type": "title",
+    "answer": "Rabbit",
+    "normalizedAnswer": "RABBIT",
+    "category": "Fauna",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "79bb06b25cf342b3123c32d62e6f2059",
+    "source": "theme",
+    "type": "title",
+    "answer": "Raccoon",
+    "normalizedAnswer": "RACCOON",
+    "category": "Fauna",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "df1918fa4903b2589d66346552d2a352",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ram",
+    "normalizedAnswer": "RAM",
+    "category": "Fauna",
+    "difficulty": 96.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "d4eb32e8f8640a5a502b9d14c7a59d94",
+    "source": "theme",
+    "type": "title",
+    "answer": "Rat",
+    "normalizedAnswer": "RAT",
+    "category": "Fauna",
+    "difficulty": 96.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "06c1c34315e75f41928f72d050f9705a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Raven",
+    "normalizedAnswer": "RAVEN",
+    "category": "Fauna",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "ec847e9667630dc243a1e76250fa7f48",
+    "source": "theme",
+    "type": "title",
+    "answer": "Rhinoceros",
+    "normalizedAnswer": "RHINOCEROS",
+    "category": "Fauna",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "3ec113abbd9050bac09e38fe3633b990",
+    "source": "theme",
+    "type": "title",
+    "answer": "Rook",
+    "normalizedAnswer": "ROOK",
+    "category": "Fauna",
+    "difficulty": 96.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "4c3d65a1886a08698be203f795aa73f1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Salamander",
+    "normalizedAnswer": "SALAMANDER",
+    "category": "Fauna",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "5bad18fff5de9c66915f7c863998829f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Salmon",
+    "normalizedAnswer": "SALMON",
+    "category": "Fauna",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "9da2ea638f17002f97dd1a4d84add582",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sand dollar",
+    "normalizedAnswer": "SAND DOLLAR",
+    "category": "Fauna",
+    "difficulty": 78,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "8306afb000fb0f30c2696e206ec0867b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sandpiper",
+    "normalizedAnswer": "SANDPIPER",
+    "category": "Fauna",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "99c1a22a70a4d03e897dce5c0c4d05c1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sardine",
+    "normalizedAnswer": "SARDINE",
+    "category": "Fauna",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "9d0359d718692d9dca14ac96daa59e30",
+    "source": "theme",
+    "type": "title",
+    "answer": "Seahorse",
+    "normalizedAnswer": "SEAHORSE",
+    "category": "Fauna",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "b3f3e59cf4660cbea836ff21b8e8ae64",
+    "source": "theme",
+    "type": "title",
+    "answer": "Seal",
+    "normalizedAnswer": "SEAL",
+    "category": "Fauna",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "acb300affdd6172bf8a75a5d4e06e1b6",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sea otter",
+    "normalizedAnswer": "SEA OTTER",
+    "category": "Fauna",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "49f3c6d17fcd3e8027e5d54f46086bed",
+    "source": "theme",
+    "type": "title",
+    "answer": "Shark",
+    "normalizedAnswer": "SHARK",
+    "category": "Fauna",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "1bd1284eb0f8ff2579369a983f19c285",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sheep",
+    "normalizedAnswer": "SHEEP",
+    "category": "Fauna",
+    "difficulty": 92,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "df692f73bc7521572c29ac8e428d566d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Skunk",
+    "normalizedAnswer": "SKUNK",
+    "category": "Fauna",
+    "difficulty": 92,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "b3024f1825a2fb43019c9906242605ee",
+    "source": "theme",
+    "type": "title",
+    "answer": "Snail",
+    "normalizedAnswer": "SNAIL",
+    "category": "Fauna",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "a9b9b0f7e6417c334e4bc19dc95b211f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Snake",
+    "normalizedAnswer": "SNAKE",
+    "category": "Fauna",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "aa5314b1d6de06fbce10ab6d8f74b9e8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Spider",
+    "normalizedAnswer": "SPIDER",
+    "category": "Fauna",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "6cdbc0bdc7fc321f3a0fee92ccd52a7b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Spoonbill",
+    "normalizedAnswer": "SPOONBILL",
+    "category": "Fauna",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "896d0f590be3ed8526fe656f97b7ca0c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Squid",
+    "normalizedAnswer": "SQUID",
+    "category": "Fauna",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "d9a423ebb3b5bd8aa2692f3698d1d700",
+    "source": "theme",
+    "type": "title",
+    "answer": "Squirrel",
+    "normalizedAnswer": "SQUIRREL",
+    "category": "Fauna",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "0279bc83cecfe98be8297fcf3415c9b9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Starfish",
+    "normalizedAnswer": "STARFISH",
+    "category": "Fauna",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "61eab3a893aff30ab3bb554351dfa597",
+    "source": "theme",
+    "type": "title",
+    "answer": "Starling",
+    "normalizedAnswer": "STARLING",
+    "category": "Fauna",
+    "difficulty": 74.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "3e2f0bf0f99ec2be59afdf78fed6576f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Stingray",
+    "normalizedAnswer": "STINGRAY",
+    "category": "Fauna",
+    "difficulty": 74.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "8aab00d8ea64380bf5f22ef9c1ec66d0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Swan",
+    "normalizedAnswer": "SWAN",
+    "category": "Fauna",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "b1536acb6a99c432dac7a854580e0460",
+    "source": "theme",
+    "type": "title",
+    "answer": "Termite",
+    "normalizedAnswer": "TERMITE",
+    "category": "Fauna",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "78ea050ae23455c8c3b1d1f4084d5736",
+    "source": "theme",
+    "type": "title",
+    "answer": "Thrush",
+    "normalizedAnswer": "THRUSH",
+    "category": "Fauna",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "15c1f462c5df4a37023f98072d76c649",
+    "source": "theme",
+    "type": "title",
+    "answer": "Tiger",
+    "normalizedAnswer": "TIGER",
+    "category": "Fauna",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "96c9248c4465f218f6c1e7a4d7594a87",
+    "source": "theme",
+    "type": "title",
+    "answer": "Toad",
+    "normalizedAnswer": "TOAD",
+    "category": "Fauna",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "ee29be4bd6e13acc89cface6a3f17dc5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Toucan",
+    "normalizedAnswer": "TOUCAN",
+    "category": "Fauna",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "559962f2e614f234f28e982b7f287579",
+    "source": "theme",
+    "type": "title",
+    "answer": "Turkey",
+    "normalizedAnswer": "TURKEY",
+    "category": "Fauna",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "641970324a0e15741ce67cfcc9510ade",
+    "source": "theme",
+    "type": "title",
+    "answer": "Turtle",
+    "normalizedAnswer": "TURTLE",
+    "category": "Fauna",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "5b86f374c51086d7b1db48aabc1496a0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Wallaby",
+    "normalizedAnswer": "WALLABY",
+    "category": "Fauna",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "b0f5070ba8dc74bce97aa5b158ed5dc1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Wasp",
+    "normalizedAnswer": "WASP",
+    "category": "Fauna",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "c73e390539c42758bf1beaf17f67d9f1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Weasel",
+    "normalizedAnswer": "WEASEL",
+    "category": "Fauna",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "1b5aed7aab3b09d3c10c2b133681166b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Whale",
+    "normalizedAnswer": "WHALE",
+    "category": "Fauna",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "16e0b740c92e04ece68700441cab8fc9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Wildebeest",
+    "normalizedAnswer": "WILDEBEEST",
+    "category": "Fauna",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "ee1d90a0cf82695cdf0ff7b02e17571b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Wolf",
+    "normalizedAnswer": "WOLF",
+    "category": "Fauna",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "e73b0bb52fd17ee586aa52eb7426db28",
+    "source": "theme",
+    "type": "title",
+    "answer": "Wombat",
+    "normalizedAnswer": "WOMBAT",
+    "category": "Fauna",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  },
+  {
+    "id": "4b572f90231b33eda0ae3fb52a0d0e5c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Zebra",
+    "normalizedAnswer": "ZEBRA",
+    "category": "Fauna",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "nature",
+      "fauna"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
+    }
+  }
+]

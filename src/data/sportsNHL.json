@@ -1,0 +1,674 @@
+[
+  {
+    "id": "41ad05dd95046cf5f87f556ac04345c9",
+    "source": "sports",
+    "type": "title",
+    "answer": "Florida Panthers",
+    "normalizedAnswer": "FLORIDA PANTHERS",
+    "category": "NHL Team",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "8395b0bd5d3421bf1a828292126f8f28",
+    "source": "sports",
+    "type": "title",
+    "answer": "Dallas Stars",
+    "normalizedAnswer": "DALLAS STARS",
+    "category": "NHL Team",
+    "difficulty": 81.6,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "9b1529aeb17c68aef762bdfd2a4081fd",
+    "source": "sports",
+    "type": "title",
+    "answer": "Colorado Avalanche",
+    "normalizedAnswer": "COLORADO AVALANCHE",
+    "category": "NHL Team",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 17,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "99b09a14edb2d29fe22fc11fdb88d6bb",
+    "source": "sports",
+    "type": "title",
+    "answer": "Montreal Canadiens",
+    "normalizedAnswer": "MONTREAL CANADIENS",
+    "category": "NHL Team",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 17,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "2b90d65e1f3dc5249b7daeecba329350",
+    "source": "sports",
+    "type": "title",
+    "answer": "Tampa Bay Lightning",
+    "normalizedAnswer": "TAMPA BAY LIGHTNING",
+    "category": "NHL Team",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 17,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "90d6e012ea97433dc05dfd09bc859ea8",
+    "source": "sports",
+    "type": "title",
+    "answer": "Nashville Predators",
+    "normalizedAnswer": "NASHVILLE PREDATORS",
+    "category": "NHL Team",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 18,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "c5d619608eb5d81ac71363d1d2d1d3d9",
+    "source": "sports",
+    "type": "title",
+    "answer": "Winnipeg Jets",
+    "normalizedAnswer": "WINNIPEG JETS",
+    "category": "NHL Team",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "9437a436b028bef66efc13c652a9e560",
+    "source": "sports",
+    "type": "title",
+    "answer": "Ottawa Senators",
+    "normalizedAnswer": "OTTAWA SENATORS",
+    "category": "NHL Team",
+    "difficulty": 72.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "2464407ec1b12711762cf191835bb755",
+    "source": "sports",
+    "type": "title",
+    "answer": "Washington Capitals",
+    "normalizedAnswer": "WASHINGTON CAPITALS",
+    "category": "NHL Team",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 18,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "35631426550d0da10801a099a48d5e1f",
+    "source": "sports",
+    "type": "title",
+    "answer": "Seattle Kraken",
+    "normalizedAnswer": "SEATTLE KRAKEN",
+    "category": "NHL Team",
+    "difficulty": 72.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "e5c861094ac78bd2996185815141b61c",
+    "source": "sports",
+    "type": "title",
+    "answer": "Los Angeles Kings",
+    "normalizedAnswer": "LOS ANGELES KINGS",
+    "category": "NHL Team",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "dd561c0647d3e0a8c6d6ac31c0d186eb",
+    "source": "sports",
+    "type": "title",
+    "answer": "Utah Mammoth",
+    "normalizedAnswer": "UTAH MAMMOTH",
+    "category": "NHL Team",
+    "difficulty": 81.6,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "5f48d56ccffdfaeac2ece7783df4fb8b",
+    "source": "sports",
+    "type": "title",
+    "answer": "St. Louis Blues",
+    "normalizedAnswer": "ST LOUIS BLUES",
+    "category": "NHL Team",
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "bd96438b4209d56de5cdd138e60902cf",
+    "source": "sports",
+    "type": "title",
+    "answer": "Minnesota Wild",
+    "normalizedAnswer": "MINNESOTA WILD",
+    "category": "NHL Team",
+    "difficulty": 60.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "bb269d2867e982a3c62f610d986ccef5",
+    "source": "sports",
+    "type": "title",
+    "answer": "Anaheim Ducks",
+    "normalizedAnswer": "ANAHEIM DUCKS",
+    "category": "NHL Team",
+    "difficulty": 61.2,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "f39661f0b0dfe0162815784fb384c1c8",
+    "source": "sports",
+    "type": "title",
+    "answer": "Buffalo Sabres",
+    "normalizedAnswer": "BUFFALO SABRES",
+    "category": "NHL Team",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "dce1d39cd87487f4f03376913ce61ea1",
+    "source": "sports",
+    "type": "title",
+    "answer": "Carolina Hurricanes",
+    "normalizedAnswer": "CAROLINA HURRICANES",
+    "category": "NHL Team",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 18,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "ea11f3a226d4a7deccfb245c293bf730",
+    "source": "sports",
+    "type": "title",
+    "answer": "Detroit Red Wings",
+    "normalizedAnswer": "DETROIT RED WINGS",
+    "category": "NHL Team",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "3468105ce90ee64913a93c644f5f76c2",
+    "source": "sports",
+    "type": "title",
+    "answer": "New York Rangers",
+    "normalizedAnswer": "NEW YORK RANGERS",
+    "category": "NHL Team",
+    "difficulty": 64.4,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "83785e94d3b772b896b0b8bebb97651d",
+    "source": "sports",
+    "type": "title",
+    "answer": "Columbus Blue Jackets",
+    "normalizedAnswer": "COLUMBUS BLUE JACKETS",
+    "category": "NHL Team",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 19,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "2064d4a116148f1c4304fe47c6f472ed",
+    "source": "sports",
+    "type": "title",
+    "answer": "Pittsburgh Penguins",
+    "normalizedAnswer": "PITTSBURGH PENGUINS",
+    "category": "NHL Team",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 18,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "f2bba083b221bf91f8aa08d851a39731",
+    "source": "sports",
+    "type": "title",
+    "answer": "New Jersey Devils",
+    "normalizedAnswer": "NEW JERSEY DEVILS",
+    "category": "NHL Team",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "9e34ac93f65c00c91a5ea0344b7955bc",
+    "source": "sports",
+    "type": "title",
+    "answer": "Vancouver Canucks",
+    "normalizedAnswer": "VANCOUVER CANUCKS",
+    "category": "NHL Team",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "ee694b9345f232cad0cb7b881178a7d4",
+    "source": "sports",
+    "type": "title",
+    "answer": "Edmonton Oilers",
+    "normalizedAnswer": "EDMONTON OILERS",
+    "category": "NHL Team",
+    "difficulty": 64.4,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "517908531ca052d0f4ee1348648f17d1",
+    "source": "sports",
+    "type": "title",
+    "answer": "San Jose Sharks",
+    "normalizedAnswer": "SAN JOSE SHARKS",
+    "category": "NHL Team",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "771f0f276a06c1de75a4485fd55dc2c4",
+    "source": "sports",
+    "type": "title",
+    "answer": "Toronto Maple Leafs",
+    "normalizedAnswer": "TORONTO MAPLE LEAFS",
+    "category": "NHL Team",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 17,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "c90255c44c8dfd19773843cc6c7490fd",
+    "source": "sports",
+    "type": "title",
+    "answer": "Calgary Flames",
+    "normalizedAnswer": "CALGARY FLAMES",
+    "category": "NHL Team",
+    "difficulty": 64.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "be11bc81af70992565dc6a4bde6c02b2",
+    "source": "sports",
+    "type": "title",
+    "answer": "Boston Bruins",
+    "normalizedAnswer": "BOSTON BRUINS",
+    "category": "NHL Team",
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "09f9285a532d802b50df682452a608d3",
+    "source": "sports",
+    "type": "title",
+    "answer": "Vegas Golden Knights",
+    "normalizedAnswer": "VEGAS GOLDEN KNIGHTS",
+    "category": "NHL Team",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 18,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "3bcb4120ab1a05c8ef1f7f7f1958e3ec",
+    "source": "sports",
+    "type": "title",
+    "answer": "New York Islanders",
+    "normalizedAnswer": "NEW YORK ISLANDERS",
+    "category": "NHL Team",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 16,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "22ebc6ecf6b25278c05d7e1241322b71",
+    "source": "sports",
+    "type": "title",
+    "answer": "Chicago Blackhawks",
+    "normalizedAnswer": "CHICAGO BLACKHAWKS",
+    "category": "NHL Team",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 17,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  },
+  {
+    "id": "b13a5b6d1124140fa9cce14330eaf8ac",
+    "source": "sports",
+    "type": "title",
+    "answer": "Philadelphia Flyers",
+    "normalizedAnswer": "PHILADELPHIA FLYERS",
+    "category": "NHL Team",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 18,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "nhl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas"
+    }
+  }
+]

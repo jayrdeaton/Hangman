@@ -1,5 +1,6 @@
+import { Pressable } from '@rific/haptic-press'
 import React, { useCallback, useEffect, useRef, useState } from 'react'
-import { FlatList, LayoutChangeEvent, Pressable, StyleSheet, View } from 'react-native'
+import { FlatList, LayoutChangeEvent, StyleSheet, View } from 'react-native'
 import { Text, useTheme } from 'react-native-paper'
 
 import { ALL_MODES } from '@/modes/registry'
@@ -44,9 +45,10 @@ type Props = {
   onSelect: (mode: GameMode) => void
 }
 
-// Memoized — this renders inside PuzzleDrawer, which re-renders on every keystroke typed into the
-// custom-phrase/hint fields. Without memoizing (and keeping `selected`/`onSelect` referentially
-// stable from the caller), the whole mode carousel re-rendered on every keystroke for no reason.
+// Memoized — this renders inside PuzzleDrawer, which re-renders on every local state change (a
+// difficulty pick, Choose Packs opening, etc). Without memoizing (and keeping `selected`/`onSelect`
+// referentially stable from the caller), the whole mode carousel re-rendered for changes that have
+// nothing to do with it.
 export const ModeSelector = React.memo(({ selected, color, onSelect }: Props) => {
   const theme = useTheme()
   const listRef = useRef<FlatList<GameMode>>(null)

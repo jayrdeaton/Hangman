@@ -1,7 +1,8 @@
 import { Dialog } from '@rific/auto-paper'
+import { Button } from '@rific/haptic-press'
 import { JSX, useEffect } from 'react'
 import { AccessibilityInfo, StyleSheet, View } from 'react-native'
-import { Button, ProgressBar, Text, useTheme } from 'react-native-paper'
+import { ProgressBar, Text, useTheme } from 'react-native-paper'
 
 import { commaString } from '@/utils/commaString'
 
@@ -19,12 +20,14 @@ export type RoundEndDialogProps = {
   phrase: string
   categoryProgress?: CategoryProgress | null
   onDismiss: () => void
-  onAnotherInCategory?: () => void
+  // Overrides the continue button's wording. Pass-and-play uses this because continuing there means
+  // writing the next word rather than being handed another puzzle. Nothing else about the result
+  // changes: whoever is holding the device is "you", so the outcome copy stays as-is.
+  continueLabel?: string
 }
 
-export const RoundEndDialog = ({ visible, outcome, phrase, categoryProgress, onDismiss, onAnotherInCategory }: RoundEndDialogProps): JSX.Element => {
+export const RoundEndDialog = ({ visible, outcome, phrase, categoryProgress, onDismiss, continueLabel }: RoundEndDialogProps): JSX.Element => {
   const theme = useTheme()
-  const showAnother = outcome === 'win' && Boolean(categoryProgress) && Boolean(onAnotherInCategory)
 
   // @rific/auto-paper's Dialog renders through a custom Portal+BlurView path when the app's
   // (default-on) blur setting is enabled, which — unlike react-native-paper's own Modal — sets no
@@ -54,18 +57,13 @@ export const RoundEndDialog = ({ visible, outcome, phrase, categoryProgress, onD
             </View>
           </View>
         ) : null}
-        {showAnother ? (
-          // Top/primary spot and label kept to one word — pack labels ("Theme Holidays
-          // Celebrations") can run long enough to wrap inside the button's fixed-height content
-          // box and get clipped, and the category is already named in the progress line above.
-          // accessibilityLabel spells the action out in full for screen-reader users navigating
-          // without that visual context.
-          <Button mode='contained' onPress={onAnotherInCategory} accessibilityLabel='Another puzzle in this category' style={styles.button} contentStyle={styles.buttonContent}>
-            Another
-          </Button>
-        ) : null}
-        <Button mode={showAnother ? 'outlined' : 'contained'} onPress={onDismiss} style={styles.button} contentStyle={styles.buttonContent}>
-          Next puzzle
+        {/* One button that already knows where to draw the next puzzle from — see
+            GameStartPayload.packScope and Main's handleRoundEnd: still inside the pack the player
+            was browsing if they were browsing one, otherwise back to their whole selection. No
+            separate "stay in this pack" action needed since it's not really a choice, just what
+            continuing already means given how this round started. */}
+        <Button mode='contained' onPress={onDismiss} style={styles.button} contentStyle={styles.buttonContent}>
+          {continueLabel ?? 'Next puzzle'}
         </Button>
       </Dialog.Content>
     </Dialog>
