@@ -114,5 +114,6 @@ export const stormCloudMode: GameMode = {
   category: 'quantitative',
   behavior: 'accumulation',
   maxMistakes: 6,
+  hidden: true,
   Visual: StormCloudVisual
 }

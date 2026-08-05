@@ -1,6 +1,14 @@
 import { act, fireEvent, render } from '@testing-library/react-native'
+import * as haptics from 'expo-haptics'
 
 import { BURST_LIFETIME_MS, Fireworks, MAX_BURST_INTERVAL_MS, MIN_BURST_INTERVAL_MS } from '@/effects/fireworks'
+
+jest.mock('expo-haptics', () => ({
+  impactAsync: jest.fn(),
+  ImpactFeedbackStyle: { Light: 'light', Medium: 'medium', Heavy: 'heavy' }
+}))
+
+const mockImpactAsync = jest.mocked(haptics.impactAsync)
 
 const LAYOUT_EVENT = { nativeEvent: { layout: { x: 0, y: 0, width: 320, height: 480 } } }
 const COLORS = ['#ff0000', '#00ff00', '#0000ff']
@@ -12,8 +20,36 @@ const PARTICLES_PER_BURST = 14
 // render root's queryAll rather than by label/text/testID. `root` is only null if nothing
 // rendered, which can't happen here — the non-null assertions reflect that.
 describe('Fireworks', () => {
+  beforeEach(() => {
+    mockImpactAsync.mockClear()
+  })
+
   afterEach(() => {
     jest.useRealTimers()
+  })
+
+  it('gives every burst a light haptic pop as it spawns, not the heavier style a correct-letter guess or the win itself uses', async () => {
+    const { root } = await render(<Fireworks colors={COLORS} onComplete={jest.fn()} />)
+
+    await fireEvent(root!, 'layout', LAYOUT_EVENT)
+
+    expect(mockImpactAsync).toHaveBeenCalledWith(haptics.ImpactFeedbackStyle.Light)
+  })
+
+  it('pops again for every successive burst, not just the first', async () => {
+    jest.useFakeTimers()
+    const { root } = await render(<Fireworks colors={COLORS} onComplete={jest.fn()} />)
+
+    await act(async () => {
+      await fireEvent(root!, 'layout', LAYOUT_EVENT)
+    })
+    expect(mockImpactAsync).toHaveBeenCalledTimes(1)
+
+    await act(async () => {
+      jest.advanceTimersByTime((MAX_BURST_INTERVAL_MS + BURST_LIFETIME_MS) * 3)
+    })
+
+    expect(mockImpactAsync.mock.calls.length).toBeGreaterThan(1)
   })
 
   it('renders no particles until layout fires, then renders one burst worth of particles', async () => {

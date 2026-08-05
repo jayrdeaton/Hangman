@@ -187,7 +187,13 @@ jest.mock('@rific/scroll-view', () => {
       return React.createElement(RN.FlatList, safeProps)
     },
     PullSearch: () => null,
-    ScrollViewHeader: ({ children }: any) => children || null,
+    // Renders title/caption/centerContent and back/trailing actions for real (unlike a bare
+    // `children || null` stand-in) — every drawer migrated onto this package drives its header
+    // through those props, not children, so a test asserting on "Hangman" or pressing "Close"
+    // needs this mock to actually put them in the tree. accessibilityLabel default of 'Back'
+    // mirrors react-native-paper's own Appbar.BackAction default, for the same reason the real
+    // package's backActionAccessibilityLabel prop exists — most callers here override it.
+    ScrollViewHeader: ({ backAction, backActionAccessibilityLabel, caption, centerContent, children, title, trailingAction }: any) => (children !== undefined ? children : React.createElement(React.Fragment, null, backAction && React.createElement(RN.Pressable, { accessibilityLabel: backActionAccessibilityLabel ?? 'Back', accessibilityRole: 'button', onPress: backAction }), centerContent !== undefined ? centerContent : React.createElement(React.Fragment, null, title && React.createElement(RN.Text, null, title), caption && React.createElement(RN.Text, null, caption)), trailingAction ?? null)),
     ScrollViewFooter: ({ children }: any) => children || null,
     ScrollViewProvider: ({ children }: any) => children,
     ScrollViewSettingsProvider: ({ children }: any) => children,

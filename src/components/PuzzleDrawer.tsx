@@ -1,14 +1,14 @@
 import { AppearancePicker, PalettePicker, useThemeSettings } from '@rific/auto-paper'
 import { Drawer, DrawerEdgeSwipe } from '@rific/drawer'
-import { Button, IconButton, SegmentedButtons, TouchableRipple } from '@rific/haptic-press'
+import { Button, IconButton, SegmentedButtons, TouchableRipple, useVibration } from '@rific/haptic-press'
+import { ScrollView, ScrollViewFooter, ScrollViewHeader, ScrollViewProvider } from '@rific/scroll-view'
 import { useUpdater } from '@rific/updater'
 import { JSX, useCallback, useEffect, useMemo, useState } from 'react'
-import { Platform, ScrollView as RNScrollView, StyleSheet, View } from 'react-native'
+import { Platform, StyleSheet, View } from 'react-native'
 import { Text, useTheme } from 'react-native-paper'
 import { useSharedValue } from 'react-native-reanimated'
-import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
-import { DRAWER_HEADER_ROW_STYLE, DRAWER_HEADER_TITLE_WRAP_STYLE } from '@/constants/drawerHeader'
+import { DRAWER_BASE_Z_INDEX } from '@/constants/drawerStacking'
 import { release } from '@/constants/release'
 import { getContainerColor, useDifficultyColors, useDifficultyContainerColors } from '@/hooks/useDifficultyColors'
 import { useKeyboardLayout } from '@/hooks/useKeyboardLayout'
@@ -59,7 +59,7 @@ export const PuzzleDrawer = ({ visible, onDismiss, onRequestOpen, initialConfig,
   // check() below is purely an ADDITIONAL affordance for a player who wants to force a check right
   // now, now that the version text has a natural home for it in the header.
   const { check, checking, updateReady } = useUpdater()
-  const insets = useSafeAreaInsets()
+  const { selection } = useVibration()
   // packsVersion isn't read here — it's a change counter bumped whenever a custom pack is
   // created/edited/deleted/imported, since getPuzzleManifest() otherwise looks pure to React.
   // eslint-disable-next-line react-hooks/exhaustive-deps -- packsVersion is an intentional external invalidation trigger, not a value the memo body reads
@@ -205,116 +205,122 @@ export const PuzzleDrawer = ({ visible, onDismiss, onRequestOpen, initialConfig,
 
   return (
     <>
-      <DrawerEdgeSwipe enabled={!visible} onOpen={onRequestOpen} translateX={translateX} width={DRAWER_WIDTH} />
-      <Drawer open={visible} onClose={onDismiss} translateX={translateX} width={DRAWER_WIDTH}>
-        {/* PacksScreen and PackPuzzlesDrawer each render as a full-width Drawer of their own,
-            stacked on top of this one while open — visually complete coverage, but this panel's
-            own content stays mounted underneath (Drawer never unmounts on close, just
-            translates). Without factoring anyOverlayVisible in here too, this panel's title/close
-            button/fields would stay reachable by screen readers and keyboard focus while
-            invisible behind whichever screen is covering them. */}
-        <View testID='puzzle-drawer-panel' style={[styles.panelContent, { paddingTop: insets.top, paddingBottom: insets.bottom }]} accessibilityViewIsModal={visible && !anyOverlayVisible} accessibilityElementsHidden={!visible || anyOverlayVisible} importantForAccessibility={visible && !anyOverlayVisible ? 'yes' : 'no-hide-descendants'} onAccessibilityEscape={visible && !anyOverlayVisible ? onDismiss : undefined}>
-          <View style={styles.headerRow}>
-            {/* The hamburger icon that opens this already says "menu" — naming the app instead is
-                more informative, and the OTA version rides along right underneath it rather than
-                its own separate card further down (see the removed Card that used to sit at the
-                bottom of the scroll content).
-                The whole title block is the touch target, not just the version line — "Hangman" is
-                as good a place to expect a tap as the version text right under it, and a two-line
-                target is easier to find and hit than a single small caption.
-                Tappable — check() is a no-op (an informational alert) in dev and on web by the
-                hook's own design, so this only does something real in a production build; harmless
-                either way to leave reachable everywhere rather than platform-gating the touch
-                target itself.
-                padding+negative margin (not hitSlop) — the hover/ripple highlight is the touchable's
-                own visible box, so it needs real breathing room around the text to round out nicely;
-                hitSlop only extends invisible touch detection, it doesn't affect what the hover
-                state actually looks like. The negative margin cancels the padding back out so it
-                doesn't shrink the touchable within DRAWER_HEADER_TITLE_WRAP_STYLE's own reserved
-                width — a centered title, matching every other drawer's header (see
-                AchievementsDrawer), not left-aligned flush with the row's edge.
-                Close sits on the LEADING (left) side, not trailing — this drawer opens from the
+      <DrawerEdgeSwipe enabled={!visible} onOpen={onRequestOpen} translateOffset={translateX} width={DRAWER_WIDTH} />
+      {/* open is gated on !anyOverlayVisible too, not just visible — PacksScreen and
+          PackPuzzlesDrawer each render as a full-width Drawer of their own, stacked on top of this
+          one while open. Now that every drawer's header/footer float over a blurred backdrop (see
+          the @rific/scroll-view migration), leaving this panel visually "open" underneath a
+          blurred child stacked on top of it read as a layering glitch — a second, redundant blur
+          bleeding through behind the one actually in front. Sliding this panel out of the way
+          while a child is open (then back in once it closes) reads as real navigation instead:
+          this panel closing IS what makes room for the child, not an accident of them overlapping.
+          Content still stays mounted underneath either way (Drawer never unmounts on close, just
+          translates) — accessibilityElementsHidden below (unchanged) is what keeps its title/close
+          button/fields from staying reachable by screen readers and keyboard focus while
+          invisible. */}
+      <Drawer open={visible && !anyOverlayVisible} onClose={onDismiss} translateOffset={translateX} width={DRAWER_WIDTH} zIndex={DRAWER_BASE_Z_INDEX}>
+        <View testID='puzzle-drawer-panel' style={styles.panelContent} accessibilityViewIsModal={visible && !anyOverlayVisible} accessibilityElementsHidden={!visible || anyOverlayVisible} importantForAccessibility={visible && !anyOverlayVisible ? 'yes' : 'no-hide-descendants'} onAccessibilityEscape={visible && !anyOverlayVisible ? onDismiss : undefined}>
+          <ScrollViewProvider>
+            {/* Close sits on the LEADING (left) side, not trailing — this drawer opens from the
                 hamburger icon at the top-left of the game screen, so closing it from the same
                 corner your thumb already used to open it keeps the gesture symmetric. Every other
                 drawer reached from here (PackPuzzlesDrawer, PacksScreen and its own children)
                 follows the same left-anchored convention; AchievementsDrawer stays right-anchored
-                since it opens from the trophy icon on the opposite corner.
-                arrow-left rather than a plain X — the arrow's direction shows which way this panel
-                actually moves when dismissed (back off to the left, the same way it slid in), which
-                a direction-less X can't communicate; it also sidesteps any expectation that an X
-                belongs in the top-right corner, since this isn't that convention at all. */}
-            <IconButton icon='arrow-left' onPress={onDismiss} accessibilityLabel='Close' />
-            {/* Absolutely positioned across the full row (see DRAWER_HEADER_TITLE_WRAP_STYLE) so
-                its center is the row's true center, independent of the icon/spacer widths on
-                either side of it. numberOfLines={1} on both lines — unlike every sibling drawer's
-                single-line title, this is a two-line title+subtitle stack inside a fixed-height
-                row with no overflow clipping, so without it a large OS accessibility font size
-                could wrap the (dynamic, so unpredictably wide) subtitle onto an extra line and
-                bleed past the row into the Appearance section right below it. */}
-            <View style={DRAWER_HEADER_TITLE_WRAP_STYLE}>
-              <TouchableRipple onPress={handleCheckForUpdate} disabled={checking} accessibilityRole='button' accessibilityLabel={checking ? 'Checking for updates' : 'Check for updates'} style={styles.titleTouchable}>
-                <View>
-                  <Text variant='titleLarge' numberOfLines={1} style={styles.centeredText}>
-                    Hangman
-                  </Text>
-                  {/* "OTA" is Expo/EAS-update jargon — meaningful for spotting which build a player's
-                      on, meaningless to the player themselves. The bare "v" + number is what's
-                      actually being loaded (release.otaVersion), still legible as a version to someone
-                      who's never heard the term OTA. */}
-                  <Text variant='bodySmall' numberOfLines={1} style={[styles.headerSubtitle, styles.centeredText]}>
-                    v{release.otaVersion}
-                    {checking ? ' · checking…' : updateReady ? ' · update ready' : ''}
-                  </Text>
-                </View>
-              </TouchableRipple>
-            </View>
-            <View style={styles.headerSpacer} />
-          </View>
+                since it opens from the trophy icon on the opposite corner. 'Close', not the
+                Appbar.BackAction default of 'Back' — this dismisses the whole panel, it doesn't
+                step back a level within it (see backActionAccessibilityLabel on every other
+                migrated drawer's ScrollViewHeader for the same reasoning). selection() here, not
+                left to Appbar.BackAction itself — unlike @rific/haptic-press's own AppbarBackAction
+                wrapper, ScrollViewHeader renders react-native-paper's raw Appbar.BackAction
+                internally with no haptic of its own, so the app's haptic convention (every other
+                pressable in this app fires one) has to be added at the call site instead. */}
+            <ScrollViewHeader
+              backAction={() => {
+                selection()
+                onDismiss()
+              }}
+              backActionAccessibilityLabel='Close'
+              // The hamburger icon that opens this already says "menu" — naming the app instead is
+              // more informative, and the OTA version rides along right underneath it rather than
+              // its own separate card further down (see the removed Card that used to sit at the
+              // bottom of the scroll content). The whole title block is the touch target, not just
+              // the version line — "Hangman" is as good a place to expect a tap as the version text
+              // right under it, and a two-line target is easier to find and hit than a single small
+              // caption. Tappable — check() is a no-op (an informational alert) in dev and on web by
+              // the hook's own design, so this only does something real in a production build;
+              // harmless either way to leave reachable everywhere rather than platform-gating the
+              // touch target itself. centerContent (not title/caption) since this needs its own
+              // TouchableRipple wrapper around a two-line stack, not ScrollViewHeader's plain Text.
+              centerContent={
+                <TouchableRipple onPress={handleCheckForUpdate} disabled={checking} accessibilityRole='button' accessibilityLabel={checking ? 'Checking for updates' : 'Check for updates'} style={styles.titleTouchable}>
+                  <View>
+                    <Text variant='titleLarge' numberOfLines={1} style={styles.centeredText}>
+                      Hangman
+                    </Text>
+                    {/* "OTA" is Expo/EAS-update jargon — meaningful for spotting which build a player's
+                        on, meaningless to the player themselves. The bare "v" + number is what's
+                        actually being loaded (release.otaVersion), still legible as a version to someone
+                        who's never heard the term OTA. */}
+                    <Text variant='bodySmall' numberOfLines={1} style={[styles.headerSubtitle, styles.centeredText]}>
+                      v{release.otaVersion}
+                      {checking ? ' · checking…' : updateReady ? ' · update ready' : ''}
+                    </Text>
+                  </View>
+                </TouchableRipple>
+              }
+            />
 
-          <RNScrollView style={styles.flex} contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps='handled'>
-            {/* App-wide appearance leads the drawer — a quick, no-scroll toggle now that Settings
+            <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps='handled'>
+              {/* App-wide appearance leads the drawer — a quick, no-scroll toggle now that Settings
                 has been folded into this hamburger menu, ahead of the puzzle-specific controls
                 below it. The accent-color swatch sits inline with the picker rather than as its
                 own labeled row — what it does is obvious without a caption. */}
-            <Text variant='titleMedium' style={styles.topSectionLabel}>
-              Appearance
-            </Text>
-            <View style={styles.row}>
-              <PalettePicker value={settings.color} onChange={(color) => set({ color })} />
-              <View style={styles.flex}>
-                <AppearancePicker value={settings.appearance} onChange={(appearance) => set({ appearance })} showLabels={false} />
+              <Text variant='titleMedium' style={styles.topSectionLabel}>
+                Appearance
+              </Text>
+              <View style={styles.row}>
+                <PalettePicker value={settings.color} onChange={(color) => set({ color })} />
+                <View style={styles.flex}>
+                  <AppearancePicker value={settings.appearance} onChange={(appearance) => set({ appearance })} showLabels={false} />
+                </View>
               </View>
-            </View>
 
-            {/* No title — QWERTY vs ABC is self-explanatory without one. */}
-            <SegmentedButtons
-              value={layout}
-              onValueChange={(value) => setLayout(value as typeof layout)}
-              buttons={[
-                { value: 'qwerty', label: 'QWERTY' },
-                { value: 'abc', label: 'ABC' }
-              ]}
-              style={styles.keyboardPicker}
-            />
+              {/* No title — QWERTY vs ABC is self-explanatory without one. */}
+              <SegmentedButtons
+                value={layout}
+                onValueChange={(value) => setLayout(value as typeof layout)}
+                buttons={[
+                  { value: 'qwerty', label: 'QWERTY' },
+                  { value: 'abc', label: 'ABC' }
+                ]}
+                style={styles.keyboardPicker}
+              />
 
-            {/* The hero: the visual/tactile choice (what the round looks and feels like) leads,
+              {/* The hero: the visual/tactile choice (what the round looks and feels like) leads,
                 ahead of the more utilitarian pack/difficulty controls below it. No label — the
-                mode cards are self-explanatory without one. */}
-            <ModeSelector selected={draft.mode} color={settings.color} onSelect={handleSelectMode} />
+                mode cards are self-explanatory without one. Negative margin cancels
+                scrollContent's own paddingHorizontal just for this one section, so the peek cards
+                on either side reach flush to the drawer's true left/right edges — a full-bleed
+                carousel, not inset like the text/buttons above and below it. ModeSelector's own
+                sidePadding math (see that file) is what still keeps the cards themselves centered
+                and clipped there, not this margin. */}
+              <View style={styles.modeSelectorBleed}>
+                <ModeSelector selected={draft.mode} color={settings.color} onSelect={handleSelectMode} />
+              </View>
 
-            <Text variant='titleMedium' style={styles.heroAdjacentSectionLabel}>
-              Difficulty
-            </Text>
-            <SegmentedButtons value={draft.difficulty} onValueChange={(value) => handleSelectDifficulty(value as 'any' | PuzzleDifficultyTier)} buttons={difficultyOptions} />
+              <Text variant='titleMedium' style={styles.heroAdjacentSectionLabel}>
+                Difficulty
+              </Text>
+              <SegmentedButtons value={draft.difficulty} onValueChange={(value) => handleSelectDifficulty(value as 'any' | PuzzleDifficultyTier)} buttons={difficultyOptions} />
 
-            <Text variant='titleMedium' style={styles.sectionLabel}>
-              Packs
-            </Text>
-            <Button mode='outlined' icon='format-list-checks' onPress={() => setPacksScreenVisible(true)} contentStyle={styles.choosePacksContent}>
-              {packSummaryLabel}
-            </Button>
+              <Text variant='titleMedium' style={styles.sectionLabel}>
+                Packs
+              </Text>
+              <Button mode='outlined' icon='format-list-checks' onPress={() => setPacksScreenVisible(true)} contentStyle={styles.choosePacksContent}>
+                {packSummaryLabel}
+              </Button>
 
-            {/* One row per pack in the current selection — tapping it opens that pack's own
+              {/* One row per pack in the current selection — tapping it opens that pack's own
                 puzzle list (browse and pick one, or draw randomly from just there), without
                 changing the selection itself. Manage which packs are IN this list via Choose
                 packs above; this is only ever a subset of what's selected there. The trailing
@@ -322,36 +328,36 @@ export const PuzzleDrawer = ({ visible, onDismiss, onRequestOpen, initialConfig,
                 it unselects the pack (same selectedPackKeys Choose packs itself toggles), so
                 "hidden" here just means "unselected there", and Choose packs is already the place
                 to bring it back. */}
-            <View style={styles.packList}>
-              {selectedPacks.map((item) => {
-                const unlocked = getUnlockedCountForPack(unlockMap, item.key)
-                const progress = item.count > 0 ? unlocked / item.count : 0
-                return <PackRow key={item.key} label={item.label} group={item.group} subtitle={`${commaString(unlocked)} of ${commaString(item.count)} unlocked`} progress={progress} onPress={() => handleOpenPack(item.key)} trailing={<IconButton icon='eye-off-outline' size={20} onPress={() => setSelectedPackKeys(selectedPackKeys.filter((key) => key !== item.key))} accessibilityLabel={`Hide ${item.label}`} />} />
-              })}
-            </View>
-          </RNScrollView>
+              <View style={styles.packList}>
+                {selectedPacks.map((item) => {
+                  const unlocked = getUnlockedCountForPack(unlockMap, item.key)
+                  const progress = item.count > 0 ? unlocked / item.count : 0
+                  return <PackRow key={item.key} label={item.label} group={item.group} subtitle={`${commaString(unlocked)} of ${commaString(item.count)} unlocked`} progress={progress} onPress={() => handleOpenPack(item.key)} trailing={<IconButton icon='eye-off-outline' size={20} onPress={() => setSelectedPackKeys(selectedPackKeys.filter((key) => key !== item.key))} accessibilityLabel={`Hide ${item.label}`} />} />
+                })}
+              </View>
+            </ScrollView>
 
-          {/* A fixed footer, not part of the scrollable content — leaving the button inline at the
-              end of a form this short left a large dead gap below it instead of avoiding one.
-              Docking it here closes that gap and keeps the primary action reachable without
-              scrolling. No divider above it — the padding alone reads as separate from the
-              content without adding a hard line. */}
-          <View style={styles.footer}>
-            <Button mode='contained' icon='play' onPress={handleConfirm} contentStyle={styles.confirmContent} labelStyle={styles.confirmLabel}>
-              Random
-            </Button>
-            <Button mode='contained-tonal' icon='account-multiple' onPress={onStartPnp} style={styles.pnpButton} contentStyle={styles.confirmContent} labelStyle={styles.confirmLabel}>
-              Pass &amp; play
-            </Button>
-          </View>
+            {/* Not part of the scrollable content — leaving the button inline at the end of a form
+                this short left a large dead gap below it instead of avoiding one. Docking it here
+                closes that gap and keeps the primary action reachable without scrolling. Scrolls
+                away with the rest of the chrome while actively scrolling and snaps back once it
+                settles (ScrollViewProvider's own default), rather than staying permanently pinned. */}
+            <ScrollViewFooter style={styles.footer}>
+              <Button mode='contained' icon='play' onPress={handleConfirm} contentStyle={styles.confirmContent} labelStyle={styles.confirmLabel}>
+                Random
+              </Button>
+              <Button mode='contained-tonal' icon='account-multiple' onPress={onStartPnp} style={styles.pnpButton} contentStyle={styles.confirmContent} labelStyle={styles.confirmLabel}>
+                Pass &amp; play
+              </Button>
+            </ScrollViewFooter>
+          </ScrollViewProvider>
         </View>
       </Drawer>
 
       <PacksScreen visible={packsScreenVisible} onDismiss={() => setPacksScreenVisible(false)} selectedKeys={selectedPackKeys} onChangeSelectedKeys={setSelectedPackKeys} packsVersion={packsVersion} onPacksChanged={onPacksChanged} />
 
-      {/* Rendered last so it stacks above both this drawer's own panel and PacksScreen — every
-          Drawer instance shares the same z-index (see @rific/drawer), so DOM order is what
-          decides who paints on top. */}
+      {/* Stacks above both this drawer's own panel and PacksScreen via its own hardcoded
+          DRAWER_PACK_DETAIL_Z_INDEX (see @/constants/drawerStacking) — not render order. */}
       <PackPuzzlesDrawer visible={playDrawerVisible} packKey={playPackKey} mode={draft.mode} difficulty={draft.difficulty} onDismiss={() => setPlayDrawerVisible(false)} onConfirm={onConfirm} />
     </>
   )
@@ -363,13 +369,16 @@ const styles = StyleSheet.create({
   confirmContent: { height: 52 },
   confirmLabel: { fontSize: 16, fontWeight: '700' },
   flex: { flex: 1 },
+  // flexDirection/alignItems override ScrollViewFooter's own row+center defaults — Random and Pass
+  // & play stack vertically here (see pnpButton's marginTop below) and each stretch full width,
+  // matching this footer's look before the scroll-view migration.
   footer: {
+    alignItems: 'stretch',
+    flexDirection: 'column',
     paddingBottom: 16,
     paddingHorizontal: 16,
     paddingTop: 16
   },
-  headerRow: DRAWER_HEADER_ROW_STYLE,
-  headerSpacer: { width: 40 },
   headerSubtitle: { opacity: 0.7 },
   // A tighter top margin than a standalone section would use — right under the mode cards, so it
   // reads as "here's what you just picked" rather than a new, unrelated block starting.
@@ -381,6 +390,11 @@ const styles = StyleSheet.create({
   // Tight above (same Appearance group as the row it follows), a full section break below —
   // ModeSelector brings no vertical margin of its own, so the gap before the artwork lives here.
   keyboardPicker: { marginBottom: 16, marginTop: 8 },
+  // Cancels scrollContent's own paddingHorizontal (16, see below) — negative, not zero, since
+  // this wraps ModeSelector rather than replacing its container, so the escape has to happen
+  // from the outside in. -16 exactly matches scrollContent's own value on purpose: change one,
+  // change the other.
+  modeSelectorBleed: { marginHorizontal: -16 },
   packList: { marginTop: 8 },
   panelContent: {
     boxShadow: [{ offsetX: 2, offsetY: 0, blurRadius: 8, color: SHADOW_COLOR }],
@@ -405,10 +419,10 @@ const styles = StyleSheet.create({
     marginTop: 16
   },
   // margin cancels padding out — the touchable needs real padding for its own hover/ripple box to
-  // round out away from the text (see the comment at its call site). No flex:1 — DRAWER_HEADER_
-  // TITLE_WRAP_STYLE's own justifyContent:'center' is what vertically centers this within the
-  // header row, and a flex:1 child here would stretch to fill that entire row height itself,
-  // pinning its content to the top instead and leaving the parent's centering with nothing to do.
+  // round out away from the text (see the comment at its call site). No flex:1 — ScrollViewHeader's
+  // own centerContent slot is what centers this, and a flex:1 child here would stretch to fill that
+  // slot's full height itself, pinning its content to the top instead of leaving the centering
+  // nothing to do.
   titleTouchable: {
     borderRadius: 8,
     margin: -8,

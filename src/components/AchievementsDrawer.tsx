@@ -1,12 +1,12 @@
 import { useAutoPaperTheme } from '@rific/auto-paper'
 import { Drawer } from '@rific/drawer'
 import { Button, IconButton } from '@rific/haptic-press'
+import { ScrollView, ScrollViewFooter, ScrollViewHeader, ScrollViewProvider } from '@rific/scroll-view'
 import { JSX, useEffect, useMemo, useState } from 'react'
-import { ScrollView, StyleSheet, View } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 import { Avatar, Card, Icon, ProgressBar, Text } from 'react-native-paper'
-import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
-import { DRAWER_HEADER_ROW_STYLE, DRAWER_HEADER_TITLE_WRAP_STYLE } from '@/constants/drawerHeader'
+import { DRAWER_BASE_Z_INDEX } from '@/constants/drawerStacking'
 import type { GameMode } from '@/types/gameModes'
 import type { GameStartPayload } from '@/types/gameSession'
 import { ACHIEVEMENT_DEFINITIONS, type AchievementId, type AchievementStats, clearAchievements, DEFAULT_ACHIEVEMENT_STATS, getAchievementStats } from '@/utils/achievements'
@@ -47,7 +47,6 @@ export type AchievementsDrawerProps = {
 // them.
 export const AchievementsDrawer = ({ visible, onDismiss, unlockVersion, onUnlocksChanged, mode, difficulty, onConfirm }: AchievementsDrawerProps): JSX.Element => {
   const theme = useAutoPaperTheme()
-  const insets = useSafeAreaInsets()
   const manifest = useMemo(() => getPuzzleManifest().filter((item) => item.count > 0), [])
   const [unlockMap, setUnlockMap] = useState<PuzzleUnlockMap>({})
   const [detailPackKey, setDetailPackKey] = useState<string | null>(null)
@@ -201,161 +200,158 @@ export const AchievementsDrawer = ({ visible, onDismiss, unlockVersion, onUnlock
 
   return (
     <>
-      <Drawer open={visible} onClose={onDismiss} width={DRAWER_WIDTH} side='right'>
-        <View testID='achievements-drawer-panel' style={[styles.panelContent, { paddingTop: insets.top, paddingBottom: insets.bottom }]} accessibilityViewIsModal={visible} accessibilityElementsHidden={!visible} importantForAccessibility={visible ? 'yes' : 'no-hide-descendants'} onAccessibilityEscape={visible ? (detailPackKey ? () => setDetailPackKey(null) : onDismiss) : undefined}>
-          {/* Both the top-level close and the drilled-in back-arrow sit on the TRAILING (right)
-              side — this drawer opens from the trophy icon at the top-right of the game screen, so
-              its own exit action stays under the same thumb that opened it, same as every drawer
-              in the Game Menu's lineage stays left-anchored to ITS opener (see PuzzleDrawer).
-              The top-level exit is arrow-right, not X — mirrors PuzzleDrawer's arrow-left: the
-              direction shows this panel moves off to the right (the way it slid in) when
-              dismissed, and reads as its own thing rather than the top-right-corner-X convention.
-              The drilled-in back-arrow stays arrow-left regardless — that's page-level "go back one
-              level" navigation within this drawer, not the whole-panel dismiss direction, so it
-              keeps the universal back-arrow meaning instead of following the panel's own side. */}
-          <View style={styles.headerRow}>
-            <View style={styles.headerSpacer} />
-            {/* Absolutely positioned (see DRAWER_HEADER_TITLE_WRAP_STYLE) so it centers on the
-                row's true center rather than the leftover flex space. */}
-            <View style={DRAWER_HEADER_TITLE_WRAP_STYLE}>
-              <Text variant='titleLarge' numberOfLines={1} style={styles.headerTitleText}>
-                {detailPackKey ? detailPackLabel : 'Achievements'}
-              </Text>
-            </View>
-            {detailPackKey ? <IconButton icon='arrow-left' onPress={() => setDetailPackKey(null)} accessibilityLabel='Back to achievements' /> : <IconButton icon='arrow-right' onPress={onDismiss} accessibilityLabel='Close' />}
-          </View>
+      <Drawer open={visible} onClose={onDismiss} width={DRAWER_WIDTH} side='right' zIndex={DRAWER_BASE_Z_INDEX}>
+        <View testID='achievements-drawer-panel' style={styles.panelContent} accessibilityViewIsModal={visible} accessibilityElementsHidden={!visible} importantForAccessibility={visible ? 'yes' : 'no-hide-descendants'} onAccessibilityEscape={visible ? (detailPackKey ? () => setDetailPackKey(null) : onDismiss) : undefined}>
+          <ScrollViewProvider>
+            {/* Both the top-level close and the drilled-in back-arrow sit on the TRAILING (right)
+                side — this drawer opens from the trophy icon at the top-right of the game screen, so
+                its own exit action stays under the same thumb that opened it, same as every drawer
+                in the Game Menu's lineage stays left-anchored to ITS opener (see PuzzleDrawer).
+                trailingAction, not backAction — ScrollViewHeader's backAction always renders on the
+                LEADING side, which would put this drawer's exit action on the wrong side; IconButton
+                here is @rific/haptic-press's own wrapper (already fires haptics), unlike
+                Appbar.BackAction, so no manual selection() call is needed the way backAction needs
+                one elsewhere. The top-level exit is arrow-right, not X — mirrors PuzzleDrawer's
+                arrow-left: the direction shows this panel moves off to the right (the way it slid
+                in) when dismissed, and reads as its own thing rather than the top-right-corner-X
+                convention. The drilled-in back-arrow stays arrow-left regardless — that's page-level
+                "go back one level" navigation within this drawer, not the whole-panel dismiss
+                direction, so it keeps the universal back-arrow meaning instead of following the
+                panel's own side. */}
+            <ScrollViewHeader title={detailPackKey ? detailPackLabel : 'Achievements'} trailingAction={detailPackKey ? <IconButton icon='arrow-left' onPress={() => setDetailPackKey(null)} accessibilityLabel='Back to achievements' /> : <IconButton icon='arrow-right' onPress={onDismiss} accessibilityLabel='Close' />} />
 
-          {detailPackKey ? (
-            <View style={styles.flex}>
-              <PackPuzzleList packKey={detailPackKey} initialFilter='all' onPlayPuzzle={handlePlayPuzzle} />
-              <View style={styles.footer}>
-                <Button mode='contained' icon='play' onPress={handleRandom} contentStyle={styles.confirmContent} labelStyle={styles.confirmLabel}>
-                  Random
-                </Button>
-              </View>
-            </View>
-          ) : (
-            <ScrollView showsVerticalScrollIndicator={false} style={styles.flex} contentContainerStyle={styles.scrollContent}>
-              <Card style={styles.card} mode='contained'>
-                <Card.Content>
-                  <Text variant='labelLarge' style={styles.overline}>
-                    Total progress
-                  </Text>
-                  <Text variant='displaySmall' style={styles.bigNumber}>
-                    {commaString(totalUnlocked)}
-                    <Text variant='titleMedium' style={styles.muted}>
-                      {' '}
-                      / {commaString(totalAvailable)}
+            {detailPackKey ? (
+              <>
+                <PackPuzzleList packKey={detailPackKey} initialFilter='all' onPlayPuzzle={handlePlayPuzzle} />
+                <ScrollViewFooter style={styles.footer}>
+                  <Button mode='contained' icon='play' onPress={handleRandom} contentStyle={styles.confirmContent} labelStyle={styles.confirmLabel}>
+                    Random
+                  </Button>
+                </ScrollViewFooter>
+              </>
+            ) : (
+              <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.scrollContent}>
+                <Card style={styles.card} mode='contained'>
+                  <Card.Content>
+                    <Text variant='labelLarge' style={styles.overline}>
+                      Total progress
                     </Text>
-                  </Text>
-                  <Text variant='bodySmall' style={styles.muted}>
-                    puzzles unlocked
-                  </Text>
-                  <View style={styles.progressBarWrapper}>
-                    <ProgressBar progress={overallProgress} style={[styles.progressBar, { backgroundColor: theme.colors.background }]} />
-                  </View>
-                </Card.Content>
-              </Card>
+                    <Text variant='displaySmall' style={styles.bigNumber}>
+                      {commaString(totalUnlocked)}
+                      <Text variant='titleMedium' style={styles.muted}>
+                        {' '}
+                        / {commaString(totalAvailable)}
+                      </Text>
+                    </Text>
+                    <Text variant='bodySmall' style={styles.muted}>
+                      puzzles unlocked
+                    </Text>
+                    <View style={styles.progressBarWrapper}>
+                      <ProgressBar progress={overallProgress} style={[styles.progressBar, { backgroundColor: theme.colors.background }]} />
+                    </View>
+                  </Card.Content>
+                </Card>
 
-              <Text variant='titleMedium' style={styles.sectionLabel}>
-                Stats
-              </Text>
-              <Card style={styles.card} mode='contained'>
-                <Card.Content>
-                  <View style={styles.statsGrid}>
-                    {soloStats.map((stat) => (
-                      <View key={stat.label} testID={`stat-${stat.label}`} style={styles.statTile}>
-                        <Text variant='titleLarge' style={styles.statValue}>
-                          {commaString(stat.value)}
-                          {stat.suffix ?? ''}
-                        </Text>
-                        <Text variant='bodySmall' style={styles.muted}>
-                          {stat.label}
-                        </Text>
-                      </View>
-                    ))}
-                  </View>
-
-                  <Text variant='labelLarge' style={styles.statsSubLabel}>
-                    Pass & play
-                  </Text>
-                  <View style={styles.statsGrid}>
-                    {pnpStats.map((stat) => (
-                      <View key={stat.label} testID={`stat-pnp-${stat.label}`} style={styles.statTile}>
-                        <Text variant='titleLarge' style={styles.statValue}>
-                          {commaString(stat.value)}
-                          {stat.suffix ?? ''}
-                        </Text>
-                        <Text variant='bodySmall' style={styles.muted}>
-                          {stat.label}
-                        </Text>
-                      </View>
-                    ))}
-                  </View>
-                </Card.Content>
-              </Card>
-
-              <Text variant='titleMedium' style={styles.sectionLabel}>
-                Achievements
-              </Text>
-              {ACHIEVEMENT_DEFINITIONS.map((def) => {
-                const unlocked = achievementStats.unlockedIds.includes(def.id)
-                const count = achievementCounts[def.id]
-                return (
-                  <Card key={def.id} style={styles.card} mode='contained'>
-                    <Card.Content style={styles.achievementRow}>
-                      <Avatar.Icon size={40} icon={def.icon} style={unlocked ? styles.achievementIconUnlocked : styles.achievementIconLocked} />
-                      <View style={styles.achievementText}>
-                        <View style={styles.achievementTitleRow}>
-                          <Text variant='titleSmall' style={unlocked ? undefined : styles.muted}>
-                            {def.title}
+                <Text variant='titleMedium' style={styles.sectionLabel}>
+                  Stats
+                </Text>
+                <Card style={styles.card} mode='contained'>
+                  <Card.Content>
+                    <View style={styles.statsGrid}>
+                      {soloStats.map((stat) => (
+                        <View key={stat.label} testID={`stat-${stat.label}`} style={styles.statTile}>
+                          <Text variant='titleLarge' style={styles.statValue}>
+                            {commaString(stat.value)}
+                            {stat.suffix ?? ''}
                           </Text>
-                          {unlocked && count ? (
-                            <Text variant='bodySmall' style={styles.muted}>
-                              ×{commaString(count)}
-                            </Text>
-                          ) : null}
+                          <Text variant='bodySmall' style={styles.muted}>
+                            {stat.label}
+                          </Text>
                         </View>
-                        <Text variant='bodySmall' style={styles.muted}>
-                          {def.description}
-                        </Text>
-                      </View>
-                    </Card.Content>
-                  </Card>
-                )
-              })}
+                      ))}
+                    </View>
 
-              <Text variant='titleMedium' style={styles.sectionLabel}>
-                Browse by pack
-              </Text>
-              {manifest.map((item) => {
-                const unlocked = getUnlockedCountForPack(unlockMap, item.key)
-                const complete = item.count > 0 && unlocked >= item.count
-                const progress = item.count > 0 ? unlocked / item.count : 0
-                return <PackRow key={item.key} label={item.label} group={item.group} subtitle={`${commaString(unlocked)} of ${commaString(item.count)} unlocked`} progress={progress} onPress={() => setDetailPackKey(item.key)} trailing={<Icon source={complete ? 'trophy' : 'chevron-right'} size={24} color={complete ? theme.colors.primary : theme.colors.onSurfaceVariant} />} />
-              })}
+                    <Text variant='labelLarge' style={styles.statsSubLabel}>
+                      Pass & play
+                    </Text>
+                    <View style={styles.statsGrid}>
+                      {pnpStats.map((stat) => (
+                        <View key={stat.label} testID={`stat-pnp-${stat.label}`} style={styles.statTile}>
+                          <Text variant='titleLarge' style={styles.statValue}>
+                            {commaString(stat.value)}
+                            {stat.suffix ?? ''}
+                          </Text>
+                          <Text variant='bodySmall' style={styles.muted}>
+                            {stat.label}
+                          </Text>
+                        </View>
+                      ))}
+                    </View>
+                  </Card.Content>
+                </Card>
 
-              <Text variant='titleMedium' style={styles.sectionLabel}>
-                Progress backup
-              </Text>
-              <Button mode='contained-tonal' icon='export-variant' onPress={() => void handleExport()}>
-                Export progress
-              </Button>
-              <Button mode='contained-tonal' icon='import' onPress={() => void handleImportFile()} style={styles.spaced}>
-                Import progress
-              </Button>
-              <Text variant='bodySmall' style={styles.muted}>
-                Imports merge with your existing progress.
-              </Text>
+                <Text variant='titleMedium' style={styles.sectionLabel}>
+                  Achievements
+                </Text>
+                {ACHIEVEMENT_DEFINITIONS.map((def) => {
+                  const unlocked = achievementStats.unlockedIds.includes(def.id)
+                  const count = achievementCounts[def.id]
+                  return (
+                    <Card key={def.id} style={styles.card} mode='contained'>
+                      <Card.Content style={styles.achievementRow}>
+                        <Avatar.Icon size={40} icon={def.icon} style={unlocked ? styles.achievementIconUnlocked : styles.achievementIconLocked} />
+                        <View style={styles.achievementText}>
+                          <View style={styles.achievementTitleRow}>
+                            <Text variant='titleSmall' style={unlocked ? undefined : styles.muted}>
+                              {def.title}
+                            </Text>
+                            {unlocked && count ? (
+                              <Text variant='bodySmall' style={styles.muted}>
+                                ×{commaString(count)}
+                              </Text>
+                            ) : null}
+                          </View>
+                          <Text variant='bodySmall' style={styles.muted}>
+                            {def.description}
+                          </Text>
+                        </View>
+                      </Card.Content>
+                    </Card>
+                  )
+                })}
 
-              <Text variant='titleMedium' style={styles.sectionLabel}>
-                Danger zone
-              </Text>
-              <Button mode='outlined' icon='delete-outline' textColor={theme.colors.danger} onPress={() => setConfirmResetVisible(true)}>
-                Reset all progress
-              </Button>
-            </ScrollView>
-          )}
+                <Text variant='titleMedium' style={styles.sectionLabel}>
+                  Browse by pack
+                </Text>
+                {manifest.map((item) => {
+                  const unlocked = getUnlockedCountForPack(unlockMap, item.key)
+                  const complete = item.count > 0 && unlocked >= item.count
+                  const progress = item.count > 0 ? unlocked / item.count : 0
+                  return <PackRow key={item.key} label={item.label} group={item.group} subtitle={`${commaString(unlocked)} of ${commaString(item.count)} unlocked`} progress={progress} onPress={() => setDetailPackKey(item.key)} trailing={<Icon source={complete ? 'trophy' : 'chevron-right'} size={24} color={complete ? theme.colors.primary : theme.colors.onSurfaceVariant} />} />
+                })}
+
+                <Text variant='titleMedium' style={styles.sectionLabel}>
+                  Progress backup
+                </Text>
+                <Button mode='contained-tonal' icon='export-variant' onPress={() => void handleExport()}>
+                  Export progress
+                </Button>
+                <Button mode='contained-tonal' icon='import' onPress={() => void handleImportFile()} style={styles.spaced}>
+                  Import progress
+                </Button>
+                <Text variant='bodySmall' style={styles.muted}>
+                  Imports merge with your existing progress.
+                </Text>
+
+                <Text variant='titleMedium' style={styles.sectionLabel}>
+                  Danger zone
+                </Text>
+                <Button mode='outlined' icon='delete-outline' textColor={theme.colors.danger} onPress={() => setConfirmResetVisible(true)}>
+                  Reset all progress
+                </Button>
+              </ScrollView>
+            )}
+          </ScrollViewProvider>
         </View>
       </Drawer>
 
@@ -374,15 +370,14 @@ const styles = StyleSheet.create({
   card: { marginBottom: 4 },
   confirmContent: { height: 52 },
   confirmLabel: { fontSize: 16, fontWeight: '700' },
-  flex: { flex: 1 },
+  // alignItems override matches every other migrated footer — see PuzzleDrawer's own footer
+  // comment: Random stretches full width instead of shrinking to content and centering.
   footer: {
+    alignItems: 'stretch',
     paddingBottom: 16,
     paddingHorizontal: 16,
     paddingTop: 16
   },
-  headerRow: DRAWER_HEADER_ROW_STYLE,
-  headerSpacer: { width: 40 },
-  headerTitleText: { textAlign: 'center' },
   muted: { opacity: 0.7 },
   overline: { letterSpacing: 1, opacity: 0.7, textTransform: 'uppercase' },
   panelContent: {

@@ -120,7 +120,6 @@ export const Main = (): JSX.Element => {
   const [unlockVersion, setUnlockVersion] = useState(0)
   const [customPacksVersion, setCustomPacksVersion] = useState(0)
   const [snackbarQueue, setSnackbarQueue] = useState<AchievementId[]>([])
-  const pendingAchievementsRef = useRef<AchievementId[]>([])
   // The category-completion stat shown on a win. Cleared synchronously at the top of
   // handleSolved (see below) so a fresh win never briefly shows the previous win's numbers
   // while the unlock-map lookup for the new one is still in flight.
@@ -336,7 +335,10 @@ export const Main = (): JSX.Element => {
         packUnlockedCount,
         packTotalCount
       })
-      pendingAchievementsRef.current = newlyUnlocked
+      // Surfaced right away, not held back for the next round to start — this resolves well
+      // within WIN_DIALOG_DELAY_MS (see Game.tsx), so the toast lands alongside the win dialog
+      // itself instead of appearing to be about whatever puzzle comes next.
+      if (newlyUnlocked.length > 0) setSnackbarQueue(newlyUnlocked)
       refreshUnlocks()
     },
     [session, refreshUnlocks, pnpPhase]
@@ -357,32 +359,20 @@ export const Main = (): JSX.Element => {
     [pnpPhase, refreshUnlocks]
   )
 
-  const surfacePendingAchievements = useCallback(() => {
-    if (pendingAchievementsRef.current.length > 0) {
-      setSnackbarQueue(pendingAchievementsRef.current)
-      pendingAchievementsRef.current = []
-    }
-  }, [])
-
   // The only caller left is handleRoundEnd's own automatic-next-round path below — kept as its own
   // function since "draw a puzzle for some set of packKeys and mount it as the next round" is a
   // distinct step from deciding WHICH packKeys that should be.
-  const startNextRound = useCallback(
-    (nextConfig: PuzzleConfig, packKeys: string[]) => {
-      surfacePendingAchievements()
-      const result = resolvePuzzle(nextConfig, packKeys, unlockMapRef.current)
-      if (result.ok) {
-        setSession(result.payload)
-        setRoundKey((k) => k + 1)
-      }
-    },
-    [surfacePendingAchievements]
-  )
+  const startNextRound = useCallback((nextConfig: PuzzleConfig, packKeys: string[]) => {
+    const result = resolvePuzzle(nextConfig, packKeys, unlockMapRef.current)
+    if (result.ok) {
+      setSession(result.payload)
+      setRoundKey((k) => k + 1)
+    }
+  }, [])
 
   const handleRoundEnd = useCallback(() => {
     // Pass and play doesn't draw anything: the player who just guessed becomes the next author, and
-    // the loop continues until someone explicitly ends the session. No achievement snackbars either
-    // — none were recorded (see handleSolved).
+    // the loop continues until someone explicitly ends the session.
     if (pnpPhase) {
       setPnpAnswer('')
       setPnpHint('')
@@ -395,7 +385,6 @@ export const Main = (): JSX.Element => {
     // A custom word is one-off — there's no "next" word to auto-generate, so surface the drawer
     // to ask for a new one instead of silently replaying the same phrase.
     if (config.sourceMode === 'custom') {
-      surfacePendingAchievements()
       setDrawerVisible(true)
       return
     }
@@ -408,7 +397,7 @@ export const Main = (): JSX.Element => {
     // "Random" should still apply to this automatic next round.
     const packKeys = session?.packScope === 'single' && session.packKey ? [session.packKey] : selectedPackKeys
     startNextRound(config, packKeys)
-  }, [config, selectedPackKeys, session, startNextRound, surfacePendingAchievements, pnpPhase])
+  }, [config, selectedPackKeys, session, startNextRound, pnpPhase])
 
   const applyPnpStart = useCallback(() => {
     setDrawerVisible(false)

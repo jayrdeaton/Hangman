@@ -3,9 +3,9 @@ import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { FlatList, LayoutChangeEvent, StyleSheet, View } from 'react-native'
 import { Text, useTheme } from 'react-native-paper'
 
-import { ALL_MODES } from '@/modes/registry'
+import { useHorizontalWheelScrollProps } from '@/hooks/useHorizontalWheelScroll'
+import { VISIBLE_MODES } from '@/modes/registry'
 import type { GameMode } from '@/types/gameModes'
-import { horizontalWheelScrollProps } from '@/utils/horizontalWheelScroll'
 
 const CARD_MARGIN = 8
 const PREVIEW_HEIGHT = 130
@@ -52,6 +52,7 @@ type Props = {
 export const ModeSelector = React.memo(({ selected, color, onSelect }: Props) => {
   const theme = useTheme()
   const listRef = useRef<FlatList<GameMode>>(null)
+  const horizontalWheelScrollProps = useHorizontalWheelScrollProps()
   // Measured, not Dimensions-derived: module-scope window width is 0 on web. This carousel only
   // ever renders inside the fixed-width puzzle drawer, so a one-card-plus-peek ratio (matching the
   // native app) is always the right fit — there's no wide desktop container to account for here.
@@ -64,14 +65,28 @@ export const ModeSelector = React.memo(({ selected, color, onSelect }: Props) =>
     setContainerWidth(e.nativeEvent.layout.width)
   }, [])
 
+  // True once this effect has centered a card at least once — false only for the very first run
+  // (see below).
+  const hasCenteredOnceRef = useRef(false)
+
   // Scrolls the carousel to whichever mode is already selected — without this, reopening the
   // drawer (or landing on a shared puzzle that specifies a non-default mode) always left the
   // carousel at its first card with nothing visibly highlighted, even though a mode WAS selected.
+  // Instant (animated: false) only the FIRST time this runs, i.e. the drawer just opened/mounted —
+  // an animated scroll on open would read as unwanted motion for something that should just
+  // already be positioned correctly. Every later run — the player actually tapping a different,
+  // off-center "peek" card — animates instead: that card sliding smoothly into place is real,
+  // trustworthy feedback that the tap landed. An instant, un-animated jump right as a finger lifts
+  // is very likely what was making a tap on a peek card need pressing twice — the list relocating
+  // out from under the finger mid-release reads to the OS as an interrupted gesture, not a
+  // completed tap, so the first tap silently did nothing visible and the second (now already
+  // centered, not moving) tap is the one that visibly "worked."
   useEffect(() => {
     if (containerWidth === 0) return
-    const index = ALL_MODES.findIndex((m) => m.id === selected.id)
+    const index = VISIBLE_MODES.findIndex((m) => m.id === selected.id)
     if (index < 0) return
-    listRef.current?.scrollToOffset({ offset: index * snapInterval, animated: false })
+    listRef.current?.scrollToOffset({ offset: index * snapInterval, animated: hasCenteredOnceRef.current })
+    hasCenteredOnceRef.current = true
   }, [containerWidth, selected.id, snapInterval])
 
   const renderCard = useCallback(
@@ -104,9 +119,9 @@ export const ModeSelector = React.memo(({ selected, color, onSelect }: Props) =>
 
   return (
     <View testID='mode-selector-container' style={styles.container} onLayout={handleContainerLayout}>
-      {/* initialNumToRender covers the full list — with only 16 lightweight cards, windowing buys
+      {/* initialNumToRender covers the full list — with this few lightweight cards, windowing buys
           nothing but risks scrollToOffset (above) targeting a card that hasn't measured yet. */}
-      {containerWidth > 0 && <FlatList ref={listRef} data={ALL_MODES} renderItem={renderCard} keyExtractor={(item) => item.id} horizontal showsHorizontalScrollIndicator={false} snapToInterval={snapInterval} decelerationRate='fast' initialNumToRender={ALL_MODES.length} style={styles.list} contentContainerStyle={{ paddingHorizontal: sidePadding }} {...horizontalWheelScrollProps} />}
+      {containerWidth > 0 && <FlatList ref={listRef} data={VISIBLE_MODES} renderItem={renderCard} keyExtractor={(item) => item.id} horizontal showsHorizontalScrollIndicator={false} snapToInterval={snapInterval} decelerationRate='fast' initialNumToRender={VISIBLE_MODES.length} style={styles.list} contentContainerStyle={{ paddingHorizontal: sidePadding }} {...horizontalWheelScrollProps} />}
     </View>
   )
 })

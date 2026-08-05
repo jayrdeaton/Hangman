@@ -1,4 +1,5 @@
 import { act, fireEvent, render as rtlRender } from '@testing-library/react-native'
+import * as haptics from 'expo-haptics'
 import type { ReactElement } from 'react'
 import { StyleSheet, Text } from 'react-native'
 import { PaperProvider } from 'react-native-paper'
@@ -9,8 +10,13 @@ import type { GameMode } from '@/types/gameModes'
 
 jest.mock('expo-haptics', () => ({
   selectionAsync: jest.fn(),
-  impactAsync: jest.fn()
+  impactAsync: jest.fn(),
+  notificationAsync: jest.fn(),
+  ImpactFeedbackStyle: { Light: 'light', Medium: 'medium', Heavy: 'heavy' },
+  NotificationFeedbackType: { Success: 'success', Warning: 'warning', Error: 'error' }
 }))
+
+const mockNotificationAsync = jest.mocked(haptics.notificationAsync)
 
 // RoundEndDialog's Dialog defaults to the blurred/Portal-based rendering path (the app-wide
 // blur setting defaults to true), which requires a react-native-paper Portal.Host ancestor —
@@ -127,6 +133,10 @@ const fireFireworksLayout = async (root: Root) => {
 }
 
 describe('Game', () => {
+  beforeEach(() => {
+    mockNotificationAsync.mockClear()
+  })
+
   it('renders a short phrase with the correct number of blanks and 0 wrong guesses', async () => {
     const { getByLabelText } = await render(<Game phrase='CAT' onStop={jest.fn()} />)
 
@@ -153,6 +163,14 @@ describe('Game', () => {
 
     await guessLetter(getByText, 'Q')
     expect(getByLabelText(/Wrong guesses: 1/)).toBeTruthy()
+  })
+
+  it('gives a wrong guess a distinct error haptic, not the same feedback a correct guess gets', async () => {
+    const { getByText } = await render(<Game phrase='CAT' onStop={jest.fn()} />)
+
+    await guessLetter(getByText, 'Q')
+
+    expect(mockNotificationAsync).toHaveBeenCalledWith(haptics.NotificationFeedbackType.Error)
   })
 
   it('triggers a loss once wrong guesses reach the mode maxMistakes, showing a dialog that calls onStop when dismissed', async () => {
@@ -211,6 +229,18 @@ describe('Game', () => {
     expect(onStop).toHaveBeenCalledTimes(1)
 
     jest.useRealTimers()
+  })
+
+  it('gives the winning guess a distinct success haptic, timed with the celebration starting rather than waiting on the dialog', async () => {
+    const { getByText } = await render(<Game phrase='CAT' onStop={jest.fn()} />)
+
+    await guessLetter(getByText, 'C')
+    await guessLetter(getByText, 'A')
+    expect(mockNotificationAsync).not.toHaveBeenCalledWith(haptics.NotificationFeedbackType.Success)
+
+    await guessLetter(getByText, 'T')
+
+    expect(mockNotificationAsync).toHaveBeenCalledWith(haptics.NotificationFeedbackType.Success)
   })
 
   it('keeps the celebration effect spawning bursts for as long as the win dialog stays open', async () => {

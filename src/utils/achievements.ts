@@ -1,6 +1,6 @@
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
-import { ALL_MODES } from '@/modes/registry'
+import { VISIBLE_MODES } from '@/modes/registry'
 
 const ACHIEVEMENTS_KEY = 'achievements_v1'
 
@@ -131,7 +131,11 @@ export const recordSolve = async (result: SolveResult): Promise<AchievementId[]>
   stats.lettersCorrect += result.guessCount - result.wrongGuesses
 
   if (!stats.wonModeIds.includes(result.modeId)) stats.wonModeIds.push(result.modeId)
-  if (stats.wonModeIds.length >= ALL_MODES.length) unlock('mode_master')
+  // VISIBLE_MODES, not ALL_MODES — a hidden mode isn't offered in the picker anymore, so
+  // requiring a win in it too would make this permanently unearnable for anyone who hasn't
+  // already won one from before it was hidden. A won id that happens to be hidden still counts
+  // toward wonModeIds itself (see the push above) — this only changes the target count.
+  if (stats.wonModeIds.length >= VISIBLE_MODES.length) unlock('mode_master')
 
   // Tallied every qualifying win, not just the first — unlike unlock() above, which only ever
   // fires once per id. These are what the Achievements list's per-badge counts (see

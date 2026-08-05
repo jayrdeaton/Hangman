@@ -75,5 +75,6 @@ export const jengaMode: GameMode = {
   category: 'quantitative',
   behavior: 'depletion',
   maxMistakes: 6,
+  hidden: true,
   Visual: JengaVisual
 }

@@ -1,6 +1,7 @@
 import { SegmentedButtons } from '@rific/haptic-press'
-import { JSX, useEffect, useMemo, useState } from 'react'
-import { FlatList, StyleSheet, View } from 'react-native'
+import { FlatList, ScrollViewContext } from '@rific/scroll-view'
+import { JSX, useContext, useEffect, useMemo, useState } from 'react'
+import { StyleSheet, View } from 'react-native'
 import { Icon, ProgressBar, Text, useTheme } from 'react-native-paper'
 
 import type { Puzzle } from '@/types/puzzle'
@@ -60,6 +61,14 @@ export type PackPuzzleListProps = {
 // implementation instead of independently-maintained ones that had quietly drifted apart.
 export const PackPuzzleList = ({ packKey, initialFilter, onPlayPuzzle }: PackPuzzleListProps): JSX.Element => {
   const theme = useTheme()
+  // Every caller renders this inside a parent ScrollViewProvider now (see PackPuzzlesDrawer/
+  // AchievementsDrawer) — its floating ScrollViewHeader overlays whatever sits at the very top of
+  // that provider, and progressHeader below is a plain in-flow sibling with no padding of its own
+  // to clear it, unlike this file's own FlatList (which already gets a correct top inset for free
+  // via useScrollList internally, see @rific/scroll-view's FlatList.tsx). headerHeight is null until
+  // the header's very first layout pass measures it — reading it directly from context, the same
+  // value ScrollViewHeader/ScrollView/Footer already key their own positioning off of.
+  const { headerHeight } = useContext(ScrollViewContext)
   const [unlockedIds, setUnlockedIds] = useState<Set<string>>(new Set())
   const [filter, setFilter] = useState<PackPuzzleFilter>(initialFilter)
 
@@ -112,10 +121,15 @@ export const PackPuzzleList = ({ packKey, initialFilter, onPlayPuzzle }: PackPuz
   if (!pack) return <View style={styles.flex} />
 
   return (
-    <View style={styles.flex}>
+    // Hidden until the header measures, same as the FlatList below already does internally — this
+    // View's own top padding depends on headerHeight too (see progressHeader below), so revealing
+    // it before that first measurement would flash it in unpadded, up under the floating header.
+    <View style={[styles.flex, headerHeight === null && styles.hidden]}>
       {/* Fixed, not part of the scrollable list below — stays in view as a running tally while
-          scrolling through a long pack instead of scrolling away with row 1. */}
-      <View style={styles.progressHeader}>
+          scrolling through a long pack instead of scrolling away with row 1. paddingTop reserves
+          space for the floating ScrollViewHeader above, which overlays rather than pushing this
+          down itself. */}
+      <View style={[styles.progressHeader, { paddingTop: (headerHeight ?? 0) + 4 }]}>
         <Text variant='bodySmall' style={styles.muted}>
           {commaString(unlockedCount)} of {commaString(totalCount)} unlocked
         </Text>
@@ -140,6 +154,7 @@ const styles = StyleSheet.create({
   emptyText: { marginTop: 12, opacity: 0.7, paddingHorizontal: 16 },
   filterButtons: { marginTop: 10 },
   flex: { flex: 1 },
+  hidden: { opacity: 0 },
   list: { flex: 1 },
   listContent: {
     paddingBottom: 16,
@@ -155,9 +170,10 @@ const styles = StyleSheet.create({
     marginTop: 10,
     overflow: 'hidden'
   },
+  // paddingTop is applied dynamically at the call site (see above) — always overrides whatever's
+  // declared here, so it's deliberately left out of this static object rather than left dead.
   progressHeader: {
     paddingBottom: 8,
-    paddingHorizontal: 16,
-    paddingTop: 4
+    paddingHorizontal: 16
   }
 })

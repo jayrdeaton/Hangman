@@ -1,7 +1,7 @@
 import { fireEvent, render } from '@testing-library/react-native'
 
 import { ModeSelector } from '@/components/ModeSelector'
-import { ALL_MODES, classicMode, robotMode } from '@/modes/registry'
+import { ALL_MODES, classicMode, robotMode, VISIBLE_MODES } from '@/modes/registry'
 
 const LAYOUT_EVENT = { nativeEvent: { layout: { x: 0, y: 0, width: 380, height: 200 } } }
 
@@ -12,11 +12,24 @@ const renderSelector = async (selected = classicMode, onSelect = jest.fn()) => {
 }
 
 describe('ModeSelector', () => {
-  it('renders a card for every registered mode with a combined, jargon-free accessibility label', async () => {
+  it('renders a card for every visible mode with a combined, jargon-free accessibility label', async () => {
     const { getByLabelText } = await renderSelector()
 
-    for (const mode of ALL_MODES) {
+    for (const mode of VISIBLE_MODES) {
       expect(getByLabelText(new RegExp(`^${mode.label} mode, `))).toBeTruthy()
+    }
+  })
+
+  it('omits a mode marked hidden from the picker entirely, without deleting it from the app', async () => {
+    const { queryByLabelText } = await renderSelector()
+    const hiddenModes = ALL_MODES.filter((mode) => mode.hidden)
+
+    // Sanity check the fixture itself actually has at least one hidden mode to test — if this
+    // fails, the assertions below would trivially pass over an empty list and prove nothing.
+    expect(hiddenModes.length).toBeGreaterThan(0)
+
+    for (const mode of hiddenModes) {
+      expect(queryByLabelText(new RegExp(`^${mode.label} mode, `))).toBeNull()
     }
   })
 

@@ -1,11 +1,10 @@
 import { Drawer } from '@rific/drawer'
-import { Button, IconButton } from '@rific/haptic-press'
+import { Button, useVibration } from '@rific/haptic-press'
+import { ScrollViewFooter, ScrollViewHeader, ScrollViewProvider } from '@rific/scroll-view'
 import { JSX, useEffect, useMemo, useState } from 'react'
 import { StyleSheet, useWindowDimensions, View } from 'react-native'
-import { Text } from 'react-native-paper'
-import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
-import { DRAWER_HEADER_ROW_STYLE, DRAWER_HEADER_TITLE_WRAP_STYLE } from '@/constants/drawerHeader'
+import { DRAWER_PACK_DETAIL_Z_INDEX } from '@/constants/drawerStacking'
 import type { GameMode } from '@/types/gameModes'
 import type { GameStartPayload } from '@/types/gameSession'
 import { alert } from '@/utils/alert'
@@ -38,8 +37,8 @@ export type PackPuzzlesDrawerProps = {
 // what's inside. Every puzzle in the pack shows as its own row (via PackPuzzleList,
 // initialFilter='all'), masked to blanks unless already solved either way.
 export const PackPuzzlesDrawer = ({ visible, packKey, onDismiss, mode, difficulty, onConfirm }: PackPuzzlesDrawerProps): JSX.Element => {
-  const insets = useSafeAreaInsets()
   const { width: windowWidth } = useWindowDimensions()
+  const { selection } = useVibration()
   const playable = Boolean(mode && difficulty && onConfirm)
 
   const pack = useMemo(() => getPuzzleManifest().find((item) => item.key === packKey), [packKey])
@@ -87,39 +86,35 @@ export const PackPuzzlesDrawer = ({ visible, packKey, onDismiss, mode, difficult
   }
 
   return (
-    <Drawer open={visible} onClose={onDismiss} width={windowWidth}>
-      <View testID='pack-puzzles-panel' style={[styles.panel, { paddingTop: insets.top, paddingBottom: insets.bottom }]} accessibilityViewIsModal={visible} accessibilityElementsHidden={!visible} importantForAccessibility={visible ? 'yes' : 'no-hide-descendants'} onAccessibilityEscape={visible ? onDismiss : undefined}>
+    <Drawer open={visible} onClose={onDismiss} width={windowWidth} zIndex={DRAWER_PACK_DETAIL_Z_INDEX}>
+      <View testID='pack-puzzles-panel' style={styles.panel} accessibilityViewIsModal={visible} accessibilityElementsHidden={!visible} importantForAccessibility={visible ? 'yes' : 'no-hide-descendants'} onAccessibilityEscape={visible ? onDismiss : undefined}>
         {pack ? (
-          <>
+          <ScrollViewProvider>
             {/* Close sits on the LEADING (left) side — this drawer is reached from the Game Menu's
                 hamburger icon (top-left of the game screen), whether directly (a pack row in
                 PuzzleDrawer) or via Choose Packs (also reached from there) — same left-anchored
                 lineage either way, so closing it lands back under the same thumb that opened the
-                chain. Balances the header row so the title stays visually centered against it.
-                arrow-left (not X) — see PuzzleDrawer's own header comment for why: it shows the
-                direction this panel moves in when dismissed instead of a direction-less X. */}
-            <View style={styles.headerRow}>
-              <IconButton icon='arrow-left' onPress={onDismiss} accessibilityLabel='Close' />
-              {/* Absolutely positioned (see DRAWER_HEADER_TITLE_WRAP_STYLE) so it centers on the
-                  row's true center, independent of the icon/spacer widths on either side. */}
-              <View style={DRAWER_HEADER_TITLE_WRAP_STYLE}>
-                <Text variant='titleLarge' numberOfLines={1} style={styles.headerTitle}>
-                  {pack.label}
-                </Text>
-              </View>
-              <View style={styles.headerSpacer} />
-            </View>
+                chain. 'Close', not the Appbar.BackAction default of 'Back' — see PuzzleDrawer's own
+                ScrollViewHeader comment for why. */}
+            <ScrollViewHeader
+              title={pack.label}
+              backAction={() => {
+                selection()
+                onDismiss()
+              }}
+              backActionAccessibilityLabel='Close'
+            />
 
             <PackPuzzleList packKey={packKey} initialFilter='all' onPlayPuzzle={playable ? handlePlayPuzzle : undefined} />
 
             {playable ? (
-              <View style={styles.footer}>
+              <ScrollViewFooter style={styles.footer}>
                 <Button mode='contained' icon='play' onPress={handleRandom} contentStyle={styles.confirmContent} labelStyle={styles.confirmLabel}>
                   Random
                 </Button>
-              </View>
+              </ScrollViewFooter>
             ) : null}
-          </>
+          </ScrollViewProvider>
         ) : null}
       </View>
     </Drawer>
@@ -129,13 +124,13 @@ export const PackPuzzlesDrawer = ({ visible, packKey, onDismiss, mode, difficult
 const styles = StyleSheet.create({
   confirmContent: { height: 52 },
   confirmLabel: { fontSize: 16, fontWeight: '700' },
+  // alignItems override ScrollViewFooter's own centered default — Random stretches full width,
+  // matching this footer's look before the scroll-view migration.
   footer: {
+    alignItems: 'stretch',
     paddingBottom: 16,
     paddingHorizontal: 16,
     paddingTop: 16
   },
-  headerRow: DRAWER_HEADER_ROW_STYLE,
-  headerSpacer: { width: 40 },
-  headerTitle: { textAlign: 'center' },
   panel: { flex: 1 }
 })

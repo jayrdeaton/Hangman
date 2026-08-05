@@ -1,4 +1,4 @@
-import { ALL_MODES } from '@/modes/registry'
+import { VISIBLE_MODES } from '@/modes/registry'
 import { clearAchievements, DEFAULT_ACHIEVEMENT_STATS, getAchievementStats, recordLoss, recordPnpLoss, recordPnpWin, recordSolve, type SolveResult } from '@/utils/achievements'
 
 let mockStore: Record<string, string>
@@ -109,10 +109,13 @@ describe('recordSolve — letters guessed/correct', () => {
 })
 
 describe('recordSolve — mode_master', () => {
-  it('unlocks mode_master only after a distinct win has been recorded for every mode id', async () => {
-    for (let i = 0; i < ALL_MODES.length; i++) {
-      const unlocked = await recordSolve(neutralSolve(ALL_MODES[i].id))
-      if (i < ALL_MODES.length - 1) {
+  // VISIBLE_MODES (what the picker actually offers), not ALL_MODES — a mode hidden from the
+  // picker shouldn't hold this achievement hostage for anyone who could never select it to win
+  // with in the first place. See registry.ts's own comment on VISIBLE_MODES.
+  it('unlocks mode_master only after a distinct win has been recorded for every visible mode id', async () => {
+    for (let i = 0; i < VISIBLE_MODES.length; i++) {
+      const unlocked = await recordSolve(neutralSolve(VISIBLE_MODES[i].id))
+      if (i < VISIBLE_MODES.length - 1) {
         expect(unlocked).not.toContain('mode_master')
       } else {
         expect(unlocked).toContain('mode_master')

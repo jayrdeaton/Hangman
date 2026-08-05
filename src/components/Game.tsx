@@ -109,7 +109,9 @@ export const Game = ({ onStop, onSolved, onLost, onGuessProgress, phrase, mode =
     if (!phrase.includes(L)) {
       const w = wrongGuesses + 1
       setWrongGuesses(w)
-      void haptics.selectionAsync()
+      // Error, not selectionAsync — a wrong guess should feel distinctly different from a correct
+      // one, not just a lighter version of the same tick.
+      void haptics.notificationAsync(haptics.NotificationFeedbackType.Error)
       if (w >= maxWrong) {
         roundOverRef.current = true
         onLost?.({ wrongGuesses: w, guessCount: next.length })
@@ -125,6 +127,9 @@ export const Game = ({ onStop, onSolved, onLost, onGuessProgress, phrase, mode =
         roundOverRef.current = true
         onSolved?.({ wrongGuesses, hintRevealed, guessCount: next.length })
         setOutcome('win')
+        // A distinctly more celebratory pulse than a regular correct-letter impact — timed to the
+        // same guess that also kicks off the fireworks celebration below.
+        void haptics.notificationAsync(haptics.NotificationFeedbackType.Success)
         winDialogTimeoutRef.current = setTimeout(() => setDialogReady(true), WIN_DIALOG_DELAY_MS)
       }
     }

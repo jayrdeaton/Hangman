@@ -19,5 +19,9 @@ export interface GameMode {
   // When false, Game skips reserving space for a Visual entirely and enlarges the letter
   // display to fill it instead — Visual is still needed for the mode-picker preview card.
   hasVisual?: boolean
+  // Curated out of the mode picker (see ModeSelector's VISIBLE_MODES) without deleting the mode
+  // itself — it stays fully resolvable everywhere else (a shared puzzle link naming it by id, the
+  // Mode Master achievement's own history) so nothing that already used it breaks.
+  hidden?: boolean
   Visual: React.ComponentType<{ mistakes: number; color: string; width: number; height: number }>
 }

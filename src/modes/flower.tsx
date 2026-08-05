@@ -112,5 +112,6 @@ export const flowerMode: GameMode = {
   category: 'parts',
   behavior: 'subtractive',
   maxMistakes: 6,
+  hidden: true,
   Visual: FlowerVisual
 }

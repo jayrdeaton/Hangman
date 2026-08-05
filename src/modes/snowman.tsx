@@ -114,5 +114,6 @@ export const snowmanMode: GameMode = {
   category: 'parts',
   behavior: 'subtractive',
   maxMistakes: 6,
+  hidden: true,
   Visual: SnowmanVisual
 }

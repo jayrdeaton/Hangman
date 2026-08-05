@@ -1,3 +1,4 @@
+import * as haptics from 'expo-haptics'
 import { JSX, useEffect, useMemo, useRef, useState } from 'react'
 import { LayoutChangeEvent, StyleSheet, View } from 'react-native'
 import Animated, { Easing, useAnimatedProps, useSharedValue, withSequence, withTiming } from 'react-native-reanimated'
@@ -117,6 +118,11 @@ export const Fireworks = ({ colors, dark = false }: CelebrationProps): JSX.Eleme
       const originY = size.height * (0.08 + Math.random() * 0.84)
       const color = colors[Math.floor(Math.random() * colors.length)]
       setBursts((prev) => [...prev, { id, originX, originY, color }])
+      // Light, not the default (Medium) style Game.tsx uses for a correct letter — a burst spawns
+      // every 180-420ms for as long as the win dialog stays open, so anything heavier would feel
+      // like a repeated thud instead of the quick, textured "pop" a firework bursting should feel
+      // like.
+      void haptics.impactAsync(haptics.ImpactFeedbackStyle.Light)
 
       const cleanupTimer = setTimeout(() => {
         cleanupTimers.delete(cleanupTimer)

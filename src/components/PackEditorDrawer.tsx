@@ -1,12 +1,12 @@
 import { useAutoPaperTheme } from '@rific/auto-paper'
 import { Drawer } from '@rific/drawer'
-import { Button, IconButton } from '@rific/haptic-press'
+import { Button, IconButton, useVibration } from '@rific/haptic-press'
+import { ScrollView, ScrollViewFooter, ScrollViewHeader, ScrollViewProvider } from '@rific/scroll-view'
 import { JSX, useMemo, useState } from 'react'
-import { ScrollView, StyleSheet, useWindowDimensions, View } from 'react-native'
+import { StyleSheet, useWindowDimensions, View } from 'react-native'
 import { Text, TextInput } from 'react-native-paper'
-import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
-import { DRAWER_HEADER_ROW_STYLE, DRAWER_HEADER_TITLE_WRAP_STYLE } from '@/constants/drawerHeader'
+import { DRAWER_PACK_DETAIL_Z_INDEX } from '@/constants/drawerStacking'
 import { alert } from '@/utils/alert'
 import { type CustomPack, type CustomPackEntryInput, getCustomPackPuzzles, saveCustomPack } from '@/utils/customPacks'
 import { normalizePhrase } from '@/utils/normalizePhrase'
@@ -39,12 +39,11 @@ export type PackEditorDrawerProps = {
 // there's an actual saved pack behind editingKey, rather than "back" and those two icons competing
 // for the same corner.
 export const PackEditorDrawer = ({ visible, editingKey, onDismiss, onSaved, onDelete, onShare }: PackEditorDrawerProps): JSX.Element => {
-  const insets = useSafeAreaInsets()
   const { width: windowWidth } = useWindowDimensions()
 
   return (
-    <Drawer open={visible} onClose={onDismiss} width={windowWidth}>
-      <View testID='pack-editor-panel' style={[styles.panel, { paddingTop: insets.top, paddingBottom: insets.bottom }]} accessibilityViewIsModal={visible} accessibilityElementsHidden={!visible} importantForAccessibility={visible ? 'yes' : 'no-hide-descendants'} onAccessibilityEscape={visible ? onDismiss : undefined}>
+    <Drawer open={visible} onClose={onDismiss} width={windowWidth} zIndex={DRAWER_PACK_DETAIL_Z_INDEX}>
+      <View testID='pack-editor-panel' style={styles.panel} accessibilityViewIsModal={visible} accessibilityElementsHidden={!visible} importantForAccessibility={visible ? 'yes' : 'no-hide-descendants'} onAccessibilityEscape={visible ? onDismiss : undefined}>
         {/* Keyed on the pack being edited (or 'new') so switching which pack you're editing — or
             from editing into creating — always starts the form fresh, without needing an effect to
             resync it. The Drawer above never unmounts this (translates only), so without the key
@@ -66,6 +65,7 @@ type PackEditorFormProps = {
 
 const PackEditorForm = ({ editingKey, onSaved, onCancel, onDelete, onShare }: PackEditorFormProps): JSX.Element => {
   const theme = useAutoPaperTheme()
+  const { selection } = useVibration()
 
   const editingPack = useMemo((): CustomPack | null => {
     if (!editingKey) return null
@@ -125,69 +125,70 @@ const PackEditorForm = ({ editingKey, onSaved, onCancel, onDelete, onShare }: Pa
 
   return (
     <>
-      {/* Share/Delete only make sense once there's an actual saved pack behind editingKey — the
-          trailing slot is a blank balancing spacer for a brand-new, not-yet-saved pack instead.
-          Leading icon is arrow-left, not X — same left-anchored Game Menu lineage as
-          PuzzleDrawer/PackPuzzlesDrawer/PacksScreen (see PuzzleDrawer's own header comment for why
-          an arrow instead of a close X). */}
-      <View style={styles.headerRow}>
-        <IconButton icon='arrow-left' onPress={onCancel} accessibilityLabel='Close' />
-        {/* Absolutely positioned (see DRAWER_HEADER_TITLE_WRAP_STYLE) so it centers on the row's
-            true center rather than the leftover flex space — this is the header where that
-            actually matters: Share+Delete (two icons) on the trailing side against a single arrow
-            on the leading side is not a symmetric split. */}
-        <View style={DRAWER_HEADER_TITLE_WRAP_STYLE}>
-          <Text variant='titleLarge' style={styles.title} numberOfLines={1}>
-            {editingKey ? 'Edit pack' : 'New pack'}
-          </Text>
-        </View>
-        {editingKey ? (
-          <View style={styles.rowActions}>
-            <IconButton icon='share-variant' size={20} onPress={() => void handleSharePress()} accessibilityLabel='Share pack' />
-            <IconButton icon='delete-outline' size={20} iconColor={theme.colors.danger} onPress={() => setConfirmDeleteVisible(true)} accessibilityLabel='Delete pack' />
-          </View>
-        ) : (
-          <View style={styles.headerSpacer} />
-        )}
-      </View>
+      <ScrollViewProvider>
+        {/* Share/Delete only make sense once there's an actual saved pack behind editingKey — no
+            trailing action at all for a brand-new, not-yet-saved pack instead (ScrollViewHeader
+            centers the title independently of whether a trailing action is present, unlike the old
+            hand-rolled row, which needed a balancing spacer). Leading icon is arrow-left, not X —
+            same left-anchored Game Menu lineage as PuzzleDrawer/PackPuzzlesDrawer/PacksScreen (see
+            PuzzleDrawer's own header comment for why an arrow instead of a close X). 'Close', not
+            the Appbar.BackAction default of 'Back' — see PuzzleDrawer's own ScrollViewHeader
+            comment for why. */}
+        <ScrollViewHeader
+          title={editingKey ? 'Edit pack' : 'New pack'}
+          backAction={() => {
+            selection()
+            onCancel()
+          }}
+          backActionAccessibilityLabel='Close'
+          trailingAction={
+            editingKey ? (
+              <View style={styles.rowActions}>
+                <IconButton icon='share-variant' size={20} onPress={() => void handleSharePress()} accessibilityLabel='Share pack' />
+                <IconButton icon='delete-outline' size={20} iconColor={theme.colors.danger} onPress={() => setConfirmDeleteVisible(true)} accessibilityLabel='Delete pack' />
+              </View>
+            ) : undefined
+          }
+        />
 
-      <ConfirmDialog visible={confirmDeleteVisible} title='Delete pack?' message={`This permanently deletes "${label}" and any unlock progress for it. This cannot be undone.`} confirmLabel='Delete' destructive onConfirm={() => void handleConfirmDelete()} onCancel={() => setConfirmDeleteVisible(false)} />
-
-      <ScrollView showsVerticalScrollIndicator={false} style={styles.scroll} contentContainerStyle={styles.scrollContent} keyboardShouldPersistTaps='handled'>
-        {/* A list-item-header treatment (like "My packs"/"Built-in packs" above the rows they
+        <ScrollView keyboardAware showsVerticalScrollIndicator={false} contentContainerStyle={styles.scrollContent} keyboardShouldPersistTaps='handled'>
+          {/* A list-item-header treatment (like "My packs"/"Built-in packs" above the rows they
             label) rather than just another form field identical to the entries below it — this is
             the one field that names the whole thing the rest of the screen is building. */}
-        <Text variant='titleSmall' style={styles.sectionHeader}>
-          Pack name
-        </Text>
-        <TextInput testID='pack-label-input' value={label} onChangeText={setLabel} mode='outlined' maxLength={60} />
+          <Text variant='titleSmall' style={styles.sectionHeader}>
+            Pack name
+          </Text>
+          <TextInput testID='pack-label-input' value={label} onChangeText={setLabel} mode='outlined' maxLength={60} />
 
-        {entries.map((entry, index) => (
-          <View key={index} style={styles.entryRow}>
-            <View style={styles.entryInputs}>
-              <TextInput testID={`entry-answer-${index}`} value={entry.answer} onChangeText={(answer) => updateEntry(index, { answer })} label='Word or phrase' autoCapitalize='characters' mode='outlined' dense maxLength={128} />
-              <TextInput testID={`entry-hint-${index}`} style={styles.hintInput} value={entry.hint} onChangeText={(hint) => updateEntry(index, { hint })} label='Hint (optional)' mode='outlined' dense maxLength={80} />
+          {entries.map((entry, index) => (
+            <View key={index} style={styles.entryRow}>
+              <View style={styles.entryInputs}>
+                <TextInput testID={`entry-answer-${index}`} value={entry.answer} onChangeText={(answer) => updateEntry(index, { answer })} label='Word or phrase' autoCapitalize='characters' mode='outlined' dense maxLength={128} />
+                <TextInput testID={`entry-hint-${index}`} style={styles.hintInput} value={entry.hint} onChangeText={(hint) => updateEntry(index, { hint })} label='Hint (optional)' mode='outlined' dense maxLength={80} />
+              </View>
+              <IconButton icon='close' size={20} onPress={() => removeEntry(index)} disabled={entries.length === 1} accessibilityLabel={`Remove entry ${index + 1}`} />
             </View>
-            <IconButton icon='close' size={20} onPress={() => removeEntry(index)} disabled={entries.length === 1} accessibilityLabel={`Remove entry ${index + 1}`} />
-          </View>
-        ))}
+          ))}
 
-        <Button icon='plus' onPress={addEntry} style={styles.addButton}>
-          Add word
-        </Button>
-      </ScrollView>
+          <Button icon='plus' onPress={addEntry} style={styles.addButton}>
+            Add word
+          </Button>
+        </ScrollView>
 
-      {/* A fixed footer, not part of the scrollable content — same reasoning as PuzzleDrawer's own
-          footer and PacksScreen's listFooter: Cancel/Save should be reachable without scrolling
-          down through however many entries this pack has. */}
-      <View style={styles.footer}>
-        <Button mode='outlined' onPress={onCancel} style={styles.footerButton}>
-          Cancel
-        </Button>
-        <Button mode='contained' onPress={() => void handleSave()} loading={saving} disabled={saving || !hasValidEntry} style={styles.footerButton}>
-          Save pack
-        </Button>
-      </View>
+        {/* Not part of the scrollable content — same reasoning as PuzzleDrawer's own footer and
+            PacksScreen's listFooter: Cancel/Save should be reachable without scrolling down
+            through however many entries this pack has. */}
+        <ScrollViewFooter style={styles.footer}>
+          <Button mode='outlined' onPress={onCancel} style={styles.footerButton}>
+            Cancel
+          </Button>
+          <Button mode='contained' onPress={() => void handleSave()} loading={saving} disabled={saving || !hasValidEntry} style={styles.footerButton}>
+            Save pack
+          </Button>
+        </ScrollViewFooter>
+      </ScrollViewProvider>
+
+      <ConfirmDialog visible={confirmDeleteVisible} title='Delete pack?' message={`This permanently deletes "${label}" and any unlock progress for it. This cannot be undone.`} confirmLabel='Delete' destructive onConfirm={() => void handleConfirmDelete()} onCancel={() => setConfirmDeleteVisible(false)} />
     </>
   )
 }
@@ -201,8 +202,12 @@ const styles = StyleSheet.create({
     gap: 4,
     marginTop: 12
   },
-  // Matches PuzzleDrawer's own fixed footer padding.
+  // Matches PuzzleDrawer's own footer padding. alignItems override matches every other migrated
+  // footer's stretch-not-center reasoning (see PuzzleDrawer's own footer comment) — inert here in
+  // practice (footerButton's flex:1 splits width, not height, and both buttons share one natural
+  // height), kept for consistency with the rest.
   footer: {
+    alignItems: 'stretch',
     flexDirection: 'row',
     gap: 12,
     paddingBottom: 16,
@@ -210,17 +215,13 @@ const styles = StyleSheet.create({
     paddingTop: 16
   },
   footerButton: { flex: 1 },
-  headerRow: DRAWER_HEADER_ROW_STYLE,
-  headerSpacer: { width: 40 },
   hintInput: { marginTop: 0 },
   panel: { flex: 1 },
   rowActions: { flexDirection: 'row' },
-  scroll: { flex: 1 },
   scrollContent: { paddingBottom: 24, paddingHorizontal: 16 },
   sectionHeader: {
     fontWeight: '700',
     marginBottom: 4,
     marginTop: 12
-  },
-  title: { textAlign: 'center' }
+  }
 })

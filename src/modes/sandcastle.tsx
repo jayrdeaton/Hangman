@@ -122,5 +122,6 @@ export const sandcastleMode: GameMode = {
   category: 'frames',
   behavior: 'depletion',
   maxMistakes: 6,
+  hidden: true,
   Visual: SandcastleVisual
 }

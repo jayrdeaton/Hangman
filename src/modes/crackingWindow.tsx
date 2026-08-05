@@ -121,5 +121,6 @@ export const crackingWindowMode: GameMode = {
   category: 'quantitative',
   behavior: 'accumulation',
   maxMistakes: 6,
+  hidden: true,
   Visual: CrackingWindowVisual
 }
