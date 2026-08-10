@@ -9,11 +9,11 @@ import { Body, GallowsWithRope, Head, LeftArm, LeftLeg, RightArm, RightLeg } fro
 // Parts reveal order: head → body → arms → legs
 const PARTS = [Head, Body, LeftArm, RightArm, LeftLeg, RightLeg]
 
-const ClassicVisual = ({ mistakes, color, width, height }: { mistakes: number; color: string; width: number; height: number }) => {
+const ClassicVisual = ({ mistakes, color, started }: { mistakes: number; color: string; started?: boolean }) => {
   const count = clampStage(mistakes, PARTS.length)
   return (
-    <Svg width={width} height={height} viewBox='0 0 100 100'>
-      <GallowsWithRope color={color} />
+    <Svg viewBox='0 0 100 100'>
+      <GallowsWithRope color={color} started={started} />
       {PARTS.slice(0, count).map((Part, i) => (
         <Part key={i} color={color} />
       ))}

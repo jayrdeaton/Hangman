@@ -22,19 +22,17 @@ type PreviewProps = {
   color: string
 }
 
+// No measure-then-mount dance — GameMode['Visual'] no longer takes width/height (see its own doc
+// comment for why), so there's nothing to wait on. styles.preview below already has a fixed
+// height and 100% width, so Visual's own <Svg> (defaulting to 100%/100%, no width/height passed —
+// see react-native-svg's own Svg.tsx) fills it immediately on first render, same as GameVisual.tsx.
 const ModePreview = ({ mode, color }: PreviewProps) => {
-  const [size, setSize] = useState({ width: 0, height: 0 })
   const previewMistakes = Math.floor(mode.maxMistakes / 2)
   const { Visual } = mode
 
-  const handleLayout = useCallback((e: LayoutChangeEvent) => {
-    const { width, height } = e.nativeEvent.layout
-    setSize({ width, height })
-  }, [])
-
   return (
-    <View style={styles.preview} onLayout={handleLayout}>
-      {size.width > 0 && <Visual mistakes={previewMistakes} color={color} width={size.width} height={size.height} />}
+    <View style={styles.preview}>
+      <Visual mistakes={previewMistakes} color={color} />
     </View>
   )
 }
@@ -121,7 +119,14 @@ export const ModeSelector = React.memo(({ selected, color, onSelect }: Props) =>
     <View testID='mode-selector-container' style={styles.container} onLayout={handleContainerLayout}>
       {/* initialNumToRender covers the full list — with this few lightweight cards, windowing buys
           nothing but risks scrollToOffset (above) targeting a card that hasn't measured yet. */}
-      {containerWidth > 0 && <FlatList ref={listRef} data={VISIBLE_MODES} renderItem={renderCard} keyExtractor={(item) => item.id} horizontal showsHorizontalScrollIndicator={false} snapToInterval={snapInterval} decelerationRate='fast' initialNumToRender={VISIBLE_MODES.length} style={styles.list} contentContainerStyle={{ paddingHorizontal: sidePadding }} {...horizontalWheelScrollProps} />}
+      {/* disableIntervalMomentum: without it, a fast fling carries enough leftover momentum to sail
+          past several cards before the snap logic catches it, so a tap meant to select a card
+          often lands while the list is still coasting — the touch gets claimed as "stop the
+          scroll" instead of reaching the card's onPress, and the list needing a second (sometimes
+          a third) tap to actually register a selection. Capping momentum at one snap interval per
+          gesture means the list is at rest again almost immediately after a finger lifts, so the
+          very next tap reliably lands on a stationary card. */}
+      {containerWidth > 0 && <FlatList ref={listRef} data={VISIBLE_MODES} renderItem={renderCard} keyExtractor={(item) => item.id} horizontal showsHorizontalScrollIndicator={false} snapToInterval={snapInterval} disableIntervalMomentum decelerationRate='normal' initialNumToRender={VISIBLE_MODES.length} style={styles.list} contentContainerStyle={{ paddingHorizontal: sidePadding }} {...horizontalWheelScrollProps} />}
     </View>
   )
 })

@@ -2,7 +2,11 @@ module.exports = {
   preset: 'jest-expo',
   setupFilesAfterEnv: ['./jest.setup.ts', './node_modules/react-native-gesture-handler/jestSetup.js'],
   transformIgnorePatterns: [],
-  testPathIgnorePatterns: ['/node_modules/'],
+  // Without the worktrees exclusion, Jest also picks up any `.claude/worktrees/*` checkout's own
+  // frozen copy of src/__tests__ as a second, stale test suite -- it fails independently of
+  // whatever's actually being worked on in this checkout (it's pinned to whatever commit that
+  // worktree was created at) and reads as a false alarm about the real change under test.
+  testPathIgnorePatterns: ['/node_modules/', '<rootDir>/.claude/worktrees/'],
   modulePathIgnorePatterns: [],
   moduleNameMapper: {
     '^@/components/(.*)$': '<rootDir>/src/components/$1',

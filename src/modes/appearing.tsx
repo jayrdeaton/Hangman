@@ -10,10 +10,10 @@ import { CenteredBody, CenteredLeftArm, CenteredLeftLeg, CenteredRightArm, Cente
 // figure is horizontally centered rather than offset to clear a gallows pole.
 const PARTS = [CenteredLeftLeg, CenteredRightLeg, CenteredBody, CenteredLeftArm, CenteredRightArm, CenteredRopeAndHead]
 
-const AppearingVisual = ({ mistakes, color, width, height }: { mistakes: number; color: string; width: number; height: number }) => {
+const AppearingVisual = ({ mistakes, color }: { mistakes: number; color: string }) => {
   const count = clampStage(mistakes, PARTS.length)
   return (
-    <Svg width={width} height={height} viewBox='0 0 100 100'>
+    <Svg viewBox='0 0 100 100'>
       {PARTS.slice(0, count).map((Part, i) => (
         <Part key={i} color={color} />
       ))}

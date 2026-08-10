@@ -2,7 +2,7 @@ import { Dialog } from '@rific/auto-paper'
 import { Button } from '@rific/haptic-press'
 import { JSX } from 'react'
 import { StyleSheet } from 'react-native'
-import { Avatar } from 'react-native-paper'
+import { Avatar, useTheme } from 'react-native-paper'
 
 export type PnpHandoffDialogProps = {
   // False while the game menu is open, same contract as PnpWordPrompt's promptVisible — this
@@ -21,16 +21,21 @@ export type PnpHandoffDialogProps = {
 // the physical hand-off from landing on the real keyboard underneath (see Game's `locked` prop) —
 // a stray touch can now end the hand-off a beat early, but that's strictly better than it reaching
 // the keyboard and burning a guess.
-export const PnpHandoffDialog = ({ visible, onReady }: PnpHandoffDialogProps): JSX.Element => (
-  <Dialog visible={visible} onDismiss={onReady}>
-    <Dialog.Content style={styles.content}>
-      <Avatar.Icon size={88} icon='account-arrow-right' />
-      <Button mode='contained' onPress={onReady} accessibilityLabel='Ready to guess' style={styles.readyButton} contentStyle={styles.readyContent} labelStyle={styles.readyLabel}>
-        Ready
-      </Button>
-    </Dialog.Content>
-  </Dialog>
-)
+export const PnpHandoffDialog = ({ visible, onReady }: PnpHandoffDialogProps): JSX.Element => {
+  const theme = useTheme()
+
+  return (
+    <Dialog visible={visible} onDismiss={onReady}>
+      <Dialog.Content style={styles.content}>
+        {/* Secondary, not primary (Avatar.Icon's default) — this is the second player's turn. */}
+        <Avatar.Icon size={88} icon='account-arrow-right' color={theme.colors.onSecondary} style={{ backgroundColor: theme.colors.secondary }} />
+        <Button mode='contained' onPress={onReady} accessibilityLabel='Ready to guess' style={styles.readyButton} contentStyle={styles.readyContent} labelStyle={styles.readyLabel}>
+          Ready
+        </Button>
+      </Dialog.Content>
+    </Dialog>
+  )
+}
 
 const styles = StyleSheet.create({
   content: { alignItems: 'center', paddingVertical: 16 },

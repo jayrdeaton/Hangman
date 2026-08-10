@@ -39,7 +39,7 @@ function makeBlocks(): BlockData[] {
   return BASE.map((b, i) => ({ ...b, key: `blk${i}` }))
 }
 
-const JengaVisual = ({ mistakes, color, width, height }: { mistakes: number; color: string; width: number; height: number }) => {
+const JengaVisual = ({ mistakes, color }: { mistakes: number; color: string }) => {
   const [blocks] = useState<BlockData[]>(makeBlocks)
   const removed = clampStage(mistakes, blocks.length)
   const visible = blocks.slice(0, blocks.length - removed)
@@ -47,7 +47,7 @@ const JengaVisual = ({ mistakes, color, width, height }: { mistakes: number; col
   const tilt = removed * 3
 
   return (
-    <Svg width={width} height={height} viewBox='0 0 100 100'>
+    <Svg viewBox='0 0 100 100'>
       {/* transform (not rotation+origin) — react-native-svg's web renderer sets origin as a raw
           `transform-origin` DOM attribute, which isn't a valid one (React warns about it); folding
           the pivot into the transform string itself avoids that path entirely, same result. */}

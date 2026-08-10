@@ -72,9 +72,9 @@ export const puzzleManifest: PuzzleManifestItem[] = [
   {
     "key": "geographyUSStates",
     "file": "geographyUSStates.json",
-    "label": "US States",
+    "label": "US States & Cities",
     "group": "Geography",
-    "count": 128,
+    "count": 132,
     "difficultyTiers": [
       "easy",
       "hard",
@@ -85,7 +85,8 @@ export const puzzleManifest: PuzzleManifestItem[] = [
     ],
     "categories": [
       "US State",
-      "US State Capital"
+      "US State Capital",
+      "US State Largest City"
     ]
   },
   {
@@ -293,7 +294,7 @@ export const puzzleManifest: PuzzleManifestItem[] = [
   {
     "key": "themeActors",
     "file": "themeActors.json",
-    "label": "Actors",
+    "label": "Classic Actors",
     "group": "Media",
     "count": 50,
     "difficultyTiers": [
@@ -313,7 +314,7 @@ export const puzzleManifest: PuzzleManifestItem[] = [
     "file": "themeAirplanes.json",
     "label": "Airplanes",
     "group": "Transportation",
-    "count": 93,
+    "count": 39,
     "difficultyTiers": [
       "easy",
       "hard",
@@ -493,7 +494,7 @@ export const puzzleManifest: PuzzleManifestItem[] = [
     "file": "themeBrandsProducts.json",
     "label": "Brands & Products",
     "group": "Business",
-    "count": 485,
+    "count": 72,
     "difficultyTiers": [
       "easy",
       "hard",
@@ -547,7 +548,7 @@ export const puzzleManifest: PuzzleManifestItem[] = [
     "file": "themeCompanies.json",
     "label": "Companies",
     "group": "Business",
-    "count": 49,
+    "count": 58,
     "difficultyTiers": [
       "easy",
       "hard",
@@ -614,24 +615,6 @@ export const puzzleManifest: PuzzleManifestItem[] = [
     ]
   },
   {
-    "key": "themeFirstLadies",
-    "file": "themeFirstLadies.json",
-    "label": "US First Ladies",
-    "group": "History",
-    "count": 53,
-    "difficultyTiers": [
-      "easy",
-      "hard",
-      "medium"
-    ],
-    "sources": [
-      "theme"
-    ],
-    "categories": [
-      "First Lady"
-    ]
-  },
-  {
     "key": "themeFlora",
     "file": "themeFlora.json",
     "label": "Flora",
@@ -665,23 +648,6 @@ export const puzzleManifest: PuzzleManifestItem[] = [
     ],
     "categories": [
       "Food and Drink"
-    ]
-  },
-  {
-    "key": "themeGalaxies",
-    "file": "themeGalaxies.json",
-    "label": "Galaxies",
-    "group": "Science",
-    "count": 18,
-    "difficultyTiers": [
-      "easy",
-      "medium"
-    ],
-    "sources": [
-      "theme"
-    ],
-    "categories": [
-      "Galaxy"
     ]
   },
   {
@@ -775,46 +741,11 @@ export const puzzleManifest: PuzzleManifestItem[] = [
     ]
   },
   {
-    "key": "themeMoons",
-    "file": "themeMoons.json",
-    "label": "Moons",
-    "group": "Science",
-    "count": 21,
-    "difficultyTiers": [
-      "hard",
-      "medium"
-    ],
-    "sources": [
-      "theme"
-    ],
-    "categories": [
-      "Moon"
-    ]
-  },
-  {
-    "key": "themeMovieTitles",
-    "file": "themeMovieTitles.json",
-    "label": "Movie Titles",
-    "group": "Media",
-    "count": 121,
-    "difficultyTiers": [
-      "easy",
-      "hard",
-      "medium"
-    ],
-    "sources": [
-      "theme"
-    ],
-    "categories": [
-      "Movie Title"
-    ]
-  },
-  {
     "key": "themeMythology",
     "file": "themeMythology.json",
     "label": "Legendary Creatures",
     "group": "Mythology",
-    "count": 752,
+    "count": 62,
     "difficultyTiers": [
       "easy",
       "hard",
@@ -846,30 +777,12 @@ export const puzzleManifest: PuzzleManifestItem[] = [
     ]
   },
   {
-    "key": "themePlanets",
-    "file": "themePlanets.json",
-    "label": "Planets",
-    "group": "Science",
-    "count": 17,
-    "difficultyTiers": [
-      "hard",
-      "medium"
-    ],
-    "sources": [
-      "theme"
-    ],
-    "categories": [
-      "Planet"
-    ]
-  },
-  {
     "key": "themeProgrammingLanguages",
     "file": "themeProgrammingLanguages.json",
     "label": "Programming Languages",
     "group": "Science",
-    "count": 581,
+    "count": 46,
     "difficultyTiers": [
-      "easy",
       "hard",
       "medium"
     ],
@@ -881,28 +794,11 @@ export const puzzleManifest: PuzzleManifestItem[] = [
     ]
   },
   {
-    "key": "themeSpaceMissions",
-    "file": "themeSpaceMissions.json",
-    "label": "Space Missions",
+    "key": "themeSpace",
+    "file": "themeSpace.json",
+    "label": "Space",
     "group": "Science",
-    "count": 15,
-    "difficultyTiers": [
-      "easy",
-      "medium"
-    ],
-    "sources": [
-      "theme"
-    ],
-    "categories": [
-      "Space Mission"
-    ]
-  },
-  {
-    "key": "themeSuperheroes",
-    "file": "themeSuperheroes.json",
-    "label": "Superheroes",
-    "group": "Media",
-    "count": 200,
+    "count": 71,
     "difficultyTiers": [
       "easy",
       "hard",
@@ -912,13 +808,16 @@ export const puzzleManifest: PuzzleManifestItem[] = [
       "theme"
     ],
     "categories": [
-      "Superhero"
+      "Galaxy",
+      "Moon",
+      "Planet",
+      "Space Mission"
     ]
   },
   {
     "key": "themeTechnology",
     "file": "themeTechnology.json",
-    "label": "Technology",
+    "label": "Gadgets & Consoles",
     "group": "Science",
     "count": 107,
     "difficultyTiers": [
@@ -951,29 +850,11 @@ export const puzzleManifest: PuzzleManifestItem[] = [
     ]
   },
   {
-    "key": "themeTVShows",
-    "file": "themeTVShows.json",
-    "label": "Classic TV Shows",
-    "group": "Media",
-    "count": 173,
-    "difficultyTiers": [
-      "easy",
-      "hard",
-      "medium"
-    ],
-    "sources": [
-      "theme"
-    ],
-    "categories": [
-      "TV Show"
-    ]
-  },
-  {
-    "key": "themeUSPresidents",
-    "file": "themeUSPresidents.json",
-    "label": "US Presidents",
+    "key": "themeUSPoliticians",
+    "file": "themeUSPoliticians.json",
+    "label": "US Politicians",
     "group": "History",
-    "count": 46,
+    "count": 99,
     "difficultyTiers": [
       "easy",
       "hard",
@@ -983,6 +864,7 @@ export const puzzleManifest: PuzzleManifestItem[] = [
       "theme"
     ],
     "categories": [
+      "First Lady",
       "US President"
     ]
   },
@@ -991,7 +873,7 @@ export const puzzleManifest: PuzzleManifestItem[] = [
     "file": "themeVehicles.json",
     "label": "Vehicles",
     "group": "Transportation",
-    "count": 58,
+    "count": 54,
     "difficultyTiers": [
       "easy",
       "hard",
@@ -1206,20 +1088,12 @@ const loaders: Record<string, () => Puzzle[]> = {
     const mod = require('./themeFauna.json')
     return (mod?.default ?? mod) as Puzzle[]
   },
-  'themeFirstLadies': () => {
-    const mod = require('./themeFirstLadies.json')
-    return (mod?.default ?? mod) as Puzzle[]
-  },
   'themeFlora': () => {
     const mod = require('./themeFlora.json')
     return (mod?.default ?? mod) as Puzzle[]
   },
   'themeFoodAndDrink': () => {
     const mod = require('./themeFoodAndDrink.json')
-    return (mod?.default ?? mod) as Puzzle[]
-  },
-  'themeGalaxies': () => {
-    const mod = require('./themeGalaxies.json')
     return (mod?.default ?? mod) as Puzzle[]
   },
   'themeGreekRomanGods': () => {
@@ -1242,14 +1116,6 @@ const loaders: Record<string, () => Puzzle[]> = {
     const mod = require('./themeModernActors.json')
     return (mod?.default ?? mod) as Puzzle[]
   },
-  'themeMoons': () => {
-    const mod = require('./themeMoons.json')
-    return (mod?.default ?? mod) as Puzzle[]
-  },
-  'themeMovieTitles': () => {
-    const mod = require('./themeMovieTitles.json')
-    return (mod?.default ?? mod) as Puzzle[]
-  },
   'themeMythology': () => {
     const mod = require('./themeMythology.json')
     return (mod?.default ?? mod) as Puzzle[]
@@ -1258,20 +1124,12 @@ const loaders: Record<string, () => Puzzle[]> = {
     const mod = require('./themePeriodicElements.json')
     return (mod?.default ?? mod) as Puzzle[]
   },
-  'themePlanets': () => {
-    const mod = require('./themePlanets.json')
-    return (mod?.default ?? mod) as Puzzle[]
-  },
   'themeProgrammingLanguages': () => {
     const mod = require('./themeProgrammingLanguages.json')
     return (mod?.default ?? mod) as Puzzle[]
   },
-  'themeSpaceMissions': () => {
-    const mod = require('./themeSpaceMissions.json')
-    return (mod?.default ?? mod) as Puzzle[]
-  },
-  'themeSuperheroes': () => {
-    const mod = require('./themeSuperheroes.json')
+  'themeSpace': () => {
+    const mod = require('./themeSpace.json')
     return (mod?.default ?? mod) as Puzzle[]
   },
   'themeTechnology': () => {
@@ -1282,12 +1140,8 @@ const loaders: Record<string, () => Puzzle[]> = {
     const mod = require('./themeTravel.json')
     return (mod?.default ?? mod) as Puzzle[]
   },
-  'themeTVShows': () => {
-    const mod = require('./themeTVShows.json')
-    return (mod?.default ?? mod) as Puzzle[]
-  },
-  'themeUSPresidents': () => {
-    const mod = require('./themeUSPresidents.json')
+  'themeUSPoliticians': () => {
+    const mod = require('./themeUSPoliticians.json')
     return (mod?.default ?? mod) as Puzzle[]
   },
   'themeVehicles': () => {

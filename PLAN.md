@@ -2,33 +2,9 @@
 
 ## Notes
 
-A ripple effect color change on the winning keypress would be really cool
+A ripple effect color change on the winning keypress would be really cool — not super necessary, just a fun idea. The keyboard could have some cool effect on a win since it takes up a good chunk of the screen.
 
-The scroll view with inputs need to account for the keyboard.  Maybe that should be baked in to react-native-scroll-view rific module so that I don't have to worry about it on future projects.
-
-I think it would be great if the 'wrong guess pips' actually showed the letters that were guessed and were wrong.  Then the correct guesses and the incorrect ones are all clearly visible without having to deduce anything.  The pip type could be an option, for the way it currently is vs that  option.
-
-The generative ones, like balloons, need to have a fill color so the strings behind them dont show through the baloons.  Or the balloons (snowflakes too) could be random theme colors, that'd be a nice effect.
-
-The snowflakes mode gave me more tries than the other modes?
-
-Why is there a delay when opening and closing drawers?
-
-How does random work?  Does it select a pack randomly first then inside the pack so they are weighted differently?  Or does a large pack get picked out of more often than a smaller pack?
-
-I think I want the achievements unlocked to be called out in the win dialog instead of in a toast.  Make sure to include the trophy icon, maybe with a pulse or dance effect or something
-
-I plan to add sound effects, so I'm wondering if I should add haptic and sound settings.  I think that these belong in a sub game menu setting dialog or screen, or collapsible part of the drawer or something (maybe they should all be collapsible), because I dont think keyboard layout and theme settings would get touched all that frequently.
-
-The game menu is all about getting a game going.  You have the settings for it, then all the packs then the random and pass and play settings.  I think a press on a pack should start a random in that pack, one press and done.  Long press could take you to browse the pack.  Browsing the pack is also the first class action in achievements, so its available there too, but the game menu should get a game going as quickly as possible IMO.
-
-Custom packs should have the place for a custom label, but get "Custom" by default if its empty.  Should be editable in the form. The form also should use react-native-focus-chain rific package.  If on last menu focus item it should add another.  That way you can just keep laternating between hint and answer then enter and never have to press away.  Make sure keyboards are being dismissed when navigated away from, I did find that was a bug. 
-
-Hangman-Scrapers needs an update, US States has too many to be US States....
-
-I also want more private packs.  Harry Potter, Lord of the Rings, Star Wars, Star Trek, etc etc.
-
-## Swap redux-persist storage engine to MMKV
+## Swap persistence to MMKV
 
 **Status:** Deferred, not urgent.
 
@@ -39,10 +15,29 @@ the same `@reduxjs/toolkit` + `react-redux` + `redux-persist` stack on top of
 versions. Currently suppressed via `expo.doctor.reactNativeDirectoryCheck.exclude`
 in `package.json`.
 
-**Idea:** Rather than replacing redux-persist itself, swap the underlying
-storage engine from AsyncStorage to `react-native-mmkv`. MMKV is synchronous
-and significantly faster; redux-persist supports a custom storage adapter, so
-this is a contained change (no Redux architecture rewrite).
+Asked separately whether this data deserves SQLite instead: no. Nothing here
+is relational (no joins, no indexed range queries, no querying across packs)
+— it's independent JSON blobs, worst case around 1MB. SQLite would add a
+schema/migrations/query-layer for data that's fundamentally just
+`JSON.parse(await AsyncStorage.getItem(key))`.
+
+**Idea:** Swap the underlying storage engine from AsyncStorage to
+`react-native-mmkv` (synchronous, significantly faster). redux-persist
+supports a custom storage adapter, so the `theme`/`haptic` slices (haptics
+joined the same redux-persist whitelist as theme once the Settings drawer's
+vibrate toggle landed — see `@/components/Haptic.tsx`) are a contained swap —
+but that's only the smallest, least meaningful piece of what's persisted.
+The data that actually matters bypasses Redux entirely, hand-rolled directly
+against AsyncStorage in independent modules, each owning one JSON blob under
+one versioned key: `src/utils/customPacks.ts` (`custom_packs_v1`),
+`src/utils/unlocks.ts` (`puzzle_unlocks_v1`), `src/utils/achievements.ts`
+(`achievements_v1`), and three settings providers
+(`AutoSaveCustomProvider.tsx`, `PackSelectionProvider.tsx`,
+`KeyboardLayoutProvider.tsx`). **Scope this migration to cover all of those,
+not just the redux `theme` slice** — same read-whole/write-whole shape, just
+swapping `AsyncStorage.getItem`/`setItem` for MMKV's synchronous
+`getString`/`set`, which also drops the `.then()`/async-effect boilerplate in
+the three settings providers.
 
 **Tradeoff:** MMKV is a native module, so it requires a dev client build —
 not compatible with Expo Go. Not a blocker since none of these projects rely

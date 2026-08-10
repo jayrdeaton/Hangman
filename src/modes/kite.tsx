@@ -97,7 +97,7 @@ function frayedStringPath(from: [number, number], to: [number, number]): string 
   return points.map((p, i) => `${i === 0 ? 'M' : 'L'}${p[0].toFixed(1)},${p[1].toFixed(1)}`).join(' ')
 }
 
-const KiteVisual = ({ mistakes, color, width, height }: { mistakes: number; color: string; width: number; height: number }) => {
+const KiteVisual = ({ mistakes, color }: { mistakes: number; color: string }) => {
   const idx = clampStage(mistakes, STAGES.length - 1)
   const s = STAGES[idx]
   const isFinalStage = idx === STAGES.length - 1
@@ -128,7 +128,7 @@ const KiteVisual = ({ mistakes, color, width, height }: { mistakes: number; colo
   const stringPath = s.stringFrayed ? frayedStringPath(stringStart, GROUND_ANCHOR) : `M${stringStart[0].toFixed(1)},${stringStart[1].toFixed(1)} Q${midX.toFixed(1)},${midY.toFixed(1)} ${GROUND_ANCHOR[0]},${GROUND_ANCHOR[1]}`
 
   return (
-    <Svg width={width} height={height} viewBox='0 0 100 100'>
+    <Svg viewBox='0 0 100 100'>
       {/* String: sags gently to a small ground knot while intact, snaps into a jagged stub once frayed */}
       <Path d={stringPath} stroke={color} strokeWidth='2' fill='none' strokeLinecap='round' strokeLinejoin='round' />
       {!s.stringFrayed && <Circle cx={GROUND_ANCHOR[0]} cy={GROUND_ANCHOR[1]} r='1.8' fill={color} stroke='none' />}

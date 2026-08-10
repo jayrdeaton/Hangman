@@ -10,7 +10,9 @@ import { normalizePhrase, type PuzzleConfig } from './puzzlePicker'
 const MAX_PHRASE_LENGTH = 128
 const MAX_HINT_LENGTH = 80
 
-const findMode = (id: string | string[] | undefined) => {
+// Exported for PuzzleDefaultsProvider.tsx, which resolves a persisted mode id the same way a
+// shared link's own mode query param resolves here.
+export const findMode = (id: string | string[] | undefined) => {
   if (typeof id !== 'string') return DEFAULT_MODE
   return ALL_MODES.find((candidate) => candidate.id === id) ?? DEFAULT_MODE
 }

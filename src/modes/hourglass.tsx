@@ -76,7 +76,7 @@ function bottomMoundPath(level: number): string | null {
   return [`M${NECK_X - baseHalfW * 1.05},${GLASS_BOTTOM_Y}`, `Q${peakX - baseHalfW * 0.3},${peakY + bulge} ${peakX},${peakY}`, `Q${peakX + baseHalfW * 0.25},${peakY + bulge} ${NECK_X + baseHalfW * 0.95},${GLASS_BOTTOM_Y}`, 'Z'].join(' ')
 }
 
-const HourglassVisual = ({ mistakes, color, width, height }: { mistakes: number; color: string; width: number; height: number }) => {
+const HourglassVisual = ({ mistakes, color }: { mistakes: number; color: string }) => {
   const index = clampStage(mistakes, STAGES.length - 1)
   const s = STAGES[index]
   const finalStage = index === STAGES.length - 1
@@ -87,7 +87,7 @@ const HourglassVisual = ({ mistakes, color, width, height }: { mistakes: number;
   const streamY2 = s.bottomSandLevel > 0 ? moundPeakY(s.bottomSandLevel) : GLASS_BOTTOM_Y
 
   return (
-    <Svg width={width} height={height} viewBox='0 0 100 100'>
+    <Svg viewBox='0 0 100 100'>
       {/* transform (not rotation+origin) — react-native-svg's web renderer sets origin as a raw
           `transform-origin` DOM attribute, which isn't a valid one (React warns about it); folding
           the pivot into the transform string itself avoids that path entirely, same result. */}

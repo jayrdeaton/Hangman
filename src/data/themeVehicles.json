@@ -980,46 +980,6 @@
     }
   },
   {
-    "id": "e822b0b62c399728b9df4ef989ffd3f9",
-    "source": "theme",
-    "type": "title",
-    "answer": "Pontiac Motor Division",
-    "normalizedAnswer": "PONTIAC MOTOR DIVISION",
-    "category": "Vehicle",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 20,
-    "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "vehicle"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
-    }
-  },
-  {
-    "id": "6615e61279817e04fc5397e3924c3ddf",
-    "source": "theme",
-    "type": "title",
-    "answer": "Ford Motor Company",
-    "normalizedAnswer": "FORD MOTOR COMPANY",
-    "category": "Vehicle",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 16,
-    "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "vehicle"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
-    }
-  },
-  {
     "id": "acf46172354e771bbc4dd81bfde65718",
     "source": "theme",
     "type": "title",
@@ -1111,46 +1071,6 @@
     "wordCount": 2,
     "letterCount": 19,
     "uniqueLetterCount": 13,
-    "tags": [
-      "theme",
-      "vehicle"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
-    }
-  },
-  {
-    "id": "760acc395fdbc1f0378946bda3d33e37",
-    "source": "theme",
-    "type": "title",
-    "answer": "Chevrolet Motor Division",
-    "normalizedAnswer": "CHEVROLET MOTOR DIVISION",
-    "category": "Vehicle",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 22,
-    "uniqueLetterCount": 13,
-    "tags": [
-      "theme",
-      "vehicle"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
-    }
-  },
-  {
-    "id": "c3c57de9d90510db3622296b4c003913",
-    "source": "theme",
-    "type": "title",
-    "answer": "Cadillac Motor Division",
-    "normalizedAnswer": "CADILLAC MOTOR DIVISION",
-    "category": "Vehicle",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 21,
-    "uniqueLetterCount": 12,
     "tags": [
       "theme",
       "vehicle"

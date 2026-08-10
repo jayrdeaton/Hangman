@@ -34,12 +34,12 @@ function flamePath(wickTop: number, flameH: number): string {
   return [`M50,${wickTop}`, `C${50 - f},${wickTop - f * 0.8}`, `${50 - f * 0.6},${top + flameH * 0.3}`, `50,${top}`, `C${50 + f * 0.6},${top + flameH * 0.3}`, `${50 + f},${wickTop - f * 0.8}`, `50,${wickTop}`].join(' ')
 }
 
-const CandleVisual = ({ mistakes, color, width, height }: { mistakes: number; color: string; width: number; height: number }) => {
+const CandleVisual = ({ mistakes, color }: { mistakes: number; color: string }) => {
   const s = STAGES[clampStage(mistakes, STAGES.length - 1)]
   const wickTop = s.bodyTop - s.wickLen
 
   return (
-    <Svg width={width} height={height} viewBox='0 0 100 100'>
+    <Svg viewBox='0 0 100 100'>
       {/* Base plate */}
       <Rect x='30' y='82' width='40' height='8' rx='3' stroke={color} strokeWidth='3' fill='none' strokeLinejoin='round' />
       {/* Body */}

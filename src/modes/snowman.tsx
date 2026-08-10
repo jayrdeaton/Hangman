@@ -86,13 +86,13 @@ const Puddle = ({ color }: { color: string }) => (
   </G>
 )
 
-const SnowmanVisual = ({ mistakes, color, width, height }: { mistakes: number; color: string; width: number; height: number }) => {
+const SnowmanVisual = ({ mistakes, color }: { mistakes: number; color: string }) => {
   const removed = clampStage(mistakes, REMOVAL_ORDER.length)
   const visible = REMOVAL_ORDER.slice(removed)
   const isDead = removed >= REMOVAL_ORDER.length
 
   return (
-    <Svg width={width} height={height} viewBox='0 0 100 100'>
+    <Svg viewBox='0 0 100 100'>
       {isDead ? (
         <Puddle color={color} />
       ) : (

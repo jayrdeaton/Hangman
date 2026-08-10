@@ -1,0 +1,1564 @@
+[
+  {
+    "id": "4645f1a2f3e0ace5feef4f34158e4e6e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Jupiter",
+    "normalizedAnswer": "JUPITER",
+    "category": "Planet",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "planet"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size"
+    }
+  },
+  {
+    "id": "e96bdd2085d6e21e92e707600c86966e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Saturn",
+    "normalizedAnswer": "SATURN",
+    "category": "Planet",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "planet"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size"
+    }
+  },
+  {
+    "id": "e7ed8f36e72fc0c2582612a81599fb27",
+    "source": "theme",
+    "type": "title",
+    "answer": "Uranus",
+    "normalizedAnswer": "URANUS",
+    "category": "Planet",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "planet"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size"
+    }
+  },
+  {
+    "id": "e82a890ff86facd2aecd25ae5ec7b026",
+    "source": "theme",
+    "type": "title",
+    "answer": "Neptune",
+    "normalizedAnswer": "NEPTUNE",
+    "category": "Planet",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "planet"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size"
+    }
+  },
+  {
+    "id": "f52bc0cb87f943f364d2edc25b8acbc8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Earth",
+    "normalizedAnswer": "EARTH",
+    "category": "Planet",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "planet"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size"
+    }
+  },
+  {
+    "id": "fbabdb345650b9bf93978e897c07c9ed",
+    "source": "theme",
+    "type": "title",
+    "answer": "Venus",
+    "normalizedAnswer": "VENUS",
+    "category": "Planet",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "planet"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size"
+    }
+  },
+  {
+    "id": "430a7d44cb615e410a8c21aeb3d9a2c7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mars",
+    "normalizedAnswer": "MARS",
+    "category": "Planet",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "planet"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size"
+    }
+  },
+  {
+    "id": "7ffcb9709617a9dc0b46fdc142e37bbd",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mercury",
+    "normalizedAnswer": "MERCURY",
+    "category": "Planet",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "planet"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size"
+    }
+  },
+  {
+    "id": "69819687c380bf31f379cdf6f8485f3a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Pluto",
+    "normalizedAnswer": "PLUTO",
+    "category": "Planet",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "planet"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size"
+    }
+  },
+  {
+    "id": "4d120927296ec5b3c895bf23be56e387",
+    "source": "theme",
+    "type": "title",
+    "answer": "Eris",
+    "normalizedAnswer": "ERIS",
+    "category": "Planet",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "planet"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size"
+    }
+  },
+  {
+    "id": "7109084fbda825a5f8e099b030491c28",
+    "source": "theme",
+    "type": "title",
+    "answer": "Haumea",
+    "normalizedAnswer": "HAUMEA",
+    "category": "Planet",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "planet"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size"
+    }
+  },
+  {
+    "id": "028dabedf0d651c01edf7ff4885dd325",
+    "source": "theme",
+    "type": "title",
+    "answer": "Makemake",
+    "normalizedAnswer": "MAKEMAKE",
+    "category": "Planet",
+    "difficulty": 90.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "planet"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size"
+    }
+  },
+  {
+    "id": "4e5ed120ac05031a11b2160780209324",
+    "source": "theme",
+    "type": "title",
+    "answer": "Gonggong",
+    "normalizedAnswer": "GONGGONG",
+    "category": "Planet",
+    "difficulty": 94.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "planet"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size"
+    }
+  },
+  {
+    "id": "b6d5802ea1802f5cd1b55b0c7d8470fa",
+    "source": "theme",
+    "type": "title",
+    "answer": "Quaoar",
+    "normalizedAnswer": "QUAOAR",
+    "category": "Planet",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "planet"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size"
+    }
+  },
+  {
+    "id": "d45e926f0b900e08eca260525fc5dcd7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ceres",
+    "normalizedAnswer": "CERES",
+    "category": "Planet",
+    "difficulty": 92,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "planet"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size"
+    }
+  },
+  {
+    "id": "bd9797298b8aca0baee768814cf6b12b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Orcus",
+    "normalizedAnswer": "ORCUS",
+    "category": "Planet",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "planet"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size"
+    }
+  },
+  {
+    "id": "374e433d921fada1ee18737f44ff8e5a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sedna",
+    "normalizedAnswer": "SEDNA",
+    "category": "Planet",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "planet"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size"
+    }
+  },
+  {
+    "id": "6ab1dc1b67d6010019f764bd5884100a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Moon",
+    "normalizedAnswer": "MOON",
+    "category": "Moon",
+    "difficulty": 96.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "moon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "07ecfd26b1eb44ef21955036c588ace6",
+    "source": "theme",
+    "type": "title",
+    "answer": "Phobos",
+    "normalizedAnswer": "PHOBOS",
+    "category": "Moon",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "moon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "cb3f33fd51ac3af69e612e565603d645",
+    "source": "theme",
+    "type": "title",
+    "answer": "Deimos",
+    "normalizedAnswer": "DEIMOS",
+    "category": "Moon",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "moon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "301559c995751368f61f0dd394d89db8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Io",
+    "normalizedAnswer": "IO",
+    "category": "Moon",
+    "difficulty": 101.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 2,
+    "uniqueLetterCount": 2,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "moon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a0eaee432c4139fa3762e377cf81328f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Europa",
+    "normalizedAnswer": "EUROPA",
+    "category": "Moon",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "moon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "5ccf30608bae19d33e8b00198471f5f5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ganymede",
+    "normalizedAnswer": "GANYMEDE",
+    "category": "Moon",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "moon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "baeb6696f38f863892d6f187352dfb76",
+    "source": "theme",
+    "type": "title",
+    "answer": "Callisto",
+    "normalizedAnswer": "CALLISTO",
+    "category": "Moon",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "moon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a7fb3bb881ad5fcec868a79a428711c3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Titan",
+    "normalizedAnswer": "TITAN",
+    "category": "Moon",
+    "difficulty": 92,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "moon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "12848b32dd253dafbad47cf8b605d53f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Enceladus",
+    "normalizedAnswer": "ENCELADUS",
+    "category": "Moon",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "moon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "b1ca212bb3f10d34a15af5cfe8ae04b5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mimas",
+    "normalizedAnswer": "MIMAS",
+    "category": "Moon",
+    "difficulty": 92,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "moon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c855dfefd642209bd5561d4a70d1801c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Iapetus",
+    "normalizedAnswer": "IAPETUS",
+    "category": "Moon",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "moon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "d3304fa4c847950224b9869c51e76822",
+    "source": "theme",
+    "type": "title",
+    "answer": "Rhea",
+    "normalizedAnswer": "RHEA",
+    "category": "Moon",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "moon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "9e24e9c400eeaa87d4d62bc411939a58",
+    "source": "theme",
+    "type": "title",
+    "answer": "Dione",
+    "normalizedAnswer": "DIONE",
+    "category": "Moon",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "moon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "38096fe630edd4579c3daf8feabbadbf",
+    "source": "theme",
+    "type": "title",
+    "answer": "Tethys",
+    "normalizedAnswer": "TETHYS",
+    "category": "Moon",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "moon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ae00654d4f5ce74b578d53371104ea21",
+    "source": "theme",
+    "type": "title",
+    "answer": "Titania",
+    "normalizedAnswer": "TITANIA",
+    "category": "Moon",
+    "difficulty": 91.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "moon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "8d521e516bcf5739fbd28c72a4deffb3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Oberon",
+    "normalizedAnswer": "OBERON",
+    "category": "Moon",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "moon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "23e8552c0fe0506301090681d4c2643e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Miranda",
+    "normalizedAnswer": "MIRANDA",
+    "category": "Moon",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "moon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "e6afa466c62bf463df27a1949f8edaa0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ariel",
+    "normalizedAnswer": "ARIEL",
+    "category": "Moon",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "moon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "363df88583686484645745e4a2043d15",
+    "source": "theme",
+    "type": "title",
+    "answer": "Umbriel",
+    "normalizedAnswer": "UMBRIEL",
+    "category": "Moon",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "moon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "5be8493b3a8842869dc8d8b72e4f8058",
+    "source": "theme",
+    "type": "title",
+    "answer": "Triton",
+    "normalizedAnswer": "TRITON",
+    "category": "Moon",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "moon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "da12e3ef6a20e8878aa29ee6014181b2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Charon",
+    "normalizedAnswer": "CHARON",
+    "category": "Moon",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "moon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "86d3c8702b4e3749e8dc8397a0bc82c4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Milky Way",
+    "normalizedAnswer": "MILKY WAY",
+    "category": "Galaxy",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "galaxy"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c85c5c156faf0bf2190deca458f88a46",
+    "source": "theme",
+    "type": "title",
+    "answer": "Andromeda Galaxy",
+    "normalizedAnswer": "ANDROMEDA GALAXY",
+    "category": "Galaxy",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "galaxy"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "b67fbd4ef91e58044c7841059cba1ae9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Triangulum Galaxy",
+    "normalizedAnswer": "TRIANGULUM GALAXY",
+    "category": "Galaxy",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "galaxy"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "98cd9c68f551546cb011fc4501cf04bb",
+    "source": "theme",
+    "type": "title",
+    "answer": "Whirlpool Galaxy",
+    "normalizedAnswer": "WHIRLPOOL GALAXY",
+    "category": "Galaxy",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "galaxy"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "4dbf2985c94dc3f2e0e6bb6365694db2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sombrero Galaxy",
+    "normalizedAnswer": "SOMBRERO GALAXY",
+    "category": "Galaxy",
+    "difficulty": 60.4,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "galaxy"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "9a3f933f48525f0a2e58c1b0eba8686e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Pinwheel Galaxy",
+    "normalizedAnswer": "PINWHEEL GALAXY",
+    "category": "Galaxy",
+    "difficulty": 60.4,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "galaxy"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "d3b7749485695d2bef1250d1d57e51d2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cartwheel Galaxy",
+    "normalizedAnswer": "CARTWHEEL GALAXY",
+    "category": "Galaxy",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "galaxy"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "493271c0281b670bbd42755157ac93bd",
+    "source": "theme",
+    "type": "title",
+    "answer": "Black Eye Galaxy",
+    "normalizedAnswer": "BLACK EYE GALAXY",
+    "category": "Galaxy",
+    "difficulty": 68.4,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 14,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "galaxy"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "15a4e08d68026a8759f82e63342b3ae0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Centaurus A",
+    "normalizedAnswer": "CENTAURUS A",
+    "category": "Galaxy",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "galaxy"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "02ed8a7bf7af5a6239f86944118c03e8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cigar Galaxy",
+    "normalizedAnswer": "CIGAR GALAXY",
+    "category": "Galaxy",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "galaxy"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "63695d74c0d73d18c3ab4316cb316e4c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sculptor Galaxy",
+    "normalizedAnswer": "SCULPTOR GALAXY",
+    "category": "Galaxy",
+    "difficulty": 56.4,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "galaxy"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "f5a1ddfe6d87112f7ecf982f0662c3f6",
+    "source": "theme",
+    "type": "title",
+    "answer": "Southern Pinwheel Galaxy",
+    "normalizedAnswer": "SOUTHERN PINWHEEL GALAXY",
+    "category": "Galaxy",
+    "difficulty": 40,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 22,
+    "uniqueLetterCount": 16,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "galaxy"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "738ebb1304bd2c26e486818c515ddd94",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bode's Galaxy",
+    "normalizedAnswer": "BODES GALAXY",
+    "category": "Galaxy",
+    "difficulty": 65.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "galaxy"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c12ba9ffffb8989b966ed1a07a92f224",
+    "source": "theme",
+    "type": "title",
+    "answer": "Large Magellanic Cloud",
+    "normalizedAnswer": "LARGE MAGELLANIC CLOUD",
+    "category": "Galaxy",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 20,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "galaxy"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "241ca519f0c1a65e55dd744cf251cbbf",
+    "source": "theme",
+    "type": "title",
+    "answer": "Small Magellanic Cloud",
+    "normalizedAnswer": "SMALL MAGELLANIC CLOUD",
+    "category": "Galaxy",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 20,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "galaxy"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "7e1c2be32c959143f6c0ce446a3588fe",
+    "source": "theme",
+    "type": "title",
+    "answer": "Antennae Galaxies",
+    "normalizedAnswer": "ANTENNAE GALAXIES",
+    "category": "Galaxy",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "galaxy"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "9598d47fcaee0eb65210612309719b4a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sunflower Galaxy",
+    "normalizedAnswer": "SUNFLOWER GALAXY",
+    "category": "Galaxy",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "galaxy"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "89a7d1d03b67b17424a35b978f1296d7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Tadpole Galaxy",
+    "normalizedAnswer": "TADPOLE GALAXY",
+    "category": "Galaxy",
+    "difficulty": 64.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "galaxy"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "36139c67d44c947c3c6357690120afc7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Apollo Program",
+    "normalizedAnswer": "APOLLO PROGRAM",
+    "category": "Space Mission",
+    "difficulty": 76.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "mission"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "50f0d727c21a6e7894629e75c632bcdd",
+    "source": "theme",
+    "type": "title",
+    "answer": "Voyager Program",
+    "normalizedAnswer": "VOYAGER PROGRAM",
+    "category": "Space Mission",
+    "difficulty": 68.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "mission"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "39853c46a5f21e137506f2a6d2582eb8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cassini-Huygens",
+    "normalizedAnswer": "CASSINIHUYGENS",
+    "category": "Space Mission",
+    "difficulty": 64.4,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "mission"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ceb8f9c755a673d83dbcd10a04352ce9",
+    "source": "theme",
+    "type": "title",
+    "answer": "New Horizons",
+    "normalizedAnswer": "NEW HORIZONS",
+    "category": "Space Mission",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "mission"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ff62f1c918c35311f14a71170fef712f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mars Pathfinder",
+    "normalizedAnswer": "MARS PATHFINDER",
+    "category": "Space Mission",
+    "difficulty": 56.4,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "mission"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "250da8d280d80d09dc47e834d7cdcbf6",
+    "source": "theme",
+    "type": "title",
+    "answer": "Curiosity Rover",
+    "normalizedAnswer": "CURIOSITY ROVER",
+    "category": "Space Mission",
+    "difficulty": 64.4,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "mission"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "b644267ae2b698551c11eb706be01e44",
+    "source": "theme",
+    "type": "title",
+    "answer": "Perseverance Rover",
+    "normalizedAnswer": "PERSEVERANCE ROVER",
+    "category": "Space Mission",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 17,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "mission"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "67aae55eb892f780134d7d1c1b33cd2e",
+    "source": "theme",
+    "type": "title",
+    "answer": "International Space Station",
+    "normalizedAnswer": "INTERNATIONAL SPACE STATION",
+    "category": "Space Mission",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 25,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "mission"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "4e1a4710311caf03bb4a3562a2c7a7c0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Hubble Space Telescope",
+    "normalizedAnswer": "HUBBLE SPACE TELESCOPE",
+    "category": "Space Mission",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 20,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "mission"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "27079b1c46b83f37d440c723148dec6c",
+    "source": "theme",
+    "type": "title",
+    "answer": "James Webb Space Telescope",
+    "normalizedAnswer": "JAMES WEBB SPACE TELESCOPE",
+    "category": "Space Mission",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 23,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "mission"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "89bd351eff14b51d847f76786a798589",
+    "source": "theme",
+    "type": "title",
+    "answer": "Space Shuttle",
+    "normalizedAnswer": "SPACE SHUTTLE",
+    "category": "Space Mission",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "mission"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "da0e1bcc714c99575de5dd1458788948",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sputnik",
+    "normalizedAnswer": "SPUTNIK",
+    "category": "Space Mission",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "mission"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "0b9d76e9c2b71adb52f32cc82b48479c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Gemini Program",
+    "normalizedAnswer": "GEMINI PROGRAM",
+    "category": "Space Mission",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "mission"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6827319c89bbe1b6522e574c0d39db7e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mercury Program",
+    "normalizedAnswer": "MERCURY PROGRAM",
+    "category": "Space Mission",
+    "difficulty": 64.4,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "mission"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "43d2b03b827415d70dc152aacdb5cbf6",
+    "source": "theme",
+    "type": "title",
+    "answer": "Artemis Program",
+    "normalizedAnswer": "ARTEMIS PROGRAM",
+    "category": "Space Mission",
+    "difficulty": 64.4,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "science",
+      "space",
+      "mission"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  }
+]

@@ -80,13 +80,13 @@ function forkPath(cx: number, cy: number, angleDeg: number, length: number, seed
   return crackPath(startX, startY, forkAngle, forkLength, seed * 4.4)
 }
 
-const CrackingWindowVisual = ({ mistakes, color, width, height }: { mistakes: number; color: string; width: number; height: number }) => {
+const CrackingWindowVisual = ({ mistakes, color }: { mistakes: number; color: string }) => {
   const s = STAGES[clampStage(mistakes, STAGES.length - 1)]
   const branches = CRACK_BRANCHES.slice(0, s.branchCount)
   const shattered = mistakes >= 6
 
   return (
-    <Svg width={width} height={height} viewBox='0 0 100 100'>
+    <Svg viewBox='0 0 100 100'>
       {/* Window frame: outer sash plus a cross-mullion dividing it into 4 panes */}
       <Rect x='15' y='15' width='70' height='70' stroke={color} strokeWidth='3' fill='none' strokeLinejoin='round' />
       <Line x1='50' y1='15' x2='50' y2='85' stroke={color} strokeWidth='2.5' strokeLinecap='round' />

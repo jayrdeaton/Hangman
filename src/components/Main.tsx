@@ -1,19 +1,20 @@
 import { AppbarAction } from '@rific/haptic-press'
 import * as Linking from 'expo-linking'
-import { JSX, useCallback, useEffect, useRef, useState } from 'react'
-import { Platform, StyleSheet, View } from 'react-native'
-import { Appbar, Snackbar } from 'react-native-paper'
+import { JSX, useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { Keyboard, Platform, StyleSheet, View } from 'react-native'
+import { Appbar } from 'react-native-paper'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
 import { useAutoSaveCustom } from '@/hooks/useAutoSaveCustom'
 import { usePackSelection } from '@/hooks/usePackSelection'
+import { usePuzzleDefaults } from '@/hooks/usePuzzleDefaults'
 import { DEFAULT_MODE } from '@/modes/registry'
 import type { GameMode } from '@/types/gameModes'
 import type { GameStartPayload } from '@/types/gameSession'
-import { ACHIEVEMENT_DEFINITIONS_BY_ID, type AchievementId, recordLoss, recordPnpLoss, recordPnpWin, recordSolve } from '@/utils/achievements'
+import { ACHIEVEMENT_DEFINITIONS_BY_ID, recordLoss, recordPnpLoss, recordPnpWin, recordSolve } from '@/utils/achievements'
 import { alert } from '@/utils/alert'
 import { commaString } from '@/utils/commaString'
-import { addCustomPuzzle, importCustomPack, loadCustomPacksCache, parseCustomPackImport, scoreDifficulty } from '@/utils/customPacks'
+import { addCustomPuzzle, importCustomPack, loadCustomPacksCache, parseCustomPackImport, PNP_QUICK_PACK_LABEL, scoreDifficulty } from '@/utils/customPacks'
 import { readHangmanFileFromUri } from '@/utils/hangmanFile'
 import { normalizePhrase } from '@/utils/normalizePhrase'
 import { getPuzzleManifest } from '@/utils/puzzleCatalog'
@@ -61,6 +62,10 @@ export const Main = (): JSX.Element => {
   // state initializers below, so it's already available (synchronously — see
   // PackSelectionProvider) the moment they run.
   const { selectedPackKeys, setSelectedPackKeys } = usePackSelection()
+  // Same idea, for the last mode/difficulty the player picked (see PuzzleDefaultsProvider) — read
+  // here, before `config`'s own initializer below, so the very first puzzle already draws under
+  // them instead of the hardcoded DEFAULT_CONFIG values.
+  const { mode: defaultMode, setMode: setDefaultMode, difficulty: defaultDifficulty, setDifficulty: setDefaultDifficulty, ready: puzzleDefaultsReady } = usePuzzleDefaults()
   const { autoSave } = useAutoSaveCustom()
   // Pass and play is just a three-beat loop, so it needs no more state than which beat we're on —
   // null means we're not in it. There are deliberately no players and no score: any number of people
@@ -81,7 +86,7 @@ export const Main = (): JSX.Element => {
   // initializers (not an effect) so the first paint already shows the right game.
   const [config, setConfig] = useState<PuzzleConfig>(() => {
     const shared = incomingUrl ? parseSharedPuzzle(incomingUrl) : null
-    return shared ?? DEFAULT_CONFIG
+    return shared ?? { ...DEFAULT_CONFIG, mode: defaultMode, difficulty: defaultDifficulty }
   })
   // A ref, not state — nothing renders off this directly (categoryProgress, set separately, is
   // what the UI actually reads), it just needs to be the latest value resolvePuzzle can read
@@ -96,6 +101,26 @@ export const Main = (): JSX.Element => {
     const result = resolvePuzzle(config, selectedPackKeys, {})
     return result.ok ? result.payload : null
   })
+  // One-time correction for the very first draw above, which almost always runs BEFORE
+  // PuzzleDefaultsProvider's own AsyncStorage read resolves (that read is inherently async, even
+  // on a fast cold boot, so `defaultMode`/`defaultDifficulty` were still just the in-memory
+  // fallback — DEFAULT_MODE/'any' — at the moment `config`'s initializer above captured them; a
+  // later context update doesn't retroactively change what that initializer already returned).
+  // Reapplies live, exactly like a manual pick would (see handleModeChange/handleDifficultyChange
+  // just below), the instant the real persisted values are known — never for a shared-link draw
+  // (re-parsed here, not cached, since reading a ref during render to cache it at the initializer
+  // above would itself be unsafe), and never more than once, so it can't clobber a mode/difficulty
+  // the player already changed by hand in the brief window before this fires.
+  const appliedPersistedDefaultsRef = useRef(false)
+  /* eslint-disable react-hooks/set-state-in-effect -- syncs from an external source (AsyncStorage, via puzzleDefaultsReady) on a real one-time transition, not derived from other state */
+  useEffect(() => {
+    if (!puzzleDefaultsReady || appliedPersistedDefaultsRef.current) return
+    appliedPersistedDefaultsRef.current = true
+    if (incomingUrl && parseSharedPuzzle(incomingUrl)) return
+    setConfig((c) => ({ ...c, mode: defaultMode, difficulty: defaultDifficulty }))
+    setSession((s) => (s ? { ...s, mode: defaultMode } : s))
+  }, [puzzleDefaultsReady, defaultMode, defaultDifficulty, incomingUrl])
+  /* eslint-enable react-hooks/set-state-in-effect */
   // Game is keyed on this counter (not session.phrase) so it always remounts on a new round —
   // two consecutive puzzles can land on the identical normalized phrase (a small pack, or two
   // different puzzles normalizing to the same text), and keying on the phrase text would then
@@ -119,7 +144,11 @@ export const Main = (): JSX.Element => {
   const [achievementsVisible, setAchievementsVisible] = useState(false)
   const [unlockVersion, setUnlockVersion] = useState(0)
   const [customPacksVersion, setCustomPacksVersion] = useState(0)
-  const [snackbarQueue, setSnackbarQueue] = useState<AchievementId[]>([])
+  // Shown inside RoundEndDialog itself now, not a separate Snackbar — see handleSolved below.
+  // Cleared synchronously at the top of handleSolved, same reasoning as categoryProgress just
+  // below: a fresh win should never briefly show the previous win's unlock titles while this
+  // round's own achievement check is still in flight.
+  const [unlockedAchievementTitles, setUnlockedAchievementTitles] = useState<string[]>([])
   // The category-completion stat shown on a win. Cleared synchronously at the top of
   // handleSolved (see below) so a fresh win never briefly shows the previous win's numbers
   // while the unlock-map lookup for the new one is still in flight.
@@ -272,23 +301,54 @@ export const Main = (): JSX.Element => {
     setDrawerVisible(false)
   }, [])
 
+  // Shared by the hamburger icon and PnpWordPrompt's own onRequestMenu (its ✕ / backdrop tap) —
+  // both hide PnpWordPrompt behind the Game Menu (`promptVisible={!drawerVisible}` below) without
+  // unmounting it, so a focused answer/hint field keeps native focus and the OS keyboard stays up
+  // through the transition unless dismissed here.
+  const handleOpenMenu = useCallback(() => {
+    Keyboard.dismiss()
+    setDrawerVisible(true)
+  }, [])
+
+  // PuzzleDrawer's own DrawerEdgeSwipe.onOpen — a plain setDrawerVisible(true) with no keyboard
+  // dismiss (unlike handleOpenMenu above, a swipe never has the OS keyboard up to begin with).
+  // Kept stable via useCallback: PuzzleDrawer is memoized (see its own file) specifically so
+  // unrelated re-renders of Main don't cascade into it, and a fresh arrow function passed as
+  // onRequestOpen on every render would defeat that regardless of the memo.
+  const handleRequestOpenDrawer = useCallback(() => {
+    setDrawerVisible(true)
+  }, [])
+
+  const handleCloseAchievements = useCallback(() => {
+    setAchievementsVisible(false)
+  }, [])
+
   // Live, not staged behind the drawer's confirm button — an art style is purely cosmetic, so it
   // applies to the round already on screen the instant it's picked, not just future ones. Session
   // stays otherwise untouched (same phrase/hint/outcome/guessedLetters), so this never disturbs a
-  // round in progress; Game.tsx separately freezes the mistake limit itself at round start so a
-  // mode with a different maxMistakes (see modes/stars.tsx) can't shift the difficulty mid-round.
-  const handleModeChange = useCallback((mode: GameMode) => {
-    setConfig((c) => ({ ...c, mode }))
-    setSession((s) => (s ? { ...s, mode } : s))
-  }, [])
+  // round in progress; Game.tsx separately freezes the mistake limit itself at round start — every
+  // built-in mode shares the same 6-mistake baseline today, but this still guards against a future
+  // or custom mode with a different maxMistakes shifting the difficulty mid-round.
+  const handleModeChange = useCallback(
+    (mode: GameMode) => {
+      setConfig((c) => ({ ...c, mode }))
+      setSession((s) => (s ? { ...s, mode } : s))
+      setDefaultMode(mode)
+    },
+    [setDefaultMode]
+  )
 
   // Also live, but deliberately left out of `session` — a difficulty filter only shapes which
   // puzzle gets drawn NEXT, so touching the config that startNextRound reads from is enough for it
   // to apply the moment the current round ends, without retroactively touching the puzzle already
   // on screen (which was already drawn under whatever filter was active at the time).
-  const handleDifficultyChange = useCallback((difficulty: PuzzleConfig['difficulty']) => {
-    setConfig((c) => ({ ...c, difficulty }))
-  }, [])
+  const handleDifficultyChange = useCallback(
+    (difficulty: PuzzleConfig['difficulty']) => {
+      setConfig((c) => ({ ...c, difficulty }))
+      setDefaultDifficulty(difficulty)
+    },
+    [setDefaultDifficulty]
+  )
 
   const handleSolved = useCallback(
     async (details: SolveDetails) => {
@@ -299,6 +359,7 @@ export const Main = (): JSX.Element => {
       // Game's own setOutcome('win') and never paints the previous round's category stats
       // while this round's unlock-map lookup is still in flight.
       setCategoryProgress(null)
+      setUnlockedAchievementTitles([])
 
       // A pass-and-play round is a contest between two people on one device, not progress against
       // the catalogue. It has no packKey/puzzleId to unlock, and folding it into the solo record
@@ -336,9 +397,11 @@ export const Main = (): JSX.Element => {
         packTotalCount
       })
       // Surfaced right away, not held back for the next round to start — this resolves well
-      // within WIN_DIALOG_DELAY_MS (see Game.tsx), so the toast lands alongside the win dialog
-      // itself instead of appearing to be about whatever puzzle comes next.
-      if (newlyUnlocked.length > 0) setSnackbarQueue(newlyUnlocked)
+      // within WIN_DIALOG_DELAY_MS (see Game.tsx), so it's already there by the time the win
+      // dialog itself opens rather than popping in after. If it does land after (recordSolve is
+      // real async work Game.tsx doesn't wait on — see RoundEndDialog's own comment on this),
+      // it still just flows into the already-open dialog as a prop update.
+      if (newlyUnlocked.length > 0) setUnlockedAchievementTitles(newlyUnlocked.map((id) => ACHIEVEMENT_DEFINITIONS_BY_ID[id].title))
       refreshUnlocks()
     },
     [session, refreshUnlocks, pnpPhase]
@@ -450,7 +513,7 @@ export const Main = (): JSX.Element => {
     // into `session` here doesn't remount anything, so there's nothing left to flicker.
     // Opt-in, off by default (see useAutoSaveCustom). Fire-and-forget so handing over isn't
     // blocked on a storage write.
-    if (autoSave) void addCustomPuzzle({ answer: pnpAnswer, hint: pnpHint || undefined }).then(refreshCustomPacks)
+    if (autoSave) void addCustomPuzzle({ answer: pnpAnswer, hint: pnpHint || undefined }, PNP_QUICK_PACK_LABEL).then(refreshCustomPacks)
     setPnpPhase('handoff')
   }, [config.mode, pnpAnswer, pnpHint, autoSave, refreshCustomPacks])
 
@@ -460,13 +523,20 @@ export const Main = (): JSX.Element => {
   // is the whole point (see the comment there).
   const effectiveSession = pnpPhase === 'authoring' ? buildPnpDraftSession(pnpAnswer, config.mode) : session
 
+  // Memoized, not called inline in the JSX below: PuzzleDrawer is memoized (see its own file) so
+  // that unrelated re-renders of Main don't cascade into its own always-mounted subtree
+  // (PacksScreen, SettingsDrawer, the pack editor form) — a fresh object from withoutSecret(config)
+  // on every render would defeat that regardless of the memo, since it'd never compare equal to
+  // the previous initialConfig prop.
+  const initialDrawerConfig = useMemo(() => withoutSecret(config), [config])
+
   return (
     <View style={styles.flex}>
       <Appbar.Header elevated>
         {/* The menu stays available throughout, pass and play included — whoever is holding the
             device can change settings or start a Random puzzle whenever they like, and that's also
             how you leave a session. */}
-        <AppbarAction icon='menu' onPress={() => setDrawerVisible(true)} accessibilityLabel='Game Menu' />
+        <AppbarAction icon='menu' onPress={handleOpenMenu} accessibilityLabel='Game Menu' />
         <View style={styles.appbarSpacer} />
         <AppbarAction icon='trophy-outline' onPress={() => setAchievementsVisible(true)} accessibilityLabel='Achievements' />
       </Appbar.Header>
@@ -482,17 +552,14 @@ export const Main = (): JSX.Element => {
           dialog once the word's been handed off. Game is locked for both of those phases (see its
           `locked` prop) so nothing about the round — the one being written OR the one about to be
           played — can be touched by tap or physical keyboard before actual play starts. */}
-      <View style={[styles.flex, gameShell, { paddingBottom: insets.bottom }]}>{effectiveSession ? <Game key={roundKey} onStop={handleRoundEnd} onSolved={handleSolved} onLost={handleLost} onGuessProgress={handleGuessProgress} phrase={effectiveSession.phrase} mode={effectiveSession.mode} hint={effectiveSession.hint} packLabel={effectiveSession.packLabel} difficultyTier={effectiveSession.difficultyTier} categoryProgress={categoryProgress} continueLabel={pnpPhase ? 'Next word' : undefined} locked={pnpPhase === 'authoring' || pnpPhase === 'handoff' || pendingAbandon !== null} /> : null}</View>
+      <View style={[styles.flex, gameShell, { paddingBottom: insets.bottom }]}>{effectiveSession ? <Game key={roundKey} onStop={handleRoundEnd} onSolved={handleSolved} onLost={handleLost} onGuessProgress={handleGuessProgress} phrase={effectiveSession.phrase} mode={effectiveSession.mode} hint={effectiveSession.hint} packLabel={effectiveSession.packLabel} difficultyTier={effectiveSession.difficultyTier} categoryProgress={categoryProgress} unlockedAchievementTitles={unlockedAchievementTitles} continueLabel={pnpPhase ? 'Next word' : undefined} locked={pnpPhase === 'authoring' || pnpPhase === 'handoff' || pendingAbandon !== null} /> : null}</View>
 
-      {pnpPhase === 'authoring' ? <PnpWordPrompt answer={pnpAnswer} hint={pnpHint} onAnswerChange={setPnpAnswer} onHintChange={setPnpHint} promptVisible={!drawerVisible} onRequestMenu={() => setDrawerVisible(true)} onSubmit={handlePnpAuthored} /> : null}
+      {pnpPhase === 'authoring' ? <PnpWordPrompt answer={pnpAnswer} hint={pnpHint} onAnswerChange={setPnpAnswer} onHintChange={setPnpHint} promptVisible={!drawerVisible} onRequestMenu={handleOpenMenu} onSubmit={handlePnpAuthored} /> : null}
 
       {pnpPhase === 'handoff' ? <PnpHandoffDialog visible={!drawerVisible} onReady={() => setPnpPhase('playing')} /> : null}
 
-      <PuzzleDrawer visible={drawerVisible} onDismiss={handleDismissDrawer} onRequestOpen={() => setDrawerVisible(true)} initialConfig={withoutSecret(config)} onConfirm={handleConfirmPuzzle} onStartPnp={handleStartPnp} packsVersion={customPacksVersion} onPacksChanged={refreshCustomPacks} onModeChange={handleModeChange} onDifficultyChange={handleDifficultyChange} />
-      <AchievementsDrawer visible={achievementsVisible} onDismiss={() => setAchievementsVisible(false)} unlockVersion={unlockVersion} onUnlocksChanged={refreshUnlocks} mode={config.mode} difficulty={config.difficulty} onConfirm={handleConfirmPuzzle} />
-      <Snackbar visible={snackbarQueue.length > 0} onDismiss={() => setSnackbarQueue((q) => q.slice(1))} duration={3000} icon='trophy-outline'>
-        {snackbarQueue[0] ? `Achievement unlocked: ${ACHIEVEMENT_DEFINITIONS_BY_ID[snackbarQueue[0]].title}` : ''}
-      </Snackbar>
+      <PuzzleDrawer visible={drawerVisible} onDismiss={handleDismissDrawer} onRequestOpen={handleRequestOpenDrawer} initialConfig={initialDrawerConfig} onConfirm={handleConfirmPuzzle} onStartPnp={handleStartPnp} packsVersion={customPacksVersion} onPacksChanged={refreshCustomPacks} onModeChange={handleModeChange} onDifficultyChange={handleDifficultyChange} />
+      <AchievementsDrawer visible={achievementsVisible} onDismiss={handleCloseAchievements} unlockVersion={unlockVersion} onUnlocksChanged={refreshUnlocks} mode={config.mode} difficulty={config.difficulty} onConfirm={handleConfirmPuzzle} />
       <ConfirmDialog visible={incomingFilePreview !== null} title={incomingFilePreview ? (incomingFilePreview.kind === 'progress' ? 'Import progress backup?' : `Import "${incomingFilePreview.label}"?`) : ''} message={incomingFilePreview ? (incomingFilePreview.kind === 'progress' ? `Merges ${commaString(incomingFilePreview.unlockCount)} unlocked puzzle${incomingFilePreview.unlockCount === 1 ? '' : 's'} into your existing progress.` : `Adds ${commaString(incomingFilePreview.wordCount)} word${incomingFilePreview.wordCount === 1 ? '' : 's'} as a new pack you can play.`) : ''} confirmLabel='Import' onConfirm={() => void handleConfirmIncomingFile()} onCancel={() => setIncomingFilePreview(null)} />
       <ConfirmDialog visible={pendingAbandon !== null} title='Abandon this puzzle?' message="You've already made a guess — switching now will count this puzzle as a loss." confirmLabel='Abandon' destructive onConfirm={handleConfirmAbandon} onCancel={handleCancelAbandon} />
     </View>

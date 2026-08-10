@@ -1,5 +1,5 @@
 import { Card } from '@rific/haptic-press'
-import { JSX, ReactNode } from 'react'
+import { JSX, memo, ReactNode } from 'react'
 import { StyleSheet, View } from 'react-native'
 import { ProgressBar, Text, useTheme } from 'react-native-paper'
 
@@ -22,7 +22,12 @@ export type PackRowProps = {
   testID?: string
 }
 
-export const PackRow = ({ label, group, subtitle, progress, onPress, leading, trailing, accessibilityLabel, testID }: PackRowProps): JSX.Element => {
+// Memoized: every caller now renders this as a FlatList renderItem (PuzzleDrawer/PacksScreen/
+// AchievementsDrawer's pack lists, up to 50 rows in the built-in manifest) rather than a plain
+// .map() inside a ScrollView — this component is the actual list-item cost that virtualization
+// exists to avoid paying for off-screen rows, so keeping it a pure, memoizable presentational
+// component (no inline-recreated non-primitive props from its own body) matters here.
+export const PackRow = memo(({ label, group, subtitle, progress, onPress, leading, trailing, accessibilityLabel, testID }: PackRowProps): JSX.Element => {
   const theme = useTheme()
 
   const card = (
@@ -64,7 +69,8 @@ export const PackRow = ({ label, group, subtitle, progress, onPress, leading, tr
   ) : (
     card
   )
-}
+})
+PackRow.displayName = 'PackRow'
 
 const styles = StyleSheet.create({
   card: { marginBottom: 4 },

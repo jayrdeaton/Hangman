@@ -65,7 +65,11 @@ const hashAnswer = (text: string): string => {
 }
 
 export const buildCustomPuzzle = (packKey: string, packLabel: string, entry: CustomPackEntryInput): Puzzle | null => {
-  const answer = entry.answer.trim()
+  // Stripped to the same letters-and-spaces charset PnpWordPrompt's live input filter already
+  // enforces on every keystroke -- this is defense-in-depth for the stored/displayed answer, not
+  // the primary gate (normalizedAnswer below is what gameplay actually matches letters against,
+  // and was already clean via normalizePhrase's own stripping regardless of this line).
+  const answer = entry.answer.trim().replace(/[^A-Za-z ]/g, '')
   const normalizedAnswer = normalizePhrase(answer)
   if (!normalizedAnswer || normalizedAnswer.replace(/ /g, '').length === 0) return null
 
@@ -165,13 +169,18 @@ export const saveCustomPack = async (input: SaveCustomPackInput): Promise<Custom
 // position of every other word untouched.
 export const CUSTOM_QUICK_PACK_LABEL = 'Custom'
 
-export const addCustomPuzzle = async (entry: CustomPackEntryInput): Promise<CustomPack> => {
-  const existing = cache.find((pack) => pack.label === CUSTOM_QUICK_PACK_LABEL)
+// Pass-and-play kept words go to their own pack rather than the general Custom one -- a word
+// authored to hand off to someone else is a different kind of "keep" than one saved while playing
+// solo, and keeping them apart means clearing out one doesn't touch the other.
+export const PNP_QUICK_PACK_LABEL = 'Pass & Play'
+
+export const addCustomPuzzle = async (entry: CustomPackEntryInput, label: string = CUSTOM_QUICK_PACK_LABEL): Promise<CustomPack> => {
+  const existing = cache.find((pack) => pack.label === label)
   const existingEntries: CustomPackEntryInput[] = existing ? existing.puzzles.map((puzzle) => ({ answer: puzzle.answer, hint: typeof puzzle.metadata?.hint === 'string' ? puzzle.metadata.hint : undefined })) : []
   const normalizedNewAnswer = normalizePhrase(entry.answer)
   const withoutDuplicate = existingEntries.filter((existingEntry) => normalizePhrase(existingEntry.answer) !== normalizedNewAnswer)
 
-  return saveCustomPack({ key: existing?.key, label: CUSTOM_QUICK_PACK_LABEL, entries: [...withoutDuplicate, entry] })
+  return saveCustomPack({ key: existing?.key, label, entries: [...withoutDuplicate, entry] })
 }
 
 export const deleteCustomPack = async (key: string): Promise<void> => {

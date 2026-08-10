@@ -1,6 +1,7 @@
+import { type AutoPaperTheme, Provider as AutoPaperProvider, useAutoPaperTheme } from '@rific/auto-paper'
 import { act, fireEvent, render as rtlRender } from '@testing-library/react-native'
 import * as haptics from 'expo-haptics'
-import type { ReactElement } from 'react'
+import { type ReactElement, useEffect } from 'react'
 import { StyleSheet, Text } from 'react-native'
 import { PaperProvider } from 'react-native-paper'
 
@@ -24,6 +25,29 @@ const mockNotificationAsync = jest.mocked(haptics.notificationAsync)
 // here supplies that same Portal.Host without pulling in the rest of the app's Redux/persist
 // provider stack.
 const render = (ui: ReactElement) => rtlRender(ui, { wrapper: PaperProvider })
+
+// danger/onDanger (Keyboard's own wrong-guess color, see Keyboard.tsx) only exist on a theme
+// @rific/auto-paper's Provider actually computed — render's own bare PaperProvider fallback
+// (MD3LightTheme) doesn't have them, same reasoning PuzzleDrawer.test.tsx's own
+// renderDrawerWithRealTheme gives for its difficulty-color tests.
+let capturedTheme: AutoPaperTheme | null = null
+const ThemeCapture = () => {
+  const theme = useAutoPaperTheme()
+  useEffect(() => {
+    capturedTheme = theme
+  }, [theme])
+  return null
+}
+const renderWithRealTheme = async (ui: ReactElement) => {
+  capturedTheme = null
+  const utils = await rtlRender(
+    <AutoPaperProvider initialValue={{ appearance: 'light' }}>
+      <ThemeCapture />
+      {ui}
+    </AutoPaperProvider>
+  )
+  return { ...utils, theme: capturedTheme! }
+}
 
 // A mode with a tiny mistake budget so loss tests don't need six wrong guesses.
 const shortMode: GameMode = {
@@ -59,12 +83,25 @@ const tightNoVisualMode: GameMode = {
   hasVisual: false,
   Visual: (() => null) as unknown as GameMode['Visual']
 }
+// A no-artwork mode with room for more than one wrong guess — unlike tightNoVisualMode above
+// (maxMistakes: 1, which the loss/round-swap tests need for a single fatal guess), this one needs
+// to stay mechanically alive through a correct guess and a wrong one without ending the round.
+const roomyNoVisualMode: GameMode = {
+  id: 'test-roomy-no-visual',
+  label: 'Test Roomy No Visual',
+  description: 'A test mode with a generous mistake limit and no artwork',
+  category: 'minimal',
+  behavior: 'none',
+  maxMistakes: 3,
+  hasVisual: false,
+  Visual: (() => null) as unknown as GameMode['Visual']
+}
 
 // Renders the exact `mistakes` value it was handed, queryable via testID — every real mode's
 // Visual (classic.tsx, stars.tsx, etc.) independently clamps `mistakes` against its OWN stage
 // count, so this fixture stands in for "some real mode's artwork" without depending on any one
 // mode's specific stage math.
-const RecordingVisual = (props: { mistakes: number; color: string; width: number; height: number }) => <Text testID='visual-mistakes'>{props.mistakes}</Text>
+const RecordingVisual = (props: { mistakes: number; color: string }) => <Text testID='visual-mistakes'>{props.mistakes}</Text>
 const roomyRecordingMode: GameMode = {
   id: 'test-roomy-recording',
   label: 'Test Roomy Recording',
@@ -95,10 +132,17 @@ const tinyRecordingMode: GameMode = {
   maxMistakes: 1,
   Visual: RecordingVisual
 }
-const VISUAL_LAYOUT_EVENT = { nativeEvent: { layout: { x: 0, y: 0, width: 200, height: 200 } } }
+// GameVisual mounts unconditionally (see its own comment), and PuzzleStage no longer fades itself
+// in (see its own onReadyChange comment — Game.tsx owns the one whole-screen curtain now instead),
+// but a test asserting on visual-area's computed height still needs this fired first, since that
+// height is derived from this measurement regardless of whether anything is currently visible.
+const ART_AND_WORD_AREA_LAYOUT_EVENT = { nativeEvent: { layout: { x: 0, y: 0, width: 400, height: 400 } } }
 // The width the word row is ALLOWED (an ordinary phone's screen width), not the width of the
 // letters inside it — see the shrink-to-fit tests below for why that distinction is the whole bug.
 const WORD_ROW_LAYOUT_EVENT = { nativeEvent: { layout: { x: 0, y: 0, width: 390, height: 40 } } }
+// What Keyboard.tsx's own onLayout reports for its outer container — feeds keyWidth, and (since
+// Game.test.tsx) whether Game's own combined gameReady gate has this half of it yet.
+const KEYBOARD_LAYOUT_EVENT = { nativeEvent: { layout: { x: 0, y: 0, width: 390, height: 160 } } }
 
 type GetByText = Awaited<ReturnType<typeof render>>['getByText']
 type Root = Awaited<ReturnType<typeof render>>['root']
@@ -171,6 +215,35 @@ describe('Game', () => {
     await guessLetter(getByText, 'Q')
 
     expect(mockNotificationAsync).toHaveBeenCalledWith(haptics.NotificationFeedbackType.Error)
+  })
+
+  // Otherwise a wrong letter is indistinguishable from a right one on the keyboard once
+  // guessed — both just went disabled — so there was no way to look back and tell which specific
+  // guesses were wrong (see Keyboard.tsx's own comment on why buttonColor/textColor alone can't
+  // do this while disabled).
+  it("colors a wrong-guessed key's label with the theme's onDanger role, leaving a correctly-guessed key's label unchanged", async () => {
+    const { getByText, theme } = await renderWithRealTheme(<Game phrase='CAT' onStop={jest.fn()} />)
+
+    await guessLetter(getByText, 'C')
+    await guessLetter(getByText, 'Q')
+
+    expect(StyleSheet.flatten(getByText('Q').props.style).color).toBe(theme.colors.onDanger)
+    expect(StyleSheet.flatten(getByText('C').props.style).color).not.toBe(theme.colors.onDanger)
+  })
+
+  // Letters Only mode's own pip cluster (PuzzleStage.tsx, hasVisual: false) has the room a
+  // real mode's small pip row under the keyboard doesn't (see Game.tsx's own pipRow comment) — so
+  // unlike that row, a filled pip here shows which letter it was for, not just a plain dot.
+  it('shows the actual wrong letter inside a filled pip in Letters Only mode, but leaves it empty for a correct guess', async () => {
+    const { getByText, getByTestId } = await render(<Game phrase='CAT' onStop={jest.fn()} mode={roomyNoVisualMode} />)
+
+    await guessLetter(getByText, 'C')
+    expect(getByTestId('pip-0')).toHaveTextContent('')
+
+    await guessLetter(getByText, 'Q')
+    expect(getByTestId('pip-0')).toHaveTextContent('Q')
+    // Nothing filled past the one actual wrong guess yet.
+    expect(getByTestId('pip-1')).toHaveTextContent('')
   })
 
   it('triggers a loss once wrong guesses reach the mode maxMistakes, showing a dialog that calls onStop when dismissed', async () => {
@@ -417,6 +490,44 @@ describe('Game', () => {
     expect(StyleSheet.flatten(longDisplay.props.children[0].props.style).fontSize).toBe(16)
   })
 
+  // Reported from a real device, twice, in two different shapes: first the word row rendered
+  // immediately at whatever position art-and-word-area's own flex fallback implied, then visibly
+  // snapped to its real position once art-and-word-area's own onLayout resolved (a fade wrapped
+  // around the artwork alone never touched the word row, since it was never part of it). Then,
+  // separately, every keyboard key rendered unconstrained until Keyboard's own onLayout resolved,
+  // then all ~26 snapped to their final uniform width — on top of a screen where the artwork/word
+  // area had *already* finished its own, independently-timed reveal, and the difficulty pill and
+  // wrong-guess pips had been fully visible from the start. Fixing the artwork/word area alone (see
+  // PuzzleStage's own stageReady comment) still left the keyboard popping in on its own schedule.
+  // The real fix is one curtain over the whole screen (see Game.tsx's own gameReady comment) that
+  // doesn't lift until EVERY measured piece — art-and-word-area's own box, the word row, and the
+  // keyboard's own key width — has landed, so this checks that any two of the three measured
+  // landing still isn't enough on its own to reveal anything. The fade itself is Reanimated-driven,
+  // and (same reasoning as the keyboard ripple's own test) this project's react-native-reanimated
+  // mock (see jest.setup.ts) resolves withTiming synchronously with no re-render to reflect it in
+  // rendered output, so whether it actually fades smoothly on a real device is a visual/manual
+  // check, not a unit-testable one — what's actually being protected here is that nothing shows up
+  // at the wrong size or position first.
+  it('keeps the whole game screen hidden until the artwork box, the word row, and the keyboard have all reported a real measurement', async () => {
+    const { getByTestId, getByLabelText } = await render(<Game phrase='CAT' onStop={jest.fn()} />)
+    const gameOpacity = () => StyleSheet.flatten(getByTestId('game-container').props.style).opacity
+
+    expect(gameOpacity()).toBe(0)
+
+    // Two of the three measured — the keyboard's own key width hasn't landed yet, so still hidden,
+    // or the keyboard would already be visible at its pre-measurement, unconstrained key sizes.
+    await fireEvent(getByTestId('art-and-word-area'), 'layout', ART_AND_WORD_AREA_LAYOUT_EVENT)
+    await fireEvent(getByLabelText('Secret word display'), 'layout', WORD_ROW_LAYOUT_EVENT)
+    expect(gameOpacity()).toBe(0)
+
+    // And a different two of the three, on a fresh mount: the keyboard and the word row measured,
+    // but art-and-word-area's own box still unknown.
+    const { getByTestId: getByTestId2, getByLabelText: getByLabelText2 } = await render(<Game phrase='CAT' onStop={jest.fn()} />)
+    await fireEvent(getByTestId2('keyboard'), 'layout', KEYBOARD_LAYOUT_EVENT)
+    await fireEvent(getByLabelText2('Secret word display'), 'layout', WORD_ROW_LAYOUT_EVENT)
+    expect(StyleSheet.flatten(getByTestId2('game-container').props.style).opacity).toBe(0)
+  })
+
   it("reserves room for a multi-line word row instead of letting the artwork's square cap crowd it out", async () => {
     // Reported from a real device: a multi-word phrase wrapped onto several lines and visibly
     // overlapped the wrong-guess pips and artwork below it. Root cause — the artwork's height was
@@ -448,7 +559,7 @@ describe('Game', () => {
 
     const displayBefore = getByLabelText('Secret word display')
     expect(displayBefore.props.children[0].props.children).toBe(nbWord('C__'))
-    expect(getByLabelText('Wrong guesses: 1 of 3')).toBeTruthy()
+    expect(getByLabelText('Wrong guesses: 1 of 3 (Q)')).toBeTruthy()
     // hasVisual defaults true, and the letter display uses the smaller of the two font sizes
     // reserved for it (see Game.tsx's WORD_FONT_SIZE) while there's still room for artwork.
     expect(StyleSheet.flatten(displayBefore.props.children[0].props.style).fontSize).toBe(30)
@@ -460,7 +571,7 @@ describe('Game', () => {
 
     const displayAfter = getByLabelText('Secret word display')
     expect(displayAfter.props.children[0].props.children).toBe(nbWord('C__'))
-    expect(getByLabelText('Wrong guesses: 1 of 3')).toBeTruthy()
+    expect(getByLabelText('Wrong guesses: 1 of 3 (Q)')).toBeTruthy()
     // The new mode has hasVisual: false, which enlarges the letter display to fill the space
     // artwork would have used (see Game.tsx's WORD_FONT_SIZE_LARGE) — reflected the instant the
     // mode prop changes, with no further interaction needed.
@@ -487,7 +598,6 @@ describe('Game', () => {
 
   it("caps the mistakes handed to the current mode's own artwork one stage short of its maximum while the round is still mechanically alive, even after a live mode swap crosses a maxMistakes boundary", async () => {
     const { getByText, getByTestId, queryByText, findByText, rerender } = await render(<Game phrase='CAT' onStop={jest.fn()} mode={roomyRecordingMode} />)
-    await fireEvent(getByTestId('game-visual-container'), 'layout', VISUAL_LAYOUT_EVENT)
 
     // 7 of roomyRecordingMode's 8 allowed mistakes — the round is still mechanically alive.
     for (const letter of ['Q', 'W', 'E', 'R', 'Y', 'U', 'I']) {
@@ -502,7 +612,6 @@ describe('Game', () => {
     // e.g. classic.tsx's `Math.min(mistakes, PARTS.length)`) — even though the round hasn't
     // actually ended.
     await rerender(<Game phrase='CAT' onStop={jest.fn()} mode={tightRecordingMode} />)
-    await fireEvent(getByTestId('game-visual-container'), 'layout', VISUAL_LAYOUT_EVENT)
 
     expect(getByTestId('visual-mistakes').props.children).toBe(5)
     expect(queryByText('You lost!')).toBeNull()
@@ -517,7 +626,6 @@ describe('Game', () => {
 
   it("shows the current mode's own full terminal stage the instant the fatal wrong guess lands, without waiting for the loss dialog's deliberate delay", async () => {
     const { getByText, getByTestId, queryByText } = await render(<Game phrase='CAT' onStop={jest.fn()} mode={tinyRecordingMode} />)
-    await fireEvent(getByTestId('game-visual-container'), 'layout', VISUAL_LAYOUT_EVENT)
 
     await guessLetter(getByText, 'Q')
 

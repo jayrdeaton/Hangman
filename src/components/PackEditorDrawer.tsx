@@ -1,14 +1,14 @@
 import { useAutoPaperTheme } from '@rific/auto-paper'
 import { Drawer } from '@rific/drawer'
+import { useFocusChain } from '@rific/focus-chain'
 import { Button, IconButton, useVibration } from '@rific/haptic-press'
 import { ScrollView, ScrollViewFooter, ScrollViewHeader, ScrollViewProvider } from '@rific/scroll-view'
-import { JSX, useMemo, useState } from 'react'
-import { StyleSheet, useWindowDimensions, View } from 'react-native'
+import { JSX, memo, useMemo, useRef, useState } from 'react'
+import { Keyboard, StyleSheet, useWindowDimensions, View } from 'react-native'
 import { Text, TextInput } from 'react-native-paper'
 
 import { DRAWER_PACK_DETAIL_Z_INDEX } from '@/constants/drawerStacking'
-import { alert } from '@/utils/alert'
-import { type CustomPack, type CustomPackEntryInput, getCustomPackPuzzles, saveCustomPack } from '@/utils/customPacks'
+import { CUSTOM_QUICK_PACK_LABEL, type CustomPack, type CustomPackEntryInput, getCustomPackPuzzles, saveCustomPack } from '@/utils/customPacks'
 import { normalizePhrase } from '@/utils/normalizePhrase'
 import { getPuzzleManifest } from '@/utils/puzzleCatalog'
 
@@ -38,7 +38,12 @@ export type PackEditorDrawerProps = {
 // lineage (see PuzzleDrawer/PackPuzzlesDrawer) — freeing the trailing side for Share/Delete once
 // there's an actual saved pack behind editingKey, rather than "back" and those two icons competing
 // for the same corner.
-export const PackEditorDrawer = ({ visible, editingKey, onDismiss, onSaved, onDelete, onShare }: PackEditorDrawerProps): JSX.Element => {
+// Memoized: stays mounted (translated off-screen) even while closed, and always renders the full
+// form below (every entry row, focus-chain registration and all) regardless of `visible` — see
+// PuzzleDrawer's own memo comment for why an always-mounted, never-visible-right-now subtree
+// still costs a re-render without this whenever an unrelated ancestor state change bubbles
+// through it.
+export const PackEditorDrawer = memo(({ visible, editingKey, onDismiss, onSaved, onDelete, onShare }: PackEditorDrawerProps): JSX.Element => {
   const { width: windowWidth } = useWindowDimensions()
 
   return (
@@ -53,7 +58,8 @@ export const PackEditorDrawer = ({ visible, editingKey, onDismiss, onSaved, onDe
       </View>
     </Drawer>
   )
-}
+})
+PackEditorDrawer.displayName = 'PackEditorDrawer'
 
 type PackEditorFormProps = {
   editingKey: string | null
@@ -82,9 +88,44 @@ const PackEditorForm = ({ editingKey, onSaved, onCancel, onDelete, onShare }: Pa
   const [saving, setSaving] = useState(false)
   const [confirmDeleteVisible, setConfirmDeleteVisible] = useState(false)
 
-  const updateEntry = (index: number, patch: Partial<CustomPackEntryInput>) => setEntries((prev) => prev.map((entry, i) => (i === index ? { ...entry, ...patch } : entry)))
+  // A blank row appended, purely for display, whenever the last REAL entry (in state) isn't blank
+  // — not written into state itself until the player actually types into it (see updateEntry).
+  // Derived during render, not grown via an effect + setState: an effect would still lag a render
+  // behind the keystroke that fills in "the last row", and eslint's react-hooks "set-state-in-effect"
+  // rule rejects that cascading-render shape anyway. Computed fresh every render instead, so the
+  // blank row is already part of the SAME commit as the keystroke that made the real last row
+  // non-blank — which is exactly what fixes the pack editor's keyboard flicker: the return-key chain
+  // (see entryRows below) always advances onto a field that's already mounted, never one that gets
+  // created and focused after the fact (the previous design's append-then-focus, which is what
+  // actually caused the flicker — not @rific/focus-chain itself, which has no way to tell an
+  // existing sibling apart from a component that just mounted this render).
+  const lastRealEntry = entries[entries.length - 1]
+  const displayEntries = lastRealEntry.answer.trim() === '' && (lastRealEntry.hint ?? '').trim() === '' ? entries : [...entries, EMPTY_ENTRY]
+
+  // index === entries.length means this is the not-yet-real trailing row above — promotes it into
+  // state (with whatever was just typed) rather than trying to update an out-of-bounds entry.
+  const updateEntry = (index: number, patch: Partial<CustomPackEntryInput>) => setEntries((prev) => (index < prev.length ? prev.map((entry, i) => (i === index ? { ...entry, ...patch } : entry)) : [...prev, { ...EMPTY_ENTRY, ...patch }]))
   const removeEntry = (index: number) => setEntries((prev) => (prev.length > 1 ? prev.filter((_, i) => i !== index) : prev))
-  const addEntry = () => setEntries((prev) => [...prev, EMPTY_ENTRY])
+
+  // Registration order IS focus order, and register() must be called during render — see
+  // PnpWordPrompt's own comment on useFocusChain for why. The label leads the chain, then every
+  // entry's answer/hint pair in list order.
+  const register = useFocusChain()
+  // Destructured to plain locals rather than kept as `labelReg.ref` etc. — eslint's react-hooks
+  // "refs" rule flags property access shaped like `.ref`/`.focus` as if it were a raw ref read
+  // during render, same as PnpWordPrompt's own registration does.
+  // blurOnSubmit=false on every field below (see PnpWordPrompt's own comment on register()) — the
+  // TextInput's native default would otherwise race each onSubmitEditing's own focus() call and
+  // flicker the keyboard shut and back open between fields.
+  const { ref: labelRef, onSubmitEditing: focusFirstEntry, blurOnSubmit: labelBlurOnSubmit } = register()
+
+  // Holds the always-blank trailing row's answer-field instance, kept up to date by the ref
+  // callback below (see entryRows) — written at commit time via the ref callback (fired by React
+  // on commit), not synchronously during render, so eslint's react-hooks "refs" rule is fine with
+  // it. Backs the "Add word" button below: since displayEntries above guarantees that row already
+  // exists and is already mounted, the button can just focus it directly rather than adding then
+  // focusing a new one.
+  const lastAnswerElRef = useRef<{ focus: () => void } | null>(null)
 
   // Same rule handleSave itself applies when actually saving — surfaced here too so the button can
   // just be disabled instead of doing nothing (or popping an alert unreliably, see ConfirmDialog's
@@ -93,11 +134,9 @@ const PackEditorForm = ({ editingKey, onSaved, onCancel, onDelete, onShare }: Pa
   const hasValidEntry = entries.some((entry) => normalizePhrase(entry.answer).replace(/ /g, '').length > 0)
 
   const handleSave = async () => {
-    const trimmedLabel = label.trim()
-    if (!trimmedLabel) {
-      void alert('Name this pack', 'Give your pack a name before saving.')
-      return
-    }
+    // Falls back to "Custom" rather than blocking the save on an empty name — the field stays
+    // freely editable either way, this just means leaving it blank isn't a dead end.
+    const trimmedLabel = label.trim() || CUSTOM_QUICK_PACK_LABEL
 
     const validEntries = entries.filter((entry) => normalizePhrase(entry.answer).replace(/ /g, '').length > 0)
     setSaving(true)
@@ -123,9 +162,54 @@ const PackEditorForm = ({ editingKey, onSaved, onCancel, onDelete, onShare }: Pa
     await onShare(editingKey, label)
   }
 
+  const entryRows = displayEntries.map((entry, index) => {
+    const { ref: answerRef, onSubmitEditing: focusHint, blurOnSubmit: answerBlurOnSubmit } = register()
+    const { ref: hintRef, onSubmitEditing: focusNextAnswer, blurOnSubmit: hintBlurOnSubmit } = register()
+    // displayEntries above keeps a blank entry always mounted after the last real one, so there's
+    // no special "last" case here — every hint field's return key just advances the chain onto the
+    // next answer field, same as every other field, because that next field already exists.
+    const isLast = index === displayEntries.length - 1
+    // True for the not-yet-real trailing row (see displayEntries/updateEntry above) — nothing to
+    // remove there yet, so its own remove button is disabled rather than a no-op tap.
+    const isVirtual = index >= entries.length
+
+    return (
+      <View key={index} style={styles.entryRow}>
+        <View style={styles.entryInputs}>
+          <TextInput
+            testID={`entry-answer-${index}`}
+            // Merged with the chain's own ref callback: it always registers this field for the
+            // return-key chain, and additionally keeps lastAnswerElRef pointed at whichever entry is
+            // currently last — a ref write, but happening inside a ref callback (fired by React at
+            // commit time), not synchronously during render, so it's fine here.
+            ref={(el: Parameters<typeof answerRef>[0]) => {
+              answerRef(el)
+              if (isLast) lastAnswerElRef.current = el
+            }}
+            onSubmitEditing={focusHint}
+            blurOnSubmit={answerBlurOnSubmit}
+            returnKeyType='next'
+            value={entry.answer}
+            onChangeText={(answer) => updateEntry(index, { answer })}
+            label='Word or phrase'
+            autoCapitalize='characters'
+            mode='outlined'
+            dense
+            maxLength={128}
+          />
+          <TextInput testID={`entry-hint-${index}`} ref={hintRef} onSubmitEditing={focusNextAnswer} blurOnSubmit={hintBlurOnSubmit} returnKeyType='next' style={styles.hintInput} value={entry.hint} onChangeText={(hint) => updateEntry(index, { hint })} label='Hint (optional)' mode='outlined' dense maxLength={80} />
+        </View>
+        <IconButton icon='close' size={20} onPress={() => removeEntry(index)} disabled={isVirtual || entries.length === 1} accessibilityLabel={`Remove entry ${index + 1}`} />
+      </View>
+    )
+  })
+
   return (
     <>
-      <ScrollViewProvider>
+      {/* footerAboveKeyboard: this form's own entries can run long enough that the last row's
+          fields sit right where the keyboard covers the screen — without it, Cancel/Save (in the
+          footer below) would be hidden behind the keyboard while a mid-form field is focused. */}
+      <ScrollViewProvider footerAboveKeyboard>
         {/* Share/Delete only make sense once there's an actual saved pack behind editingKey — no
             trailing action at all for a brand-new, not-yet-saved pack instead (ScrollViewHeader
             centers the title independently of whether a trailing action is present, unlike the old
@@ -138,6 +222,10 @@ const PackEditorForm = ({ editingKey, onSaved, onCancel, onDelete, onShare }: Pa
           title={editingKey ? 'Edit pack' : 'New pack'}
           backAction={() => {
             selection()
+            // The Drawer this panel lives in never unmounts on close, only translates off-screen
+            // (see PackEditorDrawer's own doc comment above) — so a focused TextInput keeps native
+            // focus and the OS keyboard stays up through the close animation unless dismissed here.
+            Keyboard.dismiss()
             onCancel()
           }}
           backActionAccessibilityLabel='Close'
@@ -158,19 +246,11 @@ const PackEditorForm = ({ editingKey, onSaved, onCancel, onDelete, onShare }: Pa
           <Text variant='titleSmall' style={styles.sectionHeader}>
             Pack name
           </Text>
-          <TextInput testID='pack-label-input' value={label} onChangeText={setLabel} mode='outlined' maxLength={60} />
+          <TextInput testID='pack-label-input' ref={labelRef} onSubmitEditing={focusFirstEntry} blurOnSubmit={labelBlurOnSubmit} returnKeyType='next' value={label} onChangeText={setLabel} mode='outlined' maxLength={60} />
 
-          {entries.map((entry, index) => (
-            <View key={index} style={styles.entryRow}>
-              <View style={styles.entryInputs}>
-                <TextInput testID={`entry-answer-${index}`} value={entry.answer} onChangeText={(answer) => updateEntry(index, { answer })} label='Word or phrase' autoCapitalize='characters' mode='outlined' dense maxLength={128} />
-                <TextInput testID={`entry-hint-${index}`} style={styles.hintInput} value={entry.hint} onChangeText={(hint) => updateEntry(index, { hint })} label='Hint (optional)' mode='outlined' dense maxLength={80} />
-              </View>
-              <IconButton icon='close' size={20} onPress={() => removeEntry(index)} disabled={entries.length === 1} accessibilityLabel={`Remove entry ${index + 1}`} />
-            </View>
-          ))}
+          {entryRows}
 
-          <Button icon='plus' onPress={addEntry} style={styles.addButton}>
+          <Button icon='plus' onPress={() => lastAnswerElRef.current?.focus()} style={styles.addButton}>
             Add word
           </Button>
         </ScrollView>
@@ -179,7 +259,14 @@ const PackEditorForm = ({ editingKey, onSaved, onCancel, onDelete, onShare }: Pa
             PacksScreen's listFooter: Cancel/Save should be reachable without scrolling down
             through however many entries this pack has. */}
         <ScrollViewFooter style={styles.footer}>
-          <Button mode='outlined' onPress={onCancel} style={styles.footerButton}>
+          <Button
+            mode='outlined'
+            onPress={() => {
+              Keyboard.dismiss()
+              onCancel()
+            }}
+            style={styles.footerButton}
+          >
             Cancel
           </Button>
           <Button mode='contained' onPress={() => void handleSave()} loading={saving} disabled={saving || !hasValidEntry} style={styles.footerButton}>

@@ -167,15 +167,58 @@ describe('PacksScreen', () => {
     expect(onPacksChanged).not.toHaveBeenCalled()
   })
 
-  it('adds another entry row via the Add word button at the end of the list', async () => {
+  // Growing the list this way (rather than only via the Add word button) is what lets the pack
+  // editor's return-key chain always advance onto an already-mounted field instead of one that
+  // gets created and focused after the fact — see PackEditorDrawer's own comment on displayEntries
+  // for why that append-then-focus shape was what actually caused its keyboard flicker.
+  it('keeps one blank trailing row always ready, growing a new one the moment the previous last row is typed into', async () => {
     const { getByText, getByTestId, queryByTestId } = await renderScreen()
 
     await fireEvent.press(getByText('Create'))
+    // Starts with just the one blank row — nothing typed into it yet.
     expect(queryByTestId('entry-answer-1')).toBeNull()
 
+    await fireEvent.changeText(getByTestId('entry-answer-0'), 'PARIS')
+
+    // Filling in the row that WAS last grows a new blank one in that same update.
+    expect(getByTestId('entry-answer-1')).toBeTruthy()
+    // Only one grows at a time — the newly-appended row is itself blank, so this doesn't cascade.
+    expect(queryByTestId('entry-answer-2')).toBeNull()
+  })
+
+  it('does not pile on a second blank row when Add word is pressed while the trailing row is already blank', async () => {
+    const { getByText, queryByTestId } = await renderScreen()
+
+    await fireEvent.press(getByText('Create'))
     await fireEvent.press(getByText('Add word'))
 
-    expect(getByTestId('entry-answer-1')).toBeTruthy()
+    // Still just the one row — Add word only focuses the already-there blank row now, since one
+    // is always kept ready; it no longer unconditionally appends its own.
+    expect(queryByTestId('entry-answer-1')).toBeNull()
+  })
+
+  it('disables the remove button on the not-yet-real trailing row, and on the sole remaining real one, but not on either once there are two real entries', async () => {
+    const { getByText, getByTestId, getByLabelText } = await renderScreen()
+
+    await fireEvent.press(getByText('Create'))
+    await fireEvent.changeText(getByTestId('entry-answer-0'), 'PARIS')
+
+    // entry-answer-1 now exists (see the growth test above) but nothing's been typed into IT —
+    // it isn't real yet (see PackEditorDrawer's updateEntry), so there's nothing to remove.
+    const virtualRemoveButton = getByLabelText('Remove entry 2')
+    expect(virtualRemoveButton.props.accessibilityState?.disabled ?? virtualRemoveButton.props.disabled).toBe(true)
+    // PARIS is still the only REAL entry (the virtual row above doesn't count) — removing it would
+    // leave zero, same reason a brand-new form's own single blank row can't be removed either.
+    const soleRealRemoveButton = getByLabelText('Remove entry 1')
+    expect(soleRealRemoveButton.props.accessibilityState?.disabled ?? soleRealRemoveButton.props.disabled).toBe(true)
+
+    // Typing into the (formerly virtual) second row promotes it into state, growing a third, still
+    // virtual, blank row behind it — now that there are two REAL entries, either can be removed.
+    await fireEvent.changeText(getByTestId('entry-answer-1'), 'LONDON')
+
+    expect(soleRealRemoveButton.props.accessibilityState?.disabled ?? soleRealRemoveButton.props.disabled).toBe(false)
+    const secondRealRemoveButton = getByLabelText('Remove entry 2')
+    expect(secondRealRemoveButton.props.accessibilityState?.disabled ?? secondRealRemoveButton.props.disabled).toBe(false)
   })
 
   // Import picks a real file (see hangmanFile.ts) rather than pasting text into a box now —

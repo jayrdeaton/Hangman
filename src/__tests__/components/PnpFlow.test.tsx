@@ -33,7 +33,7 @@ jest.mock('@/utils/alert', () => ({
 // Keep-this-word tests below assert on.
 jest.mock('@/utils/customPacks', () => ({
   ...jest.requireActual('@/utils/customPacks'),
-  addCustomPuzzle: jest.fn().mockResolvedValue({ key: 'custom:test', label: 'Custom', createdAt: '', updatedAt: '', puzzles: [] })
+  addCustomPuzzle: jest.fn().mockResolvedValue({ key: 'custom:test', label: 'Pass & Play', createdAt: '', updatedAt: '', puzzles: [] })
 }))
 
 const mockResolvePuzzle = jest.mocked(puzzlePicker.resolvePuzzle)
@@ -448,7 +448,7 @@ describe('Main — pass and play', () => {
     expect(mockAddCustomPuzzle).not.toHaveBeenCalled()
   })
 
-  it('saves the authored word and hint to the Custom pack once Keep this word is switched on before Hand off', async () => {
+  it('saves the authored word and hint to the Pass & Play pack once Keep this word is switched on before Hand off', async () => {
     mockResolvePuzzle.mockReturnValue({ ok: true, payload: pnpPayload('CAT') })
     const utils = await renderApp()
     const { getByLabelText, getByText, getByTestId } = utils
@@ -461,8 +461,9 @@ describe('Main — pass and play', () => {
     await fireEvent.press(getByText('Hand off'))
 
     // The RAW typed hint, not the resolved/normalized payload — matches what Main.tsx's
-    // handlePnpAuthored actually passes to addCustomPuzzle.
-    expect(mockAddCustomPuzzle).toHaveBeenCalledWith({ answer: 'CAT', hint: 'A pet' })
+    // handlePnpAuthored actually passes to addCustomPuzzle. Second arg is the dedicated pass-and-
+    // play pack label, not the general Custom one.
+    expect(mockAddCustomPuzzle).toHaveBeenCalledWith({ answer: 'CAT', hint: 'A pet' }, 'Pass & Play')
   })
 
   it('rejects a character that is not a letter or space, and toasts about it rather than silently dropping it', async () => {

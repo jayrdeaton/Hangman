@@ -76,7 +76,7 @@ const Leaf = ({ x, y, angle, color }: { x: number; y: number; angle: number; col
   </G>
 )
 
-const FlowerVisual = ({ mistakes, color, width, height }: { mistakes: number; color: string; width: number; height: number }) => {
+const FlowerVisual = ({ mistakes, color }: { mistakes: number; color: string }) => {
   const s = STAGES[clampStage(mistakes, STAGES.length - 1)]
   const { cx, cy } = flowerCenter(s.stemBend)
   // Kept close to the ground end of the stem (well short of the flower head at t=1) so the
@@ -86,7 +86,7 @@ const FlowerVisual = ({ mistakes, color, width, height }: { mistakes: number; co
   const droop = s.stemBend * 0.15
 
   return (
-    <Svg width={width} height={height} viewBox='0 0 100 100'>
+    <Svg viewBox='0 0 100 100'>
       {/* Stem */}
       <Path d={stemPath(cx, cy)} stroke={color} strokeWidth='3' fill='none' strokeLinecap='round' />
       {/* Leaves, drooping a little further as the stem bends */}

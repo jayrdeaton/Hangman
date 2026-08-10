@@ -6,6 +6,7 @@
 
 jest.mock('react-native-reanimated', () => {
   const RN = require('react-native')
+  const { useRef } = require('react')
   const passthrough = (value: unknown) => value
   const passthroughLast = (...values: unknown[]) => values[values.length - 1]
 
@@ -16,7 +17,17 @@ jest.mock('react-native-reanimated', () => {
     ScrollView: RN.ScrollView,
     FlatList: RN.FlatList,
     createAnimatedComponent: (Component: unknown) => Component,
-    useSharedValue: <T>(value: T) => ({ value }),
+    // Real shared values are stable across re-renders (ref-like) — a fresh `{ value }` object per
+    // call, as this used to be, silently drops any mutation the instant something else triggers a
+    // re-render, since the next render just makes a brand new one starting back at the initial
+    // value. Anything that mutates .value from an event callback and expects a later render to
+    // still see it (e.g. a Keyboard listener feeding an animated transform) breaks under that,
+    // even though the real library handles it fine.
+    useSharedValue: (initial: unknown) => {
+      const ref: { current: { value: unknown } | null } = useRef(null)
+      if (ref.current === null) ref.current = { value: initial }
+      return ref.current
+    },
     useAnimatedStyle: (updater?: () => unknown) => {
       try {
         return typeof updater === 'function' ? updater() : {}
@@ -32,6 +43,15 @@ jest.mock('react-native-reanimated', () => {
       }
     },
     useAnimatedScrollHandler: (handler: (...args: unknown[]) => unknown) => handler,
+    useAnimatedKeyboard: jest.fn(() => ({ height: { value: 0 }, state: { value: 0 } })),
+    useAnimatedReaction: (prepare: () => unknown, react: (current: unknown, previous: unknown) => void) => {
+      try {
+        react(prepare(), undefined)
+      } catch {
+        // Swallowed, same as useAnimatedStyle/useAnimatedProps above — a reaction that throws on
+        // this one-shot mock call shouldn't fail a test that isn't exercising it.
+      }
+    },
     useDerivedValue: (updater?: () => unknown) => ({ value: typeof updater === 'function' ? updater() : undefined }),
     withTiming: passthrough,
     withSpring: passthrough,
@@ -317,6 +337,15 @@ jest.mock('expo-blur', () => ({
   BlurView: ({ children }: any) => children
 }))
 
+// expo-font — real useFonts returns a Map-keyed loaded state that resolves async; tests need
+// fonts already "loaded" synchronously so Theme.tsx's own splash gate (see splashGate.ts) doesn't
+// stay stuck waiting on it forever.
+jest.mock('expo-font', () => ({
+  useFonts: () => [true, null],
+  loadAsync: jest.fn().mockResolvedValue(undefined),
+  isLoaded: () => true
+}))
+
 // expo-linking
 jest.mock('expo-linking', () => ({
   useLinkingURL: () => null,
@@ -386,7 +415,8 @@ jest.mock('react-native-keyboard-controller', () => ({
   },
   KeyboardProvider: ({ children }: any) => children,
   KeyboardAwareScrollView: ({ children }: any) => children,
-  useKeyboardHandler: jest.fn()
+  useKeyboardHandler: jest.fn(),
+  useReanimatedKeyboardAnimation: jest.fn(() => ({ height: { value: 0 }, progress: { value: 0 } }))
 }))
 
 // react-native-safe-area-context
@@ -400,11 +430,16 @@ jest.mock('react-native-safe-area-context', () => ({
 }))
 
 // react-native-svg
+// Every primitive any mode in src/modes/*.tsx actually imports needs an entry here — this used to
+// only cover whichever ones happened to get exercised, since GameVisual/ModeSelector's own
+// measure-then-mount gates meant most modes' <Visual> never actually rendered in tests at all
+// (Ellipse was missing and nothing surfaced it until those gates came out).
 jest.mock('react-native-svg', () => ({
   __esModule: true,
   default: ({ children }: any) => children,
   Svg: ({ children }: any) => children,
   Circle: 'Circle',
+  Ellipse: 'Ellipse',
   G: 'G',
   Line: 'Line',
   Path: 'Path',

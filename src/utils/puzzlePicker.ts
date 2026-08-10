@@ -81,27 +81,34 @@ export type PuzzleConfig = {
 
 export type PuzzleResolution = { ok: true; payload: GameStartPayload } | { ok: false; error: string }
 
-// A random draw, scoped to whichever packs the player has checked (defaults to all of them),
-// preferring a puzzle the player hasn't unlocked yet over one they have. Flattened across every
-// eligible pack into one pool rather than picked per-pack — a puzzle in ANY eligible pack that's
-// still unsolved beats a repeat, not just an unsolved puzzle in whichever pack happened to be
-// tried first. Falls back to the full (repeats-allowed) pool only once every eligible puzzle
-// across the whole selection is already unlocked — without this, a solved puzzle and an unsolved
-// one were served with equal odds forever, so a player hitting Random could never actually work
-// through and finish a pack.
+// A random draw, scoped to whichever packs the player has checked (defaults to all of them).
+// Picked in two steps — a pack first, uniformly among every eligible pack, THEN a puzzle within
+// that pack — rather than flattened into one cross-pack pool. A flattened pool weights packs by
+// their own puzzle count, so a 500-puzzle pack drowns out a 10-puzzle one; picking the pack first
+// gives every eligible pack an equal shot regardless of size. Within the chosen pack, an unsolved
+// puzzle beats a repeat, falling back to the full (repeats-allowed) pool only once every puzzle in
+// THAT pack is already unlocked — so a player hitting Random still works through and finishes
+// whichever pack they land on, it just no longer favors big packs, or packs the player has fully
+// completed, over anything else in the selection.
 const pickRandomPackPuzzle = (allowedKeys: Set<string>, unlockedByPack: PuzzleUnlockMap, difficultyFilter?: PuzzleDifficultyTier) => {
   const manifest = getPuzzleManifest().filter((item) => item.count > 0 && allowedKeys.has(item.key))
   const candidatePacks = manifest.filter((item) => (difficultyFilter ? item.difficultyTiers.includes(difficultyFilter) : true))
 
-  const candidates = candidatePacks.flatMap((pack) => {
-    const unlockedIds = new Set(unlockedByPack[pack.key] ?? [])
-    return getPuzzlesForCategory(pack.key, difficultyFilter)
-      .map((puzzle) => ({ puzzle, normalized: normalizePhrase(puzzle.answer), pack, unlocked: unlockedIds.has(puzzle.id) }))
-      .filter((item) => item.normalized.length > 0)
-  })
+  const packPools = candidatePacks
+    .map((pack) => {
+      const unlockedIds = new Set(unlockedByPack[pack.key] ?? [])
+      const candidates = getPuzzlesForCategory(pack.key, difficultyFilter)
+        .map((puzzle) => ({ puzzle, normalized: normalizePhrase(puzzle.answer), pack, unlocked: unlockedIds.has(puzzle.id) }))
+        .filter((item) => item.normalized.length > 0)
+      return { pack, candidates }
+    })
+    // A pack with nothing playable (empty after the difficulty/normalization filters) can't be
+    // drawn from — excluded here rather than left in to be picked and then come up empty.
+    .filter((entry) => entry.candidates.length > 0)
 
-  if (candidates.length === 0) return null
+  if (packPools.length === 0) return null
 
+  const { candidates } = packPools[Math.floor(Math.random() * packPools.length)]
   const unsolved = candidates.filter((item) => !item.unlocked)
   const pool = unsolved.length > 0 ? unsolved : candidates
 

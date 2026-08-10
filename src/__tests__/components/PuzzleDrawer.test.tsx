@@ -143,12 +143,27 @@ describe('PuzzleDrawer', () => {
     expect(onConfirm).not.toHaveBeenCalled()
   })
 
-  it("opens that pack's own puzzle list, scoped to the specific pack tapped — not just any drawer, and not another pack in the selection", async () => {
+  it('draws an instant random puzzle scoped to just the pack tapped, not the whole selection, when a quick-start row itself is pressed', async () => {
     const [packA, packB] = builtInPacks()
     const onConfirm = jest.fn()
-    const { getByText, findByText, queryByTestId } = await renderDrawer({ onConfirm }, { selectedPackKeys: [packA.key, packB.key] })
+    const { getByText } = await renderDrawer({ onConfirm }, { selectedPackKeys: [packA.key, packB.key] })
 
     await fireEvent.press(getByText(packA.label))
+
+    // The Game Menu is about getting a game going as fast as possible now — a plain tap on a
+    // quick-start row draws directly from that one pack rather than opening its list.
+    expect(onConfirm).toHaveBeenCalledTimes(1)
+    const [payload] = onConfirm.mock.calls[0]
+    expect(payload.packKey).toBe(packA.key)
+    expect(payload.packScope).toBe('single')
+  })
+
+  it("opens that pack's own puzzle list via its trailing info icon, scoped to the specific pack — not just any drawer, and not another pack in the selection", async () => {
+    const [packA, packB] = builtInPacks()
+    const onConfirm = jest.fn()
+    const { getByLabelText, findByText, queryByTestId } = await renderDrawer({ onConfirm }, { selectedPackKeys: [packA.key, packB.key] })
+
+    await fireEvent.press(getByLabelText(`Browse ${packA.label}`))
 
     // Specific to packA's own count — proves packA's own list opened, not packB's or an
     // unresolved one, which a bare accessibilityViewIsModal check can't distinguish.
@@ -157,8 +172,8 @@ describe('PuzzleDrawer', () => {
     const puzzleFromB = getPuzzlesForCategory(packB.key)[0]
     expect(queryByTestId(`puzzle-row-${puzzleFromA.id}`)).toBeTruthy()
     expect(queryByTestId(`puzzle-row-${puzzleFromB.id}`)).toBeNull()
-    // Picking a specific puzzle or a pack-scoped Random both happen from within the opened list
-    // now — tapping the quick-start row itself no longer resolves anything on its own.
+    // Browsing is a distinct action from an instant random draw — the info icon shouldn't also
+    // resolve a puzzle on its own.
     expect(onConfirm).not.toHaveBeenCalled()
   })
 
@@ -288,19 +303,17 @@ describe('PuzzleDrawer', () => {
     expect(StyleSheet.flatten(getByText('Any').props.style).color).toBe(theme.colors.primary)
   })
 
-  it('shows the Appearance and Keyboard controls, now that Settings has been folded into this drawer', async () => {
-    const { getByText, getByLabelText } = await renderDrawer()
+  // Appearance/keyboard layout/haptics moved out to their own SettingsDrawer (reached via the
+  // gear icon below) — this menu is gameplay-only now (packs, difficulty, Random, Pass & play).
+  // See SettingsDrawer.test.tsx for coverage of the controls themselves.
+  it('does not show the Appearance or Keyboard controls directly, only a Settings entry point to reach them', async () => {
+    const { getByLabelText, queryByText, queryByLabelText } = await renderDrawer()
 
-    expect(getByText('Appearance')).toBeTruthy()
-    // Icon-only (showLabels={false}) — "System" truncates as visible text at this width, so the
-    // accessible name is what's asserted on instead of the (intentionally hidden) label.
-    expect(getByLabelText('System')).toBeTruthy()
-    expect(getByLabelText('Light')).toBeTruthy()
-    expect(getByLabelText('Dark')).toBeTruthy()
-
-    // No "Keyboard" heading — QWERTY vs ABC is self-explanatory without one.
-    expect(getByText('QWERTY')).toBeTruthy()
-    expect(getByText('ABC')).toBeTruthy()
+    expect(queryByText('Appearance')).toBeNull()
+    expect(queryByLabelText('System')).toBeNull()
+    expect(queryByText('QWERTY')).toBeNull()
+    expect(queryByText('ABC')).toBeNull()
+    expect(getByLabelText('Settings')).toBeTruthy()
   })
 
   it('titles the drawer with the app name and its version, not a generic "Game Menu" the hamburger icon already implies or the "OTA" jargon a player wouldn\'t recognize', async () => {

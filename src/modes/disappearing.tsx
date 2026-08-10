@@ -11,11 +11,11 @@ import { CenteredBody, CenteredLeftArm, CenteredLeftLeg, CenteredRightArm, Cente
 // figure is horizontally centered rather than offset to clear a gallows pole.
 const REMOVAL_ORDER = [CenteredRopeAndHead, CenteredBody, CenteredLeftArm, CenteredRightArm, CenteredLeftLeg, CenteredRightLeg]
 
-const DisappearingVisual = ({ mistakes, color, width, height }: { mistakes: number; color: string; width: number; height: number }) => {
+const DisappearingVisual = ({ mistakes, color }: { mistakes: number; color: string }) => {
   const removed = clampStage(mistakes, REMOVAL_ORDER.length)
   const visible = REMOVAL_ORDER.slice(removed)
   return (
-    <Svg width={width} height={height} viewBox='0 0 100 100'>
+    <Svg viewBox='0 0 100 100'>
       {visible.map((Part, i) => (
         <Part key={i} color={color} />
       ))}

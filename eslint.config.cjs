@@ -13,7 +13,7 @@ module.exports = defineConfig([
   eslintPluginPrettierRecommended,
   tseslint.configs.recommended,
   {
-    ignores: ['dist/**', 'node_modules/**', 'ios/**', 'android/**', '.expo/**', '**/.vscode/**', '**/experimental/**']
+    ignores: ['dist/**', 'node_modules/**', 'ios/**', 'android/**', '.expo/**', '**/.vscode/**', '**/experimental/**', '.claude/worktrees/**']
   },
   {
     plugins: {

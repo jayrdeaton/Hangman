@@ -220,26 +220,6 @@
     }
   },
   {
-    "id": "a5f1c44ba0b3639ccba714e19952360f",
-    "source": "geography",
-    "type": "title",
-    "answer": "Philippines",
-    "normalizedAnswer": "PHILIPPINES",
-    "category": "Country",
-    "difficulty": 77.6,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 11,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "geography",
-      "country"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population"
-    }
-  },
-  {
     "id": "4f6fc1438f82df958a3b414375a53592",
     "source": "geography",
     "type": "title",
@@ -251,6 +231,26 @@
     "wordCount": 5,
     "letterCount": 28,
     "uniqueLetterCount": 17,
+    "tags": [
+      "geography",
+      "country"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population"
+    }
+  },
+  {
+    "id": "a5f1c44ba0b3639ccba714e19952360f",
+    "source": "geography",
+    "type": "title",
+    "answer": "Philippines",
+    "normalizedAnswer": "PHILIPPINES",
+    "category": "Country",
+    "difficulty": 77.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
     "tags": [
       "geography",
       "country"
@@ -380,6 +380,26 @@
     }
   },
   {
+    "id": "5f2de4438b59f71307d385b1cdea2be9",
+    "source": "geography",
+    "type": "title",
+    "answer": "Tanzania",
+    "normalizedAnswer": "TANZANIA",
+    "category": "Country",
+    "difficulty": 86.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "country"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population"
+    }
+  },
+  {
     "id": "f0523d6935b3b63bf3d12704e12c8c8f",
     "source": "geography",
     "type": "title",
@@ -411,26 +431,6 @@
     "wordCount": 1,
     "letterCount": 6,
     "uniqueLetterCount": 6,
-    "tags": [
-      "geography",
-      "country"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population"
-    }
-  },
-  {
-    "id": "5f2de4438b59f71307d385b1cdea2be9",
-    "source": "geography",
-    "type": "title",
-    "answer": "Tanzania",
-    "normalizedAnswer": "TANZANIA",
-    "category": "Country",
-    "difficulty": 86.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 5,
     "tags": [
       "geography",
       "country"
@@ -500,26 +500,6 @@
     }
   },
   {
-    "id": "a023e89a4a611581a4220eb7c218b90b",
-    "source": "geography",
-    "type": "title",
-    "answer": "Kenya",
-    "normalizedAnswer": "KENYA",
-    "category": "Country",
-    "difficulty": 88,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "geography",
-      "country"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population"
-    }
-  },
-  {
     "id": "c5a72784130a8135b065c928df0f281f",
     "source": "geography",
     "type": "title",
@@ -531,6 +511,26 @@
     "wordCount": 1,
     "letterCount": 8,
     "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "country"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population"
+    }
+  },
+  {
+    "id": "a023e89a4a611581a4220eb7c218b90b",
+    "source": "geography",
+    "type": "title",
+    "answer": "Kenya",
+    "normalizedAnswer": "KENYA",
+    "category": "Country",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
     "tags": [
       "geography",
       "country"
@@ -840,46 +840,6 @@
     }
   },
   {
-    "id": "f5b0fcb8a99956154df863e0d68e2d26",
-    "source": "geography",
-    "type": "title",
-    "answer": "Malaysia",
-    "normalizedAnswer": "MALAYSIA",
-    "category": "Country",
-    "difficulty": 82.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "geography",
-      "country"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population"
-    }
-  },
-  {
-    "id": "d727bd064ede39b5ad4b07625cf4f613",
-    "source": "geography",
-    "type": "title",
-    "answer": "Peru",
-    "normalizedAnswer": "PERU",
-    "category": "Country",
-    "difficulty": 92.4,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 4,
-    "uniqueLetterCount": 4,
-    "tags": [
-      "geography",
-      "country"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population"
-    }
-  },
-  {
     "id": "68789de9eaae2b4e39487d2c146723fa",
     "source": "geography",
     "type": "title",
@@ -920,6 +880,46 @@
     }
   },
   {
+    "id": "f5b0fcb8a99956154df863e0d68e2d26",
+    "source": "geography",
+    "type": "title",
+    "answer": "Malaysia",
+    "normalizedAnswer": "MALAYSIA",
+    "category": "Country",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "country"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population"
+    }
+  },
+  {
+    "id": "d727bd064ede39b5ad4b07625cf4f613",
+    "source": "geography",
+    "type": "title",
+    "answer": "Peru",
+    "normalizedAnswer": "PERU",
+    "category": "Country",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "country"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population"
+    }
+  },
+  {
     "id": "4664ff765e9b6e9297b8cf61fcf6f380",
     "source": "geography",
     "type": "title",
@@ -940,26 +940,6 @@
     }
   },
   {
-    "id": "4ba5e71ce5d6dc52f4503666c842cb04",
-    "source": "geography",
-    "type": "title",
-    "answer": "Ivory Coast",
-    "normalizedAnswer": "IVORY COAST",
-    "category": "Country",
-    "difficulty": 70,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 10,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "geography",
-      "country"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population"
-    }
-  },
-  {
     "id": "055ae92187f03868915e3efd2b20f51d",
     "source": "geography",
     "type": "title",
@@ -971,6 +951,26 @@
     "wordCount": 1,
     "letterCount": 10,
     "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "country"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population"
+    }
+  },
+  {
+    "id": "4ba5e71ce5d6dc52f4503666c842cb04",
+    "source": "geography",
+    "type": "title",
+    "answer": "Ivory Coast",
+    "normalizedAnswer": "IVORY COAST",
+    "category": "Country",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
     "tags": [
       "geography",
       "country"
@@ -1260,6 +1260,26 @@
     }
   },
   {
+    "id": "b612b10179a84cf913a1b7880fbbf27b",
+    "source": "geography",
+    "type": "title",
+    "answer": "Somalia",
+    "normalizedAnswer": "SOMALIA",
+    "category": "Country",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "country"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population"
+    }
+  },
+  {
     "id": "c54b00e5fdde22537dca691748ad91d0",
     "source": "geography",
     "type": "title",
@@ -1311,26 +1331,6 @@
     "wordCount": 1,
     "letterCount": 6,
     "uniqueLetterCount": 5,
-    "tags": [
-      "geography",
-      "country"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population"
-    }
-  },
-  {
-    "id": "b612b10179a84cf913a1b7880fbbf27b",
-    "source": "geography",
-    "type": "title",
-    "answer": "Somalia",
-    "normalizedAnswer": "SOMALIA",
-    "category": "Country",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 6,
     "tags": [
       "geography",
       "country"
@@ -2060,26 +2060,6 @@
     }
   },
   {
-    "id": "4d93e1d6024c272be91626b708f4d2e6",
-    "source": "geography",
-    "type": "title",
-    "answer": "Hong Kong",
-    "normalizedAnswer": "HONG KONG",
-    "category": "Country",
-    "difficulty": 86.8,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "geography",
-      "country"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population"
-    }
-  },
-  {
     "id": "fec5bb270993a7c7a3f47d1cfccf681f",
     "source": "geography",
     "type": "title",
@@ -2090,6 +2070,26 @@
     "difficultyTier": "hard",
     "wordCount": 1,
     "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "country"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population"
+    }
+  },
+  {
+    "id": "4d93e1d6024c272be91626b708f4d2e6",
+    "source": "geography",
+    "type": "title",
+    "answer": "Hong Kong",
+    "normalizedAnswer": "HONG KONG",
+    "category": "Country",
+    "difficulty": 86.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 8,
     "uniqueLetterCount": 5,
     "tags": [
       "geography",
@@ -2440,26 +2440,6 @@
     }
   },
   {
-    "id": "b6dac9a879bc68d20a35c28a832e359e",
-    "source": "geography",
-    "type": "title",
-    "answer": "New Zealand",
-    "normalizedAnswer": "NEW ZEALAND",
-    "category": "Country",
-    "difficulty": 78,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 10,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "geography",
-      "country"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population"
-    }
-  },
-  {
     "id": "6ccfd7ec14376c897d326742216a7cc6",
     "source": "geography",
     "type": "title",
@@ -2471,6 +2451,26 @@
     "wordCount": 1,
     "letterCount": 4,
     "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "country"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population"
+    }
+  },
+  {
+    "id": "b6dac9a879bc68d20a35c28a832e359e",
+    "source": "geography",
+    "type": "title",
+    "answer": "New Zealand",
+    "normalizedAnswer": "NEW ZEALAND",
+    "category": "Country",
+    "difficulty": 78,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
     "tags": [
       "geography",
       "country"
@@ -4780,88 +4780,6 @@
     }
   },
   {
-    "id": "b8e361152920ef818a73fff4fdbf502c",
-    "source": "geography",
-    "type": "title",
-    "answer": "Flag, name andpostal abbreviation",
-    "normalizedAnswer": "FLAG NAME ANDPOSTAL ABBREVIATION",
-    "category": "US State",
-    "difficulty": 40,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 29,
-    "uniqueLetterCount": 16,
-    "tags": [
-      "geography",
-      "us-state"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
-    }
-  },
-  {
-    "id": "78ce5268bd17bc085dab637659d64d36",
-    "source": "geography",
-    "type": "title",
-    "answer": "Ratification oradmission",
-    "normalizedAnswer": "RATIFICATION ORADMISSION",
-    "category": "US State Capital",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 23,
-    "uniqueLetterCount": 11,
-    "tags": [
-      "geography",
-      "capital",
-      "us"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
-    }
-  },
-  {
-    "id": "620d39fadfa091410f8ca6a8e071df02",
-    "source": "geography",
-    "type": "title",
-    "answer": "Capital",
-    "normalizedAnswer": "CAPITAL",
-    "category": "US State",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "geography",
-      "us-state"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
-    }
-  },
-  {
-    "id": "72b06cef8362c26969ac25fb4760e970",
-    "source": "geography",
-    "type": "title",
-    "answer": "mi2",
-    "normalizedAnswer": "MI2",
-    "category": "US State Capital",
-    "difficulty": 101.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 3,
-    "uniqueLetterCount": 2,
-    "tags": [
-      "geography",
-      "capital",
-      "us"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
-    }
-  },
-  {
     "id": "690d4a7e62c96db8f93c38351d0a8251",
     "source": "geography",
     "type": "title",
@@ -4903,6 +4821,27 @@
     }
   },
   {
+    "id": "a8094c5b0e9ac1614d5b8ba72c9554ef",
+    "source": "geography",
+    "type": "title",
+    "answer": "Huntsville",
+    "normalizedAnswer": "HUNTSVILLE",
+    "category": "US State Largest City",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "city",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
     "id": "9329aa07790bbed3071e1f3f95e99f28",
     "source": "geography",
     "type": "title",
@@ -4937,6 +4876,27 @@
     "tags": [
       "geography",
       "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "5e120593f3dedcfaa2a869212f9a30a2",
+    "source": "geography",
+    "type": "title",
+    "answer": "Anchorage",
+    "normalizedAnswer": "ANCHORAGE",
+    "category": "US State Largest City",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "city",
       "us"
     ],
     "metadata": {
@@ -5067,6 +5027,27 @@
     }
   },
   {
+    "id": "e0efd25c748dc9bbf131dd69111cd7f8",
+    "source": "geography",
+    "type": "title",
+    "answer": "Los Angeles",
+    "normalizedAnswer": "LOS ANGELES",
+    "category": "US State Largest City",
+    "difficulty": 78,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "city",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
     "id": "0749de98fe0d327ed0818c7f68721411",
     "source": "geography",
     "type": "title",
@@ -5149,6 +5130,27 @@
     }
   },
   {
+    "id": "74e174a5b0248b0eb2eb198efc8427b0",
+    "source": "geography",
+    "type": "title",
+    "answer": "Bridgeport",
+    "normalizedAnswer": "BRIDGEPORT",
+    "category": "US State Largest City",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "city",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
     "id": "0fbd75da61d48aefddc6f6f4f9f54e22",
     "source": "geography",
     "type": "title",
@@ -5190,6 +5192,27 @@
     }
   },
   {
+    "id": "e91129ed03480564b04ec51a879478b0",
+    "source": "geography",
+    "type": "title",
+    "answer": "Wilmington",
+    "normalizedAnswer": "WILMINGTON",
+    "category": "US State Largest City",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "city",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
     "id": "cada2d8ef7a6459bc5ca7821f8a07854",
     "source": "geography",
     "type": "title",
@@ -5224,6 +5247,27 @@
     "tags": [
       "geography",
       "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "19a1d505fd7ce069715cef663b32b0d1",
+    "source": "geography",
+    "type": "title",
+    "answer": "Jacksonville",
+    "normalizedAnswer": "JACKSONVILLE",
+    "category": "US State Largest City",
+    "difficulty": 61.2,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 12,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "geography",
+      "city",
       "us"
     ],
     "metadata": {
@@ -5395,6 +5439,27 @@
     }
   },
   {
+    "id": "556f46349fbe5452ee74846b5f52b6dd",
+    "source": "geography",
+    "type": "title",
+    "answer": "Chicago",
+    "normalizedAnswer": "CHICAGO",
+    "category": "US State Largest City",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "city",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
     "id": "ff648d4d928a546954b6ab6f436ce023",
     "source": "geography",
     "type": "title",
@@ -5518,6 +5583,27 @@
     }
   },
   {
+    "id": "433cf71cfe77974fa7304a5b73534824",
+    "source": "geography",
+    "type": "title",
+    "answer": "Wichita",
+    "normalizedAnswer": "WICHITA",
+    "category": "US State Largest City",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "city",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
     "id": "41cd7792a25c1c93f7b25b50cf90ec29",
     "source": "geography",
     "type": "title",
@@ -5552,6 +5638,27 @@
     "tags": [
       "geography",
       "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "0dc1d4ad4d77b37ae89fb02453350b72",
+    "source": "geography",
+    "type": "title",
+    "answer": "Louisville",
+    "normalizedAnswer": "LOUISVILLE",
+    "category": "US State Largest City",
+    "difficulty": 78,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "city",
       "us"
     ],
     "metadata": {
@@ -5600,6 +5707,27 @@
     }
   },
   {
+    "id": "58ebd0450e82bb480908271a2a87aa0e",
+    "source": "geography",
+    "type": "title",
+    "answer": "New Orleans",
+    "normalizedAnswer": "NEW ORLEANS",
+    "category": "US State Largest City",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "city",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
     "id": "d9f94051136e8a13344498dc4ce71f43",
     "source": "geography",
     "type": "title",
@@ -5641,6 +5769,27 @@
     }
   },
   {
+    "id": "534da082650ecc3f5ad5f4783f74278a",
+    "source": "geography",
+    "type": "title",
+    "answer": "Portland",
+    "normalizedAnswer": "PORTLAND",
+    "category": "US State Largest City",
+    "difficulty": 74.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "city",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
     "id": "4ad5750aaf73e2739e05c5e9d543fa75",
     "source": "geography",
     "type": "title",
@@ -5675,6 +5824,27 @@
     "tags": [
       "geography",
       "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "5ec82349ccf54212b29cf2459a40bfa7",
+    "source": "geography",
+    "type": "title",
+    "answer": "Baltimore",
+    "normalizedAnswer": "BALTIMORE",
+    "category": "US State Largest City",
+    "difficulty": 70.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "city",
       "us"
     ],
     "metadata": {
@@ -5764,6 +5934,27 @@
     }
   },
   {
+    "id": "b1e656eb9d070491a910b523a3643ce8",
+    "source": "geography",
+    "type": "title",
+    "answer": "Detroit",
+    "normalizedAnswer": "DETROIT",
+    "category": "US State Largest City",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "city",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
     "id": "123b482a3d1513624677c5093d6cc4dc",
     "source": "geography",
     "type": "title",
@@ -5798,6 +5989,27 @@
     "tags": [
       "geography",
       "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "faf8e883f0c878f4314049b886528b41",
+    "source": "geography",
+    "type": "title",
+    "answer": "Minneapolis",
+    "normalizedAnswer": "MINNEAPOLIS",
+    "category": "US State Largest City",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "city",
       "us"
     ],
     "metadata": {
@@ -5887,6 +6099,27 @@
     }
   },
   {
+    "id": "d7da64ab090863c4db889405e972ed33",
+    "source": "geography",
+    "type": "title",
+    "answer": "Kansas City",
+    "normalizedAnswer": "KANSAS CITY",
+    "category": "US State Largest City",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "city",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
     "id": "75a6316e547c9c806d271c9e0f6f4c78",
     "source": "geography",
     "type": "title",
@@ -5921,6 +6154,27 @@
     "tags": [
       "geography",
       "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "5e042de1c76068072260ced4d7a362cd",
+    "source": "geography",
+    "type": "title",
+    "answer": "Billings",
+    "normalizedAnswer": "BILLINGS",
+    "category": "US State Largest City",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "city",
       "us"
     ],
     "metadata": {
@@ -5969,6 +6223,27 @@
     }
   },
   {
+    "id": "fe743ff9000d13e25b3441e832449b23",
+    "source": "geography",
+    "type": "title",
+    "answer": "Omaha",
+    "normalizedAnswer": "OMAHA",
+    "category": "US State Largest City",
+    "difficulty": 92,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "city",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
     "id": "0b30611fadfd7977f578413a8d7ddbbf",
     "source": "geography",
     "type": "title",
@@ -6003,6 +6278,27 @@
     "tags": [
       "geography",
       "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "927e320123b3e141da37a312bbfc4321",
+    "source": "geography",
+    "type": "title",
+    "answer": "Las Vegas",
+    "normalizedAnswer": "LAS VEGAS",
+    "category": "US State Largest City",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "city",
       "us"
     ],
     "metadata": {
@@ -6051,6 +6347,27 @@
     }
   },
   {
+    "id": "8837123e7b8c03db7fa68faf0af1c032",
+    "source": "geography",
+    "type": "title",
+    "answer": "Manchester",
+    "normalizedAnswer": "MANCHESTER",
+    "category": "US State Largest City",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "city",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
     "id": "80502336d7721865957359123f953b90",
     "source": "geography",
     "type": "title",
@@ -6085,6 +6402,27 @@
     "tags": [
       "geography",
       "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "3be2fdcb3b203efdef761e7f0694ea29",
+    "source": "geography",
+    "type": "title",
+    "answer": "Newark",
+    "normalizedAnswer": "NEWARK",
+    "category": "US State Largest City",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "city",
       "us"
     ],
     "metadata": {
@@ -6133,6 +6471,27 @@
     }
   },
   {
+    "id": "ef2ec4eedb23225cbff9a940d41ab905",
+    "source": "geography",
+    "type": "title",
+    "answer": "Albuquerque",
+    "normalizedAnswer": "ALBUQUERQUE",
+    "category": "US State Largest City",
+    "difficulty": 77.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "city",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
     "id": "02bd5c7998dc20b76baf01dee542e466",
     "source": "geography",
     "type": "title",
@@ -6167,6 +6526,27 @@
     "tags": [
       "geography",
       "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "2c72c9b7a4736bd9c04204f3cd3a2904",
+    "source": "geography",
+    "type": "title",
+    "answer": "New York City",
+    "normalizedAnswer": "NEW YORK CITY",
+    "category": "US State Largest City",
+    "difficulty": 65.6,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 11,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "geography",
+      "city",
       "us"
     ],
     "metadata": {
@@ -6215,6 +6595,27 @@
     }
   },
   {
+    "id": "8a05d6726623e3d131f3d9c7a34d9091",
+    "source": "geography",
+    "type": "title",
+    "answer": "Charlotte",
+    "normalizedAnswer": "CHARLOTTE",
+    "category": "US State Largest City",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "city",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
     "id": "4ba856947a0ee8a4e5a87d38153af416",
     "source": "geography",
     "type": "title",
@@ -6249,6 +6650,27 @@
     "tags": [
       "geography",
       "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "ed869de4bf41adf0d177421c90532b34",
+    "source": "geography",
+    "type": "title",
+    "answer": "Fargo",
+    "normalizedAnswer": "FARGO",
+    "category": "US State Largest City",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "city",
       "us"
     ],
     "metadata": {
@@ -6420,6 +6842,27 @@
     }
   },
   {
+    "id": "a8d8dfe185062f3f1aa6d3675a6219fc",
+    "source": "geography",
+    "type": "title",
+    "answer": "Philadelphia",
+    "normalizedAnswer": "PHILADELPHIA",
+    "category": "US State Largest City",
+    "difficulty": 77.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 12,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "city",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
     "id": "eea85e8f4852a18d1db1009771a4b1a5",
     "source": "geography",
     "type": "title",
@@ -6502,6 +6945,27 @@
     }
   },
   {
+    "id": "c4bcaf9b47c78bf0a434ad8967b7ccac",
+    "source": "geography",
+    "type": "title",
+    "answer": "Charleston",
+    "normalizedAnswer": "CHARLESTON",
+    "category": "US State Largest City",
+    "difficulty": 66,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "geography",
+      "city",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
     "id": "78ce12d5b2a3e3b72d87b4f33f8c8bd2",
     "source": "geography",
     "type": "title",
@@ -6536,6 +7000,27 @@
     "tags": [
       "geography",
       "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "f7fb8474294b7da48016e2687fe180d1",
+    "source": "geography",
+    "type": "title",
+    "answer": "Sioux Falls",
+    "normalizedAnswer": "SIOUX FALLS",
+    "category": "US State Largest City",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "city",
       "us"
     ],
     "metadata": {
@@ -6625,6 +7110,27 @@
     }
   },
   {
+    "id": "d2321000ece4f839c346cfa2704b3f94",
+    "source": "geography",
+    "type": "title",
+    "answer": "Houston",
+    "normalizedAnswer": "HOUSTON",
+    "category": "US State Largest City",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "city",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
     "id": "f2229ecd98d8c3bfd2d299f4271cbd1a",
     "source": "geography",
     "type": "title",
@@ -6707,6 +7213,27 @@
     }
   },
   {
+    "id": "58f117cb1fc6e987a4ecc1a518477365",
+    "source": "geography",
+    "type": "title",
+    "answer": "Burlington",
+    "normalizedAnswer": "BURLINGTON",
+    "category": "US State Largest City",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "city",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
     "id": "a1b6e6928ad14c378a721bef02174fce",
     "source": "geography",
     "type": "title",
@@ -6748,6 +7275,27 @@
     }
   },
   {
+    "id": "467299bd38d565493b07b972c702cf0f",
+    "source": "geography",
+    "type": "title",
+    "answer": "Virginia Beach",
+    "normalizedAnswer": "VIRGINIA BEACH",
+    "category": "US State Largest City",
+    "difficulty": 64.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "geography",
+      "city",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
     "id": "c71258259ff44493d110bcdcc3ba6fbb",
     "source": "geography",
     "type": "title",
@@ -6782,6 +7330,27 @@
     "tags": [
       "geography",
       "capital",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
+    "id": "7f7ab7bd2265c612cbca2dbb6a61da32",
+    "source": "geography",
+    "type": "title",
+    "answer": "Seattle",
+    "normalizedAnswer": "SEATTLE",
+    "category": "US State Largest City",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "city",
       "us"
     ],
     "metadata": {
@@ -6871,6 +7440,27 @@
     }
   },
   {
+    "id": "fd52832e3765838651456304560514c1",
+    "source": "geography",
+    "type": "title",
+    "answer": "Milwaukee",
+    "normalizedAnswer": "MILWAUKEE",
+    "category": "US State Largest City",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "city",
+      "us"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
+    }
+  },
+  {
     "id": "e5d93ecfa440b3d2e97547b4407eaf96",
     "source": "geography",
     "type": "title",
@@ -6906,533 +7496,6 @@
       "geography",
       "capital",
       "us"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
-    }
-  },
-  {
-    "id": "731e08c8537e9ae460e8a2229ad16676",
-    "source": "geography",
-    "type": "title",
-    "answer": "Name andpostal abbreviation",
-    "normalizedAnswer": "NAME ANDPOSTAL ABBREVIATION",
-    "category": "US State",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 25,
-    "uniqueLetterCount": 14,
-    "tags": [
-      "geography",
-      "us-state"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
-    }
-  },
-  {
-    "id": "6899778805512315611e4cda36d7848d",
-    "source": "geography",
-    "type": "title",
-    "answer": "Acquired",
-    "normalizedAnswer": "ACQUIRED",
-    "category": "US State Capital",
-    "difficulty": 74.8,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "geography",
-      "capital",
-      "us"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
-    }
-  },
-  {
-    "id": "17e5cf50cb73d1c133b56fbac92cd4b6",
-    "source": "geography",
-    "type": "title",
-    "answer": "mi2",
-    "normalizedAnswer": "MI2",
-    "category": "US State",
-    "difficulty": 101.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 3,
-    "uniqueLetterCount": 2,
-    "tags": [
-      "geography",
-      "us-state"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
-    }
-  },
-  {
-    "id": "89361c892e1e28676c4608cfc2e37fc0",
-    "source": "geography",
-    "type": "title",
-    "answer": "American Samoa",
-    "normalizedAnswer": "AMERICAN SAMOA",
-    "category": "US State",
-    "difficulty": 68.8,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 13,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "geography",
-      "us-state"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
-    }
-  },
-  {
-    "id": "448689b09876c724c4d00079ac7381a3",
-    "source": "geography",
-    "type": "title",
-    "answer": "Pago Pago",
-    "normalizedAnswer": "PAGO PAGO",
-    "category": "US State Capital",
-    "difficulty": 90.8,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 4,
-    "tags": [
-      "geography",
-      "capital",
-      "us"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
-    }
-  },
-  {
-    "id": "e6f412edac576d8ff4c7b43269decc33",
-    "source": "geography",
-    "type": "title",
-    "answer": "Guam",
-    "normalizedAnswer": "GUAM",
-    "category": "US State",
-    "difficulty": 92.4,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 4,
-    "uniqueLetterCount": 4,
-    "tags": [
-      "geography",
-      "us-state"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
-    }
-  },
-  {
-    "id": "8d6af8a008484cbcc6ccf2f01bb11fb4",
-    "source": "geography",
-    "type": "title",
-    "answer": "Hagåtña",
-    "normalizedAnswer": "HAGATNA",
-    "category": "US State Capital",
-    "difficulty": 87.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "geography",
-      "capital",
-      "us"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
-    }
-  },
-  {
-    "id": "36faaba914398bf4fa4f052242837d6a",
-    "source": "geography",
-    "type": "title",
-    "answer": "Northern Mariana Islands",
-    "normalizedAnswer": "NORTHERN MARIANA ISLANDS",
-    "category": "US State",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 22,
-    "uniqueLetterCount": 12,
-    "tags": [
-      "geography",
-      "us-state"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
-    }
-  },
-  {
-    "id": "cca572f611df00ac33ed79df6560937f",
-    "source": "geography",
-    "type": "title",
-    "answer": "Saipan",
-    "normalizedAnswer": "SAIPAN",
-    "category": "US State Capital",
-    "difficulty": 87.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "geography",
-      "capital",
-      "us"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
-    }
-  },
-  {
-    "id": "c7159bfcd5e7ad2d52469f9c273320ef",
-    "source": "geography",
-    "type": "title",
-    "answer": "Puerto Rico",
-    "normalizedAnswer": "PUERTO RICO",
-    "category": "US State",
-    "difficulty": 74,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 10,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "geography",
-      "us-state"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
-    }
-  },
-  {
-    "id": "bc324c312d472fb85a12b5244c9f2462",
-    "source": "geography",
-    "type": "title",
-    "answer": "San Juan",
-    "normalizedAnswer": "SAN JUAN",
-    "category": "US State Capital",
-    "difficulty": 87.2,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 7,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "geography",
-      "capital",
-      "us"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
-    }
-  },
-  {
-    "id": "68028c8d5a023e67a74b9643b5cdb69c",
-    "source": "geography",
-    "type": "title",
-    "answer": "U.S. Virgin Islands",
-    "normalizedAnswer": "US VIRGIN ISLANDS",
-    "category": "US State",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 15,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "geography",
-      "us-state"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
-    }
-  },
-  {
-    "id": "fafc42ea843bfe5ee2822b70f7b62e18",
-    "source": "geography",
-    "type": "title",
-    "answer": "Charlotte Amalie",
-    "normalizedAnswer": "CHARLOTTE AMALIE",
-    "category": "US State Capital",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 15,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "geography",
-      "capital",
-      "us"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
-    }
-  },
-  {
-    "id": "95d868f0d721ea6c399d2324e6cf7dc3",
-    "source": "geography",
-    "type": "title",
-    "answer": "Name",
-    "normalizedAnswer": "NAME",
-    "category": "US State",
-    "difficulty": 92.4,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 4,
-    "uniqueLetterCount": 4,
-    "tags": [
-      "geography",
-      "us-state"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
-    }
-  },
-  {
-    "id": "a41dc8ede26d3b0ff8aa1ebcf0efddf9",
-    "source": "geography",
-    "type": "title",
-    "answer": "Territorial status",
-    "normalizedAnswer": "TERRITORIAL STATUS",
-    "category": "US State Capital",
-    "difficulty": 68,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 17,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "geography",
-      "capital",
-      "us"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
-    }
-  },
-  {
-    "id": "1e85fc068bb9febc4a7392f86c0450c2",
-    "source": "geography",
-    "type": "title",
-    "answer": "Baker Island",
-    "normalizedAnswer": "BAKER ISLAND",
-    "category": "US State",
-    "difficulty": 65.6,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "geography",
-      "us-state"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
-    }
-  },
-  {
-    "id": "ccaa299a055db6df2c2585d4a6c94b33",
-    "source": "geography",
-    "type": "title",
-    "answer": "Howland Island",
-    "normalizedAnswer": "HOWLAND ISLAND",
-    "category": "US State",
-    "difficulty": 68.8,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 13,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "geography",
-      "us-state"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
-    }
-  },
-  {
-    "id": "f9a6483a52790b744ae79b760fe7d16f",
-    "source": "geography",
-    "type": "title",
-    "answer": "Jarvis Island",
-    "normalizedAnswer": "JARVIS ISLAND",
-    "category": "US State",
-    "difficulty": 69.2,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 12,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "geography",
-      "us-state"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
-    }
-  },
-  {
-    "id": "64d7f033741bfea5016d033878583607",
-    "source": "geography",
-    "type": "title",
-    "answer": "Johnston Atoll",
-    "normalizedAnswer": "JOHNSTON ATOLL",
-    "category": "US State",
-    "difficulty": 72.8,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 13,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "geography",
-      "us-state"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
-    }
-  },
-  {
-    "id": "7ddaf16b3bd3d9f5148a039fc9bdc4af",
-    "source": "geography",
-    "type": "title",
-    "answer": "Kingman Reef",
-    "normalizedAnswer": "KINGMAN REEF",
-    "category": "US State",
-    "difficulty": 69.6,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "geography",
-      "us-state"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
-    }
-  },
-  {
-    "id": "0a6e0a929a38f2629999bf60d8ab0c61",
-    "source": "geography",
-    "type": "title",
-    "answer": "Midway Atoll",
-    "normalizedAnswer": "MIDWAY ATOLL",
-    "category": "US State",
-    "difficulty": 69.6,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "geography",
-      "us-state"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
-    }
-  },
-  {
-    "id": "d15f47bf7192e4c519d3ee0fcb2dcb1b",
-    "source": "geography",
-    "type": "title",
-    "answer": "Navassa Island",
-    "normalizedAnswer": "NAVASSA ISLAND",
-    "category": "US State",
-    "difficulty": 76.8,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 13,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "geography",
-      "us-state"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
-    }
-  },
-  {
-    "id": "77a96fa88327745027717a3da80fc66b",
-    "source": "geography",
-    "type": "title",
-    "answer": "Palmyra Atoll",
-    "normalizedAnswer": "PALMYRA ATOLL",
-    "category": "US State",
-    "difficulty": 73.2,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 12,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "geography",
-      "us-state"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
-    }
-  },
-  {
-    "id": "e78018f5f016577437dd53c638e94cc3",
-    "source": "geography",
-    "type": "title",
-    "answer": "Wake Island",
-    "normalizedAnswer": "WAKE ISLAND",
-    "category": "US State",
-    "difficulty": 70,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 10,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "geography",
-      "us-state"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
-    }
-  },
-  {
-    "id": "6c1157a094059c84231992c077e326d1",
-    "source": "geography",
-    "type": "title",
-    "answer": "Bajo Nuevo Bank",
-    "normalizedAnswer": "BAJO NUEVO BANK",
-    "category": "US State",
-    "difficulty": 68.8,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 13,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "geography",
-      "us-state"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"
-    }
-  },
-  {
-    "id": "51f193151433c2610c7d569a2c8788cb",
-    "source": "geography",
-    "type": "title",
-    "answer": "Serranilla Bank",
-    "normalizedAnswer": "SERRANILLA BANK",
-    "category": "US State",
-    "difficulty": 68.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 14,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "geography",
-      "us-state"
     ],
     "metadata": {
       "source": "https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States"

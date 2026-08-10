@@ -534,18 +534,34 @@ describe('resolvePuzzle - prefers unsolved puzzles over repeats', () => {
     if (result.ok) expect(['bands-1', 'bands-2', 'bands-3']).toContain(result.payload.puzzleId)
   })
 
-  it('flattens preference across every eligible pack, not just whichever pack is picked first', () => {
+  it('applies the unsolved-over-repeat preference within whichever pack is drawn, not across the whole selection', () => {
     mockGetPuzzleManifest.mockReturnValue([packA, packB])
-    // Pack A (bands) is fully solved; pack B (movies) has one unsolved puzzle left. The only
-    // unsolved puzzle across BOTH eligible packs should always win, regardless of which pack a
-    // naive per-pack-then-random approach might have tried first.
+    // Pack A (bands) is fully solved; pack B (movies) has one unsolved puzzle left. Packs are now
+    // drawn equally (see the pack-weighting test below), so landing on bands should still return
+    // one of its own puzzles (repeats-allowed, since all three are solved) rather than reaching
+    // into movies for its one unsolved puzzle — the preference no longer crosses pack boundaries.
     const unlockedByPack = { bands: ['bands-1', 'bands-2', 'bands-3'], movies: ['movies-1'] }
+    const randomSpy = jest.spyOn(Math, 'random').mockReturnValueOnce(0).mockReturnValueOnce(0)
 
-    for (let i = 0; i < 10; i++) {
-      const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random' }, ['bands', 'movies'], unlockedByPack)
-      expect(result.ok).toBe(true)
-      if (result.ok) expect(result.payload.puzzleId).toBe('movies-2')
-    }
+    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random' }, ['bands', 'movies'], unlockedByPack)
+
+    randomSpy.mockRestore()
+    expect(result.ok).toBe(true)
+    if (result.ok) expect(result.payload.puzzleId).toBe('bands-1')
+  })
+
+  it('draws packs with equal odds regardless of size or how much of each is already solved', () => {
+    mockGetPuzzleManifest.mockReturnValue([packA, packB])
+    // packA has 3 puzzles, packB has 2 — a size-weighted flat pool would favor packA 3:2. Forcing
+    // the pack-selection draw to land on packB (the smaller pack) and getting a packB puzzle back
+    // proves pack choice isn't weighted by puzzle count.
+    const randomSpy = jest.spyOn(Math, 'random').mockReturnValueOnce(0.9).mockReturnValueOnce(0)
+
+    const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random' }, ['bands', 'movies'])
+
+    randomSpy.mockRestore()
+    expect(result.ok).toBe(true)
+    if (result.ok) expect(result.payload.packKey).toBe('movies')
   })
 
   it('draws with no preference (matching pre-existing behavior) when unlockedByPack is omitted', () => {

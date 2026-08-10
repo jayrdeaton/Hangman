@@ -3,6 +3,8 @@ import { getCustomPackPuzzles, getCustomPackSummaries, isCustomPackKey } from '@
 
 import { loadPuzzlesByKey, puzzleManifest, type PuzzleManifestItem } from '../data/puzzleCatalog.generated'
 
+export type { PuzzleManifestItem }
+
 export type PuzzleDifficultyTier = 'easy' | 'medium' | 'hard'
 
 // Primary sort by group (so related packs like Sports' NFL/NBA/MLB/... actually land together

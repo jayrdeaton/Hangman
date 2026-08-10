@@ -65,7 +65,7 @@ function tidePath(y: number): string {
   return d
 }
 
-const SandcastleVisual = ({ mistakes, color, width, height }: { mistakes: number; color: string; width: number; height: number }) => {
+const SandcastleVisual = ({ mistakes, color }: { mistakes: number; color: string }) => {
   const idx = clampStage(mistakes, STAGES.length - 1)
   const s = STAGES[idx]
   const isFinalStage = idx === STAGES.length - 1
@@ -78,7 +78,7 @@ const SandcastleVisual = ({ mistakes, color, width, height }: { mistakes: number
   const waterY = WATER_Y_LOW - s.waterLevel * (WATER_Y_LOW - WATER_Y_HIGH)
 
   return (
-    <Svg width={width} height={height} viewBox='0 0 100 100'>
+    <Svg viewBox='0 0 100 100'>
       {/* Base mound: always present, the towers shrink into it as the castle erodes */}
       <Path d={MOUND_PATH} stroke={color} strokeWidth='3' fill='none' strokeLinecap='round' strokeLinejoin='round' />
 

@@ -60,7 +60,7 @@ function boltPath(x: number, yTop: number): string {
   return `M${x},${yTop} L${x - 4},${yTop + 9} L${x + 3},${yTop + 10} L${x - 5},${yTop + 20} L${x + 4},${yTop + 19} L${x - 2},${yTop + 28}`
 }
 
-const StormCloudVisual = ({ mistakes, color, width, height }: { mistakes: number; color: string; width: number; height: number }) => {
+const StormCloudVisual = ({ mistakes, color }: { mistakes: number; color: string }) => {
   const s = STAGES[clampStage(mistakes, STAGES.length - 1)]
 
   // Cloud drifts in as a tiny wisp off to the side, then grows and moves in to fully cover the sun.
@@ -74,7 +74,7 @@ const StormCloudVisual = ({ mistakes, color, width, height }: { mistakes: number
   const rays = sunRays(SUN_X, SUN_Y, SUN_R + 2, SUN_R + 7)
 
   return (
-    <Svg width={width} height={height} viewBox='0 0 100 100'>
+    <Svg viewBox='0 0 100 100'>
       {/* Sun: always present, fades and gets covered as the storm builds */}
       <G opacity={sunOpacity}>
         <Circle cx={SUN_X} cy={SUN_Y} r={SUN_R} stroke={color} strokeWidth='2.5' fill='none' />

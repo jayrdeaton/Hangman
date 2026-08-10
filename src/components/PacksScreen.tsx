@@ -1,7 +1,7 @@
 import { Drawer } from '@rific/drawer'
 import { Button, Checkbox, IconButton, useVibration } from '@rific/haptic-press'
-import { ScrollView, ScrollViewFooter, ScrollViewHeader, ScrollViewProvider } from '@rific/scroll-view'
-import { JSX, useEffect, useMemo, useState } from 'react'
+import { FlatList, ScrollViewFooter, ScrollViewHeader, ScrollViewProvider } from '@rific/scroll-view'
+import { JSX, memo, useCallback, useEffect, useMemo, useState } from 'react'
 import { StyleSheet, useWindowDimensions, View } from 'react-native'
 import { Text } from 'react-native-paper'
 
@@ -10,7 +10,7 @@ import { alert } from '@/utils/alert'
 import { commaString } from '@/utils/commaString'
 import { type CustomPack, deleteCustomPack, importCustomPack, isCustomPackKey } from '@/utils/customPacks'
 import { pickHangmanFile, shareCustomPackFile } from '@/utils/hangmanFile'
-import { getPuzzleManifest } from '@/utils/puzzleCatalog'
+import { getPuzzleManifest, type PuzzleManifestItem } from '@/utils/puzzleCatalog'
 import { getPuzzleUnlockMap, getUnlockedCountForPack, PuzzleUnlockMap } from '@/utils/unlocks'
 
 import { PackEditorDrawer } from './PackEditorDrawer'
@@ -26,7 +26,11 @@ export type PacksScreenProps = {
   onPacksChanged: () => void
 }
 
-export const PacksScreen = ({ visible, onDismiss, selectedKeys, onChangeSelectedKeys, packsVersion, onPacksChanged }: PacksScreenProps): JSX.Element => {
+// Memoized: stays mounted (translated off-screen) even while closed, and its own children
+// (PackPuzzlesDrawer/PackEditorDrawer, each with their own always-mounted content) are heavy
+// enough that re-rendering this whole tree on every unrelated ancestor state change is
+// noticeable — see PuzzleDrawer's own memo comment for the full reasoning.
+export const PacksScreen = memo(({ visible, onDismiss, selectedKeys, onChangeSelectedKeys, packsVersion, onPacksChanged }: PacksScreenProps): JSX.Element => {
   const { width: windowWidth } = useWindowDimensions()
   const { selection } = useVibration()
 
@@ -58,14 +62,12 @@ export const PacksScreen = ({ visible, onDismiss, selectedKeys, onChangeSelected
 
   // Always reopens on the list, with neither overlay open — otherwise a screen left mid-edit or
   // mid-detail on last close would silently resume there next time.
-  /* eslint-disable react-hooks/set-state-in-effect -- resets local UI state on an external prop transition, not derived from other state */
   useEffect(() => {
     if (visible) {
       setDetailVisible(false)
       setEditorVisible(false)
     }
   }, [visible])
-  /* eslint-enable react-hooks/set-state-in-effect */
 
   // Re-fetched each time this screen opens, not subscribed to live — good enough for a summary
   // count sitting in a list row, and matches the one-shot fetch every other pack-progress display
@@ -81,45 +83,68 @@ export const PacksScreen = ({ visible, onDismiss, selectedKeys, onChangeSelected
     }
   }, [visible])
 
-  const toggle = (key: string) => {
-    const next = new Set(selectedSet)
-    if (next.has(key)) next.delete(key)
-    else next.add(key)
-    onChangeSelectedKeys(Array.from(next))
-  }
+  // useCallback (unlike before): now a dependency of renderBuiltInPackRow/listHeader below, both
+  // of which the FlatList rows/header rely on staying referentially stable.
+  const toggle = useCallback(
+    (key: string) => {
+      const next = new Set(selectedSet)
+      if (next.has(key)) next.delete(key)
+      else next.add(key)
+      onChangeSelectedKeys(Array.from(next))
+    },
+    [selectedSet, onChangeSelectedKeys]
+  )
 
-  const selectKey = (key: string) => {
-    if (selectedSet.has(key)) return
-    onChangeSelectedKeys([...selectedKeys, key])
-  }
+  const selectKey = useCallback(
+    (key: string) => {
+      if (selectedSet.has(key)) return
+      onChangeSelectedKeys([...selectedKeys, key])
+    },
+    [selectedSet, selectedKeys, onChangeSelectedKeys]
+  )
 
-  const handleSaved = (pack: CustomPack) => {
-    selectKey(pack.key)
-    onPacksChanged()
-    setEditorVisible(false)
-  }
+  // Wrapped in useCallback (unlike toggle/selectKey's other callers above, which stay inline
+  // since they're only ever handed to a plain Button/PackRow) — these three specifically become
+  // PackEditorDrawer's own onSaved/onDelete/onShare props, and that drawer is memoized (see its
+  // own file), so a fresh function identity here on every render would silently defeat that.
+  const handleSaved = useCallback(
+    (pack: CustomPack) => {
+      selectKey(pack.key)
+      onPacksChanged()
+      setEditorVisible(false)
+    },
+    [selectKey, onPacksChanged]
+  )
 
   // No confirm() here — PackEditorDrawer's own ConfirmDialog gates the call to this, so by the time
   // it runs the player has already agreed. Unconditional and side-effecting only.
-  const handleDelete = async (key: string) => {
-    await deleteCustomPack(key)
-    if (selectedSet.has(key)) onChangeSelectedKeys(selectedKeys.filter((k) => k !== key))
-    onPacksChanged()
-  }
+  const handleDelete = useCallback(
+    async (key: string) => {
+      await deleteCustomPack(key)
+      if (selectedSet.has(key)) onChangeSelectedKeys(selectedKeys.filter((k) => k !== key))
+      onPacksChanged()
+    },
+    [selectedSet, selectedKeys, onChangeSelectedKeys, onPacksChanged]
+  )
 
-  const handleShare = async (key: string, label: string) => {
+  const handleShare = useCallback(async (key: string, label: string) => {
     try {
       const shared = await shareCustomPackFile(key, label)
       if (!shared) void alert("Couldn't share", 'Sharing is not available on this device.')
     } catch {
       void alert("Couldn't share", 'Something went wrong sharing this pack. Please try again.')
     }
-  }
+  }, [])
+
+  const handleCloseDetail = useCallback(() => setDetailVisible(false), [])
+  const handleCloseEditor = useCallback(() => setEditorVisible(false), [])
 
   // Reads a file straight off the device (a real "pick a .hangman file" flow) rather than a
   // paste-text box — see hangmanFile.ts's own doc comments for why: the old clipboard-and-paste
   // round trip also depended on alert() to tell the player it worked, which isn't reliable on web.
-  const handleImportFile = async () => {
+  // useCallback (unlike before): this is now a listHeader dependency (see below), so a fresh
+  // identity every render would recompute that memo for nothing.
+  const handleImportFile = useCallback(async () => {
     const raw = await pickHangmanFile()
     if (!raw) return
 
@@ -131,7 +156,114 @@ export const PacksScreen = ({ visible, onDismiss, selectedKeys, onChangeSelected
     } catch (_error) {
       void alert('Invalid pack', 'Could not read that as a Hangman pack file.')
     }
-  }
+  }, [selectKey, onPacksChanged])
+
+  // The built-in manifest is 48 packs (50 total minus whatever's custom) — real enough on-device
+  // render cost that the old plain .map() inside a ScrollView was the actual cause of "opening
+  // Choose packs feels slow": every row mounted at once instead of just the ones on screen.
+  // Custom packs stay a plain .map() in listHeader below (typically a handful, not worth
+  // virtualizing) — only the built-in list becomes the FlatList's own `data`.
+  const renderBuiltInPackRow = useCallback(
+    ({ item }: { item: PuzzleManifestItem }) => {
+      const unlocked = getUnlockedCountForPack(unlockMap, item.key)
+      const progress = item.count > 0 ? unlocked / item.count : 0
+      return (
+        <PackRow
+          label={item.label}
+          group={item.group}
+          subtitle={`${commaString(unlocked)} of ${commaString(item.count)} unlocked`}
+          progress={progress}
+          onPress={() => toggle(item.key)}
+          leading={<Checkbox status={selectedSet.has(item.key) ? 'checked' : 'unchecked'} onPress={() => toggle(item.key)} />}
+          trailing={
+            <IconButton
+              icon='information-outline'
+              size={20}
+              onPress={() => {
+                setDetailKey(item.key)
+                setDetailVisible(true)
+              }}
+              accessibilityLabel={`View ${item.label} contents`}
+            />
+          }
+        />
+      )
+    },
+    [unlockMap, selectedSet, toggle]
+  )
+  const packRowKeyExtractor = useCallback((item: PuzzleManifestItem) => item.key, [])
+
+  // "My packs" (a handful of custom entries, cheap to always render) through the "Built-in packs"
+  // label, as the FlatList's own scrolling header rather than a sibling before it — same
+  // ListHeaderComponent approach as PuzzleDrawer's own pack list (see its own comment on this).
+  const listHeader = useMemo(
+    () => (
+      <>
+        <View style={styles.sectionHeaderRow}>
+          <Text variant='titleSmall' style={styles.sectionHeader}>
+            My packs
+          </Text>
+          <View style={styles.sectionActions}>
+            <Button
+              compact
+              icon='plus'
+              onPress={() => {
+                setEditingKey(null)
+                setEditorVisible(true)
+              }}
+            >
+              Create
+            </Button>
+            <Button compact icon='import' onPress={() => void handleImportFile()}>
+              Import
+            </Button>
+          </View>
+        </View>
+
+        {customPacks.length === 0 ? (
+          <Text variant='bodySmall' style={styles.emptyText}>
+            No custom packs yet.
+          </Text>
+        ) : (
+          customPacks.map((item) => {
+            const unlocked = getUnlockedCountForPack(unlockMap, item.key)
+            const progress = item.count > 0 ? unlocked / item.count : 0
+            return (
+              <PackRow
+                key={item.key}
+                label={item.label}
+                group={item.group}
+                subtitle={`${commaString(unlocked)} of ${commaString(item.count)} unlocked`}
+                progress={progress}
+                onPress={() => toggle(item.key)}
+                leading={<Checkbox status={selectedSet.has(item.key) ? 'checked' : 'unchecked'} onPress={() => toggle(item.key)} />}
+                // Share and Delete both live in the editor header now (Edit -> pack name ->
+                // Share/Delete) — this row used to be 3 icons deep with no real gap between
+                // them. Edit is the one thing this row itself needs: everything else about
+                // managing a specific pack happens once you're actually in it.
+                trailing={
+                  <IconButton
+                    icon='pencil-outline'
+                    size={20}
+                    onPress={() => {
+                      setEditingKey(item.key)
+                      setEditorVisible(true)
+                    }}
+                    accessibilityLabel={`Edit ${item.label}`}
+                  />
+                }
+              />
+            )
+          })
+        )}
+
+        <Text variant='titleSmall' style={styles.sectionHeader}>
+          Built-in packs
+        </Text>
+      </>
+    ),
+    [customPacks, unlockMap, selectedSet, handleImportFile, toggle]
+  )
 
   return (
     <>
@@ -160,95 +292,11 @@ export const PacksScreen = ({ visible, onDismiss, selectedKeys, onChangeSelected
               backActionAccessibilityLabel='Close'
             />
 
-            <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.scrollContent} keyboardShouldPersistTaps='handled'>
-              <View style={styles.sectionHeaderRow}>
-                <Text variant='titleSmall' style={styles.sectionHeader}>
-                  My packs
-                </Text>
-                <View style={styles.sectionActions}>
-                  <Button
-                    compact
-                    icon='plus'
-                    onPress={() => {
-                      setEditingKey(null)
-                      setEditorVisible(true)
-                    }}
-                  >
-                    Create
-                  </Button>
-                  <Button compact icon='import' onPress={() => void handleImportFile()}>
-                    Import
-                  </Button>
-                </View>
-              </View>
-
-              {customPacks.length === 0 ? (
-                <Text variant='bodySmall' style={styles.emptyText}>
-                  No custom packs yet.
-                </Text>
-              ) : (
-                customPacks.map((item) => {
-                  const unlocked = getUnlockedCountForPack(unlockMap, item.key)
-                  const progress = item.count > 0 ? unlocked / item.count : 0
-                  return (
-                    <PackRow
-                      key={item.key}
-                      label={item.label}
-                      group={item.group}
-                      subtitle={`${commaString(unlocked)} of ${commaString(item.count)} unlocked`}
-                      progress={progress}
-                      onPress={() => toggle(item.key)}
-                      leading={<Checkbox status={selectedSet.has(item.key) ? 'checked' : 'unchecked'} onPress={() => toggle(item.key)} />}
-                      // Share and Delete both live in the editor header now (Edit -> pack name ->
-                      // Share/Delete) — this row used to be 3 icons deep with no real gap between
-                      // them. Edit is the one thing this row itself needs: everything else about
-                      // managing a specific pack happens once you're actually in it.
-                      trailing={
-                        <IconButton
-                          icon='pencil-outline'
-                          size={20}
-                          onPress={() => {
-                            setEditingKey(item.key)
-                            setEditorVisible(true)
-                          }}
-                          accessibilityLabel={`Edit ${item.label}`}
-                        />
-                      }
-                    />
-                  )
-                })
-              )}
-
-              <Text variant='titleSmall' style={styles.sectionHeader}>
-                Built-in packs
-              </Text>
-              {builtInPacks.map((item) => {
-                const unlocked = getUnlockedCountForPack(unlockMap, item.key)
-                const progress = item.count > 0 ? unlocked / item.count : 0
-                return (
-                  <PackRow
-                    key={item.key}
-                    label={item.label}
-                    group={item.group}
-                    subtitle={`${commaString(unlocked)} of ${commaString(item.count)} unlocked`}
-                    progress={progress}
-                    onPress={() => toggle(item.key)}
-                    leading={<Checkbox status={selectedSet.has(item.key) ? 'checked' : 'unchecked'} onPress={() => toggle(item.key)} />}
-                    trailing={
-                      <IconButton
-                        icon='information-outline'
-                        size={20}
-                        onPress={() => {
-                          setDetailKey(item.key)
-                          setDetailVisible(true)
-                        }}
-                        accessibilityLabel={`View ${item.label} contents`}
-                      />
-                    }
-                  />
-                )
-              })}
-            </ScrollView>
+            {/* "My packs" through the "Built-in packs" label live in listHeader (see its own
+                declaration above) — everything above the built-in pack list scrolls away with it
+                exactly as it did back when this was all one plain ScrollView; only the built-in
+                list itself needed to become a real FlatList. */}
+            <FlatList data={builtInPacks} keyExtractor={packRowKeyExtractor} renderItem={renderBuiltInPackRow} ListHeaderComponent={listHeader} showsVerticalScrollIndicator={false} contentContainerStyle={styles.scrollContent} keyboardShouldPersistTaps='handled' />
 
             {/* Not part of the scrollable content — matches PuzzleDrawer's own quick-start list,
                 and keeps Select all/Clear reachable without scrolling back up past however many
@@ -270,11 +318,12 @@ export const PacksScreen = ({ visible, onDismiss, selectedKeys, onChangeSelected
         </View>
       </Drawer>
 
-      <PackPuzzlesDrawer visible={detailVisible} packKey={detailKey} onDismiss={() => setDetailVisible(false)} />
-      <PackEditorDrawer visible={editorVisible} editingKey={editingKey} onDismiss={() => setEditorVisible(false)} onSaved={handleSaved} onDelete={handleDelete} onShare={handleShare} />
+      <PackPuzzlesDrawer visible={detailVisible} packKey={detailKey} onDismiss={handleCloseDetail} />
+      <PackEditorDrawer visible={editorVisible} editingKey={editingKey} onDismiss={handleCloseEditor} onSaved={handleSaved} onDelete={handleDelete} onShare={handleShare} />
     </>
   )
-}
+})
+PacksScreen.displayName = 'PacksScreen'
 
 const styles = StyleSheet.create({
   emptyText: { marginBottom: 12, opacity: 0.7 },

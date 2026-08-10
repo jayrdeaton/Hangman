@@ -1,7 +1,7 @@
 import { Drawer } from '@rific/drawer'
 import { Button, useVibration } from '@rific/haptic-press'
 import { ScrollViewFooter, ScrollViewHeader, ScrollViewProvider } from '@rific/scroll-view'
-import { JSX, useEffect, useMemo, useState } from 'react'
+import { JSX, memo, useEffect, useMemo, useState } from 'react'
 import { StyleSheet, useWindowDimensions, View } from 'react-native'
 
 import { DRAWER_PACK_DETAIL_Z_INDEX } from '@/constants/drawerStacking'
@@ -36,7 +36,11 @@ export type PackPuzzlesDrawerProps = {
 // difficulty/onConfirm all omitted) — there's no round to start from Choose Packs, just browsing
 // what's inside. Every puzzle in the pack shows as its own row (via PackPuzzleList,
 // initialFilter='all'), masked to blanks unless already solved either way.
-export const PackPuzzlesDrawer = ({ visible, packKey, onDismiss, mode, difficulty, onConfirm }: PackPuzzlesDrawerProps): JSX.Element => {
+// Memoized: two instances of this stay mounted (translated off-screen) even while closed — one
+// under PuzzleDrawer, one under PacksScreen — see PuzzleDrawer's own memo comment for why an
+// always-mounted, never-visible-right-now subtree still costs a re-render without this whenever
+// an unrelated ancestor state change bubbles through it.
+export const PackPuzzlesDrawer = memo(({ visible, packKey, onDismiss, mode, difficulty, onConfirm }: PackPuzzlesDrawerProps): JSX.Element => {
   const { width: windowWidth } = useWindowDimensions()
   const { selection } = useVibration()
   const playable = Boolean(mode && difficulty && onConfirm)
@@ -119,7 +123,8 @@ export const PackPuzzlesDrawer = ({ visible, packKey, onDismiss, mode, difficult
       </View>
     </Drawer>
   )
-}
+})
+PackPuzzlesDrawer.displayName = 'PackPuzzlesDrawer'
 
 const styles = StyleSheet.create({
   confirmContent: { height: 52 },

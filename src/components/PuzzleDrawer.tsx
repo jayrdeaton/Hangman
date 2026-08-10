@@ -1,9 +1,9 @@
-import { AppearancePicker, PalettePicker, useThemeSettings } from '@rific/auto-paper'
+import { useThemeSettings } from '@rific/auto-paper'
 import { Drawer, DrawerEdgeSwipe } from '@rific/drawer'
 import { Button, IconButton, SegmentedButtons, TouchableRipple, useVibration } from '@rific/haptic-press'
-import { ScrollView, ScrollViewFooter, ScrollViewHeader, ScrollViewProvider } from '@rific/scroll-view'
+import { FlatList, ScrollViewFooter, ScrollViewHeader, ScrollViewProvider } from '@rific/scroll-view'
 import { useUpdater } from '@rific/updater'
-import { JSX, useCallback, useEffect, useMemo, useState } from 'react'
+import { JSX, memo, useCallback, useEffect, useMemo, useState } from 'react'
 import { Platform, StyleSheet, View } from 'react-native'
 import { Text, useTheme } from 'react-native-paper'
 import { useSharedValue } from 'react-native-reanimated'
@@ -11,20 +11,21 @@ import { useSharedValue } from 'react-native-reanimated'
 import { DRAWER_BASE_Z_INDEX } from '@/constants/drawerStacking'
 import { release } from '@/constants/release'
 import { getContainerColor, useDifficultyColors, useDifficultyContainerColors } from '@/hooks/useDifficultyColors'
-import { useKeyboardLayout } from '@/hooks/useKeyboardLayout'
 import { usePackSelection } from '@/hooks/usePackSelection'
 import type { GameMode } from '@/types/gameModes'
 import type { GameStartPayload } from '@/types/gameSession'
 import { alert } from '@/utils/alert'
 import { commaString } from '@/utils/commaString'
-import { getPuzzleManifest, PuzzleDifficultyTier } from '@/utils/puzzleCatalog'
+import { getPuzzleManifest, PuzzleDifficultyTier, type PuzzleManifestItem } from '@/utils/puzzleCatalog'
 import { type PuzzleConfig, resolvePuzzle } from '@/utils/puzzlePicker'
+import { resolveSeedColor } from '@/utils/resolveSeedColor'
 import { getPuzzleUnlockMap, getUnlockedCountForPack, PuzzleUnlockMap } from '@/utils/unlocks'
 
 import { ModeSelector } from './ModeSelector'
 import { PackPuzzlesDrawer } from './PackPuzzlesDrawer'
 import { PackRow } from './PackRow'
 import { PacksScreen } from './PacksScreen'
+import { SettingsDrawer } from './SettingsDrawer'
 
 const DRAWER_WIDTH = 380
 // Opacity folded into the color itself — boxShadow (unlike the deprecated shadow* props it
@@ -50,10 +51,17 @@ export type PuzzleDrawerProps = {
   onDifficultyChange?: (difficulty: 'any' | PuzzleDifficultyTier) => void
 }
 
-export const PuzzleDrawer = ({ visible, onDismiss, onRequestOpen, initialConfig, onConfirm, onStartPnp = () => {}, packsVersion = 0, onPacksChanged = () => {}, onModeChange = () => {}, onDifficultyChange = () => {} }: PuzzleDrawerProps): JSX.Element => {
-  const { settings, set } = useThemeSettings()
+// Memoized: PacksScreen/SettingsDrawer/PackPuzzlesDrawer below (and everything they in turn
+// render — pack rows, the pack editor form) stay mounted at all times (see the Drawer-never-
+// unmounts comment further down), so without this, any unrelated state change in Main
+// (difficulty, mode, drawerVisible toggling elsewhere) would re-render this entire subtree for
+// no visible-facing reason. Callers must keep every prop referentially stable (useCallback/
+// useMemo) or this memo does nothing — see Main.tsx's own initialDrawerConfig/handleOpenDrawer.
+export const PuzzleDrawer = memo(({ visible, onDismiss, onRequestOpen, initialConfig, onConfirm, onStartPnp = () => {}, packsVersion = 0, onPacksChanged = () => {}, onModeChange = () => {}, onDifficultyChange = () => {} }: PuzzleDrawerProps): JSX.Element => {
+  // Only settings.color is read here now (ModeSelector's own preview swatch) — editing appearance
+  // itself moved to SettingsDrawer, reached via the gear icon below.
+  const { settings } = useThemeSettings()
   const theme = useTheme()
-  const { layout, setLayout } = useKeyboardLayout()
   // autoCheck stays on (the default) — matches every other game built on this hook, which stage
   // updates silently in the background and apply on the next cold launch with no button needed.
   // check() below is purely an ADDITIONAL affordance for a player who wants to force a check right
@@ -72,12 +80,13 @@ export const PuzzleDrawer = ({ visible, onDismiss, onRequestOpen, initialConfig,
 
   const [draft, setDraft] = useState<PuzzleConfig>(initialConfig)
   const [packsScreenVisible, setPacksScreenVisible] = useState(false)
+  const [settingsVisible, setSettingsVisible] = useState(false)
   // Which pack's puzzle list is showing, and whether it's actually open — split rather than one
   // nullable "open pack" so dismissing doesn't null the key out mid-close-animation (see
   // PackPuzzlesDrawer's own doc comment on packKey for why that would flash the content blank).
   const [playPackKey, setPlayPackKey] = useState<string | null>(null)
   const [playDrawerVisible, setPlayDrawerVisible] = useState(false)
-  const anyOverlayVisible = packsScreenVisible || playDrawerVisible
+  const anyOverlayVisible = packsScreenVisible || settingsVisible || playDrawerVisible
   const [unlockMap, setUnlockMap] = useState<PuzzleUnlockMap>({})
 
   const packSummaryLabel = useMemo(() => {
@@ -132,13 +141,11 @@ export const PuzzleDrawer = ({ visible, onDismiss, onRequestOpen, initialConfig,
   // every one of those echoes would fight the player's own in-progress edits to the rest of the
   // draft (e.g. a difficulty filter they just picked) just because they tapped a different mode
   // card a moment earlier.
-  /* eslint-disable react-hooks/set-state-in-effect -- syncs the draft from an external prop, not derived from other state */
   useEffect(() => {
     if (!visible) return
     setDraft(initialConfig)
     // eslint-disable-next-line react-hooks/exhaustive-deps -- initialConfig is deliberately excluded, see above
   }, [visible])
-  /* eslint-enable react-hooks/set-state-in-effect */
 
   // Re-fetched each time the drawer opens, not subscribed to live — good enough for the per-pack
   // progress the quick-start list below shows, and matches the one-shot fetch every other
@@ -164,12 +171,37 @@ export const PuzzleDrawer = ({ visible, onDismiss, onRequestOpen, initialConfig,
     onConfirm(result.payload, configToResolve)
   }, [draft, onConfirm, selectedPackKeys, unlockMap])
 
-  // Opens that pack's own puzzle list (PackPuzzlesDrawer) rather than drawing from it directly —
-  // picking a specific puzzle or a pack-scoped Random both happen from there now.
+  // A quick-start row's own tap: the Game Menu is about getting a game going as fast as possible,
+  // so pressing a pack now draws instantly from just that one — same shape as handleConfirm above,
+  // just scoped to a single packKey instead of the whole selection. Browsing that pack (picking a
+  // specific puzzle, or a pack-scoped Random from within its own list) moved to the row's trailing
+  // info icon (see handleOpenPack) rather than living behind the row tap itself.
+  const handleQuickRandom = useCallback(
+    (packKey: string) => {
+      const configToResolve: PuzzleConfig = { ...draft, sourceMode: 'random' }
+      const result = resolvePuzzle(configToResolve, [packKey], unlockMap)
+      if (!result.ok) {
+        void alert('No puzzles available', result.error)
+        return
+      }
+      onConfirm(result.payload, configToResolve)
+    },
+    [draft, onConfirm, unlockMap]
+  )
+
+  // Opens that pack's own puzzle list (PackPuzzlesDrawer) — browsing, not the fast path above.
   const handleOpenPack = useCallback((packKey: string) => {
     setPlayPackKey(packKey)
     setPlayDrawerVisible(true)
   }, [])
+
+  // Stable identities for PacksScreen/SettingsDrawer/PackPuzzlesDrawer's own onDismiss below —
+  // each is memoized (see their own files) specifically so an unrelated re-render here (e.g. this
+  // component's own `draft` changing) doesn't cascade into them; a fresh arrow function on every
+  // render would defeat that regardless of the memo.
+  const handleClosePacksScreen = useCallback(() => setPacksScreenVisible(false), [])
+  const handleCloseSettings = useCallback(() => setSettingsVisible(false), [])
+  const handleClosePlayDrawer = useCallback(() => setPlayDrawerVisible(false), [])
 
   const handleSelectMode = useCallback(
     (mode: GameMode) => {
@@ -185,6 +217,74 @@ export const PuzzleDrawer = ({ visible, onDismiss, onRequestOpen, initialConfig,
       onDifficultyChange(value)
     },
     [updateDraft, onDifficultyChange]
+  )
+
+  // One row per pack in the current selection. The Game Menu is about getting a game going as
+  // fast as possible, so tapping a row itself draws an instant random puzzle from just that pack
+  // (handleQuickRandom) rather than opening its list — browsing (picking a specific puzzle, or a
+  // pack-scoped Random from within it) is the trailing info icon instead, a small but visible
+  // affordance rather than a hidden gesture. Manage which packs are IN this list via Choose packs
+  // above; this is only ever a subset of what's selected there. The trailing eye icon is the fast
+  // path to trim this list without a trip through Choose packs — it unselects the pack (same
+  // selectedPackKeys Choose packs itself toggles), so "hidden" here just means "unselected there",
+  // and Choose packs is already the place to bring it back. Rendered via FlatList (below), not a
+  // plain .map() — the full built-in manifest is 50 packs, real enough on-device render cost once
+  // a player has most/all of them selected that virtualizing (only mounting on-screen rows) is
+  // what actually fixed the felt delay opening this menu, not just memoizing the row component.
+  const renderPackRow = useCallback(
+    ({ item }: { item: PuzzleManifestItem }) => {
+      const unlocked = getUnlockedCountForPack(unlockMap, item.key)
+      const progress = item.count > 0 ? unlocked / item.count : 0
+      return (
+        <PackRow
+          label={item.label}
+          group={item.group}
+          subtitle={`${commaString(unlocked)} of ${commaString(item.count)} unlocked`}
+          progress={progress}
+          onPress={() => handleQuickRandom(item.key)}
+          trailing={
+            <View style={styles.packRowActions}>
+              <IconButton icon='information-outline' size={20} onPress={() => handleOpenPack(item.key)} accessibilityLabel={`Browse ${item.label}`} />
+              <IconButton icon='eye-off-outline' size={20} onPress={() => setSelectedPackKeys(selectedPackKeys.filter((key) => key !== item.key))} accessibilityLabel={`Hide ${item.label}`} />
+            </View>
+          }
+        />
+      )
+    },
+    [unlockMap, handleQuickRandom, handleOpenPack, selectedPackKeys, setSelectedPackKeys]
+  )
+  const packRowKeyExtractor = useCallback((item: PuzzleManifestItem) => item.key, [])
+
+  // Everything ABOVE the pack list — mode picker, difficulty filter, Choose packs summary button
+  // — as the FlatList's own scrolling header rather than a sibling before it, so it scrolls away
+  // with the rest of the content exactly as it did back when this was all one plain ScrollView.
+  const listHeader = useMemo(
+    () => (
+      <>
+        {/* No label — the mode cards are self-explanatory without one. Negative margin cancels
+            scrollContent's own paddingHorizontal just for this one section, so the peek cards on
+            either side reach flush to the drawer's true left/right edges — a full-bleed carousel,
+            not inset like the text/buttons below it. ModeSelector's own sidePadding math (see that
+            file) is what still keeps the cards themselves centered and clipped there, not this
+            margin. */}
+        <View style={styles.modeSelectorBleed}>
+          <ModeSelector selected={draft.mode} color={resolveSeedColor(settings.color)} onSelect={handleSelectMode} />
+        </View>
+
+        <Text variant='titleMedium' style={styles.heroAdjacentSectionLabel}>
+          Difficulty
+        </Text>
+        <SegmentedButtons value={draft.difficulty} onValueChange={(value) => handleSelectDifficulty(value as 'any' | PuzzleDifficultyTier)} buttons={difficultyOptions} />
+
+        <Text variant='titleMedium' style={styles.sectionLabel}>
+          Packs
+        </Text>
+        <Button mode='outlined' icon='format-list-checks' onPress={() => setPacksScreenVisible(true)} contentStyle={styles.choosePacksContent} style={styles.choosePacksSpacing}>
+          {packSummaryLabel}
+        </Button>
+      </>
+    ),
+    [draft.mode, draft.difficulty, settings.color, handleSelectMode, handleSelectDifficulty, difficultyOptions, packSummaryLabel]
   )
 
   // Mirrors @rific/updater's own "unsupported here" guard (__DEV__ || web) rather than always
@@ -268,74 +368,19 @@ export const PuzzleDrawer = ({ visible, onDismiss, onRequestOpen, initialConfig,
                   </View>
                 </TouchableRipple>
               }
+              // Appearance/keyboard layout/haptics all moved to their own SettingsDrawer — this
+              // menu is gameplay-only now (packs, difficulty, Random, Pass & play), so those
+              // rarely-touched preferences sit one tap away instead of permanently at the top.
+              trailingAction={<IconButton icon='cog-outline' onPress={() => setSettingsVisible(true)} accessibilityLabel='Settings' />}
             />
 
-            <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps='handled'>
-              {/* App-wide appearance leads the drawer — a quick, no-scroll toggle now that Settings
-                has been folded into this hamburger menu, ahead of the puzzle-specific controls
-                below it. The accent-color swatch sits inline with the picker rather than as its
-                own labeled row — what it does is obvious without a caption. */}
-              <Text variant='titleMedium' style={styles.topSectionLabel}>
-                Appearance
-              </Text>
-              <View style={styles.row}>
-                <PalettePicker value={settings.color} onChange={(color) => set({ color })} />
-                <View style={styles.flex}>
-                  <AppearancePicker value={settings.appearance} onChange={(appearance) => set({ appearance })} showLabels={false} />
-                </View>
-              </View>
-
-              {/* No title — QWERTY vs ABC is self-explanatory without one. */}
-              <SegmentedButtons
-                value={layout}
-                onValueChange={(value) => setLayout(value as typeof layout)}
-                buttons={[
-                  { value: 'qwerty', label: 'QWERTY' },
-                  { value: 'abc', label: 'ABC' }
-                ]}
-                style={styles.keyboardPicker}
-              />
-
-              {/* The hero: the visual/tactile choice (what the round looks and feels like) leads,
-                ahead of the more utilitarian pack/difficulty controls below it. No label — the
-                mode cards are self-explanatory without one. Negative margin cancels
-                scrollContent's own paddingHorizontal just for this one section, so the peek cards
-                on either side reach flush to the drawer's true left/right edges — a full-bleed
-                carousel, not inset like the text/buttons above and below it. ModeSelector's own
-                sidePadding math (see that file) is what still keeps the cards themselves centered
-                and clipped there, not this margin. */}
-              <View style={styles.modeSelectorBleed}>
-                <ModeSelector selected={draft.mode} color={settings.color} onSelect={handleSelectMode} />
-              </View>
-
-              <Text variant='titleMedium' style={styles.heroAdjacentSectionLabel}>
-                Difficulty
-              </Text>
-              <SegmentedButtons value={draft.difficulty} onValueChange={(value) => handleSelectDifficulty(value as 'any' | PuzzleDifficultyTier)} buttons={difficultyOptions} />
-
-              <Text variant='titleMedium' style={styles.sectionLabel}>
-                Packs
-              </Text>
-              <Button mode='outlined' icon='format-list-checks' onPress={() => setPacksScreenVisible(true)} contentStyle={styles.choosePacksContent}>
-                {packSummaryLabel}
-              </Button>
-
-              {/* One row per pack in the current selection — tapping it opens that pack's own
-                puzzle list (browse and pick one, or draw randomly from just there), without
-                changing the selection itself. Manage which packs are IN this list via Choose
-                packs above; this is only ever a subset of what's selected there. The trailing
-                eye icon is the fast path to trim this list without a trip through Choose packs —
-                it unselects the pack (same selectedPackKeys Choose packs itself toggles), so
-                "hidden" here just means "unselected there", and Choose packs is already the place
-                to bring it back. */}
-              <View style={styles.packList}>
-                {selectedPacks.map((item) => {
-                  const unlocked = getUnlockedCountForPack(unlockMap, item.key)
-                  const progress = item.count > 0 ? unlocked / item.count : 0
-                  return <PackRow key={item.key} label={item.label} group={item.group} subtitle={`${commaString(unlocked)} of ${commaString(item.count)} unlocked`} progress={progress} onPress={() => handleOpenPack(item.key)} trailing={<IconButton icon='eye-off-outline' size={20} onPress={() => setSelectedPackKeys(selectedPackKeys.filter((key) => key !== item.key))} accessibilityLabel={`Hide ${item.label}`} />} />
-                })}
-              </View>
-            </ScrollView>
+            {/* The hero (ModeSelector) through the Choose packs button live in ListHeaderComponent
+                below, not as siblings before this — they scroll away together with the pack list
+                exactly as they did back when this was all one plain ScrollView; only the pack
+                list itself (up to 50 rows in the built-in manifest) needed to become a real
+                FlatList, so everything above it stays exactly the JSX it always was, just moved
+                into listHeader (see its own declaration above). */}
+            <FlatList data={selectedPacks} keyExtractor={packRowKeyExtractor} renderItem={renderPackRow} ListHeaderComponent={listHeader} contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps='handled' />
 
             {/* Not part of the scrollable content — leaving the button inline at the end of a form
                 this short left a large dead gap below it instead of avoiding one. Docking it here
@@ -354,21 +399,27 @@ export const PuzzleDrawer = ({ visible, onDismiss, onRequestOpen, initialConfig,
         </View>
       </Drawer>
 
-      <PacksScreen visible={packsScreenVisible} onDismiss={() => setPacksScreenVisible(false)} selectedKeys={selectedPackKeys} onChangeSelectedKeys={setSelectedPackKeys} packsVersion={packsVersion} onPacksChanged={onPacksChanged} />
+      <PacksScreen visible={packsScreenVisible} onDismiss={handleClosePacksScreen} selectedKeys={selectedPackKeys} onChangeSelectedKeys={setSelectedPackKeys} packsVersion={packsVersion} onPacksChanged={onPacksChanged} />
+
+      <SettingsDrawer visible={settingsVisible} onDismiss={handleCloseSettings} />
 
       {/* Stacks above both this drawer's own panel and PacksScreen via its own hardcoded
           DRAWER_PACK_DETAIL_Z_INDEX (see @/constants/drawerStacking) — not render order. */}
-      <PackPuzzlesDrawer visible={playDrawerVisible} packKey={playPackKey} mode={draft.mode} difficulty={draft.difficulty} onDismiss={() => setPlayDrawerVisible(false)} onConfirm={onConfirm} />
+      <PackPuzzlesDrawer visible={playDrawerVisible} packKey={playPackKey} mode={draft.mode} difficulty={draft.difficulty} onDismiss={handleClosePlayDrawer} onConfirm={onConfirm} />
     </>
   )
-}
+})
+PuzzleDrawer.displayName = 'PuzzleDrawer'
 
 const styles = StyleSheet.create({
   centeredText: { textAlign: 'center' },
   choosePacksContent: { justifyContent: 'flex-start' },
+  // Replaces the old packList wrapper's marginTop — now that the pack rows are a FlatList's own
+  // `data` (see renderPackRow/listHeader above) rather than a sibling View after this button, the
+  // same gap has to come from the last header element's own margin instead.
+  choosePacksSpacing: { marginBottom: 8 },
   confirmContent: { height: 52 },
   confirmLabel: { fontSize: 16, fontWeight: '700' },
-  flex: { flex: 1 },
   // flexDirection/alignItems override ScrollViewFooter's own row+center defaults — Random and Pass
   // & play stack vertically here (see pnpButton's marginTop below) and each stretch full width,
   // matching this footer's look before the scroll-view migration.
@@ -387,15 +438,13 @@ const styles = StyleSheet.create({
     marginBottom: 8,
     marginTop: 12
   },
-  // Tight above (same Appearance group as the row it follows), a full section break below —
-  // ModeSelector brings no vertical margin of its own, so the gap before the artwork lives here.
-  keyboardPicker: { marginBottom: 16, marginTop: 8 },
-  // Cancels scrollContent's own paddingHorizontal (16, see below) — negative, not zero, since
-  // this wraps ModeSelector rather than replacing its container, so the escape has to happen
-  // from the outside in. -16 exactly matches scrollContent's own value on purpose: change one,
-  // change the other.
-  modeSelectorBleed: { marginHorizontal: -16 },
-  packList: { marginTop: 8 },
+  // marginHorizontal cancels scrollContent's own paddingHorizontal (16, see below) — negative,
+  // not zero, since this wraps ModeSelector rather than replacing its container, so the escape
+  // has to happen from the outside in. -16 exactly matches scrollContent's own value on purpose:
+  // change one, change the other. marginTop gives the carousel breathing room below the header —
+  // without it the cards sat flush against the header's bottom edge.
+  modeSelectorBleed: { marginHorizontal: -16, marginTop: 12 },
+  packRowActions: { flexDirection: 'row' },
   panelContent: {
     boxShadow: [{ offsetX: 2, offsetY: 0, blurRadius: 8, color: SHADOW_COLOR }],
     elevation: 8,
@@ -403,12 +452,6 @@ const styles = StyleSheet.create({
     overflow: 'hidden'
   },
   pnpButton: { marginTop: 8 },
-  row: {
-    alignItems: 'center',
-    flexDirection: 'row',
-    gap: 12,
-    justifyContent: 'space-between'
-  },
   scrollContent: {
     paddingBottom: 16,
     paddingHorizontal: 16
@@ -427,9 +470,5 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     margin: -8,
     padding: 8
-  },
-  topSectionLabel: {
-    fontWeight: '700',
-    marginBottom: 8
   }
 })
