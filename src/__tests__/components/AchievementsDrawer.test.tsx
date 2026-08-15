@@ -1,6 +1,7 @@
+import { HapticPressProvider } from '@rific/haptic-press'
 import { act, fireEvent, render as rtlRender, waitFor, within } from '@testing-library/react-native'
-import type { ReactElement } from 'react'
-import { PaperProvider } from 'react-native-paper'
+import type { ReactElement, ReactNode } from 'react'
+import * as RNPaper from 'react-native-paper'
 
 import { AchievementsDrawer } from '@/components/AchievementsDrawer'
 import { DEFAULT_MODE } from '@/modes/registry'
@@ -68,8 +69,17 @@ const realResolvePuzzle: typeof resolvePuzzle = jest.requireActual('@/utils/puzz
 
 // ConfirmDialog (like RoundEndDialog in Game.test.tsx) defaults to the blurred/Portal-based
 // rendering path and needs a react-native-paper Portal.Host ancestor — normally supplied by
-// @rific/auto-paper's Provider at the app root.
-const render = (ui: ReactElement) => rtlRender(ui, { wrapper: PaperProvider })
+// @rific/auto-paper's Provider at the app root. HapticPressProvider's real `paper` module is
+// also injected here (see Haptic.tsx, the app's own root wiring) — without it, @rific/haptic-
+// press's Button/IconButton fall back to a bare RN Pressable that drops accessibilityLabel
+// entirely, which every backAction/Button query below (Close, Back to achievements, Random,
+// Reset all progress, the confirm dialog's own buttons) relies on.
+const Wrapper = ({ children }: { children: ReactNode }) => (
+  <RNPaper.PaperProvider>
+    <HapticPressProvider paper={RNPaper}>{children}</HapticPressProvider>
+  </RNPaper.PaperProvider>
+)
+const render = (ui: ReactElement) => rtlRender(ui, { wrapper: Wrapper })
 
 const builtIn = () => getPuzzleManifest().filter((item) => item.count > 0)[0]
 
@@ -284,14 +294,14 @@ describe('AchievementsDrawer', () => {
     await waitFor(() => expect(getByText(/unlocked/)).toBeTruthy())
 
     await rerender(
-      <PaperProvider>
+      <RNPaper.PaperProvider>
         <AchievementsDrawer visible={false} onDismiss={jest.fn()} unlockVersion={0} onUnlocksChanged={jest.fn()} mode={DEFAULT_MODE} difficulty='any' onConfirm={jest.fn()} />
-      </PaperProvider>
+      </RNPaper.PaperProvider>
     )
     await rerender(
-      <PaperProvider>
+      <RNPaper.PaperProvider>
         <AchievementsDrawer visible onDismiss={jest.fn()} unlockVersion={0} onUnlocksChanged={jest.fn()} mode={DEFAULT_MODE} difficulty='any' onConfirm={jest.fn()} />
-      </PaperProvider>
+      </RNPaper.PaperProvider>
     )
 
     expect(getByText('Browse by pack')).toBeTruthy()
@@ -305,9 +315,9 @@ describe('AchievementsDrawer', () => {
     expect(getByTestId('achievements-drawer-panel').props.importantForAccessibility).toBe('yes')
 
     await rerender(
-      <PaperProvider>
+      <RNPaper.PaperProvider>
         <AchievementsDrawer visible={false} onDismiss={jest.fn()} unlockVersion={0} onUnlocksChanged={jest.fn()} mode={DEFAULT_MODE} difficulty='any' onConfirm={jest.fn()} />
-      </PaperProvider>
+      </RNPaper.PaperProvider>
     )
 
     // Closed state is deliberately hidden from accessibility tools (accessibilityElementsHidden),
@@ -328,9 +338,9 @@ describe('AchievementsDrawer', () => {
     // proves the effect re-runs (not just that it ran once on mount): a stale closure or a missing
     // dependency would leave this reading "3" forever instead of picking up the new fetch.
     await rerender(
-      <PaperProvider>
+      <RNPaper.PaperProvider>
         <AchievementsDrawer visible onDismiss={jest.fn()} unlockVersion={1} onUnlocksChanged={jest.fn()} mode={DEFAULT_MODE} difficulty='any' onConfirm={jest.fn()} />
-      </PaperProvider>
+      </RNPaper.PaperProvider>
     )
 
     await waitFor(() => expect(within(getByTestId('stat-Won')).getByText('4')).toBeTruthy())

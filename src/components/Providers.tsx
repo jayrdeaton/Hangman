@@ -15,6 +15,7 @@ import { Haptic } from './Haptic'
 import { KeyboardLayoutProvider } from './KeyboardLayoutProvider'
 import { PackSelectionProvider } from './PackSelectionProvider'
 import { PuzzleDefaultsProvider } from './PuzzleDefaultsProvider'
+import { SoundSettingsProvider } from './SoundSettingsProvider'
 import { Theme } from './Theme'
 
 export type ProvidersProps = { children: ReactNode }
@@ -46,11 +47,13 @@ export const Providers = ({ children }: ProvidersProps): JSX.Element => (
                   computed theme rather than Paper's own default. */}
               <ToastProvider haptics={ExpoHaptics} paper={RNPaper}>
                 <KeyboardLayoutProvider>
-                  <AutoSaveCustomProvider>
-                    <PackSelectionProvider>
-                      <PuzzleDefaultsProvider>{children}</PuzzleDefaultsProvider>
-                    </PackSelectionProvider>
-                  </AutoSaveCustomProvider>
+                  <SoundSettingsProvider>
+                    <AutoSaveCustomProvider>
+                      <PackSelectionProvider>
+                        <PuzzleDefaultsProvider>{children}</PuzzleDefaultsProvider>
+                      </PackSelectionProvider>
+                    </AutoSaveCustomProvider>
+                  </SoundSettingsProvider>
                 </KeyboardLayoutProvider>
                 <Toaster clearButton={null} historyButton={null} limit={1} />
               </ToastProvider>

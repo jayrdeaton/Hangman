@@ -65,7 +65,7 @@ function tidePath(y: number): string {
   return d
 }
 
-const SandcastleVisual = ({ mistakes, color }: { mistakes: number; color: string }) => {
+const SandcastleVisual = ({ mistakes, color, colors }: { mistakes: number; color: string; colors?: string[] }) => {
   const idx = clampStage(mistakes, STAGES.length - 1)
   const s = STAGES[idx]
   const isFinalStage = idx === STAGES.length - 1
@@ -76,39 +76,46 @@ const SandcastleVisual = ({ mistakes, color }: { mistakes: number; color: string
   const rightTop = BASE_TOP - rightHeight
   const poleTopY = rightTop - 9
   const waterY = WATER_Y_LOW - s.waterLevel * (WATER_Y_LOW - WATER_Y_HIGH)
+  // Towers are the focus (primary, what erodes down to nothing). Base mound is the constant
+  // scaffold the towers shrink into — same role hourglass's stand plays — secondary. Door,
+  // crenellations, flag and tide are smaller decorative details — tertiary, same role hourglass's
+  // glass outline plays. Falls back to the plain `color` when no triad is given (e.g.
+  // ModeSelector's card preview, which only passes `color`).
+  const moundColor = colors?.[1] ?? color
+  const detailColor = colors?.[2] ?? color
 
   return (
     <Svg viewBox='0 0 100 100'>
       {/* Base mound: always present, the towers shrink into it as the castle erodes */}
-      <Path d={MOUND_PATH} stroke={color} strokeWidth='3' fill='none' strokeLinecap='round' strokeLinejoin='round' />
+      <Path d={MOUND_PATH} stroke={moundColor} strokeWidth='3' fill='none' strokeLinecap='round' strokeLinejoin='round' />
 
       {/* Doorway arch, carved into the mound between the turrets */}
-      {s.hasDoor && <Path d={DOOR_PATH} stroke={color} strokeWidth='2.5' fill='none' strokeLinecap='round' strokeLinejoin='round' />}
+      {s.hasDoor && <Path d={DOOR_PATH} stroke={detailColor} strokeWidth='2.5' fill='none' strokeLinecap='round' strokeLinejoin='round' />}
 
       {/* Turrets: rounded-top rectangles whose height tracks towerHeight */}
       <Rect x={LEFT_CX - TURRET_W / 2} y={leftTop} width={TURRET_W} height={leftHeight} rx='3' stroke={color} strokeWidth='3' fill='none' strokeLinejoin='round' />
       <Rect x={RIGHT_CX - TURRET_W / 2} y={rightTop} width={TURRET_W} height={rightHeight} rx='3' stroke={color} strokeWidth='3' fill='none' strokeLinejoin='round' />
 
       {/* Crenellation notches along the top edge of each turret */}
-      {s.hasCrenellations && crenellations(LEFT_CX, leftTop, 'lc').map((c) => <Rect key={c.key} x={c.x} y={c.y} width={CRENEL_W} height={CRENEL_H} stroke={color} strokeWidth='2' fill='none' strokeLinejoin='round' />)}
-      {s.hasCrenellations && crenellations(RIGHT_CX, rightTop, 'rc').map((c) => <Rect key={c.key} x={c.x} y={c.y} width={CRENEL_W} height={CRENEL_H} stroke={color} strokeWidth='2' fill='none' strokeLinejoin='round' />)}
+      {s.hasCrenellations && crenellations(LEFT_CX, leftTop, 'lc').map((c) => <Rect key={c.key} x={c.x} y={c.y} width={CRENEL_W} height={CRENEL_H} stroke={detailColor} strokeWidth='2' fill='none' strokeLinejoin='round' />)}
+      {s.hasCrenellations && crenellations(RIGHT_CX, rightTop, 'rc').map((c) => <Rect key={c.key} x={c.x} y={c.y} width={CRENEL_W} height={CRENEL_H} stroke={detailColor} strokeWidth='2' fill='none' strokeLinejoin='round' />)}
 
       {/* Flag on a thin pole above the tallest (right) turret */}
       {s.hasFlag && (
         <>
-          <Line x1={RIGHT_CX} y1={rightTop} x2={RIGHT_CX} y2={poleTopY} stroke={color} strokeWidth='2' strokeLinecap='round' />
-          <Path d={`M${RIGHT_CX},${poleTopY} L${RIGHT_CX + 7},${poleTopY + 2.5} L${RIGHT_CX},${poleTopY + 5} Z`} stroke={color} strokeWidth='2' fill='none' strokeLinejoin='round' />
+          <Line x1={RIGHT_CX} y1={rightTop} x2={RIGHT_CX} y2={poleTopY} stroke={detailColor} strokeWidth='2' strokeLinecap='round' />
+          <Path d={`M${RIGHT_CX},${poleTopY} L${RIGHT_CX + 7},${poleTopY + 2.5} L${RIGHT_CX},${poleTopY + 5} Z`} stroke={detailColor} strokeWidth='2' fill='none' strokeLinejoin='round' />
         </>
       )}
 
       {/* Tide: a wavy line that creeps higher up the base with every wrong guess */}
-      <Path d={tidePath(waterY)} stroke={color} strokeWidth='2.5' fill='none' strokeLinecap='round' strokeLinejoin='round' />
+      <Path d={tidePath(waterY)} stroke={detailColor} strokeWidth='2.5' fill='none' strokeLinecap='round' strokeLinejoin='round' />
 
       {/* Final-stage flourish: a couple of foam-splash squiggles as the tide washes over the mound */}
       {isFinalStage && (
         <>
-          <Path d={`M27,${(waterY - 5).toFixed(1)} Q31,${(waterY - 9).toFixed(1)} 35,${(waterY - 5).toFixed(1)}`} stroke={color} strokeWidth='2' fill='none' strokeLinecap='round' />
-          <Path d={`M61,${(waterY - 6).toFixed(1)} Q65,${(waterY - 10).toFixed(1)} 69,${(waterY - 6).toFixed(1)}`} stroke={color} strokeWidth='2' fill='none' strokeLinecap='round' />
+          <Path d={`M27,${(waterY - 5).toFixed(1)} Q31,${(waterY - 9).toFixed(1)} 35,${(waterY - 5).toFixed(1)}`} stroke={detailColor} strokeWidth='2' fill='none' strokeLinecap='round' />
+          <Path d={`M61,${(waterY - 6).toFixed(1)} Q65,${(waterY - 10).toFixed(1)} 69,${(waterY - 6).toFixed(1)}`} stroke={detailColor} strokeWidth='2' fill='none' strokeLinecap='round' />
         </>
       )}
     </Svg>

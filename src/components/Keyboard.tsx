@@ -252,7 +252,7 @@ const KeyboardKey = ({ letter, isGuessed, isWrong, disabled, width, rippleDistan
           land after that internal color in the component's own style arrays, so an explicit color
           there wins even while disabled — that's what actually shows the wrong-guess color rather
           than the generic disabled grey. */}
-      <Button mode='contained' disabled={isGuessed || disabled} buttonColor={theme.colors.secondary} textColor={theme.colors.onSecondary} style={[styles.key, width ? { width } : null, isWrong ? { backgroundColor: theme.colors.dangerContainer } : null]} onPress={onPress} hitSlop={KEY_HIT_SLOP} labelStyle={[styles.text, isWrong ? { color: theme.colors.onDangerContainer } : null]}>
+      <Button mode='contained' disabled={isGuessed || disabled} buttonColor={theme.colors.primary} textColor={theme.colors.onPrimary} style={[styles.key, width ? { width } : null, isWrong ? { backgroundColor: theme.colors.dangerContainer } : null]} onPress={onPress} hitSlop={KEY_HIT_SLOP} labelStyle={[styles.text, isWrong ? { color: theme.colors.onDangerContainer } : null]}>
         {letter}
       </Button>
     </Animated.View>

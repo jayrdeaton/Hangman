@@ -4,8 +4,8 @@
     {
       "name": "hangman-web",
       "runtimeExecutable": "npx",
-      "runtimeArgs": ["expo", "start", "--web", "--port", "8099"],
-      "port": 8099
+      "runtimeArgs": ["expo", "start", "--web", "--port", "8100"],
+      "port": 8100
     }
   ]
 }

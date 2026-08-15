@@ -1,8 +1,9 @@
 import { Drawer } from '@rific/drawer'
-import { Button, useVibration } from '@rific/haptic-press'
+import { Button, IconButton } from '@rific/haptic-press'
 import { ScrollViewFooter, ScrollViewHeader, ScrollViewProvider } from '@rific/scroll-view'
 import { JSX, memo, useEffect, useMemo, useState } from 'react'
 import { StyleSheet, useWindowDimensions, View } from 'react-native'
+import { useTheme } from 'react-native-paper'
 
 import { DRAWER_PACK_DETAIL_Z_INDEX } from '@/constants/drawerStacking'
 import type { GameMode } from '@/types/gameModes'
@@ -13,6 +14,11 @@ import { type PuzzleConfig, resolveChosenPuzzle, resolvePuzzle } from '@/utils/p
 import { getPuzzleUnlockMap, type PuzzleUnlockMap } from '@/utils/unlocks'
 
 import { PackPuzzleList } from './PackPuzzleList'
+
+// 4px on every side of a 40x40 icon button (see the matching actionSize={40} on this drawer's own
+// ScrollViewHeader) brings the actual tap target up to 48x48, without the visible circle itself
+// growing to fill that whole area.
+const ICON_ACTION_HIT_SLOP = { top: 4, bottom: 4, left: 4, right: 4 }
 
 export type PackPuzzlesDrawerProps = {
   visible: boolean
@@ -34,26 +40,25 @@ export type PackPuzzlesDrawerProps = {
 // playable (tapping a row plays that exact puzzle, Random in the footer draws one) when a player
 // taps a pack they've selected; PacksScreen's built-in-pack info icon opens it read-only (mode/
 // difficulty/onConfirm all omitted) — there's no round to start from Choose Packs, just browsing
-// what's inside. Every puzzle in the pack shows as its own row (via PackPuzzleList,
-// initialFilter='all'), masked to blanks unless already solved either way.
+// what's inside. Every puzzle in the pack shows as its own row (via PackPuzzleList), masked to
+// blanks unless already solved either way.
 // Memoized: two instances of this stay mounted (translated off-screen) even while closed — one
 // under PuzzleDrawer, one under PacksScreen — see PuzzleDrawer's own memo comment for why an
 // always-mounted, never-visible-right-now subtree still costs a re-render without this whenever
 // an unrelated ancestor state change bubbles through it.
 export const PackPuzzlesDrawer = memo(({ visible, packKey, onDismiss, mode, difficulty, onConfirm }: PackPuzzlesDrawerProps): JSX.Element => {
   const { width: windowWidth } = useWindowDimensions()
-  const { selection } = useVibration()
+  const theme = useTheme()
   const playable = Boolean(mode && difficulty && onConfirm)
 
   const pack = useMemo(() => getPuzzleManifest().find((item) => item.key === packKey), [packKey])
 
   // Re-fetched whenever this drawer opens on a pack, not subscribed to live — same one-shot
   // pattern PuzzleDrawer's own unlockMap uses. Feeds Random below so it prefers a puzzle the
-  // player hasn't unlocked yet in THIS pack over one they have (see resolvePuzzle). Skipped
-  // entirely in read-only mode — nothing here reads it without Random to feed.
+  // player hasn't unlocked yet in THIS pack over one they have (see resolvePuzzle).
   const [unlockMap, setUnlockMap] = useState<PuzzleUnlockMap>({})
   useEffect(() => {
-    if (!visible || !playable) return
+    if (!visible) return
     let mounted = true
     void getPuzzleUnlockMap().then((map) => {
       if (mounted) setUnlockMap(map)
@@ -61,7 +66,7 @@ export const PackPuzzlesDrawer = memo(({ visible, packKey, onDismiss, mode, diff
     return () => {
       mounted = false
     }
-  }, [visible, packKey, playable])
+  }, [visible, packKey])
 
   const handlePlayPuzzle = (puzzleId: string) => {
     if (!packKey || !mode || !onConfirm) return
@@ -99,21 +104,26 @@ export const PackPuzzlesDrawer = memo(({ visible, packKey, onDismiss, mode, diff
                 PuzzleDrawer) or via Choose Packs (also reached from there) — same left-anchored
                 lineage either way, so closing it lands back under the same thumb that opened the
                 chain. 'Close', not the Appbar.BackAction default of 'Back' — see PuzzleDrawer's own
-                ScrollViewHeader comment for why. */}
+                ScrollViewHeader comment for why. Custom IconButton, not the default
+                callback-driven Appbar.BackAction — filled tertiary, matching every other
+                back/close action in the app; IconButton already fires the app's own haptic
+                convention on press itself, so this needs no manual selection() call the way the
+                callback form used to. */}
             <ScrollViewHeader
-              title={pack.label}
-              backAction={() => {
-                selection()
-                onDismiss()
-              }}
-              backActionAccessibilityLabel='Close'
+              actionSize={40}
+              // Generic "Pack" rather than the pack's own name or group tint — its actual identity
+              // (icon, genre, title, progress) lives entirely in PackPuzzleList's own in-flow pack
+              // summary row now; this is just enough of a label that the floating bar doesn't read
+              // as unexpectedly bare.
+              title='Pack'
+              backAction={<IconButton icon='arrow-left' mode='contained' hitSlop={ICON_ACTION_HIT_SLOP} containerColor={theme.colors.tertiary} iconColor={theme.colors.onTertiary} onPress={onDismiss} accessibilityLabel='Close' />}
             />
 
-            <PackPuzzleList packKey={packKey} initialFilter='all' onPlayPuzzle={playable ? handlePlayPuzzle : undefined} />
+            <PackPuzzleList packKey={packKey} onPlayPuzzle={playable ? handlePlayPuzzle : undefined} />
 
             {playable ? (
               <ScrollViewFooter style={styles.footer}>
-                <Button mode='contained' icon='play' onPress={handleRandom} contentStyle={styles.confirmContent} labelStyle={styles.confirmLabel}>
+                <Button mode='contained' icon='play' onPress={handleRandom}>
                   Random
                 </Button>
               </ScrollViewFooter>
@@ -127,15 +137,17 @@ export const PackPuzzlesDrawer = memo(({ visible, packKey, onDismiss, mode, diff
 PackPuzzlesDrawer.displayName = 'PackPuzzlesDrawer'
 
 const styles = StyleSheet.create({
-  confirmContent: { height: 52 },
-  confirmLabel: { fontSize: 16, fontWeight: '700' },
-  // alignItems override ScrollViewFooter's own centered default — Random stretches full width,
-  // matching this footer's look before the scroll-view migration.
+  // flexDirection/alignItems override ScrollViewFooter's own row+center defaults — alignItems
+  // alone stretches the CROSS axis, which is height while flexDirection stays 'row' (see
+  // ScrollViewFooter's own styles.row); flexDirection has to flip to 'column' too so Random
+  // actually stretches full width, matching this footer's look before the scroll-view migration.
   footer: {
     alignItems: 'stretch',
-    paddingBottom: 16,
+    flexDirection: 'column',
+    // Matches ScrollViewHeader's own actionMargin — see PuzzleDrawer's own footer comment for why.
+    paddingBottom: 4,
     paddingHorizontal: 16,
-    paddingTop: 16
+    paddingTop: 4
   },
   panel: { flex: 1 }
 })

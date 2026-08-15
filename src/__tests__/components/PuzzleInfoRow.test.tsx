@@ -30,13 +30,12 @@ const contrastRatio = (hexA: string, hexB: string): number => {
   return (l1 + 0.05) / (l2 + 0.05)
 }
 
-// react-native-paper's actual MD3 surface tokens — see LightTheme.tsx/DarkTheme.tsx's
-// `surface: palette.neutral99` / `palette.neutral10`.
-const SURFACE = { light: '#FFFBFE', dark: '#1C1B1F' }
-
 // Rendered through @rific/auto-paper's real Provider (not a hand-built PaperProvider theme) —
-// easy/medium/hard now read straight off theme.colors.on{Success,Warning,Danger}Container (see
-// useDifficultyColors), which only exist on a theme useComputedTheme actually produced.
+// easy/medium/hard now read straight off theme.colors.{success,warning,danger} for the pill's own
+// fill and theme.colors.on{Success,Warning,Danger} for its text (see useDifficultyColors), which
+// only exist on a theme useComputedTheme actually produced. The pill is a solid vibrant fill now
+// (not an outline on the page's own surface — see PuzzleInfoRow's own comment on why), so the
+// contrast that actually matters is fill vs its own text, not either one against SURFACE.
 const renderDifficultyPill = async (tier: 'easy' | 'medium' | 'hard', dark: boolean) => {
   const utils = await render(
     <Provider initialValue={{ appearance: dark ? 'dark' : 'light' }}>
@@ -44,7 +43,8 @@ const renderDifficultyPill = async (tier: 'easy' | 'medium' | 'hard', dark: bool
     </Provider>
   )
   const pill = utils.getByLabelText(`Difficulty: ${tier[0].toUpperCase()}${tier.slice(1)}`)
-  return StyleSheet.flatten(pill.props.style).borderColor as string
+  const label = utils.getByText(tier[0].toUpperCase() + tier.slice(1))
+  return { fill: StyleSheet.flatten(pill.props.style).backgroundColor as string, text: StyleSheet.flatten(label.props.style).color as string }
 }
 
 describe('PuzzleInfoRow difficulty badge contrast — driven through the component by the real theme', () => {
@@ -53,9 +53,9 @@ describe('PuzzleInfoRow difficulty badge contrast — driven through the compone
   // across: just light and dark mode.
   for (const dark of [false, true]) {
     for (const tier of ['easy', 'medium', 'hard'] as const) {
-      it(`keeps ${tier}'s badge at WCAG AA contrast (>= 4.5:1) against the surface in ${dark ? 'dark' : 'light'} mode`, async () => {
-        const badgeColor = await renderDifficultyPill(tier, dark)
-        const ratio = contrastRatio(badgeColor, SURFACE[dark ? 'dark' : 'light'])
+      it(`keeps ${tier}'s badge text at WCAG AA contrast (>= 4.5:1) against its own fill in ${dark ? 'dark' : 'light'} mode`, async () => {
+        const { fill, text } = await renderDifficultyPill(tier, dark)
+        const ratio = contrastRatio(fill, text)
         expect(ratio).toBeGreaterThanOrEqual(4.5)
       })
     }
@@ -66,8 +66,8 @@ describe('PuzzleInfoRow difficulty badge contrast — driven through the compone
     const hard = await renderDifficultyPill('hard', false)
 
     // Green: G channel clearly dominant. Red: R channel clearly dominant.
-    const [er, eg, eb] = toRgb(easy)
-    const [hr, hg, hb] = toRgb(hard)
+    const [er, eg, eb] = toRgb(easy.fill)
+    const [hr, hg, hb] = toRgb(hard.fill)
     expect(eg).toBeGreaterThan(er)
     expect(eg).toBeGreaterThan(eb)
     expect(hr).toBeGreaterThan(hg)

@@ -6,6 +6,7 @@ import Animated, { useAnimatedStyle, useSharedValue, withTiming } from 'react-na
 
 import { type CelebrationEffect, DEFAULT_CELEBRATION } from '@/effects/registry'
 import { useKeyboardLayout } from '@/hooks/useKeyboardLayout'
+import { useSoundEffects } from '@/hooks/useSoundEffects'
 import { DEFAULT_MODE } from '@/modes/registry'
 import type { GameMode } from '@/types/gameModes'
 import type { PuzzleDifficultyTier } from '@/utils/puzzleCatalog'
@@ -61,8 +62,9 @@ export type GameProps = {
 
 export const Game = ({ onStop, onSolved, onLost, onGuessProgress, phrase, mode = DEFAULT_MODE, hint, packLabel, difficultyTier, celebration = DEFAULT_CELEBRATION, categoryProgress, unlockedAchievementTitles, continueLabel, locked = false }: GameProps): JSX.Element => {
   const { layout } = useKeyboardLayout()
+  const { playCorrect, playWrong, playWin, playLoss } = useSoundEffects()
   const theme = useTheme()
-  const tertiaryColor = theme.colors.tertiary
+  const secondaryColor = theme.colors.secondary
   const [guessedLetters, setGuessedLetters] = useState<string[]>([])
   const [wrongGuesses, setWrongGuesses] = useState(0)
   const [hintRevealed, setHintRevealed] = useState(false)
@@ -145,10 +147,14 @@ export const Game = ({ onStop, onSolved, onLost, onGuessProgress, phrase, mode =
       // Error, not selectionAsync — a wrong guess should feel distinctly different from a correct
       // one, not just a lighter version of the same tick.
       void haptics.notificationAsync(haptics.NotificationFeedbackType.Error)
+      playWrong()
       if (w >= maxWrong) {
         roundOverRef.current = true
         setKeyboardFalling(true)
         onLost?.({ wrongGuesses: w, guessCount: next.length })
+        // Stacks with the wrong-guess buzz above, same as a winning guess stacks its own correct
+        // blip with the fanfare below — the final wrong guess is still a wrong guess first.
+        playLoss()
         lossTimeoutRef.current = setTimeout(() => {
           setOutcome('loss')
           setDialogReady(true)
@@ -156,6 +162,7 @@ export const Game = ({ onStop, onSolved, onLost, onGuessProgress, phrase, mode =
       }
     } else {
       void haptics.impactAsync()
+      playCorrect()
       const allRevealed = phrase.split('').every((c) => c === ' ' || next.includes(c))
       if (allRevealed) {
         roundOverRef.current = true
@@ -167,6 +174,7 @@ export const Game = ({ onStop, onSolved, onLost, onGuessProgress, phrase, mode =
         // A distinctly more celebratory pulse than a regular correct-letter impact — timed to the
         // same guess that also kicks off the fireworks celebration below.
         void haptics.notificationAsync(haptics.NotificationFeedbackType.Success)
+        playWin()
         winDialogTimeoutRef.current = setTimeout(() => setDialogReady(true), WIN_DIALOG_DELAY_MS)
       }
     }
@@ -214,7 +222,7 @@ export const Game = ({ onStop, onSolved, onLost, onGuessProgress, phrase, mode =
         {hasVisual ? (
           <View style={styles.pipRow} accessibilityLabel={pipsLabel}>
             {Array.from({ length: maxWrong }, (_, i) => (
-              <View key={i} style={[styles.pip, { borderColor: tertiaryColor }, i < wrongGuesses ? { backgroundColor: tertiaryColor } : null]} />
+              <View key={i} style={[styles.pip, { borderColor: secondaryColor }, i < wrongGuesses ? { backgroundColor: secondaryColor } : null]} />
             ))}
           </View>
         ) : null}

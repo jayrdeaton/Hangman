@@ -1,10 +1,9 @@
-import { useThemeSettings } from '@rific/auto-paper'
+import { resolveSeedColor, useThemeSettings } from '@rific/auto-paper'
 import { JSX, useEffect, useMemo, useState } from 'react'
 import { LayoutChangeEvent, Platform, StyleSheet, View } from 'react-native'
 import { Text, useTheme } from 'react-native-paper'
 
 import type { GameMode } from '@/types/gameModes'
-import { resolveSeedColor } from '@/utils/resolveSeedColor'
 
 import { GameVisual } from './GameVisual'
 

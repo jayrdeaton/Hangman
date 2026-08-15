@@ -2,7 +2,7 @@ import { AppbarAction } from '@rific/haptic-press'
 import * as Linking from 'expo-linking'
 import { JSX, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Keyboard, Platform, StyleSheet, View } from 'react-native'
-import { Appbar } from 'react-native-paper'
+import { useTheme } from 'react-native-paper'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
 import { useAutoSaveCustom } from '@/hooks/useAutoSaveCustom'
@@ -23,13 +23,17 @@ import { type PuzzleConfig, resolvePuzzle } from '@/utils/puzzlePicker'
 import { getPuzzleUnlockMap, getTotalUnlockedCount, getUnlockedCountForPack, markPuzzleUnlocked, mergePuzzleUnlocks, parseProgressBackup, type PuzzleUnlockMap } from '@/utils/unlocks'
 import { gameShell } from '@/utils/webLayout'
 
-import { AchievementsDrawer } from './AchievementsDrawer'
 import { ConfirmDialog } from './ConfirmDialog'
 import { Game, type LossDetails, type SolveDetails } from './Game'
 import { PnpHandoffDialog } from './PnpHandoffDialog'
 import { PnpWordPrompt } from './PnpWordPrompt'
 import { PuzzleDrawer } from './PuzzleDrawer'
 import { type CategoryProgress } from './RoundEndDialog'
+
+// 4px on every side of a 40x40 default IconButton brings its actual tap target up to 48x48 —
+// matching every drawer header's own back/close/settings action (see PuzzleDrawer's own comment
+// on this pair) — without growing the visible circle itself to fill that whole area.
+const APPBAR_ACTION_HIT_SLOP = { top: 4, bottom: 4, left: 4, right: 4 }
 
 const DEFAULT_CONFIG: PuzzleConfig = {
   sourceMode: 'random',
@@ -57,6 +61,7 @@ const buildPnpDraftSession = (answer: string, mode: GameMode): GameStartPayload 
 }
 
 export const Main = (): JSX.Element => {
+  const theme = useTheme()
   const insets = useSafeAreaInsets()
   // The persisted default pack selection (see usePackSelection) — read here, before the lazy
   // state initializers below, so it's already available (synchronously — see
@@ -141,7 +146,6 @@ export const Main = (): JSX.Element => {
   // switch is.
   const [pendingAbandon, setPendingAbandon] = useState<{ kind: 'puzzle'; payload: GameStartPayload; config: PuzzleConfig } | { kind: 'pnp' } | null>(null)
   const [drawerVisible, setDrawerVisible] = useState(false)
-  const [achievementsVisible, setAchievementsVisible] = useState(false)
   const [unlockVersion, setUnlockVersion] = useState(0)
   const [customPacksVersion, setCustomPacksVersion] = useState(0)
   // Shown inside RoundEndDialog itself now, not a separate Snackbar — see handleSolved below.
@@ -241,9 +245,11 @@ export const Main = (): JSX.Element => {
       if (incomingFilePreview.kind === 'progress') {
         await mergePuzzleUnlocks(incomingFilePreview.raw)
         refreshUnlocks()
-        // Opens the Achievements drawer so the merged progress is immediately visible — the
-        // closest thing to confirmation without inventing new toast UI.
-        setAchievementsVisible(true)
+        // Opens the menu so the merged progress (its own quick-look card, right at the top) is
+        // immediately visible — the closest thing to confirmation without inventing new toast UI.
+        // Same reasoning as the pack-import branch below, not a standalone Achievements drawer:
+        // that's reached from inside this same menu now, not its own top-level destination.
+        setDrawerVisible(true)
       } else {
         const pack = await importCustomPack(incomingFilePreview.raw)
         if (!selectedPackKeys.includes(pack.key)) setSelectedPackKeys([...selectedPackKeys, pack.key])
@@ -317,10 +323,6 @@ export const Main = (): JSX.Element => {
   // onRequestOpen on every render would defeat that regardless of the memo.
   const handleRequestOpenDrawer = useCallback(() => {
     setDrawerVisible(true)
-  }, [])
-
-  const handleCloseAchievements = useCallback(() => {
-    setAchievementsVisible(false)
   }, [])
 
   // Live, not staged behind the drawer's confirm button — an art style is purely cosmetic, so it
@@ -531,16 +533,7 @@ export const Main = (): JSX.Element => {
   const initialDrawerConfig = useMemo(() => withoutSecret(config), [config])
 
   return (
-    <View style={styles.flex}>
-      <Appbar.Header elevated>
-        {/* The menu stays available throughout, pass and play included — whoever is holding the
-            device can change settings or start a Random puzzle whenever they like, and that's also
-            how you leave a session. */}
-        <AppbarAction icon='menu' onPress={handleOpenMenu} accessibilityLabel='Game Menu' />
-        <View style={styles.appbarSpacer} />
-        <AppbarAction icon='trophy-outline' onPress={() => setAchievementsVisible(true)} accessibilityLabel='Achievements' />
-      </Appbar.Header>
-
+    <View style={[styles.flex, { backgroundColor: theme.colors.surface }]}>
       {/* One occupant, always: Game. It mounts once at the start of a pass-and-play round — the
           moment composing begins, not once a word's been handed off — and stays mounted, unchanged,
           all the way through play. Nothing ever swaps it out for a separate preview or screen,
@@ -551,15 +544,35 @@ export const Main = (): JSX.Element => {
           Game's phrase live from pnpAnswer, see buildPnpDraftSession above), then the handoff
           dialog once the word's been handed off. Game is locked for both of those phases (see its
           `locked` prop) so nothing about the round — the one being written OR the one about to be
-          played — can be touched by tap or physical keyboard before actual play starts. */}
-      <View style={[styles.flex, gameShell, { paddingBottom: insets.bottom }]}>{effectiveSession ? <Game key={roundKey} onStop={handleRoundEnd} onSolved={handleSolved} onLost={handleLost} onGuessProgress={handleGuessProgress} phrase={effectiveSession.phrase} mode={effectiveSession.mode} hint={effectiveSession.hint} packLabel={effectiveSession.packLabel} difficultyTier={effectiveSession.difficultyTier} categoryProgress={categoryProgress} unlockedAchievementTitles={unlockedAchievementTitles} continueLabel={pnpPhase ? 'Next word' : undefined} locked={pnpPhase === 'authoring' || pnpPhase === 'handoff' || pendingAbandon !== null} /> : null}</View>
+          played — can be touched by tap or physical keyboard before actual play starts.
+          paddingTop matches the floating menu/trophy buttons below rather than reserving a whole
+          extra header row for them — the game's own top row (PuzzleInfoRow's difficulty/hint
+          pills) shares that same band of space instead of sitting below it. */}
+      <View style={[styles.flex, gameShell, { paddingTop: insets.top, paddingBottom: insets.bottom }]}>{effectiveSession ? <Game key={roundKey} onStop={handleRoundEnd} onSolved={handleSolved} onLost={handleLost} onGuessProgress={handleGuessProgress} phrase={effectiveSession.phrase} mode={effectiveSession.mode} hint={effectiveSession.hint} packLabel={effectiveSession.packLabel} difficultyTier={effectiveSession.difficultyTier} categoryProgress={categoryProgress} unlockedAchievementTitles={unlockedAchievementTitles} continueLabel={pnpPhase ? 'Next word' : undefined} locked={pnpPhase === 'authoring' || pnpPhase === 'handoff' || pendingAbandon !== null} /> : null}</View>
+
+      {/* Floats over the game's own top row instead of reserving a header row of its own — see the
+          paddingTop comment above. pointerEvents='box-none' lets taps in the empty middle (where
+          PuzzleInfoRow's pills sit, centered) fall through to that content; the two buttons are
+          still individually tappable. The menu stays available throughout, pass and play included
+          — whoever is holding the device can change settings or start a Random puzzle whenever
+          they like, and that's also how you leave a session. */}
+      <View style={[styles.topBar, { top: insets.top }]} pointerEvents='box-none'>
+        {/* mode='contained' + explicit containerColor/color (not just color alone) — a bare tinted
+            glyph on this screen's own neutral background read as washed out, the same problem a
+            plain-text Button had before this app's whole button pass moved to solid contained
+            fills; a filled circular badge matches that same "vibrant fill, not a tint" language
+            instead. Left at IconButton's own natural 40x40 footprint (no size/style override) —
+            hitSlop keeps the actual tap target at 48x48 (matching every drawer header's own back/
+            close/settings action — see PuzzleDrawer's own comment on this) without the visible
+            circle itself growing to fill it. */}
+        <AppbarAction icon='menu' mode='contained' containerColor={theme.colors.primary} color={theme.colors.onPrimary} hitSlop={APPBAR_ACTION_HIT_SLOP} onPress={handleOpenMenu} accessibilityLabel='Game Menu' />
+      </View>
 
       {pnpPhase === 'authoring' ? <PnpWordPrompt answer={pnpAnswer} hint={pnpHint} onAnswerChange={setPnpAnswer} onHintChange={setPnpHint} promptVisible={!drawerVisible} onRequestMenu={handleOpenMenu} onSubmit={handlePnpAuthored} /> : null}
 
       {pnpPhase === 'handoff' ? <PnpHandoffDialog visible={!drawerVisible} onReady={() => setPnpPhase('playing')} /> : null}
 
-      <PuzzleDrawer visible={drawerVisible} onDismiss={handleDismissDrawer} onRequestOpen={handleRequestOpenDrawer} initialConfig={initialDrawerConfig} onConfirm={handleConfirmPuzzle} onStartPnp={handleStartPnp} packsVersion={customPacksVersion} onPacksChanged={refreshCustomPacks} onModeChange={handleModeChange} onDifficultyChange={handleDifficultyChange} />
-      <AchievementsDrawer visible={achievementsVisible} onDismiss={handleCloseAchievements} unlockVersion={unlockVersion} onUnlocksChanged={refreshUnlocks} mode={config.mode} difficulty={config.difficulty} onConfirm={handleConfirmPuzzle} />
+      <PuzzleDrawer visible={drawerVisible} onDismiss={handleDismissDrawer} onRequestOpen={handleRequestOpenDrawer} initialConfig={initialDrawerConfig} onConfirm={handleConfirmPuzzle} onStartPnp={handleStartPnp} packsVersion={customPacksVersion} onPacksChanged={refreshCustomPacks} unlockVersion={unlockVersion} onUnlocksChanged={refreshUnlocks} onModeChange={handleModeChange} onDifficultyChange={handleDifficultyChange} />
       <ConfirmDialog visible={incomingFilePreview !== null} title={incomingFilePreview ? (incomingFilePreview.kind === 'progress' ? 'Import progress backup?' : `Import "${incomingFilePreview.label}"?`) : ''} message={incomingFilePreview ? (incomingFilePreview.kind === 'progress' ? `Merges ${commaString(incomingFilePreview.unlockCount)} unlocked puzzle${incomingFilePreview.unlockCount === 1 ? '' : 's'} into your existing progress.` : `Adds ${commaString(incomingFilePreview.wordCount)} word${incomingFilePreview.wordCount === 1 ? '' : 's'} as a new pack you can play.`) : ''} confirmLabel='Import' onConfirm={() => void handleConfirmIncomingFile()} onCancel={() => setIncomingFilePreview(null)} />
       <ConfirmDialog visible={pendingAbandon !== null} title='Abandon this puzzle?' message="You've already made a guess — switching now will count this puzzle as a loss." confirmLabel='Abandon' destructive onConfirm={handleConfirmAbandon} onCancel={handleCancelAbandon} />
     </View>
@@ -567,6 +580,6 @@ export const Main = (): JSX.Element => {
 }
 
 const styles = StyleSheet.create({
-  appbarSpacer: { flex: 1 },
-  flex: { flex: 1 }
+  flex: { flex: 1 },
+  topBar: { alignItems: 'center', flexDirection: 'row', justifyContent: 'space-between', left: 0, position: 'absolute', right: 0, zIndex: 10 }
 })

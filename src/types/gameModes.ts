@@ -1,4 +1,5 @@
 import type React from 'react'
+import type { SharedValue } from 'react-native-reanimated'
 
 export type ModeCategory = 'parts' | 'frames' | 'quantitative' | 'minimal'
 
@@ -44,5 +45,11 @@ export interface GameMode {
   // comment on gameReady/gameOpacity), threaded down through GameVisual/PuzzleStage, so a mode whose
   // artwork has its own one-time "construct the scene" reveal (e.g. classic.tsx's gallows) can hold
   // that reveal until the screen is actually visible instead of racing the curtain's own fade.
-  Visual: React.ComponentType<{ mistakes: number; color: string; colors?: string[]; started?: boolean }>
+  //
+  // partsOpacity is optional and additive too, and only classic.tsx reads it: it's the only mode
+  // with a permanent scaffold (the gallows) structurally separate from its mistake-tracked parts
+  // (the stick figure), so it's the only one where ModePickerDrawer's demo loop can fade the parts
+  // back out between build cycles while leaving the scaffold alone — every other mode's demo cycle
+  // fades and redraws the whole scene instead (see ModePickerDrawer's own useCardAnimation).
+  Visual: React.ComponentType<{ mistakes: number; color: string; colors?: string[]; started?: boolean; partsOpacity?: SharedValue<number> }>
 }

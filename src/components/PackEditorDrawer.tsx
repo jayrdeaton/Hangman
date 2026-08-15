@@ -1,7 +1,7 @@
 import { useAutoPaperTheme } from '@rific/auto-paper'
 import { Drawer } from '@rific/drawer'
 import { useFocusChain } from '@rific/focus-chain'
-import { Button, IconButton, useVibration } from '@rific/haptic-press'
+import { Button, IconButton } from '@rific/haptic-press'
 import { ScrollView, ScrollViewFooter, ScrollViewHeader, ScrollViewProvider } from '@rific/scroll-view'
 import { JSX, memo, useMemo, useRef, useState } from 'react'
 import { Keyboard, StyleSheet, useWindowDimensions, View } from 'react-native'
@@ -15,6 +15,10 @@ import { getPuzzleManifest } from '@/utils/puzzleCatalog'
 import { ConfirmDialog } from './ConfirmDialog'
 
 const EMPTY_ENTRY: CustomPackEntryInput = { answer: '', hint: '' }
+// 4px on every side of a 40x40 icon button (see the matching actionSize={40} on this drawer's own
+// ScrollViewHeader) brings the actual tap target up to 48x48, without the visible circle itself
+// growing to fill that whole area.
+const ICON_ACTION_HIT_SLOP = { top: 4, bottom: 4, left: 4, right: 4 }
 
 export type PackEditorDrawerProps = {
   visible: boolean
@@ -71,7 +75,6 @@ type PackEditorFormProps = {
 
 const PackEditorForm = ({ editingKey, onSaved, onCancel, onDelete, onShare }: PackEditorFormProps): JSX.Element => {
   const theme = useAutoPaperTheme()
-  const { selection } = useVibration()
 
   const editingPack = useMemo((): CustomPack | null => {
     if (!editingKey) return null
@@ -217,18 +220,31 @@ const PackEditorForm = ({ editingKey, onSaved, onCancel, onDelete, onShare }: Pa
             same left-anchored Game Menu lineage as PuzzleDrawer/PackPuzzlesDrawer/PacksScreen (see
             PuzzleDrawer's own header comment for why an arrow instead of a close X). 'Close', not
             the Appbar.BackAction default of 'Back' — see PuzzleDrawer's own ScrollViewHeader
-            comment for why. */}
+            comment for why. Custom IconButton, not the default callback-driven Appbar.BackAction —
+            filled tertiary, matching every other back/close action in the app; IconButton already
+            fires the app's own haptic convention on press itself, so this needs no manual
+            selection() call the way the callback form used to. */}
         <ScrollViewHeader
           title={editingKey ? 'Edit pack' : 'New pack'}
-          backAction={() => {
-            selection()
-            // The Drawer this panel lives in never unmounts on close, only translates off-screen
-            // (see PackEditorDrawer's own doc comment above) — so a focused TextInput keeps native
-            // focus and the OS keyboard stays up through the close animation unless dismissed here.
-            Keyboard.dismiss()
-            onCancel()
-          }}
-          backActionAccessibilityLabel='Close'
+          actionSize={40}
+          backAction={
+            <IconButton
+              icon='arrow-left'
+              mode='contained'
+              hitSlop={ICON_ACTION_HIT_SLOP}
+              containerColor={theme.colors.tertiary}
+              iconColor={theme.colors.onTertiary}
+              onPress={() => {
+                // The Drawer this panel lives in never unmounts on close, only translates
+                // off-screen (see PackEditorDrawer's own doc comment above) — so a focused
+                // TextInput keeps native focus and the OS keyboard stays up through the close
+                // animation unless dismissed here.
+                Keyboard.dismiss()
+                onCancel()
+              }}
+              accessibilityLabel='Close'
+            />
+          }
           trailingAction={
             editingKey ? (
               <View style={styles.rowActions}>
@@ -297,15 +313,19 @@ const styles = StyleSheet.create({
     alignItems: 'stretch',
     flexDirection: 'row',
     gap: 12,
-    paddingBottom: 16,
+    // Matches ScrollViewHeader's own actionMargin — see PuzzleDrawer's own footer comment for why.
+    paddingBottom: 4,
     paddingHorizontal: 16,
-    paddingTop: 16
+    paddingTop: 4
   },
   footerButton: { flex: 1 },
   hintInput: { marginTop: 0 },
   panel: { flex: 1 },
   rowActions: { flexDirection: 'row' },
-  scrollContent: { paddingBottom: 24, paddingHorizontal: 16 },
+  // paddingBottom matches sectionHeader's own marginTop above exactly — the scrollable content's
+  // last field sits the same distance from what follows it (the footer) as the first sits from
+  // the header.
+  scrollContent: { paddingBottom: 12, paddingHorizontal: 16 },
   sectionHeader: {
     fontWeight: '700',
     marginBottom: 4,

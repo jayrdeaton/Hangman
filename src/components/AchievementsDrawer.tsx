@@ -1,12 +1,13 @@
-import { useAutoPaperTheme } from '@rific/auto-paper'
+import { type AutoPaperTheme, useAutoPaperTheme } from '@rific/auto-paper'
 import { Drawer } from '@rific/drawer'
 import { Button, IconButton } from '@rific/haptic-press'
 import { FlatList, ScrollViewFooter, ScrollViewHeader, ScrollViewProvider } from '@rific/scroll-view'
 import { JSX, memo, useCallback, useEffect, useMemo, useState } from 'react'
 import { StyleSheet, View } from 'react-native'
 import { Avatar, Card, Icon, ProgressBar, Text } from 'react-native-paper'
+import { useSharedValue } from 'react-native-reanimated'
 
-import { DRAWER_BASE_Z_INDEX } from '@/constants/drawerStacking'
+import { DRAWER_ACHIEVEMENTS_Z_INDEX } from '@/constants/drawerStacking'
 import type { GameMode } from '@/types/gameModes'
 import type { GameStartPayload } from '@/types/gameSession'
 import { ACHIEVEMENT_DEFINITIONS, type AchievementId, type AchievementStats, clearAchievements, DEFAULT_ACHIEVEMENT_STATS, getAchievementStats } from '@/utils/achievements'
@@ -15,16 +16,26 @@ import { commaString } from '@/utils/commaString'
 import { pickHangmanFile, shareProgressBackupFile } from '@/utils/hangmanFile'
 import { getPuzzleManifest, PuzzleDifficultyTier, type PuzzleManifestItem } from '@/utils/puzzleCatalog'
 import { type PuzzleConfig, resolveChosenPuzzle, resolvePuzzle } from '@/utils/puzzlePicker'
-import { clearPuzzleUnlocks, getPuzzleUnlockMap, getUnlockedCountForPack, mergePuzzleUnlocks, parseProgressBackup, PuzzleUnlockMap } from '@/utils/unlocks'
+import { clearPuzzleUnlocks, getManifestUnlockProgress, getPuzzleUnlockMap, getUnlockedCountForPack, mergePuzzleUnlocks, parseProgressBackup, PuzzleUnlockMap } from '@/utils/unlocks'
 
 import { ConfirmDialog } from './ConfirmDialog'
 import { PackPuzzleList } from './PackPuzzleList'
 import { PackRow } from './PackRow'
 
 const DRAWER_WIDTH = 380
-// Opacity folded into the color itself — boxShadow (unlike the deprecated shadow* props it
-// replaces) has no separate opacity field.
-const SHADOW_COLOR = 'rgba(0, 0, 0, 0.3)'
+// 4px on every side of a 40x40 icon button (see the matching actionSize={40} on this drawer's own
+// ScrollViewHeader) brings the actual tap target up to 48x48, without the visible circle itself
+// growing to fill that whole area.
+const ICON_ACTION_HIT_SLOP = { top: 4, bottom: 4, left: 4, right: 4 }
+
+// Won/Lost read as a plain win-loss signal regardless of which stat grid (solo or pass & play)
+// they're in, so both share this rather than each grid hand-picking its own accents; every other
+// tile stays neutral (onSecondaryContainer) rather than turning the whole grid into a rainbow.
+const statValueColor = (label: string, theme: AutoPaperTheme): string => {
+  if (label === 'Won' || label === 'Wins') return theme.colors.success
+  if (label === 'Lost' || label === 'Losses') return theme.colors.error
+  return theme.colors.onSecondaryContainer
+}
 
 export type AchievementsDrawerProps = {
   visible: boolean
@@ -38,13 +49,14 @@ export type AchievementsDrawerProps = {
 
 // A drawer, not a dialog: the achievement list plus one row per pack is a genuinely long scroll,
 // and the old DialogShell capped its content at a fixed maxHeight regardless of screen size,
-// forcing a cramped nested scroll; a drawer gets the browser's full height instead. Right-side
-// (matching the trophy button's position in the app bar) and no edge-swipe-to-open, matching
-// PacksScreen (a secondary screen reached by tapping a button, not the app's primary
-// hamburger-triggered drawer) rather than PuzzleDrawer, which anchors left with its hamburger
-// trigger. Progress backup/reset lives at the bottom of this drawer rather than a standalone
-// Settings screen, since those actions operate directly on the unlock/achievement data shown above
-// them.
+// forcing a cramped nested scroll; a drawer gets the browser's full height instead. Left-side,
+// matching PuzzleDrawer (the Game Menu) — this only opens from a tap on that drawer's own
+// quick-look progress card now, not a standalone trophy button on the opposite corner, so it
+// stacks above PuzzleDrawer's own panel (see DRAWER_ACHIEVEMENTS_Z_INDEX) rather than sliding in
+// independently; no edge-swipe of its own, same as PackPuzzlesDrawer (also only reached via a tap
+// from inside another drawer). Progress backup/reset lives at the bottom of this drawer rather
+// than a standalone Settings screen, since those actions operate directly on the unlock/
+// achievement data shown above them.
 // mode/difficulty are read live in this file only inside handlePlayPuzzle/handleRandom (see
 // below) — event handlers that fire from an actual tap, never from rendering — so while this
 // drawer is closed, a mode/difficulty change happening elsewhere (e.g. the player picking a
@@ -71,6 +83,9 @@ const areAchievementsDrawerPropsEqual = (prev: AchievementsDrawerProps, next: Ac
 // comment for why that's safe.
 export const AchievementsDrawer = memo(({ visible, onDismiss, unlockVersion, onUnlocksChanged, mode, difficulty, onConfirm }: AchievementsDrawerProps): JSX.Element => {
   const theme = useAutoPaperTheme()
+  // Closed position for a `side='left'` drawer (the default — see @rific/drawer's own
+  // getClosedOffset) is -DRAWER_WIDTH, the same seed PuzzleDrawer's own panel uses.
+  const translateX = useSharedValue(-DRAWER_WIDTH)
   const manifest = useMemo(() => getPuzzleManifest().filter((item) => item.count > 0), [])
   const [unlockMap, setUnlockMap] = useState<PuzzleUnlockMap>({})
   const [detailPackKey, setDetailPackKey] = useState<string | null>(null)
@@ -98,16 +113,7 @@ export const AchievementsDrawer = memo(({ visible, onDismiss, unlockVersion, onU
     }
   }, [visible, unlockVersion])
 
-  const totalAvailable = useMemo(() => manifest.reduce((sum, item) => sum + item.count, 0), [manifest])
-  const totalUnlocked = useMemo(() => {
-    return manifest.reduce((sum, item) => {
-      const count = getUnlockedCountForPack(unlockMap, item.key)
-      return sum + Math.min(count, item.count)
-    }, 0)
-  }, [manifest, unlockMap])
-
-  const overallProgress = totalAvailable > 0 ? totalUnlocked / totalAvailable : 0
-  const detailPackLabel = useMemo(() => manifest.find((item) => item.key === detailPackKey)?.label ?? '', [manifest, detailPackKey])
+  const { totalUnlocked, totalAvailable, overallProgress } = useMemo(() => getManifestUnlockProgress(manifest, unlockMap), [manifest, unlockMap])
 
   // Derived fresh from the same manifest/unlockMap "Browse by pack" and "Total progress" already
   // use, rather than a separately-persisted counter — a pack's completion state is exactly
@@ -230,7 +236,7 @@ export const AchievementsDrawer = memo(({ visible, onDismiss, unlockVersion, onU
       const unlocked = getUnlockedCountForPack(unlockMap, item.key)
       const complete = item.count > 0 && unlocked >= item.count
       const progress = item.count > 0 ? unlocked / item.count : 0
-      return <PackRow label={item.label} group={item.group} subtitle={`${commaString(unlocked)} of ${commaString(item.count)} unlocked`} progress={progress} onPress={() => setDetailPackKey(item.key)} trailing={<Icon source={complete ? 'trophy' : 'chevron-right'} size={24} color={complete ? theme.colors.primary : theme.colors.onSurfaceVariant} />} />
+      return <PackRow label={item.label} group={item.group} isPack subtitle={`${commaString(unlocked)} of ${commaString(item.count)} unlocked`} progress={progress} onPress={() => setDetailPackKey(item.key)} trailing={<Icon source={complete ? 'trophy' : 'chevron-right'} size={24} color={complete ? theme.colors.primary : theme.colors.onSurfaceVariant} />} />
     },
     [unlockMap, theme.colors.primary, theme.colors.onSurfaceVariant]
   )
@@ -244,23 +250,23 @@ export const AchievementsDrawer = memo(({ visible, onDismiss, unlockVersion, onU
   // against here — just the same JSX this screen always rendered, moved into a variable.
   const listHeader = (
     <>
-      <Card style={styles.card} mode='contained'>
+      <Card style={[styles.card, styles.firstCard, { backgroundColor: theme.colors.primaryContainer }]} mode='contained'>
         <Card.Content>
-          <Text variant='labelLarge' style={styles.overline}>
+          <Text variant='labelLarge' style={[styles.overline, { color: theme.colors.onPrimaryContainer }]}>
             Total progress
           </Text>
-          <Text variant='displaySmall' style={styles.bigNumber}>
+          <Text variant='displaySmall' style={[styles.bigNumber, { color: theme.colors.primary }]}>
             {commaString(totalUnlocked)}
-            <Text variant='titleMedium' style={styles.muted}>
+            <Text variant='titleMedium' style={[styles.muted, { color: theme.colors.onPrimaryContainer }]}>
               {' '}
               / {commaString(totalAvailable)}
             </Text>
           </Text>
-          <Text variant='bodySmall' style={styles.muted}>
+          <Text variant='bodySmall' style={[styles.muted, { color: theme.colors.onPrimaryContainer }]}>
             puzzles unlocked
           </Text>
           <View style={styles.progressBarWrapper}>
-            <ProgressBar progress={overallProgress} style={[styles.progressBar, { backgroundColor: theme.colors.background }]} />
+            <ProgressBar progress={overallProgress} style={[styles.progressBar, { backgroundColor: theme.colors.surface }]} />
           </View>
         </Card.Content>
       </Card>
@@ -268,33 +274,33 @@ export const AchievementsDrawer = memo(({ visible, onDismiss, unlockVersion, onU
       <Text variant='titleMedium' style={styles.sectionLabel}>
         Stats
       </Text>
-      <Card style={styles.card} mode='contained'>
+      <Card style={[styles.card, { backgroundColor: theme.colors.secondaryContainer }]} mode='contained'>
         <Card.Content>
           <View style={styles.statsGrid}>
             {soloStats.map((stat) => (
               <View key={stat.label} testID={`stat-${stat.label}`} style={styles.statTile}>
-                <Text variant='titleLarge' style={styles.statValue}>
+                <Text variant='titleLarge' style={[styles.statValue, { color: statValueColor(stat.label, theme) }]}>
                   {commaString(stat.value)}
                   {stat.suffix ?? ''}
                 </Text>
-                <Text variant='bodySmall' style={styles.muted}>
+                <Text variant='bodySmall' style={[styles.muted, { color: theme.colors.onSecondaryContainer }]}>
                   {stat.label}
                 </Text>
               </View>
             ))}
           </View>
 
-          <Text variant='labelLarge' style={styles.statsSubLabel}>
+          <Text variant='labelLarge' style={[styles.statsSubLabel, { color: theme.colors.onSecondaryContainer }]}>
             Pass & play
           </Text>
           <View style={styles.statsGrid}>
             {pnpStats.map((stat) => (
               <View key={stat.label} testID={`stat-pnp-${stat.label}`} style={styles.statTile}>
-                <Text variant='titleLarge' style={styles.statValue}>
+                <Text variant='titleLarge' style={[styles.statValue, { color: statValueColor(stat.label, theme) }]}>
                   {commaString(stat.value)}
                   {stat.suffix ?? ''}
                 </Text>
-                <Text variant='bodySmall' style={styles.muted}>
+                <Text variant='bodySmall' style={[styles.muted, { color: theme.colors.onSecondaryContainer }]}>
                   {stat.label}
                 </Text>
               </View>
@@ -310,21 +316,30 @@ export const AchievementsDrawer = memo(({ visible, onDismiss, unlockVersion, onU
         const unlocked = achievementStats.unlockedIds.includes(def.id)
         const count = achievementCounts[def.id]
         return (
-          <Card key={def.id} style={styles.card} mode='contained'>
+          <Card key={def.id} style={[styles.card, { backgroundColor: theme.colors.tertiaryContainer }]} mode='contained'>
             <Card.Content style={styles.achievementRow}>
-              <Avatar.Icon size={40} icon={def.icon} style={unlocked ? styles.achievementIconUnlocked : styles.achievementIconLocked} />
+              <Avatar.Icon
+                size={40}
+                icon={def.icon}
+                // Explicit color, not Avatar.Icon's own default (react-native-paper's
+                // getContrastingColor — a fixed white/rgba(0,0,0,.54) split with no idea what hue
+                // it's contrasting against): the theme's own onPrimary/onSurfaceVariant already
+                // compute the correct contrast for whatever seed color is active, light or dark.
+                color={unlocked ? theme.colors.onPrimary : theme.colors.onSurfaceVariant}
+                style={unlocked ? { backgroundColor: theme.colors.primary } : [styles.achievementIconLocked, { backgroundColor: theme.colors.surfaceVariant }]}
+              />
               <View style={styles.achievementText}>
                 <View style={styles.achievementTitleRow}>
-                  <Text variant='titleSmall' style={unlocked ? undefined : styles.muted}>
+                  <Text variant='titleSmall' style={unlocked ? { color: theme.colors.onTertiaryContainer } : [styles.muted, { color: theme.colors.onTertiaryContainer }]}>
                     {def.title}
                   </Text>
                   {unlocked && count ? (
-                    <Text variant='bodySmall' style={styles.muted}>
+                    <Text variant='bodySmall' style={[styles.muted, { color: theme.colors.onTertiaryContainer }]}>
                       ×{commaString(count)}
                     </Text>
                   ) : null}
                 </View>
-                <Text variant='bodySmall' style={styles.muted}>
+                <Text variant='bodySmall' style={[styles.muted, { color: theme.colors.onTertiaryContainer }]}>
                   {def.description}
                 </Text>
               </View>
@@ -344,10 +359,10 @@ export const AchievementsDrawer = memo(({ visible, onDismiss, unlockVersion, onU
       <Text variant='titleMedium' style={styles.sectionLabel}>
         Progress backup
       </Text>
-      <Button mode='contained-tonal' icon='export-variant' onPress={() => void handleExport()}>
+      <Button mode='contained' buttonColor={theme.colors.secondary} textColor={theme.colors.onSecondary} icon='export-variant' onPress={() => void handleExport()}>
         Export progress
       </Button>
-      <Button mode='contained-tonal' icon='import' onPress={() => void handleImportFile()} style={styles.spaced}>
+      <Button mode='contained' buttonColor={theme.colors.tertiary} textColor={theme.colors.onTertiary} icon='import' onPress={() => void handleImportFile()} style={styles.spaced}>
         Import progress
       </Button>
       <Text variant='bodySmall' style={styles.muted}>
@@ -357,7 +372,7 @@ export const AchievementsDrawer = memo(({ visible, onDismiss, unlockVersion, onU
       <Text variant='titleMedium' style={styles.sectionLabel}>
         Danger zone
       </Text>
-      <Button mode='outlined' icon='delete-outline' textColor={theme.colors.danger} onPress={() => setConfirmResetVisible(true)}>
+      <Button mode='contained' buttonColor={theme.colors.danger} textColor={theme.colors.onDanger} icon='delete-outline' onPress={() => setConfirmResetVisible(true)}>
         Reset all progress
       </Button>
     </>
@@ -365,31 +380,36 @@ export const AchievementsDrawer = memo(({ visible, onDismiss, unlockVersion, onU
 
   return (
     <>
-      <Drawer open={visible} onClose={onDismiss} width={DRAWER_WIDTH} side='right' zIndex={DRAWER_BASE_Z_INDEX}>
+      <Drawer open={visible} onClose={onDismiss} panelShadow translateOffset={translateX} width={DRAWER_WIDTH} zIndex={DRAWER_ACHIEVEMENTS_Z_INDEX}>
         <View testID='achievements-drawer-panel' style={styles.panelContent} accessibilityViewIsModal={visible} accessibilityElementsHidden={!visible} importantForAccessibility={visible ? 'yes' : 'no-hide-descendants'} onAccessibilityEscape={visible ? (detailPackKey ? () => setDetailPackKey(null) : onDismiss) : undefined}>
           <ScrollViewProvider>
-            {/* Both the top-level close and the drilled-in back-arrow sit on the TRAILING (right)
-                side — this drawer opens from the trophy icon at the top-right of the game screen, so
-                its own exit action stays under the same thumb that opened it, same as every drawer
-                in the Game Menu's lineage stays left-anchored to ITS opener (see PuzzleDrawer).
-                trailingAction, not backAction — ScrollViewHeader's backAction always renders on the
-                LEADING side, which would put this drawer's exit action on the wrong side; IconButton
-                here is @rific/haptic-press's own wrapper (already fires haptics), unlike
-                Appbar.BackAction, so no manual selection() call is needed the way backAction needs
-                one elsewhere. The top-level exit is arrow-right, not X — mirrors PuzzleDrawer's
-                arrow-left: the direction shows this panel moves off to the right (the way it slid
-                in) when dismissed, and reads as its own thing rather than the top-right-corner-X
-                convention. The drilled-in back-arrow stays arrow-left regardless — that's page-level
-                "go back one level" navigation within this drawer, not the whole-panel dismiss
-                direction, so it keeps the universal back-arrow meaning instead of following the
-                panel's own side. */}
-            <ScrollViewHeader title={detailPackKey ? detailPackLabel : 'Achievements'} trailingAction={detailPackKey ? <IconButton icon='arrow-left' onPress={() => setDetailPackKey(null)} accessibilityLabel='Back to achievements' /> : <IconButton icon='arrow-right' onPress={onDismiss} accessibilityLabel='Close' />} />
+            {/* Both the top-level close and the drilled-in back-arrow sit on the LEADING (left)
+                side, matching PuzzleDrawer (the Game Menu) — this only opens from a tap on that
+                drawer's own quick-look card now, so its own exit action stays under the same
+                thumb that opened it, same as PackPuzzlesDrawer already does for the same reason.
+                backAction, not trailingAction — IconButton here is @rific/haptic-press's own
+                wrapper (already fires haptics), unlike Appbar.BackAction, so no manual selection()
+                call is needed the way backAction needs one elsewhere. The top-level exit is
+                arrow-left, not X — mirrors PuzzleDrawer's own close icon exactly, rather than the
+                top-right-corner-X convention. The drilled-in back-arrow stays arrow-left too —
+                that's page-level "go back one level" navigation within this drawer, not the
+                whole-panel dismiss, but both read the same direction now that this panel itself is
+                left-anchored. */}
+            <ScrollViewHeader
+              actionSize={40}
+              // Generic "Pack" while drilled in, rather than the pack's own name or group tint —
+              // its actual identity (icon, genre, title, progress) lives entirely in
+              // PackPuzzleList's own in-flow pack summary row now; this is just enough of a label
+              // that the floating bar doesn't read as unexpectedly bare.
+              title={detailPackKey ? 'Pack' : 'Achievements'}
+              backAction={detailPackKey ? <IconButton icon='arrow-left' mode='contained' hitSlop={ICON_ACTION_HIT_SLOP} containerColor={theme.colors.tertiary} iconColor={theme.colors.onTertiary} onPress={() => setDetailPackKey(null)} accessibilityLabel='Back to achievements' /> : <IconButton icon='arrow-left' mode='contained' hitSlop={ICON_ACTION_HIT_SLOP} containerColor={theme.colors.tertiary} iconColor={theme.colors.onTertiary} onPress={onDismiss} accessibilityLabel='Close' />}
+            />
 
             {detailPackKey ? (
               <>
-                <PackPuzzleList packKey={detailPackKey} initialFilter='all' onPlayPuzzle={handlePlayPuzzle} />
+                <PackPuzzleList packKey={detailPackKey} onPlayPuzzle={handlePlayPuzzle} />
                 <ScrollViewFooter style={styles.footer}>
-                  <Button mode='contained' icon='play' onPress={handleRandom} contentStyle={styles.confirmContent} labelStyle={styles.confirmLabel}>
+                  <Button mode='contained' icon='play' onPress={handleRandom}>
                     Random
                   </Button>
                 </ScrollViewFooter>
@@ -400,7 +420,19 @@ export const AchievementsDrawer = memo(({ visible, onDismiss, unlockVersion, onU
               // pack list scrolls with it exactly as it did back when this was all one plain
               // ScrollView; only the pack list itself (the full 50-pack manifest) needed to
               // become a real FlatList.
-              <FlatList data={manifest} keyExtractor={packRowKeyExtractor} renderItem={renderPackRow} ListHeaderComponent={listHeader} ListFooterComponent={listFooter} showsVerticalScrollIndicator={false} contentContainerStyle={styles.scrollContent} />
+              <FlatList
+                data={manifest}
+                keyExtractor={packRowKeyExtractor}
+                renderItem={renderPackRow}
+                ListHeaderComponent={listHeader}
+                ListFooterComponent={listFooter}
+                showsVerticalScrollIndicator={false}
+                contentContainerStyle={styles.scrollContent}
+                // Solid vibrant fill, not the chip's own default muted surface tint — matches
+                // every other accent in this drawer now instead of being the one control still
+                // washed out.
+                chipProps={{ style: { backgroundColor: theme.colors.primary }, selectedColor: theme.colors.onPrimary }}
+              />
             )}
           </ScrollViewProvider>
         </View>
@@ -414,27 +446,31 @@ AchievementsDrawer.displayName = 'AchievementsDrawer'
 
 const styles = StyleSheet.create({
   achievementIconLocked: { opacity: 0.4 },
-  achievementIconUnlocked: {},
   achievementRow: { alignItems: 'center', flexDirection: 'row', gap: 12 },
   achievementText: { flex: 1, flexShrink: 1 },
   achievementTitleRow: { alignItems: 'baseline', flexDirection: 'row', gap: 6 },
   bigNumber: { fontWeight: '800', marginTop: 4 },
   card: { marginBottom: 4 },
-  confirmContent: { height: 52 },
-  confirmLabel: { fontSize: 16, fontWeight: '700' },
-  // alignItems override matches every other migrated footer — see PuzzleDrawer's own footer
-  // comment: Random stretches full width instead of shrinking to content and centering.
+  // scrollContent's own paddingTop is clobbered by the FlatList's header-height inset (see
+  // useScrollList's contentPadding, applied after externalContentContainerStyle in its style
+  // array), so it can't create breathing room below the fixed header — this has to sit on the
+  // first card itself instead, same as PuzzleDrawer's modeSelectorBleed.
+  firstCard: { marginTop: 12 },
+  // flexDirection/alignItems override matches every other migrated footer — see PuzzleDrawer's
+  // own footer comment: alignItems alone only stretches the cross axis, which is height while
+  // ScrollViewFooter's own row stays flexDirection 'row', so flexDirection has to flip to
+  // 'column' too for Random to actually stretch full width instead of shrinking to content.
   footer: {
     alignItems: 'stretch',
-    paddingBottom: 16,
+    flexDirection: 'column',
+    // Matches ScrollViewHeader's own actionMargin — see PuzzleDrawer's own footer comment for why.
+    paddingBottom: 4,
     paddingHorizontal: 16,
-    paddingTop: 16
+    paddingTop: 4
   },
   muted: { opacity: 0.7 },
   overline: { letterSpacing: 1, opacity: 0.7, textTransform: 'uppercase' },
   panelContent: {
-    boxShadow: [{ offsetX: 2, offsetY: 0, blurRadius: 8, color: SHADOW_COLOR }],
-    elevation: 8,
     flex: 1,
     overflow: 'hidden'
   },
@@ -448,7 +484,7 @@ const styles = StyleSheet.create({
     overflow: 'hidden'
   },
   scrollContent: {
-    paddingBottom: 16,
+    paddingBottom: 12,
     paddingHorizontal: 16,
     paddingTop: 4
   },

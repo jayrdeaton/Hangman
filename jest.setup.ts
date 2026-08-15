@@ -210,10 +210,14 @@ jest.mock('@rific/scroll-view', () => {
     // Renders title/caption/centerContent and back/trailing actions for real (unlike a bare
     // `children || null` stand-in) — every drawer migrated onto this package drives its header
     // through those props, not children, so a test asserting on "Hangman" or pressing "Close"
-    // needs this mock to actually put them in the tree. accessibilityLabel default of 'Back'
-    // mirrors react-native-paper's own Appbar.BackAction default, for the same reason the real
-    // package's backActionAccessibilityLabel prop exists — most callers here override it.
-    ScrollViewHeader: ({ backAction, backActionAccessibilityLabel, caption, centerContent, children, title, trailingAction }: any) => (children !== undefined ? children : React.createElement(React.Fragment, null, backAction && React.createElement(RN.Pressable, { accessibilityLabel: backActionAccessibilityLabel ?? 'Back', accessibilityRole: 'button', onPress: backAction }), centerContent !== undefined ? centerContent : React.createElement(React.Fragment, null, title && React.createElement(RN.Text, null, title), caption && React.createElement(RN.Text, null, caption)), trailingAction ?? null)),
+    // needs this mock to actually put them in the tree. backAction mirrors the real component's
+    // own dual signature (see @rific/scroll-view's ScrollViewHeader.tsx): a function still gets
+    // wrapped in a bare Pressable with a default accessibilityLabel of 'Back' (matching react-
+    // native-paper's own Appbar.BackAction default, for the same reason backActionAccessibilityLabel
+    // exists), but every drawer in this app now passes a ReactNode instead (its own IconButton,
+    // with its own onPress/accessibilityLabel already baked in) — that has to render as-is, not get
+    // swallowed into an onPress prop that's never called.
+    ScrollViewHeader: ({ backAction, backActionAccessibilityLabel, caption, centerContent, children, title, trailingAction }: any) => (children !== undefined ? children : React.createElement(React.Fragment, null, backAction && (typeof backAction === 'function' ? React.createElement(RN.Pressable, { accessibilityLabel: backActionAccessibilityLabel ?? 'Back', accessibilityRole: 'button', onPress: backAction }) : backAction), centerContent !== undefined ? centerContent : React.createElement(React.Fragment, null, title && React.createElement(RN.Text, null, title), caption && React.createElement(RN.Text, null, caption)), trailingAction ?? null)),
     ScrollViewFooter: ({ children }: any) => children || null,
     ScrollViewProvider: ({ children }: any) => children,
     ScrollViewSettingsProvider: ({ children }: any) => children,
@@ -397,6 +401,7 @@ jest.mock('react-native-gesture-handler', () => {
       Native: () => makeGesture(),
       Pinch: () => makeGesture(),
       Pan: () => makeGesture(),
+      Tap: () => makeGesture(),
       Simultaneous: (..._gs: any[]) => makeGesture(),
       Race: (..._gs: any[]) => makeGesture(),
       Sequence: (..._gs: any[]) => makeGesture()

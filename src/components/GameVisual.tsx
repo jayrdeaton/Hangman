@@ -1,5 +1,6 @@
 import React from 'react'
 import { StyleProp, StyleSheet, View, ViewStyle } from 'react-native'
+import type { SharedValue } from 'react-native-reanimated'
 
 import type { GameMode } from '@/types/gameModes'
 
@@ -9,6 +10,7 @@ type Props = {
   color: string
   colors?: string[]
   started?: boolean
+  partsOpacity?: SharedValue<number>
   style?: StyleProp<ViewStyle>
 }
 
@@ -20,12 +22,12 @@ type Props = {
 // own onLayout reported a nonzero width, which was a second, independent async round-trip on top
 // of whatever the caller's own layout already needed — and the actual reason a fade-in wrapped
 // around this (see PuzzleStage.tsx) raced ahead of the content it was supposed to be revealing.
-export const GameVisual = ({ mode, mistakes, color, colors, started, style }: Props) => {
+export const GameVisual = ({ mode, mistakes, color, colors, started, partsOpacity, style }: Props) => {
   const { Visual } = mode
 
   return (
     <View testID='game-visual-container' style={[styles.container, style]}>
-      <Visual mistakes={mistakes} color={color} colors={colors} started={started} />
+      <Visual mistakes={mistakes} color={color} colors={colors} started={started} partsOpacity={partsOpacity} />
     </View>
   )
 }

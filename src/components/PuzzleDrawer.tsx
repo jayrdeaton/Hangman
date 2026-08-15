@@ -1,36 +1,39 @@
-import { useThemeSettings } from '@rific/auto-paper'
+import { resolveSeedColor, useThemeSettings } from '@rific/auto-paper'
 import { Drawer, DrawerEdgeSwipe } from '@rific/drawer'
-import { Button, IconButton, SegmentedButtons, TouchableRipple, useVibration } from '@rific/haptic-press'
+import { Button, IconButton, SegmentedButtons, TouchableRipple } from '@rific/haptic-press'
 import { FlatList, ScrollViewFooter, ScrollViewHeader, ScrollViewProvider } from '@rific/scroll-view'
 import { useUpdater } from '@rific/updater'
 import { JSX, memo, useCallback, useEffect, useMemo, useState } from 'react'
 import { Platform, StyleSheet, View } from 'react-native'
-import { Text, useTheme } from 'react-native-paper'
+import { Avatar, Card, Icon, ProgressBar, Text, useTheme } from 'react-native-paper'
 import { useSharedValue } from 'react-native-reanimated'
 
 import { DRAWER_BASE_Z_INDEX } from '@/constants/drawerStacking'
 import { release } from '@/constants/release'
-import { getContainerColor, useDifficultyColors, useDifficultyContainerColors } from '@/hooks/useDifficultyColors'
+import { useDifficultyOptionColors } from '@/hooks/useDifficultyColors'
 import { usePackSelection } from '@/hooks/usePackSelection'
+import { fullyDrawnMistakes } from '@/modes/shared/fullyDrawnMistakes'
 import type { GameMode } from '@/types/gameModes'
 import type { GameStartPayload } from '@/types/gameSession'
+import { ACHIEVEMENT_DEFINITIONS, type AchievementStats, DEFAULT_ACHIEVEMENT_STATS, getAchievementStats } from '@/utils/achievements'
 import { alert } from '@/utils/alert'
 import { commaString } from '@/utils/commaString'
 import { getPuzzleManifest, PuzzleDifficultyTier, type PuzzleManifestItem } from '@/utils/puzzleCatalog'
 import { type PuzzleConfig, resolvePuzzle } from '@/utils/puzzlePicker'
-import { resolveSeedColor } from '@/utils/resolveSeedColor'
-import { getPuzzleUnlockMap, getUnlockedCountForPack, PuzzleUnlockMap } from '@/utils/unlocks'
+import { getManifestUnlockProgress, getPuzzleUnlockMap, getUnlockedCountForPack, PuzzleUnlockMap } from '@/utils/unlocks'
 
-import { ModeSelector } from './ModeSelector'
+import { AchievementsDrawer } from './AchievementsDrawer'
+import { GameVisual } from './GameVisual'
+import { ModePickerDrawer } from './ModePickerDrawer'
 import { PackPuzzlesDrawer } from './PackPuzzlesDrawer'
 import { PackRow } from './PackRow'
 import { PacksScreen } from './PacksScreen'
-import { SettingsDrawer } from './SettingsDrawer'
 
 const DRAWER_WIDTH = 380
-// Opacity folded into the color itself — boxShadow (unlike the deprecated shadow* props it
-// replaces) has no separate opacity field.
-const SHADOW_COLOR = 'rgba(0, 0, 0, 0.3)'
+// 4px on every side of a 40x40 icon button (see the matching actionSize={40} on this drawer's own
+// ScrollViewHeader) brings the actual tap target up to 48x48, without the visible circle itself
+// growing to fill that whole area.
+const ICON_ACTION_HIT_SLOP = { top: 4, bottom: 4, left: 4, right: 4 }
 
 export type PuzzleDrawerProps = {
   visible: boolean
@@ -43,6 +46,10 @@ export type PuzzleDrawerProps = {
   onStartPnp?: () => void
   packsVersion?: number
   onPacksChanged?: () => void
+  // Threaded straight through to the nested AchievementsDrawer (see below) — mirrors
+  // packsVersion/onPacksChanged just above.
+  unlockVersion?: number
+  onUnlocksChanged?: () => void
   // Fired live, on every change — not staged behind the confirm button — so the art style updates
   // the round already in progress immediately, and the difficulty filter is already in effect the
   // moment the current round ends, without the player having to also press New Puzzle/Start Puzzle
@@ -51,15 +58,15 @@ export type PuzzleDrawerProps = {
   onDifficultyChange?: (difficulty: 'any' | PuzzleDifficultyTier) => void
 }
 
-// Memoized: PacksScreen/SettingsDrawer/PackPuzzlesDrawer below (and everything they in turn
+// Memoized: PacksScreen/PackPuzzlesDrawer below (and everything they in turn
 // render — pack rows, the pack editor form) stay mounted at all times (see the Drawer-never-
 // unmounts comment further down), so without this, any unrelated state change in Main
 // (difficulty, mode, drawerVisible toggling elsewhere) would re-render this entire subtree for
 // no visible-facing reason. Callers must keep every prop referentially stable (useCallback/
 // useMemo) or this memo does nothing — see Main.tsx's own initialDrawerConfig/handleOpenDrawer.
-export const PuzzleDrawer = memo(({ visible, onDismiss, onRequestOpen, initialConfig, onConfirm, onStartPnp = () => {}, packsVersion = 0, onPacksChanged = () => {}, onModeChange = () => {}, onDifficultyChange = () => {} }: PuzzleDrawerProps): JSX.Element => {
-  // Only settings.color is read here now (ModeSelector's own preview swatch) — editing appearance
-  // itself moved to SettingsDrawer, reached via the gear icon below.
+export const PuzzleDrawer = memo(({ visible, onDismiss, onRequestOpen, initialConfig, onConfirm, onStartPnp = () => {}, packsVersion = 0, onPacksChanged = () => {}, unlockVersion = 0, onUnlocksChanged = () => {}, onModeChange = () => {}, onDifficultyChange = () => {} }: PuzzleDrawerProps): JSX.Element => {
+  // Only settings.color is read here now (the mode summary row's own preview swatch) — editing
+  // appearance itself moved to ModePickerDrawer, reached via that same row.
   const { settings } = useThemeSettings()
   const theme = useTheme()
   // autoCheck stays on (the default) — matches every other game built on this hook, which stage
@@ -67,7 +74,6 @@ export const PuzzleDrawer = memo(({ visible, onDismiss, onRequestOpen, initialCo
   // check() below is purely an ADDITIONAL affordance for a player who wants to force a check right
   // now, now that the version text has a natural home for it in the header.
   const { check, checking, updateReady } = useUpdater()
-  const { selection } = useVibration()
   // packsVersion isn't read here — it's a change counter bumped whenever a custom pack is
   // created/edited/deleted/imported, since getPuzzleManifest() otherwise looks pure to React.
   // eslint-disable-next-line react-hooks/exhaustive-deps -- packsVersion is an intentional external invalidation trigger, not a value the memo body reads
@@ -80,20 +86,29 @@ export const PuzzleDrawer = memo(({ visible, onDismiss, onRequestOpen, initialCo
 
   const [draft, setDraft] = useState<PuzzleConfig>(initialConfig)
   const [packsScreenVisible, setPacksScreenVisible] = useState(false)
-  const [settingsVisible, setSettingsVisible] = useState(false)
   // Which pack's puzzle list is showing, and whether it's actually open — split rather than one
   // nullable "open pack" so dismissing doesn't null the key out mid-close-animation (see
   // PackPuzzlesDrawer's own doc comment on packKey for why that would flash the content blank).
   const [playPackKey, setPlayPackKey] = useState<string | null>(null)
   const [playDrawerVisible, setPlayDrawerVisible] = useState(false)
-  const anyOverlayVisible = packsScreenVisible || settingsVisible || playDrawerVisible
+  const [achievementsVisible, setAchievementsVisible] = useState(false)
+  const [modePickerVisible, setModePickerVisible] = useState(false)
+  const anyOverlayVisible = packsScreenVisible || playDrawerVisible || achievementsVisible || modePickerVisible
   const [unlockMap, setUnlockMap] = useState<PuzzleUnlockMap>({})
+  const [achievementStats, setAchievementStats] = useState<AchievementStats>(DEFAULT_ACHIEVEMENT_STATS)
 
-  const packSummaryLabel = useMemo(() => {
-    if (selectedPackKeys.length === 0) return 'No packs selected'
-    if (selectedPackKeys.length === manifest.length) return 'All packs'
-    return `${selectedPackKeys.length} of ${manifest.length} selected`
-  }, [selectedPackKeys, manifest.length])
+  // Same triad PuzzleStage.tsx builds for the real game visual — without this, the mode summary
+  // row's own preview would silently fall back to plain `color` instead of showing the actual
+  // multi-color look a selected mode gets in-game (see e.g. hourglass.tsx, classic.tsx).
+  const themeColors = useMemo(() => [theme.colors.primary, theme.colors.secondary, theme.colors.tertiary], [theme.colors.primary, theme.colors.secondary, theme.colors.tertiary])
+
+  // The "All packs" row's own label — how many of the manifest's packs are actually toggled on for
+  // Random/quick-start draws, not the unlock-progress subtitle just below it (that one deliberately
+  // stays scoped to every pack regardless of selection, the same "your overall collection" framing
+  // the Achievements card uses — this is a second, different fact about the same row, not a
+  // narrower view of the first one). No special-cased "No packs selected" string for zero anymore —
+  // "0 of 50 Packs" already says that, in the same shape as every other count here.
+  const packsLabel = useMemo(() => (selectedPackKeys.length === manifest.length ? 'All Packs' : `${selectedPackKeys.length} of ${manifest.length} Packs`), [selectedPackKeys.length, manifest.length])
 
   // In manifest order (built-in packs first, alphabetical within that), not selection order —
   // stable regardless of the order packs happened to get toggled on in, and matches what Choose
@@ -103,31 +118,30 @@ export const PuzzleDrawer = memo(({ visible, onDismiss, onRequestOpen, initialCo
     return manifest.filter((item) => selectedSet.has(item.key))
   }, [manifest, selectedPackKeys])
 
-  // Same theme-harmonized green/amber/red the difficulty badge shows during play (see
-  // useDifficultyColors) — so picking "Hard" here and seeing "Hard" during the round are visually
-  // the same color, not just the same word.
-  const difficultyColors = useDifficultyColors()
-  // The SELECTED segment's own fill, not just its text — a lightened tint of the same tier color,
-  // so picking "Hard" doesn't just turn the label red, the whole pill reads as red. react-native-
-  // paper's SegmentedButtons has no prop for a per-segment checked background (checkedColor only
-  // ever reaches the text/icon/border — see SegmentedButtonItem's getSegmentedButtonColors), so this
-  // is applied as a plain style override below, and only on the option that's actually checked —
-  // every button always renders its OWN style regardless of checked state, unlike checkedColor.
-  const difficultyContainerColors = useDifficultyContainerColors()
-  const anyContainerColor = useMemo(() => getContainerColor(theme.colors.primary, theme.colors.surface), [theme.colors.primary, theme.colors.surface])
+  // Same theme-harmonized green/amber/red the difficulty badge shows during play, and the same
+  // four-way (Any + the three real tiers) color set PackPuzzleList's own difficulty filter menu
+  // uses — one shared hook so the two stay visually identical rather than two hand-rolled copies
+  // (see useDifficultyOptionColors's own doc comment).
+  const difficultyOptionColors = useDifficultyOptionColors()
 
-  const difficultyOptions = useMemo((): { label: string; value: 'any' | PuzzleDifficultyTier; checkedColor?: string; style?: { backgroundColor: string } }[] => {
-    const tiers: { label: string; value: 'any' | PuzzleDifficultyTier; checkedColor: string; containerColor: string }[] = [
-      // "Any" isn't a difficulty tier, so it has no green/amber/red of its own — colored with the
-      // theme's own primary instead, so it still pops when selected rather than being the one
-      // segment that looks unfinished next to three colored ones.
-      { label: 'Any', value: 'any', checkedColor: theme.colors.primary, containerColor: anyContainerColor },
-      { label: 'Easy', value: 'easy', checkedColor: difficultyColors.easy, containerColor: difficultyContainerColors.easy },
-      { label: 'Medium', value: 'medium', checkedColor: difficultyColors.medium, containerColor: difficultyContainerColors.medium },
-      { label: 'Hard', value: 'hard', checkedColor: difficultyColors.hard, containerColor: difficultyContainerColors.hard }
+  const difficultyOptions = useMemo((): { label: string; value: 'any' | PuzzleDifficultyTier; checkedColor: string; uncheckedColor: string; style: { backgroundColor: string } }[] => {
+    const tiers: { label: string; value: 'any' | PuzzleDifficultyTier }[] = [
+      { label: 'Any', value: 'any' },
+      { label: 'Easy', value: 'easy' },
+      { label: 'Medium', value: 'medium' },
+      { label: 'Hard', value: 'hard' }
     ]
-    return tiers.map(({ containerColor, ...option }) => (option.value === draft.difficulty ? { ...option, style: { backgroundColor: containerColor } } : option))
-  }, [difficultyColors, difficultyContainerColors, theme.colors.primary, anyContainerColor, draft.difficulty])
+    // react-native-paper's SegmentedButtons has no prop for a per-segment checked background
+    // (checkedColor only ever reaches text/icon/border — see SegmentedButtonItem's
+    // getSegmentedButtonColors), so both checked AND unchecked backgrounds are applied as a plain
+    // style override below, on every option, not just whichever is checked — every button always
+    // renders its OWN style regardless of checked state, unlike checkedColor/uncheckedColor.
+    return tiers.map((option) => {
+      const checked = option.value === draft.difficulty
+      const colors = difficultyOptionColors[option.value]
+      return { ...option, checkedColor: colors.onVibrant, uncheckedColor: colors.onContainer, style: { backgroundColor: checked ? colors.vibrant : colors.container } }
+    })
+  }, [difficultyOptionColors, draft.difficulty])
 
   const updateDraft = useCallback((patch: Partial<PuzzleConfig>) => setDraft((d) => ({ ...d, ...patch })), [])
 
@@ -147,19 +161,31 @@ export const PuzzleDrawer = memo(({ visible, onDismiss, onRequestOpen, initialCo
     // eslint-disable-next-line react-hooks/exhaustive-deps -- initialConfig is deliberately excluded, see above
   }, [visible])
 
-  // Re-fetched each time the drawer opens, not subscribed to live — good enough for the per-pack
-  // progress the quick-start list below shows, and matches the one-shot fetch every other
-  // pack-progress display in this app already does (PackPuzzleList, AchievementsDrawer).
+  // Re-fetched each time the drawer opens, AND whenever unlockVersion bumps (a puzzle solved
+  // elsewhere while this drawer is already open, e.g. through the nested AchievementsDrawer's own
+  // Random) — the quick-start list's per-pack progress and the "All packs" row's own unlocked
+  // count (see totalUnlocked/totalAvailable/overallProgress) both read unlockMap live rather than
+  // only on next open; the Achievements card's own earned-count reads achievementStats the same
+  // way, fetched alongside it (same Promise.all pairing AchievementsDrawer's own identical effect
+  // uses) since a puzzle solved elsewhere can unlock a new achievement in the same stroke.
   useEffect(() => {
     if (!visible) return
     let mounted = true
-    void getPuzzleUnlockMap().then((map) => {
-      if (mounted) setUnlockMap(map)
+    void Promise.all([getPuzzleUnlockMap(), getAchievementStats()]).then(([map, stats]) => {
+      if (mounted) {
+        setUnlockMap(map)
+        setAchievementStats(stats)
+      }
     })
     return () => {
       mounted = false
     }
-  }, [visible])
+  }, [visible, unlockVersion])
+
+  // Shared with AchievementsDrawer's own identical "Total progress" computation (see
+  // getManifestUnlockProgress's own doc comment) — the quick-look card below shows the exact same
+  // numbers as the drawer it opens.
+  const { totalUnlocked, totalAvailable, overallProgress } = useMemo(() => getManifestUnlockProgress(manifest, unlockMap), [manifest, unlockMap])
 
   const handleConfirm = useCallback(() => {
     const configToResolve: PuzzleConfig = { ...draft, sourceMode: 'random' }
@@ -195,13 +221,15 @@ export const PuzzleDrawer = memo(({ visible, onDismiss, onRequestOpen, initialCo
     setPlayDrawerVisible(true)
   }, [])
 
-  // Stable identities for PacksScreen/SettingsDrawer/PackPuzzlesDrawer's own onDismiss below —
-  // each is memoized (see their own files) specifically so an unrelated re-render here (e.g. this
-  // component's own `draft` changing) doesn't cascade into them; a fresh arrow function on every
-  // render would defeat that regardless of the memo.
+  // Stable identities for PacksScreen/PackPuzzlesDrawer's own onDismiss below — each is memoized
+  // (see their own files) specifically so an unrelated re-render here (e.g. this component's own
+  // `draft` changing) doesn't cascade into them; a fresh arrow function on every render would defeat
+  // that regardless of the memo.
   const handleClosePacksScreen = useCallback(() => setPacksScreenVisible(false), [])
-  const handleCloseSettings = useCallback(() => setSettingsVisible(false), [])
   const handleClosePlayDrawer = useCallback(() => setPlayDrawerVisible(false), [])
+  const handleCloseAchievements = useCallback(() => setAchievementsVisible(false), [])
+  const handleOpenModePicker = useCallback(() => setModePickerVisible(true), [])
+  const handleCloseModePicker = useCallback(() => setModePickerVisible(false), [])
 
   const handleSelectMode = useCallback(
     (mode: GameMode) => {
@@ -224,32 +252,20 @@ export const PuzzleDrawer = memo(({ visible, onDismiss, onRequestOpen, initialCo
   // (handleQuickRandom) rather than opening its list — browsing (picking a specific puzzle, or a
   // pack-scoped Random from within it) is the trailing info icon instead, a small but visible
   // affordance rather than a hidden gesture. Manage which packs are IN this list via Choose packs
-  // above; this is only ever a subset of what's selected there. The trailing eye icon is the fast
+  // above; this is only ever a subset of what's selected there. Long-pressing a row is the fast
   // path to trim this list without a trip through Choose packs — it unselects the pack (same
   // selectedPackKeys Choose packs itself toggles), so "hidden" here just means "unselected there",
-  // and Choose packs is already the place to bring it back. Rendered via FlatList (below), not a
-  // plain .map() — the full built-in manifest is 50 packs, real enough on-device render cost once
-  // a player has most/all of them selected that virtualizing (only mounting on-screen rows) is
-  // what actually fixed the felt delay opening this menu, not just memoizing the row component.
+  // and Choose packs is already the place to bring it back. Deliberately not a visible affordance
+  // (no icon, no hint) — a long press is fine as a not-immediately-obvious power-user shortcut here.
+  // Rendered via FlatList (below), not a plain .map() — the full built-in manifest is 50 packs, real
+  // enough on-device render cost once a player has most/all of them selected that virtualizing
+  // (only mounting on-screen rows) is what actually fixed the felt delay opening this menu, not
+  // just memoizing the row component.
   const renderPackRow = useCallback(
     ({ item }: { item: PuzzleManifestItem }) => {
       const unlocked = getUnlockedCountForPack(unlockMap, item.key)
       const progress = item.count > 0 ? unlocked / item.count : 0
-      return (
-        <PackRow
-          label={item.label}
-          group={item.group}
-          subtitle={`${commaString(unlocked)} of ${commaString(item.count)} unlocked`}
-          progress={progress}
-          onPress={() => handleQuickRandom(item.key)}
-          trailing={
-            <View style={styles.packRowActions}>
-              <IconButton icon='information-outline' size={20} onPress={() => handleOpenPack(item.key)} accessibilityLabel={`Browse ${item.label}`} />
-              <IconButton icon='eye-off-outline' size={20} onPress={() => setSelectedPackKeys(selectedPackKeys.filter((key) => key !== item.key))} accessibilityLabel={`Hide ${item.label}`} />
-            </View>
-          }
-        />
-      )
+      return <PackRow label={item.label} group={item.group} isPack subtitle={`${commaString(unlocked)} of ${commaString(item.count)} unlocked`} progress={progress} onPress={() => handleQuickRandom(item.key)} onLongPress={() => setSelectedPackKeys(selectedPackKeys.filter((key) => key !== item.key))} trailing={<IconButton icon='information-outline' size={20} onPress={() => handleOpenPack(item.key)} accessibilityLabel={`Browse ${item.label}`} />} />
     },
     [unlockMap, handleQuickRandom, handleOpenPack, selectedPackKeys, setSelectedPackKeys]
   )
@@ -261,15 +277,49 @@ export const PuzzleDrawer = memo(({ visible, onDismiss, onRequestOpen, initialCo
   const listHeader = useMemo(
     () => (
       <>
-        {/* No label — the mode cards are self-explanatory without one. Negative margin cancels
-            scrollContent's own paddingHorizontal just for this one section, so the peek cards on
-            either side reach flush to the drawer's true left/right edges — a full-bleed carousel,
-            not inset like the text/buttons below it. ModeSelector's own sidePadding math (see that
-            file) is what still keeps the cards themselves centered and clipped there, not this
-            margin. */}
-        <View style={styles.modeSelectorBleed}>
-          <ModeSelector selected={draft.mode} color={resolveSeedColor(settings.color)} onSelect={handleSelectMode} />
-        </View>
+        <Text variant='titleMedium' style={styles.topSectionLabel}>
+          Achievements
+        </Text>
+        {/* Same big-number/progress-bar visual language as the "All packs" row below (tapping
+            either opens the full drawer/screen behind it) but a different metric — earned
+            achievements out of the fixed ACHIEVEMENT_DEFINITIONS list, not a puzzle-unlock count.
+            That count already lives on "All packs" now (and on every pack row below it); showing
+            it a second time here just made this card look like one more pack row instead of its
+            own distinct facet of progress. */}
+        <Card style={[styles.achievementsCard, { backgroundColor: theme.colors.primaryContainer }]} mode='contained' onPress={() => setAchievementsVisible(true)}>
+          <Card.Content style={styles.achievementsCardRow}>
+            <Avatar.Icon size={40} icon='trophy-award' color={theme.colors.onPrimary} style={{ backgroundColor: theme.colors.primary }} />
+            <View style={styles.achievementsText}>
+              {/* No "Achievements" overline in here anymore — the topSectionLabel right above the
+                  card already says it, and repeating it a second time immediately below read as
+                  the same word twice in a row. */}
+              <Text variant='titleSmall' style={{ color: theme.colors.onPrimaryContainer }}>
+                {achievementStats.unlockedIds.length}
+                <Text variant='titleSmall' style={[styles.muted, { color: theme.colors.onPrimaryContainer }]}>
+                  {' '}
+                  / {ACHIEVEMENT_DEFINITIONS.length}
+                </Text>
+              </Text>
+              <Text variant='bodySmall' style={[styles.muted, { color: theme.colors.onPrimaryContainer }]}>
+                Achievements earned
+              </Text>
+              <View style={styles.progressBarWrapper}>
+                <ProgressBar progress={achievementStats.unlockedIds.length / ACHIEVEMENT_DEFINITIONS.length} style={[styles.progressBar, { backgroundColor: theme.colors.surface }]} />
+              </View>
+            </View>
+            <Icon source='chevron-right' size={24} color={theme.colors.onPrimaryContainer} />
+          </Card.Content>
+        </Card>
+
+        <Text variant='titleMedium' style={styles.sectionLabel}>
+          Customize
+        </Text>
+        {/* Compact summary of the current mode — tapping it opens ModePickerDrawer (titled
+            "Customize", hence the label above matching it), the full-page picker (animated
+            previews, one mode per screen) that replaced the old inline carousel. PackRow is the
+            same "leading visual + trailing accessory + onPress" row every pack in this drawer
+            already uses, not a bespoke component. */}
+        <PackRow label={draft.mode.label} subtitle={draft.mode.description} leading={<GameVisual mode={draft.mode} mistakes={fullyDrawnMistakes(draft.mode)} color={resolveSeedColor(settings.color)} colors={themeColors} style={[styles.modeSummaryPreview, { borderColor: theme.colors.primary, backgroundColor: theme.colors.surface }]} />} trailing={<Icon source='chevron-right' size={24} color={theme.colors.onSurfaceVariant} />} onPress={handleOpenModePicker} accessibilityLabel={`Mode: ${draft.mode.label}. Change mode`} />
 
         <Text variant='titleMedium' style={styles.heroAdjacentSectionLabel}>
           Difficulty
@@ -279,12 +329,19 @@ export const PuzzleDrawer = memo(({ visible, onDismiss, onRequestOpen, initialCo
         <Text variant='titleMedium' style={styles.sectionLabel}>
           Packs
         </Text>
-        <Button mode='outlined' icon='format-list-checks' onPress={() => setPacksScreenVisible(true)} contentStyle={styles.choosePacksContent} style={styles.choosePacksSpacing}>
-          {packSummaryLabel}
-        </Button>
+        {/* Same shape as every pack row below it (leading badge, label, "X of Y unlocked" subtitle,
+            progress bar) — it IS the row for the aggregate across every pack, not a differently-
+            styled button above the real ones. Untinted card (no group/isPack) since it isn't
+            itself a member of any pack's own category — the tertiary tint moves to its own
+            leading icon instead, keeping the same accent the button used to carry without
+            tinting the whole row the way a real pack's group color does. Opens PacksScreen on
+            press, same as the button always did — browsing/selection, not an instant Random draw
+            the way tapping a real pack row is (that's what the Random button at the bottom is
+            for). */}
+        <PackRow label={packsLabel} subtitle={`${commaString(totalUnlocked)} of ${commaString(totalAvailable)} unlocked`} progress={overallProgress} leading={<Avatar.Icon size={40} icon='format-list-checks' color={theme.colors.onTertiary} style={{ backgroundColor: theme.colors.tertiary }} />} trailing={<Icon source='chevron-right' size={24} color={theme.colors.onSurfaceVariant} />} onPress={() => setPacksScreenVisible(true)} />
       </>
     ),
-    [draft.mode, draft.difficulty, settings.color, handleSelectMode, handleSelectDifficulty, difficultyOptions, packSummaryLabel]
+    [draft.mode, draft.difficulty, settings.color, themeColors, handleOpenModePicker, handleSelectDifficulty, difficultyOptions, achievementStats, packsLabel, totalUnlocked, totalAvailable, overallProgress, theme]
   )
 
   // Mirrors @rific/updater's own "unsupported here" guard (__DEV__ || web) rather than always
@@ -306,9 +363,9 @@ export const PuzzleDrawer = memo(({ visible, onDismiss, onRequestOpen, initialCo
   return (
     <>
       <DrawerEdgeSwipe enabled={!visible} onOpen={onRequestOpen} translateOffset={translateX} width={DRAWER_WIDTH} />
-      {/* open is gated on !anyOverlayVisible too, not just visible — PacksScreen and
-          PackPuzzlesDrawer each render as a full-width Drawer of their own, stacked on top of this
-          one while open. Now that every drawer's header/footer float over a blurred backdrop (see
+      {/* open is gated on !anyOverlayVisible too, not just visible — PacksScreen, PackPuzzlesDrawer,
+          and ModePickerDrawer each render as a Drawer of their own, stacked on top of this one while
+          open. Now that every drawer's header/footer float over a blurred backdrop (see
           the @rific/scroll-view migration), leaving this panel visually "open" underneath a
           blurred child stacked on top of it read as a layering glitch — a second, redundant blur
           bleeding through behind the one actually in front. Sliding this panel out of the way
@@ -318,28 +375,25 @@ export const PuzzleDrawer = memo(({ visible, onDismiss, onRequestOpen, initialCo
           translates) — accessibilityElementsHidden below (unchanged) is what keeps its title/close
           button/fields from staying reachable by screen readers and keyboard focus while
           invisible. */}
-      <Drawer open={visible && !anyOverlayVisible} onClose={onDismiss} translateOffset={translateX} width={DRAWER_WIDTH} zIndex={DRAWER_BASE_Z_INDEX}>
+      <Drawer open={visible && !anyOverlayVisible} onClose={onDismiss} panelShadow translateOffset={translateX} width={DRAWER_WIDTH} zIndex={DRAWER_BASE_Z_INDEX}>
         <View testID='puzzle-drawer-panel' style={styles.panelContent} accessibilityViewIsModal={visible && !anyOverlayVisible} accessibilityElementsHidden={!visible || anyOverlayVisible} importantForAccessibility={visible && !anyOverlayVisible ? 'yes' : 'no-hide-descendants'} onAccessibilityEscape={visible && !anyOverlayVisible ? onDismiss : undefined}>
           <ScrollViewProvider>
             {/* Close sits on the LEADING (left) side, not trailing — this drawer opens from the
                 hamburger icon at the top-left of the game screen, so closing it from the same
                 corner your thumb already used to open it keeps the gesture symmetric. Every other
-                drawer reached from here (PackPuzzlesDrawer, PacksScreen and its own children)
-                follows the same left-anchored convention; AchievementsDrawer stays right-anchored
-                since it opens from the trophy icon on the opposite corner. 'Close', not the
+                drawer reached from here (PackPuzzlesDrawer, PacksScreen and its own children,
+                AchievementsDrawer) follows the same left-anchored convention. 'Close', not the
                 Appbar.BackAction default of 'Back' — this dismisses the whole panel, it doesn't
-                step back a level within it (see backActionAccessibilityLabel on every other
-                migrated drawer's ScrollViewHeader for the same reasoning). selection() here, not
-                left to Appbar.BackAction itself — unlike @rific/haptic-press's own AppbarBackAction
-                wrapper, ScrollViewHeader renders react-native-paper's raw Appbar.BackAction
-                internally with no haptic of its own, so the app's haptic convention (every other
-                pressable in this app fires one) has to be added at the call site instead. */}
+                step back a level within it (see accessibilityLabel on every other migrated
+                drawer's ScrollViewHeader for the same reasoning). A custom IconButton, not the
+                default callback-driven Appbar.BackAction — filled tertiary, matching every other
+                back/close action in the app (see AchievementsDrawer's own back/close for the
+                first of these); IconButton already fires the app's own haptic convention on
+                press itself (unlike raw Appbar.BackAction, which has none of its own), so this
+                needs no manual selection() call the way the callback form used to. */}
             <ScrollViewHeader
-              backAction={() => {
-                selection()
-                onDismiss()
-              }}
-              backActionAccessibilityLabel='Close'
+              actionSize={40}
+              backAction={<IconButton icon='arrow-left' mode='contained' hitSlop={ICON_ACTION_HIT_SLOP} containerColor={theme.colors.tertiary} iconColor={theme.colors.onTertiary} onPress={onDismiss} accessibilityLabel='Close' />}
               // The hamburger icon that opens this already says "menu" — naming the app instead is
               // more informative, and the OTA version rides along right underneath it rather than
               // its own separate card further down (see the removed Card that used to sit at the
@@ -368,19 +422,30 @@ export const PuzzleDrawer = memo(({ visible, onDismiss, onRequestOpen, initialCo
                   </View>
                 </TouchableRipple>
               }
-              // Appearance/keyboard layout/haptics all moved to their own SettingsDrawer — this
-              // menu is gameplay-only now (packs, difficulty, Random, Pass & play), so those
-              // rarely-touched preferences sit one tap away instead of permanently at the top.
-              trailingAction={<IconButton icon='cog-outline' onPress={() => setSettingsVisible(true)} accessibilityLabel='Settings' />}
+              // No trailingAction anymore — appearance/color, keyboard layout, and haptics/sound all
+              // moved into ModePickerDrawer (reached via the mode summary row below), the only
+              // settings surface this menu opens now. This menu itself stays gameplay-only (packs,
+              // difficulty, Random, Pass & play).
             />
 
-            {/* The hero (ModeSelector) through the Choose packs button live in ListHeaderComponent
-                below, not as siblings before this — they scroll away together with the pack list
+            {/* The hero (the mode summary row) through the Choose packs button live in
+                ListHeaderComponent below, not as siblings before this — they scroll away together with the pack list
                 exactly as they did back when this was all one plain ScrollView; only the pack
                 list itself (up to 50 rows in the built-in manifest) needed to become a real
                 FlatList, so everything above it stays exactly the JSX it always was, just moved
                 into listHeader (see its own declaration above). */}
-            <FlatList data={selectedPacks} keyExtractor={packRowKeyExtractor} renderItem={renderPackRow} ListHeaderComponent={listHeader} contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps='handled' />
+            <FlatList
+              data={selectedPacks}
+              keyExtractor={packRowKeyExtractor}
+              renderItem={renderPackRow}
+              ListHeaderComponent={listHeader}
+              contentContainerStyle={styles.scrollContent}
+              showsVerticalScrollIndicator={false}
+              keyboardShouldPersistTaps='handled'
+              // Solid vibrant fill, not the chip's own default muted surface tint — matches every
+              // other accent in this drawer now instead of being the one control still washed out.
+              chipProps={{ style: { backgroundColor: theme.colors.primary }, selectedColor: theme.colors.onPrimary }}
+            />
 
             {/* Not part of the scrollable content — leaving the button inline at the end of a form
                 this short left a large dead gap below it instead of avoiding one. Docking it here
@@ -388,10 +453,10 @@ export const PuzzleDrawer = memo(({ visible, onDismiss, onRequestOpen, initialCo
                 away with the rest of the chrome while actively scrolling and snaps back once it
                 settles (ScrollViewProvider's own default), rather than staying permanently pinned. */}
             <ScrollViewFooter style={styles.footer}>
-              <Button mode='contained' icon='play' onPress={handleConfirm} contentStyle={styles.confirmContent} labelStyle={styles.confirmLabel}>
+              <Button mode='contained' icon='play' onPress={handleConfirm}>
                 Random
               </Button>
-              <Button mode='contained-tonal' icon='account-multiple' onPress={onStartPnp} style={styles.pnpButton} contentStyle={styles.confirmContent} labelStyle={styles.confirmLabel}>
+              <Button mode='contained' buttonColor={theme.colors.secondary} textColor={theme.colors.onSecondary} icon='account-multiple' onPress={onStartPnp} style={styles.pnpButton}>
                 Pass &amp; play
               </Button>
             </ScrollViewFooter>
@@ -401,34 +466,46 @@ export const PuzzleDrawer = memo(({ visible, onDismiss, onRequestOpen, initialCo
 
       <PacksScreen visible={packsScreenVisible} onDismiss={handleClosePacksScreen} selectedKeys={selectedPackKeys} onChangeSelectedKeys={setSelectedPackKeys} packsVersion={packsVersion} onPacksChanged={onPacksChanged} />
 
-      <SettingsDrawer visible={settingsVisible} onDismiss={handleCloseSettings} />
-
       {/* Stacks above both this drawer's own panel and PacksScreen via its own hardcoded
           DRAWER_PACK_DETAIL_Z_INDEX (see @/constants/drawerStacking) — not render order. */}
       <PackPuzzlesDrawer visible={playDrawerVisible} packKey={playPackKey} mode={draft.mode} difficulty={draft.difficulty} onDismiss={handleClosePlayDrawer} onConfirm={onConfirm} />
+
+      {/* Reached by tapping the quick-look card above rather than its own top-level entry point —
+          see AchievementsDrawer's own doc comment for why it stacks here (DRAWER_ACHIEVEMENTS_Z_INDEX)
+          instead of sliding in independently from the opposite screen edge. mode/difficulty/onConfirm
+          reuse this drawer's own draft/prop, same as PackPuzzlesDrawer just above. */}
+      <AchievementsDrawer visible={achievementsVisible} onDismiss={handleCloseAchievements} unlockVersion={unlockVersion} onUnlocksChanged={onUnlocksChanged} mode={draft.mode} difficulty={draft.difficulty} onConfirm={onConfirm} />
+
+      {/* Reached by tapping the mode summary row above — full-page, animated, replacing the old
+          inline ModeSelector carousel. handleSelectMode is reused unchanged: it already does
+          exactly what a picker selection needs (updateDraft + onModeChange). */}
+      <ModePickerDrawer visible={modePickerVisible} onDismiss={handleCloseModePicker} selected={draft.mode} onSelect={handleSelectMode} />
     </>
   )
 })
 PuzzleDrawer.displayName = 'PuzzleDrawer'
 
 const styles = StyleSheet.create({
+  // Matches AchievementsDrawer's own "Total progress" card spacing/shape exactly (see its own
+  // styles.card) — no marginTop of its own since the "Achievements" label right above it (see
+  // topSectionLabel) already provides that clearance.
+  achievementsCard: { marginBottom: 4 },
+  achievementsCardRow: { alignItems: 'center', flexDirection: 'row', gap: 12 },
+  achievementsText: { flex: 1 },
   centeredText: { textAlign: 'center' },
-  choosePacksContent: { justifyContent: 'flex-start' },
-  // Replaces the old packList wrapper's marginTop — now that the pack rows are a FlatList's own
-  // `data` (see renderPackRow/listHeader above) rather than a sibling View after this button, the
-  // same gap has to come from the last header element's own margin instead.
-  choosePacksSpacing: { marginBottom: 8 },
-  confirmContent: { height: 52 },
-  confirmLabel: { fontSize: 16, fontWeight: '700' },
   // flexDirection/alignItems override ScrollViewFooter's own row+center defaults — Random and Pass
   // & play stack vertically here (see pnpButton's marginTop below) and each stretch full width,
   // matching this footer's look before the scroll-view migration.
   footer: {
     alignItems: 'stretch',
     flexDirection: 'column',
-    paddingBottom: 16,
+    // paddingTop/paddingBottom match ScrollViewHeader's own actionMargin (@rific/scroll-view's
+    // ScrollViewHeader.tsx) — its action icons sit only 4px from the header's own top/bottom edge,
+    // so this footer uses the same margin instead of the much roomier 16px it used to, which made
+    // the footer bar read as a different, heavier weight of chrome than the header.
+    paddingBottom: 4,
     paddingHorizontal: 16,
-    paddingTop: 16
+    paddingTop: 4
   },
   headerSubtitle: { opacity: 0.7 },
   // A tighter top margin than a standalone section would use — right under the mode cards, so it
@@ -438,22 +515,24 @@ const styles = StyleSheet.create({
     marginBottom: 8,
     marginTop: 12
   },
-  // marginHorizontal cancels scrollContent's own paddingHorizontal (16, see below) — negative,
-  // not zero, since this wraps ModeSelector rather than replacing its container, so the escape
-  // has to happen from the outside in. -16 exactly matches scrollContent's own value on purpose:
-  // change one, change the other. marginTop gives the carousel breathing room below the header —
-  // without it the cards sat flush against the header's bottom edge.
-  modeSelectorBleed: { marginHorizontal: -16, marginTop: 12 },
-  packRowActions: { flexDirection: 'row' },
+  modeSummaryPreview: { borderRadius: 8, borderWidth: 2, height: 56, overflow: 'hidden', width: 56 },
+  muted: { opacity: 0.7 },
   panelContent: {
-    boxShadow: [{ offsetX: 2, offsetY: 0, blurRadius: 8, color: SHADOW_COLOR }],
-    elevation: 8,
     flex: 1,
     overflow: 'hidden'
   },
   pnpButton: { marginTop: 8 },
+  progressBar: {
+    borderRadius: 6,
+    height: 8
+  },
+  progressBarWrapper: {
+    height: 8,
+    marginTop: 10,
+    overflow: 'hidden'
+  },
   scrollContent: {
-    paddingBottom: 16,
+    paddingBottom: 12,
     paddingHorizontal: 16
   },
   sectionLabel: {
@@ -470,5 +549,13 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     margin: -8,
     padding: 8
+  },
+  // Same tight marginTop as heroAdjacentSectionLabel (both 12, vs a standalone section's 16) — this
+  // is the very first label in the list, right below the header's own inset, not following another
+  // section's own bottom margin the way sectionLabel's 16 assumes.
+  topSectionLabel: {
+    fontWeight: '700',
+    marginBottom: 8,
+    marginTop: 12
   }
 })

@@ -5,6 +5,8 @@ import type { GameMode } from '@/types/gameModes'
 
 import { clampStage } from './shared/clampStage'
 import { randIn, shuffledIndices } from './shared/procedural'
+import { SCENE_START_DELAY_MS } from './shared/sceneReveal'
+import { FadeScaleIn } from './shared/sketchShapes'
 
 // Quantitative/depletion: N balloons generated at game start, one popped per wrong guess.
 // Positions, sizes and colors are re-rolled each round (generated once in useState initializer —
@@ -42,6 +44,8 @@ const BASE_RX = 11.5
 const BASE_RY = 14.5
 const SIZE_VARIANCE = 0.15 // random size wobble layered on top of the depth scaling below
 const BACK_SCALE = 0.7 // how small a fully-back balloon shrinks to, relative to a fully-front one
+// How much each balloon's one-time round-start float-in staggers behind the next.
+const STAGGER_MS = 110
 
 function makeBalloons(): BalloonData[] {
   return BASE_SLOTS.map((slot, i) => {
@@ -60,7 +64,7 @@ function makeBalloons(): BalloonData[] {
   })
 }
 
-const BalloonVisual = ({ mistakes, color, colors }: { mistakes: number; color: string; colors?: string[] }) => {
+const BalloonVisual = ({ mistakes, color, colors, started }: { mistakes: number; color: string; colors?: string[]; started?: boolean }) => {
   const [balloons] = useState<BalloonData[]>(makeBalloons)
   // Randomizes which balloon gets which theme color each round, while still guaranteeing every
   // color gets used at least once (same guarantee the old fixed index % colors.length cycle had).
@@ -77,12 +81,20 @@ const BalloonVisual = ({ mistakes, color, colors }: { mistakes: number; color: s
         const stringMidX = b.x + b.stringX
         const balloonColor = colors && colors.length > 0 ? colors[colorOrder[b.index] % colors.length] : color
         return (
-          <G key={b.key}>
-            {/* Opaque fill (was fill='none') — an unfilled balloon let an overlapping neighbor's
-                string, or body, show straight through it. */}
-            <Ellipse cx={b.x} cy={b.y} rx={b.rx} ry={b.ry} stroke={balloonColor} strokeWidth='2.5' fill={balloonColor} />
-            <Path d={`M${b.x},${b.y + b.ry} Q${stringMidX},${b.y + b.ry + 9} ${b.x},${stringEndY}`} stroke={balloonColor} strokeWidth='2' fill='none' strokeLinecap='round' />
-          </G>
+          // A balloon's outline is mostly beside the point (it's a solid fill, and its string is a
+          // thin curve not worth the arc-length math a true stroke-draw would need) — the whole
+          // balloon+string fades and scales in together instead, around its own center, same as
+          // stars.tsx. Every balloon mounts exactly once, already visible at mistakes=0 (this is a
+          // depletion mode: a wrong guess pops one rather than revealing one), so `started`/
+          // `delayMs` gate and stagger the whole bunch floating in at round start.
+          <FadeScaleIn key={b.key} cx={b.x} cy={b.y} start={started} delayMs={SCENE_START_DELAY_MS + b.index * STAGGER_MS}>
+            <G>
+              {/* Opaque fill (was fill='none') — an unfilled balloon let an overlapping neighbor's
+                  string, or body, show straight through it. */}
+              <Ellipse cx={b.x} cy={b.y} rx={b.rx} ry={b.ry} stroke={balloonColor} strokeWidth='2.5' fill={balloonColor} />
+              <Path d={`M${b.x},${b.y + b.ry} Q${stringMidX},${b.y + b.ry + 9} ${b.x},${stringEndY}`} stroke={balloonColor} strokeWidth='2' fill='none' strokeLinecap='round' />
+            </G>
+          </FadeScaleIn>
         )
       })}
     </Svg>

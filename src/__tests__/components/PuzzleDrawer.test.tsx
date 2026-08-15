@@ -1,8 +1,10 @@
-import { type AutoPaperTheme, Provider, useAutoPaperTheme } from '@rific/auto-paper'
+import { type AutoPaperTheme, getColorRoles, Provider, useAutoPaperTheme } from '@rific/auto-paper'
+import { HapticPressProvider } from '@rific/haptic-press'
 import { useUpdater } from '@rific/updater'
-import { fireEvent, render } from '@testing-library/react-native'
-import { useEffect } from 'react'
+import { fireEvent, render as rtlRender } from '@testing-library/react-native'
+import { type ReactElement, type ReactNode, useEffect } from 'react'
 import { StyleSheet } from 'react-native'
+import * as RNPaper from 'react-native-paper'
 
 import { PuzzleDrawer } from '@/components/PuzzleDrawer'
 import { PackSelectionContext, type PackSelectionContextType } from '@/hooks/usePackSelection'
@@ -12,8 +14,10 @@ import { commaString } from '@/utils/commaString'
 import { getPuzzleManifest, getPuzzlesForCategory } from '@/utils/puzzleCatalog'
 import type { PuzzleConfig } from '@/utils/puzzlePicker'
 
-// Any mode other than DEFAULT_MODE (baseConfig.mode below) — used to prove a mode change was
-// actually applied, not just re-confirmed as the same value.
+// Any mode other than DEFAULT_MODE (baseConfig.mode below) — used both as the accessibility label
+// ModeSelector's own cards used to render AND as ModePickerCard's own current format
+// (`${label} mode, ${category}. ${description}`) — proves a mode change was actually applied, not
+// just re-confirmed as the same value, regardless of which picker UI is asserting on it.
 const OTHER_MODE_ACCESSIBILITY_LABEL = /Letters Only mode/
 
 // This file renders PuzzleDrawer without a PaperProvider — react-native-paper's useTheme() falls
@@ -29,10 +33,17 @@ const colorChannels = (color: string): [number, number, number] => {
   return [(n >> 16) & 255, (n >> 8) & 255, n & 255]
 }
 
-// ModeSelector's cards render from a measured container width (see ModeSelector.test.tsx) — with
-// no layout event, its FlatList never renders a single card and mode-card queries below would
-// always come up empty.
-const MODE_SELECTOR_LAYOUT_EVENT = { nativeEvent: { layout: { x: 0, y: 0, width: 380, height: 200 } } }
+// HapticPressProvider's real `paper` module injected everywhere below (see Haptic.tsx, the app's
+// own root wiring) — without it, @rific/haptic-press's Button/IconButton/SegmentedButtons all fall
+// back to a bare, unstyled RN element that drops accessibilityLabel entirely and renders with a
+// completely different DOM shape (see that package's own renderFallbackIcon/SegmentedButtons
+// fallback), which both the label-based queries and the parent/parent DOM-traversal assertions
+// below rely on being the real react-native-paper structure. Passed as RTL's own `wrapper` option,
+// not a manual JSX wrap — several tests below call `rerender` with a bare <PuzzleDrawer> (no
+// wrapper of its own), which only keeps this Provider in the tree if RTL re-applies `wrapper`
+// itself on every rerender the way it does automatically for this option.
+const HapticWrapper = ({ children }: { children: ReactNode }) => <HapticPressProvider paper={RNPaper}>{children}</HapticPressProvider>
+const render = (ui: ReactElement) => rtlRender(ui, { wrapper: HapticWrapper })
 
 jest.mock('@/utils/alert', () => ({
   alert: jest.fn().mockResolvedValue(undefined),
@@ -105,14 +116,24 @@ describe('PuzzleDrawer', () => {
     mockUseUpdater.mockReturnValue({ check: mockCheck, checking: false, updateReady: false })
   })
 
-  it('shows Choose packs and Difficulty with no Custom option — pass and play is how a word gets authored now — and always offers both Random and Pass & play', async () => {
+  it('shows the All packs row and Difficulty with no Custom option — pass and play is how a word gets authored now — and always offers both Random and Pass & play', async () => {
     const { getByText, queryByText } = await renderDrawer()
 
-    expect(getByText('No packs selected')).toBeTruthy()
+    // "All packs" is its own row now (see listHeader's own comment on why it looks like a pack
+    // row instead of a button above them), labeled with the live selection count (see packsLabel's
+    // own comment) rather than a static caption — nothing is selected by default here (see
+    // renderDrawer's own packSelection default), so "0 of N Packs" is what that label resolves to.
+    expect(getByText(`0 of ${builtInPacks().length} Packs`)).toBeTruthy()
     expect(getByText('Difficulty')).toBeTruthy()
     expect(queryByText('Custom')).toBeNull()
     expect(getByText('Random')).toBeTruthy()
     expect(getByText('Pass & play')).toBeTruthy()
+  })
+
+  it('labels the "All packs" row "All Packs" once every built-in pack is selected, not a count', async () => {
+    const { getByText } = await renderDrawer({}, { selectedPackKeys: builtInPacks().map((pack) => pack.key) })
+
+    expect(getByText('All Packs')).toBeTruthy()
   })
 
   it('shows no quick-start pack rows when nothing is selected', async () => {
@@ -130,16 +151,16 @@ describe('PuzzleDrawer', () => {
     expect(await findByText(`${commaString(0)} of ${commaString(pack.count)} unlocked`)).toBeTruthy()
   })
 
-  it('hides a pack from the quick list via its trailing icon — unselecting it (same selectedPackKeys Choose packs itself toggles) rather than opening it', async () => {
+  it('hides a pack from the quick list via a long press — unselecting it (same selectedPackKeys Choose packs itself toggles) rather than opening it', async () => {
     const [packA, packB] = builtInPacks()
     const onConfirm = jest.fn()
     const setSelectedPackKeys = jest.fn()
-    const { getByLabelText } = await renderDrawer({ onConfirm }, { selectedPackKeys: [packA.key, packB.key], setSelectedPackKeys })
+    const { getByText } = await renderDrawer({ onConfirm }, { selectedPackKeys: [packA.key, packB.key], setSelectedPackKeys })
 
-    await fireEvent.press(getByLabelText(`Hide ${packA.label}`))
+    await fireEvent(getByText(packA.label), 'longPress')
 
     expect(setSelectedPackKeys).toHaveBeenCalledWith([packB.key])
-    // A distinct action from tapping the row body — hiding a pack shouldn't also open its puzzle list.
+    // A distinct action from tapping the row body — hiding a pack shouldn't also draw from it.
     expect(onConfirm).not.toHaveBeenCalled()
   })
 
@@ -221,13 +242,30 @@ describe('PuzzleDrawer', () => {
     expect(closedPanel.props.importantForAccessibility).toBe('no-hide-descendants')
   })
 
-  it('fires onModeChange immediately when a different mode card is tapped, without requiring confirm', async () => {
+  it('opens ModePickerDrawer from the mode summary row, showing the current mode', async () => {
+    const { getByLabelText } = await renderDrawer()
+
+    // draft.mode starts as baseConfig.mode (DEFAULT_MODE) — the row itself, and the picker it
+    // opens, both read that value; pressing it is the only way to reach the picker's cards below.
+    expect(getByLabelText(`Mode: ${DEFAULT_MODE.label}. Change mode`)).toBeTruthy()
+
+    await fireEvent.press(getByLabelText(`Mode: ${DEFAULT_MODE.label}. Change mode`))
+
+    expect(getByLabelText(OTHER_MODE_ACCESSIBILITY_LABEL)).toBeTruthy()
+  })
+
+  // Cards are plain Views now, not Pressables — scrolling the carousel to a card is what selects
+  // it (see ModePickerDrawer's own handleScroll/commitIndex), so this simulates that by firing a
+  // 'scroll' event with contentOffset.x landing exactly on the target card's page boundary, not by
+  // pressing it. offsetX: 0 always lands on index 0 (Letters Only, the first VISIBLE_MODES entry)
+  // regardless of the test environment's own windowWidth, since 0 / anything is still 0.
+  it('fires onModeChange immediately when the carousel settles on a different mode card, without requiring confirm or closing the picker', async () => {
     const onModeChange = jest.fn()
     const onConfirm = jest.fn()
     const { getByLabelText, getByTestId } = await renderDrawer({ onModeChange, onConfirm })
 
-    await fireEvent(getByTestId('mode-selector-container'), 'layout', MODE_SELECTOR_LAYOUT_EVENT)
-    await fireEvent.press(getByLabelText(OTHER_MODE_ACCESSIBILITY_LABEL))
+    await fireEvent.press(getByLabelText(`Mode: ${DEFAULT_MODE.label}. Change mode`))
+    await fireEvent.scroll(getByTestId('mode-picker-carousel'), { nativeEvent: { contentOffset: { x: 0, y: 0 } } })
 
     expect(onModeChange).toHaveBeenCalledTimes(1)
     expect(onModeChange.mock.calls[0][0].id).toBe('letters')
@@ -235,6 +273,9 @@ describe('PuzzleDrawer', () => {
     // handleModeChange is what actually pushes it live, but from the drawer's own side this
     // shouldn't wait on (or require) the confirm button at all.
     expect(onConfirm).not.toHaveBeenCalled()
+    // Selecting is just a live side effect of scrolling — it doesn't commit or close anything on
+    // its own (see ModePickerDrawer's own footer/close comments), so the card is still reachable.
+    expect(getByLabelText(OTHER_MODE_ACCESSIBILITY_LABEL)).toBeTruthy()
   })
 
   it('fires onDifficultyChange immediately when a difficulty option is picked, without requiring confirm', async () => {
@@ -248,72 +289,85 @@ describe('PuzzleDrawer', () => {
     expect(onConfirm).not.toHaveBeenCalled()
   })
 
-  it('colors the selected difficulty segment with its own theme role (easy/medium/hard -> success/warning/danger — see useDifficultyColors), and moves the color when the selection changes', async () => {
+  it("colors the CHECKED difficulty segment with its own theme role's vibrant text color (easy/medium/hard -> success/warning/danger — see useDifficultyOptionColors), and every unchecked segment with that role's muted container text color instead", async () => {
     const { getByText, theme } = await renderDrawerWithRealTheme()
 
     await fireEvent.press(getByText('Hard'))
-    expect(StyleSheet.flatten(getByText('Hard').props.style).color).toBe(theme.colors.onDangerContainer)
+    // Checked: the vibrant (full-saturation) role color, not the muted container one — every
+    // checked segment in this app now pops solid rather than just tinted.
+    expect(StyleSheet.flatten(getByText('Hard').props.style).color).toBe(theme.colors.onDanger)
     // Red channel clearly dominant — hard is a red, whatever the exact shade.
-    const [hr, hg, hb] = colorChannels(theme.colors.onDangerContainer)
+    const [hr, hg, hb] = colorChannels(theme.colors.onDanger)
     expect(hr).toBeGreaterThan(hg)
     expect(hr).toBeGreaterThan(hb)
-    // The previously-checked segment ("Any", checked by default per baseConfig) is back to plain
-    // unchecked/onSurface — not primary, and not any of the difficulty colors either.
-    expect(StyleSheet.flatten(getByText('Any').props.style).color).toBe(theme.colors.onSurface)
+    // The previously-checked segment ("Any", checked by default per baseConfig) drops to its own
+    // unchecked/muted-container text color, not a generic onSurface — every segment keeps its own
+    // tier's tint even while unchecked now.
+    expect(StyleSheet.flatten(getByText('Any').props.style).color).toBe(theme.colors.onPrimaryContainer)
 
     await fireEvent.press(getByText('Easy'))
-    expect(StyleSheet.flatten(getByText('Easy').props.style).color).toBe(theme.colors.onSuccessContainer)
-    // Green channel clearly dominant, and Hard goes back to plain onSurface now that it's no
-    // longer checked — its red doesn't linger.
-    const [er, eg, eb] = colorChannels(theme.colors.onSuccessContainer)
+    expect(StyleSheet.flatten(getByText('Easy').props.style).color).toBe(theme.colors.onSuccess)
+    // Green channel clearly dominant, and Hard goes back to its own muted onDangerContainer now
+    // that it's no longer checked — not a generic neutral, its own red just dims.
+    const [er, eg, eb] = colorChannels(theme.colors.onSuccess)
     expect(eg).toBeGreaterThan(er)
     expect(eg).toBeGreaterThan(eb)
-    expect(StyleSheet.flatten(getByText('Hard').props.style).color).toBe(theme.colors.onSurface)
+    expect(StyleSheet.flatten(getByText('Hard').props.style).color).toBe(theme.colors.onDangerContainer)
   })
 
-  it("fills the selected difficulty segment's own background with its theme role's container color, and clears it once the selection moves elsewhere", async () => {
+  it("fills the CHECKED difficulty segment's own background with its theme role's vibrant (full-saturation) color, and every unchecked segment with that role's muted container color instead", async () => {
     const { getByText, theme } = await renderDrawerWithRealTheme()
     // react-native-paper's SegmentedButtons has no per-segment checked-background prop (checkedColor
     // only ever reaches the text/icon/border) — PuzzleDrawer applies this as a plain style override
-    // on whichever button is currently checked (see difficultyOptions), which lands on the segment's
-    // outer View, three parents up from its label Text.
+    // on every button, checked or not (see difficultyOptions), which lands on the segment's outer
+    // View, three parents up from its label Text.
     const fillOf = (label: string) => StyleSheet.flatten(getByText(label).parent?.parent?.parent?.props.style).backgroundColor
+    // "Any" isn't a difficulty tier with its own success/warning/danger role — its container is a
+    // computed tint of the theme's own primary (see useDifficultyOptionColors' own anyContainerColor),
+    // not primaryContainer directly.
+    const anyContainerColor = getColorRoles(theme.colors.primary, theme.colors.surface).container
 
     await fireEvent.press(getByText('Hard'))
-    expect(fillOf('Hard')).toBe(theme.colors.dangerContainer)
-    const [hr, hg, hb] = colorChannels(theme.colors.dangerContainer)
+    expect(fillOf('Hard')).toBe(theme.colors.danger)
+    const [hr, hg, hb] = colorChannels(theme.colors.danger)
     expect(hr).toBeGreaterThan(hg)
     expect(hr).toBeGreaterThan(hb)
-    // "Any" (checked by default) goes back to the theme's own plain unchecked background
-    // (transparent) once it's no longer checked — not a lingering tint.
-    expect(fillOf('Any')).toBe('transparent')
+    // "Any" (checked by default) drops to its own muted container fill once it's no longer
+    // checked — not a bare transparent default.
+    expect(fillOf('Any')).toBe(anyContainerColor)
 
     await fireEvent.press(getByText('Easy'))
-    expect(fillOf('Easy')).toBe(theme.colors.successContainer)
-    const [er, eg, eb] = colorChannels(theme.colors.successContainer)
+    expect(fillOf('Easy')).toBe(theme.colors.success)
+    const [er, eg, eb] = colorChannels(theme.colors.success)
     expect(eg).toBeGreaterThan(er)
     expect(eg).toBeGreaterThan(eb)
-    expect(fillOf('Hard')).toBe('transparent')
+    expect(fillOf('Hard')).toBe(theme.colors.dangerContainer)
   })
 
-  it("colors 'Any' with the theme's own primary color when selected, since it isn't a difficulty tier with a semantic role of its own", async () => {
+  it("fills the checked 'Any' segment with the theme's own primary color as a solid vibrant fill, since it isn't a difficulty tier with a semantic role of its own", async () => {
     const { getByText, theme } = await renderDrawerWithRealTheme()
+    const fillOf = (label: string) => StyleSheet.flatten(getByText(label).parent?.parent?.parent?.props.style).backgroundColor
 
     // baseConfig.difficulty is 'any', so it's already checked on first render — no press needed.
-    expect(StyleSheet.flatten(getByText('Any').props.style).color).toBe(theme.colors.primary)
+    expect(StyleSheet.flatten(getByText('Any').props.style).color).toBe(theme.colors.onPrimary)
+    expect(fillOf('Any')).toBe(theme.colors.primary)
   })
 
-  // Appearance/keyboard layout/haptics moved out to their own SettingsDrawer (reached via the
-  // gear icon below) — this menu is gameplay-only now (packs, difficulty, Random, Pass & play).
-  // See SettingsDrawer.test.tsx for coverage of the controls themselves.
-  it('does not show the Appearance or Keyboard controls directly, only a Settings entry point to reach them', async () => {
+  // Appearance/keyboard layout AND haptics/sound all moved into ModePickerDrawer (reached via the
+  // mode summary row) — SettingsDrawer and its own gear-icon entry point are gone entirely, so this
+  // menu no longer renders those controls directly OR offers a second way to reach them. See
+  // ModePickerDrawer.test.tsx for coverage of the controls themselves.
+  it('does not show the Appearance, Keyboard, or Feedback controls directly, and has no separate settings entry point besides the mode summary row', async () => {
     const { getByLabelText, queryByText, queryByLabelText } = await renderDrawer()
 
     expect(queryByText('Appearance')).toBeNull()
     expect(queryByLabelText('System')).toBeNull()
     expect(queryByText('QWERTY')).toBeNull()
     expect(queryByText('ABC')).toBeNull()
-    expect(getByLabelText('Settings')).toBeTruthy()
+    expect(queryByLabelText('Vibrate on tap')).toBeNull()
+    expect(queryByLabelText('Sound effects')).toBeNull()
+    expect(queryByLabelText('Feedback')).toBeNull()
+    expect(getByLabelText(`Mode: ${DEFAULT_MODE.label}. Change mode`)).toBeTruthy()
   })
 
   it('titles the drawer with the app name and its version, not a generic "Game Menu" the hamburger icon already implies or the "OTA" jargon a player wouldn\'t recognize', async () => {

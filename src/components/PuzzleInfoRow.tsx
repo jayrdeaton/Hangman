@@ -3,7 +3,7 @@ import { JSX } from 'react'
 import { StyleSheet, View } from 'react-native'
 import { Icon, Text, useTheme } from 'react-native-paper'
 
-import { useDifficultyColors } from '@/hooks/useDifficultyColors'
+import { useDifficultyOnVibrantColors, useDifficultyVibrantColors } from '@/hooks/useDifficultyColors'
 import type { PuzzleDifficultyTier } from '@/utils/puzzleCatalog'
 
 const DIFFICULTY_LABELS: Record<PuzzleDifficultyTier, string> = {
@@ -41,9 +41,12 @@ export const PuzzleInfoRow = ({ difficultyTier, packLabel, hint, hintRevealed, o
   // light and dark variants, so pairing them keeps the label readable for every accent choice.
   const onTertiaryColor = theme.colors.onTertiary
   // easy/medium/hard map onto @rific/auto-paper's success/warning/danger theme roles — see
-  // useDifficultyColors. Shared with PuzzleDrawer's difficulty picker, so both reflect the exact
-  // same colors.
-  const difficultyColors = useDifficultyColors()
+  // useDifficultyColors. Shared with PuzzleDrawer's difficulty picker's own CHECKED segment, so
+  // both reflect the exact same solid-vibrant fill rather than the muted container tint an
+  // unchecked segment gets there — this pill has no "unselected" state to distinguish itself
+  // from, so it's always the vibrant one.
+  const difficultyVibrantColors = useDifficultyVibrantColors()
+  const difficultyOnVibrantColors = useDifficultyOnVibrantColors()
 
   // Difficulty sits in its own pill, always visible when known — unlike the hint, glancing at it
   // isn't "getting help", so it doesn't route through hintRevealed (which onSolved reports for the
@@ -60,8 +63,8 @@ export const PuzzleInfoRow = ({ difficultyTier, packLabel, hint, hintRevealed, o
     <View style={styles.hintSlot}>
       <View style={styles.infoRow}>
         {difficultyTier ? (
-          <View style={[styles.pill, { borderColor: difficultyColors[difficultyTier] }]} accessibilityLabel={`Difficulty: ${DIFFICULTY_LABELS[difficultyTier]}`}>
-            <Text style={[styles.pillTextStrong, { color: difficultyColors[difficultyTier] }]}>{DIFFICULTY_LABELS[difficultyTier]}</Text>
+          <View style={[styles.pill, { backgroundColor: difficultyVibrantColors[difficultyTier], borderColor: difficultyVibrantColors[difficultyTier] }]} accessibilityLabel={`Difficulty: ${DIFFICULTY_LABELS[difficultyTier]}`}>
+            <Text style={[styles.pillTextStrong, { color: difficultyOnVibrantColors[difficultyTier] }]}>{DIFFICULTY_LABELS[difficultyTier]}</Text>
           </View>
         ) : null}
         {hasHintContent ? (
@@ -90,7 +93,10 @@ export const PuzzleInfoRow = ({ difficultyTier, packLabel, hint, hintRevealed, o
 
 const styles = StyleSheet.create({
   hintPill: { alignItems: 'center', columnGap: 6, flexDirection: 'row' },
-  hintSlot: { alignItems: 'center', alignSelf: 'stretch', justifyContent: 'center', marginBottom: 4, marginTop: 4, minHeight: 38, paddingHorizontal: 24 },
+  // paddingHorizontal clears the menu/trophy buttons Main.tsx floats over this same row (each a
+  // 40pt IconButton pinned to the screen edge) — wide pill content stays centered inside that
+  // margin instead of drifting underneath them.
+  hintSlot: { alignItems: 'center', alignSelf: 'stretch', justifyContent: 'center', marginBottom: 4, marginTop: 4, minHeight: 38, paddingHorizontal: 52 },
   infoRow: { alignItems: 'center', columnGap: 10, flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', rowGap: 6 },
   pill: { borderRadius: 14, borderWidth: 1.5, maxWidth: '100%', overflow: 'hidden', paddingHorizontal: 14, paddingVertical: 5 },
   pillText: { fontSize: 13, textAlign: 'center' },

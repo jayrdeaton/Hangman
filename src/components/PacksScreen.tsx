@@ -1,9 +1,9 @@
 import { Drawer } from '@rific/drawer'
-import { Button, Checkbox, IconButton, useVibration } from '@rific/haptic-press'
+import { Button, Checkbox, IconButton } from '@rific/haptic-press'
 import { FlatList, ScrollViewFooter, ScrollViewHeader, ScrollViewProvider } from '@rific/scroll-view'
 import { JSX, memo, useCallback, useEffect, useMemo, useState } from 'react'
-import { StyleSheet, useWindowDimensions, View } from 'react-native'
-import { Text } from 'react-native-paper'
+import { StyleSheet, View } from 'react-native'
+import { Text, useTheme } from 'react-native-paper'
 
 import { DRAWER_PACKS_SCREEN_Z_INDEX } from '@/constants/drawerStacking'
 import { alert } from '@/utils/alert'
@@ -16,6 +16,15 @@ import { getPuzzleUnlockMap, getUnlockedCountForPack, PuzzleUnlockMap } from '@/
 import { PackEditorDrawer } from './PackEditorDrawer'
 import { PackPuzzlesDrawer } from './PackPuzzlesDrawer'
 import { PackRow } from './PackRow'
+
+// 4px on every side of a 40x40 icon button (see the matching actionSize={40} on this screen's own
+// ScrollViewHeader) brings the actual tap target up to 48x48, without the visible circle itself
+// growing to fill that whole area.
+const ICON_ACTION_HIT_SLOP = { top: 4, bottom: 4, left: 4, right: 4 }
+// Same fixed panel width every other drawer in the app uses (PuzzleDrawer's own Game Menu,
+// AchievementsDrawer) — this used to be a full-width page, but there's no reason its own panel
+// should be the one exception.
+const DRAWER_WIDTH = 380
 
 export type PacksScreenProps = {
   visible: boolean
@@ -31,8 +40,7 @@ export type PacksScreenProps = {
 // enough that re-rendering this whole tree on every unrelated ancestor state change is
 // noticeable — see PuzzleDrawer's own memo comment for the full reasoning.
 export const PacksScreen = memo(({ visible, onDismiss, selectedKeys, onChangeSelectedKeys, packsVersion, onPacksChanged }: PacksScreenProps): JSX.Element => {
-  const { width: windowWidth } = useWindowDimensions()
-  const { selection } = useVibration()
+  const theme = useTheme()
 
   // packsVersion isn't read inside the memo — it's a change counter bumped whenever a custom pack
   // is created/edited/deleted/imported, since getPuzzleManifest() otherwise looks pure to React.
@@ -171,6 +179,7 @@ export const PacksScreen = memo(({ visible, onDismiss, selectedKeys, onChangeSel
         <PackRow
           label={item.label}
           group={item.group}
+          isPack
           subtitle={`${commaString(unlocked)} of ${commaString(item.count)} unlocked`}
           progress={progress}
           onPress={() => toggle(item.key)}
@@ -200,12 +209,14 @@ export const PacksScreen = memo(({ visible, onDismiss, selectedKeys, onChangeSel
     () => (
       <>
         <View style={styles.sectionHeaderRow}>
-          <Text variant='titleSmall' style={styles.sectionHeader}>
+          <Text variant='titleSmall' style={styles.sectionHeaderInRow}>
             My packs
           </Text>
           <View style={styles.sectionActions}>
             <Button
-              compact
+              mode='contained'
+              buttonColor={theme.colors.primary}
+              textColor={theme.colors.onPrimary}
               icon='plus'
               onPress={() => {
                 setEditingKey(null)
@@ -214,7 +225,7 @@ export const PacksScreen = memo(({ visible, onDismiss, selectedKeys, onChangeSel
             >
               Create
             </Button>
-            <Button compact icon='import' onPress={() => void handleImportFile()}>
+            <Button mode='contained' buttonColor={theme.colors.secondary} textColor={theme.colors.onSecondary} icon='import' onPress={() => void handleImportFile()}>
               Import
             </Button>
           </View>
@@ -233,6 +244,7 @@ export const PacksScreen = memo(({ visible, onDismiss, selectedKeys, onChangeSel
                 key={item.key}
                 label={item.label}
                 group={item.group}
+                isPack
                 subtitle={`${commaString(unlocked)} of ${commaString(item.count)} unlocked`}
                 progress={progress}
                 onPress={() => toggle(item.key)}
@@ -275,44 +287,55 @@ export const PacksScreen = memo(({ visible, onDismiss, selectedKeys, onChangeSel
           underneath either way (Drawer never unmounts on close, just translates) —
           accessibilityElementsHidden below (unchanged) is what keeps this panel's title/close
           button/rows from staying reachable by screen readers and keyboard focus while invisible. */}
-      <Drawer open={visible && !anyOverlayVisible} onClose={onDismiss} width={windowWidth} zIndex={DRAWER_PACKS_SCREEN_Z_INDEX}>
+      <Drawer open={visible && !anyOverlayVisible} onClose={onDismiss} width={DRAWER_WIDTH} zIndex={DRAWER_PACKS_SCREEN_Z_INDEX}>
         <View testID='packs-screen-panel' style={styles.panel} accessibilityViewIsModal={visible && !anyOverlayVisible} accessibilityElementsHidden={!visible || anyOverlayVisible} importantForAccessibility={visible && !anyOverlayVisible ? 'yes' : 'no-hide-descendants'} onAccessibilityEscape={visible && !anyOverlayVisible ? onDismiss : undefined}>
-          <ScrollViewProvider>
+          <ScrollViewProvider footerFixed>
             {/* Close sits on the LEADING (left) side — this screen is reached from the Game Menu's
                 hamburger icon (top-left of the game screen), same left-anchored lineage as
                 PuzzleDrawer/PackPuzzlesDrawer, so closing it lands back under the same thumb that
                 opened the chain. 'Close', not the Appbar.BackAction default of 'Back' — see
-                PuzzleDrawer's own ScrollViewHeader comment for why. */}
-            <ScrollViewHeader
-              title='Choose packs'
-              backAction={() => {
-                selection()
-                onDismiss()
-              }}
-              backActionAccessibilityLabel='Close'
-            />
+                PuzzleDrawer's own ScrollViewHeader comment for why. Custom IconButton, not the
+                default callback-driven Appbar.BackAction — filled tertiary, matching every other
+                back/close action in the app; IconButton already fires the app's own haptic
+                convention on press itself, so this needs no manual selection() call the way the
+                callback form used to. */}
+            <ScrollViewHeader title='Choose packs' actionSize={40} backAction={<IconButton icon='arrow-left' mode='contained' hitSlop={ICON_ACTION_HIT_SLOP} containerColor={theme.colors.tertiary} iconColor={theme.colors.onTertiary} onPress={onDismiss} accessibilityLabel='Close' />} />
 
             {/* "My packs" through the "Built-in packs" label live in listHeader (see its own
                 declaration above) — everything above the built-in pack list scrolls away with it
                 exactly as it did back when this was all one plain ScrollView; only the built-in
                 list itself needed to become a real FlatList. */}
-            <FlatList data={builtInPacks} keyExtractor={packRowKeyExtractor} renderItem={renderBuiltInPackRow} ListHeaderComponent={listHeader} showsVerticalScrollIndicator={false} contentContainerStyle={styles.scrollContent} keyboardShouldPersistTaps='handled' />
+            <FlatList
+              data={builtInPacks}
+              keyExtractor={packRowKeyExtractor}
+              renderItem={renderBuiltInPackRow}
+              ListHeaderComponent={listHeader}
+              showsVerticalScrollIndicator={false}
+              contentContainerStyle={styles.scrollContent}
+              keyboardShouldPersistTaps='handled'
+              // Solid vibrant fill, not the chip's own default muted surface tint — matches every
+              // other accent on this screen now instead of being the one control still washed out.
+              chipProps={{ style: { backgroundColor: theme.colors.primary }, selectedColor: theme.colors.onPrimary }}
+            />
 
-            {/* Not part of the scrollable content — matches PuzzleDrawer's own quick-start list,
-                and keeps Select all/Clear reachable without scrolling back up past however many
-                custom and built-in packs are in between. */}
-            <ScrollViewFooter style={styles.listFooter}>
-              <Text variant='bodySmall' style={styles.muted}>
-                {commaString(selectedSet.size)} of {commaString(manifest.length)} selected
-              </Text>
+            {/* Select all/Clear sit in their own row above Done, not part of the scrollable content
+                — same "reachable without scrolling back up" reasoning the old single-row footer
+                had. The count that used to live in its own label text next to them now lives in
+                Done's own label instead — Done is already the one line every eye lands on before
+                closing this screen, so the count reads there rather than needing a second, separate
+                bit of text just above it. */}
+            <ScrollViewFooter style={styles.footer}>
               <View style={styles.quickActions}>
-                <Button compact onPress={() => onChangeSelectedKeys(manifest.map((item) => item.key))}>
-                  Select all
-                </Button>
-                <Button compact onPress={() => onChangeSelectedKeys([])}>
+                <Button mode='contained' buttonColor={theme.colors.secondary} textColor={theme.colors.onSecondary} icon='select-off' onPress={() => onChangeSelectedKeys([])} style={styles.quickActionButton}>
                   Clear
                 </Button>
+                <Button mode='contained' buttonColor={theme.colors.tertiary} textColor={theme.colors.onTertiary} icon='select-all' onPress={() => onChangeSelectedKeys(manifest.map((item) => item.key))} style={styles.quickActionButton}>
+                  Select all
+                </Button>
               </View>
+              <Button mode='contained' icon='check' onPress={onDismiss} style={styles.footerButton}>
+                Done ({commaString(selectedSet.size)} of {commaString(manifest.length)})
+              </Button>
             </ScrollViewFooter>
           </ScrollViewProvider>
         </View>
@@ -327,29 +350,47 @@ PacksScreen.displayName = 'PacksScreen'
 
 const styles = StyleSheet.create({
   emptyText: { marginBottom: 12, opacity: 0.7 },
-  // Matches PuzzleDrawer's own footer padding — scrolls away with the rest of the chrome while
-  // actively scrolling and snaps back once it settles, rather than staying permanently pinned.
-  listFooter: {
-    alignItems: 'center',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    paddingBottom: 16,
+  // Matches ModePickerDrawer's own footer/footerButton exactly — same plain dismiss-button footer.
+  // alignItems/flexDirection override ScrollViewFooter's own row+center defaults — the quick
+  // actions row and Done stack vertically here, same convention PuzzleDrawer's own footer uses for
+  // Random/Pass & play.
+  footer: {
+    alignItems: 'stretch',
+    flexDirection: 'column',
+    paddingBottom: 4,
     paddingHorizontal: 16,
-    paddingTop: 16
+    paddingTop: 4
   },
+  footerButton: { marginTop: 8, width: '100%' },
   muted: { opacity: 0.7 },
   panel: { flex: 1 },
-  quickActions: { flexDirection: 'row' },
-  scrollContent: { paddingBottom: 24, paddingHorizontal: 16 },
-  sectionActions: { flexDirection: 'row' },
+  // Select all/Clear split the row evenly (flex: 1 each via quickActionButton) rather than sitting
+  // at their own natural width — reads as one cohesive block with the full-width Done button below,
+  // instead of two oddly-sized pills floating above it.
+  quickActionButton: { flex: 1 },
+  quickActions: { flexDirection: 'row', gap: 8 },
+  // paddingBottom matches sectionHeaderRow's own marginTop above exactly — the scrollable
+  // content's last row sits the same distance from what follows it (the footer) as the first
+  // row sits from the header.
+  scrollContent: { paddingBottom: 12, paddingHorizontal: 16 },
+  sectionActions: { flexDirection: 'row', gap: 8 },
   sectionHeader: {
     fontWeight: '700',
     marginBottom: 4,
     marginTop: 12
   },
+  // Same bold treatment as sectionHeader, but no marginTop of its own — this Text sits inside
+  // sectionHeaderRow (a flex row alongside Create/Import), which now carries that same 12px as a
+  // margin on the ROW itself instead, so both the label and its buttons move down together rather
+  // than only the text shifting inside the row.
+  sectionHeaderInRow: { fontWeight: '700' },
+  // marginTop matches every other drawer's own top-of-content breathing room (see PuzzleDrawer's
+  // modeSelectorBleed/AchievementsDrawer's firstCard/SettingsDrawer's topSectionLabel) — this row
+  // used to sit flush against the header with no gap at all.
   sectionHeaderRow: {
     alignItems: 'center',
     flexDirection: 'row',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    marginTop: 12
   }
 })

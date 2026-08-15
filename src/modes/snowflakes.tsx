@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
-import Svg, { G, Line } from 'react-native-svg'
+import Svg, { G } from 'react-native-svg'
 
 import type { GameMode } from '@/types/gameModes'
 
 import { clampStage } from './shared/clampStage'
 import { randIn, shuffledIndices } from './shared/procedural'
+import { SCENE_START_DELAY_MS } from './shared/sceneReveal'
+import { SketchLine } from './shared/sketchShapes'
 
 // Quantitative/depletion: a flurry of snowflakes melts away one by one.
 // maxMistakes=6, same baseline every mode uses.
@@ -37,6 +39,8 @@ const BASE_SLOTS: { x: number; y: number; size: number }[] = [
 
 const POSITION_JITTER = 6
 const SIZE_VARIANCE = 0.2
+// How much each snowflake's one-time round-start sketch-in staggers behind the next.
+const STAGGER_MS = 110
 
 function makeSnowflakes(): SnowflakeData[] {
   return BASE_SLOTS.map((slot, i) => ({
@@ -48,20 +52,24 @@ function makeSnowflakes(): SnowflakeData[] {
   }))
 }
 
-// 4-pointed doodle snowflake: two crossed lines + two diagonal lines
-const SnowflakeShape = ({ x, y, size, color }: { x: number; y: number; size: number; color: string }) => {
+// 4-pointed doodle snowflake: two crossed lines + two diagonal lines. Each snowflake mounts exactly
+// once — every one is already visible at mistakes=0 (this is a depletion mode: a wrong guess
+// removes one rather than revealing one), so `started`/`delayMs` gate and stagger the whole flurry
+// materializing in at round start, the same "hidden until the screen has actually appeared" gating
+// GallowsWithRope uses (see classicParts.tsx's own comment) — not a per-guess reveal.
+const SnowflakeShape = ({ x, y, size, color, started, delayMs }: { x: number; y: number; size: number; color: string; started?: boolean; delayMs?: number }) => {
   const d = size * 0.65
   return (
     <G>
-      <Line x1={x - size} y1={y} x2={x + size} y2={y} stroke={color} strokeWidth='2.5' strokeLinecap='round' />
-      <Line x1={x} y1={y - size} x2={x} y2={y + size} stroke={color} strokeWidth='2.5' strokeLinecap='round' />
-      <Line x1={x - d} y1={y - d} x2={x + d} y2={y + d} stroke={color} strokeWidth='2' strokeLinecap='round' />
-      <Line x1={x + d} y1={y - d} x2={x - d} y2={y + d} stroke={color} strokeWidth='2' strokeLinecap='round' />
+      <SketchLine x1={x - size} y1={y} x2={x + size} y2={y} color={color} strokeWidth={2.5} start={started} delayMs={delayMs} />
+      <SketchLine x1={x} y1={y - size} x2={x} y2={y + size} color={color} strokeWidth={2.5} start={started} delayMs={delayMs} />
+      <SketchLine x1={x - d} y1={y - d} x2={x + d} y2={y + d} color={color} strokeWidth={2} start={started} delayMs={delayMs} />
+      <SketchLine x1={x + d} y1={y - d} x2={x - d} y2={y + d} color={color} strokeWidth={2} start={started} delayMs={delayMs} />
     </G>
   )
 }
 
-const SnowflakesVisual = ({ mistakes, color, colors }: { mistakes: number; color: string; colors?: string[] }) => {
+const SnowflakesVisual = ({ mistakes, color, colors, started }: { mistakes: number; color: string; colors?: string[]; started?: boolean }) => {
   const [snowflakes] = useState<SnowflakeData[]>(makeSnowflakes)
   // Randomizes which snowflake gets which theme color each round, while still guaranteeing every
   // color gets used at least once (same guarantee the old fixed index % colors.length cycle had).
@@ -71,7 +79,7 @@ const SnowflakesVisual = ({ mistakes, color, colors }: { mistakes: number; color
   return (
     <Svg viewBox='0 0 100 100'>
       {visible.map((s) => (
-        <SnowflakeShape key={s.key} x={s.x} y={s.y} size={s.size} color={colors && colors.length > 0 ? colors[colorOrder[s.index] % colors.length] : color} />
+        <SnowflakeShape key={s.key} x={s.x} y={s.y} size={s.size} color={colors && colors.length > 0 ? colors[colorOrder[s.index] % colors.length] : color} started={started} delayMs={SCENE_START_DELAY_MS + s.index * STAGGER_MS} />
       ))}
     </Svg>
   )
