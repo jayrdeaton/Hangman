@@ -107,7 +107,10 @@ export const polylineLength = (points: [number, number][]): number => {
 // as long as the shape is still at-or-past its own full length (i.e. still genuinely hidden,
 // whether held or merely delayed), 1 the instant real drawing begins. That's a categorical guarantee
 // independent of whatever the dash math is doing underneath, not a numeric near-miss.
-const hiddenOpacity = (offsetValue: number, length: number) => (offsetValue >= length ? 0 : 1)
+const hiddenOpacity = (offsetValue: number, length: number) => {
+  'worklet'
+  return offsetValue >= length ? 0 : 1
+}
 
 // Draws a Line on stroke-by-stroke (pen-sketch style), via the standard strokeDasharray/
 // strokeDashoffset trick: a single dash exactly as long as the line itself, offset so none of it
