@@ -15,9 +15,13 @@
           {
             "UTTypeIdentifier": "com.infinitetoken.hangman.pack",
             "UTTypeDescription": "Hangman Puzzle Pack",
-            "UTTypeConformsTo": ["public.json"],
+            "UTTypeConformsTo": [
+              "public.json"
+            ],
             "UTTypeTagSpecification": {
-              "public.filename-extension": ["hangman"],
+              "public.filename-extension": [
+                "hangman"
+              ],
               "public.mime-type": "application/x-hangman"
             }
           }
@@ -27,7 +31,9 @@
             "CFBundleTypeName": "Hangman Puzzle Pack",
             "CFBundleTypeRole": "Editor",
             "LSHandlerRank": "Owner",
-            "LSItemContentTypes": ["com.infinitetoken.hangman.pack"]
+            "LSItemContentTypes": [
+              "com.infinitetoken.hangman.pack"
+            ]
           }
         ]
       },
@@ -44,17 +50,32 @@
       "package": "com.infinitetoken.Hangman",
       "permissions": [
         "android.permission.RECORD_AUDIO",
-        "android.permission.MODIFY_AUDIO_SETTINGS"
+        "android.permission.MODIFY_AUDIO_SETTINGS",
+        "android.permission.FOREGROUND_SERVICE",
+        "android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK"
       ],
       "intentFilters": [
         {
           "action": "VIEW",
           "data": [
-            { "mimeType": "application/x-hangman" },
-            { "scheme": "file", "host": "*", "pathPattern": ".*\\.hangman" },
-            { "scheme": "content", "host": "*", "pathPattern": ".*\\.hangman" }
+            {
+              "mimeType": "application/x-hangman"
+            },
+            {
+              "scheme": "file",
+              "host": "*",
+              "pathPattern": ".*\\.hangman"
+            },
+            {
+              "scheme": "content",
+              "host": "*",
+              "pathPattern": ".*\\.hangman"
+            }
           ],
-          "category": ["DEFAULT", "BROWSABLE"]
+          "category": [
+            "DEFAULT",
+            "BROWSABLE"
+          ]
         }
       ]
     },
@@ -89,6 +110,9 @@
       "eas": {
         "projectId": "470e8522-592d-4311-b726-ea0bf8827144"
       }
+    },
+    "updates": {
+      "url": "https://u.expo.dev/470e8522-592d-4311-b726-ea0bf8827144"
     }
   }
 }
