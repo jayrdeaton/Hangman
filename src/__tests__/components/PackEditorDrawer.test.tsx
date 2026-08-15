@@ -1,5 +1,6 @@
+import { ToastProvider } from '@rific/toaster'
 import { render as rtlRender } from '@testing-library/react-native'
-import type { ReactElement } from 'react'
+import type { ReactElement, ReactNode } from 'react'
 import { PaperProvider } from 'react-native-paper'
 
 import { PackEditorDrawer } from '@/components/PackEditorDrawer'
@@ -13,7 +14,16 @@ jest.mock('@/utils/alert', () => ({
 // ConfirmDialog renders through a react-native-paper Portal — needs a Portal.Host ancestor,
 // normally supplied by @rific/auto-paper's Provider at the app root; same wrapper
 // PacksScreen.test.tsx/AchievementsDrawer.test.tsx use for their own Portal-based dialogs.
-const render = (ui: ReactElement) => rtlRender(ui, { wrapper: PaperProvider })
+// ToastProvider is also required now — PackEditorDrawer's own save flow calls useToast() to
+// surface a newly-unlocked custom-pack achievement (see achievements.ts's packs_created_* ladder),
+// and that hook throws outside a ToastProvider ancestor (normally supplied by Providers.tsx at the
+// app root, same as PnpFlow.test.tsx gets it by rendering under the full <Providers>).
+const Wrapper = ({ children }: { children: ReactNode }) => (
+  <ToastProvider>
+    <PaperProvider>{children}</PaperProvider>
+  </ToastProvider>
+)
+const render = (ui: ReactElement) => rtlRender(ui, { wrapper: Wrapper })
 
 // This file only covers what's specific to PackEditorDrawer's own shell — the accessibility-modal
 // wiring every sibling drawer's test (PuzzleDrawer.test.tsx, AchievementsDrawer.test.tsx) already

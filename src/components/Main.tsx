@@ -369,7 +369,10 @@ export const Main = (): JSX.Element => {
       // choice of whether to write a hint decide the "No Hints Needed" achievement. Tracked in its
       // own pnpWins counter instead (see achievements.ts), separate from every solo stat.
       if (pnpPhase) {
-        void recordPnpWin().then(refreshUnlocks)
+        void recordPnpWin().then((newlyUnlocked) => {
+          if (newlyUnlocked.length > 0) setUnlockedAchievementTitles(newlyUnlocked.map((id) => ACHIEVEMENT_DEFINITIONS_BY_ID[id].title))
+          refreshUnlocks()
+        })
         return
       }
 
@@ -413,10 +416,18 @@ export const Main = (): JSX.Element => {
     (details: LossDetails) => {
       // A loss decides the round too — see roundDecidedRef's own declaration.
       roundDecidedRef.current = true
+      // Cleared up front, same as handleSolved above — otherwise a title left over from a
+      // previous round's win would still be sitting in state (and, now that RoundEndDialog shows
+      // unlocks on a loss too, would incorrectly bleed into this one).
+      setUnlockedAchievementTitles([])
       // Same separation as the win path above — a friend beating you shouldn't break your solo
-      // streak or count toward your solo losses.
+      // streak or count toward your solo losses. A pnp loss can still cross a "games played"
+      // threshold though, so it's checked the same way a pnp win is.
       if (pnpPhase) {
-        void recordPnpLoss().then(refreshUnlocks)
+        void recordPnpLoss().then((newlyUnlocked) => {
+          if (newlyUnlocked.length > 0) setUnlockedAchievementTitles(newlyUnlocked.map((id) => ACHIEVEMENT_DEFINITIONS_BY_ID[id].title))
+          refreshUnlocks()
+        })
         return
       }
       void recordLoss(details).then(refreshUnlocks)

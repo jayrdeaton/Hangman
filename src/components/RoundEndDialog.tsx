@@ -33,7 +33,11 @@ export type RoundEndDialogProps = {
 
 export const RoundEndDialog = ({ visible, outcome, phrase, categoryProgress, unlockedAchievementTitles, onDismiss, continueLabel }: RoundEndDialogProps): JSX.Element => {
   const theme = useTheme()
-  const hasUnlocks = outcome === 'win' && Boolean(unlockedAchievementTitles?.length)
+  // Not gated on outcome === 'win' -- a pass-and-play LOSS can still cross a "games played"
+  // threshold (see achievements.ts's pnp_played_* ladder), and the solo path never populates
+  // unlockedAchievementTitles on a loss (recordLoss unlocks nothing), so this stays false there
+  // regardless.
+  const hasUnlocks = Boolean(unlockedAchievementTitles?.length)
 
   // Gentle, continuous grow-and-settle rather than a one-shot pulse — the dialog has no fixed
   // lifetime (it stays up until "Next puzzle" is pressed), so a single pulse would read as done and

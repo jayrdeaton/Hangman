@@ -1,5 +1,6 @@
+import { ToastProvider } from '@rific/toaster'
 import { fireEvent, render as rtlRender, waitFor, within } from '@testing-library/react-native'
-import type { ReactElement } from 'react'
+import type { ReactElement, ReactNode } from 'react'
 import { PaperProvider } from 'react-native-paper'
 
 import { PacksScreen } from '@/components/PacksScreen'
@@ -25,7 +26,16 @@ const builtIn = () => getPuzzleManifest().filter((item) => item.count > 0)[0]
 // ConfirmDialog renders through a react-native-paper Portal (Delete pack's confirm dialog) — needs
 // a Portal.Host ancestor, normally supplied by @rific/auto-paper's Provider at the app root; same
 // wrapper AchievementsDrawer.test.tsx uses for its own Portal-based dialog.
-const render = (ui: ReactElement) => rtlRender(ui, { wrapper: PaperProvider })
+// ToastProvider is also required — this screen always mounts its own PackEditorDrawer (translated
+// off-screen when not visible, same as every other drawer in this lineage), and that drawer's own
+// form calls useToast() to surface a newly-unlocked custom-pack achievement (see achievements.ts's
+// packs_created_* ladder), which throws outside a ToastProvider ancestor.
+const Wrapper = ({ children }: { children: ReactNode }) => (
+  <ToastProvider>
+    <PaperProvider>{children}</PaperProvider>
+  </ToastProvider>
+)
+const render = (ui: ReactElement) => rtlRender(ui, { wrapper: Wrapper })
 
 const renderScreen = (overrides: Partial<React.ComponentProps<typeof PacksScreen>> = {}) => render(<PacksScreen visible onDismiss={jest.fn()} selectedKeys={[]} onChangeSelectedKeys={jest.fn()} packsVersion={0} onPacksChanged={jest.fn()} {...overrides} />)
 

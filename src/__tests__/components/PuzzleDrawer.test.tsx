@@ -1,5 +1,6 @@
 import { type AutoPaperTheme, getColorRoles, Provider, useAutoPaperTheme } from '@rific/auto-paper'
 import { HapticPressProvider } from '@rific/haptic-press'
+import { ToastProvider } from '@rific/toaster'
 import { useUpdater } from '@rific/updater'
 import { fireEvent, render as rtlRender } from '@testing-library/react-native'
 import { type ReactElement, type ReactNode, useEffect } from 'react'
@@ -42,7 +43,16 @@ const colorChannels = (color: string): [number, number, number] => {
 // not a manual JSX wrap — several tests below call `rerender` with a bare <PuzzleDrawer> (no
 // wrapper of its own), which only keeps this Provider in the tree if RTL re-applies `wrapper`
 // itself on every rerender the way it does automatically for this option.
-const HapticWrapper = ({ children }: { children: ReactNode }) => <HapticPressProvider paper={RNPaper}>{children}</HapticPressProvider>
+// ToastProvider is also required — PuzzleDrawer's own tree reaches down through PacksScreen into
+// PackEditorDrawer (always mounted, translated off-screen, same as every other drawer in this
+// lineage), and that drawer's own form calls useToast() to surface a newly-unlocked custom-pack
+// achievement (see achievements.ts's packs_created_* ladder), which throws outside a ToastProvider
+// ancestor.
+const HapticWrapper = ({ children }: { children: ReactNode }) => (
+  <ToastProvider>
+    <HapticPressProvider paper={RNPaper}>{children}</HapticPressProvider>
+  </ToastProvider>
+)
 const render = (ui: ReactElement) => rtlRender(ui, { wrapper: HapticWrapper })
 
 jest.mock('@/utils/alert', () => ({

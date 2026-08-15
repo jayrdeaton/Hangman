@@ -1,5 +1,5 @@
 import { VISIBLE_MODES } from '@/modes/registry'
-import { clearAchievements, DEFAULT_ACHIEVEMENT_STATS, getAchievementStats, recordLoss, recordPnpLoss, recordPnpWin, recordSolve, type SolveResult } from '@/utils/achievements'
+import { clearAchievements, DEFAULT_ACHIEVEMENT_STATS, getAchievementStats, recordCustomPackCreated, recordLoss, recordPnpLoss, recordPnpWin, recordSolve, type SolveResult } from '@/utils/achievements'
 
 let mockStore: Record<string, string>
 
@@ -62,6 +62,7 @@ describe('getAchievementStats', () => {
     expect(stats.pnpLosses).toBe(0)
     expect(stats.flawlessWins).toBe(0)
     expect(stats.noHintWins).toBe(0)
+    expect(stats.customPacksCreated).toBe(0)
     // Untouched fields from the older shape still come through.
     expect(stats.currentStreak).toBe(2)
     expect(stats.bestStreak).toBe(4)
@@ -216,6 +217,28 @@ describe('recordSolve — win_streak_5', () => {
   })
 })
 
+describe('recordSolve — win_streak_10 / win_streak_20', () => {
+  it('unlocks win_streak_10 at the 10th consecutive win and not before', async () => {
+    mockStore[ACHIEVEMENTS_KEY] = JSON.stringify({ unlockedIds: [], wonModeIds: [], currentStreak: 9, bestStreak: 9, totalSolved: 9 })
+    const unlocked = await recordSolve(neutralSolve())
+    expect(unlocked).toContain('win_streak_10')
+
+    mockStore[ACHIEVEMENTS_KEY] = JSON.stringify({ unlockedIds: [], wonModeIds: [], currentStreak: 7, bestStreak: 7, totalSolved: 7 })
+    const early = await recordSolve(neutralSolve())
+    expect(early).not.toContain('win_streak_10')
+  })
+
+  it('unlocks win_streak_20 at the 20th consecutive win and not before', async () => {
+    mockStore[ACHIEVEMENTS_KEY] = JSON.stringify({ unlockedIds: [], wonModeIds: [], currentStreak: 19, bestStreak: 19, totalSolved: 19 })
+    const unlocked = await recordSolve(neutralSolve())
+    expect(unlocked).toContain('win_streak_20')
+
+    mockStore[ACHIEVEMENTS_KEY] = JSON.stringify({ unlockedIds: [], wonModeIds: [], currentStreak: 17, bestStreak: 17, totalSolved: 17 })
+    const early = await recordSolve(neutralSolve())
+    expect(early).not.toContain('win_streak_20')
+  })
+})
+
 describe('recordLoss', () => {
   it('resets currentStreak to 0 but leaves totalSolved, bestStreak, and unlockedIds untouched', async () => {
     await recordSolve({ modeId: 'm', wrongGuesses: 0, guessCount: 5, hintWasAvailable: false, hintRevealed: false })
@@ -264,6 +287,79 @@ describe('recordPnpWin / recordPnpLoss', () => {
     expect(stats.currentStreak).toBe(1)
     expect(stats.lettersGuessed).toBe(6)
   })
+
+  it('unlocks pnp_played_5 off total games played (wins + losses combined), not wins alone', async () => {
+    await recordPnpWin()
+    await recordPnpLoss()
+    await recordPnpLoss()
+    const early = await recordPnpWin()
+    expect(early).not.toContain('pnp_played_5')
+
+    // The 5th game overall is a LOSS, not a win — still crosses the threshold, confirming the
+    // ladder counts total games played rather than wins alone.
+    const unlocked = await recordPnpLoss()
+    expect(unlocked).toContain('pnp_played_5')
+  })
+
+  it('unlocks pnp_played_25 / pnp_played_100 / pnp_played_250 as total games played crosses each threshold', async () => {
+    mockStore[ACHIEVEMENTS_KEY] = JSON.stringify({ unlockedIds: [], wonModeIds: [], currentStreak: 0, bestStreak: 0, pnpWins: 12, pnpLosses: 12 })
+    const at25 = await recordPnpWin()
+    expect(at25).toContain('pnp_played_25')
+
+    mockStore[ACHIEVEMENTS_KEY] = JSON.stringify({ unlockedIds: [], wonModeIds: [], currentStreak: 0, bestStreak: 0, pnpWins: 50, pnpLosses: 49 })
+    const at100 = await recordPnpWin()
+    expect(at100).toContain('pnp_played_100')
+
+    mockStore[ACHIEVEMENTS_KEY] = JSON.stringify({ unlockedIds: [], wonModeIds: [], currentStreak: 0, bestStreak: 0, pnpWins: 125, pnpLosses: 124 })
+    const at250 = await recordPnpWin()
+    expect(at250).toContain('pnp_played_250')
+  })
+
+  it('only returns a newly-unlocked pnp_played_* id on the call that first crosses its threshold', async () => {
+    for (let i = 0; i < 4; i++) await recordPnpWin()
+    const first = await recordPnpWin()
+    expect(first).toContain('pnp_played_5')
+
+    const second = await recordPnpWin()
+    expect(second).not.toContain('pnp_played_5')
+  })
+})
+
+describe('recordCustomPackCreated', () => {
+  it('increments customPacksCreated on every call', async () => {
+    await recordCustomPackCreated()
+    await recordCustomPackCreated()
+
+    const stats = await getAchievementStats()
+    expect(stats.customPacksCreated).toBe(2)
+  })
+
+  it('unlocks packs_created_1 on the first call', async () => {
+    const unlocked = await recordCustomPackCreated()
+    expect(unlocked).toContain('packs_created_1')
+  })
+
+  it('unlocks packs_created_5 / packs_created_15 / packs_created_30 as the count crosses each threshold', async () => {
+    mockStore[ACHIEVEMENTS_KEY] = JSON.stringify({ unlockedIds: [], wonModeIds: [], currentStreak: 0, bestStreak: 0, customPacksCreated: 4 })
+    const at5 = await recordCustomPackCreated()
+    expect(at5).toContain('packs_created_5')
+
+    mockStore[ACHIEVEMENTS_KEY] = JSON.stringify({ unlockedIds: [], wonModeIds: [], currentStreak: 0, bestStreak: 0, customPacksCreated: 14 })
+    const at15 = await recordCustomPackCreated()
+    expect(at15).toContain('packs_created_15')
+
+    mockStore[ACHIEVEMENTS_KEY] = JSON.stringify({ unlockedIds: [], wonModeIds: [], currentStreak: 0, bestStreak: 0, customPacksCreated: 29 })
+    const at30 = await recordCustomPackCreated()
+    expect(at30).toContain('packs_created_30')
+  })
+
+  it('only returns packs_created_1 on the first call, not subsequent ones', async () => {
+    const first = await recordCustomPackCreated()
+    expect(first).toContain('packs_created_1')
+
+    const second = await recordCustomPackCreated()
+    expect(second).not.toContain('packs_created_1')
+  })
 })
 
 describe('recordSolve — milestones', () => {
@@ -305,6 +401,56 @@ describe('recordSolve — milestones', () => {
     mockStore[ACHIEVEMENTS_KEY] = JSON.stringify({ unlockedIds: [], wonModeIds: [], currentStreak: 0, bestStreak: 0, totalSolved: 497 })
     const early = await recordSolve(neutralSolve())
     expect(early).not.toContain('milestone_500')
+  })
+
+  it('unlocks milestone_1000 at the 1,000th solve and not before', async () => {
+    mockStore[ACHIEVEMENTS_KEY] = JSON.stringify({ unlockedIds: [], wonModeIds: [], currentStreak: 0, bestStreak: 0, totalSolved: 999 })
+    const unlocked = await recordSolve(neutralSolve())
+    expect(unlocked).toContain('milestone_1000')
+
+    mockStore[ACHIEVEMENTS_KEY] = JSON.stringify({ unlockedIds: [], wonModeIds: [], currentStreak: 0, bestStreak: 0, totalSolved: 997 })
+    const early = await recordSolve(neutralSolve())
+    expect(early).not.toContain('milestone_1000')
+  })
+
+  it('unlocks milestone_2500 at the 2,500th solve and not before', async () => {
+    mockStore[ACHIEVEMENTS_KEY] = JSON.stringify({ unlockedIds: [], wonModeIds: [], currentStreak: 0, bestStreak: 0, totalSolved: 2499 })
+    const unlocked = await recordSolve(neutralSolve())
+    expect(unlocked).toContain('milestone_2500')
+
+    mockStore[ACHIEVEMENTS_KEY] = JSON.stringify({ unlockedIds: [], wonModeIds: [], currentStreak: 0, bestStreak: 0, totalSolved: 2497 })
+    const early = await recordSolve(neutralSolve())
+    expect(early).not.toContain('milestone_2500')
+  })
+
+  it('unlocks milestone_5000 at the 5,000th solve and not before', async () => {
+    mockStore[ACHIEVEMENTS_KEY] = JSON.stringify({ unlockedIds: [], wonModeIds: [], currentStreak: 0, bestStreak: 0, totalSolved: 4999 })
+    const unlocked = await recordSolve(neutralSolve())
+    expect(unlocked).toContain('milestone_5000')
+
+    mockStore[ACHIEVEMENTS_KEY] = JSON.stringify({ unlockedIds: [], wonModeIds: [], currentStreak: 0, bestStreak: 0, totalSolved: 4997 })
+    const early = await recordSolve(neutralSolve())
+    expect(early).not.toContain('milestone_5000')
+  })
+
+  it('unlocks milestone_10000 at the 10,000th solve and not before', async () => {
+    mockStore[ACHIEVEMENTS_KEY] = JSON.stringify({ unlockedIds: [], wonModeIds: [], currentStreak: 0, bestStreak: 0, totalSolved: 9999 })
+    const unlocked = await recordSolve(neutralSolve())
+    expect(unlocked).toContain('milestone_10000')
+
+    mockStore[ACHIEVEMENTS_KEY] = JSON.stringify({ unlockedIds: [], wonModeIds: [], currentStreak: 0, bestStreak: 0, totalSolved: 9997 })
+    const early = await recordSolve(neutralSolve())
+    expect(early).not.toContain('milestone_10000')
+  })
+
+  it('unlocks milestone_20000 at the 20,000th solve and not before', async () => {
+    mockStore[ACHIEVEMENTS_KEY] = JSON.stringify({ unlockedIds: [], wonModeIds: [], currentStreak: 0, bestStreak: 0, totalSolved: 19999 })
+    const unlocked = await recordSolve(neutralSolve())
+    expect(unlocked).toContain('milestone_20000')
+
+    mockStore[ACHIEVEMENTS_KEY] = JSON.stringify({ unlockedIds: [], wonModeIds: [], currentStreak: 0, bestStreak: 0, totalSolved: 19997 })
+    const early = await recordSolve(neutralSolve())
+    expect(early).not.toContain('milestone_20000')
   })
 })
 
