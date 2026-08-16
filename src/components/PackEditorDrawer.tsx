@@ -123,7 +123,10 @@ const PackEditorForm = ({ editingKey, onSaved, onCancel, onDelete, onShare }: Pa
   // blurOnSubmit=false on every field below (see PnpWordPrompt's own comment on register()) — the
   // TextInput's native default would otherwise race each onSubmitEditing's own focus() call and
   // flicker the keyboard shut and back open between fields.
-  const { ref: labelRef, onSubmitEditing: focusFirstEntry, blurOnSubmit: labelBlurOnSubmit } = register()
+  const {
+    ref: labelRef,
+    props: { onSubmitEditing: focusFirstEntry, blurOnSubmit: labelBlurOnSubmit }
+  } = register()
 
   // Holds the always-blank trailing row's answer-field instance, kept up to date by the ref
   // callback below (see entryRows) — written at commit time via the ref callback (fired by React
@@ -179,8 +182,14 @@ const PackEditorForm = ({ editingKey, onSaved, onCancel, onDelete, onShare }: Pa
   }
 
   const entryRows = displayEntries.map((entry, index) => {
-    const { ref: answerRef, onSubmitEditing: focusHint, blurOnSubmit: answerBlurOnSubmit } = register()
-    const { ref: hintRef, onSubmitEditing: focusNextAnswer, blurOnSubmit: hintBlurOnSubmit } = register()
+    const {
+      ref: answerRef,
+      props: { onSubmitEditing: focusHint, blurOnSubmit: answerBlurOnSubmit }
+    } = register()
+    const {
+      ref: hintRef,
+      props: { onSubmitEditing: focusNextAnswer, blurOnSubmit: hintBlurOnSubmit }
+    } = register()
     // displayEntries above keeps a blank entry always mounted after the last real one, so there's
     // no special "last" case here — every hint field's return key just advances the chain onto the
     // next answer field, same as every other field, because that next field already exists.

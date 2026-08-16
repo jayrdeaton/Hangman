@@ -40,7 +40,7 @@
     "@rific/auto-paper": "^0.9.4",
     "@rific/drawer": "^0.4.2",
     "@rific/feedback-press": "^0.7.0",
-    "@rific/focus-chain": "^0.4.1",
+    "@rific/focus-chain": "^0.4.3",
     "@rific/scroll-view": "^0.6.5",
     "@rific/splash-gate": "^0.1.2",
     "@rific/toaster": "^0.4.1",

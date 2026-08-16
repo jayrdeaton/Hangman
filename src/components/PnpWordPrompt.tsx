@@ -66,7 +66,10 @@ export const PnpWordPrompt = ({ answer, hint, onAnswerChange, onHintChange, prom
   // blurOnSubmit=false: without it, the TextInput's own native default (blurOnSubmit=true on a
   // single-line field) races the chain's focusHint() call below, blurring right after it just
   // focused and producing a keyboard close/reopen flicker between fields.
-  const { ref: answerRef, onSubmitEditing: focusHint, blurOnSubmit } = register()
+  const {
+    ref: answerRef,
+    props: { onSubmitEditing: focusHint, blurOnSubmit }
+  } = register()
   const { ref: hintRef } = register()
 
   // The same builder the drawer's custom form uses (and that Main uses to score the live board
