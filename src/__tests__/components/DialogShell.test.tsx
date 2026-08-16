@@ -43,7 +43,7 @@ const simulateKeyboardShow = (height: number) => listeners.keyboardWillShow?.({ 
 describe('DialogShell', () => {
   beforeEach(() => {
     listeners = {}
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
     jest.spyOn(Keyboard, 'addListener').mockImplementation((eventName: string, callback: any) => {
       listeners[eventName] = callback
       return { remove: jest.fn() } as unknown as ReturnType<typeof Keyboard.addListener>

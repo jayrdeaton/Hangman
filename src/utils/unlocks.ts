@@ -32,7 +32,7 @@ export const getPuzzleUnlockMap = async (): Promise<PuzzleUnlockMap> => {
     const raw = await AsyncStorage.getItem(PUZZLE_UNLOCKS_KEY)
     if (!raw) return {}
     return normalizeUnlockMap(JSON.parse(raw))
-  } catch (_e) {
+  } catch {
     return {}
   }
 }
@@ -132,7 +132,7 @@ export const markPuzzleUnlocked = async (packKey: string, puzzleId: string): Pro
 
     await AsyncStorage.setItem(PUZZLE_UNLOCKS_KEY, JSON.stringify(unlockMap))
     return true
-  } catch (_e) {
+  } catch {
     return false
   }
 }

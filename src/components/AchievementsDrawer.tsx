@@ -179,7 +179,7 @@ export const AchievementsDrawer = memo(({ visible, onDismiss, unlockVersion, onU
       const result = await mergePuzzleUnlocks(raw)
       onUnlocksChanged()
       void alert('Import complete', `Merged ${result.importedCount} entries. Added ${result.addedCount} new unlocks.`)
-    } catch (_error) {
+    } catch {
       void alert('Invalid backup', 'Could not read that as a Hangman progress backup file.')
     }
   }

@@ -103,7 +103,7 @@ export const getStoredCustomPacks = async (): Promise<CustomPack[]> => {
     const raw = await AsyncStorage.getItem(CUSTOM_PACKS_KEY)
     if (!raw) return []
     return normalizeStoredPacks(JSON.parse(raw))
-  } catch (_e) {
+  } catch {
     return []
   }
 }

@@ -1,6 +1,6 @@
 import { type AutoPaperTheme, useAutoPaperTheme } from '@rific/auto-paper'
 import { Button, useVibration } from '@rific/haptic-press'
-import React, { useEffect, useLayoutEffect, useMemo, useState } from 'react'
+import React, { useEffect, useLayoutEffect, useState } from 'react'
 import { StyleProp, StyleSheet, useWindowDimensions, View, ViewStyle } from 'react-native'
 import Animated, { Easing, useAnimatedStyle, useSharedValue, withDelay, withSequence, withTiming } from 'react-native-reanimated'
 
@@ -184,16 +184,17 @@ const KeyboardKey = ({ letter, isGuessed, isWrong, disabled, width, rippleDistan
   // Randomized once per key, at mount — same pattern as fireworks.tsx's per-particle trajectory —
   // so the cascade below reads as organic tumbling rather than every key following an identical
   // path. Layered on top of the deterministic cascadeBaseDelayMs passed in from the parent.
-  /* eslint-disable-next-line react-hooks/purity */
-  const fallTrajectory = useMemo(
-    () => ({
-      jitterMs: Math.random() * CASCADE_JITTER_MS,
-      durationMs: FALL_DURATION_BASE_MS + Math.random() * FALL_DURATION_JITTER_MS,
-      rotateDeg: (Math.random() < 0.5 ? -1 : 1) * (FALL_ROTATE_DEG_BASE + Math.random() * FALL_ROTATE_DEG_JITTER),
-      driftPx: (Math.random() * 2 - 1) * FALL_DRIFT_PX
-    }),
-    []
-  )
+
+  // useState's lazy initializer, not useMemo — React only guarantees the latter runs once per
+  // mount in practice, not by contract (it may discard and recompute the cache), which is exactly
+  // the impurity react-hooks/purity flags Math.random() for here. The lazy initializer is the
+  // pattern React itself documents for one-time-per-mount randomness.
+  const [fallTrajectory] = useState(() => ({
+    jitterMs: Math.random() * CASCADE_JITTER_MS,
+    durationMs: FALL_DURATION_BASE_MS + Math.random() * FALL_DURATION_JITTER_MS,
+    rotateDeg: (Math.random() < 0.5 ? -1 : 1) * (FALL_ROTATE_DEG_BASE + Math.random() * FALL_ROTATE_DEG_JITTER),
+    driftPx: (Math.random() * 2 - 1) * FALL_DRIFT_PX
+  }))
 
   useLayoutEffect(() => {
     if (!falling) return
@@ -202,18 +203,14 @@ const KeyboardKey = ({ letter, isGuessed, isWrong, disabled, width, rippleDistan
     // separate assignments — Reanimated's own .value setter cancels and replaces whatever's still
     // mid-flight, so a later assignment for "phase 2" would cut phase 1's shake off before it's
     // ever seen.
-    translateX.value = withSequence(
-      ...Array.from({ length: SHAKE_STEPS }, (_, i) => withTiming(i % 2 === 0 ? SHAKE_TRANSLATE_PX : -SHAKE_TRANSLATE_PX, { duration: SHAKE_STEP_MS })),
-      withTiming(0, { duration: SHAKE_STEP_MS }),
-      withDelay(cascadeBaseDelayMs + fallTrajectory.jitterMs, withTiming(fallTrajectory.driftPx, { duration: fallTrajectory.durationMs, easing: Easing.inOut(Easing.quad) }))
-    )
-    rotate.value = withSequence(
-      ...Array.from({ length: SHAKE_STEPS }, (_, i) => withTiming(i % 2 === 0 ? SHAKE_ROTATE_DEG : -SHAKE_ROTATE_DEG, { duration: SHAKE_STEP_MS })),
-      withTiming(0, { duration: SHAKE_STEP_MS }),
-      withDelay(cascadeBaseDelayMs + fallTrajectory.jitterMs, withTiming(fallTrajectory.rotateDeg, { duration: fallTrajectory.durationMs, easing: Easing.linear }))
-    )
+    translateX.value = withSequence(...Array.from({ length: SHAKE_STEPS }, (_, i) => withTiming(i % 2 === 0 ? SHAKE_TRANSLATE_PX : -SHAKE_TRANSLATE_PX, { duration: SHAKE_STEP_MS })), withTiming(0, { duration: SHAKE_STEP_MS }), withDelay(cascadeBaseDelayMs + fallTrajectory.jitterMs, withTiming(fallTrajectory.driftPx, { duration: fallTrajectory.durationMs, easing: Easing.inOut(Easing.quad) })))
+    rotate.value = withSequence(...Array.from({ length: SHAKE_STEPS }, (_, i) => withTiming(i % 2 === 0 ? SHAKE_ROTATE_DEG : -SHAKE_ROTATE_DEG, { duration: SHAKE_STEP_MS })), withTiming(0, { duration: SHAKE_STEP_MS }), withDelay(cascadeBaseDelayMs + fallTrajectory.jitterMs, withTiming(fallTrajectory.rotateDeg, { duration: fallTrajectory.durationMs, easing: Easing.linear })))
     // No shake phase for translateY (keys don't move vertically while trembling) — just the fall,
     // delayed to start exactly when translateX/rotate's own shake-then-wait finishes above.
+    // react-hooks/immutability flags this .value assignment but not the identical translateX/rotate
+    // ones two lines up — Reanimated SharedValues are mutable by design (react-hooks doesn't model
+    // them), and its detection of that here is inconsistent, not a real finding.
+    // eslint-disable-next-line react-hooks/immutability
     translateY.value = withDelay(cascadeDelayMs, withTiming(fallDistance, { duration: fallTrajectory.durationMs, easing: Easing.in(Easing.quad) }))
     // falling is only ever set true once per Keyboard instance (see its own prop comment) —
     // re-running this if fallTrajectory/fallDistance/cascadeBaseDelayMs happened to change would

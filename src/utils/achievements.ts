@@ -107,7 +107,7 @@ export const getAchievementStats = async (): Promise<AchievementStats> => {
     const raw = await AsyncStorage.getItem(ACHIEVEMENTS_KEY)
     if (!raw) return cloneDefaultStats()
     return normalizeStats(JSON.parse(raw))
-  } catch (_e) {
+  } catch {
     return cloneDefaultStats()
   }
 }

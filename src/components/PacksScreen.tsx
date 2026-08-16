@@ -161,7 +161,7 @@ export const PacksScreen = memo(({ visible, onDismiss, selectedKeys, onChangeSel
       selectKey(pack.key)
       onPacksChanged()
       void alert('Pack imported', `Added "${pack.label}" (${commaString(pack.puzzles.length)} puzzles) to your packs.`)
-    } catch (_error) {
+    } catch {
       void alert('Invalid pack', 'Could not read that as a Hangman pack file.')
     }
   }, [selectKey, onPacksChanged])
@@ -274,7 +274,7 @@ export const PacksScreen = memo(({ visible, onDismiss, selectedKeys, onChangeSel
         </Text>
       </>
     ),
-    [customPacks, unlockMap, selectedSet, handleImportFile, toggle]
+    [theme.colors.primary, theme.colors.onPrimary, theme.colors.secondary, theme.colors.onSecondary, customPacks, handleImportFile, unlockMap, selectedSet, toggle]
   )
 
   return (
