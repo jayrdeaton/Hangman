@@ -1,5 +1,5 @@
 import { type AutoPaperTheme, useAutoPaperTheme } from '@rific/auto-paper'
-import { Button, useVibration } from '@rific/haptic-press'
+import { Button, useVibration } from '@rific/feedback-press'
 import React, { useEffect, useLayoutEffect, useState } from 'react'
 import { StyleProp, StyleSheet, useWindowDimensions, View, ViewStyle } from 'react-native'
 import Animated, { Easing, useAnimatedStyle, useSharedValue, withDelay, withSequence, withTiming } from 'react-native-reanimated'
@@ -249,7 +249,11 @@ const KeyboardKey = ({ letter, isGuessed, isWrong, disabled, width, rippleDistan
           land after that internal color in the component's own style arrays, so an explicit color
           there wins even while disabled — that's what actually shows the wrong-guess color rather
           than the generic disabled grey. */}
-      <Button mode='contained' disabled={isGuessed || disabled} buttonColor={theme.colors.primary} textColor={theme.colors.onPrimary} style={[styles.key, width ? { width } : null, isWrong ? { backgroundColor: theme.colors.dangerContainer } : null]} onPress={onPress} hitSlop={KEY_HIT_SLOP} labelStyle={[styles.text, isWrong ? { color: theme.colors.onDangerContainer } : null]}>
+      {/* soundDisabled — a letter guess already plays playCorrect()/playWrong() from Game.tsx's
+          handleGuess, a beat after this same press; without this, the generic feedback-press click
+          would double up with that on every single guess. The key still keeps its own
+          onPress-triggered haptic. */}
+      <Button mode='contained' soundDisabled disabled={isGuessed || disabled} buttonColor={theme.colors.primary} textColor={theme.colors.onPrimary} style={[styles.key, width ? { width } : null, isWrong ? { backgroundColor: theme.colors.dangerContainer } : null]} onPress={onPress} hitSlop={KEY_HIT_SLOP} labelStyle={[styles.text, isWrong ? { color: theme.colors.onDangerContainer } : null]}>
         {letter}
       </Button>
     </Animated.View>

@@ -1,5 +1,5 @@
 import { Menu } from '@rific/auto-paper'
-import { Button } from '@rific/haptic-press'
+import { Button } from '@rific/feedback-press'
 import { FlatList, ScrollViewContext } from '@rific/scroll-view'
 import { JSX, useContext, useEffect, useMemo, useState } from 'react'
 import { StyleSheet, View } from 'react-native'

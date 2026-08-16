@@ -1,5 +1,7 @@
+import { FeedbackPressProvider } from '@rific/feedback-press'
 import { fireEvent, render as rtlRender, within } from '@testing-library/react-native'
-import type { ReactElement } from 'react'
+import type { JSX, ReactElement, ReactNode } from 'react'
+import * as RNPaper from 'react-native-paper'
 import { PaperProvider } from 'react-native-paper'
 
 import { findKeyPosition, Keyboard, LAYOUT_ROWS } from '@/components/Keyboard'
@@ -109,5 +111,29 @@ describe('Keyboard', () => {
     const { getByText } = await render(<Keyboard guessedLetters={[]} phrase='CAT' started={false} onGuess={jest.fn()} />)
 
     expect(getByText('C')).toBeTruthy()
+  })
+
+  // Regression guard for the double-sound hazard: a letter guess already plays
+  // playCorrect()/playWrong() from Game.tsx's handleGuess, a beat after this same press, so every
+  // key must opt out of the generic feedback-press click (see soundDisabled on Keyboard.tsx's own
+  // Button) even though it keeps its haptic. Unlike every other test above, this one wraps in a
+  // real FeedbackPressProvider (not just PaperProvider) since that's the only way a `sound`
+  // callback is ever reachable at all.
+  it('does not play the generic click sound on a letter press, even though the press itself still fires', async () => {
+    const mockClick = jest.fn()
+    const onGuess = jest.fn()
+    const wrapper = ({ children }: { children: ReactNode }): JSX.Element => (
+      <PaperProvider>
+        <FeedbackPressProvider paper={RNPaper} sound={{ selection: mockClick }}>
+          {children}
+        </FeedbackPressProvider>
+      </PaperProvider>
+    )
+    const { getByText } = await rtlRender(<Keyboard guessedLetters={[]} phrase='CAT' onGuess={onGuess} />, { wrapper })
+
+    await fireEvent.press(getByText('A'))
+
+    expect(onGuess).toHaveBeenCalledWith('A')
+    expect(mockClick).not.toHaveBeenCalled()
   })
 })

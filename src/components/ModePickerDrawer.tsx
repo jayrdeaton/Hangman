@@ -1,6 +1,6 @@
 import { AutoPalettePicker, resolveSeedColor, useThemeSettings } from '@rific/auto-paper'
 import { Drawer } from '@rific/drawer'
-import { Button, IconButton, SegmentedButtons, Switch, useHapticSettings } from '@rific/haptic-press'
+import { Button, IconButton, SegmentedButtons, Switch, useHapticSettings } from '@rific/feedback-press'
 import { ScrollView, ScrollViewFooter, ScrollViewHeader, ScrollViewProvider } from '@rific/scroll-view'
 import { JSX, memo, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { FlatList, NativeScrollEvent, NativeSyntheticEvent, StyleSheet, useWindowDimensions, View } from 'react-native'

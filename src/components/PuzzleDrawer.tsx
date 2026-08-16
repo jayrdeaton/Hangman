@@ -1,6 +1,6 @@
 import { resolveSeedColor, useThemeSettings } from '@rific/auto-paper'
 import { Drawer, DrawerEdgeSwipe } from '@rific/drawer'
-import { Button, IconButton, SegmentedButtons, TouchableRipple } from '@rific/haptic-press'
+import { Button, IconButton, SegmentedButtons, TouchableRipple } from '@rific/feedback-press'
 import { FlatList, ScrollViewFooter, ScrollViewHeader, ScrollViewProvider } from '@rific/scroll-view'
 import { useUpdater } from '@rific/updater'
 import { JSX, memo, useCallback, useEffect, useMemo, useState } from 'react'

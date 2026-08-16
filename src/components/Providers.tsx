@@ -28,37 +28,44 @@ export const Providers = ({ children }: ProvidersProps): JSX.Element => (
     <KeyboardWrapper>
       <ReduxProvider store={store}>
         <PersistGate loading={null} persistor={persistor}>
-          {/* Haptic wraps Theme, not the reverse: Theme's <Provider> renders react-native-paper's
-              own Provider internally, which mounts a PortalHost near its own root — Portal content
-              (auto-paper's Dialog, used by ConfirmDialog/RoundEndDialog/PnpHandoffDialog/DialogShell,
-              every one of which renders @rific/haptic-press Buttons/IconButtons inside) gets
-              reparented to that host in the fiber tree, not left as a descendant of wherever it was
-              written. A Haptic nested inside Theme would sit outside the portaled subtree entirely,
-              so its injected `paper` (see Haptic.tsx) would never reach any Button rendered inside a
-              Dialog. Hoisting Haptic above Theme makes it an ancestor of the PortalHost too, so
-              portaled content stays inside its context regardless of where react-native-paper mounts
-              the host. */}
-          <Haptic>
-            <Theme>
-              {/* Nested inside Theme, not above it, for the same reason Haptic is hoisted above:
-                  Toaster's Portal (when `paper` is injected, as here) reparents into the same
-                  PortalHost react-native-paper's own Provider mounts inside Theme, and paper's own
-                  useTheme() call needs to run below Theme's Provider to resolve the app's actual
-                  computed theme rather than Paper's own default. */}
-              <ToastProvider haptics={ExpoHaptics} paper={RNPaper}>
-                <KeyboardLayoutProvider>
-                  <SoundSettingsProvider>
+          {/* Above Haptic, not below (its previous position, nested inside KeyboardLayoutProvider)
+              — Haptic.tsx reads useClickSound() (which itself reads useSoundSettings()) to wire
+              FeedbackPressProvider's `sound` prop, so this must be an ancestor of Haptic or that
+              read would silently resolve to SoundSettingsContext's static default ({ enabled: true })
+              instead of the persisted/toggleable value. SoundSettingsProvider has no Portal content
+              of its own (unlike Haptic below), so it doesn't share Haptic's own reason for sitting
+              above Theme specifically — it only needs to be an ancestor of Haptic. */}
+          <SoundSettingsProvider>
+            {/* Haptic wraps Theme, not the reverse: Theme's <Provider> renders react-native-paper's
+                own Provider internally, which mounts a PortalHost near its own root — Portal content
+                (auto-paper's Dialog, used by ConfirmDialog/RoundEndDialog/PnpHandoffDialog/DialogShell,
+                every one of which renders @rific/feedback-press Buttons/IconButtons inside) gets
+                reparented to that host in the fiber tree, not left as a descendant of wherever it was
+                written. A Haptic nested inside Theme would sit outside the portaled subtree entirely,
+                so its injected `paper` (see Haptic.tsx) would never reach any Button rendered inside a
+                Dialog. Hoisting Haptic above Theme makes it an ancestor of the PortalHost too, so
+                portaled content stays inside its context regardless of where react-native-paper mounts
+                the host. */}
+            <Haptic>
+              <Theme>
+                {/* Nested inside Theme, not above it, for the same reason Haptic is hoisted above:
+                    Toaster's Portal (when `paper` is injected, as here) reparents into the same
+                    PortalHost react-native-paper's own Provider mounts inside Theme, and paper's own
+                    useTheme() call needs to run below Theme's Provider to resolve the app's actual
+                    computed theme rather than Paper's own default. */}
+                <ToastProvider haptics={ExpoHaptics} paper={RNPaper}>
+                  <KeyboardLayoutProvider>
                     <AutoSaveCustomProvider>
                       <PackSelectionProvider>
                         <PuzzleDefaultsProvider>{children}</PuzzleDefaultsProvider>
                       </PackSelectionProvider>
                     </AutoSaveCustomProvider>
-                  </SoundSettingsProvider>
-                </KeyboardLayoutProvider>
-                <Toaster clearButton={null} historyButton={null} limit={1} />
-              </ToastProvider>
-            </Theme>
-          </Haptic>
+                  </KeyboardLayoutProvider>
+                  <Toaster clearButton={null} historyButton={null} limit={1} />
+                </ToastProvider>
+              </Theme>
+            </Haptic>
+          </SoundSettingsProvider>
         </PersistGate>
       </ReduxProvider>
     </KeyboardWrapper>

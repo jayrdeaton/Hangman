@@ -8,6 +8,9 @@ jest.mock('expo-haptics', () => ({
   ImpactFeedbackStyle: { Light: 'light', Medium: 'medium', Heavy: 'heavy' }
 }))
 
+const mockPlayPop = jest.fn()
+jest.mock('@/hooks/usePopSound', () => ({ usePopSound: () => ({ playPop: mockPlayPop }) }))
+
 const mockImpactAsync = jest.mocked(haptics.impactAsync)
 
 const LAYOUT_EVENT = { nativeEvent: { layout: { x: 0, y: 0, width: 320, height: 480 } } }
@@ -22,6 +25,7 @@ const PARTICLES_PER_BURST = 14
 describe('Fireworks', () => {
   beforeEach(() => {
     mockImpactAsync.mockClear()
+    mockPlayPop.mockClear()
   })
 
   afterEach(() => {
@@ -50,6 +54,30 @@ describe('Fireworks', () => {
     })
 
     expect(mockImpactAsync.mock.calls.length).toBeGreaterThan(1)
+  })
+
+  it('gives every burst a pop sound as it spawns', async () => {
+    const { root } = await render(<Fireworks colors={COLORS} onComplete={jest.fn()} />)
+
+    await fireEvent(root!, 'layout', LAYOUT_EVENT)
+
+    expect(mockPlayPop).toHaveBeenCalledTimes(1)
+  })
+
+  it('plays a pop sound again for every successive burst, not just the first', async () => {
+    jest.useFakeTimers()
+    const { root } = await render(<Fireworks colors={COLORS} onComplete={jest.fn()} />)
+
+    await act(async () => {
+      await fireEvent(root!, 'layout', LAYOUT_EVENT)
+    })
+    expect(mockPlayPop).toHaveBeenCalledTimes(1)
+
+    await act(async () => {
+      jest.advanceTimersByTime((MAX_BURST_INTERVAL_MS + BURST_LIFETIME_MS) * 3)
+    })
+
+    expect(mockPlayPop.mock.calls.length).toBeGreaterThan(1)
   })
 
   it('renders no particles until layout fires, then renders one burst worth of particles', async () => {

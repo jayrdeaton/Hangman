@@ -1,4 +1,4 @@
-import { HapticPressProvider } from '@rific/haptic-press'
+import { FeedbackPressProvider } from '@rific/feedback-press'
 import { fireEvent, render as rtlRender, within } from '@testing-library/react-native'
 import type { ReactElement, ReactNode } from 'react'
 import * as RNPaper from 'react-native-paper'
@@ -35,13 +35,13 @@ const seedPrefs = (patch: Partial<{ statusFilter: string; difficultyFilter: stri
 // The filter menus render through a react-native-paper Portal — needs a Portal.Host ancestor,
 // normally supplied by @rific/auto-paper's Provider at the app root; same wrapper
 // PackEditorDrawer.test.tsx/PacksScreen.test.tsx use for their own Portal-based UI. Also needs
-// HapticPressProvider's real `paper` module injected (see Haptic.tsx, the app's own root
-// wiring) — without it, @rific/haptic-press's Button falls back to a bare RN Pressable that
+// FeedbackPressProvider's real `paper` module injected (see Haptic.tsx, the app's own root
+// wiring) — without it, @rific/feedback-press's Button falls back to a bare RN Pressable that
 // drops testID/accessibilityLabel entirely, which is what the Status/Difficulty buttons below
 // rely on.
 const Wrapper = ({ children }: { children: ReactNode }) => (
   <RNPaper.PaperProvider>
-    <HapticPressProvider paper={RNPaper}>{children}</HapticPressProvider>
+    <FeedbackPressProvider paper={RNPaper}>{children}</FeedbackPressProvider>
   </RNPaper.PaperProvider>
 )
 const render = (ui: ReactElement) => rtlRender(ui, { wrapper: Wrapper })

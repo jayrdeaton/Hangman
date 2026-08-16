@@ -1,5 +1,5 @@
 import { Dialog } from '@rific/auto-paper'
-import { Button } from '@rific/haptic-press'
+import { Button } from '@rific/feedback-press'
 import { JSX, useEffect } from 'react'
 import { AccessibilityInfo, StyleSheet, View } from 'react-native'
 import { Icon, ProgressBar, Text, useTheme } from 'react-native-paper'

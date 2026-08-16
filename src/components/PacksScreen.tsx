@@ -1,5 +1,5 @@
 import { Drawer } from '@rific/drawer'
-import { Button, Checkbox, IconButton } from '@rific/haptic-press'
+import { Button, Checkbox, IconButton } from '@rific/feedback-press'
 import { FlatList, ScrollViewFooter, ScrollViewHeader, ScrollViewProvider } from '@rific/scroll-view'
 import { JSX, memo, useCallback, useEffect, useMemo, useState } from 'react'
 import { StyleSheet, View } from 'react-native'

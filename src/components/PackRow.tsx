@@ -1,4 +1,4 @@
-import { Card } from '@rific/haptic-press'
+import { Card } from '@rific/feedback-press'
 import { JSX, memo, ReactNode } from 'react'
 import { StyleSheet, View } from 'react-native'
 import { Avatar, ProgressBar, Text, useTheme } from 'react-native-paper'

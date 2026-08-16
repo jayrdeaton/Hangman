@@ -1,4 +1,4 @@
-import { TouchableRipple } from '@rific/haptic-press'
+import { TouchableRipple } from '@rific/feedback-press'
 import { JSX } from 'react'
 import { StyleSheet, View } from 'react-native'
 import { Icon, Text, useTheme } from 'react-native-paper'
@@ -75,7 +75,7 @@ export const PuzzleInfoRow = ({ difficultyTier, packLabel, hint, hintRevealed, o
           // and only changing its content/disabled state lets that animation finish
           // naturally. TouchableRipple itself (not Button) imposes no padding/min-height of
           // its own, so it still matches the difficulty pill's geometry exactly. The
-          // @rific/haptic-press wrapper (not react-native-paper's own) fires the app's
+          // @rific/feedback-press wrapper (not react-native-paper's own) fires the app's
           // haptic-setting-aware selection tap on top of that for free.
           <TouchableRipple onPress={onRevealHint} disabled={hintRevealed} accessibilityRole='button' accessibilityLabel={hintRevealed ? hintAccessibilityLabel : 'Show hint'} hitSlop={8} style={[styles.pill, { backgroundColor: tertiaryColor, borderColor: tertiaryColor }]}>
             <View style={styles.hintPill}>

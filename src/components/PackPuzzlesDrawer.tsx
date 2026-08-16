@@ -1,5 +1,5 @@
 import { Drawer } from '@rific/drawer'
-import { Button, IconButton } from '@rific/haptic-press'
+import { Button, IconButton } from '@rific/feedback-press'
 import { ScrollViewFooter, ScrollViewHeader, ScrollViewProvider } from '@rific/scroll-view'
 import { JSX, memo, useEffect, useMemo, useState } from 'react'
 import { StyleSheet, useWindowDimensions, View } from 'react-native'

@@ -1,5 +1,5 @@
 import { Provider } from '@rific/auto-paper'
-import { HapticPressProvider } from '@rific/haptic-press'
+import { FeedbackPressProvider } from '@rific/feedback-press'
 import { act, fireEvent, render as rtlRender } from '@testing-library/react-native'
 import type { ReactElement, ReactNode } from 'react'
 import * as RNPaper from 'react-native-paper'
@@ -26,15 +26,15 @@ const OTHER_MODE_ACCESSIBILITY_LABEL = /Letters Only mode/
 const SELECTED_MODE_ACCESSIBILITY_LABEL = /Classic mode/
 
 // PaperProvider (react-native-paper's own useTheme()), auto-paper's Provider (success/warning/
-// danger roles, PalettePicker/AppearancePicker's own theme plumbing), and HapticPressProvider's
+// danger roles, PalettePicker/AppearancePicker's own theme plumbing), and FeedbackPressProvider's
 // real `paper` module (see Haptic.tsx, the app's own root wiring — without it, @rific/haptic-
 // press's IconButton/SegmentedButtons/Pressable all fall back to a bare, unstyled RN element that
 // drops accessibilityLabel entirely) — the same three this app's own Providers.tsx always nests
 // together, in the same order (Haptic outside Theme).
 const Wrapper = ({ children }: { children: ReactNode }) => (
-  <HapticPressProvider paper={RNPaper}>
+  <FeedbackPressProvider paper={RNPaper}>
     <Provider initialValue={{ appearance: 'light' }}>{children}</Provider>
-  </HapticPressProvider>
+  </FeedbackPressProvider>
 )
 
 const render = (ui: ReactElement, keyboardLayout?: Partial<KeyboardLayoutContextType>) => {

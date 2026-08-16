@@ -1,6 +1,6 @@
 import { type AutoPaperTheme, useAutoPaperTheme } from '@rific/auto-paper'
 import { Drawer } from '@rific/drawer'
-import { Button, IconButton } from '@rific/haptic-press'
+import { Button, IconButton } from '@rific/feedback-press'
 import { FlatList, ScrollViewFooter, ScrollViewHeader, ScrollViewProvider } from '@rific/scroll-view'
 import { JSX, memo, useCallback, useEffect, useMemo, useState } from 'react'
 import { StyleSheet, View } from 'react-native'
@@ -387,7 +387,7 @@ export const AchievementsDrawer = memo(({ visible, onDismiss, unlockVersion, onU
                 side, matching PuzzleDrawer (the Game Menu) — this only opens from a tap on that
                 drawer's own quick-look card now, so its own exit action stays under the same
                 thumb that opened it, same as PackPuzzlesDrawer already does for the same reason.
-                backAction, not trailingAction — IconButton here is @rific/haptic-press's own
+                backAction, not trailingAction — IconButton here is @rific/feedback-press's own
                 wrapper (already fires haptics), unlike Appbar.BackAction, so no manual selection()
                 call is needed the way backAction needs one elsewhere. The top-level exit is
                 arrow-left, not X — mirrors PuzzleDrawer's own close icon exactly, rather than the

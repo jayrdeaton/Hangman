@@ -1,5 +1,5 @@
 import { Dialog } from '@rific/auto-paper'
-import { IconButton } from '@rific/haptic-press'
+import { IconButton } from '@rific/feedback-press'
 import { JSX, ReactNode, useEffect, useState } from 'react'
 import { Keyboard, type KeyboardEvent, LayoutChangeEvent, Platform, StyleSheet, useWindowDimensions, View } from 'react-native'
 import { Text } from 'react-native-paper'

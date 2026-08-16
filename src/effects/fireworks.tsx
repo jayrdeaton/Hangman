@@ -4,6 +4,8 @@ import { LayoutChangeEvent, StyleSheet, View } from 'react-native'
 import Animated, { Easing, useAnimatedProps, useSharedValue, withSequence, withTiming } from 'react-native-reanimated'
 import { Circle, Svg } from 'react-native-svg'
 
+import { usePopSound } from '@/hooks/usePopSound'
+
 import type { CelebrationProps } from './registry'
 
 const AnimatedCircle = Animated.createAnimatedComponent(Circle)
@@ -91,6 +93,7 @@ const Burst = ({ originX, originY, color, outline }: BurstSpec & { outline: stri
 
 export const Fireworks = ({ colors, dark = false }: CelebrationProps): JSX.Element => {
   const outline = dark ? DARK_MODE_OUTLINE : LIGHT_MODE_OUTLINE
+  const { playPop } = usePopSound()
   const [size, setSize] = useState({ width: 0, height: 0 })
   const [bursts, setBursts] = useState<BurstSpec[]>([])
   const nextIdRef = useRef(0)
@@ -123,6 +126,7 @@ export const Fireworks = ({ colors, dark = false }: CelebrationProps): JSX.Eleme
       // like a repeated thud instead of the quick, textured "pop" a firework bursting should feel
       // like.
       void haptics.impactAsync(haptics.ImpactFeedbackStyle.Light)
+      playPop()
 
       const cleanupTimer = setTimeout(() => {
         cleanupTimers.delete(cleanupTimer)

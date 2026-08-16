@@ -1,4 +1,4 @@
-import { AppbarAction } from '@rific/haptic-press'
+import { AppbarAction } from '@rific/feedback-press'
 import * as Linking from 'expo-linking'
 import { JSX, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Keyboard, Platform, StyleSheet, View } from 'react-native'

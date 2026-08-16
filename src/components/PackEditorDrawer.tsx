@@ -1,7 +1,7 @@
 import { useAutoPaperTheme } from '@rific/auto-paper'
 import { Drawer } from '@rific/drawer'
 import { useFocusChain } from '@rific/focus-chain'
-import { Button, IconButton } from '@rific/haptic-press'
+import { Button, IconButton } from '@rific/feedback-press'
 import { ScrollView, ScrollViewFooter, ScrollViewHeader, ScrollViewProvider } from '@rific/scroll-view'
 import { useToast } from '@rific/toaster'
 import { JSX, memo, useMemo, useRef, useState } from 'react'

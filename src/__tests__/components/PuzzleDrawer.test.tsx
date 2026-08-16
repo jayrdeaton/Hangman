@@ -1,5 +1,5 @@
 import { type AutoPaperTheme, getColorRoles, Provider, useAutoPaperTheme } from '@rific/auto-paper'
-import { HapticPressProvider } from '@rific/haptic-press'
+import { FeedbackPressProvider } from '@rific/feedback-press'
 import { ToastProvider } from '@rific/toaster'
 import { useUpdater } from '@rific/updater'
 import { fireEvent, render as rtlRender } from '@testing-library/react-native'
@@ -34,8 +34,8 @@ const colorChannels = (color: string): [number, number, number] => {
   return [(n >> 16) & 255, (n >> 8) & 255, n & 255]
 }
 
-// HapticPressProvider's real `paper` module injected everywhere below (see Haptic.tsx, the app's
-// own root wiring) — without it, @rific/haptic-press's Button/IconButton/SegmentedButtons all fall
+// FeedbackPressProvider's real `paper` module injected everywhere below (see Haptic.tsx, the app's
+// own root wiring) — without it, @rific/feedback-press's Button/IconButton/SegmentedButtons all fall
 // back to a bare, unstyled RN element that drops accessibilityLabel entirely and renders with a
 // completely different DOM shape (see that package's own renderFallbackIcon/SegmentedButtons
 // fallback), which both the label-based queries and the parent/parent DOM-traversal assertions
@@ -50,7 +50,7 @@ const colorChannels = (color: string): [number, number, number] => {
 // ancestor.
 const HapticWrapper = ({ children }: { children: ReactNode }) => (
   <ToastProvider>
-    <HapticPressProvider paper={RNPaper}>{children}</HapticPressProvider>
+    <FeedbackPressProvider paper={RNPaper}>{children}</FeedbackPressProvider>
   </ToastProvider>
 )
 const render = (ui: ReactElement) => rtlRender(ui, { wrapper: HapticWrapper })
