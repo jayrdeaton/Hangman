@@ -23,14 +23,24 @@ export const useSoundEffects = () => {
   const winPlayer = useAudioPlayer(WIN_SOUND)
   const lossPlayer = useAudioPlayer(LOSS_SOUND)
 
+  // Deferred a tick via setTimeout rather than called inline from handleGuess — expo-audio's
+  // play() is synchronous on the JS side but, on Android, its native module hops to the UI thread
+  // and blocks (runBlocking) waiting for it, so calling it inline stalled the very state update
+  // that reveals the guessed letter until that native round-trip returned. Pushing it a macrotask
+  // out lets React commit that update first (the keyboard responds immediately), so the blip lands
+  // a frame later instead of adding native-thread latency to every keypress.
+  //
   // seekTo(0) before play() — expo-audio's own replacement for expo-av's old replayAsync(), so a
   // clip retriggered before its previous play finished (or already fully played out) restarts from
-  // the top instead of doing nothing (already at end) or resuming mid-clip.
+  // the top instead of doing nothing (already at end) or resuming mid-clip. Awaited here (unlike a
+  // fire-and-forget seek) since it's already off the input path — awaiting removes the race where
+  // play() could start before the seek lands and get yanked back to 0 out from under itself.
   const play = useCallback(
     (player: AudioPlayer) => {
       if (!settings.enabled) return
-      void player.seekTo(0)
-      player.play()
+      setTimeout(() => {
+        void player.seekTo(0).then(() => player.play())
+      }, 0)
     },
     [settings.enabled]
   )
