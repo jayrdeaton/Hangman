@@ -77,23 +77,24 @@ describe('Keyboard', () => {
     expect(onGuess).not.toHaveBeenCalled()
   })
 
-  // The ripple itself (Keyboard.tsx's KeyboardKey/rippleDistance) is Reanimated-driven, and this
-  // project's react-native-reanimated mock (see jest.setup.ts) resolves withSequence/withDelay
-  // synchronously to their settled end value with no observable peak — same reason fireworks.tsx's
+  // The win "ink" wave itself (Keyboard.tsx's KeyboardKey/rippleDistance, and the KeyLetterInk it
+  // stages in via a plain setTimeout) is timer/Reanimated-driven, and this project's
+  // react-native-reanimated mock (see jest.setup.ts) resolves withSequence/withDelay synchronously
+  // to their settled end value with no observable intermediate state — same reason fireworks.tsx's
   // own tests check particle counts/timing/color rather than animated values. What's actually worth
   // protecting here is the plain (row, col) distance math above (findKeyPosition) and that handing
   // Keyboard a winningLetter doesn't blow up rendering, which this covers; the visual "does it
-  // actually ripple" question is a manual/on-device check, not a unit-testable one.
+  // actually draw in" question is a manual/on-device check, not a unit-testable one.
   it('renders without error when a winningLetter is provided', async () => {
     const { getByText } = await render(<Keyboard guessedLetters={['C', 'A', 'T']} phrase='CAT' winningLetter='T' disabled onGuess={jest.fn()} />)
 
     expect(getByText('T')).toBeTruthy()
   })
 
-  // Same reasoning as the winningLetter test above: the shake-then-fall itself (Keyboard.tsx's
-  // own falling prop) is Reanimated-driven and this project's mock resolves it synchronously with
-  // no observable intermediate motion, so all that's checkable here is that every key — including
-  // already-guessed ones — still renders without error once falling flips true.
+  // Same reasoning as the winningLetter test above: the shake-then-erase itself (Keyboard.tsx's
+  // own falling prop) is timer/Reanimated-driven and this project's mock resolves it synchronously
+  // with no observable intermediate motion, so all that's checkable here is that every key —
+  // including already-guessed ones — still renders without error once falling flips true.
   it('renders without error when falling is true', async () => {
     const { getByText } = await render(<Keyboard guessedLetters={['C', 'A']} phrase='CAT' falling disabled onGuess={jest.fn()} />)
 

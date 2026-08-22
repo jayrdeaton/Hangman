@@ -153,7 +153,6 @@ const guessLetter = async (getByText: GetByText, letter: string) => {
 
 // Letters render joined by non-breaking spaces, not regular ones (see Game.tsx's guessWords) — a
 // plain ' '.join equivalent here would silently never match the rendered text.
-const nbWord = (letters: string) => letters.split('').join(' ')
 
 const FIREWORKS_LAYOUT_EVENT = { nativeEvent: { layout: { x: 0, y: 0, width: 320, height: 480 } } }
 
@@ -185,7 +184,7 @@ describe('Game', () => {
     const { getByLabelText } = await render(<Game phrase='CAT' onStop={jest.fn()} />)
 
     const display = getByLabelText('Secret word display')
-    expect(display.props.children[0].props.children).toBe('_ _ _')
+    expect(display.props.children[0].props.letters).toEqual(['_', '_', '_'])
     expect(getByLabelText(/Wrong guesses: 0/)).toBeTruthy()
   })
 
@@ -195,7 +194,7 @@ describe('Game', () => {
     await guessLetter(getByText, 'A')
 
     const display = getByLabelText('Secret word display')
-    expect(display.props.children[0].props.children).toBe('_ A _')
+    expect(display.props.children[0].props.letters).toEqual(['_', 'A', '_'])
     expect(getByLabelText(/Wrong guesses: 0/)).toBeTruthy()
   })
 
@@ -233,17 +232,21 @@ describe('Game', () => {
 
   // Letters Only mode's own pip cluster (PuzzleStage.tsx, hasVisual: false) has the room a
   // real mode's small pip row under the keyboard doesn't (see Game.tsx's own pipRow comment) — so
-  // unlike that row, a filled pip here shows which letter it was for, not just a plain dot.
+  // unlike that row, a filled pip here shows which letter it was for, not just a plain dot. The
+  // letter itself draws as a hand-drawn SketchLetter rather than Text (see PuzzleStage's own pip
+  // comment), so this asserts on the SketchLetter element's own `letter` prop directly — same
+  // prop-introspection style the word display's own tests already use for SketchWord — rather than
+  // rendered text content, which no longer exists here.
   it('shows the actual wrong letter inside a filled pip in Letters Only mode, but leaves it empty for a correct guess', async () => {
     const { getByText, getByTestId } = await render(<Game phrase='CAT' onStop={jest.fn()} mode={roomyNoVisualMode} />)
 
     await guessLetter(getByText, 'C')
-    expect(getByTestId('pip-0')).toHaveTextContent('')
+    expect(getByTestId('pip-0').props.children.props.children[2]).toBeNull()
 
     await guessLetter(getByText, 'Q')
-    expect(getByTestId('pip-0')).toHaveTextContent('Q')
+    expect(getByTestId('pip-0').props.children.props.children[2].props.letter).toBe('Q')
     // Nothing filled past the one actual wrong guess yet.
-    expect(getByTestId('pip-1')).toHaveTextContent('')
+    expect(getByTestId('pip-1').props.children.props.children[2]).toBeNull()
   })
 
   it('triggers a loss once wrong guesses reach the mode maxMistakes, showing a dialog that calls onStop when dismissed', async () => {
@@ -451,10 +454,14 @@ describe('Game', () => {
     const { getByLabelText } = await render(<Game phrase='DINOSAUR' onStop={jest.fn()} />)
 
     const display = getByLabelText('Secret word display')
-    await fireEvent(display, 'layout', WORD_ROW_LAYOUT_EVENT)
+    // Wider than WORD_ROW_LAYOUT_EVENT on purpose: 8 letters comfortably beats even a 390pt row's
+    // width fit (see the shrink test below), so a 390pt row is no longer "nowhere near too wide"
+    // once WORD_FONT_SIZE itself can grow past what that width allows — this uses a row wide enough
+    // that the base size, not the width fit, is what ends up binding.
+    await fireEvent(display, 'layout', { nativeEvent: { layout: { x: 0, y: 0, width: 500, height: 40 } } })
 
-    // 8 letters is nowhere near too wide for a 390pt row, so nothing should shrink.
-    expect(StyleSheet.flatten(display.props.children[0].props.style).fontSize).toBe(30)
+    // Nowhere near too wide for a 500pt row, so nothing should shrink below the base size.
+    expect(display.props.children[0].props.fontSize).toBe(42)
     // The structural half of the fix: the row spans its parent instead of hugging its letters.
     // Without this, onLayout reports the width of the text the fitted size just produced, and
     // because MONOSPACE_CHAR_WIDTH_RATIO overstates a real monospace advance to leave slack, each
@@ -470,12 +477,16 @@ describe('Game', () => {
     const display = getByLabelText('Secret word display')
     await fireEvent(display, 'layout', WORD_ROW_LAYOUT_EVENT)
 
-    // 12 letters render as 23 monospace cells, which really is wider than a 390pt row at the base
-    // 30pt, so this one does have to come down. The fitted size is computed against the row's
-    // PADDED inner width (390 - 2 * 12) rather than the raw measurement — the difference between
-    // 25 and 27 here — which is what keeps the longest line from grazing the screen edges.
-    const fitted = StyleSheet.flatten(display.props.children[0].props.style).fontSize
-    expect(fitted).toBe(Math.floor((390 - 24) / (23 * 0.62)))
+    // Every letter (or blank) renders in the same CELL_WIDTH cell (see SketchWord's own comment on
+    // why cells are uniform rather than each letter's real width), so this is a plain character
+    // count again — 12 letters occupy 12 cells and 11 gaps. That really is wider than a 390pt row
+    // at the base 30pt, so it has to come down. PuzzleStage approximates glyphHeight ≈ fontSize *
+    // 0.88 (see its own HERSHEY_HEIGHT_RATIO comment — not exported, so mirrored here) against the
+    // row's PADDED inner width (390 - 2 * 12) rather than the raw measurement, which is what keeps
+    // the longest line from grazing the screen edges.
+    const fitted = display.props.children[0].props.fontSize
+    const cellsWidthAt100 = 12 * 110 + 11 * 20
+    expect(fitted).toBe(Math.floor((390 - 24) / ((cellsWidthAt100 / 100) * 0.88)))
     // Landing strictly between the floor and the base is what makes the assertion above meaningful:
     // a word long enough to clamp at MIN_WORD_FONT_SIZE would produce the same number whether or
     // not the padding were subtracted at all.
@@ -484,10 +495,10 @@ describe('Game', () => {
 
     // A word too long to fit even at the smallest usable size stops at the floor rather than
     // dwindling to something unreadable.
-    await rerender(<Game phrase='ELECTROENCEPHALOGRAPH' onStop={jest.fn()} />)
+    await rerender(<Game phrase='ANTIDISESTABLISHMENTARIANISM' onStop={jest.fn()} />)
     const longDisplay = getByLabelText('Secret word display')
     await fireEvent(longDisplay, 'layout', WORD_ROW_LAYOUT_EVENT)
-    expect(StyleSheet.flatten(longDisplay.props.children[0].props.style).fontSize).toBe(16)
+    expect(longDisplay.props.children[0].props.fontSize).toBe(16)
   })
 
   // Reported from a real device, twice, in two different shapes: first the word row rendered
@@ -558,11 +569,11 @@ describe('Game', () => {
     await guessLetter(getByText, 'Q')
 
     const displayBefore = getByLabelText('Secret word display')
-    expect(displayBefore.props.children[0].props.children).toBe(nbWord('C__'))
+    expect(displayBefore.props.children[0].props.letters).toEqual(['C', '_', '_'])
     expect(getByLabelText('Wrong guesses: 1 of 3 (Q)')).toBeTruthy()
     // hasVisual defaults true, and the letter display uses the smaller of the two font sizes
     // reserved for it (see Game.tsx's WORD_FONT_SIZE) while there's still room for artwork.
-    expect(StyleSheet.flatten(displayBefore.props.children[0].props.style).fontSize).toBe(30)
+    expect(displayBefore.props.children[0].props.fontSize).toBe(42)
 
     // Simulates PuzzleDrawer's onModeChange pushing a freshly picked art style straight into the
     // session mid-round (see Main.tsx's handleModeChange) — the same Game instance, just a new
@@ -570,12 +581,12 @@ describe('Game', () => {
     await rerender(<Game phrase='CAT' onStop={jest.fn()} mode={tightNoVisualMode} />)
 
     const displayAfter = getByLabelText('Secret word display')
-    expect(displayAfter.props.children[0].props.children).toBe(nbWord('C__'))
+    expect(displayAfter.props.children[0].props.letters).toEqual(['C', '_', '_'])
     expect(getByLabelText('Wrong guesses: 1 of 3 (Q)')).toBeTruthy()
     // The new mode has hasVisual: false, which enlarges the letter display to fill the space
     // artwork would have used (see Game.tsx's WORD_FONT_SIZE_LARGE) — reflected the instant the
     // mode prop changes, with no further interaction needed.
-    expect(StyleSheet.flatten(displayAfter.props.children[0].props.style).fontSize).toBe(56)
+    expect(displayAfter.props.children[0].props.fontSize).toBe(80)
   })
 
   it("keeps the round's mistake limit fixed at whatever mode it started with, even after a live mode swap to a mode with a different maxMistakes", async () => {

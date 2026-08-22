@@ -1,4 +1,5 @@
-import { fireEvent, render } from '@testing-library/react-native'
+import AsyncStorage from '@react-native-async-storage/async-storage'
+import { act, fireEvent, render, waitFor } from '@testing-library/react-native'
 import { StyleSheet } from 'react-native'
 
 import { Main } from '@/components/Main'
@@ -127,5 +128,47 @@ describe('Main', () => {
     // Same packKeys the initial auto-start itself drew from (the live selection) — not narrowed to
     // the single pack the just-finished puzzle happened to land on.
     expect(mockResolvePuzzle.mock.calls[1][1]).toEqual(mockResolvePuzzle.mock.calls[0][1])
+  })
+
+  it("corrects the very first puzzle draw to the player's persisted pack selection once it loads from storage, instead of leaving cold boot's own 'every pack' fallback stand", async () => {
+    jest.spyOn(AsyncStorage, 'getItem').mockImplementation((key: string) => Promise.resolve(key === 'selectedPackKeys' ? JSON.stringify(['pack-1']) : null))
+    mockResolvePuzzle.mockReturnValueOnce({ ok: true, payload: payload({ phrase: 'DOG', packKey: 'every-pack-draw' }) }).mockReturnValueOnce({ ok: true, payload: payload({ phrase: 'FISH', packKey: 'pack-1' }) })
+
+    await renderApp()
+
+    // The very first, synchronous draw can only ever run under whatever selectedPackKeys already
+    // is in memory at mount — the persisted selection hasn't been read back from AsyncStorage yet.
+    expect(mockResolvePuzzle.mock.calls[0][1]).not.toEqual(['pack-1'])
+
+    // Once that read resolves, the first round gets corrected the same way a manual mode/
+    // difficulty pick would — a second draw, this time actually scoped to the persisted packs.
+    await waitFor(() => expect(mockResolvePuzzle).toHaveBeenCalledTimes(2))
+    expect(mockResolvePuzzle.mock.calls[1][1]).toEqual(['pack-1'])
+  })
+
+  it('leaves a round the player has already started guessing alone, rather than silently swapping it out once the persisted pack selection resolves', async () => {
+    let resolveStorage: (value: string | null) => void = () => {}
+    const pending = new Promise<string | null>((resolve) => {
+      resolveStorage = resolve
+    })
+    jest.spyOn(AsyncStorage, 'getItem').mockImplementation((key: string) => (key === 'selectedPackKeys' ? pending : Promise.resolve(null)))
+    mockResolvePuzzle.mockReturnValue({ ok: true, payload: payload({ phrase: 'DOG' }) })
+
+    const { getByText } = await renderApp()
+
+    // A correct guess that doesn't end the round — same "there's something to protect" condition
+    // shouldConfirmAbandon itself uses for every other puzzle-switch path in Main.tsx.
+    await fireEvent.press(getByText('D'))
+
+    // The persisted selection resolves to a genuinely different set (see the previous test), but
+    // this round already has an undecided guess on it — the correction should skip it entirely
+    // rather than silently discard the guess with no abandon-confirmation dialog and no loss
+    // recorded, the way every other puzzle-switch path in this file requires.
+    await act(async () => {
+      resolveStorage(JSON.stringify(['pack-1']))
+      await pending
+    })
+
+    expect(mockResolvePuzzle).toHaveBeenCalledTimes(1)
   })
 })

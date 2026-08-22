@@ -1,4 +1,4 @@
-import { type AudioPlayer, useAudioPlayer } from 'expo-audio'
+import { useAudioPool } from '@rific/feedback-press/audio'
 import { useCallback } from 'react'
 
 import { useSoundSettings } from './useSoundSettings'
@@ -13,42 +13,39 @@ const WRONG_SOUND = require('../../assets/sounds/wrong.wav')
 const WIN_SOUND = require('../../assets/sounds/win.wav')
 const LOSS_SOUND = require('../../assets/sounds/loss.wav')
 
-// One useAudioPlayer per clip, not a single player whose source gets replaced per call — these can
-// fire back-to-back (a fast player mashing letters) and each needs to be able to restart or overlap
-// independently rather than cutting the previous clip off to load a new source.
+// One useAudioPool(...) per clip, not a single pool whose source gets replaced per call — these
+// can fire back-to-back (a fast player mashing letters) and each needs its own pool to restart or
+// overlap independently rather than racing a single shared player. No poolSize override: the
+// default already covers the fast-typing case this comment describes — a pool of 1 would collapse
+// back to a single shared player racing itself, the exact bug useAudioPool exists to prevent. The
+// setTimeout/seekTo(0) deferral this hook used to hand-roll now lives inside
+// @rific/feedback-press/audio's useAudioPool.
 export const useSoundEffects = () => {
   const { settings } = useSoundSettings()
-  const correctPlayer = useAudioPlayer(CORRECT_SOUND)
-  const wrongPlayer = useAudioPlayer(WRONG_SOUND)
-  const winPlayer = useAudioPlayer(WIN_SOUND)
-  const lossPlayer = useAudioPlayer(LOSS_SOUND)
+  const playCorrectRaw = useAudioPool(CORRECT_SOUND)
+  const playWrongRaw = useAudioPool(WRONG_SOUND)
+  const playWinRaw = useAudioPool(WIN_SOUND)
+  const playLossRaw = useAudioPool(LOSS_SOUND)
 
-  // Deferred a tick via setTimeout rather than called inline from handleGuess — expo-audio's
-  // play() is synchronous on the JS side but, on Android, its native module hops to the UI thread
-  // and blocks (runBlocking) waiting for it, so calling it inline stalled the very state update
-  // that reveals the guessed letter until that native round-trip returned. Pushing it a macrotask
-  // out lets React commit that update first (the keyboard responds immediately), so the blip lands
-  // a frame later instead of adding native-thread latency to every keypress.
-  //
-  // seekTo(0) before play() — expo-audio's own replacement for expo-av's old replayAsync(), so a
-  // clip retriggered before its previous play finished (or already fully played out) restarts from
-  // the top instead of doing nothing (already at end) or resuming mid-clip. Awaited here (unlike a
-  // fire-and-forget seek) since it's already off the input path — awaiting removes the race where
-  // play() could start before the seek lands and get yanked back to 0 out from under itself.
-  const play = useCallback(
-    (player: AudioPlayer) => {
-      if (!settings.enabled) return
-      setTimeout(() => {
-        void player.seekTo(0).then(() => player.play())
-      }, 0)
-    },
-    [settings.enabled]
-  )
+  const playCorrect = useCallback(() => {
+    if (!settings.enabled) return
+    playCorrectRaw()
+  }, [settings.enabled, playCorrectRaw])
 
-  const playCorrect = useCallback(() => play(correctPlayer), [play, correctPlayer])
-  const playWrong = useCallback(() => play(wrongPlayer), [play, wrongPlayer])
-  const playWin = useCallback(() => play(winPlayer), [play, winPlayer])
-  const playLoss = useCallback(() => play(lossPlayer), [play, lossPlayer])
+  const playWrong = useCallback(() => {
+    if (!settings.enabled) return
+    playWrongRaw()
+  }, [settings.enabled, playWrongRaw])
+
+  const playWin = useCallback(() => {
+    if (!settings.enabled) return
+    playWinRaw()
+  }, [settings.enabled, playWinRaw])
+
+  const playLoss = useCallback(() => {
+    if (!settings.enabled) return
+    playLossRaw()
+  }, [settings.enabled, playLossRaw])
 
   return { playCorrect, playWrong, playWin, playLoss }
 }

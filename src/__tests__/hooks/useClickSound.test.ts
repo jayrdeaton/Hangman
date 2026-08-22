@@ -1,5 +1,5 @@
 import { act, renderHook } from '@testing-library/react-native'
-import { useAudioPlayer } from 'expo-audio'
+import { createAudioPlayer } from 'expo-audio'
 
 import { useClickSound } from '@/hooks/useClickSound'
 import { useSoundSettings } from '@/hooks/useSoundSettings'
@@ -7,7 +7,9 @@ import { useSoundSettings } from '@/hooks/useSoundSettings'
 jest.mock('@/hooks/useSoundSettings', () => ({ useSoundSettings: jest.fn() }))
 
 const mockUseSoundSettings = jest.mocked(useSoundSettings)
-const mockUseAudioPlayer = jest.mocked(useAudioPlayer)
+// @rific/feedback-press/audio's useAudioPool builds its pool with createAudioPlayer (a plain
+// factory), not the useAudioPlayer hook.
+const mockCreateAudioPlayer = jest.mocked(createAudioPlayer)
 
 // The setTimeout(0) deferral (see useClickSound.ts's own comment) means play()/seekTo() land a
 // macrotask after playClick() returns, and seekTo() itself resolves a microtask later still — a
@@ -23,13 +25,13 @@ const clickAndFlush = async (playClick: () => void) => {
 
 describe('useClickSound', () => {
   beforeEach(() => {
-    mockUseAudioPlayer.mockClear()
+    mockCreateAudioPlayer.mockClear()
   })
 
   it('plays when sound is enabled', async () => {
     mockUseSoundSettings.mockReturnValue({ settings: { enabled: true }, setEnabled: jest.fn() })
     const { result } = await renderHook(() => useClickSound())
-    const player = mockUseAudioPlayer.mock.results[0].value
+    const player = mockCreateAudioPlayer.mock.results[0].value
 
     await clickAndFlush(result.current.playClick)
 
@@ -40,7 +42,7 @@ describe('useClickSound', () => {
   it('no-ops when sound is disabled', async () => {
     mockUseSoundSettings.mockReturnValue({ settings: { enabled: false }, setEnabled: jest.fn() })
     const { result } = await renderHook(() => useClickSound())
-    const player = mockUseAudioPlayer.mock.results[0].value
+    const player = mockCreateAudioPlayer.mock.results[0].value
 
     await clickAndFlush(result.current.playClick)
 

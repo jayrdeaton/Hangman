@@ -87,8 +87,12 @@ const SCAFFOLDED_MODE_ID = 'classic'
 // simpler and reads just as well ("draw in, animate through, fade out, draw back in, repeat").
 const useCardAnimation = (isFocused: boolean, mode: GameMode) => {
   const restMistakes = fullyDrawnMistakes(mode)
-  // 'none' (Letters Only) has no mistake-reactive art at all — nothing for this cycle to animate,
-  // so it just stays on its static resting frame.
+  // 'none' (Letters Only) has no mistake-reactive art — nothing for the mistake-stepping half of
+  // this cycle (runMistakeLoop below) to animate. It still has its own one-time reveal worth
+  // replaying on a loop now that it draws its letters in (SketchLetter) rather than rendering
+  // static text, so it's not exempted from this hook entirely — see the `animated` branch below,
+  // which skips straight from one remount to the next, holding on the resting frame in between
+  // rather than stepping through mistakes it doesn't have.
   const animated = mode.behavior !== 'none'
   const isClassic = mode.id === SCAFFOLDED_MODE_ID
 
@@ -98,7 +102,6 @@ const useCardAnimation = (isFocused: boolean, mode: GameMode) => {
   const partsOpacity = useSharedValue(1)
 
   useEffect(() => {
-    if (!animated) return
     if (!isFocused) {
       // Snapped, not faded — this card isn't visible mid-transition to begin with (it's the one
       // losing focus as the carousel settles elsewhere), so there's nothing for a tween to show.
@@ -111,6 +114,26 @@ const useCardAnimation = (isFocused: boolean, mode: GameMode) => {
 
     let cancelled = false
     let timeoutId: ReturnType<typeof setTimeout>
+
+    if (!animated) {
+      // No mistakes to step through, just the one-time reveal itself, replayed on a loop: fade
+      // out, remount (revealKey forces SketchLetter's own draw-in to play fresh, same trick the
+      // animated branch below uses), hold on the resting frame, repeat.
+      const runStaticLoop = () => {
+        cardOpacity.value = withTiming(0, { duration: FADE_MS })
+        timeoutId = setTimeout(() => {
+          if (cancelled) return
+          setRevealKey((key) => key + 1)
+          cardOpacity.value = 1
+          timeoutId = setTimeout(runStaticLoop, SCENE_REVEAL_HOLD_MS + DEMO_HOLD_MS)
+        }, FADE_MS)
+      }
+      timeoutId = setTimeout(runStaticLoop, SCENE_REVEAL_HOLD_MS + DEMO_HOLD_MS)
+      return () => {
+        cancelled = true
+        clearTimeout(timeoutId)
+      }
+    }
 
     const runMistakeLoop = () => {
       let step = 0

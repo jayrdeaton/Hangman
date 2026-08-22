@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import Svg, { Ellipse, G, Path } from 'react-native-svg'
+import Svg, { Ellipse } from 'react-native-svg'
 
 import type { GameMode } from '@/types/gameModes'
 
 import { clampStage } from './shared/clampStage'
 import { randIn, shuffledIndices } from './shared/procedural'
 import { SCENE_START_DELAY_MS } from './shared/sceneReveal'
-import { FadeScaleIn } from './shared/sketchShapes'
+import { DRAW_MS, quadraticBezierLength, SketchEllipse, SketchFill, SketchPath } from './shared/sketchShapes'
 
 // Quantitative/depletion: N balloons generated at game start, one popped per wrong guess.
 // Positions, sizes and colors are re-rolled each round (generated once in useState initializer —
@@ -80,21 +80,26 @@ const BalloonVisual = ({ mistakes, color, colors, started }: { mistakes: number;
         const stringEndY = b.y + b.ry + 16
         const stringMidX = b.x + b.stringX
         const balloonColor = colors && colors.length > 0 ? colors[colorOrder[b.index] % colors.length] : color
+        const delayMs = SCENE_START_DELAY_MS + b.index * STAGGER_MS
+        // Fill starts once the outline has had time to finish drawing (DRAW_MS, its own default
+        // duration below) rather than racing it — same handoff hourglass.tsx's standDelay/glassDelay/
+        // sandDelay stagger achieves with fixed offsets, since Sketch*/SketchFill have no
+        // draw-finished callback to chain off of.
+        const fillDelayMs = delayMs + DRAW_MS
+        const stringD = `M${b.x},${b.y + b.ry} Q${stringMidX},${b.y + b.ry + 9} ${b.x},${stringEndY}`
+        const stringLength = quadraticBezierLength(b.x, b.y + b.ry, stringMidX, b.y + b.ry + 9, b.x, stringEndY)
         return (
-          // A balloon's outline is mostly beside the point (it's a solid fill, and its string is a
-          // thin curve not worth the arc-length math a true stroke-draw would need) — the whole
-          // balloon+string fades and scales in together instead, around its own center, same as
-          // stars.tsx. Every balloon mounts exactly once, already visible at mistakes=0 (this is a
-          // depletion mode: a wrong guess pops one rather than revealing one), so `started`/
-          // `delayMs` gate and stagger the whole bunch floating in at round start.
-          <FadeScaleIn key={b.key} cx={b.x} cy={b.y} start={started} delayMs={SCENE_START_DELAY_MS + b.index * STAGGER_MS}>
-            <G>
-              {/* Opaque fill (was fill='none') — an unfilled balloon let an overlapping neighbor's
-                  string, or body, show straight through it. */}
-              <Ellipse cx={b.x} cy={b.y} rx={b.rx} ry={b.ry} stroke={balloonColor} strokeWidth='2.5' fill={balloonColor} />
-              <Path d={`M${b.x},${b.y + b.ry} Q${stringMidX},${b.y + b.ry + 9} ${b.x},${stringEndY}`} stroke={balloonColor} strokeWidth='2' fill='none' strokeLinecap='round' />
-            </G>
-          </FadeScaleIn>
+          // Every balloon mounts exactly once, already visible at mistakes=0 (this is a depletion
+          // mode: a wrong guess pops one rather than revealing one), so `started`/`delayMs` gate and
+          // stagger the whole bunch materializing in at round start rather than a per-guess reveal.
+          // Fill paints first so the string, added last, sits visually in front of the balloon body
+          // — same z-order the original combined fill+string group had. The outline stroke has no
+          // fill of its own, so where it lands relative to the body fill underneath doesn't matter.
+          <React.Fragment key={b.key}>
+            <SketchFill bounds={{ x: b.x - b.rx, y: b.y - b.ry, width: b.rx * 2, height: b.ry * 2 }} clip={<Ellipse cx={b.x} cy={b.y} rx={b.rx - 1} ry={b.ry - 1} />} color={balloonColor} start={started} delayMs={fillDelayMs} />
+            <SketchEllipse cx={b.x} cy={b.y} rx={b.rx} ry={b.ry} color={balloonColor} strokeWidth={2.5} start={started} delayMs={delayMs} />
+            <SketchPath d={stringD} length={stringLength} color={balloonColor} strokeWidth={2} start={started} delayMs={delayMs} />
+          </React.Fragment>
         )
       })}
     </Svg>

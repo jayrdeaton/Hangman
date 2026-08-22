@@ -1,19 +1,31 @@
 import { resolveSeedColor, useThemeSettings } from '@rific/auto-paper'
 import { JSX, useEffect, useMemo, useState } from 'react'
-import { LayoutChangeEvent, Platform, StyleSheet, View } from 'react-native'
-import { Text, useTheme } from 'react-native-paper'
+import { LayoutChangeEvent, StyleSheet, View } from 'react-native'
+import { useTheme } from 'react-native-paper'
+import Svg, { Circle } from 'react-native-svg'
 
+import { HERSHEY_GAP } from '@/modes/shared/letterformsHershey'
+import { glyphWidth, SketchLetter } from '@/modes/shared/sketchLetter'
+import { FadeScaleIn, SketchCircle } from '@/modes/shared/sketchShapes'
 import type { GameMode } from '@/types/gameModes'
 
 import { GameVisual } from './GameVisual'
+import { CELL_WIDTH, SketchWord } from './SketchWord'
 
-// Base sizes for the word display (also referenced by the shrink-to-fit calculation below).
-const WORD_FONT_SIZE = 30
-const WORD_FONT_SIZE_LARGE = 56
+// Ceilings for the word display — sanity caps for a short word on a roomy screen, not the size it
+// normally renders at. In the common case the width/height fit below (rowWidthAt100/wordAreaHeight)
+// lands well under these, so raising them just lets a word that genuinely HAS the room grow into it
+// instead of stalling at a fixed pixel size regardless of how much space is actually free.
+const WORD_FONT_SIZE = 42
+const WORD_FONT_SIZE_LARGE = 80
 const MIN_WORD_FONT_SIZE = 16
-// Fraction of fontSize a monospace glyph cell (Menlo / Android monospace) occupies. Approximate,
-// so the fitted size leaves a little slack rather than exactly grazing the measured width.
-const MONOSPACE_CHAR_WIDTH_RATIO = 0.62
+// SketchWord's own glyphHeight = fontSize - 2 * (strokeWidth * 0.75), and strokeWidth itself is
+// ~fontSize*0.08 across the sizes this ever actually fits to (below its own 1.5px floor only at
+// the very bottom of the shrink range) — collapsing to glyphHeight ≈ fontSize * 0.88. Approximate
+// on purpose, same as this file's fitting math always has been: leaves a little slack rather than
+// exactly grazing the measured width, and letting the fitted size undershoot by a hair at the
+// smallest sizes costs nothing a real user would notice.
+const HERSHEY_HEIGHT_RATIO = 0.88
 // Breathing room kept either side of the longest word, so a word that does need shrinking stops
 // short of the screen edges instead of running right up against them. Applied as real padding on
 // the word row and subtracted back out of the measurement below, since onLayout reports the
@@ -24,6 +36,28 @@ const WORD_ROW_PADDING_HORIZONTAL = 12
 // box, not part of it), so this is added back in wherever that measured height is used to budget
 // space for something else, or the artwork would end up sized as if this margin didn't exist.
 const WORD_ROW_MARGIN_BOTTOM = 12
+
+// Wrong-guess pip in Letters Only mode: a small hand-drawn ring (SketchCircle), same stroke-by-
+// stroke technique as every other shape in this app, standing in for what used to be a plain
+// rn-paper bordered View. A wrong guess blooms a solid dot on top of that ring (FadeScaleIn, per
+// its own "solid dot" doc comment) and, since there's room to spare here (see the pip cluster's own
+// comment below), draws the actual wrong letter inside via the same Hershey letterforms SketchWord
+// uses for the puzzle word itself — legible tucked inside a 32px ring at PIP_LETTER_HEIGHT despite
+// being real vector strokes, not a font.
+const PIP_SIZE = 32
+const PIP_CENTER = PIP_SIZE / 2
+const PIP_STROKE_WIDTH = 3
+// Centerline radius for the ring's stroke — leaves the ring's own outer edge (r + strokeWidth/2)
+// just inside PIP_CENTER, matching the fitted-but-not-clipped look the old bordered View had.
+const PIP_RADIUS = PIP_CENTER - PIP_STROKE_WIDTH
+const PIP_LETTER_HEIGHT = 15
+const PIP_LETTER_STROKE_WIDTH = 2
+// Stagger between one pip ring's own reveal and the next at round start — same spirit as
+// SketchWord's own BLANK_STAGGER_MS, just local to this file since nothing else needs it.
+const PIP_STAGGER_MS = 60
+// A beat after a wrong guess's fill dot blooms in, so the pip reads as bloom-then-letter rather
+// than both popping in at the same instant.
+const PIP_LETTER_DELAY_MS = 120
 
 export type PuzzleStageProps = {
   mode: GameMode
@@ -65,17 +99,11 @@ export const PuzzleStage = ({ mode, phrase, guessedLetters, wrongGuesses, wrongL
   const themeColors = useMemo(() => [theme.colors.primary, theme.colors.secondary, theme.colors.tertiary], [theme.colors.primary, theme.colors.secondary, theme.colors.tertiary])
 
   const guessWords = useMemo(() => {
-    // Each word renders as its own flex item, letters joined by non-breaking spaces so a
-    // word can never split across lines — a mid-word wrap is indistinguishable from a real
-    // word boundary and reads as disingenuous. Wrapping happens between word items via
-    // flexWrap, and the row's own gap supplies the visual separation, so no leftover
-    // whitespace clings to the edge of a wrapped line and throws off centering.
-    return phrase.split(' ').map((word) =>
-      word
-        .split('')
-        .map((ch) => (guessedLetters.includes(ch) ? ch : '_'))
-        .join(' ')
-    )
+    // Each word renders as its own flex item (a single SketchWord, one fixed-size SVG standing in
+    // for what used to be one Text node) so a word can never split across lines — a mid-word wrap
+    // is indistinguishable from a real word boundary and reads as disingenuous. Wrapping happens
+    // between word items via flexWrap, and the row's own gap supplies the visual separation.
+    return phrase.split(' ').map((word) => word.split('').map((ch) => (guessedLetters.includes(ch) ? ch : '_')))
   }, [phrase, guessedLetters])
 
   const hasVisual = mode.hasVisual !== false
@@ -172,15 +200,32 @@ export const PuzzleStage = ({ mode, phrase, guessedLetters, wrongGuesses, wrongL
   const fittedWordFontSize = useMemo(() => {
     const baseFontSize = hasVisual ? WORD_FONT_SIZE : WORD_FONT_SIZE_LARGE
     const availableWidth = wordRowSize.width - WORD_ROW_PADDING_HORIZONTAL * 2
-    if (availableWidth <= 0) return baseFontSize
-    // Letters render as N glyphs joined by N-1 non-breaking-space glyphs (see guessWords above),
-    // so a word of N letters occupies 2N-1 monospace cells on its line. Only the longest word
-    // matters: words are separate flex items that wrap onto their own lines rather than splitting.
-    const longestWordLength = Math.max(...phrase.split(' ').map((word) => word.length))
-    const renderedCells = longestWordLength * 2 - 1
-    const maxFittingSize = Math.floor(availableWidth / (renderedCells * MONOSPACE_CHAR_WIDTH_RATIO))
-    return Math.max(MIN_WORD_FONT_SIZE, Math.min(baseFontSize, maxFittingSize))
-  }, [wordRowSize.width, hasVisual, phrase])
+    const words = phrase.split(' ')
+
+    // SketchWord lays out every letter (or blank) in the same CELL_WIDTH-plus-HERSHEY_GAP cell —
+    // see its own comment on why cells are uniform rather than each letter's real width — so a word
+    // of N letters occupies N cells and N-1 gaps, a plain character count again now that every cell
+    // costs the same regardless of which letter it holds. Only the longest word matters: words are
+    // separate flex items that wrap onto their own lines rather than splitting.
+    const longestWordLength = Math.max(...words.map((word) => word.length))
+    const rowWidthAt100 = longestWordLength * CELL_WIDTH + Math.max(0, longestWordLength - 1) * HERSHEY_GAP
+    const maxFittingWidth = availableWidth > 0 ? Math.floor(availableWidth / ((rowWidthAt100 / 100) * HERSHEY_HEIGHT_RATIO)) : Infinity
+
+    // Same combinedAreaSize/visualHeight this component already measures to size the artwork box
+    // (see visualHeight's own comment) — reused here so the word can grow into whatever's actually
+    // left over vertically instead of stalling at a flat pixel cap regardless of how much room the
+    // screen has. SketchWord's rendered height IS the fontSize (no 0.88 correction here — that ratio
+    // is about how much of the box the glyph ink fills, not the box itself), so N stacked lines cost
+    // N*fontSize plus (N-1) row gaps. Worst case every word wraps onto its own line; real wrapping
+    // often packs more than one per line, so — same "leaves slack" spirit as the width fit above —
+    // this can undershoot the true available room for a multi-word phrase rather than overshoot it.
+    const rowGap = hasVisual ? 4 : 8
+    const wordAreaHeight = combinedAreaMeasured ? Math.max(0, combinedAreaSize.height - (visualHeight ?? 0) - WORD_ROW_MARGIN_BOTTOM) : undefined
+    const maxFittingHeight = wordAreaHeight !== undefined ? Math.floor((wordAreaHeight - (words.length - 1) * rowGap) / words.length) : Infinity
+
+    if (availableWidth <= 0 && wordAreaHeight === undefined) return baseFontSize
+    return Math.max(MIN_WORD_FONT_SIZE, Math.min(baseFontSize, maxFittingWidth, maxFittingHeight))
+  }, [wordRowSize.width, hasVisual, phrase, combinedAreaMeasured, combinedAreaSize.height, visualHeight])
 
   return (
     // Not hidden here (see onReadyChange's own comment — Game.tsx handles the whole screen's
@@ -214,13 +259,21 @@ export const PuzzleStage = ({ mode, phrase, guessedLetters, wrongGuesses, wrongL
             <View style={styles.pipClusterRow}>
               {Array.from({ length: maxWrong }, (_, i) => {
                 const filled = i < wrongGuesses
+                const letter = wrongLetters[i]
+                const letterWidth = letter ? glyphWidth(letter, PIP_LETTER_HEIGHT) : 0
                 return (
-                  <View key={i} testID={`pip-${i}`} style={[styles.pipLarge, { borderColor: tertiaryColor }, filled ? { backgroundColor: tertiaryColor } : null]}>
-                    {filled && wrongLetters[i] ? (
-                      <Text variant='labelLarge' style={[styles.pipLetter, { color: theme.colors.onTertiary }]}>
-                        {wrongLetters[i]}
-                      </Text>
-                    ) : null}
+                  // testID lives on this wrapping View, not the Svg itself — Svg has no single host
+                  // node of its own to carry one (it's a pure viewport around its children).
+                  <View key={i} testID={`pip-${i}`}>
+                    <Svg width={PIP_SIZE} height={PIP_SIZE} viewBox={`0 0 ${PIP_SIZE} ${PIP_SIZE}`}>
+                      <SketchCircle cx={PIP_CENTER} cy={PIP_CENTER} r={PIP_RADIUS} color={tertiaryColor} strokeWidth={PIP_STROKE_WIDTH} start={started} delayMs={i * PIP_STAGGER_MS} />
+                      {filled ? (
+                        <FadeScaleIn cx={PIP_CENTER} cy={PIP_CENTER}>
+                          <Circle cx={PIP_CENTER} cy={PIP_CENTER} r={PIP_RADIUS} fill={tertiaryColor} />
+                        </FadeScaleIn>
+                      ) : null}
+                      {filled && letter ? <SketchLetter letter={letter} x={(PIP_SIZE - letterWidth) / 2} y={(PIP_SIZE - PIP_LETTER_HEIGHT) / 2} height={PIP_LETTER_HEIGHT} color={theme.colors.onTertiary} strokeWidth={PIP_LETTER_STROKE_WIDTH} delayMs={PIP_LETTER_DELAY_MS} /> : null}
+                    </Svg>
                   </View>
                 )
               })}
@@ -234,9 +287,7 @@ export const PuzzleStage = ({ mode, phrase, guessedLetters, wrongGuesses, wrongL
       <View style={styles.wordArea}>
         <View style={hasVisual ? styles.wordRow : styles.wordRowLarge} accessible accessibilityLabel='Secret word display' onLayout={handleWordRowLayout}>
           {guessWords.map((word, i) => (
-            <Text key={i} style={[hasVisual ? styles.text : styles.textLarge, { fontSize: fittedWordFontSize }]}>
-              {word}
-            </Text>
+            <SketchWord key={i} letters={word} fontSize={fittedWordFontSize} color={theme.colors.onSurface} started={started} />
           ))}
         </View>
       </View>
@@ -248,13 +299,6 @@ const styles = StyleSheet.create({
   artAndWordArea: { flex: 1, width: '100%' },
   pipClusterRow: { columnGap: 18, flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', paddingHorizontal: 24, rowGap: 18 },
   pipClusterWrap: { alignItems: 'center', flex: 1, justifyContent: 'center', width: '100%' },
-  pipLarge: { alignItems: 'center', borderRadius: 16, borderWidth: 3, height: 32, justifyContent: 'center', width: 32 },
-  // fontSize set explicitly rather than relying on labelLarge's own default (14) — 32px is tight
-  // for a glyph plus the pip's own 3px border on each side, and this reads clearly at that size
-  // without the pip needing to grow.
-  pipLetter: { fontSize: 13, fontWeight: '700' },
-  text: { fontFamily: Platform.OS === 'android' ? 'monospace' : 'Menlo', fontSize: WORD_FONT_SIZE, textAlign: 'center' },
-  textLarge: { fontFamily: Platform.OS === 'android' ? 'monospace' : 'Menlo', fontSize: WORD_FONT_SIZE_LARGE, textAlign: 'center' },
   visualArea: { width: '100%' },
   // Only used before combinedAreaSize's first measurement lands — without it the box would render
   // at 0 height (no explicit height yet, no flex to grow into). Nothing in here is actually visible

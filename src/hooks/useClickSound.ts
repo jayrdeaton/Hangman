@@ -1,4 +1,4 @@
-import { useAudioPlayer } from 'expo-audio'
+import { useAudioPool } from '@rific/feedback-press/audio'
 import { useCallback } from 'react'
 
 import { useSoundSettings } from './useSoundSettings'
@@ -12,16 +12,16 @@ const CLICK_SOUND = require('../../assets/sounds/click.wav')
 // already owns, since useAudioPlayer() allocates an independent native player per call site.
 export const useClickSound = () => {
   const { settings } = useSoundSettings()
-  const clickPlayer = useAudioPlayer(CLICK_SOUND)
+  // No poolSize override — this fires as the app-wide press sound via Haptic.tsx's
+  // FeedbackPressProvider, so a fast sequence of taps (e.g. typing on the on-screen keyboard)
+  // can retrigger it quickly. The default pool already covers that; poolSize: 1 would collapse
+  // back to a single shared player racing itself, the exact bug useAudioPool exists to prevent.
+  const rawPlay = useAudioPool(CLICK_SOUND)
 
-  // Same deferral as useSoundEffects.ts's own play() — see its comment for why this waits a
-  // macrotask on Android rather than calling play() inline from the press handler.
   const playClick = useCallback(() => {
     if (!settings.enabled) return
-    setTimeout(() => {
-      void clickPlayer.seekTo(0).then(() => clickPlayer.play())
-    }, 0)
-  }, [settings.enabled, clickPlayer])
+    rawPlay()
+  }, [settings.enabled, rawPlay])
 
   return { playClick }
 }

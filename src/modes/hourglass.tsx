@@ -5,13 +5,15 @@ import type { GameMode } from '@/types/gameModes'
 
 import { clampStage } from './shared/clampStage'
 import { SCENE_START_DELAY_MS } from './shared/sceneReveal'
-import { FadeScaleIn, polylineLength, SketchLine, SketchPath } from './shared/sketchShapes'
+import { FadeScaleIn, polylineLength, SketchFill, SketchLine, SketchPath } from './shared/sketchShapes'
 
 // A "frame" mode: one continuous scene whose numeric params (sand levels) shift with every wrong
 // guess, rather than discrete parts appearing or disappearing — see candle.tsx's identical comment
 // for why only the very first frame, at round start, gets an actual reveal. The stand's posts and
-// the glass sketch themselves on (they're stroked outlines with real length to trace); the cap
-// plates and the sand itself are solid fills with nothing to trace, so they fade in instead.
+// the glass sketch themselves on (they're stroked outlines with real length to trace); the sand
+// wipes in as a fill (SketchFill — it has no drawn edge to trace, just a poured silhouette). The cap
+// plates are solid fills too, but only 3 units tall — too thin a strip for a hatch to read as
+// texture rather than noise — so they stay on the plain fade/scale FadeScaleIn instead.
 const SCENE_DRAW_MS = 500
 const STAGGER_MS = 110
 
@@ -43,6 +45,12 @@ const GLASS_TOP_Y = 22
 const GLASS_BOTTOM_Y = 78
 const BULB_HALF_WIDTH = 20
 const TRIANGLE_HEIGHT = NECK_Y - GLASS_TOP_Y // 28, same as GLASS_BOTTOM_Y - NECK_Y
+
+// Fixed, level-independent bounding boxes for the two sand fills below — generous enough to cover
+// the sand at any level (SketchFill only uses these to size its own wipe mask, not as an exact
+// clip, so a little slack here costs nothing).
+const TOP_SAND_BOUNDS = { x: NECK_X - BULB_HALF_WIDTH, y: GLASS_TOP_Y, width: BULB_HALF_WIDTH * 2, height: TRIANGLE_HEIGHT }
+const BOTTOM_MOUND_BOUNDS = { x: NECK_X - BULB_HALF_WIDTH, y: NECK_Y, width: BULB_HALF_WIDTH * 2, height: TRIANGLE_HEIGHT }
 
 // Outer stand: two flared cap plates connected by corner posts, sitting just outside the glass.
 const CAP_LEFT_X = 22
@@ -140,23 +148,16 @@ const HourglassVisual = ({ mistakes, color, colors, started }: { mistakes: numbe
         <SketchLine x1={POST_RIGHT_X} y1={POST_TOP_Y} x2={POST_RIGHT_X} y2={POST_BOTTOM_Y} color={frameColor} strokeWidth={3} start={started} delayMs={standDelay} durationMs={SCENE_DRAW_MS} />
 
         {/* Bottom sand: rising mound, drawn before the glass outline so the outline stays crisp on
-            top. Filled, no outline worth tracing — fades in with the rest of the sand instead. */}
-        {moundPath && (
-          <FadeScaleIn cx={NECK_X} cy={GLASS_BOTTOM_Y} start={started} delayMs={sandDelay} durationMs={SCENE_DRAW_MS}>
-            <Path d={moundPath} fill={color} />
-          </FadeScaleIn>
-        )}
+            top. No outline worth tracing (real sand has no drawn edge, just a poured silhouette) —
+            wipes in as a fill instead, same as the top bulb below. */}
+        {moundPath && <SketchFill bounds={BOTTOM_MOUND_BOUNDS} clip={<Path d={moundPath} />} color={color} start={started} delayMs={sandDelay} durationMs={SCENE_DRAW_MS} />}
 
         {/* Glass: two triangles meeting at the neck. A real outline made entirely of straight
             segments, so it sketches on cleanly. */}
         <SketchPath d={GLASS_PATH} length={GLASS_LENGTH} color={glassColor} strokeWidth={1} strokeLinejoin='round' start={started} delayMs={glassDelay} durationMs={SCENE_DRAW_MS} />
 
-        {/* Top sand: always adjacent to the neck, draining downward. Filled, fades in with the mound. */}
-        {topPath && (
-          <FadeScaleIn cx={NECK_X} cy={GLASS_TOP_Y} start={started} delayMs={sandDelay} durationMs={SCENE_DRAW_MS}>
-            <Path d={topPath} fill={color} />
-          </FadeScaleIn>
-        )}
+        {/* Top sand: always adjacent to the neck, draining downward. Same no-outline wipe as the mound. */}
+        {topPath && <SketchFill bounds={TOP_SAND_BOUNDS} clip={<Path d={topPath} />} color={color} start={started} delayMs={sandDelay} durationMs={SCENE_DRAW_MS} />}
 
         {/* Falling stream through the neck, drawn as fine dots rather than a solid line so it
             reads as individual grains of sand — its own strokeDasharray is already doing that

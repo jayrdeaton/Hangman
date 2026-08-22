@@ -5,7 +5,7 @@ import type { GameMode } from '@/types/gameModes'
 
 import { clampStage } from './shared/clampStage'
 import { SCENE_START_DELAY_MS } from './shared/sceneReveal'
-import { FadeScaleIn, SketchLine, SketchRect } from './shared/sketchShapes'
+import { DRAW_MS, FadeScaleIn, SketchLine, SketchRect } from './shared/sketchShapes'
 
 // Robot centered at x=50, viewBox 0 0 100 100.
 // Body: rect 37-63 x, 54-76 y
@@ -39,36 +39,46 @@ const RobotCore = ({ color, started = true }: { color: string; started?: boolean
 // core scaffold above has finished — see REMOVAL_ORDER's own comment for the resulting order.
 const STAGGER_MS = 90
 
-const Antenna = ({ color, started, delayMs }: { color: string; started?: boolean; delayMs?: number }) => (
+// Each removable part stays mounted for the whole round instead of being conditionally unmounted
+// the instant a wrong guess removes it — same fix as disappearing.tsx's own REMOVAL_ORDER comment:
+// react-native-svg's shapes have no exit animation to unmount into, so an instant unmount was
+// always just an instant pop. `erased` scrubs the part's own stroke (or fades/scales its filled
+// shape) back out via sketchShapes.tsx's useDrawProgress, retracing the same draw-in in reverse.
+type RemovablePartProps = { color: string; started?: boolean; erased?: boolean; delayMs?: number }
+
+const Antenna = ({ color, started, erased, delayMs }: RemovablePartProps) => (
   <G>
-    <SketchLine x1={50} y1={20} x2={50} y2={30} color={color} strokeWidth={2} start={started} delayMs={delayMs} />
-    <FadeScaleIn cx={50} cy={17} start={started} delayMs={delayMs}>
+    <SketchLine x1={50} y1={20} x2={50} y2={30} color={color} strokeWidth={2} start={started} erased={erased} delayMs={delayMs} />
+    <FadeScaleIn cx={50} cy={17} start={started} erased={erased} delayMs={delayMs}>
       <Circle cx='50' cy='17' r='2.8' fill={color} />
     </FadeScaleIn>
   </G>
 )
 
-const LeftArm = ({ color, started, delayMs }: { color: string; started?: boolean; delayMs?: number }) => <SketchLine x1={37} y1={61} x2={25} y2={71} color={color} start={started} delayMs={delayMs} />
+const LeftArm = ({ color, started, erased, delayMs }: RemovablePartProps) => <SketchLine x1={37} y1={61} x2={25} y2={71} color={color} start={started} erased={erased} delayMs={delayMs} />
 
-const RightArm = ({ color, started, delayMs }: { color: string; started?: boolean; delayMs?: number }) => <SketchLine x1={63} y1={61} x2={75} y2={71} color={color} start={started} delayMs={delayMs} />
+const RightArm = ({ color, started, erased, delayMs }: RemovablePartProps) => <SketchLine x1={63} y1={61} x2={75} y2={71} color={color} start={started} erased={erased} delayMs={delayMs} />
 
-const LeftLeg = ({ color, started, delayMs }: { color: string; started?: boolean; delayMs?: number }) => <SketchLine x1={44} y1={76} x2={39} y2={91} color={color} start={started} delayMs={delayMs} />
+const LeftLeg = ({ color, started, erased, delayMs }: RemovablePartProps) => <SketchLine x1={44} y1={76} x2={39} y2={91} color={color} start={started} erased={erased} delayMs={delayMs} />
 
-const RightLeg = ({ color, started, delayMs }: { color: string; started?: boolean; delayMs?: number }) => <SketchLine x1={56} y1={76} x2={61} y2={91} color={color} start={started} delayMs={delayMs} />
+const RightLeg = ({ color, started, erased, delayMs }: RemovablePartProps) => <SketchLine x1={56} y1={76} x2={61} y2={91} color={color} start={started} erased={erased} delayMs={delayMs} />
 
-const Eyes = ({ color, started, delayMs }: { color: string; started?: boolean; delayMs?: number }) => (
-  <FadeScaleIn cx={50} cy={40} start={started} delayMs={delayMs}>
+const Eyes = ({ color, started, erased, delayMs }: RemovablePartProps) => (
+  <FadeScaleIn cx={50} cy={40} start={started} erased={erased} delayMs={delayMs}>
     <Circle cx='43' cy='40' r='3.5' fill={color} />
     <Circle cx='57' cy='40' r='3.5' fill={color} />
   </FadeScaleIn>
 )
 
-const XEyes = ({ color }: { color: string }) => (
+// Drawn in only once the eyes above have finished fading out (delayMs = the erase's own
+// durationMs, DRAW_MS, since Eyes passes none of its own) — so the dead stare reads as the eyes
+// having gone dark and the X's then being drawn on, not two animations racing in the same spot.
+const XEyes = ({ color, delayMs }: { color: string; delayMs?: number }) => (
   <G>
-    <SketchLine x1={40} y1={37} x2={46} y2={43} color={color} strokeWidth={2.5} />
-    <SketchLine x1={46} y1={37} x2={40} y2={43} color={color} strokeWidth={2.5} />
-    <SketchLine x1={54} y1={37} x2={60} y2={43} color={color} strokeWidth={2.5} />
-    <SketchLine x1={60} y1={37} x2={54} y2={43} color={color} strokeWidth={2.5} />
+    <SketchLine x1={40} y1={37} x2={46} y2={43} color={color} strokeWidth={2.5} delayMs={delayMs} />
+    <SketchLine x1={46} y1={37} x2={40} y2={43} color={color} strokeWidth={2.5} delayMs={delayMs} />
+    <SketchLine x1={54} y1={37} x2={60} y2={43} color={color} strokeWidth={2.5} delayMs={delayMs} />
+    <SketchLine x1={60} y1={37} x2={54} y2={43} color={color} strokeWidth={2.5} delayMs={delayMs} />
   </G>
 )
 
@@ -95,8 +105,10 @@ const RobotVisual = ({ mistakes, color, colors, started }: { mistakes: number; c
           post-slice array — see disappearing.tsx's identical comment for why a positional key
           would cause every surviving part to spuriously remount (and replay its reveal) on every
           wrong guess. */}
-      {REMOVAL_ORDER.map((Part, index) => (index < removed ? null : <Part key={index} color={Part === Eyes ? eyeColor : color} started={started} delayMs={CORE_END_MS + (REMOVAL_ORDER.length - 1 - index) * STAGGER_MS} />))}
-      {isDead && <XEyes color={eyeColor} />}
+      {REMOVAL_ORDER.map((Part, index) => (
+        <Part key={index} color={Part === Eyes ? eyeColor : color} started={started} erased={index < removed} delayMs={CORE_END_MS + (REMOVAL_ORDER.length - 1 - index) * STAGGER_MS} />
+      ))}
+      {isDead && <XEyes color={eyeColor} delayMs={DRAW_MS} />}
     </Svg>
   )
 }

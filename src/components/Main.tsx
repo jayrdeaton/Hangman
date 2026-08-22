@@ -66,7 +66,7 @@ export const Main = (): JSX.Element => {
   // The persisted default pack selection (see usePackSelection) — read here, before the lazy
   // state initializers below, so it's already available (synchronously — see
   // PackSelectionProvider) the moment they run.
-  const { selectedPackKeys, setSelectedPackKeys } = usePackSelection()
+  const { selectedPackKeys, setSelectedPackKeys, ready: packSelectionReady } = usePackSelection()
   // Same idea, for the last mode/difficulty the player picked (see PuzzleDefaultsProvider) — read
   // here, before `config`'s own initializer below, so the very first puzzle already draws under
   // them instead of the hardcoded DEFAULT_CONFIG values.
@@ -106,6 +106,12 @@ export const Main = (): JSX.Element => {
     const result = resolvePuzzle(config, selectedPackKeys, {})
     return result.ok ? result.payload : null
   })
+  // The exact pack keys that very first draw actually used — captured here (not re-read later)
+  // so the correction effect below can tell "the persisted selection turned out to be the same
+  // set anyway" apart from "it's genuinely different", without re-triggering on every future
+  // change to selectedPackKeys (a player editing Choose Packs seconds later shouldn't yank the
+  // round already on screen out from under them the way this one-time cold-boot correction does).
+  const initialPackKeysRef = useRef(selectedPackKeys)
   // One-time correction for the very first draw above, which almost always runs BEFORE
   // PuzzleDefaultsProvider's own AsyncStorage read resolves (that read is inherently async, even
   // on a fast cold boot, so `defaultMode`/`defaultDifficulty` were still just the in-memory
@@ -140,6 +146,36 @@ export const Main = (): JSX.Element => {
   // is decided (see Game's own roundOverRef) — cheaper and more accurate than trying to infer
   // "already decided" from Game's outcome state, which lags a loss by its own 450ms delay.
   const roundDecidedRef = useRef(false)
+  // A second, independent one-time correction for that same very first draw — this one for
+  // selectedPackKeys instead of mode/difficulty. PackSelectionProvider's own persisted-selection
+  // read races the same cold-boot draw above, but unlike mode/difficulty it has no in-place patch
+  // (the pack a puzzle came from isn't something you can swap on the session already showing) —
+  // the only way to actually respect a persisted pack selection here is to re-draw. Skipped
+  // entirely when the persisted set matches initialPackKeysRef (nothing to correct — most players
+  // never narrow their selection, and re-drawing then would just churn a perfectly fine puzzle
+  // into a different random one for no reason). Also skipped for anything other than a plain
+  // random round in progress — a custom/shared-link phrase (config.sourceMode !== 'random' already
+  // covers a shared link, since parseSharedPuzzle always returns sourceMode: 'custom'), a pass-and-
+  // play round (pnpPhase never touches config.sourceMode, so it can't be caught by that check
+  // alone), or a round the player has already put a guess into (the same "costs nothing to leave"
+  // test shouldConfirmAbandon itself uses below) — none of those should get silently swapped out
+  // from under the player with no abandon-confirmation dialog and no recorded loss, unlike every
+  // other puzzle-switch path in this file.
+  const appliedPersistedPackKeysRef = useRef(false)
+  useEffect(() => {
+    if (!packSelectionReady || appliedPersistedPackKeysRef.current) return
+    appliedPersistedPackKeysRef.current = true
+    if (config.sourceMode !== 'random') return
+    if (pnpPhase || (!roundDecidedRef.current && roundProgressRef.current.guessCount > 0)) return
+    const initialKeys = initialPackKeysRef.current
+    const unchanged = selectedPackKeys.length === initialKeys.length && initialKeys.every((key) => selectedPackKeys.includes(key))
+    if (unchanged) return
+    const result = resolvePuzzle(config, selectedPackKeys, unlockMapRef.current)
+    if (result.ok) {
+      setSession(result.payload)
+      setRoundKey((k) => k + 1)
+    }
+  }, [packSelectionReady, selectedPackKeys, config, pnpPhase])
   // A puzzle switch requested while the current round already has a guess on it and isn't decided
   // yet — held here until the player confirms via the abandon-confirmation dialog below (or
   // discards it via Cancel), rather than applied immediately like a fresh/already-over round's

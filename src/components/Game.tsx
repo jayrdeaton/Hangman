@@ -3,11 +3,13 @@ import { JSX, useEffect, useRef, useState } from 'react'
 import { Platform, StyleSheet, View } from 'react-native'
 import { Portal, useTheme } from 'react-native-paper'
 import Animated, { useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated'
+import Svg, { Circle } from 'react-native-svg'
 
 import { type CelebrationEffect, DEFAULT_CELEBRATION } from '@/effects/registry'
 import { useKeyboardLayout } from '@/hooks/useKeyboardLayout'
 import { useSoundEffects } from '@/hooks/useSoundEffects'
 import { DEFAULT_MODE } from '@/modes/registry'
+import { FadeScaleIn, SketchCircle } from '@/modes/shared/sketchShapes'
 import type { GameMode } from '@/types/gameModes'
 import type { PuzzleDifficultyTier } from '@/utils/puzzleCatalog'
 
@@ -27,6 +29,19 @@ export type LossDetails = { wrongGuesses: number; guessCount: number }
 // to cover the final stage of the artwork drawing, not a whole show. Exported so tests can assert
 // against the real value instead of a hand-copied magic number.
 export const WIN_DIALOG_DELAY_MS = 2000
+
+// Wrong-guess pip row anchored to the keyboard (see its own render comment below) — same
+// hand-drawn ring + bloom-on-miss treatment as PuzzleStage's own Letters Only pip cluster, just at
+// a fraction of the size and with no letter inside (this row stays letter-less by design; see the
+// render comment). PIP_RADIUS = PIP_CENTER - PIP_STROKE_WIDTH mirrors PuzzleStage's own pip
+// constants exactly, so both rows read as the same shape, just scaled.
+const PIP_SIZE = 12
+const PIP_CENTER = PIP_SIZE / 2
+const PIP_STROKE_WIDTH = 1.5
+const PIP_RADIUS = PIP_CENTER - PIP_STROKE_WIDTH
+// Stagger between one pip ring's own reveal and the next at round start — same spirit as
+// PuzzleStage's own PIP_STAGGER_MS, just local to this file since nothing else needs it.
+const PIP_STAGGER_MS = 60
 
 export type GameProps = {
   onStop: () => void
@@ -221,9 +236,23 @@ export const Game = ({ onStop, onSolved, onLost, onGuessProgress, phrase, mode =
             (pipsLabel) still spells the wrong letters out either way, for a screen reader. */}
         {hasVisual ? (
           <View style={styles.pipRow} accessibilityLabel={pipsLabel}>
-            {Array.from({ length: maxWrong }, (_, i) => (
-              <View key={i} style={[styles.pip, { borderColor: secondaryColor }, i < wrongGuesses ? { backgroundColor: secondaryColor } : null]} />
-            ))}
+            {Array.from({ length: maxWrong }, (_, i) => {
+              const filled = i < wrongGuesses
+              return (
+                // testID lives on this wrapping View, not the Svg itself — see PuzzleStage's own
+                // identical comment on why (Svg has no single host node of its own to carry one).
+                <View key={i} testID={`pip-${i}`}>
+                  <Svg width={PIP_SIZE} height={PIP_SIZE} viewBox={`0 0 ${PIP_SIZE} ${PIP_SIZE}`}>
+                    <SketchCircle cx={PIP_CENTER} cy={PIP_CENTER} r={PIP_RADIUS} color={secondaryColor} strokeWidth={PIP_STROKE_WIDTH} start={gameReady} delayMs={i * PIP_STAGGER_MS} />
+                    {filled ? (
+                      <FadeScaleIn cx={PIP_CENTER} cy={PIP_CENTER}>
+                        <Circle cx={PIP_CENTER} cy={PIP_CENTER} r={PIP_RADIUS} fill={secondaryColor} />
+                      </FadeScaleIn>
+                    ) : null}
+                  </Svg>
+                </View>
+              )
+            })}
           </View>
         ) : null}
         <Keyboard guessedLetters={guessedLetters} phrase={phrase} winningLetter={winningLetter} falling={keyboardFalling} started={gameReady} disabled={outcome !== null} layout={layout} onGuess={handleGuess} onReadyChange={setKeyboardReady} />
@@ -244,7 +273,6 @@ export const Game = ({ onStop, onSolved, onLost, onGuessProgress, phrase, mode =
 
 const styles = StyleSheet.create({
   gameContainer: { alignItems: 'center', flex: 1 },
-  pip: { borderRadius: 6, borderWidth: 1.5, height: 12, width: 12 },
   pipRow: { flexDirection: 'row', gap: 8, marginBottom: 12, marginTop: 4 },
   root: { flex: 1 }
 })

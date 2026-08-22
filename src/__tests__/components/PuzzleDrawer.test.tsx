@@ -90,7 +90,7 @@ const builtInPacks = () => getPuzzleManifest().filter((item) => item.count > 0)
 const renderDrawer = (overrides: Partial<React.ComponentProps<typeof PuzzleDrawer>> = {}, packSelection?: Partial<PackSelectionContextType>) => {
   const drawer = <PuzzleDrawer visible onDismiss={jest.fn()} onRequestOpen={jest.fn()} initialConfig={baseConfig} onConfirm={jest.fn()} {...overrides} />
   if (!packSelection) return render(drawer)
-  return render(<PackSelectionContext.Provider value={{ selectedPackKeys: [], setSelectedPackKeys: jest.fn(), ...packSelection }}>{drawer}</PackSelectionContext.Provider>)
+  return render(<PackSelectionContext.Provider value={{ selectedPackKeys: [], setSelectedPackKeys: jest.fn(), ready: true, ...packSelection }}>{drawer}</PackSelectionContext.Provider>)
 }
 
 // success/warning/danger only exist on a theme @rific/auto-paper's Provider actually computed (see
@@ -109,7 +109,7 @@ const ThemeCapture = () => {
 const renderDrawerWithRealTheme = async (overrides: Partial<React.ComponentProps<typeof PuzzleDrawer>> = {}, packSelection?: Partial<PackSelectionContextType>) => {
   capturedTheme = null
   const drawer = <PuzzleDrawer visible onDismiss={jest.fn()} onRequestOpen={jest.fn()} initialConfig={baseConfig} onConfirm={jest.fn()} {...overrides} />
-  const wrapped = packSelection ? <PackSelectionContext.Provider value={{ selectedPackKeys: [], setSelectedPackKeys: jest.fn(), ...packSelection }}>{drawer}</PackSelectionContext.Provider> : drawer
+  const wrapped = packSelection ? <PackSelectionContext.Provider value={{ selectedPackKeys: [], setSelectedPackKeys: jest.fn(), ready: true, ...packSelection }}>{drawer}</PackSelectionContext.Provider> : drawer
   const utils = await render(
     <Provider initialValue={{ appearance: 'light' }}>
       <ThemeCapture />

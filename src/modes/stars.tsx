@@ -6,7 +6,7 @@ import type { GameMode } from '@/types/gameModes'
 import { clampStage } from './shared/clampStage'
 import { randIn, shuffledIndices } from './shared/procedural'
 import { SCENE_START_DELAY_MS } from './shared/sceneReveal'
-import { FadeScaleIn } from './shared/sketchShapes'
+import { DRAW_MS, polylineLength, SketchFill, SketchPath } from './shared/sketchShapes'
 
 // Quantitative/depletion: a night sky dims one proper 5-pointed star at a time.
 // maxMistakes=6, same baseline every mode uses.
@@ -46,15 +46,20 @@ const STAGGER_MS = 110
 // A proper 5-pointed star outline, one point straight up — 10 alternating outer/inner vertices —
 // instead of the 4-pointed crossed-lines doodle this mode used to draw (see snowflakes.tsx, which
 // kept that original doodle under its own name).
-function starPath(cx: number, cy: number, outerR: number): string {
+function starPoints(cx: number, cy: number, outerR: number): [number, number][] {
   const innerR = outerR * INNER_RATIO
-  const points: string[] = []
+  const points: [number, number][] = []
   for (let i = 0; i < 10; i++) {
     const angle = (Math.PI / 5) * i - Math.PI / 2
     const r = i % 2 === 0 ? outerR : innerR
-    points.push(`${(cx + r * Math.cos(angle)).toFixed(2)},${(cy + r * Math.sin(angle)).toFixed(2)}`)
+    points.push([cx + r * Math.cos(angle), cy + r * Math.sin(angle)])
   }
-  return `M${points[0]} L${points.slice(1).join(' L')} Z`
+  return points
+}
+
+function starPath(points: [number, number][]): string {
+  const [first, ...rest] = points
+  return `M${first[0].toFixed(2)},${first[1].toFixed(2)} L${rest.map((p) => `${p[0].toFixed(2)},${p[1].toFixed(2)}`).join(' L')} Z`
 }
 
 function makeStars(): StarData[] {
@@ -67,17 +72,21 @@ function makeStars(): StarData[] {
   }))
 }
 
-// A star is mostly solid fill with only a hairline stroke, so tracing that stroke wouldn't read as
-// "drawing" the star (the fill would already show solid underneath the whole time) — it fades and
-// scales in around its own center instead, same as balloons.tsx. Every star mounts exactly once,
-// already visible at mistakes=0 (this is a depletion mode: a wrong guess removes one rather than
-// revealing one), so `started`/`delayMs` gate and stagger the whole sky materializing in at round
-// start rather than a per-guess reveal.
-const StarShape = ({ x, y, size, color, started, delayMs }: { x: number; y: number; size: number; color: string; started?: boolean; delayMs?: number }) => (
-  <FadeScaleIn cx={x} cy={y} start={started} delayMs={delayMs}>
-    <Path d={starPath(x, y, size)} fill={color} stroke={color} strokeWidth='1' />
-  </FadeScaleIn>
-)
+// Every star mounts exactly once, already visible at mistakes=0 (this is a depletion mode: a wrong
+// guess removes one rather than revealing one), so `started`/`delayMs` gate and stagger the whole
+// sky materializing in at round start rather than a per-guess reveal. The hairline outline sketches
+// on first; the fill wipes in right behind it, same handoff balloons.tsx uses.
+const StarShape = ({ x, y, size, color, started, delayMs = 0 }: { x: number; y: number; size: number; color: string; started?: boolean; delayMs?: number }) => {
+  const points = starPoints(x, y, size)
+  const d = starPath(points)
+  const length = polylineLength([...points, points[0]])
+  return (
+    <>
+      <SketchFill bounds={{ x: x - size, y: y - size, width: size * 2, height: size * 2 }} clip={<Path d={d} />} color={color} start={started} delayMs={delayMs + DRAW_MS} />
+      <SketchPath d={d} length={length} color={color} strokeWidth={1} start={started} delayMs={delayMs} />
+    </>
+  )
+}
 
 const StarsVisual = ({ mistakes, color, colors, started }: { mistakes: number; color: string; colors?: string[]; started?: boolean }) => {
   const [stars] = useState<StarData[]>(makeStars)

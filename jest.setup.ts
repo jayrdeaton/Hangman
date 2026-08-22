@@ -330,6 +330,24 @@ jest.mock('expo-audio', () => ({
     pause: jest.fn(),
     stop: jest.fn(),
     seekTo: jest.fn().mockResolvedValue(undefined),
+    remove: jest.fn(),
+    addListener: jest.fn(() => ({
+      remove: jest.fn()
+    }))
+  })),
+  // @rific/feedback-press/audio's useAudioPool builds its pool with createAudioPlayer (a plain
+  // factory), not the useAudioPlayer hook — both need mocking here.
+  createAudioPlayer: jest.fn(() => ({
+    duration: 0,
+    currentTime: 0,
+    isLoaded: false,
+    isPlaying: false,
+    load: jest.fn().mockResolvedValue(undefined),
+    play: jest.fn(),
+    pause: jest.fn(),
+    stop: jest.fn(),
+    seekTo: jest.fn().mockResolvedValue(undefined),
+    remove: jest.fn(),
     addListener: jest.fn(() => ({
       remove: jest.fn()
     }))
@@ -444,6 +462,8 @@ jest.mock('react-native-svg', () => ({
   default: ({ children }: any) => children,
   Svg: ({ children }: any) => children,
   Circle: 'Circle',
+  ClipPath: 'ClipPath',
+  Defs: 'Defs',
   Ellipse: 'Ellipse',
   G: 'G',
   Line: 'Line',

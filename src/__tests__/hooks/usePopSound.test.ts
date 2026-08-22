@@ -1,5 +1,5 @@
 import { act, renderHook } from '@testing-library/react-native'
-import { useAudioPlayer } from 'expo-audio'
+import { createAudioPlayer } from 'expo-audio'
 
 import { usePopSound } from '@/hooks/usePopSound'
 import { useSoundSettings } from '@/hooks/useSoundSettings'
@@ -7,7 +7,9 @@ import { useSoundSettings } from '@/hooks/useSoundSettings'
 jest.mock('@/hooks/useSoundSettings', () => ({ useSoundSettings: jest.fn() }))
 
 const mockUseSoundSettings = jest.mocked(useSoundSettings)
-const mockUseAudioPlayer = jest.mocked(useAudioPlayer)
+// @rific/feedback-press/audio's useAudioPool builds its pool with createAudioPlayer (a plain
+// factory), not the useAudioPlayer hook.
+const mockCreateAudioPlayer = jest.mocked(createAudioPlayer)
 
 // Same setTimeout(0)-plus-promise deferral as useClickSound.ts — see that test file's own
 // comment on why a single awaited async act() (not a bare act() followed by a separate await) is
@@ -21,13 +23,16 @@ const popAndFlush = async (playPop: () => void, times = 1) => {
 
 describe('usePopSound', () => {
   beforeEach(() => {
-    mockUseAudioPlayer.mockClear()
+    mockCreateAudioPlayer.mockClear()
     mockUseSoundSettings.mockReturnValue({ settings: { enabled: true }, setEnabled: jest.fn() })
   })
 
   it('round-robins across its player pool for successive pops', async () => {
     const { result } = await renderHook(() => usePopSound())
-    const players = mockUseAudioPlayer.mock.results.map((r) => r.value)
+    const players = mockCreateAudioPlayer.mock.results.map((r) => r.value)
+    // useAudioPool now allocates exactly poolSize players (createAudioPlayer is a plain factory,
+    // not a hook, so it's not bound to a fixed hook-call count) — usePopSound passes
+    // poolSize: 4, so exactly 4 get created, all of which actively rotate.
     expect(players).toHaveLength(4)
 
     await popAndFlush(result.current.playPop, 5)
@@ -41,7 +46,7 @@ describe('usePopSound', () => {
   it('no-ops when sound is disabled', async () => {
     mockUseSoundSettings.mockReturnValue({ settings: { enabled: false }, setEnabled: jest.fn() })
     const { result } = await renderHook(() => usePopSound())
-    const players = mockUseAudioPlayer.mock.results.map((r) => r.value)
+    const players = mockCreateAudioPlayer.mock.results.map((r) => r.value)
 
     await popAndFlush(result.current.playPop)
 
