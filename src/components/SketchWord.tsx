@@ -2,6 +2,7 @@ import React from 'react'
 import Svg from 'react-native-svg'
 
 import { GLYPH_HEIGHT, HERSHEY_GAP, HERSHEY_GLYPHS } from '@/modes/shared/letterformsHershey'
+import { WORD_SWEEP_DELAY_MS } from '@/modes/shared/sceneReveal'
 import { SketchLetter } from '@/modes/shared/sketchLetter'
 import { SketchLine } from '@/modes/shared/sketchShapes'
 
@@ -19,7 +20,8 @@ const BLANK_MARK_FILL = 0.55
 // multi-part reveal in this app uses (classicParts.tsx's GALLOWS_STAGGER_MS, balloons.tsx's own
 // STAGGER_MS, ...) rather than a slower value — against SketchPath's own DRAW_MS (380), this reads
 // as a few dashes drawing in close together, not a dozen scribbling in at once and not a slow
-// one-at-a-time crawl either.
+// one-at-a-time crawl either. Added on top of WORD_SWEEP_DELAY_MS (see sceneReveal.ts), which is
+// the whole-screen sweep's own head start for this band, not a per-blank amount.
 const BLANK_STAGGER_MS = 90
 // Gap between one duplicate letter's own reveal starting and the next one's — e.g. guessing "S" in
 // "KISS" reveals two positions in the same render, and without this both S's would draw in at the
@@ -69,7 +71,7 @@ export const SketchWord = ({ letters, fontSize, color, started }: SketchWordProp
         if (ch === '_') {
           const y = height - strokeWidth
           const inset = (cellWidth - markWidth) / 2
-          return <SketchLine key={i} x1={cellX + inset} y1={y} x2={cellX + cellWidth - inset} y2={y} color={color} strokeWidth={strokeWidth} start={started} delayMs={i * BLANK_STAGGER_MS} />
+          return <SketchLine key={i} x1={cellX + inset} y1={y} x2={cellX + cellWidth - inset} y2={y} color={color} strokeWidth={strokeWidth} start={started} delayMs={WORD_SWEEP_DELAY_MS + i * BLANK_STAGGER_MS} />
         }
         const letterWidth = (HERSHEY_GLYPHS[ch]?.width ?? 0) * scale
         // How many earlier positions in this same word already show this same letter — 0 for the

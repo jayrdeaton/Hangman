@@ -6,6 +6,7 @@ import Animated, { Easing, useAnimatedStyle, useSharedValue, withDelay, withSequ
 import Svg, { Rect } from 'react-native-svg'
 
 import type { KeyboardLayout } from '@/hooks/useKeyboardLayout'
+import { KEYBOARD_SWEEP_DELAY_MS } from '@/modes/shared/sceneReveal'
 import { SketchFill } from '@/modes/shared/sketchShapes'
 
 export type KeyboardProps = {
@@ -36,12 +37,12 @@ export type KeyboardProps = {
   // convention already used by the mode artwork) — true once the whole screen's reveal curtain has
   // resolved. Drives this keyboard's own one-time entrance below: every key fades in while its own
   // hatch fill draws in for the first time, staggered left to right across the whole board (see
-  // ENTRANCE_COLUMN_STAGGER_MS) so the entrance itself reads as the keyboard being drawn, after the
-  // same ENTRANCE_START_DELAY_MS classicParts.tsx's own gallows sketch waits — so both read as one
-  // deliberate beat once the curtain settles, not two animations racing it (or each other) on their
-  // own schedules. Defaults true so a keyboard mounted without wiring the real signal still gets a
-  // plain on-mount entrance rather than sitting permanently hidden. Also gates each key's own very
-  // first hatch-fill draw-in, for the same reason.
+  // ENTRANCE_COLUMN_STAGGER_MS), starting at KEYBOARD_SWEEP_DELAY_MS (see sceneReveal.ts). The
+  // keyboard sits at the very bottom of the screen, so it's the first band of the whole-screen
+  // sweep to begin, ahead of the pips/word/artwork/info-row above it, rather than racing them on
+  // its own schedule. Defaults true so a keyboard mounted without wiring the real signal still gets
+  // a plain on-mount entrance rather than sitting permanently hidden. Also gates each key's own
+  // very first hatch-fill draw-in, for the same reason.
   started?: boolean
   layout?: KeyboardLayout
   onGuess: (letter: string) => void
@@ -104,9 +105,6 @@ const CASCADE_ROW_STAGGER_MS = 90
 const CASCADE_JITTER_MS = 300
 
 // -- Game-start "drawn in left to right" entrance --
-// Same delay classicParts.tsx's own gallows sketch waits after `started` before it begins drawing
-// — see KeyboardProps.started's own comment for why matching it matters.
-const ENTRANCE_START_DELAY_MS = 400
 // Per-column head start, keyed on a key's plain index within its own row (see findKeyPosition's
 // own comment on why index rather than a measured pixel position) — every key sharing a column
 // index across all three rows starts at the same moment, so the sweep reads as one wavefront
@@ -203,7 +201,7 @@ const KeyboardKey = ({ letter, isGuessed, isWrong, disabled, width, rippleDistan
 
   useLayoutEffect(() => {
     if (!started) return
-    const delay = ENTRANCE_START_DELAY_MS + entranceBaseDelayMs
+    const delay = KEYBOARD_SWEEP_DELAY_MS + entranceBaseDelayMs
     opacity.value = withDelay(delay, withTiming(1, { duration: ENTRANCE_DURATION_MS, easing: Easing.out(Easing.cubic) }))
     // started is only ever set true once per Keyboard instance (see its own prop comment) —
     // re-running this if entranceBaseDelayMs happened to change identity would just no-op against
@@ -227,7 +225,7 @@ const KeyboardKey = ({ letter, isGuessed, isWrong, disabled, width, rippleDistan
   // just recolor instantly" mode, so a fresh mount is what makes each transition read as a redraw
   // rather than a flat color swap. `delayMs` is whatever stagger that particular transition uses
   // (none for a single key's own guess, the win/loss wave's own stagger for those).
-  const [fill, setFill] = useState({ gen: 0, color: theme.colors.primary, textColor: theme.colors.onPrimary, delayMs: ENTRANCE_START_DELAY_MS + entranceBaseDelayMs })
+  const [fill, setFill] = useState({ gen: 0, color: theme.colors.primary, textColor: theme.colors.onPrimary, delayMs: KEYBOARD_SWEEP_DELAY_MS + entranceBaseDelayMs })
 
   // Redraws this key's own fill the instant its own guess lands — a correct guess gets no color
   // of its own at all, just the same muted "spent" look a disabled control already has everywhere

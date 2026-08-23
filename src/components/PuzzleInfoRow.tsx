@@ -1,10 +1,20 @@
 import { TouchableRipple } from '@rific/feedback-press'
-import { JSX } from 'react'
+import { JSX, useEffect } from 'react'
 import { StyleSheet, View } from 'react-native'
 import { Icon, Text, useTheme } from 'react-native-paper'
+import Animated, { Easing, useAnimatedStyle, useSharedValue, withDelay, withTiming } from 'react-native-reanimated'
 
 import { useDifficultyOnVibrantColors, useDifficultyVibrantColors } from '@/hooks/useDifficultyColors'
+import { INFO_ROW_SWEEP_DELAY_MS } from '@/modes/shared/sceneReveal'
 import type { PuzzleDifficultyTier } from '@/utils/puzzleCatalog'
+
+// This row sits at the very top of the screen, so it's the LAST band in the whole-screen opening
+// sweep (see sceneReveal.ts): settling in, fading up and easing down into place, once the
+// keyboard/pips/word/artwork below it have already begun. A plain fade+settle rather than a
+// hand-drawn stroke reveal: unlike everything else in the sweep this is solid rn-paper chrome, not
+// an SVG path with anything to trace.
+const ENTRANCE_DURATION_MS = 260
+const ENTRANCE_TRANSLATE_Y = 8
 
 const DIFFICULTY_LABELS: Record<PuzzleDifficultyTier, string> = {
   easy: 'Easy',
@@ -28,9 +38,13 @@ export type PuzzleInfoRowProps = {
   hint?: string
   hintRevealed: boolean
   onRevealHint: () => void
+  // Game.tsx's own gameReady. See Keyboard.tsx's identical `started` prop comment for the shared
+  // convention. Defaults true so a row mounted without wiring the real signal still gets a plain
+  // on-mount entrance rather than sitting permanently hidden.
+  started?: boolean
 }
 
-export const PuzzleInfoRow = ({ difficultyTier, packLabel, hint, hintRevealed, onRevealHint }: PuzzleInfoRowProps): JSX.Element | null => {
+export const PuzzleInfoRow = ({ difficultyTier, packLabel, hint, hintRevealed, onRevealHint, started = true }: PuzzleInfoRowProps): JSX.Element | null => {
   const theme = useTheme()
   const tertiaryColor = theme.colors.tertiary
   // The hint pill is FILLED with tertiary and draws its icon/text in onTertiary, rather than
@@ -57,11 +71,23 @@ export const PuzzleInfoRow = ({ difficultyTier, packLabel, hint, hintRevealed, o
   const hasInfoRow = Boolean(difficultyTier) || hasHintContent
   const hintAccessibilityLabel = hintSegments.join('. ')
 
+  const entranceOpacity = useSharedValue(0)
+  const entranceTranslateY = useSharedValue(ENTRANCE_TRANSLATE_Y)
+  useEffect(() => {
+    if (!started) return
+    entranceOpacity.value = withDelay(INFO_ROW_SWEEP_DELAY_MS, withTiming(1, { duration: ENTRANCE_DURATION_MS, easing: Easing.out(Easing.cubic) }))
+    entranceTranslateY.value = withDelay(INFO_ROW_SWEEP_DELAY_MS, withTiming(0, { duration: ENTRANCE_DURATION_MS, easing: Easing.out(Easing.cubic) }))
+    // started is only ever set true once per Game instance (see its own prop comment), and nothing
+    // else here ever changes identity in a way that should re-fire this one-shot entrance.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [started])
+  const entranceStyle = useAnimatedStyle(() => ({ opacity: entranceOpacity.value, transform: [{ translateY: entranceTranslateY.value }] }))
+
   if (!hasInfoRow) return null
 
   return (
     <View style={styles.hintSlot}>
-      <View style={styles.infoRow}>
+      <Animated.View style={[styles.infoRow, entranceStyle]}>
         {difficultyTier ? (
           <View style={[styles.pill, { backgroundColor: difficultyVibrantColors[difficultyTier], borderColor: difficultyVibrantColors[difficultyTier] }]} accessibilityLabel={`Difficulty: ${DIFFICULTY_LABELS[difficultyTier]}`}>
             <Text style={[styles.pillTextStrong, { color: difficultyOnVibrantColors[difficultyTier] }]}>{DIFFICULTY_LABELS[difficultyTier]}</Text>
@@ -86,7 +112,7 @@ export const PuzzleInfoRow = ({ difficultyTier, packLabel, hint, hintRevealed, o
             </View>
           </TouchableRipple>
         ) : null}
-      </View>
+      </Animated.View>
     </View>
   )
 }

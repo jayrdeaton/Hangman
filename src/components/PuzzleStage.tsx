@@ -5,6 +5,7 @@ import { useTheme } from 'react-native-paper'
 import Svg, { Circle } from 'react-native-svg'
 
 import { HERSHEY_GAP } from '@/modes/shared/letterformsHershey'
+import { PIPS_SWEEP_DELAY_MS } from '@/modes/shared/sceneReveal'
 import { glyphWidth, SketchLetter } from '@/modes/shared/sketchLetter'
 import { FadeScaleIn, SketchCircle } from '@/modes/shared/sketchShapes'
 import type { GameMode } from '@/types/gameModes'
@@ -53,7 +54,9 @@ const PIP_RADIUS = PIP_CENTER - PIP_STROKE_WIDTH
 const PIP_LETTER_HEIGHT = 15
 const PIP_LETTER_STROKE_WIDTH = 2
 // Stagger between one pip ring's own reveal and the next at round start — same spirit as
-// SketchWord's own BLANK_STAGGER_MS, just local to this file since nothing else needs it.
+// SketchWord's own BLANK_STAGGER_MS, just local to this file since nothing else needs it. Added on
+// top of PIPS_SWEEP_DELAY_MS (see sceneReveal.ts), which is the whole-screen sweep's own head start
+// for this band, not a per-pip amount.
 const PIP_STAGGER_MS = 60
 // A beat after a wrong guess's fill dot blooms in, so the pip reads as bloom-then-letter rather
 // than both popping in at the same instant.
@@ -266,7 +269,7 @@ export const PuzzleStage = ({ mode, phrase, guessedLetters, wrongGuesses, wrongL
                   // node of its own to carry one (it's a pure viewport around its children).
                   <View key={i} testID={`pip-${i}`}>
                     <Svg width={PIP_SIZE} height={PIP_SIZE} viewBox={`0 0 ${PIP_SIZE} ${PIP_SIZE}`}>
-                      <SketchCircle cx={PIP_CENTER} cy={PIP_CENTER} r={PIP_RADIUS} color={tertiaryColor} strokeWidth={PIP_STROKE_WIDTH} start={started} delayMs={i * PIP_STAGGER_MS} />
+                      <SketchCircle cx={PIP_CENTER} cy={PIP_CENTER} r={PIP_RADIUS} color={tertiaryColor} strokeWidth={PIP_STROKE_WIDTH} start={started} delayMs={PIPS_SWEEP_DELAY_MS + i * PIP_STAGGER_MS} />
                       {filled ? (
                         <FadeScaleIn cx={PIP_CENTER} cy={PIP_CENTER}>
                           <Circle cx={PIP_CENTER} cy={PIP_CENTER} r={PIP_RADIUS} fill={tertiaryColor} />

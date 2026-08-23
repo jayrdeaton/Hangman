@@ -362,7 +362,14 @@ export const PuzzleDrawer = memo(({ visible, onDismiss, onRequestOpen, initialCo
 
   return (
     <>
-      <DrawerEdgeSwipe enabled={!visible} onOpen={onRequestOpen} translateOffset={translateX} width={DRAWER_WIDTH} />
+      {/* Permanently disabled, not just while the drawer is already open: this strip runs the full
+          screen height along the left edge, which on Hangman's own screen overlaps the Q/A/Z
+          column of the on-screen keyboard, silently swallowing presses meant for those keys during
+          play. enabled={false} is DrawerEdgeSwipe's own documented way to shed the gesture (see its
+          own comment): the underlying View switches to pointerEvents:'none', so those key presses
+          fall straight through to the keyboard instead. The hamburger menu button remains a fully
+          working way to open this drawer either way. */}
+      <DrawerEdgeSwipe enabled={false} onOpen={onRequestOpen} translateOffset={translateX} width={DRAWER_WIDTH} />
       {/* open is gated on !anyOverlayVisible too, not just visible — PacksScreen, PackPuzzlesDrawer,
           and ModePickerDrawer each render as a Drawer of their own, stacked on top of this one while
           open. Now that every drawer's header/footer float over a blurred backdrop (see

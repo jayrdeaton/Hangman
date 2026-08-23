@@ -9,6 +9,7 @@ import { type CelebrationEffect, DEFAULT_CELEBRATION } from '@/effects/registry'
 import { useKeyboardLayout } from '@/hooks/useKeyboardLayout'
 import { useSoundEffects } from '@/hooks/useSoundEffects'
 import { DEFAULT_MODE } from '@/modes/registry'
+import { PIPS_SWEEP_DELAY_MS } from '@/modes/shared/sceneReveal'
 import { FadeScaleIn, SketchCircle } from '@/modes/shared/sketchShapes'
 import type { GameMode } from '@/types/gameModes'
 import type { PuzzleDifficultyTier } from '@/utils/puzzleCatalog'
@@ -40,7 +41,9 @@ const PIP_CENTER = PIP_SIZE / 2
 const PIP_STROKE_WIDTH = 1.5
 const PIP_RADIUS = PIP_CENTER - PIP_STROKE_WIDTH
 // Stagger between one pip ring's own reveal and the next at round start — same spirit as
-// PuzzleStage's own PIP_STAGGER_MS, just local to this file since nothing else needs it.
+// PuzzleStage's own PIP_STAGGER_MS, just local to this file since nothing else needs it. Added on
+// top of PIPS_SWEEP_DELAY_MS (see sceneReveal.ts), which is the whole-screen sweep's own head start
+// for this band, not a per-pip amount.
 const PIP_STAGGER_MS = 60
 
 export type GameProps = {
@@ -223,7 +226,7 @@ export const Game = ({ onStop, onSolved, onLost, onGuessProgress, phrase, mode =
           consistency (revealed as part of the same screen, not a beat ahead of it) rather than
           because they'd otherwise show anything wrong. */}
       <Animated.View testID='game-container' style={[styles.gameContainer, gameFadeStyle]}>
-        <PuzzleInfoRow difficultyTier={difficultyTier} packLabel={packLabel} hint={hint} hintRevealed={hintRevealed} onRevealHint={() => setHintRevealed(true)} />
+        <PuzzleInfoRow difficultyTier={difficultyTier} packLabel={packLabel} hint={hint} hintRevealed={hintRevealed} onRevealHint={() => setHintRevealed(true)} started={gameReady} />
         <PuzzleStage mode={mode} phrase={phrase} guessedLetters={guessedLetters} wrongGuesses={wrongGuesses} wrongLetters={wrongLetters} maxWrong={maxWrong} pipsLabel={pipsLabel} onReadyChange={setPuzzleStageReady} started={gameReady} />
         {/* Anchored to the keyboard (not the artwork, and not wherever PuzzleStage's own word-row
             centering happens to land it) — the pips are a "guesses remaining" readout, most useful
@@ -243,7 +246,7 @@ export const Game = ({ onStop, onSolved, onLost, onGuessProgress, phrase, mode =
                 // identical comment on why (Svg has no single host node of its own to carry one).
                 <View key={i} testID={`pip-${i}`}>
                   <Svg width={PIP_SIZE} height={PIP_SIZE} viewBox={`0 0 ${PIP_SIZE} ${PIP_SIZE}`}>
-                    <SketchCircle cx={PIP_CENTER} cy={PIP_CENTER} r={PIP_RADIUS} color={secondaryColor} strokeWidth={PIP_STROKE_WIDTH} start={gameReady} delayMs={i * PIP_STAGGER_MS} />
+                    <SketchCircle cx={PIP_CENTER} cy={PIP_CENTER} r={PIP_RADIUS} color={secondaryColor} strokeWidth={PIP_STROKE_WIDTH} start={gameReady} delayMs={PIPS_SWEEP_DELAY_MS + i * PIP_STAGGER_MS} />
                     {filled ? (
                       <FadeScaleIn cx={PIP_CENTER} cy={PIP_CENTER}>
                         <Circle cx={PIP_CENTER} cy={PIP_CENTER} r={PIP_RADIUS} fill={secondaryColor} />
