@@ -13,7 +13,10 @@ export type SoundSettingsProviderProps = { children: ReactNode }
 // future guess plays a sound, and no guess can happen before the very first frame renders, so
 // there's nothing for the splash screen to wait on; the saved value just loads in the background.
 export const SoundSettingsProvider = ({ children }: SoundSettingsProviderProps): JSX.Element => {
-  const [enabled, setEnabledState] = useState(true)
+  // Default muted in dev/simulator builds (no stored preference yet, so the effect below never
+  // overwrites this) so Claude/local testing doesn't blast audio; production builds still default
+  // to sound on.
+  const [enabled, setEnabledState] = useState(!__DEV__)
 
   useEffect(() => {
     void AsyncStorage.getItem(STORAGE_KEY).then((stored) => {
