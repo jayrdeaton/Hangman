@@ -1,12 +1,14 @@
 import { type AutoPaperTheme, Provider as AutoPaperProvider, useAutoPaperTheme } from '@rific/auto-paper'
+import { FeedbackPressProvider } from '@rific/feedback-press'
+import { BURST_LIFETIME_MS, MAX_BURST_INTERVAL_MS } from '@tastic/animations/fireworks'
 import { act, fireEvent, render as rtlRender } from '@testing-library/react-native'
 import * as haptics from 'expo-haptics'
-import { type ReactElement, useEffect } from 'react'
+import { type ReactElement, type ReactNode, useEffect } from 'react'
 import { StyleSheet, Text } from 'react-native'
+import * as RNPaper from 'react-native-paper'
 import { PaperProvider } from 'react-native-paper'
 
 import { Game, WIN_DIALOG_DELAY_MS } from '@/components/Game'
-import { BURST_LIFETIME_MS, MAX_BURST_INTERVAL_MS } from '@/effects/fireworks'
 import type { GameMode } from '@/types/gameModes'
 
 jest.mock('expo-haptics', () => ({
@@ -24,7 +26,20 @@ const mockNotificationAsync = jest.mocked(haptics.notificationAsync)
 // normally supplied by @rific/auto-paper's Provider at the app root. Wrapping with PaperProvider
 // here supplies that same Portal.Host without pulling in the rest of the app's Redux/persist
 // provider stack.
-const render = (ui: ReactElement) => rtlRender(ui, { wrapper: PaperProvider })
+// FeedbackPressProvider paper={RNPaper} is required too — @rific/feedback-press no longer
+// auto-detects react-native-paper (see Haptic.tsx's own comment on this), so without it every
+// Button/IconButton Game.tsx renders (the keyboard, the hint/pack pill, RoundEndDialog's own
+// buttons) falls back to a bare, unstyled Pressable that ignores the themed labelStyle/
+// accessibilityLabel props those all rely on. It has to wrap PaperProvider, not nest inside it —
+// PaperProvider's PortalHost mounts near its own root (same reasoning Providers.tsx gives for
+// hoisting the real app's Haptic above Theme), so RoundEndDialog's Portal-rendered buttons only
+// see FeedbackPressProvider's context if it's an ancestor of PaperProvider.
+const Wrapper = ({ children }: { children: ReactNode }) => (
+  <FeedbackPressProvider paper={RNPaper}>
+    <PaperProvider>{children}</PaperProvider>
+  </FeedbackPressProvider>
+)
+const render = (ui: ReactElement) => rtlRender(ui, { wrapper: Wrapper })
 
 // danger/onDanger (Keyboard's own wrong-guess color, see Keyboard.tsx) only exist on a theme
 // @rific/auto-paper's Provider actually computed — render's own bare PaperProvider fallback
@@ -41,10 +56,12 @@ const ThemeCapture = () => {
 const renderWithRealTheme = async (ui: ReactElement) => {
   capturedTheme = null
   const utils = await rtlRender(
-    <AutoPaperProvider initialValue={{ appearance: 'light' }}>
-      <ThemeCapture />
-      {ui}
-    </AutoPaperProvider>
+    <FeedbackPressProvider paper={RNPaper}>
+      <AutoPaperProvider initialValue={{ appearance: 'light' }}>
+        <ThemeCapture />
+        {ui}
+      </AutoPaperProvider>
+    </FeedbackPressProvider>
   )
   return { ...utils, theme: capturedTheme! }
 }
@@ -220,14 +237,17 @@ describe('Game', () => {
   // guessed — both just went disabled — so there was no way to look back and tell which specific
   // guesses were wrong (see Keyboard.tsx's own comment on why buttonColor/textColor alone can't
   // do this while disabled).
-  it("colors a wrong-guessed key's label with the theme's onDanger role, leaving a correctly-guessed key's label unchanged", async () => {
+  // A single wrong guess gets the quieter dangerContainer/onDangerContainer tone, not the full
+  // danger/onDanger one — that's reserved for the loss cascade once the whole round ends (see
+  // Keyboard.tsx's own comment on the two-tier distinction).
+  it("colors a wrong-guessed key's label with the theme's onDangerContainer role, leaving a correctly-guessed key's label unchanged", async () => {
     const { getByText, theme } = await renderWithRealTheme(<Game phrase='CAT' onStop={jest.fn()} />)
 
     await guessLetter(getByText, 'C')
     await guessLetter(getByText, 'Q')
 
-    expect(StyleSheet.flatten(getByText('Q').props.style).color).toBe(theme.colors.onDanger)
-    expect(StyleSheet.flatten(getByText('C').props.style).color).not.toBe(theme.colors.onDanger)
+    expect(StyleSheet.flatten(getByText('Q').props.style).color).toBe(theme.colors.onDangerContainer)
+    expect(StyleSheet.flatten(getByText('C').props.style).color).not.toBe(theme.colors.onDangerContainer)
   })
 
   // Letters Only mode's own pip cluster (PuzzleStage.tsx, hasVisual: false) has the room a

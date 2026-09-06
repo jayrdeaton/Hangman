@@ -1,5 +1,8 @@
-import { fireEvent, render } from '@testing-library/react-native'
-import type { ComponentProps } from 'react'
+import { FeedbackPressProvider } from '@rific/feedback-press'
+import { fireEvent, render as rtlRender } from '@testing-library/react-native'
+import type { ComponentProps, ReactElement, ReactNode } from 'react'
+import * as RNPaper from 'react-native-paper'
+import { PaperProvider } from 'react-native-paper'
 
 import { PackPuzzlesDrawer } from '@/components/PackPuzzlesDrawer'
 import { DEFAULT_MODE } from '@/modes/registry'
@@ -7,6 +10,17 @@ import { alert } from '@/utils/alert'
 import { getPuzzleManifest, getPuzzlesForCategory } from '@/utils/puzzleCatalog'
 import { resolvePuzzle } from '@/utils/puzzlePicker'
 import { getPuzzleUnlockMap } from '@/utils/unlocks'
+
+// @rific/feedback-press no longer auto-detects react-native-paper (see Haptic.tsx's own comment
+// on this) — without an explicit FeedbackPressProvider paper={RNPaper} ancestor, every Button/
+// IconButton this drawer renders (including the puzzle rows and header Close) falls back to a
+// bare, unstyled Pressable that doesn't carry the same testID/accessibilityLabel wiring.
+const Wrapper = ({ children }: { children: ReactNode }) => (
+  <FeedbackPressProvider paper={RNPaper}>
+    <PaperProvider>{children}</PaperProvider>
+  </FeedbackPressProvider>
+)
+const render = (ui: ReactElement) => rtlRender(ui, { wrapper: Wrapper })
 
 jest.mock('@/utils/alert', () => ({
   alert: jest.fn().mockResolvedValue(undefined),

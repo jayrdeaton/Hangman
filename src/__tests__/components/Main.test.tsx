@@ -1,9 +1,9 @@
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { act, fireEvent, render, waitFor } from '@testing-library/react-native'
-import { StyleSheet } from 'react-native'
 
 import { Main } from '@/components/Main'
 import { Providers } from '@/components/Providers'
+import { DEFAULT_MODE } from '@/modes/registry'
 import type { GameMode } from '@/types/gameModes'
 import type { GameStartPayload } from '@/types/gameSession'
 import * as puzzlePicker from '@/utils/puzzlePicker'
@@ -41,9 +41,6 @@ const oneMistakeMode: GameMode = {
 
 const payload = (overrides: Partial<GameStartPayload>): GameStartPayload => ({ phrase: 'DOG', mode: visualMode, sourceMode: 'random', packKey: 'pack-1', packLabel: 'Test Pack', puzzleId: 'puzzle-1', difficultyTier: 'easy', ...overrides })
 
-const MODE_SELECTOR_LAYOUT_EVENT = { nativeEvent: { layout: { x: 0, y: 0, width: 380, height: 200 } } }
-const OTHER_MODE_ACCESSIBILITY_LABEL = /Letters Only mode/
-
 const renderApp = () =>
   render(
     <Providers>
@@ -61,19 +58,33 @@ describe('Main', () => {
     const { getByLabelText, getByTestId } = await renderApp()
 
     const displayBefore = getByLabelText('Secret word display')
+    // SketchWord takes fontSize as a direct prop, not a style object — no measured layout has
+    // landed in this test environment (no onLayout fired for art-and-word-area/wordRow), so
+    // PuzzleStage's shrink-to-fit falls through to its unclamped base ceiling (see its own "if
+    // (availableWidth <= 0 && wordAreaHeight === undefined) return baseFontSize" branch).
     // visualMode has hasVisual: true (the default) — the letter display uses the smaller of the
-    // two reserved font sizes while there's still room for artwork (see Game.tsx's WORD_FONT_SIZE).
-    expect(StyleSheet.flatten(displayBefore.props.children[0].props.style).fontSize).toBe(30)
+    // two reserved font sizes while there's still room for artwork (see PuzzleStage.tsx's
+    // WORD_FONT_SIZE).
+    expect(displayBefore.props.children[0].props.fontSize).toBe(42)
 
+    // The mode summary row (PuzzleDrawer.tsx's own handleOpenModePicker) opens ModePickerDrawer —
+    // the full-page picker that replaced the old inline carousel this test used to poke at
+    // directly via a manually-fired layout event. draft.mode there reflects the persisted config
+    // (DEFAULT_MODE), not necessarily the currently-playing round's own mode — same reasoning
+    // PuzzleDrawer.test.tsx's own comment gives for using DEFAULT_MODE here too.
     await fireEvent.press(getByLabelText('Game Menu'))
-    await fireEvent(getByTestId('mode-selector-container'), 'layout', MODE_SELECTOR_LAYOUT_EVENT)
-    await fireEvent.press(getByLabelText(OTHER_MODE_ACCESSIBILITY_LABEL))
+    await fireEvent.press(getByLabelText(`Mode: ${DEFAULT_MODE.label}. Change mode`))
+    // Cards are plain Views, not Pressables — scrolling the carousel to a card is what selects it
+    // (see ModePickerDrawer's own handleScroll/commitIndex and ModePickerDrawer.test.tsx's
+    // identical comment). offsetX: 0 lands on index 0 (Letters Only, the first VISIBLE_MODES
+    // entry) regardless of this test environment's own windowWidth, since 0 / anything is still 0.
+    await fireEvent.scroll(getByTestId('mode-picker-carousel'), { nativeEvent: { contentOffset: { x: 0, y: 0 } } })
 
     const displayAfter = getByLabelText('Secret word display')
     // Letters Only has hasVisual: false, enlarging the letter display (WORD_FONT_SIZE_LARGE) —
     // reflected immediately, with the drawer's confirm button never pressed and no second
     // resolvePuzzle call (same round, same puzzle, just a different look).
-    expect(StyleSheet.flatten(displayAfter.props.children[0].props.style).fontSize).toBe(56)
+    expect(displayAfter.props.children[0].props.fontSize).toBe(80)
     expect(mockResolvePuzzle).toHaveBeenCalledTimes(1)
   })
 

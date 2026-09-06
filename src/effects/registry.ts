@@ -1,6 +1,6 @@
 import type { JSX } from 'react'
 
-import { Fireworks } from './fireworks'
+import { FireworksCelebration } from './FireworksCelebration'
 
 export type CelebrationProps = {
   colors: string[]
@@ -14,6 +14,6 @@ export type CelebrationEffect = {
   Component: (props: CelebrationProps) => JSX.Element
 }
 
-const ALL_CELEBRATIONS: CelebrationEffect[] = [{ id: 'fireworks', label: 'Fireworks', Component: Fireworks }]
+const ALL_CELEBRATIONS: CelebrationEffect[] = [{ id: 'fireworks', label: 'Fireworks', Component: FireworksCelebration }]
 
 export const DEFAULT_CELEBRATION: CelebrationEffect = ALL_CELEBRATIONS[0]

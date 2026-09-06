@@ -1,5 +1,5 @@
-import { useFocusChain } from '@rific/focus-chain'
 import { Button, Switch } from '@rific/feedback-press'
+import { useFocusChain } from '@rific/focus-chain'
 import { useToast } from '@rific/toaster'
 import { JSX, useState } from 'react'
 import { StyleSheet, View } from 'react-native'

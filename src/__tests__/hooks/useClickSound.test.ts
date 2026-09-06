@@ -23,6 +23,15 @@ const clickAndFlush = async (playClick: () => void) => {
   })
 }
 
+// useAudioPool now defers actually building the pool behind its own setTimeout(0) inside a mount
+// effect (see useAudioPool.ts's "Pool creation is pushed one tick out" comment) — renderHook only
+// flushes synchronous effect work, so a real macrotask has to elapse before createAudioPlayer has
+// been called at all, let alone before any test can read its mock call history off of it.
+const flushPoolCreation = () =>
+  act(async () => {
+    await new Promise((resolve) => setTimeout(resolve, 0))
+  })
+
 describe('useClickSound', () => {
   beforeEach(() => {
     mockCreateAudioPlayer.mockClear()
@@ -31,6 +40,7 @@ describe('useClickSound', () => {
   it('plays when sound is enabled', async () => {
     mockUseSoundSettings.mockReturnValue({ settings: { enabled: true }, setEnabled: jest.fn() })
     const { result } = await renderHook(() => useClickSound())
+    await flushPoolCreation()
     const player = mockCreateAudioPlayer.mock.results[0].value
 
     await clickAndFlush(result.current.playClick)
@@ -42,6 +52,7 @@ describe('useClickSound', () => {
   it('no-ops when sound is disabled', async () => {
     mockUseSoundSettings.mockReturnValue({ settings: { enabled: false }, setEnabled: jest.fn() })
     const { result } = await renderHook(() => useClickSound())
+    await flushPoolCreation()
     const player = mockCreateAudioPlayer.mock.results[0].value
 
     await clickAndFlush(result.current.playClick)

@@ -21,6 +21,15 @@ const popAndFlush = async (playPop: () => void, times = 1) => {
   })
 }
 
+// useAudioPool now defers actually building the pool behind its own setTimeout(0) inside a mount
+// effect (see useAudioPool.ts's "Pool creation is pushed one tick out" comment) — renderHook only
+// flushes synchronous effect work, so a real macrotask has to elapse before createAudioPlayer has
+// been called at all, let alone before any test can read its mock call history off of it.
+const flushPoolCreation = () =>
+  act(async () => {
+    await new Promise((resolve) => setTimeout(resolve, 0))
+  })
+
 describe('usePopSound', () => {
   beforeEach(() => {
     mockCreateAudioPlayer.mockClear()
@@ -29,6 +38,7 @@ describe('usePopSound', () => {
 
   it('round-robins across its player pool for successive pops', async () => {
     const { result } = await renderHook(() => usePopSound())
+    await flushPoolCreation()
     const players = mockCreateAudioPlayer.mock.results.map((r) => r.value)
     // useAudioPool now allocates exactly poolSize players (createAudioPlayer is a plain factory,
     // not a hook, so it's not bound to a fixed hook-call count) — usePopSound passes
@@ -46,7 +56,9 @@ describe('usePopSound', () => {
   it('no-ops when sound is disabled', async () => {
     mockUseSoundSettings.mockReturnValue({ settings: { enabled: false }, setEnabled: jest.fn() })
     const { result } = await renderHook(() => usePopSound())
+    await flushPoolCreation()
     const players = mockCreateAudioPlayer.mock.results.map((r) => r.value)
+    expect(players).toHaveLength(4)
 
     await popAndFlush(result.current.playPop)
 

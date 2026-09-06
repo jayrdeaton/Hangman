@@ -1,4 +1,3 @@
-import React from 'react'
 import type { SharedValue } from 'react-native-reanimated'
 import Animated, { useAnimatedProps, useSharedValue } from 'react-native-reanimated'
 import Svg, { G } from 'react-native-svg'

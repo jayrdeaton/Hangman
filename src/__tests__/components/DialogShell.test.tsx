@@ -26,7 +26,7 @@ const render = (ui: ReactElement) => rtlRender(ui, { wrapper: ({ children }) => 
 // require(), not `import * as RN` -- Babel's ESM-interop namespace copy isn't the same object
 // DialogShell.tsx's own `import { useWindowDimensions } from 'react-native'` reads from, so
 // spying on that copy wouldn't be observed. require() returns the actual shared module object.
-// eslint-disable-next-line @typescript-eslint/no-require-imports
+
 const ReactNative = require('react-native')
 
 const getWrapperTransform = (getByTestId: Awaited<ReturnType<typeof render>>['getByTestId']) => StyleSheet.flatten(getByTestId('dialog-animated-wrapper').props.style).transform

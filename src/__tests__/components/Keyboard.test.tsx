@@ -6,7 +6,17 @@ import { PaperProvider } from 'react-native-paper'
 
 import { findKeyPosition, Keyboard, LAYOUT_ROWS } from '@/components/Keyboard'
 
-const render = (ui: ReactElement) => rtlRender(ui, { wrapper: PaperProvider })
+// @rific/feedback-press no longer auto-detects react-native-paper (same change Haptic.tsx's own
+// comment describes) — without an explicit FeedbackPressProvider paper={RNPaper} ancestor, every
+// Button this renders falls back to a bare, unstyled Pressable instead of Paper's real Button,
+// which is a different element tree than the accessibilityState/testID assertions below expect.
+const Wrapper = ({ children }: { children: ReactNode }): JSX.Element => (
+  <PaperProvider>
+    <FeedbackPressProvider paper={RNPaper}>{children}</FeedbackPressProvider>
+  </PaperProvider>
+)
+
+const render = (ui: ReactElement) => rtlRender(ui, { wrapper: Wrapper })
 
 describe('findKeyPosition', () => {
   it("finds a letter's row and column in the real qwerty layout", () => {
@@ -69,9 +79,9 @@ describe('Keyboard', () => {
     expect(onGuess).not.toHaveBeenCalled()
 
     await rerender(
-      <PaperProvider>
+      <Wrapper>
         <Keyboard guessedLetters={[]} phrase='CAT' disabled onGuess={onGuess} />
-      </PaperProvider>
+      </Wrapper>
     )
     await fireEvent.press(getByText('A'))
     expect(onGuess).not.toHaveBeenCalled()

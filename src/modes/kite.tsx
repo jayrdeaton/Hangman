@@ -1,4 +1,3 @@
-import React from 'react'
 import Svg, { Circle, G, Line, Path } from 'react-native-svg'
 
 import type { GameMode } from '@/types/gameModes'

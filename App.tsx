@@ -1,7 +1,7 @@
 import * as AutoPaper from '@rific/auto-paper'
 import { configureDrawer } from '@rific/drawer'
 import { useUpdater } from '@rific/updater'
-import React, { JSX } from 'react'
+import { JSX } from 'react'
 import { StyleSheet } from 'react-native'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 

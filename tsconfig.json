@@ -1,7 +1,6 @@
 {
-  "extends": "expo/tsconfig.base",
+  "extends": "@infinitetoken/tsconfig/expo",
   "compilerOptions": {
-    "strict": true,
     "paths": {
       "@/*": ["./*"],
       "@/components/*": ["./src/components/*"],
@@ -12,20 +11,8 @@
       "@/redux/*": ["./src/redux/*"],
       "@/types/*": ["./src/types/*"],
       "@/utils/*": ["./src/utils/*"]
-    },
-    "types": ["react-native", "node", "jest"]
+    }
   },
-  "include": [
-    "**/*.ts",
-    "**/*.tsx"
-  ],
-  "exclude": [
-    "node_modules",
-    "babel.config.js",
-    "metro.config.js",
-    "jest.config.js",
-    "android",
-    "ios",
-    ".claude/worktrees/**"
-  ]
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": [".claude/worktrees"]
 }

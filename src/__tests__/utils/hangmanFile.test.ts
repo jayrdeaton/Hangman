@@ -4,7 +4,6 @@
 // jsdom, not the default jest-expo/RN environment — the web-platform tests below need a real
 // `document` (creating an anchor, clicking it) to exercise shareCustomPackFile's browser-download
 // fallback, which plain react-native's test environment doesn't provide at all.
-/* eslint-disable @typescript-eslint/no-require-imports */
 
 jest.mock('react-native', () => {
   const RN = jest.requireActual('react-native')

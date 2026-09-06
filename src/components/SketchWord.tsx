@@ -1,4 +1,3 @@
-import React from 'react'
 import Svg from 'react-native-svg'
 
 import { GLYPH_HEIGHT, HERSHEY_GAP, HERSHEY_GLYPHS } from '@/modes/shared/letterformsHershey'

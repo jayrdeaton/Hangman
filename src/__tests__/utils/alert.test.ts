@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-require-imports */
-
 jest.mock('react-native', () => {
   const RN = jest.requireActual('react-native')
   const mocked = Object.create(RN)

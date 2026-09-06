@@ -1,4 +1,3 @@
-import React from 'react'
 import { G } from 'react-native-svg'
 
 import { SCENE_START_DELAY_MS } from './sceneReveal'

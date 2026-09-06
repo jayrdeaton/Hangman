@@ -1,6 +1,8 @@
+import { FeedbackPressProvider } from '@rific/feedback-press'
 import { ToastProvider } from '@rific/toaster'
 import { fireEvent, render as rtlRender, waitFor, within } from '@testing-library/react-native'
 import type { ReactElement, ReactNode } from 'react'
+import * as RNPaper from 'react-native-paper'
 import { PaperProvider } from 'react-native-paper'
 
 import { PacksScreen } from '@/components/PacksScreen'
@@ -30,10 +32,20 @@ const builtIn = () => getPuzzleManifest().filter((item) => item.count > 0)[0]
 // off-screen when not visible, same as every other drawer in this lineage), and that drawer's own
 // form calls useToast() to surface a newly-unlocked custom-pack achievement (see achievements.ts's
 // packs_created_* ladder), which throws outside a ToastProvider ancestor.
+// FeedbackPressProvider paper={RNPaper} is required too — @rific/feedback-press no longer
+// auto-detects react-native-paper (see Haptic.tsx's own comment on this), so without it every
+// Button/IconButton here falls back to a bare, unstyled Pressable instead of Paper's real
+// component, which breaks the accessibilityState/accessibilityLabel assertions below. It has to
+// wrap PaperProvider, not nest inside it, for the same reason Providers.tsx hoists the real app's
+// Haptic above Theme: PaperProvider's PortalHost mounts near its own root, so ConfirmDialog's
+// Portal-rendered Cancel/Delete buttons only see FeedbackPressProvider's context if it's an
+// ancestor of PaperProvider — nested inside, they'd sit outside the portaled subtree entirely.
 const Wrapper = ({ children }: { children: ReactNode }) => (
-  <ToastProvider>
-    <PaperProvider>{children}</PaperProvider>
-  </ToastProvider>
+  <FeedbackPressProvider paper={RNPaper}>
+    <PaperProvider>
+      <ToastProvider>{children}</ToastProvider>
+    </PaperProvider>
+  </FeedbackPressProvider>
 )
 const render = (ui: ReactElement) => rtlRender(ui, { wrapper: Wrapper })
 

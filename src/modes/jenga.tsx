@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import Svg, { G, Rect } from 'react-native-svg'
 
 import type { GameMode } from '@/types/gameModes'

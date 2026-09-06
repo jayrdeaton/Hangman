@@ -1,4 +1,3 @@
-import React from 'react'
 import { G } from 'react-native-svg'
 
 import { GLYPH_HEIGHT, HERSHEY_GLYPHS, type Point } from './letterformsHershey'

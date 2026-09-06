@@ -1,4 +1,3 @@
-import React from 'react'
 import Svg from 'react-native-svg'
 
 import type { GameMode } from '@/types/gameModes'
@@ -23,7 +22,7 @@ const LettersVisual = ({ color }: { mistakes: number; color: string }) => {
   const totalWidth = widths.reduce((sum, w) => sum + w, 0) + PREVIEW_GAP * (PREVIEW_LETTERS.length - 1)
   const startX = (100 - totalWidth) / 2
   const y = (100 - PREVIEW_HEIGHT) / 2
-  const xs = widths.reduce<number[]>((acc, w, i) => [...acc, i === 0 ? startX : acc[i - 1] + widths[i - 1] + PREVIEW_GAP], [])
+  const xs = widths.reduce<number[]>((acc, _w, i) => [...acc, i === 0 ? startX : acc[i - 1] + widths[i - 1] + PREVIEW_GAP], [])
   return (
     <Svg viewBox='0 0 100 100'>
       {PREVIEW_LETTERS.map((letter, i) => (
