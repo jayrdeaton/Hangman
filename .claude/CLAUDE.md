@@ -48,6 +48,8 @@ Onboarded onto the shared `@infinitetoken` config packages (`eslint-config`, `je
 
 `@infinitetoken/eslint-config` (`^0.2.0`), `@infinitetoken/jest-config` (`^0.2.3`), and `@infinitetoken/tsconfig` (`^0.4.1`) are all on real published versions — never yalc-linked for this app.
 
+**`@rific/scroll-view` was briefly yalc-linked (`file:.yalc/@rific/scroll-view`) for a real bug — resolved 2026-09-11.** `ScrollViewProvider`'s `headerHeight` state could get stuck at `null` forever on web if a `<ScrollViewHeader>`'s `onLayout` simply never fired on the very first mount through Expo Router — every screen this app wraps in a `ScrollViewProvider` (`PackPuzzlesDrawer.tsx`, `PacksScreen.tsx`) stayed at `opacity: 0` until `headerHeight` resolved, so this was making this app's entire UI render invisible on first web load. Fixed in `ScrollViewProvider.tsx` itself with a `Platform.OS === 'web'`-gated effect that falls back to `setHeaderHeight(0)` two animation frames after mount if still `null` — see `React-Native-Scroll-View`'s own CLAUDE.md, "The web opacity-0 race `ScrollViewProvider` guards against," for the full reasoning. Now on the real published `@rific/scroll-view@0.7.1` (a patch — pure bug fix, no API change); the `.yalc/` link is gone.
+
 ## Testing
 
 - Framework: Jest (`@infinitetoken/jest-config/expo`, `jest-expo` preset)

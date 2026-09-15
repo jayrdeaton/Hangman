@@ -1,10 +1,10 @@
+import { useSoundSettings } from '@rific/feedback-press'
 import { act, renderHook } from '@testing-library/react-native'
 import { createAudioPlayer } from 'expo-audio'
 
 import { useClickSound } from '@/hooks/useClickSound'
-import { useSoundSettings } from '@/hooks/useSoundSettings'
 
-jest.mock('@/hooks/useSoundSettings', () => ({ useSoundSettings: jest.fn() }))
+jest.mock('@rific/feedback-press', () => ({ ...jest.requireActual('@rific/feedback-press'), useSoundSettings: jest.fn() }))
 
 const mockUseSoundSettings = jest.mocked(useSoundSettings)
 // @rific/feedback-press/audio's useAudioPool builds its pool with createAudioPlayer (a plain
@@ -38,7 +38,7 @@ describe('useClickSound', () => {
   })
 
   it('plays when sound is enabled', async () => {
-    mockUseSoundSettings.mockReturnValue({ settings: { enabled: true }, setEnabled: jest.fn() })
+    mockUseSoundSettings.mockReturnValue({ settings: { enabled: true }, set: jest.fn() })
     const { result } = await renderHook(() => useClickSound())
     await flushPoolCreation()
     const player = mockCreateAudioPlayer.mock.results[0].value
@@ -50,7 +50,7 @@ describe('useClickSound', () => {
   })
 
   it('no-ops when sound is disabled', async () => {
-    mockUseSoundSettings.mockReturnValue({ settings: { enabled: false }, setEnabled: jest.fn() })
+    mockUseSoundSettings.mockReturnValue({ settings: { enabled: false }, set: jest.fn() })
     const { result } = await renderHook(() => useClickSound())
     await flushPoolCreation()
     const player = mockCreateAudioPlayer.mock.results[0].value

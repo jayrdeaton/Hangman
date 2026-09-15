@@ -1,7 +1,6 @@
+import { useSoundSettings } from '@rific/feedback-press'
 import { useAudioPool } from '@rific/feedback-press/audio'
 import { useCallback } from 'react'
-
-import { useSoundSettings } from './useSoundSettings'
 
 // Relative, not the @/ alias — these are static require() calls Metro's asset plugin has to
 // resolve at bundle time, and every other local-asset require in this codebase (app icons,

@@ -1,7 +1,6 @@
+import { useSoundSettings } from '@rific/feedback-press'
 import { useAudioPool } from '@rific/feedback-press/audio'
 import { useCallback } from 'react'
-
-import { useSoundSettings } from './useSoundSettings'
 
 // Relative, not the @/ alias — see useSoundEffects.ts's own comment on why static asset
 // requires in this codebase stick to plain relative paths.

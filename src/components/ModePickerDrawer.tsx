@@ -1,6 +1,6 @@
 import { AutoPalettePicker, resolveSeedColor, useThemeSettings } from '@rific/auto-paper'
 import { Drawer } from '@rific/drawer'
-import { Button, IconButton, SegmentedButtons, Switch, useHapticSettings } from '@rific/feedback-press'
+import { Button, IconButton, SegmentedButtons, Switch, useHapticSettings, useSoundSettings } from '@rific/feedback-press'
 import { ScrollView, ScrollViewFooter, ScrollViewHeader, ScrollViewProvider } from '@rific/scroll-view'
 import { JSX, memo, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { FlatList, NativeScrollEvent, NativeSyntheticEvent, StyleSheet, useWindowDimensions, View } from 'react-native'
@@ -10,7 +10,6 @@ import Animated, { useAnimatedStyle, useSharedValue, withTiming } from 'react-na
 import { DRAWER_MODE_PICKER_Z_INDEX } from '@/constants/drawerStacking'
 import { useHorizontalWheelScrollProps } from '@/hooks/useHorizontalWheelScroll'
 import { useKeyboardLayout } from '@/hooks/useKeyboardLayout'
-import { useSoundSettings } from '@/hooks/useSoundSettings'
 import { VISIBLE_MODES } from '@/modes/registry'
 import { fullyDrawnMistakes } from '@/modes/shared/fullyDrawnMistakes'
 import type { GameMode } from '@/types/gameModes'
@@ -281,7 +280,7 @@ export const ModePickerDrawer = memo(({ visible, onDismiss, selected, onSelect }
   const { settings, set } = useThemeSettings()
   const { layout, setLayout } = useKeyboardLayout()
   const { settings: hapticSettings, set: setHapticSettings } = useHapticSettings()
-  const { settings: soundSettings, setEnabled: setSoundEnabled } = useSoundSettings()
+  const { settings: soundSettings, set: setSoundSettings } = useSoundSettings()
   const horizontalWheelScrollProps = useHorizontalWheelScrollProps()
   const listRef = useRef<FlatList<GameMode>>(null)
 
@@ -531,7 +530,7 @@ export const ModePickerDrawer = memo(({ visible, onDismiss, selected, onSelect }
                     Play a sound for guesses, wins, and losses
                   </Text>
                 </View>
-                <Switch value={soundSettings.enabled} onValueChange={setSoundEnabled} color={theme.colors.primary} accessibilityLabel='Sound effects' />
+                <Switch value={soundSettings.enabled} onValueChange={(enabled) => setSoundSettings({ enabled })} color={theme.colors.primary} accessibilityLabel='Sound effects' />
               </View>
             </View>
           </ScrollView>

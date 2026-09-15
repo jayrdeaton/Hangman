@@ -159,4 +159,8 @@ beforeEach(() => {
 
 afterEach(() => {
   jest.clearAllTimers()
+  // A test that calls jest.useFakeTimers() but gets killed by Jest's own per-test
+  // timeout before reaching its own jest.useRealTimers() cleanup would otherwise leak
+  // fake timers into every later test in the file. No-op when already on real timers.
+  jest.useRealTimers()
 })

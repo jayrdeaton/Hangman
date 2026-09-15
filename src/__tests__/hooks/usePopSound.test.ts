@@ -1,10 +1,10 @@
+import { useSoundSettings } from '@rific/feedback-press'
 import { act, renderHook } from '@testing-library/react-native'
 import { createAudioPlayer } from 'expo-audio'
 
 import { usePopSound } from '@/hooks/usePopSound'
-import { useSoundSettings } from '@/hooks/useSoundSettings'
 
-jest.mock('@/hooks/useSoundSettings', () => ({ useSoundSettings: jest.fn() }))
+jest.mock('@rific/feedback-press', () => ({ ...jest.requireActual('@rific/feedback-press'), useSoundSettings: jest.fn() }))
 
 const mockUseSoundSettings = jest.mocked(useSoundSettings)
 // @rific/feedback-press/audio's useAudioPool builds its pool with createAudioPlayer (a plain
@@ -33,7 +33,7 @@ const flushPoolCreation = () =>
 describe('usePopSound', () => {
   beforeEach(() => {
     mockCreateAudioPlayer.mockClear()
-    mockUseSoundSettings.mockReturnValue({ settings: { enabled: true }, setEnabled: jest.fn() })
+    mockUseSoundSettings.mockReturnValue({ settings: { enabled: true }, set: jest.fn() })
   })
 
   it('round-robins across its player pool for successive pops', async () => {
@@ -54,7 +54,7 @@ describe('usePopSound', () => {
   })
 
   it('no-ops when sound is disabled', async () => {
-    mockUseSoundSettings.mockReturnValue({ settings: { enabled: false }, setEnabled: jest.fn() })
+    mockUseSoundSettings.mockReturnValue({ settings: { enabled: false }, set: jest.fn() })
     const { result } = await renderHook(() => usePopSound())
     await flushPoolCreation()
     const players = mockCreateAudioPlayer.mock.results.map((r) => r.value)

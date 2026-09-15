@@ -1,4 +1,4 @@
-import { FeedbackPressProvider, hapticActions, type HapticSettings, type SoundConfig } from '@rific/feedback-press'
+import { FeedbackPressProvider, hapticActions, type HapticSettings, soundActions, type SoundConfig, type SoundSettings } from '@rific/feedback-press'
 import { ReactNode, useCallback, useMemo } from 'react'
 import * as RNPaper from 'react-native-paper'
 import { shallowEqual, useDispatch, useSelector } from 'react-redux'
@@ -15,11 +15,15 @@ export type HapticProps = {
 // so this reuses the identical bridge rather than a bespoke AsyncStorage wrapper: redux-persist
 // (already wired up for the theme slice, see @/redux/store) is what actually persists this, this
 // component just keeps @rific/feedback-press's own Provider (and therefore useVibration/useHapticSettings
-// everywhere else in the app) in sync with it.
+// everywhere else in the app) in sync with it. Sound settings are wired the same way now too — see
+// @/redux/store's `sound` slice — replacing this app's old bespoke SoundSettingsProvider/
+// useSoundSettings Context (which persisted a single 'soundEnabled' AsyncStorage key directly).
 export const Haptic = ({ children }: HapticProps) => {
   const settings = useSelector((state: RootState) => state.haptic, shallowEqual)
+  const soundSettings = useSelector((state: RootState) => state.sound, shallowEqual)
   const dispatch = useDispatch()
   const onChange = useCallback((next: HapticSettings) => dispatch(hapticActions.initialize(next)), [dispatch])
+  const onSoundChange = useCallback((next: SoundSettings) => dispatch(soundActions.initialize(next)), [dispatch])
   const { playClick } = useClickSound()
   // Memoized so an unrelated Haptic re-render doesn't hand FeedbackPressProvider's `sound` prop a
   // new object identity every time — only changes when playClick's own identity changes (i.e. when
@@ -33,7 +37,7 @@ export const Haptic = ({ children }: HapticProps) => {
     // paper is no longer auto-detected (same Metro/ESM limitation as @rific/auto-paper and
     // @rific/drawer) — without it, every Button/IconButton/Card/etc. this app renders through
     // @rific/feedback-press falls back to a bare, unstyled RN element instead of the real Paper one.
-    <FeedbackPressProvider initialValue={settings} onChange={onChange} paper={RNPaper} sound={sound}>
+    <FeedbackPressProvider initialValue={settings} onChange={onChange} soundInitialValue={soundSettings} onSoundChange={onSoundChange} paper={RNPaper} sound={sound}>
       {children}
     </FeedbackPressProvider>
   )
