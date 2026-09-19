@@ -52,7 +52,7 @@ export const Providers = ({ children }: ProvidersProps): JSX.Element => (
                     </PackSelectionProvider>
                   </AutoSaveCustomProvider>
                 </KeyboardLayoutProvider>
-                <Toaster clearButton={null} historyButton={null} limit={1} />
+                <Toaster clearButton={null} historyButton={null} limit={3} />
               </ToastProvider>
             </Theme>
           </Haptic>
