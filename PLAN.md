@@ -9,7 +9,7 @@ A ripple effect color change on the winning keypress would be really cool — no
 **Status:** Deferred, not urgent.
 
 **Context:** expo-doctor flags `redux-persist` as unmaintained (no recent
-releases). It's not broken — Hangman, Lumber, and CashierFu-Utility all use
+releases). It's not broken — Hangman, Lumber, and Utility all use
 the same `@reduxjs/toolkit` + `react-redux` + `redux-persist` stack on top of
 `@react-native-async-storage/async-storage`, and it works fine on current
 versions. Currently suppressed via `expo.doctor.reactNativeDirectoryCheck.exclude`
@@ -43,5 +43,5 @@ the three settings providers.
 not compatible with Expo Go. Not a blocker since none of these projects rely
 on Expo Go currently.
 
-**Scope:** Could be rolled out the same way to Lumber and CashierFu-Utility
+**Scope:** Could be rolled out the same way to Lumber and Utility
 once validated here, since all three share the identical redux-persist setup.

@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Hangman",
-    "slug": "Ad-Free-Hangman",
+    "slug": "Hangman",
     "version": "1.0.0",
     "scheme": "hangman",
     "orientation": "portrait",
@@ -108,11 +108,12 @@
     },
     "extra": {
       "eas": {
-        "projectId": "470e8522-592d-4311-b726-ea0bf8827144"
+        "projectId": "8bf1aca0-c256-4eb0-beb8-67900a6b315c"
       }
     },
     "updates": {
-      "url": "https://u.expo.dev/470e8522-592d-4311-b726-ea0bf8827144"
-    }
+      "url": "https://u.expo.dev/8bf1aca0-c256-4eb0-beb8-67900a6b315c"
+    },
+    "owner": "jayrdeaton"
   }
 }

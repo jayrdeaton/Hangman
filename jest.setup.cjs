@@ -110,14 +110,6 @@ if (typeof process !== 'undefined' && process && process.on) {
   process.on('uncaughtException', handleUncaughtException)
 }
 
-// Suppress Animated native warnings in tests and provide RAF polyfills
-try {
-  // suppress the 'Animated: `useNativeDriver`' warnings from RN Animated native helper
-  jest.mock('react-native/Libraries/Animated/NativeAnimatedHelper')
-} catch {
-  // ignore if the path isn't present in this environment
-}
-
 // Force react-native Animated to use JS driver (not native) to avoid
 // findHostInstanceWithWarning failures in test-renderer environment
 try {
@@ -130,14 +122,6 @@ try {
   AnimatedImpl.decay = (value, config) => realDecay(value, { ...config, useNativeDriver: false })
 } catch {
   // ignore if module path not found
-}
-
-// Provide a basic requestAnimationFrame/cancelAnimationFrame for animation updates in tests
-if (typeof globalThis.requestAnimationFrame === 'undefined') {
-  globalThis.requestAnimationFrame = (cb) => setTimeout(cb, 0)
-}
-if (typeof globalThis.cancelAnimationFrame === 'undefined') {
-  globalThis.cancelAnimationFrame = (id) => clearTimeout(id)
 }
 
 // Patch NativeAnimatedModule to call endCallback synchronously instead of via
