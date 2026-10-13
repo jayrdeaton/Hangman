@@ -540,26 +540,6 @@
     }
   },
   {
-    "id": "d0f86c72e0e85fdea554dbaa73b45419",
-    "source": "theme",
-    "type": "title",
-    "answer": "Chevrolet Caprice Classic LTZ",
-    "normalizedAnswer": "CHEVROLET CAPRICE CLASSIC LTZ",
-    "category": "Vehicle",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 26,
-    "uniqueLetterCount": 13,
-    "tags": [
-      "theme",
-      "vehicle"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
-    }
-  },
-  {
     "id": "060fdf4e4c9715f72af1ef603cd90dd4",
     "source": "theme",
     "type": "title",
@@ -571,26 +551,6 @@
     "wordCount": 3,
     "letterCount": 14,
     "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "vehicle"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
-    }
-  },
-  {
-    "id": "d20d0fb3bf09b91759476ee5a8ae4a16",
-    "source": "theme",
-    "type": "title",
-    "answer": "Ford Thunderbird Super Coupe",
-    "normalizedAnswer": "FORD THUNDERBIRD SUPER COUPE",
-    "category": "Vehicle",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 25,
-    "uniqueLetterCount": 14,
     "tags": [
       "theme",
       "vehicle"
@@ -620,26 +580,6 @@
     }
   },
   {
-    "id": "73a62925b427888999f81851a612938e",
-    "source": "theme",
-    "type": "title",
-    "answer": "Ford Thunderbird Turbo Coupe",
-    "normalizedAnswer": "FORD THUNDERBIRD TURBO COUPE",
-    "category": "Vehicle",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 25,
-    "uniqueLetterCount": 13,
-    "tags": [
-      "theme",
-      "vehicle"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
-    }
-  },
-  {
     "id": "d654d87757d99630fc5772847fd775fc",
     "source": "theme",
     "type": "title",
@@ -651,26 +591,6 @@
     "wordCount": 3,
     "letterCount": 12,
     "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "vehicle"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
-    }
-  },
-  {
-    "id": "8a7dc6e8c488e93aa0b21f4f0c320083",
-    "source": "theme",
-    "type": "title",
-    "answer": "Volkswagen GTI",
-    "normalizedAnswer": "VOLKSWAGEN GTI",
-    "category": "Vehicle",
-    "difficulty": 56.8,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 13,
-    "uniqueLetterCount": 12,
     "tags": [
       "theme",
       "vehicle"
@@ -1051,26 +971,6 @@
     "wordCount": 2,
     "letterCount": 16,
     "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "vehicle"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/Motor_Trend_Car_of_the_Year"
-    }
-  },
-  {
-    "id": "8e8e7cda4b2e169e6d3ed17a6140ccdf",
-    "source": "theme",
-    "type": "title",
-    "answer": "Chrysler Corporation",
-    "normalizedAnswer": "CHRYSLER CORPORATION",
-    "category": "Vehicle",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 19,
-    "uniqueLetterCount": 13,
     "tags": [
       "theme",
       "vehicle"

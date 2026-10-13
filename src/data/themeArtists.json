@@ -1,0 +1,1388 @@
+[
+  {
+    "id": "2d66168e05097c12930862b226b8adf0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Leonardo da Vinci",
+    "normalizedAnswer": "LEONARDO DA VINCI",
+    "category": "Artist",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "5fbb89b2f3b1f00ddfa960a381bdba86",
+    "source": "theme",
+    "type": "title",
+    "answer": "Michelangelo",
+    "normalizedAnswer": "MICHELANGELO",
+    "category": "Artist",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "3028859a5f4e69a3067e956b2d924eb1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Raphael",
+    "normalizedAnswer": "RAPHAEL",
+    "category": "Artist",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "27196bd63a2fb37742daf0decd73bb83",
+    "source": "theme",
+    "type": "title",
+    "answer": "Donatello",
+    "normalizedAnswer": "DONATELLO",
+    "category": "Artist",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "aa5f4491de9f381641e6ec52fe76715c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Botticelli",
+    "normalizedAnswer": "BOTTICELLI",
+    "category": "Artist",
+    "difficulty": 78,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "7e6636190bbbaf61fbf9db1bd2909325",
+    "source": "theme",
+    "type": "title",
+    "answer": "Titian",
+    "normalizedAnswer": "TITIAN",
+    "category": "Artist",
+    "difficulty": 91.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c405e431f23e3a525e9dee1ed1300cae",
+    "source": "theme",
+    "type": "title",
+    "answer": "Caravaggio",
+    "normalizedAnswer": "CARAVAGGIO",
+    "category": "Artist",
+    "difficulty": 78,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "75a190019d7cb7575264ecfceb78a90d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Rembrandt",
+    "normalizedAnswer": "REMBRANDT",
+    "category": "Artist",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "202545190f6b46bb0fd240abb480e741",
+    "source": "theme",
+    "type": "title",
+    "answer": "Johannes Vermeer",
+    "normalizedAnswer": "JOHANNES VERMEER",
+    "category": "Artist",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "673608076dcc4dd3fc5d198de152f556",
+    "source": "theme",
+    "type": "title",
+    "answer": "Albrecht Dürer",
+    "normalizedAnswer": "ALBRECHT DURER",
+    "category": "Artist",
+    "difficulty": 64.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c27fbd0ee65a910f0ac629ccf1f4a79f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Hieronymus Bosch",
+    "normalizedAnswer": "HIERONYMUS BOSCH",
+    "category": "Artist",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ffd9ef6c3cf2a64a142bba0a3d8130e5",
+    "source": "theme",
+    "type": "title",
+    "answer": "El Greco",
+    "normalizedAnswer": "EL GRECO",
+    "category": "Artist",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "4a37eca065382e8b733c2b37a4dc8a59",
+    "source": "theme",
+    "type": "title",
+    "answer": "Diego Velázquez",
+    "normalizedAnswer": "DIEGO VELAZQUEZ",
+    "category": "Artist",
+    "difficulty": 60.4,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "737c8b1dded37856e274b6b91fb413a7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Peter Paul Rubens",
+    "normalizedAnswer": "PETER PAUL RUBENS",
+    "category": "Artist",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "198796ed16ecc42266ce962a6324d990",
+    "source": "theme",
+    "type": "title",
+    "answer": "Francisco Goya",
+    "normalizedAnswer": "FRANCISCO GOYA",
+    "category": "Artist",
+    "difficulty": 64.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6510265337a77266542f85c827aeb338",
+    "source": "theme",
+    "type": "title",
+    "answer": "Eugène Delacroix",
+    "normalizedAnswer": "EUGENE DELACROIX",
+    "category": "Artist",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "3176c24d9412ab918f5025dfcc5ea52e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Claude Monet",
+    "normalizedAnswer": "CLAUDE MONET",
+    "category": "Artist",
+    "difficulty": 65.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "d18ed2a3e7b20f633abcce496bd6781b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Édouard Manet",
+    "normalizedAnswer": "EDOUARD MANET",
+    "category": "Artist",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "12a09046ad6a6927115aebf73b50bcf2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Pierre-Auguste Renoir",
+    "normalizedAnswer": "PIERREAUGUSTE RENOIR",
+    "category": "Artist",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 19,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "3a975f1a60275250e42931ca368c3c7c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Edgar Degas",
+    "normalizedAnswer": "EDGAR DEGAS",
+    "category": "Artist",
+    "difficulty": 82,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ca23294b909a112eeed7164b1a206b56",
+    "source": "theme",
+    "type": "title",
+    "answer": "Paul Cézanne",
+    "normalizedAnswer": "PAUL CEZANNE",
+    "category": "Artist",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "1644a8cf1f0c382288e8e374c27b9c6f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mary Cassatt",
+    "normalizedAnswer": "MARY CASSATT",
+    "category": "Artist",
+    "difficulty": 77.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "8a0b2513750ab1ec6abc41e2ae994d61",
+    "source": "theme",
+    "type": "title",
+    "answer": "Georges Seurat",
+    "normalizedAnswer": "GEORGES SEURAT",
+    "category": "Artist",
+    "difficulty": 72.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "1672cb2c53e1a41fa3938ef4549b40a3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Paul Gauguin",
+    "normalizedAnswer": "PAUL GAUGUIN",
+    "category": "Artist",
+    "difficulty": 77.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "1aea4790f54d828c0fc0414235c401c3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Vincent van Gogh",
+    "normalizedAnswer": "VINCENT VAN GOGH",
+    "category": "Artist",
+    "difficulty": 64.4,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "075e2ea23afe5fdd12e6f95aab0b85f5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Henri de Toulouse-Lautrec",
+    "normalizedAnswer": "HENRI DE TOULOUSELAUTREC",
+    "category": "Artist",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 22,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "b67579cfb96d8fea8851c328451ea928",
+    "source": "theme",
+    "type": "title",
+    "answer": "Auguste Rodin",
+    "normalizedAnswer": "AUGUSTE RODIN",
+    "category": "Artist",
+    "difficulty": 61.2,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "e33d9fcf9e7b999a3ebbe0fe3509e24f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Gustav Klimt",
+    "normalizedAnswer": "GUSTAV KLIMT",
+    "category": "Artist",
+    "difficulty": 65.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "4cebe5056dd36a0427fd52fd005ae17f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Edvard Munch",
+    "normalizedAnswer": "EDVARD MUNCH",
+    "category": "Artist",
+    "difficulty": 65.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "cb53177cffe8ca9176c29a1587fa1f94",
+    "source": "theme",
+    "type": "title",
+    "answer": "James McNeill Whistler",
+    "normalizedAnswer": "JAMES MCNEILL WHISTLER",
+    "category": "Artist",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 20,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "eb1be6254be4db5fcf4773eaba1b77ec",
+    "source": "theme",
+    "type": "title",
+    "answer": "John Singer Sargent",
+    "normalizedAnswer": "JOHN SINGER SARGENT",
+    "category": "Artist",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 17,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "26ddc0ac5e39b736548c3eb4953f7418",
+    "source": "theme",
+    "type": "title",
+    "answer": "Winslow Homer",
+    "normalizedAnswer": "WINSLOW HOMER",
+    "category": "Artist",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "e5552a65227fa878644bfc95c90a1632",
+    "source": "theme",
+    "type": "title",
+    "answer": "Hokusai",
+    "normalizedAnswer": "HOKUSAI",
+    "category": "Artist",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "7cee5cc5a390e71ff77ee8a3be418cee",
+    "source": "theme",
+    "type": "title",
+    "answer": "Pablo Picasso",
+    "normalizedAnswer": "PABLO PICASSO",
+    "category": "Artist",
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "32a3fc9ece0b6b17ee127488fe3fe2df",
+    "source": "theme",
+    "type": "title",
+    "answer": "Henri Matisse",
+    "normalizedAnswer": "HENRI MATISSE",
+    "category": "Artist",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "9f5b691a89dd49220f9b91ddd5a42963",
+    "source": "theme",
+    "type": "title",
+    "answer": "Salvador Dalí",
+    "normalizedAnswer": "SALVADOR DALI",
+    "category": "Artist",
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "1da09cfa33eb8fd63664eec35d1256bc",
+    "source": "theme",
+    "type": "title",
+    "answer": "René Magritte",
+    "normalizedAnswer": "RENE MAGRITTE",
+    "category": "Artist",
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "03da380152f9d1b5321b5ba6e1230b6c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Joan Miró",
+    "normalizedAnswer": "JOAN MIRO",
+    "category": "Artist",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "9f5f907eb836d22bca40d03793198024",
+    "source": "theme",
+    "type": "title",
+    "answer": "Wassily Kandinsky",
+    "normalizedAnswer": "WASSILY KANDINSKY",
+    "category": "Artist",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "19501d41dabec843e662ad2cfebde7ea",
+    "source": "theme",
+    "type": "title",
+    "answer": "Piet Mondrian",
+    "normalizedAnswer": "PIET MONDRIAN",
+    "category": "Artist",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "962b882521a98cefb4df52353c26cb8e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Marc Chagall",
+    "normalizedAnswer": "MARC CHAGALL",
+    "category": "Artist",
+    "difficulty": 77.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "aaa228297ae10b86dea929164d1c0e5b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Paul Klee",
+    "normalizedAnswer": "PAUL KLEE",
+    "category": "Artist",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "2495cbd72a4e7b8f6f3906503822f307",
+    "source": "theme",
+    "type": "title",
+    "answer": "Amedeo Modigliani",
+    "normalizedAnswer": "AMEDEO MODIGLIANI",
+    "category": "Artist",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "2b9007bd32a910c5efd06dc2cc225b7b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Marcel Duchamp",
+    "normalizedAnswer": "MARCEL DUCHAMP",
+    "category": "Artist",
+    "difficulty": 64.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "2c22aae1e3e26c3da4bbf9cbe8bb7a80",
+    "source": "theme",
+    "type": "title",
+    "answer": "Frida Kahlo",
+    "normalizedAnswer": "FRIDA KAHLO",
+    "category": "Artist",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "4d3631103dfa88192f75d714b51b6597",
+    "source": "theme",
+    "type": "title",
+    "answer": "Diego Rivera",
+    "normalizedAnswer": "DIEGO RIVERA",
+    "category": "Artist",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "3b59099c4e11242fe64ce3855e86019f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Georgia O'Keeffe",
+    "normalizedAnswer": "GEORGIA OKEEFFE",
+    "category": "Artist",
+    "difficulty": 72.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "fcf16dd57f7e9a58baf0a758b8fc8d89",
+    "source": "theme",
+    "type": "title",
+    "answer": "Edward Hopper",
+    "normalizedAnswer": "EDWARD HOPPER",
+    "category": "Artist",
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "230287609334bed0cac5b47550d6159f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Grant Wood",
+    "normalizedAnswer": "GRANT WOOD",
+    "category": "Artist",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "dd106c74f653e6d1abdcdf1572025591",
+    "source": "theme",
+    "type": "title",
+    "answer": "Norman Rockwell",
+    "normalizedAnswer": "NORMAN ROCKWELL",
+    "category": "Artist",
+    "difficulty": 64.4,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "b2e46c076506780ba1042e53bc4735e0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Andrew Wyeth",
+    "normalizedAnswer": "ANDREW WYETH",
+    "category": "Artist",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "12c3412441e27146a2085c3b165f0b3e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Jackson Pollock",
+    "normalizedAnswer": "JACKSON POLLOCK",
+    "category": "Artist",
+    "difficulty": 68.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "e0d45fc46432e9d3fc25f1e10f2e461b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mark Rothko",
+    "normalizedAnswer": "MARK ROTHKO",
+    "category": "Artist",
+    "difficulty": 78,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "0c265020e125635ff40f7bb87fcb2228",
+    "source": "theme",
+    "type": "title",
+    "answer": "Andy Warhol",
+    "normalizedAnswer": "ANDY WARHOL",
+    "category": "Artist",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "f298a4d25df7a5651531a9147b098d9c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Roy Lichtenstein",
+    "normalizedAnswer": "ROY LICHTENSTEIN",
+    "category": "Artist",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "3e4b5f583bda6f8d4b13e3a799dd9d1e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Alexander Calder",
+    "normalizedAnswer": "ALEXANDER CALDER",
+    "category": "Artist",
+    "difficulty": 72,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ad4a8e9d6504570f49c278426322474b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Keith Haring",
+    "normalizedAnswer": "KEITH HARING",
+    "category": "Artist",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6565711e944698ef23089e073edbf2fc",
+    "source": "theme",
+    "type": "title",
+    "answer": "Jean-Michel Basquiat",
+    "normalizedAnswer": "JEANMICHEL BASQUIAT",
+    "category": "Artist",
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 18,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "967d2785830e23880763b943390ec098",
+    "source": "theme",
+    "type": "title",
+    "answer": "David Hockney",
+    "normalizedAnswer": "DAVID HOCKNEY",
+    "category": "Artist",
+    "difficulty": 61.2,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "64ca89803334e743fa7efe64169576a3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Yayoi Kusama",
+    "normalizedAnswer": "YAYOI KUSAMA",
+    "category": "Artist",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "8079a1535e744a4150846051018c5ded",
+    "source": "theme",
+    "type": "title",
+    "answer": "Jeff Koons",
+    "normalizedAnswer": "JEFF KOONS",
+    "category": "Artist",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "3bcf86e144933ff68c1681a2b62e6948",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ai Weiwei",
+    "normalizedAnswer": "AI WEIWEI",
+    "category": "Artist",
+    "difficulty": 90.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "f3b8f943f6cbe07fb8584e56f0b44f27",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bob Ross",
+    "normalizedAnswer": "BOB ROSS",
+    "category": "Artist",
+    "difficulty": 91.2,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 7,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "f58ba2c8d551a4058b57d9550c797b24",
+    "source": "theme",
+    "type": "title",
+    "answer": "Banksy",
+    "normalizedAnswer": "BANKSY",
+    "category": "Artist",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "dc92ceb872ab31e32b9eb75554b80fa6",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ansel Adams",
+    "normalizedAnswer": "ANSEL ADAMS",
+    "category": "Artist",
+    "difficulty": 78,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "7de9080bc03cac0ff11780503c71ec41",
+    "source": "theme",
+    "type": "title",
+    "answer": "Annie Leibovitz",
+    "normalizedAnswer": "ANNIE LEIBOVITZ",
+    "category": "Artist",
+    "difficulty": 64.4,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "art",
+      "artist"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  }
+]

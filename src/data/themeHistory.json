@@ -180,26 +180,6 @@
     }
   },
   {
-    "id": "1a27a0ca8dfe7c72c3adc6a84888b7c2",
-    "source": "theme",
-    "type": "title",
-    "answer": "United States",
-    "normalizedAnswer": "UNITED STATES",
-    "category": "History",
-    "difficulty": 73.2,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 12,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "history"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_largest_empires"
-    }
-  },
-  {
     "id": "873d8190fc7949c172197e20d9990b44",
     "source": "theme",
     "type": "title",
@@ -340,26 +320,6 @@
     }
   },
   {
-    "id": "8896f24d8fc2e0605717902d25712847",
-    "source": "theme",
-    "type": "title",
-    "answer": "Jochi Khanate",
-    "normalizedAnswer": "JOCHI KHANATE",
-    "category": "History",
-    "difficulty": 65.2,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 12,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "history"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_largest_empires"
-    }
-  },
-  {
     "id": "b95ff8a5860a2270cc0469cc2add634b",
     "source": "theme",
     "type": "title",
@@ -480,26 +440,6 @@
     }
   },
   {
-    "id": "6ac25af898cc8b26c4b2f57171932074",
-    "source": "theme",
-    "type": "title",
-    "answer": "Northern Yuan dynasty",
-    "normalizedAnswer": "NORTHERN YUAN DYNASTY",
-    "category": "History",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 19,
-    "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "history"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_largest_empires"
-    }
-  },
-  {
     "id": "b2cbe804daadb2945161cde56588763a",
     "source": "theme",
     "type": "title",
@@ -510,26 +450,6 @@
     "difficultyTier": "medium",
     "wordCount": 2,
     "letterCount": 11,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "history"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_largest_empires"
-    }
-  },
-  {
-    "id": "385b0518675409fa3dc62681e3ff7edf",
-    "source": "theme",
-    "type": "title",
-    "answer": "Xin dynasty",
-    "normalizedAnswer": "XIN DYNASTY",
-    "category": "History",
-    "difficulty": 74,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 10,
     "uniqueLetterCount": 8,
     "tags": [
       "theme",
@@ -551,26 +471,6 @@
     "wordCount": 2,
     "letterCount": 13,
     "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "history"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_largest_empires"
-    }
-  },
-  {
-    "id": "0b4a85d1dd6614abaee1772357afa665",
-    "source": "theme",
-    "type": "title",
-    "answer": "Xianbei state",
-    "normalizedAnswer": "XIANBEI STATE",
-    "category": "History",
-    "difficulty": 73.2,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 12,
-    "uniqueLetterCount": 8,
     "tags": [
       "theme",
       "history"
@@ -631,26 +531,6 @@
     "wordCount": 2,
     "letterCount": 16,
     "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "history"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_largest_empires"
-    }
-  },
-  {
-    "id": "5185171fa16b2858b9e78389f72ac921",
-    "source": "theme",
-    "type": "title",
-    "answer": "Eastern Turkic Khaganate",
-    "normalizedAnswer": "EASTERN TURKIC KHAGANATE",
-    "category": "History",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 22,
-    "uniqueLetterCount": 12,
     "tags": [
       "theme",
       "history"
@@ -780,26 +660,6 @@
     }
   },
   {
-    "id": "146b738622349e6a319945617b89a663",
-    "source": "theme",
-    "type": "title",
-    "answer": "Dzungar Khanate",
-    "normalizedAnswer": "DZUNGAR KHANATE",
-    "category": "History",
-    "difficulty": 60.4,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 14,
-    "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "history"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_largest_empires"
-    }
-  },
-  {
     "id": "5463f78b4643f94a1782af8f30deaf0a",
     "source": "theme",
     "type": "title",
@@ -831,46 +691,6 @@
     "wordCount": 2,
     "letterCount": 14,
     "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "history"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_largest_empires"
-    }
-  },
-  {
-    "id": "eeffd5acd97c1c2d73a80a508a929454",
-    "source": "theme",
-    "type": "title",
-    "answer": "Western Turkic Khaganate",
-    "normalizedAnswer": "WESTERN TURKIC KHAGANATE",
-    "category": "History",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 22,
-    "uniqueLetterCount": 13,
-    "tags": [
-      "theme",
-      "history"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_largest_empires"
-    }
-  },
-  {
-    "id": "7c18ce787e279515fc46b3dad6e53bb4",
-    "source": "theme",
-    "type": "title",
-    "answer": "Western Xiongnu",
-    "normalizedAnswer": "WESTERN XIONGNU",
-    "category": "History",
-    "difficulty": 60.4,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 14,
-    "uniqueLetterCount": 11,
     "tags": [
       "theme",
       "history"
@@ -1020,26 +840,6 @@
     }
   },
   {
-    "id": "656a5ddb63e130e98c515a5bc6952c68",
-    "source": "theme",
-    "type": "title",
-    "answer": "Western Jin dynasty",
-    "normalizedAnswer": "WESTERN JIN DYNASTY",
-    "category": "History",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 17,
-    "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "history"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_largest_empires"
-    }
-  },
-  {
     "id": "db868f0843d281485da6df20991d4ef4",
     "source": "theme",
     "type": "title",
@@ -1100,46 +900,6 @@
     }
   },
   {
-    "id": "b54dcf3acfdffe700ac09708de42bc3b",
-    "source": "theme",
-    "type": "title",
-    "answer": "Samanid Empire",
-    "normalizedAnswer": "SAMANID EMPIRE",
-    "category": "History",
-    "difficulty": 68.8,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 13,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "history"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_largest_empires"
-    }
-  },
-  {
-    "id": "89cca012103de678e417edf1d8723404",
-    "source": "theme",
-    "type": "title",
-    "answer": "Eastern Jin dynasty",
-    "normalizedAnswer": "EASTERN JIN DYNASTY",
-    "category": "History",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 17,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "history"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_largest_empires"
-    }
-  },
-  {
     "id": "8b5a00f69fea6fce28bc4114f643230a",
     "source": "theme",
     "type": "title",
@@ -1171,26 +931,6 @@
     "wordCount": 2,
     "letterCount": 14,
     "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "history"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_largest_empires"
-    }
-  },
-  {
-    "id": "48ee4e3e0838595d1ddcb1456b0a8d8a",
-    "source": "theme",
-    "type": "title",
-    "answer": "Rouran Khaganate",
-    "normalizedAnswer": "ROURAN KHAGANATE",
-    "category": "History",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 15,
-    "uniqueLetterCount": 10,
     "tags": [
       "theme",
       "history"
@@ -1271,26 +1011,6 @@
     "wordCount": 2,
     "letterCount": 20,
     "uniqueLetterCount": 13,
-    "tags": [
-      "theme",
-      "history"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_largest_empires"
-    }
-  },
-  {
-    "id": "6f1bea89c506eb688d795064cf4382cd",
-    "source": "theme",
-    "type": "title",
-    "answer": "Later Zhao",
-    "normalizedAnswer": "LATER ZHAO",
-    "category": "History",
-    "difficulty": 74.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 8,
     "tags": [
       "theme",
       "history"
@@ -1560,66 +1280,6 @@
     }
   },
   {
-    "id": "a0bcaf6956500f9b3103124a2221c598",
-    "source": "theme",
-    "type": "title",
-    "answer": "Former Qin",
-    "normalizedAnswer": "FORMER QIN",
-    "category": "History",
-    "difficulty": 74.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "history"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_largest_empires"
-    }
-  },
-  {
-    "id": "373e6c069042ae96a978047392ec5758",
-    "source": "theme",
-    "type": "title",
-    "answer": "Former Zhao",
-    "normalizedAnswer": "FORMER ZHAO",
-    "category": "History",
-    "difficulty": 74,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 10,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "history"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_largest_empires"
-    }
-  },
-  {
-    "id": "7c0d9db4ef3d72d1cc017073bf8d80ca",
-    "source": "theme",
-    "type": "title",
-    "answer": "Ghurid dynasty",
-    "normalizedAnswer": "GHURID DYNASTY",
-    "category": "History",
-    "difficulty": 60.8,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 13,
-    "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "history"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_largest_empires"
-    }
-  },
-  {
     "id": "b5358fd1d1119863220c323317196779",
     "source": "theme",
     "type": "title",
@@ -1651,46 +1311,6 @@
     "wordCount": 2,
     "letterCount": 12,
     "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "history"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_largest_empires"
-    }
-  },
-  {
-    "id": "874b61401801353f6b92de7b0beb4fe2",
-    "source": "theme",
-    "type": "title",
-    "answer": "Liu Song dynasty",
-    "normalizedAnswer": "LIU SONG DYNASTY",
-    "category": "History",
-    "difficulty": 60.4,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 14,
-    "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "history"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_largest_empires"
-    }
-  },
-  {
-    "id": "ea846ec833ba0c3108b20f0cad9307fb",
-    "source": "theme",
-    "type": "title",
-    "answer": "Northern Wei",
-    "normalizedAnswer": "NORTHERN WEI",
-    "category": "History",
-    "difficulty": 73.6,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 8,
     "tags": [
       "theme",
       "history"
@@ -1760,46 +1380,6 @@
     }
   },
   {
-    "id": "bac76f757b50d063a2221e695213f190",
-    "source": "theme",
-    "type": "title",
-    "answer": "Hephthalite Empire",
-    "normalizedAnswer": "HEPHTHALITE EMPIRE",
-    "category": "History",
-    "difficulty": 68,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 17,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "history"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_largest_empires"
-    }
-  },
-  {
-    "id": "5955bc65870b20ed156aa854902facd4",
-    "source": "theme",
-    "type": "title",
-    "answer": "Buyid dynasty",
-    "normalizedAnswer": "BUYID DYNASTY",
-    "category": "History",
-    "difficulty": 69.2,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 12,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "history"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_largest_empires"
-    }
-  },
-  {
     "id": "ad4ef7cf0502e80a3fa40c3bbfc81d8e",
     "source": "theme",
     "type": "title",
@@ -1810,66 +1390,6 @@
     "difficultyTier": "medium",
     "wordCount": 2,
     "letterCount": 9,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "history"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_largest_empires"
-    }
-  },
-  {
-    "id": "11ccb4bdd97c8dd32827452a99432f94",
-    "source": "theme",
-    "type": "title",
-    "answer": "Northern Qi",
-    "normalizedAnswer": "NORTHERN QI",
-    "category": "History",
-    "difficulty": 74,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 10,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "history"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_largest_empires"
-    }
-  },
-  {
-    "id": "9d50fcfa420afe63164444dbc6adf51f",
-    "source": "theme",
-    "type": "title",
-    "answer": "Northern Xiongnu",
-    "normalizedAnswer": "NORTHERN XIONGNU",
-    "category": "History",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 15,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "history"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_largest_empires"
-    }
-  },
-  {
-    "id": "402c825c0f75c75126b86e4ffb1bc183",
-    "source": "theme",
-    "type": "title",
-    "answer": "Northern Zhou",
-    "normalizedAnswer": "NORTHERN ZHOU",
-    "category": "History",
-    "difficulty": 73.2,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 12,
     "uniqueLetterCount": 8,
     "tags": [
       "theme",
@@ -1891,46 +1411,6 @@
     "wordCount": 2,
     "letterCount": 17,
     "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "history"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_largest_empires"
-    }
-  },
-  {
-    "id": "e23db5991f279140c4d121e10f234877",
-    "source": "theme",
-    "type": "title",
-    "answer": "Eastern Maurya Kingdom",
-    "normalizedAnswer": "EASTERN MAURYA KINGDOM",
-    "category": "History",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 20,
-    "uniqueLetterCount": 14,
-    "tags": [
-      "theme",
-      "history"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_largest_empires"
-    }
-  },
-  {
-    "id": "56a6a7f1364cc8f351a4953e0b6d3b11",
-    "source": "theme",
-    "type": "title",
-    "answer": "Liang dynasty",
-    "normalizedAnswer": "LIANG DYNASTY",
-    "category": "History",
-    "difficulty": 69.2,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 12,
-    "uniqueLetterCount": 9,
     "tags": [
       "theme",
       "history"
@@ -2120,46 +1600,6 @@
     }
   },
   {
-    "id": "58f0895e92087e812c06d18bbc0559a9",
-    "source": "theme",
-    "type": "title",
-    "answer": "Pushyabhuti dynasty",
-    "normalizedAnswer": "PUSHYABHUTI DYNASTY",
-    "category": "History",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 18,
-    "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "history"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_largest_empires"
-    }
-  },
-  {
-    "id": "d2bb876e945d42be979c5d0677768027",
-    "source": "theme",
-    "type": "title",
-    "answer": "Gurjara-Pratihara dynasty",
-    "normalizedAnswer": "GURJARAPRATIHARA DYNASTY",
-    "category": "History",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 23,
-    "uniqueLetterCount": 13,
-    "tags": [
-      "theme",
-      "history"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_largest_empires"
-    }
-  },
-  {
     "id": "18b695a152182bb2c1023b9be9b230a4",
     "source": "theme",
     "type": "title",
@@ -2260,26 +1700,6 @@
     }
   },
   {
-    "id": "4edffdb8db37f8226fa0c9e249e39ffe",
-    "source": "theme",
-    "type": "title",
-    "answer": "Qara Khitai",
-    "normalizedAnswer": "QARA KHITAI",
-    "category": "History",
-    "difficulty": 78,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 10,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "history"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_largest_empires"
-    }
-  },
-  {
     "id": "81dd6eda88aac5db08c1ca1bb5877cb0",
     "source": "theme",
     "type": "title",
@@ -2311,26 +1731,6 @@
     "wordCount": 2,
     "letterCount": 6,
     "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "history"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_largest_empires"
-    }
-  },
-  {
-    "id": "35f992e22a51de9f84739a3d956688cd",
-    "source": "theme",
-    "type": "title",
-    "answer": "Tahirid dynasty",
-    "normalizedAnswer": "TAHIRID DYNASTY",
-    "category": "History",
-    "difficulty": 68.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 14,
-    "uniqueLetterCount": 9,
     "tags": [
       "theme",
       "history"
@@ -2440,46 +1840,6 @@
     }
   },
   {
-    "id": "97902c2417c6e6cd3a052367d96c7b52",
-    "source": "theme",
-    "type": "title",
-    "answer": "Chu",
-    "normalizedAnswer": "CHU",
-    "category": "History",
-    "difficulty": 96.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 3,
-    "uniqueLetterCount": 3,
-    "tags": [
-      "theme",
-      "history"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_largest_empires"
-    }
-  },
-  {
-    "id": "0719bb349eec9abb686bcb2caaaae5de",
-    "source": "theme",
-    "type": "title",
-    "answer": "Huns",
-    "normalizedAnswer": "HUNS",
-    "category": "History",
-    "difficulty": 92.4,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 4,
-    "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "history"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_largest_empires"
-    }
-  },
-  {
     "id": "69b400cbedff882a66e4fae4da8f6a9d",
     "source": "theme",
     "type": "title",
@@ -2511,46 +1871,6 @@
     "wordCount": 1,
     "letterCount": 6,
     "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "history"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_largest_empires"
-    }
-  },
-  {
-    "id": "24c1b46b7db9a507825aa39e630d0028",
-    "source": "theme",
-    "type": "title",
-    "answer": "Twenty-sixth Dynasty of Egypt",
-    "normalizedAnswer": "TWENTYSIXTH DYNASTY OF EGYPT",
-    "category": "History",
-    "difficulty": 44,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 25,
-    "uniqueLetterCount": 15,
-    "tags": [
-      "theme",
-      "history"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_largest_empires"
-    }
-  },
-  {
-    "id": "2db8ba11b9c6e2fa2c3862c6070adb0b",
-    "source": "theme",
-    "type": "title",
-    "answer": "Rozvi Empire",
-    "normalizedAnswer": "ROZVI EMPIRE",
-    "category": "History",
-    "difficulty": 73.6,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 8,
     "tags": [
       "theme",
       "history"
@@ -2700,26 +2020,6 @@
     }
   },
   {
-    "id": "3cf5c1fcfa214504ba2aa391b68d09ce",
-    "source": "theme",
-    "type": "title",
-    "answer": "Kosala",
-    "normalizedAnswer": "KOSALA",
-    "category": "History",
-    "difficulty": 87.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "history"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_largest_empires"
-    }
-  },
-  {
     "id": "b5c23d9ef03468af64c3e8c16b2edaff",
     "source": "theme",
     "type": "title",
@@ -2730,26 +2030,6 @@
     "difficultyTier": "hard",
     "wordCount": 1,
     "letterCount": 5,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "history"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_largest_empires"
-    }
-  },
-  {
-    "id": "8174c069915b441be70c518271779c47",
-    "source": "theme",
-    "type": "title",
-    "answer": "Magadha",
-    "normalizedAnswer": "MAGADHA",
-    "category": "History",
-    "difficulty": 87.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
     "uniqueLetterCount": 5,
     "tags": [
       "theme",
@@ -2791,66 +2071,6 @@
     "wordCount": 2,
     "letterCount": 19,
     "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "history"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_largest_empires"
-    }
-  },
-  {
-    "id": "da06cdc959702c7db74d0f959607e58e",
-    "source": "theme",
-    "type": "title",
-    "answer": "Satavahana dynasty",
-    "normalizedAnswer": "SATAVAHANA DYNASTY",
-    "category": "History",
-    "difficulty": 72,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 17,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "history"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_largest_empires"
-    }
-  },
-  {
-    "id": "52e37cdccd0d09d085388f319d8e35b8",
-    "source": "theme",
-    "type": "title",
-    "answer": "Twenty-fifth Dynasty of Egypt",
-    "normalizedAnswer": "TWENTYFIFTH DYNASTY OF EGYPT",
-    "category": "History",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 25,
-    "uniqueLetterCount": 14,
-    "tags": [
-      "theme",
-      "history"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_largest_empires"
-    }
-  },
-  {
-    "id": "efdb3496d6a0d84a966a090680a1344f",
-    "source": "theme",
-    "type": "title",
-    "answer": "Western Satraps",
-    "normalizedAnswer": "WESTERN SATRAPS",
-    "category": "History",
-    "difficulty": 72.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 14,
-    "uniqueLetterCount": 8,
     "tags": [
       "theme",
       "history"
@@ -3040,26 +2260,6 @@
     }
   },
   {
-    "id": "1e380fdfdd89b1e85e18fabc0648ffb7",
-    "source": "theme",
-    "type": "title",
-    "answer": "Indus Valley Civilisation",
-    "normalizedAnswer": "INDUS VALLEY CIVILISATION",
-    "category": "History",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 23,
-    "uniqueLetterCount": 13,
-    "tags": [
-      "theme",
-      "history"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_largest_empires"
-    }
-  },
-  {
     "id": "dc315d4444c6abf6680a0f12153e3973",
     "source": "theme",
     "type": "title",
@@ -3200,26 +2400,6 @@
     }
   },
   {
-    "id": "a38ee2672516cf734a5bdfe08f8c7c8c",
-    "source": "theme",
-    "type": "title",
-    "answer": "Second Dynasty of Isin",
-    "normalizedAnswer": "SECOND DYNASTY OF ISIN",
-    "category": "History",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 19,
-    "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "history"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_largest_empires"
-    }
-  },
-  {
     "id": "fba05e1d19f012ebbda298301b47dd63",
     "source": "theme",
     "type": "title",
@@ -3251,26 +2431,6 @@
     "wordCount": 2,
     "letterCount": 11,
     "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "history"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_largest_empires"
-    }
-  },
-  {
-    "id": "a15abf79207da5ed5e9d8d9dafb994ee",
-    "source": "theme",
-    "type": "title",
-    "answer": "Middle Hittite Kingdom",
-    "normalizedAnswer": "MIDDLE HITTITE KINGDOM",
-    "category": "History",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 20,
-    "uniqueLetterCount": 11,
     "tags": [
       "theme",
       "history"
@@ -3340,46 +2500,6 @@
     }
   },
   {
-    "id": "adb7ec8eaa360b2b8125c26cdb73bfc3",
-    "source": "theme",
-    "type": "title",
-    "answer": "Bornu Empire",
-    "normalizedAnswer": "BORNU EMPIRE",
-    "category": "History",
-    "difficulty": 69.6,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "history"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_largest_empires"
-    }
-  },
-  {
-    "id": "e154033d1f2292ca26b5a2d7efe1491e",
-    "source": "theme",
-    "type": "title",
-    "answer": "Larsa",
-    "normalizedAnswer": "LARSA",
-    "category": "History",
-    "difficulty": 92,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "history"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_largest_empires"
-    }
-  },
-  {
     "id": "55fe729652b546f792f7560651a91be8",
     "source": "theme",
     "type": "title",
@@ -3391,46 +2511,6 @@
     "wordCount": 2,
     "letterCount": 17,
     "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "history"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_largest_empires"
-    }
-  },
-  {
-    "id": "bda824d968e5a3e8c6d946c2f9a58bd4",
-    "source": "theme",
-    "type": "title",
-    "answer": "Tarascan empire",
-    "normalizedAnswer": "TARASCAN EMPIRE",
-    "category": "History",
-    "difficulty": 64.4,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 14,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "history"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_largest_empires"
-    }
-  },
-  {
-    "id": "05e49d77a1fb3da1f59e5c769230bf44",
-    "source": "theme",
-    "type": "title",
-    "answer": "Lagash",
-    "normalizedAnswer": "LAGASH",
-    "category": "History",
-    "difficulty": 87.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 5,
     "tags": [
       "theme",
       "history"

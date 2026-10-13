@@ -1,0 +1,2249 @@
+[
+  {
+    "id": "5f1f1cdf0c48860092622f57c306cf41",
+    "source": "theme",
+    "type": "title",
+    "answer": "Michael Jordan",
+    "normalizedAnswer": "MICHAEL JORDAN",
+    "category": "Athlete",
+    "difficulty": 56.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "4a666dbc77bf51c4d3a6fa1061d0c6a8",
+    "source": "theme",
+    "type": "title",
+    "answer": "LeBron James",
+    "normalizedAnswer": "LEBRON JAMES",
+    "category": "Athlete",
+    "difficulty": 65.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ed06229748ca31d42ba3d0cf0495ec3b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Kobe Bryant",
+    "normalizedAnswer": "KOBE BRYANT",
+    "category": "Athlete",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6e57be435c8a154fab45b6535d8973d2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Shaquille O'Neal",
+    "normalizedAnswer": "SHAQUILLE ONEAL",
+    "category": "Athlete",
+    "difficulty": 64.4,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "e7d2e88e68c91ded332b38bfc3c2d857",
+    "source": "theme",
+    "type": "title",
+    "answer": "Stephen Curry",
+    "normalizedAnswer": "STEPHEN CURRY",
+    "category": "Athlete",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "7e575a411584a4c4d57b2507043302ae",
+    "source": "theme",
+    "type": "title",
+    "answer": "Magic Johnson",
+    "normalizedAnswer": "MAGIC JOHNSON",
+    "category": "Athlete",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "386368bb4e5c79b8ab23ecedafd2322d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Larry Bird",
+    "normalizedAnswer": "LARRY BIRD",
+    "category": "Athlete",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "5b7769fcf2e25d48f1d5bfc16efa90ae",
+    "source": "theme",
+    "type": "title",
+    "answer": "Kareem Abdul-Jabbar",
+    "normalizedAnswer": "KAREEM ABDULJABBAR",
+    "category": "Athlete",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 17,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a5a91424c8a675fbee5306ef45a2d65c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Wilt Chamberlain",
+    "normalizedAnswer": "WILT CHAMBERLAIN",
+    "category": "Athlete",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "2f16ff06a03569ed39435ac500abb50e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Kevin Durant",
+    "normalizedAnswer": "KEVIN DURANT",
+    "category": "Athlete",
+    "difficulty": 65.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "b6e26e73279f3c01c778b9da60317096",
+    "source": "theme",
+    "type": "title",
+    "answer": "Giannis Antetokounmpo",
+    "normalizedAnswer": "GIANNIS ANTETOKOUNMPO",
+    "category": "Athlete",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 20,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "408c7f235468d06b9cb1778575bf5f15",
+    "source": "theme",
+    "type": "title",
+    "answer": "Victor Wembanyama",
+    "normalizedAnswer": "VICTOR WEMBANYAMA",
+    "category": "Athlete",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "5db2a4b3ddb90bf234d83941f92f4cfa",
+    "source": "theme",
+    "type": "title",
+    "answer": "Caitlin Clark",
+    "normalizedAnswer": "CAITLIN CLARK",
+    "category": "Athlete",
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "3e97b971ead48ffdddd58ee719296b61",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lionel Messi",
+    "normalizedAnswer": "LIONEL MESSI",
+    "category": "Athlete",
+    "difficulty": 77.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "690e3f474f56aab80d6203b554b029ea",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cristiano Ronaldo",
+    "normalizedAnswer": "CRISTIANO RONALDO",
+    "category": "Athlete",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "0c62c46ff61bfdcc1f73e49c5f0215cb",
+    "source": "theme",
+    "type": "title",
+    "answer": "Pelé",
+    "normalizedAnswer": "PELE",
+    "category": "Athlete",
+    "difficulty": 96.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "de4a60ee5276baac37ea248e1c1327c2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Diego Maradona",
+    "normalizedAnswer": "DIEGO MARADONA",
+    "category": "Athlete",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c2a12b2db849d25e691d58109b46d237",
+    "source": "theme",
+    "type": "title",
+    "answer": "David Beckham",
+    "normalizedAnswer": "DAVID BECKHAM",
+    "category": "Athlete",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "bd1392e1bb058f65eb6dd7a723bd88bd",
+    "source": "theme",
+    "type": "title",
+    "answer": "Zinedine Zidane",
+    "normalizedAnswer": "ZINEDINE ZIDANE",
+    "category": "Athlete",
+    "difficulty": 80.4,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "7279e4b44022a3473b0953e1383f44c1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Kylian Mbappé",
+    "normalizedAnswer": "KYLIAN MBAPPE",
+    "category": "Athlete",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ed5bc9f8b9ccbdce17121ab62c7b88fe",
+    "source": "theme",
+    "type": "title",
+    "answer": "Erling Haaland",
+    "normalizedAnswer": "ERLING HAALAND",
+    "category": "Athlete",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "2a81373e181dddc3c3325885eb92d38a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Neymar",
+    "normalizedAnswer": "NEYMAR",
+    "category": "Athlete",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "0c0eae30e29bc9a72c5245521a260258",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mia Hamm",
+    "normalizedAnswer": "MIA HAMM",
+    "category": "Athlete",
+    "difficulty": 91.2,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 7,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "147b65a9c79f780fbe0703d9ea8fa0d0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Megan Rapinoe",
+    "normalizedAnswer": "MEGAN RAPINOE",
+    "category": "Athlete",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "bed8636d79d0d93f44358c1db7c24426",
+    "source": "theme",
+    "type": "title",
+    "answer": "Alex Morgan",
+    "normalizedAnswer": "ALEX MORGAN",
+    "category": "Athlete",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "b061295ca34788f02d8916b1638019d7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mohamed Salah",
+    "normalizedAnswer": "MOHAMED SALAH",
+    "category": "Athlete",
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "292e71f9519f8bf92ab692b6acc9880e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lamine Yamal",
+    "normalizedAnswer": "LAMINE YAMAL",
+    "category": "Athlete",
+    "difficulty": 77.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "d29e212731c86ae37dbda9a03d9f9719",
+    "source": "theme",
+    "type": "title",
+    "answer": "Tom Brady",
+    "normalizedAnswer": "TOM BRADY",
+    "category": "Athlete",
+    "difficulty": 74.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6e332eaabb5a98c3e4278864d813c24c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Patrick Mahomes",
+    "normalizedAnswer": "PATRICK MAHOMES",
+    "category": "Athlete",
+    "difficulty": 56.4,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "fafba5fd1bae01f6997eceaefafc0a81",
+    "source": "theme",
+    "type": "title",
+    "answer": "Peyton Manning",
+    "normalizedAnswer": "PEYTON MANNING",
+    "category": "Athlete",
+    "difficulty": 64.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "aa3d471aff78bc4c6bf66c2eb900de33",
+    "source": "theme",
+    "type": "title",
+    "answer": "Jerry Rice",
+    "normalizedAnswer": "JERRY RICE",
+    "category": "Athlete",
+    "difficulty": 82.4,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "1a8f3ef929a3923010dff294b3e8be62",
+    "source": "theme",
+    "type": "title",
+    "answer": "Joe Montana",
+    "normalizedAnswer": "JOE MONTANA",
+    "category": "Athlete",
+    "difficulty": 78,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "14ef869c2ad07588191ba1a34c98efbd",
+    "source": "theme",
+    "type": "title",
+    "answer": "Walter Payton",
+    "normalizedAnswer": "WALTER PAYTON",
+    "category": "Athlete",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6b1a5997f96209d7c6d772f1b8a07441",
+    "source": "theme",
+    "type": "title",
+    "answer": "Barry Sanders",
+    "normalizedAnswer": "BARRY SANDERS",
+    "category": "Athlete",
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "2430723d6f77c4cfe509296e19d172a9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Emmitt Smith",
+    "normalizedAnswer": "EMMITT SMITH",
+    "category": "Athlete",
+    "difficulty": 81.6,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c2d00cbd2c65077c6964a99df29f2c5c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Travis Kelce",
+    "normalizedAnswer": "TRAVIS KELCE",
+    "category": "Athlete",
+    "difficulty": 65.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "3c10a3651ccc91cefa5e4841da37d39c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Deion Sanders",
+    "normalizedAnswer": "DEION SANDERS",
+    "category": "Athlete",
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "f70a1a19fac40c5395aab23ebca10cf5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Babe Ruth",
+    "normalizedAnswer": "BABE RUTH",
+    "category": "Athlete",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "13af978c9d1e23eedd16856cd8f63e10",
+    "source": "theme",
+    "type": "title",
+    "answer": "Jackie Robinson",
+    "normalizedAnswer": "JACKIE ROBINSON",
+    "category": "Athlete",
+    "difficulty": 60.4,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "8236f3e26631ebe8cb835fee6fa7d867",
+    "source": "theme",
+    "type": "title",
+    "answer": "Hank Aaron",
+    "normalizedAnswer": "HANK AARON",
+    "category": "Athlete",
+    "difficulty": 82.4,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "f9102d6eb98e1e817aaf27b16d973a38",
+    "source": "theme",
+    "type": "title",
+    "answer": "Willie Mays",
+    "normalizedAnswer": "WILLIE MAYS",
+    "category": "Athlete",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "e4fe1d072d2ce94b1e208975e02860dd",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lou Gehrig",
+    "normalizedAnswer": "LOU GEHRIG",
+    "category": "Athlete",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "27e93548526d572f51c38e16f2e0d092",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mickey Mantle",
+    "normalizedAnswer": "MICKEY MANTLE",
+    "category": "Athlete",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "26c30c452c84d568c98d6a4a9daed6b3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Derek Jeter",
+    "normalizedAnswer": "DEREK JETER",
+    "category": "Athlete",
+    "difficulty": 82,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "8c1eb3ef2885558cbf2862d24d1e816a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Shohei Ohtani",
+    "normalizedAnswer": "SHOHEI OHTANI",
+    "category": "Athlete",
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "42488081473ee2d07f95d349f60f8485",
+    "source": "theme",
+    "type": "title",
+    "answer": "Aaron Judge",
+    "normalizedAnswer": "AARON JUDGE",
+    "category": "Athlete",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "2e68db0cc4833f147474081ed14806fc",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ken Griffey Jr.",
+    "normalizedAnswer": "KEN GRIFFEY JR",
+    "category": "Athlete",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "845a22b2c04988f681dc8deb37be74f3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Roberto Clemente",
+    "normalizedAnswer": "ROBERTO CLEMENTE",
+    "category": "Athlete",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "52e1497fb813028df7a47e91bb9c6380",
+    "source": "theme",
+    "type": "title",
+    "answer": "Wayne Gretzky",
+    "normalizedAnswer": "WAYNE GRETZKY",
+    "category": "Athlete",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "681ca94bb98787091e28ea215cc33a39",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mario Lemieux",
+    "normalizedAnswer": "MARIO LEMIEUX",
+    "category": "Athlete",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "238631a16466c23f7955b9faeb045108",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sidney Crosby",
+    "normalizedAnswer": "SIDNEY CROSBY",
+    "category": "Athlete",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "76fc7796acca547f9a3d8fdb63cdb52a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Alex Ovechkin",
+    "normalizedAnswer": "ALEX OVECHKIN",
+    "category": "Athlete",
+    "difficulty": 61.2,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "cf3d9d8fd080bab67a21e1bc1a47f9ab",
+    "source": "theme",
+    "type": "title",
+    "answer": "Connor McDavid",
+    "normalizedAnswer": "CONNOR MCDAVID",
+    "category": "Athlete",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "9de1b5732217c434069783ea6f29c25d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bobby Orr",
+    "normalizedAnswer": "BOBBY ORR",
+    "category": "Athlete",
+    "difficulty": 90.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "afe331d82c953145bb8d0b9a27694e7a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Serena Williams",
+    "normalizedAnswer": "SERENA WILLIAMS",
+    "category": "Athlete",
+    "difficulty": 68.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "100b72614fc2f6321d32a7ca5325a9e4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Venus Williams",
+    "normalizedAnswer": "VENUS WILLIAMS",
+    "category": "Athlete",
+    "difficulty": 64.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "3a67ceef154dd0557a768cd31b959305",
+    "source": "theme",
+    "type": "title",
+    "answer": "Roger Federer",
+    "normalizedAnswer": "ROGER FEDERER",
+    "category": "Athlete",
+    "difficulty": 81.2,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c805937fbe14c10fe27a704098e7e95e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Rafael Nadal",
+    "normalizedAnswer": "RAFAEL NADAL",
+    "category": "Athlete",
+    "difficulty": 77.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "7a3cf7e20dba573fdfa8cb946f2b51eb",
+    "source": "theme",
+    "type": "title",
+    "answer": "Novak Djokovic",
+    "normalizedAnswer": "NOVAK DJOKOVIC",
+    "category": "Athlete",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "f0edfebb72c04c5df0c4f32868d3627f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Billie Jean King",
+    "normalizedAnswer": "BILLIE JEAN KING",
+    "category": "Athlete",
+    "difficulty": 68.4,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 14,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "bc906d3996fbb7f10de7ce44db2c9555",
+    "source": "theme",
+    "type": "title",
+    "answer": "Steffi Graf",
+    "normalizedAnswer": "STEFFI GRAF",
+    "category": "Athlete",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "0729df7c640b67d58940168434109dbe",
+    "source": "theme",
+    "type": "title",
+    "answer": "Andre Agassi",
+    "normalizedAnswer": "ANDRE AGASSI",
+    "category": "Athlete",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "866f6663c98cf222a36e034c7ea133ca",
+    "source": "theme",
+    "type": "title",
+    "answer": "Martina Navratilova",
+    "normalizedAnswer": "MARTINA NAVRATILOVA",
+    "category": "Athlete",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 18,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "1276abdc8cad80c5299c774c20b361e1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Carlos Alcaraz",
+    "normalizedAnswer": "CARLOS ALCARAZ",
+    "category": "Athlete",
+    "difficulty": 76.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "dc7116eaccdf26e14f51475c71464b34",
+    "source": "theme",
+    "type": "title",
+    "answer": "Coco Gauff",
+    "normalizedAnswer": "COCO GAUFF",
+    "category": "Athlete",
+    "difficulty": 82.4,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "00be771ad8832069cc5bb70181e58c09",
+    "source": "theme",
+    "type": "title",
+    "answer": "Tiger Woods",
+    "normalizedAnswer": "TIGER WOODS",
+    "category": "Athlete",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "9771f8514875ec91e8002f783cd1a005",
+    "source": "theme",
+    "type": "title",
+    "answer": "Jack Nicklaus",
+    "normalizedAnswer": "JACK NICKLAUS",
+    "category": "Athlete",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "8ebdbba3ce3913e8dcd87aa4e8595cd8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Arnold Palmer",
+    "normalizedAnswer": "ARNOLD PALMER",
+    "category": "Athlete",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ace84d031a835cff7b216a47a57c4482",
+    "source": "theme",
+    "type": "title",
+    "answer": "Annika Sorenstam",
+    "normalizedAnswer": "ANNIKA SORENSTAM",
+    "category": "Athlete",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "5f35905a012971afd95dde4ce114ba7e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Rory McIlroy",
+    "normalizedAnswer": "RORY MCILROY",
+    "category": "Athlete",
+    "difficulty": 77.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "380f472c285cbaa95ece343604824d98",
+    "source": "theme",
+    "type": "title",
+    "answer": "Scottie Scheffler",
+    "normalizedAnswer": "SCOTTIE SCHEFFLER",
+    "category": "Athlete",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "e83956bbfc9901d0582e4e539e5104b3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Muhammad Ali",
+    "normalizedAnswer": "MUHAMMAD ALI",
+    "category": "Athlete",
+    "difficulty": 77.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "36477281cc9761b74c9fb06ad779b60f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mike Tyson",
+    "normalizedAnswer": "MIKE TYSON",
+    "category": "Athlete",
+    "difficulty": 70.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "7e59c77a6164f602d9ceedfb75763fc2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sugar Ray Leonard",
+    "normalizedAnswer": "SUGAR RAY LEONARD",
+    "category": "Athlete",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "074c31f0a944f92fff4b0c2f2bd1fe77",
+    "source": "theme",
+    "type": "title",
+    "answer": "George Foreman",
+    "normalizedAnswer": "GEORGE FOREMAN",
+    "category": "Athlete",
+    "difficulty": 72.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ebda611a31845e24326beb7e5cdc2e97",
+    "source": "theme",
+    "type": "title",
+    "answer": "Manny Pacquiao",
+    "normalizedAnswer": "MANNY PACQUIAO",
+    "category": "Athlete",
+    "difficulty": 64.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "0ca4bef286d8cf00f902f15f7061d575",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ronda Rousey",
+    "normalizedAnswer": "RONDA ROUSEY",
+    "category": "Athlete",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "88715313e0c224866461118bc3a70319",
+    "source": "theme",
+    "type": "title",
+    "answer": "Usain Bolt",
+    "normalizedAnswer": "USAIN BOLT",
+    "category": "Athlete",
+    "difficulty": 70.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "09fcd5925dbe9dc1009237172c392dbd",
+    "source": "theme",
+    "type": "title",
+    "answer": "Carl Lewis",
+    "normalizedAnswer": "CARL LEWIS",
+    "category": "Athlete",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "beca4abd6a003ea929271fc4d5212714",
+    "source": "theme",
+    "type": "title",
+    "answer": "Jesse Owens",
+    "normalizedAnswer": "JESSE OWENS",
+    "category": "Athlete",
+    "difficulty": 82,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "e135f2bd2a3fe78be36f11dbd2e62def",
+    "source": "theme",
+    "type": "title",
+    "answer": "Jackie Joyner-Kersee",
+    "normalizedAnswer": "JACKIE JOYNERKERSEE",
+    "category": "Athlete",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 18,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "1ce1d4e76aea73c5dbf64fdffc2d9ecd",
+    "source": "theme",
+    "type": "title",
+    "answer": "Wilma Rudolph",
+    "normalizedAnswer": "WILMA RUDOLPH",
+    "category": "Athlete",
+    "difficulty": 61.2,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "84b882dd7f248a815488723043cfff62",
+    "source": "theme",
+    "type": "title",
+    "answer": "Allyson Felix",
+    "normalizedAnswer": "ALLYSON FELIX",
+    "category": "Athlete",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "41dfa0599869912249f36f43cb78a494",
+    "source": "theme",
+    "type": "title",
+    "answer": "Eliud Kipchoge",
+    "normalizedAnswer": "ELIUD KIPCHOGE",
+    "category": "Athlete",
+    "difficulty": 60.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "e628a2a144b14bb67b823727e98b473f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Michael Phelps",
+    "normalizedAnswer": "MICHAEL PHELPS",
+    "category": "Athlete",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "3cb883668bdb045c6f6b51f6e740bea4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Katie Ledecky",
+    "normalizedAnswer": "KATIE LEDECKY",
+    "category": "Athlete",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "bcd71df477e30c578a97e5daff748aef",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mark Spitz",
+    "normalizedAnswer": "MARK SPITZ",
+    "category": "Athlete",
+    "difficulty": 70.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "08bc7e32ae6c581b45d875e3c82a40ae",
+    "source": "theme",
+    "type": "title",
+    "answer": "Simone Biles",
+    "normalizedAnswer": "SIMONE BILES",
+    "category": "Athlete",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "881f2438e11f4eb825e3dadb77040761",
+    "source": "theme",
+    "type": "title",
+    "answer": "Nadia Comaneci",
+    "normalizedAnswer": "NADIA COMANECI",
+    "category": "Athlete",
+    "difficulty": 72.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "84b1e7d4992cb7461b7960a419b4690a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mary Lou Retton",
+    "normalizedAnswer": "MARY LOU RETTON",
+    "category": "Athlete",
+    "difficulty": 64.8,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "9a7d415bb25b01488fd52cd4b6d8d21d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Gabby Douglas",
+    "normalizedAnswer": "GABBY DOUGLAS",
+    "category": "Athlete",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "8f0131b01489edbb0c7c61dc529ec3c5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lewis Hamilton",
+    "normalizedAnswer": "LEWIS HAMILTON",
+    "category": "Athlete",
+    "difficulty": 60.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "9d71bd0f282d0bb71e72dbfb4c9c8a40",
+    "source": "theme",
+    "type": "title",
+    "answer": "Michael Schumacher",
+    "normalizedAnswer": "MICHAEL SCHUMACHER",
+    "category": "Athlete",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 17,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "84e14d696adf2ac261b3272768ab0998",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ayrton Senna",
+    "normalizedAnswer": "AYRTON SENNA",
+    "category": "Athlete",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "267c5d6dfa0de0636c7c486610134ab0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Max Verstappen",
+    "normalizedAnswer": "MAX VERSTAPPEN",
+    "category": "Athlete",
+    "difficulty": 64.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c8ac124d6d45580b041964525f44d784",
+    "source": "theme",
+    "type": "title",
+    "answer": "Dale Earnhardt",
+    "normalizedAnswer": "DALE EARNHARDT",
+    "category": "Athlete",
+    "difficulty": 72.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6e7e25346f6061329c48de4b2d407a92",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mario Andretti",
+    "normalizedAnswer": "MARIO ANDRETTI",
+    "category": "Athlete",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "70dc8ca43600e402bff9d00603582f3d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Danica Patrick",
+    "normalizedAnswer": "DANICA PATRICK",
+    "category": "Athlete",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "87e77f368c53f65f216db24832c4c574",
+    "source": "theme",
+    "type": "title",
+    "answer": "Shaun White",
+    "normalizedAnswer": "SHAUN WHITE",
+    "category": "Athlete",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "decf03a2e64438d16086b6c2dc86b498",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lindsey Vonn",
+    "normalizedAnswer": "LINDSEY VONN",
+    "category": "Athlete",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "17d0d513d067f0ed638fa7810a3ad96e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mikaela Shiffrin",
+    "normalizedAnswer": "MIKAELA SHIFFRIN",
+    "category": "Athlete",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "0f6ee97eed778556ddc571c81d22c1b5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chloe Kim",
+    "normalizedAnswer": "CHLOE KIM",
+    "category": "Athlete",
+    "difficulty": 74.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "4f50332932800f2fa88c7558380c1cda",
+    "source": "theme",
+    "type": "title",
+    "answer": "Michelle Kwan",
+    "normalizedAnswer": "MICHELLE KWAN",
+    "category": "Athlete",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "09b9a2992a2ed390ae751eb9531d62d1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Tony Hawk",
+    "normalizedAnswer": "TONY HAWK",
+    "category": "Athlete",
+    "difficulty": 74.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "5a6b4e72cc7cc3fce96dfbbe937f9121",
+    "source": "theme",
+    "type": "title",
+    "answer": "Kelly Slater",
+    "normalizedAnswer": "KELLY SLATER",
+    "category": "Athlete",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "58aa521e9a065c597daa978378aed7ab",
+    "source": "theme",
+    "type": "title",
+    "answer": "Jim Thorpe",
+    "normalizedAnswer": "JIM THORPE",
+    "category": "Athlete",
+    "difficulty": 70.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a85fc38650f63154b3dd4e39728a9072",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bo Jackson",
+    "normalizedAnswer": "BO JACKSON",
+    "category": "Athlete",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "sports",
+      "athlete"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  }
+]

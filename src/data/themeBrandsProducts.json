@@ -168,27 +168,6 @@
     }
   },
   {
-    "id": "6a62e2ec5ea474ae3c815a3e43b9257b",
-    "source": "theme",
-    "type": "title",
-    "answer": "M&M's",
-    "normalizedAnswer": "MMS",
-    "category": "Brand",
-    "difficulty": 100.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 3,
-    "uniqueLetterCount": 2,
-    "tags": [
-      "theme",
-      "brand",
-      "product"
-    ],
-    "metadata": {
-      "source": "fallback"
-    }
-  },
-  {
     "id": "767e804c05346cf65b97f05f284ab1e4",
     "source": "theme",
     "type": "title",

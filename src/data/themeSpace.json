@@ -264,28 +264,6 @@
     }
   },
   {
-    "id": "4e5ed120ac05031a11b2160780209324",
-    "source": "theme",
-    "type": "title",
-    "answer": "Gonggong",
-    "normalizedAnswer": "GONGGONG",
-    "category": "Planet",
-    "difficulty": 94.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 3,
-    "tags": [
-      "theme",
-      "science",
-      "space",
-      "planet"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size"
-    }
-  },
-  {
     "id": "b6d5802ea1802f5cd1b55b0c7d8470fa",
     "source": "theme",
     "type": "title",
@@ -319,28 +297,6 @@
     "wordCount": 1,
     "letterCount": 5,
     "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "science",
-      "space",
-      "planet"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size"
-    }
-  },
-  {
-    "id": "bd9797298b8aca0baee768814cf6b12b",
-    "source": "theme",
-    "type": "title",
-    "answer": "Orcus",
-    "normalizedAnswer": "ORCUS",
-    "category": "Planet",
-    "difficulty": 88,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 5,
     "tags": [
       "theme",
       "science",

@@ -1,0 +1,2442 @@
+[
+  {
+    "id": "efc2f9aef9ab1d0fd83e85603fa6edc6",
+    "source": "theme",
+    "type": "title",
+    "answer": "Firefighter",
+    "normalizedAnswer": "FIREFIGHTER",
+    "category": "Occupation",
+    "difficulty": 77.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a519105540ce8ee003f1e44ed097d82a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Astronaut",
+    "normalizedAnswer": "ASTRONAUT",
+    "category": "Occupation",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "44840beadf2eba2ad8bc79be85cc5ec3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Plumber",
+    "normalizedAnswer": "PLUMBER",
+    "category": "Occupation",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "640e981c23b35259fa2793eef2a4bcaf",
+    "source": "theme",
+    "type": "title",
+    "answer": "Veterinarian",
+    "normalizedAnswer": "VETERINARIAN",
+    "category": "Occupation",
+    "difficulty": 77.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 12,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ee34a3cbac1d48d7f1f65a11cb236b56",
+    "source": "theme",
+    "type": "title",
+    "answer": "Pharmacist",
+    "normalizedAnswer": "PHARMACIST",
+    "category": "Occupation",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "63e64bcbc3d798b50e5226ddcefe54bc",
+    "source": "theme",
+    "type": "title",
+    "answer": "Electrician",
+    "normalizedAnswer": "ELECTRICIAN",
+    "category": "Occupation",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "8c345e4efb3a3ab48d3fd343b99c5d13",
+    "source": "theme",
+    "type": "title",
+    "answer": "Librarian",
+    "normalizedAnswer": "LIBRARIAN",
+    "category": "Occupation",
+    "difficulty": 82.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6757ab6d8cb0223636b737f1acafb303",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chef",
+    "normalizedAnswer": "CHEF",
+    "category": "Occupation",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "191d066853afcde104217f42d100e980",
+    "source": "theme",
+    "type": "title",
+    "answer": "Pilot",
+    "normalizedAnswer": "PILOT",
+    "category": "Occupation",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "dbfd2fe9cea8f2a37a335b11236222c1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lifeguard",
+    "normalizedAnswer": "LIFEGUARD",
+    "category": "Occupation",
+    "difficulty": 70.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c573677dcfc830bed94fa2170da6087f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Architect",
+    "normalizedAnswer": "ARCHITECT",
+    "category": "Occupation",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "f63adfa444c37ee55948d7d35cae7e3f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Dentist",
+    "normalizedAnswer": "DENTIST",
+    "category": "Occupation",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6b4fc2f683a778f1fc6f5fee9ed6cdae",
+    "source": "theme",
+    "type": "title",
+    "answer": "Journalist",
+    "normalizedAnswer": "JOURNALIST",
+    "category": "Occupation",
+    "difficulty": 66,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a992d3947aad3a148d12b0be701af811",
+    "source": "theme",
+    "type": "title",
+    "answer": "Paramedic",
+    "normalizedAnswer": "PARAMEDIC",
+    "category": "Occupation",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "85015847bcaaa7676c2948906a5d2c61",
+    "source": "theme",
+    "type": "title",
+    "answer": "Carpenter",
+    "normalizedAnswer": "CARPENTER",
+    "category": "Occupation",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "1ccaee2cdb60908a0573160eba70308d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Police Officer",
+    "normalizedAnswer": "POLICE OFFICER",
+    "category": "Occupation",
+    "difficulty": 72.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "261d0c039dfc25a2279eb8b1fae4e076",
+    "source": "theme",
+    "type": "title",
+    "answer": "Flight Attendant",
+    "normalizedAnswer": "FLIGHT ATTENDANT",
+    "category": "Occupation",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "81ca8c724fd7c55a9cad2fb7f15d4272",
+    "source": "theme",
+    "type": "title",
+    "answer": "Teacher",
+    "normalizedAnswer": "TEACHER",
+    "category": "Occupation",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "25fd7892e223e9b9293973695dd03bc4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Nurse",
+    "normalizedAnswer": "NURSE",
+    "category": "Occupation",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ae5870980752d17b7d97525ae7564306",
+    "source": "theme",
+    "type": "title",
+    "answer": "Doctor",
+    "normalizedAnswer": "DOCTOR",
+    "category": "Occupation",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ed9523474f444a6755502afd429b3b65",
+    "source": "theme",
+    "type": "title",
+    "answer": "Surgeon",
+    "normalizedAnswer": "SURGEON",
+    "category": "Occupation",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "2da7d5ee901521e2c94d3838e437442d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lawyer",
+    "normalizedAnswer": "LAWYER",
+    "category": "Occupation",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "0f44cc120bad83bdf043509c8bb3f076",
+    "source": "theme",
+    "type": "title",
+    "answer": "Judge",
+    "normalizedAnswer": "JUDGE",
+    "category": "Occupation",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "2a40b1fb4463289c85585bd46b290096",
+    "source": "theme",
+    "type": "title",
+    "answer": "Accountant",
+    "normalizedAnswer": "ACCOUNTANT",
+    "category": "Occupation",
+    "difficulty": 82,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "d8e16944f31020fab7600f13f49631c6",
+    "source": "theme",
+    "type": "title",
+    "answer": "Engineer",
+    "normalizedAnswer": "ENGINEER",
+    "category": "Occupation",
+    "difficulty": 86.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "65a130adaf5553586d96512b7335ccb3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Scientist",
+    "normalizedAnswer": "SCIENTIST",
+    "category": "Occupation",
+    "difficulty": 82.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a03414d23e997da5790d7b48e63132d5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mechanic",
+    "normalizedAnswer": "MECHANIC",
+    "category": "Occupation",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "56eaa7e69dc78a11dec133072fbd30bd",
+    "source": "theme",
+    "type": "title",
+    "answer": "Farmer",
+    "normalizedAnswer": "FARMER",
+    "category": "Occupation",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "b5acbaa65026a8d563e387547cdc1a1b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Baker",
+    "normalizedAnswer": "BAKER",
+    "category": "Occupation",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "1c061cdf7f5c9e6e6de6b3ee68aba3a0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Butcher",
+    "normalizedAnswer": "BUTCHER",
+    "category": "Occupation",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "44790dca0c886209c8049eea29488aad",
+    "source": "theme",
+    "type": "title",
+    "answer": "Barber",
+    "normalizedAnswer": "BARBER",
+    "category": "Occupation",
+    "difficulty": 91.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a109a02d0d57f15c2ac32803cf1543ff",
+    "source": "theme",
+    "type": "title",
+    "answer": "Hairstylist",
+    "normalizedAnswer": "HAIRSTYLIST",
+    "category": "Occupation",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "4e193106559bb1fa10bb612ae00a1e86",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cashier",
+    "normalizedAnswer": "CASHIER",
+    "category": "Occupation",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "824f25fb3aafec7da2049ff7fd71389f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bartender",
+    "normalizedAnswer": "BARTENDER",
+    "category": "Occupation",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "36ec2bd09d902a1254afe44cc9b5cb8c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Barista",
+    "normalizedAnswer": "BARISTA",
+    "category": "Occupation",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c018f089800fedf1bee69ef5958c0da3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Server",
+    "normalizedAnswer": "SERVER",
+    "category": "Occupation",
+    "difficulty": 91.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "8a512c158233ad2581e904254f269cc6",
+    "source": "theme",
+    "type": "title",
+    "answer": "Janitor",
+    "normalizedAnswer": "JANITOR",
+    "category": "Occupation",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6bae8678d90fbf9a0be185bfbdbe8ff8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mail Carrier",
+    "normalizedAnswer": "MAIL CARRIER",
+    "category": "Occupation",
+    "difficulty": 77.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "7db8ef8d21ad282c49b350eb430efcce",
+    "source": "theme",
+    "type": "title",
+    "answer": "Truck Driver",
+    "normalizedAnswer": "TRUCK DRIVER",
+    "category": "Occupation",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "9a04f8df2bfe782214751f0b6f1e77a5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bus Driver",
+    "normalizedAnswer": "BUS DRIVER",
+    "category": "Occupation",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "329dfcdde04dbaf1996b67d212727724",
+    "source": "theme",
+    "type": "title",
+    "answer": "Taxi Driver",
+    "normalizedAnswer": "TAXI DRIVER",
+    "category": "Occupation",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ce7ce59135428773199d1a6c86762ca6",
+    "source": "theme",
+    "type": "title",
+    "answer": "Photographer",
+    "normalizedAnswer": "PHOTOGRAPHER",
+    "category": "Occupation",
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "f5fd67b8cd0a345f06b2adf700c97258",
+    "source": "theme",
+    "type": "title",
+    "answer": "Musician",
+    "normalizedAnswer": "MUSICIAN",
+    "category": "Occupation",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "e8dd6d3cb2a5ab12c68e872f20337d6d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Painter",
+    "normalizedAnswer": "PAINTER",
+    "category": "Occupation",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "7f575f7a05d3e758fd5b45f4206374ae",
+    "source": "theme",
+    "type": "title",
+    "answer": "Actor",
+    "normalizedAnswer": "ACTOR",
+    "category": "Occupation",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "0d51e477e6c381a2c50229893fb1bc5f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Dancer",
+    "normalizedAnswer": "DANCER",
+    "category": "Occupation",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "5467ea433aeb22418bc2ea3a825f6697",
+    "source": "theme",
+    "type": "title",
+    "answer": "Singer",
+    "normalizedAnswer": "SINGER",
+    "category": "Occupation",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "b2fb9e9eeeb4db40620931291e08975d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Author",
+    "normalizedAnswer": "AUTHOR",
+    "category": "Occupation",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "d2b9d7d4c697d35e7596ec64ea478021",
+    "source": "theme",
+    "type": "title",
+    "answer": "Translator",
+    "normalizedAnswer": "TRANSLATOR",
+    "category": "Occupation",
+    "difficulty": 78,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "10acc683bc0a05a06c77e69e244a4b36",
+    "source": "theme",
+    "type": "title",
+    "answer": "Optometrist",
+    "normalizedAnswer": "OPTOMETRIST",
+    "category": "Occupation",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "bc4a20ac531618f4d43976262b327757",
+    "source": "theme",
+    "type": "title",
+    "answer": "Pediatrician",
+    "normalizedAnswer": "PEDIATRICIAN",
+    "category": "Occupation",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "b89adcb3c78d11d478944482ee72d55b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Psychologist",
+    "normalizedAnswer": "PSYCHOLOGIST",
+    "category": "Occupation",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "dbb9808ee51bdca1e6ee3d962817aaf0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Therapist",
+    "normalizedAnswer": "THERAPIST",
+    "category": "Occupation",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "5e88a2eae368fc8018b9b6386ebe66e4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Social Worker",
+    "normalizedAnswer": "SOCIAL WORKER",
+    "category": "Occupation",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "39428f8b8d8c3e6b316ad31278e51c2a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Principal",
+    "normalizedAnswer": "PRINCIPAL",
+    "category": "Occupation",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "8aa537260235dec93f18cba5e7f227e5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Professor",
+    "normalizedAnswer": "PROFESSOR",
+    "category": "Occupation",
+    "difficulty": 82.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "0667ff818cd760046590cc02667d3a87",
+    "source": "theme",
+    "type": "title",
+    "answer": "Coach",
+    "normalizedAnswer": "COACH",
+    "category": "Occupation",
+    "difficulty": 92,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "259e4a2adb960b05cd8539b359feec1e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Referee",
+    "normalizedAnswer": "REFEREE",
+    "category": "Occupation",
+    "difficulty": 95.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "0139e140a6e2ddd026f52e7e738f4867",
+    "source": "theme",
+    "type": "title",
+    "answer": "Umpire",
+    "normalizedAnswer": "UMPIRE",
+    "category": "Occupation",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ae7b0fc95624c0c446219e4987adb5a4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Zookeeper",
+    "normalizedAnswer": "ZOOKEEPER",
+    "category": "Occupation",
+    "difficulty": 82.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "5f30b452ed9f404e9d880c0ec60b335c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Park Ranger",
+    "normalizedAnswer": "PARK RANGER",
+    "category": "Occupation",
+    "difficulty": 78,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "140a116d0d996fd4959bb0772c1ac0c1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Florist",
+    "normalizedAnswer": "FLORIST",
+    "category": "Occupation",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "9017b20444ddac606883f8c4656204d1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Gardener",
+    "normalizedAnswer": "GARDENER",
+    "category": "Occupation",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "313a627cdbf537e8377e39a21836c82c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lumberjack",
+    "normalizedAnswer": "LUMBERJACK",
+    "category": "Occupation",
+    "difficulty": 66,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "d66b70678cd386db3a1e9a8ba8337b10",
+    "source": "theme",
+    "type": "title",
+    "answer": "Miner",
+    "normalizedAnswer": "MINER",
+    "category": "Occupation",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "38f60e439ffb50b8766a63f1b589c99c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Welder",
+    "normalizedAnswer": "WELDER",
+    "category": "Occupation",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "cf532d75a809afe70b1e63dcd515c560",
+    "source": "theme",
+    "type": "title",
+    "answer": "Locksmith",
+    "normalizedAnswer": "LOCKSMITH",
+    "category": "Occupation",
+    "difficulty": 70.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "b3489c6375ded385522abfd2f4f2a559",
+    "source": "theme",
+    "type": "title",
+    "answer": "Blacksmith",
+    "normalizedAnswer": "BLACKSMITH",
+    "category": "Occupation",
+    "difficulty": 66,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "2e9887c6afd31ed7564c4ff315bf6de3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Tailor",
+    "normalizedAnswer": "TAILOR",
+    "category": "Occupation",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "70ee9646dbddec38865be81222093dc1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Jeweler",
+    "normalizedAnswer": "JEWELER",
+    "category": "Occupation",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "9b0a3b53d2f4c2a7685ffa8ac2848d5c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Real Estate Agent",
+    "normalizedAnswer": "REAL ESTATE AGENT",
+    "category": "Occupation",
+    "difficulty": 72,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a4ad6fefada6ba4e50f227bf68e3c401",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bank Teller",
+    "normalizedAnswer": "BANK TELLER",
+    "category": "Occupation",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "24195baa21dadf1aa8c74ff57e18ac26",
+    "source": "theme",
+    "type": "title",
+    "answer": "Programmer",
+    "normalizedAnswer": "PROGRAMMER",
+    "category": "Occupation",
+    "difficulty": 78,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "e787bbb15f063e2562cc0dfcf86375d6",
+    "source": "theme",
+    "type": "title",
+    "answer": "Graphic Designer",
+    "normalizedAnswer": "GRAPHIC DESIGNER",
+    "category": "Occupation",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "e9aa1c3f6c83d28661efe48689613256",
+    "source": "theme",
+    "type": "title",
+    "answer": "Fashion Designer",
+    "normalizedAnswer": "FASHION DESIGNER",
+    "category": "Occupation",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "eab99b832fb41f1891ffb3838648b24b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Interior Designer",
+    "normalizedAnswer": "INTERIOR DESIGNER",
+    "category": "Occupation",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "210b9a84f38d54cf86bbac5d4499e790",
+    "source": "theme",
+    "type": "title",
+    "answer": "Animator",
+    "normalizedAnswer": "ANIMATOR",
+    "category": "Occupation",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "23aa92369c68556a69e98c74480fbe5e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cartoonist",
+    "normalizedAnswer": "CARTOONIST",
+    "category": "Occupation",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "e338b07e89fba94b5bf105c908114a80",
+    "source": "theme",
+    "type": "title",
+    "answer": "Magician",
+    "normalizedAnswer": "MAGICIAN",
+    "category": "Occupation",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "9b42885152e6c588a3f4bf663700b123",
+    "source": "theme",
+    "type": "title",
+    "answer": "Comedian",
+    "normalizedAnswer": "COMEDIAN",
+    "category": "Occupation",
+    "difficulty": 74.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "24e45a95aa34e1648ad941688f15b4e1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Clown",
+    "normalizedAnswer": "CLOWN",
+    "category": "Occupation",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "24a365433039a55b663f99bc24a26898",
+    "source": "theme",
+    "type": "title",
+    "answer": "Detective",
+    "normalizedAnswer": "DETECTIVE",
+    "category": "Occupation",
+    "difficulty": 82.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "b4768be785e00c308b570bd5b0846115",
+    "source": "theme",
+    "type": "title",
+    "answer": "Security Guard",
+    "normalizedAnswer": "SECURITY GUARD",
+    "category": "Occupation",
+    "difficulty": 60.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6dfd579a0f6def075f20169460d21de1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Soldier",
+    "normalizedAnswer": "SOLDIER",
+    "category": "Occupation",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "af36b8e27c1ad05bf0acec957e8b41ed",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sailor",
+    "normalizedAnswer": "SAILOR",
+    "category": "Occupation",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "478df18cf03dd9b8fb73ba1bdf72ce76",
+    "source": "theme",
+    "type": "title",
+    "answer": "Marine Biologist",
+    "normalizedAnswer": "MARINE BIOLOGIST",
+    "category": "Occupation",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "2f0ca6ff472f2dc2e6831ace35454691",
+    "source": "theme",
+    "type": "title",
+    "answer": "Archaeologist",
+    "normalizedAnswer": "ARCHAEOLOGIST",
+    "category": "Occupation",
+    "difficulty": 60.8,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 13,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "f480607cf59f3d9d313f5b0664549f5e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Paleontologist",
+    "normalizedAnswer": "PALEONTOLOGIST",
+    "category": "Occupation",
+    "difficulty": 64.4,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ce1bc14e9f07e36e8e1a1d3402b52ae2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Astronomer",
+    "normalizedAnswer": "ASTRONOMER",
+    "category": "Occupation",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c3a681e576635391c9ed433fc8cba278",
+    "source": "theme",
+    "type": "title",
+    "answer": "Meteorologist",
+    "normalizedAnswer": "METEOROLOGIST",
+    "category": "Occupation",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ad05bb85a12ad74565edd025ba4ef046",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mathematician",
+    "normalizedAnswer": "MATHEMATICIAN",
+    "category": "Occupation",
+    "difficulty": 72.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 13,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "220fd561586c078ff0ee2b9fe791cced",
+    "source": "theme",
+    "type": "title",
+    "answer": "Personal Trainer",
+    "normalizedAnswer": "PERSONAL TRAINER",
+    "category": "Occupation",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c0ca580c0475ba3345174c00b51f429d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Babysitter",
+    "normalizedAnswer": "BABYSITTER",
+    "category": "Occupation",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "8e27a5caed3dd25efef17be18087d16e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Construction Worker",
+    "normalizedAnswer": "CONSTRUCTION WORKER",
+    "category": "Occupation",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 18,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "1bd0213cb478495d67275ee2cd845b22",
+    "source": "theme",
+    "type": "title",
+    "answer": "Air Traffic Controller",
+    "normalizedAnswer": "AIR TRAFFIC CONTROLLER",
+    "category": "Occupation",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 20,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "7847f2bd91a341e18fbc06bce6e72890",
+    "source": "theme",
+    "type": "title",
+    "answer": "Tour Guide",
+    "normalizedAnswer": "TOUR GUIDE",
+    "category": "Occupation",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "4a336a03c0d6660eebf5cbb14516e1ee",
+    "source": "theme",
+    "type": "title",
+    "answer": "Travel Agent",
+    "normalizedAnswer": "TRAVEL AGENT",
+    "category": "Occupation",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "23e1654dad2c9a4465cf2a41df35bc45",
+    "source": "theme",
+    "type": "title",
+    "answer": "Receptionist",
+    "normalizedAnswer": "RECEPTIONIST",
+    "category": "Occupation",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "d40b6c449bf480386f99a4988706c675",
+    "source": "theme",
+    "type": "title",
+    "answer": "Dental Hygienist",
+    "normalizedAnswer": "DENTAL HYGIENIST",
+    "category": "Occupation",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "5edd7f87fedeafa787a84ec8e1abf120",
+    "source": "theme",
+    "type": "title",
+    "answer": "Orthodontist",
+    "normalizedAnswer": "ORTHODONTIST",
+    "category": "Occupation",
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a15e0e51ec0033a397b6ac4d31c612d4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Midwife",
+    "normalizedAnswer": "MIDWIFE",
+    "category": "Occupation",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "fb4029996848f2bc3a8d7a5dcd7bd387",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sheriff",
+    "normalizedAnswer": "SHERIFF",
+    "category": "Occupation",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "b811785a3a9c713e8d5a19a3cbd89bde",
+    "source": "theme",
+    "type": "title",
+    "answer": "News Anchor",
+    "normalizedAnswer": "NEWS ANCHOR",
+    "category": "Occupation",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c856d395fe71dbb35fb9d7dd2f5065a9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Film Director",
+    "normalizedAnswer": "FILM DIRECTOR",
+    "category": "Occupation",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "5362017b2c16165d3e0964fb575b1e4f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Poet",
+    "normalizedAnswer": "POET",
+    "category": "Occupation",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "e811e2616817647f8d3c5a774f2c8a1b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sculptor",
+    "normalizedAnswer": "SCULPTOR",
+    "category": "Occupation",
+    "difficulty": 74.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6b00434393b3dc9d50c12950f088fade",
+    "source": "theme",
+    "type": "title",
+    "answer": "Composer",
+    "normalizedAnswer": "COMPOSER",
+    "category": "Occupation",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "cb49c4317734f639b6eefb183c2520fc",
+    "source": "theme",
+    "type": "title",
+    "answer": "Disc Jockey",
+    "normalizedAnswer": "DISC JOCKEY",
+    "category": "Occupation",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c5678afcfb8412f894a0aae86b8e50bf",
+    "source": "theme",
+    "type": "title",
+    "answer": "Auctioneer",
+    "normalizedAnswer": "AUCTIONEER",
+    "category": "Occupation",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "122aa6d9b60c686017816fbb1a0f070b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Dog Walker",
+    "normalizedAnswer": "DOG WALKER",
+    "category": "Occupation",
+    "difficulty": 70.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "4910e5177de649cd40bcf554ef778dbb",
+    "source": "theme",
+    "type": "title",
+    "answer": "Beekeeper",
+    "normalizedAnswer": "BEEKEEPER",
+    "category": "Occupation",
+    "difficulty": 86.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "332f5fee3042f07760a36b8f848c42ce",
+    "source": "theme",
+    "type": "title",
+    "answer": "Rancher",
+    "normalizedAnswer": "RANCHER",
+    "category": "Occupation",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "916b735d77633eb9b3c14fcd3717b32a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chimney Sweep",
+    "normalizedAnswer": "CHIMNEY SWEEP",
+    "category": "Occupation",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ef7f7881c8f3fbd1d2b350ae1c5c6580",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bricklayer",
+    "normalizedAnswer": "BRICKLAYER",
+    "category": "Occupation",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "fe8b129772a5eca50d6a6171d875ea6c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Pastry Chef",
+    "normalizedAnswer": "PASTRY CHEF",
+    "category": "Occupation",
+    "difficulty": 66,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "e7cd70e926e9ba80c4c997721898240a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Tattoo Artist",
+    "normalizedAnswer": "TATTOO ARTIST",
+    "category": "Occupation",
+    "difficulty": 81.2,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "52321cea9d5609f542b045704e31da49",
+    "source": "theme",
+    "type": "title",
+    "answer": "Makeup Artist",
+    "normalizedAnswer": "MAKEUP ARTIST",
+    "category": "Occupation",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "7948d3da7cf2651a8979cdfec5a36bb3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Crossing Guard",
+    "normalizedAnswer": "CROSSING GUARD",
+    "category": "Occupation",
+    "difficulty": 64.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "b416ac5a7aa579ac980908135416c536",
+    "source": "theme",
+    "type": "title",
+    "answer": "Garbage Collector",
+    "normalizedAnswer": "GARBAGE COLLECTOR",
+    "category": "Occupation",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "e75b2595e2ddda3ad4ae5913ad3942cd",
+    "source": "theme",
+    "type": "title",
+    "answer": "Jockey",
+    "normalizedAnswer": "JOCKEY",
+    "category": "Occupation",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "0807fba2e87b76e932e55b2c5ede8707",
+    "source": "theme",
+    "type": "title",
+    "answer": "Private Investigator",
+    "normalizedAnswer": "PRIVATE INVESTIGATOR",
+    "category": "Occupation",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 19,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a9a93e3f19374bd49c76cbdcbe3100a8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Video Game Designer",
+    "normalizedAnswer": "VIDEO GAME DESIGNER",
+    "category": "Occupation",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 17,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "occupation"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  }
+]

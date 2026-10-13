@@ -20,86 +20,6 @@
     }
   },
   {
-    "id": "a10076a56d02c17ff2f13fc1f1ba5f41",
-    "source": "theme",
-    "type": "title",
-    "answer": "BAC One-Eleven",
-    "normalizedAnswer": "BAC ONEELEVEN",
-    "category": "Aircraft",
-    "difficulty": 73.2,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 12,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "aircraft"
-    ],
-    "metadata": {
-      "source": "wikipedia-airliners-plus-curated"
-    }
-  },
-  {
-    "id": "51b3d993a1b11efc5899719d23f13f78",
-    "source": "theme",
-    "type": "title",
-    "answer": "Embraer E-Jet family",
-    "normalizedAnswer": "EMBRAER EJET FAMILY",
-    "category": "Aircraft",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 17,
-    "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "aircraft"
-    ],
-    "metadata": {
-      "source": "wikipedia-airliners-plus-curated"
-    }
-  },
-  {
-    "id": "7fc473c00b97d110966a1c42011220b4",
-    "source": "theme",
-    "type": "title",
-    "answer": "Embraer ERJ family",
-    "normalizedAnswer": "EMBRAER ERJ FAMILY",
-    "category": "Aircraft",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 16,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "aircraft"
-    ],
-    "metadata": {
-      "source": "wikipedia-airliners-plus-curated"
-    }
-  },
-  {
-    "id": "28ebc9d05ec33eb282440ce4bde88ffa",
-    "source": "theme",
-    "type": "title",
-    "answer": "Mitsubishi SpaceJet",
-    "normalizedAnswer": "MITSUBISHI SPACEJET",
-    "category": "Aircraft",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 18,
-    "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "aircraft"
-    ],
-    "metadata": {
-      "source": "wikipedia-airliners-plus-curated"
-    }
-  },
-  {
     "id": "0c9495fee504bf8668efff6a7a9a821d",
     "source": "theme",
     "type": "title",
@@ -651,26 +571,6 @@
     "wordCount": 2,
     "letterCount": 12,
     "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "aircraft"
-    ],
-    "metadata": {
-      "source": "wikipedia-airliners-plus-curated"
-    }
-  },
-  {
-    "id": "4cbefe7c3addab5f3bcd8e870373d751",
-    "source": "theme",
-    "type": "title",
-    "answer": "Dragon Lady",
-    "normalizedAnswer": "DRAGON LADY",
-    "category": "Aircraft",
-    "difficulty": 74,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 10,
-    "uniqueLetterCount": 8,
     "tags": [
       "theme",
       "aircraft"

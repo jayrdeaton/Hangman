@@ -1,70 +1,70 @@
 [
   {
-    "id": "934dd44791d5010c537333566c849178",
+    "id": "9e9e0c8535166ba178ca9cd59671d79d",
     "source": "theme",
     "type": "title",
-    "answer": "Anguirus",
-    "normalizedAnswer": "ANGUIRUS",
+    "answer": "Mickey Mouse",
+    "normalizedAnswer": "MICKEY MOUSE",
     "category": "Cartoon Character",
-    "difficulty": 78.8,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "cartoon"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
-    "id": "a0ebfe69805a659022db5779fd566d81",
-    "source": "theme",
-    "type": "title",
-    "answer": "Astro Boy",
-    "normalizedAnswer": "ASTRO BOY",
-    "category": "Cartoon Character",
-    "difficulty": 78.8,
+    "difficulty": 69.6,
     "difficultyTier": "medium",
     "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 7,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
     "tags": [
       "theme",
       "cartoon"
     ],
     "metadata": {
-      "source": "wikipedia-category"
+      "source": "fallback"
     }
   },
   {
-    "id": "95ff1aaf8c58a143f85df9b0b8f330a3",
+    "id": "5c1a1e1b7c0ab49402a2c561258c3782",
     "source": "theme",
     "type": "title",
-    "answer": "Banke Mian",
-    "normalizedAnswer": "BANKE MIAN",
+    "answer": "Minnie Mouse",
+    "normalizedAnswer": "MINNIE MOUSE",
     "category": "Cartoon Character",
-    "difficulty": 78.4,
+    "difficulty": 77.6,
     "difficultyTier": "medium",
     "wordCount": 2,
-    "letterCount": 9,
+    "letterCount": 11,
     "uniqueLetterCount": 7,
     "tags": [
       "theme",
       "cartoon"
     ],
     "metadata": {
-      "source": "wikipedia-category"
+      "source": "fallback"
     }
   },
   {
-    "id": "7de8856dfbb9c5bb11887bb1c20bcbda",
+    "id": "3ac2d8aa6bfa76e71bdb49c358cb1219",
     "source": "theme",
     "type": "title",
-    "answer": "Bosko",
-    "normalizedAnswer": "BOSKO",
+    "answer": "Donald Duck",
+    "normalizedAnswer": "DONALD DUCK",
+    "category": "Cartoon Character",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "09e6f8bf4476b925e424939299581765",
+    "source": "theme",
+    "type": "title",
+    "answer": "Goofy",
+    "normalizedAnswer": "GOOFY",
     "category": "Cartoon Character",
     "difficulty": 92,
     "difficultyTier": "hard",
@@ -76,7 +76,287 @@
       "cartoon"
     ],
     "metadata": {
-      "source": "wikipedia-category"
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "78b65edf7c7853303634fe322cb9a36f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Scrooge McDuck",
+    "normalizedAnswer": "SCROOGE MCDUCK",
+    "category": "Cartoon Character",
+    "difficulty": 64.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "cfbab143c59530c548ef3667d66f7159",
+    "source": "theme",
+    "type": "title",
+    "answer": "Winnie the Pooh",
+    "normalizedAnswer": "WINNIE THE POOH",
+    "category": "Cartoon Character",
+    "difficulty": 72.8,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 13,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "0c5ec7564a0f9126fcaf352b03508cb7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Buzz Lightyear",
+    "normalizedAnswer": "BUZZ LIGHTYEAR",
+    "category": "Cartoon Character",
+    "difficulty": 56.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "d0909c1872e2664a9cf81fb18b46bc60",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sheriff Woody",
+    "normalizedAnswer": "SHERIFF WOODY",
+    "category": "Cartoon Character",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "57a50b22803069cbaff18ed84f28a55b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mike Wazowski",
+    "normalizedAnswer": "MIKE WAZOWSKI",
+    "category": "Cartoon Character",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "f1ed0bc3a160e6bc5c8fad1e3f8ce73c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lightning McQueen",
+    "normalizedAnswer": "LIGHTNING MCQUEEN",
+    "category": "Cartoon Character",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "215ec429d4ebd12e20cc3d684cf69043",
+    "source": "theme",
+    "type": "title",
+    "answer": "Nemo",
+    "normalizedAnswer": "NEMO",
+    "category": "Cartoon Character",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6bbd06737f5f28128a174bb3b8b075b3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Simba",
+    "normalizedAnswer": "SIMBA",
+    "category": "Cartoon Character",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "977aa1905ff9450adf9bb59e7d62a823",
+    "source": "theme",
+    "type": "title",
+    "answer": "Stitch",
+    "normalizedAnswer": "STITCH",
+    "category": "Cartoon Character",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "b544855cb2d6a7f3f9e44527d8e6ec4f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Olaf",
+    "normalizedAnswer": "OLAF",
+    "category": "Cartoon Character",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "8533ff2dc97c84121d321fc3e7a84877",
+    "source": "theme",
+    "type": "title",
+    "answer": "Homer Simpson",
+    "normalizedAnswer": "HOMER SIMPSON",
+    "category": "Cartoon Character",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "f0fd766fb846410745f5fdee1c0e3bd6",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bart Simpson",
+    "normalizedAnswer": "BART SIMPSON",
+    "category": "Cartoon Character",
+    "difficulty": 65.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "26938c058c2d37178a8ecdec121e0aea",
+    "source": "theme",
+    "type": "title",
+    "answer": "Marge Simpson",
+    "normalizedAnswer": "MARGE SIMPSON",
+    "category": "Cartoon Character",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "3bb3b200119531860e0e90c534a4cb7b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Peter Griffin",
+    "normalizedAnswer": "PETER GRIFFIN",
+    "category": "Cartoon Character",
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
     }
   },
   {
@@ -96,67 +376,7 @@
       "cartoon"
     ],
     "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
-    "id": "ed68bd4dacf67dbe67b3901e0599cab7",
-    "source": "theme",
-    "type": "title",
-    "answer": "Caillou",
-    "normalizedAnswer": "CAILLOU",
-    "category": "Cartoon Character",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "cartoon"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
-    "id": "9880fad2a98a86c8c18992ade54a4bb9",
-    "source": "theme",
-    "type": "title",
-    "answer": "Casper the Friendly Ghost",
-    "normalizedAnswer": "CASPER THE FRIENDLY GHOST",
-    "category": "Cartoon Character",
-    "difficulty": 40,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 22,
-    "uniqueLetterCount": 16,
-    "tags": [
-      "theme",
-      "cartoon"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
-    "id": "c0967f2e13355da802e2816721f4dcc3",
-    "source": "theme",
-    "type": "title",
-    "answer": "Chester Cheetah",
-    "normalizedAnswer": "CHESTER CHEETAH",
-    "category": "Cartoon Character",
-    "difficulty": 76.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 14,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "cartoon"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
+      "source": "fallback"
     }
   },
   {
@@ -176,55 +396,35 @@
       "cartoon"
     ],
     "metadata": {
-      "source": "wikipedia-category"
+      "source": "fallback"
     }
   },
   {
-    "id": "97f9202c1248a3412e51db86257f2a06",
+    "id": "5321d329becf5a8710b80892f90e5af7",
     "source": "theme",
     "type": "title",
-    "answer": "Din Dong",
-    "normalizedAnswer": "DIN DONG",
+    "answer": "Porky Pig",
+    "normalizedAnswer": "PORKY PIG",
     "category": "Cartoon Character",
-    "difficulty": 87.2,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 7,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "cartoon"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
-    "id": "49cd775ff642cad1d01690d3a7a684bb",
-    "source": "theme",
-    "type": "title",
-    "answer": "Dr. Zalost",
-    "normalizedAnswer": "DR ZALOST",
-    "category": "Cartoon Character",
-    "difficulty": 74.8,
+    "difficulty": 78.8,
     "difficultyTier": "medium",
     "wordCount": 2,
     "letterCount": 8,
-    "uniqueLetterCount": 8,
+    "uniqueLetterCount": 7,
     "tags": [
       "theme",
       "cartoon"
     ],
     "metadata": {
-      "source": "wikipedia-category"
+      "source": "fallback"
     }
   },
   {
-    "id": "b7dc95a237d5f04688f048c4b9326429",
+    "id": "9e8af549f826730fa69457dad1621c48",
     "source": "theme",
     "type": "title",
-    "answer": "Aimi Eguchi",
-    "normalizedAnswer": "AIMI EGUCHI",
+    "answer": "Tweety Bird",
+    "normalizedAnswer": "TWEETY BIRD",
     "category": "Cartoon Character",
     "difficulty": 74,
     "difficultyTier": "medium",
@@ -236,19 +436,279 @@
       "cartoon"
     ],
     "metadata": {
-      "source": "wikipedia-category"
+      "source": "fallback"
     }
   },
   {
-    "id": "948a939d338da7bd898c8118c0a04301",
+    "id": "fd986ffff880e97edc11a907929c564c",
     "source": "theme",
     "type": "title",
-    "answer": "Elmo Aardvark",
-    "normalizedAnswer": "ELMO AARDVARK",
+    "answer": "Sylvester the Cat",
+    "normalizedAnswer": "SYLVESTER THE CAT",
+    "category": "Cartoon Character",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "983c34e4a905192abe1a0b57a1178789",
+    "source": "theme",
+    "type": "title",
+    "answer": "Wile E. Coyote",
+    "normalizedAnswer": "WILE E COYOTE",
+    "category": "Cartoon Character",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "77f6cb53bc37f1661d0d6a933e882ed4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Road Runner",
+    "normalizedAnswer": "ROAD RUNNER",
+    "category": "Cartoon Character",
+    "difficulty": 78,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "654e2143e872df5dee914fb848814551",
+    "source": "theme",
+    "type": "title",
+    "answer": "Elmer Fudd",
+    "normalizedAnswer": "ELMER FUDD",
+    "category": "Cartoon Character",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ac71b6e238bf592f00346db205f9b00b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Tom Cat",
+    "normalizedAnswer": "TOM CAT",
+    "category": "Cartoon Character",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "49a5664b454aa325a460b7ed181b5225",
+    "source": "theme",
+    "type": "title",
+    "answer": "Jerry Mouse",
+    "normalizedAnswer": "JERRY MOUSE",
+    "category": "Cartoon Character",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "3c7af0838666f3e9d3e05ec021a4ceef",
+    "source": "theme",
+    "type": "title",
+    "answer": "Scooby-Doo",
+    "normalizedAnswer": "SCOOBYDOO",
+    "category": "Cartoon Character",
+    "difficulty": 82.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "04857f5a20d731ee1112861614002c50",
+    "source": "theme",
+    "type": "title",
+    "answer": "Shaggy Rogers",
+    "normalizedAnswer": "SHAGGY ROGERS",
+    "category": "Cartoon Character",
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "8e3f67c6b97a3d7ce18b30913ddf0d45",
+    "source": "theme",
+    "type": "title",
+    "answer": "Fred Flintstone",
+    "normalizedAnswer": "FRED FLINTSTONE",
+    "category": "Cartoon Character",
+    "difficulty": 64.4,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "3c1d192a6d527e3cfde31cc4d44121e1",
+    "source": "theme",
+    "type": "title",
+    "answer": "George Jetson",
+    "normalizedAnswer": "GEORGE JETSON",
+    "category": "Cartoon Character",
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "00d25410b3d64176901a4a6f94c30740",
+    "source": "theme",
+    "type": "title",
+    "answer": "Yogi Bear",
+    "normalizedAnswer": "YOGI BEAR",
+    "category": "Cartoon Character",
+    "difficulty": 74.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ad803660cb1d44e7706b54edec820ba7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Courage the Cowardly Dog",
+    "normalizedAnswer": "COURAGE THE COWARDLY DOG",
+    "category": "Cartoon Character",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 21,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "8c00c5567da4b7e0d69c5e45bb301f52",
+    "source": "theme",
+    "type": "title",
+    "answer": "Johnny Bravo",
+    "normalizedAnswer": "JOHNNY BRAVO",
+    "category": "Cartoon Character",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "abc54ce0e3e7a6987670cd84a58861d0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Finn the Human",
+    "normalizedAnswer": "FINN THE HUMAN",
     "category": "Cartoon Character",
     "difficulty": 69.2,
     "difficultyTier": "medium",
-    "wordCount": 2,
+    "wordCount": 3,
     "letterCount": 12,
     "uniqueLetterCount": 9,
     "tags": [
@@ -256,47 +716,7 @@
       "cartoon"
     ],
     "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
-    "id": "c4ed696bbd3568cec403cb4861f17cc1",
-    "source": "theme",
-    "type": "title",
-    "answer": "Felix the Cat",
-    "normalizedAnswer": "FELIX THE CAT",
-    "category": "Cartoon Character",
-    "difficulty": 69.6,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 11,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "cartoon"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
-    "id": "61488605342d04e1b14ee5aef319a36f",
-    "source": "theme",
-    "type": "title",
-    "answer": "Fritz the Cat",
-    "normalizedAnswer": "FRITZ THE CAT",
-    "category": "Cartoon Character",
-    "difficulty": 69.6,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 11,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "cartoon"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
+      "source": "fallback"
     }
   },
   {
@@ -316,275 +736,15 @@
       "cartoon"
     ],
     "metadata": {
-      "source": "wikipedia-category"
+      "source": "fallback"
     }
   },
   {
-    "id": "aaa6aa49b3004d23ee7b7de2ea594f71",
+    "id": "2a1fb0d99a82577989cd7a75fb2ccbf3",
     "source": "theme",
     "type": "title",
-    "answer": "Ghostly Trio",
-    "normalizedAnswer": "GHOSTLY TRIO",
-    "category": "Cartoon Character",
-    "difficulty": 69.6,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "cartoon"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
-    "id": "6bf8bd4a5e81ae59151269cbfb485663",
-    "source": "theme",
-    "type": "title",
-    "answer": "Giselle \"Danse\" Dvorak",
-    "normalizedAnswer": "GISELLE DANSE DVORAK",
-    "category": "Cartoon Character",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 18,
-    "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "cartoon"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
-    "id": "d118e0a5d259fcdc013a8dedfff690da",
-    "source": "theme",
-    "type": "title",
-    "answer": "Go Go Gophers",
-    "normalizedAnswer": "GO GO GOPHERS",
-    "category": "Cartoon Character",
-    "difficulty": 77.6,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 11,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "cartoon"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
-    "id": "907613e300403700ec38d316515e7dc8",
-    "source": "theme",
-    "type": "title",
-    "answer": "Godzilla",
-    "normalizedAnswer": "GODZILLA",
-    "category": "Cartoon Character",
-    "difficulty": 78.8,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "cartoon"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
-    "id": "4bb14fa2a5c9822eb70aa498ccc4126b",
-    "source": "theme",
-    "type": "title",
-    "answer": "Gojirin",
-    "normalizedAnswer": "GOJIRIN",
-    "category": "Cartoon Character",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "cartoon"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
-    "id": "f580063a987e0fdb99b55e391686619c",
-    "source": "theme",
-    "type": "title",
-    "answer": "Gollum",
-    "normalizedAnswer": "GOLLUM",
-    "category": "Cartoon Character",
-    "difficulty": 87.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "cartoon"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
-    "id": "01e1da93313d5608e8b46b13d0a2a7d8",
-    "source": "theme",
-    "type": "title",
-    "answer": "Gustafer Yellowgold",
-    "normalizedAnswer": "GUSTAFER YELLOWGOLD",
-    "category": "Cartoon Character",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 18,
-    "uniqueLetterCount": 13,
-    "tags": [
-      "theme",
-      "cartoon"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
-    "id": "e619e8b8531c2d2cd0fb06d748fdbc25",
-    "source": "theme",
-    "type": "title",
-    "answer": "Hoops & Yoyo",
-    "normalizedAnswer": "HOOPS YOYO",
-    "category": "Cartoon Character",
-    "difficulty": 86.4,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "cartoon"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
-    "id": "197eb5246820dc66cc742367adcd0d7a",
-    "source": "theme",
-    "type": "title",
-    "answer": "Jerry the Tyke",
-    "normalizedAnswer": "JERRY THE TYKE",
-    "category": "Cartoon Character",
-    "difficulty": 77.2,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 12,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "cartoon"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
-    "id": "0f75f1cf77c87adc178e8ddca2e8cbd6",
-    "source": "theme",
-    "type": "title",
-    "answer": "Käptn Blaubär",
-    "normalizedAnswer": "KAPTN BLAUBAR",
-    "category": "Cartoon Character",
-    "difficulty": 69.2,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 12,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "cartoon"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
-    "id": "7066caaae4e1a818eee932c5fa74e731",
-    "source": "theme",
-    "type": "title",
-    "answer": "King Kong",
-    "normalizedAnswer": "KING KONG",
-    "category": "Cartoon Character",
-    "difficulty": 86.8,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "cartoon"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
-    "id": "3f3287fd444d4db8f0e1ebded78a05cf",
-    "source": "theme",
-    "type": "title",
-    "answer": "King Leonardo and His Short Subjects",
-    "normalizedAnswer": "KING LEONARDO AND HIS SHORT SUBJECTS",
-    "category": "Cartoon Character",
-    "difficulty": 36,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 31,
-    "uniqueLetterCount": 17,
-    "tags": [
-      "theme",
-      "cartoon"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
-    "id": "3629f511c1040cc023fa08c4b62b7d26",
-    "source": "theme",
-    "type": "title",
-    "answer": "King Rollo",
-    "normalizedAnswer": "KING ROLLO",
-    "category": "Cartoon Character",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "cartoon"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
-    "id": "13ad0975e6297c0a1ddf46a4465b5f53",
-    "source": "theme",
-    "type": "title",
-    "answer": "Kong",
-    "normalizedAnswer": "KONG",
+    "answer": "Odie",
+    "normalizedAnswer": "ODIE",
     "category": "Cartoon Character",
     "difficulty": 92.4,
     "difficultyTier": "hard",
@@ -596,179 +756,59 @@
       "cartoon"
     ],
     "metadata": {
-      "source": "wikipedia-category"
+      "source": "fallback"
     }
   },
   {
-    "id": "ef16a7329a88c9db512ae16e658c0b0c",
+    "id": "af7d818cd5e667bea34a50749072f2e3",
     "source": "theme",
     "type": "title",
-    "answer": "Kool-Aid Man",
-    "normalizedAnswer": "KOOLAID MAN",
-    "category": "Cartoon Character",
-    "difficulty": 74,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 10,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "cartoon"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
-    "id": "f90d04d859b8c6338e2c26b6aacc51dc",
-    "source": "theme",
-    "type": "title",
-    "answer": "Le Piaf",
-    "normalizedAnswer": "LE PIAF",
-    "category": "Cartoon Character",
-    "difficulty": 83.6,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 6,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "cartoon"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
-    "id": "3dfe4800a802a7fa5d6d67ff54e5db42",
-    "source": "theme",
-    "type": "title",
-    "answer": "Colonel Heeza Liar",
-    "normalizedAnswer": "COLONEL HEEZA LIAR",
-    "category": "Cartoon Character",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 16,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "cartoon"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
-    "id": "0e412cbd09739d334b48323a4526a8e4",
-    "source": "theme",
-    "type": "title",
-    "answer": "Lola and Mila",
-    "normalizedAnswer": "LOLA AND MILA",
-    "category": "Cartoon Character",
-    "difficulty": 77.6,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 11,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "cartoon"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
-    "id": "489519b81060b4402a4817c528517f2d",
-    "source": "theme",
-    "type": "title",
-    "answer": "Malebolgia",
-    "normalizedAnswer": "MALEBOLGIA",
-    "category": "Cartoon Character",
-    "difficulty": 74,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 10,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "cartoon"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
-    "id": "aeace152e30fec90931f66e98d72a6cc",
-    "source": "theme",
-    "type": "title",
-    "answer": "The Man from Another Place",
-    "normalizedAnswer": "THE MAN FROM ANOTHER PLACE",
+    "answer": "SpongeBob SquarePants",
+    "normalizedAnswer": "SPONGEBOB SQUAREPANTS",
     "category": "Cartoon Character",
     "difficulty": 56,
     "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 22,
+    "wordCount": 2,
+    "letterCount": 20,
     "uniqueLetterCount": 12,
     "tags": [
       "theme",
       "cartoon"
     ],
     "metadata": {
-      "source": "wikipedia-category"
+      "source": "fallback"
     }
   },
   {
-    "id": "e2c07a419c94caa544496aae17659e03",
+    "id": "6680e4a39ce979f5a0ce98c3f4c4a312",
     "source": "theme",
     "type": "title",
-    "answer": "Manon",
-    "normalizedAnswer": "MANON",
+    "answer": "Patrick Star",
+    "normalizedAnswer": "PATRICK STAR",
     "category": "Cartoon Character",
-    "difficulty": 92,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 4,
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
     "tags": [
       "theme",
       "cartoon"
     ],
     "metadata": {
-      "source": "wikipedia-category"
+      "source": "fallback"
     }
   },
   {
-    "id": "f4427963106e75f6bfdf7938ea2d6ccf",
+    "id": "aa6d27eaca1d9d6eb826237cbfaf6a43",
     "source": "theme",
     "type": "title",
-    "answer": "The Mézga Family",
-    "normalizedAnswer": "THE MEZGA FAMILY",
-    "category": "Cartoon Character",
-    "difficulty": 60.4,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 14,
-    "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "cartoon"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
-    "id": "237efc9d20ff7cfbd1c2397b6cf92c76",
-    "source": "theme",
-    "type": "title",
-    "answer": "Milk & Mocha",
-    "normalizedAnswer": "MILK MOCHA",
+    "answer": "Squidward",
+    "normalizedAnswer": "SQUIDWARD",
     "category": "Cartoon Character",
     "difficulty": 74.4,
     "difficultyTier": "medium",
-    "wordCount": 2,
+    "wordCount": 1,
     "letterCount": 9,
     "uniqueLetterCount": 8,
     "tags": [
@@ -776,27 +816,47 @@
       "cartoon"
     ],
     "metadata": {
-      "source": "wikipedia-category"
+      "source": "fallback"
     }
   },
   {
-    "id": "9e9e0c8535166ba178ca9cd59671d79d",
+    "id": "d91b63cc539d385fb24667f3525d1b2a",
     "source": "theme",
     "type": "title",
-    "answer": "Mickey Mouse",
-    "normalizedAnswer": "MICKEY MOUSE",
+    "answer": "Mr. Krabs",
+    "normalizedAnswer": "MR KRABS",
     "category": "Cartoon Character",
-    "difficulty": 69.6,
-    "difficultyTier": "medium",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
     "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 9,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
     "tags": [
       "theme",
       "cartoon"
     ],
     "metadata": {
-      "source": "wikipedia-category"
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "23213d3e0b450f36fad5d4293b93f9c9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Dora the Explorer",
+    "normalizedAnswer": "DORA THE EXPLORER",
+    "category": "Cartoon Character",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
     }
   },
   {
@@ -816,527 +876,87 @@
       "cartoon"
     ],
     "metadata": {
-      "source": "wikipedia-category"
+      "source": "fallback"
     }
   },
   {
-    "id": "334af10d690de6136b0087fe047538e7",
+    "id": "ba1029f0426d9f4c51c24e141ced9b02",
     "source": "theme",
     "type": "title",
-    "answer": "Dev Null",
-    "normalizedAnswer": "DEV NULL",
+    "answer": "Tommy Pickles",
+    "normalizedAnswer": "TOMMY PICKLES",
     "category": "Cartoon Character",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 7,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "cartoon"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
-    "id": "8109d970c7953aafc91bdc87c6dcff34",
-    "source": "theme",
-    "type": "title",
-    "answer": "Ocha-Ken",
-    "normalizedAnswer": "OCHAKEN",
-    "category": "Cartoon Character",
-    "difficulty": 79.2,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "cartoon"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
-    "id": "a089e17e7661d73bd43713f47ce7cea3",
-    "source": "theme",
-    "type": "title",
-    "answer": "Olli",
-    "normalizedAnswer": "OLLI",
-    "category": "Cartoon Character",
-    "difficulty": 96.4,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 4,
-    "uniqueLetterCount": 3,
-    "tags": [
-      "theme",
-      "cartoon"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
-    "id": "6167201eeaaadb41065085fb3142e976",
-    "source": "theme",
-    "type": "title",
-    "answer": "Oswald the Lucky Rabbit",
-    "normalizedAnswer": "OSWALD THE LUCKY RABBIT",
-    "category": "Cartoon Character",
-    "difficulty": 40,
+    "difficulty": 61.2,
     "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 20,
-    "uniqueLetterCount": 16,
-    "tags": [
-      "theme",
-      "cartoon"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
-    "id": "6b8b83411770d0911358b1b479f6fc83",
-    "source": "theme",
-    "type": "title",
-    "answer": "Pants Ant",
-    "normalizedAnswer": "PANTS ANT",
-    "category": "Cartoon Character",
-    "difficulty": 86.8,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "cartoon"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
-    "id": "e61d46b41add2a6f58738087b7bf655c",
-    "source": "theme",
-    "type": "title",
-    "answer": "Pelle Politibil",
-    "normalizedAnswer": "PELLE POLITIBIL",
-    "category": "Cartoon Character",
-    "difficulty": 76.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 14,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "cartoon"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
-    "id": "1f99316dff569683efd5ce7d543f00a2",
-    "source": "theme",
-    "type": "title",
-    "answer": "Pink Panther",
-    "normalizedAnswer": "PINK PANTHER",
-    "category": "Cartoon Character",
-    "difficulty": 69.6,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "cartoon"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
-    "id": "d3b0181d56a433a2208bd695e97405e5",
-    "source": "theme",
-    "type": "title",
-    "answer": "Pino",
-    "normalizedAnswer": "PINO",
-    "category": "Cartoon Character",
-    "difficulty": 92.4,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 4,
-    "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "cartoon"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
-    "id": "1ba0c8ea4047f7666f5002cea36cb12c",
-    "source": "theme",
-    "type": "title",
-    "answer": "Popeye",
-    "normalizedAnswer": "POPEYE",
-    "category": "Cartoon Character",
-    "difficulty": 91.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "cartoon"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
-    "id": "572792bf48fb0539808a7bec3b99036c",
-    "source": "theme",
-    "type": "title",
-    "answer": "Puppy Monkey Baby",
-    "normalizedAnswer": "PUPPY MONKEY BABY",
-    "category": "Cartoon Character",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 15,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "cartoon"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
-    "id": "7171d3cb3ef6dd77ef0897903c350942",
-    "source": "theme",
-    "type": "title",
-    "answer": "Rocky",
-    "normalizedAnswer": "ROCKY",
-    "category": "Cartoon Character",
-    "difficulty": 88,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "cartoon"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
-    "id": "9b02395f6d12f7ffa3db3f6e8faf8e20",
-    "source": "theme",
-    "type": "title",
-    "answer": "Rupert Bear",
-    "normalizedAnswer": "RUPERT BEAR",
-    "category": "Cartoon Character",
-    "difficulty": 78,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 10,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "cartoon"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
-    "id": "0d26314bb8d9cb02d72770c137b6f5a3",
-    "source": "theme",
-    "type": "title",
-    "answer": "Salad Fingers",
-    "normalizedAnswer": "SALAD FINGERS",
-    "category": "Cartoon Character",
-    "difficulty": 65.2,
-    "difficultyTier": "medium",
     "wordCount": 2,
     "letterCount": 12,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "cartoon"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
-    "id": "fd65b18b5110e38c83e3c8d15ce8ce6c",
-    "source": "theme",
-    "type": "title",
-    "answer": "Screwy Squirrel",
-    "normalizedAnswer": "SCREWY SQUIRREL",
-    "category": "Cartoon Character",
-    "difficulty": 64.4,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 14,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "cartoon"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
-    "id": "afbaf50c4575c49d622cc0fca7262e5a",
-    "source": "theme",
-    "type": "title",
-    "answer": "Serce and Rozum",
-    "normalizedAnswer": "SERCE AND ROZUM",
-    "category": "Cartoon Character",
-    "difficulty": 60.8,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 13,
     "uniqueLetterCount": 11,
     "tags": [
       "theme",
       "cartoon"
     ],
     "metadata": {
-      "source": "wikipedia-category"
+      "source": "fallback"
     }
   },
   {
-    "id": "46c80f60c2034b8d318c4e40a9bd3847",
+    "id": "1bd9b11f408696fe0d38ee8455d786be",
     "source": "theme",
     "type": "title",
-    "answer": "Spokestoon",
-    "normalizedAnswer": "SPOKESTOON",
+    "answer": "Angelica Pickles",
+    "normalizedAnswer": "ANGELICA PICKLES",
     "category": "Cartoon Character",
-    "difficulty": 78,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 10,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "cartoon"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
-    "id": "204e131199fae3e93747dfb2710d5688",
-    "source": "theme",
-    "type": "title",
-    "answer": "Strong Bad",
-    "normalizedAnswer": "STRONG BAD",
-    "category": "Cartoon Character",
-    "difficulty": 70.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "cartoon"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
-    "id": "dac26d7b47538098976ce27e81613be7",
-    "source": "theme",
-    "type": "title",
-    "answer": "Sunny Bunnies",
-    "normalizedAnswer": "SUNNY BUNNIES",
-    "category": "Cartoon Character",
-    "difficulty": 77.2,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 12,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "cartoon"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
-    "id": "9a94d0eb6cd8784b45cb43d652b37400",
-    "source": "theme",
-    "type": "title",
-    "answer": "T-Babe",
-    "normalizedAnswer": "TBABE",
-    "category": "Cartoon Character",
-    "difficulty": 92,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "cartoon"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
-    "id": "3121f7de0e4822ae45c79c355c173593",
-    "source": "theme",
-    "type": "title",
-    "answer": "T.O.M",
-    "normalizedAnswer": "TOM",
-    "category": "Cartoon Character",
-    "difficulty": 96.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 3,
-    "uniqueLetterCount": 3,
-    "tags": [
-      "theme",
-      "cartoon"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
-    "id": "0cd906350e33dc8b48b69ec4f61d02c1",
-    "source": "theme",
-    "type": "title",
-    "answer": "Tegwolo",
-    "normalizedAnswer": "TEGWOLO",
-    "category": "Cartoon Character",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "cartoon"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
-    "id": "a0cdcee0268eac051758af48e3a10394",
-    "source": "theme",
-    "type": "title",
-    "answer": "Tennessee Tuxedo",
-    "normalizedAnswer": "TENNESSEE TUXEDO",
-    "category": "Cartoon Character",
-    "difficulty": 72,
-    "difficultyTier": "medium",
+    "difficulty": 64,
+    "difficultyTier": "easy",
     "wordCount": 2,
     "letterCount": 15,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "cartoon"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
-    "id": "aa0aaba7fb5d638201eb6569bfc923e7",
-    "source": "theme",
-    "type": "title",
-    "answer": "Toby the Pup",
-    "normalizedAnswer": "TOBY THE PUP",
-    "category": "Cartoon Character",
-    "difficulty": 74,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 10,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "cartoon"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
-    "id": "f80cba5aea46a8af99d8513f21e185cc",
-    "source": "theme",
-    "type": "title",
-    "answer": "Tokai",
-    "normalizedAnswer": "TOKAI",
-    "category": "Cartoon Character",
-    "difficulty": 88,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "cartoon"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
-    "id": "1291555db9b7730505cde6fa569376f5",
-    "source": "theme",
-    "type": "title",
-    "answer": "Virtual actor",
-    "normalizedAnswer": "VIRTUAL ACTOR",
-    "category": "Cartoon Character",
-    "difficulty": 69.2,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 12,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "cartoon"
-    ],
-    "metadata": {
-      "source": "wikipedia-category"
-    }
-  },
-  {
-    "id": "d9796029814768a1d6bbe76ad50d3b82",
-    "source": "theme",
-    "type": "title",
-    "answer": "Virtual human",
-    "normalizedAnswer": "VIRTUAL HUMAN",
-    "category": "Cartoon Character",
-    "difficulty": 65.2,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 12,
     "uniqueLetterCount": 10,
     "tags": [
       "theme",
       "cartoon"
     ],
     "metadata": {
-      "source": "wikipedia-category"
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "5c3bd668747a2f47d70396deb9e7b9e9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Timmy Turner",
+    "normalizedAnswer": "TIMMY TURNER",
+    "category": "Cartoon Character",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "4cf7e62849148af6ccd39567ebc15959",
+    "source": "theme",
+    "type": "title",
+    "answer": "Avatar Aang",
+    "normalizedAnswer": "AVATAR AANG",
+    "category": "Cartoon Character",
+    "difficulty": 82,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
     }
   },
   {
@@ -1356,7 +976,1047 @@
       "cartoon"
     ],
     "metadata": {
-      "source": "wikipedia-category"
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "9880fad2a98a86c8c18992ade54a4bb9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Casper the Friendly Ghost",
+    "normalizedAnswer": "CASPER THE FRIENDLY GHOST",
+    "category": "Cartoon Character",
+    "difficulty": 40,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 22,
+    "uniqueLetterCount": 16,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c4ed696bbd3568cec403cb4861f17cc1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Felix the Cat",
+    "normalizedAnswer": "FELIX THE CAT",
+    "category": "Cartoon Character",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a75473168a65acd334ad619d7d824ca5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Shrek",
+    "normalizedAnswer": "SHREK",
+    "category": "Cartoon Character",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "5aa000467ee610b9c2aa185518b6cb1d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Princess Fiona",
+    "normalizedAnswer": "PRINCESS FIONA",
+    "category": "Cartoon Character",
+    "difficulty": 64.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "0529ee5118f6dd9cc969504bd156c2e1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lord Farquaad",
+    "normalizedAnswer": "LORD FARQUAAD",
+    "category": "Cartoon Character",
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "321377b923a74e2d013e39396dbf3e60",
+    "source": "theme",
+    "type": "title",
+    "answer": "Puss in Boots",
+    "normalizedAnswer": "PUSS IN BOOTS",
+    "category": "Cartoon Character",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "5c5cdd29767a3ae76c0f434d3fb3eb13",
+    "source": "theme",
+    "type": "title",
+    "answer": "Toothless",
+    "normalizedAnswer": "TOOTHLESS",
+    "category": "Cartoon Character",
+    "difficulty": 82.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "528ddfb30a0e0e38d3fc97afbf84b38a",
+    "source": "theme",
+    "type": "title",
+    "answer": "King Julien",
+    "normalizedAnswer": "KING JULIEN",
+    "category": "Cartoon Character",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a07bfa662fa60814d638d176341d50d1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Megamind",
+    "normalizedAnswer": "MEGAMIND",
+    "category": "Cartoon Character",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a39d5aa33e275186c3bb1d3d4932edd5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Princess Poppy",
+    "normalizedAnswer": "PRINCESS POPPY",
+    "category": "Cartoon Character",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c732f705d60cb8cc53068e36559e8fcc",
+    "source": "theme",
+    "type": "title",
+    "answer": "Gru",
+    "normalizedAnswer": "GRU",
+    "category": "Cartoon Character",
+    "difficulty": 96.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 3,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "5746c2a9e2b1906d450a07654a1bf51a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Curious George",
+    "normalizedAnswer": "CURIOUS GEORGE",
+    "category": "Cartoon Character",
+    "difficulty": 72.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "5ce4ae5b8309991623cbf2e2dde397f0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mr. Magoo",
+    "normalizedAnswer": "MR MAGOO",
+    "category": "Cartoon Character",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "b2af178cf2d3869deaf1d12d3c9cfcbb",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bullwinkle",
+    "normalizedAnswer": "BULLWINKLE",
+    "category": "Cartoon Character",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "759ba1730ff3ef141506fdac94050072",
+    "source": "theme",
+    "type": "title",
+    "answer": "Rocky the Flying Squirrel",
+    "normalizedAnswer": "ROCKY THE FLYING SQUIRREL",
+    "category": "Cartoon Character",
+    "difficulty": 40,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 22,
+    "uniqueLetterCount": 16,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6ff16bf440837baee27271ddadd4f9ac",
+    "source": "theme",
+    "type": "title",
+    "answer": "Charlie Brown",
+    "normalizedAnswer": "CHARLIE BROWN",
+    "category": "Cartoon Character",
+    "difficulty": 61.2,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "5fab18d8b39e30a290a46a09b1c37c05",
+    "source": "theme",
+    "type": "title",
+    "answer": "Snoopy",
+    "normalizedAnswer": "SNOOPY",
+    "category": "Cartoon Character",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "27abf716bdd498531bfc9c512faf4c00",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lucy van Pelt",
+    "normalizedAnswer": "LUCY VAN PELT",
+    "category": "Cartoon Character",
+    "difficulty": 65.6,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 11,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "d93696df50595f592ce88a0355a64e9b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Linus van Pelt",
+    "normalizedAnswer": "LINUS VAN PELT",
+    "category": "Cartoon Character",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "4d43edab8a2d8b551f639e92802bfd6f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Peppermint Patty",
+    "normalizedAnswer": "PEPPERMINT PATTY",
+    "category": "Cartoon Character",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "701418a6928cd1934cb68dff988ab6e0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Woodstock",
+    "normalizedAnswer": "WOODSTOCK",
+    "category": "Cartoon Character",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "4c7b641516647c6513e87bac756037dd",
+    "source": "theme",
+    "type": "title",
+    "answer": "He-Man",
+    "normalizedAnswer": "HEMAN",
+    "category": "Cartoon Character",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "63ac0c18151ddf398e8cdd69bb012345",
+    "source": "theme",
+    "type": "title",
+    "answer": "Skeletor",
+    "normalizedAnswer": "SKELETOR",
+    "category": "Cartoon Character",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "d9780b19ab7730648c6a18ab78f88df8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bob the Builder",
+    "normalizedAnswer": "BOB THE BUILDER",
+    "category": "Cartoon Character",
+    "difficulty": 64.8,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "f227437e32716b7847f30ad98917372e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Thomas the Tank Engine",
+    "normalizedAnswer": "THOMAS THE TANK ENGINE",
+    "category": "Cartoon Character",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 19,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "11e05953ef5a13e75411bf8343b2ec29",
+    "source": "theme",
+    "type": "title",
+    "answer": "Peppa Pig",
+    "normalizedAnswer": "PEPPA PIG",
+    "category": "Cartoon Character",
+    "difficulty": 86.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a3622352ef1d40920c6024484e0dff42",
+    "source": "theme",
+    "type": "title",
+    "answer": "Optimus Prime",
+    "normalizedAnswer": "OPTIMUS PRIME",
+    "category": "Cartoon Character",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "0784823d1578bd4acc5bd419acf92549",
+    "source": "theme",
+    "type": "title",
+    "answer": "Twilight Sparkle",
+    "normalizedAnswer": "TWILIGHT SPARKLE",
+    "category": "Cartoon Character",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6ee451109584883fad9ec883f71ac685",
+    "source": "theme",
+    "type": "title",
+    "answer": "Rainbow Dash",
+    "normalizedAnswer": "RAINBOW DASH",
+    "category": "Cartoon Character",
+    "difficulty": 65.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ed68bd4dacf67dbe67b3901e0599cab7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Caillou",
+    "normalizedAnswer": "CAILLOU",
+    "category": "Cartoon Character",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ebe8ec628fa7b9d8c292425960230585",
+    "source": "theme",
+    "type": "title",
+    "answer": "Inspector Gadget",
+    "normalizedAnswer": "INSPECTOR GADGET",
+    "category": "Cartoon Character",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a76fc2fce32179a53731ff5afd512359",
+    "source": "theme",
+    "type": "title",
+    "answer": "Strawberry Shortcake",
+    "normalizedAnswer": "STRAWBERRY SHORTCAKE",
+    "category": "Cartoon Character",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 19,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "1ba0c8ea4047f7666f5002cea36cb12c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Popeye",
+    "normalizedAnswer": "POPEYE",
+    "category": "Cartoon Character",
+    "difficulty": 91.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "3acbb017cf7bbec17243b3170b25047f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Olive Oyl",
+    "normalizedAnswer": "OLIVE OYL",
+    "category": "Cartoon Character",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "29a501b18635d173c46a4c67c323845f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bluto",
+    "normalizedAnswer": "BLUTO",
+    "category": "Cartoon Character",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ec984d19dd840a0e032da172e3834742",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bluey",
+    "normalizedAnswer": "BLUEY",
+    "category": "Cartoon Character",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "4587d53804b125b9a8e79d9dbeb2f149",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bingo Heeler",
+    "normalizedAnswer": "BINGO HEELER",
+    "category": "Cartoon Character",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "90089394b779afa21135b236f8d4ea48",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bandit Heeler",
+    "normalizedAnswer": "BANDIT HEELER",
+    "category": "Cartoon Character",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c8219be61479a54ede2c2a361c7d525a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Clifford the Big Red Dog",
+    "normalizedAnswer": "CLIFFORD THE BIG RED DOG",
+    "category": "Cartoon Character",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 20,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6b93f9ccb201f999a4aa9dcfbbb424f8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ms. Frizzle",
+    "normalizedAnswer": "MS FRIZZLE",
+    "category": "Cartoon Character",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "2579603b4cd2d014a5516b8848418be5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Papa Smurf",
+    "normalizedAnswer": "PAPA SMURF",
+    "category": "Cartoon Character",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "7adfcf78a68f6ba84aa579b525f64a75",
+    "source": "theme",
+    "type": "title",
+    "answer": "Smurfette",
+    "normalizedAnswer": "SMURFETTE",
+    "category": "Cartoon Character",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "1f99316dff569683efd5ce7d543f00a2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Pink Panther",
+    "normalizedAnswer": "PINK PANTHER",
+    "category": "Cartoon Character",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6efacccd607250404a69f221fb7bd009",
+    "source": "theme",
+    "type": "title",
+    "answer": "Betty Boop",
+    "normalizedAnswer": "BETTY BOOP",
+    "category": "Cartoon Character",
+    "difficulty": 82.4,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "69997f4ab2e467dcb358b55e4142e803",
+    "source": "theme",
+    "type": "title",
+    "answer": "Arthur Read",
+    "normalizedAnswer": "ARTHUR READ",
+    "category": "Cartoon Character",
+    "difficulty": 78,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "12e11fc56db927e50e7fc6cdb01a9a49",
+    "source": "theme",
+    "type": "title",
+    "answer": "Daniel Tiger",
+    "normalizedAnswer": "DANIEL TIGER",
+    "category": "Cartoon Character",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "8a86988cb90f787116858a89eeae9910",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Grinch",
+    "normalizedAnswer": "THE GRINCH",
+    "category": "Cartoon Character",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "0d96eb12313897a00fc6a632aed75718",
+    "source": "theme",
+    "type": "title",
+    "answer": "Rudolph the Red-Nosed Reindeer",
+    "normalizedAnswer": "RUDOLPH THE REDNOSED REINDEER",
+    "category": "Cartoon Character",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 26,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "eccfc10f943cad918b047eebf39f8334",
+    "source": "theme",
+    "type": "title",
+    "answer": "Shaun the Sheep",
+    "normalizedAnswer": "SHAUN THE SHEEP",
+    "category": "Cartoon Character",
+    "difficulty": 72.8,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 13,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "9fd4f935a087f0af2e7aca0cfaca7e02",
+    "source": "theme",
+    "type": "title",
+    "answer": "Gumby",
+    "normalizedAnswer": "GUMBY",
+    "category": "Cartoon Character",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "06c743b7039281c083e1d6fd7fecfadc",
+    "source": "theme",
+    "type": "title",
+    "answer": "Franklin the Turtle",
+    "normalizedAnswer": "FRANKLIN THE TURTLE",
+    "category": "Cartoon Character",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 17,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "b8b03e3f0f2eec4e9950ecec0bb17851",
+    "source": "theme",
+    "type": "title",
+    "answer": "Grumpy Bear",
+    "normalizedAnswer": "GRUMPY BEAR",
+    "category": "Cartoon Character",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "cartoon"
+    ],
+    "metadata": {
+      "source": "fallback"
     }
   }
 ]

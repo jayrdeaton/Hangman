@@ -1422,24 +1422,6 @@
     }
   },
   {
-    "id": "666ee191f8aa8f19d278d1404338fbec",
-    "source": "tv",
-    "type": "title",
-    "answer": "Seventeen Moments of Spring",
-    "normalizedAnswer": "SEVENTEEN MOMENTS OF SPRING",
-    "category": "Drama",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 24,
-    "uniqueLetterCount": 12,
-    "metadata": {
-      "year": "1973",
-      "rating": 8.7,
-      "votes": 5501
-    }
-  },
-  {
     "id": "b233991f6ee0eb2de363896217ae1ce5",
     "source": "tv",
     "type": "title",
@@ -2304,24 +2286,6 @@
     }
   },
   {
-    "id": "73dc085124bca64b5ff857024992eef8",
-    "source": "tv",
-    "type": "title",
-    "answer": "Matador",
-    "normalizedAnswer": "MATADOR",
-    "category": "Drama",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "1978",
-      "rating": 9.2,
-      "votes": 6390
-    }
-  },
-  {
     "id": "20a9db510cdc267fa9d5f53e75e27ea0",
     "source": "tv",
     "type": "title",
@@ -2427,24 +2391,6 @@
       "year": "1979",
       "rating": 6.7,
       "votes": 10032
-    }
-  },
-  {
-    "id": "7380edef289cc416d166cf9f3830127c",
-    "source": "tv",
-    "type": "title",
-    "answer": "The Meeting Place Cannot Be Changed",
-    "normalizedAnswer": "THE MEETING PLACE CANNOT BE CHANGED",
-    "category": "Action",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 30,
-    "uniqueLetterCount": 14,
-    "metadata": {
-      "year": "1979",
-      "rating": 8.7,
-      "votes": 5570
     }
   },
   {
@@ -6498,24 +6444,6 @@
     }
   },
   {
-    "id": "3e86112d7068c4ddb6407628812d326b",
-    "source": "tv",
-    "type": "title",
-    "answer": "Kommissar Rex",
-    "normalizedAnswer": "KOMMISSAR REX",
-    "category": "Action",
-    "difficulty": 69.2,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 12,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "1994",
-      "rating": 7.2,
-      "votes": 6906
-    }
-  },
-  {
     "id": "79105e55af62e00cadd9c58d6eaf7d3a",
     "source": "tv",
     "type": "title",
@@ -8604,24 +8532,6 @@
     }
   },
   {
-    "id": "17eb3c1faefba318b502f8aa7c06e87e",
-    "source": "tv",
-    "type": "title",
-    "answer": "Mahabharat",
-    "normalizedAnswer": "MAHABHARAT",
-    "category": "Action",
-    "difficulty": 82,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 10,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "1988",
-      "rating": 8.9,
-      "votes": 27632
-    }
-  },
-  {
     "id": "776597092cd892eee0ef6bd85f65e4c8",
     "source": "tv",
     "type": "title",
@@ -9468,24 +9378,6 @@
     }
   },
   {
-    "id": "d7cb893931fe4e6fe55d6f66502a2332",
-    "source": "tv",
-    "type": "title",
-    "answer": "A Dog's Will",
-    "normalizedAnswer": "A DOGS WILL",
-    "category": "Comedy",
-    "difficulty": 74.4,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 9,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "year": "1999",
-      "rating": 9.2,
-      "votes": 6722
-    }
-  },
-  {
     "id": "359ddd9808865b09c339d28f430ba925",
     "source": "tv",
     "type": "title",
@@ -10152,24 +10044,6 @@
     }
   },
   {
-    "id": "2549850f9a0a57f6ec09e5f55658d0f0",
-    "source": "tv",
-    "type": "title",
-    "answer": "Well, Just You Wait!",
-    "normalizedAnswer": "WELL JUST YOU WAIT",
-    "category": "Action",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 15,
-    "uniqueLetterCount": 11,
-    "metadata": {
-      "year": "1969",
-      "rating": 8.5,
-      "votes": 7251
-    }
-  },
-  {
     "id": "eb5c3ee675970e0b3073ae1cfcdc5048",
     "source": "tv",
     "type": "title",
@@ -10401,24 +10275,6 @@
       "year": "1999",
       "rating": 6.9,
       "votes": 11480
-    }
-  },
-  {
-    "id": "19cfe01e9286d02be931bf7b2da27f38",
-    "source": "tv",
-    "type": "title",
-    "answer": "Kureyon Shin-chan",
-    "normalizedAnswer": "KUREYON SHINCHAN",
-    "category": "Animation",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 15,
-    "uniqueLetterCount": 12,
-    "metadata": {
-      "year": "2006",
-      "rating": 8,
-      "votes": 6691
     }
   },
   {
@@ -10923,42 +10779,6 @@
       "year": "2000",
       "rating": 7.4,
       "votes": 29554
-    }
-  },
-  {
-    "id": "ec7482e65a3f043badd06d18a6b9770f",
-    "source": "tv",
-    "type": "title",
-    "answer": "Second Spring",
-    "normalizedAnswer": "SECOND SPRING",
-    "category": "Drama",
-    "difficulty": 65.2,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 12,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "year": "1998",
-      "rating": 8.7,
-      "votes": 7145
-    }
-  },
-  {
-    "id": "3be9110386529431bff4d1f452bd2d13",
-    "source": "tv",
-    "type": "title",
-    "answer": "Ramayan",
-    "normalizedAnswer": "RAMAYAN",
-    "category": "Adventure",
-    "difficulty": 87.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "year": "1987",
-      "rating": 9,
-      "votes": 27945
     }
   },
   {
@@ -11718,24 +11538,6 @@
     }
   },
   {
-    "id": "6adef34423cc76b77c363670bce56a8f",
-    "source": "tv",
-    "type": "title",
-    "answer": "Sweet Life",
-    "normalizedAnswer": "SWEET LIFE",
-    "category": "Comedy",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2001",
-      "rating": 8.5,
-      "votes": 8390
-    }
-  },
-  {
     "id": "e8fac0924fab14f9b5994de6d74d3d24",
     "source": "tv",
     "type": "title",
@@ -12438,24 +12240,6 @@
     }
   },
   {
-    "id": "8bedfcf54abb6bb57f3392bd37d2dfac",
-    "source": "tv",
-    "type": "title",
-    "answer": "Bir Demet Tiyatro",
-    "normalizedAnswer": "BIR DEMET TIYATRO",
-    "category": "Comedy",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 15,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "year": "1995",
-      "rating": 8.5,
-      "votes": 5489
-    }
-  },
-  {
     "id": "e63b98a5a8e6c8718abf166bb16750b1",
     "source": "tv",
     "type": "title",
@@ -12489,24 +12273,6 @@
       "year": "2002",
       "rating": 8.5,
       "votes": 22509
-    }
-  },
-  {
-    "id": "d669eb7c94c51aac390a9203b478e287",
-    "source": "tv",
-    "type": "title",
-    "answer": "Penn & Teller: Bullshit!",
-    "normalizedAnswer": "PENN TELLER BULLSHIT",
-    "category": "Comedy",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 18,
-    "uniqueLetterCount": 11,
-    "metadata": {
-      "year": "2003",
-      "rating": 8.2,
-      "votes": 12083
     }
   },
   {
@@ -13554,24 +13320,6 @@
     }
   },
   {
-    "id": "f20660d2f31fb9772a67732cc750d8e2",
-    "source": "tv",
-    "type": "title",
-    "answer": "Shaktimaan",
-    "normalizedAnswer": "SHAKTIMAAN",
-    "category": "Action",
-    "difficulty": 74,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 10,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "year": "1997",
-      "rating": 8.1,
-      "votes": 5852
-    }
-  },
-  {
     "id": "1ee21c50505dc3226a44b8390e6ef645",
     "source": "tv",
     "type": "title",
@@ -13734,24 +13482,6 @@
     }
   },
   {
-    "id": "067cc7d4e4472bbb613ab67582204b2e",
-    "source": "tv",
-    "type": "title",
-    "answer": "C.I.D.",
-    "normalizedAnswer": "CID",
-    "category": "Action",
-    "difficulty": 96.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 3,
-    "uniqueLetterCount": 3,
-    "metadata": {
-      "year": "1998",
-      "rating": 7.1,
-      "votes": 5821
-    }
-  },
-  {
     "id": "13535bfd3f3321613616634fe4848598",
     "source": "tv",
     "type": "title",
@@ -13785,24 +13515,6 @@
       "year": "2004",
       "rating": 8.6,
       "votes": 17291
-    }
-  },
-  {
-    "id": "c71d30baec7c17dfe09457c316979dad",
-    "source": "tv",
-    "type": "title",
-    "answer": "Master i Margarita",
-    "normalizedAnswer": "MASTER I MARGARITA",
-    "category": "Drama",
-    "difficulty": 72,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 16,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "year": "2005",
-      "rating": 7.5,
-      "votes": 5428
     }
   },
   {
@@ -14184,24 +13896,6 @@
     }
   },
   {
-    "id": "c0b43995b4f25dd668821b99c0abf316",
-    "source": "tv",
-    "type": "title",
-    "answer": "The European Side",
-    "normalizedAnswer": "THE EUROPEAN SIDE",
-    "category": "Comedy",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 15,
-    "uniqueLetterCount": 12,
-    "metadata": {
-      "year": "2004",
-      "rating": 8.6,
-      "votes": 24015
-    }
-  },
-  {
     "id": "5610b10856603379f0ee3f4172f046aa",
     "source": "tv",
     "type": "title",
@@ -14217,24 +13911,6 @@
       "year": "2003",
       "rating": 8.5,
       "votes": 86616
-    }
-  },
-  {
-    "id": "5dd35a551b6f742e137f8396b524416b",
-    "source": "tv",
-    "type": "title",
-    "answer": "The Valley of the Wolves",
-    "normalizedAnswer": "THE VALLEY OF THE WOLVES",
-    "category": "Action",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 20,
-    "uniqueLetterCount": 11,
-    "metadata": {
-      "year": "2003",
-      "rating": 8.2,
-      "votes": 26760
     }
   },
   {
@@ -14472,24 +14148,6 @@
     }
   },
   {
-    "id": "f71f123cbdc58594e6a3d804ba2f647f",
-    "source": "tv",
-    "type": "title",
-    "answer": "Stromberg",
-    "normalizedAnswer": "STROMBERG",
-    "category": "Comedy",
-    "difficulty": 74.4,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 9,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "year": "2004",
-      "rating": 8.4,
-      "votes": 11237
-    }
-  },
-  {
     "id": "f556f3700545c36d18a996893cf78d1f",
     "source": "tv",
     "type": "title",
@@ -14613,24 +14271,6 @@
       "year": "2004",
       "rating": 7.1,
       "votes": 9849
-    }
-  },
-  {
-    "id": "0ea56a7e7bbe485b4be259802479b2f6",
-    "source": "tv",
-    "type": "title",
-    "answer": "Clown",
-    "normalizedAnswer": "CLOWN",
-    "category": "Comedy",
-    "difficulty": 88,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "year": "2005",
-      "rating": 8.5,
-      "votes": 6713
     }
   },
   {
@@ -15462,24 +15102,6 @@
     }
   },
   {
-    "id": "6ec725f8f60aa0a422c24ecb586ddf7f",
-    "source": "tv",
-    "type": "title",
-    "answer": "Turkish for Beginners",
-    "normalizedAnswer": "TURKISH FOR BEGINNERS",
-    "category": "Comedy",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 19,
-    "uniqueLetterCount": 13,
-    "metadata": {
-      "year": "2006",
-      "rating": 7.5,
-      "votes": 5686
-    }
-  },
-  {
     "id": "609a175575ba552f1016638835ac0d52",
     "source": "tv",
     "type": "title",
@@ -15822,24 +15444,6 @@
     }
   },
   {
-    "id": "14b287a4efe345c51cf7b84650df0084",
-    "source": "tv",
-    "type": "title",
-    "answer": "Under the Trees",
-    "normalizedAnswer": "UNDER THE TREES",
-    "category": "Romance",
-    "difficulty": 72.8,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 13,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "year": "2005",
-      "rating": 8.1,
-      "votes": 6544
-    }
-  },
-  {
     "id": "6552b4bd4cbd977bc29f9699c50ea2b0",
     "source": "tv",
     "type": "title",
@@ -15891,24 +15495,6 @@
       "year": "2005",
       "rating": 8.8,
       "votes": 6704
-    }
-  },
-  {
-    "id": "a07acab38c76c6a77597528cbb0da2ac",
-    "source": "tv",
-    "type": "title",
-    "answer": "Barareh Nights",
-    "normalizedAnswer": "BARAREH NIGHTS",
-    "category": "Comedy",
-    "difficulty": 64.8,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 13,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "year": "2005",
-      "rating": 8.5,
-      "votes": 20086
     }
   },
   {
@@ -17622,24 +17208,6 @@
     }
   },
   {
-    "id": "50d9f70b9bc1145af1e209b47378219e",
-    "source": "tv",
-    "type": "title",
-    "answer": "La que se avecina",
-    "normalizedAnswer": "LA QUE SE AVECINA",
-    "category": "Comedy",
-    "difficulty": 64.4,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 14,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "year": "2007",
-      "rating": 7.6,
-      "votes": 5696
-    }
-  },
-  {
     "id": "512b5dd943c3951d47498acbb0e5507e",
     "source": "tv",
     "type": "title",
@@ -18090,24 +17658,6 @@
     }
   },
   {
-    "id": "85d70c53062fc7ae5c3cfc6dedda2b1b",
-    "source": "tv",
-    "type": "title",
-    "answer": "Jumong",
-    "normalizedAnswer": "JUMONG",
-    "category": "Biography",
-    "difficulty": 83.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "2006",
-      "rating": 8.1,
-      "votes": 5378
-    }
-  },
-  {
     "id": "87ee118477961a67bca0a2c58f38c679",
     "source": "tv",
     "type": "title",
@@ -18360,24 +17910,6 @@
     }
   },
   {
-    "id": "a7a491e3fc2a63eaf788129adfae13a9",
-    "source": "tv",
-    "type": "title",
-    "answer": "Bekaaboo",
-    "normalizedAnswer": "BEKAABOO",
-    "category": "Drama",
-    "difficulty": 86.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "year": "2019",
-      "rating": 6,
-      "votes": 5521
-    }
-  },
-  {
     "id": "250833a7c87630d7c0aa52f3d76b0af2",
     "source": "tv",
     "type": "title",
@@ -18612,24 +18144,6 @@
     }
   },
   {
-    "id": "4bb330a32e4284b383ff38a88d0f698f",
-    "source": "tv",
-    "type": "title",
-    "answer": "Fuh se Fantasy",
-    "normalizedAnswer": "FUH SE FANTASY",
-    "category": "Romance",
-    "difficulty": 69.2,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 12,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "2019",
-      "rating": 6.8,
-      "votes": 6728
-    }
-  },
-  {
     "id": "fb328a8a39cfbf3d60c3e86bf1fc9cb2",
     "source": "tv",
     "type": "title",
@@ -18720,24 +18234,6 @@
     }
   },
   {
-    "id": "b636d5d99b934fe6fe02b95f26746a88",
-    "source": "tv",
-    "type": "title",
-    "answer": "Valley of the Wolves: Ambush",
-    "normalizedAnswer": "VALLEY OF THE WOLVES AMBUSH",
-    "category": "Action",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 23,
-    "uniqueLetterCount": 14,
-    "metadata": {
-      "year": "2007",
-      "rating": 6.3,
-      "votes": 10589
-    }
-  },
-  {
     "id": "46470fe9c51f1bf988796e22b54e4b85",
     "source": "tv",
     "type": "title",
@@ -18753,24 +18249,6 @@
       "year": "2019",
       "rating": 7.8,
       "votes": 5226
-    }
-  },
-  {
-    "id": "d2eb5e22b270abc2d9543a3a886fcb1e",
-    "source": "tv",
-    "type": "title",
-    "answer": "Boris",
-    "normalizedAnswer": "BORIS",
-    "category": "Comedy",
-    "difficulty": 88,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "year": "2007",
-      "rating": 8.6,
-      "votes": 5042
     }
   },
   {
@@ -18936,24 +18414,6 @@
     }
   },
   {
-    "id": "a3eb0449cdab932c85feff43a73fb7c2",
-    "source": "tv",
-    "type": "title",
-    "answer": "The Boarding School",
-    "normalizedAnswer": "THE BOARDING SCHOOL",
-    "category": "Drama",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 17,
-    "uniqueLetterCount": 14,
-    "metadata": {
-      "year": "2007",
-      "rating": 8.1,
-      "votes": 6628
-    }
-  },
-  {
     "id": "56e287507f024540bec4a6ca67fbf926",
     "source": "tv",
     "type": "title",
@@ -18987,42 +18447,6 @@
       "year": "2020",
       "rating": 6.7,
       "votes": 11371
-    }
-  },
-  {
-    "id": "486a77fd5d0123e3c8d2ff5bc7978900",
-    "source": "tv",
-    "type": "title",
-    "answer": "The Accused Escaped",
-    "normalizedAnswer": "THE ACCUSED ESCAPED",
-    "category": "Comedy",
-    "difficulty": 68,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 17,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "2005",
-      "rating": 7.2,
-      "votes": 5765
-    }
-  },
-  {
-    "id": "a1d358d9636ddf2f9156e7c2dbfc56f5",
-    "source": "tv",
-    "type": "title",
-    "answer": "The Forgotten Army - Azaadi ke liye",
-    "normalizedAnswer": "THE FORGOTTEN ARMY AZAADI KE LIYE",
-    "category": "Drama",
-    "difficulty": 40,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 28,
-    "uniqueLetterCount": 16,
-    "metadata": {
-      "year": "2020",
-      "rating": 7.9,
-      "votes": 6461
     }
   },
   {
@@ -19620,24 +19044,6 @@
     }
   },
   {
-    "id": "440a620ae3b2783529fcdcc7f1379fe0",
-    "source": "tv",
-    "type": "title",
-    "answer": "The Storks Will Return",
-    "normalizedAnswer": "THE STORKS WILL RETURN",
-    "category": "Comedy",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 19,
-    "uniqueLetterCount": 12,
-    "metadata": {
-      "year": "2007",
-      "rating": 9.1,
-      "votes": 9964
-    }
-  },
-  {
     "id": "f763205256ac905fa2a1ba40a3c864c5",
     "source": "tv",
     "type": "title",
@@ -19869,24 +19275,6 @@
       "year": "2016",
       "rating": 7.1,
       "votes": 66356
-    }
-  },
-  {
-    "id": "32269bbde10571b5d3841652059d0ea2",
-    "source": "tv",
-    "type": "title",
-    "answer": "Gullak",
-    "normalizedAnswer": "GULLAK",
-    "category": "Comedy",
-    "difficulty": 87.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "year": "2019",
-      "rating": 9.1,
-      "votes": 31465
     }
   },
   {
@@ -20826,24 +20214,6 @@
     }
   },
   {
-    "id": "3d73e3edffde105161459baf92e951a5",
-    "source": "tv",
-    "type": "title",
-    "answer": "Antidisturbios",
-    "normalizedAnswer": "ANTIDISTURBIOS",
-    "category": "Action",
-    "difficulty": 64.4,
-    "difficultyTier": "easy",
-    "wordCount": 1,
-    "letterCount": 14,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "year": "2020",
-      "rating": 8,
-      "votes": 6022
-    }
-  },
-  {
     "id": "9f1b07709d486a08beaa15ab4f3d891e",
     "source": "tv",
     "type": "title",
@@ -20967,24 +20337,6 @@
       "year": "2020",
       "rating": 7,
       "votes": 39325
-    }
-  },
-  {
-    "id": "dabbfde1306ae1d9317dc739831aa396",
-    "source": "tv",
-    "type": "title",
-    "answer": "Crazy, Confused, Normal",
-    "normalizedAnswer": "CRAZY CONFUSED NORMAL",
-    "category": "Comedy",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 19,
-    "uniqueLetterCount": 14,
-    "metadata": {
-      "year": "2007",
-      "rating": 8.5,
-      "votes": 5026
     }
   },
   {
@@ -21366,24 +20718,6 @@
     }
   },
   {
-    "id": "1bd4ef4066bee4a499261a983b004ddc",
-    "source": "tv",
-    "type": "title",
-    "answer": "Azize",
-    "normalizedAnswer": "AZIZE",
-    "category": "Drama",
-    "difficulty": 92,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 4,
-    "metadata": {
-      "year": "2019",
-      "rating": 7.9,
-      "votes": 22593
-    }
-  },
-  {
     "id": "c4573e9c14eda7667de56c1c9634087b",
     "source": "tv",
     "type": "title",
@@ -21492,24 +20826,6 @@
     }
   },
   {
-    "id": "cca15a9ed8c80e0a44532defd7c266be",
-    "source": "tv",
-    "type": "title",
-    "answer": "Dirin Dirin",
-    "normalizedAnswer": "DIRIN DIRIN",
-    "category": "Animation",
-    "difficulty": 90,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 10,
-    "uniqueLetterCount": 4,
-    "metadata": {
-      "year": "2015",
-      "rating": 8.2,
-      "votes": 18750
-    }
-  },
-  {
     "id": "5f251dd4bf963fd02d8cda5497194d18",
     "source": "tv",
     "type": "title",
@@ -21543,24 +20859,6 @@
       "year": "2022",
       "rating": 7.1,
       "votes": 12476
-    }
-  },
-  {
-    "id": "cdc43bb0f92233bb1037d49a1d9f43d3",
-    "source": "tv",
-    "type": "title",
-    "answer": "Establishment: Osman",
-    "normalizedAnswer": "ESTABLISHMENT OSMAN",
-    "category": "Action",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 18,
-    "uniqueLetterCount": 11,
-    "metadata": {
-      "year": "2019",
-      "rating": 7.4,
-      "votes": 13653
     }
   },
   {
@@ -21669,24 +20967,6 @@
       "year": "2020",
       "rating": 8.1,
       "votes": 16453
-    }
-  },
-  {
-    "id": "801fde758a74d4dbd6a116bf04903bc3",
-    "source": "tv",
-    "type": "title",
-    "answer": "Jamtara: Sabka Number Ayega",
-    "normalizedAnswer": "JAMTARA SABKA NUMBER AYEGA",
-    "category": "Crime",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 23,
-    "uniqueLetterCount": 13,
-    "metadata": {
-      "year": "2020",
-      "rating": 7.3,
-      "votes": 10986
     }
   },
   {
@@ -22014,24 +21294,6 @@
     }
   },
   {
-    "id": "3131b571f125b679497ebf70320f38fe",
-    "source": "tv",
-    "type": "title",
-    "answer": "Alef",
-    "normalizedAnswer": "ALEF",
-    "category": "Action",
-    "difficulty": 92.4,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 4,
-    "uniqueLetterCount": 4,
-    "metadata": {
-      "year": "2020",
-      "rating": 7.8,
-      "votes": 9336
-    }
-  },
-  {
     "id": "4872ceabe8ebab28dd8d81acd5f8dbb4",
     "source": "tv",
     "type": "title",
@@ -22299,24 +21561,6 @@
       "year": "2009",
       "rating": 6.6,
       "votes": 16566
-    }
-  },
-  {
-    "id": "1afa1423b91ec32f376e310bc323e904",
-    "source": "tv",
-    "type": "title",
-    "answer": "Don't F**k with Cats: Hunting an Internet Killer",
-    "normalizedAnswer": "DONT FK WITH CATS HUNTING AN INTERNET KILLER",
-    "category": "Crime",
-    "difficulty": 36,
-    "difficultyTier": "easy",
-    "wordCount": 8,
-    "letterCount": 37,
-    "uniqueLetterCount": 17,
-    "metadata": {
-      "year": "2019",
-      "rating": 8,
-      "votes": 69981
     }
   },
   {
@@ -22695,24 +21939,6 @@
       "year": "2020",
       "rating": 7.3,
       "votes": 20657
-    }
-  },
-  {
-    "id": "3246dbafda6b36ec7944dfc3b8c56c93",
-    "source": "tv",
-    "type": "title",
-    "answer": "Asi",
-    "normalizedAnswer": "ASI",
-    "category": "Drama",
-    "difficulty": 96.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 3,
-    "uniqueLetterCount": 3,
-    "metadata": {
-      "year": "2007",
-      "rating": 8,
-      "votes": 15103
     }
   },
   {
@@ -23922,24 +23148,6 @@
     }
   },
   {
-    "id": "5dbbe5e717c8f6aa7c58decc4ef86a26",
-    "source": "tv",
-    "type": "title",
-    "answer": "Asur: Welcome to Your Dark Side",
-    "normalizedAnswer": "ASUR WELCOME TO YOUR DARK SIDE",
-    "category": "Crime",
-    "difficulty": 44,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 25,
-    "uniqueLetterCount": 15,
-    "metadata": {
-      "year": "2020",
-      "rating": 8.5,
-      "votes": 71473
-    }
-  },
-  {
     "id": "514d75443dc9cb9fd7620e6e17269a91",
     "source": "tv",
     "type": "title",
@@ -24102,24 +23310,6 @@
     }
   },
   {
-    "id": "a55f2de22de7686cee6c535d38585a84",
-    "source": "tv",
-    "type": "title",
-    "answer": "Samantar",
-    "normalizedAnswer": "SAMANTAR",
-    "category": "Mystery",
-    "difficulty": 82.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "2020",
-      "rating": 8.2,
-      "votes": 6739
-    }
-  },
-  {
     "id": "b4d16dea86195634ee2e5a866ace7841",
     "source": "tv",
     "type": "title",
@@ -24192,24 +23382,6 @@
     }
   },
   {
-    "id": "212ee32bcf5dd8185a095a1ee1fab3bc",
-    "source": "tv",
-    "type": "title",
-    "answer": "Harga",
-    "normalizedAnswer": "HARGA",
-    "category": "Drama",
-    "difficulty": 92,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 4,
-    "metadata": {
-      "year": "2021",
-      "rating": 8.8,
-      "votes": 10106
-    }
-  },
-  {
     "id": "95dd559b6897a23dfe519e5c00a43e39",
     "source": "tv",
     "type": "title",
@@ -24225,24 +23397,6 @@
       "year": "2022",
       "rating": 6.8,
       "votes": 10636
-    }
-  },
-  {
-    "id": "e6e1b52edc9aa6d72b2d5862f3beece4",
-    "source": "tv",
-    "type": "title",
-    "answer": "Panchayat",
-    "normalizedAnswer": "PANCHAYAT",
-    "category": "Comedy",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 9,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2020",
-      "rating": 9,
-      "votes": 118680
     }
   },
   {
@@ -24405,24 +23559,6 @@
       "year": "2008",
       "rating": 7.1,
       "votes": 6544
-    }
-  },
-  {
-    "id": "f178b1f98ac67e22ec60ef28c51efdca",
-    "source": "tv",
-    "type": "title",
-    "answer": "Ek Thi Begum",
-    "normalizedAnswer": "EK THI BEGUM",
-    "category": "Crime",
-    "difficulty": 70,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 10,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "2020",
-      "rating": 8.1,
-      "votes": 6541
     }
   },
   {
@@ -24603,42 +23739,6 @@
       "year": "2021",
       "rating": 6.6,
       "votes": 33427
-    }
-  },
-  {
-    "id": "7d6ddec09b1951b6ce836af21a40cde4",
-    "source": "tv",
-    "type": "title",
-    "answer": "Beyaz Show",
-    "normalizedAnswer": "BEYAZ SHOW",
-    "category": "TV Show",
-    "difficulty": 70.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "1996",
-      "rating": 7.1,
-      "votes": 10812
-    }
-  },
-  {
-    "id": "2f2c77e86fcbf67782d157f238b2c454",
-    "source": "tv",
-    "type": "title",
-    "answer": "Tunna blå linjen",
-    "normalizedAnswer": "TUNNA BLA LINJEN",
-    "category": "Crime",
-    "difficulty": 68.4,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 14,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "2021",
-      "rating": 8,
-      "votes": 6467
     }
   },
   {
@@ -24912,24 +24012,6 @@
     }
   },
   {
-    "id": "d40bbb3b10b212b732fc682cbbdcb631",
-    "source": "tv",
-    "type": "title",
-    "answer": "Raktanchal",
-    "normalizedAnswer": "RAKTANCHAL",
-    "category": "Action",
-    "difficulty": 74,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 10,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "year": "2020",
-      "rating": 6.8,
-      "votes": 8218
-    }
-  },
-  {
     "id": "286dafe80f1e89862d21a4cd5fa7ba91",
     "source": "tv",
     "type": "title",
@@ -25020,24 +24102,6 @@
     }
   },
   {
-    "id": "3f0cc6abc185071b0ec0144c0d238c4e",
-    "source": "tv",
-    "type": "title",
-    "answer": "Undekhi",
-    "normalizedAnswer": "UNDEKHI",
-    "category": "Crime",
-    "difficulty": 79.2,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2020",
-      "rating": 7.9,
-      "votes": 12492
-    }
-  },
-  {
     "id": "a5b17c594f47d597d88096cde2dd6a66",
     "source": "tv",
     "type": "title",
@@ -25110,24 +24174,6 @@
     }
   },
   {
-    "id": "1e7a2d4166a86cb5c0c07a39408327eb",
-    "source": "tv",
-    "type": "title",
-    "answer": "Criminal Novel",
-    "normalizedAnswer": "CRIMINAL NOVEL",
-    "category": "Crime",
-    "difficulty": 64.8,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 13,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "year": "2008",
-      "rating": 8.5,
-      "votes": 7368
-    }
-  },
-  {
     "id": "623bec0c0a28548e183c19629973723f",
     "source": "tv",
     "type": "title",
@@ -25161,24 +24207,6 @@
       "year": "2020",
       "rating": 7.3,
       "votes": 26725
-    }
-  },
-  {
-    "id": "9b1e7cc68ae147fd2ba31d2b210a46ee",
-    "source": "tv",
-    "type": "title",
-    "answer": "Aarya",
-    "normalizedAnswer": "AARYA",
-    "category": "Action",
-    "difficulty": 96,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 3,
-    "metadata": {
-      "year": "2020",
-      "rating": 7.7,
-      "votes": 17019
     }
   },
   {
@@ -25269,24 +24297,6 @@
       "year": "2009",
       "rating": 6,
       "votes": 13983
-    }
-  },
-  {
-    "id": "6d6f25f7454bb9f853eb8baf057f47ec",
-    "source": "tv",
-    "type": "title",
-    "answer": "Douluo Continent",
-    "normalizedAnswer": "DOULUO CONTINENT",
-    "category": "Action",
-    "difficulty": 68,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 15,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "2021",
-      "rating": 8.1,
-      "votes": 5539
     }
   },
   {
@@ -25467,24 +24477,6 @@
       "year": "2021",
       "rating": 7.4,
       "votes": 6420
-    }
-  },
-  {
-    "id": "8dc065a317f8711931829afac66dcb5f",
-    "source": "tv",
-    "type": "title",
-    "answer": "The Great Seljuks: Guardians of Justice",
-    "normalizedAnswer": "THE GREAT SELJUKS GUARDIANS OF JUSTICE",
-    "category": "Drama",
-    "difficulty": 36,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 33,
-    "uniqueLetterCount": 17,
-    "metadata": {
-      "year": "2020",
-      "rating": 7.7,
-      "votes": 5183
     }
   },
   {
@@ -25809,24 +24801,6 @@
       "year": "2010",
       "rating": 8.3,
       "votes": 17019
-    }
-  },
-  {
-    "id": "746536ebda7bfe77a0d2d08e4b531c28",
-    "source": "tv",
-    "type": "title",
-    "answer": "Aashram",
-    "normalizedAnswer": "AASHRAM",
-    "category": "Crime",
-    "difficulty": 87.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "year": "2020",
-      "rating": 6.6,
-      "votes": 59040
     }
   },
   {
@@ -26205,24 +25179,6 @@
       "year": "2021",
       "rating": 8.2,
       "votes": 7688
-    }
-  },
-  {
-    "id": "e97b2f0f8008e366c26e4db184f4398d",
-    "source": "tv",
-    "type": "title",
-    "answer": "Bicchoo Ka Khel",
-    "normalizedAnswer": "BICCHOO KA KHEL",
-    "category": "Crime",
-    "difficulty": 68.8,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 13,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "2020",
-      "rating": 7,
-      "votes": 20050
     }
   },
   {
@@ -26817,24 +25773,6 @@
       "year": "2008",
       "rating": 7.2,
       "votes": 10628
-    }
-  },
-  {
-    "id": "53585b0712e7e96bc7526aa054876216",
-    "source": "tv",
-    "type": "title",
-    "answer": "Paava Kadhaigal",
-    "normalizedAnswer": "PAAVA KADHAIGAL",
-    "category": "Drama",
-    "difficulty": 68.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 14,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "2020",
-      "rating": 8,
-      "votes": 6268
     }
   },
   {
@@ -27918,24 +26856,6 @@
     }
   },
   {
-    "id": "93b70d33cc1b93580afc6b16649835d4",
-    "source": "tv",
-    "type": "title",
-    "answer": "Taqdeer",
-    "normalizedAnswer": "TAQDEER",
-    "category": "Crime",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "2020",
-      "rating": 8.6,
-      "votes": 8423
-    }
-  },
-  {
     "id": "59c794fdd30eecd99b2a863094d64a45",
     "source": "tv",
     "type": "title",
@@ -28494,24 +27414,6 @@
     }
   },
   {
-    "id": "344448eef6ece2e69ac8a71dffe128a1",
-    "source": "tv",
-    "type": "title",
-    "answer": "Konusanlar",
-    "normalizedAnswer": "KONUSANLAR",
-    "category": "Comedy",
-    "difficulty": 74,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 10,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "year": "2021",
-      "rating": 6.4,
-      "votes": 5311
-    }
-  },
-  {
     "id": "7baad66500e98d77ecfd55b6cc3d6c8c",
     "source": "tv",
     "type": "title",
@@ -28815,24 +27717,6 @@
       "year": "2021",
       "rating": 8.1,
       "votes": 9834
-    }
-  },
-  {
-    "id": "86806d28d39c7a7cc1a4d16e3e3d2de7",
-    "source": "tv",
-    "type": "title",
-    "answer": "Rashash",
-    "normalizedAnswer": "RASHASH",
-    "category": "Action",
-    "difficulty": 91.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 4,
-    "metadata": {
-      "year": "2021",
-      "rating": 8,
-      "votes": 9154
     }
   },
   {
@@ -29142,24 +28026,6 @@
     }
   },
   {
-    "id": "4480334b3a21f03b52b6622486c2fd22",
-    "source": "tv",
-    "type": "title",
-    "answer": "Re: ZERO - Starting Life in Another World (Re-Edit)",
-    "normalizedAnswer": "RE ZERO STARTING LIFE IN ANOTHER WORLD REEDIT",
-    "category": "Adventure",
-    "difficulty": 44,
-    "difficultyTier": "easy",
-    "wordCount": 8,
-    "letterCount": 38,
-    "uniqueLetterCount": 15,
-    "metadata": {
-      "year": "2016",
-      "rating": 8.7,
-      "votes": 5972
-    }
-  },
-  {
     "id": "67257bb9a09eba47217808e904b8b49d",
     "source": "tv",
     "type": "title",
@@ -29412,24 +28278,6 @@
     }
   },
   {
-    "id": "4100d5713d87dbbcfb370c9cec89def6",
-    "source": "tv",
-    "type": "title",
-    "answer": "Susah Sinyal: The Series",
-    "normalizedAnswer": "SUSAH SINYAL THE SERIES",
-    "category": "Comedy",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 20,
-    "uniqueLetterCount": 11,
-    "metadata": {
-      "year": "2021",
-      "rating": 7.7,
-      "votes": 5091
-    }
-  },
-  {
     "id": "1e1d33fab611535c2521cdb0869738ae",
     "source": "tv",
     "type": "title",
@@ -29610,24 +28458,6 @@
     }
   },
   {
-    "id": "5726f0706b69d2ac5f10f3e811fa28a9",
-    "source": "tv",
-    "type": "title",
-    "answer": "Boo, Bitch",
-    "normalizedAnswer": "BOO BITCH",
-    "category": "Comedy",
-    "difficulty": 82.8,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "2022",
-      "rating": 6,
-      "votes": 6505
-    }
-  },
-  {
     "id": "61766a262d872c014931cb3ecff04b82",
     "source": "tv",
     "type": "title",
@@ -29790,42 +28620,6 @@
     }
   },
   {
-    "id": "3ac825ea09507bb44d7bedf89614f88e",
-    "source": "tv",
-    "type": "title",
-    "answer": "Mai",
-    "normalizedAnswer": "MAI",
-    "category": "Crime",
-    "difficulty": 96.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 3,
-    "uniqueLetterCount": 3,
-    "metadata": {
-      "year": "2022",
-      "rating": 7,
-      "votes": 5973
-    }
-  },
-  {
-    "id": "b128eb3ca7e338b91109d718d95df1c1",
-    "source": "tv",
-    "type": "title",
-    "answer": "Yeh Kaali Kaali Ankhein",
-    "normalizedAnswer": "YEH KAALI KAALI ANKHEIN",
-    "category": "Comedy",
-    "difficulty": 72,
-    "difficultyTier": "medium",
-    "wordCount": 4,
-    "letterCount": 20,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "year": "2022",
-      "rating": 7,
-      "votes": 10687
-    }
-  },
-  {
     "id": "577a9ec70f6b077622829212e70ed835",
     "source": "tv",
     "type": "title",
@@ -29877,24 +28671,6 @@
       "year": "2021",
       "rating": 7.9,
       "votes": 8999
-    }
-  },
-  {
-    "id": "bee7dcd54df7c55fe84af0660efdcc04",
-    "source": "tv",
-    "type": "title",
-    "answer": "Aranyak",
-    "normalizedAnswer": "ARANYAK",
-    "category": "Crime",
-    "difficulty": 87.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "year": "2021",
-      "rating": 7.7,
-      "votes": 12036
     }
   },
   {
@@ -30006,24 +28782,6 @@
     }
   },
   {
-    "id": "fec55be93517e2fa0978e2191c3a6ef0",
-    "source": "tv",
-    "type": "title",
-    "answer": "Dogu",
-    "normalizedAnswer": "DOGU",
-    "category": "Comedy",
-    "difficulty": 92.4,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 4,
-    "uniqueLetterCount": 4,
-    "metadata": {
-      "year": "2021",
-      "rating": 7.2,
-      "votes": 6246
-    }
-  },
-  {
     "id": "f2548347ac7692b20861c9cd0ef01709",
     "source": "tv",
     "type": "title",
@@ -30093,24 +28851,6 @@
       "year": "2022",
       "rating": 7.6,
       "votes": 33223
-    }
-  },
-  {
-    "id": "c9ef9dbfa554c4b5a1e69ad33c012b82",
-    "source": "tv",
-    "type": "title",
-    "answer": "Kursadzije",
-    "normalizedAnswer": "KURSADZIJE",
-    "category": "Comedy",
-    "difficulty": 66,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 10,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "year": "2006",
-      "rating": 8.2,
-      "votes": 22666
     }
   },
   {
@@ -30759,24 +29499,6 @@
       "year": "2025",
       "rating": 8.4,
       "votes": 5125
-    }
-  },
-  {
-    "id": "f84ec1a49ca1904e5eb6620d9930b88b",
-    "source": "tv",
-    "type": "title",
-    "answer": "Maharani",
-    "normalizedAnswer": "MAHARANI",
-    "category": "Drama",
-    "difficulty": 82.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "2021",
-      "rating": 8,
-      "votes": 10775
     }
   },
   {
@@ -31554,24 +30276,6 @@
     }
   },
   {
-    "id": "b406c5803910350c4b68c50309419048",
-    "source": "tv",
-    "type": "title",
-    "answer": "Dhindora",
-    "normalizedAnswer": "DHINDORA",
-    "category": "Comedy",
-    "difficulty": 78.8,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2021",
-      "rating": 8.8,
-      "votes": 126714
-    }
-  },
-  {
     "id": "c74d15ab3dfbaa10547bf8eba7c928b7",
     "source": "tv",
     "type": "title",
@@ -31734,24 +30438,6 @@
     }
   },
   {
-    "id": "34c1138408f7c3df444a07dae4a49b59",
-    "source": "tv",
-    "type": "title",
-    "answer": "Çok Güzel Hareketler Bunlar",
-    "normalizedAnswer": "COK GUZEL HAREKETLER BUNLAR",
-    "category": "Comedy",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 24,
-    "uniqueLetterCount": 14,
-    "metadata": {
-      "year": "2008",
-      "rating": 6.6,
-      "votes": 5459
-    }
-  },
-  {
     "id": "8157a515887c293e886b9344f19b71fa",
     "source": "tv",
     "type": "title",
@@ -31911,24 +30597,6 @@
       "year": "2022",
       "rating": 6.9,
       "votes": 5664
-    }
-  },
-  {
-    "id": "08b44fffb0b4f8fedf90c13261ce4ae9",
-    "source": "tv",
-    "type": "title",
-    "answer": "Genis Aile",
-    "normalizedAnswer": "GENIS AILE",
-    "category": "Comedy",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2009",
-      "rating": 7.2,
-      "votes": 5328
     }
   },
   {
@@ -32181,24 +30849,6 @@
       "year": "2009",
       "rating": 8.6,
       "votes": 176163
-    }
-  },
-  {
-    "id": "78097fe985d080cae59656facaf017fd",
-    "source": "tv",
-    "type": "title",
-    "answer": "Mohanagar",
-    "normalizedAnswer": "MOHANAGAR",
-    "category": "Thriller",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 9,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2021",
-      "rating": 8.7,
-      "votes": 8826
     }
   },
   {
@@ -32868,24 +31518,6 @@
     }
   },
   {
-    "id": "174aee8ea6cad0c4da31990086661fdb",
-    "source": "tv",
-    "type": "title",
-    "answer": "Sarabhai V/S Sarabhai",
-    "normalizedAnswer": "SARABHAI VS SARABHAI",
-    "category": "Comedy",
-    "difficulty": 76,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 18,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2004",
-      "rating": 8.8,
-      "votes": 19990
-    }
-  },
-  {
     "id": "69c350c3b02e1ad7214d5e63b4a1afcc",
     "source": "tv",
     "type": "title",
@@ -33282,24 +31914,6 @@
     }
   },
   {
-    "id": "9c6b8128b3fe1be2810e95597471f87a",
-    "source": "tv",
-    "type": "title",
-    "answer": "Ezel",
-    "normalizedAnswer": "EZEL",
-    "category": "Crime",
-    "difficulty": 96.4,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 4,
-    "uniqueLetterCount": 3,
-    "metadata": {
-      "year": "2009",
-      "rating": 8.6,
-      "votes": 43951
-    }
-  },
-  {
     "id": "db191db803a9212f3f4bb51ac549ebe1",
     "source": "tv",
     "type": "title",
@@ -33459,24 +32073,6 @@
       "year": "2021",
       "rating": 7.2,
       "votes": 10088
-    }
-  },
-  {
-    "id": "09a6e7ffaab0e49d986ecfef5a81c7e1",
-    "source": "tv",
-    "type": "title",
-    "answer": "Tabbar",
-    "normalizedAnswer": "TABBAR",
-    "category": "Drama",
-    "difficulty": 91.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 4,
-    "metadata": {
-      "year": "2021",
-      "rating": 8.2,
-      "votes": 5191
     }
   },
   {
@@ -33768,24 +32364,6 @@
     }
   },
   {
-    "id": "34406bf9e93463452b1edfffa3287bb1",
-    "source": "tv",
-    "type": "title",
-    "answer": "Farzi",
-    "normalizedAnswer": "FARZI",
-    "category": "Comedy",
-    "difficulty": 88,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "year": "2023",
-      "rating": 8.3,
-      "votes": 56483
-    }
-  },
-  {
     "id": "7093b6966bb169c1c08bae1ce2125e24",
     "source": "tv",
     "type": "title",
@@ -33945,24 +32523,6 @@
       "year": "2010",
       "rating": 7.7,
       "votes": 42333
-    }
-  },
-  {
-    "id": "68d57cfbb9892836de57b62f3e691f6d",
-    "source": "tv",
-    "type": "title",
-    "answer": "Matsya Kaand",
-    "normalizedAnswer": "MATSYA KAAND",
-    "category": "Thriller",
-    "difficulty": 73.6,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "year": "2021",
-      "rating": 8.5,
-      "votes": 7062
     }
   },
   {
@@ -34413,24 +32973,6 @@
       "year": "2022",
       "rating": 7.1,
       "votes": 5430
-    }
-  },
-  {
-    "id": "ee346318ccafd681d0298eb5729a0acf",
-    "source": "tv",
-    "type": "title",
-    "answer": "Vilangu",
-    "normalizedAnswer": "VILANGU",
-    "category": "Drama",
-    "difficulty": 79.2,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2022",
-      "rating": 8,
-      "votes": 5627
     }
   },
   {
@@ -34956,24 +33498,6 @@
     }
   },
   {
-    "id": "1d708db104f04a0f359dcc2e50e32756",
-    "source": "tv",
-    "type": "title",
-    "answer": "Solsidan",
-    "normalizedAnswer": "SOLSIDAN",
-    "category": "Comedy",
-    "difficulty": 78.8,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2010",
-      "rating": 8.1,
-      "votes": 8870
-    }
-  },
-  {
     "id": "de5f5bbb9e9c82100d83e7435ca118ab",
     "source": "tv",
     "type": "title",
@@ -35352,24 +33876,6 @@
     }
   },
   {
-    "id": "3d6249c86b8ce79b20f5493cb188cf1e",
-    "source": "tv",
-    "type": "title",
-    "answer": "$#*! My Dad Says",
-    "normalizedAnswer": "MY DAD SAYS",
-    "category": "Comedy",
-    "difficulty": 86.4,
-    "difficultyTier": "hard",
-    "wordCount": 3,
-    "letterCount": 9,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "year": "2010",
-      "rating": 6.3,
-      "votes": 5521
-    }
-  },
-  {
     "id": "0079421a9c57a075e2a320268b13543d",
     "source": "tv",
     "type": "title",
@@ -35403,24 +33909,6 @@
       "year": "2010",
       "rating": 8,
       "votes": 43614
-    }
-  },
-  {
-    "id": "8f07b2b02a7557ba7e6e6683415ad3ff",
-    "source": "tv",
-    "type": "title",
-    "answer": "Gönülçelen",
-    "normalizedAnswer": "GONULCELEN",
-    "category": "Drama",
-    "difficulty": 78,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 10,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2010",
-      "rating": 8.1,
-      "votes": 10949
     }
   },
   {
@@ -36108,24 +34596,6 @@
     }
   },
   {
-    "id": "fd1245b625936b4b0f8483ce9355cb46",
-    "source": "tv",
-    "type": "title",
-    "answer": "Die Discounter",
-    "normalizedAnswer": "DIE DISCOUNTER",
-    "category": "Comedy",
-    "difficulty": 64.8,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 13,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "year": "2021",
-      "rating": 8.1,
-      "votes": 7616
-    }
-  },
-  {
     "id": "69c46990d0ca1bb329767d1fac2d77e3",
     "source": "tv",
     "type": "title",
@@ -36774,24 +35244,6 @@
     }
   },
   {
-    "id": "8fc2b8a445c5e55ff09cefa5fff935ff",
-    "source": "tv",
-    "type": "title",
-    "answer": "Taarak Mehta Ka Ooltah Chashmah",
-    "normalizedAnswer": "TAARAK MEHTA KA OOLTAH CHASHMAH",
-    "category": "Comedy",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 27,
-    "uniqueLetterCount": 11,
-    "metadata": {
-      "year": "2008",
-      "rating": 8.2,
-      "votes": 15075
-    }
-  },
-  {
     "id": "904d04b0cfffeac0cf5f685b0a0fb96c",
     "source": "tv",
     "type": "title",
@@ -36807,24 +35259,6 @@
       "year": "2010",
       "rating": 8.6,
       "votes": 75642
-    }
-  },
-  {
-    "id": "7b249ea39e175386391d07cfc28c00b7",
-    "source": "tv",
-    "type": "title",
-    "answer": "Dag",
-    "normalizedAnswer": "DAG",
-    "category": "Comedy",
-    "difficulty": 96.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 3,
-    "uniqueLetterCount": 3,
-    "metadata": {
-      "year": "2010",
-      "rating": 8.5,
-      "votes": 5622
     }
   },
   {
@@ -37260,24 +35694,6 @@
     }
   },
   {
-    "id": "a2f9a8753ca1dda01e4928d61eeb1317",
-    "source": "tv",
-    "type": "title",
-    "answer": "Mithya",
-    "normalizedAnswer": "MITHYA",
-    "category": "Crime",
-    "difficulty": 83.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "2022",
-      "rating": 6.8,
-      "votes": 15667
-    }
-  },
-  {
     "id": "aac31c2863064ae010d7a7128f547c97",
     "source": "tv",
     "type": "title",
@@ -37383,24 +35799,6 @@
       "year": "2023",
       "rating": 7.7,
       "votes": 30090
-    }
-  },
-  {
-    "id": "ab3f63f9b4c0cc7a0021ca3a2a0dcede",
-    "source": "tv",
-    "type": "title",
-    "answer": "Arkadas Canlisi",
-    "normalizedAnswer": "ARKADAS CANLISI",
-    "category": "TV Show",
-    "difficulty": 68.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 14,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "2022",
-      "rating": 8.4,
-      "votes": 6426
     }
   },
   {
@@ -38016,24 +36414,6 @@
     }
   },
   {
-    "id": "6332fa3b1b0b2dae331d2b0a6f04ddc1",
-    "source": "tv",
-    "type": "title",
-    "answer": "Mokhtarnameh",
-    "normalizedAnswer": "MOKHTARNAMEH",
-    "category": "Biography",
-    "difficulty": 69.2,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 12,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "2010",
-      "rating": 7.5,
-      "votes": 11285
-    }
-  },
-  {
     "id": "564e3caa3dc40c31f3f86ba62f5b5b28",
     "source": "tv",
     "type": "title",
@@ -38250,24 +36630,6 @@
     }
   },
   {
-    "id": "dbba373da480010423d9345460045ce8",
-    "source": "tv",
-    "type": "title",
-    "answer": "Jugaadistan",
-    "normalizedAnswer": "JUGAADISTAN",
-    "category": "Comedy",
-    "difficulty": 69.6,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 11,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "2022",
-      "rating": 8,
-      "votes": 5336
-    }
-  },
-  {
     "id": "487884d2e7af166a366f47ade6763204",
     "source": "tv",
     "type": "title",
@@ -38427,24 +36789,6 @@
       "year": "2011",
       "rating": 6.7,
       "votes": 6282
-    }
-  },
-  {
-    "id": "e95cec527f1eefb0693689a304f8bbf1",
-    "source": "tv",
-    "type": "title",
-    "answer": "Leyla and Mecnun",
-    "normalizedAnswer": "LEYLA AND MECNUN",
-    "category": "Adventure",
-    "difficulty": 68.4,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 14,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "2011",
-      "rating": 9,
-      "votes": 103817
     }
   },
   {
@@ -39420,24 +37764,6 @@
     }
   },
   {
-    "id": "57ac88f3334c3136e97963ef39ee98a3",
-    "source": "tv",
-    "type": "title",
-    "answer": "Kaala Paani",
-    "normalizedAnswer": "KAALA PAANI",
-    "category": "Drama",
-    "difficulty": 82,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 10,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "2023",
-      "rating": 7.9,
-      "votes": 12246
-    }
-  },
-  {
     "id": "bbcd03296aa98a1e3578f1d542d3c79e",
     "source": "tv",
     "type": "title",
@@ -40284,78 +38610,6 @@
     }
   },
   {
-    "id": "bec9b564f261190a689284654cdbe602",
-    "source": "tv",
-    "type": "title",
-    "answer": "Dahaad",
-    "normalizedAnswer": "DAHAAD",
-    "category": "Crime",
-    "difficulty": 95.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 3,
-    "metadata": {
-      "year": "2023",
-      "rating": 7.6,
-      "votes": 15532
-    }
-  },
-  {
-    "id": "dc1ee7861e8fc1b37452b661c993b985",
-    "source": "tv",
-    "type": "title",
-    "answer": "Dhootha",
-    "normalizedAnswer": "DHOOTHA",
-    "category": "Drama",
-    "difficulty": 87.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "year": "2023",
-      "rating": 7.7,
-      "votes": 6977
-    }
-  },
-  {
-    "id": "fad3993b21674dd0f16eae8fee654d9d",
-    "source": "tv",
-    "type": "title",
-    "answer": "Bambai Meri Jaan",
-    "normalizedAnswer": "BAMBAI MERI JAAN",
-    "category": "Action",
-    "difficulty": 72.4,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 14,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "year": "2023",
-      "rating": 7.5,
-      "votes": 5507
-    }
-  },
-  {
-    "id": "5c1790a58d564003fc6ed11230f13104",
-    "source": "tv",
-    "type": "title",
-    "answer": "Jee Karda",
-    "normalizedAnswer": "JEE KARDA",
-    "category": "Drama",
-    "difficulty": 82.8,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "2023",
-      "rating": 6.5,
-      "votes": 8393
-    }
-  },
-  {
     "id": "6d0097609e2411139e55d3ca29692630",
     "source": "tv",
     "type": "title",
@@ -40407,24 +38661,6 @@
       "year": "2022",
       "rating": 6.5,
       "votes": 5773
-    }
-  },
-  {
-    "id": "c37d01e44731de037e66800503a3ba1c",
-    "source": "tv",
-    "type": "title",
-    "answer": "B.E. Rojgaar",
-    "normalizedAnswer": "BE ROJGAAR",
-    "category": "Drama",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2022",
-      "rating": 8.9,
-      "votes": 6694
     }
   },
   {
@@ -40770,24 +39006,6 @@
     }
   },
   {
-    "id": "51370c978deea6b8cb914e086707b811",
-    "source": "tv",
-    "type": "title",
-    "answer": "Kuzey Güney",
-    "normalizedAnswer": "KUZEY GUNEY",
-    "category": "Drama",
-    "difficulty": 78,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 10,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2011",
-      "rating": 7.7,
-      "votes": 12762
-    }
-  },
-  {
     "id": "67d4d595f7afe42b7544f183f5844493",
     "source": "tv",
     "type": "title",
@@ -40893,42 +39111,6 @@
       "year": "2024",
       "rating": 7,
       "votes": 45591
-    }
-  },
-  {
-    "id": "e43714e426c539256d4d6daaa3dbc202",
-    "source": "tv",
-    "type": "title",
-    "answer": "Var Bunlar",
-    "normalizedAnswer": "VAR BUNLAR",
-    "category": "Comedy",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2022",
-      "rating": 8.1,
-      "votes": 5829
-    }
-  },
-  {
-    "id": "8981c75d9726b914f3c33b9aa55fc1b3",
-    "source": "tv",
-    "type": "title",
-    "answer": "Farouk Omar",
-    "normalizedAnswer": "FAROUK OMAR",
-    "category": "Biography",
-    "difficulty": 78,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 10,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2012",
-      "rating": 9,
-      "votes": 10930
     }
   },
   {
@@ -41058,24 +39240,6 @@
     }
   },
   {
-    "id": "7e9bad0348500851ff0d1d31f5323ccd",
-    "source": "tv",
-    "type": "title",
-    "answer": "Bandon Mein Tha Dum!",
-    "normalizedAnswer": "BANDON MEIN THA DUM",
-    "category": "Documentary",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 16,
-    "uniqueLetterCount": 11,
-    "metadata": {
-      "year": "2022",
-      "rating": 8.8,
-      "votes": 6470
-    }
-  },
-  {
     "id": "1bb5cf7820bf846816fae4aa8b73bea4",
     "source": "tv",
     "type": "title",
@@ -41184,24 +39348,6 @@
     }
   },
   {
-    "id": "fdb3690faa5a064f066e465be9da7127",
-    "source": "tv",
-    "type": "title",
-    "answer": "Cyber Vaar",
-    "normalizedAnswer": "CYBER VAAR",
-    "category": "Crime",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2022",
-      "rating": 7.6,
-      "votes": 12241
-    }
-  },
-  {
     "id": "91d62bf847bd4538367083faa79dcc49",
     "source": "tv",
     "type": "title",
@@ -41253,24 +39399,6 @@
       "year": "2024",
       "rating": 7.4,
       "votes": 6439
-    }
-  },
-  {
-    "id": "c837b46e974d7ee7d33f8e7213053e7f",
-    "source": "tv",
-    "type": "title",
-    "answer": "Suzhal - The Vortex",
-    "normalizedAnswer": "SUZHAL THE VORTEX",
-    "category": "Crime",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 15,
-    "uniqueLetterCount": 12,
-    "metadata": {
-      "year": "2022",
-      "rating": 8.1,
-      "votes": 11573
     }
   },
   {
@@ -41994,42 +40122,6 @@
     }
   },
   {
-    "id": "1586a254172e7f8947a9fed709564b42",
-    "source": "tv",
-    "type": "title",
-    "answer": "Der Tatortreiniger",
-    "normalizedAnswer": "DER TATORTREINIGER",
-    "category": "Comedy",
-    "difficulty": 68,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 17,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "2011",
-      "rating": 8.5,
-      "votes": 8851
-    }
-  },
-  {
-    "id": "11daf6c131b3766a47139d83ef4e9a3f",
-    "source": "tv",
-    "type": "title",
-    "answer": "Devon Ke Dev... Mahadev",
-    "normalizedAnswer": "DEVON KE DEV MAHADEV",
-    "category": "Action",
-    "difficulty": 68,
-    "difficultyTier": "medium",
-    "wordCount": 4,
-    "letterCount": 17,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "2011",
-      "rating": 9.2,
-      "votes": 5642
-    }
-  },
-  {
     "id": "3b6799ac85d152998a9737f93f1712de",
     "source": "tv",
     "type": "title",
@@ -42390,24 +40482,6 @@
     }
   },
   {
-    "id": "7e5c6e4d9d089af30fcfb037398e23c1",
-    "source": "tv",
-    "type": "title",
-    "answer": "Criminal Justice: Adhura Sach",
-    "normalizedAnswer": "CRIMINAL JUSTICE ADHURA SACH",
-    "category": "Crime",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 25,
-    "uniqueLetterCount": 14,
-    "metadata": {
-      "year": "2022",
-      "rating": 7.6,
-      "votes": 8069
-    }
-  },
-  {
     "id": "6ac0dcd7a1beedbddef3ee72f2353719",
     "source": "tv",
     "type": "title",
@@ -42642,24 +40716,6 @@
     }
   },
   {
-    "id": "015ad93234bac687060eb4b3520e7002",
-    "source": "tv",
-    "type": "title",
-    "answer": "Pablo Escobar: El Patrón del Mal",
-    "normalizedAnswer": "PABLO ESCOBAR EL PATRON DEL MAL",
-    "category": "Biography",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 26,
-    "uniqueLetterCount": 13,
-    "metadata": {
-      "year": "2012",
-      "rating": 8.4,
-      "votes": 7073
-    }
-  },
-  {
     "id": "d710a0926ebe4989e329d78459406142",
     "source": "tv",
     "type": "title",
@@ -42750,24 +40806,6 @@
     }
   },
   {
-    "id": "0cdd765f8bb8ba5a040862d7c92c5982",
-    "source": "tv",
-    "type": "title",
-    "answer": "Vadhandhi: The Fable of Velonie",
-    "normalizedAnswer": "VADHANDHI THE FABLE OF VELONIE",
-    "category": "Crime",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 26,
-    "uniqueLetterCount": 12,
-    "metadata": {
-      "year": "2022",
-      "rating": 7.9,
-      "votes": 6277
-    }
-  },
-  {
     "id": "ed030c84b507c1f2f44efa41ad4db649",
     "source": "tv",
     "type": "title",
@@ -42783,24 +40821,6 @@
       "year": "2024",
       "rating": 6.1,
       "votes": 8894
-    }
-  },
-  {
-    "id": "41cbd7139840e5fcae6f7370ce8d8b5b",
-    "source": "tv",
-    "type": "title",
-    "answer": "Tanaav",
-    "normalizedAnswer": "TANAAV",
-    "category": "Action",
-    "difficulty": 91.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 4,
-    "metadata": {
-      "year": "2022",
-      "rating": 7.5,
-      "votes": 12112
     }
   },
   {
@@ -42855,24 +40875,6 @@
       "year": "2012",
       "rating": 7,
       "votes": 39243
-    }
-  },
-  {
-    "id": "f04b88e24ccf159c3ca0a259c6d7f0d7",
-    "source": "tv",
-    "type": "title",
-    "answer": "Dahan: Raakan Ka Rahasya",
-    "normalizedAnswer": "DAHAN RAAKAN KA RAHASYA",
-    "category": "Drama",
-    "difficulty": 72,
-    "difficultyTier": "medium",
-    "wordCount": 4,
-    "letterCount": 20,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "year": "2022",
-      "rating": 7.1,
-      "votes": 8633
     }
   },
   {
@@ -43002,24 +41004,6 @@
     }
   },
   {
-    "id": "f8775a3dd0785f67043513599ab81049",
-    "source": "tv",
-    "type": "title",
-    "answer": "Taaza Khabar",
-    "normalizedAnswer": "TAAZA KHABAR",
-    "category": "Action",
-    "difficulty": 77.6,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2023",
-      "rating": 8,
-      "votes": 57785
-    }
-  },
-  {
     "id": "cadd91278a8d810148a690d5d2ce7672",
     "source": "tv",
     "type": "title",
@@ -43035,24 +41019,6 @@
       "year": "2023",
       "rating": 6.7,
       "votes": 7978
-    }
-  },
-  {
-    "id": "63e39518a914096492ebba6dd120602e",
-    "source": "tv",
-    "type": "title",
-    "answer": "Jury Duty Presents",
-    "normalizedAnswer": "JURY DUTY PRESENTS",
-    "category": "Comedy",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 16,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "year": "2023",
-      "rating": 8.2,
-      "votes": 57122
     }
   },
   {
@@ -43488,24 +41454,6 @@
     }
   },
   {
-    "id": "3740dc9ce56626bf86c0933ca69c5518",
-    "source": "tv",
-    "type": "title",
-    "answer": "Karm Yuddh",
-    "normalizedAnswer": "KARM YUDDH",
-    "category": "Drama",
-    "difficulty": 74.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "year": "2022",
-      "rating": 7.8,
-      "votes": 14943
-    }
-  },
-  {
     "id": "7b4a86c5c64b3cf6723f407c60b49684",
     "source": "tv",
     "type": "title",
@@ -43683,24 +41631,6 @@
       "year": "2013",
       "rating": 7.4,
       "votes": 5486
-    }
-  },
-  {
-    "id": "52f8ccbcfaf09a00365543974e9e0cb6",
-    "source": "tv",
-    "type": "title",
-    "answer": "Taali",
-    "normalizedAnswer": "TAALI",
-    "category": "Drama",
-    "difficulty": 92,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 4,
-    "metadata": {
-      "year": "2023",
-      "rating": 7.8,
-      "votes": 10867
     }
   },
   {
@@ -44298,24 +42228,6 @@
     }
   },
   {
-    "id": "e6995e3009fea57351feb6b972aac021",
-    "source": "tv",
-    "type": "title",
-    "answer": "Khakee: The Bihar Chapter",
-    "normalizedAnswer": "KHAKEE THE BIHAR CHAPTER",
-    "category": "Action",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 21,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "year": "2022",
-      "rating": 8.1,
-      "votes": 14613
-    }
-  },
-  {
     "id": "06c86080b047e0727760c381f7d3e339",
     "source": "tv",
     "type": "title",
@@ -44457,24 +42369,6 @@
       "year": "2013",
       "rating": 7.7,
       "votes": 18013
-    }
-  },
-  {
-    "id": "91eb09b29a38baea9d79cf9453263845",
-    "source": "tv",
-    "type": "title",
-    "answer": "Isler Güçler",
-    "normalizedAnswer": "ISLER GUCLER",
-    "category": "Comedy",
-    "difficulty": 73.6,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "year": "2012",
-      "rating": 8.6,
-      "votes": 22064
     }
   },
   {
@@ -44712,24 +42606,6 @@
     }
   },
   {
-    "id": "ebdfda76cb179c5c48d2b2cbbe4649db",
-    "source": "tv",
-    "type": "title",
-    "answer": "Dharavi Bank",
-    "normalizedAnswer": "DHARAVI BANK",
-    "category": "Action",
-    "difficulty": 69.6,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "2022",
-      "rating": 7.5,
-      "votes": 5066
-    }
-  },
-  {
     "id": "02267165b4ca7009b5bae437061a96d7",
     "source": "tv",
     "type": "title",
@@ -44763,24 +42639,6 @@
       "year": "2013",
       "rating": 6.5,
       "votes": 5560
-    }
-  },
-  {
-    "id": "a23316d25df6dddfdd61c81e747ea119",
-    "source": "tv",
-    "type": "title",
-    "answer": "Karadayi",
-    "normalizedAnswer": "KARADAYI",
-    "category": "Action",
-    "difficulty": 82.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "2012",
-      "rating": 7.7,
-      "votes": 6540
     }
   },
   {
@@ -44997,24 +42855,6 @@
       "year": "2012",
       "rating": 8.6,
       "votes": 58938
-    }
-  },
-  {
-    "id": "0cee9983746507e5bf6277549f151f20",
-    "source": "tv",
-    "type": "title",
-    "answer": "Satyamev Jayate",
-    "normalizedAnswer": "SATYAMEV JAYATE",
-    "category": "Documentary",
-    "difficulty": 72.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 14,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "year": "2012",
-      "rating": 8.6,
-      "votes": 7831
     }
   },
   {
@@ -45537,24 +43377,6 @@
       "year": "2014",
       "rating": 7.4,
       "votes": 69985
-    }
-  },
-  {
-    "id": "3f8b361bb879ec90234f128f54e3f2b1",
-    "source": "tv",
-    "type": "title",
-    "answer": "Humsafar",
-    "normalizedAnswer": "HUMSAFAR",
-    "category": "Drama",
-    "difficulty": 78.8,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2011",
-      "rating": 8.8,
-      "votes": 5256
     }
   },
   {
@@ -47466,42 +45288,6 @@
     }
   },
   {
-    "id": "7dbd206387f1f2553e32b4527b3b45db",
-    "source": "tv",
-    "type": "title",
-    "answer": "SK Sir Ki Class",
-    "normalizedAnswer": "SK SIR KI CLASS",
-    "category": "Drama",
-    "difficulty": 77.2,
-    "difficultyTier": "medium",
-    "wordCount": 4,
-    "letterCount": 12,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2023",
-      "rating": 8.1,
-      "votes": 7808
-    }
-  },
-  {
-    "id": "1f923a5dafd6b73425684c519d671f00",
-    "source": "tv",
-    "type": "title",
-    "answer": "Kübra",
-    "normalizedAnswer": "KUBRA",
-    "category": "Drama",
-    "difficulty": 88,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "year": "2024",
-      "rating": 6.2,
-      "votes": 5007
-    }
-  },
-  {
     "id": "05f75d6d2acdf7a496b97de9fd3dafa0",
     "source": "tv",
     "type": "title",
@@ -47553,24 +45339,6 @@
       "year": "2025",
       "rating": 6.7,
       "votes": 18313
-    }
-  },
-  {
-    "id": "51fc47a01ea9c87021a5160a87fa922b",
-    "source": "tv",
-    "type": "title",
-    "answer": "Gyaarah Gyaarah",
-    "normalizedAnswer": "GYAARAH GYAARAH",
-    "category": "Crime",
-    "difficulty": 84.4,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 14,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "year": "2024",
-      "rating": 8.1,
-      "votes": 7975
     }
   },
   {
@@ -47988,24 +45756,6 @@
     }
   },
   {
-    "id": "539279083c6283326e42df68422c63dd",
-    "source": "tv",
-    "type": "title",
-    "answer": "Gutar Gu",
-    "normalizedAnswer": "GUTAR GU",
-    "category": "Drama",
-    "difficulty": 87.2,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 7,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "year": "2023",
-      "rating": 8.3,
-      "votes": 5422
-    }
-  },
-  {
     "id": "0783cb685067752d6a4cd303256e3d65",
     "source": "tv",
     "type": "title",
@@ -48168,42 +45918,6 @@
     }
   },
   {
-    "id": "5b9b6f55f664ab38338a83426c1b7fda",
-    "source": "tv",
-    "type": "title",
-    "answer": "Shekhar Home",
-    "normalizedAnswer": "SHEKHAR HOME",
-    "category": "Crime",
-    "difficulty": 73.6,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "year": "2024",
-      "rating": 7.9,
-      "votes": 13119
-    }
-  },
-  {
-    "id": "f78bf98451ce36bccbb3bc45c1e03fe9",
-    "source": "tv",
-    "type": "title",
-    "answer": "Shaitan",
-    "normalizedAnswer": "SHAITAN",
-    "category": "Action",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "2023",
-      "rating": 6.4,
-      "votes": 6975
-    }
-  },
-  {
     "id": "603cff2dd6c2504d851fdb52a45cc7cf",
     "source": "tv",
     "type": "title",
@@ -48291,24 +46005,6 @@
       "year": "2023",
       "rating": 8,
       "votes": 5344
-    }
-  },
-  {
-    "id": "b4639cbe795de1775509c851fb043878",
-    "source": "tv",
-    "type": "title",
-    "answer": "Saas, Bahu Aur Flamingo",
-    "normalizedAnswer": "SAAS BAHU AUR FLAMINGO",
-    "category": "Action",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 19,
-    "uniqueLetterCount": 13,
-    "metadata": {
-      "year": "2023",
-      "rating": 7.7,
-      "votes": 10798
     }
   },
   {
@@ -48417,24 +46113,6 @@
       "year": "2024",
       "rating": 8.1,
       "votes": 9877
-    }
-  },
-  {
-    "id": "baa70054a8078c609e11807e440badbb",
-    "source": "tv",
-    "type": "title",
-    "answer": "Fireflies: Parth Aur Jugnu",
-    "normalizedAnswer": "FIREFLIES PARTH AUR JUGNU",
-    "category": "Drama",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 22,
-    "uniqueLetterCount": 14,
-    "metadata": {
-      "year": "2023",
-      "rating": 7.3,
-      "votes": 5275
     }
   },
   {
@@ -48798,24 +46476,6 @@
     }
   },
   {
-    "id": "5165ff5635a0e62042e597b585d20040",
-    "source": "tv",
-    "type": "title",
-    "answer": "Kohrra",
-    "normalizedAnswer": "KOHRRA",
-    "category": "Crime",
-    "difficulty": 87.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "year": "2023",
-      "rating": 7.5,
-      "votes": 12393
-    }
-  },
-  {
     "id": "67c2a0cb0648b0422b5b887fb939e416",
     "source": "tv",
     "type": "title",
@@ -49140,24 +46800,6 @@
     }
   },
   {
-    "id": "c89646c50793eeaa61996d9db38c9ada",
-    "source": "tv",
-    "type": "title",
-    "answer": "Pritam Pedro",
-    "normalizedAnswer": "PRITAM PEDRO",
-    "category": "Comedy",
-    "difficulty": 69.6,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "2026",
-      "rating": 7.8,
-      "votes": 10809
-    }
-  },
-  {
     "id": "4ba28f75eb114016547088b5b8dc50e7",
     "source": "tv",
     "type": "title",
@@ -49173,24 +46815,6 @@
       "year": "2025",
       "rating": 6.8,
       "votes": 10614
-    }
-  },
-  {
-    "id": "1d9a2ca37ac67b9ca8313554b5fcc61f",
-    "source": "tv",
-    "type": "title",
-    "answer": "Sankalp",
-    "normalizedAnswer": "SANKALP",
-    "category": "Drama",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "2026",
-      "rating": 6.6,
-      "votes": 26908
     }
   },
   {
@@ -49230,24 +46854,6 @@
     }
   },
   {
-    "id": "677b6a2149f2fac64fd6ec1e5baa6122",
-    "source": "tv",
-    "type": "title",
-    "answer": "Kaalkoot",
-    "normalizedAnswer": "KAALKOOT",
-    "category": "Crime",
-    "difficulty": 86.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "year": "2023",
-      "rating": 7.8,
-      "votes": 8925
-    }
-  },
-  {
     "id": "5350454743f825a5fbed2dc2ff85c731",
     "source": "tv",
     "type": "title",
@@ -49284,24 +46890,6 @@
     }
   },
   {
-    "id": "70239e0081a459aa3f4cd9f944f24dee",
-    "source": "tv",
-    "type": "title",
-    "answer": "Chamak",
-    "normalizedAnswer": "CHAMAK",
-    "category": "Crime",
-    "difficulty": 87.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "year": "2023",
-      "rating": 6.7,
-      "votes": 55438
-    }
-  },
-  {
     "id": "d464e06d1bcd8f803f5f85aee6d8d9da",
     "source": "tv",
     "type": "title",
@@ -49335,24 +46923,6 @@
       "year": "2023",
       "rating": 7.2,
       "votes": 5171
-    }
-  },
-  {
-    "id": "835007d330e9fefe628d8b94f0ec6c91",
-    "source": "tv",
-    "type": "title",
-    "answer": "Sandeep Bhaiya",
-    "normalizedAnswer": "SANDEEP BHAIYA",
-    "category": "Drama",
-    "difficulty": 64.8,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 13,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "year": "2023",
-      "rating": 9,
-      "votes": 77318
     }
   },
   {
@@ -49641,24 +47211,6 @@
       "year": "2024",
       "rating": 7.1,
       "votes": 10556
-    }
-  },
-  {
-    "id": "e8b94df9df8c9027687a0baf81f36e3b",
-    "source": "tv",
-    "type": "title",
-    "answer": "Ranneeti: Balakot & Beyond",
-    "normalizedAnswer": "RANNEETI BALAKOT BEYOND",
-    "category": "Action",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 21,
-    "uniqueLetterCount": 12,
-    "metadata": {
-      "year": "2024",
-      "rating": 7.7,
-      "votes": 18467
     }
   },
   {
@@ -50580,24 +48132,6 @@
     }
   },
   {
-    "id": "ea53151b8b1191eb74b35fc0b471eb81",
-    "source": "tv",
-    "type": "title",
-    "answer": "Sapne Vs Everyone",
-    "normalizedAnswer": "SAPNE VS EVERYONE",
-    "category": "Drama",
-    "difficulty": 68,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 15,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "2023",
-      "rating": 9.2,
-      "votes": 86656
-    }
-  },
-  {
     "id": "af6e7a0ad08f0e0fe6af53689019eb14",
     "source": "tv",
     "type": "title",
@@ -50703,24 +48237,6 @@
       "year": "2025",
       "rating": 6.2,
       "votes": 9505
-    }
-  },
-  {
-    "id": "dfff0614572111b39d2899f576e1be17",
-    "source": "tv",
-    "type": "title",
-    "answer": "The Hateful Eight: Extended Version",
-    "normalizedAnswer": "THE HATEFUL EIGHT EXTENDED VERSION",
-    "category": "Drama",
-    "difficulty": 40,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 30,
-    "uniqueLetterCount": 16,
-    "metadata": {
-      "year": "2019",
-      "rating": 8.4,
-      "votes": 8945
     }
   },
   {
@@ -51084,24 +48600,6 @@
     }
   },
   {
-    "id": "ffee117965412a267b11111ffbd7f7a6",
-    "source": "tv",
-    "type": "title",
-    "answer": "Jab Mila Tu",
-    "normalizedAnswer": "JAB MILA TU",
-    "category": "Romance",
-    "difficulty": 74.4,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 9,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "year": "2024",
-      "rating": 6.7,
-      "votes": 5721
-    }
-  },
-  {
     "id": "9f68db7f058c8b13f8c93ddb0cee1d6f",
     "source": "tv",
     "type": "title",
@@ -51171,24 +48669,6 @@
       "year": "2025",
       "rating": 6.1,
       "votes": 25372
-    }
-  },
-  {
-    "id": "887ed015d7aa23fc4b0e35e4475901e4",
-    "source": "tv",
-    "type": "title",
-    "answer": "Mahsun J",
-    "normalizedAnswer": "MAHSUN J",
-    "category": "Comedy",
-    "difficulty": 79.2,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 7,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2024",
-      "rating": 8.1,
-      "votes": 10953
     }
   },
   {
@@ -51405,24 +48885,6 @@
       "year": "2024",
       "rating": 7.4,
       "votes": 7010
-    }
-  },
-  {
-    "id": "7cad56d75059dcfc3f6e5671ca791834",
-    "source": "tv",
-    "type": "title",
-    "answer": "Maamla Legal Hai",
-    "normalizedAnswer": "MAAMLA LEGAL HAI",
-    "category": "Comedy",
-    "difficulty": 76.4,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 14,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2024",
-      "rating": 8,
-      "votes": 13653
     }
   },
   {
@@ -52182,24 +49644,6 @@
     }
   },
   {
-    "id": "a3bdc6360025b79d229d5df6432abd3f",
-    "source": "tv",
-    "type": "title",
-    "answer": "Very Parivarik",
-    "normalizedAnswer": "VERY PARIVARIK",
-    "category": "Comedy",
-    "difficulty": 72.8,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 13,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "year": "2024",
-      "rating": 8.6,
-      "votes": 17905
-    }
-  },
-  {
     "id": "e8c6839123f142a5cd817e0af8b85d70",
     "source": "tv",
     "type": "title",
@@ -52233,42 +49677,6 @@
       "year": "2024",
       "rating": 7.7,
       "votes": 7155
-    }
-  },
-  {
-    "id": "2e2c86828dca331420a9cb5ee9823793",
-    "source": "tv",
-    "type": "title",
-    "answer": "Khauf",
-    "normalizedAnswer": "KHAUF",
-    "category": "Drama",
-    "difficulty": 88,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "year": "2025",
-      "rating": 7.4,
-      "votes": 6048
-    }
-  },
-  {
-    "id": "8a8f980af164018c4c8ac38e47217a37",
-    "source": "tv",
-    "type": "title",
-    "answer": "Dupahiya",
-    "normalizedAnswer": "DUPAHIYA",
-    "category": "Comedy",
-    "difficulty": 78.8,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2025",
-      "rating": 7.4,
-      "votes": 6449
     }
   },
   {
@@ -52467,24 +49875,6 @@
       "year": "2025",
       "rating": 8.7,
       "votes": 7598
-    }
-  },
-  {
-    "id": "ba8f7993375c578ddfb74f0632ccd1bb",
-    "source": "tv",
-    "type": "title",
-    "answer": "Mahabharat",
-    "normalizedAnswer": "MAHABHARAT",
-    "category": "Drama",
-    "difficulty": 82,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 10,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "2013",
-      "rating": 8.7,
-      "votes": 15289
     }
   },
   {
@@ -52881,24 +50271,6 @@
       "year": "2015",
       "rating": 8.5,
       "votes": 193424
-    }
-  },
-  {
-    "id": "a018270299289b84c1b4f99b4a80c12d",
-    "source": "tv",
-    "type": "title",
-    "answer": "Cumartesi-Pazar Surpriz",
-    "normalizedAnswer": "CUMARTESIPAZAR SURPRIZ",
-    "category": "TV Show",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 21,
-    "uniqueLetterCount": 11,
-    "metadata": {
-      "year": "2016",
-      "rating": 8.2,
-      "votes": 8223
     }
   },
   {
@@ -53313,24 +50685,6 @@
       "year": "2014",
       "rating": 8.1,
       "votes": 59342
-    }
-  },
-  {
-    "id": "9a75bcdceac11e16fa96a9061455ab37",
-    "source": "tv",
-    "type": "title",
-    "answer": "Kabhi Main Kabhi Tum",
-    "normalizedAnswer": "KABHI MAIN KABHI TUM",
-    "category": "Drama",
-    "difficulty": 68,
-    "difficultyTier": "medium",
-    "wordCount": 4,
-    "letterCount": 17,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "2024",
-      "rating": 8.9,
-      "votes": 5270
     }
   },
   {
@@ -53892,24 +51246,6 @@
     }
   },
   {
-    "id": "977629a8b340bc09f1928558b8c3a4e5",
-    "source": "tv",
-    "type": "title",
-    "answer": "Khalbali Records",
-    "normalizedAnswer": "KHALBALI RECORDS",
-    "category": "Music",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 15,
-    "uniqueLetterCount": 12,
-    "metadata": {
-      "year": "2024",
-      "rating": 7,
-      "votes": 7087
-    }
-  },
-  {
     "id": "052cd8995b884cdec52c89dafd041d91",
     "source": "tv",
     "type": "title",
@@ -54414,24 +51750,6 @@
     }
   },
   {
-    "id": "a1596898fc8d3c35ec05db797ab292ec",
-    "source": "tv",
-    "type": "title",
-    "answer": "Khakee: The Bengal Chapter",
-    "normalizedAnswer": "KHAKEE THE BENGAL CHAPTER",
-    "category": "Action",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 22,
-    "uniqueLetterCount": 12,
-    "metadata": {
-      "year": "2025",
-      "rating": 7.5,
-      "votes": 6505
-    }
-  },
-  {
     "id": "de25a6ef0f1ecf9cd0e149f618328cf6",
     "source": "tv",
     "type": "title",
@@ -54483,24 +51801,6 @@
       "year": "2026",
       "rating": 6.8,
       "votes": 9617
-    }
-  },
-  {
-    "id": "12739059005a29052ee8d53d8f3f175b",
-    "source": "tv",
-    "type": "title",
-    "answer": "The Ba***ds of Bollywood",
-    "normalizedAnswer": "THE BADS OF BOLLYWOOD",
-    "category": "Action",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 18,
-    "uniqueLetterCount": 12,
-    "metadata": {
-      "year": "2025",
-      "rating": 7.5,
-      "votes": 41871
     }
   },
   {
@@ -54591,24 +51891,6 @@
       "year": "2026",
       "rating": 7.1,
       "votes": 45700
-    }
-  },
-  {
-    "id": "4cc9dd9711e79b6415c1b7720f7ed79e",
-    "source": "tv",
-    "type": "title",
-    "answer": "Gram Chikitsalay",
-    "normalizedAnswer": "GRAM CHIKITSALAY",
-    "category": "Comedy",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 15,
-    "uniqueLetterCount": 12,
-    "metadata": {
-      "year": "2025",
-      "rating": 7.4,
-      "votes": 7073
     }
   },
   {
@@ -54972,24 +52254,6 @@
     }
   },
   {
-    "id": "c598c0312e2d191814ddd27fc6f84e23",
-    "source": "tv",
-    "type": "title",
-    "answer": "Esref Rüya",
-    "normalizedAnswer": "ESREF RUYA",
-    "category": "Action",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2025",
-      "rating": 6.8,
-      "votes": 8984
-    }
-  },
-  {
     "id": "4d464bc9bc1c32cf870b4329f70c9193",
     "source": "tv",
     "type": "title",
@@ -55005,24 +52269,6 @@
       "year": "2015",
       "rating": 7.8,
       "votes": 11752
-    }
-  },
-  {
-    "id": "afe369bc34a4d1c5b924816494bb1da4",
-    "source": "tv",
-    "type": "title",
-    "answer": "Gassal",
-    "normalizedAnswer": "GASSAL",
-    "category": "Comedy",
-    "difficulty": 91.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 4,
-    "metadata": {
-      "year": "2024",
-      "rating": 8.1,
-      "votes": 8249
     }
   },
   {
@@ -55239,24 +52485,6 @@
       "year": "2025",
       "rating": 7.3,
       "votes": 6412
-    }
-  },
-  {
-    "id": "2be89569a2e551a6f3dcb15e3a646dd4",
-    "source": "tv",
-    "type": "title",
-    "answer": "Taskaree: The Smuggler's Web",
-    "normalizedAnswer": "TASKAREE THE SMUGGLERS WEB",
-    "category": "Crime",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 23,
-    "uniqueLetterCount": 13,
-    "metadata": {
-      "year": "2026",
-      "rating": 7.1,
-      "votes": 7093
     }
   },
   {
@@ -55602,24 +52830,6 @@
     }
   },
   {
-    "id": "9c99e5fdf346c4987f093e94db2aca86",
-    "source": "tv",
-    "type": "title",
-    "answer": "Bhay: The Gaurav Tiwari Mystery",
-    "normalizedAnswer": "BHAY THE GAURAV TIWARI MYSTERY",
-    "category": "Drama",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 26,
-    "uniqueLetterCount": 14,
-    "metadata": {
-      "year": "2025",
-      "rating": 8.2,
-      "votes": 7852
-    }
-  },
-  {
     "id": "f26405ff9fc36f86e78422bffaff4300",
     "source": "tv",
     "type": "title",
@@ -55761,24 +52971,6 @@
       "year": "2026",
       "rating": 7.3,
       "votes": 6989
-    }
-  },
-  {
-    "id": "ecb83f68a9dcaed747a8cdf3f361e02b",
-    "source": "tv",
-    "type": "title",
-    "answer": "Raakh",
-    "normalizedAnswer": "RAAKH",
-    "category": "Crime",
-    "difficulty": 92,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 4,
-    "metadata": {
-      "year": "2026",
-      "rating": 7.6,
-      "votes": 7442
     }
   },
   {
@@ -56088,24 +53280,6 @@
     }
   },
   {
-    "id": "fae21b2f7cfa85ff6cff4871d94fddbb",
-    "source": "tv",
-    "type": "title",
-    "answer": "Bedrag",
-    "normalizedAnswer": "BEDRAG",
-    "category": "Crime",
-    "difficulty": 83.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "2016",
-      "rating": 7.6,
-      "votes": 5256
-    }
-  },
-  {
     "id": "2752b9350571f0488c244e54d0784420",
     "source": "tv",
     "type": "title",
@@ -56286,24 +53460,6 @@
     }
   },
   {
-    "id": "7ad8d55f5f8ce097034a905c9654f7b4",
-    "source": "tv",
-    "type": "title",
-    "answer": "Kardes Payi",
-    "normalizedAnswer": "KARDES PAYI",
-    "category": "Comedy",
-    "difficulty": 70,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 10,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "2014",
-      "rating": 8.6,
-      "votes": 18702
-    }
-  },
-  {
     "id": "6c6af6b2c82ba3fb3791cb2b45e3df3d",
     "source": "tv",
     "type": "title",
@@ -56355,24 +53511,6 @@
       "year": "2014",
       "rating": 8.5,
       "votes": 21404
-    }
-  },
-  {
-    "id": "5e65179c4d4c63761c4c94bc93cb5c0b",
-    "source": "tv",
-    "type": "title",
-    "answer": "Ekaki",
-    "normalizedAnswer": "EKAKI",
-    "category": "Adventure",
-    "difficulty": 92,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 4,
-    "metadata": {
-      "year": "2025",
-      "rating": 8.1,
-      "votes": 37452
     }
   },
   {
@@ -57024,24 +54162,6 @@
     }
   },
   {
-    "id": "2fefcfe3dc4b903236313e1765baba9d",
-    "source": "tv",
-    "type": "title",
-    "answer": "Janaawar: The Beast Within",
-    "normalizedAnswer": "JANAAWAR THE BEAST WITHIN",
-    "category": "Action",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 22,
-    "uniqueLetterCount": 11,
-    "metadata": {
-      "year": "2025",
-      "rating": 6.7,
-      "votes": 5995
-    }
-  },
-  {
     "id": "3269c11004c54d6698bbed5603b33caa",
     "source": "tv",
     "type": "title",
@@ -57330,24 +54450,6 @@
     }
   },
   {
-    "id": "71513ecbf8703a63aa2ef8ff54d01229",
-    "source": "tv",
-    "type": "title",
-    "answer": "Honeymoon Se Hatya",
-    "normalizedAnswer": "HONEYMOON SE HATYA",
-    "category": "Crime",
-    "difficulty": 68,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 16,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "2026",
-      "rating": 7,
-      "votes": 5401
-    }
-  },
-  {
     "id": "edb59748b652ca00783e5adc41f55611",
     "source": "tv",
     "type": "title",
@@ -57363,24 +54465,6 @@
       "year": "2026",
       "rating": 7.8,
       "votes": 5502
-    }
-  },
-  {
-    "id": "5cf78b9a01d31d5b20149f8592850fa4",
-    "source": "tv",
-    "type": "title",
-    "answer": "Shabad: Reet aur Riwaaz",
-    "normalizedAnswer": "SHABAD REET AUR RIWAAZ",
-    "category": "Comedy",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 19,
-    "uniqueLetterCount": 12,
-    "metadata": {
-      "year": "2026",
-      "rating": 6.8,
-      "votes": 5486
     }
   },
   {
@@ -57723,24 +54807,6 @@
       "year": "2014",
       "rating": 8.6,
       "votes": 26704
-    }
-  },
-  {
-    "id": "1cef25871ba16289f768f43b159ce960",
-    "source": "tv",
-    "type": "title",
-    "answer": "Chiraiya",
-    "normalizedAnswer": "CHIRAIYA",
-    "category": "Drama",
-    "difficulty": 82.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "2026",
-      "rating": 7.8,
-      "votes": 6527
     }
   },
   {
@@ -58212,24 +55278,6 @@
     }
   },
   {
-    "id": "59d6a356e41b410d444502b975feab87",
-    "source": "tv",
-    "type": "title",
-    "answer": "Okkupert",
-    "normalizedAnswer": "OKKUPERT",
-    "category": "Drama",
-    "difficulty": 78.8,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2015",
-      "rating": 7.6,
-      "votes": 10358
-    }
-  },
-  {
     "id": "2cb135972997032efde59405ea561cb0",
     "source": "tv",
     "type": "title",
@@ -58443,24 +55491,6 @@
       "year": "2015",
       "rating": 7.9,
       "votes": 30354
-    }
-  },
-  {
-    "id": "a0b269e4406f540bcfa8e616106e72dc",
-    "source": "tv",
-    "type": "title",
-    "answer": "Umbre",
-    "normalizedAnswer": "UMBRE",
-    "category": "Crime",
-    "difficulty": 88,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "year": "2014",
-      "rating": 8.7,
-      "votes": 12602
     }
   },
   {
@@ -59397,24 +56427,6 @@
       "year": "2016",
       "rating": 8.6,
       "votes": 1720055
-    }
-  },
-  {
-    "id": "fa6dad41c34c09008ee1d763c80cc3dd",
-    "source": "tv",
-    "type": "title",
-    "answer": "Mutlu Ol Yeter",
-    "normalizedAnswer": "MUTLU OL YETER",
-    "category": "Comedy",
-    "difficulty": 73.2,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 12,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "year": "2015",
-      "rating": 8.3,
-      "votes": 5796
     }
   },
   {
@@ -61200,24 +58212,6 @@
     }
   },
   {
-    "id": "354f26da508f5248588994920915fe75",
-    "source": "tv",
-    "type": "title",
-    "answer": "Bang Baaja Baaraat",
-    "normalizedAnswer": "BANG BAAJA BAARAAT",
-    "category": "Comedy",
-    "difficulty": 76,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 16,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2015",
-      "rating": 7.9,
-      "votes": 6798
-    }
-  },
-  {
     "id": "b4e61e7195dc245821574f069dadfd1d",
     "source": "tv",
     "type": "title",
@@ -61269,24 +58263,6 @@
       "year": "2014",
       "rating": 8.3,
       "votes": 20124
-    }
-  },
-  {
-    "id": "073baf90b8116454fc08343f8f3ee7b3",
-    "source": "tv",
-    "type": "title",
-    "answer": "Bhabi Ji Ghar Par Hai",
-    "normalizedAnswer": "BHABI JI GHAR PAR HAI",
-    "category": "Comedy",
-    "difficulty": 72,
-    "difficultyTier": "medium",
-    "wordCount": 5,
-    "letterCount": 17,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "year": "2015",
-      "rating": 8.6,
-      "votes": 5026
     }
   },
   {
@@ -61485,24 +58461,6 @@
       "year": "2016",
       "rating": 7.6,
       "votes": 7100
-    }
-  },
-  {
-    "id": "28a5f0d1ac0a91687af9f3c19dee7934",
-    "source": "tv",
-    "type": "title",
-    "answer": "Springfloden",
-    "normalizedAnswer": "SPRINGFLODEN",
-    "category": "Crime",
-    "difficulty": 61.2,
-    "difficultyTier": "easy",
-    "wordCount": 1,
-    "letterCount": 12,
-    "uniqueLetterCount": 11,
-    "metadata": {
-      "year": "2016",
-      "rating": 7.5,
-      "votes": 5194
     }
   },
   {
@@ -61755,24 +58713,6 @@
       "year": "2016",
       "rating": 8.4,
       "votes": 12373
-    }
-  },
-  {
-    "id": "e29446b8dc8b4e0002b6cc8b0308f590",
-    "source": "tv",
-    "type": "title",
-    "answer": "Shahrzad",
-    "normalizedAnswer": "SHAHRZAD",
-    "category": "Drama",
-    "difficulty": 82.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "2015",
-      "rating": 8,
-      "votes": 13312
     }
   },
   {
@@ -62079,24 +59019,6 @@
       "year": "2015",
       "rating": 6,
       "votes": 5108
-    }
-  },
-  {
-    "id": "86956e0294af443b18b4fae5e816ba77",
-    "source": "tv",
-    "type": "title",
-    "answer": "I Love Dick",
-    "normalizedAnswer": "I LOVE DICK",
-    "category": "Comedy",
-    "difficulty": 74.4,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 9,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "year": "2016",
-      "rating": 6.4,
-      "votes": 5653
     }
   },
   {
@@ -62658,24 +59580,6 @@
     }
   },
   {
-    "id": "b30dbe823836b176ff5831ac87cf3400",
-    "source": "tv",
-    "type": "title",
-    "answer": "Çarkifelek",
-    "normalizedAnswer": "CARKIFELEK",
-    "category": "TV Show",
-    "difficulty": 74,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 10,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "year": "1975",
-      "rating": 6.8,
-      "votes": 5928
-    }
-  },
-  {
     "id": "e470c289e05ca42ac368f41674191180",
     "source": "tv",
     "type": "title",
@@ -63105,24 +60009,6 @@
       "year": "2017",
       "rating": 8,
       "votes": 110025
-    }
-  },
-  {
-    "id": "34877dfbaa8829137ae3dd6fcdc8e189",
-    "source": "tv",
-    "type": "title",
-    "answer": "Kuch Rang Pyar Ke Aise Bhi",
-    "normalizedAnswer": "KUCH RANG PYAR KE AISE BHI",
-    "category": "Drama",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 21,
-    "uniqueLetterCount": 14,
-    "metadata": {
-      "year": "2016",
-      "rating": 8.1,
-      "votes": 6073
     }
   },
   {
@@ -63666,24 +60552,6 @@
     }
   },
   {
-    "id": "ff1b804d8377aae8f7ad0de1a667354b",
-    "source": "tv",
-    "type": "title",
-    "answer": "Tash Ma Tash",
-    "normalizedAnswer": "TASH MA TASH",
-    "category": "Comedy",
-    "difficulty": 86,
-    "difficultyTier": "hard",
-    "wordCount": 3,
-    "letterCount": 10,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "year": "1993",
-      "rating": 9,
-      "votes": 13217
-    }
-  },
-  {
     "id": "18fa5cc2c9724af1fa29e3e058b6e05b",
     "source": "tv",
     "type": "title",
@@ -63789,24 +60657,6 @@
       "year": "2018",
       "rating": 7.8,
       "votes": 10607
-    }
-  },
-  {
-    "id": "831546a28a5df9394f8fa72b253aaa38",
-    "source": "tv",
-    "type": "title",
-    "answer": "Vikingane",
-    "normalizedAnswer": "VIKINGANE",
-    "category": "Comedy",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 9,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2016",
-      "rating": 7.7,
-      "votes": 24061
     }
   },
   {
@@ -64818,24 +61668,6 @@
     }
   },
   {
-    "id": "8c14601e91166d7c12ce2928e472921a",
-    "source": "tv",
-    "type": "title",
-    "answer": "Inside Look: The People v. O.J. Simpson - American Crime Story",
-    "normalizedAnswer": "INSIDE LOOK THE PEOPLE V OJ SIMPSON AMERICAN CRIME STORY",
-    "category": "Documentary",
-    "difficulty": 32,
-    "difficultyTier": "easy",
-    "wordCount": 10,
-    "letterCount": 47,
-    "uniqueLetterCount": 18,
-    "metadata": {
-      "year": "2016",
-      "rating": 8.3,
-      "votes": 27889
-    }
-  },
-  {
     "id": "a8cbdb4ed09e92a49a2807a04f4bbe98",
     "source": "tv",
     "type": "title",
@@ -64980,24 +61812,6 @@
     }
   },
   {
-    "id": "8d19d3e6ef04e03536be09af05e48191",
-    "source": "tv",
-    "type": "title",
-    "answer": "The End of the F***ing World",
-    "normalizedAnswer": "THE END OF THE FING WORLD",
-    "category": "Adventure",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 20,
-    "uniqueLetterCount": 12,
-    "metadata": {
-      "year": "2017",
-      "rating": 8,
-      "votes": 247992
-    }
-  },
-  {
     "id": "96b99f5689579c774f38162091b5bc0b",
     "source": "tv",
     "type": "title",
@@ -65049,24 +61863,6 @@
       "year": "2018",
       "rating": 7.6,
       "votes": 18230
-    }
-  },
-  {
-    "id": "41e27ffa5707d7349cacb322f421dd79",
-    "source": "tv",
-    "type": "title",
-    "answer": "SMILF",
-    "normalizedAnswer": "SMILF",
-    "category": "Comedy",
-    "difficulty": 88,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "year": "2017",
-      "rating": 6.8,
-      "votes": 5749
     }
   },
   {
@@ -65610,24 +62406,6 @@
     }
   },
   {
-    "id": "a4eb2de750e4ae8d3ae2750bf378032c",
-    "source": "tv",
-    "type": "title",
-    "answer": "La Mante",
-    "normalizedAnswer": "LA MANTE",
-    "category": "Crime",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 7,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "2017",
-      "rating": 7.4,
-      "votes": 14967
-    }
-  },
-  {
     "id": "14464359fce09d1cf0cfe0cda2bd87d1",
     "source": "tv",
     "type": "title",
@@ -65661,24 +62439,6 @@
       "year": "2017",
       "rating": 8,
       "votes": 131266
-    }
-  },
-  {
-    "id": "3ff8b78d0f992cdc5bd7cca610223049",
-    "source": "tv",
-    "type": "title",
-    "answer": "Mirzapur",
-    "normalizedAnswer": "MIRZAPUR",
-    "category": "Action",
-    "difficulty": 78.8,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2018",
-      "rating": 8.4,
-      "votes": 94132
     }
   },
   {
@@ -66114,24 +62874,6 @@
     }
   },
   {
-    "id": "f05f3ab8d063f5ec62f59cefc64847bd",
-    "source": "tv",
-    "type": "title",
-    "answer": "Dorehami",
-    "normalizedAnswer": "DOREHAMI",
-    "category": "Comedy",
-    "difficulty": 74.8,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "year": "2016",
-      "rating": 6.7,
-      "votes": 6742
-    }
-  },
-  {
     "id": "31ce48d26c5a87c72d1fa0619783f882",
     "source": "tv",
     "type": "title",
@@ -66327,24 +63069,6 @@
       "year": "2017",
       "rating": 7.7,
       "votes": 9931
-    }
-  },
-  {
-    "id": "59c3e3cca280bc0e2d7c91cc24e71c34",
-    "source": "tv",
-    "type": "title",
-    "answer": "Fi",
-    "normalizedAnswer": "FI",
-    "category": "Drama",
-    "difficulty": 101.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 2,
-    "uniqueLetterCount": 2,
-    "metadata": {
-      "year": "2017",
-      "rating": 7.8,
-      "votes": 23195
     }
   },
   {
@@ -67428,24 +64152,6 @@
     }
   },
   {
-    "id": "11d2864d4d40d405897650d6e4d7bfe3",
-    "source": "tv",
-    "type": "title",
-    "answer": "Dev DD",
-    "normalizedAnswer": "DEV DD",
-    "category": "Drama",
-    "difficulty": 96,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 5,
-    "uniqueLetterCount": 3,
-    "metadata": {
-      "year": "2017",
-      "rating": 6.4,
-      "votes": 7327
-    }
-  },
-  {
     "id": "8b6de4082af3f26fd15b877747c9e89a",
     "source": "tv",
     "type": "title",
@@ -68217,24 +64923,6 @@
       "year": "2017",
       "rating": 8.2,
       "votes": 50522
-    }
-  },
-  {
-    "id": "7e0f88c6435ab72034513269633cf5f9",
-    "source": "tv",
-    "type": "title",
-    "answer": "Koombiyo",
-    "normalizedAnswer": "KOOMBIYO",
-    "category": "Crime",
-    "difficulty": 82.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "2017",
-      "rating": 9.1,
-      "votes": 18705
     }
   },
   {
@@ -70146,42 +66834,6 @@
     }
   },
   {
-    "id": "c4c54d0e683e3afc1bd7af4778a3bfe8",
-    "source": "tv",
-    "type": "title",
-    "answer": "Kehne Ko Humsafar Hain",
-    "normalizedAnswer": "KEHNE KO HUMSAFAR HAIN",
-    "category": "Drama",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 19,
-    "uniqueLetterCount": 12,
-    "metadata": {
-      "year": "2018",
-      "rating": 6.8,
-      "votes": 5385
-    }
-  },
-  {
-    "id": "6015225d7bcf82985877d08771e704f0",
-    "source": "tv",
-    "type": "title",
-    "answer": "Inside Look: The Assassination of Gianni Versace - American Crime Story",
-    "normalizedAnswer": "INSIDE LOOK THE ASSASSINATION OF GIANNI VERSACE AMERICAN CRIME STORY",
-    "category": "Documentary",
-    "difficulty": 32,
-    "difficultyTier": "easy",
-    "wordCount": 10,
-    "letterCount": 59,
-    "uniqueLetterCount": 18,
-    "metadata": {
-      "year": "2017",
-      "rating": 7.7,
-      "votes": 10894
-    }
-  },
-  {
     "id": "e1e9bf3a3ff24d2cf48092ab88bcc21d",
     "source": "tv",
     "type": "title",
@@ -70884,24 +67536,6 @@
     }
   },
   {
-    "id": "20bf4e314996a745d1290f8d6af02b82",
-    "source": "tv",
-    "type": "title",
-    "answer": "Chacha Vidhayak Hain Humare",
-    "normalizedAnswer": "CHACHA VIDHAYAK HAIN HUMARE",
-    "category": "Comedy",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 24,
-    "uniqueLetterCount": 13,
-    "metadata": {
-      "year": "2018",
-      "rating": 7.5,
-      "votes": 6582
-    }
-  },
-  {
     "id": "f97543729a97ef0322c4179c0ddf367a",
     "source": "tv",
     "type": "title",
@@ -71385,24 +68019,6 @@
       "year": "2019",
       "rating": 7.1,
       "votes": 7782
-    }
-  },
-  {
-    "id": "5b06869e8191073564fb37559f612ff2",
-    "source": "tv",
-    "type": "title",
-    "answer": "Apharan",
-    "normalizedAnswer": "APHARAN",
-    "category": "Crime",
-    "difficulty": 87.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "year": "2018",
-      "rating": 8.2,
-      "votes": 20664
     }
   },
   {
@@ -71997,24 +68613,6 @@
       "year": "2019",
       "rating": 7.6,
       "votes": 7310
-    }
-  },
-  {
-    "id": "53440230b4c87ef34350f6f981664a5b",
-    "source": "tv",
-    "type": "title",
-    "answer": "Yeh Meri Family",
-    "normalizedAnswer": "YEH MERI FAMILY",
-    "category": "Comedy",
-    "difficulty": 68.8,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 13,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "2018",
-      "rating": 8.9,
-      "votes": 27808
     }
   },
   {
@@ -72846,24 +69444,6 @@
     }
   },
   {
-    "id": "90af42dab27c49b03cc28d92a547d0b1",
-    "source": "tv",
-    "type": "title",
-    "answer": "Mocro Maffia",
-    "normalizedAnswer": "MOCRO MAFFIA",
-    "category": "Crime",
-    "difficulty": 77.6,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2018",
-      "rating": 8.1,
-      "votes": 5405
-    }
-  },
-  {
     "id": "28aa27875ef7c1b068547b7a01410b25",
     "source": "tv",
     "type": "title",
@@ -73242,24 +69822,6 @@
     }
   },
   {
-    "id": "9b6ff0f1684979fff368043dea9d7a67",
-    "source": "tv",
-    "type": "title",
-    "answer": "BB Ki Vines",
-    "normalizedAnswer": "BB KI VINES",
-    "category": "Comedy",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 9,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2015",
-      "rating": 9.2,
-      "votes": 11984
-    }
-  },
-  {
     "id": "3712265d44bd3e8b728ed2f88a8c534a",
     "source": "tv",
     "type": "title",
@@ -73581,24 +70143,6 @@
       "year": "2018",
       "rating": 7.1,
       "votes": 13867
-    }
-  },
-  {
-    "id": "d3e4ec7fcbda71234682595a2301d41f",
-    "source": "tv",
-    "type": "title",
-    "answer": "Bu Gece",
-    "normalizedAnswer": "BU GECE",
-    "category": "Comedy",
-    "difficulty": 87.6,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 6,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "year": "2018",
-      "rating": 7.5,
-      "votes": 6929
     }
   },
   {
@@ -74538,24 +71082,6 @@
     }
   },
   {
-    "id": "a370638d1cb43477b5c14c6189b9378e",
-    "source": "tv",
-    "type": "title",
-    "answer": "Kevin Can F**k Himself",
-    "normalizedAnswer": "KEVIN CAN FK HIMSELF",
-    "category": "Comedy",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 17,
-    "uniqueLetterCount": 12,
-    "metadata": {
-      "year": "2021",
-      "rating": 7.2,
-      "votes": 16915
-    }
-  },
-  {
     "id": "c1eb3f09229185efb129495eee8d3224",
     "source": "tv",
     "type": "title",
@@ -74844,24 +71370,6 @@
     }
   },
   {
-    "id": "c85bbe302f70cae2e8d0d1665e02d6a2",
-    "source": "tv",
-    "type": "title",
-    "answer": "Bhaukaal",
-    "normalizedAnswer": "BHAUKAAL",
-    "category": "Action",
-    "difficulty": 82.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "2020",
-      "rating": 7.7,
-      "votes": 15842
-    }
-  },
-  {
     "id": "95e8e84c9439f2f6a076875cc433406a",
     "source": "tv",
     "type": "title",
@@ -74913,24 +71421,6 @@
       "year": "2019",
       "rating": 7,
       "votes": 5387
-    }
-  },
-  {
-    "id": "2b5aa707bc3fa344e9da7b3498e34a65",
-    "source": "tv",
-    "type": "title",
-    "answer": "Rangbaaz",
-    "normalizedAnswer": "RANGBAAZ",
-    "category": "Action",
-    "difficulty": 82.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "2018",
-      "rating": 7.7,
-      "votes": 6394
     }
   },
   {
@@ -75111,24 +71601,6 @@
       "year": "2019",
       "rating": 7.6,
       "votes": 6245
-    }
-  },
-  {
-    "id": "f5aa5f91d69b3e53c8edd8a714a9bfbd",
-    "source": "tv",
-    "type": "title",
-    "answer": "Halka",
-    "normalizedAnswer": "HALKA",
-    "category": "Action",
-    "difficulty": 92,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 4,
-    "metadata": {
-      "year": "2019",
-      "rating": 8.7,
-      "votes": 27853
     }
   },
   {
@@ -75438,24 +71910,6 @@
     }
   },
   {
-    "id": "9794565a6c200861e7fa95d09e6c2001",
-    "source": "tv",
-    "type": "title",
-    "answer": "Paatal Lok",
-    "normalizedAnswer": "PAATAL LOK",
-    "category": "Action",
-    "difficulty": 82.4,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "year": "2020",
-      "rating": 8.2,
-      "votes": 75846
-    }
-  },
-  {
     "id": "5901e8c495a4335d8c856da76a2197c4",
     "source": "tv",
     "type": "title",
@@ -75633,24 +72087,6 @@
       "year": "2019",
       "rating": 6.3,
       "votes": 5859
-    }
-  },
-  {
-    "id": "cedaa3934ba230e6d6b4219aa61ab6a6",
-    "source": "tv",
-    "type": "title",
-    "answer": "Abhay",
-    "normalizedAnswer": "ABHAY",
-    "category": "Crime",
-    "difficulty": 92,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 4,
-    "metadata": {
-      "year": "2019",
-      "rating": 7.9,
-      "votes": 14037
     }
   },
   {
@@ -75852,24 +72288,6 @@
     }
   },
   {
-    "id": "6bf40978b302660647bd8da04acb58f9",
-    "source": "tv",
-    "type": "title",
-    "answer": "Bandish Bandits",
-    "normalizedAnswer": "BANDISH BANDITS",
-    "category": "Drama",
-    "difficulty": 72.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 14,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "year": "2020",
-      "rating": 8.6,
-      "votes": 20630
-    }
-  },
-  {
     "id": "22a48bf54c5b2b5ca5c4162f5a534731",
     "source": "tv",
     "type": "title",
@@ -76011,24 +72429,6 @@
       "year": "2024",
       "rating": 7.7,
       "votes": 49917
-    }
-  },
-  {
-    "id": "3f859bd7421c4d4b6a39b6d9b55cb43a",
-    "source": "tv",
-    "type": "title",
-    "answer": "Çilgin Dersane at the University",
-    "normalizedAnswer": "CILGIN DERSANE AT THE UNIVERSITY",
-    "category": "Comedy",
-    "difficulty": 44,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 28,
-    "uniqueLetterCount": 15,
-    "metadata": {
-      "year": "2014",
-      "rating": 7.8,
-      "votes": 20172
     }
   },
   {

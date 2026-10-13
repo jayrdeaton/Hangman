@@ -780,26 +780,6 @@
     }
   },
   {
-    "id": "b1747f695318cf985c0022b79cdadece",
-    "source": "theme",
-    "type": "title",
-    "answer": "Djinn",
-    "normalizedAnswer": "DJINN",
-    "category": "Mythology Figure",
-    "difficulty": 92,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "mythology"
-    ],
-    "metadata": {
-      "source": "fallback"
-    }
-  },
-  {
     "id": "2fe0d24e7d4681a48f024abbd02cf665",
     "source": "theme",
     "type": "title",

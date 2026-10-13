@@ -74,6 +74,24 @@
     ]
   },
   {
+    "key": "geographyWorldCapitals",
+    "file": "geographyWorldCapitals.json",
+    "label": "World Capitals",
+    "group": "Geography",
+    "count": 199,
+    "difficultyTiers": [
+      "easy",
+      "hard",
+      "medium"
+    ],
+    "sources": [
+      "theme"
+    ],
+    "categories": [
+      "World Capital"
+    ]
+  },
+  {
     "key": "geographyWorldWonders",
     "file": "geographyWorldWonders.json",
     "label": "World Wonders",
@@ -96,7 +114,7 @@
     "file": "movies.json",
     "label": "Movies",
     "group": "Media",
-    "count": 8934,
+    "count": 8389,
     "difficultyTiers": [
       "easy",
       "hard",
@@ -132,7 +150,7 @@
     "file": "phrases.json",
     "label": "Phrases",
     "group": "Language",
-    "count": 426,
+    "count": 138,
     "difficultyTiers": [
       "easy",
       "hard",
@@ -155,7 +173,7 @@
     "file": "songs.json",
     "label": "Songs",
     "group": "Media",
-    "count": 1848,
+    "count": 1806,
     "difficultyTiers": [
       "easy",
       "hard",
@@ -166,6 +184,24 @@
     ],
     "categories": [
       "Song"
+    ]
+  },
+  {
+    "key": "sportsAthletes",
+    "file": "sportsAthletes.json",
+    "label": "Famous Athletes",
+    "group": "Sports",
+    "count": 107,
+    "difficultyTiers": [
+      "easy",
+      "hard",
+      "medium"
+    ],
+    "sources": [
+      "theme"
+    ],
+    "categories": [
+      "Athlete"
     ]
   },
   {
@@ -276,11 +312,29 @@
     ]
   },
   {
+    "key": "sportsOlympicSports",
+    "file": "sportsOlympicSports.json",
+    "label": "Olympic Sports",
+    "group": "Sports",
+    "count": 87,
+    "difficultyTiers": [
+      "easy",
+      "hard",
+      "medium"
+    ],
+    "sources": [
+      "theme"
+    ],
+    "categories": [
+      "Olympic Sport"
+    ]
+  },
+  {
     "key": "themeActors",
     "file": "themeActors.json",
     "label": "Classic Actors",
     "group": "Media",
-    "count": 50,
+    "count": 49,
     "difficultyTiers": [
       "easy",
       "hard",
@@ -298,7 +352,7 @@
     "file": "themeAirplanes.json",
     "label": "Airplanes",
     "group": "Transportation",
-    "count": 39,
+    "count": 34,
     "difficultyTiers": [
       "easy",
       "hard",
@@ -316,7 +370,7 @@
     "file": "themeAnimeTitles.json",
     "label": "Anime",
     "group": "Media",
-    "count": 106,
+    "count": 105,
     "difficultyTiers": [
       "easy",
       "hard",
@@ -327,6 +381,24 @@
     ],
     "categories": [
       "Anime"
+    ]
+  },
+  {
+    "key": "themeArtists",
+    "file": "themeArtists.json",
+    "label": "Famous Artists",
+    "group": "Media",
+    "count": 66,
+    "difficultyTiers": [
+      "easy",
+      "hard",
+      "medium"
+    ],
+    "sources": [
+      "theme"
+    ],
+    "categories": [
+      "Artist"
     ]
   },
   {
@@ -460,7 +532,7 @@
     "file": "themeBoardGamesToys.json",
     "label": "Board Games & Toys",
     "group": "Games",
-    "count": 502,
+    "count": 254,
     "difficultyTiers": [
       "easy",
       "hard",
@@ -478,7 +550,7 @@
     "file": "themeBrandsProducts.json",
     "label": "Brands & Products",
     "group": "Business",
-    "count": 72,
+    "count": 71,
     "difficultyTiers": [
       "easy",
       "hard",
@@ -494,9 +566,9 @@
   {
     "key": "themeCartoons",
     "file": "themeCartoons.json",
-    "label": "Cartoons",
+    "label": "Cartoon Characters",
     "group": "Media",
-    "count": 68,
+    "count": 101,
     "difficultyTiers": [
       "easy",
       "hard",
@@ -514,7 +586,7 @@
     "file": "themeCatBreeds.json",
     "label": "Cat Breeds",
     "group": "Nature",
-    "count": 99,
+    "count": 71,
     "difficultyTiers": [
       "easy",
       "hard",
@@ -564,6 +636,24 @@
     ]
   },
   {
+    "key": "themeDinosaurs",
+    "file": "themeDinosaurs.json",
+    "label": "Dinosaurs",
+    "group": "Nature",
+    "count": 74,
+    "difficultyTiers": [
+      "easy",
+      "hard",
+      "medium"
+    ],
+    "sources": [
+      "theme"
+    ],
+    "categories": [
+      "Dinosaur"
+    ]
+  },
+  {
     "key": "themeDogBreeds",
     "file": "themeDogBreeds.json",
     "label": "Dog Breeds",
@@ -586,7 +676,7 @@
     "file": "themeFauna.json",
     "label": "Fauna",
     "group": "Nature",
-    "count": 181,
+    "count": 176,
     "difficultyTiers": [
       "hard",
       "medium"
@@ -603,7 +693,7 @@
     "file": "themeFlora.json",
     "label": "Flora",
     "group": "Nature",
-    "count": 918,
+    "count": 267,
     "difficultyTiers": [
       "easy",
       "hard",
@@ -621,7 +711,7 @@
     "file": "themeFoodAndDrink.json",
     "label": "Food & Drink",
     "group": "Other",
-    "count": 459,
+    "count": 355,
     "difficultyTiers": [
       "easy",
       "hard",
@@ -657,7 +747,7 @@
     "file": "themeHistory.json",
     "label": "Empires",
     "group": "History",
-    "count": 173,
+    "count": 127,
     "difficultyTiers": [
       "easy",
       "hard",
@@ -675,7 +765,7 @@
     "file": "themeHolidaysCelebrations.json",
     "label": "Holidays & Celebrations",
     "group": "Other",
-    "count": 32,
+    "count": 51,
     "difficultyTiers": [
       "easy",
       "hard",
@@ -689,11 +779,29 @@
     ]
   },
   {
+    "key": "themeIdioms",
+    "file": "themeIdioms.json",
+    "label": "Idioms & Proverbs",
+    "group": "Language",
+    "count": 190,
+    "difficultyTiers": [
+      "easy",
+      "hard",
+      "medium"
+    ],
+    "sources": [
+      "theme"
+    ],
+    "categories": [
+      "Idiom or Proverb"
+    ]
+  },
+  {
     "key": "themeLiterature",
     "file": "themeLiterature.json",
     "label": "Literature",
     "group": "Media",
-    "count": 299,
+    "count": 241,
     "difficultyTiers": [
       "easy",
       "hard",
@@ -725,11 +833,29 @@
     ]
   },
   {
+    "key": "themeMusicalInstruments",
+    "file": "themeMusicalInstruments.json",
+    "label": "Musical Instruments",
+    "group": "Media",
+    "count": 92,
+    "difficultyTiers": [
+      "easy",
+      "hard",
+      "medium"
+    ],
+    "sources": [
+      "theme"
+    ],
+    "categories": [
+      "Musical Instrument"
+    ]
+  },
+  {
     "key": "themeMythology",
     "file": "themeMythology.json",
     "label": "Legendary Creatures",
     "group": "Mythology",
-    "count": 62,
+    "count": 61,
     "difficultyTiers": [
       "easy",
       "hard",
@@ -740,6 +866,24 @@
     ],
     "categories": [
       "Mythology Figure"
+    ]
+  },
+  {
+    "key": "themeOccupations",
+    "file": "themeOccupations.json",
+    "label": "Occupations",
+    "group": "Other",
+    "count": 122,
+    "difficultyTiers": [
+      "easy",
+      "hard",
+      "medium"
+    ],
+    "sources": [
+      "theme"
+    ],
+    "categories": [
+      "Occupation"
     ]
   },
   {
@@ -782,7 +926,7 @@
     "file": "themeSpace.json",
     "label": "Space",
     "group": "Science",
-    "count": 71,
+    "count": 69,
     "difficultyTiers": [
       "easy",
       "hard",
@@ -803,7 +947,7 @@
     "file": "themeTechnology.json",
     "label": "Gadgets & Consoles",
     "group": "Science",
-    "count": 107,
+    "count": 55,
     "difficultyTiers": [
       "easy",
       "hard",
@@ -821,7 +965,7 @@
     "file": "themeTravel.json",
     "label": "Travel",
     "group": "Transportation",
-    "count": 50,
+    "count": 47,
     "difficultyTiers": [
       "easy",
       "medium"
@@ -838,7 +982,7 @@
     "file": "themeUSPoliticians.json",
     "label": "US Politicians",
     "group": "History",
-    "count": 99,
+    "count": 98,
     "difficultyTiers": [
       "easy",
       "hard",
@@ -857,7 +1001,7 @@
     "file": "themeVehicles.json",
     "label": "Vehicles",
     "group": "Transportation",
-    "count": 54,
+    "count": 49,
     "difficultyTiers": [
       "easy",
       "hard",
@@ -875,7 +1019,7 @@
     "file": "themeVideoGames.json",
     "label": "Video Games",
     "group": "Games",
-    "count": 733,
+    "count": 653,
     "difficultyTiers": [
       "easy",
       "hard",
@@ -893,7 +1037,7 @@
     "file": "themeWordplay.json",
     "label": "Wordplay",
     "group": "Language",
-    "count": 26,
+    "count": 24,
     "difficultyTiers": [
       "easy",
       "hard",
@@ -911,7 +1055,7 @@
     "file": "tvShows.json",
     "label": "TV Shows",
     "group": "Media",
-    "count": 4228,
+    "count": 4028,
     "difficultyTiers": [
       "easy",
       "hard",

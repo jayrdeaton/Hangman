@@ -1,25 +1,5 @@
 [
   {
-    "id": "49c5958031e1e23fb874bc0a9e105a66",
-    "source": "theme",
-    "type": "title",
-    "answer": "Ants climbing a tree",
-    "normalizedAnswer": "ANTS CLIMBING A TREE",
-    "category": "Food and Drink",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 17,
-    "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
     "id": "45e73c4a7bafae77f9aec65886ee87f7",
     "source": "theme",
     "type": "title",
@@ -31,46 +11,6 @@
     "wordCount": 4,
     "letterCount": 10,
     "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "c6a5c06c4438d88229d9da6d90949138",
-    "source": "theme",
-    "type": "title",
-    "answer": "Aushak",
-    "normalizedAnswer": "AUSHAK",
-    "category": "Food and Drink",
-    "difficulty": 87.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "5690962d3789e3785f610e01cb0dd36e",
-    "source": "theme",
-    "type": "title",
-    "answer": "Aranygaluska",
-    "normalizedAnswer": "ARANYGALUSKA",
-    "category": "Food and Drink",
-    "difficulty": 69.2,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 12,
-    "uniqueLetterCount": 9,
     "tags": [
       "theme",
       "food"
@@ -131,26 +71,6 @@
     "wordCount": 2,
     "letterCount": 13,
     "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "2ea76a521bd1a132969143d56273b508",
-    "source": "theme",
-    "type": "title",
-    "answer": "Bobotie",
-    "normalizedAnswer": "BOBOTIE",
-    "category": "Food and Drink",
-    "difficulty": 87.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 5,
     "tags": [
       "theme",
       "food"
@@ -240,26 +160,6 @@
     }
   },
   {
-    "id": "21ede362dd950c8fcdfeb5bbea61d09c",
-    "source": "theme",
-    "type": "title",
-    "answer": "Crispy pata",
-    "normalizedAnswer": "CRISPY PATA",
-    "category": "Food and Drink",
-    "difficulty": 74,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 10,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
     "id": "1560f3d62ee8ae0233a6f84b695efe79",
     "source": "theme",
     "type": "title",
@@ -311,26 +211,6 @@
     "wordCount": 1,
     "letterCount": 7,
     "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "e21db71ecf08e8baf6f329a3f8cde307",
-    "source": "theme",
-    "type": "title",
-    "answer": "Beverage",
-    "normalizedAnswer": "BEVERAGE",
-    "category": "Food and Drink",
-    "difficulty": 82.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 6,
     "tags": [
       "theme",
       "food"
@@ -900,46 +780,6 @@
     }
   },
   {
-    "id": "6276d98914116a416313aba4e02dcfc8",
-    "source": "theme",
-    "type": "title",
-    "answer": "Hallongrotta",
-    "normalizedAnswer": "HALLONGROTTA",
-    "category": "Food and Drink",
-    "difficulty": 73.2,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 12,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "a7fdc9dcdfee880d8e2b1d99100049aa",
-    "source": "theme",
-    "type": "title",
-    "answer": "Afghan biscuits",
-    "normalizedAnswer": "AFGHAN BISCUITS",
-    "category": "Food and Drink",
-    "difficulty": 60.4,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 14,
-    "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
     "id": "ea61d5b353c5d8a362aa5d8f9ebfda46",
     "source": "theme",
     "type": "title",
@@ -1060,126 +900,6 @@
     }
   },
   {
-    "id": "78924b6b4ad85730158554f539efcaf2",
-    "source": "theme",
-    "type": "title",
-    "answer": "Aachener Printen",
-    "normalizedAnswer": "AACHENER PRINTEN",
-    "category": "Food and Drink",
-    "difficulty": 68,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 15,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "8b3fd6bfed90e84c8cf4668d7ddca507",
-    "source": "theme",
-    "type": "title",
-    "answer": "Cornish fairing",
-    "normalizedAnswer": "CORNISH FAIRING",
-    "category": "Food and Drink",
-    "difficulty": 64.4,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 14,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "f9d579161bc22e420b8bbc4ac782a472",
-    "source": "theme",
-    "type": "title",
-    "answer": "Speculaas",
-    "normalizedAnswer": "SPECULAAS",
-    "category": "Food and Drink",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 9,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "6efbb6821a58067b63c344129d7b19fa",
-    "source": "theme",
-    "type": "title",
-    "answer": "Springerle",
-    "normalizedAnswer": "SPRINGERLE",
-    "category": "Food and Drink",
-    "difficulty": 74,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 10,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "07b922aab660355f1039a85936fa775a",
-    "source": "theme",
-    "type": "title",
-    "answer": "Kruidnoten",
-    "normalizedAnswer": "KRUIDNOTEN",
-    "category": "Food and Drink",
-    "difficulty": 70,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 10,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "d5897a51c1ecb6e123b860c9b1f2c8c3",
-    "source": "theme",
-    "type": "title",
-    "answer": "Acıbadem kurabiyesi",
-    "normalizedAnswer": "ACIBADEM KURABIYESI",
-    "category": "Food and Drink",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 18,
-    "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
     "id": "938de13135dc2086181331cd400e8b17",
     "source": "theme",
     "type": "title",
@@ -1220,26 +940,6 @@
     }
   },
   {
-    "id": "c43435cfd766779f5a68fb86b7b2bd81",
-    "source": "theme",
-    "type": "title",
-    "answer": "Abernethy",
-    "normalizedAnswer": "ABERNETHY",
-    "category": "Food and Drink",
-    "difficulty": 74.4,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 9,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
     "id": "1795b9d59207ec2f2feb512fc219c53b",
     "source": "theme",
     "type": "title",
@@ -1260,46 +960,6 @@
     }
   },
   {
-    "id": "e1cde27d3d4f10749f8f135eb0bf89c2",
-    "source": "theme",
-    "type": "title",
-    "answer": "Anadama bread",
-    "normalizedAnswer": "ANADAMA BREAD",
-    "category": "Food and Drink",
-    "difficulty": 77.2,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 12,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "bac1f39e2ead5086be8b1bd97a460952",
-    "source": "theme",
-    "type": "title",
-    "answer": "Anpan",
-    "normalizedAnswer": "ANPAN",
-    "category": "Food and Drink",
-    "difficulty": 96,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 3,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
     "id": "a2b5a619144f59770a1fe9431353f7a5",
     "source": "theme",
     "type": "title",
@@ -1311,26 +971,6 @@
     "wordCount": 1,
     "letterCount": 5,
     "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "48fb0e70bc0709c58c3e782da7eacc2f",
-    "source": "theme",
-    "type": "title",
-    "answer": "Baghrir",
-    "normalizedAnswer": "BAGHRIR",
-    "category": "Food and Drink",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 6,
     "tags": [
       "theme",
       "food"
@@ -1500,26 +1140,6 @@
     }
   },
   {
-    "id": "46446e53d0903c331f5633bf6f887bb4",
-    "source": "theme",
-    "type": "title",
-    "answer": "Fugazza",
-    "normalizedAnswer": "FUGAZZA",
-    "category": "Food and Drink",
-    "difficulty": 87.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
     "id": "f052a54955d3a0ce7f40502661422451",
     "source": "theme",
     "type": "title",
@@ -1560,26 +1180,6 @@
     }
   },
   {
-    "id": "30d00600736016c1c645ed476150632a",
-    "source": "theme",
-    "type": "title",
-    "answer": "Sfiha",
-    "normalizedAnswer": "SFIHA",
-    "category": "Food and Drink",
-    "difficulty": 88,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
     "id": "1e2aed6b4a9a21af9fd874a6f33c4b04",
     "source": "theme",
     "type": "title",
@@ -1591,26 +1191,6 @@
     "wordCount": 1,
     "letterCount": 7,
     "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "db8fd2626ca8d0109524aac130d77bb8",
-    "source": "theme",
-    "type": "title",
-    "answer": "Korovai",
-    "normalizedAnswer": "KOROVAI",
-    "category": "Food and Drink",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 6,
     "tags": [
       "theme",
       "food"
@@ -2060,26 +1640,6 @@
     }
   },
   {
-    "id": "51b2c41fa107ba6fa2483e89375c4cef",
-    "source": "theme",
-    "type": "title",
-    "answer": "Ice-cream cake",
-    "normalizedAnswer": "ICECREAM CAKE",
-    "category": "Food and Drink",
-    "difficulty": 77.2,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 12,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
     "id": "174d08562be5b916310db2a7fbf59efe",
     "source": "theme",
     "type": "title",
@@ -2150,26 +1710,6 @@
     "difficultyTier": "medium",
     "wordCount": 2,
     "letterCount": 9,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "94cd2f654c84d04e2a50292bcf4984f3",
-    "source": "theme",
-    "type": "title",
-    "answer": "Medivnyk",
-    "normalizedAnswer": "MEDIVNYK",
-    "category": "Food and Drink",
-    "difficulty": 74.8,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 8,
     "uniqueLetterCount": 8,
     "tags": [
       "theme",
@@ -2520,26 +2060,6 @@
     }
   },
   {
-    "id": "0987f3e636d17de127acd71410989343",
-    "source": "theme",
-    "type": "title",
-    "answer": "Parmigiano Reggiano",
-    "normalizedAnswer": "PARMIGIANO REGGIANO",
-    "category": "Food and Drink",
-    "difficulty": 68,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 18,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
     "id": "278af2fef72e2cbf41c4394bfb392d0f",
     "source": "theme",
     "type": "title",
@@ -2780,26 +2300,6 @@
     }
   },
   {
-    "id": "88e3bbc169795df75c6cd889286a40c8",
-    "source": "theme",
-    "type": "title",
-    "answer": "Nasi kari",
-    "normalizedAnswer": "NASI KARI",
-    "category": "Food and Drink",
-    "difficulty": 82.8,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
     "id": "47c5b2e5be2e92d1aeeb3f995d105eb9",
     "source": "theme",
     "type": "title",
@@ -2831,26 +2331,6 @@
     "wordCount": 2,
     "letterCount": 13,
     "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "656030be9b39a4bf6fdf33aede4c0e7b",
-    "source": "theme",
-    "type": "title",
-    "answer": "Duck as food",
-    "normalizedAnswer": "DUCK AS FOOD",
-    "category": "Food and Drink",
-    "difficulty": 74,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 10,
-    "uniqueLetterCount": 8,
     "tags": [
       "theme",
       "food"
@@ -2960,66 +2440,6 @@
     }
   },
   {
-    "id": "6a34c9a15c126fe2d557d85e578093ef",
-    "source": "theme",
-    "type": "title",
-    "answer": "Krispy Kreme",
-    "normalizedAnswer": "KRISPY KREME",
-    "category": "Food and Drink",
-    "difficulty": 73.6,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "16e7cf15b54b6868bb10da1f6e0a532a",
-    "source": "theme",
-    "type": "title",
-    "answer": "Tim Hortons",
-    "normalizedAnswer": "TIM HORTONS",
-    "category": "Food and Drink",
-    "difficulty": 74,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 10,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "0b6791c245071bcaa351fb209cfce14e",
-    "source": "theme",
-    "type": "title",
-    "answer": "McDonald's",
-    "normalizedAnswer": "MCDONALDS",
-    "category": "Food and Drink",
-    "difficulty": 74.4,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 9,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
     "id": "cf754e4deeecdbe010cb847218701702",
     "source": "theme",
     "type": "title",
@@ -3031,26 +2451,6 @@
     "wordCount": 1,
     "letterCount": 9,
     "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "aa19b4a5b3b9a3da0764b8b5ddc1eb1f",
-    "source": "theme",
-    "type": "title",
-    "answer": "Fun guo",
-    "normalizedAnswer": "FUN GUO",
-    "category": "Food and Drink",
-    "difficulty": 87.6,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 6,
-    "uniqueLetterCount": 5,
     "tags": [
       "theme",
       "food"
@@ -3320,26 +2720,6 @@
     }
   },
   {
-    "id": "1ecb550d09ec6dd54e1e806b0499ed91",
-    "source": "theme",
-    "type": "title",
-    "answer": "Iron egg",
-    "normalizedAnswer": "IRON EGG",
-    "category": "Food and Drink",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 7,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
     "id": "7d8ed49616d701336bb70efd241113b0",
     "source": "theme",
     "type": "title",
@@ -3451,26 +2831,6 @@
     "wordCount": 1,
     "letterCount": 4,
     "uniqueLetterCount": 2,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "e7eeaa555cda61c49e7ca1c5e403bd5a",
-    "source": "theme",
-    "type": "title",
-    "answer": "Fruits",
-    "normalizedAnswer": "FRUITS",
-    "category": "Food and Drink",
-    "difficulty": 83.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 6,
     "tags": [
       "theme",
       "food"
@@ -4080,26 +3440,6 @@
     }
   },
   {
-    "id": "0855570b7baadbcae0c5154c7b792b02",
-    "source": "theme",
-    "type": "title",
-    "answer": "Flæskesteg",
-    "normalizedAnswer": "FLAESKESTEG",
-    "category": "Food and Drink",
-    "difficulty": 73.6,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 11,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
     "id": "eee672501aaa18cc5f8b4cf358301661",
     "source": "theme",
     "type": "title",
@@ -4111,26 +3451,6 @@
     "wordCount": 1,
     "letterCount": 5,
     "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "8f93100cd8b7366d0ffaceeae12c065e",
-    "source": "theme",
-    "type": "title",
-    "answer": "Grains",
-    "normalizedAnswer": "GRAINS",
-    "category": "Food and Drink",
-    "difficulty": 83.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 6,
     "tags": [
       "theme",
       "food"
@@ -4291,26 +3611,6 @@
     "wordCount": 1,
     "letterCount": 7,
     "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "347c293f725d899653ae118f1f52ca48",
-    "source": "theme",
-    "type": "title",
-    "answer": "Hallaca",
-    "normalizedAnswer": "HALLACA",
-    "category": "Food and Drink",
-    "difficulty": 91.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 4,
     "tags": [
       "theme",
       "food"
@@ -4500,26 +3800,6 @@
     }
   },
   {
-    "id": "495c8201afc6652f52d4e57d2f07a26a",
-    "source": "theme",
-    "type": "title",
-    "answer": "Biscuit Tortoni",
-    "normalizedAnswer": "BISCUIT TORTONI",
-    "category": "Food and Drink",
-    "difficulty": 68.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 14,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
     "id": "5cb310b406e021616b14e243cbb5df7e",
     "source": "theme",
     "type": "title",
@@ -4600,46 +3880,6 @@
     }
   },
   {
-    "id": "70a8073312c2f193571a287146086525",
-    "source": "theme",
-    "type": "title",
-    "answer": "Tiger Tail",
-    "normalizedAnswer": "TIGER TAIL",
-    "category": "Food and Drink",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "5d8fd05b82e0587e377402d34a994dac",
-    "source": "theme",
-    "type": "title",
-    "answer": "Superman",
-    "normalizedAnswer": "SUPERMAN",
-    "category": "Food and Drink",
-    "difficulty": 74.8,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
     "id": "ec9732124ba262fb3412a80221947009",
     "source": "theme",
     "type": "title",
@@ -4680,26 +3920,6 @@
     }
   },
   {
-    "id": "a06732d30c7a7f5c7757828b9fb6b983",
-    "source": "theme",
-    "type": "title",
-    "answer": "Moon mist",
-    "normalizedAnswer": "MOON MIST",
-    "category": "Food and Drink",
-    "difficulty": 82.8,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
     "id": "5a8968b3d03943b81edddb7d4884c8b9",
     "source": "theme",
     "type": "title",
@@ -4711,26 +3931,6 @@
     "wordCount": 1,
     "letterCount": 10,
     "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "b0c224f8f14fc1b38d4c74f75e2ca04e",
-    "source": "theme",
-    "type": "title",
-    "answer": "Inyama yenhloko",
-    "normalizedAnswer": "INYAMA YENHLOKO",
-    "category": "Food and Drink",
-    "difficulty": 64.4,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 14,
-    "uniqueLetterCount": 10,
     "tags": [
       "theme",
       "food"
@@ -4900,26 +4100,6 @@
     }
   },
   {
-    "id": "31ac25aa3656f7cde0c57ddd92537483",
-    "source": "theme",
-    "type": "title",
-    "answer": "Meats",
-    "normalizedAnswer": "MEATS",
-    "category": "Food and Drink",
-    "difficulty": 88,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
     "id": "94ee6f1d5ed8e3eb4dc4d2ece996704d",
     "source": "theme",
     "type": "title",
@@ -5051,26 +4231,6 @@
     "wordCount": 1,
     "letterCount": 9,
     "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "ded65c044429fde8b9fd2691216717ec",
-    "source": "theme",
-    "type": "title",
-    "answer": "Finocchiona",
-    "normalizedAnswer": "FINOCCHIONA",
-    "category": "Food and Drink",
-    "difficulty": 77.6,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 11,
-    "uniqueLetterCount": 7,
     "tags": [
       "theme",
       "food"
@@ -5280,26 +4440,6 @@
     }
   },
   {
-    "id": "265aeae4b65c2c680f25ab8bb7d788cf",
-    "source": "theme",
-    "type": "title",
-    "answer": "Musakhan",
-    "normalizedAnswer": "MUSAKHAN",
-    "category": "Food and Drink",
-    "difficulty": 78.8,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
     "id": "23a9beab5b7ae0be4ed2c7262a5e988b",
     "source": "theme",
     "type": "title",
@@ -5431,26 +4571,6 @@
     "wordCount": 1,
     "letterCount": 6,
     "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "2fafda5d858513083d8bc74e2c2a31e1",
-    "source": "theme",
-    "type": "title",
-    "answer": "Shrimp and prawn",
-    "normalizedAnswer": "SHRIMP AND PRAWN",
-    "category": "Food and Drink",
-    "difficulty": 64.4,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 14,
-    "uniqueLetterCount": 10,
     "tags": [
       "theme",
       "food"
@@ -5640,106 +4760,6 @@
     }
   },
   {
-    "id": "118a5faf84f6ac1debae47ba2cf12f97",
-    "source": "theme",
-    "type": "title",
-    "answer": "Ravioli capresi",
-    "normalizedAnswer": "RAVIOLI CAPRESI",
-    "category": "Food and Drink",
-    "difficulty": 64.4,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 14,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "3ec0e8d106043e3fcf760aefe4b4e521",
-    "source": "theme",
-    "type": "title",
-    "answer": "Ravioli scarpolesi",
-    "normalizedAnswer": "RAVIOLI SCARPOLESI",
-    "category": "Food and Drink",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 17,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "d221cb75eccce029e903ba0ab9f7e681",
-    "source": "theme",
-    "type": "title",
-    "answer": "Pasticho",
-    "normalizedAnswer": "PASTICHO",
-    "category": "Food and Drink",
-    "difficulty": 74.8,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "e49af197072d1731c95a697c6c9ebc0e",
-    "source": "theme",
-    "type": "title",
-    "answer": "Pasta â Paolina",
-    "normalizedAnswer": "PASTA A PAOLINA",
-    "category": "Food and Drink",
-    "difficulty": 72.8,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 13,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "f2d8aab80d4348d5daf1219f99109e3f",
-    "source": "theme",
-    "type": "title",
-    "answer": "Pasta e ceci",
-    "normalizedAnswer": "PASTA E CECI",
-    "category": "Food and Drink",
-    "difficulty": 78,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 10,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
     "id": "a942bb71f9bd1d8e98d1123040339581",
     "source": "theme",
     "type": "title",
@@ -5840,46 +4860,6 @@
     }
   },
   {
-    "id": "59ccb7373e2f96a60c6d7741c57a34ee",
-    "source": "theme",
-    "type": "title",
-    "answer": "Spaghetti alla carrettiera",
-    "normalizedAnswer": "SPAGHETTI ALLA CARRETTIERA",
-    "category": "Food and Drink",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 24,
-    "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "c09c528f41eb4bc5c06025f3e75b980c",
-    "source": "theme",
-    "type": "title",
-    "answer": "Spaghetti alla carbonara",
-    "normalizedAnswer": "SPAGHETTI ALLA CARBONARA",
-    "category": "Food and Drink",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 22,
-    "uniqueLetterCount": 14,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
     "id": "552443666b61ed715d57b06ec9faa825",
     "source": "theme",
     "type": "title",
@@ -5900,26 +4880,6 @@
     }
   },
   {
-    "id": "524e8bdec839f3004ae23b035c8ac902",
-    "source": "theme",
-    "type": "title",
-    "answer": "Pancit canton",
-    "normalizedAnswer": "PANCIT CANTON",
-    "category": "Food and Drink",
-    "difficulty": 77.2,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 12,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
     "id": "09e284308f45228be055c3251dfd7ea1",
     "source": "theme",
     "type": "title",
@@ -5931,46 +4891,6 @@
     "wordCount": 1,
     "letterCount": 10,
     "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "430a472f265d9f8dfe8e7e0d00af21e5",
-    "source": "theme",
-    "type": "title",
-    "answer": "Vincisgrassi",
-    "normalizedAnswer": "VINCISGRASSI",
-    "category": "Food and Drink",
-    "difficulty": 73.2,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 12,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "045e99e9cfb9ee498c0bc57118921c63",
-    "source": "theme",
-    "type": "title",
-    "answer": "Ploye",
-    "normalizedAnswer": "PLOYE",
-    "category": "Food and Drink",
-    "difficulty": 88,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 5,
     "tags": [
       "theme",
       "food"
@@ -6031,26 +4951,6 @@
     "wordCount": 1,
     "letterCount": 3,
     "uniqueLetterCount": 3,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "bf2c2a17be730beb7404400ad0da20b0",
-    "source": "theme",
-    "type": "title",
-    "answer": "Aloo pie",
-    "normalizedAnswer": "ALOO PIE",
-    "category": "Food and Drink",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 7,
-    "uniqueLetterCount": 6,
     "tags": [
       "theme",
       "food"
@@ -6260,26 +5160,6 @@
     }
   },
   {
-    "id": "eeb61ffbd40c617a3131bd88a0ea7246",
-    "source": "theme",
-    "type": "title",
-    "answer": "Hornazo",
-    "normalizedAnswer": "HORNAZO",
-    "category": "Food and Drink",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
     "id": "df6e67b1b37bec2013abd86ec8c55edb",
     "source": "theme",
     "type": "title",
@@ -6300,26 +5180,6 @@
     }
   },
   {
-    "id": "cdda4dc381e41399318771fa291e1a2b",
-    "source": "theme",
-    "type": "title",
-    "answer": "Melktert",
-    "normalizedAnswer": "MELKTERT",
-    "category": "Food and Drink",
-    "difficulty": 82.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
     "id": "59971a080ebfc19ddb36f2e3dd61e32d",
     "source": "theme",
     "type": "title",
@@ -6331,26 +5191,6 @@
     "wordCount": 2,
     "letterCount": 10,
     "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "65f93fd8b2c3754d5ee60378a91d80e2",
-    "source": "theme",
-    "type": "title",
-    "answer": "Pirog",
-    "normalizedAnswer": "PIROG",
-    "category": "Food and Drink",
-    "difficulty": 88,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 5,
     "tags": [
       "theme",
       "food"
@@ -6440,46 +5280,6 @@
     }
   },
   {
-    "id": "116f086a6a047eeea7bb4611344aa04b",
-    "source": "theme",
-    "type": "title",
-    "answer": "Yau gok",
-    "normalizedAnswer": "YAU GOK",
-    "category": "Food and Drink",
-    "difficulty": 83.6,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 6,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "aca9decbbdffe990be2b1fbecd19c09e",
-    "source": "theme",
-    "type": "title",
-    "answer": "Zelnik",
-    "normalizedAnswer": "ZELNIK",
-    "category": "Food and Drink",
-    "difficulty": 83.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
     "id": "a77f7e2270317e92d4ba92d28e7f79b4",
     "source": "theme",
     "type": "title",
@@ -6511,46 +5311,6 @@
     "wordCount": 1,
     "letterCount": 5,
     "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "ddf3eca92c2dc002a2efd9057f231248",
-    "source": "theme",
-    "type": "title",
-    "answer": "Aburasoba",
-    "normalizedAnswer": "ABURASOBA",
-    "category": "Food and Drink",
-    "difficulty": 82.4,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 9,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "434e6dcb0666945cd2b0bbc60d7ab460",
-    "source": "theme",
-    "type": "title",
-    "answer": "Tsukemen",
-    "normalizedAnswer": "TSUKEMEN",
-    "category": "Food and Drink",
-    "difficulty": 78.8,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 7,
     "tags": [
       "theme",
       "food"
@@ -6651,26 +5411,6 @@
     "wordCount": 2,
     "letterCount": 13,
     "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "058cf052133e4806a7671def1deffcb3",
-    "source": "theme",
-    "type": "title",
-    "answer": "Hawaiian",
-    "normalizedAnswer": "HAWAIIAN",
-    "category": "Food and Drink",
-    "difficulty": 86.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 5,
     "tags": [
       "theme",
       "food"
@@ -6791,26 +5531,6 @@
     "wordCount": 1,
     "letterCount": 6,
     "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "d517d50fbc5ec3dd73275e8dc0bcfc52",
-    "source": "theme",
-    "type": "title",
-    "answer": "Sartù di riso",
-    "normalizedAnswer": "SARTU DI RISO",
-    "category": "Food and Drink",
-    "difficulty": 73.6,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 11,
-    "uniqueLetterCount": 8,
     "tags": [
       "theme",
       "food"
@@ -7280,46 +6000,6 @@
     }
   },
   {
-    "id": "928487c4ff0fdadf696a138a5b72935e",
-    "source": "theme",
-    "type": "title",
-    "answer": "Paska",
-    "normalizedAnswer": "PASKA",
-    "category": "Food and Drink",
-    "difficulty": 92,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "2b9688e36e4fbabd2295320b1ebb0d11",
-    "source": "theme",
-    "type": "title",
-    "answer": "Ptashyne moloko",
-    "normalizedAnswer": "PTASHYNE MOLOKO",
-    "category": "Food and Drink",
-    "difficulty": 56.4,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 14,
-    "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
     "id": "c431f3013c89c61ccc6abce03a2da8fa",
     "source": "theme",
     "type": "title",
@@ -7640,26 +6320,6 @@
     }
   },
   {
-    "id": "7e0959b04e05354adbfaacfe4cb6f25b",
-    "source": "theme",
-    "type": "title",
-    "answer": "Aguadito",
-    "normalizedAnswer": "AGUADITO",
-    "category": "Food and Drink",
-    "difficulty": 78.8,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
     "id": "4950f5218af8450f5d904b6761b708b0",
     "source": "theme",
     "type": "title",
@@ -7680,26 +6340,6 @@
     }
   },
   {
-    "id": "46f112d21d740f11b5a82beb9770ae04",
-    "source": "theme",
-    "type": "title",
-    "answer": "Bún bò Hu",
-    "normalizedAnswer": "BUN BO HU",
-    "category": "Food and Drink",
-    "difficulty": 87.2,
-    "difficultyTier": "hard",
-    "wordCount": 3,
-    "letterCount": 7,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
     "id": "18409e95ada8cc5e6ebfa950065f89e9",
     "source": "theme",
     "type": "title",
@@ -7711,26 +6351,6 @@
     "wordCount": 3,
     "letterCount": 13,
     "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "df85da148ebb48ed96e33bbdbdd037a6",
-    "source": "theme",
-    "type": "title",
-    "answer": "Champon",
-    "normalizedAnswer": "CHAMPON",
-    "category": "Food and Drink",
-    "difficulty": 79.2,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 7,
     "tags": [
       "theme",
       "food"
@@ -7860,46 +6480,6 @@
     }
   },
   {
-    "id": "7b9ea95d4c44dfaee1980a61832aa1af",
-    "source": "theme",
-    "type": "title",
-    "answer": "Tyurya",
-    "normalizedAnswer": "TYURYA",
-    "category": "Food and Drink",
-    "difficulty": 87.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "feed3527eadebc0365ee526c94767d4f",
-    "source": "theme",
-    "type": "title",
-    "answer": "Sinigang",
-    "normalizedAnswer": "SINIGANG",
-    "category": "Food and Drink",
-    "difficulty": 86.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
     "id": "6ccb132308d2d962e8cd8780724e4e43",
     "source": "theme",
     "type": "title",
@@ -7911,46 +6491,6 @@
     "wordCount": 3,
     "letterCount": 13,
     "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "80998acd653b80393860b55477f0d717",
-    "source": "theme",
-    "type": "title",
-    "answer": "Shchi",
-    "normalizedAnswer": "SHCHI",
-    "category": "Food and Drink",
-    "difficulty": 92,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "c519964f2a0b1fbb5bd46b1330a2a0db",
-    "source": "theme",
-    "type": "title",
-    "answer": "Solyanka",
-    "normalizedAnswer": "SOLYANKA",
-    "category": "Food and Drink",
-    "difficulty": 78.8,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 7,
     "tags": [
       "theme",
       "food"
@@ -8060,26 +6600,6 @@
     }
   },
   {
-    "id": "1383b7c03cbf300800622a3e8ad4e717",
-    "source": "theme",
-    "type": "title",
-    "answer": "Slavink",
-    "normalizedAnswer": "SLAVINK",
-    "category": "Food and Drink",
-    "difficulty": 79.2,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
     "id": "7186c6b43f36ed4f850850d811c4ca01",
     "source": "theme",
     "type": "title",
@@ -8180,26 +6700,6 @@
     }
   },
   {
-    "id": "348264d4a47b95a747a17a87db07c819",
-    "source": "theme",
-    "type": "title",
-    "answer": "Burgoo",
-    "normalizedAnswer": "BURGOO",
-    "category": "Food and Drink",
-    "difficulty": 87.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
     "id": "76f327c0cd2161d2d109318b86581ee0",
     "source": "theme",
     "type": "title",
@@ -8240,46 +6740,6 @@
     }
   },
   {
-    "id": "234ff1e934778f69891f6cf6b62abb4e",
-    "source": "theme",
-    "type": "title",
-    "answer": "Locro",
-    "normalizedAnswer": "LOCRO",
-    "category": "Food and Drink",
-    "difficulty": 92,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "960191628619c9c61f47320151dd5a45",
-    "source": "theme",
-    "type": "title",
-    "answer": "Pichelsteiner",
-    "normalizedAnswer": "PICHELSTEINER",
-    "category": "Food and Drink",
-    "difficulty": 64.8,
-    "difficultyTier": "easy",
-    "wordCount": 1,
-    "letterCount": 13,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
     "id": "3707ea5fe97dcf369a86ba49c1398ed0",
     "source": "theme",
     "type": "title",
@@ -8311,26 +6771,6 @@
     "wordCount": 1,
     "letterCount": 7,
     "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "9da4e19df58ed531faea549dcd0c2315",
-    "source": "theme",
-    "type": "title",
-    "answer": "Tocan",
-    "normalizedAnswer": "TOCAN",
-    "category": "Food and Drink",
-    "difficulty": 88,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 5,
     "tags": [
       "theme",
       "food"
@@ -8440,26 +6880,6 @@
     }
   },
   {
-    "id": "516f1e7ba9825799ccdc6ad43a9ec4ea",
-    "source": "theme",
-    "type": "title",
-    "answer": "Tequeños",
-    "normalizedAnswer": "TEQUENOS",
-    "category": "Food and Drink",
-    "difficulty": 78.8,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
     "id": "d58470379adc2a5f87496e9f611645b7",
     "source": "theme",
     "type": "title",
@@ -8511,86 +6931,6 @@
     "wordCount": 2,
     "letterCount": 13,
     "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "87df92cb4ca412956e382b197ee6e40a",
-    "source": "theme",
-    "type": "title",
-    "answer": "Turon",
-    "normalizedAnswer": "TURON",
-    "category": "Food and Drink",
-    "difficulty": 88,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "e8db600701276652401617f9164079f5",
-    "source": "theme",
-    "type": "title",
-    "answer": "Ugali",
-    "normalizedAnswer": "UGALI",
-    "category": "Food and Drink",
-    "difficulty": 88,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "73ae73ff66d0ff8d9cc9ca30218f0bf7",
-    "source": "theme",
-    "type": "title",
-    "answer": "Varenye",
-    "normalizedAnswer": "VARENYE",
-    "category": "Food and Drink",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "9bd72536efde68a085a109a5a686ad63",
-    "source": "theme",
-    "type": "title",
-    "answer": "Vegetables",
-    "normalizedAnswer": "VEGETABLES",
-    "category": "Food and Drink",
-    "difficulty": 74,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 10,
-    "uniqueLetterCount": 8,
     "tags": [
       "theme",
       "food"
@@ -8740,26 +7080,6 @@
     }
   },
   {
-    "id": "0f275ec9f3845e3223f7afdb2bc81d57",
-    "source": "theme",
-    "type": "title",
-    "answer": "Root vegetable",
-    "normalizedAnswer": "ROOT VEGETABLE",
-    "category": "Food and Drink",
-    "difficulty": 68.8,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 13,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
     "id": "ca8072c415add4d56ed6528da9f51b1c",
     "source": "theme",
     "type": "title",
@@ -8771,406 +7091,6 @@
     "wordCount": 1,
     "letterCount": 6,
     "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "04f10f1f240f11410e146d5b1452f8c5",
-    "source": "theme",
-    "type": "title",
-    "answer": "Wuzetka",
-    "normalizedAnswer": "WUZETKA",
-    "category": "Food and Drink",
-    "difficulty": 79.2,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "e45de574a5bf49e0030d08b1dc863ee5",
-    "source": "theme",
-    "type": "title",
-    "answer": "Youtiao",
-    "normalizedAnswer": "YOUTIAO",
-    "category": "Food and Drink",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "e600e093abe0e31116c519d19e0c84e3",
-    "source": "theme",
-    "type": "title",
-    "answer": "Yuxiang shredded pork",
-    "normalizedAnswer": "YUXIANG SHREDDED PORK",
-    "category": "Food and Drink",
-    "difficulty": 44,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 19,
-    "uniqueLetterCount": 15,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "b86746802939a2320b88c5d19004aa93",
-    "source": "theme",
-    "type": "title",
-    "answer": "Bushfood",
-    "normalizedAnswer": "BUSHFOOD",
-    "category": "Food and Drink",
-    "difficulty": 78.8,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "25b8fc91b439deffb7d6973e5e092e24",
-    "source": "theme",
-    "type": "title",
-    "answer": "Cuisine",
-    "normalizedAnswer": "CUISINE",
-    "category": "Food and Drink",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "2976f2dd5a56885b42421b554e188ca9",
-    "source": "theme",
-    "type": "title",
-    "answer": "Dishes by main ingredient",
-    "normalizedAnswer": "DISHES BY MAIN INGREDIENT",
-    "category": "Food and Drink",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 22,
-    "uniqueLetterCount": 13,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "e4969fc9a626f14f27e249b7aa71e238",
-    "source": "theme",
-    "type": "title",
-    "answer": "Edible flower",
-    "normalizedAnswer": "EDIBLE FLOWER",
-    "category": "Food and Drink",
-    "difficulty": 69.2,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 12,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "1a68623ae49e4483d953b10f073890a6",
-    "source": "theme",
-    "type": "title",
-    "answer": "Food products",
-    "normalizedAnswer": "FOOD PRODUCTS",
-    "category": "Food and Drink",
-    "difficulty": 69.2,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 12,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "b3ef9cf1217c881deee20a4b8ad8890a",
-    "source": "theme",
-    "type": "title",
-    "answer": "Foods by cooking technique",
-    "normalizedAnswer": "FOODS BY COOKING TECHNIQUE",
-    "category": "Food and Drink",
-    "difficulty": 40,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 23,
-    "uniqueLetterCount": 16,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "e2ed887ea40bbc9dd9d76d01f2956b36",
-    "source": "theme",
-    "type": "title",
-    "answer": "Lists of foods",
-    "normalizedAnswer": "LISTS OF FOODS",
-    "category": "Food and Drink",
-    "difficulty": 77.2,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 12,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "aca0d08ee87ebf07865153334630ecc9",
-    "source": "theme",
-    "type": "title",
-    "answer": "Natural food",
-    "normalizedAnswer": "NATURAL FOOD",
-    "category": "Food and Drink",
-    "difficulty": 69.6,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "e1bd0b4f790f3ecfb9de5fe87439f319",
-    "source": "theme",
-    "type": "title",
-    "answer": "Nutrition",
-    "normalizedAnswer": "NUTRITION",
-    "category": "Food and Drink",
-    "difficulty": 82.4,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 9,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "a3ac604bcfe88142df59ee2fc0183301",
-    "source": "theme",
-    "type": "title",
-    "answer": "Organic food",
-    "normalizedAnswer": "ORGANIC FOOD",
-    "category": "Food and Drink",
-    "difficulty": 69.6,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "1c4390b0045c0bfe554cfbdc0f82f300",
-    "source": "theme",
-    "type": "title",
-    "answer": "Seasoning",
-    "normalizedAnswer": "SEASONING",
-    "category": "Food and Drink",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 9,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "596816d45c703064bf4ede2359e2558f",
-    "source": "theme",
-    "type": "title",
-    "answer": "Outline of food preparation",
-    "normalizedAnswer": "OUTLINE OF FOOD PREPARATION",
-    "category": "Food and Drink",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 24,
-    "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "a36f18b0743cc0d7ec3ea37efe9e2a02",
-    "source": "theme",
-    "type": "title",
-    "answer": "Specialty foods",
-    "normalizedAnswer": "SPECIALTY FOODS",
-    "category": "Food and Drink",
-    "difficulty": 56.4,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 14,
-    "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "f8c9ac0f0384e9273244f46225826f97",
-    "source": "theme",
-    "type": "title",
-    "answer": "Taboo food and drink",
-    "normalizedAnswer": "TABOO FOOD AND DRINK",
-    "category": "Food and Drink",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 17,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "49f5b8d09a9bdb61fa0165c71389deee",
-    "source": "theme",
-    "type": "title",
-    "answer": "Whole food",
-    "normalizedAnswer": "WHOLE FOOD",
-    "category": "Food and Drink",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "537ee7cbdbdc01fe79df024cbe4de81f",
-    "source": "theme",
-    "type": "title",
-    "answer": "Comfort food",
-    "normalizedAnswer": "COMFORT FOOD",
-    "category": "Food and Drink",
-    "difficulty": 77.6,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "food"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_foods"
-    }
-  },
-  {
-    "id": "64f32edd92aa9b9fda8bf666a2a5b80a",
-    "source": "theme",
-    "type": "title",
-    "answer": "Food",
-    "normalizedAnswer": "FOOD",
-    "category": "Food and Drink",
-    "difficulty": 96.4,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 4,
-    "uniqueLetterCount": 3,
     "tags": [
       "theme",
       "food"

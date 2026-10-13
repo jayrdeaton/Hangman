@@ -780,26 +780,6 @@
     }
   },
   {
-    "id": "1bb8e2afbc7fe06799a4ab8f081096ba",
-    "source": "theme",
-    "type": "title",
-    "answer": "Marx Brothers Chico Harpo Groucho Zeppo",
-    "normalizedAnswer": "MARX BROTHERS CHICO HARPO GROUCHO ZEPPO",
-    "category": "Actor",
-    "difficulty": 40,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 34,
-    "uniqueLetterCount": 16,
-    "tags": [
-      "theme",
-      "actor"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Stars"
-    }
-  },
-  {
     "id": "27267ce580152cfb45fc7f34dadde83b",
     "source": "theme",
     "type": "title",

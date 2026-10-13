@@ -1,0 +1,3992 @@
+[
+  {
+    "id": "7967b2150fd3adfdb06c5d00e228eb22",
+    "source": "theme",
+    "type": "title",
+    "answer": "A Dime a Dozen",
+    "normalizedAnswer": "A DIME A DOZEN",
+    "category": "Idiom or Proverb",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 4,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "7dd27ff5c1d95e18e7637647708b8023",
+    "source": "theme",
+    "type": "title",
+    "answer": "A Friend in Need Is a Friend Indeed",
+    "normalizedAnswer": "A FRIEND IN NEED IS A FRIEND INDEED",
+    "category": "Idiom or Proverb",
+    "difficulty": 72,
+    "difficultyTier": "medium",
+    "wordCount": 8,
+    "letterCount": 28,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "080510adf541c3fff650937529e626ac",
+    "source": "theme",
+    "type": "title",
+    "answer": "A Needle in a Haystack",
+    "normalizedAnswer": "A NEEDLE IN A HAYSTACK",
+    "category": "Idiom or Proverb",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 18,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a754e713d466751be41800aa80c71135",
+    "source": "theme",
+    "type": "title",
+    "answer": "A Penny Saved Is a Penny Earned",
+    "normalizedAnswer": "A PENNY SAVED IS A PENNY EARNED",
+    "category": "Idiom or Proverb",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 7,
+    "letterCount": 25,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "79fde7b69042d48f2b3dad6ea14d94da",
+    "source": "theme",
+    "type": "title",
+    "answer": "A Picture Is Worth a Thousand Words",
+    "normalizedAnswer": "A PICTURE IS WORTH A THOUSAND WORDS",
+    "category": "Idiom or Proverb",
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 7,
+    "letterCount": 29,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a71c39b4a284fff2d61b89c4789ad8d8",
+    "source": "theme",
+    "type": "title",
+    "answer": "A Taste of Your Own Medicine",
+    "normalizedAnswer": "A TASTE OF YOUR OWN MEDICINE",
+    "category": "Idiom or Proverb",
+    "difficulty": 44,
+    "difficultyTier": "easy",
+    "wordCount": 6,
+    "letterCount": 23,
+    "uniqueLetterCount": 15,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "f866e030bed78290935930eb34de4c51",
+    "source": "theme",
+    "type": "title",
+    "answer": "A Watched Pot Never Boils",
+    "normalizedAnswer": "A WATCHED POT NEVER BOILS",
+    "category": "Idiom or Proverb",
+    "difficulty": 40,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 21,
+    "uniqueLetterCount": 16,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "724642d71c595cff5dfe73b854051ee2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Absence Makes the Heart Grow Fonder",
+    "normalizedAnswer": "ABSENCE MAKES THE HEART GROW FONDER",
+    "category": "Idiom or Proverb",
+    "difficulty": 40,
+    "difficultyTier": "easy",
+    "wordCount": 6,
+    "letterCount": 30,
+    "uniqueLetterCount": 16,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "59761c09dfa6e0a6674be2d7e5eb97a3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Actions Speak Louder Than Words",
+    "normalizedAnswer": "ACTIONS SPEAK LOUDER THAN WORDS",
+    "category": "Idiom or Proverb",
+    "difficulty": 40,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 27,
+    "uniqueLetterCount": 16,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c503299d031f4ca6f9f7e8a556ec5639",
+    "source": "theme",
+    "type": "title",
+    "answer": "Add Insult to Injury",
+    "normalizedAnswer": "ADD INSULT TO INJURY",
+    "category": "Idiom or Proverb",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 17,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ec7d9a7fdc6e26c2d8b09b7be34718d9",
+    "source": "theme",
+    "type": "title",
+    "answer": "All That Glitters Is Not Gold",
+    "normalizedAnswer": "ALL THAT GLITTERS IS NOT GOLD",
+    "category": "Idiom or Proverb",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 6,
+    "letterCount": 24,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "9b1ed14a02c02b27783d0214db3f9e71",
+    "source": "theme",
+    "type": "title",
+    "answer": "All's Well That Ends Well",
+    "normalizedAnswer": "ALLS WELL THAT ENDS WELL",
+    "category": "Idiom or Proverb",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 5,
+    "letterCount": 20,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "04d0b6abff728a29f1ddd1ac5cb85621",
+    "source": "theme",
+    "type": "title",
+    "answer": "An Apple a Day Keeps the Doctor Away",
+    "normalizedAnswer": "AN APPLE A DAY KEEPS THE DOCTOR AWAY",
+    "category": "Idiom or Proverb",
+    "difficulty": 44,
+    "difficultyTier": "easy",
+    "wordCount": 8,
+    "letterCount": 29,
+    "uniqueLetterCount": 15,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "9df7302ff6a7690dab36b233b78364bf",
+    "source": "theme",
+    "type": "title",
+    "answer": "At the Drop of a Hat",
+    "normalizedAnswer": "AT THE DROP OF A HAT",
+    "category": "Idiom or Proverb",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 6,
+    "letterCount": 15,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "e5ed05bc41d180a1eb64458f15c3d6af",
+    "source": "theme",
+    "type": "title",
+    "answer": "Back to Square One",
+    "normalizedAnswer": "BACK TO SQUARE ONE",
+    "category": "Idiom or Proverb",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 15,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "cea52813e446c27823acae05feb84cb3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Back to the Drawing Board",
+    "normalizedAnswer": "BACK TO THE DRAWING BOARD",
+    "category": "Idiom or Proverb",
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 21,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "d501fd8bfffcbf3235e631d696c8e33d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Barking Up the Wrong Tree",
+    "normalizedAnswer": "BARKING UP THE WRONG TREE",
+    "category": "Idiom or Proverb",
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 21,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "3c7c7f7c8c90c5cc3501c481d765deba",
+    "source": "theme",
+    "type": "title",
+    "answer": "Beat Around the Bush",
+    "normalizedAnswer": "BEAT AROUND THE BUSH",
+    "category": "Idiom or Proverb",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 17,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "373c5e22dcee145e5fadd322465bdb99",
+    "source": "theme",
+    "type": "title",
+    "answer": "Beauty Is in the Eye of the Beholder",
+    "normalizedAnswer": "BEAUTY IS IN THE EYE OF THE BEHOLDER",
+    "category": "Idiom or Proverb",
+    "difficulty": 44,
+    "difficultyTier": "easy",
+    "wordCount": 8,
+    "letterCount": 29,
+    "uniqueLetterCount": 15,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "269b487419a1e289322a343b352bd15a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Beggars Can't Be Choosers",
+    "normalizedAnswer": "BEGGARS CANT BE CHOOSERS",
+    "category": "Idiom or Proverb",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 21,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c4ea14a5ec5648b5c6555f0dd0176df2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Better Late Than Never",
+    "normalizedAnswer": "BETTER LATE THAN NEVER",
+    "category": "Idiom or Proverb",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 4,
+    "letterCount": 19,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "78bff622a71101d37b3ce4bf4391fe2b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Better Safe Than Sorry",
+    "normalizedAnswer": "BETTER SAFE THAN SORRY",
+    "category": "Idiom or Proverb",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 19,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "f067fc9a58c984bc6acf0d76548a719e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Between a Rock and a Hard Place",
+    "normalizedAnswer": "BETWEEN A ROCK AND A HARD PLACE",
+    "category": "Idiom or Proverb",
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 7,
+    "letterCount": 25,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "d8b8f29148af8f1a2dc82e8ea3732fce",
+    "source": "theme",
+    "type": "title",
+    "answer": "Birds of a Feather Flock Together",
+    "normalizedAnswer": "BIRDS OF A FEATHER FLOCK TOGETHER",
+    "category": "Idiom or Proverb",
+    "difficulty": 44,
+    "difficultyTier": "easy",
+    "wordCount": 6,
+    "letterCount": 28,
+    "uniqueLetterCount": 15,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "4dcb15d2a6ca6cfb8c5b108007659213",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bite Off More Than You Can Chew",
+    "normalizedAnswer": "BITE OFF MORE THAN YOU CAN CHEW",
+    "category": "Idiom or Proverb",
+    "difficulty": 44,
+    "difficultyTier": "easy",
+    "wordCount": 7,
+    "letterCount": 25,
+    "uniqueLetterCount": 15,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "7f047475bf0ce12026900496a2ca4a82",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bite the Bullet",
+    "normalizedAnswer": "BITE THE BULLET",
+    "category": "Idiom or Proverb",
+    "difficulty": 76.8,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 13,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "0b588b05e24004663929cc1860790173",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bite the Dust",
+    "normalizedAnswer": "BITE THE DUST",
+    "category": "Idiom or Proverb",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "800a0fead8a9e5c6c3cb975257bed756",
+    "source": "theme",
+    "type": "title",
+    "answer": "Blood Is Thicker Than Water",
+    "normalizedAnswer": "BLOOD IS THICKER THAN WATER",
+    "category": "Idiom or Proverb",
+    "difficulty": 44,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 23,
+    "uniqueLetterCount": 15,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "d571b0e6eeb25619cace59a6f9dd2994",
+    "source": "theme",
+    "type": "title",
+    "answer": "Break a Leg",
+    "normalizedAnswer": "BREAK A LEG",
+    "category": "Idiom or Proverb",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "5b20377402a82ce0e1c76c5c3f4b0a15",
+    "source": "theme",
+    "type": "title",
+    "answer": "Break the Ice",
+    "normalizedAnswer": "BREAK THE ICE",
+    "category": "Idiom or Proverb",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "5210388e1deedc4fe0fe36a66a878d09",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bring Home the Bacon",
+    "normalizedAnswer": "BRING HOME THE BACON",
+    "category": "Idiom or Proverb",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 17,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "96a49b292f85c6185a03847b794acf8e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Burn the Midnight Oil",
+    "normalizedAnswer": "BURN THE MIDNIGHT OIL",
+    "category": "Idiom or Proverb",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 18,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "7f17f37faf553cfcf3f58fcfebd8b4b1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bury the Hatchet",
+    "normalizedAnswer": "BURY THE HATCHET",
+    "category": "Idiom or Proverb",
+    "difficulty": 68.4,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 14,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "4ad99103d0d77ab1c7c9f2517f5da265",
+    "source": "theme",
+    "type": "title",
+    "answer": "By the Skin of Your Teeth",
+    "normalizedAnswer": "BY THE SKIN OF YOUR TEETH",
+    "category": "Idiom or Proverb",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 6,
+    "letterCount": 20,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "b2785ae623828303b7ada0e2e6ce717a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Call It a Day",
+    "normalizedAnswer": "CALL IT A DAY",
+    "category": "Idiom or Proverb",
+    "difficulty": 78,
+    "difficultyTier": "medium",
+    "wordCount": 4,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "9623e90c6017480e0369e8ad1b980f9e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Can't See the Forest for the Trees",
+    "normalizedAnswer": "CANT SEE THE FOREST FOR THE TREES",
+    "category": "Idiom or Proverb",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 7,
+    "letterCount": 27,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c891c4d0782f30814576643df4adaac7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cat Got Your Tongue",
+    "normalizedAnswer": "CAT GOT YOUR TONGUE",
+    "category": "Idiom or Proverb",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 16,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "51654324777746726688540344911800",
+    "source": "theme",
+    "type": "title",
+    "answer": "Caught Red-Handed",
+    "normalizedAnswer": "CAUGHT REDHANDED",
+    "category": "Idiom or Proverb",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6006719a85648be185bf6316db3169f8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cool as a Cucumber",
+    "normalizedAnswer": "COOL AS A CUCUMBER",
+    "category": "Idiom or Proverb",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "610f1358b3bf81dcc92baf3b345299fd",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cost an Arm and a Leg",
+    "normalizedAnswer": "COST AN ARM AND A LEG",
+    "category": "Idiom or Proverb",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 6,
+    "letterCount": 16,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "dbdabaaf27e96a7653c8e5c1fee76d18",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cross That Bridge When You Come to It",
+    "normalizedAnswer": "CROSS THAT BRIDGE WHEN YOU COME TO IT",
+    "category": "Idiom or Proverb",
+    "difficulty": 36,
+    "difficultyTier": "easy",
+    "wordCount": 8,
+    "letterCount": 30,
+    "uniqueLetterCount": 17,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "f66d07349b433e16ec4fa22122e34575",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cry Wolf",
+    "normalizedAnswer": "CRY WOLF",
+    "category": "Idiom or Proverb",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "53e555042ffeb188baf92f36d0e4fb47",
+    "source": "theme",
+    "type": "title",
+    "answer": "Curiosity Killed the Cat",
+    "normalizedAnswer": "CURIOSITY KILLED THE CAT",
+    "category": "Idiom or Proverb",
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 21,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "76273bc692c34c042e6b12e7de723612",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cut to the Chase",
+    "normalizedAnswer": "CUT TO THE CHASE",
+    "category": "Idiom or Proverb",
+    "difficulty": 72.8,
+    "difficultyTier": "medium",
+    "wordCount": 4,
+    "letterCount": 13,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c883861dd8fb38b51994b9ec424c0bb1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Don't Bite the Hand That Feeds You",
+    "normalizedAnswer": "DONT BITE THE HAND THAT FEEDS YOU",
+    "category": "Idiom or Proverb",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 7,
+    "letterCount": 27,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "921371e520f6d408dcb2e749c6f62d6c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Don't Count Your Chickens",
+    "normalizedAnswer": "DONT COUNT YOUR CHICKENS",
+    "category": "Idiom or Proverb",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 21,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "f12b25f87037fe15e37f8d51d2b8ae1e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Don't Cry Over Spilled Milk",
+    "normalizedAnswer": "DONT CRY OVER SPILLED MILK",
+    "category": "Idiom or Proverb",
+    "difficulty": 44,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 22,
+    "uniqueLetterCount": 15,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "8bb24c8b31b5000ecea2868de4a0dbee",
+    "source": "theme",
+    "type": "title",
+    "answer": "Don't Judge a Book by Its Cover",
+    "normalizedAnswer": "DONT JUDGE A BOOK BY ITS COVER",
+    "category": "Idiom or Proverb",
+    "difficulty": 36,
+    "difficultyTier": "easy",
+    "wordCount": 7,
+    "letterCount": 24,
+    "uniqueLetterCount": 17,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "f5e67503565d599e92a75923832b08e9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Don't Look a Gift Horse in the Mouth",
+    "normalizedAnswer": "DONT LOOK A GIFT HORSE IN THE MOUTH",
+    "category": "Idiom or Proverb",
+    "difficulty": 40,
+    "difficultyTier": "easy",
+    "wordCount": 8,
+    "letterCount": 28,
+    "uniqueLetterCount": 16,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "790623e25913eac164e6130b0ade37db",
+    "source": "theme",
+    "type": "title",
+    "answer": "Don't Put All Your Eggs in One Basket",
+    "normalizedAnswer": "DONT PUT ALL YOUR EGGS IN ONE BASKET",
+    "category": "Idiom or Proverb",
+    "difficulty": 40,
+    "difficultyTier": "easy",
+    "wordCount": 8,
+    "letterCount": 29,
+    "uniqueLetterCount": 16,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "71e3987f17613e8194f0de3057b90bea",
+    "source": "theme",
+    "type": "title",
+    "answer": "Don't Put the Cart Before the Horse",
+    "normalizedAnswer": "DONT PUT THE CART BEFORE THE HORSE",
+    "category": "Idiom or Proverb",
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 7,
+    "letterCount": 28,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "8dab90477901dc5276c339f8024f30f4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Don't Rock the Boat",
+    "normalizedAnswer": "DONT ROCK THE BOAT",
+    "category": "Idiom or Proverb",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "49ff0f6b5e3e03590c82bacf83de3468",
+    "source": "theme",
+    "type": "title",
+    "answer": "Don't Shoot the Messenger",
+    "normalizedAnswer": "DONT SHOOT THE MESSENGER",
+    "category": "Idiom or Proverb",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 21,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "752324865267e31e1cfe9618dbf8e385",
+    "source": "theme",
+    "type": "title",
+    "answer": "Easier Said Than Done",
+    "normalizedAnswer": "EASIER SAID THAN DONE",
+    "category": "Idiom or Proverb",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 18,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "7c1f01c8d77207ba60b7ca455540f9fd",
+    "source": "theme",
+    "type": "title",
+    "answer": "Easy Come Easy Go",
+    "normalizedAnswer": "EASY COME EASY GO",
+    "category": "Idiom or Proverb",
+    "difficulty": 72.4,
+    "difficultyTier": "medium",
+    "wordCount": 4,
+    "letterCount": 14,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "302b14caf349389656ef42e785c07442",
+    "source": "theme",
+    "type": "title",
+    "answer": "Every Cloud Has a Silver Lining",
+    "normalizedAnswer": "EVERY CLOUD HAS A SILVER LINING",
+    "category": "Idiom or Proverb",
+    "difficulty": 44,
+    "difficultyTier": "easy",
+    "wordCount": 6,
+    "letterCount": 26,
+    "uniqueLetterCount": 15,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "905867b7c215c9bc46a7d4bcd5d8adf8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Every Dog Has Its Day",
+    "normalizedAnswer": "EVERY DOG HAS ITS DAY",
+    "category": "Idiom or Proverb",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 17,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "42ce296bd525f90259e214c6edef8c9d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Face the Music",
+    "normalizedAnswer": "FACE THE MUSIC",
+    "category": "Idiom or Proverb",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "d5c7a92dab28a1f03b2c77740e411778",
+    "source": "theme",
+    "type": "title",
+    "answer": "First Come First Served",
+    "normalizedAnswer": "FIRST COME FIRST SERVED",
+    "category": "Idiom or Proverb",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 20,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "fab53ebcb7919f8695d066c5bb06cc6a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Fit as a Fiddle",
+    "normalizedAnswer": "FIT AS A FIDDLE",
+    "category": "Idiom or Proverb",
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 4,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "14e4adaf1c0703ed60eec8d3cf04895c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Fortune Favors the Bold",
+    "normalizedAnswer": "FORTUNE FAVORS THE BOLD",
+    "category": "Idiom or Proverb",
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 20,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ea5eb491611177f629938db64b1e52ca",
+    "source": "theme",
+    "type": "title",
+    "answer": "Get Cold Feet",
+    "normalizedAnswer": "GET COLD FEET",
+    "category": "Idiom or Proverb",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "67b21604d40886596daee14dc2073dee",
+    "source": "theme",
+    "type": "title",
+    "answer": "Get the Ball Rolling",
+    "normalizedAnswer": "GET THE BALL ROLLING",
+    "category": "Idiom or Proverb",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 17,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "564dd21732d884ff812c2a416a66c267",
+    "source": "theme",
+    "type": "title",
+    "answer": "Go Out on a Limb",
+    "normalizedAnswer": "GO OUT ON A LIMB",
+    "category": "Idiom or Proverb",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 5,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "7f103d9a8c46fd1c1af7283a879b631f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Go the Extra Mile",
+    "normalizedAnswer": "GO THE EXTRA MILE",
+    "category": "Idiom or Proverb",
+    "difficulty": 60.4,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 14,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "05541b632378ea80e4d3cb280139107a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Go With the Flow",
+    "normalizedAnswer": "GO WITH THE FLOW",
+    "category": "Idiom or Proverb",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 4,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "0ccdb9b018b45bd90e5d47ce98b41f43",
+    "source": "theme",
+    "type": "title",
+    "answer": "Good Things Come to Those Who Wait",
+    "normalizedAnswer": "GOOD THINGS COME TO THOSE WHO WAIT",
+    "category": "Idiom or Proverb",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 7,
+    "letterCount": 28,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "8ecc50f23453ea312af12047dbda04a6",
+    "source": "theme",
+    "type": "title",
+    "answer": "Great Minds Think Alike",
+    "normalizedAnswer": "GREAT MINDS THINK ALIKE",
+    "category": "Idiom or Proverb",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 20,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c62a342fede2584bb5c3371ce1641483",
+    "source": "theme",
+    "type": "title",
+    "answer": "Haste Makes Waste",
+    "normalizedAnswer": "HASTE MAKES WASTE",
+    "category": "Idiom or Proverb",
+    "difficulty": 72,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "fd58ebda1f5cbc1ec2fafc7ad0282486",
+    "source": "theme",
+    "type": "title",
+    "answer": "Have Your Cake and Eat It Too",
+    "normalizedAnswer": "HAVE YOUR CAKE AND EAT IT TOO",
+    "category": "Idiom or Proverb",
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 7,
+    "letterCount": 23,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "87e3aa0273c7d431ca7cb61817a1e39d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Head Over Heels",
+    "normalizedAnswer": "HEAD OVER HEELS",
+    "category": "Idiom or Proverb",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "87624cd1a9f5b6e0b2954563365eb03b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Hit the Nail on the Head",
+    "normalizedAnswer": "HIT THE NAIL ON THE HEAD",
+    "category": "Idiom or Proverb",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 6,
+    "letterCount": 19,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "750356bbf8cbad139ce47a4b1036e219",
+    "source": "theme",
+    "type": "title",
+    "answer": "Hit the Road",
+    "normalizedAnswer": "HIT THE ROAD",
+    "category": "Idiom or Proverb",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "0d06490909bda070581ec00a6028145a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Hit the Sack",
+    "normalizedAnswer": "HIT THE SACK",
+    "category": "Idiom or Proverb",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "bbb75d520b48b9e66aca14283b81596f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Hold Your Horses",
+    "normalizedAnswer": "HOLD YOUR HORSES",
+    "category": "Idiom or Proverb",
+    "difficulty": 68.4,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 14,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "7ab3f17df56427304436dd65736498b7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Home Is Where the Heart Is",
+    "normalizedAnswer": "HOME IS WHERE THE HEART IS",
+    "category": "Idiom or Proverb",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 6,
+    "letterCount": 21,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "e8f777f2305a5fc74d83e876a72a3b20",
+    "source": "theme",
+    "type": "title",
+    "answer": "Honesty Is the Best Policy",
+    "normalizedAnswer": "HONESTY IS THE BEST POLICY",
+    "category": "Idiom or Proverb",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 22,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "24942034997e230b1d92dfc0abb0feb9",
+    "source": "theme",
+    "type": "title",
+    "answer": "If It Ain't Broke Don't Fix It",
+    "normalizedAnswer": "IF IT AINT BROKE DONT FIX IT",
+    "category": "Idiom or Proverb",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 7,
+    "letterCount": 22,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "30904aa9c91dcd0faf4ee62315c00c31",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ignorance Is Bliss",
+    "normalizedAnswer": "IGNORANCE IS BLISS",
+    "category": "Idiom or Proverb",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 16,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "baba48c02c28b3a6acb44906733a2f9c",
+    "source": "theme",
+    "type": "title",
+    "answer": "In Hot Water",
+    "normalizedAnswer": "IN HOT WATER",
+    "category": "Idiom or Proverb",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "db4c0f39acf746772836909c16ea8c68",
+    "source": "theme",
+    "type": "title",
+    "answer": "In the Nick of Time",
+    "normalizedAnswer": "IN THE NICK OF TIME",
+    "category": "Idiom or Proverb",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "3be572a209de48c920f731b394f342b0",
+    "source": "theme",
+    "type": "title",
+    "answer": "In the Same Boat",
+    "normalizedAnswer": "IN THE SAME BOAT",
+    "category": "Idiom or Proverb",
+    "difficulty": 64.8,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "d8a960206c3538fa1222fa8c128992b8",
+    "source": "theme",
+    "type": "title",
+    "answer": "It Takes Two to Tango",
+    "normalizedAnswer": "IT TAKES TWO TO TANGO",
+    "category": "Idiom or Proverb",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 17,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "495db9069838701fb0ee238587faeea8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Jack of All Trades",
+    "normalizedAnswer": "JACK OF ALL TRADES",
+    "category": "Idiom or Proverb",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 15,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "e135328bd022da149799fe8da20555a9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Jump on the Bandwagon",
+    "normalizedAnswer": "JUMP ON THE BANDWAGON",
+    "category": "Idiom or Proverb",
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 18,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6d904a4c9085042746148f454bdafad5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Jump the Gun",
+    "normalizedAnswer": "JUMP THE GUN",
+    "category": "Idiom or Proverb",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "e4dd97f844fa791bfbd0b25039dc3e93",
+    "source": "theme",
+    "type": "title",
+    "answer": "Kick the Bucket",
+    "normalizedAnswer": "KICK THE BUCKET",
+    "category": "Idiom or Proverb",
+    "difficulty": 72.8,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 13,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "87a0951a9f6252c3462cf24f121b8928",
+    "source": "theme",
+    "type": "title",
+    "answer": "Kill Two Birds With One Stone",
+    "normalizedAnswer": "KILL TWO BIRDS WITH ONE STONE",
+    "category": "Idiom or Proverb",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 6,
+    "letterCount": 24,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "38328f95c94398ad67f289da9e50a4af",
+    "source": "theme",
+    "type": "title",
+    "answer": "Knock on Wood",
+    "normalizedAnswer": "KNOCK ON WOOD",
+    "category": "Idiom or Proverb",
+    "difficulty": 81.6,
+    "difficultyTier": "hard",
+    "wordCount": 3,
+    "letterCount": 11,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "707ed294878aef59471fcf6aeeca3b74",
+    "source": "theme",
+    "type": "title",
+    "answer": "Knowledge Is Power",
+    "normalizedAnswer": "KNOWLEDGE IS POWER",
+    "category": "Idiom or Proverb",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 16,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "afe0680eafffbfcb6eeef406b38c0687",
+    "source": "theme",
+    "type": "title",
+    "answer": "Laughter Is the Best Medicine",
+    "normalizedAnswer": "LAUGHTER IS THE BEST MEDICINE",
+    "category": "Idiom or Proverb",
+    "difficulty": 44,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 25,
+    "uniqueLetterCount": 15,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "5ab11d137d171cf4685d7750501f5502",
+    "source": "theme",
+    "type": "title",
+    "answer": "Leave No Stone Unturned",
+    "normalizedAnswer": "LEAVE NO STONE UNTURNED",
+    "category": "Idiom or Proverb",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 20,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "8b289b0dc40fd29ec2839cbc1445d6d9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Let Bygones Be Bygones",
+    "normalizedAnswer": "LET BYGONES BE BYGONES",
+    "category": "Idiom or Proverb",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 4,
+    "letterCount": 19,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c8533ba36956dda6684e2c0e4c201e88",
+    "source": "theme",
+    "type": "title",
+    "answer": "Let Sleeping Dogs Lie",
+    "normalizedAnswer": "LET SLEEPING DOGS LIE",
+    "category": "Idiom or Proverb",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 18,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "2b971698d2d84fb9f9f014bec8571012",
+    "source": "theme",
+    "type": "title",
+    "answer": "Let the Cat Out of the Bag",
+    "normalizedAnswer": "LET THE CAT OUT OF THE BAG",
+    "category": "Idiom or Proverb",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 7,
+    "letterCount": 20,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "eaab11490eca509d236997cd456d9dc7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lightning Never Strikes Twice",
+    "normalizedAnswer": "LIGHTNING NEVER STRIKES TWICE",
+    "category": "Idiom or Proverb",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 26,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "dd3b4778a38517ca9b80c8e28a7d9218",
+    "source": "theme",
+    "type": "title",
+    "answer": "Like a Bull in a China Shop",
+    "normalizedAnswer": "LIKE A BULL IN A CHINA SHOP",
+    "category": "Idiom or Proverb",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 7,
+    "letterCount": 21,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "d9cf36b67f2153c81f7ae151ec626555",
+    "source": "theme",
+    "type": "title",
+    "answer": "Like a Fish Out of Water",
+    "normalizedAnswer": "LIKE A FISH OUT OF WATER",
+    "category": "Idiom or Proverb",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 6,
+    "letterCount": 19,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "aea86645dd448c8fa27a7ef2e8eb5d4f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Like Father Like Son",
+    "normalizedAnswer": "LIKE FATHER LIKE SON",
+    "category": "Idiom or Proverb",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 17,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "79a70f54faeab3d853035feb117af52c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Look Before You Leap",
+    "normalizedAnswer": "LOOK BEFORE YOU LEAP",
+    "category": "Idiom or Proverb",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 17,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "bfd5e2c80a1b69a2f9e30d5be1ab79cb",
+    "source": "theme",
+    "type": "title",
+    "answer": "Make Hay While the Sun Shines",
+    "normalizedAnswer": "MAKE HAY WHILE THE SUN SHINES",
+    "category": "Idiom or Proverb",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 6,
+    "letterCount": 24,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "d321bbb7ea02b7f53afff16714186771",
+    "source": "theme",
+    "type": "title",
+    "answer": "Many Hands Make Light Work",
+    "normalizedAnswer": "MANY HANDS MAKE LIGHT WORK",
+    "category": "Idiom or Proverb",
+    "difficulty": 40,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 22,
+    "uniqueLetterCount": 16,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "3ddbf2ae1f43a9e7482090da0944e0eb",
+    "source": "theme",
+    "type": "title",
+    "answer": "Misery Loves Company",
+    "normalizedAnswer": "MISERY LOVES COMPANY",
+    "category": "Idiom or Proverb",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 18,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "2ef6f2c340cb8e59738ee3029a338413",
+    "source": "theme",
+    "type": "title",
+    "answer": "Money Doesn't Grow on Trees",
+    "normalizedAnswer": "MONEY DOESNT GROW ON TREES",
+    "category": "Idiom or Proverb",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 22,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "46888ed4e584772953816b224aa14a74",
+    "source": "theme",
+    "type": "title",
+    "answer": "Monkey See Monkey Do",
+    "normalizedAnswer": "MONKEY SEE MONKEY DO",
+    "category": "Idiom or Proverb",
+    "difficulty": 72,
+    "difficultyTier": "medium",
+    "wordCount": 4,
+    "letterCount": 17,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "63b354db848e19f9850c358292ec64fc",
+    "source": "theme",
+    "type": "title",
+    "answer": "Necessity Is the Mother of Invention",
+    "normalizedAnswer": "NECESSITY IS THE MOTHER OF INVENTION",
+    "category": "Idiom or Proverb",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 6,
+    "letterCount": 31,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "cd7302ccc6932780b08b0ef12320ce9c",
+    "source": "theme",
+    "type": "title",
+    "answer": "No Pain No Gain",
+    "normalizedAnswer": "NO PAIN NO GAIN",
+    "category": "Idiom or Proverb",
+    "difficulty": 81.2,
+    "difficultyTier": "hard",
+    "wordCount": 4,
+    "letterCount": 12,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "80b9e5266c7021d61655841de0a8b83c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Not My Cup of Tea",
+    "normalizedAnswer": "NOT MY CUP OF TEA",
+    "category": "Idiom or Proverb",
+    "difficulty": 60.8,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 13,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "3cadcc5e85c05e100b2e436372c1f9b6",
+    "source": "theme",
+    "type": "title",
+    "answer": "Old Habits Die Hard",
+    "normalizedAnswer": "OLD HABITS DIE HARD",
+    "category": "Idiom or Proverb",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 16,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "5afa8ead4d5ad4104001875ad1be2e1a",
+    "source": "theme",
+    "type": "title",
+    "answer": "On Cloud Nine",
+    "normalizedAnswer": "ON CLOUD NINE",
+    "category": "Idiom or Proverb",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "d058b82cd5000de72be90e8415fd99bd",
+    "source": "theme",
+    "type": "title",
+    "answer": "On Thin Ice",
+    "normalizedAnswer": "ON THIN ICE",
+    "category": "Idiom or Proverb",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "03ec54d4ea604eea2329e297053a877f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Once Bitten Twice Shy",
+    "normalizedAnswer": "ONCE BITTEN TWICE SHY",
+    "category": "Idiom or Proverb",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 18,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6156070b9b1b5435ad251fe2b5113475",
+    "source": "theme",
+    "type": "title",
+    "answer": "Once in a Blue Moon",
+    "normalizedAnswer": "ONCE IN A BLUE MOON",
+    "category": "Idiom or Proverb",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "2d23dfa39fb37e68484f34ea83b6442d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Out of Sight Out of Mind",
+    "normalizedAnswer": "OUT OF SIGHT OUT OF MIND",
+    "category": "Idiom or Proverb",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 6,
+    "letterCount": 19,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "015eb795e0e88946a2bd0bee1900e131",
+    "source": "theme",
+    "type": "title",
+    "answer": "Out of the Blue",
+    "normalizedAnswer": "OUT OF THE BLUE",
+    "category": "Idiom or Proverb",
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 4,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "322fa1f6c4c79ccce04027f9b09eb53d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Out of the Frying Pan Into the Fire",
+    "normalizedAnswer": "OUT OF THE FRYING PAN INTO THE FIRE",
+    "category": "Idiom or Proverb",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 8,
+    "letterCount": 28,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "67e3c9e9b48007756de353cacd8d29e6",
+    "source": "theme",
+    "type": "title",
+    "answer": "Over the Moon",
+    "normalizedAnswer": "OVER THE MOON",
+    "category": "Idiom or Proverb",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "e2fa7c1f0edf837e9274b0af59624eb1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Paint the Town Red",
+    "normalizedAnswer": "PAINT THE TOWN RED",
+    "category": "Idiom or Proverb",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "775f4ad2cad19b0db63e5dce364ceed4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Patience Is a Virtue",
+    "normalizedAnswer": "PATIENCE IS A VIRTUE",
+    "category": "Idiom or Proverb",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 17,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "f0a9a25c1f0b2d9b7ed0880ee666beb1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Piece of Cake",
+    "normalizedAnswer": "PIECE OF CAKE",
+    "category": "Idiom or Proverb",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "523e6cb9eb5a27c225535e0b32610f54",
+    "source": "theme",
+    "type": "title",
+    "answer": "Play It by Ear",
+    "normalizedAnswer": "PLAY IT BY EAR",
+    "category": "Idiom or Proverb",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 4,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "3ff238ed008ae6e2425b6a2b1dd12a0f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Practice Makes Perfect",
+    "normalizedAnswer": "PRACTICE MAKES PERFECT",
+    "category": "Idiom or Proverb",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 20,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "bd58a322da91a33206c67d5ed0c79309",
+    "source": "theme",
+    "type": "title",
+    "answer": "Practice What You Preach",
+    "normalizedAnswer": "PRACTICE WHAT YOU PREACH",
+    "category": "Idiom or Proverb",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 21,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c258c14a8bcf9dbdaf613661acd05410",
+    "source": "theme",
+    "type": "title",
+    "answer": "Put Your Money Where Your Mouth Is",
+    "normalizedAnswer": "PUT YOUR MONEY WHERE YOUR MOUTH IS",
+    "category": "Idiom or Proverb",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 7,
+    "letterCount": 28,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "bf85c28dd444f9bc9fac26aee16af32a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Raining Cats and Dogs",
+    "normalizedAnswer": "RAINING CATS AND DOGS",
+    "category": "Idiom or Proverb",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 18,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "18c55b7494acafb01f368c84ca70fcd1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Read Between the Lines",
+    "normalizedAnswer": "READ BETWEEN THE LINES",
+    "category": "Idiom or Proverb",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 19,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "348f838d8e1fb392a6c0cff5599fa955",
+    "source": "theme",
+    "type": "title",
+    "answer": "Red Herring",
+    "normalizedAnswer": "RED HERRING",
+    "category": "Idiom or Proverb",
+    "difficulty": 78,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "46b80fe8de1ea77413793a60b6be91e8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Rome Wasn't Built in a Day",
+    "normalizedAnswer": "ROME WASNT BUILT IN A DAY",
+    "category": "Idiom or Proverb",
+    "difficulty": 44,
+    "difficultyTier": "easy",
+    "wordCount": 6,
+    "letterCount": 20,
+    "uniqueLetterCount": 15,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "20c36e9d8c9b5c36e8d608e60349ce2c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Rule of Thumb",
+    "normalizedAnswer": "RULE OF THUMB",
+    "category": "Idiom or Proverb",
+    "difficulty": 65.6,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 11,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "0bf2b1a081cee12866619104548faa4a",
+    "source": "theme",
+    "type": "title",
+    "answer": "See Eye to Eye",
+    "normalizedAnswer": "SEE EYE TO EYE",
+    "category": "Idiom or Proverb",
+    "difficulty": 85.6,
+    "difficultyTier": "hard",
+    "wordCount": 4,
+    "letterCount": 11,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "8d1208700a9d862e59115eab27e1caa0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Seeing Is Believing",
+    "normalizedAnswer": "SEEING IS BELIEVING",
+    "category": "Idiom or Proverb",
+    "difficulty": 72,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 17,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "1c633c09f5a5d30ea3a20fd10cd3f7e7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sit on the Fence",
+    "normalizedAnswer": "SIT ON THE FENCE",
+    "category": "Idiom or Proverb",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 4,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "eee6d4a51acc4cad54e19bf674111d6e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Slow and Steady Wins the Race",
+    "normalizedAnswer": "SLOW AND STEADY WINS THE RACE",
+    "category": "Idiom or Proverb",
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 6,
+    "letterCount": 24,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c8d8067da5157fe1cd303160f291fbef",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sour Grapes",
+    "normalizedAnswer": "SOUR GRAPES",
+    "category": "Idiom or Proverb",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "cfe4712307619b5c4ade8a1826836f27",
+    "source": "theme",
+    "type": "title",
+    "answer": "Speak of the Devil",
+    "normalizedAnswer": "SPEAK OF THE DEVIL",
+    "category": "Idiom or Proverb",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 15,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "8a21ec6bb0493853d576e6fbd661690c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Spill the Beans",
+    "normalizedAnswer": "SPILL THE BEANS",
+    "category": "Idiom or Proverb",
+    "difficulty": 64.8,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "00f926fa942be9fe9857359c2beca5a0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Straight From the Horse's Mouth",
+    "normalizedAnswer": "STRAIGHT FROM THE HORSES MOUTH",
+    "category": "Idiom or Proverb",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 26,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "3ce9b4062d6726f68c1a26352cc5b04c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Strike While the Iron Is Hot",
+    "normalizedAnswer": "STRIKE WHILE THE IRON IS HOT",
+    "category": "Idiom or Proverb",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 6,
+    "letterCount": 23,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c39cfd924cad1dfd2f6a358ed6a3634b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Take It With a Grain of Salt",
+    "normalizedAnswer": "TAKE IT WITH A GRAIN OF SALT",
+    "category": "Idiom or Proverb",
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 7,
+    "letterCount": 22,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "f6a715688a830bf4686e3a9d66f05362",
+    "source": "theme",
+    "type": "title",
+    "answer": "Take the Bull by the Horns",
+    "normalizedAnswer": "TAKE THE BULL BY THE HORNS",
+    "category": "Idiom or Proverb",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 6,
+    "letterCount": 21,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "cb1774c8050ba9d193b773c81abe0c87",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Apple Doesn't Fall Far From the Tree",
+    "normalizedAnswer": "THE APPLE DOESNT FALL FAR FROM THE TREE",
+    "category": "Idiom or Proverb",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 8,
+    "letterCount": 32,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "1d4eab972e5a78fb5a46093ef6e5e38a",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Ball Is in Your Court",
+    "normalizedAnswer": "THE BALL IS IN YOUR COURT",
+    "category": "Idiom or Proverb",
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 6,
+    "letterCount": 20,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a98276dc7724289dc94a7069ba742327",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Best of Both Worlds",
+    "normalizedAnswer": "THE BEST OF BOTH WORLDS",
+    "category": "Idiom or Proverb",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 19,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "836ae89bea0bce0d7ec542f7690c0854",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Best Thing Since Sliced Bread",
+    "normalizedAnswer": "THE BEST THING SINCE SLICED BREAD",
+    "category": "Idiom or Proverb",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 6,
+    "letterCount": 28,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "e1c6aa33e1c03391879017f469affb04",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Bigger They Are the Harder They Fall",
+    "normalizedAnswer": "THE BIGGER THEY ARE THE HARDER THEY FALL",
+    "category": "Idiom or Proverb",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 8,
+    "letterCount": 33,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "2c8fb0217891965aa2d060da0262e463",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Calm Before the Storm",
+    "normalizedAnswer": "THE CALM BEFORE THE STORM",
+    "category": "Idiom or Proverb",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 21,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "fb9ea29054bbf37d137dbf8a433ad363",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Devil Is in the Details",
+    "normalizedAnswer": "THE DEVIL IS IN THE DETAILS",
+    "category": "Idiom or Proverb",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 6,
+    "letterCount": 22,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "18748262fc6db0ab6a1eb323a5523982",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Early Bird Catches the Worm",
+    "normalizedAnswer": "THE EARLY BIRD CATCHES THE WORM",
+    "category": "Idiom or Proverb",
+    "difficulty": 44,
+    "difficultyTier": "easy",
+    "wordCount": 6,
+    "letterCount": 26,
+    "uniqueLetterCount": 15,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "0a5106174138dcff8574a57265e9fcc4",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Elephant in the Room",
+    "normalizedAnswer": "THE ELEPHANT IN THE ROOM",
+    "category": "Idiom or Proverb",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 20,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "44c91666018bd90e1150b1fd5779f2ef",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Grass Is Greener on the Other Side",
+    "normalizedAnswer": "THE GRASS IS GREENER ON THE OTHER SIDE",
+    "category": "Idiom or Proverb",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 8,
+    "letterCount": 31,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "9e1f5b1aa951ca08a75c13d9e2700220",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Icing on the Cake",
+    "normalizedAnswer": "THE ICING ON THE CAKE",
+    "category": "Idiom or Proverb",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 17,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "5b6b3603acc9867b0637883cbd10b319",
+    "source": "theme",
+    "type": "title",
+    "answer": "The More the Merrier",
+    "normalizedAnswer": "THE MORE THE MERRIER",
+    "category": "Idiom or Proverb",
+    "difficulty": 76,
+    "difficultyTier": "medium",
+    "wordCount": 4,
+    "letterCount": 17,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "04799fb929b3df32046f48bf92fbca0a",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Pen Is Mightier Than the Sword",
+    "normalizedAnswer": "THE PEN IS MIGHTIER THAN THE SWORD",
+    "category": "Idiom or Proverb",
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 7,
+    "letterCount": 28,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "963ad59747e9a057fc60d84f942f2825",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Pot Calling the Kettle Black",
+    "normalizedAnswer": "THE POT CALLING THE KETTLE BLACK",
+    "category": "Idiom or Proverb",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 6,
+    "letterCount": 27,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "4b76f7fa34a3b738b03354ae7c128dcc",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Proof Is in the Pudding",
+    "normalizedAnswer": "THE PROOF IS IN THE PUDDING",
+    "category": "Idiom or Proverb",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 6,
+    "letterCount": 22,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "426bf2c74f93da2bb1154e768e1a0ff5",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Squeaky Wheel Gets the Grease",
+    "normalizedAnswer": "THE SQUEAKY WHEEL GETS THE GREASE",
+    "category": "Idiom or Proverb",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 6,
+    "letterCount": 28,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "832ee24d51e7fc07bdcd3c34c60fa099",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Straw That Broke the Camel's Back",
+    "normalizedAnswer": "THE STRAW THAT BROKE THE CAMELS BACK",
+    "category": "Idiom or Proverb",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 7,
+    "letterCount": 30,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "9a71f70a4c9a4cc9e42f39bd4ad2f03f",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Tip of the Iceberg",
+    "normalizedAnswer": "THE TIP OF THE ICEBERG",
+    "category": "Idiom or Proverb",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 18,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "7f545f8a255a71da922b3747dc4e7c43",
+    "source": "theme",
+    "type": "title",
+    "answer": "The Whole Nine Yards",
+    "normalizedAnswer": "THE WHOLE NINE YARDS",
+    "category": "Idiom or Proverb",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 17,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "7e6edb92af02f272ca3b307fc27f40e0",
+    "source": "theme",
+    "type": "title",
+    "answer": "There's No Place Like Home",
+    "normalizedAnswer": "THERES NO PLACE LIKE HOME",
+    "category": "Idiom or Proverb",
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 21,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "4719ff4141b126548ee96cc6ac617cb3",
+    "source": "theme",
+    "type": "title",
+    "answer": "There's No Such Thing as a Free Lunch",
+    "normalizedAnswer": "THERES NO SUCH THING AS A FREE LUNCH",
+    "category": "Idiom or Proverb",
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 8,
+    "letterCount": 29,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "72afc3f88c880d6664fcdb74a02eeb8c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Think Outside the Box",
+    "normalizedAnswer": "THINK OUTSIDE THE BOX",
+    "category": "Idiom or Proverb",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 18,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "5c08e1db3053192dd4931787b4194efe",
+    "source": "theme",
+    "type": "title",
+    "answer": "Third Time's the Charm",
+    "normalizedAnswer": "THIRD TIMES THE CHARM",
+    "category": "Idiom or Proverb",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 18,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "bd1a6e9d9bd1052fdbbd59c2d5979044",
+    "source": "theme",
+    "type": "title",
+    "answer": "Through Thick and Thin",
+    "normalizedAnswer": "THROUGH THICK AND THIN",
+    "category": "Idiom or Proverb",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 19,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "488d3c5968f6e2417f6e4a934071684a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Throw in the Towel",
+    "normalizedAnswer": "THROW IN THE TOWEL",
+    "category": "Idiom or Proverb",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 4,
+    "letterCount": 15,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "4c05a0ce717f863bf6ade08a6bc4af3f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Tie the Knot",
+    "normalizedAnswer": "TIE THE KNOT",
+    "category": "Idiom or Proverb",
+    "difficulty": 78,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "8aee29246fc26437282937930f0be9ff",
+    "source": "theme",
+    "type": "title",
+    "answer": "Time Flies When You're Having Fun",
+    "normalizedAnswer": "TIME FLIES WHEN YOURE HAVING FUN",
+    "category": "Idiom or Proverb",
+    "difficulty": 36,
+    "difficultyTier": "easy",
+    "wordCount": 6,
+    "letterCount": 27,
+    "uniqueLetterCount": 17,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "7afd50854b0d11b37a45f7d83ef759fc",
+    "source": "theme",
+    "type": "title",
+    "answer": "Time Is Money",
+    "normalizedAnswer": "TIME IS MONEY",
+    "category": "Idiom or Proverb",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "f5cc895bdd2b77a9575e9fd413bf3849",
+    "source": "theme",
+    "type": "title",
+    "answer": "Too Many Cooks Spoil the Broth",
+    "normalizedAnswer": "TOO MANY COOKS SPOIL THE BROTH",
+    "category": "Idiom or Proverb",
+    "difficulty": 40,
+    "difficultyTier": "easy",
+    "wordCount": 6,
+    "letterCount": 25,
+    "uniqueLetterCount": 16,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "13ef6fb5fd23a13517f32ddd92e7f121",
+    "source": "theme",
+    "type": "title",
+    "answer": "Turn Over a New Leaf",
+    "normalizedAnswer": "TURN OVER A NEW LEAF",
+    "category": "Idiom or Proverb",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 16,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "0c8df819b7da215834beb4abcf0be1ae",
+    "source": "theme",
+    "type": "title",
+    "answer": "Two Heads Are Better Than One",
+    "normalizedAnswer": "TWO HEADS ARE BETTER THAN ONE",
+    "category": "Idiom or Proverb",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 6,
+    "letterCount": 24,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "e7ab28a7cd7679ec286c65dbc1cc2d78",
+    "source": "theme",
+    "type": "title",
+    "answer": "Two Peas in a Pod",
+    "normalizedAnswer": "TWO PEAS IN A POD",
+    "category": "Idiom or Proverb",
+    "difficulty": 64.8,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "23122bc78ac02518098abcfd95095e10",
+    "source": "theme",
+    "type": "title",
+    "answer": "Two Wrongs Don't Make a Right",
+    "normalizedAnswer": "TWO WRONGS DONT MAKE A RIGHT",
+    "category": "Idiom or Proverb",
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 6,
+    "letterCount": 23,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "8b1935c9a9cf50743f7a5cd8d4e4fd7e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Under the Weather",
+    "normalizedAnswer": "UNDER THE WEATHER",
+    "category": "Idiom or Proverb",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 15,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "4ec7d7a205f69541a04ef738003ade2e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Up in the Air",
+    "normalizedAnswer": "UP IN THE AIR",
+    "category": "Idiom or Proverb",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 4,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "5c13b9567ba73d0520783ae90749b7fb",
+    "source": "theme",
+    "type": "title",
+    "answer": "Variety Is the Spice of Life",
+    "normalizedAnswer": "VARIETY IS THE SPICE OF LIFE",
+    "category": "Idiom or Proverb",
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 6,
+    "letterCount": 23,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "f52b863f188a575f0ac2e6f5c9105cc4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Water Under the Bridge",
+    "normalizedAnswer": "WATER UNDER THE BRIDGE",
+    "category": "Idiom or Proverb",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 19,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6717d0dd7123e17478f1db318b0898d0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Wear Your Heart on Your Sleeve",
+    "normalizedAnswer": "WEAR YOUR HEART ON YOUR SLEEVE",
+    "category": "Idiom or Proverb",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 6,
+    "letterCount": 25,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "60d4fcdd23177be1ad42ce2ac020d7cb",
+    "source": "theme",
+    "type": "title",
+    "answer": "What Goes Around Comes Around",
+    "normalizedAnswer": "WHAT GOES AROUND COMES AROUND",
+    "category": "Idiom or Proverb",
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 25,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "41d9554d014309054be1b71e3e6fde83",
+    "source": "theme",
+    "type": "title",
+    "answer": "When in Rome Do as the Romans Do",
+    "normalizedAnswer": "WHEN IN ROME DO AS THE ROMANS DO",
+    "category": "Idiom or Proverb",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 8,
+    "letterCount": 25,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "e10af48b5bc8000858ffc18bd785c79c",
+    "source": "theme",
+    "type": "title",
+    "answer": "When It Rains It Pours",
+    "normalizedAnswer": "WHEN IT RAINS IT POURS",
+    "category": "Idiom or Proverb",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 18,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "3e1cecf726dd264237f19b1987428ce6",
+    "source": "theme",
+    "type": "title",
+    "answer": "When Life Gives You Lemons Make Lemonade",
+    "normalizedAnswer": "WHEN LIFE GIVES YOU LEMONS MAKE LEMONADE",
+    "category": "Idiom or Proverb",
+    "difficulty": 36,
+    "difficultyTier": "easy",
+    "wordCount": 7,
+    "letterCount": 34,
+    "uniqueLetterCount": 17,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "58c37a9af368075d8ee6a38d9e27a35e",
+    "source": "theme",
+    "type": "title",
+    "answer": "When Pigs Fly",
+    "normalizedAnswer": "WHEN PIGS FLY",
+    "category": "Idiom or Proverb",
+    "difficulty": 61.6,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 11,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "7a9a2aa025afede63d441814473001c1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Where There's a Will There's a Way",
+    "normalizedAnswer": "WHERE THERES A WILL THERES A WAY",
+    "category": "Idiom or Proverb",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 7,
+    "letterCount": 26,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "f3790ce06b4197e05b53476594504c8b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Where There's Smoke There's Fire",
+    "normalizedAnswer": "WHERE THERES SMOKE THERES FIRE",
+    "category": "Idiom or Proverb",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 26,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "2d63e3eb537a39b30b198130f70e96b5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Wild Goose Chase",
+    "normalizedAnswer": "WILD GOOSE CHASE",
+    "category": "Idiom or Proverb",
+    "difficulty": 60.4,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 14,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "60d9269f24de8aa8831a1eb6f134c69e",
+    "source": "theme",
+    "type": "title",
+    "answer": "You Can Lead a Horse to Water",
+    "normalizedAnswer": "YOU CAN LEAD A HORSE TO WATER",
+    "category": "Idiom or Proverb",
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 7,
+    "letterCount": 23,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "023f401260f1f990b0dca5d23968b20a",
+    "source": "theme",
+    "type": "title",
+    "answer": "You Can't Teach an Old Dog New Tricks",
+    "normalizedAnswer": "YOU CANT TEACH AN OLD DOG NEW TRICKS",
+    "category": "Idiom or Proverb",
+    "difficulty": 36,
+    "difficultyTier": "easy",
+    "wordCount": 8,
+    "letterCount": 29,
+    "uniqueLetterCount": 17,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ef8750b0d90d3e5f8984fcc6626fc8b4",
+    "source": "theme",
+    "type": "title",
+    "answer": "You Reap What You Sow",
+    "normalizedAnswer": "YOU REAP WHAT YOU SOW",
+    "category": "Idiom or Proverb",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 5,
+    "letterCount": 17,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "1a46c988f9c459e4b25727ba55c2ae09",
+    "source": "theme",
+    "type": "title",
+    "answer": "Your Guess Is as Good as Mine",
+    "normalizedAnswer": "YOUR GUESS IS AS GOOD AS MINE",
+    "category": "Idiom or Proverb",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 7,
+    "letterCount": 23,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "language",
+      "idiom"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  }
+]

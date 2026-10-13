@@ -1,68 +1,5 @@
 [
   {
-    "id": "d761e0c47a51454e2105625a60456c8c",
-    "source": "theme",
-    "type": "title",
-    "answer": "Fields of Fire",
-    "normalizedAnswer": "FIELDS OF FIRE",
-    "category": "Board Game or Toy",
-    "difficulty": 73.2,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 12,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "08bd55c0f7dc22d15f18a055aae9803e",
-    "source": "theme",
-    "type": "title",
-    "answer": "Final Girl",
-    "normalizedAnswer": "FINAL GIRL",
-    "category": "Board Game or Toy",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "461b0e09456049295319006beaba28bb",
-    "source": "theme",
-    "type": "title",
-    "answer": "A Game of War",
-    "normalizedAnswer": "A GAME OF WAR",
-    "category": "Board Game or Toy",
-    "difficulty": 74,
-    "difficultyTier": "medium",
-    "wordCount": 4,
-    "letterCount": 10,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "9031ef9fb227219b35312ba036177008",
     "source": "theme",
     "type": "title",
@@ -105,27 +42,6 @@
     }
   },
   {
-    "id": "47cb82407d923077e89c1ffb6768637d",
-    "source": "theme",
-    "type": "title",
-    "answer": "Agon",
-    "normalizedAnswer": "AGON",
-    "category": "Board Game or Toy",
-    "difficulty": 92.4,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 4,
-    "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "58e5ee8984f401d3654769dbecce471a",
     "source": "theme",
     "type": "title",
@@ -137,48 +53,6 @@
     "wordCount": 2,
     "letterCount": 16,
     "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "684927e20aa135a1357cfe39e3e56b34",
-    "source": "theme",
-    "type": "title",
-    "answer": "Arimaa",
-    "normalizedAnswer": "ARIMAA",
-    "category": "Board Game or Toy",
-    "difficulty": 91.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "9f441f9b7788fae3e2eefd2f5e4b4a0a",
-    "source": "theme",
-    "type": "title",
-    "answer": "Asalto",
-    "normalizedAnswer": "ASALTO",
-    "category": "Board Game or Toy",
-    "difficulty": 87.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 5,
     "tags": [
       "theme",
       "board-game",
@@ -210,27 +84,6 @@
     }
   },
   {
-    "id": "fc5fc2be11ed3805862cd581a4f5f277",
-    "source": "theme",
-    "type": "title",
-    "answer": "BattleLore",
-    "normalizedAnswer": "BATTLELORE",
-    "category": "Board Game or Toy",
-    "difficulty": 78,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 10,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "d25765b530629e660373cca4b3a50469",
     "source": "theme",
     "type": "title",
@@ -252,27 +105,6 @@
     }
   },
   {
-    "id": "5f9e8d61f54a357469e6c730a48edd6a",
-    "source": "theme",
-    "type": "title",
-    "answer": "Blockade",
-    "normalizedAnswer": "BLOCKADE",
-    "category": "Board Game or Toy",
-    "difficulty": 74.8,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "5c1f200afa2faa8ba3daca0559d6bc8f",
     "source": "theme",
     "type": "title",
@@ -284,48 +116,6 @@
     "wordCount": 2,
     "letterCount": 9,
     "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "4763caa9f5dc5ed788fe6b52f22c67b7",
-    "source": "theme",
-    "type": "title",
-    "answer": "Bul",
-    "normalizedAnswer": "BUL",
-    "category": "Board Game or Toy",
-    "difficulty": 96.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 3,
-    "uniqueLetterCount": 3,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "6107e772007f0b2fe848e2b208c3b24d",
-    "source": "theme",
-    "type": "title",
-    "answer": "Camelot",
-    "normalizedAnswer": "CAMELOT",
-    "category": "Board Game or Toy",
-    "difficulty": 79.2,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 7,
     "tags": [
       "theme",
       "board-game",
@@ -399,27 +189,6 @@
     }
   },
   {
-    "id": "2d982da20c7a9af2a849668d8efaace4",
-    "source": "theme",
-    "type": "title",
-    "answer": "Commands & Colors: Ancients",
-    "normalizedAnswer": "COMMANDS COLORS ANCIENTS",
-    "category": "Board Game or Toy",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 22,
-    "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "4f67ded49d2a977300e3b164977379b7",
     "source": "theme",
     "type": "title",
@@ -431,27 +200,6 @@
     "wordCount": 2,
     "letterCount": 11,
     "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "f7b15c25a26a2a91eadc951a17c73b5d",
-    "source": "theme",
-    "type": "title",
-    "answer": "Cross and circle game",
-    "normalizedAnswer": "CROSS AND CIRCLE GAME",
-    "category": "Board Game or Toy",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 18,
-    "uniqueLetterCount": 12,
     "tags": [
       "theme",
       "board-game",
@@ -483,111 +231,6 @@
     }
   },
   {
-    "id": "b2b2a034cd03c3e9f2710b93e1fcfc91",
-    "source": "theme",
-    "type": "title",
-    "answer": "Counter Intelligence",
-    "normalizedAnswer": "COUNTER INTELLIGENCE",
-    "category": "Board Game or Toy",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 19,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "af8f2e87904607254ff719146adcb1a1",
-    "source": "theme",
-    "type": "title",
-    "answer": "Daldøs",
-    "normalizedAnswer": "DALDOS",
-    "category": "Board Game or Toy",
-    "difficulty": 87.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "5e0678b1ec10f4dccc59f038d25ae054",
-    "source": "theme",
-    "type": "title",
-    "answer": "Diamond",
-    "normalizedAnswer": "DIAMOND",
-    "category": "Board Game or Toy",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "8d7bbf609ecbdbc7feb9ca7832788f1e",
-    "source": "theme",
-    "type": "title",
-    "answer": "Diceball",
-    "normalizedAnswer": "DICEBALL",
-    "category": "Board Game or Toy",
-    "difficulty": 78.8,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "5e6b55ffe7b0aab82591a21d1c4e8076",
-    "source": "theme",
-    "type": "title",
-    "answer": "Doublets",
-    "normalizedAnswer": "DOUBLETS",
-    "category": "Board Game or Toy",
-    "difficulty": 74.8,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "4b8f3609705092f12bbdea7733fe0e91",
     "source": "theme",
     "type": "title",
@@ -599,174 +242,6 @@
     "wordCount": 1,
     "letterCount": 8,
     "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "6f4e7441ebe598a4201d2332f0003cfe",
-    "source": "theme",
-    "type": "title",
-    "answer": "DVONN",
-    "normalizedAnswer": "DVONN",
-    "category": "Board Game or Toy",
-    "difficulty": 92,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "38040f0d69fe82e64a1e47c9e4d13143",
-    "source": "theme",
-    "type": "title",
-    "answer": "Draughts",
-    "normalizedAnswer": "DRAUGHTS",
-    "category": "Board Game or Toy",
-    "difficulty": 74.8,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "30105b14991d4fd7ccffff1bdf1dfff3",
-    "source": "theme",
-    "type": "title",
-    "answer": "East Front",
-    "normalizedAnswer": "EAST FRONT",
-    "category": "Board Game or Toy",
-    "difficulty": 74.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "47e9ff9966556b4a2d73df95ee3eea4b",
-    "source": "theme",
-    "type": "title",
-    "answer": "English Game",
-    "normalizedAnswer": "ENGLISH GAME",
-    "category": "Board Game or Toy",
-    "difficulty": 69.6,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "e0b7765adee7aec3a95ea34abb553be4",
-    "source": "theme",
-    "type": "title",
-    "answer": "Fanorona",
-    "normalizedAnswer": "FANORONA",
-    "category": "Board Game or Toy",
-    "difficulty": 86.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "ddd29479950cb46abbde31ec76410ad5",
-    "source": "theme",
-    "type": "title",
-    "answer": "Game of the Generals",
-    "normalizedAnswer": "GAME OF THE GENERALS",
-    "category": "Board Game or Toy",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 17,
-    "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "36958b6bf66ae8e6da29040a9df0c509",
-    "source": "theme",
-    "type": "title",
-    "answer": "Ghosts",
-    "normalizedAnswer": "GHOSTS",
-    "category": "Board Game or Toy",
-    "difficulty": 87.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "16e7b4c5fa7dd515e1dd1a44e3231e92",
-    "source": "theme",
-    "type": "title",
-    "answer": "GIPF",
-    "normalizedAnswer": "GIPF",
-    "category": "Board Game or Toy",
-    "difficulty": 92.4,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 4,
-    "uniqueLetterCount": 4,
     "tags": [
       "theme",
       "board-game",
@@ -861,27 +336,6 @@
     }
   },
   {
-    "id": "ab02af0835600a1f86c5187a97da84e5",
-    "source": "theme",
-    "type": "title",
-    "answer": "Hounds and jackals",
-    "normalizedAnswer": "HOUNDS AND JACKALS",
-    "category": "Board Game or Toy",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 16,
-    "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "9fa0f8b361abc0b44b4c3725fd159fb6",
     "source": "theme",
     "type": "title",
@@ -903,111 +357,6 @@
     }
   },
   {
-    "id": "c112e52b07939ace662ddf15fb045bbc",
-    "source": "theme",
-    "type": "title",
-    "answer": "Hijara",
-    "normalizedAnswer": "HIJARA",
-    "category": "Board Game or Toy",
-    "difficulty": 87.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "ebd87254ed7b12e95c8484099f3cecce",
-    "source": "theme",
-    "type": "title",
-    "answer": "Hnetafl",
-    "normalizedAnswer": "HNETAFL",
-    "category": "Board Game or Toy",
-    "difficulty": 79.2,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "ae3b1e0d0a0ff14b1961e1f0fc0ce6d0",
-    "source": "theme",
-    "type": "title",
-    "answer": "Irish",
-    "normalizedAnswer": "IRISH",
-    "category": "Board Game or Toy",
-    "difficulty": 92,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "faef1b3001794e795059e35d0c4ea5a9",
-    "source": "theme",
-    "type": "title",
-    "answer": "Jacquet",
-    "normalizedAnswer": "JACQUET",
-    "category": "Board Game or Toy",
-    "difficulty": 79.2,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "9831cdf478f1cba8b7bbf5b92ded9c00",
-    "source": "theme",
-    "type": "title",
-    "answer": "Janggi",
-    "normalizedAnswer": "JANGGI",
-    "category": "Board Game or Toy",
-    "difficulty": 87.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "780cff9acd87c142144081b3bf84ab00",
     "source": "theme",
     "type": "title",
@@ -1019,90 +368,6 @@
     "wordCount": 1,
     "letterCount": 6,
     "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "548a6e30adfd3a8818ede5c5bc362bf4",
-    "source": "theme",
-    "type": "title",
-    "answer": "Kalah",
-    "normalizedAnswer": "KALAH",
-    "category": "Board Game or Toy",
-    "difficulty": 92,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "e4eba383e13a4ee61ab734a417407354",
-    "source": "theme",
-    "type": "title",
-    "answer": "Kamisado",
-    "normalizedAnswer": "KAMISADO",
-    "category": "Board Game or Toy",
-    "difficulty": 78.8,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "2c82afeb17af559a11085e67d70c2137",
-    "source": "theme",
-    "type": "title",
-    "answer": "Khet",
-    "normalizedAnswer": "KHET",
-    "category": "Board Game or Toy",
-    "difficulty": 92.4,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 4,
-    "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "252f2550b9c867ad501033020281c328",
-    "source": "theme",
-    "type": "title",
-    "answer": "Liubo",
-    "normalizedAnswer": "LIUBO",
-    "category": "Board Game or Toy",
-    "difficulty": 88,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 5,
     "tags": [
       "theme",
       "board-game",
@@ -1143,27 +408,6 @@
     "difficulty": 87.6,
     "difficultyTier": "hard",
     "wordCount": 2,
-    "letterCount": 6,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "c2e6dc25545180585324b9e0496bb73f",
-    "source": "theme",
-    "type": "title",
-    "answer": "Makruk",
-    "normalizedAnswer": "MAKRUK",
-    "category": "Board Game or Toy",
-    "difficulty": 87.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
     "letterCount": 6,
     "uniqueLetterCount": 5,
     "tags": [
@@ -1218,27 +462,6 @@
     }
   },
   {
-    "id": "93c40a1033d4b4100618a8fa33ae4ae1",
-    "source": "theme",
-    "type": "title",
-    "answer": "Matching game",
-    "normalizedAnswer": "MATCHING GAME",
-    "category": "Board Game or Toy",
-    "difficulty": 69.2,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 12,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "be6c4006ebc0b404de8f123155131a93",
     "source": "theme",
     "type": "title",
@@ -1250,27 +473,6 @@
     "wordCount": 1,
     "letterCount": 8,
     "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "73fbf655c6dca0dfb4fc84ae3982e741",
-    "source": "theme",
-    "type": "title",
-    "answer": "Napoléon à Austerlitz",
-    "normalizedAnswer": "NAPOLEON A AUSTERLITZ",
-    "category": "Board Game or Toy",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 19,
-    "uniqueLetterCount": 12,
     "tags": [
       "theme",
       "board-game",
@@ -1302,27 +504,6 @@
     }
   },
   {
-    "id": "ce964df20c800bbf2c6dbe95b179cdf8",
-    "source": "theme",
-    "type": "title",
-    "answer": "Onyx",
-    "normalizedAnswer": "ONYX",
-    "category": "Board Game or Toy",
-    "difficulty": 92.4,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 4,
-    "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "6d33d6b591f95a74b8c8af0ebd961314",
     "source": "theme",
     "type": "title",
@@ -1334,69 +515,6 @@
     "wordCount": 1,
     "letterCount": 9,
     "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "cddba0640788929e66205c2320e6025f",
-    "source": "theme",
-    "type": "title",
-    "answer": "Ouk-Khmer",
-    "normalizedAnswer": "OUKKHMER",
-    "category": "Board Game or Toy",
-    "difficulty": 78.8,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "1497f8793edf4362222cdde7d9a11900",
-    "source": "theme",
-    "type": "title",
-    "answer": "Oware",
-    "normalizedAnswer": "OWARE",
-    "category": "Board Game or Toy",
-    "difficulty": 88,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "71fc1648bc8722e3a6886904bbc6b6a5",
-    "source": "theme",
-    "type": "title",
-    "answer": "PÜNCT",
-    "normalizedAnswer": "PUNCT",
-    "category": "Board Game or Toy",
-    "difficulty": 88,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 5,
     "tags": [
       "theme",
       "board-game",
@@ -1470,27 +588,6 @@
     }
   },
   {
-    "id": "950c418da05b2afaa20677dcc5b58b04",
-    "source": "theme",
-    "type": "title",
-    "answer": "Rithmomachy",
-    "normalizedAnswer": "RITHMOMACHY",
-    "category": "Board Game or Toy",
-    "difficulty": 69.6,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 11,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "45f9e7eb0a658aa89b3be56dab3d67bc",
     "source": "theme",
     "type": "title",
@@ -1502,48 +599,6 @@
     "wordCount": 4,
     "letterCount": 13,
     "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "1b0ad01e57d8cd54698af20cce89abc3",
-    "source": "theme",
-    "type": "title",
-    "answer": "RSVP",
-    "normalizedAnswer": "RSVP",
-    "category": "Board Game or Toy",
-    "difficulty": 92.4,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 4,
-    "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "7917ed8df67e180c19acaf9743277837",
-    "source": "theme",
-    "type": "title",
-    "answer": "Sáhkku",
-    "normalizedAnswer": "SAHKKU",
-    "category": "Board Game or Toy",
-    "difficulty": 87.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 5,
     "tags": [
       "theme",
       "board-game",
@@ -1596,48 +651,6 @@
     }
   },
   {
-    "id": "89dfc68ec5cd9bb4c7e55eb95b447f85",
-    "source": "theme",
-    "type": "title",
-    "answer": "Shatar",
-    "normalizedAnswer": "SHATAR",
-    "category": "Board Game or Toy",
-    "difficulty": 87.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "0e4219626f3d51e62c85329bbfb78c70",
-    "source": "theme",
-    "type": "title",
-    "answer": "Shatranj",
-    "normalizedAnswer": "SHATRANJ",
-    "category": "Board Game or Toy",
-    "difficulty": 78.8,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "c924c9099c4a415c8b087639d6a33f1b",
     "source": "theme",
     "type": "title",
@@ -1670,27 +683,6 @@
     "wordCount": 1,
     "letterCount": 5,
     "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "ee62cab33be5c628742fbd5d5862495f",
-    "source": "theme",
-    "type": "title",
-    "answer": "Sittuyin",
-    "normalizedAnswer": "SITTUYIN",
-    "category": "Board Game or Toy",
-    "difficulty": 82.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 6,
     "tags": [
       "theme",
       "board-game",
@@ -1806,195 +798,6 @@
     }
   },
   {
-    "id": "c71396bcfb108f04e9c75423f3b479b9",
-    "source": "theme",
-    "type": "title",
-    "answer": "Suffragetto",
-    "normalizedAnswer": "SUFFRAGETTO",
-    "category": "Board Game or Toy",
-    "difficulty": 69.6,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 11,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "ccfbd62ae23d1ec82667529ddeaccb52",
-    "source": "theme",
-    "type": "title",
-    "answer": "Sugoroku",
-    "normalizedAnswer": "SUGOROKU",
-    "category": "Board Game or Toy",
-    "difficulty": 82.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "31fc9bf3534262344f05fcf0cdd4376b",
-    "source": "theme",
-    "type": "title",
-    "answer": "Summoner Wars",
-    "normalizedAnswer": "SUMMONER WARS",
-    "category": "Board Game or Toy",
-    "difficulty": 69.2,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 12,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "b671837a76ddbf3564399c61c00c0d53",
-    "source": "theme",
-    "type": "title",
-    "answer": "Ta Y",
-    "normalizedAnswer": "TA Y",
-    "category": "Board Game or Toy",
-    "difficulty": 96.8,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 3,
-    "uniqueLetterCount": 3,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "ccd50236d7929502f2b3f268a965b8dd",
-    "source": "theme",
-    "type": "title",
-    "answer": "Tâb",
-    "normalizedAnswer": "TAB",
-    "category": "Board Game or Toy",
-    "difficulty": 96.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 3,
-    "uniqueLetterCount": 3,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "ec4aefbc440bdac49c776cef258f0a96",
-    "source": "theme",
-    "type": "title",
-    "answer": "Tafl",
-    "normalizedAnswer": "TAFL",
-    "category": "Board Game or Toy",
-    "difficulty": 92.4,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 4,
-    "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "61aa314fa6c8eb0135dafb2dcf490b0d",
-    "source": "theme",
-    "type": "title",
-    "answer": "Tantrix",
-    "normalizedAnswer": "TANTRIX",
-    "category": "Board Game or Toy",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "698d09c8c91c5ab005819adbd0f331df",
-    "source": "theme",
-    "type": "title",
-    "answer": "Tak",
-    "normalizedAnswer": "TAK",
-    "category": "Board Game or Toy",
-    "difficulty": 96.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 3,
-    "uniqueLetterCount": 3,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "0e42b16d64ec103d217a22f04e4069e1",
-    "source": "theme",
-    "type": "title",
-    "answer": "The Dragonlords",
-    "normalizedAnswer": "THE DRAGONLORDS",
-    "category": "Board Game or Toy",
-    "difficulty": 60.4,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 14,
-    "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "7bdf0f88c2fb5cd63c1d5aa4bd1af1ec",
     "source": "theme",
     "type": "title",
@@ -2006,27 +809,6 @@
     "wordCount": 1,
     "letterCount": 9,
     "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "6f05218de94459ed14ab97b0549a2129",
-    "source": "theme",
-    "type": "title",
-    "answer": "Verquere",
-    "normalizedAnswer": "VERQUERE",
-    "category": "Board Game or Toy",
-    "difficulty": 86.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 5,
     "tags": [
       "theme",
       "board-game",
@@ -2058,69 +840,6 @@
     }
   },
   {
-    "id": "4e8758465fd6d74d4b6174dd3967529c",
-    "source": "theme",
-    "type": "title",
-    "answer": "YINSH",
-    "normalizedAnswer": "YINSH",
-    "category": "Board Game or Toy",
-    "difficulty": 88,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "1d2212ea6036617f6347f8656c7316e8",
-    "source": "theme",
-    "type": "title",
-    "answer": "ZÈRTZ",
-    "normalizedAnswer": "ZERTZ",
-    "category": "Board Game or Toy",
-    "difficulty": 92,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "85d66fae271c32a59e3df9d2eef73ab7",
-    "source": "theme",
-    "type": "title",
-    "answer": "American Megafauna",
-    "normalizedAnswer": "AMERICAN MEGAFAUNA",
-    "category": "Board Game or Toy",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 17,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "e3e5e0541f17a452477691797c980dfd",
     "source": "theme",
     "type": "title",
@@ -2132,27 +851,6 @@
     "wordCount": 1,
     "letterCount": 12,
     "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "4c2ef2a55b2144db021fedf2ca7493e9",
-    "source": "theme",
-    "type": "title",
-    "answer": "Attack",
-    "normalizedAnswer": "ATTACK",
-    "category": "Board Game or Toy",
-    "difficulty": 91.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 4,
     "tags": [
       "theme",
       "board-game",
@@ -2205,27 +903,6 @@
     }
   },
   {
-    "id": "23e246369608edef5b2f602c01f70e48",
-    "source": "theme",
-    "type": "title",
-    "answer": "Battle Sheep",
-    "normalizedAnswer": "BATTLE SHEEP",
-    "category": "Board Game or Toy",
-    "difficulty": 73.6,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "9eca9df1edd9f5fc98c6d156d40a2de3",
     "source": "theme",
     "type": "title",
@@ -2268,69 +945,6 @@
     }
   },
   {
-    "id": "da66961136a81e6375bd4d59d54f95ee",
-    "source": "theme",
-    "type": "title",
-    "answer": "Blood Feud in New York",
-    "normalizedAnswer": "BLOOD FEUD IN NEW YORK",
-    "category": "Board Game or Toy",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 18,
-    "uniqueLetterCount": 13,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "e79475b9baed0f83a401173609c0e031",
-    "source": "theme",
-    "type": "title",
-    "answer": "Blue Max",
-    "normalizedAnswer": "BLUE MAX",
-    "category": "Board Game or Toy",
-    "difficulty": 79.2,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 7,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "e294e68211bce11182a7d5535ed57424",
-    "source": "theme",
-    "type": "title",
-    "answer": "Bookchase",
-    "normalizedAnswer": "BOOKCHASE",
-    "category": "Board Game or Toy",
-    "difficulty": 74.4,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 9,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "03a00811a5de6aa110b7d1c1908ef25e",
     "source": "theme",
     "type": "title",
@@ -2352,27 +966,6 @@
     }
   },
   {
-    "id": "f2b5b3c723df2db068457db9ae53ddbd",
-    "source": "theme",
-    "type": "title",
-    "answer": "Coppit",
-    "normalizedAnswer": "COPPIT",
-    "category": "Board Game or Toy",
-    "difficulty": 87.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "a8d47009629248485d280453696faff1",
     "source": "theme",
     "type": "title",
@@ -2384,27 +977,6 @@
     "wordCount": 1,
     "letterCount": 9,
     "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "90b4a7b49d9908c4316608f7b43b2cea",
-    "source": "theme",
-    "type": "title",
-    "answer": "Djambi",
-    "normalizedAnswer": "DJAMBI",
-    "category": "Board Game or Toy",
-    "difficulty": 83.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 6,
     "tags": [
       "theme",
       "board-game",
@@ -2457,111 +1029,6 @@
     }
   },
   {
-    "id": "5f5499a9da20ccd4a1749eac69c43ba9",
-    "source": "theme",
-    "type": "title",
-    "answer": "The Farming Game",
-    "normalizedAnswer": "THE FARMING GAME",
-    "category": "Board Game or Toy",
-    "difficulty": 64.4,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 14,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "89b9465609c89b5b258cf9b0926dc30a",
-    "source": "theme",
-    "type": "title",
-    "answer": "Finance",
-    "normalizedAnswer": "FINANCE",
-    "category": "Board Game or Toy",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "8f03690c9603cdf539f14ca59d4ff349",
-    "source": "theme",
-    "type": "title",
-    "answer": "Ghettopoly",
-    "normalizedAnswer": "GHETTOPOLY",
-    "category": "Board Game or Toy",
-    "difficulty": 74,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 10,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "c472c8facf219ee48702af217317edb4",
-    "source": "theme",
-    "type": "title",
-    "answer": "Glückshaus",
-    "normalizedAnswer": "GLUCKSHAUS",
-    "category": "Board Game or Toy",
-    "difficulty": 74,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 10,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "eb2f4770476d7ed4e91dd5848001e272",
-    "source": "theme",
-    "type": "title",
-    "answer": "The Great Train Robbery",
-    "normalizedAnswer": "THE GREAT TRAIN ROBBERY",
-    "category": "Board Game or Toy",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 20,
-    "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "4b1ab7653de570ea2128010cea6d9335",
     "source": "theme",
     "type": "title",
@@ -2594,27 +1061,6 @@
     "wordCount": 4,
     "letterCount": 14,
     "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "0765b7a49735a1ac3aebc219a8d6d50e",
-    "source": "theme",
-    "type": "title",
-    "answer": "Hotel",
-    "normalizedAnswer": "HOTEL",
-    "category": "Board Game or Toy",
-    "difficulty": 88,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 5,
     "tags": [
       "theme",
       "board-game",
@@ -2667,27 +1113,6 @@
     }
   },
   {
-    "id": "a4c42c39638fdcbeb4caee2345c8f250",
-    "source": "theme",
-    "type": "title",
-    "answer": "King Oil",
-    "normalizedAnswer": "KING OIL",
-    "category": "Board Game or Toy",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 7,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "09d5e58ae005aea0dfa76629afac4ef7",
     "source": "theme",
     "type": "title",
@@ -2730,48 +1155,6 @@
     }
   },
   {
-    "id": "bc05e06c10ee11b24a871fe9f4bec2d9",
-    "source": "theme",
-    "type": "title",
-    "answer": "Nuclear War",
-    "normalizedAnswer": "NUCLEAR WAR",
-    "category": "Board Game or Toy",
-    "difficulty": 74,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 10,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "6386c8e26878cdf49761ed0143cb31de",
-    "source": "theme",
-    "type": "title",
-    "answer": "Poleconomy",
-    "normalizedAnswer": "POLECONOMY",
-    "category": "Board Game or Toy",
-    "difficulty": 74,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 10,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "6f7010ad5cf643114f88687fdcfe0dec",
     "source": "theme",
     "type": "title",
@@ -2783,132 +1166,6 @@
     "wordCount": 1,
     "letterCount": 4,
     "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "a3aa95ab5a7032ee25258e7d33967051",
-    "source": "theme",
-    "type": "title",
-    "answer": "Shadow Hunters",
-    "normalizedAnswer": "SHADOW HUNTERS",
-    "category": "Board Game or Toy",
-    "difficulty": 60.8,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 13,
-    "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "2b82a88854edf9bb44c4de25408a392e",
-    "source": "theme",
-    "type": "title",
-    "answer": "Shengguan Tu",
-    "normalizedAnswer": "SHENGGUAN TU",
-    "category": "Board Game or Toy",
-    "difficulty": 73.6,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "67b49e32a53510d3171bc6b7a8ff2d4f",
-    "source": "theme",
-    "type": "title",
-    "answer": "Shogun/Samurai Swords",
-    "normalizedAnswer": "SHOGUNSAMURAI SWORDS",
-    "category": "Board Game or Toy",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 19,
-    "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "1099210a5c332e2e1b89ba1f6aebb8df",
-    "source": "theme",
-    "type": "title",
-    "answer": "Solarquest",
-    "normalizedAnswer": "SOLARQUEST",
-    "category": "Board Game or Toy",
-    "difficulty": 70,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 10,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "9219ac47c417005036007bec5717d260",
-    "source": "theme",
-    "type": "title",
-    "answer": "Sopwith",
-    "normalizedAnswer": "SOPWITH",
-    "category": "Board Game or Toy",
-    "difficulty": 79.2,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "cb3914dd8ea83b5504cae7d20a40b754",
-    "source": "theme",
-    "type": "title",
-    "answer": "Spy Alley",
-    "normalizedAnswer": "SPY ALLEY",
-    "category": "Board Game or Toy",
-    "difficulty": 82.8,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 6,
     "tags": [
       "theme",
       "board-game",
@@ -2982,153 +1239,6 @@
     }
   },
   {
-    "id": "626e838a46ec211719b05e0be9931978",
-    "source": "theme",
-    "type": "title",
-    "answer": "Strange Synergy",
-    "normalizedAnswer": "STRANGE SYNERGY",
-    "category": "Board Game or Toy",
-    "difficulty": 72.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 14,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "0ec3ca5a0a12ac99cfdc18b00912ff57",
-    "source": "theme",
-    "type": "title",
-    "answer": "Summit",
-    "normalizedAnswer": "SUMMIT",
-    "category": "Board Game or Toy",
-    "difficulty": 87.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "017be365941430dfdce4636e60b32407",
-    "source": "theme",
-    "type": "title",
-    "answer": "TEG",
-    "normalizedAnswer": "TEG",
-    "category": "Board Game or Toy",
-    "difficulty": 96.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 3,
-    "uniqueLetterCount": 3,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "9b104d90828bc1f6865a7e844cd46df6",
-    "source": "theme",
-    "type": "title",
-    "answer": "Terakh",
-    "normalizedAnswer": "TERAKH",
-    "category": "Board Game or Toy",
-    "difficulty": 83.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "03c6e704319c9ca28d57f857534a205a",
-    "source": "theme",
-    "type": "title",
-    "answer": "Titan",
-    "normalizedAnswer": "TITAN",
-    "category": "Board Game or Toy",
-    "difficulty": 92,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "c55ba32701d3e6e2cd9b35a43c2ceace",
-    "source": "theme",
-    "type": "title",
-    "answer": "Tri-nim",
-    "normalizedAnswer": "TRINIM",
-    "category": "Board Game or Toy",
-    "difficulty": 87.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "9616eebf4005979a7565bd141e81d9a0",
-    "source": "theme",
-    "type": "title",
-    "answer": "Triumph",
-    "normalizedAnswer": "TRIUMPH",
-    "category": "Board Game or Toy",
-    "difficulty": 79.2,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "eba7a98b0fba34ac6cbee3e86a51ff1b",
     "source": "theme",
     "type": "title",
@@ -3140,69 +1250,6 @@
     "wordCount": 1,
     "letterCount": 5,
     "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "6bdeb853d27ab4da89623a5cf02c8fc8",
-    "source": "theme",
-    "type": "title",
-    "answer": "Tsuro of the Seas",
-    "normalizedAnswer": "TSURO OF THE SEAS",
-    "category": "Board Game or Toy",
-    "difficulty": 68.4,
-    "difficultyTier": "medium",
-    "wordCount": 4,
-    "letterCount": 14,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "90703d77a1fd09a0d80c11f1cf400554",
-    "source": "theme",
-    "type": "title",
-    "answer": "War on Terror, The Boardgame",
-    "normalizedAnswer": "WAR ON TERROR THE BOARDGAME",
-    "category": "Board Game or Toy",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 23,
-    "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "c326121b8bc666ef323013ed1171eff3",
-    "source": "theme",
-    "type": "title",
-    "answer": "Cartagena",
-    "normalizedAnswer": "CARTAGENA",
-    "category": "Board Game or Toy",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 9,
-    "uniqueLetterCount": 7,
     "tags": [
       "theme",
       "board-game",
@@ -3276,48 +1323,6 @@
     }
   },
   {
-    "id": "d5a180bb811ec140f681d3faf4da4231",
-    "source": "theme",
-    "type": "title",
-    "answer": "Hare and Tortoise",
-    "normalizedAnswer": "HARE AND TORTOISE",
-    "category": "Board Game or Toy",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 15,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "ce2f6e35ae4496534ceeb3d4781655a8",
-    "source": "theme",
-    "type": "title",
-    "answer": "Mississippi Queen",
-    "normalizedAnswer": "MISSISSIPPI QUEEN",
-    "category": "Board Game or Toy",
-    "difficulty": 72,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 16,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "fcc57d4d9db6ea79c10869b87a63f6d5",
     "source": "theme",
     "type": "title",
@@ -3329,27 +1334,6 @@
     "wordCount": 1,
     "letterCount": 12,
     "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "879b45ede9b7a33baf2b10a2a1fb2b11",
-    "source": "theme",
-    "type": "title",
-    "answer": "About Time",
-    "normalizedAnswer": "ABOUT TIME",
-    "category": "Board Game or Toy",
-    "difficulty": 74.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 8,
     "tags": [
       "theme",
       "board-game",
@@ -3381,48 +1365,6 @@
     }
   },
   {
-    "id": "f51fe42823efc8c08dbb28d5fa9dd9f6",
-    "source": "theme",
-    "type": "title",
-    "answer": "Acronymble",
-    "normalizedAnswer": "ACRONYMBLE",
-    "category": "Board Game or Toy",
-    "difficulty": 66,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 10,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "1cb29adfb64310b49764bb2246d122a4",
-    "source": "theme",
-    "type": "title",
-    "answer": "Afrikan tähti",
-    "normalizedAnswer": "AFRIKAN TAHTI",
-    "category": "Board Game or Toy",
-    "difficulty": 73.2,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 12,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "0982aec4e744b03c9022dc4c7dd04465",
     "source": "theme",
     "type": "title",
@@ -3434,69 +1376,6 @@
     "wordCount": 1,
     "letterCount": 8,
     "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "611d3a8f7205a59431d42f09999dc455",
-    "source": "theme",
-    "type": "title",
-    "answer": "Air Charter",
-    "normalizedAnswer": "AIR CHARTER",
-    "category": "Board Game or Toy",
-    "difficulty": 78,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 10,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "0aeae17748ca93aa06a70530fb2361f3",
-    "source": "theme",
-    "type": "title",
-    "answer": "Aksharit",
-    "normalizedAnswer": "AKSHARIT",
-    "category": "Board Game or Toy",
-    "difficulty": 78.8,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "c49e0dc0c77a10628685815c835da87a",
-    "source": "theme",
-    "type": "title",
-    "answer": "Aladdin's Dragons",
-    "normalizedAnswer": "ALADDINS DRAGONS",
-    "category": "Board Game or Toy",
-    "difficulty": 68,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 15,
-    "uniqueLetterCount": 9,
     "tags": [
       "theme",
       "board-game",
@@ -3549,27 +1428,6 @@
     }
   },
   {
-    "id": "4773809e6c41373b83f760dc645fdbdf",
-    "source": "theme",
-    "type": "title",
-    "answer": "Amun-Re",
-    "normalizedAnswer": "AMUNRE",
-    "category": "Board Game or Toy",
-    "difficulty": 83.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "f6d2592195dc56b28361efbe10aeff00",
     "source": "theme",
     "type": "title",
@@ -3612,69 +1470,6 @@
     }
   },
   {
-    "id": "9193456d8baf80debbfa5b8c219f30f6",
-    "source": "theme",
-    "type": "title",
-    "answer": "Auf Achse",
-    "normalizedAnswer": "AUF ACHSE",
-    "category": "Board Game or Toy",
-    "difficulty": 78.8,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "9c71797ce5fe16823e19d5aa65ff27f4",
-    "source": "theme",
-    "type": "title",
-    "answer": "Australia",
-    "normalizedAnswer": "AUSTRALIA",
-    "category": "Board Game or Toy",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 9,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "ef16373235d5db888114b4f765a0c430",
-    "source": "theme",
-    "type": "title",
-    "answer": "Ave Caesar",
-    "normalizedAnswer": "AVE CAESAR",
-    "category": "Board Game or Toy",
-    "difficulty": 82.4,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "bad86fb270c776cb46c91a0545ebc505",
     "source": "theme",
     "type": "title",
@@ -3686,27 +1481,6 @@
     "wordCount": 1,
     "letterCount": 4,
     "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "262444a96266c1629d92591d197d3c21",
-    "source": "theme",
-    "type": "title",
-    "answer": "Bailout! The Game",
-    "normalizedAnswer": "BAILOUT THE GAME",
-    "category": "Board Game or Toy",
-    "difficulty": 60.4,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 14,
-    "uniqueLetterCount": 11,
     "tags": [
       "theme",
       "board-game",
@@ -3738,27 +1512,6 @@
     }
   },
   {
-    "id": "02d362c1c759e80d87430b1bece1d7f7",
-    "source": "theme",
-    "type": "title",
-    "answer": "Barbarossa",
-    "normalizedAnswer": "BARBAROSSA",
-    "category": "Board Game or Toy",
-    "difficulty": 86,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 10,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "08fee139af5920ed032c22677ddd8912",
     "source": "theme",
     "type": "title",
@@ -3770,27 +1523,6 @@
     "wordCount": 2,
     "letterCount": 19,
     "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "e7a729860ff1b34e151c9b1be7a317e4",
-    "source": "theme",
-    "type": "title",
-    "answer": "Bezzerwizzer",
-    "normalizedAnswer": "BEZZERWIZZER",
-    "category": "Board Game or Toy",
-    "difficulty": 81.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 12,
-    "uniqueLetterCount": 6,
     "tags": [
       "theme",
       "board-game",
@@ -3853,27 +1585,6 @@
     "difficultyTier": "medium",
     "wordCount": 1,
     "letterCount": 7,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "7aaf974826244180d41c035571d448d2",
-    "source": "theme",
-    "type": "title",
-    "answer": "Brain Chain",
-    "normalizedAnswer": "BRAIN CHAIN",
-    "category": "Board Game or Toy",
-    "difficulty": 78,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 10,
     "uniqueLetterCount": 7,
     "tags": [
       "theme",
@@ -3969,27 +1680,6 @@
     }
   },
   {
-    "id": "64ed6360cf5f3739abbec10c8b4a9bb7",
-    "source": "theme",
-    "type": "title",
-    "answer": "Capitol",
-    "normalizedAnswer": "CAPITOL",
-    "category": "Board Game or Toy",
-    "difficulty": 79.2,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "4fc3140fdbe4bcd52c9c82b0a4c04be5",
     "source": "theme",
     "type": "title",
@@ -4022,27 +1712,6 @@
     "wordCount": 1,
     "letterCount": 7,
     "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "24707a9827ba0eadbc995c601f5f12fd",
-    "source": "theme",
-    "type": "title",
-    "answer": "Caribbean",
-    "normalizedAnswer": "CARIBBEAN",
-    "category": "Board Game or Toy",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 9,
-    "uniqueLetterCount": 7,
     "tags": [
       "theme",
       "board-game",
@@ -4095,69 +1764,6 @@
     }
   },
   {
-    "id": "2c7d24fc29ee5fd6e1a57c739d4ffc39",
-    "source": "theme",
-    "type": "title",
-    "answer": "Chowka bhara",
-    "normalizedAnswer": "CHOWKA BHARA",
-    "category": "Board Game or Toy",
-    "difficulty": 73.6,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "ad5d488c90b5c1c25702a91674e30794",
-    "source": "theme",
-    "type": "title",
-    "answer": "Chromino",
-    "normalizedAnswer": "CHROMINO",
-    "category": "Board Game or Toy",
-    "difficulty": 78.8,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "2a185ea8a4c221d80e44cb4b1bf1f373",
-    "source": "theme",
-    "type": "title",
-    "answer": "CirKis",
-    "normalizedAnswer": "CIRKIS",
-    "category": "Board Game or Toy",
-    "difficulty": 87.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "7481e5dfc95cd304988e946d930d7fcf",
     "source": "theme",
     "type": "title",
@@ -4179,48 +1785,6 @@
     }
   },
   {
-    "id": "a31f119c6ffbaaa9bb581cc8289b8285",
-    "source": "theme",
-    "type": "title",
-    "answer": "Clans",
-    "normalizedAnswer": "CLANS",
-    "category": "Board Game or Toy",
-    "difficulty": 88,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "003fb9e6440c460cbfeb15bf10f143eb",
-    "source": "theme",
-    "type": "title",
-    "answer": "Clue/Cluedo",
-    "normalizedAnswer": "CLUECLUEDO",
-    "category": "Board Game or Toy",
-    "difficulty": 82,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 10,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "60d485610bfac26caa388049dcca21f8",
     "source": "theme",
     "type": "title",
@@ -4232,27 +1796,6 @@
     "wordCount": 1,
     "letterCount": 9,
     "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "a36e05723f5fd74baee4506a0a8f9522",
-    "source": "theme",
-    "type": "title",
-    "answer": "Coin Hopping—Washington D.C",
-    "normalizedAnswer": "COIN HOPPINGWASHINGTON DC",
-    "category": "Board Game or Toy",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 23,
-    "uniqueLetterCount": 12,
     "tags": [
       "theme",
       "board-game",
@@ -4294,48 +1837,6 @@
     "difficultyTier": "hard",
     "wordCount": 1,
     "letterCount": 7,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "7bfdeb907d8f0c43fd276bb7a998d8c9",
-    "source": "theme",
-    "type": "title",
-    "answer": "Conspiracy",
-    "normalizedAnswer": "CONSPIRACY",
-    "category": "Board Game or Toy",
-    "difficulty": 70,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 10,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "a1238883efe5416f88b5f417495c97d1",
-    "source": "theme",
-    "type": "title",
-    "answer": "Continuo",
-    "normalizedAnswer": "CONTINUO",
-    "category": "Board Game or Toy",
-    "difficulty": 82.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 8,
     "uniqueLetterCount": 6,
     "tags": [
       "theme",
@@ -4410,27 +1911,6 @@
     }
   },
   {
-    "id": "b2c131bc94b626836074829253ff99ad",
-    "source": "theme",
-    "type": "title",
-    "answer": "Crosstrack",
-    "normalizedAnswer": "CROSSTRACK",
-    "category": "Board Game or Toy",
-    "difficulty": 78,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 10,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "e3d19108d3ab2072137b687eb273c3b3",
     "source": "theme",
     "type": "title",
@@ -4442,27 +1922,6 @@
     "wordCount": 2,
     "letterCount": 9,
     "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "9d6a49f02790ecafe5eb234ae954f364",
-    "source": "theme",
-    "type": "title",
-    "answer": "Diamant",
-    "normalizedAnswer": "DIAMANT",
-    "category": "Board Game or Toy",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 6,
     "tags": [
       "theme",
       "board-game",
@@ -4505,90 +1964,6 @@
     "wordCount": 1,
     "letterCount": 8,
     "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "5a502739984a61def2459a9cad5eb1aa",
-    "source": "theme",
-    "type": "title",
-    "answer": "Don't Miss the Boat",
-    "normalizedAnswer": "DONT MISS THE BOAT",
-    "category": "Board Game or Toy",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 15,
-    "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "b749fae86811ec86acec2f7483613a3f",
-    "source": "theme",
-    "type": "title",
-    "answer": "Don't Quote Me",
-    "normalizedAnswer": "DONT QUOTE ME",
-    "category": "Board Game or Toy",
-    "difficulty": 73.6,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 11,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "25963a08ea29c605717b16a5bb995d82",
-    "source": "theme",
-    "type": "title",
-    "answer": "Dorn",
-    "normalizedAnswer": "DORN",
-    "category": "Board Game or Toy",
-    "difficulty": 92.4,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 4,
-    "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "c31c98aff133069a713811d762e930e4",
-    "source": "theme",
-    "type": "title",
-    "answer": "Drunter und Drüber",
-    "normalizedAnswer": "DRUNTER UND DRUBER",
-    "category": "Board Game or Toy",
-    "difficulty": 76,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 16,
-    "uniqueLetterCount": 7,
     "tags": [
       "theme",
       "board-game",
@@ -4651,90 +2026,6 @@
     "difficultyTier": "medium",
     "wordCount": 2,
     "letterCount": 8,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "cacc5241913908ef48409e156d95fa62",
-    "source": "theme",
-    "type": "title",
-    "answer": "Elfenland",
-    "normalizedAnswer": "ELFENLAND",
-    "category": "Board Game or Toy",
-    "difficulty": 82.4,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 9,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "49d5e9d4e667137aea5b4583e30ede0d",
-    "source": "theme",
-    "type": "title",
-    "answer": "Enchanted Forest",
-    "normalizedAnswer": "ENCHANTED FOREST",
-    "category": "Board Game or Toy",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 15,
-    "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "e925a0642ac10758dedff4e87e3a52fd",
-    "source": "theme",
-    "type": "title",
-    "answer": "Endeavor: Deep Sea",
-    "normalizedAnswer": "ENDEAVOR DEEP SEA",
-    "category": "Board Game or Toy",
-    "difficulty": 68,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 15,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "d4e47479cc80c91fd3fd809d4add1714",
-    "source": "theme",
-    "type": "title",
-    "answer": "Entdecker",
-    "normalizedAnswer": "ENTDECKER",
-    "category": "Board Game or Toy",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 9,
     "uniqueLetterCount": 7,
     "tags": [
       "theme",
@@ -4830,27 +2121,6 @@
     }
   },
   {
-    "id": "fa7e7a5013f55f3578d1798d0006f473",
-    "source": "theme",
-    "type": "title",
-    "answer": "Figure It Out",
-    "normalizedAnswer": "FIGURE IT OUT",
-    "category": "Board Game or Toy",
-    "difficulty": 73.6,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 11,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "69a44cdee6fcdaf654cff85034d94af8",
     "source": "theme",
     "type": "title",
@@ -4862,69 +2132,6 @@
     "wordCount": 2,
     "letterCount": 14,
     "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "80edbd0b21750a8efcc158ad85cbfd15",
-    "source": "theme",
-    "type": "title",
-    "answer": "Focus",
-    "normalizedAnswer": "FOCUS",
-    "category": "Board Game or Toy",
-    "difficulty": 88,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "c123dc2b40b962f66d7b796459fa4264",
-    "source": "theme",
-    "type": "title",
-    "answer": "Fresco",
-    "normalizedAnswer": "FRESCO",
-    "category": "Board Game or Toy",
-    "difficulty": 83.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "6adcd5ad09086512252a22273eb25699",
-    "source": "theme",
-    "type": "title",
-    "answer": "Game For Fame",
-    "normalizedAnswer": "GAME FOR FAME",
-    "category": "Board Game or Toy",
-    "difficulty": 77.6,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 11,
-    "uniqueLetterCount": 7,
     "tags": [
       "theme",
       "board-game",
@@ -4956,48 +2163,6 @@
     }
   },
   {
-    "id": "3bc7ed3a17271396da0f91c1ce2bb868",
-    "source": "theme",
-    "type": "title",
-    "answer": "Gift Trap",
-    "normalizedAnswer": "GIFT TRAP",
-    "category": "Board Game or Toy",
-    "difficulty": 78.8,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "89aa2436ea642e8bc7ea5ad4e4512323",
-    "source": "theme",
-    "type": "title",
-    "answer": "Giganten",
-    "normalizedAnswer": "GIGANTEN",
-    "category": "Board Game or Toy",
-    "difficulty": 82.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "e4dd5c51ead49476fc1d3d713c8befd5",
     "source": "theme",
     "type": "title",
@@ -5009,48 +2174,6 @@
     "wordCount": 2,
     "letterCount": 8,
     "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "1ca368cd931dc4347d3cea5e0367ffae",
-    "source": "theme",
-    "type": "title",
-    "answer": "The Golf Game: Par Excellence",
-    "normalizedAnswer": "THE GOLF GAME PAR EXCELLENCE",
-    "category": "Board Game or Toy",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 24,
-    "uniqueLetterCount": 14,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "64597289cc0213429e437e41b20084b9",
-    "source": "theme",
-    "type": "title",
-    "answer": "GridIron Master",
-    "normalizedAnswer": "GRIDIRON MASTER",
-    "category": "Board Game or Toy",
-    "difficulty": 60.4,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 14,
-    "uniqueLetterCount": 11,
     "tags": [
       "theme",
       "board-game",
@@ -5082,174 +2205,6 @@
     }
   },
   {
-    "id": "ca200af17e35ba8feafa596b8111ed41",
-    "source": "theme",
-    "type": "title",
-    "answer": "History of the World",
-    "normalizedAnswer": "HISTORY OF THE WORLD",
-    "category": "Board Game or Toy",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 17,
-    "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "b0bd981f30f268c9e507043e8e168994",
-    "source": "theme",
-    "type": "title",
-    "answer": "Hoity Toity",
-    "normalizedAnswer": "HOITY TOITY",
-    "category": "Board Game or Toy",
-    "difficulty": 86,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 10,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "dc4f56dee10c8eab2260210953ea094f",
-    "source": "theme",
-    "type": "title",
-    "answer": "Hooop",
-    "normalizedAnswer": "HOOOP",
-    "category": "Board Game or Toy",
-    "difficulty": 96,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 3,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "86a3b54288ba135e90dd0116943cb5ff",
-    "source": "theme",
-    "type": "title",
-    "answer": "Hūsker D",
-    "normalizedAnswer": "HUSKER D",
-    "category": "Board Game or Toy",
-    "difficulty": 79.2,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 7,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "fc87a4d72dbb5544adcb16c8f9133826",
-    "source": "theme",
-    "type": "title",
-    "answer": "I'm the Boss",
-    "normalizedAnswer": "IM THE BOSS",
-    "category": "Board Game or Toy",
-    "difficulty": 74.4,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 9,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "c5e41a68a87c63c0a22fca8a4fd0bc1b",
-    "source": "theme",
-    "type": "title",
-    "answer": "Imhotep",
-    "normalizedAnswer": "IMHOTEP",
-    "category": "Board Game or Toy",
-    "difficulty": 79.2,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "3b9b44b458abcc3f4635c2add7bc7679",
-    "source": "theme",
-    "type": "title",
-    "answer": "Imperial",
-    "normalizedAnswer": "IMPERIAL",
-    "category": "Board Game or Toy",
-    "difficulty": 78.8,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "ae6405ed8d1db119ec48af7d5808983d",
-    "source": "theme",
-    "type": "title",
-    "answer": "Indigo",
-    "normalizedAnswer": "INDIGO",
-    "category": "Board Game or Toy",
-    "difficulty": 87.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "7f7975d638f5eaed9e4e739fbde2ab12",
     "source": "theme",
     "type": "title",
@@ -5261,153 +2216,6 @@
     "wordCount": 1,
     "letterCount": 9,
     "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "7ec0e67bc66ca51d2f48ecb8bba8e622",
-    "source": "theme",
-    "type": "title",
-    "answer": "Inkan aarre",
-    "normalizedAnswer": "INKAN AARRE",
-    "category": "Board Game or Toy",
-    "difficulty": 82,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 10,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "f9cd6fd9b124caad2025a84d9a1640d1",
-    "source": "theme",
-    "type": "title",
-    "answer": "Java",
-    "normalizedAnswer": "JAVA",
-    "category": "Board Game or Toy",
-    "difficulty": 96.4,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 4,
-    "uniqueLetterCount": 3,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "e24f13e4dedb96d51e15440fc6d3d380",
-    "source": "theme",
-    "type": "title",
-    "answer": "John Company",
-    "normalizedAnswer": "JOHN COMPANY",
-    "category": "Board Game or Toy",
-    "difficulty": 69.6,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "f4d829998aae4dfc79046a9ac53a972f",
-    "source": "theme",
-    "type": "title",
-    "answer": "Journey Through Europe",
-    "normalizedAnswer": "JOURNEY THROUGH EUROPE",
-    "category": "Board Game or Toy",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 20,
-    "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "1fd71ae8b8df56066a34dee8b797baed",
-    "source": "theme",
-    "type": "title",
-    "answer": "Junta",
-    "normalizedAnswer": "JUNTA",
-    "category": "Board Game or Toy",
-    "difficulty": 88,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "d55460c8b2d96ffa97a73fef6b5ffe2d",
-    "source": "theme",
-    "type": "title",
-    "answer": "Karuba",
-    "normalizedAnswer": "KARUBA",
-    "category": "Board Game or Toy",
-    "difficulty": 87.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "f1463ba60a294b38afe6cdd851aa38a3",
-    "source": "theme",
-    "type": "title",
-    "answer": "Keltis",
-    "normalizedAnswer": "KELTIS",
-    "category": "Board Game or Toy",
-    "difficulty": 83.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 6,
     "tags": [
       "theme",
       "board-game",
@@ -5460,27 +2268,6 @@
     }
   },
   {
-    "id": "c58eacbddcf7c35505e7ed53c0980e3a",
-    "source": "theme",
-    "type": "title",
-    "answer": "Kingdoms",
-    "normalizedAnswer": "KINGDOMS",
-    "category": "Board Game or Toy",
-    "difficulty": 74.8,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "2769f3f4d33474950993076d42c1e4bc",
     "source": "theme",
     "type": "title",
@@ -5492,48 +2279,6 @@
     "wordCount": 1,
     "letterCount": 9,
     "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "ac94852a08bc19925eaa5a29871f7820",
-    "source": "theme",
-    "type": "title",
-    "answer": "Landslide",
-    "normalizedAnswer": "LANDSLIDE",
-    "category": "Board Game or Toy",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 9,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "5fb416b5ad9472f42a78b301e717ad2b",
-    "source": "theme",
-    "type": "title",
-    "answer": "Las Vegas",
-    "normalizedAnswer": "LAS VEGAS",
-    "category": "Board Game or Toy",
-    "difficulty": 82.8,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 6,
     "tags": [
       "theme",
       "board-game",
@@ -5586,27 +2331,6 @@
     }
   },
   {
-    "id": "fcf7779e574c1678adbee969c915b013",
-    "source": "theme",
-    "type": "title",
-    "answer": "The London Game",
-    "normalizedAnswer": "THE LONDON GAME",
-    "category": "Board Game or Toy",
-    "difficulty": 64.8,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 13,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "ef4d0b9744ee8999195b6d30e4a7b623",
     "source": "theme",
     "type": "title",
@@ -5618,69 +2342,6 @@
     "wordCount": 3,
     "letterCount": 16,
     "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "14504be715ecac6c8305015b11140b77",
-    "source": "theme",
-    "type": "title",
-    "answer": "Löwenherz",
-    "normalizedAnswer": "LOWENHERZ",
-    "category": "Board Game or Toy",
-    "difficulty": 74.4,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 9,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "1594c7ec0c76636ed9bffa0c4dbb6c7e",
-    "source": "theme",
-    "type": "title",
-    "answer": "Luck of the Draw",
-    "normalizedAnswer": "LUCK OF THE DRAW",
-    "category": "Board Game or Toy",
-    "difficulty": 52.8,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 13,
-    "uniqueLetterCount": 13,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "7cb2698b2c1a8edc519b8af73a829062",
-    "source": "theme",
-    "type": "title",
-    "answer": "Die Macher",
-    "normalizedAnswer": "DIE MACHER",
-    "category": "Board Game or Toy",
-    "difficulty": 74.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 8,
     "tags": [
       "theme",
       "board-game",
@@ -5712,53 +2373,11 @@
     }
   },
   {
-    "id": "39a42a5eadeecf5e93ad7adfef723dab",
-    "source": "theme",
-    "type": "title",
-    "answer": "The Magic Labyrinth",
-    "normalizedAnswer": "THE MAGIC LABYRINTH",
-    "category": "Board Game or Toy",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 17,
-    "uniqueLetterCount": 13,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "934894597262ccd9f0bf3ce39ef463a3",
     "source": "theme",
     "type": "title",
     "answer": "Mahjong",
     "normalizedAnswer": "MAHJONG",
-    "category": "Board Game or Toy",
-    "difficulty": 79.2,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "bd4a3fa2a80348432de72f3c801230bb",
-    "source": "theme",
-    "type": "title",
-    "answer": "Malefiz",
-    "normalizedAnswer": "MALEFIZ",
     "category": "Board Game or Toy",
     "difficulty": 79.2,
     "difficultyTier": "medium",
@@ -5796,300 +2415,6 @@
     }
   },
   {
-    "id": "a8ae305dda290b4cb9d88decd6385fe4",
-    "source": "theme",
-    "type": "title",
-    "answer": "Manhattan",
-    "normalizedAnswer": "MANHATTAN",
-    "category": "Board Game or Toy",
-    "difficulty": 86.4,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 9,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "e6479d9e5d63ccbcfbabc185fe3b7dc4",
-    "source": "theme",
-    "type": "title",
-    "answer": "Masterpiece",
-    "normalizedAnswer": "MASTERPIECE",
-    "category": "Board Game or Toy",
-    "difficulty": 69.6,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 11,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "0c08f3c0d25aef11b25ad97d46fd0468",
-    "source": "theme",
-    "type": "title",
-    "answer": "Medici",
-    "normalizedAnswer": "MEDICI",
-    "category": "Board Game or Toy",
-    "difficulty": 87.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "7d25af1f1c3f2460db5c5b19952ce66b",
-    "source": "theme",
-    "type": "title",
-    "answer": "Medina",
-    "normalizedAnswer": "MEDINA",
-    "category": "Board Game or Toy",
-    "difficulty": 83.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "719d9de2f4dedd37a694ead5a55cea7b",
-    "source": "theme",
-    "type": "title",
-    "answer": "Mensch ärgere Dich nicht",
-    "normalizedAnswer": "MENSCH ARGERE DICH NICHT",
-    "category": "Board Game or Toy",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 21,
-    "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "5b0ebb4058ae3f03b2dac57b3c315502",
-    "source": "theme",
-    "type": "title",
-    "answer": "Merchant of Venus",
-    "normalizedAnswer": "MERCHANT OF VENUS",
-    "category": "Board Game or Toy",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 15,
-    "uniqueLetterCount": 13,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "f7106ee8c2dddb64bf616c7acf4d9335",
-    "source": "theme",
-    "type": "title",
-    "answer": "Metro",
-    "normalizedAnswer": "METRO",
-    "category": "Board Game or Toy",
-    "difficulty": 88,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "59f26392e4c090f86251e4a0d388d578",
-    "source": "theme",
-    "type": "title",
-    "answer": "Mexica",
-    "normalizedAnswer": "MEXICA",
-    "category": "Board Game or Toy",
-    "difficulty": 83.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "834fc1adc58d1a6d7f066da6acc24df0",
-    "source": "theme",
-    "type": "title",
-    "answer": "Mine a Million",
-    "normalizedAnswer": "MINE A MILLION",
-    "category": "Board Game or Toy",
-    "difficulty": 77.2,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 12,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "990af8e5bf9eb8d1f2e63238782d0ee4",
-    "source": "theme",
-    "type": "title",
-    "answer": "Modern Art",
-    "normalizedAnswer": "MODERN ART",
-    "category": "Board Game or Toy",
-    "difficulty": 74.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "f56a4c4129b896702b5cf5159ce3f699",
-    "source": "theme",
-    "type": "title",
-    "answer": "Mutant Meeples",
-    "normalizedAnswer": "MUTANT MEEPLES",
-    "category": "Board Game or Toy",
-    "difficulty": 68.8,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 13,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "001c63b99ebb2411e05a05013c367480",
-    "source": "theme",
-    "type": "title",
-    "answer": "Near and Far",
-    "normalizedAnswer": "NEAR AND FAR",
-    "category": "Board Game or Toy",
-    "difficulty": 82,
-    "difficultyTier": "hard",
-    "wordCount": 3,
-    "letterCount": 10,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "6670ba2988f42a9aadc50e9dfaacb904",
-    "source": "theme",
-    "type": "title",
-    "answer": "Niagara",
-    "normalizedAnswer": "NIAGARA",
-    "category": "Board Game or Toy",
-    "difficulty": 87.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "d047e52576487281f34f1a3bba467bba",
-    "source": "theme",
-    "type": "title",
-    "answer": "Omega Virus",
-    "normalizedAnswer": "OMEGA VIRUS",
-    "category": "Board Game or Toy",
-    "difficulty": 66,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 10,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "26b846825382847b957573ded6a3e18b",
     "source": "theme",
     "type": "title",
@@ -6101,69 +2426,6 @@
     "wordCount": 1,
     "letterCount": 5,
     "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "cbaca9314ec5fbb98b8bfe54a22468d6",
-    "source": "theme",
-    "type": "title",
-    "answer": "Outrage",
-    "normalizedAnswer": "OUTRAGE",
-    "category": "Board Game or Toy",
-    "difficulty": 79.2,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "5dda43ff1bd5f9471a96ea15a58e8815",
-    "source": "theme",
-    "type": "title",
-    "answer": "Pack & Stack",
-    "normalizedAnswer": "PACK STACK",
-    "category": "Board Game or Toy",
-    "difficulty": 82.4,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "7beaad131d7eac436246db5bfd6e1fc3",
-    "source": "theme",
-    "type": "title",
-    "answer": "Pank-a-Squith",
-    "normalizedAnswer": "PANKASQUITH",
-    "category": "Board Game or Toy",
-    "difficulty": 65.6,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 11,
-    "uniqueLetterCount": 10,
     "tags": [
       "theme",
       "board-game",
@@ -6195,27 +2457,6 @@
     }
   },
   {
-    "id": "4011d08acc85280392d89fe8be18bf90",
-    "source": "theme",
-    "type": "title",
-    "answer": "Parqués",
-    "normalizedAnswer": "PARQUES",
-    "category": "Board Game or Toy",
-    "difficulty": 79.2,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "c280a8b7a72d68cff43e898a9a9dc5c2",
     "source": "theme",
     "type": "title",
@@ -6227,27 +2468,6 @@
     "wordCount": 2,
     "letterCount": 6,
     "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "cbec1b9f483e42148bf67888d0adf5ce",
-    "source": "theme",
-    "type": "title",
-    "answer": "Personal Preference",
-    "normalizedAnswer": "PERSONAL PREFERENCE",
-    "category": "Board Game or Toy",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 18,
-    "uniqueLetterCount": 10,
     "tags": [
       "theme",
       "board-game",
@@ -6279,27 +2499,6 @@
     }
   },
   {
-    "id": "481ed0b5a41e730357f12cc2543ba26d",
-    "source": "theme",
-    "type": "title",
-    "answer": "Pirate's Cove",
-    "normalizedAnswer": "PIRATES COVE",
-    "category": "Board Game or Toy",
-    "difficulty": 65.6,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "5158d96dcad18e57050a9cb16f67aabf",
     "source": "theme",
     "type": "title",
@@ -6311,69 +2510,6 @@
     "wordCount": 2,
     "letterCount": 9,
     "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "e502159f5ff94a209f4f1b4eced19c2a",
-    "source": "theme",
-    "type": "title",
-    "answer": "Primordial Soup",
-    "normalizedAnswer": "PRIMORDIAL SOUP",
-    "category": "Board Game or Toy",
-    "difficulty": 64.4,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 14,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "ce4245ef681817f239dc1b9135f57943",
-    "source": "theme",
-    "type": "title",
-    "answer": "The Princes of Florence",
-    "normalizedAnswer": "THE PRINCES OF FLORENCE",
-    "category": "Board Game or Toy",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 20,
-    "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "4e10cd8f0a56f5ae6113e37d73e42203",
-    "source": "theme",
-    "type": "title",
-    "answer": "Probe",
-    "normalizedAnswer": "PROBE",
-    "category": "Board Game or Toy",
-    "difficulty": 88,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 5,
     "tags": [
       "theme",
       "board-game",
@@ -6426,48 +2562,6 @@
     }
   },
   {
-    "id": "042083952d3bb47b8f03c8ef37534c48",
-    "source": "theme",
-    "type": "title",
-    "answer": "Qin",
-    "normalizedAnswer": "QIN",
-    "category": "Board Game or Toy",
-    "difficulty": 96.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 3,
-    "uniqueLetterCount": 3,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "1b1b03d0aba41e9b402e645d0a0cbaab",
-    "source": "theme",
-    "type": "title",
-    "answer": "The Quest of the Philosopher's Stone",
-    "normalizedAnswer": "THE QUEST OF THE PHILOSOPHERS STONE",
-    "category": "Board Game or Toy",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 30,
-    "uniqueLetterCount": 13,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "7a478498c8df04b189c43f02ced837ae",
     "source": "theme",
     "type": "title",
@@ -6489,111 +2583,6 @@
     }
   },
   {
-    "id": "9e13bca9f29fc4ebee4c8616fb3e1d01",
-    "source": "theme",
-    "type": "title",
-    "answer": "Rail Baron",
-    "normalizedAnswer": "RAIL BARON",
-    "category": "Board Game or Toy",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "220cc6b05559e6182978a129367a8a74",
-    "source": "theme",
-    "type": "title",
-    "answer": "Railway Rivals",
-    "normalizedAnswer": "RAILWAY RIVALS",
-    "category": "Board Game or Toy",
-    "difficulty": 72.8,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 13,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "7cad754afed66fa95aab25401346b292",
-    "source": "theme",
-    "type": "title",
-    "answer": "Return to Dark Tower",
-    "normalizedAnswer": "RETURN TO DARK TOWER",
-    "category": "Board Game or Toy",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 17,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "988e851b4d6dd10fd68184b386bef96e",
-    "source": "theme",
-    "type": "title",
-    "answer": "Ricochet Robots",
-    "normalizedAnswer": "RICOCHET ROBOTS",
-    "category": "Board Game or Toy",
-    "difficulty": 68.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 14,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "32ceee03a4b60efc40fc61c67393d145",
-    "source": "theme",
-    "type": "title",
-    "answer": "Rivers, Roads & Rails",
-    "normalizedAnswer": "RIVERS ROADS RAILS",
-    "category": "Board Game or Toy",
-    "difficulty": 68,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 16,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "b36b4623bb503cc7ffa8c423724ba279",
     "source": "theme",
     "type": "title",
@@ -6605,90 +2594,6 @@
     "wordCount": 1,
     "letterCount": 9,
     "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "8552c3c829b170d54798442e3b61a362",
-    "source": "theme",
-    "type": "title",
-    "answer": "Rummoli",
-    "normalizedAnswer": "RUMMOLI",
-    "category": "Board Game or Toy",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "6f989f3269e878aa8942d28fd7a6c300",
-    "source": "theme",
-    "type": "title",
-    "answer": "Saint Petersburg",
-    "normalizedAnswer": "SAINT PETERSBURG",
-    "category": "Board Game or Toy",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 15,
-    "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "22000f39ae7974d089123d33b38fee33",
-    "source": "theme",
-    "type": "title",
-    "answer": "Samurai",
-    "normalizedAnswer": "SAMURAI",
-    "category": "Board Game or Toy",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "55c4d39e08ddc299226daa6198276f93",
-    "source": "theme",
-    "type": "title",
-    "answer": "San Marco",
-    "normalizedAnswer": "SAN MARCO",
-    "category": "Board Game or Toy",
-    "difficulty": 78.8,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 7,
     "tags": [
       "theme",
       "board-game",
@@ -6762,27 +2667,6 @@
     }
   },
   {
-    "id": "387bd79e20d092b109db304841b51c19",
-    "source": "theme",
-    "type": "title",
-    "answer": "Scoundrels of Skullport",
-    "normalizedAnswer": "SCOUNDRELS OF SKULLPORT",
-    "category": "Board Game or Toy",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 21,
-    "uniqueLetterCount": 13,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "95e2e00862db474371eeeb12eac47d79",
     "source": "theme",
     "type": "title",
@@ -6846,27 +2730,6 @@
     }
   },
   {
-    "id": "55e29012026017dd86462dabc9684f16",
-    "source": "theme",
-    "type": "title",
-    "answer": "Shadows over Camelot",
-    "normalizedAnswer": "SHADOWS OVER CAMELOT",
-    "category": "Board Game or Toy",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 18,
-    "uniqueLetterCount": 13,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "d7cd26ab4f7d872814704f8918bcd477",
     "source": "theme",
     "type": "title",
@@ -6878,27 +2741,6 @@
     "wordCount": 4,
     "letterCount": 33,
     "uniqueLetterCount": 16,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "7a160bf6d4455e2337e3be1cd4743173",
-    "source": "theme",
-    "type": "title",
-    "answer": "Skirrid",
-    "normalizedAnswer": "SKIRRID",
-    "category": "Board Game or Toy",
-    "difficulty": 87.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 5,
     "tags": [
       "theme",
       "board-game",
@@ -6972,111 +2814,6 @@
     }
   },
   {
-    "id": "53482507d96cb37c46efd50d797ff280",
-    "source": "theme",
-    "type": "title",
-    "answer": "Squatter",
-    "normalizedAnswer": "SQUATTER",
-    "category": "Board Game or Toy",
-    "difficulty": 78.8,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "f58e2e2497f97df12ee2849824c290ae",
-    "source": "theme",
-    "type": "title",
-    "answer": "Stock Ticker",
-    "normalizedAnswer": "STOCK TICKER",
-    "category": "Board Game or Toy",
-    "difficulty": 73.6,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "d99f8e26be9170aa41346af654e9d24c",
-    "source": "theme",
-    "type": "title",
-    "answer": "Taj Mahal",
-    "normalizedAnswer": "TAJ MAHAL",
-    "category": "Board Game or Toy",
-    "difficulty": 82.8,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "d61d4d08e59c49714c99bb8fa5f78bb6",
-    "source": "theme",
-    "type": "title",
-    "answer": "Take It Easy",
-    "normalizedAnswer": "TAKE IT EASY",
-    "category": "Board Game or Toy",
-    "difficulty": 78,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 10,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "ac7b332b61aba910488744a713cc9a86",
-    "source": "theme",
-    "type": "title",
-    "answer": "Take the Galaxy",
-    "normalizedAnswer": "TAKE THE GALAXY",
-    "category": "Board Game or Toy",
-    "difficulty": 68.8,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 13,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "fcf8d5fb0c0fd81eb66fc96a2180a7a7",
     "source": "theme",
     "type": "title",
@@ -7109,48 +2846,6 @@
     "wordCount": 2,
     "letterCount": 12,
     "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "e4cc581faf224516aa5ac26e4d8cf194",
-    "source": "theme",
-    "type": "title",
-    "answer": "Through the Desert",
-    "normalizedAnswer": "THROUGH THE DESERT",
-    "category": "Board Game or Toy",
-    "difficulty": 68,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 16,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "2fa1eeb4f881f33ffc62b25939fc2d6e",
-    "source": "theme",
-    "type": "title",
-    "answer": "Thurn and Taxis",
-    "normalizedAnswer": "THURN AND TAXIS",
-    "category": "Board Game or Toy",
-    "difficulty": 64.8,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 13,
-    "uniqueLetterCount": 10,
     "tags": [
       "theme",
       "board-game",
@@ -7203,48 +2898,6 @@
     }
   },
   {
-    "id": "664ceab68a2d651d9f4fc9c8cf2abb7b",
-    "source": "theme",
-    "type": "title",
-    "answer": "Tikal",
-    "normalizedAnswer": "TIKAL",
-    "category": "Board Game or Toy",
-    "difficulty": 88,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "89ace3c4b54cd90aac4dc3278cad0a84",
-    "source": "theme",
-    "type": "title",
-    "answer": "Timberland",
-    "normalizedAnswer": "TIMBERLAND",
-    "category": "Board Game or Toy",
-    "difficulty": 66,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 10,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "e674bc421d919008ee4229a367ed7221",
     "source": "theme",
     "type": "title",
@@ -7256,132 +2909,6 @@
     "wordCount": 2,
     "letterCount": 7,
     "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "13d5e27282b3f3edb2559e17ed777a54",
-    "source": "theme",
-    "type": "title",
-    "answer": "Top Secret Spies",
-    "normalizedAnswer": "TOP SECRET SPIES",
-    "category": "Board Game or Toy",
-    "difficulty": 72.4,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 14,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "5eb5ee638bbf64a9a8fb8c4d6de2c3a5",
-    "source": "theme",
-    "type": "title",
-    "answer": "Torres",
-    "normalizedAnswer": "TORRES",
-    "category": "Board Game or Toy",
-    "difficulty": 87.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "5f32c8e1c7a0b967dbf0a3fdb02bc23f",
-    "source": "theme",
-    "type": "title",
-    "answer": "Totopoly",
-    "normalizedAnswer": "TOTOPOLY",
-    "category": "Board Game or Toy",
-    "difficulty": 86.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "2195d01b37c198ba5b3da087980bf605",
-    "source": "theme",
-    "type": "title",
-    "answer": "Tracks to Telluride",
-    "normalizedAnswer": "TRACKS TO TELLURIDE",
-    "category": "Board Game or Toy",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 17,
-    "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "6ecb8654f4543cad5a169383bcd78791",
-    "source": "theme",
-    "type": "title",
-    "answer": "TransAmerica",
-    "normalizedAnswer": "TRANSAMERICA",
-    "category": "Board Game or Toy",
-    "difficulty": 69.2,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 12,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "5b7e8029cd4b34f844bf45836eb22790",
-    "source": "theme",
-    "type": "title",
-    "answer": "Travel Go",
-    "normalizedAnswer": "TRAVEL GO",
-    "category": "Board Game or Toy",
-    "difficulty": 74.8,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 8,
     "tags": [
       "theme",
       "board-game",
@@ -7497,48 +3024,6 @@
     }
   },
   {
-    "id": "b596bcf0fe123420f3249b619a73932c",
-    "source": "theme",
-    "type": "title",
-    "answer": "Vanished Planet",
-    "normalizedAnswer": "VANISHED PLANET",
-    "category": "Board Game or Toy",
-    "difficulty": 60.4,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 14,
-    "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "7c79fd4cdf14064649133124e620e84e",
-    "source": "theme",
-    "type": "title",
-    "answer": "Vinci",
-    "normalizedAnswer": "VINCI",
-    "category": "Board Game or Toy",
-    "difficulty": 92,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "cae5148103bb4c84a679d9958c9dc1c5",
     "source": "theme",
     "type": "title",
@@ -7581,48 +3066,6 @@
     }
   },
   {
-    "id": "fb3abb566e7860e1ab853af979bbc4bd",
-    "source": "theme",
-    "type": "title",
-    "answer": "Yut",
-    "normalizedAnswer": "YUT",
-    "category": "Board Game or Toy",
-    "difficulty": 96.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 3,
-    "uniqueLetterCount": 3,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "c8ead4346728d89d8e9244557f564a14",
-    "source": "theme",
-    "type": "title",
-    "answer": "Yunnori",
-    "normalizedAnswer": "YUNNORI",
-    "category": "Board Game or Toy",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "cf163654770ba581440ee145417273d4",
     "source": "theme",
     "type": "title",
@@ -7633,69 +3076,6 @@
     "difficultyTier": "medium",
     "wordCount": 1,
     "letterCount": 7,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "8fda983d49bf8a1e1fd61e7c579ee88b",
-    "source": "theme",
-    "type": "title",
-    "answer": "Kolejka",
-    "normalizedAnswer": "KOLEJKA",
-    "category": "Board Game or Toy",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "2e60cbc4c42dc3c7e0913fef30171c94",
-    "source": "theme",
-    "type": "title",
-    "answer": "København",
-    "normalizedAnswer": "KOBENHAVN",
-    "category": "Board Game or Toy",
-    "difficulty": 74.4,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 9,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "a07478f9dfe229b57f0dfd1eec20274d",
-    "source": "theme",
-    "type": "title",
-    "answer": "Mr. Trucker",
-    "normalizedAnswer": "MR TRUCKER",
-    "category": "Board Game or Toy",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 9,
     "uniqueLetterCount": 7,
     "tags": [
       "theme",
@@ -7770,48 +3150,6 @@
     }
   },
   {
-    "id": "a767d8cd092b25e86ca459875d26aa41",
-    "source": "theme",
-    "type": "title",
-    "answer": "Triopoly",
-    "normalizedAnswer": "TRIOPOLY",
-    "category": "Board Game or Toy",
-    "difficulty": 78.8,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "eec8d03893ab5449c7eb1f886039586c",
-    "source": "theme",
-    "type": "title",
-    "answer": "Battle Dome",
-    "normalizedAnswer": "BATTLE DOME",
-    "category": "Board Game or Toy",
-    "difficulty": 74,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 10,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "616ff496302a78fb3ab0d5ba3e37b624",
     "source": "theme",
     "type": "title",
@@ -7854,27 +3192,6 @@
     }
   },
   {
-    "id": "0cbf12f6acf5e677e7e3c1399ee9ee8a",
-    "source": "theme",
-    "type": "title",
-    "answer": "Camp Granada",
-    "normalizedAnswer": "CAMP GRANADA",
-    "category": "Board Game or Toy",
-    "difficulty": 73.6,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "761aef889e3e47480a91adff23a992a1",
     "source": "theme",
     "type": "title",
@@ -7896,27 +3213,6 @@
     }
   },
   {
-    "id": "2e47942d79aec3a657bd6fa35b10c5a1",
-    "source": "theme",
-    "type": "title",
-    "answer": "Chapayev",
-    "normalizedAnswer": "CHAPAYEV",
-    "category": "Board Game or Toy",
-    "difficulty": 78.8,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "b4c4239d3186da4b32ac8bbcb2d78ded",
     "source": "theme",
     "type": "title",
@@ -7928,27 +3224,6 @@
     "wordCount": 1,
     "letterCount": 9,
     "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "47b247eef9c01e468b7cb707ea7760bf",
-    "source": "theme",
-    "type": "title",
-    "answer": "Dart Wars",
-    "normalizedAnswer": "DART WARS",
-    "category": "Board Game or Toy",
-    "difficulty": 82.8,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 6,
     "tags": [
       "theme",
       "board-game",
@@ -8043,27 +3318,6 @@
     }
   },
   {
-    "id": "fbaf3489f22199a1981e38609bfef3da",
-    "source": "theme",
-    "type": "title",
-    "answer": "Polarity",
-    "normalizedAnswer": "POLARITY",
-    "category": "Board Game or Toy",
-    "difficulty": 74.8,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "0a6731b214ef2cd482dc95c09420538e",
     "source": "theme",
     "type": "title",
@@ -8096,27 +3350,6 @@
     "wordCount": 1,
     "letterCount": 7,
     "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "bc4b6e42eaf5de49c1fc5fd3bf4a21c7",
-    "source": "theme",
-    "type": "title",
-    "answer": "Villa Paletti",
-    "normalizedAnswer": "VILLA PALETTI",
-    "category": "Board Game or Toy",
-    "difficulty": 77.2,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 12,
-    "uniqueLetterCount": 7,
     "tags": [
       "theme",
       "board-game",
@@ -8179,27 +3412,6 @@
     "difficultyTier": "medium",
     "wordCount": 3,
     "letterCount": 13,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "bbca007b4110f48d2570512fb9286627",
-    "source": "theme",
-    "type": "title",
-    "answer": "Forbidden Bridge",
-    "normalizedAnswer": "FORBIDDEN BRIDGE",
-    "category": "Board Game or Toy",
-    "difficulty": 68,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 15,
     "uniqueLetterCount": 9,
     "tags": [
       "theme",
@@ -8274,69 +3486,6 @@
     }
   },
   {
-    "id": "43de3e2e3618d186b257e5ca6989dc3b",
-    "source": "theme",
-    "type": "title",
-    "answer": "Rap Rat",
-    "normalizedAnswer": "RAP RAT",
-    "category": "Board Game or Toy",
-    "difficulty": 91.6,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 6,
-    "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "4ade03740a4711886022ef494cff6198",
-    "source": "theme",
-    "type": "title",
-    "answer": "Space Hop",
-    "normalizedAnswer": "SPACE HOP",
-    "category": "Board Game or Toy",
-    "difficulty": 78.8,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "cc5c0b301a48ec718fde02f28230fa3f",
-    "source": "theme",
-    "type": "title",
-    "answer": "Battlestar Galactica: The Board Game",
-    "normalizedAnswer": "BATTLESTAR GALACTICA THE BOARD GAME",
-    "category": "Board Game or Toy",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 31,
-    "uniqueLetterCount": 14,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "b27c90b0134ec22693f705bfb8e2beb4",
     "source": "theme",
     "type": "title",
@@ -8358,27 +3507,6 @@
     }
   },
   {
-    "id": "cf8d6ae63f7d153421faca4041d7f075",
-    "source": "theme",
-    "type": "title",
-    "answer": "Flash Point: Fire Rescue",
-    "normalizedAnswer": "FLASH POINT FIRE RESCUE",
-    "category": "Board Game or Toy",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 20,
-    "uniqueLetterCount": 14,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "7c0a332a08d701cfe99d51edf4744b0c",
     "source": "theme",
     "type": "title",
@@ -8390,27 +3518,6 @@
     "wordCount": 2,
     "letterCount": 15,
     "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "2780b6aeb3d6859b18cdecfe6bf9ef54",
-    "source": "theme",
-    "type": "title",
-    "answer": "Freedom: The Underground Railroad",
-    "normalizedAnswer": "FREEDOM THE UNDERGROUND RAILROAD",
-    "category": "Board Game or Toy",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 29,
-    "uniqueLetterCount": 14,
     "tags": [
       "theme",
       "board-game",
@@ -8526,27 +3633,6 @@
     }
   },
   {
-    "id": "b395c15562317a9aab257de889e38913",
-    "source": "theme",
-    "type": "title",
-    "answer": "Space Alert",
-    "normalizedAnswer": "SPACE ALERT",
-    "category": "Board Game or Toy",
-    "difficulty": 74,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 10,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "fd66915359050a7f4927716b2475f1b1",
     "source": "theme",
     "type": "title",
@@ -8568,48 +3654,6 @@
     }
   },
   {
-    "id": "c6aa353dc3f030c6f8511a80ce9981f4",
-    "source": "theme",
-    "type": "title",
-    "answer": "Thorgal: The Board Game",
-    "normalizedAnswer": "THORGAL THE BOARD GAME",
-    "category": "Board Game or Toy",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 19,
-    "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "3fa7c7e100346277f23d8dc707e9f369",
-    "source": "theme",
-    "type": "title",
-    "answer": "What Next",
-    "normalizedAnswer": "WHAT NEXT",
-    "category": "Board Game or Toy",
-    "difficulty": 78.8,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "24f79c9d227feceddd7c59e8d8389bbf",
     "source": "theme",
     "type": "title",
@@ -8621,27 +3665,6 @@
     "wordCount": 1,
     "letterCount": 4,
     "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "7f7c7166e00e3fee655f9c3a87fc1bf1",
-    "source": "theme",
-    "type": "title",
-    "answer": "Alfapet",
-    "normalizedAnswer": "ALFAPET",
-    "category": "Board Game or Toy",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 6,
     "tags": [
       "theme",
       "board-game",
@@ -8715,69 +3738,6 @@
     }
   },
   {
-    "id": "964f85775a78884b78c566c75bd1e735",
-    "source": "theme",
-    "type": "title",
-    "answer": "Kings Cribbage",
-    "normalizedAnswer": "KINGS CRIBBAGE",
-    "category": "Board Game or Toy",
-    "difficulty": 64.8,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 13,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "7d86e3e255ac82455b43eca18f225390",
-    "source": "theme",
-    "type": "title",
-    "answer": "Thiruthamizh",
-    "normalizedAnswer": "THIRUTHAMIZH",
-    "category": "Board Game or Toy",
-    "difficulty": 73.2,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 12,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "746ba905fa6ae85d7a8994a1425bce38",
-    "source": "theme",
-    "type": "title",
-    "answer": "Trickster",
-    "normalizedAnswer": "TRICKSTER",
-    "category": "Board Game or Toy",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 9,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "7cf7d18929a87260fb83b2a3d921ecc8",
     "source": "theme",
     "type": "title",
@@ -8799,27 +3759,6 @@
     }
   },
   {
-    "id": "71ab4af807a9192230f07680a61afd70",
-    "source": "theme",
-    "type": "title",
-    "answer": "Flibbix",
-    "normalizedAnswer": "FLIBBIX",
-    "category": "Board Game or Toy",
-    "difficulty": 87.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "6308190754cb842cd253b55e3cde9318",
     "source": "theme",
     "type": "title",
@@ -8830,69 +3769,6 @@
     "difficultyTier": "hard",
     "wordCount": 1,
     "letterCount": 8,
-    "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "401ab77bfe530782d0ebb0cc26d53e4f",
-    "source": "theme",
-    "type": "title",
-    "answer": "Icehouse pieces",
-    "normalizedAnswer": "ICEHOUSE PIECES",
-    "category": "Board Game or Toy",
-    "difficulty": 72.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 14,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "fd16fdf6bba2146058d8014010fb3109",
-    "source": "theme",
-    "type": "title",
-    "answer": "Stonehenge",
-    "normalizedAnswer": "STONEHENGE",
-    "category": "Board Game or Toy",
-    "difficulty": 78,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 10,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "7a54fb927b362ee7e76559644359ce17",
-    "source": "theme",
-    "type": "title",
-    "answer": "Piecepack",
-    "normalizedAnswer": "PIECEPACK",
-    "category": "Board Game or Toy",
-    "difficulty": 82.4,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 9,
     "uniqueLetterCount": 6,
     "tags": [
       "theme",
@@ -10206,27 +5082,6 @@
     }
   },
   {
-    "id": "dcbcf7c6cef730f14a8bd2d8c630bf49",
-    "source": "theme",
-    "type": "title",
-    "answer": "Baby Nancy",
-    "normalizedAnswer": "BABY NANCY",
-    "category": "Board Game or Toy",
-    "difficulty": 86.4,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
     "id": "11b7c6dcd46cd482b5507b4fa6b1e656",
     "source": "theme",
     "type": "title",
@@ -10448,69 +5303,6 @@
     "wordCount": 4,
     "letterCount": 17,
     "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "e3f92b7876717bac674bcb9f838bf1df",
-    "source": "theme",
-    "type": "title",
-    "answer": "Transformers action figures",
-    "normalizedAnswer": "TRANSFORMERS ACTION FIGURES",
-    "category": "Board Game or Toy",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 25,
-    "uniqueLetterCount": 13,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "14925baf53e7f903175b3f79e416ab21",
-    "source": "theme",
-    "type": "title",
-    "answer": "Battleship board game",
-    "normalizedAnswer": "BATTLESHIP BOARD GAME",
-    "category": "Board Game or Toy",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 19,
-    "uniqueLetterCount": 14,
-    "tags": [
-      "theme",
-      "board-game",
-      "toy"
-    ],
-    "metadata": {
-      "source": "wikipedia-boardgames-toyhalloffame"
-    }
-  },
-  {
-    "id": "e34ca7887996fdb85a33b1a515ba11c7",
-    "source": "theme",
-    "type": "title",
-    "answer": "Trivial Pursuit board game",
-    "normalizedAnswer": "TRIVIAL PURSUIT BOARD GAME",
-    "category": "Board Game or Toy",
-    "difficulty": 44,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 23,
-    "uniqueLetterCount": 15,
     "tags": [
       "theme",
       "board-game",

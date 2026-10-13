@@ -1,0 +1,1934 @@
+[
+  {
+    "id": "17624dc8f315b4f67869d6d326e8d120",
+    "source": "theme",
+    "type": "title",
+    "answer": "Violin",
+    "normalizedAnswer": "VIOLIN",
+    "category": "Musical Instrument",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "49fb8d59c3c4a0626fcc3ae7ed6d7b91",
+    "source": "theme",
+    "type": "title",
+    "answer": "Viola",
+    "normalizedAnswer": "VIOLA",
+    "category": "Musical Instrument",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "70a15766c11aa00abd49e1317b78c795",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cello",
+    "normalizedAnswer": "CELLO",
+    "category": "Musical Instrument",
+    "difficulty": 92,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "016b27d70fec14b81f7f4ff528a94541",
+    "source": "theme",
+    "type": "title",
+    "answer": "Double Bass",
+    "normalizedAnswer": "DOUBLE BASS",
+    "category": "Musical Instrument",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "9551b280895bdaa33f36c854ba578ff0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Harp",
+    "normalizedAnswer": "HARP",
+    "category": "Musical Instrument",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "3f775f1203c3ec22598dbeaee6576f06",
+    "source": "theme",
+    "type": "title",
+    "answer": "Flute",
+    "normalizedAnswer": "FLUTE",
+    "category": "Musical Instrument",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ffbf501fbad5c75d9000302edf1dd593",
+    "source": "theme",
+    "type": "title",
+    "answer": "Piccolo",
+    "normalizedAnswer": "PICCOLO",
+    "category": "Musical Instrument",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "4132ad748b91ce4525a848b24b763724",
+    "source": "theme",
+    "type": "title",
+    "answer": "Clarinet",
+    "normalizedAnswer": "CLARINET",
+    "category": "Musical Instrument",
+    "difficulty": 74.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "d0d5ff9be63ab8397b97457094d707d7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Oboe",
+    "normalizedAnswer": "OBOE",
+    "category": "Musical Instrument",
+    "difficulty": 96.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "5a0aa9bab9406da7d5487a8172e9329a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bassoon",
+    "normalizedAnswer": "BASSOON",
+    "category": "Musical Instrument",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "faa3711ec65a66983163e117887ad112",
+    "source": "theme",
+    "type": "title",
+    "answer": "English Horn",
+    "normalizedAnswer": "ENGLISH HORN",
+    "category": "Musical Instrument",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "dc79daf3536a485d3354215d28aa6790",
+    "source": "theme",
+    "type": "title",
+    "answer": "Saxophone",
+    "normalizedAnswer": "SAXOPHONE",
+    "category": "Musical Instrument",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "3ea8f4aaa018f07d44e75319efe72357",
+    "source": "theme",
+    "type": "title",
+    "answer": "Recorder",
+    "normalizedAnswer": "RECORDER",
+    "category": "Musical Instrument",
+    "difficulty": 86.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ac2a2886ef90e5f09a3684bb2a38f770",
+    "source": "theme",
+    "type": "title",
+    "answer": "Pan Flute",
+    "normalizedAnswer": "PAN FLUTE",
+    "category": "Musical Instrument",
+    "difficulty": 74.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "42298d920ebfb6009e604c43cb57358f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Fife",
+    "normalizedAnswer": "FIFE",
+    "category": "Musical Instrument",
+    "difficulty": 96.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "7f677d8c4c3364454e30b8a429cc0cd9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ocarina",
+    "normalizedAnswer": "OCARINA",
+    "category": "Musical Instrument",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "846d987c8cfd48e9dab4420948db76a7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Tin Whistle",
+    "normalizedAnswer": "TIN WHISTLE",
+    "category": "Musical Instrument",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "916649fc10d72ff5a5a3289a1053241b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Slide Whistle",
+    "normalizedAnswer": "SLIDE WHISTLE",
+    "category": "Musical Instrument",
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "518e659f6b04a2fc4393810c700c1efc",
+    "source": "theme",
+    "type": "title",
+    "answer": "Kazoo",
+    "normalizedAnswer": "KAZOO",
+    "category": "Musical Instrument",
+    "difficulty": 92,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "1206f7afca8b3e75fdf2d02c829bbee2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Trumpet",
+    "normalizedAnswer": "TRUMPET",
+    "category": "Musical Instrument",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "787df32d75913d715d631c12f9b59e71",
+    "source": "theme",
+    "type": "title",
+    "answer": "Trombone",
+    "normalizedAnswer": "TROMBONE",
+    "category": "Musical Instrument",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "f9c2a5cb76f7e10a195dfe60088db1fb",
+    "source": "theme",
+    "type": "title",
+    "answer": "French Horn",
+    "normalizedAnswer": "FRENCH HORN",
+    "category": "Musical Instrument",
+    "difficulty": 78,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "193f8a5892f936993dd721d250f41697",
+    "source": "theme",
+    "type": "title",
+    "answer": "Tuba",
+    "normalizedAnswer": "TUBA",
+    "category": "Musical Instrument",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "66d55298c688110d006063acc28c934c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cornet",
+    "normalizedAnswer": "CORNET",
+    "category": "Musical Instrument",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "8fa544da60b7c1fd2cef4cccff09a90f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Flugelhorn",
+    "normalizedAnswer": "FLUGELHORN",
+    "category": "Musical Instrument",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "31d0084fd383d3867e1c893450970cc5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Euphonium",
+    "normalizedAnswer": "EUPHONIUM",
+    "category": "Musical Instrument",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "240d56f0e004ee9a2eb5d6e49f2ddcbd",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sousaphone",
+    "normalizedAnswer": "SOUSAPHONE",
+    "category": "Musical Instrument",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "4b2cc63b93b74fa31b94f3a0f843e9b9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bugle",
+    "normalizedAnswer": "BUGLE",
+    "category": "Musical Instrument",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ae38d8cd0c574691b540d236b45078c6",
+    "source": "theme",
+    "type": "title",
+    "answer": "Alphorn",
+    "normalizedAnswer": "ALPHORN",
+    "category": "Musical Instrument",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "921eb16e196b93aea2fa296a74b1e8fb",
+    "source": "theme",
+    "type": "title",
+    "answer": "Timpani",
+    "normalizedAnswer": "TIMPANI",
+    "category": "Musical Instrument",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "67d26e83fc6a68a53c2e088b85b011ce",
+    "source": "theme",
+    "type": "title",
+    "answer": "Snare Drum",
+    "normalizedAnswer": "SNARE DRUM",
+    "category": "Musical Instrument",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "42be4f04dca1e55fcc703a6ce455f23f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bass Drum",
+    "normalizedAnswer": "BASS DRUM",
+    "category": "Musical Instrument",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "85cbdc68ed5209969a0336582a668404",
+    "source": "theme",
+    "type": "title",
+    "answer": "Tom-Tom",
+    "normalizedAnswer": "TOMTOM",
+    "category": "Musical Instrument",
+    "difficulty": 95.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "fbdd192b06c65b41df13ee4944c8764b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cymbals",
+    "normalizedAnswer": "CYMBALS",
+    "category": "Musical Instrument",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "10b9b0a331c830c0d47285b1e2e0fa1f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Triangle",
+    "normalizedAnswer": "TRIANGLE",
+    "category": "Musical Instrument",
+    "difficulty": 74.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "89cbb7c21c4651fc20b6e5c04e97d7c9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Xylophone",
+    "normalizedAnswer": "XYLOPHONE",
+    "category": "Musical Instrument",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c4bd46b337722e2d3d89d3164705f5de",
+    "source": "theme",
+    "type": "title",
+    "answer": "Marimba",
+    "normalizedAnswer": "MARIMBA",
+    "category": "Musical Instrument",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "7572f66c962318b4ad288548223b6a9c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Vibraphone",
+    "normalizedAnswer": "VIBRAPHONE",
+    "category": "Musical Instrument",
+    "difficulty": 66,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "b5b9c2c98e3bb868df4ada353b8f4d04",
+    "source": "theme",
+    "type": "title",
+    "answer": "Glockenspiel",
+    "normalizedAnswer": "GLOCKENSPIEL",
+    "category": "Musical Instrument",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a235ed420ee0adbdd61e52e0f94a0ae2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Tambourine",
+    "normalizedAnswer": "TAMBOURINE",
+    "category": "Musical Instrument",
+    "difficulty": 66,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "9213b0e1ddf129bd3df7ebba631a137d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Gong",
+    "normalizedAnswer": "GONG",
+    "category": "Musical Instrument",
+    "difficulty": 96.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "18569980a25aa75e84d99af1346edae5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Castanets",
+    "normalizedAnswer": "CASTANETS",
+    "category": "Musical Instrument",
+    "difficulty": 82.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "daa4b2baf09fa67fc373e1a22fb00b4a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cowbell",
+    "normalizedAnswer": "COWBELL",
+    "category": "Musical Instrument",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "8a9ddcf00ea339849d248290d78e0b72",
+    "source": "theme",
+    "type": "title",
+    "answer": "Maracas",
+    "normalizedAnswer": "MARACAS",
+    "category": "Musical Instrument",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ad7336d51e574ee3e0efcd16a9acc18b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Rain Stick",
+    "normalizedAnswer": "RAIN STICK",
+    "category": "Musical Instrument",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "16b939bca22d4c5789357ba5a45ed229",
+    "source": "theme",
+    "type": "title",
+    "answer": "Wood Block",
+    "normalizedAnswer": "WOOD BLOCK",
+    "category": "Musical Instrument",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "9e17d7310777ea2de95c8f2c02f7c0f3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bongo Drums",
+    "normalizedAnswer": "BONGO DRUMS",
+    "category": "Musical Instrument",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "f7eaf476e1ecad4e8f0ebd1f9c7906ea",
+    "source": "theme",
+    "type": "title",
+    "answer": "Conga Drum",
+    "normalizedAnswer": "CONGA DRUM",
+    "category": "Musical Instrument",
+    "difficulty": 70.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "da44e89fd1b71969120c4792a512b1f9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Steel Drum",
+    "normalizedAnswer": "STEEL DRUM",
+    "category": "Musical Instrument",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "bed6f2e823a60ec7ec4d0b74b80612e2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Djembe",
+    "normalizedAnswer": "DJEMBE",
+    "category": "Musical Instrument",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6b1f81208b096aa7fdff748fb274642b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Tabla",
+    "normalizedAnswer": "TABLA",
+    "category": "Musical Instrument",
+    "difficulty": 92,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "fce61337da0f2c8954e4d457a50b4add",
+    "source": "theme",
+    "type": "title",
+    "answer": "Drum Set",
+    "normalizedAnswer": "DRUM SET",
+    "category": "Musical Instrument",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "1f628143336892c1c99fda3983ab4677",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sleigh Bells",
+    "normalizedAnswer": "SLEIGH BELLS",
+    "category": "Musical Instrument",
+    "difficulty": 77.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "cdea920b7be2188dfa78a8f95b904e57",
+    "source": "theme",
+    "type": "title",
+    "answer": "Hi-Hat",
+    "normalizedAnswer": "HIHAT",
+    "category": "Musical Instrument",
+    "difficulty": 92,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "b50eb5196acbbeade8e16c74e8152dba",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cajón",
+    "normalizedAnswer": "CAJON",
+    "category": "Musical Instrument",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a4add27d8fe33db93c55c80850d29fdc",
+    "source": "theme",
+    "type": "title",
+    "answer": "Washboard",
+    "normalizedAnswer": "WASHBOARD",
+    "category": "Musical Instrument",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "48f0a43ffaa2eedeeb9bb3b443810a32",
+    "source": "theme",
+    "type": "title",
+    "answer": "Piano",
+    "normalizedAnswer": "PIANO",
+    "category": "Musical Instrument",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "2e1020136053bdecf0b11d43ce8eb2bd",
+    "source": "theme",
+    "type": "title",
+    "answer": "Pipe Organ",
+    "normalizedAnswer": "PIPE ORGAN",
+    "category": "Musical Instrument",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "32b897db6c1c578dac397b979c356266",
+    "source": "theme",
+    "type": "title",
+    "answer": "Harpsichord",
+    "normalizedAnswer": "HARPSICHORD",
+    "category": "Musical Instrument",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "f532a7c2bb9ac4db19d81beb2e584a51",
+    "source": "theme",
+    "type": "title",
+    "answer": "Synthesizer",
+    "normalizedAnswer": "SYNTHESIZER",
+    "category": "Musical Instrument",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "af4dcaf6b7c4b95d9c26814cda1083e7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Keytar",
+    "normalizedAnswer": "KEYTAR",
+    "category": "Musical Instrument",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c60543e6441b1422310fd43e819e00df",
+    "source": "theme",
+    "type": "title",
+    "answer": "Celesta",
+    "normalizedAnswer": "CELESTA",
+    "category": "Musical Instrument",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "8921fae9180c98ccb77622b8b1a05772",
+    "source": "theme",
+    "type": "title",
+    "answer": "Accordion",
+    "normalizedAnswer": "ACCORDION",
+    "category": "Musical Instrument",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "dc96ac43ef89dc3312fe1a18e2e0c9a3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Concertina",
+    "normalizedAnswer": "CONCERTINA",
+    "category": "Musical Instrument",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "88fd197defa949ef924fe0e4d546da2f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Melodica",
+    "normalizedAnswer": "MELODICA",
+    "category": "Musical Instrument",
+    "difficulty": 74.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6ef3b4b3a7329394a362aa1d968c5b95",
+    "source": "theme",
+    "type": "title",
+    "answer": "Calliope",
+    "normalizedAnswer": "CALLIOPE",
+    "category": "Musical Instrument",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "2a9d222a0c5f61036dc11a921cf41bfe",
+    "source": "theme",
+    "type": "title",
+    "answer": "Acoustic Guitar",
+    "normalizedAnswer": "ACOUSTIC GUITAR",
+    "category": "Musical Instrument",
+    "difficulty": 68.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ef9972daf6afdee7816c7e826123371e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Electric Guitar",
+    "normalizedAnswer": "ELECTRIC GUITAR",
+    "category": "Musical Instrument",
+    "difficulty": 68.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "463acd9dac4873c251ed6fb8a0bb3acf",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bass Guitar",
+    "normalizedAnswer": "BASS GUITAR",
+    "category": "Musical Instrument",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "11221f5a31766efd430a435a13709cff",
+    "source": "theme",
+    "type": "title",
+    "answer": "Pedal Steel Guitar",
+    "normalizedAnswer": "PEDAL STEEL GUITAR",
+    "category": "Musical Instrument",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 16,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "740f58e4e8fd7549f8ccd37522c7c273",
+    "source": "theme",
+    "type": "title",
+    "answer": "Twelve-String Guitar",
+    "normalizedAnswer": "TWELVESTRING GUITAR",
+    "category": "Musical Instrument",
+    "difficulty": 56,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 18,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6e02543742ac60f3b64b1ac1b553376f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Fiddle",
+    "normalizedAnswer": "FIDDLE",
+    "category": "Musical Instrument",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "320a056a533d8592ebc455db45d71cfe",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mandolin",
+    "normalizedAnswer": "MANDOLIN",
+    "category": "Musical Instrument",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "2a90f46d48f83de26f57be8f485e942e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Banjo",
+    "normalizedAnswer": "BANJO",
+    "category": "Musical Instrument",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "5bc77ad38a1490541ce77093e6f66fe4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ukulele",
+    "normalizedAnswer": "UKULELE",
+    "category": "Musical Instrument",
+    "difficulty": 91.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "91172d03c80bd70f478a5599c3067d28",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lute",
+    "normalizedAnswer": "LUTE",
+    "category": "Musical Instrument",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "79dc6cbac67024f78460675977714bb1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lyre",
+    "normalizedAnswer": "LYRE",
+    "category": "Musical Instrument",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6ba737293796453b44350b8caf0c9256",
+    "source": "theme",
+    "type": "title",
+    "answer": "Autoharp",
+    "normalizedAnswer": "AUTOHARP",
+    "category": "Musical Instrument",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "58bd5c68013d8850ce2a04a7f0fc7584",
+    "source": "theme",
+    "type": "title",
+    "answer": "Zither",
+    "normalizedAnswer": "ZITHER",
+    "category": "Musical Instrument",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "9017736c9695433fb4e9871dab5ea883",
+    "source": "theme",
+    "type": "title",
+    "answer": "Dulcimer",
+    "normalizedAnswer": "DULCIMER",
+    "category": "Musical Instrument",
+    "difficulty": 74.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "0a7d0c52a62ebafc1710a5b211e5c768",
+    "source": "theme",
+    "type": "title",
+    "answer": "Harmonica",
+    "normalizedAnswer": "HARMONICA",
+    "category": "Musical Instrument",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "9ec14e3bfa5f89e36258e1652fc435a3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bagpipes",
+    "normalizedAnswer": "BAGPIPES",
+    "category": "Musical Instrument",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "e6969018bf749baf929fba21991a6c24",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sitar",
+    "normalizedAnswer": "SITAR",
+    "category": "Musical Instrument",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ee6b6b10ce2a46f35d6cc4902840a56a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Didgeridoo",
+    "normalizedAnswer": "DIDGERIDOO",
+    "category": "Musical Instrument",
+    "difficulty": 82,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "1ac70e23b8809b1377d0dc134b858141",
+    "source": "theme",
+    "type": "title",
+    "answer": "Theremin",
+    "normalizedAnswer": "THEREMIN",
+    "category": "Musical Instrument",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "4fb44185eedc4e76718fe656378703a2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Balalaika",
+    "normalizedAnswer": "BALALAIKA",
+    "category": "Musical Instrument",
+    "difficulty": 86.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "e115a286b9777cc47a828fdd7081bc5c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bouzouki",
+    "normalizedAnswer": "BOUZOUKI",
+    "category": "Musical Instrument",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a37c479c2b305d3d046da148a47b24c3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Koto",
+    "normalizedAnswer": "KOTO",
+    "category": "Musical Instrument",
+    "difficulty": 96.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "71c1075226b790486a8e9d76f6518dfc",
+    "source": "theme",
+    "type": "title",
+    "answer": "Kalimba",
+    "normalizedAnswer": "KALIMBA",
+    "category": "Musical Instrument",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "d8b379ac76c3c16a41a9325edfe6a06e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Hurdy-Gurdy",
+    "normalizedAnswer": "HURDYGURDY",
+    "category": "Musical Instrument",
+    "difficulty": 82,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c467c478357e584345470cc0cecac7b5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Jaw Harp",
+    "normalizedAnswer": "JAW HARP",
+    "category": "Musical Instrument",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "08ba057d2f681d8c9cbb4f474a761c5b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Vuvuzela",
+    "normalizedAnswer": "VUVUZELA",
+    "category": "Musical Instrument",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "music",
+      "instrument"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  }
+]

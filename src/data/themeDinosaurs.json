@@ -1,0 +1,1556 @@
+[
+  {
+    "id": "581c802fcafd31a76696194d8dc8e508",
+    "source": "theme",
+    "type": "title",
+    "answer": "Tyrannosaurus Rex",
+    "normalizedAnswer": "TYRANNOSAURUS REX",
+    "category": "Dinosaur",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "32a86afdea940f4dc80c6341ec06e3f9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Triceratops",
+    "normalizedAnswer": "TRICERATOPS",
+    "category": "Dinosaur",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "98ad604137ca9b2fb891c0408ef1df52",
+    "source": "theme",
+    "type": "title",
+    "answer": "Velociraptor",
+    "normalizedAnswer": "VELOCIRAPTOR",
+    "category": "Dinosaur",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "9bf8c97d9cc0b7057d5ce439f0d9e936",
+    "source": "theme",
+    "type": "title",
+    "answer": "Stegosaurus",
+    "normalizedAnswer": "STEGOSAURUS",
+    "category": "Dinosaur",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "f769e5f427495aab4c9899ca1d89cb25",
+    "source": "theme",
+    "type": "title",
+    "answer": "Brachiosaurus",
+    "normalizedAnswer": "BRACHIOSAURUS",
+    "category": "Dinosaur",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c533313fa6e62f43d163fc7575102ffe",
+    "source": "theme",
+    "type": "title",
+    "answer": "Spinosaurus",
+    "normalizedAnswer": "SPINOSAURUS",
+    "category": "Dinosaur",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "9c5f940f2dc4171d2b3590c2144a572d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ankylosaurus",
+    "normalizedAnswer": "ANKYLOSAURUS",
+    "category": "Dinosaur",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "8f6d39f5440488ffcb2bed1000bb4bc7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Parasaurolophus",
+    "normalizedAnswer": "PARASAUROLOPHUS",
+    "category": "Dinosaur",
+    "difficulty": 72,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 15,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "28fc69bcc7b882555d53f6ccade0fe3a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Diplodocus",
+    "normalizedAnswer": "DIPLODOCUS",
+    "category": "Dinosaur",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "8bf9d0364276ed68c969cb16b9b8181b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Allosaurus",
+    "normalizedAnswer": "ALLOSAURUS",
+    "category": "Dinosaur",
+    "difficulty": 82,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "0304b53fb9db9c10b0d6ea510b5f096d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Iguanodon",
+    "normalizedAnswer": "IGUANODON",
+    "category": "Dinosaur",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "0c472202810963ba78649cea8386be0d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Apatosaurus",
+    "normalizedAnswer": "APATOSAURUS",
+    "category": "Dinosaur",
+    "difficulty": 77.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "7a32ce9f11f6dfa00d040978a60a58e0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Brontosaurus",
+    "normalizedAnswer": "BRONTOSAURUS",
+    "category": "Dinosaur",
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "b398134cbf70075c7bb948d58f87f178",
+    "source": "theme",
+    "type": "title",
+    "answer": "Pachycephalosaurus",
+    "normalizedAnswer": "PACHYCEPHALOSAURUS",
+    "category": "Dinosaur",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 18,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "74bf1253077e585b19779c609d4a0412",
+    "source": "theme",
+    "type": "title",
+    "answer": "Dilophosaurus",
+    "normalizedAnswer": "DILOPHOSAURUS",
+    "category": "Dinosaur",
+    "difficulty": 64.8,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "27cbde13bf8c8dba7d23a2e5c49088a2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Compsognathus",
+    "normalizedAnswer": "COMPSOGNATHUS",
+    "category": "Dinosaur",
+    "difficulty": 60.8,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 13,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "858cc63bceb230378884504cde11073f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Gallimimus",
+    "normalizedAnswer": "GALLIMIMUS",
+    "category": "Dinosaur",
+    "difficulty": 78,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "38f269794f6dfc827f209deacd4c8cdc",
+    "source": "theme",
+    "type": "title",
+    "answer": "Carnotaurus",
+    "normalizedAnswer": "CARNOTAURUS",
+    "category": "Dinosaur",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "054f51a823a2ae59c03e32dd1eaaf612",
+    "source": "theme",
+    "type": "title",
+    "answer": "Giganotosaurus",
+    "normalizedAnswer": "GIGANOTOSAURUS",
+    "category": "Dinosaur",
+    "difficulty": 68.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 14,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "2763179f2dc3d54698f42ea170ba5d21",
+    "source": "theme",
+    "type": "title",
+    "answer": "Argentinosaurus",
+    "normalizedAnswer": "ARGENTINOSAURUS",
+    "category": "Dinosaur",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "e23934fe12454bbd158c73a2aa6605c4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Deinonychus",
+    "normalizedAnswer": "DEINONYCHUS",
+    "category": "Dinosaur",
+    "difficulty": 65.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "8cf020113a54cc9a87b8fb66b1179eb3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Utahraptor",
+    "normalizedAnswer": "UTAHRAPTOR",
+    "category": "Dinosaur",
+    "difficulty": 78,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "69ac7abbda65a3018dc9857b605d1881",
+    "source": "theme",
+    "type": "title",
+    "answer": "Microraptor",
+    "normalizedAnswer": "MICRORAPTOR",
+    "category": "Dinosaur",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "2bc94c9a683a570c4680f0db0e1836d3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Oviraptor",
+    "normalizedAnswer": "OVIRAPTOR",
+    "category": "Dinosaur",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "37a7079d59156f1b0213389fe79c1404",
+    "source": "theme",
+    "type": "title",
+    "answer": "Protoceratops",
+    "normalizedAnswer": "PROTOCERATOPS",
+    "category": "Dinosaur",
+    "difficulty": 72.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 13,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "f4ec6f8078b67050e06c0658a5212496",
+    "source": "theme",
+    "type": "title",
+    "answer": "Styracosaurus",
+    "normalizedAnswer": "STYRACOSAURUS",
+    "category": "Dinosaur",
+    "difficulty": 72.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 13,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "7780c50e04ea86f319864b2b63e95fa6",
+    "source": "theme",
+    "type": "title",
+    "answer": "Maiasaura",
+    "normalizedAnswer": "MAIASAURA",
+    "category": "Dinosaur",
+    "difficulty": 82.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "67f48efc97d33d12107f3f8c029a2008",
+    "source": "theme",
+    "type": "title",
+    "answer": "Edmontosaurus",
+    "normalizedAnswer": "EDMONTOSAURUS",
+    "category": "Dinosaur",
+    "difficulty": 64.8,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "1e93df02c0aa904572440724e9644a57",
+    "source": "theme",
+    "type": "title",
+    "answer": "Corythosaurus",
+    "normalizedAnswer": "CORYTHOSAURUS",
+    "category": "Dinosaur",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "106168762622f822ead9083c8543ee06",
+    "source": "theme",
+    "type": "title",
+    "answer": "Baryonyx",
+    "normalizedAnswer": "BARYONYX",
+    "category": "Dinosaur",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c0ef415d5d3f137afd529b2f3f74e46b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Therizinosaurus",
+    "normalizedAnswer": "THERIZINOSAURUS",
+    "category": "Dinosaur",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "847cb4179e255c2d34dd9ba7dee88c42",
+    "source": "theme",
+    "type": "title",
+    "answer": "Megalosaurus",
+    "normalizedAnswer": "MEGALOSAURUS",
+    "category": "Dinosaur",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "831e020fcb16f72d63d92baf08b44206",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ceratosaurus",
+    "normalizedAnswer": "CERATOSAURUS",
+    "category": "Dinosaur",
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "2c48b31f4181e8ecf82b3c5e75b11878",
+    "source": "theme",
+    "type": "title",
+    "answer": "Coelophysis",
+    "normalizedAnswer": "COELOPHYSIS",
+    "category": "Dinosaur",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "9f789b7ef240cba6a66dc802d7593290",
+    "source": "theme",
+    "type": "title",
+    "answer": "Herrerasaurus",
+    "normalizedAnswer": "HERRERASAURUS",
+    "category": "Dinosaur",
+    "difficulty": 80.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 13,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "67b122a4ae49972f06dd291bb81102e0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Plateosaurus",
+    "normalizedAnswer": "PLATEOSAURUS",
+    "category": "Dinosaur",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "b06a5cfad4b28d3b1f731af307b7964e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Camarasaurus",
+    "normalizedAnswer": "CAMARASAURUS",
+    "category": "Dinosaur",
+    "difficulty": 81.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 12,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "378cc8298a500ae88959db618b626314",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mamenchisaurus",
+    "normalizedAnswer": "MAMENCHISAURUS",
+    "category": "Dinosaur",
+    "difficulty": 64.4,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a07327b806756ca47a88da1c6343597d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Pachyrhinosaurus",
+    "normalizedAnswer": "PACHYRHINOSAURUS",
+    "category": "Dinosaur",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 16,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "5f693fb471e7efebaee013336bf3d2ce",
+    "source": "theme",
+    "type": "title",
+    "answer": "Centrosaurus",
+    "normalizedAnswer": "CENTROSAURUS",
+    "category": "Dinosaur",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "71ce145f30b30bf1ba6860ace92a3daf",
+    "source": "theme",
+    "type": "title",
+    "answer": "Euoplocephalus",
+    "normalizedAnswer": "EUOPLOCEPHALUS",
+    "category": "Dinosaur",
+    "difficulty": 68.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 14,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6314bbd60286bc216a5a868fcec9d84b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Kentrosaurus",
+    "normalizedAnswer": "KENTROSAURUS",
+    "category": "Dinosaur",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "efa88c666670e039036cf4b602de3e02",
+    "source": "theme",
+    "type": "title",
+    "answer": "Albertosaurus",
+    "normalizedAnswer": "ALBERTOSAURUS",
+    "category": "Dinosaur",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "3e0f9082047713536eb549ed3985e84f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Carcharodontosaurus",
+    "normalizedAnswer": "CARCHARODONTOSAURUS",
+    "category": "Dinosaur",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 19,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "e12432c64ca4109e9fc9c9cf23523f35",
+    "source": "theme",
+    "type": "title",
+    "answer": "Troodon",
+    "normalizedAnswer": "TROODON",
+    "category": "Dinosaur",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "f386743d1d262d77d7d85b2a5b459791",
+    "source": "theme",
+    "type": "title",
+    "answer": "Suchomimus",
+    "normalizedAnswer": "SUCHOMIMUS",
+    "category": "Dinosaur",
+    "difficulty": 78,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "81be4b2fc073112d144df6a3b867712e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Stygimoloch",
+    "normalizedAnswer": "STYGIMOLOCH",
+    "category": "Dinosaur",
+    "difficulty": 65.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "5e19a1c36679633735225d8deedc81e8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ouranosaurus",
+    "normalizedAnswer": "OURANOSAURUS",
+    "category": "Dinosaur",
+    "difficulty": 81.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 12,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "63a176aeee21fe3b6a2c96e47498129b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lambeosaurus",
+    "normalizedAnswer": "LAMBEOSAURUS",
+    "category": "Dinosaur",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "0f262c33897250f3f74385cd45aa9ef0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Hadrosaurus",
+    "normalizedAnswer": "HADROSAURUS",
+    "category": "Dinosaur",
+    "difficulty": 77.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "79052038191b9ef0587e188cbe80d583",
+    "source": "theme",
+    "type": "title",
+    "answer": "Amargasaurus",
+    "normalizedAnswer": "AMARGASAURUS",
+    "category": "Dinosaur",
+    "difficulty": 81.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 12,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "5e6de00ed4d85fc551509ef9488b8e1f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Saltasaurus",
+    "normalizedAnswer": "SALTASAURUS",
+    "category": "Dinosaur",
+    "difficulty": 81.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "8b1b3fe1510c63c09041e113578301f2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Torosaurus",
+    "normalizedAnswer": "TOROSAURUS",
+    "category": "Dinosaur",
+    "difficulty": 82,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "d54fe353c431a73bfdde49325a2eb18e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Psittacosaurus",
+    "normalizedAnswer": "PSITTACOSAURUS",
+    "category": "Dinosaur",
+    "difficulty": 68.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 14,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "e5d4f7473e09ba929c5b1e5649c37f84",
+    "source": "theme",
+    "type": "title",
+    "answer": "Eoraptor",
+    "normalizedAnswer": "EORAPTOR",
+    "category": "Dinosaur",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "7d6cee06d187a16d4e8865adf0c8b4f0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Acrocanthosaurus",
+    "normalizedAnswer": "ACROCANTHOSAURUS",
+    "category": "Dinosaur",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 16,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "df51d8dd4971b82ef60787e04800c73c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Hypsilophodon",
+    "normalizedAnswer": "HYPSILOPHODON",
+    "category": "Dinosaur",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "1da17074c19ac43a7db4b9f8ed0dc658",
+    "source": "theme",
+    "type": "title",
+    "answer": "Daspletosaurus",
+    "normalizedAnswer": "DASPLETOSAURUS",
+    "category": "Dinosaur",
+    "difficulty": 64.4,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a12e7100ace83e712c2d6c5364ec0908",
+    "source": "theme",
+    "type": "title",
+    "answer": "Majungasaurus",
+    "normalizedAnswer": "MAJUNGASAURUS",
+    "category": "Dinosaur",
+    "difficulty": 72.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 13,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "5831d058f6a8ea6bbbb544edce77c16e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chasmosaurus",
+    "normalizedAnswer": "CHASMOSAURUS",
+    "category": "Dinosaur",
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "d55f1e1b82d6ab98c63654a46cce950c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ornithomimus",
+    "normalizedAnswer": "ORNITHOMIMUS",
+    "category": "Dinosaur",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "fa95c35c2ad4b98f43b24d3633733aa0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Struthiomimus",
+    "normalizedAnswer": "STRUTHIOMIMUS",
+    "category": "Dinosaur",
+    "difficulty": 72.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 13,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "1d5e2f9481b17b7f4a08dd539a1b3bed",
+    "source": "theme",
+    "type": "title",
+    "answer": "Tarbosaurus",
+    "normalizedAnswer": "TARBOSAURUS",
+    "category": "Dinosaur",
+    "difficulty": 77.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "2abdb90cf049bc88f4671dd074e448b7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Nodosaurus",
+    "normalizedAnswer": "NODOSAURUS",
+    "category": "Dinosaur",
+    "difficulty": 78,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6e22d0d5845bb0c0bcec7be56ea3de9a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Edmontonia",
+    "normalizedAnswer": "EDMONTONIA",
+    "category": "Dinosaur",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "4e3765cf90ffb94831e26d35bc04df79",
+    "source": "theme",
+    "type": "title",
+    "answer": "Tenontosaurus",
+    "normalizedAnswer": "TENONTOSAURUS",
+    "category": "Dinosaur",
+    "difficulty": 72.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 13,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "562910ddf8affaeabaad4c7e50177e03",
+    "source": "theme",
+    "type": "title",
+    "answer": "Patagotitan",
+    "normalizedAnswer": "PATAGOTITAN",
+    "category": "Dinosaur",
+    "difficulty": 77.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "3dac86563625c10166d54fb00b4bec1f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Dreadnoughtus",
+    "normalizedAnswer": "DREADNOUGHTUS",
+    "category": "Dinosaur",
+    "difficulty": 60.8,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 13,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "fe297865143992f58609b07220f6b142",
+    "source": "theme",
+    "type": "title",
+    "answer": "Supersaurus",
+    "normalizedAnswer": "SUPERSAURUS",
+    "category": "Dinosaur",
+    "difficulty": 81.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "e2b1c460e107da2d10aa8b09f98550b0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cryolophosaurus",
+    "normalizedAnswer": "CRYOLOPHOSAURUS",
+    "category": "Dinosaur",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 15,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "09a57873458ea083f0b662defa755b4c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sinoceratops",
+    "normalizedAnswer": "SINOCERATOPS",
+    "category": "Dinosaur",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "795dd67a99ee9b52b9e2d11c77ac6d2e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Dracorex",
+    "normalizedAnswer": "DRACOREX",
+    "category": "Dinosaur",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "da0282e7c81c32814ec0eb4c16fe422c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mononykus",
+    "normalizedAnswer": "MONONYKUS",
+    "category": "Dinosaur",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "10d1b7c6e4938b6c17f4ba9b53504602",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ornitholestes",
+    "normalizedAnswer": "ORNITHOLESTES",
+    "category": "Dinosaur",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "animal",
+      "dinosaur"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  }
+]

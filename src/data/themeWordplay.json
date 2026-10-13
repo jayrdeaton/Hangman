@@ -340,26 +340,6 @@
     }
   },
   {
-    "id": "4aa12840f1e908c83982d22791f1f6ac",
-    "source": "theme",
-    "type": "title",
-    "answer": "Wow Such Amaze",
-    "normalizedAnswer": "WOW SUCH AMAZE",
-    "category": "Wordplay",
-    "difficulty": 65.2,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 12,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "wordplay"
-    ],
-    "metadata": {
-      "source": "fallback"
-    }
-  },
-  {
     "id": "8e366caf3f698b0b175810a303a4d972",
     "source": "theme",
     "type": "title",
@@ -411,26 +391,6 @@
     "wordCount": 5,
     "letterCount": 27,
     "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "wordplay"
-    ],
-    "metadata": {
-      "source": "fallback"
-    }
-  },
-  {
-    "id": "a14f9683a40ce8d47c5bfd9939880d4a",
-    "source": "theme",
-    "type": "title",
-    "answer": "Sally Sells Seashells by the Seashore",
-    "normalizedAnswer": "SALLY SELLS SEASHELLS BY THE SEASHORE",
-    "category": "Wordplay",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 32,
-    "uniqueLetterCount": 10,
     "tags": [
       "theme",
       "wordplay"

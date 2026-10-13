@@ -667,16 +667,16 @@
     }
   },
   {
-    "id": "f92b04195fb92ead7e85cbe97deb3bd4",
+    "id": "1bd16aae5c9092c8516dc1d294083193",
     "source": "geography",
     "type": "title",
-    "answer": "Haleakal",
-    "normalizedAnswer": "HALEAKAL",
+    "answer": "Haleakalā",
+    "normalizedAnswer": "HALEAKALA",
     "category": "National Park",
-    "difficulty": 86.8,
+    "difficulty": 86.4,
     "difficultyTier": "hard",
     "wordCount": 1,
-    "letterCount": 8,
+    "letterCount": 9,
     "uniqueLetterCount": 5,
     "tags": [
       "geography",

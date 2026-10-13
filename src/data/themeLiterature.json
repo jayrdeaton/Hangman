@@ -1,26 +1,5 @@
 [
   {
-    "id": "b7fec0efba37e555e78aead278b33fb8",
-    "source": "theme",
-    "type": "title",
-    "answer": "Book",
-    "normalizedAnswer": "BOOK",
-    "category": "Book Title",
-    "difficulty": 96.4,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 4,
-    "uniqueLetterCount": 3,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
     "id": "164ca62017608290b1afbd8dc368e968",
     "source": "theme",
     "type": "title",
@@ -609,27 +588,6 @@
     }
   },
   {
-    "id": "522f7ac2004762d06021790768bdb6ac",
-    "source": "theme",
-    "type": "title",
-    "answer": "The Hite Report",
-    "normalizedAnswer": "THE HITE REPORT",
-    "category": "Book Title",
-    "difficulty": 76.8,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 13,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
     "id": "5cfe63bc6c3f780d5dda11199add2f52",
     "source": "theme",
     "type": "title",
@@ -641,27 +599,6 @@
     "wordCount": 2,
     "letterCount": 13,
     "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
-    "id": "679d2b8a8403d28a8361edf1236b8d6e",
-    "source": "theme",
-    "type": "title",
-    "answer": "The Ginger Man",
-    "normalizedAnswer": "THE GINGER MAN",
-    "category": "Book Title",
-    "difficulty": 69.2,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 12,
-    "uniqueLetterCount": 9,
     "tags": [
       "theme",
       "literature",
@@ -746,27 +683,6 @@
     "wordCount": 4,
     "letterCount": 24,
     "uniqueLetterCount": 14,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
-    "id": "9648de871323f70794b82008de7dd23b",
-    "source": "theme",
-    "type": "title",
-    "answer": "A Message to Garcia",
-    "normalizedAnswer": "A MESSAGE TO GARCIA",
-    "category": "Book Title",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 16,
-    "uniqueLetterCount": 10,
     "tags": [
       "theme",
       "literature",
@@ -924,27 +840,6 @@
     }
   },
   {
-    "id": "31fbe5cbf42195691a50ea2bbd3bb8b7",
-    "source": "theme",
-    "type": "title",
-    "answer": "How the Steel Was Tempered",
-    "normalizedAnswer": "HOW THE STEEL WAS TEMPERED",
-    "category": "Book Title",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 22,
-    "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
     "id": "9d874a84392d36db588db3d6d94b67e1",
     "source": "theme",
     "type": "title",
@@ -998,27 +893,6 @@
     "wordCount": 5,
     "letterCount": 19,
     "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
-    "id": "8a9907a766e71ed759933a2cfb9fd555",
-    "source": "theme",
-    "type": "title",
-    "answer": "Your Erroneous Zones",
-    "normalizedAnswer": "YOUR ERRONEOUS ZONES",
-    "category": "Book Title",
-    "difficulty": 72,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 18,
-    "uniqueLetterCount": 8,
     "tags": [
       "theme",
       "literature",
@@ -1176,27 +1050,6 @@
     }
   },
   {
-    "id": "43eb5e0919e8e6980e54cfc721938fa2",
-    "source": "theme",
-    "type": "title",
-    "answer": "The Revolt of Mamie Stover",
-    "normalizedAnswer": "THE REVOLT OF MAMIE STOVER",
-    "category": "Book Title",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 22,
-    "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
     "id": "9e5cf132e9e6ed40733790a9f8a59d7a",
     "source": "theme",
     "type": "title",
@@ -1302,27 +1155,6 @@
     }
   },
   {
-    "id": "ed82bae973a0938e95ed86a89257405d",
-    "source": "theme",
-    "type": "title",
-    "answer": "The Young Guard",
-    "normalizedAnswer": "THE YOUNG GUARD",
-    "category": "Book Title",
-    "difficulty": 60.8,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 13,
-    "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
     "id": "ff25c2ca2183cb9175fe5593faf3b058",
     "source": "theme",
     "type": "title",
@@ -1365,27 +1197,6 @@
     }
   },
   {
-    "id": "c01d176f3fb2be9c0a145071fd2d419c",
-    "source": "theme",
-    "type": "title",
-    "answer": "Paul et Virginie",
-    "normalizedAnswer": "PAUL ET VIRGINIE",
-    "category": "Book Title",
-    "difficulty": 60.4,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 14,
-    "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
     "id": "2f2bcca79fef976713440e7307a8c422",
     "source": "theme",
     "type": "title",
@@ -1418,48 +1229,6 @@
     "wordCount": 5,
     "letterCount": 19,
     "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
-    "id": "c58ddecaaf7aa5449921bcb0bb443f1c",
-    "source": "theme",
-    "type": "title",
-    "answer": "Totto-Chan: The Little Girl at the Window",
-    "normalizedAnswer": "TOTTOCHAN THE LITTLE GIRL AT THE WINDOW",
-    "category": "Book Title",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 7,
-    "letterCount": 33,
-    "uniqueLetterCount": 13,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
-    "id": "ff7808545b7f65d8b11fb72d6454981e",
-    "source": "theme",
-    "type": "title",
-    "answer": "Virgin Soil Upturned",
-    "normalizedAnswer": "VIRGIN SOIL UPTURNED",
-    "category": "Book Title",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 18,
-    "uniqueLetterCount": 13,
     "tags": [
       "theme",
       "literature",
@@ -1554,27 +1323,6 @@
     }
   },
   {
-    "id": "ac0d568c704349124cd672e7e16b03cc",
-    "source": "theme",
-    "type": "title",
-    "answer": "Uncle Styopa",
-    "normalizedAnswer": "UNCLE STYOPA",
-    "category": "Book Title",
-    "difficulty": 61.6,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 11,
-    "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
     "id": "7cd95ae2f58e8908889b53e390dd1493",
     "source": "theme",
     "type": "title",
@@ -1659,48 +1407,6 @@
     }
   },
   {
-    "id": "7a4b388047b9e6aaf8b0160d9b007534",
-    "source": "theme",
-    "type": "title",
-    "answer": "Kitchen",
-    "normalizedAnswer": "KITCHEN",
-    "category": "Book Title",
-    "difficulty": 79.2,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
-    "id": "da6925b9c6628b8c982b5bdc2cfe4f49",
-    "source": "theme",
-    "type": "title",
-    "answer": "Andromeda Nebula",
-    "normalizedAnswer": "ANDROMEDA NEBULA",
-    "category": "Book Title",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 15,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
     "id": "4e1743f444df6ba66cc49ef81f12a70d",
     "source": "theme",
     "type": "title",
@@ -1764,27 +1470,6 @@
     }
   },
   {
-    "id": "ca11bc77930a0995e9da47e872a88b49",
-    "source": "theme",
-    "type": "title",
-    "answer": "Wolf Totem",
-    "normalizedAnswer": "WOLF TOTEM",
-    "category": "Book Title",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
     "id": "9d480ab071674864368a9c02263d80f2",
     "source": "theme",
     "type": "title",
@@ -1838,27 +1523,6 @@
     "wordCount": 3,
     "letterCount": 14,
     "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
-    "id": "cf21c12e1cdf470a5e3378bd7e8b0e65",
-    "source": "theme",
-    "type": "title",
-    "answer": "The Women's Room",
-    "normalizedAnswer": "THE WOMENS ROOM",
-    "category": "Book Title",
-    "difficulty": 68.8,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 13,
-    "uniqueLetterCount": 9,
     "tags": [
       "theme",
       "literature",
@@ -2090,27 +1754,6 @@
     "wordCount": 3,
     "letterCount": 11,
     "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
-    "id": "401a80e056e5d352c815d1891b7371d1",
-    "source": "theme",
-    "type": "title",
-    "answer": "Kokoro",
-    "normalizedAnswer": "KOKORO",
-    "category": "Book Title",
-    "difficulty": 95.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 3,
     "tags": [
       "theme",
       "literature",
@@ -2667,27 +2310,6 @@
     }
   },
   {
-    "id": "55260e73a2556c15aaa38bff94ba9fec",
-    "source": "theme",
-    "type": "title",
-    "answer": "Momo",
-    "normalizedAnswer": "MOMO",
-    "category": "Book Title",
-    "difficulty": 100.4,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 4,
-    "uniqueLetterCount": 2,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
     "id": "8c5784ac967b3b941a41087fe7715532",
     "source": "theme",
     "type": "title",
@@ -2825,27 +2447,6 @@
     "wordCount": 4,
     "letterCount": 20,
     "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
-    "id": "1ebc239b41c7230a2e0f65d43bb4ef9a",
-    "source": "theme",
-    "type": "title",
-    "answer": "The Subtle Art of Not Giving a Fuck",
-    "normalizedAnswer": "THE SUBTLE ART OF NOT GIVING A FUCK",
-    "category": "Book Title",
-    "difficulty": 36,
-    "difficultyTier": "easy",
-    "wordCount": 8,
-    "letterCount": 28,
-    "uniqueLetterCount": 17,
     "tags": [
       "theme",
       "literature",
@@ -3192,27 +2793,6 @@
     }
   },
   {
-    "id": "523567fac26f2f61df788837a4a08761",
-    "source": "theme",
-    "type": "title",
-    "answer": "Santa Evita",
-    "normalizedAnswer": "SANTA EVITA",
-    "category": "Book Title",
-    "difficulty": 78,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 10,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
     "id": "1be010325513a8645055515e7a9a8cef",
     "source": "theme",
     "type": "title",
@@ -3224,90 +2804,6 @@
     "wordCount": 1,
     "letterCount": 5,
     "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
-    "id": "eca880da7ce8e21def3c01d86d6f559d",
-    "source": "theme",
-    "type": "title",
-    "answer": "Confucius from the Heart",
-    "normalizedAnswer": "CONFUCIUS FROM THE HEART",
-    "category": "Book Title",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 21,
-    "uniqueLetterCount": 13,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
-    "id": "c0f94bae6e588f0a5ad154091be77c5f",
-    "source": "theme",
-    "type": "title",
-    "answer": "The Total Woman",
-    "normalizedAnswer": "THE TOTAL WOMAN",
-    "category": "Book Title",
-    "difficulty": 68.8,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 13,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
-    "id": "4c65d64f88381aa0f66fce842324c37b",
-    "source": "theme",
-    "type": "title",
-    "answer": "Knowledge-value Revolution",
-    "normalizedAnswer": "KNOWLEDGEVALUE REVOLUTION",
-    "category": "Book Title",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 24,
-    "uniqueLetterCount": 14,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
-    "id": "5f09b27f237fabe1b7b3700e478cac51",
-    "source": "theme",
-    "type": "title",
-    "answer": "Problems in China's Socialist Economy",
-    "normalizedAnswer": "PROBLEMS IN CHINAS SOCIALIST ECONOMY",
-    "category": "Book Title",
-    "difficulty": 44,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 32,
-    "uniqueLetterCount": 15,
     "tags": [
       "theme",
       "literature",
@@ -3381,27 +2877,6 @@
     }
   },
   {
-    "id": "4b484b845115d585b56e0a40a517de6d",
-    "source": "theme",
-    "type": "title",
-    "answer": "The Gospel According to Peanuts",
-    "normalizedAnswer": "THE GOSPEL ACCORDING TO PEANUTS",
-    "category": "Book Title",
-    "difficulty": 44,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 27,
-    "uniqueLetterCount": 15,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
     "id": "a1a6ad6c4919e59009855a03428e60bc",
     "source": "theme",
     "type": "title",
@@ -3413,48 +2888,6 @@
     "wordCount": 3,
     "letterCount": 8,
     "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
-    "id": "ed15283f810aa49a20e38c4fae8260d2",
-    "source": "theme",
-    "type": "title",
-    "answer": "The Front Runner",
-    "normalizedAnswer": "THE FRONT RUNNER",
-    "category": "Book Title",
-    "difficulty": 72.4,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 14,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
-    "id": "fe0ac61a8717dbdb9779864ffa2f6945",
-    "source": "theme",
-    "type": "title",
-    "answer": "The Goal",
-    "normalizedAnswer": "THE GOAL",
-    "category": "Book Title",
-    "difficulty": 79.2,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 7,
-    "uniqueLetterCount": 7,
     "tags": [
       "theme",
       "literature",
@@ -3560,27 +2993,6 @@
     "wordCount": 3,
     "letterCount": 17,
     "uniqueLetterCount": 12,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
-    "id": "4da25923429949d446d0a8b6fa65aa9f",
-    "source": "theme",
-    "type": "title",
-    "answer": "Book series",
-    "normalizedAnswer": "BOOK SERIES",
-    "category": "Book Title",
-    "difficulty": 78,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 10,
-    "uniqueLetterCount": 7,
     "tags": [
       "theme",
       "literature",
@@ -3822,27 +3234,6 @@
     }
   },
   {
-    "id": "802cf105b85cb387162f0d5ba3898dc7",
-    "source": "theme",
-    "type": "title",
-    "answer": "The Railway Series and Thomas & Friends",
-    "normalizedAnswer": "THE RAILWAY SERIES AND THOMAS FRIENDS",
-    "category": "Book Title",
-    "difficulty": 44,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 32,
-    "uniqueLetterCount": 15,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
     "id": "b1ca5bf664d7343a51391258f3e387f9",
     "source": "theme",
     "type": "title",
@@ -3854,27 +3245,6 @@
     "wordCount": 2,
     "letterCount": 9,
     "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
-    "id": "c677bf1da91811ea33b51d60b95d17d2",
-    "source": "theme",
-    "type": "title",
-    "answer": "San-Antonio",
-    "normalizedAnswer": "SANANTONIO",
-    "category": "Book Title",
-    "difficulty": 82,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 10,
-    "uniqueLetterCount": 6,
     "tags": [
       "theme",
       "literature",
@@ -4137,27 +3507,6 @@
     }
   },
   {
-    "id": "f6495eda47ef06212ce38a3b7c7531af",
-    "source": "theme",
-    "type": "title",
-    "answer": "Frank Merriwell",
-    "normalizedAnswer": "FRANK MERRIWELL",
-    "category": "Book Title",
-    "difficulty": 64.4,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 14,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
     "id": "bf006abd6f9d8de84829d11e2a9cd180",
     "source": "theme",
     "type": "title",
@@ -4200,27 +3549,6 @@
     }
   },
   {
-    "id": "4de5576b9756562d40ed5e93443a2f6e",
-    "source": "theme",
-    "type": "title",
-    "answer": "SAS",
-    "normalizedAnswer": "SAS",
-    "category": "Book Title",
-    "difficulty": 100.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 3,
-    "uniqueLetterCount": 2,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
     "id": "de48790bde9e43edbddc7f81b2b970c1",
     "source": "theme",
     "type": "title",
@@ -4253,27 +3581,6 @@
     "wordCount": 2,
     "letterCount": 9,
     "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
-    "id": "e81efabe53d4bec3768b71eac7c715e4",
-    "source": "theme",
-    "type": "title",
-    "answer": "Martine",
-    "normalizedAnswer": "MARTINE",
-    "category": "Book Title",
-    "difficulty": 79.2,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 7,
     "tags": [
       "theme",
       "literature",
@@ -4347,27 +3654,6 @@
     }
   },
   {
-    "id": "436e96181042f714dd1d80b13334c9bd",
-    "source": "theme",
-    "type": "title",
-    "answer": "Nijntje",
-    "normalizedAnswer": "NIJNTJE",
-    "category": "Book Title",
-    "difficulty": 87.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
     "id": "b38ae8ac2fd628b4b3925cf2e76464a3",
     "source": "theme",
     "type": "title",
@@ -4379,27 +3665,6 @@
     "wordCount": 2,
     "letterCount": 9,
     "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
-    "id": "e5eed409dde66392fe9e2c7206c01fa0",
-    "source": "theme",
-    "type": "title",
-    "answer": "Anpanman",
-    "normalizedAnswer": "ANPANMAN",
-    "category": "Book Title",
-    "difficulty": 90.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 4,
     "tags": [
       "theme",
       "literature",
@@ -4442,27 +3707,6 @@
     "wordCount": 2,
     "letterCount": 10,
     "uniqueLetterCount": 6,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
-    "id": "d1c409b80ad6995fc4b5ffff54ad3fd2",
-    "source": "theme",
-    "type": "title",
-    "answer": "Pippi Långstrump",
-    "normalizedAnswer": "PIPPI LANGSTRUMP",
-    "category": "Book Title",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 15,
-    "uniqueLetterCount": 11,
     "tags": [
       "theme",
       "literature",
@@ -4809,27 +4053,6 @@
     }
   },
   {
-    "id": "f499bb8289a02c7b596a92ecfcb1cf68",
-    "source": "theme",
-    "type": "title",
-    "answer": "A Child's First Library of Learning",
-    "normalizedAnswer": "A CHILDS FIRST LIBRARY OF LEARNING",
-    "category": "Book Title",
-    "difficulty": 40,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 29,
-    "uniqueLetterCount": 16,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
     "id": "a5e99de21feb759e7fd12ea1feb2e051",
     "source": "theme",
     "type": "title",
@@ -5082,48 +4305,6 @@
     }
   },
   {
-    "id": "4a35c62bf4e9ef251a6827ef61f322fb",
-    "source": "theme",
-    "type": "title",
-    "answer": "The Destroyer",
-    "normalizedAnswer": "THE DESTROYER",
-    "category": "Book Title",
-    "difficulty": 73.2,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 12,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
-    "id": "2a53b248486af858fb93a898a4ada34d",
-    "source": "theme",
-    "type": "title",
-    "answer": "The Ramses Saga",
-    "normalizedAnswer": "THE RAMSES SAGA",
-    "category": "Book Title",
-    "difficulty": 72.8,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 13,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
     "id": "46006b62f5e8d4ddcad5f3940b285b4f",
     "source": "theme",
     "type": "title",
@@ -5177,27 +4358,6 @@
     "wordCount": 2,
     "letterCount": 13,
     "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
-    "id": "83003a138083b13ed14fb4a340f8a250",
-    "source": "theme",
-    "type": "title",
-    "answer": "Sagan om Isfolket",
-    "normalizedAnswer": "SAGAN OM ISFOLKET",
-    "category": "Book Title",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 15,
-    "uniqueLetterCount": 12,
     "tags": [
       "theme",
       "literature",
@@ -5355,27 +4515,6 @@
     }
   },
   {
-    "id": "53e860edb9526f0149fd7c3f62079005",
-    "source": "theme",
-    "type": "title",
-    "answer": "Dune series",
-    "normalizedAnswer": "DUNE SERIES",
-    "category": "Book Title",
-    "difficulty": 78,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 10,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
     "id": "8b9795680d75bd8b9ffb2714254d9c73",
     "source": "theme",
     "type": "title",
@@ -5387,27 +4526,6 @@
     "wordCount": 2,
     "letterCount": 9,
     "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
-    "id": "a767baf2793a87bb6de80ff0eff88124",
-    "source": "theme",
-    "type": "title",
-    "answer": "Découvertes Gallimard",
-    "normalizedAnswer": "DECOUVERTES GALLIMARD",
-    "category": "Book Title",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 20,
-    "uniqueLetterCount": 14,
     "tags": [
       "theme",
       "literature",
@@ -5544,27 +4662,6 @@
     }
   },
   {
-    "id": "6e64347ee151cd5e43dc2259072a5d3f",
-    "source": "theme",
-    "type": "title",
-    "answer": "Morgan Kane",
-    "normalizedAnswer": "MORGAN KANE",
-    "category": "Book Title",
-    "difficulty": 74,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 10,
-    "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
     "id": "53a950472b3fa90f14099b870f5f765d",
     "source": "theme",
     "type": "title",
@@ -5597,48 +4694,6 @@
     "wordCount": 2,
     "letterCount": 9,
     "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
-    "id": "2c76a79bda8c15a5505840db3eed6e09",
-    "source": "theme",
-    "type": "title",
-    "answer": "Kicia Kocia",
-    "normalizedAnswer": "KICIA KOCIA",
-    "category": "Book Title",
-    "difficulty": 86,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 10,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
-    "id": "aab76cc94444cd1da204d1d1fee6a766",
-    "source": "theme",
-    "type": "title",
-    "answer": "Erast Fandorin series",
-    "normalizedAnswer": "ERAST FANDORIN SERIES",
-    "category": "Book Title",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 19,
-    "uniqueLetterCount": 10,
     "tags": [
       "theme",
       "literature",
@@ -5754,27 +4809,6 @@
     }
   },
   {
-    "id": "1331a3fcf2fc67736f9f3f856183d316",
-    "source": "theme",
-    "type": "title",
-    "answer": "Wiedźmin",
-    "normalizedAnswer": "WIEDZMIN",
-    "category": "Book Title",
-    "difficulty": 78.8,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
     "id": "7ed87ccb71b83b8c901a4a115a5c7ce8",
     "source": "theme",
     "type": "title",
@@ -5838,48 +4872,6 @@
     }
   },
   {
-    "id": "ab275ee03a931456c7c715470a747fdd",
-    "source": "theme",
-    "type": "title",
-    "answer": "Tells Your Fortune",
-    "normalizedAnswer": "TELLS YOUR FORTUNE",
-    "category": "Book Title",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 16,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
-    "id": "bb3dc05077d63307f60d0d0cd8fd05c0",
-    "source": "theme",
-    "type": "title",
-    "answer": "American Spelling Book",
-    "normalizedAnswer": "AMERICAN SPELLING BOOK",
-    "category": "Book Title",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 20,
-    "uniqueLetterCount": 14,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
     "id": "b20f219005d054c5d066670988406974",
     "source": "theme",
     "type": "title",
@@ -5912,27 +4904,6 @@
     "wordCount": 3,
     "letterCount": 20,
     "uniqueLetterCount": 8,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
-    "id": "b5997a2721c70a85595a6dc934569d32",
-    "source": "theme",
-    "type": "title",
-    "answer": "Tung Shing",
-    "normalizedAnswer": "TUNG SHING",
-    "category": "Book Title",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 7,
     "tags": [
       "theme",
       "literature",
@@ -6006,27 +4977,6 @@
     }
   },
   {
-    "id": "144c649a0bdfd4768de4a7270e3eb3dd",
-    "source": "theme",
-    "type": "title",
-    "answer": "The Art of Mathematics",
-    "normalizedAnswer": "THE ART OF MATHEMATICS",
-    "category": "Book Title",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 19,
-    "uniqueLetterCount": 11,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
     "id": "42c0ad89e504db6cbb5b012e82d44136",
     "source": "theme",
     "type": "title",
@@ -6069,27 +5019,6 @@
     }
   },
   {
-    "id": "d1ec63cf7c7543f1f450c31953d35c5d",
-    "source": "theme",
-    "type": "title",
-    "answer": "English Grammar",
-    "normalizedAnswer": "ENGLISH GRAMMAR",
-    "category": "Book Title",
-    "difficulty": 64.4,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 14,
-    "uniqueLetterCount": 10,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
     "id": "f7fcae78e4700d50c3b6c850192f5596",
     "source": "theme",
     "type": "title",
@@ -6111,27 +5040,6 @@
     }
   },
   {
-    "id": "8093a56b7beba7554ec680d72b7370d5",
-    "source": "theme",
-    "type": "title",
-    "answer": "Compilation of basic English vocabulary",
-    "normalizedAnswer": "COMPILATION OF BASIC ENGLISH VOCABULARY",
-    "category": "Book Title",
-    "difficulty": 28,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 35,
-    "uniqueLetterCount": 19,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
     "id": "75f5d35e6b2d6a9eeea00d4db64fc068",
     "source": "theme",
     "type": "title",
@@ -6143,132 +5051,6 @@
     "wordCount": 3,
     "letterCount": 30,
     "uniqueLetterCount": 16,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
-    "id": "a3aaf4370fb64d78af3b006b877f9693",
-    "source": "theme",
-    "type": "title",
-    "answer": "English vocabulary in examinations",
-    "normalizedAnswer": "ENGLISH VOCABULARY IN EXAMINATIONS",
-    "category": "Book Title",
-    "difficulty": 32,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 31,
-    "uniqueLetterCount": 18,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
-    "id": "b359794f48caab5e2a4869092ae43bf3",
-    "source": "theme",
-    "type": "title",
-    "answer": "New English-Japanese Dictionary",
-    "normalizedAnswer": "NEW ENGLISHJAPANESE DICTIONARY",
-    "category": "Book Title",
-    "difficulty": 36,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 28,
-    "uniqueLetterCount": 17,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
-    "id": "bfe1e04d35117a284454790d29e76019",
-    "source": "theme",
-    "type": "title",
-    "answer": "Obunsha Dictionary of Archaisms",
-    "normalizedAnswer": "OBUNSHA DICTIONARY OF ARCHAISMS",
-    "category": "Book Title",
-    "difficulty": 44,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 28,
-    "uniqueLetterCount": 15,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
-    "id": "a25486c5b44603029af74482777c30e5",
-    "source": "theme",
-    "type": "title",
-    "answer": "Hammond's Pocket Atlas",
-    "normalizedAnswer": "HAMMONDS POCKET ATLAS",
-    "category": "Book Title",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 19,
-    "uniqueLetterCount": 13,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
-    "id": "405a0614a96b70a7151ea4c3072a0c89",
-    "source": "theme",
-    "type": "title",
-    "answer": "Sanseido Dictionary of the Japanese Language",
-    "normalizedAnswer": "SANSEIDO DICTIONARY OF THE JAPANESE LANGUAGE",
-    "category": "Book Title",
-    "difficulty": 32,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 39,
-    "uniqueLetterCount": 18,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
-    "id": "b55e70817b0e8fe535faa27ccc93e116",
-    "source": "theme",
-    "type": "title",
-    "answer": "Key to Practical Personal Care at Home",
-    "normalizedAnswer": "KEY TO PRACTICAL PERSONAL CARE AT HOME",
-    "category": "Book Title",
-    "difficulty": 44,
-    "difficultyTier": "easy",
-    "wordCount": 7,
-    "letterCount": 32,
-    "uniqueLetterCount": 15,
     "tags": [
       "theme",
       "literature",

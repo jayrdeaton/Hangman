@@ -1460,26 +1460,6 @@
     }
   },
   {
-    "id": "8325afce03e13813963e0edf4d8f2bae",
-    "source": "theme",
-    "type": "title",
-    "answer": "My Hero Academia: Final Season",
-    "normalizedAnswer": "MY HERO ACADEMIA FINAL SEASON",
-    "category": "Anime",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 25,
-    "uniqueLetterCount": 14,
-    "tags": [
-      "theme",
-      "anime"
-    ],
-    "metadata": {
-      "source": "wikipedia-anime-best-and-awards"
-    }
-  },
-  {
     "id": "dd70b0330881c4b3cab34cafce3b8358",
     "source": "theme",
     "type": "title",

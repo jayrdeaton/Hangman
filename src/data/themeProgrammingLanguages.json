@@ -80,17 +80,17 @@
     }
   },
   {
-    "id": "fb637ca5888b2a775b52530a6af56aa2",
+    "id": "5990fb951214b850908bb36b3805d92c",
     "source": "theme",
     "type": "title",
-    "answer": "C++",
-    "normalizedAnswer": "C",
+    "answer": "C Plus Plus",
+    "normalizedAnswer": "C PLUS PLUS",
     "category": "Programming Language",
-    "difficulty": 105.6,
+    "difficulty": 86.4,
     "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 1,
-    "uniqueLetterCount": 1,
+    "wordCount": 3,
+    "letterCount": 9,
+    "uniqueLetterCount": 5,
     "tags": [
       "theme",
       "programming"

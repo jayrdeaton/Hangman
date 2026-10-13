@@ -588,27 +588,6 @@
     }
   },
   {
-    "id": "6a556e83268649656fa3577ad536572c",
-    "source": "theme",
-    "type": "title",
-    "answer": "Chough",
-    "normalizedAnswer": "CHOUGH",
-    "category": "Fauna",
-    "difficulty": 87.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 5,
-    "tags": [
-      "theme",
-      "nature",
-      "fauna"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
-    }
-  },
-  {
     "id": "d9480b431257bb53380946244a973576",
     "source": "theme",
     "type": "title",
@@ -914,27 +893,6 @@
     "wordCount": 1,
     "letterCount": 4,
     "uniqueLetterCount": 4,
-    "tags": [
-      "theme",
-      "nature",
-      "fauna"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
-    }
-  },
-  {
-    "id": "57f9d40a3301fad0a82d8ede7dd35e79",
-    "source": "theme",
-    "type": "title",
-    "answer": "Dunlin",
-    "normalizedAnswer": "DUNLIN",
-    "category": "Fauna",
-    "difficulty": 87.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 5,
     "tags": [
       "theme",
       "nature",
@@ -1260,27 +1218,6 @@
     }
   },
   {
-    "id": "4e66b3325a845a58de4c4de88ea9173a",
-    "source": "theme",
-    "type": "title",
-    "answer": "Giant panda",
-    "normalizedAnswer": "GIANT PANDA",
-    "category": "Fauna",
-    "difficulty": 78,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 10,
-    "uniqueLetterCount": 7,
-    "tags": [
-      "theme",
-      "nature",
-      "fauna"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
-    }
-  },
-  {
     "id": "4f1892be1a0a19ae50ccd444cbb4ec7d",
     "source": "theme",
     "type": "title",
@@ -1323,27 +1260,6 @@
     }
   },
   {
-    "id": "69f32d4eaba19798a4af0fb6e1cd5c53",
-    "source": "theme",
-    "type": "title",
-    "answer": "Gnu",
-    "normalizedAnswer": "GNU",
-    "category": "Fauna",
-    "difficulty": 96.8,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 3,
-    "uniqueLetterCount": 3,
-    "tags": [
-      "theme",
-      "nature",
-      "fauna"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
-    }
-  },
-  {
     "id": "0e2491aab6ee0be083d7e1bc381e02af",
     "source": "theme",
     "type": "title",
@@ -1376,27 +1292,6 @@
     "wordCount": 1,
     "letterCount": 9,
     "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "nature",
-      "fauna"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_animal_names"
-    }
-  },
-  {
-    "id": "9762dcc1b15e524868bcb1e82cde334a",
-    "source": "theme",
-    "type": "title",
-    "answer": "Goosander",
-    "normalizedAnswer": "GOOSANDER",
-    "category": "Fauna",
-    "difficulty": 74.4,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 9,
-    "uniqueLetterCount": 8,
     "tags": [
       "theme",
       "nature",

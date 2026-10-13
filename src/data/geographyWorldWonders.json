@@ -63,17 +63,17 @@
     }
   },
   {
-    "id": "fc32061b19e5736735663bd863df1392",
+    "id": "61cd48975aea90b7904943e81572d4d4",
     "source": "geography",
     "type": "title",
-    "answer": "Chichén Itz",
-    "normalizedAnswer": "CHICHEN ITZ",
+    "answer": "Chichén Itzá",
+    "normalizedAnswer": "CHICHEN ITZA",
     "category": "World Wonder",
-    "difficulty": 78,
+    "difficulty": 73.6,
     "difficultyTier": "medium",
     "wordCount": 2,
-    "letterCount": 10,
-    "uniqueLetterCount": 7,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
     "tags": [
       "geography",
       "landmark",

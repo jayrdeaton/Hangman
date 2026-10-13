@@ -800,26 +800,6 @@
     }
   },
   {
-    "id": "35a2409e18c6e2ee314f04c87a701b15",
-    "source": "theme",
-    "type": "title",
-    "answer": "Hangzhou Xiaoshan International Airport",
-    "normalizedAnswer": "HANGZHOU XIAOSHAN INTERNATIONAL AIRPORT",
-    "category": "Travel",
-    "difficulty": 44,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 36,
-    "uniqueLetterCount": 15,
-    "tags": [
-      "theme",
-      "travel"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic"
-    }
-  },
-  {
     "id": "395fe65ba4c82d5cf0736ed7b2f2df40",
     "source": "theme",
     "type": "title",
@@ -831,46 +811,6 @@
     "wordCount": 4,
     "letterCount": 36,
     "uniqueLetterCount": 13,
-    "tags": [
-      "theme",
-      "travel"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic"
-    }
-  },
-  {
-    "id": "8c5b988af050093babbd1bc313eafac3",
-    "source": "theme",
-    "type": "title",
-    "answer": "Chongqing Jiangbei International Airport",
-    "normalizedAnswer": "CHONGQING JIANGBEI INTERNATIONAL AIRPORT",
-    "category": "Travel",
-    "difficulty": 44,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 37,
-    "uniqueLetterCount": 15,
-    "tags": [
-      "theme",
-      "travel"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic"
-    }
-  },
-  {
-    "id": "5c9c20da9025841030086ddbff8a9f3b",
-    "source": "theme",
-    "type": "title",
-    "answer": "Kunming Changshui International Airport",
-    "normalizedAnswer": "KUNMING CHANGSHUI INTERNATIONAL AIRPORT",
-    "category": "Travel",
-    "difficulty": 40,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 36,
-    "uniqueLetterCount": 16,
     "tags": [
       "theme",
       "travel"

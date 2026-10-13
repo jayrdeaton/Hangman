@@ -1,0 +1,3982 @@
+[
+  {
+    "id": "b0340609baee2211f621356c07f2fd1f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Kabul",
+    "normalizedAnswer": "KABUL",
+    "category": "World Capital",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "64eccd4f507b92de8c35742850689805",
+    "source": "theme",
+    "type": "title",
+    "answer": "Tirana",
+    "normalizedAnswer": "TIRANA",
+    "category": "World Capital",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "655ba03b22862ae14556de23e0d707b4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Algiers",
+    "normalizedAnswer": "ALGIERS",
+    "category": "World Capital",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "e77d3f117a89f6400b001ebe765c4a8a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Andorra la Vella",
+    "normalizedAnswer": "ANDORRA LA VELLA",
+    "category": "World Capital",
+    "difficulty": 72.4,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 14,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "eed63570de9ba2964003db387e1930e8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Luanda",
+    "normalizedAnswer": "LUANDA",
+    "category": "World Capital",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "d6d90978e92b13be25276a3a3893563f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Saint John's",
+    "normalizedAnswer": "SAINT JOHNS",
+    "category": "World Capital",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "3a5bc6e869dce131b1019c7405e8dd91",
+    "source": "theme",
+    "type": "title",
+    "answer": "Buenos Aires",
+    "normalizedAnswer": "BUENOS AIRES",
+    "category": "World Capital",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "0f429428c582334de2f8937120528daa",
+    "source": "theme",
+    "type": "title",
+    "answer": "Yerevan",
+    "normalizedAnswer": "YEREVAN",
+    "category": "World Capital",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "f724d8c71c0888f9ed6b7627b3c63be4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Canberra",
+    "normalizedAnswer": "CANBERRA",
+    "category": "World Capital",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "48ddddf8027085f67934e67a31f48ff8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Vienna",
+    "normalizedAnswer": "VIENNA",
+    "category": "World Capital",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "2cb6777c0e1eeec5a70baad76be8c1e1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Baku",
+    "normalizedAnswer": "BAKU",
+    "category": "World Capital",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "fa856cb6bd98ac230fe319a421eea5e9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Nassau",
+    "normalizedAnswer": "NASSAU",
+    "category": "World Capital",
+    "difficulty": 91.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "48b7a3407308ff94fe5d0a985dcc94b0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Manama",
+    "normalizedAnswer": "MANAMA",
+    "category": "World Capital",
+    "difficulty": 95.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6fc168bcdf0a92f86659bcb462dd224b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Dhaka",
+    "normalizedAnswer": "DHAKA",
+    "category": "World Capital",
+    "difficulty": 92,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "0bd2e7799893e3c4318397b3c2e02ee9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bridgetown",
+    "normalizedAnswer": "BRIDGETOWN",
+    "category": "World Capital",
+    "difficulty": 66,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "af14a4c8ff3168e9ba6bdb8a4641e227",
+    "source": "theme",
+    "type": "title",
+    "answer": "Minsk",
+    "normalizedAnswer": "MINSK",
+    "category": "World Capital",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "1c7a62099cc785333d4a703393845b1f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Brussels",
+    "normalizedAnswer": "BRUSSELS",
+    "category": "World Capital",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a2d1513a993779801c9766230c8ea582",
+    "source": "theme",
+    "type": "title",
+    "answer": "Belmopan",
+    "normalizedAnswer": "BELMOPAN",
+    "category": "World Capital",
+    "difficulty": 74.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "be45ec526ec1e6ce7ed8b3ef5b4d9570",
+    "source": "theme",
+    "type": "title",
+    "answer": "Porto-Novo",
+    "normalizedAnswer": "PORTONOVO",
+    "category": "World Capital",
+    "difficulty": 82.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "f6185259e49924592a38f3393e57e417",
+    "source": "theme",
+    "type": "title",
+    "answer": "Thimphu",
+    "normalizedAnswer": "THIMPHU",
+    "category": "World Capital",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "43602d5a640dc2f33bf4598b893df125",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sucre",
+    "normalizedAnswer": "SUCRE",
+    "category": "World Capital",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6ca64d780f99ea5bb1f676d1542ad05c",
+    "source": "theme",
+    "type": "title",
+    "answer": "La Paz",
+    "normalizedAnswer": "LA PAZ",
+    "category": "World Capital",
+    "difficulty": 92,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "dbefb743d86e27f1b2efe5b2db0bf97f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sarajevo",
+    "normalizedAnswer": "SARAJEVO",
+    "category": "World Capital",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a3de3a64bb57211fc0219e781526f7b0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Gaborone",
+    "normalizedAnswer": "GABORONE",
+    "category": "World Capital",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "fef52f023b9671ccd8ffd460855202cc",
+    "source": "theme",
+    "type": "title",
+    "answer": "Brasília",
+    "normalizedAnswer": "BRASILIA",
+    "category": "World Capital",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "06e94b15c4681858c8ebece07647f725",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bandar Seri Begawan",
+    "normalizedAnswer": "BANDAR SERI BEGAWAN",
+    "category": "World Capital",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 17,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "413522bc146ab1354ee8f05243aa1ad4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sofia",
+    "normalizedAnswer": "SOFIA",
+    "category": "World Capital",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "63dc0ca5dedf959538ecd8c2a54ea7ce",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ouagadougou",
+    "normalizedAnswer": "OUAGADOUGOU",
+    "category": "World Capital",
+    "difficulty": 85.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "d86ebf0e84f520301c957323d0dbbc0e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Gitega",
+    "normalizedAnswer": "GITEGA",
+    "category": "World Capital",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6334d5c7e0eb4bb4b29530469bb42df8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Praia",
+    "normalizedAnswer": "PRAIA",
+    "category": "World Capital",
+    "difficulty": 92,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "1eba2dd94796d3559082beb5ff490f96",
+    "source": "theme",
+    "type": "title",
+    "answer": "Phnom Penh",
+    "normalizedAnswer": "PHNOM PENH",
+    "category": "World Capital",
+    "difficulty": 82.4,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "76afcac8f840cdcd80791c22ad4fdf29",
+    "source": "theme",
+    "type": "title",
+    "answer": "Yaoundé",
+    "normalizedAnswer": "YAOUNDE",
+    "category": "World Capital",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "8d3ecfd5613f51430b99b7e94d02256e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ottawa",
+    "normalizedAnswer": "OTTAWA",
+    "category": "World Capital",
+    "difficulty": 91.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a5d1255dce8bf9d9cea60de2cd98f4cf",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bangui",
+    "normalizedAnswer": "BANGUI",
+    "category": "World Capital",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "d56976ec6462bcab0e41d2a3634eb225",
+    "source": "theme",
+    "type": "title",
+    "answer": "N'Djamena",
+    "normalizedAnswer": "NDJAMENA",
+    "category": "World Capital",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "125f4b09a15adfee03d44dc1d8ad939c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Santiago",
+    "normalizedAnswer": "SANTIAGO",
+    "category": "World Capital",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "4337576ca31879bdef6afd1a31e9b5d9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Beijing",
+    "normalizedAnswer": "BEIJING",
+    "category": "World Capital",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "fd88aa2116d110dd7d4aabafca96634a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bogotá",
+    "normalizedAnswer": "BOGOTA",
+    "category": "World Capital",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "d0f21a0cd469b0b4845ab5c90133aa93",
+    "source": "theme",
+    "type": "title",
+    "answer": "Moroni",
+    "normalizedAnswer": "MORONI",
+    "category": "World Capital",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "d61969ea8a4e4c39e7cbc33440e401d8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Brazzaville",
+    "normalizedAnswer": "BRAZZAVILLE",
+    "category": "World Capital",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "9550abe7b6e9316c577eff63d51c8ae5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Kinshasa",
+    "normalizedAnswer": "KINSHASA",
+    "category": "World Capital",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "2b64e99d96e9a705ecf88e61309b3646",
+    "source": "theme",
+    "type": "title",
+    "answer": "San José",
+    "normalizedAnswer": "SAN JOSE",
+    "category": "World Capital",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "bfcfa099f1a1fe7aab70e6b87162e665",
+    "source": "theme",
+    "type": "title",
+    "answer": "Yamoussoukro",
+    "normalizedAnswer": "YAMOUSSOUKRO",
+    "category": "World Capital",
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "afbbcaf9cf3b2c938b38ef2ccb57c73b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Zagreb",
+    "normalizedAnswer": "ZAGREB",
+    "category": "World Capital",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "3ba8423bb9de11b2f3f903bcfd2416ea",
+    "source": "theme",
+    "type": "title",
+    "answer": "Havana",
+    "normalizedAnswer": "HAVANA",
+    "category": "World Capital",
+    "difficulty": 91.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "33e04a7f132fd9cde8bf135e2d56472a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Nicosia",
+    "normalizedAnswer": "NICOSIA",
+    "category": "World Capital",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "afb118b5c2057c5a65cdbb86be3045e8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Prague",
+    "normalizedAnswer": "PRAGUE",
+    "category": "World Capital",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "1ce60d523e045db1afd9a2f7f191e408",
+    "source": "theme",
+    "type": "title",
+    "answer": "Copenhagen",
+    "normalizedAnswer": "COPENHAGEN",
+    "category": "World Capital",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a22403d257726d4640f125f864a206d2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Djibouti City",
+    "normalizedAnswer": "DJIBOUTI CITY",
+    "category": "World Capital",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "4044fc806181a87b16bc4e99053d7da5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Roseau",
+    "normalizedAnswer": "ROSEAU",
+    "category": "World Capital",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "935189da139eeb2b9c84e3b9582bb02d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Santo Domingo",
+    "normalizedAnswer": "SANTO DOMINGO",
+    "category": "World Capital",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "eebfd21ebaf82ff8e6741ba9c1136384",
+    "source": "theme",
+    "type": "title",
+    "answer": "Quito",
+    "normalizedAnswer": "QUITO",
+    "category": "World Capital",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c0a25c949bf109df8e3e07e35dd4afce",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cairo",
+    "normalizedAnswer": "CAIRO",
+    "category": "World Capital",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "34676d96a18b15c8cdf10c6196200b00",
+    "source": "theme",
+    "type": "title",
+    "answer": "San Salvador",
+    "normalizedAnswer": "SAN SALVADOR",
+    "category": "World Capital",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c22ecfe6c41268631eceb317c85a8e77",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ciudad de la Paz",
+    "normalizedAnswer": "CIUDAD DE LA PAZ",
+    "category": "World Capital",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 4,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "8bd5c4e94a03a90b2fef4e78aa3efc42",
+    "source": "theme",
+    "type": "title",
+    "answer": "Asmara",
+    "normalizedAnswer": "ASMARA",
+    "category": "World Capital",
+    "difficulty": 91.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "e06ba0b7686943ee52b8bdc520160a7e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Tallinn",
+    "normalizedAnswer": "TALLINN",
+    "category": "World Capital",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "75a477f2b3f9231f82d91e31b0ea0bb3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mbabane",
+    "normalizedAnswer": "MBABANE",
+    "category": "World Capital",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "f2d471d47157a63847b5280153d253f6",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lobamba",
+    "normalizedAnswer": "LOBAMBA",
+    "category": "World Capital",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "778aa592d27aeb2b1dc01b3da9650f08",
+    "source": "theme",
+    "type": "title",
+    "answer": "Addis Ababa",
+    "normalizedAnswer": "ADDIS ABABA",
+    "category": "World Capital",
+    "difficulty": 86,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6f9ba848f147f110d729b98a35910a56",
+    "source": "theme",
+    "type": "title",
+    "answer": "Suva",
+    "normalizedAnswer": "SUVA",
+    "category": "World Capital",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "9a36de09d8f2679b72c9e78d00a41a44",
+    "source": "theme",
+    "type": "title",
+    "answer": "Helsinki",
+    "normalizedAnswer": "HELSINKI",
+    "category": "World Capital",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "12989f9bf3ff16c9c5121e58c8d30348",
+    "source": "theme",
+    "type": "title",
+    "answer": "Paris",
+    "normalizedAnswer": "PARIS",
+    "category": "World Capital",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "790f5a95978638e6a16274b9a7d330bd",
+    "source": "theme",
+    "type": "title",
+    "answer": "Libreville",
+    "normalizedAnswer": "LIBREVILLE",
+    "category": "World Capital",
+    "difficulty": 82,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "273a5f8c183eb02976dd30e93c976450",
+    "source": "theme",
+    "type": "title",
+    "answer": "Banjul",
+    "normalizedAnswer": "BANJUL",
+    "category": "World Capital",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "4f0ec2c1c5430107f12e929f57b31031",
+    "source": "theme",
+    "type": "title",
+    "answer": "Tbilisi",
+    "normalizedAnswer": "TBILISI",
+    "category": "World Capital",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "91f975d56c5d03f6e836e8f13e514e6f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Berlin",
+    "normalizedAnswer": "BERLIN",
+    "category": "World Capital",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "de2c6f4667e40f5cb6a3bc0c3f665706",
+    "source": "theme",
+    "type": "title",
+    "answer": "Accra",
+    "normalizedAnswer": "ACCRA",
+    "category": "World Capital",
+    "difficulty": 96,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "0db75a0f7961c7e62156a5132a9714e7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Athens",
+    "normalizedAnswer": "ATHENS",
+    "category": "World Capital",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "0813b0ac3d18d66374e365ec73bcac2f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Saint George's",
+    "normalizedAnswer": "SAINT GEORGES",
+    "category": "World Capital",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "1371ae68424f0bff23c8b59025e8b816",
+    "source": "theme",
+    "type": "title",
+    "answer": "Guatemala City",
+    "normalizedAnswer": "GUATEMALA CITY",
+    "category": "World Capital",
+    "difficulty": 64.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "31ef6e89697551b3295b3f3845df0d47",
+    "source": "theme",
+    "type": "title",
+    "answer": "Conakry",
+    "normalizedAnswer": "CONAKRY",
+    "category": "World Capital",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "70403e031d83dabb891f01531e8d2dad",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bissau",
+    "normalizedAnswer": "BISSAU",
+    "category": "World Capital",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "196ce3ab4e136941a7f49c885cc66565",
+    "source": "theme",
+    "type": "title",
+    "answer": "Georgetown",
+    "normalizedAnswer": "GEORGETOWN",
+    "category": "World Capital",
+    "difficulty": 78,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "8923b41177909723a93b5b3b0ce8543c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Port-au-Prince",
+    "normalizedAnswer": "PORTAUPRINCE",
+    "category": "World Capital",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ba54589a35fddad07ea6484145b234ee",
+    "source": "theme",
+    "type": "title",
+    "answer": "Tegucigalpa",
+    "normalizedAnswer": "TEGUCIGALPA",
+    "category": "World Capital",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "4b4d97e58ff424b222e0873fd301ab19",
+    "source": "theme",
+    "type": "title",
+    "answer": "Budapest",
+    "normalizedAnswer": "BUDAPEST",
+    "category": "World Capital",
+    "difficulty": 74.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ef6addbbd5d0f20b93b6b82c491d4759",
+    "source": "theme",
+    "type": "title",
+    "answer": "Reykjavík",
+    "normalizedAnswer": "REYKJAVIK",
+    "category": "World Capital",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "b825daf4f132421ed24f294f07d88737",
+    "source": "theme",
+    "type": "title",
+    "answer": "New Delhi",
+    "normalizedAnswer": "NEW DELHI",
+    "category": "World Capital",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c0960705f8abf2871f90294800259340",
+    "source": "theme",
+    "type": "title",
+    "answer": "Jakarta",
+    "normalizedAnswer": "JAKARTA",
+    "category": "World Capital",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "9faba054dc30f16f023f96cfbe0176a6",
+    "source": "theme",
+    "type": "title",
+    "answer": "Tehran",
+    "normalizedAnswer": "TEHRAN",
+    "category": "World Capital",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6549bb5b0fc270183becd887990403b9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Baghdad",
+    "normalizedAnswer": "BAGHDAD",
+    "category": "World Capital",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "37845cee57a478d79135ebaba47fd2a0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Dublin",
+    "normalizedAnswer": "DUBLIN",
+    "category": "World Capital",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "46595d19b6bc01b05e6cf299dda0304f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Jerusalem",
+    "normalizedAnswer": "JERUSALEM",
+    "category": "World Capital",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "71b65d572377650740064b23dc26175f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Rome",
+    "normalizedAnswer": "ROME",
+    "category": "World Capital",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "33e61c16a1b942a2f2310921e77a7345",
+    "source": "theme",
+    "type": "title",
+    "answer": "Kingston",
+    "normalizedAnswer": "KINGSTON",
+    "category": "World Capital",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "980c6456d2fe43a020fb8aa210053508",
+    "source": "theme",
+    "type": "title",
+    "answer": "Tokyo",
+    "normalizedAnswer": "TOKYO",
+    "category": "World Capital",
+    "difficulty": 92,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "bbd69877b3d8ea287fa05544bb7e3d2f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Amman",
+    "normalizedAnswer": "AMMAN",
+    "category": "World Capital",
+    "difficulty": 96,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "034ff416f360d0e43f41d8b3394df6f7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Astana",
+    "normalizedAnswer": "ASTANA",
+    "category": "World Capital",
+    "difficulty": 91.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "db3c4afbcaf7dd752b98ce27ded9f0a0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Nairobi",
+    "normalizedAnswer": "NAIROBI",
+    "category": "World Capital",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "b53db95552ec957f4be2d914c7f2ab19",
+    "source": "theme",
+    "type": "title",
+    "answer": "South Tarawa",
+    "normalizedAnswer": "SOUTH TARAWA",
+    "category": "World Capital",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6b1ad1fa5ff12d4b640c2fc1a74d9421",
+    "source": "theme",
+    "type": "title",
+    "answer": "Kuwait City",
+    "normalizedAnswer": "KUWAIT CITY",
+    "category": "World Capital",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "2ca3aa729d7277772b8ee8e22d6c4d82",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bishkek",
+    "normalizedAnswer": "BISHKEK",
+    "category": "World Capital",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "760ab038ffe9bcfac8093b2673ac43e9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Vientiane",
+    "normalizedAnswer": "VIENTIANE",
+    "category": "World Capital",
+    "difficulty": 82.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ccc089da800483ad22cd4cf27057d904",
+    "source": "theme",
+    "type": "title",
+    "answer": "Riga",
+    "normalizedAnswer": "RIGA",
+    "category": "World Capital",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "773aeaa2757fa68a16720c476584855b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Beirut",
+    "normalizedAnswer": "BEIRUT",
+    "category": "World Capital",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "1b99150b0eccf9501a250424341965b7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Maseru",
+    "normalizedAnswer": "MASERU",
+    "category": "World Capital",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ed59ac4d9e9c28cd43376435f6c34c62",
+    "source": "theme",
+    "type": "title",
+    "answer": "Monrovia",
+    "normalizedAnswer": "MONROVIA",
+    "category": "World Capital",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "18b6bb4026b8b434d95d60a61eff6610",
+    "source": "theme",
+    "type": "title",
+    "answer": "Tripoli",
+    "normalizedAnswer": "TRIPOLI",
+    "category": "World Capital",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "91e04012e9dac1cf8d4fd03c23029b11",
+    "source": "theme",
+    "type": "title",
+    "answer": "Vaduz",
+    "normalizedAnswer": "VADUZ",
+    "category": "World Capital",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "0c548d585df70cb284dd12b14f747325",
+    "source": "theme",
+    "type": "title",
+    "answer": "Vilnius",
+    "normalizedAnswer": "VILNIUS",
+    "category": "World Capital",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "cf6f7be3fbb028f192d9464a7469c183",
+    "source": "theme",
+    "type": "title",
+    "answer": "Luxembourg",
+    "normalizedAnswer": "LUXEMBOURG",
+    "category": "World Capital",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c1126e9239d8c522b056b2a419dc8356",
+    "source": "theme",
+    "type": "title",
+    "answer": "Antananarivo",
+    "normalizedAnswer": "ANTANANARIVO",
+    "category": "World Capital",
+    "difficulty": 77.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 12,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "1c275b19baba827b9f791d69fada24c8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lilongwe",
+    "normalizedAnswer": "LILONGWE",
+    "category": "World Capital",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "440d0936ec2a7cfd281e6cda52b18953",
+    "source": "theme",
+    "type": "title",
+    "answer": "Kuala Lumpur",
+    "normalizedAnswer": "KUALA LUMPUR",
+    "category": "World Capital",
+    "difficulty": 77.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "e6e2c6d95a2ac275d27663cd9908e1c2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Malé",
+    "normalizedAnswer": "MALE",
+    "category": "World Capital",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "df3869ed5c7517d3e7dd6d597bcd4af7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bamako",
+    "normalizedAnswer": "BAMAKO",
+    "category": "World Capital",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "66d292b0ad46e04c848a418782ce1957",
+    "source": "theme",
+    "type": "title",
+    "answer": "Valletta",
+    "normalizedAnswer": "VALLETTA",
+    "category": "World Capital",
+    "difficulty": 86.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "37aa23051c919e42f0cb4867c6fbf9ec",
+    "source": "theme",
+    "type": "title",
+    "answer": "Majuro",
+    "normalizedAnswer": "MAJURO",
+    "category": "World Capital",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ba7015ffba996ddd8b379603296fa779",
+    "source": "theme",
+    "type": "title",
+    "answer": "Nouakchott",
+    "normalizedAnswer": "NOUAKCHOTT",
+    "category": "World Capital",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "5a006b9d51e25926b1408e30afabcd85",
+    "source": "theme",
+    "type": "title",
+    "answer": "Port Louis",
+    "normalizedAnswer": "PORT LOUIS",
+    "category": "World Capital",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "313cb20dbe5bd0fd5fab5463673b11c5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mexico City",
+    "normalizedAnswer": "MEXICO CITY",
+    "category": "World Capital",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "83b5e6ad8fb8ce014157f9371d134a95",
+    "source": "theme",
+    "type": "title",
+    "answer": "Palikir",
+    "normalizedAnswer": "PALIKIR",
+    "category": "World Capital",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "53e0a52dc60ba157a1a9cee674bcaacc",
+    "source": "theme",
+    "type": "title",
+    "answer": "Chisinau",
+    "normalizedAnswer": "CHISINAU",
+    "category": "World Capital",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "8474b8a755a92d778be6b99f4cc1cf1c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Monaco",
+    "normalizedAnswer": "MONACO",
+    "category": "World Capital",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "e152fdfdf4c7b4a81a39eee90418c11f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ulaanbaatar",
+    "normalizedAnswer": "ULAANBAATAR",
+    "category": "World Capital",
+    "difficulty": 77.6,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "3f262a6ec0dbb3f11be33c3d6ce87d08",
+    "source": "theme",
+    "type": "title",
+    "answer": "Podgorica",
+    "normalizedAnswer": "PODGORICA",
+    "category": "World Capital",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6eb464594f607c59174032d0036b8621",
+    "source": "theme",
+    "type": "title",
+    "answer": "Rabat",
+    "normalizedAnswer": "RABAT",
+    "category": "World Capital",
+    "difficulty": 92,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "e14e3eccb73dd347a9c2d925c6cd0849",
+    "source": "theme",
+    "type": "title",
+    "answer": "Maputo",
+    "normalizedAnswer": "MAPUTO",
+    "category": "World Capital",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6059c850c707928d6e28867f00a9c55c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Naypyidaw",
+    "normalizedAnswer": "NAYPYIDAW",
+    "category": "World Capital",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "bd96f4cd08fa50305a72e19c431eada6",
+    "source": "theme",
+    "type": "title",
+    "answer": "Windhoek",
+    "normalizedAnswer": "WINDHOEK",
+    "category": "World Capital",
+    "difficulty": 74.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "0b3dd000bc1da91287875d29bfe5fa39",
+    "source": "theme",
+    "type": "title",
+    "answer": "Yaren",
+    "normalizedAnswer": "YAREN",
+    "category": "World Capital",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "72ba40df443148820ff4b01a4f6665df",
+    "source": "theme",
+    "type": "title",
+    "answer": "Kathmandu",
+    "normalizedAnswer": "KATHMANDU",
+    "category": "World Capital",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a7f5e3b238c80eddaa8e0134cd6ead69",
+    "source": "theme",
+    "type": "title",
+    "answer": "Amsterdam",
+    "normalizedAnswer": "AMSTERDAM",
+    "category": "World Capital",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "2c93c150fc42e3e94ec6557c227bc8d4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Wellington",
+    "normalizedAnswer": "WELLINGTON",
+    "category": "World Capital",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "7ff5a2f4fed9c617edfbe68d29cdb5f4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Managua",
+    "normalizedAnswer": "MANAGUA",
+    "category": "World Capital",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "802c878c3b25e68c56e098ac20cc0d9e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Niamey",
+    "normalizedAnswer": "NIAMEY",
+    "category": "World Capital",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ff7de771976f5ec2225f4b83fe805cf6",
+    "source": "theme",
+    "type": "title",
+    "answer": "Abuja",
+    "normalizedAnswer": "ABUJA",
+    "category": "World Capital",
+    "difficulty": 92,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "37c4d9df0fa98e14352f96955447a184",
+    "source": "theme",
+    "type": "title",
+    "answer": "Pyongyang",
+    "normalizedAnswer": "PYONGYANG",
+    "category": "World Capital",
+    "difficulty": 82.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "5fcef427b25d82ec18904daa74e230af",
+    "source": "theme",
+    "type": "title",
+    "answer": "Skopje",
+    "normalizedAnswer": "SKOPJE",
+    "category": "World Capital",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a86a3e7842bc17e7e6bb483ad8488b3a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Oslo",
+    "normalizedAnswer": "OSLO",
+    "category": "World Capital",
+    "difficulty": 96.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "34604aa55a2b22c7ee0cf0d22ad09676",
+    "source": "theme",
+    "type": "title",
+    "answer": "Muscat",
+    "normalizedAnswer": "MUSCAT",
+    "category": "World Capital",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "2cef90261123197e9aa0bf6ff585ce7b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Islamabad",
+    "normalizedAnswer": "ISLAMABAD",
+    "category": "World Capital",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "5f7f1276826b423f85b0a07c2bbd2ddb",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ngerulmud",
+    "normalizedAnswer": "NGERULMUD",
+    "category": "World Capital",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "d180a51f168399734be647c7f9a44d87",
+    "source": "theme",
+    "type": "title",
+    "answer": "Panama City",
+    "normalizedAnswer": "PANAMA CITY",
+    "category": "World Capital",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "5c372bd0aa6b9d42d162abd8c74fff8d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Port Moresby",
+    "normalizedAnswer": "PORT MORESBY",
+    "category": "World Capital",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "656b71b5f0844b31e0433ac205e82d32",
+    "source": "theme",
+    "type": "title",
+    "answer": "Asunción",
+    "normalizedAnswer": "ASUNCION",
+    "category": "World Capital",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "2056c695cf8eff14d1ab030a2a90918d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lima",
+    "normalizedAnswer": "LIMA",
+    "category": "World Capital",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "22a7c9396bfed18af455c38fd64edae6",
+    "source": "theme",
+    "type": "title",
+    "answer": "Manila",
+    "normalizedAnswer": "MANILA",
+    "category": "World Capital",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "77c4a5d01fb6d50998c8ae7a0621e7d6",
+    "source": "theme",
+    "type": "title",
+    "answer": "Warsaw",
+    "normalizedAnswer": "WARSAW",
+    "category": "World Capital",
+    "difficulty": 91.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "b680f4d5bd1e5a79e8bbbf665ee0407c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lisbon",
+    "normalizedAnswer": "LISBON",
+    "category": "World Capital",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "cebc94c5ee7958d0708854ddb436d778",
+    "source": "theme",
+    "type": "title",
+    "answer": "Doha",
+    "normalizedAnswer": "DOHA",
+    "category": "World Capital",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "0c694deb47210424732ace9cedbf7da4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bucharest",
+    "normalizedAnswer": "BUCHAREST",
+    "category": "World Capital",
+    "difficulty": 70.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "7b0cb6d606bcb39ae172ad6164edb218",
+    "source": "theme",
+    "type": "title",
+    "answer": "Moscow",
+    "normalizedAnswer": "MOSCOW",
+    "category": "World Capital",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "76cd81f669f58233dd6e050cc2a36fea",
+    "source": "theme",
+    "type": "title",
+    "answer": "Kigali",
+    "normalizedAnswer": "KIGALI",
+    "category": "World Capital",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "37dcb1d23f74451326df832898d819e4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Basseterre",
+    "normalizedAnswer": "BASSETERRE",
+    "category": "World Capital",
+    "difficulty": 82,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "0f6f53e792ecbd6e4a36ac9a1acbaba0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Castries",
+    "normalizedAnswer": "CASTRIES",
+    "category": "World Capital",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "18a7c4e0257b1948dfaf75f18a8c360e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Kingstown",
+    "normalizedAnswer": "KINGSTOWN",
+    "category": "World Capital",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c9a7d51ecfc4f24ed7d58aa8589ee824",
+    "source": "theme",
+    "type": "title",
+    "answer": "Apia",
+    "normalizedAnswer": "APIA",
+    "category": "World Capital",
+    "difficulty": 96.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "47c5cb81bca49ec6887bad4f497b8730",
+    "source": "theme",
+    "type": "title",
+    "answer": "San Marino",
+    "normalizedAnswer": "SAN MARINO",
+    "category": "World Capital",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "83baeddabb63b38c7406984686c208d3",
+    "source": "theme",
+    "type": "title",
+    "answer": "São Tomé",
+    "normalizedAnswer": "SAO TOME",
+    "category": "World Capital",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "0eddfe56c226d55f91ca54f4d3999994",
+    "source": "theme",
+    "type": "title",
+    "answer": "Riyadh",
+    "normalizedAnswer": "RIYADH",
+    "category": "World Capital",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "fa7c1ca563ddae36f01b6348f3a35d49",
+    "source": "theme",
+    "type": "title",
+    "answer": "Dakar",
+    "normalizedAnswer": "DAKAR",
+    "category": "World Capital",
+    "difficulty": 92,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "9bc739c5aa4dba63712ba820c263c176",
+    "source": "theme",
+    "type": "title",
+    "answer": "Belgrade",
+    "normalizedAnswer": "BELGRADE",
+    "category": "World Capital",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "de4d04c3537fdd1d9f3ff34e646dc4ac",
+    "source": "theme",
+    "type": "title",
+    "answer": "Victoria",
+    "normalizedAnswer": "VICTORIA",
+    "category": "World Capital",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "9e4ef63c28750d9dc3ff68843901ad10",
+    "source": "theme",
+    "type": "title",
+    "answer": "Freetown",
+    "normalizedAnswer": "FREETOWN",
+    "category": "World Capital",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "88fb6cee8cb7660bd333869816e40473",
+    "source": "theme",
+    "type": "title",
+    "answer": "Singapore",
+    "normalizedAnswer": "SINGAPORE",
+    "category": "World Capital",
+    "difficulty": 70.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ec5be1c94f99e61e25b91b2eecefbb83",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bratislava",
+    "normalizedAnswer": "BRATISLAVA",
+    "category": "World Capital",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "f441709eee264163b5fac51567c25893",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ljubljana",
+    "normalizedAnswer": "LJUBLJANA",
+    "category": "World Capital",
+    "difficulty": 82.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ed8e463fbfde4a9a7e610b8bb7ca837e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Honiara",
+    "normalizedAnswer": "HONIARA",
+    "category": "World Capital",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "9c8a7dec3dc385c6b18ecf316c1da644",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mogadishu",
+    "normalizedAnswer": "MOGADISHU",
+    "category": "World Capital",
+    "difficulty": 70.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a4cd50dd4978905253aa29dcaba6229c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Pretoria",
+    "normalizedAnswer": "PRETORIA",
+    "category": "World Capital",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "95bac8f9190a37ca854ba2663f8c3b2d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cape Town",
+    "normalizedAnswer": "CAPE TOWN",
+    "category": "World Capital",
+    "difficulty": 74.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "b5a2bf772cd3ed43932872364fafd218",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bloemfontein",
+    "normalizedAnswer": "BLOEMFONTEIN",
+    "category": "World Capital",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "bbb270c3740f5789e9485ed7b4f18b78",
+    "source": "theme",
+    "type": "title",
+    "answer": "Seoul",
+    "normalizedAnswer": "SEOUL",
+    "category": "World Capital",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6e93bfe81a3438384bf30b995301220b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Juba",
+    "normalizedAnswer": "JUBA",
+    "category": "World Capital",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "63f77cbc0c6415b2b007c4681f8ffae6",
+    "source": "theme",
+    "type": "title",
+    "answer": "Madrid",
+    "normalizedAnswer": "MADRID",
+    "category": "World Capital",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "3f497816bbd3831dbcf2a0e91fefbc93",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sri Jayawardenepura Kotte",
+    "normalizedAnswer": "SRI JAYAWARDENEPURA KOTTE",
+    "category": "World Capital",
+    "difficulty": 44,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 23,
+    "uniqueLetterCount": 15,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ce4e538a23d2e8b2e06633722dc84caf",
+    "source": "theme",
+    "type": "title",
+    "answer": "Colombo",
+    "normalizedAnswer": "COLOMBO",
+    "category": "World Capital",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "10b43e25c871acbf9f3af33aced05500",
+    "source": "theme",
+    "type": "title",
+    "answer": "Khartoum",
+    "normalizedAnswer": "KHARTOUM",
+    "category": "World Capital",
+    "difficulty": 74.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "77f95e7b61561ed9cd33e89749afd4b0",
+    "source": "theme",
+    "type": "title",
+    "answer": "Paramaribo",
+    "normalizedAnswer": "PARAMARIBO",
+    "category": "World Capital",
+    "difficulty": 78,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "05723693aca8976f8a21ba9cf945750b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Stockholm",
+    "normalizedAnswer": "STOCKHOLM",
+    "category": "World Capital",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6d7e697283b5419ba274502d29061a67",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bern",
+    "normalizedAnswer": "BERN",
+    "category": "World Capital",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "9998ef5749edba8ad59fc548538d7bd3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Damascus",
+    "normalizedAnswer": "DAMASCUS",
+    "category": "World Capital",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6fc0e575f3a1d10d71eb3fa86c183046",
+    "source": "theme",
+    "type": "title",
+    "answer": "Dushanbe",
+    "normalizedAnswer": "DUSHANBE",
+    "category": "World Capital",
+    "difficulty": 74.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "276759ed3dc18e34de61b4a0efe7a296",
+    "source": "theme",
+    "type": "title",
+    "answer": "Dodoma",
+    "normalizedAnswer": "DODOMA",
+    "category": "World Capital",
+    "difficulty": 91.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "0fa19330d4f5ca6d0e744dc0221064aa",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bangkok",
+    "normalizedAnswer": "BANGKOK",
+    "category": "World Capital",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "5d5231430504000b4a280c30c4a00d0b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Dili",
+    "normalizedAnswer": "DILI",
+    "category": "World Capital",
+    "difficulty": 96.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "126361965ded44e9a98026fdaa8a3eb9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lomé",
+    "normalizedAnswer": "LOME",
+    "category": "World Capital",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "9e7e71eee5de0ea609761e812a964918",
+    "source": "theme",
+    "type": "title",
+    "answer": "Nuku'alofa",
+    "normalizedAnswer": "NUKUALOFA",
+    "category": "World Capital",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "81c475af2a695dd0ad9523686bff0ad1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Port of Spain",
+    "normalizedAnswer": "PORT OF SPAIN",
+    "category": "World Capital",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 3,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "06f3cabfebedb6f2c70f815531b5f0cd",
+    "source": "theme",
+    "type": "title",
+    "answer": "Tunis",
+    "normalizedAnswer": "TUNIS",
+    "category": "World Capital",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "2ae301bf176e61a1426fc795db46b601",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ankara",
+    "normalizedAnswer": "ANKARA",
+    "category": "World Capital",
+    "difficulty": 91.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "877ffd23aa4d6be0b1a433100471254f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ashgabat",
+    "normalizedAnswer": "ASHGABAT",
+    "category": "World Capital",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "d3fc8403eb26d759e43f14ad0857d9e8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Funafuti",
+    "normalizedAnswer": "FUNAFUTI",
+    "category": "World Capital",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "934780d44940a1491476de50b27c80e1",
+    "source": "theme",
+    "type": "title",
+    "answer": "Kampala",
+    "normalizedAnswer": "KAMPALA",
+    "category": "World Capital",
+    "difficulty": 87.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "32b213242060a2f0904630662e384681",
+    "source": "theme",
+    "type": "title",
+    "answer": "Kyiv",
+    "normalizedAnswer": "KYIV",
+    "category": "World Capital",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ce7befe234a7e72d3b4e90a307eecfa6",
+    "source": "theme",
+    "type": "title",
+    "answer": "Abu Dhabi",
+    "normalizedAnswer": "ABU DHABI",
+    "category": "World Capital",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "0e0c8fa8c68581f1ffa85f1e06e50843",
+    "source": "theme",
+    "type": "title",
+    "answer": "London",
+    "normalizedAnswer": "LONDON",
+    "category": "World Capital",
+    "difficulty": 91.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "f83809cb34362100906691a6a3c65fa8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Washington D.C.",
+    "normalizedAnswer": "WASHINGTON DC",
+    "category": "World Capital",
+    "difficulty": 61.2,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "89ff6dffbbbfbc03354f06a6c68323f8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Montevideo",
+    "normalizedAnswer": "MONTEVIDEO",
+    "category": "World Capital",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "51ce7c7884c78d2f2a5694affb8121bf",
+    "source": "theme",
+    "type": "title",
+    "answer": "Tashkent",
+    "normalizedAnswer": "TASHKENT",
+    "category": "World Capital",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "9834cf3804054dcd427796c6f3ed32dd",
+    "source": "theme",
+    "type": "title",
+    "answer": "Port Vila",
+    "normalizedAnswer": "PORT VILA",
+    "category": "World Capital",
+    "difficulty": 74.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6588842778823dc61ee08f83d0052060",
+    "source": "theme",
+    "type": "title",
+    "answer": "Caracas",
+    "normalizedAnswer": "CARACAS",
+    "category": "World Capital",
+    "difficulty": 91.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a89fcbaa95b69e25954e5f5fc8281bdb",
+    "source": "theme",
+    "type": "title",
+    "answer": "Hanoi",
+    "normalizedAnswer": "HANOI",
+    "category": "World Capital",
+    "difficulty": 88,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "168b0c3522190c85a214796a26b5aea8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sanaa",
+    "normalizedAnswer": "SANAA",
+    "category": "World Capital",
+    "difficulty": 96,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 5,
+    "uniqueLetterCount": 3,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "8378c87d387b121843c49c2351c48038",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lusaka",
+    "normalizedAnswer": "LUSAKA",
+    "category": "World Capital",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "8f1c21646bf686137d6929472cc2a8f4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Harare",
+    "normalizedAnswer": "HARARE",
+    "category": "World Capital",
+    "difficulty": 91.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "3976d87b5c62a06713415a8c4c5614c9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Vatican City",
+    "normalizedAnswer": "VATICAN CITY",
+    "category": "World Capital",
+    "difficulty": 77.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "geography",
+      "capital"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  }
+]

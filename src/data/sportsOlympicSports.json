@@ -1,0 +1,1829 @@
+[
+  {
+    "id": "9849cc7c30f5e93b2790c2055206f51a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Archery",
+    "normalizedAnswer": "ARCHERY",
+    "category": "Olympic Sport",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "0db74e72bc35a608881f4f42590e42ce",
+    "source": "theme",
+    "type": "title",
+    "answer": "Artistic Swimming",
+    "normalizedAnswer": "ARTISTIC SWIMMING",
+    "category": "Olympic Sport",
+    "difficulty": 64,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "37ed1562c5b17778c797dbd5a85fefb3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Badminton",
+    "normalizedAnswer": "BADMINTON",
+    "category": "Olympic Sport",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "b4e23e66b842db34c8ede389315facd4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Baseball",
+    "normalizedAnswer": "BASEBALL",
+    "category": "Olympic Sport",
+    "difficulty": 86.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "7a55a13b7e6fc6de28c355c6881cc74b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Basketball",
+    "normalizedAnswer": "BASKETBALL",
+    "category": "Olympic Sport",
+    "difficulty": 78,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "3425ee7ab8e6295f755672f0df3cbc00",
+    "source": "theme",
+    "type": "title",
+    "answer": "Beach Volleyball",
+    "normalizedAnswer": "BEACH VOLLEYBALL",
+    "category": "Olympic Sport",
+    "difficulty": 68,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "141ff15210e0c53c47212ae495bcbad2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Boxing",
+    "normalizedAnswer": "BOXING",
+    "category": "Olympic Sport",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ea662579ca94cc994dfe5f4aa5a9b722",
+    "source": "theme",
+    "type": "title",
+    "answer": "Canoeing",
+    "normalizedAnswer": "CANOEING",
+    "category": "Olympic Sport",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "5728f885278bb0bd76fc168606047edb",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cricket",
+    "normalizedAnswer": "CRICKET",
+    "category": "Olympic Sport",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "9c210690e6529047d9f2f7fa86100d8f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cycling",
+    "normalizedAnswer": "CYCLING",
+    "category": "Olympic Sport",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "b6ad5e93d8982420908a172f0ae46ebf",
+    "source": "theme",
+    "type": "title",
+    "answer": "Diving",
+    "normalizedAnswer": "DIVING",
+    "category": "Olympic Sport",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "11923baa06862ed7e94e6dac61b579e3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Equestrian",
+    "normalizedAnswer": "EQUESTRIAN",
+    "category": "Olympic Sport",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "821630d0c5a059f986e958eef6b63220",
+    "source": "theme",
+    "type": "title",
+    "answer": "Fencing",
+    "normalizedAnswer": "FENCING",
+    "category": "Olympic Sport",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "b11941245ca7e2d348a7dcde449f1f0b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Field Hockey",
+    "normalizedAnswer": "FIELD HOCKEY",
+    "category": "Olympic Sport",
+    "difficulty": 65.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a1d430f29e0b822807eb50035d519153",
+    "source": "theme",
+    "type": "title",
+    "answer": "Flag Football",
+    "normalizedAnswer": "FLAG FOOTBALL",
+    "category": "Olympic Sport",
+    "difficulty": 77.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "3aab9b1700687434e1351af90039c8ae",
+    "source": "theme",
+    "type": "title",
+    "answer": "Golf",
+    "normalizedAnswer": "GOLF",
+    "category": "Olympic Sport",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "f266c114b7bf6967ab09e2992b83cae4",
+    "source": "theme",
+    "type": "title",
+    "answer": "Gymnastics",
+    "normalizedAnswer": "GYMNASTICS",
+    "category": "Olympic Sport",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "48d69a7af50f31203c2bf63a6460fe9f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Handball",
+    "normalizedAnswer": "HANDBALL",
+    "category": "Olympic Sport",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "e8a35adac3d2fc9f7d8c5f1512a59865",
+    "source": "theme",
+    "type": "title",
+    "answer": "Judo",
+    "normalizedAnswer": "JUDO",
+    "category": "Olympic Sport",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c9f1972a5fd1060161d58924d2a1dc16",
+    "source": "theme",
+    "type": "title",
+    "answer": "Lacrosse",
+    "normalizedAnswer": "LACROSSE",
+    "category": "Olympic Sport",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "0825519c513a4b19e8d7c04e57fa40f8",
+    "source": "theme",
+    "type": "title",
+    "answer": "Modern Pentathlon",
+    "normalizedAnswer": "MODERN PENTATHLON",
+    "category": "Olympic Sport",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 16,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c128083fd60643a536481856d7d673ca",
+    "source": "theme",
+    "type": "title",
+    "answer": "Rowing",
+    "normalizedAnswer": "ROWING",
+    "category": "Olympic Sport",
+    "difficulty": 83.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "7f0398037f5218ff4163af0ea3300b4e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Rugby Sevens",
+    "normalizedAnswer": "RUGBY SEVENS",
+    "category": "Olympic Sport",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "7802170c1a6953bce3e2f31f8d25e27c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sailing",
+    "normalizedAnswer": "SAILING",
+    "category": "Olympic Sport",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "56412f64ef783e2efa596f9f6eb68fca",
+    "source": "theme",
+    "type": "title",
+    "answer": "Shooting",
+    "normalizedAnswer": "SHOOTING",
+    "category": "Olympic Sport",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "d1df56979710ab5cb3ab3e2f3c37e149",
+    "source": "theme",
+    "type": "title",
+    "answer": "Skateboarding",
+    "normalizedAnswer": "SKATEBOARDING",
+    "category": "Olympic Sport",
+    "difficulty": 56.8,
+    "difficultyTier": "easy",
+    "wordCount": 1,
+    "letterCount": 13,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "00bd5962ddbaa82c571ebe93ad048c74",
+    "source": "theme",
+    "type": "title",
+    "answer": "Soccer",
+    "normalizedAnswer": "SOCCER",
+    "category": "Olympic Sport",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "4d90d98a55a148b06ebce921ceaf317f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Softball",
+    "normalizedAnswer": "SOFTBALL",
+    "category": "Olympic Sport",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "ee76d5d581eacf090ededd890606f222",
+    "source": "theme",
+    "type": "title",
+    "answer": "Sport Climbing",
+    "normalizedAnswer": "SPORT CLIMBING",
+    "category": "Olympic Sport",
+    "difficulty": 56.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 12,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "53b14d577db5cda6136212ca104c439c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Squash",
+    "normalizedAnswer": "SQUASH",
+    "category": "Olympic Sport",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "7ff52cc163727091493469db3ae8011d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Surfing",
+    "normalizedAnswer": "SURFING",
+    "category": "Olympic Sport",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "0e25cb9450d61f9227dd13ebaeab2189",
+    "source": "theme",
+    "type": "title",
+    "answer": "Swimming",
+    "normalizedAnswer": "SWIMMING",
+    "category": "Olympic Sport",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "601c705434e536bc105ccf3fac33ae33",
+    "source": "theme",
+    "type": "title",
+    "answer": "Table Tennis",
+    "normalizedAnswer": "TABLE TENNIS",
+    "category": "Olympic Sport",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "25793a41f63212e85f78831dcf39c1a9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Taekwondo",
+    "normalizedAnswer": "TAEKWONDO",
+    "category": "Olympic Sport",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "f0250c973c80fa79244a4b120165be77",
+    "source": "theme",
+    "type": "title",
+    "answer": "Tennis",
+    "normalizedAnswer": "TENNIS",
+    "category": "Olympic Sport",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "9959b403eb6204295cb020d78cb0fe9d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Track and Field",
+    "normalizedAnswer": "TRACK AND FIELD",
+    "category": "Olympic Sport",
+    "difficulty": 60.8,
+    "difficultyTier": "easy",
+    "wordCount": 3,
+    "letterCount": 13,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "df71ab5a5536f201266ae1c848c24f1e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Triathlon",
+    "normalizedAnswer": "TRIATHLON",
+    "category": "Olympic Sport",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "f598f627dd3610e4729c4caadb788b6b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Volleyball",
+    "normalizedAnswer": "VOLLEYBALL",
+    "category": "Olympic Sport",
+    "difficulty": 78,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "b734b1dfe54e0d4d2fe2216b082fa36f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Water Polo",
+    "normalizedAnswer": "WATER POLO",
+    "category": "Olympic Sport",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "e69ae2038ab09e66cb3f9be2667ccf4e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Weightlifting",
+    "normalizedAnswer": "WEIGHTLIFTING",
+    "category": "Olympic Sport",
+    "difficulty": 68.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 13,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a71884aec6d0779680c853e113639b7e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Wrestling",
+    "normalizedAnswer": "WRESTLING",
+    "category": "Olympic Sport",
+    "difficulty": 70.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a9b9f402a0c8517bc9952ee82cda6755",
+    "source": "theme",
+    "type": "title",
+    "answer": "Greco-Roman Wrestling",
+    "normalizedAnswer": "GRECOROMAN WRESTLING",
+    "category": "Olympic Sport",
+    "difficulty": 52,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 19,
+    "uniqueLetterCount": 13,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "173e068e11870baad7655e0b030e5ea5",
+    "source": "theme",
+    "type": "title",
+    "answer": "Dressage",
+    "normalizedAnswer": "DRESSAGE",
+    "category": "Olympic Sport",
+    "difficulty": 82.8,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c2d20ae17c2c1cf34f9b9d0bf428d193",
+    "source": "theme",
+    "type": "title",
+    "answer": "Show Jumping",
+    "normalizedAnswer": "SHOW JUMPING",
+    "category": "Olympic Sport",
+    "difficulty": 61.6,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "c978b484318db4a83b62f3223385bac3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Mountain Biking",
+    "normalizedAnswer": "MOUNTAIN BIKING",
+    "category": "Olympic Sport",
+    "difficulty": 64.4,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a32e6306be93e76363a46dd3073480e7",
+    "source": "theme",
+    "type": "title",
+    "answer": "BMX Racing",
+    "normalizedAnswer": "BMX RACING",
+    "category": "Olympic Sport",
+    "difficulty": 70.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "79eec060559eeaff092ec3ffbe3115cc",
+    "source": "theme",
+    "type": "title",
+    "answer": "Trampoline",
+    "normalizedAnswer": "TRAMPOLINE",
+    "category": "Olympic Sport",
+    "difficulty": 66,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "83d2e4e41143fdfa6e576bd96d740f31",
+    "source": "theme",
+    "type": "title",
+    "answer": "Rhythmic Gymnastics",
+    "normalizedAnswer": "RHYTHMIC GYMNASTICS",
+    "category": "Olympic Sport",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 18,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "0e1af6b9e363745f5c5518f2afae9399",
+    "source": "theme",
+    "type": "title",
+    "answer": "Balance Beam",
+    "normalizedAnswer": "BALANCE BEAM",
+    "category": "Olympic Sport",
+    "difficulty": 77.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "f3fbb150f69bf89d15d7ed3a915cff32",
+    "source": "theme",
+    "type": "title",
+    "answer": "Pommel Horse",
+    "normalizedAnswer": "POMMEL HORSE",
+    "category": "Olympic Sport",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "04e57934a76388de986974ade3ae5e02",
+    "source": "theme",
+    "type": "title",
+    "answer": "Uneven Bars",
+    "normalizedAnswer": "UNEVEN BARS",
+    "category": "Olympic Sport",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "4bbf3fc847ee99110b4499cfaff27733",
+    "source": "theme",
+    "type": "title",
+    "answer": "Backstroke",
+    "normalizedAnswer": "BACKSTROKE",
+    "category": "Olympic Sport",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "2eb4bbf86bbdaff42e237156baabce53",
+    "source": "theme",
+    "type": "title",
+    "answer": "Breaststroke",
+    "normalizedAnswer": "BREASTSTROKE",
+    "category": "Olympic Sport",
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "529c4561d70c6c9273fd106fb6412522",
+    "source": "theme",
+    "type": "title",
+    "answer": "Butterfly",
+    "normalizedAnswer": "BUTTERFLY",
+    "category": "Olympic Sport",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "58cd82dba5e73213156451f58708ab9a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Pole Vault",
+    "normalizedAnswer": "POLE VAULT",
+    "category": "Olympic Sport",
+    "difficulty": 74.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "19b0f50d3db1f1e124a0b81e8b881b83",
+    "source": "theme",
+    "type": "title",
+    "answer": "High Jump",
+    "normalizedAnswer": "HIGH JUMP",
+    "category": "Olympic Sport",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "43d71a5804649ed4ff95624a64beea74",
+    "source": "theme",
+    "type": "title",
+    "answer": "Long Jump",
+    "normalizedAnswer": "LONG JUMP",
+    "category": "Olympic Sport",
+    "difficulty": 74.8,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a4c5814fb33ace7f1f25a64bf34a48ea",
+    "source": "theme",
+    "type": "title",
+    "answer": "Triple Jump",
+    "normalizedAnswer": "TRIPLE JUMP",
+    "category": "Olympic Sport",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "cc3e07016e42be1cca504d1e53c39f98",
+    "source": "theme",
+    "type": "title",
+    "answer": "Javelin",
+    "normalizedAnswer": "JAVELIN",
+    "category": "Olympic Sport",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "1e4daa729746465a33f7e34a8e4ff50c",
+    "source": "theme",
+    "type": "title",
+    "answer": "Discus",
+    "normalizedAnswer": "DISCUS",
+    "category": "Olympic Sport",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "e149f2a8b74fd8b705bd9d834b292434",
+    "source": "theme",
+    "type": "title",
+    "answer": "Shot Put",
+    "normalizedAnswer": "SHOT PUT",
+    "category": "Olympic Sport",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 2,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "0a1ec835e88bfa89c3295bd58916800b",
+    "source": "theme",
+    "type": "title",
+    "answer": "Hammer Throw",
+    "normalizedAnswer": "HAMMER THROW",
+    "category": "Olympic Sport",
+    "difficulty": 73.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a5a2125f2fe3d9e1c518f4a2cd1fb6bd",
+    "source": "theme",
+    "type": "title",
+    "answer": "Decathlon",
+    "normalizedAnswer": "DECATHLON",
+    "category": "Olympic Sport",
+    "difficulty": 70.4,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 9,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "9f4918b462af16a8fabb76ea5eae6679",
+    "source": "theme",
+    "type": "title",
+    "answer": "Heptathlon",
+    "normalizedAnswer": "HEPTATHLON",
+    "category": "Olympic Sport",
+    "difficulty": 74,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 10,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6bf7d4592b4cb31b6838ff7b5cd37374",
+    "source": "theme",
+    "type": "title",
+    "answer": "Marathon",
+    "normalizedAnswer": "MARATHON",
+    "category": "Olympic Sport",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "23113b07c1f615a32903aec331db3144",
+    "source": "theme",
+    "type": "title",
+    "answer": "Hurdles",
+    "normalizedAnswer": "HURDLES",
+    "category": "Olympic Sport",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "df44022fe0c4bd26ba9bd6bcd971d354",
+    "source": "theme",
+    "type": "title",
+    "answer": "Steeplechase",
+    "normalizedAnswer": "STEEPLECHASE",
+    "category": "Olympic Sport",
+    "difficulty": 73.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 12,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "5a819dee170a67e3183a6a578d592ad2",
+    "source": "theme",
+    "type": "title",
+    "answer": "Alpine Skiing",
+    "normalizedAnswer": "ALPINE SKIING",
+    "category": "Olympic Sport",
+    "difficulty": 69.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "f4ccd19a7d33c8e93e3951631495f1d7",
+    "source": "theme",
+    "type": "title",
+    "answer": "Biathlon",
+    "normalizedAnswer": "BIATHLON",
+    "category": "Olympic Sport",
+    "difficulty": 74.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 8,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a0784456f9ff24319956f70b0c6e72e3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Bobsled",
+    "normalizedAnswer": "BOBSLED",
+    "category": "Olympic Sport",
+    "difficulty": 83.2,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 6,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "a1b25b0017aa390eb1935691c26c834f",
+    "source": "theme",
+    "type": "title",
+    "answer": "Cross-Country Skiing",
+    "normalizedAnswer": "CROSSCOUNTRY SKIING",
+    "category": "Olympic Sport",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 18,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "e895b734ceb8e345395783844579ea97",
+    "source": "theme",
+    "type": "title",
+    "answer": "Curling",
+    "normalizedAnswer": "CURLING",
+    "category": "Olympic Sport",
+    "difficulty": 79.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 7,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "f5e591e2eb5f0cdd921434a7cb038a53",
+    "source": "theme",
+    "type": "title",
+    "answer": "Figure Skating",
+    "normalizedAnswer": "FIGURE SKATING",
+    "category": "Olympic Sport",
+    "difficulty": 60.8,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 13,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "6676314ee5b2567c94d149ae70bf0415",
+    "source": "theme",
+    "type": "title",
+    "answer": "Freestyle Skiing",
+    "normalizedAnswer": "FREESTYLE SKIING",
+    "category": "Olympic Sport",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 2,
+    "letterCount": 15,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "78ae2c30055d61e539ec2ac9f9d5fa3d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ice Hockey",
+    "normalizedAnswer": "ICE HOCKEY",
+    "category": "Olympic Sport",
+    "difficulty": 78.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 9,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "7348da94dc40eadd291daa4f1fbd1e5e",
+    "source": "theme",
+    "type": "title",
+    "answer": "Luge",
+    "normalizedAnswer": "LUGE",
+    "category": "Olympic Sport",
+    "difficulty": 92.4,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 4,
+    "uniqueLetterCount": 4,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "41f24dfa622678d0bbcc085b28b18e83",
+    "source": "theme",
+    "type": "title",
+    "answer": "Nordic Combined",
+    "normalizedAnswer": "NORDIC COMBINED",
+    "category": "Olympic Sport",
+    "difficulty": 68.4,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 14,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "da8ca338211d8537c5898da8cb260f85",
+    "source": "theme",
+    "type": "title",
+    "answer": "Short Track Speed Skating",
+    "normalizedAnswer": "SHORT TRACK SPEED SKATING",
+    "category": "Olympic Sport",
+    "difficulty": 48,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 22,
+    "uniqueLetterCount": 14,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "49971e12bc74e4c913b9df8963e263b3",
+    "source": "theme",
+    "type": "title",
+    "answer": "Skeleton",
+    "normalizedAnswer": "SKELETON",
+    "category": "Olympic Sport",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "d1e4a734c8a560fd055087f67382af09",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ski Jumping",
+    "normalizedAnswer": "SKI JUMPING",
+    "category": "Olympic Sport",
+    "difficulty": 70,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "7f93153bafecca20bcda325084308b06",
+    "source": "theme",
+    "type": "title",
+    "answer": "Snowboarding",
+    "normalizedAnswer": "SNOWBOARDING",
+    "category": "Olympic Sport",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "9388869363bb14deca24f18eeaded67a",
+    "source": "theme",
+    "type": "title",
+    "answer": "Speed Skating",
+    "normalizedAnswer": "SPEED SKATING",
+    "category": "Olympic Sport",
+    "difficulty": 65.2,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 12,
+    "uniqueLetterCount": 10,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "0d6da125482fc5adc193ad56f76d2062",
+    "source": "theme",
+    "type": "title",
+    "answer": "Ice Dancing",
+    "normalizedAnswer": "ICE DANCING",
+    "category": "Olympic Sport",
+    "difficulty": 78,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 10,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "522843f815fb4717298f5669aae55cc9",
+    "source": "theme",
+    "type": "title",
+    "answer": "Downhill",
+    "normalizedAnswer": "DOWNHILL",
+    "category": "Olympic Sport",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "77b3edadd99346ca79d7844e9f86df35",
+    "source": "theme",
+    "type": "title",
+    "answer": "Slalom",
+    "normalizedAnswer": "SLALOM",
+    "category": "Olympic Sport",
+    "difficulty": 87.6,
+    "difficultyTier": "hard",
+    "wordCount": 1,
+    "letterCount": 6,
+    "uniqueLetterCount": 5,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "030d7a99745e8c1b104fd8789a575839",
+    "source": "theme",
+    "type": "title",
+    "answer": "Giant Slalom",
+    "normalizedAnswer": "GIANT SLALOM",
+    "category": "Olympic Sport",
+    "difficulty": 69.6,
+    "difficultyTier": "medium",
+    "wordCount": 2,
+    "letterCount": 11,
+    "uniqueLetterCount": 9,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  },
+  {
+    "id": "36ef2a901317077b6c1063fe8385db1d",
+    "source": "theme",
+    "type": "title",
+    "answer": "Halfpipe",
+    "normalizedAnswer": "HALFPIPE",
+    "category": "Olympic Sport",
+    "difficulty": 78.8,
+    "difficultyTier": "medium",
+    "wordCount": 1,
+    "letterCount": 8,
+    "uniqueLetterCount": 7,
+    "tags": [
+      "theme",
+      "sports",
+      "olympics"
+    ],
+    "metadata": {
+      "source": "fallback"
+    }
+  }
+]
