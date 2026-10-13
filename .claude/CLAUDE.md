@@ -13,7 +13,7 @@ An ad-free Hangman word-guessing game (Expo/React Native). Part of the `@rific`/
 ```bash
 npm run lint          # expo lint .
 npm run fix            # expo lint . --fix
-npm test               # Jest (30 suites, 397 tests)
+npm test               # Jest (30 suites, 392 tests)
 npm run test:watch     # Jest --watchAll
 npm run typecheck      # tsc
 npm run verify         # lint + test + typecheck
@@ -56,6 +56,8 @@ Onboarded onto the shared `@infinitetoken` config packages (`eslint-config`, `je
 - Tests live in `src/__tests__/`, mirroring the source subfolder structure (`components/`, `effects/`, `hooks/`, `utils/`)
 - Native/Expo module mocks live in `src/__mocks__/`, one file per module (including several scoped subpaths) — a bare-package mock is picked up automatically, but every subpath mock needs its matching explicit `jest.mock('specifier')` call in `jest.setup.cjs` too (see Tooling above for why)
 - `jest.setup.cjs` holds only genuine setup-file concerns: the explicit subpath-mock registrations, process-level error handlers, the `IS_REACT_ACT_ENVIRONMENT` flag, and this app's own Animated-JS-driver-forcing + `NativeAnimatedModule` synchronous-callback patches. The RAF polyfills and no-factory `NativeAnimatedHelper` automock it used to carry were removed on 2026-10-02 as no-ops: `@react-native/jest-preset`'s own setup (pulled in by `jest-expo`, and run before this file) already defines `requestAnimationFrame`/`cancelAnimationFrame`, so the `typeof ... === 'undefined'` guards never fired, and `react-native/Libraries/Animated/NativeAnimatedHelper` doesn't exist in RN 0.86 (it moved to `src/private/animated/`), so that `jest.mock()` call always threw into a bare `catch` and never applied
+- RNTL 14's `render`/`rerender`/`unmount`/`fireEvent` are all async: always `await` them. `render` only queues its tree for the automatic afterEach unmount once its own promise resolves, so an un-awaited `render` (App.test.tsx did this until 2026-10-13) leaves the whole app mounted, timers still firing, after the file's Jest environment is torn down.
+- Nothing in an always-mounted subtree (the drawers stay mounted while closed) may run timers while hidden. ModePickerDrawer's card demo loop used to, so every test rendering Main or App fed React real-timer updates for as long as the tree lived. On a slow CI runner that turned one test hitting the 5s timeout into a whole file of timed-out tests and timed-out RNTL cleanup hooks, and CI run 37263959211 then hung until GitHub's 6-hour limit (fixed 2026-10-13: the loop pauses while the drawer is closed).
 
 ## Architecture
 

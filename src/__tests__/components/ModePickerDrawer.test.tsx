@@ -173,4 +173,42 @@ describe('ModePickerDrawer', () => {
     expect(getByTestId('game-visual-classic').props.children).toBe(0)
     expect(getByTestId('game-visual-letters').props.children).toBe(0)
   })
+
+  // The drawer stays mounted while closed (see PuzzleDrawer), so a cycle that kept running would
+  // keep re-rendering a card nobody can see, forever. That also used to keep every test rendering
+  // Main feeding React real-timer updates long after it ended.
+  it("freezes the focused card's demo cycle while the drawer is closed, and restarts it from the entry fade on the next open", async () => {
+    jest.useFakeTimers()
+    const { getByTestId, rerender } = await render(<ModePickerDrawer visible={false} selected={DEFAULT_MODE} onDismiss={jest.fn()} onSelect={jest.fn()} />)
+    await rerender(<ModePickerDrawer visible selected={DEFAULT_MODE} onDismiss={jest.fn()} onSelect={jest.fn()} />)
+
+    // Same t=3200 mid-build point as the test above.
+    await act(async () => {
+      jest.advanceTimersByTime(3200)
+    })
+    const midBuild = getByTestId('game-visual-classic').props.children
+    expect(midBuild).toBeGreaterThan(0)
+    expect(midBuild).toBeLessThan(6)
+
+    await rerender(<ModePickerDrawer visible={false} selected={DEFAULT_MODE} onDismiss={jest.fn()} onSelect={jest.fn()} />)
+
+    // Several full build/clear cycles' worth of time: a still-running loop would have moved on.
+    await act(async () => {
+      jest.advanceTimersByTime(10000)
+    })
+    // Closed state is hidden from accessibility tools, so RTL's default queries skip it.
+    expect(getByTestId('game-visual-classic', { includeHiddenElements: true }).props.children).toBe(midBuild)
+
+    await rerender(<ModePickerDrawer visible selected={DEFAULT_MODE} onDismiss={jest.fn()} onSelect={jest.fn()} />)
+
+    // Reopening runs the entry fade again (t=200 drops to 0), then the build resumes.
+    await act(async () => {
+      jest.advanceTimersByTime(200)
+    })
+    expect(getByTestId('game-visual-classic').props.children).toBe(0)
+    await act(async () => {
+      jest.advanceTimersByTime(3000)
+    })
+    expect(getByTestId('game-visual-classic').props.children).toBeGreaterThan(0)
+  })
 })

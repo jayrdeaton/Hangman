@@ -51,7 +51,7 @@ type GetByText = Awaited<ReturnType<typeof renderApp>>['getByText']
 const winByGuessingCat = async (getByText: GetByText) => {
   for (const letter of ['C', 'A', 'T']) {
     await act(async () => {
-      fireEvent.press(getByText(letter))
+      await fireEvent.press(getByText(letter))
     })
   }
 }

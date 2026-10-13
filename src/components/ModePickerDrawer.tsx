@@ -84,7 +84,8 @@ const SCAFFOLDED_MODE_ID = 'classic'
 // the whole card out, remounts for a full fresh redraw, and waits out the reveal again before
 // continuing — there's no persistent piece worth preserving there, so a full redraw each cycle is
 // simpler and reads just as well ("draw in, animate through, fade out, draw back in, repeat").
-const useCardAnimation = (isFocused: boolean, mode: GameMode) => {
+// `paused` (the drawer is closed) stops the cycle outright; see its own guard below.
+const useCardAnimation = (isFocused: boolean, paused: boolean, mode: GameMode) => {
   const restMistakes = fullyDrawnMistakes(mode)
   // 'none' (Letters Only) has no mistake-reactive art — nothing for the mistake-stepping half of
   // this cycle (runMistakeLoop below) to animate. It still has its own one-time reveal worth
@@ -110,6 +111,15 @@ const useCardAnimation = (isFocused: boolean, mode: GameMode) => {
       partsOpacity.value = 1
       return
     }
+
+    // This drawer stays mounted (translated off-screen) while closed, and focusedIndex keeps its
+    // value, so without this the focused card's cycle would keep re-rendering and remounting its art
+    // forever in the background. It also kept every test that renders Main (which mounts this drawer
+    // via PuzzleDrawer) feeding React a never-ending stream of real-timer updates. Bailing out here,
+    // rather than through the snap above, leaves whatever frame was showing in place for the close
+    // slide-out; the next open (which re-syncs focus, see ModePickerDrawer's own prevVisible) flips
+    // this back and restarts from the entry fade below.
+    if (paused) return
 
     let cancelled = false
     let timeoutId: ReturnType<typeof setTimeout>
@@ -186,8 +196,8 @@ const useCardAnimation = (isFocused: boolean, mode: GameMode) => {
       cancelled = true
       clearTimeout(timeoutId)
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- mode/isClassic/restMistakes are fixed for a given card instance; only isFocused should retrigger this
-  }, [isFocused])
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- mode/isClassic/restMistakes are fixed for a given card instance; only isFocused/paused should retrigger this
+  }, [isFocused, paused])
 
   return { mistakes: animated && isFocused ? mistakes : restMistakes, revealKey, cardOpacity, partsOpacity }
 }
@@ -195,6 +205,7 @@ const useCardAnimation = (isFocused: boolean, mode: GameMode) => {
 type ModePickerCardProps = {
   item: GameMode
   isFocused: boolean
+  paused: boolean
   isSelected: boolean
   width: number
   height: number
@@ -206,9 +217,9 @@ type ModePickerCardProps = {
 // below), so there's nothing left for tapping the card itself to do. `accessible` collapses the
 // whole card into one screen-reader-announced block using accessibilityLabel, same as it would have
 // with a button role, just without implying an action that no longer exists.
-const ModePickerCard = ({ item, isFocused, isSelected, width, height, color, colors }: ModePickerCardProps) => {
+const ModePickerCard = ({ item, isFocused, paused, isSelected, width, height, color, colors }: ModePickerCardProps) => {
   const theme = useTheme()
-  const { mistakes, revealKey, cardOpacity, partsOpacity } = useCardAnimation(isFocused, item)
+  const { mistakes, revealKey, cardOpacity, partsOpacity } = useCardAnimation(isFocused, paused, item)
   const previewAnimatedStyle = useAnimatedStyle(() => ({ opacity: cardOpacity.value }))
 
   return (
@@ -417,7 +428,7 @@ export const ModePickerDrawer = memo(({ visible, onDismiss, selected, onSelect }
   // needed.
   const carouselHeight = Math.max(CAROUSEL_MIN_HEIGHT, Math.round(windowHeight * CAROUSEL_HEIGHT_RATIO))
 
-  const renderCard = useCallback(({ item, index }: { item: GameMode; index: number }) => <ModePickerCard item={item} isFocused={index === focusedIndex} isSelected={item.id === selected.id} width={DRAWER_WIDTH} height={carouselHeight} color={color} colors={colors} />, [focusedIndex, selected.id, carouselHeight, color, colors])
+  const renderCard = useCallback(({ item, index }: { item: GameMode; index: number }) => <ModePickerCard item={item} isFocused={index === focusedIndex} paused={!visible} isSelected={item.id === selected.id} width={DRAWER_WIDTH} height={carouselHeight} color={color} colors={colors} />, [focusedIndex, visible, selected.id, carouselHeight, color, colors])
 
   return (
     <Drawer open={visible} onClose={onDismiss} width={DRAWER_WIDTH} zIndex={DRAWER_MODE_PICKER_Z_INDEX}>
