@@ -6,6 +6,7 @@
     "scheme": "hangman",
     "orientation": "portrait",
     "userInterfaceStyle": "automatic",
+    "icon": "./assets/images/icon-dark.png",
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.infinitetoken.Hangman",
@@ -38,15 +39,11 @@
         ]
       },
       "icon": {
-        "dark": "./assets/images/dark-icon.png",
-        "light": "./assets/images/light-icon.png"
+        "dark": "./assets/images/icon-dark.png",
+        "light": "./assets/images/icon-light.png"
       }
     },
     "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/images/splash-icon.png",
-        "backgroundColor": "#F0F0F0"
-      },
       "package": "com.infinitetoken.Hangman",
       "intentFilters": [
         {
@@ -76,7 +73,7 @@
     "web": {
       "bundler": "metro",
       "output": "single",
-      "favicon": "./assets/images/light-icon.png"
+      "favicon": "./assets/images/icon-dark.png"
     },
     "plugins": [
       [
@@ -90,13 +87,13 @@
       [
         "expo-splash-screen",
         {
-          "backgroundColor": "#F0F0F0",
-          "image": "./assets/images/splash-icon.png",
+          "image": "./assets/images/splash-light.png",
+          "imageWidth": 200,
+          "backgroundColor": "#FAFAFA",
           "dark": {
-            "image": "./assets/images/splash-icon.png",
-            "backgroundColor": "#0F0F0F"
-          },
-          "imageWidth": 200
+            "image": "./assets/images/splash-dark.png",
+            "backgroundColor": "#050505"
+          }
         }
       ],
       "expo-status-bar",
