@@ -1,4 +1,3 @@
-import * as haptics from 'expo-haptics'
 import { JSX, useEffect, useRef, useState } from 'react'
 import { Platform, StyleSheet, View } from 'react-native'
 import { Portal, useTheme } from 'react-native-paper'
@@ -6,6 +5,7 @@ import Animated, { useAnimatedStyle, useSharedValue, withTiming } from 'react-na
 import Svg, { Circle } from 'react-native-svg'
 
 import { type CelebrationEffect, DEFAULT_CELEBRATION } from '@/effects/registry'
+import { useGameHaptics } from '@/hooks/useGameHaptics'
 import { useKeyboardLayout } from '@/hooks/useKeyboardLayout'
 import { useSoundEffects } from '@/hooks/useSoundEffects'
 import { DEFAULT_MODE } from '@/modes/registry'
@@ -46,6 +46,15 @@ const PIP_RADIUS = PIP_CENTER - PIP_STROKE_WIDTH
 // for this band, not a per-pip amount.
 const PIP_STAGGER_MS = 60
 
+// Duck-typed rather than `instanceof HTMLElement` so it stays safe to call where the DOM globals
+// don't exist. A keydown's target is the window or document when nothing is focused, and those
+// have no tagName, so they fall through to false.
+const EDITABLE_TAGS = ['INPUT', 'TEXTAREA', 'SELECT']
+const isEditableTarget = (target: EventTarget | null): boolean => {
+  const element = target as HTMLElement | null
+  return element !== null && (element.isContentEditable === true || EDITABLE_TAGS.includes(element.tagName))
+}
+
 export type GameProps = {
   onStop: () => void
   onSolved?: (details: SolveDetails) => void
@@ -81,6 +90,7 @@ export type GameProps = {
 export const Game = ({ onStop, onSolved, onLost, onGuessProgress, phrase, mode = DEFAULT_MODE, hint, packLabel, difficultyTier, celebration = DEFAULT_CELEBRATION, categoryProgress, unlockedAchievementTitles, continueLabel, locked = false }: GameProps): JSX.Element => {
   const { layout } = useKeyboardLayout()
   const { playCorrect, playWrong, playWin, playLoss } = useSoundEffects()
+  const gameHaptics = useGameHaptics()
   const theme = useTheme()
   const secondaryColor = theme.colors.secondary
   const [guessedLetters, setGuessedLetters] = useState<string[]>([])
@@ -162,9 +172,7 @@ export const Game = ({ onStop, onSolved, onLost, onGuessProgress, phrase, mode =
     if (!phrase.includes(L)) {
       const w = wrongGuesses + 1
       setWrongGuesses(w)
-      // Error, not selectionAsync — a wrong guess should feel distinctly different from a correct
-      // one, not just a lighter version of the same tick.
-      void haptics.notificationAsync(haptics.NotificationFeedbackType.Error)
+      gameHaptics.wrongGuess()
       playWrong()
       if (w >= maxWrong) {
         roundOverRef.current = true
@@ -179,7 +187,7 @@ export const Game = ({ onStop, onSolved, onLost, onGuessProgress, phrase, mode =
         }, 450)
       }
     } else {
-      void haptics.impactAsync()
+      gameHaptics.correctGuess()
       playCorrect()
       const allRevealed = phrase.split('').every((c) => c === ' ' || next.includes(c))
       if (allRevealed) {
@@ -189,9 +197,7 @@ export const Game = ({ onStop, onSolved, onLost, onGuessProgress, phrase, mode =
         // Drives the keyboard's own ripple (see Keyboard.tsx) — set in the same batch as
         // setOutcome so the ripple starts the instant the board freezes, not a tick later.
         setWinningLetter(L)
-        // A distinctly more celebratory pulse than a regular correct-letter impact — timed to the
-        // same guess that also kicks off the fireworks celebration below.
-        void haptics.notificationAsync(haptics.NotificationFeedbackType.Success)
+        gameHaptics.win()
         playWin()
         winDialogTimeoutRef.current = setTimeout(() => setDialogReady(true), WIN_DIALOG_DELAY_MS)
       }
@@ -199,10 +205,13 @@ export const Game = ({ onStop, onSolved, onLost, onGuessProgress, phrase, mode =
   }
 
   // Physical keyboard guessing on web — deliberately no dep array so the listener always closes
-  // over the current guess state.
+  // over the current guess state. The listener is on window, so it hears every keystroke on the
+  // page: a shortcut (Cmd+R, Ctrl+F) or a letter typed into any text field (a pack name, a Pass &
+  // Play word) would otherwise also guess that letter in the round behind it.
   useEffect(() => {
     if (Platform.OS !== 'web') return
     const onKeyDown = (e: KeyboardEvent) => {
+      if (e.metaKey || e.ctrlKey || e.altKey || isEditableTarget(e.target)) return
       const key = e.key.toUpperCase()
       if (key.length === 1 && key >= 'A' && key <= 'Z') handleGuess(key)
     }

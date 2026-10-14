@@ -61,7 +61,7 @@ jest.mock('@/utils/alert', () => ({
 }))
 
 // The real hook is exercised on its own turf (its own package); here it's just a dependency whose
-// checking/updateReady states this file wants to drive directly, without faking AppState changes
+// checking state this file wants to drive directly, without faking AppState changes
 // or a real expo-updates manifest fetch.
 jest.mock('@rific/updater', () => ({
   useUpdater: jest.fn()
@@ -431,10 +431,10 @@ describe('PuzzleDrawer', () => {
     expect(versionText.props.accessibilityState?.disabled ?? versionText.props.disabled).toBe(true)
   })
 
-  it('flags a silently-staged update on the version text, from the same background check every other game on this hook relies on', async () => {
-    mockUseUpdater.mockReturnValue({ check: mockCheck, checking: false, updateReady: true })
-    const { getByText } = await renderDrawer()
+  it("never runs its own background update check, leaving that to App.tsx's single instance so one update can't prompt twice", async () => {
+    await renderDrawer()
 
-    expect(getByText(/v\d+ · update ready/)).toBeTruthy()
+    expect(mockUseUpdater).toHaveBeenCalled()
+    for (const [options] of mockUseUpdater.mock.calls) expect(options).toEqual(expect.objectContaining({ autoCheck: false }))
   })
 })

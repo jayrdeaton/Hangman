@@ -1,3 +1,4 @@
+import { FeedbackPressProvider } from '@rific/feedback-press'
 import { render } from '@testing-library/react-native'
 import * as haptics from 'expo-haptics'
 
@@ -34,6 +35,16 @@ describe('FireworksCelebration', () => {
     await render(<FireworksCelebration colors={COLORS} onComplete={jest.fn()} />)
 
     expect(mockImpactAsync).toHaveBeenCalledWith(haptics.ImpactFeedbackStyle.Light)
+  })
+
+  it('skips the burst haptic while Vibrate is off', async () => {
+    await render(
+      <FeedbackPressProvider initialValue={{ vibrate: false }}>
+        <FireworksCelebration colors={COLORS} onComplete={jest.fn()} />
+      </FeedbackPressProvider>
+    )
+
+    expect(mockImpactAsync).not.toHaveBeenCalled()
   })
 
   it('plays a pop sound when the wrapped Fireworks reports a burst', async () => {

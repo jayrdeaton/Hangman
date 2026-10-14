@@ -157,6 +157,23 @@ describe('Main', () => {
     expect(mockResolvePuzzle.mock.calls[1][1]).toEqual(['pack-1'])
   })
 
+  it('locks the round while the Game Menu is open, so a letter pressed behind it guesses nothing until the menu closes', async () => {
+    mockResolvePuzzle.mockReturnValue({ ok: true, payload: payload({ phrase: 'DOG' }) })
+    const { getByLabelText, getByText } = await renderApp()
+    const revealed = () => getByLabelText('Secret word display').props.children[0].props.letters
+
+    // A tap can't reach the keyboard under the open drawer, but a physical key on web can (Game's
+    // window keydown listener), and both go through the same locked check. Pressing the on-screen
+    // key here exercises that check without the web-only listener.
+    await fireEvent.press(getByLabelText('Game Menu'))
+    await fireEvent.press(getByText('D'))
+    expect(revealed()).toEqual(['_', '_', '_'])
+
+    await fireEvent.press(getByLabelText('Close'))
+    await fireEvent.press(getByText('D'))
+    expect(revealed()).toEqual(['D', '_', '_'])
+  })
+
   it('leaves a round the player has already started guessing alone, rather than silently swapping it out once the persisted pack selection resolves', async () => {
     let resolveStorage: (value: string | null) => void = () => {}
     const pending = new Promise<string | null>((resolve) => {

@@ -69,11 +69,13 @@ export const PuzzleDrawer = memo(({ visible, onDismiss, onRequestOpen, initialCo
   // appearance itself moved to ModePickerDrawer, reached via that same row.
   const { settings } = useThemeSettings()
   const theme = useTheme()
-  // autoCheck stays on (the default) — matches every other game built on this hook, which stage
-  // updates silently in the background and apply on the next cold launch with no button needed.
-  // check() below is purely an ADDITIONAL affordance for a player who wants to force a check right
-  // now, now that the version text has a natural home for it in the header.
-  const { check, checking, updateReady } = useUpdater()
+  // autoCheck: false. App.tsx's own useUpdater() call is the one background checker (on cold launch
+  // and every foreground resume). A second auto-checking instance here would add a second AppState
+  // listener with its own prompt state, so one available update could prompt twice. This instance
+  // only checks when the version text below is tapped, the same split @tastic/hud's
+  // BaseSettingsDialog uses. (The hook's updateReady is only ever set by an auto-check, so it isn't
+  // read here: with autoCheck off it would always be false.)
+  const { check, checking } = useUpdater({ autoCheck: false })
   // packsVersion isn't read here — it's a change counter bumped whenever a custom pack is
   // created/edited/deleted/imported, since getPuzzleManifest() otherwise looks pure to React.
   // eslint-disable-next-line react-hooks/exhaustive-deps -- packsVersion is an intentional external invalidation trigger, not a value the memo body reads
@@ -424,7 +426,7 @@ export const PuzzleDrawer = memo(({ visible, onDismiss, onRequestOpen, initialCo
                         who's never heard the term OTA. */}
                     <Text variant='bodySmall' numberOfLines={1} style={[styles.headerSubtitle, styles.centeredText]}>
                       v{release.otaVersion}
-                      {checking ? ' · checking…' : updateReady ? ' · update ready' : ''}
+                      {checking ? ' · checking…' : ''}
                     </Text>
                   </View>
                 </TouchableRipple>

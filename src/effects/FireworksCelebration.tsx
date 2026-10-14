@@ -1,7 +1,7 @@
 import { Fireworks } from '@tastic/animations/fireworks'
-import * as haptics from 'expo-haptics'
 import { JSX } from 'react'
 
+import { useGameHaptics } from '@/hooks/useGameHaptics'
 import { usePopSound } from '@/hooks/usePopSound'
 
 import type { CelebrationProps } from './registry'
@@ -11,10 +11,11 @@ import type { CelebrationProps } from './registry'
 // + light haptic get reattached, preserving the exact feel the pre-extraction inline version had.
 export const FireworksCelebration = ({ colors, dark }: CelebrationProps): JSX.Element => {
   const { playPop } = usePopSound()
+  const { burst } = useGameHaptics()
 
   const handleBurst = () => {
     playPop()
-    void haptics.impactAsync(haptics.ImpactFeedbackStyle.Light)
+    burst()
   }
 
   return <Fireworks colors={colors} dark={dark} onBurst={handleBurst} />

@@ -158,8 +158,10 @@ const PackEditorForm = ({ editingKey, onSaved, onCancel, onDelete, onShare }: Pa
         const newlyUnlocked = await recordCustomPackCreated()
         // No win/loss dialog here to fold this into (unlike a solved puzzle -- see Main.tsx's
         // handleSolved), so a toast is the feedback surface instead -- same @rific/toaster
-        // <Toaster/> PnpWordPrompt.tsx already uses, mounted once in Providers.tsx.
-        newlyUnlocked.forEach((id) => success('Achievement unlocked', ACHIEVEMENT_DEFINITIONS_BY_ID[id].title))
+        // <Toaster/> PnpWordPrompt.tsx already uses, mounted once in Providers.tsx. The
+        // achievement's own name is the toast title and 'Achievement unlocked' its caption, the
+        // same order every @tastic game's achievement toast uses.
+        newlyUnlocked.forEach((id) => success(ACHIEVEMENT_DEFINITIONS_BY_ID[id].title, 'Achievement unlocked'))
       }
       onSaved(pack)
     } finally {

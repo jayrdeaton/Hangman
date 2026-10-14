@@ -351,10 +351,8 @@ export const Keyboard: React.FC<KeyboardProps> = ({ disabled = false, guessedLet
   // One light tap per row, timed to when that row's own loss redraw cascade actually starts
   // (SHAKE_TOTAL_MS, then CASCADE_ROW_STAGGER_MS per row — same constants KeyboardKey uses below),
   // rather than per-key: 26 individual taps that close together would blur into a buzz on real
-  // hardware, while 3 read as a distinct cascade. Unlike every other game-feedback haptic in this
-  // app (wrong/correct/win in Game.tsx, bursts in fireworks.tsx — all unconditional expo-haptics
-  // calls), this one deliberately goes through useVibration() so it respects the Settings > Haptics
-  // toggle; that's an intentional exception, not an oversight.
+  // hardware, while 3 read as a distinct cascade. useVibration() checks the Vibrate setting, the same
+  // as every other haptic in the app (the guess, win and firework ones go through useGameHaptics.ts).
   useEffect(() => {
     if (!falling) return
     const timers = rows.map((_, rowIndex) => setTimeout(() => vibration.short(), SHAKE_TOTAL_MS + rowIndex * CASCADE_ROW_STAGGER_MS))

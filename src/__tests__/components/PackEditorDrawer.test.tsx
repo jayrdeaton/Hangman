@@ -1,5 +1,5 @@
 import { ToastProvider } from '@rific/toaster'
-import { render as rtlRender } from '@testing-library/react-native'
+import { fireEvent, render as rtlRender, waitFor } from '@testing-library/react-native'
 import type { ReactElement, ReactNode } from 'react'
 import { PaperProvider } from 'react-native-paper'
 
@@ -9,6 +9,20 @@ import { loadCustomPacksCache } from '@/utils/customPacks'
 jest.mock('@/utils/alert', () => ({
   alert: jest.fn().mockResolvedValue(undefined),
   confirm: jest.fn().mockResolvedValue(true)
+}))
+
+// Only success() is read by PackEditorDrawer; the real ToastProvider still wraps every render.
+const mockSuccess = jest.fn()
+jest.mock('@rific/toaster', () => ({
+  ...jest.requireActual('@rific/toaster'),
+  useToast: () => ({ success: mockSuccess })
+}))
+
+// Pinned rather than left to achievements.ts's module-level cache, which would only report
+// packs_created_1 as newly unlocked the first time any test in this file saves a pack.
+jest.mock('@/utils/achievements', () => ({
+  ...jest.requireActual('@/utils/achievements'),
+  recordCustomPackCreated: jest.fn().mockResolvedValue(['packs_created_1'])
 }))
 
 // ConfirmDialog renders through a react-native-paper Portal — needs a Portal.Host ancestor,
@@ -66,5 +80,15 @@ describe('PackEditorDrawer', () => {
     // Nothing to share or delete yet — there's no saved pack behind a still-being-created one.
     expect(queryByLabelText('Share pack')).toBeNull()
     expect(queryByLabelText('Delete pack')).toBeNull()
+  })
+
+  it("toasts a new pack's unlocked achievement by name, captioned 'Achievement unlocked'", async () => {
+    const { getByTestId, getByText } = await render(<PackEditorDrawer visible editingKey={null} onDismiss={jest.fn()} onSaved={jest.fn()} onDelete={jest.fn()} onShare={jest.fn()} />)
+
+    await fireEvent.changeText(getByTestId('pack-label-input'), 'My Trip')
+    await fireEvent.changeText(getByTestId('entry-answer-0'), 'PARIS')
+    await fireEvent.press(getByText('Save pack'))
+
+    await waitFor(() => expect(mockSuccess).toHaveBeenCalledWith('Pack Rat', 'Achievement unlocked'))
   })
 })

@@ -1,3 +1,4 @@
+import { useHapticSettings } from '@rific/feedback-press'
 import { Toaster, ToastProvider } from '@rific/toaster'
 import * as ExpoHaptics from 'expo-haptics'
 import { Fragment, JSX, ReactNode } from 'react'
@@ -22,6 +23,19 @@ export type ProvidersProps = { children: ReactNode }
 // react-native-keyboard-controller has no web implementation — skip its provider there.
 const KeyboardWrapper = Platform.OS === 'web' ? Fragment : KeyboardProvider
 
+// The toaster only gets expo-haptics while the player's Vibrate setting is on, so its haptic ticks
+// follow the same setting as every other haptic in the app. Today they can't fire anyway (the only
+// controls that tick, the history and clear buttons, are hidden below), but this keeps it that way
+// if either is ever shown. Must render inside Haptic, which provides the setting.
+const HapticGatedToastProvider = ({ children }: { children: ReactNode }): JSX.Element => {
+  const { settings } = useHapticSettings()
+  return (
+    <ToastProvider haptics={settings.vibrate ? ExpoHaptics : undefined} paper={RNPaper}>
+      {children}
+    </ToastProvider>
+  )
+}
+
 export const Providers = ({ children }: ProvidersProps): JSX.Element => (
   <SafeAreaProvider>
     <KeyboardWrapper>
@@ -44,7 +58,7 @@ export const Providers = ({ children }: ProvidersProps): JSX.Element => (
                   PortalHost react-native-paper's own Provider mounts inside Theme, and paper's own
                   useTheme() call needs to run below Theme's Provider to resolve the app's actual
                   computed theme rather than Paper's own default. */}
-              <ToastProvider haptics={ExpoHaptics} paper={RNPaper}>
+              <HapticGatedToastProvider>
                 <KeyboardLayoutProvider>
                   <AutoSaveCustomProvider>
                     <PackSelectionProvider>
@@ -53,7 +67,7 @@ export const Providers = ({ children }: ProvidersProps): JSX.Element => (
                   </AutoSaveCustomProvider>
                 </KeyboardLayoutProvider>
                 <Toaster clearButton={null} historyButton={null} limit={3} />
-              </ToastProvider>
+              </HapticGatedToastProvider>
             </Theme>
           </Haptic>
         </PersistGate>

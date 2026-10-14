@@ -48,6 +48,17 @@ describe('normalizePhrase', () => {
   it('returns an empty string for an all-non-letter input', () => {
     expect(normalizePhrase('123 456 !@#')).toBe('')
   })
+
+  // Escaped so this file holds no literal dash characters.
+  it('treats an en or em dash as a word break, so two names joined by one stay two words', () => {
+    expect(normalizePhrase('Adolfo Su\u00e1rez Madrid\u2013Barajas Airport')).toBe('ADOLFO SUAREZ MADRID BARAJAS AIRPORT')
+    expect(normalizePhrase('Wrangell\u2013St. Elias')).toBe('WRANGELL ST ELIAS')
+    expect(normalizePhrase('before\u2014after')).toBe('BEFORE AFTER')
+  })
+
+  it('still joins words across a plain hyphen', () => {
+    expect(normalizePhrase('Kareem Abdul-Jabbar')).toBe('KAREEM ABDULJABBAR')
+  })
 })
 
 describe('resolvePuzzle - custom source mode', () => {

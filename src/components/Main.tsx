@@ -592,10 +592,13 @@ export const Main = (): JSX.Element => {
           dialog once the word's been handed off. Game is locked for both of those phases (see its
           `locked` prop) so nothing about the round — the one being written OR the one about to be
           played — can be touched by tap or physical keyboard before actual play starts.
+          It's also locked while the Game Menu drawer or the file-import confirm is up: Game's web
+          keyboard listener still hears keys pressed over either one, so a letter would otherwise
+          guess in the round behind it.
           paddingTop matches the floating menu/trophy buttons below rather than reserving a whole
           extra header row for them — the game's own top row (PuzzleInfoRow's difficulty/hint
           pills) shares that same band of space instead of sitting below it. */}
-      <View style={[styles.flex, gameShell, { paddingTop: insets.top, paddingBottom: insets.bottom }]}>{effectiveSession ? <Game key={roundKey} onStop={handleRoundEnd} onSolved={handleSolved} onLost={handleLost} onGuessProgress={handleGuessProgress} phrase={effectiveSession.phrase} mode={effectiveSession.mode} hint={effectiveSession.hint} packLabel={effectiveSession.packLabel} difficultyTier={effectiveSession.difficultyTier} categoryProgress={categoryProgress} unlockedAchievementTitles={unlockedAchievementTitles} continueLabel={pnpPhase ? 'Next word' : undefined} locked={pnpPhase === 'authoring' || pnpPhase === 'handoff' || pendingAbandon !== null} /> : null}</View>
+      <View style={[styles.flex, gameShell, { paddingTop: insets.top, paddingBottom: insets.bottom }]}>{effectiveSession ? <Game key={roundKey} onStop={handleRoundEnd} onSolved={handleSolved} onLost={handleLost} onGuessProgress={handleGuessProgress} phrase={effectiveSession.phrase} mode={effectiveSession.mode} hint={effectiveSession.hint} packLabel={effectiveSession.packLabel} difficultyTier={effectiveSession.difficultyTier} categoryProgress={categoryProgress} unlockedAchievementTitles={unlockedAchievementTitles} continueLabel={pnpPhase ? 'Next word' : undefined} locked={pnpPhase === 'authoring' || pnpPhase === 'handoff' || pendingAbandon !== null || drawerVisible || incomingFilePreview !== null} /> : null}</View>
 
       {/* Floats over the game's own top row instead of reserving a header row of its own — see the
           paddingTop comment above. pointerEvents='box-none' lets taps in the empty middle (where

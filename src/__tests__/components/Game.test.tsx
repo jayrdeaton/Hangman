@@ -1,10 +1,10 @@
 import { type AutoPaperTheme, Provider as AutoPaperProvider, useAutoPaperTheme } from '@rific/auto-paper'
 import { FeedbackPressProvider } from '@rific/feedback-press'
 import { BURST_LIFETIME_MS, MAX_BURST_INTERVAL_MS } from '@tastic/animations/fireworks'
-import { act, fireEvent, render as rtlRender } from '@testing-library/react-native'
+import { act, cleanup, fireEvent, render as rtlRender } from '@testing-library/react-native'
 import * as haptics from 'expo-haptics'
 import { type ReactElement, type ReactNode, useEffect } from 'react'
-import { StyleSheet, Text } from 'react-native'
+import { Platform, StyleSheet, Text } from 'react-native'
 import * as RNPaper from 'react-native-paper'
 import { PaperProvider } from 'react-native-paper'
 
@@ -339,6 +339,25 @@ describe('Game', () => {
     expect(mockNotificationAsync).toHaveBeenCalledWith(haptics.NotificationFeedbackType.Success)
   })
 
+  it('fires no haptic at all, for a wrong guess, a correct one or the win, while Vibrate is off', async () => {
+    const VibrateOffWrapper = ({ children }: { children: ReactNode }) => (
+      <FeedbackPressProvider paper={RNPaper} initialValue={{ vibrate: false }}>
+        <PaperProvider>{children}</PaperProvider>
+      </FeedbackPressProvider>
+    )
+    const mockImpactAsync = jest.mocked(haptics.impactAsync)
+    mockImpactAsync.mockClear()
+    const { getByText } = await rtlRender(<Game phrase='CAT' onStop={jest.fn()} />, { wrapper: VibrateOffWrapper })
+
+    await guessLetter(getByText, 'Q')
+    await guessLetter(getByText, 'C')
+    await guessLetter(getByText, 'A')
+    await guessLetter(getByText, 'T')
+
+    expect(mockNotificationAsync).not.toHaveBeenCalled()
+    expect(mockImpactAsync).not.toHaveBeenCalled()
+  })
+
   it('keeps the celebration effect spawning bursts for as long as the win dialog stays open', async () => {
     jest.useFakeTimers()
     const { getByText, root } = await render(<Game phrase='CAT' onStop={jest.fn()} />)
@@ -666,5 +685,75 @@ describe('Game', () => {
     // draw would still be one stage short for the entire pause.
     expect(queryByText('You lost!')).toBeNull()
     expect(getByTestId('visual-mistakes').props.children).toBe(1)
+  })
+})
+
+// Game listens for physical letter keys on window, web only. The listener hears every keystroke on
+// the page, so it has to skip shortcuts and anything typed into a text field. window's add/remove
+// are swapped for stubs that capture the latest keydown listener (the effect re-subscribes on every
+// render), and the captured listener is called with plain event-shaped objects.
+describe('Game physical keyboard (web)', () => {
+  type KeyEventInit = { key: string; target?: unknown; metaKey?: boolean; ctrlKey?: boolean; altKey?: boolean }
+  let keydown: ((event: KeyboardEvent) => void) | null = null
+  const originalOS = Platform.OS
+  const originalAdd = window.addEventListener
+  const originalRemove = window.removeEventListener
+
+  beforeEach(() => {
+    keydown = null
+    Object.defineProperty(Platform, 'OS', { configurable: true, value: 'web' })
+    window.addEventListener = ((type: string, listener: (event: KeyboardEvent) => void) => {
+      if (type === 'keydown') keydown = listener
+    }) as typeof window.addEventListener
+    window.removeEventListener = (() => {}) as typeof window.removeEventListener
+  })
+
+  afterEach(async () => {
+    // Unmount now, while the stubs are still installed: RNTL's own automatic cleanup runs after this
+    // hook, and the effect's teardown calls window.removeEventListener, which doesn't exist here.
+    await cleanup()
+    Object.defineProperty(Platform, 'OS', { configurable: true, value: originalOS })
+    window.addEventListener = originalAdd
+    window.removeEventListener = originalRemove
+  })
+
+  const pressKey = async (init: KeyEventInit) => {
+    await act(async () => {
+      keydown?.({ metaKey: false, ctrlKey: false, altKey: false, target: null, ...init } as unknown as KeyboardEvent)
+    })
+  }
+
+  const revealedLetters = (getByLabelText: Awaited<ReturnType<typeof render>>['getByLabelText']): string[] => getByLabelText('Secret word display').props.children[0].props.letters
+
+  it('guesses a letter pressed with nothing focused', async () => {
+    const { getByLabelText } = await render(<Game phrase='CAT' onStop={jest.fn()} />)
+
+    await pressKey({ key: 'a' })
+
+    expect(revealedLetters(getByLabelText)).toEqual(['_', 'A', '_'])
+  })
+
+  it('ignores a letter typed into a text field, or pressed as part of a Cmd, Ctrl or Alt shortcut', async () => {
+    const { getByLabelText } = await render(<Game phrase='CAT' onStop={jest.fn()} />)
+
+    await pressKey({ key: 'a', target: { tagName: 'INPUT' } })
+    await pressKey({ key: 'a', target: { tagName: 'TEXTAREA' } })
+    await pressKey({ key: 'a', target: { tagName: 'DIV', isContentEditable: true } })
+    await pressKey({ key: 'c', metaKey: true })
+    await pressKey({ key: 'c', ctrlKey: true })
+    await pressKey({ key: 't', altKey: true })
+
+    expect(revealedLetters(getByLabelText)).toEqual(['_', '_', '_'])
+    expect(getByLabelText(/Wrong guesses: 0/)).toBeTruthy()
+  })
+
+  it('ignores letter keys while locked (Main locks Game behind the Game Menu and other overlays)', async () => {
+    const { getByLabelText } = await render(<Game phrase='CAT' onStop={jest.fn()} locked />)
+
+    await pressKey({ key: 'a' })
+    await pressKey({ key: 'z' })
+
+    expect(revealedLetters(getByLabelText)).toEqual(['_', '_', '_'])
+    expect(getByLabelText(/Wrong guesses: 0/)).toBeTruthy()
   })
 })
