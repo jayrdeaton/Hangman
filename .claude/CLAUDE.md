@@ -24,7 +24,7 @@ npm run client          # Expo dev server (dev client build)
 
 Always run `npm run lint` before finishing any task. This is an app (`"private": true`, no publish scripts) — `verify` doesn't include a build step.
 
-`build:development`/`build:preview`/`build:production`/`build:web` and `update` (which `update:development`/`update:preview`/`update:production` delegate to) are each gated behind `verify` by prefixing `npm run verify && ` directly onto the script's own definition, same as every other migrated app — see Swirlio's CLAUDE.md for the full reasoning (not redundant with CI, since EAS builds/OTA updates have no GitHub Action step to catch this the way `publish.yml` does; inline chaining rather than a separate `pre<script>` hook, since these are scripts we author ourselves, not builtin npm commands).
+`build`/`update` delegate to `@rific/updater`'s `rific-updater-build`/`rific-updater-update` CLI bins (`npm run build <profile>`, `npm run update <profile>`), which run this app's `npm run verify` internally as their first step. There are no per-profile `build:development`/`update:production`-style scripts and no `npm run verify && ` prefix on them; that older pattern predates the bins. `build:web` is the one exception and still chains `npm run verify && expo export -p web` inline. See `@rific/updater`'s README for the full mechanism.
 
 ## Tooling
 
