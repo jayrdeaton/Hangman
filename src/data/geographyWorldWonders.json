@@ -340,11 +340,11 @@
     "source": "geography",
     "type": "title",
     "answer": "Kiyomizu-dera",
-    "normalizedAnswer": "KIYOMIZUDERA",
+    "normalizedAnswer": "KIYOMIZU DERA",
     "category": "World Wonder",
     "difficulty": 61.2,
     "difficultyTier": "easy",
-    "wordCount": 1,
+    "wordCount": 2,
     "letterCount": 12,
     "uniqueLetterCount": 11,
     "tags": [

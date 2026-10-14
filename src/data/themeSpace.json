@@ -1236,11 +1236,11 @@
     "source": "theme",
     "type": "title",
     "answer": "Cassini-Huygens",
-    "normalizedAnswer": "CASSINIHUYGENS",
+    "normalizedAnswer": "CASSINI HUYGENS",
     "category": "Space Mission",
     "difficulty": 64.4,
     "difficultyTier": "easy",
-    "wordCount": 1,
+    "wordCount": 2,
     "letterCount": 14,
     "uniqueLetterCount": 10,
     "tags": [

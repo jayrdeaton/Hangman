@@ -424,11 +424,11 @@
     "source": "theme",
     "type": "title",
     "answer": "Objective-C",
-    "normalizedAnswer": "OBJECTIVEC",
+    "normalizedAnswer": "OBJECTIVE C",
     "category": "Programming Language",
     "difficulty": 74,
     "difficultyTier": "medium",
-    "wordCount": 1,
+    "wordCount": 2,
     "letterCount": 10,
     "uniqueLetterCount": 8,
     "tags": [

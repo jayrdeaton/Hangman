@@ -644,11 +644,11 @@
     "source": "theme",
     "type": "title",
     "answer": "Coca-Cola",
-    "normalizedAnswer": "COCACOLA",
+    "normalizedAnswer": "COCA COLA",
     "category": "Company",
     "difficulty": 90.8,
     "difficultyTier": "hard",
-    "wordCount": 1,
+    "wordCount": 2,
     "letterCount": 8,
     "uniqueLetterCount": 4,
     "tags": [

@@ -56,8 +56,24 @@ describe('normalizePhrase', () => {
     expect(normalizePhrase('before\u2014after')).toBe('BEFORE AFTER')
   })
 
-  it('still joins words across a plain hyphen', () => {
-    expect(normalizePhrase('Kareem Abdul-Jabbar')).toBe('KAREEM ABDULJABBAR')
+  it('treats a plain hyphen as a word break too', () => {
+    expect(normalizePhrase('Kareem Abdul-Jabbar')).toBe('KAREEM ABDUL JABBAR')
+    expect(normalizePhrase('Ms. Pac-Man')).toBe('MS PAC MAN')
+    expect(normalizePhrase('Forget-me-not')).toBe('FORGET ME NOT')
+  })
+
+  it('treats a slash as a word break', () => {
+    expect(normalizePhrase('Face/Off')).toBe('FACE OFF')
+    expect(normalizePhrase('AC/DC')).toBe('AC DC')
+  })
+
+  it('treats the rest of the Unicode dash block, from the hyphen to the horizontal bar, as a word break', () => {
+    for (const dash of ['\u2010', '\u2011', '\u2012', '\u2015']) expect(normalizePhrase(`Spider${dash}Man`)).toBe('SPIDER MAN')
+  })
+
+  it('collapses a separator that already has spaces around it into a single word break', () => {
+    expect(normalizePhrase('Kluane / Wrangell\u2013St. Elias')).toBe('KLUANE WRANGELL ST ELIAS')
+    expect(normalizePhrase('Liverpool \u2013 Maritime Mercantile City')).toBe('LIVERPOOL MARITIME MERCANTILE CITY')
   })
 })
 

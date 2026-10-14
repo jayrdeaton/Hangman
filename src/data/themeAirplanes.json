@@ -4,11 +4,11 @@
     "source": "theme",
     "type": "title",
     "answer": "Aérospatiale-BAC Concorde",
-    "normalizedAnswer": "AEROSPATIALEBAC CONCORDE",
+    "normalizedAnswer": "AEROSPATIALE BAC CONCORDE",
     "category": "Aircraft",
     "difficulty": 52,
     "difficultyTier": "easy",
-    "wordCount": 2,
+    "wordCount": 3,
     "letterCount": 23,
     "uniqueLetterCount": 13,
     "tags": [

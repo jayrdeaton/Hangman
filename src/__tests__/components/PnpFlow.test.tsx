@@ -253,6 +253,20 @@ describe('Main — pass and play', () => {
     expect(getByLabelText('Difficulty: Easy')).toBeTruthy()
   })
 
+  it('turns a typed hyphen or slash into a space, the same word break the board makes', async () => {
+    mockResolvePuzzle.mockReturnValue({ ok: true, payload: pnpPayload('CAT') })
+    const { getByLabelText, getByText, getByTestId } = await renderApp()
+
+    await fireEvent.press(getByLabelText('Game Menu'))
+    await fireEvent.press(getByText('Pass & play'))
+
+    await fireEvent.changeText(getByTestId('pnp-answer-input'), 'Spider-Man')
+    expect(getByTestId('pnp-answer-input').props.value).toBe('Spider Man')
+
+    await fireEvent.changeText(getByTestId('pnp-answer-input'), 'Face/Off')
+    expect(getByTestId('pnp-answer-input').props.value).toBe('Face Off')
+  })
+
   it('carries the difficulty badge and pip row straight through Hand off, unchanged', async () => {
     mockResolvePuzzle.mockReturnValue({ ok: true, payload: pnpPayload('CAT') })
     const utils = await renderApp()

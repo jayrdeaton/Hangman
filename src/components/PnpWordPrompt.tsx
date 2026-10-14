@@ -7,6 +7,7 @@ import { Text, TextInput } from 'react-native-paper'
 
 import { useAutoSaveCustom } from '@/hooks/useAutoSaveCustom'
 import { buildCustomPuzzle } from '@/utils/customPacks'
+import { WORD_SEPARATORS } from '@/utils/normalizePhrase'
 
 import { DialogShell } from './DialogShell'
 
@@ -54,9 +55,12 @@ export const PnpWordPrompt = ({ answer, hint, onAnswerChange, onHintChange, prom
   // this dialog needs since the keyboard is up for the entire time this can fire.
   const { warning } = useToast()
 
+  // A hyphen, dash or slash becomes a space rather than a rejected keystroke: it's the same word
+  // break normalizePhrase makes, so a typed Spider-Man shows SPIDER MAN here exactly as it plays.
   const handleAnswerChange = (text: string) => {
-    const cleaned = text.replace(/[^A-Za-z ]/g, '')
-    if (cleaned !== text) warning('Only letters and spaces')
+    const separated = text.replace(WORD_SEPARATORS, ' ')
+    const cleaned = separated.replace(/[^A-Za-z ]/g, '')
+    if (cleaned !== separated) warning('Only letters and spaces')
     onAnswerChange(cleaned)
   }
 

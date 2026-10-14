@@ -1361,11 +1361,11 @@
     "source": "geography",
     "type": "title",
     "answer": "Wrangell–St. Elias",
-    "normalizedAnswer": "WRANGELLST ELIAS",
+    "normalizedAnswer": "WRANGELL ST ELIAS",
     "category": "National Park",
     "difficulty": 64,
     "difficultyTier": "easy",
-    "wordCount": 2,
+    "wordCount": 3,
     "letterCount": 15,
     "uniqueLetterCount": 10,
     "tags": [

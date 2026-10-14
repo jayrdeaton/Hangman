@@ -20,16 +20,18 @@ const foldDiacritics = (text: string): string =>
     .replace(/[đĐøØłŁæÆœŒß]/g, (match) => SPECIAL_LATIN_LETTERS[match])
     .replace(/\p{Lm}/gu, '')
 
-// An en dash (U+2013) or em dash (U+2014) in an answer separates two names, as in the
-// Madrid-Barajas airport or the Polish-Lithuanian Commonwealth (both written with an en dash in the
-// data), so it becomes a word break. Stripping it like other punctuation would fuse the two names
-// into one long run of blanks. Plain hyphens are deliberately untouched: they're still stripped, so
-// "Spider-Man" stays one word.
-const WORD_SEPARATOR_DASHES = /[\u2013\u2014]/g
+// A hyphen, dash or slash in an answer joins two words, so it becomes a word break: Spider-Man
+// plays as SPIDER MAN, the Madrid-Barajas airport (an en dash in the data) as MADRID BARAJAS and
+// Face/Off as FACE OFF. Stripping it like other punctuation would fuse the two words into one long
+// run of blanks. Covers the plain hyphen, the slash and the whole Unicode dash block U+2010 to U+2015
+// (hyphen, non-breaking hyphen, figure dash, en dash, em dash, horizontal bar), so a dash pasted in
+// from elsewhere splits the same as one typed. Hangman-Scrapers' normalize() and customPackExport.ts
+// split on the same characters, and PnpWordPrompt turns them into a space as they're typed.
+export const WORD_SEPARATORS = /[-/\u2010-\u2015]/g
 
 export const normalizePhrase = (value: string): string =>
   foldDiacritics(value)
-    .replace(WORD_SEPARATOR_DASHES, ' ')
+    .replace(WORD_SEPARATORS, ' ')
     .replace(/[^A-Za-z ]/g, '')
     .replace(/\s+/g, ' ')
     .trim()
