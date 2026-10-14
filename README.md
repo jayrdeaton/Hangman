@@ -45,3 +45,9 @@ This is a small enough shape that a short script to automate steps 1–2 is easy
 you're adding several packs — there just isn't a maintained one in this repo, since the canonical
 version of that logic now lives in the private companion repo (which also runs it automatically
 after every scrape).
+
+## License
+
+The code is released under the MIT License, see [LICENSE](LICENSE).
+
+The game's name, logo, and icons, and the original artwork and audio in this repository, are not covered by that license and remain all rights reserved. If you fork it, please give your version its own name and look.
