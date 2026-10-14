@@ -1,6 +1,6 @@
 import { type AutoPaperTheme, Provider as AutoPaperProvider, useAutoPaperTheme } from '@rific/auto-paper'
 import { FeedbackPressProvider } from '@rific/feedback-press'
-import { BURST_LIFETIME_MS, MAX_BURST_INTERVAL_MS } from '@tastic/animations/fireworks'
+import { BURST_LIFETIME_MS, MAX_BURST_INTERVAL_MS } from '@tastic/sprites/fireworks'
 import { act, cleanup, fireEvent, render as rtlRender } from '@testing-library/react-native'
 import * as haptics from 'expo-haptics'
 import { type ReactElement, type ReactNode, useEffect } from 'react'

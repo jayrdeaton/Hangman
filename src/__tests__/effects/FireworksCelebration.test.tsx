@@ -9,9 +9,9 @@ jest.mock('expo-haptics', () => ({
   ImpactFeedbackStyle: { Light: 'light', Medium: 'medium', Heavy: 'heavy' }
 }))
 
-// @tastic/animations' own Fireworks owns the burst-spawning/timing logic now — this file only
-// needs it to report a burst so FireworksCelebration's wiring (sound + haptic) can be observed.
-jest.mock('@tastic/animations/fireworks', () => ({
+// @tastic/sprites' own Fireworks owns the burst-spawning and timing logic, so this file only needs
+// it to report a burst for FireworksCelebration's wiring (sound and haptic) to be observed.
+jest.mock('@tastic/sprites/fireworks', () => ({
   Fireworks: (props: { onBurst?: () => void }) => {
     props.onBurst?.()
     return null

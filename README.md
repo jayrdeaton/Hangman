@@ -35,7 +35,7 @@ Hangman is an ad-free word-guessing game for iOS, Android, and web. Built with E
 | Package | Used for |
 | --- | --- |
 | [`@tastic/core`](https://github.com/jayrdeaton/React-Native-Game-Core) | Expo config plugin for the native portrait lock |
-| [`@tastic/animations`](https://www.npmjs.com/package/@tastic/animations) | SVG fireworks burst on a win (the `./fireworks` subpath) |
+| [`@tastic/sprites`](https://www.npmjs.com/package/@tastic/sprites) | SVG fireworks burst on a win (the `./fireworks` subpath) |
 | [`@rific/core`](https://www.npmjs.com/package/@rific/core) | Shared foundation that `@tastic/core` and most of the `@rific` packages here depend on (not imported directly) |
 | [`@rific/auto-paper`](https://www.npmjs.com/package/@rific/auto-paper) | React Native Paper theming from a seed color and harmony, light/dark appearance, the color picker, dialogs and menus |
 | [`@rific/drawer`](https://www.npmjs.com/package/@rific/drawer) | The menu and every drawer stacked on top of it |
