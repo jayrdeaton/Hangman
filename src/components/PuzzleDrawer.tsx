@@ -11,6 +11,7 @@ import { useSharedValue } from 'react-native-reanimated'
 import { DRAWER_BASE_Z_INDEX } from '@/constants/drawerStacking'
 import { release } from '@/constants/release'
 import { useDifficultyOptionColors } from '@/hooks/useDifficultyColors'
+import { useDrawerWidth } from '@/hooks/useDrawerWidth'
 import { usePackSelection } from '@/hooks/usePackSelection'
 import { fullyDrawnMistakes } from '@/modes/shared/fullyDrawnMistakes'
 import type { GameMode } from '@/types/gameModes'
@@ -29,7 +30,6 @@ import { PackPuzzlesDrawer } from './PackPuzzlesDrawer'
 import { PackRow } from './PackRow'
 import { PacksScreen } from './PacksScreen'
 
-const DRAWER_WIDTH = 380
 // 4px on every side of a 40x40 icon button (see the matching actionSize={40} on this drawer's own
 // ScrollViewHeader) brings the actual tap target up to 48x48, without the visible circle itself
 // growing to fill that whole area.
@@ -80,7 +80,11 @@ export const PuzzleDrawer = memo(({ visible, onDismiss, onRequestOpen, initialCo
   // created/edited/deleted/imported, since getPuzzleManifest() otherwise looks pure to React.
   // eslint-disable-next-line react-hooks/exhaustive-deps -- packsVersion is an intentional external invalidation trigger, not a value the memo body reads
   const manifest = useMemo(() => getPuzzleManifest().filter((item) => item.count > 0), [packsVersion])
-  const translateX = useSharedValue(-DRAWER_WIDTH)
+  const drawerWidth = useDrawerWidth()
+  // Seeded at the closed position (see useDrawerWidth for why it must be the same width the Drawer
+  // gets). Only the first render reads this: after that, Drawer itself springs the value to its own
+  // closed offset whenever the width changes.
+  const translateX = useSharedValue(-drawerWidth)
   // The persisted default (see usePackSelection) — read and written live, not staged in `draft`
   // like the rest of this config, so toggling a pack takes effect immediately for every future
   // round rather than only once "Random" is pressed.
@@ -371,7 +375,7 @@ export const PuzzleDrawer = memo(({ visible, onDismiss, onRequestOpen, initialCo
           own comment): the underlying View switches to pointerEvents:'none', so those key presses
           fall straight through to the keyboard instead. The hamburger menu button remains a fully
           working way to open this drawer either way. */}
-      <DrawerEdgeSwipe enabled={false} onOpen={onRequestOpen} translateOffset={translateX} width={DRAWER_WIDTH} />
+      <DrawerEdgeSwipe enabled={false} onOpen={onRequestOpen} translateOffset={translateX} width={drawerWidth} />
       {/* open is gated on !anyOverlayVisible too, not just visible — PacksScreen, PackPuzzlesDrawer,
           and ModePickerDrawer each render as a Drawer of their own, stacked on top of this one while
           open. Now that every drawer's header/footer float over a blurred backdrop (see
@@ -384,7 +388,7 @@ export const PuzzleDrawer = memo(({ visible, onDismiss, onRequestOpen, initialCo
           translates) — accessibilityElementsHidden below (unchanged) is what keeps its title/close
           button/fields from staying reachable by screen readers and keyboard focus while
           invisible. */}
-      <Drawer open={visible && !anyOverlayVisible} onClose={onDismiss} panelShadow translateOffset={translateX} width={DRAWER_WIDTH} zIndex={DRAWER_BASE_Z_INDEX}>
+      <Drawer open={visible && !anyOverlayVisible} onClose={onDismiss} panelShadow translateOffset={translateX} width={drawerWidth} zIndex={DRAWER_BASE_Z_INDEX}>
         <View testID='puzzle-drawer-panel' style={styles.panelContent} accessibilityViewIsModal={visible && !anyOverlayVisible} accessibilityElementsHidden={!visible || anyOverlayVisible} importantForAccessibility={visible && !anyOverlayVisible ? 'yes' : 'no-hide-descendants'} onAccessibilityEscape={visible && !anyOverlayVisible ? onDismiss : undefined}>
           <ScrollViewProvider>
             {/* Close sits on the LEADING (left) side, not trailing — this drawer opens from the

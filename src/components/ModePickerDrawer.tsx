@@ -8,6 +8,7 @@ import { Text, useTheme } from 'react-native-paper'
 import Animated, { useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated'
 
 import { DRAWER_MODE_PICKER_Z_INDEX } from '@/constants/drawerStacking'
+import { useDrawerWidth } from '@/hooks/useDrawerWidth'
 import { useHorizontalWheelScrollProps } from '@/hooks/useHorizontalWheelScroll'
 import { useKeyboardLayout } from '@/hooks/useKeyboardLayout'
 import { VISIBLE_MODES } from '@/modes/registry'
@@ -33,14 +34,6 @@ const ICON_ACTION_HIT_SLOP = { top: 4, bottom: 4, left: 4, right: 4 }
 // window (a landscape phone, a small browser tab) still shows the art at a legible size.
 const CAROUSEL_HEIGHT_RATIO = 0.6
 const CAROUSEL_MIN_HEIGHT = 400
-
-// Same fixed panel width every other drawer in the app uses (PuzzleDrawer's own Game Menu,
-// AchievementsDrawer) — this used to be a full-width page (see this drawer's own doc comment,
-// below, for why), but there's no reason its own panel should be the one exception. The carousel's
-// per-card width (see getItemLayout/renderCard/handleScroll below) is pinned to this same constant
-// rather than the raw window width, so paging still lands exactly one page per swipe inside the
-// now-narrower panel instead of overshooting into whatever's left of the screen beside it.
-const DRAWER_WIDTH = 380
 
 const CATEGORY_LABEL: Record<GameMode['category'], string> = {
   parts: 'Parts',
@@ -264,7 +257,7 @@ export type ModePickerDrawerProps = {
   onSelect: (mode: GameMode) => void
 }
 
-// Same fixed-width panel every other drawer in the app uses (see DRAWER_WIDTH above), replacing
+// Same panel width every other fixed-width drawer in the app uses (see useDrawerWidth), replacing
 // the old inline ModeSelector carousel — every mode gets a big, fixed-height card, and the focused
 // one plays its reveal animation (a repeating build/clear demo loop for every mode). A normal
 // scrolling page, like every other drawer in the app (see CAROUSEL_HEIGHT_RATIO's own comment for
@@ -287,6 +280,10 @@ export type ModePickerDrawerProps = {
 // without this.
 export const ModePickerDrawer = memo(({ visible, onDismiss, selected, onSelect }: ModePickerDrawerProps): JSX.Element => {
   const { height: windowHeight } = useWindowDimensions()
+  // Also the carousel's page width (see getItemLayout/renderCard/handleScroll below), not the raw
+  // window width, so paging lands exactly one card per swipe inside the panel instead of
+  // overshooting into whatever's left of the screen beside it.
+  const drawerWidth = useDrawerWidth()
   const theme = useTheme()
   const { settings, set } = useThemeSettings()
   const { layout, setLayout } = useKeyboardLayout()
@@ -369,9 +366,13 @@ export const ModePickerDrawer = memo(({ visible, onDismiss, selected, onSelect }
       0,
       VISIBLE_MODES.findIndex((m) => m.id === selected.id)
     )
-    listRef.current?.scrollToOffset({ offset: index * DRAWER_WIDTH, animated: false })
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- selected.id read once per open, not tracked live while already open
-  }, [visible])
+    listRef.current?.scrollToOffset({ offset: index * drawerWidth, animated: false })
+    // Also re-runs if drawerWidth changes while open (a foldable folding or unfolding, a browser
+    // window resized across DRAWER_MAX_WIDTH): the list keeps its old pixel offset, which no longer
+    // sits on a page boundary at the new width. selected.id is safe to read there, since the
+    // settled card is always the selected mode (see commitIndex below).
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- selected.id read once per open (or width change), not tracked live while already open
+  }, [visible, drawerWidth])
 
   // Deliberately built on plain onScroll, not onMomentumScrollEnd/onScrollEndDrag — react-native-
   // web's ScrollViewBase only ever wires the native `scroll` DOM event through to onScroll;
@@ -409,18 +410,18 @@ export const ModePickerDrawer = memo(({ visible, onDismiss, selected, onSelect }
   const handleScroll = useCallback(
     (e: NativeSyntheticEvent<NativeScrollEvent>) => {
       const offsetX = e.nativeEvent.contentOffset.x
-      const nearestIndex = Math.round(offsetX / DRAWER_WIDTH)
+      const nearestIndex = Math.round(offsetX / drawerWidth)
       if (scrollSettleTimeoutRef.current) clearTimeout(scrollSettleTimeoutRef.current)
-      if (Math.abs(offsetX - nearestIndex * DRAWER_WIDTH) < 2) {
+      if (Math.abs(offsetX - nearestIndex * drawerWidth) < 2) {
         commitIndex(nearestIndex)
         return
       }
-      scrollSettleTimeoutRef.current = setTimeout(() => commitIndex(Math.round(offsetX / DRAWER_WIDTH)), 60)
+      scrollSettleTimeoutRef.current = setTimeout(() => commitIndex(Math.round(offsetX / drawerWidth)), 60)
     },
-    [commitIndex]
+    [commitIndex, drawerWidth]
   )
 
-  const getItemLayout = useCallback((_: ArrayLike<GameMode> | null | undefined, index: number) => ({ length: DRAWER_WIDTH, offset: DRAWER_WIDTH * index, index }), [])
+  const getItemLayout = useCallback((_: ArrayLike<GameMode> | null | undefined, index: number) => ({ length: drawerWidth, offset: drawerWidth * index, index }), [drawerWidth])
   const keyExtractor = useCallback((item: GameMode) => item.id, [])
 
   // Known synchronously from useWindowDimensions() alone, unlike the old onLayout-measured
@@ -428,10 +429,10 @@ export const ModePickerDrawer = memo(({ visible, onDismiss, selected, onSelect }
   // needed.
   const carouselHeight = Math.max(CAROUSEL_MIN_HEIGHT, Math.round(windowHeight * CAROUSEL_HEIGHT_RATIO))
 
-  const renderCard = useCallback(({ item, index }: { item: GameMode; index: number }) => <ModePickerCard item={item} isFocused={index === focusedIndex} paused={!visible} isSelected={item.id === selected.id} width={DRAWER_WIDTH} height={carouselHeight} color={color} colors={colors} />, [focusedIndex, visible, selected.id, carouselHeight, color, colors])
+  const renderCard = useCallback(({ item, index }: { item: GameMode; index: number }) => <ModePickerCard item={item} isFocused={index === focusedIndex} paused={!visible} isSelected={item.id === selected.id} width={drawerWidth} height={carouselHeight} color={color} colors={colors} />, [focusedIndex, visible, selected.id, drawerWidth, carouselHeight, color, colors])
 
   return (
-    <Drawer open={visible} onClose={onDismiss} width={DRAWER_WIDTH} zIndex={DRAWER_MODE_PICKER_Z_INDEX}>
+    <Drawer open={visible} onClose={onDismiss} width={drawerWidth} zIndex={DRAWER_MODE_PICKER_Z_INDEX}>
       <View testID='mode-picker-panel' style={styles.panelContent} accessibilityViewIsModal={visible} accessibilityElementsHidden={!visible} importantForAccessibility={visible ? 'yes' : 'no-hide-descendants'} onAccessibilityEscape={visible ? onDismiss : undefined}>
         {/* footerFixed: the Done button stays permanently pinned (not a hide-on-scroll-up bar,
             @rific/scroll-view's default for a footer — see ScrollViewFooter's own footerStyle) and,

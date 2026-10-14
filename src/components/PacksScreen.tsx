@@ -6,6 +6,7 @@ import { StyleSheet, View } from 'react-native'
 import { Text, useTheme } from 'react-native-paper'
 
 import { DRAWER_PACKS_SCREEN_Z_INDEX } from '@/constants/drawerStacking'
+import { useDrawerWidth } from '@/hooks/useDrawerWidth'
 import { alert } from '@/utils/alert'
 import { commaString } from '@/utils/commaString'
 import { type CustomPack, deleteCustomPack, importCustomPack, isCustomPackKey } from '@/utils/customPacks'
@@ -21,10 +22,6 @@ import { PackRow } from './PackRow'
 // ScrollViewHeader) brings the actual tap target up to 48x48, without the visible circle itself
 // growing to fill that whole area.
 const ICON_ACTION_HIT_SLOP = { top: 4, bottom: 4, left: 4, right: 4 }
-// Same fixed panel width every other drawer in the app uses (PuzzleDrawer's own Game Menu,
-// AchievementsDrawer) — this used to be a full-width page, but there's no reason its own panel
-// should be the one exception.
-const DRAWER_WIDTH = 380
 
 export type PacksScreenProps = {
   visible: boolean
@@ -41,6 +38,10 @@ export type PacksScreenProps = {
 // noticeable — see PuzzleDrawer's own memo comment for the full reasoning.
 export const PacksScreen = memo(({ visible, onDismiss, selectedKeys, onChangeSelectedKeys, packsVersion, onPacksChanged }: PacksScreenProps): JSX.Element => {
   const theme = useTheme()
+  // Same panel width every other fixed-width drawer in the app uses (PuzzleDrawer's own Game Menu,
+  // AchievementsDrawer). This used to be a full-width page, but there's no reason its own panel
+  // should be the one exception.
+  const drawerWidth = useDrawerWidth()
 
   // packsVersion isn't read inside the memo — it's a change counter bumped whenever a custom pack
   // is created/edited/deleted/imported, since getPuzzleManifest() otherwise looks pure to React.
@@ -287,7 +288,7 @@ export const PacksScreen = memo(({ visible, onDismiss, selectedKeys, onChangeSel
           underneath either way (Drawer never unmounts on close, just translates) —
           accessibilityElementsHidden below (unchanged) is what keeps this panel's title/close
           button/rows from staying reachable by screen readers and keyboard focus while invisible. */}
-      <Drawer open={visible && !anyOverlayVisible} onClose={onDismiss} width={DRAWER_WIDTH} zIndex={DRAWER_PACKS_SCREEN_Z_INDEX}>
+      <Drawer open={visible && !anyOverlayVisible} onClose={onDismiss} width={drawerWidth} zIndex={DRAWER_PACKS_SCREEN_Z_INDEX}>
         <View testID='packs-screen-panel' style={styles.panel} accessibilityViewIsModal={visible && !anyOverlayVisible} accessibilityElementsHidden={!visible || anyOverlayVisible} importantForAccessibility={visible && !anyOverlayVisible ? 'yes' : 'no-hide-descendants'} onAccessibilityEscape={visible && !anyOverlayVisible ? onDismiss : undefined}>
           <ScrollViewProvider footerFixed>
             {/* Close sits on the LEADING (left) side — this screen is reached from the Game Menu's

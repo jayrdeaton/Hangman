@@ -8,6 +8,7 @@ import { Avatar, Card, Icon, ProgressBar, Text } from 'react-native-paper'
 import { useSharedValue } from 'react-native-reanimated'
 
 import { DRAWER_ACHIEVEMENTS_Z_INDEX } from '@/constants/drawerStacking'
+import { useDrawerWidth } from '@/hooks/useDrawerWidth'
 import type { GameMode } from '@/types/gameModes'
 import type { GameStartPayload } from '@/types/gameSession'
 import { ACHIEVEMENT_DEFINITIONS, type AchievementId, type AchievementStats, clearAchievements, DEFAULT_ACHIEVEMENT_STATS, getAchievementStats } from '@/utils/achievements'
@@ -22,7 +23,6 @@ import { ConfirmDialog } from './ConfirmDialog'
 import { PackPuzzleList } from './PackPuzzleList'
 import { PackRow } from './PackRow'
 
-const DRAWER_WIDTH = 380
 // 4px on every side of a 40x40 icon button (see the matching actionSize={40} on this drawer's own
 // ScrollViewHeader) brings the actual tap target up to 48x48, without the visible circle itself
 // growing to fill that whole area.
@@ -83,9 +83,10 @@ const areAchievementsDrawerPropsEqual = (prev: AchievementsDrawerProps, next: Ac
 // comment for why that's safe.
 export const AchievementsDrawer = memo(({ visible, onDismiss, unlockVersion, onUnlocksChanged, mode, difficulty, onConfirm }: AchievementsDrawerProps): JSX.Element => {
   const theme = useAutoPaperTheme()
-  // Closed position for a `side='left'` drawer (the default — see @rific/drawer's own
-  // getClosedOffset) is -DRAWER_WIDTH, the same seed PuzzleDrawer's own panel uses.
-  const translateX = useSharedValue(-DRAWER_WIDTH)
+  const drawerWidth = useDrawerWidth()
+  // Closed position for a `side='left'` drawer (the default, see @rific/drawer's own
+  // getClosedOffset) is -drawerWidth, the same seed PuzzleDrawer's own panel uses.
+  const translateX = useSharedValue(-drawerWidth)
   const manifest = useMemo(() => getPuzzleManifest().filter((item) => item.count > 0), [])
   const [unlockMap, setUnlockMap] = useState<PuzzleUnlockMap>({})
   const [detailPackKey, setDetailPackKey] = useState<string | null>(null)
@@ -380,7 +381,7 @@ export const AchievementsDrawer = memo(({ visible, onDismiss, unlockVersion, onU
 
   return (
     <>
-      <Drawer open={visible} onClose={onDismiss} panelShadow translateOffset={translateX} width={DRAWER_WIDTH} zIndex={DRAWER_ACHIEVEMENTS_Z_INDEX}>
+      <Drawer open={visible} onClose={onDismiss} panelShadow translateOffset={translateX} width={drawerWidth} zIndex={DRAWER_ACHIEVEMENTS_Z_INDEX}>
         <View testID='achievements-drawer-panel' style={styles.panelContent} accessibilityViewIsModal={visible} accessibilityElementsHidden={!visible} importantForAccessibility={visible ? 'yes' : 'no-hide-descendants'} onAccessibilityEscape={visible ? (detailPackKey ? () => setDetailPackKey(null) : onDismiss) : undefined}>
           <ScrollViewProvider>
             {/* Both the top-level close and the drilled-in back-arrow sit on the LEADING (left)
