@@ -266,7 +266,7 @@ export const Main = (): JSX.Element => {
         setIncomingFilePreview({ kind: 'pack', raw, label, wordCount: entries.length })
       })
       .catch(() => {
-        if (mounted) void alert('Invalid file', 'Could not read that as a Hangman pack or progress backup file.')
+        if (mounted) void alert('Invalid File', 'Could not read that as a Hangman pack or progress backup file.')
       })
     return () => {
       mounted = false
@@ -295,7 +295,7 @@ export const Main = (): JSX.Element => {
         setDrawerVisible(true)
       }
     } catch {
-      void alert('Invalid file', incomingFilePreview.kind === 'progress' ? 'Could not import that Hangman progress backup file.' : 'Could not import that Hangman pack file.')
+      void alert('Invalid File', incomingFilePreview.kind === 'progress' ? 'Could not import that Hangman progress backup file.' : 'Could not import that Hangman pack file.')
     } finally {
       setIncomingFilePreview(null)
     }
@@ -551,7 +551,7 @@ export const Main = (): JSX.Element => {
     // comes from `config` so whichever artwork the players picked still applies.
     const result = resolvePuzzle({ ...DEFAULT_CONFIG, sourceMode: 'custom', mode: config.mode, customPhrase: pnpAnswer, customHint: pnpHint }, [])
     if (!result.ok) {
-      void alert('Enter a valid word', result.error)
+      void alert('Invalid Word', result.error)
       return
     }
     // Deliberately does NOT write to `config` — that's what feeds the drawer, and a phrase left
@@ -598,7 +598,7 @@ export const Main = (): JSX.Element => {
           paddingTop matches the floating menu/trophy buttons below rather than reserving a whole
           extra header row for them — the game's own top row (PuzzleInfoRow's difficulty/hint
           pills) shares that same band of space instead of sitting below it. */}
-      <View style={[styles.flex, gameShell, { paddingTop: insets.top, paddingBottom: insets.bottom }]}>{effectiveSession ? <Game key={roundKey} onStop={handleRoundEnd} onSolved={handleSolved} onLost={handleLost} onGuessProgress={handleGuessProgress} phrase={effectiveSession.phrase} mode={effectiveSession.mode} hint={effectiveSession.hint} packLabel={effectiveSession.packLabel} difficultyTier={effectiveSession.difficultyTier} categoryProgress={categoryProgress} unlockedAchievementTitles={unlockedAchievementTitles} continueLabel={pnpPhase ? 'Next word' : undefined} locked={pnpPhase === 'authoring' || pnpPhase === 'handoff' || pendingAbandon !== null || drawerVisible || incomingFilePreview !== null} /> : null}</View>
+      <View style={[styles.flex, gameShell, { paddingTop: insets.top, paddingBottom: insets.bottom }]}>{effectiveSession ? <Game key={roundKey} onStop={handleRoundEnd} onSolved={handleSolved} onLost={handleLost} onGuessProgress={handleGuessProgress} phrase={effectiveSession.phrase} mode={effectiveSession.mode} hint={effectiveSession.hint} packLabel={effectiveSession.packLabel} difficultyTier={effectiveSession.difficultyTier} categoryProgress={categoryProgress} unlockedAchievementTitles={unlockedAchievementTitles} locked={pnpPhase === 'authoring' || pnpPhase === 'handoff' || pendingAbandon !== null || drawerVisible || incomingFilePreview !== null} /> : null}</View>
 
       {/* Floats over the game's own top row instead of reserving a header row of its own — see the
           paddingTop comment above. pointerEvents='box-none' lets taps in the empty middle (where
@@ -623,8 +623,8 @@ export const Main = (): JSX.Element => {
       {pnpPhase === 'handoff' ? <PnpHandoffDialog visible={!drawerVisible} onReady={() => setPnpPhase('playing')} /> : null}
 
       <PuzzleDrawer visible={drawerVisible} onDismiss={handleDismissDrawer} onRequestOpen={handleRequestOpenDrawer} initialConfig={initialDrawerConfig} onConfirm={handleConfirmPuzzle} onStartPnp={handleStartPnp} packsVersion={customPacksVersion} onPacksChanged={refreshCustomPacks} unlockVersion={unlockVersion} onUnlocksChanged={refreshUnlocks} onModeChange={handleModeChange} onDifficultyChange={handleDifficultyChange} />
-      <ConfirmDialog visible={incomingFilePreview !== null} title={incomingFilePreview ? (incomingFilePreview.kind === 'progress' ? 'Import progress backup?' : `Import "${incomingFilePreview.label}"?`) : ''} message={incomingFilePreview ? (incomingFilePreview.kind === 'progress' ? `Merges ${commaString(incomingFilePreview.unlockCount)} unlocked puzzle${incomingFilePreview.unlockCount === 1 ? '' : 's'} into your existing progress.` : `Adds ${commaString(incomingFilePreview.wordCount)} word${incomingFilePreview.wordCount === 1 ? '' : 's'} as a new pack you can play.`) : ''} confirmLabel='Import' onConfirm={() => void handleConfirmIncomingFile()} onCancel={() => setIncomingFilePreview(null)} />
-      <ConfirmDialog visible={pendingAbandon !== null} title='Abandon this puzzle?' message="You've already made a guess — switching now will count this puzzle as a loss." confirmLabel='Abandon' destructive onConfirm={handleConfirmAbandon} onCancel={handleCancelAbandon} />
+      <ConfirmDialog visible={incomingFilePreview !== null} title={incomingFilePreview ? (incomingFilePreview.kind === 'progress' ? 'Import Progress Backup?' : `Import "${incomingFilePreview.label}"?`) : ''} message={incomingFilePreview ? (incomingFilePreview.kind === 'progress' ? `Merges ${commaString(incomingFilePreview.unlockCount)} unlocked puzzle${incomingFilePreview.unlockCount === 1 ? '' : 's'} into your existing progress.` : `Adds ${commaString(incomingFilePreview.wordCount)} word${incomingFilePreview.wordCount === 1 ? '' : 's'} as a new pack you can play.`) : ''} confirmLabel='Import' onConfirm={() => void handleConfirmIncomingFile()} onCancel={() => setIncomingFilePreview(null)} />
+      <ConfirmDialog visible={pendingAbandon !== null} title='Abandon This Puzzle?' message="You've already made a guess. Switching now will count this puzzle as a loss." confirmLabel='Abandon' destructive onConfirm={handleConfirmAbandon} onCancel={handleCancelAbandon} />
     </View>
   )
 }

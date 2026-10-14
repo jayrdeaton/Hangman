@@ -218,13 +218,13 @@ const PackEditorForm = ({ editingKey, onSaved, onCancel, onDelete, onShare }: Pa
             returnKeyType='next'
             value={entry.answer}
             onChangeText={(answer) => updateEntry(index, { answer })}
-            label='Word or phrase'
+            label='Word or Phrase'
             autoCapitalize='characters'
             mode='outlined'
             dense
             maxLength={128}
           />
-          <TextInput testID={`entry-hint-${index}`} ref={hintRef} onSubmitEditing={focusNextAnswer} blurOnSubmit={hintBlurOnSubmit} returnKeyType='next' style={styles.hintInput} value={entry.hint} onChangeText={(hint) => updateEntry(index, { hint })} label='Hint (optional)' mode='outlined' dense maxLength={80} />
+          <TextInput testID={`entry-hint-${index}`} ref={hintRef} onSubmitEditing={focusNextAnswer} blurOnSubmit={hintBlurOnSubmit} returnKeyType='next' style={styles.hintInput} value={entry.hint} onChangeText={(hint) => updateEntry(index, { hint })} label='Hint (Optional)' mode='outlined' dense maxLength={80} />
         </View>
         <IconButton icon='close' size={20} onPress={() => removeEntry(index)} disabled={isVirtual || entries.length === 1} accessibilityLabel={`Remove entry ${index + 1}`} />
       </View>
@@ -249,7 +249,7 @@ const PackEditorForm = ({ editingKey, onSaved, onCancel, onDelete, onShare }: Pa
             fires the app's own haptic convention on press itself, so this needs no manual
             selection() call the way the callback form used to. */}
         <ScrollViewHeader
-          title={editingKey ? 'Edit pack' : 'New pack'}
+          title={editingKey ? 'Edit Pack' : 'New Pack'}
           actionSize={40}
           backAction={
             <IconButton
@@ -284,14 +284,14 @@ const PackEditorForm = ({ editingKey, onSaved, onCancel, onDelete, onShare }: Pa
             label) rather than just another form field identical to the entries below it — this is
             the one field that names the whole thing the rest of the screen is building. */}
           <Text variant='titleSmall' style={styles.sectionHeader}>
-            Pack name
+            Pack Name
           </Text>
           <TextInput testID='pack-label-input' ref={labelRef} onSubmitEditing={focusFirstEntry} blurOnSubmit={labelBlurOnSubmit} returnKeyType='next' value={label} onChangeText={setLabel} mode='outlined' maxLength={60} />
 
           {entryRows}
 
           <Button icon='plus' onPress={() => lastAnswerElRef.current?.focus()} style={styles.addButton}>
-            Add word
+            Add
           </Button>
         </ScrollView>
 
@@ -310,12 +310,12 @@ const PackEditorForm = ({ editingKey, onSaved, onCancel, onDelete, onShare }: Pa
             Cancel
           </Button>
           <Button mode='contained' onPress={() => void handleSave()} loading={saving} disabled={saving || !hasValidEntry} style={styles.footerButton}>
-            Save pack
+            Save
           </Button>
         </ScrollViewFooter>
       </ScrollViewProvider>
 
-      <ConfirmDialog visible={confirmDeleteVisible} title='Delete pack?' message={`This permanently deletes "${label}" and any unlock progress for it. This cannot be undone.`} confirmLabel='Delete' destructive onConfirm={() => void handleConfirmDelete()} onCancel={() => setConfirmDeleteVisible(false)} />
+      <ConfirmDialog visible={confirmDeleteVisible} title='Delete Pack?' message={`This permanently deletes "${label}" and any unlock progress for it. This cannot be undone.`} confirmLabel='Delete' destructive onConfirm={() => void handleConfirmDelete()} onCancel={() => setConfirmDeleteVisible(false)} />
     </>
   )
 }

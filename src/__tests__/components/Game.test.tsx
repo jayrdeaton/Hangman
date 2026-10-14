@@ -276,10 +276,10 @@ describe('Game', () => {
     await guessLetter(getByText, 'Q')
     await guessLetter(getByText, 'W')
 
-    expect(await findByText('You lost!')).toBeTruthy()
+    expect(await findByText('You Lose!')).toBeTruthy()
     expect(onStop).not.toHaveBeenCalled()
 
-    await fireEvent.press(getByText('Next puzzle'))
+    await fireEvent.press(getByText('Next'))
 
     expect(onStop).toHaveBeenCalledTimes(1)
   })
@@ -311,16 +311,16 @@ describe('Game', () => {
     expect(fireworksView).toBeTruthy()
     // ...but the dialog itself waits (see Game.tsx's WIN_DIALOG_DELAY_MS), so it doesn't cut the
     // moment off the instant the last letter lands.
-    expect(queryByText('You win!')).toBeNull()
+    expect(queryByText('You Win!')).toBeNull()
 
     await fireFireworksLayout(root)
     await act(async () => {
       jest.advanceTimersByTime(WIN_DIALOG_DELAY_MS)
     })
 
-    expect(getByText('You win!')).toBeTruthy()
+    expect(getByText('You Win!')).toBeTruthy()
 
-    await fireEvent.press(getByText('Next puzzle'))
+    await fireEvent.press(getByText('Next'))
 
     expect(onStop).toHaveBeenCalledTimes(1)
 
@@ -404,7 +404,7 @@ describe('Game', () => {
     await guessLetter(getByText, 'Q')
     await guessLetter(getByText, 'W')
 
-    expect(await findByText('You lost!')).toBeTruthy()
+    expect(await findByText('You Lose!')).toBeTruthy()
     expect(queryByText(/unlocked in Animals/)).toBeNull()
   })
 
@@ -413,7 +413,7 @@ describe('Game', () => {
     const { getByText } = await render(<Game phrase='CAT' onStop={jest.fn()} onSolved={onSolved} hint='A furry pet' />)
 
     await guessLetter(getByText, 'Q')
-    await fireEvent.press(getByText('Show hint'))
+    await fireEvent.press(getByText('Hint'))
     await guessLetter(getByText, 'C')
     await guessLetter(getByText, 'A')
     await guessLetter(getByText, 'T')
@@ -426,12 +426,12 @@ describe('Game', () => {
 
     expect(queryByText('A furry pet')).toBeNull()
 
-    await fireEvent.press(getByText('Show hint'))
+    await fireEvent.press(getByText('Hint'))
     expect(getByText('A furry pet')).toBeTruthy()
 
     await rerender(<Game phrase='CAT' onStop={jest.fn()} />)
 
-    expect(queryByText('Show hint')).toBeNull()
+    expect(queryByText('Hint')).toBeNull()
     expect(queryByText('A furry pet')).toBeNull()
   })
 
@@ -440,7 +440,7 @@ describe('Game', () => {
 
     expect(getByText('Hard')).toBeTruthy()
     expect(getByLabelText('Difficulty: Hard')).toBeTruthy()
-    expect(getByText('Show hint')).toBeTruthy()
+    expect(getByText('Hint')).toBeTruthy()
   })
 
   it('does not count peeking at the always-visible difficulty badge as revealing the hint', async () => {
@@ -448,7 +448,7 @@ describe('Game', () => {
     const { getByText } = await render(<Game phrase='CAT' onStop={jest.fn()} onSolved={onSolved} hint='Drama · 1994' packLabel='Movies' difficultyTier='hard' />)
 
     // Difficulty is visible without any reveal action — glancing at it isn't "using a hint" for
-    // achievement purposes (see achievements.ts's no_hints achievement), unlike pressing "Show hint".
+    // achievement purposes (see achievements.ts's no_hints achievement), unlike pressing "Hint".
     await guessLetter(getByText, 'C')
     await guessLetter(getByText, 'A')
     await guessLetter(getByText, 'T')
@@ -461,7 +461,7 @@ describe('Game', () => {
 
     expect(queryByText(/Theme/)).toBeNull()
 
-    await fireEvent.press(getByText('Show hint'))
+    await fireEvent.press(getByText('Hint'))
 
     expect(getByText('Theme | Superheroes  |  Wikipedia category')).toBeTruthy()
     expect(getByLabelText('Theme | Superheroes. Wikipedia category')).toBeTruthy()
@@ -470,7 +470,7 @@ describe('Game', () => {
   it('fills the hint pill with tertiary and draws its label in onTertiary, so the text never sits tertiary-on-surface', async () => {
     const { getByText } = await render(<Game phrase='CAT' onStop={jest.fn()} hint='A furry pet' />)
 
-    const label = getByText('Show hint')
+    const label = getByText('Hint')
     const labelColor = StyleSheet.flatten(label.props.style).color
     // tertiary is derived from the player's chosen accent, and at the pale end of that range
     // (yellows especially) tertiary text on the surface washes out. onTertiary is the palette's
@@ -486,7 +486,7 @@ describe('Game', () => {
     const { getByText, queryByText } = await render(<Game phrase='CAT' onStop={jest.fn()} difficultyTier='easy' />)
 
     expect(getByText('Easy')).toBeTruthy()
-    expect(queryByText('Show hint')).toBeNull()
+    expect(queryByText('Hint')).toBeNull()
   })
 
   it('leaves a word that comfortably fits at its full size, and stretches the row so its own letters can never drive the measurement', async () => {
@@ -638,12 +638,12 @@ describe('Game', () => {
     // started under roomyVisualMode (maxMistakes 3), so swapping mid-round must not retroactively
     // end it just because the new mode's limit would already have been exceeded.
     await rerender(<Game phrase='CAT' onStop={jest.fn()} mode={tightNoVisualMode} />)
-    expect(queryByText('You lost!')).toBeNull()
+    expect(queryByText('You Lose!')).toBeNull()
 
     // The round is still governed by the ORIGINAL mode's limit (3) — one more wrong guess reaches
     // it and the round ends now, not one guess ago and not never.
     await guessLetter(getByText, 'Z')
-    expect(await findByText('You lost!')).toBeTruthy()
+    expect(await findByText('You Lose!')).toBeTruthy()
   })
 
   it("caps the mistakes handed to the current mode's own artwork one stage short of its maximum while the round is still mechanically alive, even after a live mode swap crosses a maxMistakes boundary", async () => {
@@ -664,13 +664,13 @@ describe('Game', () => {
     await rerender(<Game phrase='CAT' onStop={jest.fn()} mode={tightRecordingMode} />)
 
     expect(getByTestId('visual-mistakes').props.children).toBe(5)
-    expect(queryByText('You lost!')).toBeNull()
+    expect(queryByText('You Lose!')).toBeNull()
 
     // One more wrong guess reaches the round's real, frozen limit (8) and the round actually ends
     // — the cap lifts, and the now-active mode's own true maximum (6) is what shows, appropriately,
     // since the round really is over at this point.
     await guessLetter(getByText, 'O')
-    expect(await findByText('You lost!')).toBeTruthy()
+    expect(await findByText('You Lose!')).toBeTruthy()
     expect(getByTestId('visual-mistakes').props.children).toBe(6)
   })
 
@@ -683,7 +683,7 @@ describe('Game', () => {
     // final stage has time to draw before the loss dialog interrupts") — the artwork itself must
     // not be the thing waiting on that delay, or the "final stage" it's supposed to have time to
     // draw would still be one stage short for the entire pause.
-    expect(queryByText('You lost!')).toBeNull()
+    expect(queryByText('You Lose!')).toBeNull()
     expect(getByTestId('visual-mistakes').props.children).toBe(1)
   })
 })

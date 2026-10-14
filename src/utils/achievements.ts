@@ -34,10 +34,10 @@ export const ACHIEVEMENT_DEFINITIONS: AchievementDefinition[] = [
   { id: 'packs_created_5', title: 'Curator', description: 'Create 5 custom packs.', icon: 'folder-multiple-outline' },
   { id: 'packs_created_15', title: 'Pack Architect', description: 'Create 15 custom packs.', icon: 'folder-star-outline' },
   { id: 'packs_created_30', title: 'Master Curator', description: 'Create 30 custom packs.', icon: 'folder-star' },
-  { id: 'pnp_played_5', title: 'Party Starter', description: 'Play 5 pass & play games.', icon: 'account-group-outline' },
-  { id: 'pnp_played_25', title: 'Game Night Regular', description: 'Play 25 pass & play games.', icon: 'account-group' },
-  { id: 'pnp_played_100', title: 'Social Butterfly', description: 'Play 100 pass & play games.', icon: 'party-popper' },
-  { id: 'pnp_played_250', title: 'Pass & Play Legend', description: 'Play 250 pass & play games.', icon: 'crown-outline' }
+  { id: 'pnp_played_5', title: 'Party Starter', description: 'Play 5 Pass & Play games.', icon: 'account-group-outline' },
+  { id: 'pnp_played_25', title: 'Game Night Regular', description: 'Play 25 Pass & Play games.', icon: 'account-group' },
+  { id: 'pnp_played_100', title: 'Social Butterfly', description: 'Play 100 Pass & Play games.', icon: 'party-popper' },
+  { id: 'pnp_played_250', title: 'Pass & Play Legend', description: 'Play 250 Pass & Play games.', icon: 'crown-outline' }
 ]
 
 export const ACHIEVEMENT_DEFINITIONS_BY_ID: Record<AchievementId, AchievementDefinition> = Object.fromEntries(ACHIEVEMENT_DEFINITIONS.map((def) => [def.id, def])) as Record<AchievementId, AchievementDefinition>

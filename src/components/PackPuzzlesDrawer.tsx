@@ -72,7 +72,7 @@ export const PackPuzzlesDrawer = memo(({ visible, packKey, onDismiss, mode, diff
     if (!packKey || !mode || !onConfirm) return
     const result = resolveChosenPuzzle(packKey, puzzleId, mode)
     if (!result.ok) {
-      void alert('No puzzles available', result.error)
+      void alert('No Puzzles Available', result.error)
       return
     }
     onConfirm(result.payload, { sourceMode: 'random', difficulty: difficulty ?? 'any', mode, customPhrase: '', customHint: '' })
@@ -87,7 +87,7 @@ export const PackPuzzlesDrawer = memo(({ visible, packKey, onDismiss, mode, diff
     const configToResolve: PuzzleConfig = { sourceMode: 'random', difficulty, mode, customPhrase: '', customHint: '' }
     const result = resolvePuzzle(configToResolve, [packKey], unlockMap)
     if (!result.ok) {
-      void alert('No puzzles available', result.error)
+      void alert('No Puzzles Available', result.error)
       return
     }
     onConfirm(result.payload, configToResolve)

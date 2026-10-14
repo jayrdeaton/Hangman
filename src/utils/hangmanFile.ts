@@ -63,7 +63,7 @@ export const shareCustomPackFile = async (key: string, label: string): Promise<b
 
 export const shareProgressBackupFile = async (): Promise<boolean> => {
   const payload = await exportPuzzleUnlocks()
-  return writeAndShareFile(payload, `hangman-progress-backup${HANGMAN_FILE_EXTENSION}`, 'Share progress backup')
+  return writeAndShareFile(payload, `hangman-progress-backup${HANGMAN_FILE_EXTENSION}`, 'Share Progress Backup')
 }
 
 // Cross-platform, unlike the share functions above — expo-document-picker supports web too (a

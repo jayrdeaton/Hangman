@@ -28,12 +28,12 @@ const DRAWER_WIDTH = 380
 // growing to fill that whole area.
 const ICON_ACTION_HIT_SLOP = { top: 4, bottom: 4, left: 4, right: 4 }
 
-// Won/Lost read as a plain win-loss signal regardless of which stat grid (solo or pass & play)
+// Wins/Losses read as a plain win-loss signal regardless of which stat grid (solo or pass & play)
 // they're in, so both share this rather than each grid hand-picking its own accents; every other
 // tile stays neutral (onSecondaryContainer) rather than turning the whole grid into a rainbow.
 const statValueColor = (label: string, theme: AutoPaperTheme): string => {
-  if (label === 'Won' || label === 'Wins') return theme.colors.success
-  if (label === 'Lost' || label === 'Losses') return theme.colors.error
+  if (label === 'Wins') return theme.colors.success
+  if (label === 'Losses') return theme.colors.error
   return theme.colors.onSecondaryContainer
 }
 
@@ -138,14 +138,14 @@ export const AchievementsDrawer = memo(({ visible, onDismiss, unlockVersion, onU
   const soloPlayed = achievementStats.totalSolved + achievementStats.totalLost
   const soloWinPercent = soloPlayed > 0 ? Math.round((achievementStats.totalSolved / soloPlayed) * 100) : 0
   const soloStats = [
-    { label: 'Won', value: achievementStats.totalSolved },
-    { label: 'Lost', value: achievementStats.totalLost },
+    { label: 'Wins', value: achievementStats.totalSolved },
+    { label: 'Losses', value: achievementStats.totalLost },
     { label: 'Win %', value: soloWinPercent, suffix: '%' },
-    { label: 'Total played', value: soloPlayed },
-    { label: 'Current streak', value: achievementStats.currentStreak },
-    { label: 'Best streak', value: achievementStats.bestStreak },
-    { label: 'Letters guessed', value: achievementStats.lettersGuessed },
-    { label: 'Letters correct', value: achievementStats.lettersCorrect }
+    { label: 'Played', value: soloPlayed },
+    { label: 'Current Streak', value: achievementStats.currentStreak },
+    { label: 'Best Streak', value: achievementStats.bestStreak },
+    { label: 'Letters Guessed', value: achievementStats.lettersGuessed },
+    { label: 'Letters Correct', value: achievementStats.lettersCorrect }
   ]
   const pnpPlayed = achievementStats.pnpWins + achievementStats.pnpLosses
   const pnpWinPercent = pnpPlayed > 0 ? Math.round((achievementStats.pnpWins / pnpPlayed) * 100) : 0
@@ -153,15 +153,15 @@ export const AchievementsDrawer = memo(({ visible, onDismiss, unlockVersion, onU
     { label: 'Wins', value: achievementStats.pnpWins },
     { label: 'Losses', value: achievementStats.pnpLosses },
     { label: 'Win %', value: pnpWinPercent, suffix: '%' },
-    { label: 'Total played', value: pnpPlayed }
+    { label: 'Played', value: pnpPlayed }
   ]
 
   const handleExport = async () => {
     try {
       const shared = await shareProgressBackupFile()
-      if (!shared) void alert("Couldn't share", 'Sharing is not available on this device.')
+      if (!shared) void alert("Couldn't Share", 'Sharing is not available on this device.')
     } catch {
-      void alert("Couldn't share", 'Something went wrong sharing your progress backup. Please try again.')
+      void alert("Couldn't Share", 'Something went wrong sharing your progress backup. Please try again.')
     }
   }
 
@@ -178,9 +178,9 @@ export const AchievementsDrawer = memo(({ visible, onDismiss, unlockVersion, onU
       parseProgressBackup(raw)
       const result = await mergePuzzleUnlocks(raw)
       onUnlocksChanged()
-      void alert('Import complete', `Merged ${result.importedCount} entries. Added ${result.addedCount} new unlocks.`)
+      void alert('Import Complete', `Merged ${result.importedCount} entries. Added ${result.addedCount} new unlocks.`)
     } catch {
-      void alert('Invalid backup', 'Could not read that as a Hangman progress backup file.')
+      void alert('Invalid Backup', 'Could not read that as a Hangman progress backup file.')
     }
   }
 
@@ -190,7 +190,7 @@ export const AchievementsDrawer = memo(({ visible, onDismiss, unlockVersion, onU
     if (!detailPackKey) return
     const result = resolveChosenPuzzle(detailPackKey, puzzleId, mode)
     if (!result.ok) {
-      void alert('No puzzles available', result.error)
+      void alert('No Puzzles Available', result.error)
       return
     }
     onConfirm(result.payload, { sourceMode: 'random', difficulty, mode, customPhrase: '', customHint: '' })
@@ -208,7 +208,7 @@ export const AchievementsDrawer = memo(({ visible, onDismiss, unlockVersion, onU
     const configToResolve: PuzzleConfig = { sourceMode: 'random', difficulty, mode, customPhrase: '', customHint: '' }
     const result = resolvePuzzle(configToResolve, [detailPackKey], unlockMap)
     if (!result.ok) {
-      void alert('No puzzles available', result.error)
+      void alert('No Puzzles Available', result.error)
       return
     }
     onConfirm(result.payload, configToResolve)
@@ -253,7 +253,7 @@ export const AchievementsDrawer = memo(({ visible, onDismiss, unlockVersion, onU
       <Card style={[styles.card, styles.firstCard, { backgroundColor: theme.colors.primaryContainer }]} mode='contained'>
         <Card.Content>
           <Text variant='labelLarge' style={[styles.overline, { color: theme.colors.onPrimaryContainer }]}>
-            Total progress
+            Total Progress
           </Text>
           <Text variant='displaySmall' style={[styles.bigNumber, { color: theme.colors.primary }]}>
             {commaString(totalUnlocked)}
@@ -263,7 +263,7 @@ export const AchievementsDrawer = memo(({ visible, onDismiss, unlockVersion, onU
             </Text>
           </Text>
           <Text variant='bodySmall' style={[styles.muted, { color: theme.colors.onPrimaryContainer }]}>
-            puzzles unlocked
+            Puzzles unlocked
           </Text>
           <View style={styles.progressBarWrapper}>
             <ProgressBar progress={overallProgress} style={[styles.progressBar, { backgroundColor: theme.colors.surface }]} />
@@ -291,7 +291,7 @@ export const AchievementsDrawer = memo(({ visible, onDismiss, unlockVersion, onU
           </View>
 
           <Text variant='labelLarge' style={[styles.statsSubLabel, { color: theme.colors.onSecondaryContainer }]}>
-            Pass & play
+            Pass & Play
           </Text>
           <View style={styles.statsGrid}>
             {pnpStats.map((stat) => (
@@ -349,7 +349,7 @@ export const AchievementsDrawer = memo(({ visible, onDismiss, unlockVersion, onU
       })}
 
       <Text variant='titleMedium' style={styles.sectionLabel}>
-        Browse by pack
+        Browse by Pack
       </Text>
     </>
   )
@@ -357,23 +357,23 @@ export const AchievementsDrawer = memo(({ visible, onDismiss, unlockVersion, onU
   const listFooter = (
     <>
       <Text variant='titleMedium' style={styles.sectionLabel}>
-        Progress backup
+        Progress Backup
       </Text>
       <Button mode='contained' buttonColor={theme.colors.secondary} textColor={theme.colors.onSecondary} icon='export-variant' onPress={() => void handleExport()}>
-        Export progress
+        Export
       </Button>
       <Button mode='contained' buttonColor={theme.colors.tertiary} textColor={theme.colors.onTertiary} icon='import' onPress={() => void handleImportFile()} style={styles.spaced}>
-        Import progress
+        Import
       </Button>
       <Text variant='bodySmall' style={styles.muted}>
-        Imports merge with your existing progress.
+        Imports merge with your existing progress
       </Text>
 
       <Text variant='titleMedium' style={styles.sectionLabel}>
-        Danger zone
+        Danger Zone
       </Text>
       <Button mode='contained' buttonColor={theme.colors.danger} textColor={theme.colors.onDanger} icon='delete-outline' onPress={() => setConfirmResetVisible(true)}>
-        Reset all progress
+        Reset All Progress
       </Button>
     </>
   )
@@ -438,7 +438,7 @@ export const AchievementsDrawer = memo(({ visible, onDismiss, unlockVersion, onU
         </View>
       </Drawer>
 
-      <ConfirmDialog visible={confirmResetVisible} title='Reset progress?' message='This permanently clears every unlocked puzzle and achievement. This cannot be undone.' confirmLabel='Reset' destructive onConfirm={() => void handleConfirmReset()} onCancel={() => setConfirmResetVisible(false)} />
+      <ConfirmDialog visible={confirmResetVisible} title='Reset Progress?' message='This permanently clears every unlocked puzzle and achievement. This cannot be undone.' confirmLabel='Reset' destructive onConfirm={() => void handleConfirmReset()} onCancel={() => setConfirmResetVisible(false)} />
     </>
   )
 }, areAchievementsDrawerPropsEqual)

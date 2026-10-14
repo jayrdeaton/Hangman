@@ -74,9 +74,6 @@ export type GameProps = {
   // Passed straight through to RoundEndDialog, same as categoryProgress above — see its own prop
   // comment there for why this arrives pre-resolved rather than as raw AchievementIds.
   unlockedAchievementTitles?: string[]
-  // Passed straight through to RoundEndDialog — Game plays a pass-and-play round exactly like any
-  // other, it just needs the continue button to say "write the next word" instead of "next puzzle".
-  continueLabel?: string
   // True while a dialog covers the board — currently only pass-and-play's handoff step, which
   // mounts the real round underneath itself rather than a blank screen (see Main.tsx), so that
   // there's nothing left to reveal once the dialog closes. Guards handleGuess only, deliberately
@@ -87,7 +84,7 @@ export type GameProps = {
   locked?: boolean
 }
 
-export const Game = ({ onStop, onSolved, onLost, onGuessProgress, phrase, mode = DEFAULT_MODE, hint, packLabel, difficultyTier, celebration = DEFAULT_CELEBRATION, categoryProgress, unlockedAchievementTitles, continueLabel, locked = false }: GameProps): JSX.Element => {
+export const Game = ({ onStop, onSolved, onLost, onGuessProgress, phrase, mode = DEFAULT_MODE, hint, packLabel, difficultyTier, celebration = DEFAULT_CELEBRATION, categoryProgress, unlockedAchievementTitles, locked = false }: GameProps): JSX.Element => {
   const { layout } = useKeyboardLayout()
   const { playCorrect, playWrong, playWin, playLoss } = useSoundEffects()
   const gameHaptics = useGameHaptics()
@@ -278,7 +275,7 @@ export const Game = ({ onStop, onSolved, onLost, onGuessProgress, phrase, mode =
           <CelebrationView key={celebrationCycle} colors={[theme.colors.primary, theme.colors.secondary, theme.colors.tertiary]} dark={theme.dark} onComplete={() => setCelebrationCycle((c) => c + 1)} />
         </Portal>
       ) : null}
-      <RoundEndDialog visible={outcome !== null && dialogReady} outcome={outcome} phrase={phrase} categoryProgress={categoryProgress} unlockedAchievementTitles={unlockedAchievementTitles} onDismiss={onStop} continueLabel={continueLabel} />
+      <RoundEndDialog visible={outcome !== null && dialogReady} outcome={outcome} phrase={phrase} categoryProgress={categoryProgress} unlockedAchievementTitles={unlockedAchievementTitles} onDismiss={onStop} />
     </View>
   )
 }

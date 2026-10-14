@@ -64,9 +64,9 @@ describe('PacksScreen', () => {
     const pack = builtIn()
     const { getByText, getByLabelText } = await renderScreen({ selectedKeys: [pack.key] })
 
-    expect(getByText('Choose packs')).toBeTruthy()
-    expect(getByText('My packs')).toBeTruthy()
-    expect(getByText('Built-in packs')).toBeTruthy()
+    expect(getByText('Choose Packs')).toBeTruthy()
+    expect(getByText('My Packs')).toBeTruthy()
+    expect(getByText('Built-In Packs')).toBeTruthy()
     expect(getByText('No custom packs yet.')).toBeTruthy()
     expect(getByText(pack.label)).toBeTruthy()
     expect(getByLabelText(`View ${pack.label} contents`)).toBeTruthy()
@@ -92,9 +92,9 @@ describe('PacksScreen', () => {
 
     await fireEvent.changeText(getByTestId('pack-label-input'), 'My Trip')
     await fireEvent.changeText(getByTestId('entry-answer-0'), 'PARIS')
-    await fireEvent.press(getByText('Save pack'))
+    await fireEvent.press(getByText('Save'))
 
-    await waitFor(() => expect(getByText('Choose packs')).toBeTruthy())
+    await waitFor(() => expect(getByText('Choose Packs')).toBeTruthy())
     expect(queryByTestId('pack-label-input')).toBeNull()
     expect(onPacksChanged).toHaveBeenCalled()
     expect(onChangeSelectedKeys).toHaveBeenCalled()
@@ -111,7 +111,7 @@ describe('PacksScreen', () => {
     const { getByText, getByTestId } = await renderScreen()
 
     await fireEvent.press(getByText('Create'))
-    const saveButton = getByText('Save pack')
+    const saveButton = getByText('Save')
     expect(saveButton.parent?.parent?.props.accessibilityState.disabled).toBe(true)
 
     await fireEvent.changeText(getByTestId('entry-answer-0'), 'PARIS')
@@ -161,11 +161,11 @@ describe('PacksScreen', () => {
 
     await fireEvent.press(getByLabelText(`Edit ${pack.label}`))
     await fireEvent.press(getByLabelText('Delete pack'))
-    expect(getByText('Delete pack?')).toBeTruthy()
+    expect(getByText('Delete Pack?')).toBeTruthy()
 
     await fireEvent.press(getByTestId('confirm-dialog-confirm'))
 
-    await waitFor(() => expect(getByText('Choose packs')).toBeTruthy())
+    await waitFor(() => expect(getByText('Choose Packs')).toBeTruthy())
     // onPacksChanged only signals the parent to bump packsVersion and re-render with a fresh
     // manifest (see the "creates a pack" test above) — the actual deletion is what's checked here.
     expect(getPuzzleManifest().some((item) => item.key === pack.key)).toBe(false)
@@ -179,11 +179,11 @@ describe('PacksScreen', () => {
 
     await fireEvent.press(getByLabelText(`Edit ${pack.label}`))
     await fireEvent.press(getByLabelText('Delete pack'))
-    expect(getByText('Delete pack?')).toBeTruthy()
+    expect(getByText('Delete Pack?')).toBeTruthy()
 
     await fireEvent.press(getByTestId('confirm-dialog-cancel'))
 
-    expect(queryByText('Delete pack?')).toBeNull()
+    expect(queryByText('Delete Pack?')).toBeNull()
     // Still on the editor, not bounced back to the list.
     expect(getByTestId('pack-label-input')).toBeTruthy()
     expect(onPacksChanged).not.toHaveBeenCalled()
@@ -212,7 +212,7 @@ describe('PacksScreen', () => {
     const { getByText, queryByTestId } = await renderScreen()
 
     await fireEvent.press(getByText('Create'))
-    await fireEvent.press(getByText('Add word'))
+    await fireEvent.press(getByText('Add'))
 
     // Still just the one row — Add word only focuses the already-there blank row now, since one
     // is always kept ready; it no longer unconditionally appends its own.
@@ -290,12 +290,12 @@ describe('PacksScreen', () => {
 
     expect(getByText(pack.label)).toBeTruthy()
     await waitFor(() => expect(getByText(/unlocked/)).toBeTruthy())
-    expect(queryByText('My packs')).toBeNull()
+    expect(queryByText('My Packs')).toBeNull()
 
     await fireEvent.press(getByLabelText('Close'))
 
-    expect(getByText('Choose packs')).toBeTruthy()
-    expect(getByText('My packs')).toBeTruthy()
+    expect(getByText('Choose Packs')).toBeTruthy()
+    expect(getByText('My Packs')).toBeTruthy()
   })
 
   it('calls onDismiss when closed from the list root', async () => {
@@ -316,7 +316,7 @@ describe('PacksScreen', () => {
     await rerender(<PacksScreen visible={false} onDismiss={jest.fn()} selectedKeys={[]} onChangeSelectedKeys={jest.fn()} packsVersion={0} onPacksChanged={jest.fn()} />)
     await rerender(<PacksScreen visible onDismiss={jest.fn()} selectedKeys={[]} onChangeSelectedKeys={jest.fn()} packsVersion={0} onPacksChanged={jest.fn()} />)
 
-    expect(getByText('Choose packs')).toBeTruthy()
+    expect(getByText('Choose Packs')).toBeTruthy()
   })
 
   it('marks its own panel as a modal accessibility view only while neither the detail nor editor overlay is open on top of it', async () => {

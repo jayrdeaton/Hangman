@@ -75,7 +75,7 @@ describe('PackEditorDrawer', () => {
   it('renders the create-pack form when editingKey is null', async () => {
     const { getByText, getByTestId, queryByLabelText } = await render(<PackEditorDrawer visible editingKey={null} onDismiss={jest.fn()} onSaved={jest.fn()} onDelete={jest.fn()} onShare={jest.fn()} />)
 
-    expect(getByText('New pack')).toBeTruthy()
+    expect(getByText('New Pack')).toBeTruthy()
     expect(getByTestId('pack-label-input')).toBeTruthy()
     // Nothing to share or delete yet — there's no saved pack behind a still-being-created one.
     expect(queryByLabelText('Share pack')).toBeNull()
@@ -87,7 +87,7 @@ describe('PackEditorDrawer', () => {
 
     await fireEvent.changeText(getByTestId('pack-label-input'), 'My Trip')
     await fireEvent.changeText(getByTestId('entry-answer-0'), 'PARIS')
-    await fireEvent.press(getByText('Save pack'))
+    await fireEvent.press(getByText('Save'))
 
     await waitFor(() => expect(mockSuccess).toHaveBeenCalledWith('Pack Rat', 'Achievement unlocked'))
   })

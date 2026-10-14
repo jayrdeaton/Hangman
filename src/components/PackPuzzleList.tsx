@@ -210,7 +210,7 @@ export const PackPuzzleList = ({ packKey, onPlayPuzzle }: PackPuzzleListProps): 
                   key={value}
                   testID={`difficulty-filter-${value}`}
                   leadingIcon={checkmark(selected, colors.onVibrant)}
-                  title={value === 'all' ? 'Any difficulty' : DIFFICULTY_LABELS[value]}
+                  title={value === 'all' ? 'Any Difficulty' : DIFFICULTY_LABELS[value]}
                   style={{ backgroundColor: selected ? colors.vibrant : colors.container }}
                   titleStyle={{ color: selected ? colors.onVibrant : colors.onContainer }}
                   onPress={() => {

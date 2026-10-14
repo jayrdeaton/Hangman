@@ -107,7 +107,7 @@ export const PuzzleInfoRow = ({ difficultyTier, packLabel, hint, hintRevealed, o
             <View style={styles.hintPill}>
               <Icon source={hintRevealed ? 'lightbulb-on' : 'lightbulb-outline'} size={15} color={onTertiaryColor} />
               <Text style={[styles.pillText, { color: onTertiaryColor }]} numberOfLines={2}>
-                {hintRevealed ? hintSegments.join('  |  ') : 'Show hint'}
+                {hintRevealed ? hintSegments.join('  |  ') : 'Hint'}
               </Text>
             </View>
           </TouchableRipple>

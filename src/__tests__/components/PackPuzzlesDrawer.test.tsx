@@ -155,7 +155,7 @@ describe('PackPuzzlesDrawer', () => {
     await fireEvent.press(getByText('Random'))
 
     expect(onConfirm).not.toHaveBeenCalled()
-    expect(mockAlert).toHaveBeenCalledWith('No puzzles available', 'No puzzles available for the selected packs and difficulty.')
+    expect(mockAlert).toHaveBeenCalledWith('No Puzzles Available', 'No puzzles available for the selected packs and difficulty.')
   })
 
   it('closes via the header close button', async () => {

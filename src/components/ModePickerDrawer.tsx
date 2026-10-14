@@ -500,7 +500,7 @@ export const ModePickerDrawer = memo(({ visible, onDismiss, selected, onSelect }
                 this drawer too. */}
             <View testID='mode-picker-keyboard-section'>
               <Text variant='titleMedium' style={styles.keyboardLabel}>
-                Keyboard layout
+                Keyboard Layout
               </Text>
               <View style={styles.keyboardRow}>
                 <SegmentedButtons value={layout} onValueChange={(value) => setLayout(value as typeof layout)} buttons={keyboardButtons} />
@@ -527,7 +527,7 @@ export const ModePickerDrawer = memo(({ visible, onDismiss, selected, onSelect }
               </Text>
               <View style={styles.feedbackRow}>
                 <View style={styles.flex}>
-                  <Text variant='bodyMedium'>Vibrate on tap</Text>
+                  <Text variant='bodyMedium'>Vibrate on Tap</Text>
                   <Text variant='bodySmall' style={styles.muted}>
                     Haptic feedback for guesses and buttons
                   </Text>
@@ -536,7 +536,7 @@ export const ModePickerDrawer = memo(({ visible, onDismiss, selected, onSelect }
               </View>
               <View style={[styles.feedbackRow, styles.feedbackRowSpacing]}>
                 <View style={styles.flex}>
-                  <Text variant='bodyMedium'>Sound effects</Text>
+                  <Text variant='bodyMedium'>Sound Effects</Text>
                   <Text variant='bodySmall' style={styles.muted}>
                     Play a sound for guesses, wins, and losses
                   </Text>

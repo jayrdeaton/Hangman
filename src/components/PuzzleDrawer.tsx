@@ -193,7 +193,7 @@ export const PuzzleDrawer = memo(({ visible, onDismiss, onRequestOpen, initialCo
     const configToResolve: PuzzleConfig = { ...draft, sourceMode: 'random' }
     const result = resolvePuzzle(configToResolve, selectedPackKeys, unlockMap)
     if (!result.ok) {
-      void alert('No puzzles available', result.error)
+      void alert('No Puzzles Available', result.error)
       return
     }
     onConfirm(result.payload, configToResolve)
@@ -209,7 +209,7 @@ export const PuzzleDrawer = memo(({ visible, onDismiss, onRequestOpen, initialCo
       const configToResolve: PuzzleConfig = { ...draft, sourceMode: 'random' }
       const result = resolvePuzzle(configToResolve, [packKey], unlockMap)
       if (!result.ok) {
-        void alert('No puzzles available', result.error)
+        void alert('No Puzzles Available', result.error)
         return
       }
       onConfirm(result.payload, configToResolve)
@@ -356,7 +356,7 @@ export const PuzzleDrawer = memo(({ visible, onDismiss, onRequestOpen, initialCo
   // for real there, on a platform where Alert.alert isn't a no-op.
   const handleCheckForUpdate = useCallback(() => {
     if (__DEV__ || Platform.OS === 'web') {
-      void alert('Updates unavailable', Platform.OS === 'web' ? 'Update checks are not supported on web.' : 'Update checks are disabled in development mode.')
+      void alert('Updates Unavailable', Platform.OS === 'web' ? 'Update checks are not supported on web.' : 'Update checks are disabled in development mode.')
       return
     }
     void check()
@@ -466,7 +466,7 @@ export const PuzzleDrawer = memo(({ visible, onDismiss, onRequestOpen, initialCo
                 Random
               </Button>
               <Button mode='contained' buttonColor={theme.colors.secondary} textColor={theme.colors.onSecondary} icon='account-multiple' onPress={onStartPnp} style={styles.pnpButton}>
-                Pass &amp; play
+                Pass &amp; Play
               </Button>
             </ScrollViewFooter>
           </ScrollViewProvider>

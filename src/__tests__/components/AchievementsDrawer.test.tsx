@@ -112,14 +112,14 @@ describe('AchievementsDrawer', () => {
     // above the achievement cards.
     expect(getAllByText('Achievements')).toHaveLength(2)
     expect(getByTestId('achievements-drawer-panel')).toBeTruthy()
-    expect(getByText('Total progress')).toBeTruthy()
-    expect(getByText('puzzles unlocked')).toBeTruthy()
+    expect(getByText('Total Progress')).toBeTruthy()
+    expect(getByText('Puzzles unlocked')).toBeTruthy()
     // Rendered regardless of unlock state — locked ones just show dimmed/muted (see
     // AchievementsDrawer.tsx's achievementIconLocked style).
     expect(getByText('No Hints Needed')).toBeTruthy()
     expect(getByText('Stats')).toBeTruthy()
-    expect(getByText('Pass & play')).toBeTruthy()
-    expect(getByText('Browse by pack')).toBeTruthy()
+    expect(getByText('Pass & Play')).toBeTruthy()
+    expect(getByText('Browse by Pack')).toBeTruthy()
     expect(getByText(pack.label)).toBeTruthy()
   })
 
@@ -143,11 +143,11 @@ describe('AchievementsDrawer', () => {
 
     await fireEvent.press(getByText(pack.label))
 
-    // The whole overview (achievements list, "Browse by pack" section, everything) swaps out for
+    // The whole overview (achievements list, "Browse by Pack" section, everything) swaps out for
     // the pack's own puzzle list in place — not a dialog stacked on top of it — and the header now
     // shows the pack's own label instead of "Achievements" (opens on filter='all', masked
     // throughout since the mocked empty unlock map guarantees nothing is solved yet here).
-    await waitFor(() => expect(queryByText('Browse by pack')).toBeNull())
+    await waitFor(() => expect(queryByText('Browse by Pack')).toBeNull())
     expect(queryByText('Achievements')).toBeNull()
     expect(await findByText(/unlocked/)).toBeTruthy()
     expect(await findByTestId(`puzzle-row-${puzzle.id}`)).toBeTruthy()
@@ -157,7 +157,7 @@ describe('AchievementsDrawer', () => {
     // Back to "Achievements" appearing twice — the drawer's own title and the section label above
     // the achievement cards — same as before the pack row was ever pressed.
     expect(getAllByText('Achievements')).toHaveLength(2)
-    expect(getByText('Browse by pack')).toBeTruthy()
+    expect(getByText('Browse by Pack')).toBeTruthy()
     expect(queryByTestId(`puzzle-row-${puzzle.id}`)).toBeNull()
     // Back is a local step-back, not a dismiss — the whole Achievements drawer must stay open.
     expect(onDismiss).not.toHaveBeenCalled()
@@ -215,7 +215,7 @@ describe('AchievementsDrawer', () => {
 
     expect(onConfirm).not.toHaveBeenCalled()
     expect(onDismiss).not.toHaveBeenCalled()
-    expect(mockAlert).toHaveBeenCalledWith('No puzzles available', 'No puzzles available for the selected packs and difficulty.')
+    expect(mockAlert).toHaveBeenCalledWith('No Puzzles Available', 'No puzzles available for the selected packs and difficulty.')
   })
 
   it("passes Main.tsx's current mode/difficulty through to the Random draw, not pickers of its own", async () => {
@@ -260,7 +260,7 @@ describe('AchievementsDrawer', () => {
 
     // Not just "some pack" reappearing — the SECOND pack's own label and progress, not a stale
     // read of the first one PackPuzzleList was keyed on moments ago.
-    await waitFor(() => expect(queryByText('Browse by pack')).toBeNull())
+    await waitFor(() => expect(queryByText('Browse by Pack')).toBeNull())
     expect(getByText(secondPack.label)).toBeTruthy()
     expect(queryByText(firstPack.label)).toBeNull()
   })
@@ -277,7 +277,7 @@ describe('AchievementsDrawer', () => {
 
     onDismiss.mockClear()
     await fireEvent.press(getByText(pack.label))
-    await waitFor(() => expect(queryByText('Browse by pack')).toBeNull())
+    await waitFor(() => expect(queryByText('Browse by Pack')).toBeNull())
 
     await act(async () => {
       getByTestId('achievements-drawer-panel').props.onAccessibilityEscape()
@@ -286,7 +286,7 @@ describe('AchievementsDrawer', () => {
     // Escape while browsing a pack must go back one step, exactly like the visible back-arrow —
     // not skip past the overview straight to closing the whole drawer.
     expect(onDismiss).not.toHaveBeenCalled()
-    expect(getByText('Browse by pack')).toBeTruthy()
+    expect(getByText('Browse by Pack')).toBeTruthy()
   })
 
   it('always reopens on the overview, even if it was left mid pack-detail', async () => {
@@ -307,7 +307,7 @@ describe('AchievementsDrawer', () => {
       </Wrapper>
     )
 
-    expect(getByText('Browse by pack')).toBeTruthy()
+    expect(getByText('Browse by Pack')).toBeTruthy()
   })
 
   it('only marks the drawer as a modal accessibility view while visible', async () => {
@@ -335,7 +335,7 @@ describe('AchievementsDrawer', () => {
     mockGetAchievementStats.mockResolvedValueOnce(statsWithTotalSolved(3)).mockResolvedValueOnce(statsWithTotalSolved(4))
     const { getByTestId, rerender } = await renderDrawer({ unlockVersion: 0 })
 
-    await waitFor(() => expect(within(getByTestId('stat-Won')).getByText('3')).toBeTruthy())
+    await waitFor(() => expect(within(getByTestId('stat-Wins')).getByText('3')).toBeTruthy())
 
     // A real bump comes from Main.tsx's refreshUnlocks after a solve/loss — this is what actually
     // proves the effect re-runs (not just that it ran once on mount): a stale closure or a missing
@@ -346,7 +346,7 @@ describe('AchievementsDrawer', () => {
       </Wrapper>
     )
 
-    await waitFor(() => expect(within(getByTestId('stat-Won')).getByText('4')).toBeTruthy())
+    await waitFor(() => expect(within(getByTestId('stat-Wins')).getByText('4')).toBeTruthy())
   })
 
   describe('Stats', () => {
@@ -364,15 +364,15 @@ describe('AchievementsDrawer', () => {
       })
       const { getByTestId } = await renderDrawer()
 
-      await waitFor(() => expect(within(getByTestId('stat-Total played')).getByText('15')).toBeTruthy())
-      expect(within(getByTestId('stat-Won')).getByText('12')).toBeTruthy()
-      expect(within(getByTestId('stat-Lost')).getByText('3')).toBeTruthy()
+      await waitFor(() => expect(within(getByTestId('stat-Played')).getByText('15')).toBeTruthy())
+      expect(within(getByTestId('stat-Wins')).getByText('12')).toBeTruthy()
+      expect(within(getByTestId('stat-Losses')).getByText('3')).toBeTruthy()
       expect(within(getByTestId('stat-Win %')).getByText('80%')).toBeTruthy()
-      expect(within(getByTestId('stat-Current streak')).getByText('2')).toBeTruthy()
-      expect(within(getByTestId('stat-Best streak')).getByText('7')).toBeTruthy()
-      expect(within(getByTestId('stat-Letters guessed')).getByText('150')).toBeTruthy()
-      expect(within(getByTestId('stat-Letters correct')).getByText('90')).toBeTruthy()
-      expect(within(getByTestId('stat-pnp-Total played')).getByText('5')).toBeTruthy()
+      expect(within(getByTestId('stat-Current Streak')).getByText('2')).toBeTruthy()
+      expect(within(getByTestId('stat-Best Streak')).getByText('7')).toBeTruthy()
+      expect(within(getByTestId('stat-Letters Guessed')).getByText('150')).toBeTruthy()
+      expect(within(getByTestId('stat-Letters Correct')).getByText('90')).toBeTruthy()
+      expect(within(getByTestId('stat-pnp-Played')).getByText('5')).toBeTruthy()
       expect(within(getByTestId('stat-pnp-Wins')).getByText('4')).toBeTruthy()
       expect(within(getByTestId('stat-pnp-Losses')).getByText('1')).toBeTruthy()
       expect(within(getByTestId('stat-pnp-Win %')).getByText('80%')).toBeTruthy()
@@ -421,12 +421,12 @@ describe('AchievementsDrawer', () => {
     })
   })
 
-  describe('Progress backup', () => {
+  describe('Progress Backup', () => {
     it('shares a progress backup file when Export progress is pressed', async () => {
       mockShareProgressBackupFile.mockResolvedValue(true)
       const { getByText } = await renderDrawer()
 
-      await fireEvent.press(getByText('Export progress'))
+      await fireEvent.press(getByText('Export'))
 
       await waitFor(() => expect(mockShareProgressBackupFile).toHaveBeenCalledTimes(1))
       expect(mockAlert).not.toHaveBeenCalled()
@@ -436,9 +436,9 @@ describe('AchievementsDrawer', () => {
       mockShareProgressBackupFile.mockResolvedValue(false)
       const { getByText } = await renderDrawer()
 
-      await fireEvent.press(getByText('Export progress'))
+      await fireEvent.press(getByText('Export'))
 
-      await waitFor(() => expect(mockAlert).toHaveBeenCalledWith("Couldn't share", expect.any(String)))
+      await waitFor(() => expect(mockAlert).toHaveBeenCalledWith("Couldn't Share", expect.any(String)))
     })
 
     it('does nothing when the file picker is canceled', async () => {
@@ -446,7 +446,7 @@ describe('AchievementsDrawer', () => {
       const onUnlocksChanged = jest.fn()
       const { getByText } = await renderDrawer({ onUnlocksChanged })
 
-      await fireEvent.press(getByText('Import progress'))
+      await fireEvent.press(getByText('Import'))
 
       await waitFor(() => expect(mockPickHangmanFile).toHaveBeenCalled())
       expect(mockMergePuzzleUnlocks).not.toHaveBeenCalled()
@@ -460,11 +460,11 @@ describe('AchievementsDrawer', () => {
       const onUnlocksChanged = jest.fn()
       const { getByText } = await renderDrawer({ onUnlocksChanged })
 
-      await fireEvent.press(getByText('Import progress'))
+      await fireEvent.press(getByText('Import'))
 
       await waitFor(() => expect(mockMergePuzzleUnlocks).toHaveBeenCalledWith(payload))
       expect(onUnlocksChanged).toHaveBeenCalledTimes(1)
-      expect(mockAlert).toHaveBeenCalledWith('Import complete', expect.stringContaining('Merged 3 entries'))
+      expect(mockAlert).toHaveBeenCalledWith('Import Complete', expect.stringContaining('Merged 3 entries'))
     })
 
     it('shows an invalid-backup alert and does not merge when the picked file is not valid JSON', async () => {
@@ -472,9 +472,9 @@ describe('AchievementsDrawer', () => {
       const onUnlocksChanged = jest.fn()
       const { getByText } = await renderDrawer({ onUnlocksChanged })
 
-      await fireEvent.press(getByText('Import progress'))
+      await fireEvent.press(getByText('Import'))
 
-      await waitFor(() => expect(mockAlert).toHaveBeenCalledWith('Invalid backup', expect.any(String)))
+      await waitFor(() => expect(mockAlert).toHaveBeenCalledWith('Invalid Backup', expect.any(String)))
       expect(mockMergePuzzleUnlocks).not.toHaveBeenCalled()
       expect(onUnlocksChanged).not.toHaveBeenCalled()
     })
@@ -486,14 +486,14 @@ describe('AchievementsDrawer', () => {
       mockPickHangmanFile.mockResolvedValue(JSON.stringify({ pack: { key: 'custom:abc', label: 'My Pack', puzzles: [] } }))
       const { getByText } = await renderDrawer()
 
-      await fireEvent.press(getByText('Import progress'))
+      await fireEvent.press(getByText('Import'))
 
-      await waitFor(() => expect(mockAlert).toHaveBeenCalledWith('Invalid backup', expect.any(String)))
+      await waitFor(() => expect(mockAlert).toHaveBeenCalledWith('Invalid Backup', expect.any(String)))
       expect(mockMergePuzzleUnlocks).not.toHaveBeenCalled()
     })
   })
 
-  describe('Danger zone', () => {
+  describe('Danger Zone', () => {
     // Reset all progress goes through an in-app ConfirmDialog now, not window.confirm/Alert.alert
     // — a native dialog isn't reliable on web (some browser/automation environments silently
     // auto-decline it, indistinguishable from the player themselves canceling).
@@ -501,12 +501,12 @@ describe('AchievementsDrawer', () => {
       const onUnlocksChanged = jest.fn()
       const { getByText, getByTestId, queryByText } = await renderDrawer({ onUnlocksChanged })
 
-      await fireEvent.press(getByText('Reset all progress'))
-      expect(getByText('Reset progress?')).toBeTruthy()
+      await fireEvent.press(getByText('Reset All Progress'))
+      expect(getByText('Reset Progress?')).toBeTruthy()
 
       await fireEvent.press(getByTestId('confirm-dialog-cancel'))
 
-      expect(queryByText('Reset progress?')).toBeNull()
+      expect(queryByText('Reset Progress?')).toBeNull()
       expect(mockClearPuzzleUnlocks).not.toHaveBeenCalled()
       expect(mockClearAchievements).not.toHaveBeenCalled()
       expect(onUnlocksChanged).not.toHaveBeenCalled()
@@ -516,7 +516,7 @@ describe('AchievementsDrawer', () => {
       const onUnlocksChanged = jest.fn()
       const { getByText, getByTestId } = await renderDrawer({ onUnlocksChanged })
 
-      await fireEvent.press(getByText('Reset all progress'))
+      await fireEvent.press(getByText('Reset All Progress'))
       await fireEvent.press(getByTestId('confirm-dialog-confirm'))
 
       await waitFor(() => expect(mockClearPuzzleUnlocks).toHaveBeenCalledTimes(1))

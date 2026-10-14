@@ -77,9 +77,9 @@ describe('Main — pass and play', () => {
   // Cold start through to "a round is in play".
   const playThroughToRound = async (utils: Awaited<ReturnType<typeof renderApp>>, phrase: string) => {
     await fireEvent.press(utils.getByLabelText('Game Menu'))
-    await fireEvent.press(utils.getByText('Pass & play'))
+    await fireEvent.press(utils.getByText('Pass & Play'))
     await fireEvent.changeText(utils.getByTestId('pnp-answer-input'), phrase)
-    await fireEvent.press(utils.getByText('Hand off'))
+    await fireEvent.press(utils.getByText('Next'))
     await fireEvent.press(utils.getByLabelText('Ready to guess'))
   }
 
@@ -102,7 +102,7 @@ describe('Main — pass and play', () => {
     const { getByLabelText, getByText, getByTestId } = utils
 
     await fireEvent.press(getByLabelText('Game Menu'))
-    await fireEvent.press(getByText('Pass & play'))
+    await fireEvent.press(getByText('Pass & Play'))
 
     // Composing is a screen, not a dialog over a blank board: the artwork and blank row render the
     // whole time, and the app bar above stays reachable.
@@ -111,7 +111,7 @@ describe('Main — pass and play', () => {
     expect(getByLabelText('Game Menu')).toBeTruthy()
 
     await fireEvent.changeText(getByTestId('pnp-answer-input'), 'CAT')
-    await fireEvent.press(getByText('Hand off'))
+    await fireEvent.press(getByText('Next'))
 
     // Handoff exists only as a beat while the device changes hands, so it's just a target to tap —
     // no instructions, nobody named. The real round is already mounted underneath it (not a blank
@@ -130,11 +130,11 @@ describe('Main — pass and play', () => {
     })
 
     // Whoever is holding the device is "you" — no player attribution, no score line.
-    expect(getByText('You win!')).toBeTruthy()
+    expect(getByText('You Win!')).toBeTruthy()
     // Only the continue button changes, because continuing here means writing the next word.
-    expect(getByText('Next word')).toBeTruthy()
+    expect(getByText('Next')).toBeTruthy()
 
-    await fireEvent.press(getByText('Next word'))
+    await fireEvent.press(getByText('Next'))
 
     // Straight back to composing, with the fields cleared for whoever is next.
     expect(getByTestId('pnp-answer-input').props.value).toBe('')
@@ -153,9 +153,9 @@ describe('Main — pass and play', () => {
     // Game holds the dialog back ~450ms so the final artwork paints first (its lossTimeoutRef).
     await loseTheRound(getByText)
 
-    expect(await findByText('You lost!')).toBeTruthy()
+    expect(await findByText('You Lose!')).toBeTruthy()
 
-    await fireEvent.press(getByText('Next word'))
+    await fireEvent.press(getByText('Next'))
     expect(getByTestId('pnp-answer-input')).toBeTruthy()
   })
 
@@ -174,7 +174,7 @@ describe('Main — pass and play', () => {
       jest.advanceTimersByTime(WIN_DIALOG_DELAY_MS)
     })
 
-    expect(getByText('You win!')).toBeTruthy()
+    expect(getByText('You Win!')).toBeTruthy()
     // A word someone typed on the spot shouldn't inflate totalSolved or the win streak, and their
     // choice not to write a hint shouldn't hand out "No Hints Needed" for free.
     expect(mockRecordSolve).not.toHaveBeenCalled()
@@ -193,7 +193,7 @@ describe('Main — pass and play', () => {
     await playThroughToRound(utils, 'CAT')
     await loseTheRound(getByText)
 
-    expect(await findByText('You lost!')).toBeTruthy()
+    expect(await findByText('You Lose!')).toBeTruthy()
     expect(mockRecordLoss).not.toHaveBeenCalled()
     expect(mockRecordSolve).not.toHaveBeenCalled()
   })
@@ -235,7 +235,7 @@ describe('Main — pass and play', () => {
     const { getByLabelText, getByText, getByTestId } = utils
 
     await fireEvent.press(getByLabelText('Game Menu'))
-    await fireEvent.press(getByText('Pass & play'))
+    await fireEvent.press(getByText('Pass & Play'))
 
     // Defaults to Easy before anything's typed, rather than being absent — so the pill doesn't pop
     // into existence (and shift the layout below it) on the first valid keystroke.
@@ -258,7 +258,7 @@ describe('Main — pass and play', () => {
     const { getByLabelText, getByText, getByTestId } = await renderApp()
 
     await fireEvent.press(getByLabelText('Game Menu'))
-    await fireEvent.press(getByText('Pass & play'))
+    await fireEvent.press(getByText('Pass & Play'))
 
     await fireEvent.changeText(getByTestId('pnp-answer-input'), 'Spider-Man')
     expect(getByTestId('pnp-answer-input').props.value).toBe('Spider Man')
@@ -273,7 +273,7 @@ describe('Main — pass and play', () => {
     const { getByLabelText, getByText, getByTestId } = utils
 
     await fireEvent.press(getByLabelText('Game Menu'))
-    await fireEvent.press(getByText('Pass & play'))
+    await fireEvent.press(getByText('Pass & Play'))
     await fireEvent.changeText(getByTestId('pnp-answer-input'), 'CAT')
 
     // Both read from the exact same label text — not just "a difficulty badge exists on both
@@ -282,7 +282,7 @@ describe('Main — pass and play', () => {
     expect(getByLabelText('Wrong guesses: 0 of 6')).toBeTruthy()
     const boardBeforeHandoff = getByLabelText('Secret word display')
 
-    await fireEvent.press(getByText('Hand off'))
+    await fireEvent.press(getByText('Next'))
 
     // Game is mounted from the moment composing itself begins, not the instant Hand off is
     // pressed (see Main.tsx's buildPnpDraftSession/effectiveSession) — this is the SAME board the
@@ -301,7 +301,7 @@ describe('Main — pass and play', () => {
     const { getByLabelText, getByText } = utils
 
     await fireEvent.press(getByLabelText('Game Menu'))
-    await fireEvent.press(getByText('Pass & play'))
+    await fireEvent.press(getByText('Pass & Play'))
 
     expect(getByText('Q')).toBeTruthy()
   })
@@ -312,9 +312,9 @@ describe('Main — pass and play', () => {
     const { getByLabelText, getByText, getByTestId } = utils
 
     await fireEvent.press(getByLabelText('Game Menu'))
-    await fireEvent.press(getByText('Pass & play'))
+    await fireEvent.press(getByText('Pass & Play'))
     await fireEvent.changeText(getByTestId('pnp-answer-input'), 'CAT')
-    await fireEvent.press(getByText('Hand off'))
+    await fireEvent.press(getByText('Next'))
 
     // The handoff dialog's own backdrop sits over the app bar too, but the app bar's hamburger is
     // its own button, wired straight to the menu regardless of what the dialog underneath it does
@@ -331,9 +331,9 @@ describe('Main — pass and play', () => {
     const { getByLabelText, getByText, getByTestId } = utils
 
     await fireEvent.press(getByLabelText('Game Menu'))
-    await fireEvent.press(getByText('Pass & play'))
+    await fireEvent.press(getByText('Pass & Play'))
     await fireEvent.changeText(getByTestId('pnp-answer-input'), 'CAT')
-    await fireEvent.press(getByText('Hand off'))
+    await fireEvent.press(getByText('Next'))
 
     // There's nothing left to configure or bail out of at this point (unlike the word prompt),
     // so a backdrop tap — no Ready press — is treated exactly like pressing Ready.
@@ -347,7 +347,7 @@ describe('Main — pass and play', () => {
       jest.advanceTimersByTime(WIN_DIALOG_DELAY_MS)
     })
 
-    expect(getByText('You win!')).toBeTruthy()
+    expect(getByText('You Win!')).toBeTruthy()
 
     jest.useRealTimers()
   })
@@ -359,9 +359,9 @@ describe('Main — pass and play', () => {
     const { getByLabelText, getByText, getByTestId, queryByText } = utils
 
     await fireEvent.press(getByLabelText('Game Menu'))
-    await fireEvent.press(getByText('Pass & play'))
+    await fireEvent.press(getByText('Pass & Play'))
     await fireEvent.changeText(getByTestId('pnp-answer-input'), 'CAT')
-    await fireEvent.press(getByText('Hand off'))
+    await fireEvent.press(getByText('Next'))
 
     // Solving it here would prove the board is only VISUALLY covered, not actually locked — the
     // on-screen Keyboard's own `disabled` state (see Game's `locked` prop) is what has to stop
@@ -370,7 +370,7 @@ describe('Main — pass and play', () => {
     await fireEvent.press(getByText('C'))
     await fireEvent.press(getByText('A'))
     await fireEvent.press(getByText('T'))
-    expect(queryByText('You win!')).toBeNull()
+    expect(queryByText('You Win!')).toBeNull()
 
     await fireEvent.press(getByLabelText('Ready to guess'))
 
@@ -382,7 +382,7 @@ describe('Main — pass and play', () => {
       jest.advanceTimersByTime(WIN_DIALOG_DELAY_MS)
     })
 
-    expect(getByText('You win!')).toBeTruthy()
+    expect(getByText('You Win!')).toBeTruthy()
 
     jest.useRealTimers()
   })
@@ -393,12 +393,12 @@ describe('Main — pass and play', () => {
     const { getByLabelText, getByText } = utils
 
     await fireEvent.press(getByLabelText('Game Menu'))
-    await fireEvent.press(getByText('Pass & play'))
+    await fireEvent.press(getByText('Pass & Play'))
 
-    // getByText demands exactly one match — the drawer's OWN "Pass & play" button is still mounted
+    // getByText demands exactly one match: the drawer's OWN "Pass & Play" button is still mounted
     // behind this (PuzzleDrawer's Drawer translates rather than unmounts on close), but is hidden
     // from accessibility while closed, so it doesn't collide with the prompt's title bar here.
-    expect(getByText('Pass & play')).toBeTruthy()
+    expect(getByText('Pass & Play')).toBeTruthy()
   })
 
   it('steps the word prompt aside for the menu, and keeps the half-typed word through the round trip', async () => {
@@ -408,7 +408,7 @@ describe('Main — pass and play', () => {
     const drawerPanel = () => getByTestId('puzzle-drawer-panel', { includeHiddenElements: true })
 
     await fireEvent.press(getByLabelText('Game Menu'))
-    await fireEvent.press(getByText('Pass & play'))
+    await fireEvent.press(getByText('Pass & Play'))
     await fireEvent.changeText(getByTestId('pnp-answer-input'), 'BANANA BREAD')
     await fireEvent.changeText(getByTestId('pnp-hint-input'), 'Breakfast loaf')
 
@@ -432,7 +432,7 @@ describe('Main — pass and play', () => {
     const { getByLabelText, getByText, getByTestId, queryByTestId } = utils
 
     await fireEvent.press(getByLabelText('Game Menu'))
-    await fireEvent.press(getByText('Pass & play'))
+    await fireEvent.press(getByText('Pass & Play'))
     await fireEvent.changeText(getByTestId('pnp-answer-input'), 'CAT')
 
     // The corner ✕ is a second way to reach the same place the backdrop tap does — both mean
@@ -452,12 +452,12 @@ describe('Main — pass and play', () => {
     const { getByLabelText, getByText, getByTestId } = utils
 
     await fireEvent.press(getByLabelText('Game Menu'))
-    await fireEvent.press(getByText('Pass & play'))
+    await fireEvent.press(getByText('Pass & Play'))
 
     expect(getByLabelText('Keep this word').props.value).toBe(false)
 
     await fireEvent.changeText(getByTestId('pnp-answer-input'), 'CAT')
-    await fireEvent.press(getByText('Hand off'))
+    await fireEvent.press(getByText('Next'))
 
     expect(mockAddCustomPuzzle).not.toHaveBeenCalled()
   })
@@ -468,11 +468,11 @@ describe('Main — pass and play', () => {
     const { getByLabelText, getByText, getByTestId } = utils
 
     await fireEvent.press(getByLabelText('Game Menu'))
-    await fireEvent.press(getByText('Pass & play'))
+    await fireEvent.press(getByText('Pass & Play'))
     await fireEvent.changeText(getByTestId('pnp-answer-input'), 'CAT')
     await fireEvent.changeText(getByTestId('pnp-hint-input'), 'A pet')
     await fireEvent(getByLabelText('Keep this word'), 'valueChange', true)
-    await fireEvent.press(getByText('Hand off'))
+    await fireEvent.press(getByText('Next'))
 
     // The RAW typed hint, not the resolved/normalized payload — matches what Main.tsx's
     // handlePnpAuthored actually passes to addCustomPuzzle. Second arg is the dedicated pass-and-
@@ -486,7 +486,7 @@ describe('Main — pass and play', () => {
     const { getByLabelText, getByText, getByTestId, findByText } = utils
 
     await fireEvent.press(getByLabelText('Game Menu'))
-    await fireEvent.press(getByText('Pass & play'))
+    await fireEvent.press(getByText('Pass & Play'))
 
     await fireEvent.changeText(getByTestId('pnp-answer-input'), 'CAT!')
 
@@ -494,6 +494,6 @@ describe('Main — pass and play', () => {
     // while the preview behind it silently showed blanks for "CAT", which is its own confusing
     // inconsistency distinct from the missing feedback.
     expect(getByTestId('pnp-answer-input').props.value).toBe('CAT')
-    expect(await findByText('Only letters and spaces')).toBeTruthy()
+    expect(await findByText('Only Letters and Spaces')).toBeTruthy()
   })
 })

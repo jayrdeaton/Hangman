@@ -17,7 +17,7 @@ export const alert = (title: string, message: string): Promise<void> =>
       })
       return
     }
-    Alert.alert(title, message, [{ text: 'Ok', onPress: () => resolve() }])
+    Alert.alert(title, message, [{ text: 'OK', onPress: () => resolve() }])
   })
 
 export const confirm = (title: string, message: string, confirmText = 'OK'): Promise<boolean> =>

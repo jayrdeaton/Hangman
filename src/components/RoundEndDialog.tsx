@@ -25,13 +25,9 @@ export type RoundEndDialogProps = {
   // above arrives pre-resolved rather than as a packKey this dialog would have to look up itself.
   unlockedAchievementTitles?: string[]
   onDismiss: () => void
-  // Overrides the continue button's wording. Pass-and-play uses this because continuing there means
-  // writing the next word rather than being handed another puzzle. Nothing else about the result
-  // changes: whoever is holding the device is "you", so the outcome copy stays as-is.
-  continueLabel?: string
 }
 
-export const RoundEndDialog = ({ visible, outcome, phrase, categoryProgress, unlockedAchievementTitles, onDismiss, continueLabel }: RoundEndDialogProps): JSX.Element => {
+export const RoundEndDialog = ({ visible, outcome, phrase, categoryProgress, unlockedAchievementTitles, onDismiss }: RoundEndDialogProps): JSX.Element => {
   const theme = useTheme()
   // Not gated on outcome === 'win' -- a pass-and-play LOSS can still cross a "games played"
   // threshold (see achievements.ts's pnp_played_* ladder), and the solo path never populates
@@ -67,7 +63,7 @@ export const RoundEndDialog = ({ visible, outcome, phrase, categoryProgress, unl
     <Dialog visible={visible} onDismiss={onDismiss}>
       <Dialog.Content style={styles.content}>
         <Text variant='headlineMedium' style={styles.title}>
-          {outcome === 'win' ? 'You win!' : 'You lost!'}
+          {outcome === 'win' ? 'You Win!' : 'You Lose!'}
         </Text>
         <Text variant='titleLarge' style={styles.phrase}>
           {phrase}
@@ -82,7 +78,7 @@ export const RoundEndDialog = ({ visible, outcome, phrase, categoryProgress, unl
               <Icon source='trophy' size={32} color={theme.colors.tertiary} />
             </Animated.View>
             <Text variant='titleMedium' style={styles.achievementsHeading}>
-              Achievement{unlockedAchievementTitles!.length > 1 ? 's' : ''} unlocked
+              Achievement{unlockedAchievementTitles!.length > 1 ? 's' : ''} Unlocked
             </Text>
             {unlockedAchievementTitles!.map((title) => (
               <Text key={title} variant='bodyMedium' style={styles.achievementTitle}>
@@ -107,7 +103,7 @@ export const RoundEndDialog = ({ visible, outcome, phrase, categoryProgress, unl
             separate "stay in this pack" action needed since it's not really a choice, just what
             continuing already means given how this round started. */}
         <Button mode='contained' onPress={onDismiss} style={styles.button} contentStyle={styles.buttonContent}>
-          {continueLabel ?? 'Next puzzle'}
+          Next
         </Button>
       </Dialog.Content>
     </Dialog>

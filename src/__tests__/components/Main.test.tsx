@@ -102,10 +102,10 @@ describe('Main', () => {
     // The puzzle already on screen was drawn before "Hard" was picked — changing the filter can't
     // retroactively change it, so the round plays out normally and ends on its own terms.
     await fireEvent.press(getByText('Q'))
-    expect(await findByText('You lost!')).toBeTruthy()
+    expect(await findByText('You Lose!')).toBeTruthy()
     expect(mockResolvePuzzle).toHaveBeenCalledTimes(1)
 
-    await fireEvent.press(getByText('Next puzzle'))
+    await fireEvent.press(getByText('Next'))
 
     expect(mockResolvePuzzle).toHaveBeenCalledTimes(2)
     // The live difficulty change is exactly what the automatic next round now reads — no drawer
@@ -118,9 +118,9 @@ describe('Main', () => {
     const { getByText, findByText } = await renderApp()
 
     await fireEvent.press(getByText('Q'))
-    expect(await findByText('You lost!')).toBeTruthy()
+    expect(await findByText('You Lose!')).toBeTruthy()
 
-    await fireEvent.press(getByText('Next puzzle'))
+    await fireEvent.press(getByText('Next'))
 
     expect(mockResolvePuzzle).toHaveBeenCalledTimes(2)
     expect(mockResolvePuzzle.mock.calls[1][1]).toEqual(['pack-1'])
@@ -131,9 +131,9 @@ describe('Main', () => {
     const { getByText, findByText } = await renderApp()
 
     await fireEvent.press(getByText('Q'))
-    expect(await findByText('You lost!')).toBeTruthy()
+    expect(await findByText('You Lose!')).toBeTruthy()
 
-    await fireEvent.press(getByText('Next puzzle'))
+    await fireEvent.press(getByText('Next'))
 
     expect(mockResolvePuzzle).toHaveBeenCalledTimes(2)
     // Same packKeys the initial auto-start itself drew from (the live selection) — not narrowed to

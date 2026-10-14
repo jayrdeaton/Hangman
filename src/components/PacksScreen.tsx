@@ -138,9 +138,9 @@ export const PacksScreen = memo(({ visible, onDismiss, selectedKeys, onChangeSel
   const handleShare = useCallback(async (key: string, label: string) => {
     try {
       const shared = await shareCustomPackFile(key, label)
-      if (!shared) void alert("Couldn't share", 'Sharing is not available on this device.')
+      if (!shared) void alert("Couldn't Share", 'Sharing is not available on this device.')
     } catch {
-      void alert("Couldn't share", 'Something went wrong sharing this pack. Please try again.')
+      void alert("Couldn't Share", 'Something went wrong sharing this pack. Please try again.')
     }
   }, [])
 
@@ -160,9 +160,9 @@ export const PacksScreen = memo(({ visible, onDismiss, selectedKeys, onChangeSel
       const pack = await importCustomPack(raw)
       selectKey(pack.key)
       onPacksChanged()
-      void alert('Pack imported', `Added "${pack.label}" (${commaString(pack.puzzles.length)} puzzles) to your packs.`)
+      void alert('Pack Imported', `Added "${pack.label}" (${commaString(pack.puzzles.length)} puzzle${pack.puzzles.length === 1 ? '' : 's'}) to your packs.`)
     } catch {
-      void alert('Invalid pack', 'Could not read that as a Hangman pack file.')
+      void alert('Invalid Pack', 'Could not read that as a Hangman pack file.')
     }
   }, [selectKey, onPacksChanged])
 
@@ -210,7 +210,7 @@ export const PacksScreen = memo(({ visible, onDismiss, selectedKeys, onChangeSel
       <>
         <View style={styles.sectionHeaderRow}>
           <Text variant='titleSmall' style={styles.sectionHeaderInRow}>
-            My packs
+            My Packs
           </Text>
           <View style={styles.sectionActions}>
             <Button
@@ -270,7 +270,7 @@ export const PacksScreen = memo(({ visible, onDismiss, selectedKeys, onChangeSel
         )}
 
         <Text variant='titleSmall' style={styles.sectionHeader}>
-          Built-in packs
+          Built-In Packs
         </Text>
       </>
     ),
@@ -299,7 +299,7 @@ export const PacksScreen = memo(({ visible, onDismiss, selectedKeys, onChangeSel
                 back/close action in the app; IconButton already fires the app's own haptic
                 convention on press itself, so this needs no manual selection() call the way the
                 callback form used to. */}
-            <ScrollViewHeader title='Choose packs' actionSize={40} backAction={<IconButton icon='arrow-left' mode='contained' hitSlop={ICON_ACTION_HIT_SLOP} containerColor={theme.colors.tertiary} iconColor={theme.colors.onTertiary} onPress={onDismiss} accessibilityLabel='Close' />} />
+            <ScrollViewHeader title='Choose Packs' actionSize={40} backAction={<IconButton icon='arrow-left' mode='contained' hitSlop={ICON_ACTION_HIT_SLOP} containerColor={theme.colors.tertiary} iconColor={theme.colors.onTertiary} onPress={onDismiss} accessibilityLabel='Close' />} />
 
             {/* "My packs" through the "Built-in packs" label live in listHeader (see its own
                 declaration above) — everything above the built-in pack list scrolls away with it
@@ -330,7 +330,7 @@ export const PacksScreen = memo(({ visible, onDismiss, selectedKeys, onChangeSel
                   Clear
                 </Button>
                 <Button mode='contained' buttonColor={theme.colors.tertiary} textColor={theme.colors.onTertiary} icon='select-all' onPress={() => onChangeSelectedKeys(manifest.map((item) => item.key))} style={styles.quickActionButton}>
-                  Select all
+                  All
                 </Button>
               </View>
               <Button mode='contained' icon='check' onPress={onDismiss} style={styles.footerButton}>

@@ -76,15 +76,15 @@ describe('Main — achievement unlocks inside the round-end dialog', () => {
 
     // recordSolve has already resolved by now (it's an immediately-resolved mock), but the dialog
     // itself is still gated behind WIN_DIALOG_DELAY_MS (see Game.tsx) — nothing to see yet.
-    expect(queryByText('You win!')).toBeNull()
+    expect(queryByText('You Win!')).toBeNull()
     expect(queryByText('Flawless Victory')).toBeNull()
 
     await act(async () => {
       jest.advanceTimersByTime(WIN_DIALOG_DELAY_MS)
     })
 
-    expect(getByText('You win!')).toBeTruthy()
-    expect(getByText('Achievement unlocked')).toBeTruthy()
+    expect(getByText('You Win!')).toBeTruthy()
+    expect(getByText('Achievement Unlocked')).toBeTruthy()
     expect(getByText('Flawless Victory')).toBeTruthy()
 
     jest.useRealTimers()
@@ -101,8 +101,8 @@ describe('Main — achievement unlocks inside the round-end dialog', () => {
       jest.advanceTimersByTime(WIN_DIALOG_DELAY_MS)
     })
 
-    expect(getByText('You win!')).toBeTruthy()
-    expect(queryByText('Achievement unlocked')).toBeNull()
+    expect(getByText('You Win!')).toBeTruthy()
+    expect(queryByText('Achievement Unlocked')).toBeNull()
     expect(queryByText(/Achievements unlocked/)).toBeNull()
 
     jest.useRealTimers()
@@ -119,7 +119,7 @@ describe('Main — achievement unlocks inside the round-end dialog', () => {
       jest.advanceTimersByTime(WIN_DIALOG_DELAY_MS)
     })
 
-    expect(getByText('Achievements unlocked')).toBeTruthy()
+    expect(getByText('Achievements Unlocked')).toBeTruthy()
     expect(getByText('Flawless Victory')).toBeTruthy()
     expect(getByText('No Hints Needed')).toBeTruthy()
 

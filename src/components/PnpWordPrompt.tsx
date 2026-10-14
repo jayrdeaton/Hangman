@@ -60,7 +60,7 @@ export const PnpWordPrompt = ({ answer, hint, onAnswerChange, onHintChange, prom
   const handleAnswerChange = (text: string) => {
     const separated = text.replace(WORD_SEPARATORS, ' ')
     const cleaned = separated.replace(/[^A-Za-z ]/g, '')
-    if (cleaned !== separated) warning('Only letters and spaces')
+    if (cleaned !== separated) warning('Only Letters and Spaces')
     onAnswerChange(cleaned)
   }
 
@@ -90,7 +90,7 @@ export const PnpWordPrompt = ({ answer, hint, onAnswerChange, onHintChange, prom
     // DialogShell rather than a bare Dialog — it already pairs a title with a close IconButton in
     // one header row, which is exactly what's needed now that there's a title, rather than a
     // bespoke corner icon. "Pass & play" matches the button that launches this, in PuzzleDrawer.
-    <DialogShell visible={promptVisible} onDismiss={onRequestMenu} title='Pass & play' avoidKeyboard>
+    <DialogShell visible={promptVisible} onDismiss={onRequestMenu} title='Pass & Play' avoidKeyboard>
       <TextInput
         testID='pnp-answer-input'
         ref={answerRef}
@@ -101,7 +101,7 @@ export const PnpWordPrompt = ({ answer, hint, onAnswerChange, onHintChange, prom
         submitBehavior='submit'
         value={answer}
         onChangeText={handleAnswerChange}
-        label='Solution'
+        label='Word or Phrase'
         autoCapitalize='characters'
         autoCorrect={false}
         spellCheck={false}
@@ -122,7 +122,7 @@ export const PnpWordPrompt = ({ answer, hint, onAnswerChange, onHintChange, prom
         style={styles.hintInput}
         value={hint}
         onChangeText={onHintChange}
-        label='Hint (optional)'
+        label='Hint (Optional)'
         autoCapitalize='none'
         autoCorrect={false}
         spellCheck={false}
@@ -133,7 +133,7 @@ export const PnpWordPrompt = ({ answer, hint, onAnswerChange, onHintChange, prom
           needs to reflect the shared preference, not act on it itself. */}
       <View style={styles.autoSaveRow}>
         <View style={styles.flex}>
-          <Text variant='bodyLarge'>Keep this word</Text>
+          <Text variant='bodyLarge'>Keep This Word</Text>
           <Text variant='bodySmall' style={styles.muted}>
             Saves it to your Pass & Play pack
           </Text>
@@ -141,7 +141,7 @@ export const PnpWordPrompt = ({ answer, hint, onAnswerChange, onHintChange, prom
         <Switch value={autoSave} onValueChange={setAutoSave} accessibilityLabel='Keep this word' />
       </View>
       <Button mode='contained' icon='arrow-right' onPress={handleStart} disabled={!preview} style={styles.startButton} contentStyle={styles.startContent} labelStyle={styles.startLabel}>
-        Hand off
+        Next
       </Button>
     </DialogShell>
   )

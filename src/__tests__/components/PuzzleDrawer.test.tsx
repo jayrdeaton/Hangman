@@ -137,7 +137,7 @@ describe('PuzzleDrawer', () => {
     expect(getByText('Difficulty')).toBeTruthy()
     expect(queryByText('Custom')).toBeNull()
     expect(getByText('Random')).toBeTruthy()
-    expect(getByText('Pass & play')).toBeTruthy()
+    expect(getByText('Pass & Play')).toBeTruthy()
   })
 
   it('labels the "All packs" row "All Packs" once every built-in pack is selected, not a count', async () => {
@@ -396,7 +396,7 @@ describe('PuzzleDrawer', () => {
 
     await fireEvent.press(getByLabelText('Check for updates'))
 
-    expect(mockAlert).toHaveBeenCalledWith('Updates unavailable', 'Update checks are disabled in development mode.')
+    expect(mockAlert).toHaveBeenCalledWith('Updates Unavailable', 'Update checks are disabled in development mode.')
     expect(mockCheck).not.toHaveBeenCalled()
   })
 

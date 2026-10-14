@@ -70,7 +70,7 @@ describe('Main — abandoning an in-progress puzzle counts as a loss', () => {
     await fireEvent.press(getByLabelText('Game Menu'))
     await fireEvent.press(getByText('Random'))
 
-    expect(getByText('Abandon this puzzle?')).toBeTruthy()
+    expect(getByText('Abandon This Puzzle?')).toBeTruthy()
     // resolvePuzzle has been asked twice by this point — once for the initial session on mount,
     // once more for Random's own candidate draw (PuzzleDrawer computes it up front, independent of
     // whether Main actually accepts it) — but that candidate is only HELD pending confirmation, not
@@ -102,7 +102,7 @@ describe('Main — abandoning an in-progress puzzle counts as a loss', () => {
     await fireEvent.press(getByText('Random'))
     await fireEvent.press(getByText('Cancel'))
 
-    expect(queryByText('Abandon this puzzle?')).toBeNull()
+    expect(queryByText('Abandon This Puzzle?')).toBeNull()
     expect(mockRecordLoss).not.toHaveBeenCalled()
     // The candidate Random already drew (see the previous test) was discarded, not applied — no
     // THIRD resolvePuzzle call from cancelling, on top of the mount + Random-press pair.
@@ -116,7 +116,7 @@ describe('Main — abandoning an in-progress puzzle counts as a loss', () => {
     await fireEvent.press(getByLabelText('Game Menu'))
     await fireEvent.press(getByText('Random'))
 
-    expect(queryByText('Abandon this puzzle?')).toBeNull()
+    expect(queryByText('Abandon This Puzzle?')).toBeNull()
     expect(mockRecordLoss).not.toHaveBeenCalled()
     expect(mockResolvePuzzle).toHaveBeenCalledTimes(2)
   })
@@ -126,14 +126,14 @@ describe('Main — abandoning an in-progress puzzle counts as a loss', () => {
     const { getByLabelText, getByText, findByText, queryByText } = await renderApp()
 
     await fireEvent.press(getByText('Q'))
-    expect(await findByText('You lost!')).toBeTruthy()
+    expect(await findByText('You Lose!')).toBeTruthy()
     // The real loss already recorded it — this is the ONE call, not a second one from abandoning.
     expect(mockRecordLoss).toHaveBeenCalledTimes(1)
 
     await fireEvent.press(getByLabelText('Game Menu'))
     await fireEvent.press(getByText('Random'))
 
-    expect(queryByText('Abandon this puzzle?')).toBeNull()
+    expect(queryByText('Abandon This Puzzle?')).toBeNull()
     expect(mockRecordLoss).toHaveBeenCalledTimes(1)
     expect(mockResolvePuzzle).toHaveBeenCalledTimes(2)
   })
@@ -144,11 +144,11 @@ describe('Main — abandoning an in-progress puzzle counts as a loss', () => {
 
     await fireEvent.press(getByText('Q'))
     await fireEvent.press(getByLabelText('Game Menu'))
-    await fireEvent.press(getByText('Pass & play'))
+    await fireEvent.press(getByText('Pass & Play'))
 
-    expect(getByText('Abandon this puzzle?')).toBeTruthy()
+    expect(getByText('Abandon This Puzzle?')).toBeTruthy()
     // Gating stops short of applying the switch — the menu (and its own now-hidden-behind-the-
-    // dialog "Pass & play" button) hasn't been dismissed, and no composing screen exists yet.
+    // dialog "Pass & Play" button) hasn't been dismissed, and no composing screen exists yet.
     expect(getByTestId('puzzle-drawer-panel').props.accessibilityElementsHidden).toBe(false)
 
     await fireEvent.press(getByText('Abandon'))
@@ -158,6 +158,6 @@ describe('Main — abandoning an in-progress puzzle counts as a loss', () => {
     // "titles the prompt to match the button that launched it") — the drawer's OWN same-labeled
     // button is accessibility-hidden by now (the menu closed as part of applying the switch), so
     // this is the one remaining match.
-    expect(getByText('Pass & play')).toBeTruthy()
+    expect(getByText('Pass & Play')).toBeTruthy()
   })
 })

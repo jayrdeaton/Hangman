@@ -212,7 +212,7 @@ describe('hangmanFile', () => {
 
       expect(result).toBe(true)
       expect(mockFileStore.get('mock-cache/hangman-progress-backup.hangman')).toBe('{"unlocks":{}}')
-      expect(Sharing.shareAsync).toHaveBeenCalledWith('mock-cache/hangman-progress-backup.hangman', expect.objectContaining({ mimeType: 'application/x-hangman', dialogTitle: 'Share progress backup' }))
+      expect(Sharing.shareAsync).toHaveBeenCalledWith('mock-cache/hangman-progress-backup.hangman', expect.objectContaining({ mimeType: 'application/x-hangman', dialogTitle: 'Share Progress Backup' }))
     })
 
     it('native: returns false without sharing when the share sheet is unavailable on this device', async () => {
