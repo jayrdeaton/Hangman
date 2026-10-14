@@ -17118,24 +17118,6 @@
     }
   },
   {
-    "id": "ae5d9989a5e919f5c6b01f2bff77f415",
-    "source": "movie",
-    "type": "title",
-    "answer": "Everything You Always Wanted to Know About Sex * But Were Afraid to Ask",
-    "normalizedAnswer": "EVERYTHING YOU ALWAYS WANTED TO KNOW ABOUT SEX BUT WERE AFRAID TO ASK",
-    "category": "Comedy",
-    "difficulty": 24,
-    "difficultyTier": "easy",
-    "wordCount": 13,
-    "letterCount": 57,
-    "uniqueLetterCount": 20,
-    "metadata": {
-      "year": "1972",
-      "rating": 6.7,
-      "votes": 44128
-    }
-  },
-  {
     "id": "783e6ac60061ce50233b2c7abfe32d1a",
     "source": "movie",
     "type": "title",
@@ -21075,24 +21057,6 @@
       "year": "1977",
       "rating": 7.3,
       "votes": 26794
-    }
-  },
-  {
-    "id": "afbeddfe87786dc69e1a1ab2069a171e",
-    "source": "movie",
-    "type": "title",
-    "answer": "The Inglorious Bastards",
-    "normalizedAnswer": "THE INGLORIOUS BASTARDS",
-    "category": "Action",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 21,
-    "uniqueLetterCount": 14,
-    "metadata": {
-      "year": "1978",
-      "rating": 6.5,
-      "votes": 11069
     }
   },
   {
@@ -25074,24 +25038,6 @@
     }
   },
   {
-    "id": "270054f70173c132981ebd2da4032a15",
-    "source": "movie",
-    "type": "title",
-    "answer": "The Best Little Whorehouse in Texas",
-    "normalizedAnswer": "THE BEST LITTLE WHOREHOUSE IN TEXAS",
-    "category": "Comedy",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 30,
-    "uniqueLetterCount": 14,
-    "metadata": {
-      "year": "1982",
-      "rating": 6.1,
-      "votes": 13394
-    }
-  },
-  {
     "id": "ad0ff3b1174ed62a3dcef22bfd715652",
     "source": "movie",
     "type": "title",
@@ -25380,24 +25326,6 @@
     }
   },
   {
-    "id": "9fe0a8fe843f28866a78109bf3cae68c",
-    "source": "movie",
-    "type": "title",
-    "answer": "The Last American Virgin",
-    "normalizedAnswer": "THE LAST AMERICAN VIRGIN",
-    "category": "Comedy",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 21,
-    "uniqueLetterCount": 13,
-    "metadata": {
-      "year": "1982",
-      "rating": 6.3,
-      "votes": 10997
-    }
-  },
-  {
     "id": "f45d01c2011aa264239d6964f22e0c29",
     "source": "movie",
     "type": "title",
@@ -25431,24 +25359,6 @@
       "year": "1982",
       "rating": 7.2,
       "votes": 10872
-    }
-  },
-  {
-    "id": "0758277d7b9648a590768e0c1ac803f0",
-    "source": "movie",
-    "type": "title",
-    "answer": "A Midsummer Night's Sex Comedy",
-    "normalizedAnswer": "A MIDSUMMER NIGHTS SEX COMEDY",
-    "category": "Comedy",
-    "difficulty": 40,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 25,
-    "uniqueLetterCount": 16,
-    "metadata": {
-      "year": "1982",
-      "rating": 6.6,
-      "votes": 22038
     }
   },
   {
@@ -35820,24 +35730,6 @@
     }
   },
   {
-    "id": "e9795823a829dde7bfe69f75e3333b3f",
-    "source": "movie",
-    "type": "title",
-    "answer": "Sex, Lies, and Videotape",
-    "normalizedAnswer": "SEX LIES AND VIDEOTAPE",
-    "category": "Drama",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 19,
-    "uniqueLetterCount": 12,
-    "metadata": {
-      "year": "1989",
-      "rating": 7.2,
-      "votes": 64921
-    }
-  },
-  {
     "id": "a8c09612ba212785174c4a8487116b6d",
     "source": "movie",
     "type": "title",
@@ -44352,24 +44244,6 @@
     }
   },
   {
-    "id": "563cad7d8c968de67ce94370057b70a1",
-    "source": "movie",
-    "type": "title",
-    "answer": "Threesome",
-    "normalizedAnswer": "THREESOME",
-    "category": "Comedy",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 9,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "1994",
-      "rating": 6.3,
-      "votes": 14317
-    }
-  },
-  {
     "id": "cc98d37ac0f7a86b9bc6a7b179b899e7",
     "source": "movie",
     "type": "title",
@@ -52380,24 +52254,6 @@
     }
   },
   {
-    "id": "38de275d8232e9eba1df06ef93229676",
-    "source": "movie",
-    "type": "title",
-    "answer": "The Opposite of Sex",
-    "normalizedAnswer": "THE OPPOSITE OF SEX",
-    "category": "Comedy",
-    "difficulty": 68,
-    "difficultyTier": "medium",
-    "wordCount": 4,
-    "letterCount": 16,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "1998",
-      "rating": 6.4,
-      "votes": 22289
-    }
-  },
-  {
     "id": "d22ca1c7b25688a837f1db3447aa298f",
     "source": "movie",
     "type": "title",
@@ -53604,24 +53460,6 @@
     }
   },
   {
-    "id": "9759fa052f74e513423a66ca489ddef9",
-    "source": "movie",
-    "type": "title",
-    "answer": "Pecker",
-    "normalizedAnswer": "PECKER",
-    "category": "Comedy",
-    "difficulty": 87.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "year": "1998",
-      "rating": 6.4,
-      "votes": 15765
-    }
-  },
-  {
     "id": "9a90fa3fff8e6f864c268b370c44a35e",
     "source": "movie",
     "type": "title",
@@ -54810,24 +54648,6 @@
     }
   },
   {
-    "id": "d74b1f3f900eda5c159e0a3069b4708a",
-    "source": "movie",
-    "type": "title",
-    "answer": "Dick",
-    "normalizedAnswer": "DICK",
-    "category": "Comedy",
-    "difficulty": 92.4,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 4,
-    "uniqueLetterCount": 4,
-    "metadata": {
-      "year": "1999",
-      "rating": 6.2,
-      "votes": 22817
-    }
-  },
-  {
     "id": "5aba6984e3a2cee036dd3c33bf4a2076",
     "source": "movie",
     "type": "title",
@@ -54969,24 +54789,6 @@
       "year": "1999",
       "rating": 7.3,
       "votes": 24552
-    }
-  },
-  {
-    "id": "5ac390562b98240099bdea14c5b37c72",
-    "source": "movie",
-    "type": "title",
-    "answer": "Austin Powers: The Spy Who Shagged Me",
-    "normalizedAnswer": "AUSTIN POWERS THE SPY WHO SHAGGED ME",
-    "category": "Action",
-    "difficulty": 40,
-    "difficultyTier": "easy",
-    "wordCount": 7,
-    "letterCount": 30,
-    "uniqueLetterCount": 16,
-    "metadata": {
-      "year": "1999",
-      "rating": 6.7,
-      "votes": 263692
     }
   },
   {
@@ -58050,24 +57852,6 @@
     }
   },
   {
-    "id": "d3725efe7afe5be89ccab133f0a8a514",
-    "source": "movie",
-    "type": "title",
-    "answer": "Sexy Beast",
-    "normalizedAnswer": "SEXY BEAST",
-    "category": "Crime",
-    "difficulty": 78.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2000",
-      "rating": 7.3,
-      "votes": 76328
-    }
-  },
-  {
     "id": "70163111534ad9bd7033c4b197e2eeff",
     "source": "movie",
     "type": "title",
@@ -60783,24 +60567,6 @@
       "year": "2001",
       "rating": 6.3,
       "votes": 19533
-    }
-  },
-  {
-    "id": "b38f64455f8848461cb630db760f909d",
-    "source": "movie",
-    "type": "title",
-    "answer": "Sex and Lucía",
-    "normalizedAnswer": "SEX AND LUCIA",
-    "category": "Drama",
-    "difficulty": 65.6,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 11,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "year": "2001",
-      "rating": 7,
-      "votes": 40717
     }
   },
   {
@@ -70323,24 +70089,6 @@
       "year": "2004",
       "rating": 7,
       "votes": 40169
-    }
-  },
-  {
-    "id": "959278b844593287f9af872c320a1758",
-    "source": "movie",
-    "type": "title",
-    "answer": "Cocaine Cowboys",
-    "normalizedAnswer": "COCAINE COWBOYS",
-    "category": "Crime",
-    "difficulty": 64.4,
-    "difficultyTier": "easy",
-    "wordCount": 2,
-    "letterCount": 14,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "year": "2006",
-      "rating": 7.7,
-      "votes": 14721
     }
   },
   {
@@ -91494,24 +91242,6 @@
     }
   },
   {
-    "id": "166049fe3ddaf2a3f832fb69160525ce",
-    "source": "movie",
-    "type": "title",
-    "answer": "Sex Drive",
-    "normalizedAnswer": "SEX DRIVE",
-    "category": "Comedy",
-    "difficulty": 78.8,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 8,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2008",
-      "rating": 6.5,
-      "votes": 96364
-    }
-  },
-  {
     "id": "ee47090c23e1b7dfc76d633665879623",
     "source": "movie",
     "type": "title",
@@ -95739,24 +95469,6 @@
       "year": "2022",
       "rating": 7.3,
       "votes": 70416
-    }
-  },
-  {
-    "id": "898bf26ae11ce5c7b933bcf18e519320",
-    "source": "movie",
-    "type": "title",
-    "answer": "Kick-Ass",
-    "normalizedAnswer": "KICKASS",
-    "category": "Action",
-    "difficulty": 87.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "year": "2010",
-      "rating": 7.6,
-      "votes": 622686
     }
   },
   {
@@ -111924,24 +111636,6 @@
     }
   },
   {
-    "id": "85528e26cb26ebd3bdf71fb8a0f283ba",
-    "source": "movie",
-    "type": "title",
-    "answer": "My Old Ass",
-    "normalizedAnswer": "MY OLD ASS",
-    "category": "Comedy",
-    "difficulty": 78.8,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 8,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2024",
-      "rating": 6.9,
-      "votes": 47962
-    }
-  },
-  {
     "id": "7f0b38c6fe0b30075995393ffab19746",
     "source": "movie",
     "type": "title",
@@ -115776,24 +115470,6 @@
     }
   },
   {
-    "id": "501dde0efe57a681b6efc4ec241c8b5a",
-    "source": "movie",
-    "type": "title",
-    "answer": "An Awkward Sexual Adventure",
-    "normalizedAnswer": "AN AWKWARD SEXUAL ADVENTURE",
-    "category": "Comedy",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 24,
-    "uniqueLetterCount": 13,
-    "metadata": {
-      "year": "2012",
-      "rating": 6.1,
-      "votes": 10673
-    }
-  },
-  {
     "id": "d4468947ca99b0003bda8dbd482be222",
     "source": "movie",
     "type": "title",
@@ -118257,24 +117933,6 @@
       "year": "2024",
       "rating": 6.1,
       "votes": 10514
-    }
-  },
-  {
-    "id": "096b2f6a160badf57a5440994ed5bf99",
-    "source": "movie",
-    "type": "title",
-    "answer": "How to Have Sex",
-    "normalizedAnswer": "HOW TO HAVE SEX",
-    "category": "Drama",
-    "difficulty": 69.2,
-    "difficultyTier": "medium",
-    "wordCount": 4,
-    "letterCount": 12,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "year": "2023",
-      "rating": 6.4,
-      "votes": 23362
     }
   },
   {
@@ -126555,24 +126213,6 @@
       "year": "2026",
       "rating": 6.2,
       "votes": 75806
-    }
-  },
-  {
-    "id": "ae1310ad4384d4e9af5a77afe739886a",
-    "source": "movie",
-    "type": "title",
-    "answer": "Pimp",
-    "normalizedAnswer": "PIMP",
-    "category": "Crime",
-    "difficulty": 96.4,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 4,
-    "uniqueLetterCount": 3,
-    "metadata": {
-      "year": "2018",
-      "rating": 6.4,
-      "votes": 21733
     }
   },
   {
@@ -150675,24 +150315,6 @@
       "year": "2020",
       "rating": 7.3,
       "votes": 220648
-    }
-  },
-  {
-    "id": "3dec3d9dd97d951de3de16102e068073",
-    "source": "movie",
-    "type": "title",
-    "answer": "Bloody Hell",
-    "normalizedAnswer": "BLOODY HELL",
-    "category": "Comedy",
-    "difficulty": 78,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 10,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "year": "2020",
-      "rating": 6.6,
-      "votes": 12569
     }
   },
   {

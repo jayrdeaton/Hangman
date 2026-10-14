@@ -130,7 +130,7 @@ export const puzzleManifest: PuzzleManifestItem[] = [
     "file": "movies.json",
     "label": "Movies",
     "group": "Media",
-    "count": 8389,
+    "count": 8368,
     "difficultyTiers": [
       "easy",
       "hard",
@@ -189,7 +189,7 @@ export const puzzleManifest: PuzzleManifestItem[] = [
     "file": "songs.json",
     "label": "Songs",
     "group": "Media",
-    "count": 1806,
+    "count": 1784,
     "difficultyTiers": [
       "easy",
       "hard",
@@ -817,7 +817,7 @@ export const puzzleManifest: PuzzleManifestItem[] = [
     "file": "themeLiterature.json",
     "label": "Literature",
     "group": "Media",
-    "count": 241,
+    "count": 239,
     "difficultyTiers": [
       "easy",
       "hard",
@@ -1071,7 +1071,7 @@ export const puzzleManifest: PuzzleManifestItem[] = [
     "file": "tvShows.json",
     "label": "TV Shows",
     "group": "Media",
-    "count": 4028,
+    "count": 4016,
     "difficultyTiers": [
       "easy",
       "hard",

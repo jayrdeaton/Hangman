@@ -1470,27 +1470,6 @@
     }
   },
   {
-    "id": "9d480ab071674864368a9c02263d80f2",
-    "source": "theme",
-    "type": "title",
-    "answer": "The Happy Hooker: My Own Story",
-    "normalizedAnswer": "THE HAPPY HOOKER MY OWN STORY",
-    "category": "Book Title",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 24,
-    "uniqueLetterCount": 13,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
     "id": "ac6b4a4450391d72f4c91f1d5c5063b3",
     "source": "theme",
     "type": "title",
@@ -2845,27 +2824,6 @@
     "difficultyTier": "medium",
     "wordCount": 3,
     "letterCount": 12,
-    "uniqueLetterCount": 9,
-    "tags": [
-      "theme",
-      "literature",
-      "book"
-    ],
-    "metadata": {
-      "source": "https://en.wikipedia.org/wiki/List_of_best-selling_books"
-    }
-  },
-  {
-    "id": "1c930af0308a90bb5a4554845a910ed3",
-    "source": "theme",
-    "type": "title",
-    "answer": "The Joy of Sex",
-    "normalizedAnswer": "THE JOY OF SEX",
-    "category": "Book Title",
-    "difficulty": 69.6,
-    "difficultyTier": "medium",
-    "wordCount": 4,
-    "letterCount": 11,
     "uniqueLetterCount": 9,
     "tags": [
       "theme",

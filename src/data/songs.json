@@ -1926,24 +1926,6 @@
     }
   },
   {
-    "id": "eed3877829f6710767a264b57161226d",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Promiscuous",
-    "normalizedAnswer": "PROMISCUOUS",
-    "category": "Song",
-    "difficulty": 73.6,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 11,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "artist": "Nelly Furtado",
-      "listeners": 2370375,
-      "playcount": 24062141
-    }
-  },
-  {
     "id": "629bcc80926c4395d29a9bc44421b0e4",
     "source": "music-song",
     "type": "song",
@@ -2085,24 +2067,6 @@
       "artist": "Drake",
       "listeners": 2066022,
       "playcount": 24534887
-    }
-  },
-  {
-    "id": "770bf5086f5ef1a708c1c375103b1179",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Janice STFU",
-    "normalizedAnswer": "JANICE STFU",
-    "category": "Song",
-    "difficulty": 66,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 10,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "artist": "Drake",
-      "listeners": 421162,
-      "playcount": 4056880
     }
   },
   {
@@ -2970,24 +2934,6 @@
     }
   },
   {
-    "id": "e779608f3b88f83765ba4eeaffe0a2ff",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Sextape",
-    "normalizedAnswer": "SEXTAPE",
-    "category": "Song",
-    "difficulty": 83.2,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 7,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "artist": "Deftones",
-      "listeners": 1621261,
-      "playcount": 29970291
-    }
-  },
-  {
     "id": "40ab5f5a504259246c855ee393c8f963",
     "source": "music-song",
     "type": "song",
@@ -3075,24 +3021,6 @@
       "artist": "Lady Gaga",
       "listeners": 1930397,
       "playcount": 23876893
-    }
-  },
-  {
-    "id": "761b561eaf4f9e1a5f158cf701be5475",
-    "source": "music-song",
-    "type": "song",
-    "answer": "lovesexdrugbomb",
-    "normalizedAnswer": "LOVESEXDRUGBOMB",
-    "category": "Song",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 1,
-    "letterCount": 15,
-    "uniqueLetterCount": 12,
-    "metadata": {
-      "artist": "Steve Lacy",
-      "listeners": 75362,
-      "playcount": 197862
     }
   },
   {
@@ -4425,24 +4353,6 @@
       "artist": "Maroon 5",
       "listeners": 2578508,
       "playcount": 21563655
-    }
-  },
-  {
-    "id": "493bf398b24b5d3fe151b0461d04fc5c",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Softcore",
-    "normalizedAnswer": "SOFTCORE",
-    "category": "Song",
-    "difficulty": 78.8,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 7,
-    "metadata": {
-      "artist": "The Neighbourhood",
-      "listeners": 1612878,
-      "playcount": 27940716
     }
   },
   {
@@ -5886,24 +5796,6 @@
     }
   },
   {
-    "id": "950896859c27cfa6ec784ce118f96448",
-    "source": "music-song",
-    "type": "song",
-    "answer": "SexyBack",
-    "normalizedAnswer": "SEXYBACK",
-    "category": "Song",
-    "difficulty": 74.8,
-    "difficultyTier": "medium",
-    "wordCount": 1,
-    "letterCount": 8,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "artist": "Justin Timberlake",
-      "listeners": 1654265,
-      "playcount": 12549887
-    }
-  },
-  {
     "id": "4c1944fd0645390a0de8a323a1f1a3ec",
     "source": "music-song",
     "type": "song",
@@ -7164,24 +7056,6 @@
     }
   },
   {
-    "id": "08795f6e8fc45f4711291001e08e8910",
-    "source": "music-song",
-    "type": "song",
-    "answer": "I Smoked Away My Brain",
-    "normalizedAnswer": "I SMOKED AWAY MY BRAIN",
-    "category": "Song",
-    "difficulty": 52,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 18,
-    "uniqueLetterCount": 13,
-    "metadata": {
-      "artist": "A$AP Rocky",
-      "listeners": 1136401,
-      "playcount": 19662308
-    }
-  },
-  {
     "id": "6ff63eeb59054144209497fce9e2433d",
     "source": "music-song",
     "type": "song",
@@ -7323,24 +7197,6 @@
       "artist": "The Weeknd",
       "listeners": 2182582,
       "playcount": 28643722
-    }
-  },
-  {
-    "id": "e652442eda8906e236202cc75a9668ff",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Sex, Drugs, Etc.",
-    "normalizedAnswer": "SEX DRUGS ETC",
-    "category": "Song",
-    "difficulty": 69.6,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 11,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "artist": "Beach Weather",
-      "listeners": 1369604,
-      "playcount": 20176693
     }
   },
   {
@@ -12060,24 +11916,6 @@
     }
   },
   {
-    "id": "ceec57990461fde6e9079ea43d684d5f",
-    "source": "music-song",
-    "type": "song",
-    "answer": "House of Balloons / Glass Table Girls",
-    "normalizedAnswer": "HOUSE OF BALLOONS GLASS TABLE GIRLS",
-    "category": "Song",
-    "difficulty": 48,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 30,
-    "uniqueLetterCount": 14,
-    "metadata": {
-      "artist": "The Weeknd",
-      "listeners": 1033115,
-      "playcount": 13707265
-    }
-  },
-  {
     "id": "ae8179350e75ee3e48ed76ba19d0189d",
     "source": "music-song",
     "type": "song",
@@ -14346,24 +14184,6 @@
     }
   },
   {
-    "id": "4f42690ad781ac1ac59ce40fee2efce8",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Lying Is the Most Fun a Girl Can Have Without Taking Her Clothes Off",
-    "normalizedAnswer": "LYING IS THE MOST FUN A GIRL CAN HAVE WITHOUT TAKING HER CLOTHES OFF",
-    "category": "Song",
-    "difficulty": 28,
-    "difficultyTier": "easy",
-    "wordCount": 14,
-    "letterCount": 55,
-    "uniqueLetterCount": 19,
-    "metadata": {
-      "artist": "Panic! at the Disco",
-      "listeners": 1351565,
-      "playcount": 17025466
-    }
-  },
-  {
     "id": "f8ab37da91e3d032c3642b75f3a20b69",
     "source": "music-song",
     "type": "song",
@@ -16344,24 +16164,6 @@
     }
   },
   {
-    "id": "a2c6eff6222a585099562e67031d7051",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Sexy To Someone",
-    "normalizedAnswer": "SEXY TO SOMEONE",
-    "category": "Song",
-    "difficulty": 72.8,
-    "difficultyTier": "medium",
-    "wordCount": 3,
-    "letterCount": 13,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "artist": "Clairo",
-      "listeners": 1037459,
-      "playcount": 15122969
-    }
-  },
-  {
     "id": "d896db7a09202025eb358e29584583e4",
     "source": "music-song",
     "type": "song",
@@ -17421,24 +17223,6 @@
       "artist": "Weezer",
       "listeners": 765511,
       "playcount": 5264935
-    }
-  },
-  {
-    "id": "1c1eda259759eb3f82cfa8da36b07420",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Crack Rock",
-    "normalizedAnswer": "CRACK ROCK",
-    "category": "Song",
-    "difficulty": 86.4,
-    "difficultyTier": "hard",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "artist": "Frank Ocean",
-      "listeners": 1207128,
-      "playcount": 16055923
     }
   },
   {
@@ -20628,24 +20412,6 @@
     }
   },
   {
-    "id": "8ef85a9519f378793a35844f9df7ae9e",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Wet Dreamz",
-    "normalizedAnswer": "WET DREAMZ",
-    "category": "Song",
-    "difficulty": 74.4,
-    "difficultyTier": "medium",
-    "wordCount": 2,
-    "letterCount": 9,
-    "uniqueLetterCount": 8,
-    "metadata": {
-      "artist": "J. Cole",
-      "listeners": 1283211,
-      "playcount": 17292115
-    }
-  },
-  {
     "id": "83c31fbce55c91d9e0c9eb1190a9c1f1",
     "source": "music-song",
     "type": "song",
@@ -21237,24 +21003,6 @@
       "artist": "Bruno Mars",
       "listeners": 1629307,
       "playcount": 13137491
-    }
-  },
-  {
-    "id": "4e355d532244107fc6efebbbd0eba969",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Never Getting Laid",
-    "normalizedAnswer": "NEVER GETTING LAID",
-    "category": "Song",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 3,
-    "letterCount": 16,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "artist": "Sabrina Carpenter",
-      "listeners": 551574,
-      "playcount": 8038049
     }
   },
   {
@@ -21852,24 +21600,6 @@
     }
   },
   {
-    "id": "340cdf13ae9198f950a58a3171f5e7d7",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Girl with the Tattoo Enter.Lewd",
-    "normalizedAnswer": "GIRL WITH THE TATTOO ENTERLEWD",
-    "category": "Song",
-    "difficulty": 56,
-    "difficultyTier": "easy",
-    "wordCount": 5,
-    "letterCount": 26,
-    "uniqueLetterCount": 12,
-    "metadata": {
-      "artist": "Miguel",
-      "listeners": 1015123,
-      "playcount": 13252436
-    }
-  },
-  {
     "id": "70e5cf2bcdde36a0d02c80290adc312f",
     "source": "music-song",
     "type": "song",
@@ -22227,24 +21957,6 @@
       "artist": "Michael Jackson",
       "listeners": 1174004,
       "playcount": 7091136
-    }
-  },
-  {
-    "id": "4b2d8d2b7ac090e596a77664221cd860",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Nangs",
-    "normalizedAnswer": "NANGS",
-    "category": "Song",
-    "difficulty": 92,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 5,
-    "uniqueLetterCount": 4,
-    "metadata": {
-      "artist": "Tame Impala",
-      "listeners": 1434331,
-      "playcount": 14273862
     }
   },
   {
@@ -24372,24 +24084,6 @@
     }
   },
   {
-    "id": "57b09bdf3131b0b967e1acac19f6e577",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Au Pays du Cocaine",
-    "normalizedAnswer": "AU PAYS DU COCAINE",
-    "category": "Song",
-    "difficulty": 60,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 15,
-    "uniqueLetterCount": 11,
-    "metadata": {
-      "artist": "Geese",
-      "listeners": 349967,
-      "playcount": 4789260
-    }
-  },
-  {
     "id": "8a778c492965b467ffe6878dc2e24442",
     "source": "music-song",
     "type": "song",
@@ -24693,24 +24387,6 @@
       "artist": "Kanye West",
       "listeners": 1239407,
       "playcount": 12488234
-    }
-  },
-  {
-    "id": "3e12d6a0fba58b45c35e1d5136f16400",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Sativa",
-    "normalizedAnswer": "SATIVA",
-    "category": "Song",
-    "difficulty": 87.6,
-    "difficultyTier": "hard",
-    "wordCount": 1,
-    "letterCount": 6,
-    "uniqueLetterCount": 5,
-    "metadata": {
-      "artist": "Jhené Aiko",
-      "listeners": 730863,
-      "playcount": 9301223
     }
   },
   {
@@ -26673,24 +26349,6 @@
       "artist": "Tate McRae",
       "listeners": 593894,
       "playcount": 11113366
-    }
-  },
-  {
-    "id": "2632c29afef5babe9c6f7f09dab573f7",
-    "source": "music-song",
-    "type": "song",
-    "answer": "I Took a Pill in Ibiza",
-    "normalizedAnswer": "I TOOK A PILL IN IBIZA",
-    "category": "Song",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 6,
-    "letterCount": 17,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "artist": "Mike Posner",
-      "listeners": 1059729,
-      "playcount": 8667392
     }
   },
   {
@@ -30600,24 +30258,6 @@
     }
   },
   {
-    "id": "cd179ad3e11103cd2eb0620d4c4eebe1",
-    "source": "music-song",
-    "type": "song",
-    "answer": "Took Her To The O",
-    "normalizedAnswer": "TOOK HER TO THE O",
-    "category": "Song",
-    "difficulty": 80.8,
-    "difficultyTier": "hard",
-    "wordCount": 5,
-    "letterCount": 13,
-    "uniqueLetterCount": 6,
-    "metadata": {
-      "artist": "King Von",
-      "listeners": 743697,
-      "playcount": 10114329
-    }
-  },
-  {
     "id": "1a3eb87d6cd125b70c80153f21ac007a",
     "source": "music-song",
     "type": "song",
@@ -30885,24 +30525,6 @@
       "artist": "LE SSERAFIM",
       "listeners": 669084,
       "playcount": 14085261
-    }
-  },
-  {
-    "id": "e095c7f77901ec35c9ba79ece0fa280e",
-    "source": "music-song",
-    "type": "song",
-    "answer": "we'll never have sex",
-    "normalizedAnswer": "WELL NEVER HAVE SEX",
-    "category": "Song",
-    "difficulty": 64,
-    "difficultyTier": "easy",
-    "wordCount": 4,
-    "letterCount": 16,
-    "uniqueLetterCount": 10,
-    "metadata": {
-      "artist": "Leith Ross",
-      "listeners": 733265,
-      "playcount": 15770596
     }
   },
   {
@@ -31371,24 +30993,6 @@
       "artist": "BTS",
       "listeners": 709374,
       "playcount": 37756467
-    }
-  },
-  {
-    "id": "4e8ba5a6bc076d01dcd33f2137a6bcc0",
-    "source": "music-song",
-    "type": "song",
-    "answer": "If U Seek Amy",
-    "normalizedAnswer": "IF U SEEK AMY",
-    "category": "Song",
-    "difficulty": 70,
-    "difficultyTier": "medium",
-    "wordCount": 4,
-    "letterCount": 10,
-    "uniqueLetterCount": 9,
-    "metadata": {
-      "artist": "Britney Spears",
-      "listeners": 1256696,
-      "playcount": 13187591
     }
   },
   {
