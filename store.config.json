@@ -1,0 +1,62 @@
+{
+  "configVersion": 0,
+  "apple": {
+    "copyright": "2026 Jay Deaton",
+    "categories": [
+      [
+        "GAMES",
+        "GAMES_WORD",
+        "GAMES_PUZZLE"
+      ]
+    ],
+    "info": {
+      "en-US": {
+        "title": "HangmanTastic",
+        "subtitle": "Classic Hangman. No Ads.",
+        "description": "The classic word-guessing game, with 19,700 puzzles across 58 packs and no ads or accounts.\n\n• Opens straight into a puzzle\n• Packs from Countries and NFL Teams to Movies, TV Shows, and Songs\n• Easy, Medium, and Hard puzzles, with optional hints\n• Pass & Play: write a word, hand off the phone, and let a friend guess\n• Make your own packs and share them as a file\n• Ten art styles, from Classic to Balloons and Hourglass\n• Stats and 24 achievements\n• Plays offline\n\nPart of the Tastic family of games.\n\nOpen source on GitHub: https://github.com/jayrdeaton/Hangman",
+        "keywords": [
+          "word",
+          "guess",
+          "puzzle",
+          "spelling",
+          "vocabulary",
+          "letters",
+          "trivia",
+          "brain",
+          "pass and play",
+          "offline"
+        ],
+        "marketingUrl": "https://hangman.infinitetoken.com",
+        "supportUrl": "https://infinitetoken.com",
+        "privacyPolicyUrl": "https://hangman.infinitetoken.com/privacy"
+      }
+    },
+    "advisory": {
+      "alcoholTobaccoOrDrugUseOrReferences": "NONE",
+      "contests": "NONE",
+      "gamblingSimulated": "NONE",
+      "gunsOrOtherWeapons": "NONE",
+      "horrorOrFearThemes": "NONE",
+      "matureOrSuggestiveThemes": "NONE",
+      "medicalOrTreatmentInformation": "NONE",
+      "profanityOrCrudeHumor": "NONE",
+      "sexualContentGraphicAndNudity": "NONE",
+      "sexualContentOrNudity": "NONE",
+      "violenceCartoonOrFantasy": "NONE",
+      "violenceRealistic": "NONE",
+      "violenceRealisticProlongedGraphicOrSadistic": "NONE",
+      "advertising": false,
+      "ageAssurance": false,
+      "gambling": false,
+      "healthOrWellnessTopics": false,
+      "lootBox": false,
+      "messagingAndChat": false,
+      "parentalControls": false,
+      "unrestrictedWebAccess": false,
+      "userGeneratedContent": false,
+      "kidsAgeBand": null,
+      "ageRatingOverride": "NONE",
+      "koreaAgeRatingOverride": "NONE"
+    }
+  }
+}
