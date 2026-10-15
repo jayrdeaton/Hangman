@@ -1,15 +1,13 @@
 import { resolveSeedColor, useThemeSettings } from '@rific/auto-paper'
 import { Drawer, DrawerEdgeSwipe } from '@rific/drawer'
-import { Button, IconButton, SegmentedButtons, TouchableRipple } from '@rific/feedback-press'
+import { Button, IconButton, SegmentedButtons } from '@rific/feedback-press'
 import { FlatList, ScrollViewFooter, ScrollViewHeader, ScrollViewProvider } from '@rific/scroll-view'
-import { useUpdater } from '@rific/updater'
 import { JSX, memo, useCallback, useEffect, useMemo, useState } from 'react'
-import { Platform, StyleSheet, View } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 import { Avatar, Card, Icon, ProgressBar, Text, useTheme } from 'react-native-paper'
 import { useSharedValue } from 'react-native-reanimated'
 
 import { DRAWER_BASE_Z_INDEX } from '@/constants/drawerStacking'
-import { release } from '@/constants/release'
 import { useDifficultyOptionColors } from '@/hooks/useDifficultyColors'
 import { useDrawerWidth } from '@/hooks/useDrawerWidth'
 import { usePackSelection } from '@/hooks/usePackSelection'
@@ -69,13 +67,6 @@ export const PuzzleDrawer = memo(({ visible, onDismiss, onRequestOpen, initialCo
   // appearance itself moved to ModePickerDrawer, reached via that same row.
   const { settings } = useThemeSettings()
   const theme = useTheme()
-  // autoCheck: false. UpdateDialog (src/components/UpdateDialog.tsx, mounted in App.tsx) owns the
-  // one background checker (on cold launch and every foreground resume). A second auto-checking
-  // instance here would add a second AppState listener with its own prompt state, so one available
-  // update could prompt twice. This instance only checks when the version text below is tapped, the
-  // same split @tastic/hud's BaseSettingsDialog uses. (The hook's updateReady is only ever set by an
-  // auto-check, so it isn't read here: with autoCheck off it would always be false.)
-  const { check, checking } = useUpdater({ autoCheck: false })
   // packsVersion isn't read here — it's a change counter bumped whenever a custom pack is
   // created/edited/deleted/imported, since getPuzzleManifest() otherwise looks pure to React.
   // eslint-disable-next-line react-hooks/exhaustive-deps -- packsVersion is an intentional external invalidation trigger, not a value the memo body reads
@@ -350,22 +341,6 @@ export const PuzzleDrawer = memo(({ visible, onDismiss, onRequestOpen, initialCo
     [draft.mode, draft.difficulty, settings.color, themeColors, handleOpenModePicker, handleSelectDifficulty, difficultyOptions, achievementStats, packsLabel, totalUnlocked, totalAvailable, overallProgress, theme]
   )
 
-  // Mirrors @rific/updater's own "unsupported here" guard (__DEV__ || web) rather than always
-  // calling check() and letting the hook handle it: the hook's version of that guard shows its
-  // message via react-native's Alert.alert, which react-native-web implements as a bare no-op (see
-  // node_modules/react-native-web/src/exports/Alert — the whole class is `static alert() {}`) —
-  // so on web, pressing this would otherwise do nothing visible at all. This app's own alert()
-  // already exists for exactly that gap (falls back to window.alert on web) and is used the same
-  // way elsewhere in this file. A real production build never takes this branch — check() runs
-  // for real there, on a platform where Alert.alert isn't a no-op.
-  const handleCheckForUpdate = useCallback(() => {
-    if (__DEV__ || Platform.OS === 'web') {
-      void alert('Updates Unavailable', Platform.OS === 'web' ? 'Update checks are not supported on web.' : 'Update checks are disabled in development mode.')
-      return
-    }
-    void check()
-  }, [check])
-
   return (
     <>
       {/* Permanently disabled, not just while the drawer is already open: this strip runs the full
@@ -407,38 +382,12 @@ export const PuzzleDrawer = memo(({ visible, onDismiss, onRequestOpen, initialCo
             <ScrollViewHeader
               actionSize={40}
               backAction={<IconButton icon='arrow-left' mode='contained' hitSlop={ICON_ACTION_HIT_SLOP} containerColor={theme.colors.tertiary} iconColor={theme.colors.onTertiary} onPress={onDismiss} accessibilityLabel='Close' />}
-              // The hamburger icon that opens this already says "menu" — naming the app instead is
-              // more informative, and the OTA version rides along right underneath it rather than
-              // its own separate card further down (see the removed Card that used to sit at the
-              // bottom of the scroll content). The whole title block is the touch target, not just
-              // the version line — "Hangman" is as good a place to expect a tap as the version text
-              // right under it, and a two-line target is easier to find and hit than a single small
-              // caption. Tappable — check() is a no-op (an informational alert) in dev and on web by
-              // the hook's own design, so this only does something real in a production build;
-              // harmless either way to leave reachable everywhere rather than platform-gating the
-              // touch target itself. centerContent (not title/caption) since this needs its own
-              // TouchableRipple wrapper around a two-line stack, not ScrollViewHeader's plain Text.
-              centerContent={
-                <TouchableRipple onPress={handleCheckForUpdate} disabled={checking} accessibilityRole='button' accessibilityLabel={checking ? 'Checking for updates' : 'Check for updates'} style={styles.titleTouchable}>
-                  <View>
-                    <Text variant='titleLarge' numberOfLines={1} style={styles.centeredText}>
-                      Hangman
-                    </Text>
-                    {/* "OTA" is Expo/EAS-update jargon — meaningful for spotting which build a player's
-                        on, meaningless to the player themselves. The bare "v" + number is what's
-                        actually being loaded (release.otaVersion), still legible as a version to someone
-                        who's never heard the term OTA. */}
-                    <Text variant='bodySmall' numberOfLines={1} style={[styles.headerSubtitle, styles.centeredText]}>
-                      v{release.otaVersion}
-                      {checking ? ' · checking…' : ''}
-                    </Text>
-                  </View>
-                </TouchableRipple>
-              }
-              // No trailingAction anymore — appearance/color, keyboard layout, and haptics/sound all
-              // moved into ModePickerDrawer (reached via the mode summary row below), the only
-              // settings surface this menu opens now. This menu itself stays gameplay-only (packs,
-              // difficulty, Random, Pass & play).
+              // Just the app's name: the hamburger that opens this already says "menu". The version and
+              // Check for Updates moved to the fleet Settings sheet (SettingsDialog.tsx, the cog in the
+              // game screen's top-right corner), like every other @tastic game. This menu stays
+              // gameplay-only (packs, difficulty, Random, Pass & Play); appearance, keyboard layout,
+              // sound and haptics live in Settings, and the palette in Customize.
+              title='Hangman'
             />
 
             {/* The hero (the mode summary row) through the Choose packs button live in
@@ -505,7 +454,6 @@ const styles = StyleSheet.create({
   achievementsCard: { marginBottom: 4 },
   achievementsCardRow: { alignItems: 'center', flexDirection: 'row', gap: 12 },
   achievementsText: { flex: 1 },
-  centeredText: { textAlign: 'center' },
   // flexDirection/alignItems override ScrollViewFooter's own row+center defaults — Random and Pass
   // & play stack vertically here (see pnpButton's marginTop below) and each stretch full width,
   // matching this footer's look before the scroll-view migration.
@@ -520,7 +468,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     paddingTop: 4
   },
-  headerSubtitle: { opacity: 0.7 },
   // A tighter top margin than a standalone section would use — right under the mode cards, so it
   // reads as "here's what you just picked" rather than a new, unrelated block starting.
   heroAdjacentSectionLabel: {
@@ -552,16 +499,6 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     marginBottom: 8,
     marginTop: 16
-  },
-  // margin cancels padding out — the touchable needs real padding for its own hover/ripple box to
-  // round out away from the text (see the comment at its call site). No flex:1 — ScrollViewHeader's
-  // own centerContent slot is what centers this, and a flex:1 child here would stretch to fill that
-  // slot's full height itself, pinning its content to the top instead of leaving the centering
-  // nothing to do.
-  titleTouchable: {
-    borderRadius: 8,
-    margin: -8,
-    padding: 8
   },
   // Same tight marginTop as heroAdjacentSectionLabel (both 12, vs a standalone section's 16) — this
   // is the very first label in the list, right below the header's own inset, not following another

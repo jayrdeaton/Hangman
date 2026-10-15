@@ -1,4 +1,4 @@
-import { AppbarAction } from '@rific/feedback-press'
+import { CornerActionButtons } from '@tastic/hud/chrome'
 import * as Linking from 'expo-linking'
 import { JSX, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Keyboard, Platform, StyleSheet, View } from 'react-native'
@@ -29,11 +29,7 @@ import { PnpHandoffDialog } from './PnpHandoffDialog'
 import { PnpWordPrompt } from './PnpWordPrompt'
 import { PuzzleDrawer } from './PuzzleDrawer'
 import { type CategoryProgress } from './RoundEndDialog'
-
-// 4px on every side of a 40x40 default IconButton brings its actual tap target up to 48x48 —
-// matching every drawer header's own back/close/settings action (see PuzzleDrawer's own comment
-// on this pair) — without growing the visible circle itself to fill that whole area.
-const APPBAR_ACTION_HIT_SLOP = { top: 4, bottom: 4, left: 4, right: 4 }
+import { SettingsDialog } from './SettingsDialog'
 
 const DEFAULT_CONFIG: PuzzleConfig = {
   sourceMode: 'random',
@@ -182,6 +178,8 @@ export const Main = (): JSX.Element => {
   // switch is.
   const [pendingAbandon, setPendingAbandon] = useState<{ kind: 'puzzle'; payload: GameStartPayload; config: PuzzleConfig } | { kind: 'pnp' } | null>(null)
   const [drawerVisible, setDrawerVisible] = useState(false)
+  // The fleet Settings sheet (SettingsDialog.tsx), opened from the cog in the top-right corner.
+  const [settingsOpen, setSettingsOpen] = useState(false)
   const [unlockVersion, setUnlockVersion] = useState(0)
   const [customPacksVersion, setCustomPacksVersion] = useState(0)
   // Shown inside RoundEndDialog itself now, not a separate Snackbar — see handleSolved below.
@@ -347,6 +345,14 @@ export const Main = (): JSX.Element => {
   // both hide PnpWordPrompt behind the Game Menu (`promptVisible={!drawerVisible}` below) without
   // unmounting it, so a focused answer/hint field keeps native focus and the OS keyboard stays up
   // through the transition unless dismissed here.
+  // Dismisses the software keyboard first, the same as opening the Game Menu: the sheet covers the
+  // Pass & Play prompt's text field, which would otherwise keep the keyboard up behind it.
+  const handleOpenSettings = useCallback(() => {
+    Keyboard.dismiss()
+    setSettingsOpen(true)
+  }, [])
+  const handleDismissSettings = useCallback(() => setSettingsOpen(false), [])
+
   const handleOpenMenu = useCallback(() => {
     Keyboard.dismiss()
     setDrawerVisible(true)
@@ -592,44 +598,39 @@ export const Main = (): JSX.Element => {
           dialog once the word's been handed off. Game is locked for both of those phases (see its
           `locked` prop) so nothing about the round — the one being written OR the one about to be
           played — can be touched by tap or physical keyboard before actual play starts.
-          It's also locked while the Game Menu drawer or the file-import confirm is up: Game's web
-          keyboard listener still hears keys pressed over either one, so a letter would otherwise
-          guess in the round behind it.
-          paddingTop matches the floating menu/trophy buttons below rather than reserving a whole
+          It's also locked while the Game Menu drawer, the Settings sheet or the file-import confirm
+          is up: Game's web keyboard listener still hears keys pressed over any of them, so a letter
+          would otherwise guess in the round behind it.
+          paddingTop matches the floating corner buttons below rather than reserving a whole
           extra header row for them — the game's own top row (PuzzleInfoRow's difficulty/hint
           pills) shares that same band of space instead of sitting below it. */}
-      <View style={[styles.flex, gameShell, { paddingTop: insets.top, paddingBottom: insets.bottom }]}>{effectiveSession ? <Game key={roundKey} onStop={handleRoundEnd} onSolved={handleSolved} onLost={handleLost} onGuessProgress={handleGuessProgress} phrase={effectiveSession.phrase} mode={effectiveSession.mode} hint={effectiveSession.hint} packLabel={effectiveSession.packLabel} difficultyTier={effectiveSession.difficultyTier} categoryProgress={categoryProgress} unlockedAchievementTitles={unlockedAchievementTitles} locked={pnpPhase === 'authoring' || pnpPhase === 'handoff' || pendingAbandon !== null || drawerVisible || incomingFilePreview !== null} /> : null}</View>
+      <View style={[styles.flex, gameShell, { paddingTop: insets.top, paddingBottom: insets.bottom }]}>{effectiveSession ? <Game key={roundKey} onStop={handleRoundEnd} onSolved={handleSolved} onLost={handleLost} onGuessProgress={handleGuessProgress} phrase={effectiveSession.phrase} mode={effectiveSession.mode} hint={effectiveSession.hint} packLabel={effectiveSession.packLabel} difficultyTier={effectiveSession.difficultyTier} categoryProgress={categoryProgress} unlockedAchievementTitles={unlockedAchievementTitles} locked={pnpPhase === 'authoring' || pnpPhase === 'handoff' || pendingAbandon !== null || drawerVisible || settingsOpen || incomingFilePreview !== null} /> : null}</View>
 
-      {/* Floats over the game's own top row instead of reserving a header row of its own — see the
-          paddingTop comment above. pointerEvents='box-none' lets taps in the empty middle (where
-          PuzzleInfoRow's pills sit, centered) fall through to that content; the two buttons are
-          still individually tappable. The menu stays available throughout, pass and play included
-          — whoever is holding the device can change settings or start a Random puzzle whenever
-          they like, and that's also how you leave a session. */}
-      <View style={[styles.topBar, { top: insets.top }]} pointerEvents='box-none'>
-        {/* mode='contained' + explicit containerColor/color (not just color alone) — a bare tinted
-            glyph on this screen's own neutral background read as washed out, the same problem a
-            plain-text Button had before this app's whole button pass moved to solid contained
-            fills; a filled circular badge matches that same "vibrant fill, not a tint" language
-            instead. Left at IconButton's own natural 40x40 footprint (no size/style override) —
-            hitSlop keeps the actual tap target at 48x48 (matching every drawer header's own back/
-            close/settings action — see PuzzleDrawer's own comment on this) without the visible
-            circle itself growing to fill it. */}
-        <AppbarAction icon='menu' mode='contained' containerColor={theme.colors.primary} color={theme.colors.onPrimary} hitSlop={APPBAR_ACTION_HIT_SLOP} onPress={handleOpenMenu} accessibilityLabel='Game Menu' />
+      {/* The fleet's plain-glyph corners (@tastic/hud's CornerActionButtons, the same pair every
+          @tastic game's screens use): the Game Menu top-left and the Settings cog top-right, drawn in
+          the surface's own onSurface ink like marker on the board rather than as filled badges. They
+          float over the game's own top row instead of reserving a header row (see the paddingTop
+          comment above), and PuzzleInfoRow's pills sit centered between them. pointerEvents='box-none'
+          lets taps in the empty middle fall through to those pills. The menu stays available
+          throughout, pass and play included: that's also how you leave a session. Static chrome, no
+          entrance animation of its own, so it never pops in outside the opening sweep. */}
+      <View style={[StyleSheet.absoluteFill, styles.corners]} pointerEvents='box-none'>
+        <CornerActionButtons backIcon='menu' backLabel='Game Menu' onBack={handleOpenMenu} onSettings={handleOpenSettings} fg={theme.colors.onSurface} insets={insets} />
       </View>
 
-      {pnpPhase === 'authoring' ? <PnpWordPrompt answer={pnpAnswer} hint={pnpHint} onAnswerChange={setPnpAnswer} onHintChange={setPnpHint} promptVisible={!drawerVisible} onRequestMenu={handleOpenMenu} onSubmit={handlePnpAuthored} /> : null}
+      {pnpPhase === 'authoring' ? <PnpWordPrompt answer={pnpAnswer} hint={pnpHint} onAnswerChange={setPnpAnswer} onHintChange={setPnpHint} promptVisible={!drawerVisible && !settingsOpen} onRequestMenu={handleOpenMenu} onSubmit={handlePnpAuthored} /> : null}
 
-      {pnpPhase === 'handoff' ? <PnpHandoffDialog visible={!drawerVisible} onReady={() => setPnpPhase('playing')} /> : null}
+      {pnpPhase === 'handoff' ? <PnpHandoffDialog visible={!drawerVisible && !settingsOpen} onReady={() => setPnpPhase('playing')} /> : null}
 
       <PuzzleDrawer visible={drawerVisible} onDismiss={handleDismissDrawer} onRequestOpen={handleRequestOpenDrawer} initialConfig={initialDrawerConfig} onConfirm={handleConfirmPuzzle} onStartPnp={handleStartPnp} packsVersion={customPacksVersion} onPacksChanged={refreshCustomPacks} unlockVersion={unlockVersion} onUnlocksChanged={refreshUnlocks} onModeChange={handleModeChange} onDifficultyChange={handleDifficultyChange} />
       <ConfirmDialog visible={incomingFilePreview !== null} title={incomingFilePreview ? (incomingFilePreview.kind === 'progress' ? 'Import Progress Backup?' : `Import "${incomingFilePreview.label}"?`) : ''} message={incomingFilePreview ? (incomingFilePreview.kind === 'progress' ? `Merges ${commaString(incomingFilePreview.unlockCount)} unlocked puzzle${incomingFilePreview.unlockCount === 1 ? '' : 's'} into your existing progress.` : `Adds ${commaString(incomingFilePreview.wordCount)} word${incomingFilePreview.wordCount === 1 ? '' : 's'} as a new pack you can play.`) : ''} confirmLabel='Import' onConfirm={() => void handleConfirmIncomingFile()} onCancel={() => setIncomingFilePreview(null)} />
+      <SettingsDialog visible={settingsOpen} onDismiss={handleDismissSettings} />
       <ConfirmDialog visible={pendingAbandon !== null} title='Abandon This Puzzle?' message="You've already made a guess. Switching now will count this puzzle as a loss." confirmLabel='Abandon' destructive onConfirm={handleConfirmAbandon} onCancel={handleCancelAbandon} />
     </View>
   )
 }
 
 const styles = StyleSheet.create({
-  flex: { flex: 1 },
-  topBar: { alignItems: 'center', flexDirection: 'row', justifyContent: 'space-between', left: 0, position: 'absolute', right: 0, zIndex: 10 }
+  corners: { zIndex: 10 },
+  flex: { flex: 1 }
 })

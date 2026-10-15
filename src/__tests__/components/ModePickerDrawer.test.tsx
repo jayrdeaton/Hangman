@@ -62,30 +62,22 @@ describe('ModePickerDrawer', () => {
     expect(closedPanel.props.importantForAccessibility).toBe('no-hide-descendants')
   })
 
-  it('titles itself "Customize" and shows the Display section (palette, appearance, keyboard layout) above the mode carousel', async () => {
-    const { getByText, getByLabelText } = await renderPicker()
+  // Only the art-specific controls stay here: the Color palette picker (it recolors the art) and the
+  // carousel. Appearance, keyboard layout, sound and haptics moved to the fleet Settings sheet (see
+  // SettingsDialog.test.tsx).
+  it('titles itself "Customize" and shows only the Color section above the mode carousel', async () => {
+    const { getByText, getByLabelText, queryByText, queryByLabelText } = await renderPicker()
 
     expect(getByText('Customize')).toBeTruthy()
-    expect(getByText('Display')).toBeTruthy()
-    // AppearancePicker — icon-only (showLabels={false}), so the accessible name is what's asserted
-    // on, same as PuzzleDrawer/SettingsDrawer's own AppearancePicker coverage.
-    expect(getByLabelText('System')).toBeTruthy()
-    expect(getByLabelText('Light')).toBeTruthy()
-    expect(getByLabelText('Dark')).toBeTruthy()
-    expect(getByText('QWERTY')).toBeTruthy()
-    expect(getByText('ABC')).toBeTruthy()
-    // The carousel itself, below the Display block.
+    expect(getByText('Color')).toBeTruthy()
     expect(getByLabelText(SELECTED_MODE_ACCESSIBILITY_LABEL)).toBeTruthy()
     expect(getByLabelText(OTHER_MODE_ACCESSIBILITY_LABEL)).toBeTruthy()
-  })
 
-  it('switches the keyboard layout via the KeyboardLayout context when ABC is picked', async () => {
-    const setLayout = jest.fn()
-    const { getByText } = await renderPicker({}, { layout: 'qwerty', setLayout })
-
-    await fireEvent.press(getByText('ABC'))
-
-    expect(setLayout).toHaveBeenCalledWith('abc')
+    expect(queryByText('Display')).toBeNull()
+    expect(queryByLabelText('System')).toBeNull()
+    expect(queryByText('QWERTY')).toBeNull()
+    expect(queryByLabelText('Vibrate on tap')).toBeNull()
+    expect(queryByLabelText('Sound effects')).toBeNull()
   })
 
   it("marks the currently-selected mode's own card (not just whichever is focused) as accessibilityState.selected", async () => {

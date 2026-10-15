@@ -157,6 +157,19 @@ describe('Main', () => {
     expect(mockResolvePuzzle.mock.calls[1][1]).toEqual(['pack-1'])
   })
 
+  it('opens the fleet Settings sheet from the corner cog, and locks the round while it is open', async () => {
+    mockResolvePuzzle.mockReturnValue({ ok: true, payload: payload({ phrase: 'DOG' }) })
+    const { getByLabelText, getByText } = await renderApp()
+    const revealed = () => getByLabelText('Secret word display').props.children[0].props.letters
+
+    await fireEvent.press(getByLabelText('Settings'))
+    expect(getByText('KEYBOARD')).toBeTruthy()
+
+    // The on-screen key goes through the same locked check the web keyboard listener does.
+    await fireEvent.press(getByText('D'))
+    expect(revealed()).toEqual(['_', '_', '_'])
+  })
+
   it('locks the round while the Game Menu is open, so a letter pressed behind it guesses nothing until the menu closes', async () => {
     mockResolvePuzzle.mockReturnValue({ ok: true, payload: payload({ phrase: 'DOG' }) })
     const { getByLabelText, getByText } = await renderApp()

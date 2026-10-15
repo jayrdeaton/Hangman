@@ -119,10 +119,13 @@ export const PuzzleInfoRow = ({ difficultyTier, packLabel, hint, hintRevealed, o
 
 const styles = StyleSheet.create({
   hintPill: { alignItems: 'center', columnGap: 6, flexDirection: 'row' },
-  // paddingHorizontal clears the menu/trophy buttons Main.tsx floats over this same row (each a
-  // 40pt IconButton pinned to the screen edge) — wide pill content stays centered inside that
-  // margin instead of drifting underneath them.
-  hintSlot: { alignItems: 'center', alignSelf: 'stretch', justifyContent: 'center', marginBottom: 4, marginTop: 4, minHeight: 38, paddingHorizontal: 52 },
+  // Lines up with the corner buttons Main.tsx floats over this same row (@tastic/hud's
+  // CornerActionButtons: a 40pt IconButton with Paper's 6pt margin, placed 8pt in from the safe-area
+  // edge). Each button's box therefore ends 8 + 6 + 40 = 54pt in from the side, and paddingHorizontal
+  // 62 keeps an 8pt gap so wide pill content stays centered between them instead of drifting
+  // underneath. The button's center sits 8 + 6 + 20 = 34pt below the safe-area top, so marginTop 15
+  // plus half of minHeight (19) puts the pills' center level with it.
+  hintSlot: { alignItems: 'center', alignSelf: 'stretch', justifyContent: 'center', marginBottom: 4, marginTop: 15, minHeight: 38, paddingHorizontal: 62 },
   infoRow: { alignItems: 'center', columnGap: 10, flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', rowGap: 6 },
   pill: { borderRadius: 14, borderWidth: 1.5, maxWidth: '100%', overflow: 'hidden', paddingHorizontal: 14, paddingVertical: 5 },
   pillText: { fontSize: 13, textAlign: 'center' },

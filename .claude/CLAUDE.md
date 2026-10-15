@@ -13,7 +13,7 @@ An ad-free Hangman word-guessing game (Expo/React Native). Part of the `@rific`/
 ```bash
 npm run lint          # expo lint .
 npm run fix            # expo lint . --fix
-npm test               # Jest (34 suites, 423 tests)
+npm test               # Jest (35 suites, 423 tests)
 npm run test:watch     # Jest --watchAll
 npm run typecheck      # tsc
 npm run verify         # lint + test + typecheck
@@ -95,6 +95,7 @@ Seven games (AirHockey, BoxHockey, Hangman, LightCycles, Pong, Snake, Solitaire)
 Hangman uses the fleet's shared UI from `@tastic/hud`, but only through its light `./chrome` subpath (added in hud 0.15.0 for this app). The main `@tastic/hud` entry also re-exports the per-seat lobby, `AchievementUnlockList` and the Skia gauge, so importing it would require Skia, `@tastic/profile` and `@tastic/split-screen`, none of which this app has. `eslint.config.cjs` blocks the bare `'@tastic/hud'` specifier with `no-restricted-imports`. `.npmrc`'s `legacy-peer-deps=true` means npm won't warn about a missing peer, so the lint rule and `npm ls @shopify/react-native-skia @tastic/profile @tastic/split-screen` (empty) are the guard. `@tastic/achievements` is installed because `tsc` type-checks hud's raw source (the `react-native` export condition) and `AchievementCatalogSection` type-imports it.
 
 - **Update prompt:** `src/components/UpdateDialog.tsx` wraps hud's `UpdateDialog` (the fleet's Restart/Later card) and is mounted in `App.tsx` inside `Providers`, which it needs for the toast, Portal host and feedback-press `paper`. It owns the one automatic update check; `PuzzleDrawer`'s version text keeps a manual-only `useUpdater({ autoCheck: false })`. The card only appears in non-dev native builds (`@rific/updater` skips `__DEV__` and web).
+- **Corners and Settings (2026-10-15):** the game screen uses hud's `CornerActionButtons` (plain `onSurface` glyphs: the Game Menu top-left, the Settings cog top-right) in place of the old filled red menu badge, and `PuzzleInfoRow`'s pills are padded and offset to sit level with and between them (the math is in its `hintSlot` comment). The cog opens `src/components/SettingsDialog.tsx`, a wrapper around hud's `BaseSettingsDialog` (Sound, Haptics, Appearance, version and Check for Updates) plus a KEYBOARD section; Lock Orientation, Edge Guard and How to Play are deliberately not passed. Customize (`ModePickerDrawer`) keeps only the Color palette and the art carousel, and the Game Menu header is just "Hangman". Game is `locked` while Settings is open. `src/__mocks__/react-native-safe-area-context.ts` exposes `SafeAreaInsetsContext` as a real context because hud's `RotatedFrame` renders its Provider.
 - **Root background:** loading any chrome component evaluates the whole `@tastic/core` barrel, and its `useThemedRootBackground.ts` calls `SystemUI.setBackgroundColorAsync('#000000')` at import, which blacks out the iOS window, the Android decor view and the web page body. `Theme.tsx`'s `RootBackground` repaints it with the theme's `surface` (the color `Main.tsx` paints behind every screen) once the theme exists and on every light/dark change. Don't also call core's `useThemedRootBackground`: its black/white would fight it.
 
 ## Xcode 26 image pin (remove on Expo SDK 58)

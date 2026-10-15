@@ -1,7 +1,6 @@
 import { type AutoPaperTheme, getColorRoles, Provider, useAutoPaperTheme } from '@rific/auto-paper'
 import { FeedbackPressProvider } from '@rific/feedback-press'
 import { ToastProvider } from '@rific/toaster'
-import { useUpdater } from '@rific/updater'
 import { fireEvent, render as rtlRender } from '@testing-library/react-native'
 import { type ReactElement, type ReactNode, useEffect } from 'react'
 import { StyleSheet } from 'react-native'
@@ -10,7 +9,6 @@ import * as RNPaper from 'react-native-paper'
 import { PuzzleDrawer } from '@/components/PuzzleDrawer'
 import { PackSelectionContext, type PackSelectionContextType } from '@/hooks/usePackSelection'
 import { DEFAULT_MODE } from '@/modes/registry'
-import { alert } from '@/utils/alert'
 import { commaString } from '@/utils/commaString'
 import { getPuzzleManifest, getPuzzlesForCategory } from '@/utils/puzzleCatalog'
 import type { PuzzleConfig } from '@/utils/puzzlePicker'
@@ -59,17 +57,6 @@ jest.mock('@/utils/alert', () => ({
   alert: jest.fn().mockResolvedValue(undefined),
   confirm: jest.fn().mockResolvedValue(true)
 }))
-
-// The real hook is exercised on its own turf (its own package); here it's just a dependency whose
-// checking state this file wants to drive directly, without faking AppState changes
-// or a real expo-updates manifest fetch.
-jest.mock('@rific/updater', () => ({
-  useUpdater: jest.fn()
-}))
-
-const mockUseUpdater = jest.mocked(useUpdater)
-const mockCheck = jest.fn().mockResolvedValue(undefined)
-const mockAlert = jest.mocked(alert)
 
 const baseConfig: PuzzleConfig = {
   sourceMode: 'random',
@@ -120,12 +107,6 @@ const renderDrawerWithRealTheme = async (overrides: Partial<React.ComponentProps
 }
 
 describe('PuzzleDrawer', () => {
-  beforeEach(() => {
-    mockCheck.mockClear()
-    mockAlert.mockClear()
-    mockUseUpdater.mockReturnValue({ check: mockCheck, checking: false, updateReady: false })
-  })
-
   it('shows the All packs row and Difficulty with no Custom option — pass and play is how a word gets authored now — and always offers both Random and Pass & play', async () => {
     const { getByText, queryByText } = await renderDrawer()
 
@@ -380,61 +361,13 @@ describe('PuzzleDrawer', () => {
     expect(getByLabelText(`Mode: ${DEFAULT_MODE.label}. Change mode`)).toBeTruthy()
   })
 
-  it('titles the drawer with the app name and its version, not a generic "Game Menu" the hamburger icon already implies or the "OTA" jargon a player wouldn\'t recognize', async () => {
-    const { getByText, queryByText } = await renderDrawer()
+  // The version and Check for Updates moved to the fleet Settings sheet (see SettingsDialog.test.tsx),
+  // so the header is just the app's name: the hamburger that opens this already says "menu".
+  it('titles the drawer with just the app name, with no version or update check of its own', async () => {
+    const { getByText, queryByText, queryByLabelText } = await renderDrawer()
 
     expect(getByText('Hangman')).toBeTruthy()
-    expect(getByText(/^v\d+$/)).toBeTruthy()
-    expect(queryByText(/OTA/)).toBeNull()
-  })
-
-  // Jest runs with __DEV__ true, same as this app's own dev/web guard checks for — so this
-  // exercises the actual real-world behavior of running the app from a dev build or the web dev
-  // server, not a simulated one.
-  it("shows an in-app alert instead of calling check() while running in dev, since react-native-web's Alert.alert — what check() falls back to on its own — is a silent no-op there", async () => {
-    const { getByLabelText } = await renderDrawer()
-
-    await fireEvent.press(getByLabelText('Check for updates'))
-
-    expect(mockAlert).toHaveBeenCalledWith('Updates Unavailable', 'Update checks are disabled in development mode.')
-    expect(mockCheck).not.toHaveBeenCalled()
-  })
-
-  it('calls the real check() on a platform the hook actually supports, from pressing either the version text or "Hangman" itself', async () => {
-    // __DEV__ is declared `const` (see react-native's own globals.d.ts) purely so app code can't
-    // reassign it by accident — real value, real global, genuinely swappable at runtime, which is
-    // exactly what simulating a production build here needs. The `any` cast is what sidesteps the
-    // same const-ness that's the whole reason this override works truthfully instead of mocking a
-    // module.
-    const globalWithDev = globalThis as unknown as { __DEV__: boolean }
-    const originalDev = globalWithDev.__DEV__
-    globalWithDev.__DEV__ = false
-    try {
-      const { getByLabelText, getByText } = await renderDrawer()
-
-      await fireEvent.press(getByText('Hangman'))
-      await fireEvent.press(getByLabelText('Check for updates'))
-
-      expect(mockCheck).toHaveBeenCalledTimes(2)
-      expect(mockAlert).not.toHaveBeenCalled()
-    } finally {
-      globalWithDev.__DEV__ = originalDev
-    }
-  })
-
-  it('shows a checking state on the version text while a check is in flight, and disables it against a second tap', async () => {
-    mockUseUpdater.mockReturnValue({ check: mockCheck, checking: true, updateReady: false })
-    const { getByLabelText, getByText } = await renderDrawer()
-
-    expect(getByText(/v\d+ · checking…/)).toBeTruthy()
-    const versionText = getByLabelText('Checking for updates')
-    expect(versionText.props.accessibilityState?.disabled ?? versionText.props.disabled).toBe(true)
-  })
-
-  it("never runs its own background update check, leaving that to App.tsx's single instance so one update can't prompt twice", async () => {
-    await renderDrawer()
-
-    expect(mockUseUpdater).toHaveBeenCalled()
-    for (const [options] of mockUseUpdater.mock.calls) expect(options).toEqual(expect.objectContaining({ autoCheck: false }))
+    expect(queryByText(/^v\d+/)).toBeNull()
+    expect(queryByLabelText('Check for updates')).toBeNull()
   })
 })

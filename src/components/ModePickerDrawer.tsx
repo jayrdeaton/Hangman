@@ -1,6 +1,6 @@
 import { AutoPalettePicker, resolveSeedColor, useThemeSettings } from '@rific/auto-paper'
 import { Drawer } from '@rific/drawer'
-import { Button, IconButton, SegmentedButtons, Switch, useHapticSettings, useSoundSettings } from '@rific/feedback-press'
+import { Button, IconButton } from '@rific/feedback-press'
 import { ScrollView, ScrollViewFooter, ScrollViewHeader, ScrollViewProvider } from '@rific/scroll-view'
 import { JSX, memo, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { FlatList, NativeScrollEvent, NativeSyntheticEvent, StyleSheet, useWindowDimensions, View } from 'react-native'
@@ -10,7 +10,6 @@ import Animated, { useAnimatedStyle, useSharedValue, withTiming } from 'react-na
 import { DRAWER_MODE_PICKER_Z_INDEX } from '@/constants/drawerStacking'
 import { useDrawerWidth } from '@/hooks/useDrawerWidth'
 import { useHorizontalWheelScrollProps } from '@/hooks/useHorizontalWheelScroll'
-import { useKeyboardLayout } from '@/hooks/useKeyboardLayout'
 import { VISIBLE_MODES } from '@/modes/registry'
 import { fullyDrawnMistakes } from '@/modes/shared/fullyDrawnMistakes'
 import type { GameMode } from '@/types/gameModes'
@@ -24,13 +23,14 @@ const ICON_ACTION_HIT_SLOP = { top: 4, bottom: 4, left: 4, right: 4 }
 
 // The carousel's own height — a fixed, generous proportion of the window, not an explicit-fit
 // computation against whatever's left above the fold. An earlier version measured every other
-// section (Display, pip row, Keyboard layout, Feedback) via onLayout and gave the carousel exactly
+// section (Display, pip row, Keyboard layout, Feedback; the last two have since moved to the Settings
+// sheet) via onLayout and gave the carousel exactly
 // what remained, so the whole page never needed to scroll — but every new section added below it
 // made that math more fragile, and it eventually overflowed behind the footer (missing the two
 // gaps between sections that lived outside any single measured box). This drawer is a normal
 // scrolling page now, like every other drawer in the app: the carousel gets a comfortably large,
-// fixed size so the artwork never feels scrunched, and the rest of the page (pip row, Keyboard
-// layout, Feedback) just scrolls into view below it. Floored at CAROUSEL_MIN_HEIGHT so a short
+// fixed size so the artwork never feels scrunched, and whatever sits below it (today just the pip
+// row) scrolls into view. Floored at CAROUSEL_MIN_HEIGHT so a short
 // window (a landscape phone, a small browser tab) still shows the art at a legible size.
 const CAROUSEL_HEIGHT_RATIO = 0.6
 const CAROUSEL_MIN_HEIGHT = 400
@@ -258,22 +258,14 @@ export type ModePickerDrawerProps = {
 }
 
 // Same panel width every other fixed-width drawer in the app uses (see useDrawerWidth), replacing
-// the old inline ModeSelector carousel — every mode gets a big, fixed-height card, and the focused
+// the old inline ModeSelector carousel. Every mode gets a big, fixed-height card, and the focused
 // one plays its reveal animation (a repeating build/clear demo loop for every mode). A normal
 // scrolling page, like every other drawer in the app (see CAROUSEL_HEIGHT_RATIO's own comment for
-// why this isn't an explicit-fit layout anymore). Color/appearance, keyboard layout,
-// and haptics/sound all live here too — this is the ONLY settings surface reached from PuzzleDrawer's
-// Game Menu, which is otherwise gameplay-only (packs, difficulty, Random, Pass & play).
-// Color/appearance sit in the "Display" block above the carousel, since they directly change how the
-// mode art itself looks; keyboard layout and Feedback (haptics/sound) each get their own section
-// below the carousel instead, since neither is a "Display" concern, just other rarely-touched
-// preferences that happen to live in this drawer too. The carousel's own selected-card frame/name
-// and the pips take their color from the seed the Display color swatch picks — which is also
-// primary's own source hue (see appearanceButtons' own comment) — so Display's picker buttons use
-// secondary instead of primary to avoid echoing the swatches right next to them, Keyboard layout
-// uses tertiary, and Feedback circles back to primary once it's far enough down the page not to
-// echo the carousel either. Every section reads as a genuinely different accent from its neighbors,
-// and all three theme colors show up somewhere on the page.
+// why this isn't an explicit-fit layout anymore). Only the art-specific controls live here: the
+// "Color" palette picker above the carousel (it recolors the art itself) and the carousel. Appearance,
+// keyboard layout, sound and haptics moved to the fleet's Settings sheet (SettingsDialog.tsx, the cog
+// in the top-right corner), the same place every other @tastic game keeps them. The carousel's own
+// selected-card frame/name and the pips take their color from the seed this palette picker picks.
 //
 // Memoized: stays mounted (translated off-screen) even while closed — see PuzzleDrawer's own memo
 // comment for why an always-mounted, never-visible-right-now subtree still costs a re-render
@@ -285,10 +277,7 @@ export const ModePickerDrawer = memo(({ visible, onDismiss, selected, onSelect }
   // overshooting into whatever's left of the screen beside it.
   const drawerWidth = useDrawerWidth()
   const theme = useTheme()
-  const { settings, set } = useThemeSettings()
-  const { layout, setLayout } = useKeyboardLayout()
-  const { settings: hapticSettings, set: setHapticSettings } = useHapticSettings()
-  const { settings: soundSettings, set: setSoundSettings } = useSoundSettings()
+  const { settings } = useThemeSettings()
   const horizontalWheelScrollProps = useHorizontalWheelScrollProps()
   const listRef = useRef<FlatList<GameMode>>(null)
 
@@ -297,46 +286,6 @@ export const ModePickerDrawer = memo(({ visible, onDismiss, selected, onSelect }
   // secondary/tertiary elements (see e.g. hourglass.tsx, classic.tsx) would silently fall back to
   // plain `color` instead of showing the actual multi-color look.
   const colors = useMemo(() => [theme.colors.primary, theme.colors.secondary, theme.colors.tertiary], [theme.colors.primary, theme.colors.secondary, theme.colors.tertiary])
-
-  // Built locally instead of using @rific/auto-paper's own AppearancePicker — that component builds
-  // its `buttons` array internally with no style-override hook, so there's no way to give its
-  // segments the same container/vibrant-fill treatment as every other segmented control in this app
-  // (see e.g. PuzzleDrawer's own difficultyOptions). Secondary-tinted, not primary: `color` above
-  // (the seed the PalettePicker right next to this picks) IS primary's own source hue — see
-  // useComputedTheme.ts's own primaryInput/getTriadicPalette — so the selected card's frame/name,
-  // the pips, and this segmented control would all read as the exact same accent if this used
-  // primary too, on top of sitting right next to the swatches carrying that color already. Secondary
-  // keeps this picker visually its own thing instead of a redundant echo of the one beside it.
-  const appearanceButtons = useMemo(
-    () =>
-      (
-        [
-          { value: 'system' as const, icon: 'monitor', label: 'System' },
-          { value: 'light' as const, icon: 'white-balance-sunny', label: 'Light' },
-          { value: 'dark' as const, icon: 'weather-night', label: 'Dark' }
-        ] satisfies { value: typeof settings.appearance; icon: string; label: string }[]
-      ).map(({ value, icon, label }) => {
-        const checked = value === settings.appearance
-        return { value, icon, accessibilityLabel: label, checkedColor: theme.colors.onSecondary, uncheckedColor: theme.colors.onSecondaryContainer, style: { backgroundColor: checked ? theme.colors.secondary : theme.colors.secondaryContainer } }
-      }),
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- only settings.appearance is actually read at runtime; the `typeof settings.appearance` above is type-only and erased at compile time, not a real dependency on the rest of `settings`
-    [settings.appearance, theme.colors]
-  )
-  // Tertiary-tinted — a third, different role from Display's secondary just above it, so this
-  // section reads as its own facet of the page too.
-  const keyboardButtons = useMemo(
-    () =>
-      (
-        [
-          { value: 'qwerty' as const, label: 'QWERTY' },
-          { value: 'abc' as const, label: 'ABC' }
-        ] satisfies { value: typeof layout; label: string }[]
-      ).map(({ value, label }) => {
-        const checked = value === layout
-        return { value, label, checkedColor: theme.colors.onTertiary, uncheckedColor: theme.colors.onTertiaryContainer, style: { backgroundColor: checked ? theme.colors.tertiary : theme.colors.tertiaryContainer } }
-      }),
-    [layout, theme.colors]
-  )
 
   const [focusedIndex, setFocusedIndex] = useState(0)
 
@@ -449,7 +398,7 @@ export const ModePickerDrawer = memo(({ visible, onDismiss, selected, onSelect }
           <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.scrollContent}>
             <View testID='mode-picker-display'>
               <Text variant='titleMedium' style={styles.displayLabel}>
-                Display
+                Color
               </Text>
               <View style={styles.displayRow}>
                 {/* AutoPalettePicker (not the plain PalettePicker) since this is exactly the
@@ -461,9 +410,6 @@ export const ModePickerDrawer = memo(({ visible, onDismiss, selected, onSelect }
                     reshapes live as harmony changes, so there's one place to tune both instead of
                     two separate controls. */}
                 <AutoPalettePicker />
-                <View style={styles.flex}>
-                  <SegmentedButtons value={settings.appearance} onValueChange={(value) => set({ appearance: value as typeof settings.appearance })} buttons={appearanceButtons} />
-                </View>
               </View>
             </View>
 
@@ -494,66 +440,13 @@ export const ModePickerDrawer = memo(({ visible, onDismiss, selected, onSelect }
                 <View key={mode.id} style={[styles.pip, { borderColor: theme.colors.outline }, index === focusedIndex && { backgroundColor: color, borderColor: color }]} />
               ))}
             </View>
-
-            {/* Also directly under the carousel, not grouped under "Display" above it — color/
-                appearance are both about how the mode art itself looks, but keyboard layout is
-                unrelated to that, just another rarely-touched preference that happens to live in
-                this drawer too. */}
-            <View testID='mode-picker-keyboard-section'>
-              <Text variant='titleMedium' style={styles.keyboardLabel}>
-                Keyboard Layout
-              </Text>
-              <View style={styles.keyboardRow}>
-                <SegmentedButtons value={layout} onValueChange={(value) => setLayout(value as typeof layout)} buttons={keyboardButtons} />
-              </View>
-            </View>
-
-            {/* Folded in from the now-removed SettingsDrawer — haptics and sound are both feedback
-                for the same events (guesses, wins, losses), so "Feedback" rather than a title naming
-                just one of them, same reasoning that drawer's own title used. Primary-tinted — the
-                same role the carousel's own selected-card frame/name/pips get from the seed color
-                (see appearanceButtons' own comment on why that hue IS primary), reused here rather
-                than left unused: this section sits far enough down the page, and switches look
-                different enough from a card frame or a segmented control, that repeating the hue
-                doesn't read as an echo of anything nearby the way Display's own picker buttons did.
-                Between this, Display's secondary, and Keyboard layout's tertiary, every section on
-                this page now uses a genuinely different accent from its neighbors above and below
-                it, and all three theme colors show up somewhere. No gear icon anywhere anymore: the
-                mode summary row is this drawer's only entry point now, so these two rarely-touched
-                toggles just ride along at the bottom of it instead of needing a whole second
-                drawer. */}
-            <View testID='mode-picker-feedback-section'>
-              <Text variant='titleMedium' style={styles.feedbackLabel}>
-                Feedback
-              </Text>
-              <View style={styles.feedbackRow}>
-                <View style={styles.flex}>
-                  <Text variant='bodyMedium'>Vibrate on Tap</Text>
-                  <Text variant='bodySmall' style={styles.muted}>
-                    Haptic feedback for guesses and buttons
-                  </Text>
-                </View>
-                <Switch value={hapticSettings.vibrate} onValueChange={(vibrate) => setHapticSettings({ vibrate })} color={theme.colors.primary} accessibilityLabel='Vibrate on tap' />
-              </View>
-              <View style={[styles.feedbackRow, styles.feedbackRowSpacing]}>
-                <View style={styles.flex}>
-                  <Text variant='bodyMedium'>Sound Effects</Text>
-                  <Text variant='bodySmall' style={styles.muted}>
-                    Play a sound for guesses, wins, and losses
-                  </Text>
-                </View>
-                <Switch value={soundSettings.enabled} onValueChange={(enabled) => setSoundSettings({ enabled })} color={theme.colors.primary} accessibilityLabel='Sound effects' />
-              </View>
-            </View>
           </ScrollView>
 
-          {/* Selection already happened live while scrolling (see handleScroll above) — this just
+          {/* Selection already happened live while scrolling (see handleScroll above), so this just
               closes, same as the header's own close button. No mode name on the button: the focused
-              card already names itself in giant text right above this, repeating it here would be
-              redundant. "Done" rather than "Select" — this drawer confirms color/appearance/keyboard
-              layout and feedback too, not just the mode, so a mode-specific verb would undersell
-              what's being closed out of. Full width: this is the one and only action in the footer,
-              no reason to leave it thumb-width. */}
+              card already names itself in giant text right above this. "Done" rather than "Select",
+              since this drawer also confirms the color, not just the mode. Full width: this is the one
+              and only action in the footer, no reason to leave it thumb-width. */}
           <ScrollViewFooter style={styles.footer}>
             <Button mode='contained' icon='check' onPress={onDismiss} style={styles.footerButton}>
               Done
@@ -595,9 +488,8 @@ const styles = StyleSheet.create({
     marginHorizontal: 16,
     marginTop: 12
   },
-  // No Card behind these anymore — just the segmented control (and, for Display, the palette
-  // picker) sitting directly on the drawer's own background, so this only needs the same
-  // marginHorizontal/row layout a Card.Content would have given them, not a container of its own.
+  // No Card behind the palette picker: it sits directly on the drawer's own background, so this only
+  // needs the same marginHorizontal/row layout a Card.Content would have given it.
   displayRow: {
     alignItems: 'center',
     flexDirection: 'row',
@@ -606,24 +498,6 @@ const styles = StyleSheet.create({
     marginBottom: 4,
     marginHorizontal: 16
   },
-  // Same label+subtitle-left/Switch-right row shape the old SettingsDrawer used inside its own
-  // Card, just without a Card behind it now — matching Display/Keyboard layout's own boxless
-  // treatment above.
-  feedbackLabel: {
-    fontWeight: '700',
-    marginBottom: 8,
-    marginHorizontal: 16,
-    marginTop: 12
-  },
-  feedbackRow: {
-    alignItems: 'center',
-    flexDirection: 'row',
-    gap: 12,
-    justifyContent: 'space-between',
-    marginHorizontal: 16
-  },
-  feedbackRowSpacing: { marginTop: 16 },
-  flex: { flex: 1 },
   // paddingVertical/paddingHorizontal match ScrollViewHeader's own actionMargin — same convention
   // PuzzleDrawer's own footer uses.
   footer: {
@@ -639,18 +513,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     paddingTop: 10
   },
-  keyboardLabel: {
-    fontWeight: '700',
-    marginBottom: 8,
-    marginHorizontal: 16,
-    marginTop: 12
-  },
-  keyboardRow: { marginHorizontal: 16 },
   label: {
     fontWeight: '700'
   },
   list: { marginTop: 8, overflow: 'hidden' },
-  muted: { marginTop: 2, opacity: 0.7 },
   panelContent: {
     flex: 1,
     overflow: 'hidden'
