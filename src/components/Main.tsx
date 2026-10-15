@@ -340,10 +340,6 @@ export const Main = (): JSX.Element => {
     setDrawerVisible(false)
   }, [])
 
-  // Shared by the hamburger icon and PnpWordPrompt's own onRequestMenu (its ✕ / backdrop tap) —
-  // both hide PnpWordPrompt behind the Game Menu (`promptVisible={!drawerVisible}` below) without
-  // unmounting it, so a focused answer/hint field keeps native focus and the OS keyboard stays up
-  // through the transition unless dismissed here.
   // Dismisses the software keyboard first, the same as opening the Game Menu: the sheet covers the
   // Pass & Play prompt's text field, which would otherwise keep the keyboard up behind it.
   const handleOpenSettings = useCallback(() => {
@@ -352,6 +348,11 @@ export const Main = (): JSX.Element => {
   }, [])
   const handleDismissSettings = useCallback(() => setSettingsOpen(false), [])
 
+  // Shared by the hamburger icon and PnpWordPrompt's onRequestMenu (its close glyph, or Android's
+  // back button). Opening the menu hides the prompt (`promptVisible={!drawerVisible && !settingsOpen}`
+  // below): PnpWordPrompt stays mounted so its show/hide toggle survives, but its fields unmount, and
+  // the word itself lives here in pnpAnswer/pnpHint. The keyboard is dismissed first so it doesn't
+  // stay up for a field that's about to go.
   const handleOpenMenu = useCallback(() => {
     Keyboard.dismiss()
     setDrawerVisible(true)

@@ -61,10 +61,10 @@ export const Theme = ({ children }: ThemeProps) => {
 
   return (
     // expoBlur is no longer auto-detected (Metro doesn't resolve a require()-in-try/catch into an
-    // ESM build's module graph) — every dialog's frosted backdrop depends on this being passed
+    // ESM build's module graph): every frosted card and sheet depends on this being passed
     // explicitly, or it silently falls back to a solid fill. reanimated is the same story for
-    // Dialog's animatedStyle prop (see DialogShell.tsx) — without it, a keyboard-avoidance transform
-    // would just be dropped rather than painted.
+    // auto-paper Dialog's animatedStyle prop, which nothing in this app passes any more (the Settings
+    // sheet's fade runs on React Native's own Animated); it stays wired for the next caller.
     <Provider initialValue={settings} onChange={onChange} onReady={onReady} expoBlur={ExpoBlur} reanimated={Reanimated}>
       <RootBackground />
       {children}

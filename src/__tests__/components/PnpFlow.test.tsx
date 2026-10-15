@@ -414,10 +414,14 @@ describe('Main — pass and play', () => {
     await fireEvent.press(getByText('Pass & Play'))
     await fireEvent.changeText(getByTestId('pnp-answer-input'), 'BANANA BREAD')
     await fireEvent.changeText(getByTestId('pnp-hint-input'), 'Breakfast loaf')
+    // Hidden before the menu opens, so the word stays hidden when the prompt comes back: the prompt
+    // stays mounted behind the menu, keeping its show/hide toggle.
+    await fireEvent.press(getByLabelText('Hide solution'))
+    expect(getByTestId('pnp-answer-input').props.secureTextEntry).toBe(true)
 
-    // Dismissing means "let me at the menu" — the one interpretation that isn't surprising, and the
+    // Closing means "let me at the menu": the one interpretation that isn't surprising, and the
     // way out of pass and play (start a Random puzzle from there).
-    await fireEvent.press(getByTestId('dialog-backdrop'))
+    await fireEvent.press(getByLabelText('Close'))
     expect(drawerPanel().props.accessibilityViewIsModal).toBe(true)
 
     // Closing the menu brings the prompt back with the word intact — the component stays mounted
@@ -425,6 +429,8 @@ describe('Main — pass and play', () => {
     await fireEvent.press(getByLabelText('Close'))
     expect(getByTestId('pnp-answer-input').props.value).toBe('BANANA BREAD')
     expect(getByTestId('pnp-hint-input').props.value).toBe('Breakfast loaf')
+    expect(getByTestId('pnp-answer-input').props.secureTextEntry).toBe(true)
+    expect(getByLabelText('Show solution')).toBeTruthy()
     // And the preview behind it is still tracking that word.
     expect(getByLabelText('Difficulty: Hard')).toBeTruthy()
   })
@@ -438,8 +444,7 @@ describe('Main — pass and play', () => {
     await fireEvent.press(getByText('Pass & Play'))
     await fireEvent.changeText(getByTestId('pnp-answer-input'), 'CAT')
 
-    // The corner ✕ is a second way to reach the same place the backdrop tap does — both mean
-    // "let me at the menu", never anything to the round itself.
+    // The corner ✕ means "let me at the menu", never anything to the round itself.
     mockResolvePuzzle.mockReturnValue({ ok: true, payload: { phrase: 'SOLO', mode: visualMode, sourceMode: 'random', packKey: 'p', packLabel: 'P', puzzleId: 'x', difficultyTier: 'easy' } })
     await fireEvent.press(getByLabelText('Close'))
     await fireEvent.press(getByText('Random'))

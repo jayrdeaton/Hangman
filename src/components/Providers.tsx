@@ -43,7 +43,7 @@ export const Providers = ({ children }: ProvidersProps): JSX.Element => (
         <PersistGate loading={null} persistor={persistor}>
           {/* Haptic wraps Theme, not the reverse: Theme's <Provider> renders react-native-paper's
               own Provider internally, which mounts a PortalHost near its own root — Portal content
-              (auto-paper's Dialog in DialogShell, and the @tastic/hud cards in ConfirmDialog and RoundEndDialog,
+              (auto-paper's Dialog in the Settings sheet, and the @tastic/hud cards in ConfirmDialog, RoundEndDialog and PnpWordPrompt,
               every one of which renders @rific/feedback-press Buttons/IconButtons inside) gets
               reparented to that host in the fiber tree, not left as a descendant of wherever it was
               written. A Haptic nested inside Theme would sit outside the portaled subtree entirely,
