@@ -20,3 +20,7 @@ Found during the 2026-10-14 README pass. Nothing here has been changed yet.
 ## Tests and docs
 
 7. **Possible flaky test.** One full Jest run had 2 failures out of 392, and a re-run passed all 30 suites. Run the suite a few times under load to find which test is timing-sensitive.
+
+## Found in the 2026-10-15 fleet review
+
+8. **A font-load error leaves the splash up forever** (audit F010). `src/components/Theme.tsx:59-60` marks the `fonts` gate from `fontsLoaded` only, and `useFonts` leaves it false after an error. Use `fontsLoaded || !!fontError`, as Snake's `Theme.tsx` does.

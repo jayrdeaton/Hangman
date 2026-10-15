@@ -5,10 +5,15 @@ import { fireEvent, render as rtlRender } from '@testing-library/react-native'
 import { type ReactElement, type ReactNode, useEffect } from 'react'
 import { StyleSheet } from 'react-native'
 import * as RNPaper from 'react-native-paper'
+import { Provider as ReduxProvider } from 'react-redux'
 
 import { PuzzleDrawer } from '@/components/PuzzleDrawer'
+import { ACHIEVEMENT_CATALOG } from '@/constants/achievements'
+import { GameStatsProvider } from '@/hooks/useGameStats'
 import { PackSelectionContext, type PackSelectionContextType } from '@/hooks/usePackSelection'
 import { DEFAULT_MODE } from '@/modes/registry'
+import { achievementsActions } from '@/redux/achievementsSlice'
+import { store } from '@/redux/store'
 import { commaString } from '@/utils/commaString'
 import { getPuzzleManifest, getPuzzlesForCategory } from '@/utils/puzzleCatalog'
 import type { PuzzleConfig } from '@/utils/puzzlePicker'
@@ -44,12 +49,17 @@ const colorChannels = (color: string): [number, number, number] => {
 // ToastProvider is also required — PuzzleDrawer's own tree reaches down through PacksScreen into
 // PackEditorDrawer (always mounted, translated off-screen, same as every other drawer in this
 // lineage), and that drawer's own form calls useToast() to surface a newly-unlocked custom-pack
-// achievement (see achievements.ts's packs_created_* ladder), which throws outside a ToastProvider
-// ancestor.
+// achievement, which throws outside a ToastProvider ancestor. The app's stats store and
+// GameStatsProvider are needed too: the Achievements card reads its count from the store, and the
+// nested drawers record and reset through useGameStats.
 const HapticWrapper = ({ children }: { children: ReactNode }) => (
-  <ToastProvider>
-    <FeedbackPressProvider paper={RNPaper}>{children}</FeedbackPressProvider>
-  </ToastProvider>
+  <ReduxProvider store={store}>
+    <GameStatsProvider>
+      <ToastProvider>
+        <FeedbackPressProvider paper={RNPaper}>{children}</FeedbackPressProvider>
+      </ToastProvider>
+    </GameStatsProvider>
+  </ReduxProvider>
 )
 const render = (ui: ReactElement) => rtlRender(ui, { wrapper: HapticWrapper })
 
@@ -107,6 +117,20 @@ const renderDrawerWithRealTheme = async (overrides: Partial<React.ComponentProps
 }
 
 describe('PuzzleDrawer', () => {
+  beforeEach(() => {
+    store.dispatch(achievementsActions.reset())
+  })
+
+  // Read from the stats store (see useUnlockedAchievementCount), out of the whole catalog. An id
+  // that's no longer in the catalog doesn't count.
+  it("shows how many achievements are earned out of the catalog's total on the Achievements card", async () => {
+    store.dispatch(achievementsActions.update({ unlocked: { first_game_played: 1, first_ever_win: 2, retired_achievement: 3 } }))
+    const { getByText } = await renderDrawer()
+
+    expect(getByText('Achievements earned')).toBeTruthy()
+    expect(getByText(`2 / ${ACHIEVEMENT_CATALOG.length}`)).toBeTruthy()
+  })
+
   it('shows the All packs row and Difficulty with no Custom option — pass and play is how a word gets authored now — and always offers both Random and Pass & play', async () => {
     const { getByText, queryByText } = await renderDrawer()
 

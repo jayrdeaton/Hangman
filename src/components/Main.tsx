@@ -1,3 +1,4 @@
+import { useToast } from '@rific/toaster'
 import { ConfirmDialog, CornerActionButtons } from '@tastic/hud/chrome'
 import * as Linking from 'expo-linking'
 import { JSX, useCallback, useEffect, useMemo, useRef, useState } from 'react'
@@ -5,13 +6,15 @@ import { Keyboard, Platform, StyleSheet, View } from 'react-native'
 import { useTheme } from 'react-native-paper'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
+import { ACHIEVEMENT_TIER_COLORS } from '@/constants/achievements'
 import { useAutoSaveCustom } from '@/hooks/useAutoSaveCustom'
+import { useGameStats } from '@/hooks/useGameStats'
 import { usePackSelection } from '@/hooks/usePackSelection'
 import { usePuzzleDefaults } from '@/hooks/usePuzzleDefaults'
 import { DEFAULT_MODE } from '@/modes/registry'
 import type { GameMode } from '@/types/gameModes'
 import type { GameStartPayload } from '@/types/gameSession'
-import { ACHIEVEMENT_DEFINITIONS_BY_ID, recordLoss, recordPnpLoss, recordPnpWin, recordSolve } from '@/utils/achievements'
+import type { UnlockedAchievement } from '@/types/stats'
 import { alert } from '@/utils/alert'
 import { commaString } from '@/utils/commaString'
 import { addCustomPuzzle, importCustomPack, loadCustomPacksCache, parseCustomPackImport, PNP_QUICK_PACK_LABEL, scoreDifficulty } from '@/utils/customPacks'
@@ -20,7 +23,7 @@ import { normalizePhrase } from '@/utils/normalizePhrase'
 import { getPuzzleManifest } from '@/utils/puzzleCatalog'
 import { parseSharedPuzzle } from '@/utils/puzzleLink'
 import { type PuzzleConfig, resolvePuzzle } from '@/utils/puzzlePicker'
-import { getPuzzleUnlockMap, getTotalUnlockedCount, getUnlockedCountForPack, markPuzzleUnlocked, mergePuzzleUnlocks, parseProgressBackup, type PuzzleUnlockMap } from '@/utils/unlocks'
+import { getCompletedBuiltInPackKeys, getPuzzleUnlockMap, getTotalUnlockedCount, getUnlockedCountForPack, markPuzzleUnlocked, mergePuzzleUnlocks, parseProgressBackup, type PuzzleUnlockMap } from '@/utils/unlocks'
 import { gameShell } from '@/utils/webLayout'
 
 import { Game, type LossDetails, type SolveDetails } from './Game'
@@ -181,11 +184,12 @@ export const Main = (): JSX.Element => {
   const [settingsOpen, setSettingsOpen] = useState(false)
   const [unlockVersion, setUnlockVersion] = useState(0)
   const [customPacksVersion, setCustomPacksVersion] = useState(0)
-  // Shown inside RoundEndDialog itself now, not a separate Snackbar — see handleSolved below.
-  // Cleared synchronously at the top of handleSolved, same reasoning as categoryProgress just
-  // below: a fresh win should never briefly show the previous win's unlock titles while this
-  // round's own achievement check is still in flight.
-  const [unlockedAchievementTitles, setUnlockedAchievementTitles] = useState<string[]>([])
+  // What the round just unlocked, shown as tier-colored rows on the round-end card (see
+  // handleSolved). Cleared at the top of each solve and loss, so a fresh round never shows the
+  // previous round's unlocks while its own recording is still in flight.
+  const [roundUnlocks, setRoundUnlocks] = useState<UnlockedAchievement[]>([])
+  const { recordSoloRound, recordPnpRound } = useGameStats()
+  const { success } = useToast()
   // The category-completion stat shown on a win. Cleared synchronously at the top of
   // handleSolved (see below) so a fresh win never briefly shows the previous win's numbers
   // while the unlock-map lookup for the new one is still in flight.
@@ -302,8 +306,8 @@ export const Main = (): JSX.Element => {
   // moment abandoning it (by starting a different puzzle, or a pass-and-play word) instead of
   // seeing it through should cost the same loss it would if the wrong-guess limit were hit for
   // real. A fresh round (no guesses) or one that already ended costs nothing to leave, so those
-  // switch immediately with no confirmation. Left out of pass-and-play entirely — a friend's word
-  // has its own separate pnpWins/pnpLosses counters (see handleSolved/handleLost above), earned
+  // switch immediately with no confirmation. Left out of pass-and-play entirely: a friend's word
+  // has its own separate Pass & Play record (stats.pnp, see handleSolved/handleLost above), earned
   // only by actually finishing a round, not by however a two-player session gets left.
   const shouldConfirmAbandon = useCallback(() => !pnpPhase && !roundDecidedRef.current && roundProgressRef.current.guessCount > 0, [pnpPhase])
 
@@ -403,78 +407,70 @@ export const Main = (): JSX.Element => {
       // Game's own setOutcome('win') and never paints the previous round's category stats
       // while this round's unlock-map lookup is still in flight.
       setCategoryProgress(null)
-      setUnlockedAchievementTitles([])
+      setRoundUnlocks([])
 
       // A pass-and-play round is a contest between two people on one device, not progress against
       // the catalogue. It has no packKey/puzzleId to unlock, and folding it into the solo record
-      // would let a friend's word inflate totalSolved and the win streak — and let the author's
-      // choice of whether to write a hint decide the "No Hints Needed" achievement. Tracked in its
-      // own pnpWins counter instead (see achievements.ts), separate from every solo stat.
+      // would let a friend's word inflate the solve count and the win streak, and let the author's
+      // choice of whether to write a hint decide No Hints Needed. It has its own Pass & Play record
+      // instead (see statsEngine's applyPnpRound), separate from every solo stat.
       if (pnpPhase) {
-        void recordPnpWin().then((newlyUnlocked) => {
-          if (newlyUnlocked.length > 0) setUnlockedAchievementTitles(newlyUnlocked.map((id) => ACHIEVEMENT_DEFINITIONS_BY_ID[id].title))
-          refreshUnlocks()
-        })
+        setRoundUnlocks(recordPnpRound('win', details.wrongGuesses))
         return
       }
 
-      let packUnlockedCount: number | undefined
-      let packTotalCount: number | undefined
-
+      // Read after this puzzle is marked, so the pack totals (and the completed-pack count the
+      // Collection Complete family reads) already include it.
       if (session?.packKey && session.puzzleId) {
         const unlocked = await markPuzzleUnlocked(session.packKey, session.puzzleId)
-        const unlockMap = await getPuzzleUnlockMap()
-        // So the very next automatic round (see startNextRound) already knows this puzzle is no
-        // longer unsolved, without waiting on its own separate fetch.
-        unlockMapRef.current = unlockMap
-        packUnlockedCount = getUnlockedCountForPack(unlockMap, session.packKey)
-        packTotalCount = getPuzzleManifest().find((item) => item.key === session.packKey)?.count
         if (unlocked) refreshUnlocks()
-        if (session.packLabel && packTotalCount) setCategoryProgress({ label: session.packLabel, unlockedCount: packUnlockedCount, totalCount: packTotalCount })
+      }
+      const unlockMap = await getPuzzleUnlockMap()
+      // So the very next automatic round (see startNextRound) already knows this puzzle is no
+      // longer unsolved, without waiting on its own separate fetch.
+      unlockMapRef.current = unlockMap
+      if (session?.packKey && session.packLabel) {
+        const packTotalCount = getPuzzleManifest().find((item) => item.key === session.packKey)?.count
+        if (packTotalCount) setCategoryProgress({ label: session.packLabel, unlockedCount: getUnlockedCountForPack(unlockMap, session.packKey), totalCount: packTotalCount })
       }
 
-      const newlyUnlocked = await recordSolve({
-        modeId: session?.mode.id ?? DEFAULT_MODE.id,
-        wrongGuesses: details.wrongGuesses,
-        guessCount: details.guessCount,
-        hintWasAvailable: Boolean(session?.hint),
-        hintRevealed: details.hintRevealed,
-        packKey: session?.packKey,
-        packUnlockedCount,
-        packTotalCount
-      })
-      // Surfaced right away, not held back for the next round to start — this resolves well
-      // within WIN_DIALOG_DELAY_MS (see Game.tsx), so it's already there by the time the win
-      // dialog itself opens rather than popping in after. If it does land after (recordSolve is
-      // real async work Game.tsx doesn't wait on — see RoundEndDialog's own comment on this),
-      // it still just flows into the already-open dialog as a prop update.
-      if (newlyUnlocked.length > 0) setUnlockedAchievementTitles(newlyUnlocked.map((id) => ACHIEVEMENT_DEFINITIONS_BY_ID[id].title))
-      refreshUnlocks()
+      // Recording is synchronous and lands well within WIN_DIALOG_DELAY_MS (see Game.tsx), so the
+      // unlocks are already there when the round-end card opens.
+      setRoundUnlocks(
+        recordSoloRound({
+          result: 'win',
+          // A hidden mode (reachable only through a shared link) doesn't count toward the mode family.
+          modeId: session && !session.mode.hidden ? session.mode.id : undefined,
+          wrongGuesses: details.wrongGuesses,
+          guessCount: details.guessCount,
+          // The same rule as the board's Hint pill (PuzzleInfoRow's hasHintContent): offered whenever
+          // there's a pack label or a hint behind it, so a win that never opened it counts.
+          hintAvailable: Boolean(session?.hint || session?.packLabel),
+          hintRevealed: details.hintRevealed,
+          completedPackKeys: getCompletedBuiltInPackKeys(unlockMap)
+        })
+      )
     },
-    [session, refreshUnlocks, pnpPhase]
+    [session, refreshUnlocks, pnpPhase, recordSoloRound, recordPnpRound]
   )
 
   const handleLost = useCallback(
     (details: LossDetails) => {
       // A loss decides the round too — see roundDecidedRef's own declaration.
       roundDecidedRef.current = true
-      // Cleared up front, same as handleSolved above — otherwise a title left over from a
-      // previous round's win would still be sitting in state (and, now that RoundEndDialog shows
-      // unlocks on a loss too, would incorrectly bleed into this one).
-      setUnlockedAchievementTitles([])
-      // Same separation as the win path above — a friend beating you shouldn't break your solo
-      // streak or count toward your solo losses. A pnp loss can still cross a "games played"
-      // threshold though, so it's checked the same way a pnp win is.
+      // Cleared up front, same as handleSolved above: the round-end card shows unlocks on a loss
+      // too, so a previous round's would otherwise bleed into this one.
+      setRoundUnlocks([])
+      // Same separation as the win path above: a friend beating you shouldn't break your solo
+      // streak or count toward your solo losses. A Pass & Play loss still counts toward the Pass &
+      // Play rounds family, so it can unlock something too.
       if (pnpPhase) {
-        void recordPnpLoss().then((newlyUnlocked) => {
-          if (newlyUnlocked.length > 0) setUnlockedAchievementTitles(newlyUnlocked.map((id) => ACHIEVEMENT_DEFINITIONS_BY_ID[id].title))
-          refreshUnlocks()
-        })
+        setRoundUnlocks(recordPnpRound('loss', details.wrongGuesses))
         return
       }
-      void recordLoss(details).then(refreshUnlocks)
+      setRoundUnlocks(recordSoloRound({ result: 'loss', wrongGuesses: details.wrongGuesses, guessCount: details.guessCount }))
     },
-    [pnpPhase, refreshUnlocks]
+    [pnpPhase, recordSoloRound, recordPnpRound]
   )
 
   // The only caller left is handleRoundEnd's own automatic-next-round path below — kept as its own
@@ -541,11 +537,13 @@ export const Main = (): JSX.Element => {
   // roundProgressRef back to zero on the very next effect pass (see its own declaration above).
   const handleConfirmAbandon = useCallback(() => {
     if (!pendingAbandon) return
-    void recordLoss(roundProgressRef.current).then(refreshUnlocks)
+    // An abandon has no round-end card, so anything it unlocks (the first puzzle played, a day
+    // streak rung) gets the fleet's achievement toast instead, the same as a new custom pack's.
+    recordSoloRound({ result: 'loss', ...roundProgressRef.current }).forEach((achievement) => success(achievement.title, 'Achievement unlocked', undefined, { color: ACHIEVEMENT_TIER_COLORS[achievement.tier], icon: achievement.icon }))
     if (pendingAbandon.kind === 'puzzle') applyNewPuzzle(pendingAbandon.payload, pendingAbandon.config)
     else applyPnpStart()
     setPendingAbandon(null)
-  }, [pendingAbandon, applyNewPuzzle, applyPnpStart, refreshUnlocks])
+  }, [pendingAbandon, applyNewPuzzle, applyPnpStart, recordSoloRound, success])
 
   const handleCancelAbandon = useCallback(() => {
     setPendingAbandon(null)
@@ -604,7 +602,7 @@ export const Main = (): JSX.Element => {
           paddingTop matches the floating corner buttons below rather than reserving a whole
           extra header row for them — the game's own top row (PuzzleInfoRow's difficulty/hint
           pills) shares that same band of space instead of sitting below it. */}
-      <View style={[styles.flex, gameShell, { paddingTop: insets.top, paddingBottom: insets.bottom }]}>{effectiveSession ? <Game key={roundKey} onStop={handleRoundEnd} onSolved={handleSolved} onLost={handleLost} onGuessProgress={handleGuessProgress} phrase={effectiveSession.phrase} mode={effectiveSession.mode} hint={effectiveSession.hint} packLabel={effectiveSession.packLabel} difficultyTier={effectiveSession.difficultyTier} categoryProgress={categoryProgress} unlockedAchievementTitles={unlockedAchievementTitles} locked={pnpPhase === 'authoring' || pnpPhase === 'handoff' || pendingAbandon !== null || drawerVisible || settingsOpen || incomingFilePreview !== null} /> : null}</View>
+      <View style={[styles.flex, gameShell, { paddingTop: insets.top, paddingBottom: insets.bottom }]}>{effectiveSession ? <Game key={roundKey} onStop={handleRoundEnd} onSolved={handleSolved} onLost={handleLost} onGuessProgress={handleGuessProgress} phrase={effectiveSession.phrase} mode={effectiveSession.mode} hint={effectiveSession.hint} packLabel={effectiveSession.packLabel} difficultyTier={effectiveSession.difficultyTier} categoryProgress={categoryProgress} unlockedAchievements={roundUnlocks} locked={pnpPhase === 'authoring' || pnpPhase === 'handoff' || pendingAbandon !== null || drawerVisible || settingsOpen || incomingFilePreview !== null} /> : null}</View>
 
       {/* The fleet's plain-glyph corners (@tastic/hud's CornerActionButtons, the same pair every
           @tastic game's screens use): the Game Menu top-left and the Settings cog top-right, drawn in

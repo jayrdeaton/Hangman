@@ -30,14 +30,15 @@ but that's only the smallest, least meaningful piece of what's persisted.
 The data that actually matters bypasses Redux entirely, hand-rolled directly
 against AsyncStorage in independent modules, each owning one JSON blob under
 one versioned key: `src/utils/customPacks.ts` (`custom_packs_v1`),
-`src/utils/unlocks.ts` (`puzzle_unlocks_v1`), `src/utils/achievements.ts`
-(`achievements_v1`), and three settings providers
+`src/utils/unlocks.ts` (`puzzle_unlocks_v1`), and three settings providers
 (`AutoSaveCustomProvider.tsx`, `PackSelectionProvider.tsx`,
 `KeyboardLayoutProvider.tsx`). **Scope this migration to cover all of those,
 not just the redux `theme` slice** — same read-whole/write-whole shape, just
 swapping `AsyncStorage.getItem`/`setItem` for MMKV's synchronous
 `getString`/`set`, which also drops the `.then()`/async-effect boilerplate in
-the three settings providers.
+the three settings providers. (Achievements and stats already moved into Redux on
+2026-10-15: the `achievements` slice from `@tastic/achievements`, persisted through the root
+whitelist, replaced the old `achievements_v1` blob.)
 
 **Tradeoff:** MMKV is a native module, so it requires a dev client build —
 not compatible with Expo Go. Not a blocker since none of these projects rely

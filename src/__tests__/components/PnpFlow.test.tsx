@@ -3,24 +3,17 @@ import { act, fireEvent, render } from '@testing-library/react-native'
 import { WIN_DIALOG_DELAY_MS } from '@/components/Game'
 import { Main } from '@/components/Main'
 import { Providers } from '@/components/Providers'
+import { achievementsActions } from '@/redux/achievementsSlice'
+import { store } from '@/redux/store'
 import type { GameMode } from '@/types/gameModes'
 import type { GameStartPayload } from '@/types/gameSession'
-import { recordLoss, recordSolve } from '@/utils/achievements'
 import { confirm } from '@/utils/alert'
 import { addCustomPuzzle } from '@/utils/customPacks'
 import * as puzzlePicker from '@/utils/puzzlePicker'
 
-// Kept in its own file rather than added to Main.test.tsx so the achievements mock below — which the
-// "pass and play never touches the solo record" assertions need — can't perturb the existing tests.
 jest.mock('@/utils/puzzlePicker', () => ({
   ...jest.requireActual('@/utils/puzzlePicker'),
   resolvePuzzle: jest.fn()
-}))
-
-jest.mock('@/utils/achievements', () => ({
-  ...jest.requireActual('@/utils/achievements'),
-  recordSolve: jest.fn().mockResolvedValue([]),
-  recordLoss: jest.fn().mockResolvedValue(undefined)
 }))
 
 jest.mock('@/utils/alert', () => ({
@@ -37,8 +30,8 @@ jest.mock('@/utils/customPacks', () => ({
 }))
 
 const mockResolvePuzzle = jest.mocked(puzzlePicker.resolvePuzzle)
-const mockRecordSolve = jest.mocked(recordSolve)
-const mockRecordLoss = jest.mocked(recordLoss)
+// The real stats store: what a round recorded is read straight from it.
+const stats = () => store.getState().achievements.stats
 const mockConfirm = jest.mocked(confirm)
 const mockAddCustomPuzzle = jest.mocked(addCustomPuzzle)
 
@@ -68,8 +61,7 @@ const renderApp = () =>
 describe('Main — pass and play', () => {
   beforeEach(() => {
     mockResolvePuzzle.mockReset()
-    mockRecordSolve.mockClear()
-    mockRecordLoss.mockClear()
+    store.dispatch(achievementsActions.reset())
     mockConfirm.mockClear()
     mockAddCustomPuzzle.mockClear()
   })
@@ -175,16 +167,17 @@ describe('Main — pass and play', () => {
     })
 
     expect(getByText('You Won!')).toBeTruthy()
-    // A word someone typed on the spot shouldn't inflate totalSolved or the win streak, and their
-    // choice not to write a hint shouldn't hand out "No Hints Needed" for free.
-    expect(mockRecordSolve).not.toHaveBeenCalled()
-    expect(mockRecordLoss).not.toHaveBeenCalled()
+    // A word someone typed on the spot shouldn't inflate the solve count or the win streak, and
+    // their choice not to write a hint shouldn't hand out No Hints Needed for free. It goes on the
+    // Pass & Play record instead.
+    expect(stats()).toMatchObject({ solo: { played: 0, wins: 0, losses: 0, draws: 0 }, soloStreak: { currentWinStreak: 0, bestWinStreak: 0 }, noHintWins: 0, flawlessWins: 0, lettersGuessed: 0 })
+    expect(stats().pnp).toEqual({ played: 1, wins: 1, losses: 0, draws: 0 })
 
     jest.useRealTimers()
   })
 
-  // recordLoss sits on a separate branch (handleLost) from recordSolve, so a win-only test doesn't
-  // cover it — losing to someone else's word must not break your solo streak either.
+  // A loss is a separate branch (handleLost) from a win, so a win-only test doesn't cover it: losing
+  // to someone else's word must not break your solo streak either.
   it('never touches the solo achievement record on a loss', async () => {
     mockResolvePuzzle.mockReturnValue({ ok: true, payload: pnpPayload('CAT') })
     const utils = await renderApp()
@@ -194,8 +187,8 @@ describe('Main — pass and play', () => {
     await loseTheRound(getByText)
 
     expect(await findByText('You Lost!')).toBeTruthy()
-    expect(mockRecordLoss).not.toHaveBeenCalled()
-    expect(mockRecordSolve).not.toHaveBeenCalled()
+    expect(stats().solo).toEqual({ played: 0, wins: 0, losses: 0, draws: 0 })
+    expect(stats().pnp).toEqual({ played: 1, wins: 0, losses: 1, draws: 0 })
   })
 
   it('keeps the game menu available during a session', async () => {

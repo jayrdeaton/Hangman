@@ -2,7 +2,7 @@ import { Provider } from '@rific/auto-paper'
 import { FeedbackPressProvider } from '@rific/feedback-press'
 import { fireEvent, render as rtlRender } from '@testing-library/react-native'
 import type { ReactElement, ReactNode } from 'react'
-import { BackHandler, StyleSheet } from 'react-native'
+import { BackHandler, type StyleProp, StyleSheet, type ViewStyle } from 'react-native'
 import * as RNPaper from 'react-native-paper'
 
 import { fitAnswerFontSize, RoundEndDialog, type RoundEndDialogProps } from '@/components/RoundEndDialog'
@@ -111,14 +111,30 @@ describe('RoundEndDialog', () => {
     expect(themeColors().error).not.toBe('#DC362E')
   })
 
-  it('lists new achievements under a medal, and shows pack progress on wins only', async () => {
+  it("lists new achievements with their own icon on their tier's color, and shows pack progress on wins only", async () => {
     const categoryProgress = { label: 'Animals', unlockedCount: 3, totalCount: 40 }
-    const { getByText } = await renderDialog({ categoryProgress, unlockedAchievementTitles: ['First Win', 'Flawless Victory'] })
+    const unlockedAchievements = [
+      { id: 'first_ever_win', title: 'Solved It', icon: 'star', tier: 'bronze' as const },
+      { id: 'flawless_debut', title: "Beginner's Luck", icon: 'star-circle', tier: 'gold' as const }
+    ]
+    const { getByText } = await renderDialog({ categoryProgress, unlockedAchievements })
 
     expect(getByText('Achievements Unlocked')).toBeTruthy()
-    expect(getByText('First Win')).toBeTruthy()
-    expect(getByText('Flawless Victory')).toBeTruthy()
-    expect(mockIcon.mock.calls.map(([props]) => props.source)).toContain('medal')
+    expect(getByText('Solved It')).toBeTruthy()
+    expect(getByText("Beginner's Luck")).toBeTruthy()
+    // Each badge is the achievement's icon in black on its tier's color (bronze, then gold).
+    const badges = mockIcon.mock.calls.map(([props]) => props).filter((props) => props.source === 'star' || props.source === 'star-circle')
+    expect(badges.map((props) => [props.source, props.color])).toEqual([
+      ['star', '#000000'],
+      ['star-circle', '#000000']
+    ])
+    // Each row is the badge (a View in the tier color) and then the title.
+    const badgeColor = (title: string) => {
+      const badge = getByText(title).parent!.children[0] as unknown as { props: { style: StyleProp<ViewStyle> } }
+      return StyleSheet.flatten(badge.props.style)?.backgroundColor
+    }
+    expect(badgeColor('Solved It')).toBe('#CD7F32') // bronze
+    expect(badgeColor("Beginner's Luck")).toBe('#FFD54F') // gold
     expect(getByText('3 of 40 unlocked in Animals')).toBeTruthy()
 
     const loss = await renderDialog({ outcome: 'loss', guessedLetters: ['Q'], categoryProgress })

@@ -2,6 +2,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
 
 import type { PuzzleManifestItem } from '@/utils/puzzleCatalog'
 
+import { puzzleManifest } from '../data/puzzleCatalog.generated'
+
 const PUZZLE_UNLOCKS_KEY = 'puzzle_unlocks_v1'
 
 export type PuzzleUnlockMap = Record<string, string[]>
@@ -155,3 +157,8 @@ export const getManifestUnlockProgress = (manifest: PuzzleManifestItem[], unlock
   const totalUnlocked = manifest.reduce((sum, item) => sum + Math.min(getUnlockedCountForPack(unlockMap, item.key), item.count), 0)
   return { totalUnlocked, totalAvailable, overallProgress: totalAvailable > 0 ? totalUnlocked / totalAvailable : 0 }
 }
+
+// Built-in packs (never custom ones) with every puzzle unlocked: the Collection Complete family's
+// count. Rescans the whole manifest rather than only the pack just played, so a pack finished through
+// a backup import is credited on the next win too.
+export const getCompletedBuiltInPackKeys = (unlockMap: PuzzleUnlockMap): string[] => puzzleManifest.filter((item) => item.count > 0 && getUnlockedCountForPack(unlockMap, item.key) >= item.count).map((item) => item.key)

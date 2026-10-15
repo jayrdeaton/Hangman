@@ -3,10 +3,11 @@ import { overlayActionStyles, OverlayBackdrop, OverlayCard, useOverlayCardColors
 import { JSX, useEffect } from 'react'
 import { AccessibilityInfo, BackHandler, ScrollView, StyleSheet, useWindowDimensions, View } from 'react-native'
 import { Icon, Portal, ProgressBar, Text, useTheme } from 'react-native-paper'
-import Animated, { useAnimatedStyle, useSharedValue, withRepeat, withSequence, withTiming } from 'react-native-reanimated'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
 import { fitSketchWordFontSize, SketchWord, sketchWordWidth } from '@/components/SketchWord'
+import { ACHIEVEMENT_TIER_COLORS } from '@/constants/achievements'
+import type { UnlockedAchievement } from '@/types/stats'
 import { commaString } from '@/utils/commaString'
 
 export type RoundEndOutcome = 'win' | 'loss'
@@ -25,10 +26,8 @@ export type RoundEndDialogProps = {
   // here are the ones the player never found, and they draw in red.
   guessedLetters: string[]
   categoryProgress?: CategoryProgress | null
-  // Already-resolved titles (e.g. "Flawless Victory"), not raw AchievementId. That keeps this a plain
-  // presentational component with no dependency on achievements.ts, the same way categoryProgress
-  // above arrives pre-resolved rather than as a packKey this dialog would have to look up itself.
-  unlockedAchievementTitles?: string[]
+  // What the round just unlocked, in catalog order (see Main's handleSolved and handleLost).
+  unlockedAchievements?: UnlockedAchievement[]
   onDismiss: () => void
 }
 
@@ -45,10 +44,11 @@ const CARD_GAP = 16
 // headlineLarge line, 40), the Next row (40) and the three gaps between those four and the body.
 const CARD_CHROME_HEIGHT = CARD_PADDING * 2 + CARD_BORDER * 2 + 64 + 40 + 40 + CARD_GAP * 3
 // Rough heights of the body's other blocks, only used to leave the answer room for them: the unlock
-// block's medal and heading, each unlock title under it, and the progress caption (up to two lines)
-// with its bar. If one runs taller, the body scrolls a little rather than anything going off-screen.
-const UNLOCKS_HEADER_HEIGHT = 64
-const UNLOCK_ROW_HEIGHT = 22
+// block's heading, each unlock row under it (a 28pt badge plus the gap), and the progress caption (up
+// to two lines) with its bar. If one runs taller, the body scrolls a little rather than anything
+// going off-screen.
+const UNLOCKS_HEADER_HEIGHT = 30
+const UNLOCK_ROW_HEIGHT = 34
 const PROGRESS_HEIGHT = 46
 // The answer's largest size: big enough to read as the round's headline beneath the title, small
 // enough that a two- or three-word answer still wraps into a few lines on a phone.
@@ -110,39 +110,24 @@ export const fitAnswerFontSize = (wordLengths: number[], width: number, heightBu
 // puzzle. Next is the only way on, and Android's back button counts as Next. The card never runs off
 // the screen: it stops at the safe area, and the answer, unlocks and progress scroll between the
 // title and Next, so Next always stays in reach.
-export const RoundEndDialog = ({ visible, outcome, phrase, guessedLetters, categoryProgress, unlockedAchievementTitles, onDismiss }: RoundEndDialogProps): JSX.Element | null => {
+export const RoundEndDialog = ({ visible, outcome, phrase, guessedLetters, categoryProgress, unlockedAchievements, onDismiss }: RoundEndDialogProps): JSX.Element | null => {
   const theme = useTheme()
   const { fg, fgMuted } = useOverlayCardColors()
   const { width: windowWidth, height: windowHeight } = useWindowDimensions()
   const insets = useSafeAreaInsets()
-  // Not gated on outcome === 'win': a pass-and-play LOSS can still cross a "games played"
-  // threshold (see achievements.ts's pnp_played_* ladder), and the solo path never populates
-  // unlockedAchievementTitles on a loss (recordLoss unlocks nothing), so this stays false there
-  // regardless.
-  const hasUnlocks = Boolean(unlockedAchievementTitles?.length)
+  // Not gated on outcome === 'win': a loss can still unlock something (the first puzzle played, a
+  // Pass & Play rounds rung, a day streak).
+  const hasUnlocks = Boolean(unlockedAchievements?.length)
   const won = outcome === 'win'
-
-  // Gentle, continuous grow-and-settle rather than a one-shot pulse: the dialog has no fixed
-  // lifetime (it stays up until "Next" is pressed), so a single pulse would read as done and
-  // forgotten long before the player actually dismisses it.
-  const medalScale = useSharedValue(1)
-  useEffect(() => {
-    if (!visible || !hasUnlocks) {
-      medalScale.value = 1
-      return
-    }
-    medalScale.value = withRepeat(withSequence(withTiming(1.15, { duration: 350 }), withTiming(1, { duration: 350 })), -1, true)
-  }, [visible, hasUnlocks, medalScale])
-  const medalAnimatedStyle = useAnimatedStyle(() => ({ transform: [{ scale: medalScale.value }] }))
 
   // The card is a plain overlay rather than a native modal, so nothing tells a screen reader it
   // appeared: this announces the result, the answer and any unlocks.
   useEffect(() => {
     if (!visible || !outcome) return
     const base = outcome === 'win' ? `You won! The answer was ${phrase}.` : `You lost! The answer was ${phrase}.`
-    const unlockSuffix = hasUnlocks ? ` Achievement${unlockedAchievementTitles!.length > 1 ? 's' : ''} unlocked: ${unlockedAchievementTitles!.join(', ')}.` : ''
+    const unlockSuffix = hasUnlocks ? ` Achievement${unlockedAchievements!.length > 1 ? 's' : ''} unlocked: ${unlockedAchievements!.map((achievement) => achievement.title).join(', ')}.` : ''
     AccessibilityInfo.announceForAccessibility(base + unlockSuffix)
-  }, [visible, outcome, phrase, hasUnlocks, unlockedAchievementTitles])
+  }, [visible, outcome, phrase, hasUnlocks, unlockedAchievements])
 
   useEffect(() => {
     if (!visible) return
@@ -161,7 +146,7 @@ export const RoundEndDialog = ({ visible, outcome, phrase, guessedLetters, categ
   const showProgress = won && Boolean(categoryProgress && categoryProgress.totalCount > 0)
   const cardMaxHeight = windowHeight - insets.top - insets.bottom - SCREEN_GUTTER * 2
   const answerWidth = Math.min(CARD_MAX_WIDTH, windowWidth - SCREEN_GUTTER * 2) - CARD_PADDING * 2 - CARD_BORDER * 2
-  const otherBodyHeight = (hasUnlocks ? CARD_GAP + UNLOCKS_HEADER_HEIGHT + UNLOCK_ROW_HEIGHT * unlockedAchievementTitles!.length : 0) + (showProgress ? CARD_GAP + PROGRESS_HEIGHT : 0)
+  const otherBodyHeight = (hasUnlocks ? CARD_GAP + UNLOCKS_HEADER_HEIGHT + UNLOCK_ROW_HEIGHT * unlockedAchievements!.length : 0) + (showProgress ? CARD_GAP + PROGRESS_HEIGHT : 0)
   const answerFontSize = fitAnswerFontSize(
     words.map((word) => word.length),
     answerWidth,
@@ -192,19 +177,25 @@ export const RoundEndDialog = ({ visible, outcome, phrase, guessedLetters, categ
                 <SketchWord key={i} letters={letters} fontSize={answerFontSize} color={fg} letterColors={letterColors} letterDelaysMs={letterDelaysMs} />
               ))}
             </View>
-            {/* Every newly unlocked achievement at once, for as long as the card is up. */}
+            {/* Every newly unlocked achievement at once, for as long as the card is up: the fleet's
+                tier-colored badge (the achievement's own icon, black on its bronze, silver or gold,
+                as in the Achievements list) beside its title. A left-aligned list, centered as a
+                block. */}
             {hasUnlocks ? (
               <View style={styles.achievements}>
-                <Animated.View style={medalAnimatedStyle}>
-                  <Icon source='medal' size={32} color={theme.colors.tertiary} />
-                </Animated.View>
                 <Text variant='titleMedium' style={[styles.achievementsHeading, { color: fg }]}>
-                  Achievement{unlockedAchievementTitles!.length > 1 ? 's' : ''} Unlocked
+                  Achievement{unlockedAchievements!.length > 1 ? 's' : ''} Unlocked
                 </Text>
-                {unlockedAchievementTitles!.map((title) => (
-                  <Text key={title} variant='bodyMedium' style={{ color: fgMuted }}>
-                    {title}
-                  </Text>
+                {unlockedAchievements!.map((achievement) => (
+                  <View key={achievement.id} style={styles.unlockRow}>
+                    <View style={[styles.unlockBadge, { backgroundColor: ACHIEVEMENT_TIER_COLORS[achievement.tier] }]}>
+                      <Icon source={achievement.icon} size={18} color='#000000' />
+                    </View>
+                    {/* flexShrink so a long title wraps at large text sizes instead of running off. */}
+                    <Text variant='bodyLarge' style={[styles.unlockTitle, { color: fg }]}>
+                      {achievement.title}
+                    </Text>
+                  </View>
                 ))}
               </View>
             ) : null}
@@ -236,8 +227,8 @@ export const RoundEndDialog = ({ visible, outcome, phrase, guessedLetters, categ
 }
 
 const styles = StyleSheet.create({
-  achievements: { alignItems: 'center', gap: 2 },
-  achievementsHeading: { fontWeight: '700', marginBottom: 2, marginTop: 6 },
+  achievements: { alignItems: 'flex-start', alignSelf: 'center', gap: 6 },
+  achievementsHeading: { alignSelf: 'center', fontWeight: '700' },
   answer: { alignSelf: 'stretch', columnGap: ANSWER_COLUMN_GAP, flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center' },
   // Takes only the height its content needs, and gives it up (then scrolls) when the card meets
   // its maxHeight, so the icon, title and Next row keep theirs.
@@ -258,5 +249,8 @@ const styles = StyleSheet.create({
     overflow: 'hidden'
   },
   progressLabel: { textAlign: 'center' },
-  title: { fontWeight: 'bold', textAlign: 'center' }
+  title: { fontWeight: 'bold', textAlign: 'center' },
+  unlockBadge: { alignItems: 'center', borderRadius: 8, height: 28, justifyContent: 'center', width: 28 },
+  unlockRow: { alignItems: 'center', flexDirection: 'row', gap: 10 },
+  unlockTitle: { flexShrink: 1 }
 })

@@ -2,8 +2,12 @@ import { ToastProvider } from '@rific/toaster'
 import { fireEvent, render as rtlRender, waitFor } from '@testing-library/react-native'
 import type { ReactElement, ReactNode } from 'react'
 import { PaperProvider } from 'react-native-paper'
+import { Provider as ReduxProvider } from 'react-redux'
 
 import { PackEditorDrawer } from '@/components/PackEditorDrawer'
+import { GameStatsProvider } from '@/hooks/useGameStats'
+import { achievementsActions } from '@/redux/achievementsSlice'
+import { store } from '@/redux/store'
 import { loadCustomPacksCache } from '@/utils/customPacks'
 
 jest.mock('@/utils/alert', () => ({
@@ -18,24 +22,21 @@ jest.mock('@rific/toaster', () => ({
   useToast: () => ({ success: mockSuccess })
 }))
 
-// Pinned rather than left to achievements.ts's module-level cache, which would only report
-// packs_created_1 as newly unlocked the first time any test in this file saves a pack.
-jest.mock('@/utils/achievements', () => ({
-  ...jest.requireActual('@/utils/achievements'),
-  recordCustomPackCreated: jest.fn().mockResolvedValue(['packs_created_1'])
-}))
-
 // ConfirmDialog renders through a react-native-paper Portal — needs a Portal.Host ancestor,
 // normally supplied by @rific/auto-paper's Provider at the app root; same wrapper
 // PacksScreen.test.tsx/AchievementsDrawer.test.tsx use for their own Portal-based dialogs.
-// ToastProvider is also required now — PackEditorDrawer's own save flow calls useToast() to
-// surface a newly-unlocked custom-pack achievement (see achievements.ts's packs_created_* ladder),
-// and that hook throws outside a ToastProvider ancestor (normally supplied by Providers.tsx at the
-// app root, same as PnpFlow.test.tsx gets it by rendering under the full <Providers>).
+// ToastProvider is also required: PackEditorDrawer's save flow calls useToast() to show a newly
+// unlocked custom-pack achievement, and that hook throws outside a ToastProvider ancestor (normally
+// supplied by Providers.tsx at the app root). So are the app's stats store and GameStatsProvider,
+// which record the new pack (see useGameStats).
 const Wrapper = ({ children }: { children: ReactNode }) => (
-  <ToastProvider>
-    <PaperProvider>{children}</PaperProvider>
-  </ToastProvider>
+  <ReduxProvider store={store}>
+    <GameStatsProvider>
+      <ToastProvider>
+        <PaperProvider>{children}</PaperProvider>
+      </ToastProvider>
+    </GameStatsProvider>
+  </ReduxProvider>
 )
 const render = (ui: ReactElement) => rtlRender(ui, { wrapper: Wrapper })
 
@@ -46,9 +47,11 @@ const render = (ui: ReactElement) => rtlRender(ui, { wrapper: Wrapper })
 // itself (save/delete/share/validation) is already covered thoroughly through PacksScreen.test.tsx.
 describe('PackEditorDrawer', () => {
   beforeEach(async () => {
-    // Resets customPacks.ts's module-level cache to empty via the always-null AsyncStorage mock —
-    // matches PacksScreen.test.tsx's own setup.
+    // Resets customPacks.ts's module-level cache to empty via the always-null AsyncStorage mock,
+    // matching PacksScreen.test.tsx's own setup, and starts every test from fresh stats.
     await loadCustomPacksCache()
+    store.dispatch(achievementsActions.reset())
+    mockSuccess.mockClear()
   })
 
   it('only marks the drawer as a modal accessibility view while visible', async () => {
@@ -82,13 +85,15 @@ describe('PackEditorDrawer', () => {
     expect(queryByLabelText('Delete pack')).toBeNull()
   })
 
-  it("toasts a new pack's unlocked achievement by name, captioned 'Achievement unlocked'", async () => {
+  it("toasts a new pack's unlocked achievement by name, captioned 'Achievement unlocked', in its tier's color with its icon", async () => {
     const { getByTestId, getByText } = await render(<PackEditorDrawer visible editingKey={null} onDismiss={jest.fn()} onSaved={jest.fn()} onDelete={jest.fn()} onShare={jest.fn()} />)
 
     await fireEvent.changeText(getByTestId('pack-label-input'), 'My Trip')
     await fireEvent.changeText(getByTestId('entry-answer-0'), 'PARIS')
     await fireEvent.press(getByText('Save'))
 
-    await waitFor(() => expect(mockSuccess).toHaveBeenCalledWith('Pack Rat', 'Achievement unlocked'))
+    await waitFor(() => expect(mockSuccess).toHaveBeenCalledWith('Pack Rat', 'Achievement unlocked', undefined, { color: '#CD7F32', icon: 'folder-plus-outline' }))
+    expect(mockSuccess).toHaveBeenCalledTimes(1)
+    expect(store.getState().achievements.stats.customPacksCreated).toBe(1)
   })
 })

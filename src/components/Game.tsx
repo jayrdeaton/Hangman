@@ -12,6 +12,7 @@ import { DEFAULT_MODE } from '@/modes/registry'
 import { PIPS_SWEEP_DELAY_MS } from '@/modes/shared/sceneReveal'
 import { FadeScaleIn, SketchCircle } from '@/modes/shared/sketchShapes'
 import type { GameMode } from '@/types/gameModes'
+import type { UnlockedAchievement } from '@/types/stats'
 import type { PuzzleDifficultyTier } from '@/utils/puzzleCatalog'
 
 import { Keyboard } from './Keyboard'
@@ -71,9 +72,8 @@ export type GameProps = {
   difficultyTier?: PuzzleDifficultyTier
   celebration?: CelebrationEffect
   categoryProgress?: CategoryProgress | null
-  // Passed straight through to RoundEndDialog, same as categoryProgress above — see its own prop
-  // comment there for why this arrives pre-resolved rather than as raw AchievementIds.
-  unlockedAchievementTitles?: string[]
+  // What this round unlocked, passed straight through to RoundEndDialog like categoryProgress above.
+  unlockedAchievements?: UnlockedAchievement[]
   // True while a dialog covers the board — currently only pass-and-play's handoff step, which
   // mounts the real round underneath itself rather than a blank screen (see Main.tsx), so that
   // there's nothing left to reveal once the dialog closes. Guards handleGuess only, deliberately
@@ -84,7 +84,7 @@ export type GameProps = {
   locked?: boolean
 }
 
-export const Game = ({ onStop, onSolved, onLost, onGuessProgress, phrase, mode = DEFAULT_MODE, hint, packLabel, difficultyTier, celebration = DEFAULT_CELEBRATION, categoryProgress, unlockedAchievementTitles, locked = false }: GameProps): JSX.Element => {
+export const Game = ({ onStop, onSolved, onLost, onGuessProgress, phrase, mode = DEFAULT_MODE, hint, packLabel, difficultyTier, celebration = DEFAULT_CELEBRATION, categoryProgress, unlockedAchievements, locked = false }: GameProps): JSX.Element => {
   const { layout } = useKeyboardLayout()
   const { playCorrect, playWrong, playWin, playLoss } = useSoundEffects()
   const gameHaptics = useGameHaptics()
@@ -283,7 +283,7 @@ export const Game = ({ onStop, onSolved, onLost, onGuessProgress, phrase, mode =
           <CelebrationView key={celebrationCycle} colors={[theme.colors.primary, theme.colors.secondary, theme.colors.tertiary]} dark={theme.dark} onComplete={() => setCelebrationCycle((c) => c + 1)} />
         </Portal>
       ) : null}
-      <RoundEndDialog visible={outcome !== null && dialogReady && !roundEndDismissed} outcome={outcome} phrase={phrase} guessedLetters={guessedLetters} categoryProgress={categoryProgress} unlockedAchievementTitles={unlockedAchievementTitles} onDismiss={handleRoundEndDismiss} />
+      <RoundEndDialog visible={outcome !== null && dialogReady && !roundEndDismissed} outcome={outcome} phrase={phrase} guessedLetters={guessedLetters} categoryProgress={categoryProgress} unlockedAchievements={unlockedAchievements} onDismiss={handleRoundEndDismiss} />
     </View>
   )
 }

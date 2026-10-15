@@ -1,24 +1,28 @@
-import { type AutoPaperTheme, useAutoPaperTheme } from '@rific/auto-paper'
+import { type AutoPaperTheme, getBlendedColor, useAutoPaperTheme } from '@rific/auto-paper'
 import { Drawer } from '@rific/drawer'
 import { Button, IconButton } from '@rific/feedback-press'
 import { FlatList, ScrollViewFooter, ScrollViewHeader, ScrollViewProvider } from '@rific/scroll-view'
-import { ConfirmDialog } from '@tastic/hud/chrome'
+import { getAchievementCatalogRows } from '@tastic/achievements'
+import { AchievementRow, ConfirmDialog, LOCKED_BADGE_COLOR } from '@tastic/hud/chrome'
 import { JSX, memo, useCallback, useEffect, useMemo, useState } from 'react'
 import { StyleSheet, View } from 'react-native'
-import { Avatar, Card, Icon, ProgressBar, Text } from 'react-native-paper'
+import { Card, Icon, ProgressBar, Text } from 'react-native-paper'
 import { useSharedValue } from 'react-native-reanimated'
+import { useSelector } from 'react-redux'
 
+import { ACHIEVEMENT_CATALOG } from '@/constants/achievements'
 import { DRAWER_ACHIEVEMENTS_Z_INDEX } from '@/constants/drawerStacking'
 import { useDrawerWidth } from '@/hooks/useDrawerWidth'
+import { useGameStats } from '@/hooks/useGameStats'
+import type { RootState } from '@/redux/store'
 import type { GameMode } from '@/types/gameModes'
 import type { GameStartPayload } from '@/types/gameSession'
-import { ACHIEVEMENT_DEFINITIONS, type AchievementId, type AchievementStats, clearAchievements, DEFAULT_ACHIEVEMENT_STATS, getAchievementStats } from '@/utils/achievements'
 import { alert } from '@/utils/alert'
 import { commaString } from '@/utils/commaString'
 import { pickHangmanFile, shareProgressBackupFile } from '@/utils/hangmanFile'
 import { getPuzzleManifest, PuzzleDifficultyTier, type PuzzleManifestItem } from '@/utils/puzzleCatalog'
 import { type PuzzleConfig, resolveChosenPuzzle, resolvePuzzle } from '@/utils/puzzlePicker'
-import { clearPuzzleUnlocks, getManifestUnlockProgress, getPuzzleUnlockMap, getUnlockedCountForPack, mergePuzzleUnlocks, parseProgressBackup, PuzzleUnlockMap } from '@/utils/unlocks'
+import { getManifestUnlockProgress, getPuzzleUnlockMap, getUnlockedCountForPack, mergePuzzleUnlocks, parseProgressBackup, PuzzleUnlockMap } from '@/utils/unlocks'
 
 import { PackPuzzleList } from './PackPuzzleList'
 import { PackRow } from './PackRow'
@@ -90,8 +94,16 @@ export const AchievementsDrawer = memo(({ visible, onDismiss, unlockVersion, onU
   const manifest = useMemo(() => getPuzzleManifest().filter((item) => item.count > 0), [])
   const [unlockMap, setUnlockMap] = useState<PuzzleUnlockMap>({})
   const [detailPackKey, setDetailPackKey] = useState<string | null>(null)
-  const [achievementStats, setAchievementStats] = useState<AchievementStats>(DEFAULT_ACHIEVEMENT_STATS)
   const [confirmResetVisible, setConfirmResetVisible] = useState(false)
+  // Stats and unlocks from the store, followed only while open. Closed, the equality check always
+  // passes, so a round finishing elsewhere doesn't re-render this mounted-but-hidden drawer (see the
+  // memo below), and the drawer keeps showing what it had while it slides shut.
+  const achievements = useSelector(
+    (state: RootState) => state.achievements,
+    (prev, next) => !visible || prev === next
+  )
+  const { stats } = achievements
+  const { resetAll } = useGameStats()
 
   // Always reopens on the overview, same as PacksScreen resetting its own step on open —
   // otherwise a drawer left mid-pack-detail on last close would silently resume there next time.
@@ -102,13 +114,9 @@ export const AchievementsDrawer = memo(({ visible, onDismiss, unlockVersion, onU
   useEffect(() => {
     if (!visible) return
     let mounted = true
-    void (async () => {
-      const [nextUnlocks, nextAchievements] = await Promise.all([getPuzzleUnlockMap(), getAchievementStats()])
-      if (mounted) {
-        setUnlockMap(nextUnlocks)
-        setAchievementStats(nextAchievements)
-      }
-    })()
+    void getPuzzleUnlockMap().then((nextUnlocks) => {
+      if (mounted) setUnlockMap(nextUnlocks)
+    })
     return () => {
       mounted = false
     }
@@ -116,46 +124,34 @@ export const AchievementsDrawer = memo(({ visible, onDismiss, unlockVersion, onU
 
   const { totalUnlocked, totalAvailable, overallProgress } = useMemo(() => getManifestUnlockProgress(manifest, unlockMap), [manifest, unlockMap])
 
-  // Derived fresh from the same manifest/unlockMap "Browse by pack" and "Total progress" already
-  // use, rather than a separately-persisted counter — a pack's completion state is exactly
-  // "unlocked count caught up to its total", so there's nothing to get out of sync by tracking it
-  // twice.
-  const packsCompleted = useMemo(() => manifest.filter((item) => item.count > 0 && getUnlockedCountForPack(unlockMap, item.key) >= item.count).length, [manifest, unlockMap])
-
-  // How many times each REPEATABLE achievement has actually been earned, shown as a small count
-  // next to its badge below — unlike win_streak_5/the milestones/mode_master, which are one-shot
-  // "eventually true forever" achievements a per-badge count wouldn't mean anything for.
-  const achievementCounts: Partial<Record<AchievementId, number>> = {
-    flawless: achievementStats.flawlessWins,
-    no_hints: achievementStats.noHintWins,
-    pack_complete: packsCompleted
-  }
-
-  // Solo and pass-and-play are kept as two separate stat groups here for the same reason
-  // recordSolve/recordPnpWin keep them in separate counters (see achievements.ts) — a pnp result
-  // is a contest between two people on one device, not the player's own record. Total played and
-  // win % are derived, not stored — plain tiles in the same grid as everything else rather than
-  // special-cased, so the whole section stays one uniform rhythm of {number, label} tiles.
-  const soloPlayed = achievementStats.totalSolved + achievementStats.totalLost
-  const soloWinPercent = soloPlayed > 0 ? Math.round((achievementStats.totalSolved / soloPlayed) * 100) : 0
+  // Solo and Pass & Play stay two separate stat groups, as in the stats themselves (see
+  // statsEngine): a Pass & Play result is a contest between two people on one device, not the
+  // player's own record. Win % is derived, a plain tile in the same grid as everything else, so the
+  // whole section stays one uniform rhythm of {number, label} tiles.
+  const winPercent = (wins: number, played: number) => (played > 0 ? Math.round((wins / played) * 100) : 0)
   const soloStats = [
-    { label: 'Wins', value: achievementStats.totalSolved },
-    { label: 'Losses', value: achievementStats.totalLost },
-    { label: 'Win %', value: soloWinPercent, suffix: '%' },
-    { label: 'Played', value: soloPlayed },
-    { label: 'Current Streak', value: achievementStats.currentStreak },
-    { label: 'Best Streak', value: achievementStats.bestStreak },
-    { label: 'Letters Guessed', value: achievementStats.lettersGuessed },
-    { label: 'Letters Correct', value: achievementStats.lettersCorrect }
+    { label: 'Wins', value: stats.solo.wins },
+    { label: 'Losses', value: stats.solo.losses },
+    { label: 'Win %', value: winPercent(stats.solo.wins, stats.solo.played), suffix: '%' },
+    { label: 'Played', value: stats.solo.played },
+    { label: 'Current Streak', value: stats.soloStreak.currentWinStreak },
+    { label: 'Best Streak', value: stats.soloStreak.bestWinStreak },
+    { label: 'Letters Guessed', value: stats.lettersGuessed },
+    { label: 'Letters Correct', value: stats.lettersCorrect }
   ]
-  const pnpPlayed = achievementStats.pnpWins + achievementStats.pnpLosses
-  const pnpWinPercent = pnpPlayed > 0 ? Math.round((achievementStats.pnpWins / pnpPlayed) * 100) : 0
   const pnpStats = [
-    { label: 'Wins', value: achievementStats.pnpWins },
-    { label: 'Losses', value: achievementStats.pnpLosses },
-    { label: 'Win %', value: pnpWinPercent, suffix: '%' },
-    { label: 'Played', value: pnpPlayed }
+    { label: 'Wins', value: stats.pnp.wins },
+    { label: 'Losses', value: stats.pnp.losses },
+    { label: 'Win %', value: winPercent(stats.pnp.wins, stats.pnp.played), suffix: '%' },
+    { label: 'Played', value: stats.pnp.played }
   ]
+  // The fleet's achievement rows: unlocked ones in their tier's color with the date, locked ones
+  // grey with a progress bar toward the next rung.
+  const achievementRows = getAchievementCatalogRows(ACHIEVEMENT_CATALOG, stats, stats, achievements.unlocked, null)
+  // Gold and silver progress bars and check marks barely show on light surfaces, so in light mode
+  // they're drawn in the tier color darkened by half. The badges keep the real tier color, whose
+  // black glyph reads fine on it.
+  const tierAccent = (tierColor: string) => (theme.dark ? tierColor : getBlendedColor('#000000', tierColor, 0.5))
 
   const handleExport = async () => {
     try {
@@ -222,8 +218,8 @@ export const AchievementsDrawer = memo(({ visible, onDismiss, unlockVersion, onU
   // below) — by the time this runs, the player has already agreed.
   const handleConfirmReset = async () => {
     setConfirmResetVisible(false)
-    await clearPuzzleUnlocks()
-    await clearAchievements()
+    // Clears the stats, achievements and unlocked puzzles together (see useGameStats).
+    await resetAll()
     onUnlocksChanged()
   }
 
@@ -313,41 +309,11 @@ export const AchievementsDrawer = memo(({ visible, onDismiss, unlockVersion, onU
       <Text variant='titleMedium' style={styles.sectionLabel}>
         Achievements
       </Text>
-      {ACHIEVEMENT_DEFINITIONS.map((def) => {
-        const unlocked = achievementStats.unlockedIds.includes(def.id)
-        const count = achievementCounts[def.id]
-        return (
-          <Card key={def.id} style={[styles.card, { backgroundColor: theme.colors.tertiaryContainer }]} mode='contained'>
-            <Card.Content style={styles.achievementRow}>
-              <Avatar.Icon
-                size={40}
-                icon={def.icon}
-                // Explicit color, not Avatar.Icon's own default (react-native-paper's
-                // getContrastingColor — a fixed white/rgba(0,0,0,.54) split with no idea what hue
-                // it's contrasting against): the theme's own onPrimary/onSurfaceVariant already
-                // compute the correct contrast for whatever seed color is active, light or dark.
-                color={unlocked ? theme.colors.onPrimary : theme.colors.onSurfaceVariant}
-                style={unlocked ? { backgroundColor: theme.colors.primary } : [styles.achievementIconLocked, { backgroundColor: theme.colors.surfaceVariant }]}
-              />
-              <View style={styles.achievementText}>
-                <View style={styles.achievementTitleRow}>
-                  <Text variant='titleSmall' style={unlocked ? { color: theme.colors.onTertiaryContainer } : [styles.muted, { color: theme.colors.onTertiaryContainer }]}>
-                    {def.title}
-                  </Text>
-                  {unlocked && count ? (
-                    <Text variant='bodySmall' style={[styles.muted, { color: theme.colors.onTertiaryContainer }]}>
-                      ×{commaString(count)}
-                    </Text>
-                  ) : null}
-                </View>
-                <Text variant='bodySmall' style={[styles.muted, { color: theme.colors.onTertiaryContainer }]}>
-                  {def.description}
-                </Text>
-              </View>
-            </Card.Content>
-          </Card>
-        )
-      })}
+      <View style={styles.achievementList}>
+        {achievementRows.map((row) => (
+          <AchievementRow key={row.id} icon={row.icon} title={row.title} description={row.description} badgeColor={row.unlockedAt !== undefined ? row.tierColor : LOCKED_BADGE_COLOR} checkColor={tierAccent(row.tierColor)} unlockedLabel={row.unlockedLabel} progress={row.progress} fg={theme.colors.onSurface} fgMuted={theme.colors.onSurfaceVariant} />
+        ))}
+      </View>
 
       <Text variant='titleMedium' style={styles.sectionLabel}>
         Browse by Pack
@@ -446,10 +412,8 @@ export const AchievementsDrawer = memo(({ visible, onDismiss, unlockVersion, onU
 AchievementsDrawer.displayName = 'AchievementsDrawer'
 
 const styles = StyleSheet.create({
-  achievementIconLocked: { opacity: 0.4 },
-  achievementRow: { alignItems: 'center', flexDirection: 'row', gap: 12 },
-  achievementText: { flex: 1, flexShrink: 1 },
-  achievementTitleRow: { alignItems: 'baseline', flexDirection: 'row', gap: 6 },
+  // hud's AchievementRow has no spacing of its own (on the fleet's stats screen the screen supplies it).
+  achievementList: { gap: 8 },
   bigNumber: { fontWeight: '800', marginTop: 4 },
   card: { marginBottom: 4 },
   // scrollContent's own paddingTop is clobbered by the FlatList's header-height inset (see

@@ -7,14 +7,15 @@ import { type StyleProp, StyleSheet, View, type ViewStyle } from 'react-native'
 import { Avatar, Card, Icon, ProgressBar, Text, useTheme } from 'react-native-paper'
 import { useSharedValue } from 'react-native-reanimated'
 
+import { ACHIEVEMENT_CATALOG } from '@/constants/achievements'
 import { DRAWER_BASE_Z_INDEX } from '@/constants/drawerStacking'
 import { useDifficultyOptionColors } from '@/hooks/useDifficultyColors'
 import { useDrawerWidth } from '@/hooks/useDrawerWidth'
+import { useUnlockedAchievementCount } from '@/hooks/useGameStats'
 import { usePackSelection } from '@/hooks/usePackSelection'
 import { fullyDrawnMistakes } from '@/modes/shared/fullyDrawnMistakes'
 import type { GameMode } from '@/types/gameModes'
 import type { GameStartPayload } from '@/types/gameSession'
-import { ACHIEVEMENT_DEFINITIONS, type AchievementStats, DEFAULT_ACHIEVEMENT_STATS, getAchievementStats } from '@/utils/achievements'
 import { alert } from '@/utils/alert'
 import { commaString } from '@/utils/commaString'
 import { getPuzzleManifest, PuzzleDifficultyTier, type PuzzleManifestItem } from '@/utils/puzzleCatalog'
@@ -92,7 +93,9 @@ export const PuzzleDrawer = memo(({ visible, onDismiss, onRequestOpen, initialCo
   const [modePickerVisible, setModePickerVisible] = useState(false)
   const anyOverlayVisible = packsScreenVisible || playDrawerVisible || achievementsVisible || modePickerVisible
   const [unlockMap, setUnlockMap] = useState<PuzzleUnlockMap>({})
-  const [achievementStats, setAchievementStats] = useState<AchievementStats>(DEFAULT_ACHIEVEMENT_STATS)
+  // Just the earned count, read from the stats store: this drawer stays mounted, so a narrow read
+  // keeps it from re-rendering after every round.
+  const earnedAchievements = useUnlockedAchievementCount()
 
   // Same triad PuzzleStage.tsx builds for the real game visual — without this, the mode summary
   // row's own preview would silently fall back to plain `color` instead of showing the actual
@@ -161,19 +164,14 @@ export const PuzzleDrawer = memo(({ visible, onDismiss, onRequestOpen, initialCo
 
   // Re-fetched each time the drawer opens, AND whenever unlockVersion bumps (a puzzle solved
   // elsewhere while this drawer is already open, e.g. through the nested AchievementsDrawer's own
-  // Random) — the quick-start list's per-pack progress and the "All packs" row's own unlocked
-  // count (see totalUnlocked/totalAvailable/overallProgress) both read unlockMap live rather than
-  // only on next open; the Achievements card's own earned-count reads achievementStats the same
-  // way, fetched alongside it (same Promise.all pairing AchievementsDrawer's own identical effect
-  // uses) since a puzzle solved elsewhere can unlock a new achievement in the same stroke.
+  // Random): the quick-start list's per-pack progress and the "All packs" row's own unlocked count
+  // (see totalUnlocked/totalAvailable/overallProgress) both read unlockMap live rather than only on
+  // next open.
   useEffect(() => {
     if (!visible) return
     let mounted = true
-    void Promise.all([getPuzzleUnlockMap(), getAchievementStats()]).then(([map, stats]) => {
-      if (mounted) {
-        setUnlockMap(map)
-        setAchievementStats(stats)
-      }
+    void getPuzzleUnlockMap().then((map) => {
+      if (mounted) setUnlockMap(map)
     })
     return () => {
       mounted = false
@@ -280,7 +278,7 @@ export const PuzzleDrawer = memo(({ visible, onDismiss, onRequestOpen, initialCo
         </Text>
         {/* Same big-number/progress-bar visual language as the "All packs" row below (tapping
             either opens the full drawer/screen behind it) but a different metric — earned
-            achievements out of the fixed ACHIEVEMENT_DEFINITIONS list, not a puzzle-unlock count.
+            achievements out of the whole catalog, not a puzzle-unlock count.
             That count already lives on "All packs" now (and on every pack row below it); showing
             it a second time here just made this card look like one more pack row instead of its
             own distinct facet of progress. */}
@@ -292,17 +290,17 @@ export const PuzzleDrawer = memo(({ visible, onDismiss, onRequestOpen, initialCo
                   card already says it, and repeating it a second time immediately below read as
                   the same word twice in a row. */}
               <Text variant='titleSmall' style={{ color: theme.colors.onPrimaryContainer }}>
-                {achievementStats.unlockedIds.length}
+                {earnedAchievements}
                 <Text variant='titleSmall' style={[styles.muted, { color: theme.colors.onPrimaryContainer }]}>
                   {' '}
-                  / {ACHIEVEMENT_DEFINITIONS.length}
+                  / {ACHIEVEMENT_CATALOG.length}
                 </Text>
               </Text>
               <Text variant='bodySmall' style={[styles.muted, { color: theme.colors.onPrimaryContainer }]}>
                 Achievements earned
               </Text>
               <View style={styles.progressBarWrapper}>
-                <ProgressBar progress={achievementStats.unlockedIds.length / ACHIEVEMENT_DEFINITIONS.length} style={[styles.progressBar, { backgroundColor: theme.colors.surface }]} />
+                <ProgressBar progress={earnedAchievements / ACHIEVEMENT_CATALOG.length} style={[styles.progressBar, { backgroundColor: theme.colors.surface }]} />
               </View>
             </View>
             <Icon source='chevron-right' size={24} color={theme.colors.onPrimaryContainer} />
@@ -339,7 +337,7 @@ export const PuzzleDrawer = memo(({ visible, onDismiss, onRequestOpen, initialCo
         <PackRow label={packsLabel} subtitle={`${commaString(totalUnlocked)} of ${commaString(totalAvailable)} unlocked`} progress={overallProgress} leading={<Avatar.Icon size={40} icon='format-list-checks' color={theme.colors.onTertiary} style={{ backgroundColor: theme.colors.tertiary }} />} trailing={<Icon source='chevron-right' size={24} color={theme.colors.onSurfaceVariant} />} onPress={() => setPacksScreenVisible(true)} />
       </>
     ),
-    [draft.mode, draft.difficulty, settings.color, themeColors, handleOpenModePicker, handleSelectDifficulty, difficultyOptions, achievementStats, packsLabel, totalUnlocked, totalAvailable, overallProgress, theme]
+    [draft.mode, draft.difficulty, settings.color, themeColors, handleOpenModePicker, handleSelectDifficulty, difficultyOptions, earnedAchievements, packsLabel, totalUnlocked, totalAvailable, overallProgress, theme]
   )
 
   return (

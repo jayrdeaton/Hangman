@@ -2,24 +2,20 @@ import { FeedbackPressProvider } from '@rific/feedback-press'
 import { act, fireEvent, render as rtlRender, waitFor, within } from '@testing-library/react-native'
 import type { ReactElement, ReactNode } from 'react'
 import * as RNPaper from 'react-native-paper'
+import { Provider as ReduxProvider } from 'react-redux'
 
 import { AchievementsDrawer } from '@/components/AchievementsDrawer'
+import { GameStatsProvider } from '@/hooks/useGameStats'
 import { DEFAULT_MODE } from '@/modes/registry'
-import { clearAchievements, DEFAULT_ACHIEVEMENT_STATS, getAchievementStats } from '@/utils/achievements'
+import { achievementsActions } from '@/redux/achievementsSlice'
+import { store } from '@/redux/store'
+import type { StatsState, UnlockedAchievementsState } from '@/types/stats'
 import { alert } from '@/utils/alert'
 import { pickHangmanFile, shareProgressBackupFile } from '@/utils/hangmanFile'
 import { getPuzzleManifest, getPuzzlesForCategory } from '@/utils/puzzleCatalog'
 import { resolvePuzzle } from '@/utils/puzzlePicker'
+import { createDefaultStats } from '@/utils/statsValidation'
 import { clearPuzzleUnlocks, getPuzzleUnlockMap, mergePuzzleUnlocks } from '@/utils/unlocks'
-
-// Spreading the real module keeps ACHIEVEMENT_DEFINITIONS/DEFAULT_ACHIEVEMENT_STATS working —
-// only getAchievementStats/clearAchievements are overridden, so their behavior can be controlled
-// per test.
-jest.mock('@/utils/achievements', () => ({
-  ...jest.requireActual('@/utils/achievements'),
-  getAchievementStats: jest.fn(),
-  clearAchievements: jest.fn().mockResolvedValue(undefined)
-}))
 
 // mergePuzzleUnlocks/clearPuzzleUnlocks read/write AsyncStorage (globally stubbed as a no-op in
 // jest.setup.ts) — mocked here instead so the Progress backup tests below can assert on exactly
@@ -56,8 +52,6 @@ jest.mock('@/utils/puzzlePicker', () => ({
   resolvePuzzle: jest.fn()
 }))
 
-const mockGetAchievementStats = jest.mocked(getAchievementStats)
-const mockClearAchievements = jest.mocked(clearAchievements)
 const mockMergePuzzleUnlocks = jest.mocked(mergePuzzleUnlocks)
 const mockClearPuzzleUnlocks = jest.mocked(clearPuzzleUnlocks)
 const mockGetPuzzleUnlockMap = jest.mocked(getPuzzleUnlockMap)
@@ -77,10 +71,16 @@ const realResolvePuzzle: typeof resolvePuzzle = jest.requireActual('@/utils/puzz
 // wrap PaperProvider, not nest inside it — PaperProvider's PortalHost mounts near its own root
 // (same reasoning as Providers.tsx hoisting the real app's Haptic above Theme), so nested the
 // other way, the confirm dialog's own Portal-rendered buttons would sit outside its context.
+// The app's stats store and GameStatsProvider wrap it all too: the drawer reads its stats and
+// achievements from the store and resets through useGameStats.
 const Wrapper = ({ children }: { children: ReactNode }) => (
-  <FeedbackPressProvider paper={RNPaper}>
-    <RNPaper.PaperProvider>{children}</RNPaper.PaperProvider>
-  </FeedbackPressProvider>
+  <ReduxProvider store={store}>
+    <GameStatsProvider>
+      <FeedbackPressProvider paper={RNPaper}>
+        <RNPaper.PaperProvider>{children}</RNPaper.PaperProvider>
+      </FeedbackPressProvider>
+    </GameStatsProvider>
+  </ReduxProvider>
 )
 const render = (ui: ReactElement) => rtlRender(ui, { wrapper: Wrapper })
 
@@ -88,12 +88,12 @@ const builtIn = () => getPuzzleManifest().filter((item) => item.count > 0)[0]
 
 const renderDrawer = (overrides: Partial<React.ComponentProps<typeof AchievementsDrawer>> = {}) => render(<AchievementsDrawer visible onDismiss={jest.fn()} unlockVersion={0} onUnlocksChanged={jest.fn()} mode={DEFAULT_MODE} difficulty='any' onConfirm={jest.fn()} {...overrides} />)
 
-const statsWithTotalSolved = (totalSolved: number) => ({ ...DEFAULT_ACHIEVEMENT_STATS, totalSolved })
+// Puts stats (and optionally unlocks) straight into the app's stats store, on top of fresh defaults.
+const seedStats = (patch: Partial<StatsState>, unlocked: UnlockedAchievementsState = {}) => store.dispatch(achievementsActions.update({ stats: { ...createDefaultStats(), ...patch }, unlocked }))
 
 describe('AchievementsDrawer', () => {
   beforeEach(() => {
-    mockGetAchievementStats.mockReset().mockResolvedValue(statsWithTotalSolved(0))
-    mockClearAchievements.mockClear()
+    store.dispatch(achievementsActions.reset())
     mockMergePuzzleUnlocks.mockReset()
     mockClearPuzzleUnlocks.mockClear()
     mockGetPuzzleUnlockMap.mockReset().mockResolvedValue({})
@@ -114,8 +114,7 @@ describe('AchievementsDrawer', () => {
     expect(getByTestId('achievements-drawer-panel')).toBeTruthy()
     expect(getByText('Total Progress')).toBeTruthy()
     expect(getByText('Puzzles unlocked')).toBeTruthy()
-    // Rendered regardless of unlock state — locked ones just show dimmed/muted (see
-    // AchievementsDrawer.tsx's achievementIconLocked style).
+    // Rendered regardless of unlock state: locked ones show a grey badge and a lock.
     expect(getByText('No Hints Needed')).toBeTruthy()
     expect(getByText('Stats')).toBeTruthy()
     expect(getByText('Pass & Play')).toBeTruthy()
@@ -331,36 +330,65 @@ describe('AchievementsDrawer', () => {
     expect(closedPanel.props.importantForAccessibility).toBe('no-hide-descendants')
   })
 
-  it('re-fetches unlock/achievement stats when unlockVersion changes while already visible', async () => {
-    mockGetAchievementStats.mockResolvedValueOnce(statsWithTotalSolved(3)).mockResolvedValueOnce(statsWithTotalSolved(4))
-    const { getByTestId, rerender } = await renderDrawer({ unlockVersion: 0 })
+  // The panel springs shut over the screen after visible flips false, so it keeps what it showed;
+  // and closed, it doesn't follow the store, so a round elsewhere doesn't re-render it.
+  it('keeps its stats while closing, ignores the store while closed, and catches up on reopening', async () => {
+    seedStats({ solo: { played: 7, wins: 7, losses: 0, draws: 0 } })
+    const drawer = (visible: boolean) => (
+      <Wrapper>
+        <AchievementsDrawer visible={visible} onDismiss={jest.fn()} unlockVersion={0} onUnlocksChanged={jest.fn()} mode={DEFAULT_MODE} difficulty='any' onConfirm={jest.fn()} />
+      </Wrapper>
+    )
+    const { getByTestId, rerender } = await renderDrawer()
+    const wins = () => within(getByTestId('stat-Wins', { includeHiddenElements: true })).getByText(/^\d+$/, { includeHiddenElements: true }).props.children
 
-    await waitFor(() => expect(within(getByTestId('stat-Wins')).getByText('3')).toBeTruthy())
+    await rerender(drawer(false))
+    expect(wins()).toEqual(['7', ''])
 
-    // A real bump comes from Main.tsx's refreshUnlocks after a solve/loss — this is what actually
-    // proves the effect re-runs (not just that it ran once on mount): a stale closure or a missing
-    // dependency would leave this reading "3" forever instead of picking up the new fetch.
+    await act(async () => {
+      seedStats({ solo: { played: 8, wins: 8, losses: 0, draws: 0 } })
+    })
+    expect(wins()).toEqual(['7', ''])
+
+    await rerender(drawer(true))
+    expect(wins()).toEqual(['8', ''])
+  })
+
+  it('re-fetches the unlock map when unlockVersion changes while already visible', async () => {
+    const { rerender } = await renderDrawer({ unlockVersion: 0 })
+    await waitFor(() => expect(mockGetPuzzleUnlockMap).toHaveBeenCalledTimes(1))
+
+    // A real bump comes from Main.tsx's refreshUnlocks after a puzzle unlocks: this is what proves
+    // the effect re-runs (not just that it ran once on mount).
     await rerender(
       <Wrapper>
         <AchievementsDrawer visible onDismiss={jest.fn()} unlockVersion={1} onUnlocksChanged={jest.fn()} mode={DEFAULT_MODE} difficulty='any' onConfirm={jest.fn()} />
       </Wrapper>
     )
 
-    await waitFor(() => expect(within(getByTestId('stat-Wins')).getByText('4')).toBeTruthy())
+    await waitFor(() => expect(mockGetPuzzleUnlockMap).toHaveBeenCalledTimes(2))
+  })
+
+  it('follows the stats store live while open: a round recorded elsewhere shows up with no refetch', async () => {
+    seedStats({ solo: { played: 3, wins: 3, losses: 0, draws: 0 } })
+    const { getByTestId } = await renderDrawer()
+    expect(within(getByTestId('stat-Wins')).getByText('3')).toBeTruthy()
+
+    await act(async () => {
+      seedStats({ solo: { played: 4, wins: 4, losses: 0, draws: 0 } })
+    })
+
+    expect(within(getByTestId('stat-Wins')).getByText('4')).toBeTruthy()
   })
 
   describe('Stats', () => {
-    it('shows Total played (won + lost, and separately wins + losses for pass & play), and every other counter, sourced from the fetched stats', async () => {
-      mockGetAchievementStats.mockResolvedValue({
-        ...DEFAULT_ACHIEVEMENT_STATS,
-        totalSolved: 12,
-        totalLost: 3,
-        currentStreak: 2,
-        bestStreak: 7,
+    it('shows the solo and Pass & Play records and every other counter, sourced from the stats store', async () => {
+      seedStats({
+        solo: { played: 15, wins: 12, losses: 3, draws: 0 },
+        soloStreak: { currentWinStreak: 2, bestWinStreak: 7 },
         lettersGuessed: 150,
         lettersCorrect: 90,
-        pnpWins: 4,
-        pnpLosses: 1
+        pnp: { played: 5, wins: 4, losses: 1, draws: 0 }
       })
       const { getByTestId } = await renderDrawer()
 
@@ -386,38 +414,23 @@ describe('AchievementsDrawer', () => {
     })
   })
 
-  describe('Achievement counts', () => {
-    it('shows a ×N count next to Flawless Victory and No Hints Needed when unlocked, sourced from flawlessWins/noHintWins', async () => {
-      mockGetAchievementStats.mockResolvedValue({
-        ...DEFAULT_ACHIEVEMENT_STATS,
-        unlockedIds: ['flawless', 'no_hints'],
-        flawlessWins: 5,
-        noHintWins: 3
-      })
-      const { findByText } = await renderDrawer()
+  describe('Achievements', () => {
+    it('shows an earned achievement with when it was unlocked, and a locked one without', async () => {
+      seedStats({ flawlessWins: 1 }, { flawless_bronze: Date.now() })
+      const { getByText, getAllByText } = await renderDrawer()
 
-      expect(await findByText('×5')).toBeTruthy()
-      expect(await findByText('×3')).toBeTruthy()
+      expect(getByText('Flawless Victory')).toBeTruthy()
+      // flawless_bronze is the only unlock (nothing else in the seeded stats clears a threshold).
+      expect(getAllByText('Unlocked today')).toHaveLength(1)
+      // Its silver rung, still locked, is listed with its own description.
+      expect(getByText('Spotless')).toBeTruthy()
+      expect(getByText('Solve 10 puzzles without a single wrong guess.')).toBeTruthy()
     })
 
-    it('shows a ×N count next to Collection Complete derived from how many packs are fully unlocked, not a stored counter', async () => {
-      const [firstPack, secondPack] = getPuzzleManifest().filter((item) => item.count > 0)
-      mockGetPuzzleUnlockMap.mockResolvedValue({
-        [firstPack.key]: Array.from({ length: firstPack.count }, (_, i) => `id-${i}`),
-        [secondPack.key]: Array.from({ length: secondPack.count }, (_, i) => `id-${i}`)
-      })
-      mockGetAchievementStats.mockResolvedValue({ ...DEFAULT_ACHIEVEMENT_STATS, unlockedIds: ['pack_complete'] })
-      const { findByText } = await renderDrawer()
+    it('lists the whole catalog, every rung of a ladder included', async () => {
+      const { getByText } = await renderDrawer()
 
-      expect(await findByText('×2')).toBeTruthy()
-    })
-
-    it('does not show a count next to a one-shot achievement like Getting Started even when unlocked', async () => {
-      mockGetAchievementStats.mockResolvedValue({ ...DEFAULT_ACHIEVEMENT_STATS, unlockedIds: ['milestone_10'], totalSolved: 10 })
-      const { getByText, queryByText } = await renderDrawer()
-
-      expect(getByText('Getting Started')).toBeTruthy()
-      expect(queryByText(/^×/)).toBeNull()
+      for (const title of ['First Word', "Beginner's Luck", 'Getting Started', 'Word Wizard', 'Unstoppable', 'Mode Master', 'Completionist', 'Pack Rat', 'Master Curator', 'Social Butterfly', 'Devoted']) expect(getByText(title)).toBeTruthy()
     })
   })
 
@@ -498,6 +511,7 @@ describe('AchievementsDrawer', () => {
     // — a native dialog isn't reliable on web (some browser/automation environments silently
     // auto-decline it, indistinguishable from the player themselves canceling).
     it('does not clear anything when Reset all progress is pressed but the confirmation dialog is declined', async () => {
+      seedStats({ solo: { played: 2, wins: 2, losses: 0, draws: 0 } })
       const onUnlocksChanged = jest.fn()
       const { getByText, queryByText } = await renderDrawer({ onUnlocksChanged })
 
@@ -508,11 +522,12 @@ describe('AchievementsDrawer', () => {
 
       expect(queryByText('Reset Progress?')).toBeNull()
       expect(mockClearPuzzleUnlocks).not.toHaveBeenCalled()
-      expect(mockClearAchievements).not.toHaveBeenCalled()
+      expect(store.getState().achievements.stats.solo.wins).toBe(2)
       expect(onUnlocksChanged).not.toHaveBeenCalled()
     })
 
-    it('clears unlocks and achievements and notifies the parent when Reset all progress is confirmed', async () => {
+    it('clears the unlocked puzzles, every stat and every achievement, and notifies the parent, when Reset all progress is confirmed', async () => {
+      seedStats({ solo: { played: 2, wins: 2, losses: 0, draws: 0 } }, { first_ever_win: Date.now() })
       const onUnlocksChanged = jest.fn()
       const { getByText } = await renderDrawer({ onUnlocksChanged })
 
@@ -520,7 +535,7 @@ describe('AchievementsDrawer', () => {
       await fireEvent.press(getByText('Reset'))
 
       await waitFor(() => expect(mockClearPuzzleUnlocks).toHaveBeenCalledTimes(1))
-      expect(mockClearAchievements).toHaveBeenCalledTimes(1)
+      expect(store.getState().achievements).toEqual({ stats: createDefaultStats(), unlocked: {} })
       expect(onUnlocksChanged).toHaveBeenCalledTimes(1)
     })
   })

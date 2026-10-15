@@ -4,8 +4,11 @@ import { fireEvent, render as rtlRender, waitFor, within } from '@testing-librar
 import type { ReactElement, ReactNode } from 'react'
 import * as RNPaper from 'react-native-paper'
 import { PaperProvider } from 'react-native-paper'
+import { Provider as ReduxProvider } from 'react-redux'
 
 import { PacksScreen } from '@/components/PacksScreen'
+import { GameStatsProvider } from '@/hooks/useGameStats'
+import { store } from '@/redux/store'
 import { loadCustomPacksCache, saveCustomPack } from '@/utils/customPacks'
 import { pickHangmanFile, shareCustomPackFile } from '@/utils/hangmanFile'
 import { getPuzzleManifest } from '@/utils/puzzleCatalog'
@@ -30,8 +33,9 @@ const builtIn = () => getPuzzleManifest().filter((item) => item.count > 0)[0]
 // wrapper AchievementsDrawer.test.tsx uses for its own Portal-based dialog.
 // ToastProvider is also required — this screen always mounts its own PackEditorDrawer (translated
 // off-screen when not visible, same as every other drawer in this lineage), and that drawer's own
-// form calls useToast() to surface a newly-unlocked custom-pack achievement (see achievements.ts's
-// packs_created_* ladder), which throws outside a ToastProvider ancestor.
+// form calls useToast() to surface a newly-unlocked custom-pack achievement, which throws outside a
+// ToastProvider ancestor. That form also records the new pack through useGameStats, so the app's
+// stats store and GameStatsProvider wrap everything too.
 // FeedbackPressProvider paper={RNPaper} is required too — @rific/feedback-press no longer
 // auto-detects react-native-paper (see Haptic.tsx's own comment on this), so without it every
 // Button/IconButton here falls back to a bare, unstyled Pressable instead of Paper's real
@@ -41,11 +45,15 @@ const builtIn = () => getPuzzleManifest().filter((item) => item.count > 0)[0]
 // Portal-rendered Cancel/Delete buttons only see FeedbackPressProvider's context if it's an
 // ancestor of PaperProvider — nested inside, they'd sit outside the portaled subtree entirely.
 const Wrapper = ({ children }: { children: ReactNode }) => (
-  <FeedbackPressProvider paper={RNPaper}>
-    <PaperProvider>
-      <ToastProvider>{children}</ToastProvider>
-    </PaperProvider>
-  </FeedbackPressProvider>
+  <ReduxProvider store={store}>
+    <GameStatsProvider>
+      <FeedbackPressProvider paper={RNPaper}>
+        <PaperProvider>
+          <ToastProvider>{children}</ToastProvider>
+        </PaperProvider>
+      </FeedbackPressProvider>
+    </GameStatsProvider>
+  </ReduxProvider>
 )
 const render = (ui: ReactElement) => rtlRender(ui, { wrapper: Wrapper })
 

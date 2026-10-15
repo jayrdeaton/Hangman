@@ -9,6 +9,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context'
 import { Provider as ReduxProvider } from 'react-redux'
 import { PersistGate } from 'redux-persist/integration/react'
 
+import { GameStatsProvider } from '@/hooks/useGameStats'
 import { persistor, store } from '@/redux/store'
 
 import { AutoSaveCustomProvider } from './AutoSaveCustomProvider'
@@ -62,7 +63,11 @@ export const Providers = ({ children }: ProvidersProps): JSX.Element => (
                 <KeyboardLayoutProvider>
                   <AutoSaveCustomProvider>
                     <PackSelectionProvider>
-                      <PuzzleDefaultsProvider>{children}</PuzzleDefaultsProvider>
+                      <PuzzleDefaultsProvider>
+                        {/* Inside PersistGate, so its one mount-time catalog sweep sees the
+                            rehydrated stats; and never keyed or gated, so it never remounts. */}
+                        <GameStatsProvider>{children}</GameStatsProvider>
+                      </PuzzleDefaultsProvider>
                     </PackSelectionProvider>
                   </AutoSaveCustomProvider>
                 </KeyboardLayoutProvider>

@@ -1,4 +1,6 @@
-import { clearPuzzleUnlocks, exportPuzzleUnlocks, getPuzzleUnlockMap, getTotalUnlockedCount, getUnlockedCountForPack, importPuzzleUnlocks, markPuzzleUnlocked, mergePuzzleUnlocks, parseProgressBackup } from '@/utils/unlocks'
+import { clearPuzzleUnlocks, exportPuzzleUnlocks, getCompletedBuiltInPackKeys, getPuzzleUnlockMap, getTotalUnlockedCount, getUnlockedCountForPack, importPuzzleUnlocks, markPuzzleUnlocked, mergePuzzleUnlocks, parseProgressBackup } from '@/utils/unlocks'
+
+import { puzzleManifest } from '../../data/puzzleCatalog.generated'
 
 let mockStore: Record<string, string>
 
@@ -244,5 +246,24 @@ describe('getTotalUnlockedCount', () => {
 
   it('returns 0 for an empty map', () => {
     expect(getTotalUnlockedCount({})).toBe(0)
+  })
+})
+
+describe('getCompletedBuiltInPackKeys', () => {
+  const ids = (count: number) => Array.from({ length: count }, (_, i) => `id-${i}`)
+
+  it('lists the built-in packs with every puzzle unlocked, rescanning the whole manifest', () => {
+    const [first, second, third] = puzzleManifest
+    const map = { [first.key]: ids(first.count), [second.key]: ids(second.count - 1), [third.key]: ids(third.count) }
+
+    expect(getCompletedBuiltInPackKeys(map)).toEqual([first.key, third.key])
+  })
+
+  it('never counts a custom pack, however complete', () => {
+    expect(getCompletedBuiltInPackKeys({ 'custom:abc': ids(5) })).toEqual([])
+  })
+
+  it('finds nothing in an empty map', () => {
+    expect(getCompletedBuiltInPackKeys({})).toEqual([])
   })
 })

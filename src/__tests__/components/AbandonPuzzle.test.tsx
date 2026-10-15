@@ -2,26 +2,20 @@ import { fireEvent, render } from '@testing-library/react-native'
 
 import { Main } from '@/components/Main'
 import { Providers } from '@/components/Providers'
+import { achievementsActions } from '@/redux/achievementsSlice'
+import { store } from '@/redux/store'
 import type { GameMode } from '@/types/gameModes'
 import type { GameStartPayload } from '@/types/gameSession'
-import { recordLoss } from '@/utils/achievements'
 import * as puzzlePicker from '@/utils/puzzlePicker'
 
-// Own file, own achievements mock — same reasoning PnpFlow.test.tsx's own comment gives: mocking
-// '@/utils/achievements' here shouldn't perturb Main.test.tsx's unrelated assertions.
 jest.mock('@/utils/puzzlePicker', () => ({
   ...jest.requireActual('@/utils/puzzlePicker'),
   resolvePuzzle: jest.fn()
 }))
 
-jest.mock('@/utils/achievements', () => ({
-  ...jest.requireActual('@/utils/achievements'),
-  recordSolve: jest.fn().mockResolvedValue([]),
-  recordLoss: jest.fn().mockResolvedValue(undefined)
-}))
-
 const mockResolvePuzzle = jest.mocked(puzzlePicker.resolvePuzzle)
-const mockRecordLoss = jest.mocked(recordLoss)
+// The real stats store: what a round recorded is read straight from it.
+const soloStats = () => store.getState().achievements.stats
 
 const visualMode: GameMode = {
   id: 'test-abandon-visual',
@@ -57,7 +51,7 @@ const renderApp = () =>
 describe('Main — abandoning an in-progress puzzle counts as a loss', () => {
   beforeEach(() => {
     mockResolvePuzzle.mockReset()
-    mockRecordLoss.mockClear()
+    store.dispatch(achievementsActions.reset())
   })
 
   it('asks for confirmation instead of switching immediately, once at least one letter has been guessed', async () => {
@@ -76,7 +70,7 @@ describe('Main — abandoning an in-progress puzzle counts as a loss', () => {
     // whether Main actually accepts it) — but that candidate is only HELD pending confirmation, not
     // applied: no loss recorded, nothing switched yet.
     expect(mockResolvePuzzle).toHaveBeenCalledTimes(2)
-    expect(mockRecordLoss).not.toHaveBeenCalled()
+    expect(soloStats().solo.losses).toBe(0)
   })
 
   it('records a loss for the abandoned puzzle and switches once the abandon is confirmed', async () => {
@@ -88,9 +82,24 @@ describe('Main — abandoning an in-progress puzzle counts as a loss', () => {
     await fireEvent.press(getByText('Random'))
     await fireEvent.press(getByText('Abandon'))
 
-    expect(mockRecordLoss).toHaveBeenCalledTimes(1)
-    expect(mockRecordLoss).toHaveBeenCalledWith({ wrongGuesses: 1, guessCount: 1 })
+    expect(soloStats().solo.losses).toBe(1)
+    expect(soloStats()).toMatchObject({ lettersGuessed: 1, lettersCorrect: 0 })
     expect(mockResolvePuzzle).toHaveBeenCalledTimes(2)
+  })
+
+  // An abandon has no round-end card, so what it unlocks (here the very first puzzle played) gets the
+  // fleet's achievement toast instead.
+  it("toasts what an abandon unlocks, since there's no round-end card to show it", async () => {
+    mockResolvePuzzle.mockReturnValueOnce({ ok: true, payload: payload({ puzzleId: 'puzzle-1' }) }).mockReturnValueOnce({ ok: true, payload: payload({ phrase: 'FISH', puzzleId: 'puzzle-2' }) })
+    const { getByLabelText, getByText, findByText } = await renderApp()
+
+    await fireEvent.press(getByText('Q'))
+    await fireEvent.press(getByLabelText('Game Menu'))
+    await fireEvent.press(getByText('Random'))
+    await fireEvent.press(getByText('Abandon'))
+
+    expect(await findByText('First Word')).toBeTruthy()
+    expect(getByText('Achievement unlocked')).toBeTruthy()
   })
 
   it('stays on the current puzzle and records nothing when the abandon is declined', async () => {
@@ -103,7 +112,7 @@ describe('Main — abandoning an in-progress puzzle counts as a loss', () => {
     await fireEvent.press(getByText('Cancel'))
 
     expect(queryByText('Abandon This Puzzle?')).toBeNull()
-    expect(mockRecordLoss).not.toHaveBeenCalled()
+    expect(soloStats().solo.losses).toBe(0)
     // The candidate Random already drew (see the previous test) was discarded, not applied — no
     // THIRD resolvePuzzle call from cancelling, on top of the mount + Random-press pair.
     expect(mockResolvePuzzle).toHaveBeenCalledTimes(2)
@@ -117,7 +126,7 @@ describe('Main — abandoning an in-progress puzzle counts as a loss', () => {
     await fireEvent.press(getByText('Random'))
 
     expect(queryByText('Abandon This Puzzle?')).toBeNull()
-    expect(mockRecordLoss).not.toHaveBeenCalled()
+    expect(soloStats().solo.losses).toBe(0)
     expect(mockResolvePuzzle).toHaveBeenCalledTimes(2)
   })
 
@@ -128,13 +137,13 @@ describe('Main — abandoning an in-progress puzzle counts as a loss', () => {
     await fireEvent.press(getByText('Q'))
     expect(await findByText('You Lost!')).toBeTruthy()
     // The real loss already recorded it — this is the ONE call, not a second one from abandoning.
-    expect(mockRecordLoss).toHaveBeenCalledTimes(1)
+    expect(soloStats().solo.losses).toBe(1)
 
     await fireEvent.press(getByLabelText('Game Menu'))
     await fireEvent.press(getByText('Random'))
 
     expect(queryByText('Abandon This Puzzle?')).toBeNull()
-    expect(mockRecordLoss).toHaveBeenCalledTimes(1)
+    expect(soloStats().solo.losses).toBe(1)
     expect(mockResolvePuzzle).toHaveBeenCalledTimes(2)
   })
 
@@ -153,7 +162,7 @@ describe('Main — abandoning an in-progress puzzle counts as a loss', () => {
 
     await fireEvent.press(getByText('Abandon'))
 
-    expect(mockRecordLoss).toHaveBeenCalledWith({ wrongGuesses: 1, guessCount: 1 })
+    expect(soloStats()).toMatchObject({ lettersGuessed: 1, lettersCorrect: 0 })
     // The prompt's own title bar matches the button that launched it (see PnpFlow.test.tsx's own
     // "titles the prompt to match the button that launched it") — the drawer's OWN same-labeled
     // button is accessibility-hidden by now (the menu closed as part of applying the switch), so

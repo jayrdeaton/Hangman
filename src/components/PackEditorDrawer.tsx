@@ -9,8 +9,9 @@ import { JSX, memo, useMemo, useRef, useState } from 'react'
 import { Keyboard, StyleSheet, useWindowDimensions, View } from 'react-native'
 import { Text, TextInput } from 'react-native-paper'
 
+import { ACHIEVEMENT_TIER_COLORS } from '@/constants/achievements'
 import { DRAWER_PACK_DETAIL_Z_INDEX } from '@/constants/drawerStacking'
-import { ACHIEVEMENT_DEFINITIONS_BY_ID, recordCustomPackCreated } from '@/utils/achievements'
+import { useGameStats } from '@/hooks/useGameStats'
 import { CUSTOM_QUICK_PACK_LABEL, type CustomPack, type CustomPackEntryInput, getCustomPackPuzzles, saveCustomPack } from '@/utils/customPacks'
 import { normalizePhrase } from '@/utils/normalizePhrase'
 import { getPuzzleManifest } from '@/utils/puzzleCatalog'
@@ -77,6 +78,7 @@ type PackEditorFormProps = {
 const PackEditorForm = ({ editingKey, onSaved, onCancel, onDelete, onShare }: PackEditorFormProps): JSX.Element => {
   const theme = useAutoPaperTheme()
   const { success } = useToast()
+  const { recordCustomPackCreated } = useGameStats()
 
   const editingPack = useMemo((): CustomPack | null => {
     if (!editingKey) return null
@@ -150,17 +152,15 @@ const PackEditorForm = ({ editingKey, onSaved, onCancel, onDelete, onShare }: Pa
     setSaving(true)
     try {
       const pack = await saveCustomPack({ key: editingPack?.key, label: trimmedLabel, entries: validEntries })
-      // editingKey (not editingPack -- see its own useMemo above) is what distinguishes a brand-
-      // new pack from editing one that already exists; only the former should count toward the
-      // packs_created_* ladder, so re-saving edits to an existing pack doesn't inflate it.
+      // editingKey (not editingPack: see its own useMemo above) is what distinguishes a brand-new
+      // pack from editing one that already exists; only the former counts toward the custom pack
+      // achievements, so re-saving edits to an existing pack doesn't inflate them.
       if (!editingKey) {
-        const newlyUnlocked = await recordCustomPackCreated()
-        // No win/loss dialog here to fold this into (unlike a solved puzzle -- see Main.tsx's
-        // handleSolved), so a toast is the feedback surface instead -- same @rific/toaster
-        // <Toaster/> PnpWordPrompt.tsx already uses, mounted once in Providers.tsx. The
-        // achievement's own name is the toast title and 'Achievement unlocked' its caption, the
-        // same order every @tastic game's achievement toast uses.
-        newlyUnlocked.forEach((id) => success(ACHIEVEMENT_DEFINITIONS_BY_ID[id].title, 'Achievement unlocked'))
+        // No round-end card here to fold this into (unlike a solved puzzle: see Main.tsx's
+        // handleSolved), so each unlock gets the fleet's achievement toast instead, from the
+        // @rific/toaster <Toaster/> mounted once in Providers.tsx: the achievement's title, then
+        // 'Achievement unlocked', in its tier's color with its own icon.
+        recordCustomPackCreated().forEach((achievement) => success(achievement.title, 'Achievement unlocked', undefined, { color: ACHIEVEMENT_TIER_COLORS[achievement.tier], icon: achievement.icon }))
       }
       onSaved(pack)
     } finally {

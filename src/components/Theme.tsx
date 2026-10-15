@@ -65,7 +65,12 @@ export const Theme = ({ children }: ThemeProps) => {
     // explicitly, or it silently falls back to a solid fill. reanimated is the same story for
     // auto-paper Dialog's animatedStyle prop, which nothing in this app passes any more (the Settings
     // sheet's fade runs on React Native's own Animated); it stays wired for the next caller.
-    <Provider initialValue={settings} onChange={onChange} onReady={onReady} expoBlur={ExpoBlur} reanimated={Reanimated}>
+    // statusBar={false}: auto-paper renders no React Native StatusBar (here or in Appbar.Header).
+    // @tastic/core's config plugin turns UIViewControllerBasedStatusBarAppearance on, under which a
+    // mounted StatusBar logs an error (a red box in a dev build), and an app linked against the iOS
+    // 27 SDK can't set the status bar through one anyway. With no navigator here, the bar keeps the
+    // root view controller's default: its text follows the system appearance, not this theme.
+    <Provider initialValue={settings} onChange={onChange} onReady={onReady} expoBlur={ExpoBlur} reanimated={Reanimated} statusBar={false}>
       <RootBackground />
       {children}
     </Provider>
