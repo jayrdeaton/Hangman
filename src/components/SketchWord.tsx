@@ -28,6 +28,34 @@ const BLANK_STAGGER_MS = 90
 // word always gets delayMs 0, revealing the moment it's guessed same as before.
 const DUPLICATE_LETTER_STAGGER_MS = 150
 
+// The stroke width, glyph margin and glyph height SketchWord draws at for a given fontSize. Shared by
+// the component and the two sizing helpers below, so a caller's fit always matches what's drawn.
+const sketchMetrics = (fontSize: number) => {
+  const strokeWidth = Math.max(1.5, fontSize * 0.08)
+  // Headroom on every edge a glyph's own path actually reaches: round strokeLinecap/strokeLinejoin
+  // (see SketchLetter/sketchShapes.tsx) draws past the nominal path by up to strokeWidth/2, and
+  // every letter's baseline sits flush with GLYPH_HEIGHT in letterformsHershey.ts, so without this
+  // the Svg's own overflow:hidden clips that overshoot right off the bottom of any letter that
+  // reaches all the way down there, which by design is most of them (S, U, ...).
+  const glyphMargin = strokeWidth * 0.75
+  const glyphHeight = Math.max(1, fontSize - glyphMargin * 2)
+  return { strokeWidth, glyphMargin, glyphHeight, scale: glyphHeight / GLYPH_HEIGHT }
+}
+
+// How wide SketchWord draws a word of `letterCount` letters at `fontSize` (its height is fontSize).
+export const sketchWordWidth = (letterCount: number, fontSize: number): number => {
+  const { scale } = sketchMetrics(fontSize)
+  return Math.max(1, letterCount * CELL_WIDTH * scale + Math.max(0, letterCount - 1) * HERSHEY_GAP * scale)
+}
+
+// The largest whole fontSize, up to `maxFontSize`, at which a word of `letterCount` letters fits in
+// `width`. Never below 1: a word too long for any readable size still draws whole, just small.
+export const fitSketchWordFontSize = (letterCount: number, width: number, maxFontSize: number): number => {
+  let fontSize = Math.max(1, Math.floor(maxFontSize))
+  while (fontSize > 1 && sketchWordWidth(letterCount, fontSize) > width) fontSize--
+  return fontSize
+}
+
 // Renders one word of the puzzle display — letters and blanks alike — as hand-drawn strokes
 // instead of monospace Text. Every cell is the same CELL_WIDTH regardless of which letter (or
 // blank) occupies it, so a word's layout never shifts as guesses land — the only thing that
@@ -44,24 +72,21 @@ export type SketchWordProps = {
   // "just mounted is just revealed" behavior already gives the right timing for free, the same way
   // robot.tsx's removable parts need no `started` gating for their own reactive reveals.
   started?: boolean
+  // Per-position overrides for a word that's written out whole in one pass (RoundEndDialog's
+  // answer): each letter's own color and start delay, indexed like `letters`. Omitted, every letter
+  // takes `color` and the duplicate-letter stagger below.
+  letterColors?: string[]
+  letterDelaysMs?: number[]
 }
 
-export const SketchWord = ({ letters, fontSize, color, started }: SketchWordProps) => {
+export const SketchWord = ({ letters, fontSize, color, started, letterColors, letterDelaysMs }: SketchWordProps) => {
   const height = fontSize
-  const strokeWidth = Math.max(1.5, fontSize * 0.08)
-  // Headroom on every edge a glyph's own path actually reaches — round strokeLinecap/
-  // strokeLinejoin (see SketchLetter/sketchShapes.tsx) draws past the nominal path by up to
-  // strokeWidth/2, and every letter's baseline sits flush with GLYPH_HEIGHT in letterformsHershey.ts,
-  // so without this the Svg's own overflow:hidden clips that overshoot right off the bottom of any
-  // letter that reaches all the way down there — which, by design, is most of them (S, U, ...).
-  const glyphMargin = strokeWidth * 0.75
-  const glyphHeight = Math.max(1, height - glyphMargin * 2)
-  const scale = glyphHeight / GLYPH_HEIGHT
+  const { strokeWidth, glyphMargin, glyphHeight, scale } = sketchMetrics(fontSize)
   const cellWidth = CELL_WIDTH * scale
   const gap = HERSHEY_GAP * scale
   const markWidth = cellWidth * BLANK_MARK_FILL
 
-  const width = Math.max(1, letters.length * cellWidth + Math.max(0, letters.length - 1) * gap)
+  const width = sketchWordWidth(letters.length, fontSize)
 
   return (
     <Svg width={width} height={height} viewBox={`0 0 ${width} ${height}`}>
@@ -76,7 +101,7 @@ export const SketchWord = ({ letters, fontSize, color, started }: SketchWordProp
         // How many earlier positions in this same word already show this same letter — 0 for the
         // first (or only) occurrence, so a non-repeated letter is unaffected.
         const duplicateIndex = letters.slice(0, i).filter((c) => c === ch).length
-        return <SketchLetter key={i} letter={ch} x={cellX + (cellWidth - letterWidth) / 2} y={glyphMargin} height={glyphHeight} color={color} strokeWidth={strokeWidth} delayMs={duplicateIndex * DUPLICATE_LETTER_STAGGER_MS} />
+        return <SketchLetter key={i} letter={ch} x={cellX + (cellWidth - letterWidth) / 2} y={glyphMargin} height={glyphHeight} color={letterColors?.[i] ?? color} strokeWidth={strokeWidth} delayMs={letterDelaysMs?.[i] ?? duplicateIndex * DUPLICATE_LETTER_STAGGER_MS} />
       })}
     </Svg>
   )

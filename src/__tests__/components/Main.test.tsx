@@ -102,7 +102,7 @@ describe('Main', () => {
     // The puzzle already on screen was drawn before "Hard" was picked — changing the filter can't
     // retroactively change it, so the round plays out normally and ends on its own terms.
     await fireEvent.press(getByText('Q'))
-    expect(await findByText('You Lose!')).toBeTruthy()
+    expect(await findByText('You Lost!')).toBeTruthy()
     expect(mockResolvePuzzle).toHaveBeenCalledTimes(1)
 
     await fireEvent.press(getByText('Next'))
@@ -118,7 +118,7 @@ describe('Main', () => {
     const { getByText, findByText } = await renderApp()
 
     await fireEvent.press(getByText('Q'))
-    expect(await findByText('You Lose!')).toBeTruthy()
+    expect(await findByText('You Lost!')).toBeTruthy()
 
     await fireEvent.press(getByText('Next'))
 
@@ -131,7 +131,7 @@ describe('Main', () => {
     const { getByText, findByText } = await renderApp()
 
     await fireEvent.press(getByText('Q'))
-    expect(await findByText('You Lose!')).toBeTruthy()
+    expect(await findByText('You Lost!')).toBeTruthy()
 
     await fireEvent.press(getByText('Next'))
 

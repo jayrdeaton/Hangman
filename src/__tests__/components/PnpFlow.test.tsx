@@ -130,7 +130,7 @@ describe('Main — pass and play', () => {
     })
 
     // Whoever is holding the device is "you" — no player attribution, no score line.
-    expect(getByText('You Win!')).toBeTruthy()
+    expect(getByText('You Won!')).toBeTruthy()
     // Only the continue button changes, because continuing here means writing the next word.
     expect(getByText('Next')).toBeTruthy()
 
@@ -153,7 +153,7 @@ describe('Main — pass and play', () => {
     // Game holds the dialog back ~450ms so the final artwork paints first (its lossTimeoutRef).
     await loseTheRound(getByText)
 
-    expect(await findByText('You Lose!')).toBeTruthy()
+    expect(await findByText('You Lost!')).toBeTruthy()
 
     await fireEvent.press(getByText('Next'))
     expect(getByTestId('pnp-answer-input')).toBeTruthy()
@@ -174,7 +174,7 @@ describe('Main — pass and play', () => {
       jest.advanceTimersByTime(WIN_DIALOG_DELAY_MS)
     })
 
-    expect(getByText('You Win!')).toBeTruthy()
+    expect(getByText('You Won!')).toBeTruthy()
     // A word someone typed on the spot shouldn't inflate totalSolved or the win streak, and their
     // choice not to write a hint shouldn't hand out "No Hints Needed" for free.
     expect(mockRecordSolve).not.toHaveBeenCalled()
@@ -193,7 +193,7 @@ describe('Main — pass and play', () => {
     await playThroughToRound(utils, 'CAT')
     await loseTheRound(getByText)
 
-    expect(await findByText('You Lose!')).toBeTruthy()
+    expect(await findByText('You Lost!')).toBeTruthy()
     expect(mockRecordLoss).not.toHaveBeenCalled()
     expect(mockRecordSolve).not.toHaveBeenCalled()
   })
@@ -350,7 +350,7 @@ describe('Main — pass and play', () => {
       jest.advanceTimersByTime(WIN_DIALOG_DELAY_MS)
     })
 
-    expect(getByText('You Win!')).toBeTruthy()
+    expect(getByText('You Won!')).toBeTruthy()
 
     jest.useRealTimers()
   })
@@ -373,7 +373,7 @@ describe('Main — pass and play', () => {
     await fireEvent.press(getByText('C'))
     await fireEvent.press(getByText('A'))
     await fireEvent.press(getByText('T'))
-    expect(queryByText('You Win!')).toBeNull()
+    expect(queryByText('You Won!')).toBeNull()
 
     await fireEvent.press(getByText('Ready'))
 
@@ -385,7 +385,7 @@ describe('Main — pass and play', () => {
       jest.advanceTimersByTime(WIN_DIALOG_DELAY_MS)
     })
 
-    expect(getByText('You Win!')).toBeTruthy()
+    expect(getByText('You Won!')).toBeTruthy()
 
     jest.useRealTimers()
   })

@@ -1,4 +1,4 @@
-import { JSX, useEffect, useRef, useState } from 'react'
+import { JSX, useCallback, useEffect, useRef, useState } from 'react'
 import { Platform, StyleSheet, View } from 'react-native'
 import { Portal, useTheme } from 'react-native-paper'
 import Animated, { useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated'
@@ -108,6 +108,14 @@ export const Game = ({ onStop, onSolved, onLost, onGuessProgress, phrase, mode =
   // setOutcome('loss') timeout, so the shake/fall begins the instant the round is actually lost
   // rather than waiting on the 450ms delay that only exists to let the final hangman art render.
   const [keyboardFalling, setKeyboardFalling] = useState(false)
+  // Set by Next. Every next-puzzle path remounts Game, so this usually never matters, but a
+  // shared-link puzzle's Next only opens the Game Menu over this same finished round: without it the
+  // card (and a win's fireworks) would stay up on top of the menu, and Next would do nothing more.
+  const [roundEndDismissed, setRoundEndDismissed] = useState(false)
+  const handleRoundEndDismiss = useCallback(() => {
+    setRoundEndDismissed(true)
+    onStop()
+  }, [onStop])
   // Bumped every time the celebration effect finishes a cycle, which remounts CelebrationView
   // (keyed on this value below) to start a fresh cycle — keeping the effect running for as long
   // as outcome stays 'win', i.e. for as long as the win dialog is open.
@@ -266,16 +274,16 @@ export const Game = ({ onStop, onSolved, onLost, onGuessProgress, phrase, mode =
         ) : null}
         <Keyboard guessedLetters={guessedLetters} phrase={phrase} winningLetter={winningLetter} falling={keyboardFalling} started={gameReady} disabled={outcome !== null} layout={layout} onGuess={handleGuess} onReadyChange={setKeyboardReady} />
       </Animated.View>
-      {outcome === 'win' ? (
+      {outcome === 'win' && !roundEndDismissed ? (
         // Portal escapes this component's own box (which sits below the app header and inside
-        // safe-area padding) to render at the app root instead — the same mechanism
-        // RoundEndDialog's Dialog uses for its full-screen backdrop — so the celebration covers
+        // safe-area padding) to render at the app root instead (the same mechanism
+        // RoundEndDialog's card uses for its full-screen backdrop), so the celebration covers
         // the entire screen (header, keyboard, everything) rather than just Game's local area.
         <Portal>
           <CelebrationView key={celebrationCycle} colors={[theme.colors.primary, theme.colors.secondary, theme.colors.tertiary]} dark={theme.dark} onComplete={() => setCelebrationCycle((c) => c + 1)} />
         </Portal>
       ) : null}
-      <RoundEndDialog visible={outcome !== null && dialogReady} outcome={outcome} phrase={phrase} categoryProgress={categoryProgress} unlockedAchievementTitles={unlockedAchievementTitles} onDismiss={onStop} />
+      <RoundEndDialog visible={outcome !== null && dialogReady && !roundEndDismissed} outcome={outcome} phrase={phrase} guessedLetters={guessedLetters} categoryProgress={categoryProgress} unlockedAchievementTitles={unlockedAchievementTitles} onDismiss={handleRoundEndDismiss} />
     </View>
   )
 }

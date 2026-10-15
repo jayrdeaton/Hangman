@@ -21,11 +21,10 @@ jest.mock('expo-haptics', () => ({
 
 const mockNotificationAsync = jest.mocked(haptics.notificationAsync)
 
-// RoundEndDialog's Dialog defaults to the blurred/Portal-based rendering path (the app-wide
-// blur setting defaults to true), which requires a react-native-paper Portal.Host ancestor —
-// normally supplied by @rific/auto-paper's Provider at the app root. Wrapping with PaperProvider
-// here supplies that same Portal.Host without pulling in the rest of the app's Redux/persist
-// provider stack.
+// RoundEndDialog's card (@tastic/hud's OverlayBackdrop and OverlayCard) always renders through
+// react-native-paper's Portal, whatever the Blur setting, so it needs a Portal.Host ancestor:
+// normally @rific/auto-paper's Provider at the app root. Wrapping with PaperProvider here supplies
+// that same Portal.Host without pulling in the rest of the app's Redux/persist provider stack.
 // FeedbackPressProvider paper={RNPaper} is required too — @rific/feedback-press no longer
 // auto-detects react-native-paper (see Haptic.tsx's own comment on this), so without it every
 // Button/IconButton Game.tsx renders (the keyboard, the hint/pack pill, RoundEndDialog's own
@@ -276,7 +275,7 @@ describe('Game', () => {
     await guessLetter(getByText, 'Q')
     await guessLetter(getByText, 'W')
 
-    expect(await findByText('You Lose!')).toBeTruthy()
+    expect(await findByText('You Lost!')).toBeTruthy()
     expect(onStop).not.toHaveBeenCalled()
 
     await fireEvent.press(getByText('Next'))
@@ -311,18 +310,43 @@ describe('Game', () => {
     expect(fireworksView).toBeTruthy()
     // ...but the dialog itself waits (see Game.tsx's WIN_DIALOG_DELAY_MS), so it doesn't cut the
     // moment off the instant the last letter lands.
-    expect(queryByText('You Win!')).toBeNull()
+    expect(queryByText('You Won!')).toBeNull()
 
     await fireFireworksLayout(root)
     await act(async () => {
       jest.advanceTimersByTime(WIN_DIALOG_DELAY_MS)
     })
 
-    expect(getByText('You Win!')).toBeTruthy()
+    expect(getByText('You Won!')).toBeTruthy()
 
     await fireEvent.press(getByText('Next'))
 
     expect(onStop).toHaveBeenCalledTimes(1)
+
+    jest.useRealTimers()
+  })
+
+  // A shared-link puzzle's Next only opens the Game Menu, over this same Game (Main's handleRoundEnd),
+  // so nothing remounts it: the card and the fireworks have to go away on their own.
+  it('takes the card and the celebration down on Next even when the round is not replaced', async () => {
+    jest.useFakeTimers()
+    const onStop = jest.fn()
+    const { getByText, queryByText, root } = await render(<Game phrase='CAT' onStop={onStop} />)
+
+    await guessLetter(getByText, 'C')
+    await guessLetter(getByText, 'A')
+    await guessLetter(getByText, 'T')
+    await fireFireworksLayout(root)
+    await act(async () => {
+      jest.advanceTimersByTime(WIN_DIALOG_DELAY_MS)
+    })
+    expect(getByText('You Won!')).toBeTruthy()
+
+    await fireEvent.press(getByText('Next'))
+
+    expect(onStop).toHaveBeenCalledTimes(1)
+    expect(queryByText('You Won!')).toBeNull()
+    expect(root!.queryAll(isFireworksView)).toHaveLength(0)
 
     jest.useRealTimers()
   })
@@ -404,7 +428,7 @@ describe('Game', () => {
     await guessLetter(getByText, 'Q')
     await guessLetter(getByText, 'W')
 
-    expect(await findByText('You Lose!')).toBeTruthy()
+    expect(await findByText('You Lost!')).toBeTruthy()
     expect(queryByText(/unlocked in Animals/)).toBeNull()
   })
 
@@ -638,12 +662,12 @@ describe('Game', () => {
     // started under roomyVisualMode (maxMistakes 3), so swapping mid-round must not retroactively
     // end it just because the new mode's limit would already have been exceeded.
     await rerender(<Game phrase='CAT' onStop={jest.fn()} mode={tightNoVisualMode} />)
-    expect(queryByText('You Lose!')).toBeNull()
+    expect(queryByText('You Lost!')).toBeNull()
 
     // The round is still governed by the ORIGINAL mode's limit (3) — one more wrong guess reaches
     // it and the round ends now, not one guess ago and not never.
     await guessLetter(getByText, 'Z')
-    expect(await findByText('You Lose!')).toBeTruthy()
+    expect(await findByText('You Lost!')).toBeTruthy()
   })
 
   it("caps the mistakes handed to the current mode's own artwork one stage short of its maximum while the round is still mechanically alive, even after a live mode swap crosses a maxMistakes boundary", async () => {
@@ -664,13 +688,13 @@ describe('Game', () => {
     await rerender(<Game phrase='CAT' onStop={jest.fn()} mode={tightRecordingMode} />)
 
     expect(getByTestId('visual-mistakes').props.children).toBe(5)
-    expect(queryByText('You Lose!')).toBeNull()
+    expect(queryByText('You Lost!')).toBeNull()
 
     // One more wrong guess reaches the round's real, frozen limit (8) and the round actually ends
     // — the cap lifts, and the now-active mode's own true maximum (6) is what shows, appropriately,
     // since the round really is over at this point.
     await guessLetter(getByText, 'O')
-    expect(await findByText('You Lose!')).toBeTruthy()
+    expect(await findByText('You Lost!')).toBeTruthy()
     expect(getByTestId('visual-mistakes').props.children).toBe(6)
   })
 
@@ -683,7 +707,7 @@ describe('Game', () => {
     // final stage has time to draw before the loss dialog interrupts") — the artwork itself must
     // not be the thing waiting on that delay, or the "final stage" it's supposed to have time to
     // draw would still be one stage short for the entire pause.
-    expect(queryByText('You Lose!')).toBeNull()
+    expect(queryByText('You Lost!')).toBeNull()
     expect(getByTestId('visual-mistakes').props.children).toBe(1)
   })
 })

@@ -126,7 +126,7 @@ describe('Main — abandoning an in-progress puzzle counts as a loss', () => {
     const { getByLabelText, getByText, findByText, queryByText } = await renderApp()
 
     await fireEvent.press(getByText('Q'))
-    expect(await findByText('You Lose!')).toBeTruthy()
+    expect(await findByText('You Lost!')).toBeTruthy()
     // The real loss already recorded it — this is the ONE call, not a second one from abandoning.
     expect(mockRecordLoss).toHaveBeenCalledTimes(1)
 

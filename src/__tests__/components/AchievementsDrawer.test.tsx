@@ -67,8 +67,8 @@ const mockAlert = jest.mocked(alert)
 const mockResolvePuzzle = jest.mocked(resolvePuzzle)
 const realResolvePuzzle: typeof resolvePuzzle = jest.requireActual('@/utils/puzzlePicker').resolvePuzzle
 
-// ConfirmDialog (like RoundEndDialog in Game.test.tsx) defaults to the blurred/Portal-based
-// rendering path and needs a react-native-paper Portal.Host ancestor — normally supplied by
+// ConfirmDialog (like RoundEndDialog in Game.test.tsx) renders through react-native-paper's Portal
+// and needs a Portal.Host ancestor, normally supplied by
 // @rific/auto-paper's Provider at the app root. FeedbackPressProvider's real `paper` module is
 // also injected here (see Haptic.tsx, the app's own root wiring) — without it, @rific/feedback-
 // press's Button/IconButton fall back to a bare RN Pressable that drops accessibilityLabel
