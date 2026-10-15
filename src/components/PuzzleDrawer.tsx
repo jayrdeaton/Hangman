@@ -3,7 +3,7 @@ import { Drawer, DrawerEdgeSwipe } from '@rific/drawer'
 import { Button, IconButton, SegmentedButtons } from '@rific/feedback-press'
 import { FlatList, ScrollViewFooter, ScrollViewHeader, ScrollViewProvider } from '@rific/scroll-view'
 import { JSX, memo, useCallback, useEffect, useMemo, useState } from 'react'
-import { StyleSheet, View } from 'react-native'
+import { type StyleProp, StyleSheet, View, type ViewStyle } from 'react-native'
 import { Avatar, Card, Icon, ProgressBar, Text, useTheme } from 'react-native-paper'
 import { useSharedValue } from 'react-native-reanimated'
 
@@ -121,7 +121,7 @@ export const PuzzleDrawer = memo(({ visible, onDismiss, onRequestOpen, initialCo
   // (see useDifficultyOptionColors's own doc comment).
   const difficultyOptionColors = useDifficultyOptionColors()
 
-  const difficultyOptions = useMemo((): { label: string; value: 'any' | PuzzleDifficultyTier; checkedColor: string; uncheckedColor: string; style: { backgroundColor: string } }[] => {
+  const difficultyOptions = useMemo((): { label: string; value: 'any' | PuzzleDifficultyTier; checkedColor: string; uncheckedColor: string; style: StyleProp<ViewStyle> }[] => {
     const tiers: { label: string; value: 'any' | PuzzleDifficultyTier }[] = [
       { label: 'Any', value: 'any' },
       { label: 'Easy', value: 'easy' },
@@ -133,10 +133,11 @@ export const PuzzleDrawer = memo(({ visible, onDismiss, onRequestOpen, initialCo
     // getSegmentedButtonColors), so both checked AND unchecked backgrounds are applied as a plain
     // style override below, on every option, not just whichever is checked — every button always
     // renders its OWN style regardless of checked state, unlike checkedColor/uncheckedColor.
+    // styles.difficultySegment rides along on the same style prop (see its own comment).
     return tiers.map((option) => {
       const checked = option.value === draft.difficulty
       const colors = difficultyOptionColors[option.value]
-      return { ...option, checkedColor: colors.onVibrant, uncheckedColor: colors.onContainer, style: { backgroundColor: checked ? colors.vibrant : colors.container } }
+      return { ...option, checkedColor: colors.onVibrant, uncheckedColor: colors.onContainer, style: [styles.difficultySegment, { backgroundColor: checked ? colors.vibrant : colors.container }] }
     })
   }, [difficultyOptionColors, draft.difficulty])
 
@@ -454,6 +455,18 @@ const styles = StyleSheet.create({
   achievementsCard: { marginBottom: 4 },
   achievementsCardRow: { alignItems: 'center', flexDirection: 'row', gap: 12 },
   achievementsText: { flex: 1 },
+  // Paper's SegmentedButtonItem makes every segment an equal quarter of the row (flex: 1) with a
+  // fixed 16pt of padding a side, and equal quarters can't hold "Medium" on a narrow phone. At 14pt
+  // the label needs 53.6pt on iOS (53.0 on web), but a 375pt drawer's 343pt row leaves each quarter
+  // 52.75 once padding and border come off, and a 360pt drawer leaves 49.0. (The old fixed 380pt
+  // drawer left 54.0, a 0.4pt margin on iOS.) So each segment starts at its own label's width
+  // (flexBasis auto) and the leftover row width is split evenly on top (flexGrow 1). No label can
+  // truncate until all four labels plus their padding outgrow the whole row: a window under about
+  // 308pt at default text size, or text scaled past 1.36x at 360. flex: 0 replaces Paper's flex: 1
+  // because Yoga ignores flexBasis whenever flex is positive. minWidth: 0 drops Paper's 76pt floor
+  // (the same zeroed floor @rific/auto-paper's HarmonyPicker uses), and flexShrink: 1 lets segments
+  // narrow and ellipsize past that point instead of overflowing the drawer's gutter.
+  difficultySegment: { flex: 0, flexBasis: 'auto', flexGrow: 1, flexShrink: 1, minWidth: 0 },
   // flexDirection/alignItems override ScrollViewFooter's own row+center defaults — Random and Pass
   // & play stack vertically here (see pnpButton's marginTop below) and each stretch full width,
   // matching this footer's look before the scroll-view migration.

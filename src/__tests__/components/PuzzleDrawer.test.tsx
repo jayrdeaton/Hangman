@@ -344,6 +344,19 @@ describe('PuzzleDrawer', () => {
     expect(fillOf('Any')).toBe(theme.colors.primary)
   })
 
+  // Jest has no real layout, so this pins the style that does the fitting rather than measured
+  // widths: each segment sized to its own label instead of Paper's equal-quarter flex: 1 and 76pt
+  // minWidth, which cut "Medium" to "Medi..." on 375pt and 360pt screens (see
+  // styles.difficultySegment in PuzzleDrawer for the measured numbers).
+  it('sizes every difficulty segment to its own label instead of an equal quarter of the row', async () => {
+    const { getByText } = await renderDrawer()
+
+    for (const label of ['Any', 'Easy', 'Medium', 'Hard']) {
+      const segmentStyle = StyleSheet.flatten(getByText(label).parent?.parent?.parent?.props.style)
+      expect(segmentStyle).toMatchObject({ flex: 0, flexBasis: 'auto', flexGrow: 1, flexShrink: 1, minWidth: 0 })
+    }
+  })
+
   // Appearance/keyboard layout AND haptics/sound all moved into ModePickerDrawer (reached via the
   // mode summary row) — SettingsDrawer and its own gear-icon entry point are gone entirely, so this
   // menu no longer renders those controls directly OR offers a second way to reach them. See
