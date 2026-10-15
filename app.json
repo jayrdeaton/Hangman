@@ -105,7 +105,8 @@
         {
           "drawsRotation": false
         }
-      ]
+      ],
+      "./plugins/withSceneDelegate"
     ],
     "runtimeVersion": {
       "policy": "fingerprint"
