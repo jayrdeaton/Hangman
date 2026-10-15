@@ -56,8 +56,10 @@ export const Theme = ({ children }: ThemeProps) => {
   // icon) popping in a beat after everything else already rendered. Loading it here and marking the
   // 'fonts' gate ready only once it resolves means every icon this app will ever show is already
   // loaded by the time the splash lifts, so nothing pops in afterward.
-  const [fontsLoaded] = useFonts(MaterialCommunityIcons.font)
-  useSplashReady('fonts', fontsLoaded)
+  // A failed load also counts as ready: `fontsLoaded` stays false forever after an error, which
+  // would leave the splash up for good, so the app opens without the icon font instead (audit F010).
+  const [fontsLoaded, fontError] = useFonts(MaterialCommunityIcons.font)
+  useSplashReady('fonts', fontsLoaded || !!fontError)
 
   return (
     // expoBlur is no longer auto-detected (Metro doesn't resolve a require()-in-try/catch into an
