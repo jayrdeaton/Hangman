@@ -1,9 +1,10 @@
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons'
-import { Provider, themeActions, type ThemeSettings } from '@rific/auto-paper'
+import { Provider, themeActions, type ThemeSettings, useAutoPaperTheme } from '@rific/auto-paper'
 import * as ExpoBlur from 'expo-blur'
 import { useFonts } from 'expo-font'
 import * as SplashScreen from 'expo-splash-screen'
-import { ReactNode, useCallback } from 'react'
+import * as SystemUI from 'expo-system-ui'
+import { ReactNode, useCallback, useEffect } from 'react'
 import Reanimated from 'react-native-reanimated'
 import { shallowEqual, useDispatch, useSelector } from 'react-redux'
 
@@ -18,6 +19,23 @@ SplashScreen.setOptions({
 
 export type ThemeProps = {
   children: ReactNode
+}
+
+// @tastic/core sets the OS root background to black as soon as its barrel is imported (its
+// useThemedRootBackground.ts calls SystemUI.setBackgroundColorAsync('#000000') at module scope), and
+// every @tastic/hud/chrome component imports that barrel. The fleet's games correct it with that
+// hook's black or white, but this app paints its theme's surface behind every screen (Main.tsx), so
+// it repaints the root with that instead: the iOS window and root view, the Android decor view, and
+// the web page body. That's what shows at the corners while an iPad turns upside down, behind an
+// Android keyboard resize, and past the page edges on web. Effects run after every module has
+// loaded, so this always lands after the import-time call, and it renders inside Provider, which
+// renders nothing until the computed theme exists.
+const RootBackground = (): null => {
+  const { colors } = useAutoPaperTheme()
+  useEffect(() => {
+    void SystemUI.setBackgroundColorAsync(colors.surface)
+  }, [colors.surface])
+  return null
 }
 
 export const Theme = ({ children }: ThemeProps) => {
@@ -48,6 +66,7 @@ export const Theme = ({ children }: ThemeProps) => {
     // Dialog's animatedStyle prop (see DialogShell.tsx) — without it, a keyboard-avoidance transform
     // would just be dropped rather than painted.
     <Provider initialValue={settings} onChange={onChange} onReady={onReady} expoBlur={ExpoBlur} reanimated={Reanimated}>
+      <RootBackground />
       {children}
     </Provider>
   )

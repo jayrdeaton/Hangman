@@ -69,12 +69,12 @@ export const PuzzleDrawer = memo(({ visible, onDismiss, onRequestOpen, initialCo
   // appearance itself moved to ModePickerDrawer, reached via that same row.
   const { settings } = useThemeSettings()
   const theme = useTheme()
-  // autoCheck: false. App.tsx's own useUpdater() call is the one background checker (on cold launch
-  // and every foreground resume). A second auto-checking instance here would add a second AppState
-  // listener with its own prompt state, so one available update could prompt twice. This instance
-  // only checks when the version text below is tapped, the same split @tastic/hud's
-  // BaseSettingsDialog uses. (The hook's updateReady is only ever set by an auto-check, so it isn't
-  // read here: with autoCheck off it would always be false.)
+  // autoCheck: false. UpdateDialog (src/components/UpdateDialog.tsx, mounted in App.tsx) owns the
+  // one background checker (on cold launch and every foreground resume). A second auto-checking
+  // instance here would add a second AppState listener with its own prompt state, so one available
+  // update could prompt twice. This instance only checks when the version text below is tapped, the
+  // same split @tastic/hud's BaseSettingsDialog uses. (The hook's updateReady is only ever set by an
+  // auto-check, so it isn't read here: with autoCheck off it would always be false.)
   const { check, checking } = useUpdater({ autoCheck: false })
   // packsVersion isn't read here — it's a change counter bumped whenever a custom pack is
   // created/edited/deleted/imported, since getPuzzleManifest() otherwise looks pure to React.

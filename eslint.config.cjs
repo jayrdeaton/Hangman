@@ -7,5 +7,23 @@ module.exports = defineConfig([
   // and copied in as-is ("Do not edit manually") — not something to lint/format like hand-written source.
   {
     ignores: ['**/*.generated.ts']
+  },
+  // @tastic/hud's main entry also re-exports the per-seat lobby, AchievementUnlockList and the Skia
+  // gauge, so one import from it would make this app need Skia, @tastic/profile and
+  // @tastic/split-screen. Only its light subpaths are allowed here (see its README's "@tastic/hud/chrome").
+  {
+    rules: {
+      'no-restricted-imports': [
+        'error',
+        {
+          paths: [
+            {
+              name: '@tastic/hud',
+              message: "Import from '@tastic/hud/chrome' (dialogs, stats, corner buttons) or '@tastic/hud/guide' instead. The main entry pulls in Skia, @tastic/profile and @tastic/split-screen."
+            }
+          ]
+        }
+      ]
+    }
   }
 ])

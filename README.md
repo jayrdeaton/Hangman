@@ -34,8 +34,10 @@ Hangman is an ad-free word-guessing game for iOS, Android, and web. Built with E
 
 | Package | Used for |
 | --- | --- |
-| [`@tastic/core`](https://github.com/jayrdeaton/React-Native-Game-Core) | Expo config plugin for the native portrait lock |
+| [`@tastic/core`](https://github.com/jayrdeaton/React-Native-Game-Core) | Expo config plugin for the native portrait lock (its JS only arrives through `@tastic/hud/chrome`) |
 | [`@tastic/sprites`](https://www.npmjs.com/package/@tastic/sprites) | SVG fireworks burst on a win (the `./fireworks` subpath) |
+| [`@tastic/hud`](https://www.npmjs.com/package/@tastic/hud) | The fleet's shared update card and, later, settings, confirm and stats screens (the light `./chrome` subpath only) |
+| [`@tastic/achievements`](https://www.npmjs.com/package/@tastic/achievements) | Type-only dependency of `@tastic/hud/chrome` today |
 | [`@rific/core`](https://www.npmjs.com/package/@rific/core) | Shared foundation that `@tastic/core` and most of the `@rific` packages here depend on (not imported directly) |
 | [`@rific/auto-paper`](https://www.npmjs.com/package/@rific/auto-paper) | React Native Paper theming from a seed color and harmony, light/dark appearance, the color picker, dialogs and menus |
 | [`@rific/drawer`](https://www.npmjs.com/package/@rific/drawer) | The menu and every drawer stacked on top of it |
