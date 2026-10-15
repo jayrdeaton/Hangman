@@ -13,7 +13,7 @@ An ad-free Hangman word-guessing game (Expo/React Native). Part of the `@rific`/
 ```bash
 npm run lint          # expo lint .
 npm run fix            # expo lint . --fix
-npm test               # Jest (35 suites, 423 tests)
+npm test               # Jest (35 suites, 425 tests)
 npm run test:watch     # Jest --watchAll
 npm run typecheck      # tsc
 npm run verify         # lint + test + typecheck

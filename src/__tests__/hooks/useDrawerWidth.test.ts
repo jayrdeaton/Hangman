@@ -29,6 +29,15 @@ describe('useDrawerWidth', () => {
     expect(result.current).toBe(DRAWER_MAX_WIDTH)
   })
 
+  // @rific/drawer's own guard: a 0 width means not measured yet (web, before hydration), and
+  // collapsing the panel to 0 there would make it visibly slide shut once the real width arrives.
+  it('stays at DRAWER_MAX_WIDTH while the window is still unmeasured (0)', async () => {
+    withWindowWidth(0)
+    const { result } = await renderHook(() => useDrawerWidth())
+
+    expect(result.current).toBe(DRAWER_MAX_WIDTH)
+  })
+
   it('follows the window when it changes size', async () => {
     const spy = withWindowWidth(430)
     const { result, rerender } = await renderHook(() => useDrawerWidth())
