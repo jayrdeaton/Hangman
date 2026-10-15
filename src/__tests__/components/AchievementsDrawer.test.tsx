@@ -499,12 +499,12 @@ describe('AchievementsDrawer', () => {
     // auto-decline it, indistinguishable from the player themselves canceling).
     it('does not clear anything when Reset all progress is pressed but the confirmation dialog is declined', async () => {
       const onUnlocksChanged = jest.fn()
-      const { getByText, getByTestId, queryByText } = await renderDrawer({ onUnlocksChanged })
+      const { getByText, queryByText } = await renderDrawer({ onUnlocksChanged })
 
       await fireEvent.press(getByText('Reset All Progress'))
       expect(getByText('Reset Progress?')).toBeTruthy()
 
-      await fireEvent.press(getByTestId('confirm-dialog-cancel'))
+      await fireEvent.press(getByText('Cancel'))
 
       expect(queryByText('Reset Progress?')).toBeNull()
       expect(mockClearPuzzleUnlocks).not.toHaveBeenCalled()
@@ -514,10 +514,10 @@ describe('AchievementsDrawer', () => {
 
     it('clears unlocks and achievements and notifies the parent when Reset all progress is confirmed', async () => {
       const onUnlocksChanged = jest.fn()
-      const { getByText, getByTestId } = await renderDrawer({ onUnlocksChanged })
+      const { getByText } = await renderDrawer({ onUnlocksChanged })
 
       await fireEvent.press(getByText('Reset All Progress'))
-      await fireEvent.press(getByTestId('confirm-dialog-confirm'))
+      await fireEvent.press(getByText('Reset'))
 
       await waitFor(() => expect(mockClearPuzzleUnlocks).toHaveBeenCalledTimes(1))
       expect(mockClearAchievements).toHaveBeenCalledTimes(1)

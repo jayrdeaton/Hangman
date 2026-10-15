@@ -4,6 +4,7 @@ import { Button, IconButton } from '@rific/feedback-press'
 import { useFocusChain } from '@rific/focus-chain'
 import { ScrollView, ScrollViewFooter, ScrollViewHeader, ScrollViewProvider } from '@rific/scroll-view'
 import { useToast } from '@rific/toaster'
+import { ConfirmDialog } from '@tastic/hud/chrome'
 import { JSX, memo, useMemo, useRef, useState } from 'react'
 import { Keyboard, StyleSheet, useWindowDimensions, View } from 'react-native'
 import { Text, TextInput } from 'react-native-paper'
@@ -13,8 +14,6 @@ import { ACHIEVEMENT_DEFINITIONS_BY_ID, recordCustomPackCreated } from '@/utils/
 import { CUSTOM_QUICK_PACK_LABEL, type CustomPack, type CustomPackEntryInput, getCustomPackPuzzles, saveCustomPack } from '@/utils/customPacks'
 import { normalizePhrase } from '@/utils/normalizePhrase'
 import { getPuzzleManifest } from '@/utils/puzzleCatalog'
-
-import { ConfirmDialog } from './ConfirmDialog'
 
 const EMPTY_ENTRY: CustomPackEntryInput = { answer: '', hint: '' }
 // 4px on every side of a 40x40 icon button (see the matching actionSize={40} on this drawer's own
@@ -313,7 +312,7 @@ const PackEditorForm = ({ editingKey, onSaved, onCancel, onDelete, onShare }: Pa
         </ScrollViewFooter>
       </ScrollViewProvider>
 
-      <ConfirmDialog visible={confirmDeleteVisible} title='Delete Pack?' message={`This permanently deletes "${label}" and any unlock progress for it. This cannot be undone.`} confirmLabel='Delete' destructive onConfirm={() => void handleConfirmDelete()} onCancel={() => setConfirmDeleteVisible(false)} />
+      <ConfirmDialog visible={confirmDeleteVisible} title='Delete Pack?' message={`This permanently deletes "${label}" and any unlock progress for it. This cannot be undone.`} icon='delete-outline' confirmLabel='Delete' cancelLabel='Cancel' destructive onConfirm={() => void handleConfirmDelete()} onCancel={() => setConfirmDeleteVisible(false)} />
     </>
   )
 }

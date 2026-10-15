@@ -157,13 +157,13 @@ describe('PacksScreen', () => {
   it('deletes the pack and returns to the list when Delete pack is confirmed in the dialog', async () => {
     const pack = await saveCustomPack({ label: 'My Pack', entries: [{ answer: 'FOO', hint: '' }] })
     const onPacksChanged = jest.fn()
-    const { getByText, getByLabelText, getByTestId } = await renderScreen({ onPacksChanged })
+    const { getByText, getByLabelText } = await renderScreen({ onPacksChanged })
 
     await fireEvent.press(getByLabelText(`Edit ${pack.label}`))
     await fireEvent.press(getByLabelText('Delete pack'))
     expect(getByText('Delete Pack?')).toBeTruthy()
 
-    await fireEvent.press(getByTestId('confirm-dialog-confirm'))
+    await fireEvent.press(getByText('Delete'))
 
     await waitFor(() => expect(getByText('Choose Packs')).toBeTruthy())
     // onPacksChanged only signals the parent to bump packsVersion and re-render with a fresh
@@ -175,13 +175,16 @@ describe('PacksScreen', () => {
   it('keeps editing and leaves the pack untouched when Delete pack is declined in the confirmation dialog', async () => {
     const pack = await saveCustomPack({ label: 'My Pack', entries: [{ answer: 'FOO', hint: '' }] })
     const onPacksChanged = jest.fn()
-    const { getByLabelText, getByText, getByTestId, queryByText } = await renderScreen({ onPacksChanged })
+    const { getByLabelText, getByText, getAllByText, getByTestId, queryByText } = await renderScreen({ onPacksChanged })
 
     await fireEvent.press(getByLabelText(`Edit ${pack.label}`))
     await fireEvent.press(getByLabelText('Delete pack'))
     expect(getByText('Delete Pack?')).toBeTruthy()
 
-    await fireEvent.press(getByTestId('confirm-dialog-cancel'))
+    // The editor's own footer has a Cancel too; the confirm card renders through a Portal at the end
+    // of the tree, so its Cancel is the last one.
+    const cancels = getAllByText('Cancel')
+    await fireEvent.press(cancels[cancels.length - 1])
 
     expect(queryByText('Delete Pack?')).toBeNull()
     // Still on the editor, not bounced back to the list.

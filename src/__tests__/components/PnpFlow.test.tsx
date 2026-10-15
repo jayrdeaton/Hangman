@@ -80,7 +80,7 @@ describe('Main — pass and play', () => {
     await fireEvent.press(utils.getByText('Pass & Play'))
     await fireEvent.changeText(utils.getByTestId('pnp-answer-input'), phrase)
     await fireEvent.press(utils.getByText('Next'))
-    await fireEvent.press(utils.getByLabelText('Ready to guess'))
+    await fireEvent.press(utils.getByText('Ready'))
   }
 
   // None of these appear in CAT. Game's own maxMistakes is frozen from config.mode the moment
@@ -116,10 +116,10 @@ describe('Main — pass and play', () => {
     // Handoff exists only as a beat while the device changes hands, so it's just a target to tap —
     // no instructions, nobody named. The real round is already mounted underneath it (not a blank
     // screen), because there's nothing about an unstarted round that needs concealing.
-    expect(getByLabelText('Ready to guess')).toBeTruthy()
+    expect(getByText('Ready')).toBeTruthy()
     expect(getByLabelText('Secret word display')).toBeTruthy()
 
-    await fireEvent.press(getByLabelText('Ready to guess'))
+    await fireEvent.press(getByText('Ready'))
 
     await fireEvent.press(getByText('C'))
     await fireEvent.press(getByText('A'))
@@ -324,21 +324,24 @@ describe('Main — pass and play', () => {
     expect(getByTestId('puzzle-drawer-panel').props.accessibilityViewIsModal).toBe(true)
   })
 
-  it('starts the round when the handoff dialog is dismissed any way at all, not just via Ready', async () => {
+  // The hand-off is the fleet's shared card (@tastic/hud's ConfirmDialog), which has no backdrop to
+  // tap away: a stray touch while the device changes hands can't end it early, so Ready is the only
+  // way into the round.
+  it('starts the round only from Ready, with no backdrop that could dismiss the hand-off early', async () => {
     jest.useFakeTimers()
     mockResolvePuzzle.mockReturnValue({ ok: true, payload: pnpPayload('CAT') })
     const utils = await renderApp()
-    const { getByLabelText, getByText, getByTestId } = utils
+    const { getByLabelText, getByText, getByTestId, queryByTestId } = utils
 
     await fireEvent.press(getByLabelText('Game Menu'))
     await fireEvent.press(getByText('Pass & Play'))
     await fireEvent.changeText(getByTestId('pnp-answer-input'), 'CAT')
     await fireEvent.press(getByText('Next'))
 
-    // There's nothing left to configure or bail out of at this point (unlike the word prompt),
-    // so a backdrop tap — no Ready press — is treated exactly like pressing Ready.
-    await fireEvent.press(getByTestId('dialog-backdrop'))
+    expect(getByText('Your Turn')).toBeTruthy()
+    expect(queryByTestId('dialog-backdrop')).toBeNull()
 
+    await fireEvent.press(getByText('Ready'))
     await fireEvent.press(getByText('C'))
     await fireEvent.press(getByText('A'))
     await fireEvent.press(getByText('T'))
@@ -372,7 +375,7 @@ describe('Main — pass and play', () => {
     await fireEvent.press(getByText('T'))
     expect(queryByText('You Win!')).toBeNull()
 
-    await fireEvent.press(getByLabelText('Ready to guess'))
+    await fireEvent.press(getByText('Ready'))
 
     await fireEvent.press(getByText('C'))
     await fireEvent.press(getByText('A'))

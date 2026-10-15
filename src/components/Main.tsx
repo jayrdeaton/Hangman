@@ -1,4 +1,4 @@
-import { CornerActionButtons } from '@tastic/hud/chrome'
+import { ConfirmDialog, CornerActionButtons } from '@tastic/hud/chrome'
 import * as Linking from 'expo-linking'
 import { JSX, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Keyboard, Platform, StyleSheet, View } from 'react-native'
@@ -23,7 +23,6 @@ import { type PuzzleConfig, resolvePuzzle } from '@/utils/puzzlePicker'
 import { getPuzzleUnlockMap, getTotalUnlockedCount, getUnlockedCountForPack, markPuzzleUnlocked, mergePuzzleUnlocks, parseProgressBackup, type PuzzleUnlockMap } from '@/utils/unlocks'
 import { gameShell } from '@/utils/webLayout'
 
-import { ConfirmDialog } from './ConfirmDialog'
 import { Game, type LossDetails, type SolveDetails } from './Game'
 import { PnpHandoffDialog } from './PnpHandoffDialog'
 import { PnpWordPrompt } from './PnpWordPrompt'
@@ -613,9 +612,11 @@ export const Main = (): JSX.Element => {
           comment above), and PuzzleInfoRow's pills sit centered between them. pointerEvents='box-none'
           lets taps in the empty middle fall through to those pills. The menu stays available
           throughout, pass and play included: that's also how you leave a session. Static chrome, no
-          entrance animation of its own, so it never pops in outside the opening sweep. */}
+          entrance animation of its own, so it never pops in outside the opening sweep. hitSlop={4}
+          makes each a 48pt target, like the drawer headers' IconButtons; the pills sit 8pt from the
+          buttons' boxes, so 4pt of clearance is left (see hud's CLAUDE.md on CornerActionButtons). */}
       <View style={[StyleSheet.absoluteFill, styles.corners]} pointerEvents='box-none'>
-        <CornerActionButtons backIcon='menu' backLabel='Game Menu' onBack={handleOpenMenu} onSettings={handleOpenSettings} fg={theme.colors.onSurface} insets={insets} />
+        <CornerActionButtons backIcon='menu' backLabel='Game Menu' onBack={handleOpenMenu} onSettings={handleOpenSettings} fg={theme.colors.onSurface} insets={insets} hitSlop={4} />
       </View>
 
       {pnpPhase === 'authoring' ? <PnpWordPrompt answer={pnpAnswer} hint={pnpHint} onAnswerChange={setPnpAnswer} onHintChange={setPnpHint} promptVisible={!drawerVisible && !settingsOpen} onRequestMenu={handleOpenMenu} onSubmit={handlePnpAuthored} /> : null}
@@ -623,9 +624,9 @@ export const Main = (): JSX.Element => {
       {pnpPhase === 'handoff' ? <PnpHandoffDialog visible={!drawerVisible && !settingsOpen} onReady={() => setPnpPhase('playing')} /> : null}
 
       <PuzzleDrawer visible={drawerVisible} onDismiss={handleDismissDrawer} onRequestOpen={handleRequestOpenDrawer} initialConfig={initialDrawerConfig} onConfirm={handleConfirmPuzzle} onStartPnp={handleStartPnp} packsVersion={customPacksVersion} onPacksChanged={refreshCustomPacks} unlockVersion={unlockVersion} onUnlocksChanged={refreshUnlocks} onModeChange={handleModeChange} onDifficultyChange={handleDifficultyChange} />
-      <ConfirmDialog visible={incomingFilePreview !== null} title={incomingFilePreview ? (incomingFilePreview.kind === 'progress' ? 'Import Progress Backup?' : `Import "${incomingFilePreview.label}"?`) : ''} message={incomingFilePreview ? (incomingFilePreview.kind === 'progress' ? `Merges ${commaString(incomingFilePreview.unlockCount)} unlocked puzzle${incomingFilePreview.unlockCount === 1 ? '' : 's'} into your existing progress.` : `Adds ${commaString(incomingFilePreview.wordCount)} word${incomingFilePreview.wordCount === 1 ? '' : 's'} as a new pack you can play.`) : ''} confirmLabel='Import' onConfirm={() => void handleConfirmIncomingFile()} onCancel={() => setIncomingFilePreview(null)} />
+      <ConfirmDialog visible={incomingFilePreview !== null} title={incomingFilePreview ? (incomingFilePreview.kind === 'progress' ? 'Import Progress Backup?' : `Import "${incomingFilePreview.label}"?`) : ''} message={incomingFilePreview ? (incomingFilePreview.kind === 'progress' ? `Merges ${commaString(incomingFilePreview.unlockCount)} unlocked puzzle${incomingFilePreview.unlockCount === 1 ? '' : 's'} into your existing progress.` : `Adds ${commaString(incomingFilePreview.wordCount)} word${incomingFilePreview.wordCount === 1 ? '' : 's'} as a new pack you can play.`) : ''} icon='file-import-outline' confirmLabel='Import' cancelLabel='Cancel' onConfirm={() => void handleConfirmIncomingFile()} onCancel={() => setIncomingFilePreview(null)} />
       <SettingsDialog visible={settingsOpen} onDismiss={handleDismissSettings} />
-      <ConfirmDialog visible={pendingAbandon !== null} title='Abandon This Puzzle?' message="You've already made a guess. Switching now will count this puzzle as a loss." confirmLabel='Abandon' destructive onConfirm={handleConfirmAbandon} onCancel={handleCancelAbandon} />
+      <ConfirmDialog visible={pendingAbandon !== null} title='Abandon This Puzzle?' message="You've already made a guess. Switching now will count this puzzle as a loss." icon='flag-outline' confirmLabel='Abandon' cancelLabel='Cancel' destructive onConfirm={handleConfirmAbandon} onCancel={handleCancelAbandon} />
     </View>
   )
 }

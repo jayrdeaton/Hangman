@@ -2,6 +2,7 @@ import { type AutoPaperTheme, useAutoPaperTheme } from '@rific/auto-paper'
 import { Drawer } from '@rific/drawer'
 import { Button, IconButton } from '@rific/feedback-press'
 import { FlatList, ScrollViewFooter, ScrollViewHeader, ScrollViewProvider } from '@rific/scroll-view'
+import { ConfirmDialog } from '@tastic/hud/chrome'
 import { JSX, memo, useCallback, useEffect, useMemo, useState } from 'react'
 import { StyleSheet, View } from 'react-native'
 import { Avatar, Card, Icon, ProgressBar, Text } from 'react-native-paper'
@@ -19,7 +20,6 @@ import { getPuzzleManifest, PuzzleDifficultyTier, type PuzzleManifestItem } from
 import { type PuzzleConfig, resolveChosenPuzzle, resolvePuzzle } from '@/utils/puzzlePicker'
 import { clearPuzzleUnlocks, getManifestUnlockProgress, getPuzzleUnlockMap, getUnlockedCountForPack, mergePuzzleUnlocks, parseProgressBackup, PuzzleUnlockMap } from '@/utils/unlocks'
 
-import { ConfirmDialog } from './ConfirmDialog'
 import { PackPuzzleList } from './PackPuzzleList'
 import { PackRow } from './PackRow'
 
@@ -439,7 +439,7 @@ export const AchievementsDrawer = memo(({ visible, onDismiss, unlockVersion, onU
         </View>
       </Drawer>
 
-      <ConfirmDialog visible={confirmResetVisible} title='Reset Progress?' message='This permanently clears every unlocked puzzle and achievement. This cannot be undone.' confirmLabel='Reset' destructive onConfirm={() => void handleConfirmReset()} onCancel={() => setConfirmResetVisible(false)} />
+      <ConfirmDialog visible={confirmResetVisible} title='Reset Progress?' message='This permanently clears every unlocked puzzle and achievement. This cannot be undone.' icon='delete-forever-outline' confirmLabel='Reset' cancelLabel='Cancel' destructive onConfirm={() => void handleConfirmReset()} onCancel={() => setConfirmResetVisible(false)} />
     </>
   )
 }, areAchievementsDrawerPropsEqual)
