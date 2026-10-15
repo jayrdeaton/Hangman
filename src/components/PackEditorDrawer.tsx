@@ -244,8 +244,8 @@ const PackEditorForm = ({ editingKey, onSaved, onCancel, onDelete, onShare }: Pa
             same left-anchored Game Menu lineage as PuzzleDrawer/PackPuzzlesDrawer/PacksScreen (see
             PuzzleDrawer's own header comment for why an arrow instead of a close X). 'Close', not
             the Appbar.BackAction default of 'Back' — see PuzzleDrawer's own ScrollViewHeader
-            comment for why. Custom IconButton, not the default callback-driven Appbar.BackAction —
-            filled tertiary, matching every other back/close action in the app; IconButton already
+            comment for why. Custom IconButton, not the default callback-driven Appbar.BackAction:
+            a plain arrow in the surface's ink (the fleet's back-button style), matching every other back/close action in the app; IconButton already
             fires the app's own haptic convention on press itself, so this needs no manual
             selection() call the way the callback form used to. */}
         <ScrollViewHeader
@@ -254,10 +254,8 @@ const PackEditorForm = ({ editingKey, onSaved, onCancel, onDelete, onShare }: Pa
           backAction={
             <IconButton
               icon='arrow-left'
-              mode='contained'
               hitSlop={ICON_ACTION_HIT_SLOP}
-              containerColor={theme.colors.tertiary}
-              iconColor={theme.colors.onTertiary}
+              iconColor={theme.colors.onSurface}
               onPress={() => {
                 // The Drawer this panel lives in never unmounts on close, only translates
                 // off-screen (see PackEditorDrawer's own doc comment above) — so a focused

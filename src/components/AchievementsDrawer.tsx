@@ -403,7 +403,7 @@ export const AchievementsDrawer = memo(({ visible, onDismiss, unlockVersion, onU
               // PackPuzzleList's own in-flow pack summary row now; this is just enough of a label
               // that the floating bar doesn't read as unexpectedly bare.
               title={detailPackKey ? 'Pack' : 'Achievements'}
-              backAction={detailPackKey ? <IconButton icon='arrow-left' mode='contained' hitSlop={ICON_ACTION_HIT_SLOP} containerColor={theme.colors.tertiary} iconColor={theme.colors.onTertiary} onPress={() => setDetailPackKey(null)} accessibilityLabel='Back to achievements' /> : <IconButton icon='arrow-left' mode='contained' hitSlop={ICON_ACTION_HIT_SLOP} containerColor={theme.colors.tertiary} iconColor={theme.colors.onTertiary} onPress={onDismiss} accessibilityLabel='Close' />}
+              backAction={detailPackKey ? <IconButton icon='arrow-left' hitSlop={ICON_ACTION_HIT_SLOP} iconColor={theme.colors.onSurface} onPress={() => setDetailPackKey(null)} accessibilityLabel='Back to achievements' /> : <IconButton icon='arrow-left' hitSlop={ICON_ACTION_HIT_SLOP} iconColor={theme.colors.onSurface} onPress={onDismiss} accessibilityLabel='Close' />}
             />
 
             {detailPackKey ? (

@@ -105,7 +105,7 @@ export const PackPuzzlesDrawer = memo(({ visible, packKey, onDismiss, mode, diff
                 lineage either way, so closing it lands back under the same thumb that opened the
                 chain. 'Close', not the Appbar.BackAction default of 'Back' — see PuzzleDrawer's own
                 ScrollViewHeader comment for why. Custom IconButton, not the default
-                callback-driven Appbar.BackAction — filled tertiary, matching every other
+                callback-driven Appbar.BackAction: a plain arrow in the surface's ink (the fleet's back-button style), matching every other
                 back/close action in the app; IconButton already fires the app's own haptic
                 convention on press itself, so this needs no manual selection() call the way the
                 callback form used to. */}
@@ -116,7 +116,7 @@ export const PackPuzzlesDrawer = memo(({ visible, packKey, onDismiss, mode, diff
               // summary row now; this is just enough of a label that the floating bar doesn't read
               // as unexpectedly bare.
               title='Pack'
-              backAction={<IconButton icon='arrow-left' mode='contained' hitSlop={ICON_ACTION_HIT_SLOP} containerColor={theme.colors.tertiary} iconColor={theme.colors.onTertiary} onPress={onDismiss} accessibilityLabel='Close' />}
+              backAction={<IconButton icon='arrow-left' hitSlop={ICON_ACTION_HIT_SLOP} iconColor={theme.colors.onSurface} onPress={onDismiss} accessibilityLabel='Close' />}
             />
 
             <PackPuzzleList packKey={packKey} onPlayPuzzle={playable ? handlePlayPuzzle : undefined} />

@@ -393,7 +393,7 @@ export const ModePickerDrawer = memo(({ visible, onDismiss, selected, onSelect }
             earlier version of this drawer that tried to hand-compute that clearance itself instead
             of just asking the library for it. */}
         <ScrollViewProvider footerFixed>
-          <ScrollViewHeader title='Customize' actionSize={40} backAction={<IconButton icon='arrow-left' mode='contained' hitSlop={ICON_ACTION_HIT_SLOP} containerColor={theme.colors.tertiary} iconColor={theme.colors.onTertiary} onPress={onDismiss} accessibilityLabel='Close' />} />
+          <ScrollViewHeader title='Customize' actionSize={40} backAction={<IconButton icon='arrow-left' hitSlop={ICON_ACTION_HIT_SLOP} iconColor={theme.colors.onSurface} onPress={onDismiss} accessibilityLabel='Close' />} />
 
           <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.scrollContent}>
             <View testID='mode-picker-display'>

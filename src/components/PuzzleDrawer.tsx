@@ -374,14 +374,14 @@ export const PuzzleDrawer = memo(({ visible, onDismiss, onRequestOpen, initialCo
                 Appbar.BackAction default of 'Back' — this dismisses the whole panel, it doesn't
                 step back a level within it (see accessibilityLabel on every other migrated
                 drawer's ScrollViewHeader for the same reasoning). A custom IconButton, not the
-                default callback-driven Appbar.BackAction — filled tertiary, matching every other
+                default callback-driven Appbar.BackAction: a plain arrow in the surface's ink (the fleet's back-button style), matching every other
                 back/close action in the app (see AchievementsDrawer's own back/close for the
                 first of these); IconButton already fires the app's own haptic convention on
                 press itself (unlike raw Appbar.BackAction, which has none of its own), so this
                 needs no manual selection() call the way the callback form used to. */}
             <ScrollViewHeader
               actionSize={40}
-              backAction={<IconButton icon='arrow-left' mode='contained' hitSlop={ICON_ACTION_HIT_SLOP} containerColor={theme.colors.tertiary} iconColor={theme.colors.onTertiary} onPress={onDismiss} accessibilityLabel='Close' />}
+              backAction={<IconButton icon='arrow-left' hitSlop={ICON_ACTION_HIT_SLOP} iconColor={theme.colors.onSurface} onPress={onDismiss} accessibilityLabel='Close' />}
               // Just the app's name: the hamburger that opens this already says "menu". The version and
               // Check for Updates moved to the fleet Settings sheet (SettingsDialog.tsx, the cog in the
               // game screen's top-right corner), like every other @tastic game. This menu stays
