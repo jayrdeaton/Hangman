@@ -39,7 +39,7 @@ export type PacksScreenProps = {
 export const PacksScreen = memo(({ visible, onDismiss, selectedKeys, onChangeSelectedKeys, packsVersion, onPacksChanged }: PacksScreenProps): JSX.Element => {
   const theme = useTheme()
   // Same panel width every other fixed-width drawer in the app uses (PuzzleDrawer's own Game Menu,
-  // AchievementsDrawer). This used to be a full-width page, but there's no reason its own panel
+  // PackProgressDrawer). This used to be a full-width page, but there's no reason its own panel
   // should be the one exception.
   const drawerWidth = useDrawerWidth()
 
@@ -80,7 +80,7 @@ export const PacksScreen = memo(({ visible, onDismiss, selectedKeys, onChangeSel
 
   // Re-fetched each time this screen opens, not subscribed to live - good enough for a summary
   // count sitting in a list row, and matches the one-shot fetch every other pack-progress display
-  // in this app already does (PackPuzzleList, AchievementsDrawer).
+  // in this app already does (PackPuzzleList, PackProgressDrawer).
   useEffect(() => {
     if (!visible) return
     let mounted = true
@@ -386,7 +386,7 @@ const styles = StyleSheet.create({
   // than only the text shifting inside the row.
   sectionHeaderInRow: { fontWeight: '700' },
   // marginTop matches every other drawer's own top-of-content breathing room (see PuzzleDrawer's
-  // modeSelectorBleed/AchievementsDrawer's firstCard/SettingsDrawer's topSectionLabel) - this row
+  // modeSelectorBleed/PackProgressDrawer's firstCard/SettingsDrawer's topSectionLabel) - this row
   // used to sit flush against the header with no gap at all.
   sectionHeaderRow: {
     alignItems: 'center',

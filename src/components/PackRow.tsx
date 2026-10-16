@@ -11,7 +11,7 @@ export type PackRowProps = {
   // (e.g. "Sports" above "NFL"). Only rendered (and only recolors the card) when `isPack` is true
   // - see its own comment below for why a puzzle row inside a pack never sets this.
   group?: string
-  // True for a row that represents a whole PACK (PuzzleDrawer/PacksScreen/AchievementsDrawer's
+  // True for a row that represents a whole PACK (PuzzleDrawer/PacksScreen/PackProgressDrawer's
   // own pack lists) - false (the default) for a row that represents a single PUZZLE within one
   // (PackPuzzleList), which has no group of its own to show. Gates the group icon/eyebrow AND the
   // card's own tinted background: without this split, an ungrouped custom pack (group=== undefined,
@@ -38,7 +38,7 @@ export type PackRowProps = {
 }
 
 // Memoized: every caller now renders this as a FlatList renderItem (PuzzleDrawer/PacksScreen/
-// AchievementsDrawer's pack lists, up to 50 rows in the built-in manifest) rather than a plain
+// PackProgressDrawer's pack lists, up to 50 rows in the built-in manifest) rather than a plain
 // .map() inside a ScrollView - this component is the actual list-item cost that virtualization
 // exists to avoid paying for off-screen rows, so keeping it a pure, memoizable presentational
 // component (no inline-recreated non-primitive props from its own body) matters here.
@@ -52,9 +52,9 @@ export const PackRow = memo(({ label, group, isPack = false, subtitle, subtitleB
   const card = (
     <Card style={[styles.card, groupColors ? { backgroundColor: groupColors.container } : null]} mode='contained' onPress={onPress} onLongPress={onLongPress} testID={testID}>
       <Card.Content style={styles.row}>
-        {/* Same badge-on-the-left shape as AchievementsDrawer's own achievement cards (Avatar.Icon
-            at the vibrant triad color, size 40) - group identity reads at the same glance-weight
-            as achievement/locked state does there. */}
+        {/* The same badge-on-the-left shape as the Game Menu's own Stats & Achievements card
+            (Avatar.Icon at the vibrant triad color, size 40), so group identity reads at the same
+            glance-weight. */}
         {groupColors ? <Avatar.Icon size={40} icon={packGroupIcon(group)} color={groupColors.onColor} style={{ backgroundColor: groupColors.color }} /> : null}
         {leading}
         <View style={styles.text}>

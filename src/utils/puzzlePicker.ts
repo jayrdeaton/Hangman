@@ -163,7 +163,7 @@ export const resolvePuzzle = (config: PuzzleConfig, packKeys: string[], unlocked
       puzzleId: randomPick.puzzle.id,
       difficultyTier: randomPick.puzzle.difficultyTier,
       hint: buildHint(randomPick.puzzle, randomPick.pack),
-      // A draw narrowed to exactly one pack (PackPuzzlesDrawer/AchievementsDrawer's own Random,
+      // A draw narrowed to exactly one pack (PackPuzzlesDrawer/PackProgressDrawer's own Random,
       // or a selection of exactly one pack) means the player was intentionally browsing that pack
       // - the round-end handler keeps drawing from just it. More than one means this came from the
       // player's whole standing selection (PuzzleDrawer's bottom Random), so the next round should

@@ -10,7 +10,7 @@ export { ACHIEVEMENT_TIER_COLORS } from '@tastic/achievements'
 // checks it still matches the registry.
 export const VISIBLE_MODE_COUNT = 10
 
-// Every achievement, in the order the Achievements list shows them and the round-end card lists fresh
+// Every achievement, in the order the Stats & Achievements screen lists them and the round-end card lists fresh
 // unlocks. The ids become stored unlock keys, so they're permanent once the app ships: rename a title,
 // never an id. A tiered family's ids are `${id}_bronze`, `${id}_silver` and `${id}_gold`.
 //

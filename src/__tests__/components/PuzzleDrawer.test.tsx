@@ -1,7 +1,7 @@
 import { type AutoPaperTheme, getColorRoles, Provider, useAutoPaperTheme } from '@rific/auto-paper'
 import { FeedbackPressProvider } from '@rific/feedback-press'
 import { ToastProvider } from '@rific/toaster'
-import { fireEvent, render as rtlRender } from '@testing-library/react-native'
+import { fireEvent, render as rtlRender, within } from '@testing-library/react-native'
 import { type ReactElement, type ReactNode, useEffect } from 'react'
 import { StyleSheet } from 'react-native'
 import * as RNPaper from 'react-native-paper'
@@ -50,7 +50,7 @@ const colorChannels = (color: string): [number, number, number] => {
 // PackEditorDrawer (always mounted, translated off-screen, same as every other drawer in this
 // lineage), and that drawer's own form calls useToast() to surface a newly-unlocked custom-pack
 // achievement, which throws outside a ToastProvider ancestor. The app's stats store and
-// GameStatsProvider are needed too: the Achievements card reads its count from the store, and the
+// GameStatsProvider are needed too: the Stats & Achievements card and page read the store, and the
 // nested drawers record and reset through useGameStats.
 const HapticWrapper = ({ children }: { children: ReactNode }) => (
   <ReduxProvider store={store}>
@@ -123,12 +123,80 @@ describe('PuzzleDrawer', () => {
 
   // Read from the stats store (see useUnlockedAchievementCount), out of the whole catalog. An id
   // that's no longer in the catalog doesn't count.
-  it("shows how many achievements are earned out of the catalog's total on the Achievements card", async () => {
+  it("shows how many achievements are earned out of the catalog's total on the Stats & Achievements card", async () => {
     store.dispatch(achievementsActions.update({ unlocked: { first_game_played: 1, first_ever_win: 2, retired_achievement: 3 } }))
-    const { getByText } = await renderDrawer()
+    const { getByText, getByRole } = await renderDrawer()
 
+    expect(getByText('Stats & Achievements')).toBeTruthy()
     expect(getByText('Achievements Earned')).toBeTruthy()
     expect(getByText(`2 / ${ACHIEVEMENT_CATALOG.length}`)).toBeTruthy()
+    // On the accessible wrapper a screen reader focuses (Paper's Card would drop it), as a button.
+    expect(getByRole('button', { name: `Stats and achievements. 2 of ${ACHIEVEMENT_CATALOG.length} achievements earned` }).props.accessible).toBe(true)
+  })
+
+  describe('the Stats & Achievements page', () => {
+    const openStats = async () => {
+      const utils = await renderDrawerWithRealTheme()
+      await fireEvent.press(utils.getByText('Achievements Earned'))
+      return utils
+    }
+
+    it('opens over the menu from the card, with the menu left open underneath but hidden from accessibility', async () => {
+      const { getByTestId, queryByTestId, getByText } = await renderDrawerWithRealTheme()
+      expect(queryByTestId('stats-screen')).toBeNull()
+
+      await fireEvent.press(getByText('Achievements Earned'))
+
+      expect(getByTestId('stats-screen')).toBeTruthy()
+      expect(getByText('Reset All Stats')).toBeTruthy()
+      const panel = getByTestId('puzzle-drawer-panel', { includeHiddenElements: true })
+      expect(panel.props.accessibilityElementsHidden).toBe(true)
+      expect(panel.props.importantForAccessibility).toBe('no-hide-descendants')
+    })
+
+    it("goes back to the menu from the page's back arrow", async () => {
+      const onDismiss = jest.fn()
+      const utils = await renderDrawerWithRealTheme({ onDismiss })
+      await fireEvent.press(utils.getByText('Achievements Earned'))
+
+      await fireEvent.press(within(utils.getByTestId('stats-screen')).getAllByRole('button')[0])
+
+      expect(utils.queryByTestId('stats-screen')).toBeNull()
+      expect(onDismiss).not.toHaveBeenCalled()
+      expect(utils.getByTestId('puzzle-drawer-panel').props.accessibilityElementsHidden).toBe(false)
+    })
+
+    it("closes with the menu, so reopening the menu doesn't land on it", async () => {
+      const { queryByTestId, getByTestId, rerender } = await openStats()
+      expect(getByTestId('stats-screen')).toBeTruthy()
+      // The same tree renderDrawerWithRealTheme built (ThemeCapture included), so this updates the
+      // mounted drawer instead of remounting a fresh one.
+      const drawer = (visible: boolean) => (
+        <Provider initialValue={{ appearance: 'light' }}>
+          <ThemeCapture />
+          <PuzzleDrawer visible={visible} onDismiss={jest.fn()} onRequestOpen={jest.fn()} initialConfig={baseConfig} onConfirm={jest.fn()} />
+        </Provider>
+      )
+
+      await rerender(drawer(false))
+      expect(queryByTestId('stats-screen')).toBeNull()
+      await rerender(drawer(true))
+      expect(queryByTestId('stats-screen')).toBeNull()
+    })
+  })
+
+  it('shows how many packs are complete on the Pack Progress row, and opens the Pack Progress drawer from it', async () => {
+    const manifest = builtInPacks()
+    const { getByText, findByText, getByTestId } = await renderDrawer()
+
+    expect(await findByText(`0 of ${manifest.length} packs complete`)).toBeTruthy()
+    expect(getByTestId('pack-progress-drawer-panel', { includeHiddenElements: true }).props.accessibilityElementsHidden).toBe(true)
+
+    await fireEvent.press(getByText('Pack Progress'))
+
+    expect(getByTestId('pack-progress-drawer-panel').props.accessibilityElementsHidden).toBe(false)
+    // The menu slides out of the way while a drawer it opened is on top.
+    expect(getByTestId('puzzle-drawer-panel', { includeHiddenElements: true }).props.accessibilityElementsHidden).toBe(true)
   })
 
   it('shows the All packs row and Difficulty with no Custom option - pass and play is how a word gets authored now - and always offers both Random and Pass & play', async () => {

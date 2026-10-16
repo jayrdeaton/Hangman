@@ -282,10 +282,9 @@ export const Main = (): JSX.Element => {
       if (incomingFilePreview.kind === 'progress') {
         await mergePuzzleUnlocks(incomingFilePreview.raw)
         refreshUnlocks()
-        // Opens the menu so the merged progress (its own quick-look card, right at the top) is
-        // immediately visible - the closest thing to confirmation without inventing new toast UI.
-        // Same reasoning as the pack-import branch below, not a standalone Achievements drawer:
-        // that's reached from inside this same menu now, not its own top-level destination.
+        // Opens the menu so the merged progress (the All Packs row's unlocked count, and the Pack
+        // Progress row) is immediately visible - the closest thing to confirmation without
+        // inventing new toast UI. Same reasoning as the pack-import branch below.
         setDrawerVisible(true)
       } else {
         const pack = await importCustomPack(incomingFilePreview.raw)
@@ -504,7 +503,7 @@ export const Main = (): JSX.Element => {
     }
     // RoundEndDialog's single continue button already knows where the puzzle that just ended came
     // from (see GameStartPayload.packScope): a pack the player was specifically browsing
-    // (PackPuzzlesDrawer/AchievementsDrawer's own Random, or a row tap) keeps drawing from just
+    // (PackPuzzlesDrawer/PackProgressDrawer's own Random, or a row tap) keeps drawing from just
     // that pack, same as a solo pack ever was; anything drawn from the player's whole standing
     // selection (PuzzleDrawer's bottom Random) draws from that live selection again - not whatever
     // config.packKeys used to be, since a pack toggled off in Choose Packs and never confirmed via
@@ -624,7 +623,7 @@ export const Main = (): JSX.Element => {
 
       <PuzzleDrawer visible={drawerVisible} onDismiss={handleDismissDrawer} onRequestOpen={handleRequestOpenDrawer} initialConfig={initialDrawerConfig} onConfirm={handleConfirmPuzzle} onStartPnp={handleStartPnp} packsVersion={customPacksVersion} onPacksChanged={refreshCustomPacks} unlockVersion={unlockVersion} onUnlocksChanged={refreshUnlocks} onModeChange={handleModeChange} onDifficultyChange={handleDifficultyChange} />
       <ConfirmDialog visible={incomingFilePreview !== null} title={incomingFilePreview ? (incomingFilePreview.kind === 'progress' ? 'Import Progress Backup?' : `Import "${incomingFilePreview.label}"?`) : ''} message={incomingFilePreview ? (incomingFilePreview.kind === 'progress' ? `Merges ${commaString(incomingFilePreview.unlockCount)} unlocked puzzle${incomingFilePreview.unlockCount === 1 ? '' : 's'} into your existing progress.` : `Adds ${commaString(incomingFilePreview.wordCount)} word${incomingFilePreview.wordCount === 1 ? '' : 's'} as a new pack you can play.`) : ''} icon='file-import-outline' confirmLabel='Import' cancelLabel='Cancel' onConfirm={() => void handleConfirmIncomingFile()} onCancel={() => setIncomingFilePreview(null)} />
-      <SettingsDialog visible={settingsOpen} onDismiss={handleDismissSettings} />
+      <SettingsDialog visible={settingsOpen} onDismiss={handleDismissSettings} onUnlocksChanged={refreshUnlocks} />
       <ConfirmDialog visible={pendingAbandon !== null} title='Abandon This Puzzle?' message="You've already made a guess. Switching now will count this puzzle as a loss." icon='flag-outline' confirmLabel='Abandon' cancelLabel='Cancel' destructive onConfirm={handleConfirmAbandon} onCancel={handleCancelAbandon} />
     </View>
   )

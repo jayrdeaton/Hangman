@@ -179,7 +179,7 @@ export const RoundEndDialog = ({ visible, outcome, phrase, guessedLetters, categ
             </View>
             {/* Every newly unlocked achievement at once, for as long as the card is up: the fleet's
                 tier-colored badge (the achievement's own icon, black on its bronze, silver or gold,
-                as in the Achievements list) beside its title. A left-aligned list, centered as a
+                as on the Stats & Achievements screen) beside its title. A left-aligned list, centered as a
                 block. */}
             {hasUnlocks ? (
               <View style={styles.achievements}>

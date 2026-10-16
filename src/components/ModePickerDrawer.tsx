@@ -290,7 +290,7 @@ export const ModePickerDrawer = memo(({ visible, onDismiss, selected, onSelect }
   const [focusedIndex, setFocusedIndex] = useState(0)
 
   // Resets to whichever mode is already selected every time the drawer opens - mirrors PacksScreen/
-  // AchievementsDrawer's own "recompute from scratch on every open" convention. Deliberately NOT an
+  // PackProgressDrawer's own "recompute from scratch on every open" convention. Deliberately NOT an
   // effect keyed on `visible`: React's own "adjusting state when a prop changes" pattern (setState
   // directly in the render body, guarded by a prevValue comparison held in state, not a ref - refs
   // can't be read/written during render) applies here instead, since the alternative -

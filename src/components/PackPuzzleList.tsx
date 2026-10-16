@@ -52,7 +52,7 @@ export type PackPuzzleListProps = {
 }
 
 // The puzzle list for one pack, shared by every screen that shows "what's in this pack": browsing
-// to play (PackPuzzlesDrawer and AchievementsDrawer's own pack detail step, both onPlayPuzzle
+// to play (PackPuzzlesDrawer and PackProgressDrawer's own pack detail step, both onPlayPuzzle
 // wired up) and reviewing progress read-only (PacksScreen's "view contents" step, no
 // onPlayPuzzle). One row-rendering, masking, and progress implementation instead of
 // independently-maintained ones that had quietly drifted apart.
@@ -76,7 +76,7 @@ export const PackPuzzleList = ({ packKey, onPlayPuzzle }: PackPuzzleListProps): 
     [theme.colors.primary, theme.colors.onPrimary, theme.colors.primaryContainer, theme.colors.onPrimaryContainer, theme.colors.secondary, theme.colors.onSecondary, theme.colors.secondaryContainer, theme.colors.onSecondaryContainer, theme.colors.tertiary, theme.colors.onTertiary, theme.colors.tertiaryContainer, theme.colors.onTertiaryContainer]
   )
   // Every caller renders this inside a parent ScrollViewProvider now (see PackPuzzlesDrawer/
-  // AchievementsDrawer) - its floating ScrollViewHeader overlays whatever sits at the very top of
+  // PackProgressDrawer) - its floating ScrollViewHeader overlays whatever sits at the very top of
   // that provider, and progressHeader below is a plain in-flow sibling with no padding of its own
   // to clear it, unlike this file's own FlatList (which already gets a correct top inset for free
   // via useScrollList internally, see @rific/scroll-view's FlatList.tsx). headerHeight is null until
@@ -151,10 +151,10 @@ export const PackPuzzleList = ({ packKey, onPlayPuzzle }: PackPuzzleListProps): 
           floating ScrollViewHeader above, which overlays rather than pushing this down itself. */}
       <View style={[styles.progressHeader, { paddingTop: (headerHeight ?? 0) + 12 }]}>
         {/* The same PackRow every pack list (PacksScreen/PuzzleDrawer's Choose Packs/
-            AchievementsDrawer's "Browse by pack") already uses for this exact pack - its group
+            PackProgressDrawer's "Browse by pack") already uses for this exact pack - its group
             icon+eyebrow, unlocked count, and progress bar, carried into the detail view it opens
             rather than left behind the moment you drill in. Lives here rather than in the fixed
-            ScrollViewHeader above (PackPuzzlesDrawer's/AchievementsDrawer's own centerContent):
+            ScrollViewHeader above (PackPuzzlesDrawer's/PackProgressDrawer's own centerContent):
             that header is a fixed-height band, absolutely positioned and clipped to fit only a
             single title line - a 4-line PackRow doesn't fit it without getting cut off. No
             onPress/trailing - this is a read-only summary of the pack already open, not another
@@ -270,7 +270,7 @@ export const PackPuzzleList = ({ packKey, onPlayPuzzle }: PackPuzzleListProps): 
               contentContainerStyle={styles.listContent}
               keyboardShouldPersistTaps='handled'
               // Solid vibrant fill, not the chip's own default muted surface tint - matches every
-              // other accent across the app now (see AchievementsDrawer's own doc comments on this
+              // other accent across the app now (see PackProgressDrawer's own chipProps for this
               // pattern), rather than being the one control that's still washed out.
               chipProps={{ style: { backgroundColor: theme.colors.primary }, selectedColor: theme.colors.onPrimary }}
             />

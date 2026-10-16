@@ -25,7 +25,7 @@ const GameStatsContext = createContext<GameStatsActions | null>(null)
 // catalog against the stored stats, so this must never remount: keep it out of anything keyed or
 // gated). Only the stable record callbacks go through context, so a round never hands the always-
 // mounted, memoized drawers new props. The data itself is read straight from the store, narrowly
-// (useUnlockedAchievementCount below) or only while visible (AchievementsDrawer).
+// (useUnlockedAchievementCount below) or only while on screen (StatsScreen, mounted only while open).
 export const GameStatsProvider = ({ children }: { children: ReactNode }): JSX.Element => {
   const { recordOutcome, resetAll } = useAchievements<StatsState, RootState>({
     catalog: ACHIEVEMENT_CATALOG,

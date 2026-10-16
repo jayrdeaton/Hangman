@@ -6,6 +6,7 @@ import { JSX, memo, useCallback, useEffect, useMemo, useState } from 'react'
 import { type StyleProp, StyleSheet, View, type ViewStyle } from 'react-native'
 import { Avatar, Card, Icon, ProgressBar, Text, useTheme } from 'react-native-paper'
 import { useSharedValue } from 'react-native-reanimated'
+import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
 import { ACHIEVEMENT_CATALOG } from '@/constants/achievements'
 import { DRAWER_BASE_Z_INDEX } from '@/constants/drawerStacking'
@@ -22,12 +23,13 @@ import { getPuzzleManifest, PuzzleDifficultyTier, type PuzzleManifestItem } from
 import { type PuzzleConfig, resolvePuzzle } from '@/utils/puzzlePicker'
 import { getManifestUnlockProgress, getPuzzleUnlockMap, getUnlockedCountForPack, PuzzleUnlockMap } from '@/utils/unlocks'
 
-import { AchievementsDrawer } from './AchievementsDrawer'
 import { GameVisual } from './GameVisual'
 import { ModePickerDrawer } from './ModePickerDrawer'
+import { PackProgressDrawer } from './PackProgressDrawer'
 import { PackPuzzlesDrawer } from './PackPuzzlesDrawer'
 import { PackRow } from './PackRow'
 import { PacksScreen } from './PacksScreen'
+import { StatsScreen } from './StatsScreen'
 
 // 4px on every side of a 40x40 icon button (see the matching actionSize={40} on this drawer's own
 // ScrollViewHeader) brings the actual tap target up to 48x48, without the visible circle itself
@@ -45,8 +47,8 @@ export type PuzzleDrawerProps = {
   onStartPnp?: () => void
   packsVersion?: number
   onPacksChanged?: () => void
-  // Threaded straight through to the nested AchievementsDrawer (see below) - mirrors
-  // packsVersion/onPacksChanged just above.
+  // Threaded through to the nested PackProgressDrawer and StatsScreen (see below) - mirrors
+  // packsVersion/onPacksChanged just above. StatsScreen's Reset calls onUnlocksChanged.
   unlockVersion?: number
   onUnlocksChanged?: () => void
   // Fired live, on every change - not staged behind the confirm button - so the art style updates
@@ -89,9 +91,16 @@ export const PuzzleDrawer = memo(({ visible, onDismiss, onRequestOpen, initialCo
   // PackPuzzlesDrawer's own doc comment on packKey for why that would flash the content blank).
   const [playPackKey, setPlayPackKey] = useState<string | null>(null)
   const [playDrawerVisible, setPlayDrawerVisible] = useState(false)
-  const [achievementsVisible, setAchievementsVisible] = useState(false)
+  const [packProgressVisible, setPackProgressVisible] = useState(false)
   const [modePickerVisible, setModePickerVisible] = useState(false)
-  const anyOverlayVisible = packsScreenVisible || playDrawerVisible || achievementsVisible || modePickerVisible
+  const anyOverlayVisible = packsScreenVisible || playDrawerVisible || packProgressVisible || modePickerVisible
+  // The full-screen Stats & Achievements page (StatsScreen), opened from the quick-look card. Not part
+  // of anyOverlayVisible: it covers this panel completely, so the panel stays open underneath instead
+  // of sliding away, and Back on the page just uncovers it again. Only shown while the menu itself is
+  // open (see statsOpen), and cleared once the menu closes so it never reopens straight onto the page.
+  const [statsVisible, setStatsVisible] = useState(false)
+  const statsOpen = visible && statsVisible
+  const insets = useSafeAreaInsets()
   const [unlockMap, setUnlockMap] = useState<PuzzleUnlockMap>({})
   // Just the earned count, read from the stats store: this drawer stays mounted, so a narrow read
   // keeps it from re-rendering after every round.
@@ -105,7 +114,7 @@ export const PuzzleDrawer = memo(({ visible, onDismiss, onRequestOpen, initialCo
   // The "All packs" row's own label - how many of the manifest's packs are actually toggled on for
   // Random/quick-start draws, not the unlock-progress subtitle just below it (that one deliberately
   // stays scoped to every pack regardless of selection, the same "your overall collection" framing
-  // the Achievements card uses - this is a second, different fact about the same row, not a
+  // the Stats & Achievements card uses - this is a second, different fact about the same row, not a
   // narrower view of the first one). No special-cased "No packs selected" string for zero anymore -
   // "0 of 50 Packs" already says that, in the same shape as every other count here.
   const packsLabel = useMemo(() => (selectedPackKeys.length === manifest.length ? 'All Packs' : `${selectedPackKeys.length} of ${manifest.length} Packs`), [selectedPackKeys.length, manifest.length])
@@ -162,11 +171,15 @@ export const PuzzleDrawer = memo(({ visible, onDismiss, onRequestOpen, initialCo
     // eslint-disable-next-line react-hooks/exhaustive-deps -- initialConfig is deliberately excluded, see above
   }, [visible])
 
-  // Re-fetched each time the drawer opens, AND whenever unlockVersion bumps (a puzzle solved
-  // elsewhere while this drawer is already open, e.g. through the nested AchievementsDrawer's own
-  // Random): the quick-start list's per-pack progress and the "All packs" row's own unlocked count
-  // (see totalUnlocked/totalAvailable/overallProgress) both read unlockMap live rather than only on
-  // next open.
+  useEffect(() => {
+    if (!visible) setStatsVisible(false)
+  }, [visible])
+
+  // Re-fetched each time the drawer opens, AND whenever unlockVersion bumps (an import or a reset
+  // while this drawer is already open, e.g. from StatsScreen's Reset): the quick-start list's
+  // per-pack progress, the "All packs" row's own unlocked count (see
+  // totalUnlocked/totalAvailable/overallProgress), the Pack Progress row and StatsScreen all read
+  // unlockMap live rather than only on next open.
   useEffect(() => {
     if (!visible) return
     let mounted = true
@@ -178,10 +191,12 @@ export const PuzzleDrawer = memo(({ visible, onDismiss, onRequestOpen, initialCo
     }
   }, [visible, unlockVersion])
 
-  // Shared with AchievementsDrawer's own identical "Total progress" computation (see
-  // getManifestUnlockProgress's own doc comment) - the quick-look card below shows the exact same
-  // numbers as the drawer it opens.
+  // Shared with PackProgressDrawer's own identical "Total progress" computation (see
+  // getManifestUnlockProgress's own doc comment), so the All Packs row shows the exact same numbers.
   const { totalUnlocked, totalAvailable, overallProgress } = useMemo(() => getManifestUnlockProgress(manifest, unlockMap), [manifest, unlockMap])
+  // The Pack Progress row's subtitle: the packs PackProgressDrawer marks with a trophy. A different
+  // fact from the All Packs row's puzzle count, so the two rows don't repeat each other.
+  const packsComplete = useMemo(() => manifest.filter((item) => getUnlockedCountForPack(unlockMap, item.key) >= item.count).length, [manifest, unlockMap])
 
   const handleConfirm = useCallback(() => {
     const configToResolve: PuzzleConfig = { ...draft, sourceMode: 'random' }
@@ -223,7 +238,8 @@ export const PuzzleDrawer = memo(({ visible, onDismiss, onRequestOpen, initialCo
   // that regardless of the memo.
   const handleClosePacksScreen = useCallback(() => setPacksScreenVisible(false), [])
   const handleClosePlayDrawer = useCallback(() => setPlayDrawerVisible(false), [])
-  const handleCloseAchievements = useCallback(() => setAchievementsVisible(false), [])
+  const handleClosePackProgress = useCallback(() => setPackProgressVisible(false), [])
+  const handleCloseStats = useCallback(() => setStatsVisible(false), [])
   const handleOpenModePicker = useCallback(() => setModePickerVisible(true), [])
   const handleCloseModePicker = useCallback(() => setModePickerVisible(false), [])
 
@@ -274,38 +290,45 @@ export const PuzzleDrawer = memo(({ visible, onDismiss, onRequestOpen, initialCo
     () => (
       <>
         <Text variant='titleMedium' style={styles.topSectionLabel}>
-          Achievements
+          Stats &amp; Achievements
         </Text>
         {/* Same big-number/progress-bar visual language as the "All packs" row below (tapping
-            either opens the full drawer/screen behind it) but a different metric - earned
-            achievements out of the whole catalog, not a puzzle-unlock count.
-            That count already lives on "All packs" now (and on every pack row below it); showing
-            it a second time here just made this card look like one more pack row instead of its
-            own distinct facet of progress. */}
-        <Card style={[styles.achievementsCard, { backgroundColor: theme.colors.primaryContainer }]} mode='contained' onPress={() => setAchievementsVisible(true)}>
-          <Card.Content style={styles.achievementsCardRow}>
-            <Avatar.Icon size={40} icon='trophy-award' color={theme.colors.onPrimary} style={{ backgroundColor: theme.colors.primary }} />
-            <View style={styles.achievementsText}>
-              {/* No "Achievements" overline in here anymore - the topSectionLabel right above the
-                  card already says it, and repeating it a second time immediately below read as
-                  the same word twice in a row. */}
-              <Text variant='titleSmall' style={{ color: theme.colors.onPrimaryContainer }}>
-                {earnedAchievements}
-                <Text variant='titleSmall' style={[styles.muted, { color: theme.colors.onPrimaryContainer }]}>
-                  {' '}
-                  / {ACHIEVEMENT_CATALOG.length}
+            either opens the full screen behind it) but a different metric - earned achievements
+            out of the whole catalog, not a puzzle-unlock count. That count already lives on "All
+            packs" (and on every pack row below it); showing it a second time here just made this
+            card look like one more pack row instead of its own distinct facet of progress. Opens
+            the full Stats & Achievements page (StatsScreen). */}
+        {/* An accessible wrapper carries the label, as in PackRow (see its comment): Paper's Card
+            never hands accessibilityLabel to the Pressable a screen reader focuses. */}
+        <View accessible accessibilityRole='button' accessibilityLabel={`Stats and achievements. ${earnedAchievements} of ${ACHIEVEMENT_CATALOG.length} achievements earned`}>
+          <Card style={[styles.achievementsCard, { backgroundColor: theme.colors.primaryContainer }]} mode='contained' onPress={() => setStatsVisible(true)}>
+            <Card.Content style={styles.achievementsCardRow}>
+              <Avatar.Icon size={40} icon='trophy-award' color={theme.colors.onPrimary} style={{ backgroundColor: theme.colors.primary }} />
+              <View style={styles.achievementsText}>
+                {/* No "Achievements" overline in here anymore - the topSectionLabel right above the
+                    card already says it, and repeating it a second time immediately below read as
+                    the same word twice in a row. */}
+                <Text variant='titleSmall' style={{ color: theme.colors.onPrimaryContainer }}>
+                  {earnedAchievements}
+                  <Text variant='titleSmall' style={[styles.muted, { color: theme.colors.onPrimaryContainer }]}>
+                    {' '}
+                    / {ACHIEVEMENT_CATALOG.length}
+                  </Text>
                 </Text>
-              </Text>
-              <Text variant='bodySmall' style={[styles.muted, { color: theme.colors.onPrimaryContainer }]}>
-                Achievements Earned
-              </Text>
-              <View style={styles.progressBarWrapper}>
-                <ProgressBar progress={earnedAchievements / ACHIEVEMENT_CATALOG.length} style={[styles.progressBar, { backgroundColor: theme.colors.surface }]} />
+                <Text variant='bodySmall' style={[styles.muted, { color: theme.colors.onPrimaryContainer }]}>
+                  Achievements Earned
+                </Text>
+                <View style={styles.progressBarWrapper}>
+                  <ProgressBar progress={earnedAchievements / ACHIEVEMENT_CATALOG.length} style={[styles.progressBar, { backgroundColor: theme.colors.surface }]} />
+                </View>
               </View>
-            </View>
-            <Icon source='chevron-right' size={24} color={theme.colors.onPrimaryContainer} />
-          </Card.Content>
-        </Card>
+              <Icon source='chevron-right' size={24} color={theme.colors.onPrimaryContainer} />
+            </Card.Content>
+          </Card>
+        </View>
+        {/* Every pack's progress, selected or not (this menu's own list below shows only the
+            selected ones), in PackProgressDrawer. */}
+        <PackRow label='Pack Progress' subtitle={`${commaString(packsComplete)} of ${commaString(manifest.length)} packs complete`} leading={<Avatar.Icon size={40} icon='progress-check' color={theme.colors.onSecondary} style={{ backgroundColor: theme.colors.secondary }} />} trailing={<Icon source='chevron-right' size={24} color={theme.colors.onSurfaceVariant} />} onPress={() => setPackProgressVisible(true)} />
 
         <Text variant='titleMedium' style={styles.sectionLabel}>
           Customize
@@ -337,7 +360,7 @@ export const PuzzleDrawer = memo(({ visible, onDismiss, onRequestOpen, initialCo
         <PackRow label={packsLabel} subtitle={`${commaString(totalUnlocked)} of ${commaString(totalAvailable)} unlocked`} progress={overallProgress} leading={<Avatar.Icon size={40} icon='format-list-checks' color={theme.colors.onTertiary} style={{ backgroundColor: theme.colors.tertiary }} />} trailing={<Icon source='chevron-right' size={24} color={theme.colors.onSurfaceVariant} />} onPress={() => setPacksScreenVisible(true)} />
       </>
     ),
-    [draft.mode, draft.difficulty, settings.color, themeColors, handleOpenModePicker, handleSelectDifficulty, difficultyOptions, earnedAchievements, packsLabel, totalUnlocked, totalAvailable, overallProgress, theme]
+    [draft.mode, draft.difficulty, settings.color, themeColors, handleOpenModePicker, handleSelectDifficulty, difficultyOptions, earnedAchievements, packsComplete, manifest.length, packsLabel, totalUnlocked, totalAvailable, overallProgress, theme]
   )
 
   return (
@@ -363,18 +386,19 @@ export const PuzzleDrawer = memo(({ visible, onDismiss, onRequestOpen, initialCo
           button/fields from staying reachable by screen readers and keyboard focus while
           invisible. */}
       <Drawer open={visible && !anyOverlayVisible} onClose={onDismiss} panelShadow translateOffset={translateX} width={drawerWidth} zIndex={DRAWER_BASE_Z_INDEX}>
-        <View testID='puzzle-drawer-panel' style={styles.panelContent} accessibilityViewIsModal={visible && !anyOverlayVisible} accessibilityElementsHidden={!visible || anyOverlayVisible} importantForAccessibility={visible && !anyOverlayVisible ? 'yes' : 'no-hide-descendants'} onAccessibilityEscape={visible && !anyOverlayVisible ? onDismiss : undefined}>
+        {/* Hidden from accessibility under StatsScreen too, which covers it without closing it. */}
+        <View testID='puzzle-drawer-panel' style={styles.panelContent} accessibilityViewIsModal={visible && !anyOverlayVisible && !statsOpen} accessibilityElementsHidden={!visible || anyOverlayVisible || statsOpen} importantForAccessibility={visible && !anyOverlayVisible && !statsOpen ? 'yes' : 'no-hide-descendants'} onAccessibilityEscape={visible && !anyOverlayVisible && !statsOpen ? onDismiss : undefined}>
           <ScrollViewProvider>
             {/* Close sits on the LEADING (left) side, not trailing - this drawer opens from the
                 hamburger icon at the top-left of the game screen, so closing it from the same
                 corner your thumb already used to open it keeps the gesture symmetric. Every other
                 drawer reached from here (PackPuzzlesDrawer, PacksScreen and its own children,
-                AchievementsDrawer) follows the same left-anchored convention. 'Close', not the
+                PackProgressDrawer) follows the same left-anchored convention. 'Close', not the
                 Appbar.BackAction default of 'Back' - this dismisses the whole panel, it doesn't
                 step back a level within it (see accessibilityLabel on every other migrated
                 drawer's ScrollViewHeader for the same reasoning). A custom IconButton, not the
                 default callback-driven Appbar.BackAction: a plain arrow in the surface's ink (the fleet's back-button style), matching every other
-                back/close action in the app (see AchievementsDrawer's own back/close for the
+                back/close action in the app (see PackProgressDrawer's own back/close for the
                 first of these); IconButton already fires the app's own haptic convention on
                 press itself (unlike raw Appbar.BackAction, which has none of its own), so this
                 needs no manual selection() call the way the callback form used to. */}
@@ -431,25 +455,30 @@ export const PuzzleDrawer = memo(({ visible, onDismiss, onRequestOpen, initialCo
           DRAWER_PACK_DETAIL_Z_INDEX (see @/constants/drawerStacking) - not render order. */}
       <PackPuzzlesDrawer visible={playDrawerVisible} packKey={playPackKey} mode={draft.mode} difficulty={draft.difficulty} onDismiss={handleClosePlayDrawer} onConfirm={onConfirm} />
 
-      {/* Reached by tapping the quick-look card above rather than its own top-level entry point -
-          see AchievementsDrawer's own doc comment for why it stacks here (DRAWER_ACHIEVEMENTS_Z_INDEX)
+      {/* Reached by tapping the Pack Progress row above rather than its own top-level entry point -
+          see PackProgressDrawer's own doc comment for why it stacks here (DRAWER_PACK_PROGRESS_Z_INDEX)
           instead of sliding in independently from the opposite screen edge. mode/difficulty/onConfirm
           reuse this drawer's own draft/prop, same as PackPuzzlesDrawer just above. */}
-      <AchievementsDrawer visible={achievementsVisible} onDismiss={handleCloseAchievements} unlockVersion={unlockVersion} onUnlocksChanged={onUnlocksChanged} mode={draft.mode} difficulty={draft.difficulty} onConfirm={onConfirm} />
+      <PackProgressDrawer visible={packProgressVisible} onDismiss={handleClosePackProgress} manifest={manifest} unlockVersion={unlockVersion} mode={draft.mode} difficulty={draft.difficulty} onConfirm={onConfirm} />
 
       {/* Reached by tapping the mode summary row above - full-page, animated, replacing the old
           inline ModeSelector carousel. handleSelectMode is reused unchanged: it already does
           exactly what a picker selection needs (updateDraft + onModeChange). */}
       <ModePickerDrawer visible={modePickerVisible} onDismiss={handleCloseModePicker} selected={draft.mode} onSelect={handleSelectMode} />
+
+      {/* Mounted only while open (it reads the stats store with no visibility gate), above every
+          drawer tier (STATS_SCREEN_Z_INDEX), over this panel left open underneath. */}
+      {statsOpen ? <StatsScreen onBack={handleCloseStats} insets={insets} manifest={manifest} unlockMap={unlockMap} onUnlocksChanged={onUnlocksChanged} /> : null}
     </>
   )
 })
 PuzzleDrawer.displayName = 'PuzzleDrawer'
 
 const styles = StyleSheet.create({
-  // Matches AchievementsDrawer's own "Total progress" card spacing/shape exactly (see its own
-  // styles.card) - no marginTop of its own since the "Achievements" label right above it (see
-  // topSectionLabel) already provides that clearance.
+  // Matches PackProgressDrawer's own "Total progress" card spacing/shape exactly (see its own
+  // styles.card) - no marginTop of its own since the "Stats & Achievements" label right above it
+  // (see topSectionLabel) already provides that clearance. The 4 below is the gap to the Pack
+  // Progress row, which PackRow spaces like every other row.
   achievementsCard: { marginBottom: 4 },
   achievementsCardRow: { alignItems: 'center', flexDirection: 'row', gap: 12 },
   achievementsText: { flex: 1 },

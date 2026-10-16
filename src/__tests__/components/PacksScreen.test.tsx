@@ -29,8 +29,7 @@ const mockShareCustomPackFile = jest.mocked(shareCustomPackFile)
 const builtIn = () => getPuzzleManifest().filter((item) => item.count > 0)[0]
 
 // ConfirmDialog renders through a react-native-paper Portal (Delete pack's confirm dialog) - needs
-// a Portal.Host ancestor, normally supplied by @rific/auto-paper's Provider at the app root; same
-// wrapper AchievementsDrawer.test.tsx uses for its own Portal-based dialog.
+// a Portal.Host ancestor, normally supplied by @rific/auto-paper's Provider at the app root.
 // ToastProvider is also required - this screen always mounts its own PackEditorDrawer (translated
 // off-screen when not visible, same as every other drawer in this lineage), and that drawer's own
 // form calls useToast() to surface a newly-unlocked custom-pack achievement, which throws outside a

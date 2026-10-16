@@ -24,7 +24,7 @@ jest.mock('@rific/toaster', () => ({
 
 // ConfirmDialog renders through a react-native-paper Portal - needs a Portal.Host ancestor,
 // normally supplied by @rific/auto-paper's Provider at the app root; same wrapper
-// PacksScreen.test.tsx/AchievementsDrawer.test.tsx use for their own Portal-based dialogs.
+// PacksScreen.test.tsx uses for its own Portal-based dialog.
 // ToastProvider is also required: PackEditorDrawer's save flow calls useToast() to show a newly
 // unlocked custom-pack achievement, and that hook throws outside a ToastProvider ancestor (normally
 // supplied by Providers.tsx at the app root). So are the app's stats store and GameStatsProvider,
@@ -41,7 +41,7 @@ const Wrapper = ({ children }: { children: ReactNode }) => (
 const render = (ui: ReactElement) => rtlRender(ui, { wrapper: Wrapper })
 
 // This file only covers what's specific to PackEditorDrawer's own shell - the accessibility-modal
-// wiring every sibling drawer's test (PuzzleDrawer.test.tsx, AchievementsDrawer.test.tsx) already
+// wiring every sibling drawer's test (PuzzleDrawer.test.tsx, PackProgressDrawer.test.tsx) already
 // checks for its own panel, which nothing exercised for this one since it used to be an in-place
 // step inside PacksScreen rather than its own animated Drawer. Everything else about the form
 // itself (save/delete/share/validation) is already covered thoroughly through PacksScreen.test.tsx.
