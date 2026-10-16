@@ -1,9 +1,10 @@
-/**
- * @jest-environment jsdom
- */
-// jsdom, not the default jest-expo/RN environment - the web-platform tests below need a real
-// `document` (creating an anchor, clicking it) to exercise shareCustomPackFile's browser-download
-// fallback, which plain react-native's test environment doesn't provide at all.
+// The web-platform tests below need a `document` to exercise shareCustomPackFile's browser-download
+// fallback (create an anchor, set href/download, click it), which react-native's test environment
+// doesn't provide. This file used to switch to `@jest-environment jsdom`, but since Expo SDK 58 the
+// React Native jest setup that jest-expo loads redefines `window`, which jsdom doesn't allow, and
+// jsdom itself can't load under the expo preset. So the suite stays in the default environment with
+// the one DOM call that code makes stubbed here; Blob and URL come from Node.
+globalThis.document = { createElement: (tag: string) => ({ tagName: tag.toUpperCase(), click: () => {} }) } as unknown as Document
 
 jest.mock('react-native', () => {
   const RN = jest.requireActual('react-native')

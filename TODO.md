@@ -15,3 +15,12 @@ Found during the 2026-10-14 README pass. The Title Case and em dash items were d
 ## Tests and docs
 
 5. **Possible flaky test.** One full Jest run had 2 failures out of 392, and a re-run passed all 30 suites. Run the suite a few times under load to find which test is timing-sensitive.
+
+## Expo SDK 58 follow-ups (2026-10-16)
+
+Deferred to ship SDK 58 the same day:
+
+- **Check it on a device.** Verify, typecheck and an iOS prebuild pass, but nothing ran on hardware: launch (SDK 58's scene life cycle), the drawers opening and closing by drag and by backdrop tap (`@rific/drawer` 0.7.2), scrolling the pack and puzzle lists (`@rific/scroll-view` 0.9.2) and swiping a toast away (`@rific/toaster` 0.8.1). Those three only had their gesture-handler 3 peer ranges raised, and their tests mock gesture-handler.
+- **React Native 0.88 strict types.** `@infinitetoken/tsconfig` 0.6 resolves React Native 0.88's legacy types, and React Native drops them after 0.88. Checked 2026-10-16 with `customConditions: ["react-native"]` only: this app's own code fails in 5 places (`src/components/PackEditorDrawer.tsx:211`, `:226`, `:286`, `src/components/PnpWordPrompt.tsx:168`, `:188`, all TS2322), plus package source it type-checks (`@rific/scroll-view` 27, `@rific/auto-paper` 3, `@tastic/core` 1, `@rific/updater` 1; see those repos' TODO.md).
+- **`hangmanFile.test.ts` stubs `document`.** It used to run under `@jest-environment jsdom`; React Native's jest setup now redefines `window`, which jsdom rejects, and jsdom can't load under the expo preset, so the file stubs the single `document.createElement('a')` call the download fallback makes. If more web-only tests need a DOM, find a way to run them in a real web environment (jest-expo's web preset, say) instead of growing the stub.
+
