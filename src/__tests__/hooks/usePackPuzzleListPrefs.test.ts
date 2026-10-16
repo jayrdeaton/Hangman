@@ -35,7 +35,7 @@ describe('usePackPuzzleListPrefs', () => {
     mockStore[STORAGE_KEY] = '{ not valid json'
     const { result } = await renderHook(() => usePackPuzzleListPrefs())
 
-    // Nothing to await here — an invalid value never overwrites the initial state, so there's no
+    // Nothing to await here - an invalid value never overwrites the initial state, so there's no
     // later change to wait for.
     expect(result.current.prefs).toEqual({ statusFilter: 'all', difficultyFilter: 'all' })
   })

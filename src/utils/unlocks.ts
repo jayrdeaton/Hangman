@@ -53,7 +53,7 @@ export const exportPuzzleUnlocks = async (): Promise<string> => {
 // Stricter than importPuzzleUnlocks/mergePuzzleUnlocks below on purpose: those two accept a bare
 // unlocks-map with no wrapper (a deliberate leniency for the old paste-a-blob flow, still relied on
 // by their own tests), but this one is for disambiguating an incoming .hangman file from a custom
-// pack file (see hangmanFile.ts) — requiring the `unlocks` key is what lets a caller tell "this is
+// pack file (see hangmanFile.ts) - requiring the `unlocks` key is what lets a caller tell "this is
 // a progress backup" apart from "this is a pack" (which has a `pack` key instead) before deciding
 // which import path to run.
 export const parseProgressBackup = (raw: string): PuzzleUnlockMap => {
@@ -148,7 +148,7 @@ export const getTotalUnlockedCount = (unlockMap: PuzzleUnlockMap): number => {
 }
 
 // Shared by AchievementsDrawer's own "Total progress" card and PuzzleDrawer's quick-look card
-// (which opens it) — both showing the exact same numbers, so this lives in one place rather than
+// (which opens it) - both showing the exact same numbers, so this lives in one place rather than
 // two copies of the same reduce quietly drifting apart. Caps each pack's contribution at its own
 // item.count (a pack whose catalog shrank shouldn't let a stale unlock entry push a tile's count
 // past 100%), summed only over packs the current manifest actually has puzzles for.

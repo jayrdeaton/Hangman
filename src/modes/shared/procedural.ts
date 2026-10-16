@@ -4,7 +4,7 @@
 
 export const randIn = (min: number, max: number): number => min + Math.random() * (max - min)
 
-// Fisher-Yates shuffle of [0..n-1] — used to randomize which theme color lands on which shape
+// Fisher-Yates shuffle of [0..n-1] - used to randomize which theme color lands on which shape
 // each round instead of a fixed index -> color mapping (which would otherwise always put the
 // same shape on the same color every game).
 export function shuffledIndices(n: number): number[] {

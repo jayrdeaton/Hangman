@@ -6,7 +6,7 @@ import { clampStage } from './shared/clampStage'
 
 // Snowman centered at x=50, viewBox 0 0 100 100.
 // Core: three stacked circles (bottom r19 cy78, middle r14 cy50, head r9.5 cy25)
-// with a permanent cute face baked into the head — this face is part of the
+// with a permanent cute face baked into the head - this face is part of the
 // core and always shows whenever the (non-melted) snowman is rendered.
 // Accessories melt away one by one until only a puddle remains.
 
@@ -72,7 +72,7 @@ const Scarf = ({ color }: { color: string }) => (
 )
 
 // Removal order: floppy/outer accessories fall off first, buttons/scarf (closer
-// to the body) go later — mirroring robot.tsx's convention of ordering the most
+// to the body) go later - mirroring robot.tsx's convention of ordering the most
 // "core to identity" part (there: Eyes) last.
 const REMOVAL_ORDER = [Hat, LeftArm, RightArm, Nose, Buttons, Scarf]
 

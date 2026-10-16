@@ -5,8 +5,8 @@ import { StyleSheet } from 'react-native'
 import { PuzzleInfoRow } from '@/components/PuzzleInfoRow'
 
 // Handles both hex (what easy/medium/hard all resolve to today, via getColorRoles) and literal
-// `rgba(r, g, b, a)` strings (what MD3's own untouched error/onError resolve to — see
-// useComputedTheme.ts) — React Native's StyleSheet accepts either format, so parsing both here is
+// `rgba(r, g, b, a)` strings (what MD3's own untouched error/onError resolve to - see
+// useComputedTheme.ts) - React Native's StyleSheet accepts either format, so parsing both here is
 // just robustness, not a statement about which format any particular tier currently uses.
 const toRgb = (color: string): [number, number, number] => {
   const rgbaMatch = color.match(/rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)/)
@@ -16,7 +16,7 @@ const toRgb = (color: string): [number, number, number] => {
 }
 
 // Same WCAG relative-luminance/contrast-ratio formula used elsewhere in this codebase to verify
-// color choices — reimplemented here, independently, so this test can't be fooled by a bug shared
+// color choices - reimplemented here, independently, so this test can't be fooled by a bug shared
 // between the component and its own verification.
 const relativeLuminance = (color: string): number => {
   const channels = toRgb(color).map((c) => {
@@ -30,11 +30,11 @@ const contrastRatio = (hexA: string, hexB: string): number => {
   return (l1 + 0.05) / (l2 + 0.05)
 }
 
-// Rendered through @rific/auto-paper's real Provider (not a hand-built PaperProvider theme) —
+// Rendered through @rific/auto-paper's real Provider (not a hand-built PaperProvider theme) -
 // easy/medium/hard now read straight off theme.colors.{success,warning,danger} for the pill's own
 // fill and theme.colors.on{Success,Warning,Danger} for its text (see useDifficultyColors), which
 // only exist on a theme useComputedTheme actually produced. The pill is a solid vibrant fill now
-// (not an outline on the page's own surface — see PuzzleInfoRow's own comment on why), so the
+// (not an outline on the page's own surface - see PuzzleInfoRow's own comment on why), so the
 // contrast that actually matters is fill vs its own text, not either one against SURFACE.
 const renderDifficultyPill = async (tier: 'easy' | 'medium' | 'hard', dark: boolean) => {
   const utils = await render(
@@ -47,8 +47,8 @@ const renderDifficultyPill = async (tier: 'easy' | 'medium' | 'hard', dark: bool
   return { fill: StyleSheet.flatten(pill.props.style).backgroundColor as string, text: StyleSheet.flatten(label.props.style).color as string }
 }
 
-describe('PuzzleInfoRow difficulty badge contrast — driven through the component by the real theme', () => {
-  // easy/medium/hard map onto success/warning/danger, which are fixed (not seed-derived — see
+describe('PuzzleInfoRow difficulty badge contrast - driven through the component by the real theme', () => {
+  // easy/medium/hard map onto success/warning/danger, which are fixed (not seed-derived - see
   // useComputedTheme.ts's SEMANTIC_BASE_COLORS), so there's no longer an accent color to sweep
   // across: just light and dark mode.
   for (const dark of [false, true]) {

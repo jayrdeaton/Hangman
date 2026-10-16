@@ -14,7 +14,7 @@ import { DRAW_MS, FadeScaleIn, SketchLine, SketchRect } from './shared/sketchSha
 const JOIN = 'round' as const
 
 // RobotCore (torso, neck, head) is a permanent scaffold, same role the gallows plays in
-// classic.tsx — always present, never reacts to a wrong guess. It draws first, staggered
+// classic.tsx - always present, never reacts to a wrong guess. It draws first, staggered
 // bottom-to-top (torso, neck, head), and the removable parts below only start once it's roughly
 // finished, so limbs/antenna/eyes read as attaching to an already-drawn body rather than every
 // piece of the robot materializing at once.
@@ -35,11 +35,11 @@ const RobotCore = ({ color, started = true }: { color: string; started?: boolean
 )
 
 // How much each surviving removable part's reveal staggers behind the next one drawn, once the
-// core scaffold above has finished — see REMOVAL_ORDER's own comment for the resulting order.
+// core scaffold above has finished - see REMOVAL_ORDER's own comment for the resulting order.
 const STAGGER_MS = 90
 
 // Each removable part stays mounted for the whole round instead of being conditionally unmounted
-// the instant a wrong guess removes it — same fix as disappearing.tsx's own REMOVAL_ORDER comment:
+// the instant a wrong guess removes it - same fix as disappearing.tsx's own REMOVAL_ORDER comment:
 // react-native-svg's shapes have no exit animation to unmount into, so an instant unmount was
 // always just an instant pop. `erased` scrubs the part's own stroke (or fades/scales its filled
 // shape) back out via sketchShapes.tsx's useDrawProgress, retracing the same draw-in in reverse.
@@ -70,7 +70,7 @@ const Eyes = ({ color, started, erased, delayMs }: RemovablePartProps) => (
 )
 
 // Drawn in only once the eyes above have finished fading out (delayMs = the erase's own
-// durationMs, DRAW_MS, since Eyes passes none of its own) — so the dead stare reads as the eyes
+// durationMs, DRAW_MS, since Eyes passes none of its own) - so the dead stare reads as the eyes
 // having gone dark and the X's then being drawn on, not two animations racing in the same spot.
 const XEyes = ({ color, delayMs }: { color: string; delayMs?: number }) => (
   <G>
@@ -82,16 +82,16 @@ const XEyes = ({ color, delayMs }: { color: string; delayMs?: number }) => (
 )
 
 // Parts in removal order (first in array = first to disappear). Reveal (see RobotVisual below)
-// runs in reverse — eyes light up first, then legs, then arms, antenna last — so a fresh round
+// runs in reverse - eyes light up first, then legs, then arms, antenna last - so a fresh round
 // reads as the robot booting up, the mirror image of it shutting down as mistakes land.
 const REMOVAL_ORDER = [Antenna, LeftArm, RightArm, LeftLeg, RightLeg, Eyes]
 
 const RobotVisual = ({ mistakes, color, colors, started }: { mistakes: number; color: string; colors?: string[]; started?: boolean }) => {
   const removed = clampStage(mistakes, REMOVAL_ORDER.length)
   const isDead = removed >= REMOVAL_ORDER.length
-  // The removable parts (antenna/limbs) are the focus — primary — since they're what actually
+  // The removable parts (antenna/limbs) are the focus - primary - since they're what actually
   // tracks mistakes. The torso/head/neck never change, same permanent-scaffold role the gallows
-  // plays in classic.tsx — secondary. Eyes/XEyes get their own tertiary accent, same role
+  // plays in classic.tsx - secondary. Eyes/XEyes get their own tertiary accent, same role
   // hourglass's glass outline plays. Falls back to the plain `color` when no triad is given (e.g.
   // ModeSelector's card preview, which only passes `color`).
   const coreColor = colors?.[1] ?? color
@@ -101,7 +101,7 @@ const RobotVisual = ({ mistakes, color, colors, started }: { mistakes: number; c
     <Svg viewBox='0 0 100 100'>
       <RobotCore color={coreColor} started={started} />
       {/* Keyed by each part's own fixed position in REMOVAL_ORDER, not by its position in a
-          post-slice array — see disappearing.tsx's identical comment for why a positional key
+          post-slice array - see disappearing.tsx's identical comment for why a positional key
           would cause every surviving part to spuriously remount (and replay its reveal) on every
           wrong guess. */}
       {REMOVAL_ORDER.map((Part, index) => (

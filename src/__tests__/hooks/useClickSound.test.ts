@@ -12,7 +12,7 @@ const mockUseSoundSettings = jest.mocked(useSoundSettings)
 const mockCreateAudioPlayer = jest.mocked(createAudioPlayer)
 
 // The setTimeout(0) deferral (see useClickSound.ts's own comment) means play()/seekTo() land a
-// macrotask after playClick() returns, and seekTo() itself resolves a microtask later still — a
+// macrotask after playClick() returns, and seekTo() itself resolves a microtask later still - a
 // single awaited async act() covering both the call and the wait is what's actually needed here:
 // splitting them into a bare act() followed by a separate await leaves React's act-tracking in a
 // state that silently breaks the NEXT test's own render in this file.
@@ -24,7 +24,7 @@ const clickAndFlush = async (playClick: () => void) => {
 }
 
 // useAudioPool now defers actually building the pool behind its own setTimeout(0) inside a mount
-// effect (see useAudioPool.ts's "Pool creation is pushed one tick out" comment) — renderHook only
+// effect (see useAudioPool.ts's "Pool creation is pushed one tick out" comment) - renderHook only
 // flushes synchronous effect work, so a real macrotask has to elapse before createAudioPlayer has
 // been called at all, let alone before any test can read its mock call history off of it.
 const flushPoolCreation = () =>

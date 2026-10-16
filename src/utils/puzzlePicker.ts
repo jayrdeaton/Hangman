@@ -10,14 +10,14 @@ import { normalizePhrase } from './normalizePhrase'
 
 export { normalizePhrase }
 
-// Category strings come straight from wildly different source datasets — some are ALL CAPS
+// Category strings come straight from wildly different source datasets - some are ALL CAPS
 // Trivia-style category names, some are lowercase kebab-slugs (the Phrases pack). Title-casing
 // each letter run (and nothing else) cleans up both without touching hyphens/quotes/spacing
 // that carry real meaning, e.g. Trivia's own hyphenated wordplay categories.
 //
 // A category that's mostly lowercase/mixed-case (e.g. "TV Show", "US President") was authored
 // by hand rather than scraped as one uniform shouting case, so an all-caps run within it (TV,
-// US) is almost certainly a real acronym — left alone rather than forced through the same
+// US) is almost certainly a real acronym - left alone rather than forced through the same
 // lowercase-the-rest pass that turns Trivia's ALL-CAPS categories readable. Judged by the
 // ratio of uppercase letters in the whole string, not just "any lowercase present", since a
 // handful of Trivia categories ("THE 1980s", "20th CENTURY WOMEN") carry an incidental
@@ -31,7 +31,7 @@ const humanizeCategory = (category: string): string => {
 
   return category.replace(/[A-Za-z]+/g, (word, offset: number, full: string) => {
     // A leading digit run (as in "20th" or "1980s") splits off its own letter-run match here
-    // ("th", "s") since digits and letters don't share a \w-style class in this regex — left
+    // ("th", "s") since digits and letters don't share a \w-style class in this regex - left
     // lowercase rather than title-cased into a stray-looking "20Th"/"1980S".
     if (offset > 0 && /\d/.test(full[offset - 1]) && ORDINAL_SUFFIX.test(word)) return word.toLowerCase()
     if (isHandAuthored && word === word.toUpperCase()) return word
@@ -45,11 +45,11 @@ const readMetaString = (metadata: Record<string, unknown> | undefined, key: stri
 }
 
 // This is the *extra* hint shown alongside the pack itself (see GameStartPayload.packLabel,
-// always surfaced next to it in the UI) — so a category only earns a place here when it tells
+// always surfaced next to it in the UI) - so a category only earns a place here when it tells
 // the player something the pack name doesn't already. Most theme/geography packs are scraped
 // one-category-per-pack (every puzzle in "Theme Superheroes" has category "Superhero"), so
 // repeating it would just parrot back the pack they already know they're in. Bands, movies, TV
-// and the mixed Phrases pack are the packs where a category is actually informative on its own —
+// and the mixed Phrases pack are the packs where a category is actually informative on its own -
 // no "Movies"/"Shows" suffix needed to disambiguate a bare genre like "Action" anymore, since the
 // pack name sitting right next to it already supplies that context.
 const buildHint = (puzzle: Pick<Puzzle, 'category' | 'metadata'>, pack: Pick<PuzzleManifestItem, 'categories'>): string | undefined => {
@@ -60,7 +60,7 @@ const buildHint = (puzzle: Pick<Puzzle, 'category' | 'metadata'>, pack: Pick<Puz
 
   if (pack.categories.length > 1) parts.push(humanizeCategory(puzzle.category))
 
-  // Scraped per-item metadata that's more specific than any category — an artist name pins a
+  // Scraped per-item metadata that's more specific than any category - an artist name pins a
   // song down far more than the pack-wide "Song" category ever could, and a release year adds
   // real information on top of a genre that's shared by hundreds of other movies/shows.
   const artist = readMetaString(puzzle.metadata, 'artist')
@@ -82,12 +82,12 @@ export type PuzzleConfig = {
 export type PuzzleResolution = { ok: true; payload: GameStartPayload } | { ok: false; error: string }
 
 // A random draw, scoped to whichever packs the player has checked (defaults to all of them).
-// Picked in two steps — a pack first, uniformly among every eligible pack, THEN a puzzle within
-// that pack — rather than flattened into one cross-pack pool. A flattened pool weights packs by
+// Picked in two steps - a pack first, uniformly among every eligible pack, THEN a puzzle within
+// that pack - rather than flattened into one cross-pack pool. A flattened pool weights packs by
 // their own puzzle count, so a 500-puzzle pack drowns out a 10-puzzle one; picking the pack first
 // gives every eligible pack an equal shot regardless of size. Within the chosen pack, an unsolved
 // puzzle beats a repeat, falling back to the full (repeats-allowed) pool only once every puzzle in
-// THAT pack is already unlocked — so a player hitting Random still works through and finishes
+// THAT pack is already unlocked - so a player hitting Random still works through and finishes
 // whichever pack they land on, it just no longer favors big packs, or packs the player has fully
 // completed, over anything else in the selection.
 const pickRandomPackPuzzle = (allowedKeys: Set<string>, unlockedByPack: PuzzleUnlockMap, difficultyFilter?: PuzzleDifficultyTier) => {
@@ -103,7 +103,7 @@ const pickRandomPackPuzzle = (allowedKeys: Set<string>, unlockedByPack: PuzzleUn
       return { pack, candidates }
     })
     // A pack with nothing playable (empty after the difficulty/normalization filters) can't be
-    // drawn from — excluded here rather than left in to be picked and then come up empty.
+    // drawn from - excluded here rather than left in to be picked and then come up empty.
     .filter((entry) => entry.candidates.length > 0)
 
   if (packPools.length === 0) return null
@@ -117,16 +117,16 @@ const pickRandomPackPuzzle = (allowedKeys: Set<string>, unlockedByPack: PuzzleUn
 }
 
 // Shared by the initial auto-start (Main mounts straight into a game, no setup screen) and the
-// drawer's "New Puzzle" confirm — one place picks the word so both stay in sync.
+// drawer's "New Puzzle" confirm - one place picks the word so both stay in sync.
 //
 // packKeys is a separate argument, not a PuzzleConfig field: it's not something the caller stages
-// and confirms like the rest of config — it's normally the live, persisted pack-selection default
+// and confirms like the rest of config - it's normally the live, persisted pack-selection default
 // (see usePackSelection), except for the one deliberate override Main's round-end handler makes to
 // narrow a single draw to just the pack the player was already browsing (see
 // GameStartPayload.packScope). Keeping it explicit here makes that override visible at the call
 // site instead of hidden inside a config object that's otherwise all-staged.
 //
-// unlockedByPack defaults to {} (nothing unlocked) rather than being required — a caller that
+// unlockedByPack defaults to {} (nothing unlocked) rather than being required - a caller that
 // doesn't have it handy yet degrades to picking with no preference at all, same as before this
 // existed, instead of failing outright.
 export const resolvePuzzle = (config: PuzzleConfig, packKeys: string[], unlockedByPack: PuzzleUnlockMap = {}): PuzzleResolution => {
@@ -140,7 +140,7 @@ export const resolvePuzzle = (config: PuzzleConfig, packKeys: string[], unlocked
 
     const hint = config.customHint.replace(/\s+/g, ' ').trim()
     // Same scorer the drawer's custom form already previews live (see PuzzleDrawer's
-    // customPreviewPuzzle) — without this, the difficulty pill a player watched update while
+    // customPreviewPuzzle) - without this, the difficulty pill a player watched update while
     // typing would vanish the instant the round actually starts, on both the drawer's own Custom
     // flow and pass-and-play's compose screen.
     const { difficultyTier } = scoreDifficulty(normalized)
@@ -165,7 +165,7 @@ export const resolvePuzzle = (config: PuzzleConfig, packKeys: string[], unlocked
       hint: buildHint(randomPick.puzzle, randomPick.pack),
       // A draw narrowed to exactly one pack (PackPuzzlesDrawer/AchievementsDrawer's own Random,
       // or a selection of exactly one pack) means the player was intentionally browsing that pack
-      // — the round-end handler keeps drawing from just it. More than one means this came from the
+      // - the round-end handler keeps drawing from just it. More than one means this came from the
       // player's whole standing selection (PuzzleDrawer's bottom Random), so the next round should
       // draw from that same selection again, not get pinned to whichever pack happened to win.
       packScope: packKeys.length === 1 ? 'single' : 'selection'
@@ -173,7 +173,7 @@ export const resolvePuzzle = (config: PuzzleConfig, packKeys: string[], unlocked
   }
 }
 
-// A player-picked puzzle rather than a random draw — PackPuzzlesDrawer's own "browse and tap one"
+// A player-picked puzzle rather than a random draw - PackPuzzlesDrawer's own "browse and tap one"
 // list. Deliberately narrow (just packKey/puzzleId/mode, not a whole PuzzleConfig): which exact
 // puzzle to play is already decided by the caller, so difficulty/sourceMode/customPhrase have
 // nothing left to contribute here the way they do for resolvePuzzle's random draw.
@@ -197,7 +197,7 @@ export const resolveChosenPuzzle = (packKey: string, puzzleId: string, mode: Gam
       puzzleId: puzzle.id,
       difficultyTier: puzzle.difficultyTier,
       hint: buildHint(puzzle, pack),
-      // A player-picked puzzle is always from one specific pack the player was already browsing —
+      // A player-picked puzzle is always from one specific pack the player was already browsing -
       // see GameStartPayload.packScope.
       packScope: 'single'
     }

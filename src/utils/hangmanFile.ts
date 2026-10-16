@@ -6,20 +6,20 @@ import { Platform } from 'react-native'
 import { exportCustomPack } from './customPacks'
 import { exportPuzzleUnlocks } from './unlocks'
 
-// One file format, two payload shapes it can carry (a custom pack, or a progress backup — see
-// customPacks.ts's CustomPackExportPayload and unlocks.ts's PuzzleUnlockExportPayload) — sharing
+// One file format, two payload shapes it can carry (a custom pack, or a progress backup - see
+// customPacks.ts's CustomPackExportPayload and unlocks.ts's PuzzleUnlockExportPayload) - sharing
 // one extension/MIME type/UTI means one native file-type registration (app.json) covers both,
 // rather than needing a second one just to add progress backups to this same mechanism.
 export const HANGMAN_FILE_EXTENSION = '.hangman'
 // A conventional unregistered vendor MIME type (the `x-` prefix), matched by the Android
-// intentFilter in app.json. iOS doesn't check this — Sharing.shareAsync's own `UTI` option and the
+// intentFilter in app.json. iOS doesn't check this - Sharing.shareAsync's own `UTI` option and the
 // app's registered CFBundleDocumentTypes (also app.json) are what make "Open in Hangman" show up
 // there instead.
 export const HANGMAN_FILE_MIME_TYPE = 'application/x-hangman'
 const HANGMAN_FILE_UTI = 'public.json'
 
 // A blank/symbol-only pack name would otherwise produce an unusable or hidden (leading-dot)
-// filename — falls back to a generic one rather than exporting something the OS can't display
+// filename - falls back to a generic one rather than exporting something the OS can't display
 // sensibly.
 const sanitizeFilename = (label: string): string => {
   const cleaned = label
@@ -32,9 +32,9 @@ const sanitizeFilename = (label: string): string => {
 // Writes any payload to a real file and hands it to the OS share sheet (Messages, Mail, AirDrop,
 // whatever's installed) on native. expo-sharing doesn't support sharing local files on web (its own
 // docs: "You cannot share local files on web by URI") and expo-file-system doesn't support web at
-// all — so web falls back to a plain browser download, the closest web equivalent of "export this"
+// all - so web falls back to a plain browser download, the closest web equivalent of "export this"
 // and the only one that actually works there. Shared by both shareCustomPackFile and
-// shareProgressBackupFile below — everything past "here's a string and a filename" is identical
+// shareProgressBackupFile below - everything past "here's a string and a filename" is identical
 // between them.
 const writeAndShareFile = async (payload: string, filename: string, dialogTitle: string): Promise<boolean> => {
   if (Platform.OS === 'web') {
@@ -66,10 +66,10 @@ export const shareProgressBackupFile = async (): Promise<boolean> => {
   return writeAndShareFile(payload, `hangman-progress-backup${HANGMAN_FILE_EXTENSION}`, 'Share Progress Backup')
 }
 
-// Cross-platform, unlike the share functions above — expo-document-picker supports web too (a
+// Cross-platform, unlike the share functions above - expo-document-picker supports web too (a
 // hidden <input type="file"> under the hood per its own docs), so this needs no Platform branch.
 // Returns null on cancel, not just on error, so callers can tell "player backed out" apart from
-// "something went wrong". Content-agnostic — the caller decides what kind of file it's expecting
+// "something went wrong". Content-agnostic - the caller decides what kind of file it's expecting
 // (a pack, via parseCustomPackImport, or a progress backup, via parseProgressBackup) and validates
 // accordingly; this just gets the raw bytes off the device.
 export const pickHangmanFile = async (): Promise<string | null> => {
@@ -85,7 +85,7 @@ export const pickHangmanFile = async (): Promise<string | null> => {
   return new File(asset.uri).text()
 }
 
-// Reads a file the OS handed the app directly (an incoming "Open in Hangman" launch) — the same
+// Reads a file the OS handed the app directly (an incoming "Open in Hangman" launch) - the same
 // underlying read pickHangmanFile's native branch does, just starting from a URI Linking already
 // resolved rather than one the player just picked through the system UI.
 export const readHangmanFileFromUri = (uri: string): Promise<string> => new File(uri).text()

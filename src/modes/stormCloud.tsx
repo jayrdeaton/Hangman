@@ -5,7 +5,7 @@ import type { GameMode } from '@/types/gameModes'
 import { clampStage } from './shared/clampStage'
 
 // Quantitative/accumulation: a clear sky clouds over and a storm builds with every wrong
-// guess. Unlike Balloons/Stars (depletion — things disappear), Storm Cloud is the opposite:
+// guess. Unlike Balloons/Stars (depletion - things disappear), Storm Cloud is the opposite:
 // the cloud, rain, and lightning all grow/appear as mistakes pile up. The sun is a small
 // fixed fixture near the top that never moves, but gets increasingly obscured (dimmed and
 // covered) as the cloud grows over it, culminating in a full dark storm with lightning as
@@ -32,7 +32,7 @@ const SUN_Y = 24
 const SUN_R = 9
 
 // A single continuous cloud outline (three bumps + a flat-ish bottom) rather than several
-// overlapping stroked circles — overlapping outlines cross through each other's interior and
+// overlapping stroked circles - overlapping outlines cross through each other's interior and
 // read as a tangled scribble instead of one soft puffy cloud. Local space, canonical scale=1,
 // centered near the origin; positioned/sized per-stage via a translate+scale transform.
 const CLOUD_PATH = 'M-19,3 A8,8 0 0 1 -7,3 A11,11 0 0 1 5,3 A9,9 0 0 1 19,3 Q0,9 -19,3 Z'

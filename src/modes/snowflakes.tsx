@@ -10,14 +10,14 @@ import { SketchLine } from './shared/sketchShapes'
 
 // Quantitative/depletion: a flurry of snowflakes melts away one by one.
 // maxMistakes=6, same baseline every mode uses.
-// Positions/sizes/colors are re-rolled each round (generated once in useState initializer — see
+// Positions/sizes/colors are re-rolled each round (generated once in useState initializer - see
 // balloons.tsx's own doc comment for why that's safe: Main.tsx remounts Game per round).
-// This file used to be the "Stars" mode — renamed once stars.tsx got a proper 5-pointed star
+// This file used to be the "Stars" mode - renamed once stars.tsx got a proper 5-pointed star
 // shape, since this 4-pointed doodle reads more like a snowflake than a star.
 
 type SnowflakeData = {
   key: string
-  // Stable per-snowflake identity, independent of how many remain visible — see balloons.tsx's
+  // Stable per-snowflake identity, independent of how many remain visible - see balloons.tsx's
   // own `index` field for why this needs to be fixed rather than derived from position in the
   // (shrinking) visible slice.
   index: number
@@ -26,7 +26,7 @@ type SnowflakeData = {
   size: number
 }
 
-// Base slots covering the 100x100 canvas in a natural scattered layout — jittered per round below
+// Base slots covering the 100x100 canvas in a natural scattered layout - jittered per round below
 // so snowflakes don't land in the exact same spot and size every game.
 const BASE_SLOTS: { x: number; y: number; size: number }[] = [
   { x: 16, y: 20, size: 6 },
@@ -53,10 +53,10 @@ function makeSnowflakes(): SnowflakeData[] {
 }
 
 // 4-pointed doodle snowflake: two crossed lines + two diagonal lines. Each snowflake mounts exactly
-// once — every one is already visible at mistakes=0 (this is a depletion mode: a wrong guess
+// once - every one is already visible at mistakes=0 (this is a depletion mode: a wrong guess
 // removes one rather than revealing one), so `started`/`delayMs` gate and stagger the whole flurry
 // materializing in at round start, the same "hidden until the screen has actually appeared" gating
-// GallowsWithRope uses (see classicParts.tsx's own comment) — not a per-guess reveal.
+// GallowsWithRope uses (see classicParts.tsx's own comment) - not a per-guess reveal.
 const SnowflakeShape = ({ x, y, size, color, started, delayMs }: { x: number; y: number; size: number; color: string; started?: boolean; delayMs?: number }) => {
   const d = size * 0.65
   return (

@@ -5,7 +5,7 @@ import type { GameMode } from '@/types/gameModes'
 import { clampStage } from './shared/clampStage'
 
 // Frame mode: 7 discrete stages (0=full castle, 6=eroded mound). A single scene morphs
-// continuously through STAGES rather than parts being added/removed — towers shrink,
+// continuously through STAGES rather than parts being added/removed - towers shrink,
 // decorations drop off, and the tide creeps higher up the base with every wrong guess.
 // All coordinates in a 100x100 viewBox.
 
@@ -76,8 +76,8 @@ const SandcastleVisual = ({ mistakes, color, colors }: { mistakes: number; color
   const poleTopY = rightTop - 9
   const waterY = WATER_Y_LOW - s.waterLevel * (WATER_Y_LOW - WATER_Y_HIGH)
   // Towers are the focus (primary, what erodes down to nothing). Base mound is the constant
-  // scaffold the towers shrink into — same role hourglass's stand plays — secondary. Door,
-  // crenellations, flag and tide are smaller decorative details — tertiary, same role hourglass's
+  // scaffold the towers shrink into - same role hourglass's stand plays - secondary. Door,
+  // crenellations, flag and tide are smaller decorative details - tertiary, same role hourglass's
   // glass outline plays. Falls back to the plain `color` when no triad is given (e.g.
   // ModeSelector's card preview, which only passes `color`).
   const moundColor = colors?.[1] ?? color

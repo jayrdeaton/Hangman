@@ -17,14 +17,14 @@ let lastPageWheelAt = 0
 let pageWheelListenerAttached = false
 
 // A real browser wires this to a page-wide `wheel` listener (see ensurePageWheelListener below);
-// exported separately so tests can call it directly — react-native's own jest environment stubs
+// exported separately so tests can call it directly - react-native's own jest environment stubs
 // `window` without real DOM event APIs to dispatch a wheel event through.
 export const recordPageWheelActivity = () => {
   lastPageWheelAt = Date.now()
 }
 
 const ensurePageWheelListener = () => {
-  // typeof window.addEventListener, not just typeof window — react-native's own test/jsdom-lite
+  // typeof window.addEventListener, not just typeof window - react-native's own test/jsdom-lite
   // environment defines a bare `window` global with no real DOM event APIs on it, so this would
   // otherwise throw the moment a test mocks Platform.OS to 'web' without actually running in a
   // browser.
@@ -35,16 +35,16 @@ const ensurePageWheelListener = () => {
 
 // react-native-web forwards unrecognized DOM event props like onWheel/onMouseEnter/onMouseLeave
 // straight through to the rendered element, so a horizontal FlatList can accept these directly;
-// native silently ignores them. Redirects vertical mouse-wheel input into horizontal scroll — on
+// native silently ignores them. Redirects vertical mouse-wheel input into horizontal scroll - on
 // web there's no visible scrollbar and no native drag-to-scroll affordance for a hidden-indicator
 // carousel.
 //
-// Gated on a genuine hover, not just "a wheel event landed on this element" — this carousel lives
+// Gated on a genuine hover, not just "a wheel event landed on this element" - this carousel lives
 // inside a vertically-scrolling drawer, so as the page scrolls, the carousel's own DOM node passes
 // under wherever the cursor happens to be resting (the cursor doesn't move during a trackpad/wheel
 // scroll gesture), and the SAME page-scroll gesture's wheel events land on it too. Those pass-
 // through events are indistinguishable from "the user parked their cursor here to browse the
-// carousel with their wheel" by deltaX/deltaY alone — both are deltaY-dominant — so redirecting
+// carousel with their wheel" by deltaX/deltaY alone - both are deltaY-dominant - so redirecting
 // unconditionally stole the page scroll out from under the user mid-gesture, and the carousel
 // visibly scrolled horizontally in response to a vertical scroll happening somewhere else on the
 // page entirely. Arming only on mouseenter, and only once the page has gone quiet for

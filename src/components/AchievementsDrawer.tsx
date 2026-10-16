@@ -54,7 +54,7 @@ export type AchievementsDrawerProps = {
 // A drawer, not a dialog: the achievement list plus one row per pack is a genuinely long scroll,
 // and the old DialogShell capped its content at a fixed maxHeight regardless of screen size,
 // forcing a cramped nested scroll; a drawer gets the browser's full height instead. Left-side,
-// matching PuzzleDrawer (the Game Menu) — this only opens from a tap on that drawer's own
+// matching PuzzleDrawer (the Game Menu) - this only opens from a tap on that drawer's own
 // quick-look progress card now, not a standalone trophy button on the opposite corner, so it
 // stacks above PuzzleDrawer's own panel (see DRAWER_ACHIEVEMENTS_Z_INDEX) rather than sliding in
 // independently; no edge-swipe of its own, same as PackPuzzlesDrawer (also only reached via a tap
@@ -62,11 +62,11 @@ export type AchievementsDrawerProps = {
 // than a standalone Settings screen, since those actions operate directly on the unlock/
 // achievement data shown above them.
 // mode/difficulty are read live in this file only inside handlePlayPuzzle/handleRandom (see
-// below) — event handlers that fire from an actual tap, never from rendering — so while this
+// below) - event handlers that fire from an actual tap, never from rendering - so while this
 // drawer is closed, a mode/difficulty change happening elsewhere (e.g. the player picking a
 // difficulty in PuzzleDrawer, on the opposite side of the screen) has nothing here for it to
 // affect. Comparing them only once `visible` is true (or transitioning) means this drawer's own
-// heavy render — a card per achievement, a row per pack — skips entirely for the common case of
+// heavy render - a card per achievement, a row per pack - skips entirely for the common case of
 // "closed, and something else on screen just changed," without going stale: the moment `visible`
 // flips true this falls through to the full comparison, so the render that actually mounts the
 // panel on screen always picks up Main.tsx's current mode/difficulty, not a cached one.
@@ -80,10 +80,10 @@ const areAchievementsDrawerPropsEqual = (prev: AchievementsDrawerProps, next: Ac
 // Memoized: this stays mounted (translated off-screen) even while closed and renders a card per
 // achievement plus a row per pack, so re-rendering it on every unrelated ancestor state change
 // (e.g. Main.tsx's config changing because the player picked a difficulty in a completely
-// different drawer) is real, needless work — see PuzzleDrawer's own memo comment for the full
+// different drawer) is real, needless work - see PuzzleDrawer's own memo comment for the full
 // reasoning. Callers must pass referentially stable props (Main.tsx wraps onDismiss in
 // useCallback) or this memo does nothing. Uses the custom comparator above (not memo's own
-// default shallow-equal) specifically to ALSO ignore mode/difficulty while closed — see its own
+// default shallow-equal) specifically to ALSO ignore mode/difficulty while closed - see its own
 // comment for why that's safe.
 export const AchievementsDrawer = memo(({ visible, onDismiss, unlockVersion, onUnlocksChanged, mode, difficulty, onConfirm }: AchievementsDrawerProps): JSX.Element => {
   const theme = useAutoPaperTheme()
@@ -105,7 +105,7 @@ export const AchievementsDrawer = memo(({ visible, onDismiss, unlockVersion, onU
   const { stats } = achievements
   const { resetAll } = useGameStats()
 
-  // Always reopens on the overview, same as PacksScreen resetting its own step on open —
+  // Always reopens on the overview, same as PacksScreen resetting its own step on open -
   // otherwise a drawer left mid-pack-detail on last close would silently resume there next time.
   useEffect(() => {
     if (visible) setDetailPackKey(null)
@@ -163,7 +163,7 @@ export const AchievementsDrawer = memo(({ visible, onDismiss, unlockVersion, onU
   }
 
   // Reads a file straight off the device (a real "pick a .hangman file" flow) rather than a
-  // paste-text box — see hangmanFile.ts's own doc comments for why. parseProgressBackup validates
+  // paste-text box - see hangmanFile.ts's own doc comments for why. parseProgressBackup validates
   // the shape first so picking a custom pack file by mistake surfaces as "Invalid backup" instead
   // of silently merging zero entries (mergePuzzleUnlocks alone is lenient about bare-map shapes and
   // wouldn't otherwise catch that).
@@ -182,7 +182,7 @@ export const AchievementsDrawer = memo(({ visible, onDismiss, unlockVersion, onU
   }
 
   // Mirrors PackPuzzlesDrawer's own row-tap-to-play (same resolve-then-close shape as handleRandom
-  // below) — a specific puzzle row should start that puzzle here exactly like it does there.
+  // below) - a specific puzzle row should start that puzzle here exactly like it does there.
   const handlePlayPuzzle = (puzzleId: string) => {
     if (!detailPackKey) return
     const result = resolveChosenPuzzle(detailPackKey, puzzleId, mode)
@@ -191,12 +191,12 @@ export const AchievementsDrawer = memo(({ visible, onDismiss, unlockVersion, onU
       return
     }
     onConfirm(result.payload, { sourceMode: 'random', difficulty, mode, customPhrase: '', customHint: '' })
-    // Starting a round is what closes this — otherwise it's left stacked on top of the game that
+    // Starting a round is what closes this - otherwise it's left stacked on top of the game that
     // just started, blocking it from view until the player finds and taps Close themselves.
     onDismiss()
   }
 
-  // Mirrors PackPuzzlesDrawer's own Random button — browsing into a pack's progress here would
+  // Mirrors PackPuzzlesDrawer's own Random button - browsing into a pack's progress here would
   // otherwise be a dead end with no way to act on it. Uses the app's current mode/difficulty
   // (passed down from Main.tsx) rather than exposing pickers of its own; this drawer is about
   // reviewing progress, not choosing settings.
@@ -209,13 +209,13 @@ export const AchievementsDrawer = memo(({ visible, onDismiss, unlockVersion, onU
       return
     }
     onConfirm(result.payload, configToResolve)
-    // Starting a round is what closes this — otherwise it's left stacked on top of the game that
+    // Starting a round is what closes this - otherwise it's left stacked on top of the game that
     // just started, blocking it from view until the player finds and taps Close themselves.
     onDismiss()
   }
 
   // Only reachable from the confirm dialog's own Reset button (see the ConfirmDialog rendered
-  // below) — by the time this runs, the player has already agreed.
+  // below) - by the time this runs, the player has already agreed.
   const handleConfirmReset = async () => {
     setConfirmResetVisible(false)
     // Clears the stats, achievements and unlocked puzzles together (see useGameStats).
@@ -223,7 +223,7 @@ export const AchievementsDrawer = memo(({ visible, onDismiss, unlockVersion, onU
     onUnlocksChanged()
   }
 
-  // "Browse by pack" — the full 50-pack manifest, real enough on-device render cost that the old
+  // "Browse by pack" - the full 50-pack manifest, real enough on-device render cost that the old
   // plain .map() inside a ScrollView (rendering every row unconditionally even though this whole
   // drawer stays mounted off-screen most of the time) was worth virtualizing: this becomes the
   // FlatList's own `data` below, everything else on the overview screen splits into
@@ -240,11 +240,11 @@ export const AchievementsDrawer = memo(({ visible, onDismiss, unlockVersion, onU
   const packRowKeyExtractor = useCallback((item: PuzzleManifestItem) => item.key, [])
 
   // Total progress card through the "Browse by pack" label, as the FlatList's own scrolling
-  // header rather than a sibling before it — same ListHeaderComponent approach as PuzzleDrawer's
+  // header rather than a sibling before it - same ListHeaderComponent approach as PuzzleDrawer's
   // and PacksScreen's own pack lists (see PuzzleDrawer's own comment on this). Not memoized:
   // unlike those two, this drawer only re-renders at all when actually open (see
   // areAchievementsDrawerPropsEqual above), so there's no needless-cascade cost left to guard
-  // against here — just the same JSX this screen always rendered, moved into a variable.
+  // against here - just the same JSX this screen always rendered, moved into a variable.
   const listHeader = (
     <>
       <Card style={[styles.card, styles.firstCard, { backgroundColor: theme.colors.primaryContainer }]} mode='contained'>
@@ -260,7 +260,7 @@ export const AchievementsDrawer = memo(({ visible, onDismiss, unlockVersion, onU
             </Text>
           </Text>
           <Text variant='bodySmall' style={[styles.muted, { color: theme.colors.onPrimaryContainer }]}>
-            Puzzles unlocked
+            Puzzles Unlocked
           </Text>
           <View style={styles.progressBarWrapper}>
             <ProgressBar progress={overallProgress} style={[styles.progressBar, { backgroundColor: theme.colors.surface }]} />
@@ -351,20 +351,20 @@ export const AchievementsDrawer = memo(({ visible, onDismiss, unlockVersion, onU
         <View testID='achievements-drawer-panel' style={styles.panelContent} accessibilityViewIsModal={visible} accessibilityElementsHidden={!visible} importantForAccessibility={visible ? 'yes' : 'no-hide-descendants'} onAccessibilityEscape={visible ? (detailPackKey ? () => setDetailPackKey(null) : onDismiss) : undefined}>
           <ScrollViewProvider>
             {/* Both the top-level close and the drilled-in back-arrow sit on the LEADING (left)
-                side, matching PuzzleDrawer (the Game Menu) — this only opens from a tap on that
+                side, matching PuzzleDrawer (the Game Menu) - this only opens from a tap on that
                 drawer's own quick-look card now, so its own exit action stays under the same
                 thumb that opened it, same as PackPuzzlesDrawer already does for the same reason.
-                backAction, not trailingAction — IconButton here is @rific/feedback-press's own
+                backAction, not trailingAction - IconButton here is @rific/feedback-press's own
                 wrapper (already fires haptics), unlike Appbar.BackAction, so no manual selection()
                 call is needed the way backAction needs one elsewhere. The top-level exit is
-                arrow-left, not X — mirrors PuzzleDrawer's own close icon exactly, rather than the
-                top-right-corner-X convention. The drilled-in back-arrow stays arrow-left too —
+                arrow-left, not X - mirrors PuzzleDrawer's own close icon exactly, rather than the
+                top-right-corner-X convention. The drilled-in back-arrow stays arrow-left too -
                 that's page-level "go back one level" navigation within this drawer, not the
                 whole-panel dismiss, but both read the same direction now that this panel itself is
                 left-anchored. */}
             <ScrollViewHeader
               actionSize={40}
-              // Generic "Pack" while drilled in, rather than the pack's own name or group tint —
+              // Generic "Pack" while drilled in, rather than the pack's own name or group tint -
               // its actual identity (icon, genre, title, progress) lives entirely in
               // PackPuzzleList's own in-flow pack summary row now; this is just enough of a label
               // that the floating bar doesn't read as unexpectedly bare.
@@ -383,7 +383,7 @@ export const AchievementsDrawer = memo(({ visible, onDismiss, unlockVersion, onU
               </>
             ) : (
               // Total progress/Stats/Achievements through Progress backup/Danger zone live in
-              // listHeader/listFooter (see their own declarations above) — everything around the
+              // listHeader/listFooter (see their own declarations above) - everything around the
               // pack list scrolls with it exactly as it did back when this was all one plain
               // ScrollView; only the pack list itself (the full 50-pack manifest) needed to
               // become a real FlatList.
@@ -395,7 +395,7 @@ export const AchievementsDrawer = memo(({ visible, onDismiss, unlockVersion, onU
                 ListFooterComponent={listFooter}
                 showsVerticalScrollIndicator={false}
                 contentContainerStyle={styles.scrollContent}
-                // Solid vibrant fill, not the chip's own default muted surface tint — matches
+                // Solid vibrant fill, not the chip's own default muted surface tint - matches
                 // every other accent in this drawer now instead of being the one control still
                 // washed out.
                 chipProps={{ style: { backgroundColor: theme.colors.primary }, selectedColor: theme.colors.onPrimary }}
@@ -418,17 +418,17 @@ const styles = StyleSheet.create({
   card: { marginBottom: 4 },
   // scrollContent's own paddingTop is clobbered by the FlatList's header-height inset (see
   // useScrollList's contentPadding, applied after externalContentContainerStyle in its style
-  // array), so it can't create breathing room below the fixed header — this has to sit on the
+  // array), so it can't create breathing room below the fixed header - this has to sit on the
   // first card itself instead, same as PuzzleDrawer's modeSelectorBleed.
   firstCard: { marginTop: 12 },
-  // flexDirection/alignItems override matches every other migrated footer — see PuzzleDrawer's
+  // flexDirection/alignItems override matches every other migrated footer - see PuzzleDrawer's
   // own footer comment: alignItems alone only stretches the cross axis, which is height while
   // ScrollViewFooter's own row stays flexDirection 'row', so flexDirection has to flip to
   // 'column' too for Random to actually stretch full width instead of shrinking to content.
   footer: {
     alignItems: 'stretch',
     flexDirection: 'column',
-    // Matches ScrollViewHeader's own actionMargin — see PuzzleDrawer's own footer comment for why.
+    // Matches ScrollViewHeader's own actionMargin - see PuzzleDrawer's own footer comment for why.
     paddingBottom: 4,
     paddingHorizontal: 16,
     paddingTop: 4

@@ -6,10 +6,10 @@ A clean, ad-free hangman game for iOS with seven visual game modes (classic gall
 
 ## Core Value
 
-The hangman you remember, with none of the ad-infested cruft of the store's alternatives — pick a category, pick a mode, play instantly offline.
+The hangman you remember, with none of the ad-infested cruft of the store's alternatives - pick a category, pick a mode, play instantly offline.
 
 ## Release Positioning
 
-- **Model:** The "Ad-Free" identity is the sell. Recommended: **paid up front (low tier)** or free-with-tip-jar — decision gate in ROADMAP before store listing is written. No IAP code exists today.
+- **Model:** The "Ad-Free" identity is the sell. Recommended: **paid up front (low tier)** or free-with-tip-jar - decision gate in ROADMAP before store listing is written. No IAP code exists today.
 - **Vehicle:** TestFlight beta → App Store. iOS first.
 - **State:** Feature complete gameplay-wise. Ship blockers: **no app icon configured**, no test suite at all, 5 lint errors (react-compiler rules), 3 TODOs in source.

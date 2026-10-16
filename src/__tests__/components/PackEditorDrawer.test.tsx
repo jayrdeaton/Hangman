@@ -22,7 +22,7 @@ jest.mock('@rific/toaster', () => ({
   useToast: () => ({ success: mockSuccess })
 }))
 
-// ConfirmDialog renders through a react-native-paper Portal — needs a Portal.Host ancestor,
+// ConfirmDialog renders through a react-native-paper Portal - needs a Portal.Host ancestor,
 // normally supplied by @rific/auto-paper's Provider at the app root; same wrapper
 // PacksScreen.test.tsx/AchievementsDrawer.test.tsx use for their own Portal-based dialogs.
 // ToastProvider is also required: PackEditorDrawer's save flow calls useToast() to show a newly
@@ -40,7 +40,7 @@ const Wrapper = ({ children }: { children: ReactNode }) => (
 )
 const render = (ui: ReactElement) => rtlRender(ui, { wrapper: Wrapper })
 
-// This file only covers what's specific to PackEditorDrawer's own shell — the accessibility-modal
+// This file only covers what's specific to PackEditorDrawer's own shell - the accessibility-modal
 // wiring every sibling drawer's test (PuzzleDrawer.test.tsx, AchievementsDrawer.test.tsx) already
 // checks for its own panel, which nothing exercised for this one since it used to be an in-place
 // step inside PacksScreen rather than its own animated Drawer. Everything else about the form
@@ -68,7 +68,7 @@ describe('PackEditorDrawer', () => {
     )
 
     // Closed state is deliberately hidden from accessibility tools (accessibilityElementsHidden),
-    // so RTL's default queries skip it — includeHiddenElements opts back in for this assertion.
+    // so RTL's default queries skip it - includeHiddenElements opts back in for this assertion.
     const closedPanel = getByTestId('pack-editor-panel', { includeHiddenElements: true })
     expect(closedPanel.props.accessibilityViewIsModal).toBe(false)
     expect(closedPanel.props.accessibilityElementsHidden).toBe(true)
@@ -80,7 +80,7 @@ describe('PackEditorDrawer', () => {
 
     expect(getByText('New Pack')).toBeTruthy()
     expect(getByTestId('pack-label-input')).toBeTruthy()
-    // Nothing to share or delete yet — there's no saved pack behind a still-being-created one.
+    // Nothing to share or delete yet - there's no saved pack behind a still-being-created one.
     expect(queryByLabelText('Share pack')).toBeNull()
     expect(queryByLabelText('Delete pack')).toBeNull()
   })

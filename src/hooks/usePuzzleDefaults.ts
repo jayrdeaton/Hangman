@@ -9,7 +9,7 @@ export type PuzzleDefaultsContextType = {
   setMode: (mode: GameMode) => void
   difficulty: 'any' | PuzzleDifficultyTier
   setDifficulty: (difficulty: 'any' | PuzzleDifficultyTier) => void
-  // True once the persisted values (if any) have been read back from storage — mode/difficulty
+  // True once the persisted values (if any) have been read back from storage - mode/difficulty
   // are only the DEFAULT_MODE/'any' fallback until then. See Main.tsx's own correction effect,
   // which needs this to know when it's finally safe to apply the real values to the puzzle
   // already drawn on the very first render (before this resolves, it's necessarily still that

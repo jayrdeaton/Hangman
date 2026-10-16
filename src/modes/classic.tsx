@@ -14,11 +14,11 @@ const PARTS = [Head, Body, LeftArm, RightArm, LeftLeg, RightLeg]
 
 const ClassicVisual = ({ mistakes, color, colors, started, partsOpacity }: { mistakes: number; color: string; colors?: string[]; started?: boolean; partsOpacity?: SharedValue<number> }) => {
   const count = clampStage(mistakes, PARTS.length)
-  // The man is the focus (primary). The gallows is scaffold, same role hourglass's stand plays —
+  // The man is the focus (primary). The gallows is scaffold, same role hourglass's stand plays -
   // secondary. Falls back to the plain `color` when no triad is given (e.g. ModeSelector's card
   // preview, which only passes `color`).
   const gallowsColor = colors?.[1] ?? color
-  // Real gameplay (Game.tsx/PuzzleStage) never passes partsOpacity — only ModePickerDrawer's demo
+  // Real gameplay (Game.tsx/PuzzleStage) never passes partsOpacity - only ModePickerDrawer's demo
   // loop does, to fade the stick figure out between build cycles while leaving the gallows alone
   // (see gameModes.ts's own comment on this prop). Falls back to a plain always-1 shared value so
   // the animatedProps hook below always has something to read.

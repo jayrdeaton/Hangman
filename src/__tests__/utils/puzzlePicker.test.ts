@@ -132,11 +132,11 @@ describe('resolvePuzzle - custom source mode', () => {
   })
 
   // Without this, the difficulty pill a player watches update live while typing (both in the
-  // drawer's own Custom form and pass-and-play's compose screen — both preview via
+  // drawer's own Custom form and pass-and-play's compose screen - both preview via
   // buildCustomPuzzle) would go missing the instant the round actually starts, since Game reads
   // its badge from payload.difficultyTier alone.
   it('sets payload.difficultyTier, scored the same way the live preview scores it', () => {
-    // Few distinct letters (only Q, U, E, N) — scoreDifficulty rates this 'hard'. See customPacks.ts.
+    // Few distinct letters (only Q, U, E, N) - scoreDifficulty rates this 'hard'. See customPacks.ts.
     const result = resolvePuzzle({ ...baseConfig, sourceMode: 'custom', customPhrase: 'queen' }, [])
 
     expect(result.ok).toBe(true)
@@ -451,7 +451,7 @@ describe('resolvePuzzle - random source mode, multiple packs selected', () => {
       expect(result.payload.phrase).toBe('THE BEATLES')
       expect(result.payload.puzzleId).toBe('bands-1')
       // packScope reflects how many packs were eligible to be searched (allPackKeys.length === 2),
-      // not how many actually had a matching puzzle — the player asked to draw from their whole
+      // not how many actually had a matching puzzle - the player asked to draw from their whole
       // selection, they just happened to land on the one pack that had something available.
       expect(result.payload.packScope).toBe('selection')
     }
@@ -566,7 +566,7 @@ describe('resolvePuzzle - prefers unsolved puzzles over repeats', () => {
     // Pack A (bands) is fully solved; pack B (movies) has one unsolved puzzle left. Packs are now
     // drawn equally (see the pack-weighting test below), so landing on bands should still return
     // one of its own puzzles (repeats-allowed, since all three are solved) rather than reaching
-    // into movies for its one unsolved puzzle — the preference no longer crosses pack boundaries.
+    // into movies for its one unsolved puzzle - the preference no longer crosses pack boundaries.
     const unlockedByPack = { bands: ['bands-1', 'bands-2', 'bands-3'], movies: ['movies-1'] }
     const randomSpy = jest.spyOn(Math, 'random').mockReturnValueOnce(0).mockReturnValueOnce(0)
 
@@ -579,7 +579,7 @@ describe('resolvePuzzle - prefers unsolved puzzles over repeats', () => {
 
   it('draws packs with equal odds regardless of size or how much of each is already solved', () => {
     mockGetPuzzleManifest.mockReturnValue([packA, packB])
-    // packA has 3 puzzles, packB has 2 — a size-weighted flat pool would favor packA 3:2. Forcing
+    // packA has 3 puzzles, packB has 2 - a size-weighted flat pool would favor packA 3:2. Forcing
     // the pack-selection draw to land on packB (the smaller pack) and getting a packB puzzle back
     // proves pack choice isn't weighted by puzzle count.
     const randomSpy = jest.spyOn(Math, 'random').mockReturnValueOnce(0.9).mockReturnValueOnce(0)
@@ -599,7 +599,7 @@ describe('resolvePuzzle - prefers unsolved puzzles over repeats', () => {
   })
 
   it('treats a pack missing from unlockedByPack as having nothing unlocked yet', () => {
-    // bands has no entry at all in unlockedByPack — same as {} for that key, not an error.
+    // bands has no entry at all in unlockedByPack - same as {} for that key, not an error.
     const result = resolvePuzzle({ ...baseConfig, sourceMode: 'random' }, ['bands'], { movies: ['movies-1'] })
 
     expect(result.ok).toBe(true)
@@ -615,7 +615,7 @@ describe('resolveChosenPuzzle', () => {
     count: 2,
     difficultyTiers: ['easy', 'medium'] as const,
     sources: [] as string[],
-    // More than one category — otherwise buildHint has nothing to say for this pack and
+    // More than one category - otherwise buildHint has nothing to say for this pack and
     // payload.hint would be undefined regardless of whether the right pack/puzzle reached it.
     categories: ['Classic Rock', 'Pop'] as string[]
   }
@@ -658,7 +658,7 @@ describe('resolveChosenPuzzle', () => {
       expect(result.payload.puzzleId).toBe('bands-1')
       expect(result.payload.difficultyTier).toBe('medium')
       // Built from THIS puzzle/pack's own category and year, via the same buildHint the random
-      // draw uses — proves resolveChosenPuzzle feeds it the looked-up pack/puzzle, not a
+      // draw uses - proves resolveChosenPuzzle feeds it the looked-up pack/puzzle, not a
       // mismatched or stale pair that would produce a different (or undefined) hint.
       expect(result.payload.hint).toBe('Classic Rock · 1965')
       // A player-picked puzzle is always from one specific pack they were already browsing.

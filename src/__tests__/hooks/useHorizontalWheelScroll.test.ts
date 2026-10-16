@@ -3,7 +3,7 @@ import { Platform } from 'react-native'
 
 import { recordPageWheelActivity, useHorizontalWheelScrollProps } from '@/hooks/useHorizontalWheelScroll'
 
-// Mutating the real Platform.OS (rather than jest.resetModules() + a fresh require per test) —
+// Mutating the real Platform.OS (rather than jest.resetModules() + a fresh require per test) -
 // this hook needs React and @testing-library/react-native's own React copy to stay the SAME
 // instance renderHook is using; resetting modules mid-file pulls in a second React copy and every
 // hook call inside it throws "Cannot read properties of null (reading 'useRef')".
@@ -50,7 +50,7 @@ describe('useHorizontalWheelScrollProps', () => {
       expect(typeof result.current.onMouseLeave).toBe('function')
     })
 
-    it("does nothing on a mostly-vertical wheel event before the cursor has genuinely entered — a page-scroll wheel event landing here before any hover shouldn't be mistaken for deliberate use", async () => {
+    it("does nothing on a mostly-vertical wheel event before the cursor has genuinely entered - a page-scroll wheel event landing here before any hover shouldn't be mistaken for deliberate use", async () => {
       const { result } = await renderHook(() => useHorizontalWheelScrollProps())
 
       const event = makeEvent(2, 50)
@@ -104,7 +104,7 @@ describe('useHorizontalWheelScrollProps', () => {
       expect(event.preventDefault).not.toHaveBeenCalled()
     })
 
-    it('disarms on mouseleave — a wheel event after leaving does nothing until the cursor genuinely re-enters', async () => {
+    it('disarms on mouseleave - a wheel event after leaving does nothing until the cursor genuinely re-enters', async () => {
       const { result } = await renderHook(() => useHorizontalWheelScrollProps())
 
       result.current.onMouseEnter!()
@@ -116,11 +116,11 @@ describe('useHorizontalWheelScrollProps', () => {
       expect(event.preventDefault).not.toHaveBeenCalled()
     })
 
-    // These two run last — recordPageWheelActivity mutates hook-module-level state that would
+    // These two run last - recordPageWheelActivity mutates hook-module-level state that would
     // otherwise leak into the "armed by default" tests above (there's no real browser wheel
     // listener in this environment to reset it through, see the hook's own doc comment on why
     // recordPageWheelActivity is exported directly for tests).
-    it('does not arm on mouseenter while the page itself just had wheel activity — the carousel scrolling into a stationary cursor during page scroll must not be mistaken for deliberate hover', async () => {
+    it('does not arm on mouseenter while the page itself just had wheel activity - the carousel scrolling into a stationary cursor during page scroll must not be mistaken for deliberate hover', async () => {
       const { result } = await renderHook(() => useHorizontalWheelScrollProps())
 
       recordPageWheelActivity()

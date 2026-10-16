@@ -21,7 +21,7 @@ import { Theme } from './Theme'
 
 export type ProvidersProps = { children: ReactNode }
 
-// react-native-keyboard-controller has no web implementation — skip its provider there.
+// react-native-keyboard-controller has no web implementation - skip its provider there.
 const KeyboardWrapper = Platform.OS === 'web' ? Fragment : KeyboardProvider
 
 // The toaster only gets expo-haptics while the player's Vibrate setting is on, so its haptic ticks
@@ -43,7 +43,7 @@ export const Providers = ({ children }: ProvidersProps): JSX.Element => (
       <ReduxProvider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           {/* Haptic wraps Theme, not the reverse: Theme's <Provider> renders react-native-paper's
-              own Provider internally, which mounts a PortalHost near its own root — Portal content
+              own Provider internally, which mounts a PortalHost near its own root - Portal content
               (auto-paper's Dialog in the Settings sheet, and the @tastic/hud cards in ConfirmDialog, RoundEndDialog and PnpWordPrompt,
               every one of which renders @rific/feedback-press Buttons/IconButtons inside) gets
               reparented to that host in the fiber tree, not left as a descendant of wherever it was

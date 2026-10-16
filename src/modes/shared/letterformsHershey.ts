@@ -1,17 +1,17 @@
 export type Point = [number, number]
 
 // Every glyph sits in a box GLYPH_HEIGHT tall, baseline at the bottom (y grows downward, matching
-// letterforms.ts's own convention) — but unlike that file's single shared GLYPH_WIDTH, each letter
+// letterforms.ts's own convention) - but unlike that file's single shared GLYPH_WIDTH, each letter
 // here carries its OWN width, matching the real font's actual proportions (an I is nowhere near as
 // wide as an M). SketchWord reads that per-letter width to lay letters out proportionally, the way
 // real type is set, instead of forcing every letter into the same uniform cell.
 export const GLYPH_HEIGHT = 100
 
-// Coordinates converted from the "hershey" npm package's Roman Simplex font — the classic Hershey
+// Coordinates converted from the "hershey" npm package's Roman Simplex font - the classic Hershey
 // vector font designed at the National Bureau of Standards in the 1960s for pen plotters and CNC
 // engraving, public domain, one continuous stroke per pen-down segment (exactly the shape
 // SketchPath already draws). Converted once, offline, into this app's own coordinate convention
-// (GLYPH_HEIGHT-tall box, baseline at the bottom, width in the same units) — this file has no
+// (GLYPH_HEIGHT-tall box, baseline at the bottom, width in the same units) - this file has no
 // runtime dependency on that package, just its output baked in as data. See letterforms.ts for the
 // hand-drawn alternative this was built to compare against.
 export const HERSHEY_GLYPHS: Record<string, { width: number; strokes: Point[][] }> = {
@@ -535,7 +535,7 @@ export const HERSHEY_GLYPHS: Record<string, { width: number; strokes: Point[][] 
 }
 
 // Inter-letter gap within a word, in the same GLYPH_HEIGHT-relative units as each glyph's own
-// width — deliberately narrower than Hershey's own built-in letter-fitting (tuned for continuous
+// width - deliberately narrower than Hershey's own built-in letter-fitting (tuned for continuous
 // prose) since a puzzle's letters/blanks read better as visually distinct slots than run-together
 // text.
 export const HERSHEY_GAP = 20

@@ -10,12 +10,12 @@ import { DRAW_MS, polylineLength, SketchFill, SketchPath } from './shared/sketch
 
 // Quantitative/depletion: a night sky dims one proper 5-pointed star at a time.
 // maxMistakes=6, same baseline every mode uses.
-// Positions/sizes/colors are re-rolled each round (generated once in useState initializer — see
+// Positions/sizes/colors are re-rolled each round (generated once in useState initializer - see
 // balloons.tsx's own doc comment for why that's safe: Main.tsx remounts Game per round).
 
 type StarData = {
   key: string
-  // Stable per-star identity, independent of how many stars remain visible — see balloons.tsx's
+  // Stable per-star identity, independent of how many stars remain visible - see balloons.tsx's
   // own `index` field for why this needs to be fixed rather than derived from position in the
   // (shrinking) visible slice.
   index: number
@@ -24,7 +24,7 @@ type StarData = {
   size: number
 }
 
-// Base slots covering the 100x100 canvas in a natural scattered layout — jittered per round below
+// Base slots covering the 100x100 canvas in a natural scattered layout - jittered per round below
 // so stars don't land in the exact same spot and size every game.
 const BASE_SLOTS: { x: number; y: number; size: number }[] = [
   { x: 16, y: 20, size: 6 },
@@ -43,7 +43,7 @@ const INNER_RATIO = 0.5
 // How much each star's one-time round-start materialize-in staggers behind the next.
 const STAGGER_MS = 110
 
-// A proper 5-pointed star outline, one point straight up — 10 alternating outer/inner vertices —
+// A proper 5-pointed star outline, one point straight up - 10 alternating outer/inner vertices -
 // instead of the 4-pointed crossed-lines doodle this mode used to draw (see snowflakes.tsx, which
 // kept that original doodle under its own name).
 function starPoints(cx: number, cy: number, outerR: number): [number, number][] {

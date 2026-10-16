@@ -5,7 +5,7 @@ import type { GameMode } from '@/types/gameModes'
 import { clampStage } from './shared/clampStage'
 import { CenteredBody, CenteredHead, CenteredLeftArm, CenteredLeftLeg, CenteredRightArm, CenteredRightLeg } from './shared/classicParts'
 
-// Same head-to-toe reveal order as classic.tsx's own PARTS, just without its gallows frame — so
+// Same head-to-toe reveal order as classic.tsx's own PARTS, just without its gallows frame - so
 // the figure is horizontally centered rather than offset to clear a gallows pole.
 const PARTS = [CenteredHead, CenteredBody, CenteredLeftArm, CenteredRightArm, CenteredLeftLeg, CenteredRightLeg]
 

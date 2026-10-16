@@ -23,16 +23,16 @@ import { type CategoryProgress, RoundEndDialog } from './RoundEndDialog'
 export type SolveDetails = { wrongGuesses: number; hintRevealed: boolean; guessCount: number }
 export type LossDetails = { wrongGuesses: number; guessCount: number }
 
-// How long a win holds off showing RoundEndDialog after the last letter lands — long enough for
+// How long a win holds off showing RoundEndDialog after the last letter lands - long enough for
 // the finished word to actually register and for a couple of the celebration's firework bursts to
-// go off (each burst runs ~1200ms and a new one starts every 180-420ms — see fireworks.tsx's
+// go off (each burst runs ~1200ms and a new one starts every 180-420ms - see fireworks.tsx's
 // BURST_LIFETIME_MS/MIN_BURST_INTERVAL_MS/MAX_BURST_INTERVAL_MS), rather than the dialog cutting
 // the moment off immediately. Longer than the loss path's own 450ms delay below, which only needs
 // to cover the final stage of the artwork drawing, not a whole show. Exported so tests can assert
 // against the real value instead of a hand-copied magic number.
 export const WIN_DIALOG_DELAY_MS = 2000
 
-// Wrong-guess pip row anchored to the keyboard (see its own render comment below) — same
+// Wrong-guess pip row anchored to the keyboard (see its own render comment below) - same
 // hand-drawn ring + bloom-on-miss treatment as PuzzleStage's own Letters Only pip cluster, just at
 // a fraction of the size and with no letter inside (this row stays letter-less by design; see the
 // render comment). PIP_RADIUS = PIP_CENTER - PIP_STROKE_WIDTH mirrors PuzzleStage's own pip
@@ -41,7 +41,7 @@ const PIP_SIZE = 12
 const PIP_CENTER = PIP_SIZE / 2
 const PIP_STROKE_WIDTH = 1.5
 const PIP_RADIUS = PIP_CENTER - PIP_STROKE_WIDTH
-// Stagger between one pip ring's own reveal and the next at round start — same spirit as
+// Stagger between one pip ring's own reveal and the next at round start - same spirit as
 // PuzzleStage's own PIP_STAGGER_MS, just local to this file since nothing else needs it. Added on
 // top of PIPS_SWEEP_DELAY_MS (see sceneReveal.ts), which is the whole-screen sweep's own head start
 // for this band, not a per-pip amount.
@@ -60,7 +60,7 @@ export type GameProps = {
   onStop: () => void
   onSolved?: (details: SolveDetails) => void
   onLost?: (details: LossDetails) => void
-  // Fired whenever the guessed-letter set changes, mid-round — lets a caller track "has the
+  // Fired whenever the guessed-letter set changes, mid-round - lets a caller track "has the
   // player guessed anything yet" and "how many wrong guesses so far" for THIS round without
   // lifting the full guessedLetters state, e.g. to decide whether starting a different puzzle
   // should count as an abandoned loss (see Main.tsx's shouldConfirmAbandon).
@@ -74,10 +74,10 @@ export type GameProps = {
   categoryProgress?: CategoryProgress | null
   // What this round unlocked, passed straight through to RoundEndDialog like categoryProgress above.
   unlockedAchievements?: UnlockedAchievement[]
-  // True while a dialog covers the board — currently only pass-and-play's handoff step, which
+  // True while a dialog covers the board - currently only pass-and-play's handoff step, which
   // mounts the real round underneath itself rather than a blank screen (see Main.tsx), so that
   // there's nothing left to reveal once the dialog closes. Guards handleGuess only, deliberately
-  // NOT the Keyboard's own `disabled` styling below — greying it out would repaint the board the
+  // NOT the Keyboard's own `disabled` styling below - greying it out would repaint the board the
   // instant the dialog disappears, which is the exact flash mounting it early was meant to avoid.
   // The dialog's backdrop already blocks on-screen taps; this only needs to catch the
   // physical-keyboard listener, which isn't gated by touch at all.
@@ -94,17 +94,17 @@ export const Game = ({ onStop, onSolved, onLost, onGuessProgress, phrase, mode =
   const [wrongGuesses, setWrongGuesses] = useState(0)
   const [hintRevealed, setHintRevealed] = useState(false)
   const [outcome, setOutcome] = useState<'win' | 'loss' | null>(null)
-  // The letter whose guess completed the round, once won — see Keyboard.tsx's own comment on why
+  // The letter whose guess completed the round, once won - see Keyboard.tsx's own comment on why
   // it's only ever set, never cleared (a fresh round is a fresh Game/Keyboard instance).
   const [winningLetter, setWinningLetter] = useState<string | null>(null)
-  // Separate from `outcome` itself — outcome flips the instant the round is decided (disabling the
+  // Separate from `outcome` itself - outcome flips the instant the round is decided (disabling the
   // keyboard, starting the celebration), but RoundEndDialog's own visibility waits on this too, so
   // a win doesn't get cut off by the dialog popping up over the celebration that just started (see
   // WIN_DIALOG_DELAY_MS above). A loss sets this true in the same tick as its own already-delayed
-  // setOutcome('loss') below — nothing extra to wait for there beyond what that delay already covers.
+  // setOutcome('loss') below - nothing extra to wait for there beyond what that delay already covers.
   const [dialogReady, setDialogReady] = useState(false)
   // Drives the keyboard's own "falling apart" collapse (see Keyboard.tsx's own falling prop
-  // comment) — set in the same tick as roundOverRef's own flip below, NOT inside the delayed
+  // comment) - set in the same tick as roundOverRef's own flip below, NOT inside the delayed
   // setOutcome('loss') timeout, so the shake/fall begins the instant the round is actually lost
   // rather than waiting on the 450ms delay that only exists to let the final hangman art render.
   const [keyboardFalling, setKeyboardFalling] = useState(false)
@@ -117,17 +117,17 @@ export const Game = ({ onStop, onSolved, onLost, onGuessProgress, phrase, mode =
     onStop()
   }, [onStop])
   // Bumped every time the celebration effect finishes a cycle, which remounts CelebrationView
-  // (keyed on this value below) to start a fresh cycle — keeping the effect running for as long
+  // (keyed on this value below) to start a fresh cycle - keeping the effect running for as long
   // as outcome stays 'win', i.e. for as long as the win dialog is open.
   const [celebrationCycle, setCelebrationCycle] = useState(0)
-  // Captured once, not read live from `mode` — `mode` itself updates immediately when the player
+  // Captured once, not read live from `mode` - `mode` itself updates immediately when the player
   // picks a new art style mid-round (see PuzzleDrawer's onModeChange), which should only change how
   // the round is drawn, never its mechanics. Every built-in mode shares the same 6-mistake baseline
-  // today, but this freeze still guards a future or custom mode that doesn't — without it, switching
+  // today, but this freeze still guards a future or custom mode that doesn't - without it, switching
   // to or from one mid-round would shift how many wrong guesses the player has left partway through.
   const [maxWrong] = useState(() => mode.maxMistakes)
   // Set synchronously the instant the round is decided (win, or the wrong-guess threshold is
-  // crossed) — a ref rather than state so it takes effect immediately, before React commits a
+  // crossed) - a ref rather than state so it takes effect immediately, before React commits a
   // re-render. Guards handleGuess against a stray guess during the win celebration, and against a
   // fast guess landing in the gap between crossing the loss threshold and the delayed
   // setOutcome('loss') below, either of which could otherwise flip a decided round's outcome.
@@ -135,12 +135,12 @@ export const Game = ({ onStop, onSolved, onLost, onGuessProgress, phrase, mode =
   const lossTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const winDialogTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
-  // Both start false on every fresh mount (a new round is a new Game instance — see Main.tsx's
+  // Both start false on every fresh mount (a new round is a new Game instance - see Main.tsx's
   // roundKey), and each flips true once, permanently, the moment its own owner reports it's fully
   // measured (see PuzzleStage's and Keyboard's own onReadyChange comments for what that covers:
   // the artwork box, the word row, and every keyboard key's real width). Before this fix, each of
   // those measured its own size independently and popped into its final layout the moment ITS OWN
-  // measurement landed — meaning the artwork/word area and the keyboard could (and did) each
+  // measurement landed - meaning the artwork/word area and the keyboard could (and did) each
   // visibly snap into place at a different moment, on top of a game screen whose other pieces
   // (difficulty pill, wrong-guess pips) were already sitting there fully visible the whole time.
   // Gating the reveal on BOTH signals together, and applying it to the whole screen at once (see
@@ -184,7 +184,7 @@ export const Game = ({ onStop, onSolved, onLost, onGuessProgress, phrase, mode =
         setKeyboardFalling(true)
         onLost?.({ wrongGuesses: w, guessCount: next.length })
         // Stacks with the wrong-guess buzz above, same as a winning guess stacks its own correct
-        // blip with the fanfare below — the final wrong guess is still a wrong guess first.
+        // blip with the fanfare below - the final wrong guess is still a wrong guess first.
         playLoss()
         lossTimeoutRef.current = setTimeout(() => {
           setOutcome('loss')
@@ -199,7 +199,7 @@ export const Game = ({ onStop, onSolved, onLost, onGuessProgress, phrase, mode =
         roundOverRef.current = true
         onSolved?.({ wrongGuesses, hintRevealed, guessCount: next.length })
         setOutcome('win')
-        // Drives the keyboard's own ripple (see Keyboard.tsx) — set in the same batch as
+        // Drives the keyboard's own ripple (see Keyboard.tsx) - set in the same batch as
         // setOutcome so the ripple starts the instant the board freezes, not a tick later.
         setWinningLetter(L)
         gameHaptics.win()
@@ -209,7 +209,7 @@ export const Game = ({ onStop, onSolved, onLost, onGuessProgress, phrase, mode =
     }
   }
 
-  // Physical keyboard guessing on web — deliberately no dep array so the listener always closes
+  // Physical keyboard guessing on web - deliberately no dep array so the listener always closes
   // over the current guess state. The listener is on window, so it hears every keystroke on the
   // page: a shortcut (Cmd+R, Ctrl+F) or a letter typed into any text field (a pack name, a Pass &
   // Play word) would otherwise also guess that letter in the round behind it.
@@ -227,14 +227,14 @@ export const Game = ({ onStop, onSolved, onLost, onGuessProgress, phrase, mode =
   const CelebrationView = celebration.Component
   const hasVisual = mode.hasVisual !== false
   // Order-preserving: guessedLetters is already in guess order, so this stays in the order the
-  // wrong guesses actually happened — pip i (below, and in PuzzleStage's own Letters Only cluster)
+  // wrong guesses actually happened - pip i (below, and in PuzzleStage's own Letters Only cluster)
   // shows wrongLetters[i], the i-th wrong guess, not just a count.
   const wrongLetters = guessedLetters.filter((letter) => !phrase.includes(letter))
   const pipsLabel = `Wrong guesses: ${wrongGuesses} of ${maxWrong}${wrongLetters.length > 0 ? ` (${wrongLetters.join(', ')})` : ''}`
 
   return (
     <View style={styles.root}>
-      {/* One curtain over the whole screen, not per-piece — see gameReady's own comment for why a
+      {/* One curtain over the whole screen, not per-piece - see gameReady's own comment for why a
           fade per measured region still isn't the same thing as this. PuzzleInfoRow and the pip
           row below have nothing of their own to measure, so they're covered by this for
           consistency (revealed as part of the same screen, not a beat ahead of it) rather than
@@ -243,11 +243,11 @@ export const Game = ({ onStop, onSolved, onLost, onGuessProgress, phrase, mode =
         <PuzzleInfoRow difficultyTier={difficultyTier} packLabel={packLabel} hint={hint} hintRevealed={hintRevealed} onRevealHint={() => setHintRevealed(true)} started={gameReady} />
         <PuzzleStage mode={mode} phrase={phrase} guessedLetters={guessedLetters} wrongGuesses={wrongGuesses} wrongLetters={wrongLetters} maxWrong={maxWrong} pipsLabel={pipsLabel} onReadyChange={setPuzzleStageReady} started={gameReady} />
         {/* Anchored to the keyboard (not the artwork, and not wherever PuzzleStage's own word-row
-            centering happens to land it) — the pips are a "guesses remaining" readout, most useful
+            centering happens to land it) - the pips are a "guesses remaining" readout, most useful
             right where your eyes already are while choosing the next letter, rather than a step
             removed near the art that's already telling the same story its own way. Stays a plain
             dot row rather than showing letters (unlike PuzzleStage's own Letters Only cluster,
-            which has the room to spare) — see PLAN.md's own reasoning: this row is deliberately
+            which has the room to spare) - see PLAN.md's own reasoning: this row is deliberately
             small since the artwork alongside it already carries the "how many mistakes" drama, and
             legible letters wouldn't fit at this size without enlarging it. accessibilityLabel
             (pipsLabel) still spells the wrong letters out either way, for a screen reader. */}
@@ -256,7 +256,7 @@ export const Game = ({ onStop, onSolved, onLost, onGuessProgress, phrase, mode =
             {Array.from({ length: maxWrong }, (_, i) => {
               const filled = i < wrongGuesses
               return (
-                // testID lives on this wrapping View, not the Svg itself — see PuzzleStage's own
+                // testID lives on this wrapping View, not the Svg itself - see PuzzleStage's own
                 // identical comment on why (Svg has no single host node of its own to carry one).
                 <View key={i} testID={`pip-${i}`}>
                   <Svg width={PIP_SIZE} height={PIP_SIZE} viewBox={`0 0 ${PIP_SIZE} ${PIP_SIZE}`}>

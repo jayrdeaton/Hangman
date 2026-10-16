@@ -6,7 +6,7 @@ import { clampStage } from './shared/clampStage'
 
 // Parts/subtractive mode: 7 stages indexed by mistakes (0=full bloom, 6=wilted).
 // Stem grows from a fixed ground point and bends further over as stemBend
-// grows, while petals drop away — the two change continuously together so
+// grows, while petals drop away - the two change continuously together so
 // the flower reads as one wilting motion rather than separate effects.
 
 type Stage = {
@@ -45,7 +45,7 @@ function flowerCenter(stemBend: number): { cx: number; cy: number } {
 }
 
 // Quadratic curve: vertical tangent leaving the ground, horizontal tangent
-// arriving at the flower center — reads as a straight stem at low bend and
+// arriving at the flower center - reads as a straight stem at low bend and
 // a shepherd's-crook droop at high bend.
 function stemPath(cx: number, cy: number): string {
   return `M${GROUND_X},${GROUND_Y} Q${GROUND_X},${cy} ${cx},${cy}`
@@ -60,7 +60,7 @@ function pointOnStem(t: number, cx: number, cy: number): { x: number; y: number 
   }
 }
 
-// transform (not rotation+origin) — react-native-svg's web renderer sets origin as a raw
+// transform (not rotation+origin) - react-native-svg's web renderer sets origin as a raw
 // `transform-origin` DOM attribute, which isn't a valid one (React warns about it); folding the
 // pivot into the transform string itself avoids that path entirely, same result.
 const Petal = ({ cx, cy, angle, color }: { cx: number; cy: number; angle: number; color: string }) => (

@@ -2,7 +2,7 @@ import { useSoundSettings } from '@rific/feedback-press'
 import { useAudioPool } from '@rific/feedback-press/audio'
 import { useCallback } from 'react'
 
-// Relative, not the @/ alias — these are static require() calls Metro's asset plugin has to
+// Relative, not the @/ alias - these are static require() calls Metro's asset plugin has to
 // resolve at bundle time, and every other local-asset require in this codebase (app icons,
 // splash images, referenced from app.json/eas.json rather than source) sticks to plain relative
 // paths for exactly that reason, so this follows the same safe convention rather than assuming
@@ -12,10 +12,10 @@ const WRONG_SOUND = require('../../assets/sounds/wrong.wav')
 const WIN_SOUND = require('../../assets/sounds/win.wav')
 const LOSS_SOUND = require('../../assets/sounds/loss.wav')
 
-// One useAudioPool(...) per clip, not a single pool whose source gets replaced per call — these
+// One useAudioPool(...) per clip, not a single pool whose source gets replaced per call - these
 // can fire back-to-back (a fast player mashing letters) and each needs its own pool to restart or
 // overlap independently rather than racing a single shared player. No poolSize override: the
-// default already covers the fast-typing case this comment describes — a pool of 1 would collapse
+// default already covers the fast-typing case this comment describes - a pool of 1 would collapse
 // back to a single shared player racing itself, the exact bug useAudioPool exists to prevent. The
 // setTimeout/seekTo(0) deferral this hook used to hand-roll now lives inside
 // @rific/feedback-press/audio's useAudioPool.

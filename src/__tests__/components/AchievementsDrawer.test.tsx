@@ -18,7 +18,7 @@ import { createDefaultStats } from '@/utils/statsValidation'
 import { clearPuzzleUnlocks, getPuzzleUnlockMap, mergePuzzleUnlocks } from '@/utils/unlocks'
 
 // mergePuzzleUnlocks/clearPuzzleUnlocks read/write AsyncStorage (globally stubbed as a no-op in
-// jest.setup.ts) — mocked here instead so the Progress backup tests below can assert on exactly
+// jest.setup.ts) - mocked here instead so the Progress backup tests below can assert on exactly
 // what the drawer passed in and control what comes back, independent of that stub's always-empty
 // storage. parseProgressBackup is left as the real implementation (spread from requireActual)
 // since its own shape-validation logic is exactly what the invalid-backup tests below exercise.
@@ -26,7 +26,7 @@ jest.mock('@/utils/unlocks', () => ({
   ...jest.requireActual('@/utils/unlocks'),
   mergePuzzleUnlocks: jest.fn(),
   clearPuzzleUnlocks: jest.fn().mockResolvedValue(undefined),
-  // Real getPuzzleUnlockMap reads AsyncStorage, globally stubbed to always return null — mocked
+  // Real getPuzzleUnlockMap reads AsyncStorage, globally stubbed to always return null - mocked
   // here instead so the "Collection Complete" count test below can put a pack at 100% without
   // needing real storage.
   getPuzzleUnlockMap: jest.fn()
@@ -45,7 +45,7 @@ jest.mock('@/utils/alert', () => ({
 }))
 
 // resolvePuzzle (Random's own path) is overridden, mirroring PackPuzzlesDrawer.test.tsx's
-// identical setup — every test restores the real implementation in beforeEach so it exercises
+// identical setup - every test restores the real implementation in beforeEach so it exercises
 // genuine resolution against real pack data unless a specific test needs to force a failure.
 jest.mock('@/utils/puzzlePicker', () => ({
   ...jest.requireActual('@/utils/puzzlePicker'),
@@ -64,11 +64,11 @@ const realResolvePuzzle: typeof resolvePuzzle = jest.requireActual('@/utils/puzz
 // ConfirmDialog (like RoundEndDialog in Game.test.tsx) renders through react-native-paper's Portal
 // and needs a Portal.Host ancestor, normally supplied by
 // @rific/auto-paper's Provider at the app root. FeedbackPressProvider's real `paper` module is
-// also injected here (see Haptic.tsx, the app's own root wiring) — without it, @rific/feedback-
+// also injected here (see Haptic.tsx, the app's own root wiring) - without it, @rific/feedback-
 // press's Button/IconButton fall back to a bare RN Pressable that drops accessibilityLabel
 // entirely, which every backAction/Button query below (Close, Back to achievements, Random,
 // Reset all progress, the confirm dialog's own buttons) relies on. FeedbackPressProvider has to
-// wrap PaperProvider, not nest inside it — PaperProvider's PortalHost mounts near its own root
+// wrap PaperProvider, not nest inside it - PaperProvider's PortalHost mounts near its own root
 // (same reasoning as Providers.tsx hoisting the real app's Haptic above Theme), so nested the
 // other way, the confirm dialog's own Portal-rendered buttons would sit outside its context.
 // The app's stats store and GameStatsProvider wrap it all too: the drawer reads its stats and
@@ -108,12 +108,12 @@ describe('AchievementsDrawer', () => {
     const pack = builtIn()
     const { getAllByText, getByText, getByTestId } = await renderDrawer()
 
-    // "Achievements" appears twice — once as the drawer's own title, once as the section label
+    // "Achievements" appears twice - once as the drawer's own title, once as the section label
     // above the achievement cards.
     expect(getAllByText('Achievements')).toHaveLength(2)
     expect(getByTestId('achievements-drawer-panel')).toBeTruthy()
     expect(getByText('Total Progress')).toBeTruthy()
-    expect(getByText('Puzzles unlocked')).toBeTruthy()
+    expect(getByText('Puzzles Unlocked')).toBeTruthy()
     // Rendered regardless of unlock state: locked ones show a grey badge and a lock.
     expect(getByText('No Hints Needed')).toBeTruthy()
     expect(getByText('Stats')).toBeTruthy()
@@ -143,7 +143,7 @@ describe('AchievementsDrawer', () => {
     await fireEvent.press(getByText(pack.label))
 
     // The whole overview (achievements list, "Browse by Pack" section, everything) swaps out for
-    // the pack's own puzzle list in place — not a dialog stacked on top of it — and the header now
+    // the pack's own puzzle list in place - not a dialog stacked on top of it - and the header now
     // shows the pack's own label instead of "Achievements" (opens on filter='all', masked
     // throughout since the mocked empty unlock map guarantees nothing is solved yet here).
     await waitFor(() => expect(queryByText('Browse by Pack')).toBeNull())
@@ -153,12 +153,12 @@ describe('AchievementsDrawer', () => {
 
     await fireEvent.press(getByLabelText('Back to achievements'))
 
-    // Back to "Achievements" appearing twice — the drawer's own title and the section label above
-    // the achievement cards — same as before the pack row was ever pressed.
+    // Back to "Achievements" appearing twice - the drawer's own title and the section label above
+    // the achievement cards - same as before the pack row was ever pressed.
     expect(getAllByText('Achievements')).toHaveLength(2)
     expect(getByText('Browse by Pack')).toBeTruthy()
     expect(queryByTestId(`puzzle-row-${puzzle.id}`)).toBeNull()
-    // Back is a local step-back, not a dismiss — the whole Achievements drawer must stay open.
+    // Back is a local step-back, not a dismiss - the whole Achievements drawer must stay open.
     expect(onDismiss).not.toHaveBeenCalled()
   })
 
@@ -257,7 +257,7 @@ describe('AchievementsDrawer', () => {
     await fireEvent.press(getByLabelText('Back to achievements'))
     await fireEvent.press(getByText(secondPack.label))
 
-    // Not just "some pack" reappearing — the SECOND pack's own label and progress, not a stale
+    // Not just "some pack" reappearing - the SECOND pack's own label and progress, not a stale
     // read of the first one PackPuzzleList was keyed on moments ago.
     await waitFor(() => expect(queryByText('Browse by Pack')).toBeNull())
     expect(getByText(secondPack.label)).toBeTruthy()
@@ -282,7 +282,7 @@ describe('AchievementsDrawer', () => {
       getByTestId('achievements-drawer-panel').props.onAccessibilityEscape()
     })
 
-    // Escape while browsing a pack must go back one step, exactly like the visible back-arrow —
+    // Escape while browsing a pack must go back one step, exactly like the visible back-arrow -
     // not skip past the overview straight to closing the whole drawer.
     expect(onDismiss).not.toHaveBeenCalled()
     expect(getByText('Browse by Pack')).toBeTruthy()
@@ -323,7 +323,7 @@ describe('AchievementsDrawer', () => {
     )
 
     // Closed state is deliberately hidden from accessibility tools (accessibilityElementsHidden),
-    // so RTL's default queries skip it — includeHiddenElements opts back in for this assertion.
+    // so RTL's default queries skip it - includeHiddenElements opts back in for this assertion.
     const closedPanel = getByTestId('achievements-drawer-panel', { includeHiddenElements: true })
     expect(closedPanel.props.accessibilityViewIsModal).toBe(false)
     expect(closedPanel.props.accessibilityElementsHidden).toBe(true)
@@ -492,7 +492,7 @@ describe('AchievementsDrawer', () => {
       expect(onUnlocksChanged).not.toHaveBeenCalled()
     })
 
-    // parseProgressBackup (the real implementation, not mocked here) is what catches this — a
+    // parseProgressBackup (the real implementation, not mocked here) is what catches this - a
     // custom pack export has a `pack` key, not `unlocks`, so it's rejected before mergePuzzleUnlocks
     // ever runs, rather than silently merging zero entries.
     it('shows an invalid-backup alert when the picked file is a custom pack, not a progress backup', async () => {
@@ -508,7 +508,7 @@ describe('AchievementsDrawer', () => {
 
   describe('Danger Zone', () => {
     // Reset all progress goes through an in-app ConfirmDialog now, not window.confirm/Alert.alert
-    // — a native dialog isn't reliable on web (some browser/automation environments silently
+    // - a native dialog isn't reliable on web (some browser/automation environments silently
     // auto-decline it, indistinguishable from the player themselves canceling).
     it('does not clear anything when Reset all progress is pressed but the confirmation dialog is declined', async () => {
       seedStats({ solo: { played: 2, wins: 2, losses: 0, draws: 0 } })

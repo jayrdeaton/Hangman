@@ -7,7 +7,7 @@ import { clampStage } from './shared/clampStage'
 
 // Quantitative/accumulation: a windowpane takes a hit and cracks radiate a little further
 // out from the same fixed impact point with every wrong guess. Unlike Jenga/Balloons
-// (depletion — things disappear/shrink), Cracking Window is additive like Storm Cloud:
+// (depletion - things disappear/shrink), Cracking Window is additive like Storm Cloud:
 // the shatter pattern only ever grows. The frame and mullions are the constant "healthy"
 // fixture (never change), the impact point is a fixed origin all cracks share, and the
 // STAGES array simply reveals more radiating crack branches as mistakes pile up, ending
@@ -85,7 +85,7 @@ const CrackingWindowVisual = ({ mistakes, color, colors }: { mistakes: number; c
   const branches = CRACK_BRANCHES.slice(0, s.branchCount)
   const shattered = mistakes >= 6
   // Cracks are the focus (primary, what grows). Frame/mullions are the "constant healthy
-  // fixture" (see this file's own doc comment) — scaffold, same role hourglass's stand plays —
+  // fixture" (see this file's own doc comment) - scaffold, same role hourglass's stand plays -
   // secondary. Falls back to the plain `color` when no triad is given (e.g. ModeSelector's card
   // preview, which only passes `color`).
   const frameColor = colors?.[1] ?? color

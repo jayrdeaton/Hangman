@@ -42,15 +42,15 @@ const DEFAULT_CONFIG: PuzzleConfig = {
 }
 
 // Strips the answer out of a config while keeping the intent around it (sourceMode/mode/
-// difficulty). `session` is the single source of truth for what's actually on screen — nothing
+// difficulty). `session` is the single source of truth for what's actually on screen - nothing
 // downstream of `config` (PuzzleDrawer's initialConfig, a later startNextRound call) has any
 // business also carrying the live phrase around.
 const withoutSecret = (config: PuzzleConfig): PuzzleConfig => ({ ...config, customPhrase: '', customHint: '' })
 
-// Always succeeds (unlike resolvePuzzle), even on a blank or unscoreable answer — Game needs a
+// Always succeeds (unlike resolvePuzzle), even on a blank or unscoreable answer - Game needs a
 // session to render as the composing screen's own board from the moment authoring starts, not
 // just once the word is valid enough to hand off. difficultyTier defaults to 'easy' while blank,
-// matching buildCustomPuzzle's own scoring (which returns null, not a real tier, for that case) —
+// matching buildCustomPuzzle's own scoring (which returns null, not a real tier, for that case) -
 // see PuzzleInfoRow's the-pill-shouldn't-pop-in reasoning, which applies here for the same reason.
 const buildPnpDraftSession = (answer: string, mode: GameMode): GameStartPayload => {
   const phrase = normalizePhrase(answer)
@@ -61,29 +61,29 @@ const buildPnpDraftSession = (answer: string, mode: GameMode): GameStartPayload 
 export const Main = (): JSX.Element => {
   const theme = useTheme()
   const insets = useSafeAreaInsets()
-  // The persisted default pack selection (see usePackSelection) — read here, before the lazy
-  // state initializers below, so it's already available (synchronously — see
+  // The persisted default pack selection (see usePackSelection) - read here, before the lazy
+  // state initializers below, so it's already available (synchronously - see
   // PackSelectionProvider) the moment they run.
   const { selectedPackKeys, setSelectedPackKeys, ready: packSelectionReady } = usePackSelection()
-  // Same idea, for the last mode/difficulty the player picked (see PuzzleDefaultsProvider) — read
+  // Same idea, for the last mode/difficulty the player picked (see PuzzleDefaultsProvider) - read
   // here, before `config`'s own initializer below, so the very first puzzle already draws under
   // them instead of the hardcoded DEFAULT_CONFIG values.
   const { mode: defaultMode, setMode: setDefaultMode, difficulty: defaultDifficulty, setDifficulty: setDefaultDifficulty, ready: puzzleDefaultsReady } = usePuzzleDefaults()
   const { autoSave } = useAutoSaveCustom()
-  // Pass and play is just a three-beat loop, so it needs no more state than which beat we're on —
+  // Pass and play is just a three-beat loop, so it needs no more state than which beat we're on -
   // null means we're not in it. There are deliberately no players and no score: any number of people
   // can be passing the device around, which makes both incoherent to track.
   const [pnpPhase, setPnpPhase] = useState<'authoring' | 'handoff' | 'playing' | null>(null)
-  // Owned here, not by PnpWordPrompt — Main mounts the real Game continuously for the whole pass-
+  // Owned here, not by PnpWordPrompt - Main mounts the real Game continuously for the whole pass-
   // and-play round (see the render below and buildPnpDraftSession above), so it needs the live
   // phrase itself to feed that board while composing, not just the finished word at Hand off.
   const [pnpAnswer, setPnpAnswer] = useState('')
   const [pnpHint, setPnpHint] = useState('')
   // Resolved synchronously (not via a hook side effect) on web and read from the native module's
-  // cache on native — see expo-linking's getLinkingURL — so a cold-started shared-puzzle link is
+  // cache on native - see expo-linking's getLinkingURL - so a cold-started shared-puzzle link is
   // already known by the time the lazy state initializers below run.
   const incomingUrl = Linking.useLinkingURL()
-  // No setup screen — the app opens straight into a game, matching the "no fuss" goal. A puzzle
+  // No setup screen - the app opens straight into a game, matching the "no fuss" goal. A puzzle
   // shared by a friend (opened cold) goes straight into that puzzle too, for the same reason;
   // everything else falls back to the default random puzzle. Both computed as lazy useState
   // initializers (not an effect) so the first paint already shows the right game.
@@ -91,20 +91,20 @@ export const Main = (): JSX.Element => {
     const shared = incomingUrl ? parseSharedPuzzle(incomingUrl) : null
     return shared ?? { ...DEFAULT_CONFIG, mode: defaultMode, difficulty: defaultDifficulty }
   })
-  // A ref, not state — nothing renders off this directly (categoryProgress, set separately, is
+  // A ref, not state - nothing renders off this directly (categoryProgress, set separately, is
   // what the UI actually reads), it just needs to be the latest value resolvePuzzle can read
   // synchronously from startNextRound's button-press callback, without an async fetch
   // (see handleSolved and the mount effect below) in the way of picking the next puzzle. Refs
-  // shouldn't be read during render (only event handlers/effects — see the mount effect below,
+  // shouldn't be read during render (only event handlers/effects - see the mount effect below,
   // which is exactly why this can't just seed the session initializer just below either), so the
-  // very first, synchronous draw on cold boot always passes {} explicitly instead of this ref —
+  // very first, synchronous draw on cold boot always passes {} explicitly instead of this ref -
   // unlocks from a previous session load moments after first paint, too late for that one draw.
   const unlockMapRef = useRef<PuzzleUnlockMap>({})
   const [session, setSession] = useState<GameStartPayload | null>(() => {
     const result = resolvePuzzle(config, selectedPackKeys, {})
     return result.ok ? result.payload : null
   })
-  // The exact pack keys that very first draw actually used — captured here (not re-read later)
+  // The exact pack keys that very first draw actually used - captured here (not re-read later)
   // so the correction effect below can tell "the persisted selection turned out to be the same
   // set anyway" apart from "it's genuinely different", without re-triggering on every future
   // change to selectedPackKeys (a player editing Choose Packs seconds later shouldn't yank the
@@ -113,10 +113,10 @@ export const Main = (): JSX.Element => {
   // One-time correction for the very first draw above, which almost always runs BEFORE
   // PuzzleDefaultsProvider's own AsyncStorage read resolves (that read is inherently async, even
   // on a fast cold boot, so `defaultMode`/`defaultDifficulty` were still just the in-memory
-  // fallback — DEFAULT_MODE/'any' — at the moment `config`'s initializer above captured them; a
+  // fallback - DEFAULT_MODE/'any' - at the moment `config`'s initializer above captured them; a
   // later context update doesn't retroactively change what that initializer already returned).
   // Reapplies live, exactly like a manual pick would (see handleModeChange/handleDifficultyChange
-  // just below), the instant the real persisted values are known — never for a shared-link draw
+  // just below), the instant the real persisted values are known - never for a shared-link draw
   // (re-parsed here, not cached, since reading a ref during render to cache it at the initializer
   // above would itself be unsafe), and never more than once, so it can't clobber a mode/difficulty
   // the player already changed by hand in the brief window before this fires.
@@ -130,33 +130,33 @@ export const Main = (): JSX.Element => {
     setSession((s) => (s ? { ...s, mode: defaultMode } : s))
   }, [puzzleDefaultsReady, defaultMode, defaultDifficulty, incomingUrl])
   /* eslint-enable react-hooks/set-state-in-effect */
-  // Game is keyed on this counter (not session.phrase) so it always remounts on a new round —
+  // Game is keyed on this counter (not session.phrase) so it always remounts on a new round -
   // two consecutive puzzles can land on the identical normalized phrase (a small pack, or two
   // different puzzles normalizing to the same text), and keying on the phrase text would then
   // reuse the same Game instance, carrying its outcome/celebrationCycle/guessedLetters state into the
   // "new" round instead of resetting it.
   const [roundKey, setRoundKey] = useState(0)
-  // How far the CURRENT round (see roundKey) has gotten — fed by Game's onGuessProgress, reset
+  // How far the CURRENT round (see roundKey) has gotten - fed by Game's onGuessProgress, reset
   // below whenever roundKey bumps. Refs, not state: nothing renders off these, they just need to
   // be readable synchronously from shouldConfirmAbandon at the moment a new puzzle is requested.
   const roundProgressRef = useRef<LossDetails>({ wrongGuesses: 0, guessCount: 0 })
   // Flipped inside handleSolved/handleLost, which already fire synchronously the instant a round
-  // is decided (see Game's own roundOverRef) — cheaper and more accurate than trying to infer
+  // is decided (see Game's own roundOverRef) - cheaper and more accurate than trying to infer
   // "already decided" from Game's outcome state, which lags a loss by its own 450ms delay.
   const roundDecidedRef = useRef(false)
-  // A second, independent one-time correction for that same very first draw — this one for
+  // A second, independent one-time correction for that same very first draw - this one for
   // selectedPackKeys instead of mode/difficulty. PackSelectionProvider's own persisted-selection
   // read races the same cold-boot draw above, but unlike mode/difficulty it has no in-place patch
-  // (the pack a puzzle came from isn't something you can swap on the session already showing) —
+  // (the pack a puzzle came from isn't something you can swap on the session already showing) -
   // the only way to actually respect a persisted pack selection here is to re-draw. Skipped
-  // entirely when the persisted set matches initialPackKeysRef (nothing to correct — most players
+  // entirely when the persisted set matches initialPackKeysRef (nothing to correct - most players
   // never narrow their selection, and re-drawing then would just churn a perfectly fine puzzle
   // into a different random one for no reason). Also skipped for anything other than a plain
-  // random round in progress — a custom/shared-link phrase (config.sourceMode !== 'random' already
+  // random round in progress - a custom/shared-link phrase (config.sourceMode !== 'random' already
   // covers a shared link, since parseSharedPuzzle always returns sourceMode: 'custom'), a pass-and-
   // play round (pnpPhase never touches config.sourceMode, so it can't be caught by that check
   // alone), or a round the player has already put a guess into (the same "costs nothing to leave"
-  // test shouldConfirmAbandon itself uses below) — none of those should get silently swapped out
+  // test shouldConfirmAbandon itself uses below) - none of those should get silently swapped out
   // from under the player with no abandon-confirmation dialog and no recorded loss, unlike every
   // other puzzle-switch path in this file.
   const appliedPersistedPackKeysRef = useRef(false)
@@ -175,7 +175,7 @@ export const Main = (): JSX.Element => {
     }
   }, [packSelectionReady, selectedPackKeys, config, pnpPhase])
   // A puzzle switch requested while the current round already has a guess on it and isn't decided
-  // yet — held here until the player confirms via the abandon-confirmation dialog below (or
+  // yet - held here until the player confirms via the abandon-confirmation dialog below (or
   // discards it via Cancel), rather than applied immediately like a fresh/already-over round's
   // switch is.
   const [pendingAbandon, setPendingAbandon] = useState<{ kind: 'puzzle'; payload: GameStartPayload; config: PuzzleConfig } | { kind: 'pnp' } | null>(null)
@@ -195,7 +195,7 @@ export const Main = (): JSX.Element => {
   // while the unlock-map lookup for the new one is still in flight.
   const [categoryProgress, setCategoryProgress] = useState<CategoryProgress | null>(null)
 
-  // Every genuinely new round (roundKey bump — see its own declaration above) starts a clean slate
+  // Every genuinely new round (roundKey bump - see its own declaration above) starts a clean slate
   // for abandon-tracking too, whichever path got it there (a picked puzzle, the automatic next
   // round, a fresh pass-and-play word).
   useEffect(() => {
@@ -204,7 +204,7 @@ export const Main = (): JSX.Element => {
   }, [roundKey])
 
   // Native caches the cold-start URL in a singleton that only resets via this call (unlike web,
-  // which always re-reads the live window location) — clearing it once consumed means a later
+  // which always re-reads the live window location) - clearing it once consumed means a later
   // remount (Fast Refresh, a future error boundary) can't replay the same puzzle as if it were new.
   useEffect(() => {
     Linking.clearInitialURL()
@@ -214,7 +214,7 @@ export const Main = (): JSX.Element => {
   const refreshCustomPacks = useCallback(() => setCustomPacksVersion((v) => v + 1), [])
 
   // Custom packs live in AsyncStorage, so they aren't available for the very first (synchronous)
-  // auto-started puzzle on cold boot — same "loads shortly after first paint" tradeoff the app
+  // auto-started puzzle on cold boot - same "loads shortly after first paint" tradeoff the app
   // already accepts for unlocks/achievements. Bumping the version afterward makes them show up in
   // the pack picker and future random draws as soon as they're hydrated.
   useEffect(() => {
@@ -222,7 +222,7 @@ export const Main = (): JSX.Element => {
   }, [refreshCustomPacks])
 
   // Hydrates unlockMapRef shortly after first paint (see its own declaration above for why the
-  // very first, synchronous session draw can't wait for this) — every automatic next round from
+  // very first, synchronous session draw can't wait for this) - every automatic next round from
   // here on already reflects unlocks from a previous session, not just ones made in this one.
   useEffect(() => {
     void getPuzzleUnlockMap().then((map) => {
@@ -230,10 +230,10 @@ export const Main = (): JSX.Element => {
     })
   }, [])
 
-  // A pack or progress backup shared as a real .hangman file (see hangmanFile.ts) — opened via the
+  // A pack or progress backup shared as a real .hangman file (see hangmanFile.ts) - opened via the
   // OS "Open in Hangman" flow (Messages attachment, Mail, Files, AirDrop), not the app's own
   // hangman:// scheme, so it arrives as a file:/content: URL rather than something
-  // parseSharedPuzzle understands. Preview-only until confirmed below — parsing reads the
+  // parseSharedPuzzle understands. Preview-only until confirmed below - parsing reads the
   // label/word count (or unlock count) without saving anything, so a stray or malicious file can't
   // silently change anything.
   const [incomingFilePreview, setIncomingFilePreview] = useState<{ kind: 'pack'; raw: string; label: string; wordCount: number } | { kind: 'progress'; raw: string; unlockCount: number } | null>(null)
@@ -251,7 +251,7 @@ export const Main = (): JSX.Element => {
       .then((raw) => {
         if (!mounted) return
         // The two .hangman payload shapes are told apart by content (a `pack` key vs an `unlocks`
-        // key — see hangmanFile.ts), not by filename/extension, since both share the same one.
+        // key - see hangmanFile.ts), not by filename/extension, since both share the same one.
         // parseProgressBackup is tried first and is strict about that `unlocks` key, so it never
         // mistakes a pack export for a backup; falling through to parseCustomPackImport on failure
         // (rather than branching on shape ourselves) reuses each parser's own validation instead of
@@ -261,7 +261,7 @@ export const Main = (): JSX.Element => {
           setIncomingFilePreview({ kind: 'progress', raw, unlockCount: getTotalUnlockedCount(unlocks) })
           return
         } catch {
-          // Not a progress backup — fall through and try it as a pack instead.
+          // Not a progress backup - fall through and try it as a pack instead.
         }
         const { label, entries } = parseCustomPackImport(raw)
         setIncomingFilePreview({ kind: 'pack', raw, label, wordCount: entries.length })
@@ -275,7 +275,7 @@ export const Main = (): JSX.Element => {
   }, [incomingUrl])
 
   // Only reachable from the confirm dialog's own Import button (see the ConfirmDialog rendered
-  // below) — by the time this runs, the player has already agreed to import the file.
+  // below) - by the time this runs, the player has already agreed to import the file.
   const handleConfirmIncomingFile = useCallback(async () => {
     if (!incomingFilePreview) return
     try {
@@ -283,7 +283,7 @@ export const Main = (): JSX.Element => {
         await mergePuzzleUnlocks(incomingFilePreview.raw)
         refreshUnlocks()
         // Opens the menu so the merged progress (its own quick-look card, right at the top) is
-        // immediately visible — the closest thing to confirmation without inventing new toast UI.
+        // immediately visible - the closest thing to confirmation without inventing new toast UI.
         // Same reasoning as the pack-import branch below, not a standalone Achievements drawer:
         // that's reached from inside this same menu now, not its own top-level destination.
         setDrawerVisible(true)
@@ -292,7 +292,7 @@ export const Main = (): JSX.Element => {
         if (!selectedPackKeys.includes(pack.key)) setSelectedPackKeys([...selectedPackKeys, pack.key])
         refreshCustomPacks()
         // Opens the menu so the new pack count (and the pack itself, in the quick list) is
-        // immediately visible — the closest thing to confirmation without inventing new toast UI.
+        // immediately visible - the closest thing to confirmation without inventing new toast UI.
         setDrawerVisible(true)
       }
     } catch {
@@ -302,7 +302,7 @@ export const Main = (): JSX.Element => {
     }
   }, [incomingFilePreview, selectedPackKeys, setSelectedPackKeys, refreshCustomPacks, refreshUnlocks])
 
-  // True while the current round has at least one guess on it and isn't decided yet — the
+  // True while the current round has at least one guess on it and isn't decided yet - the
   // moment abandoning it (by starting a different puzzle, or a pass-and-play word) instead of
   // seeing it through should cost the same loss it would if the wrong-guess limit were hit for
   // real. A fresh round (no guesses) or one that already ended costs nothing to leave, so those
@@ -313,14 +313,14 @@ export const Main = (): JSX.Element => {
 
   const applyNewPuzzle = useCallback((payload: GameStartPayload, nextConfig: PuzzleConfig) => {
     setSession(payload)
-    // The secret itself is deliberately NOT retained in `config` — only the intent around it
+    // The secret itself is deliberately NOT retained in `config` - only the intent around it
     // (sourceMode/mode/difficulty). It's already been resolved into `session` by this point, and
     // anything still holding it would let a later startNextRound(config, …) silently replay the old
     // word instead of drawing a new one. `session` is the single owner of the live phrase.
     setConfig(withoutSecret(nextConfig))
     setDrawerVisible(false)
     setRoundKey((k) => k + 1)
-    // Starting any puzzle from the menu is how you leave pass and play — the menu stays reachable
+    // Starting any puzzle from the menu is how you leave pass and play - the menu stays reachable
     // throughout, so this doubles as the exit and needs no separate affordance.
     setPnpPhase(null)
   }, [])
@@ -362,7 +362,7 @@ export const Main = (): JSX.Element => {
     setDrawerVisible(true)
   }, [])
 
-  // PuzzleDrawer's own DrawerEdgeSwipe.onOpen — a plain setDrawerVisible(true) with no keyboard
+  // PuzzleDrawer's own DrawerEdgeSwipe.onOpen - a plain setDrawerVisible(true) with no keyboard
   // dismiss (unlike handleOpenMenu above, a swipe never has the OS keyboard up to begin with).
   // Kept stable via useCallback: PuzzleDrawer is memoized (see its own file) specifically so
   // unrelated re-renders of Main don't cascade into it, and a fresh arrow function passed as
@@ -371,10 +371,10 @@ export const Main = (): JSX.Element => {
     setDrawerVisible(true)
   }, [])
 
-  // Live, not staged behind the drawer's confirm button — an art style is purely cosmetic, so it
+  // Live, not staged behind the drawer's confirm button - an art style is purely cosmetic, so it
   // applies to the round already on screen the instant it's picked, not just future ones. Session
   // stays otherwise untouched (same phrase/hint/outcome/guessedLetters), so this never disturbs a
-  // round in progress; Game.tsx separately freezes the mistake limit itself at round start — every
+  // round in progress; Game.tsx separately freezes the mistake limit itself at round start - every
   // built-in mode shares the same 6-mistake baseline today, but this still guards against a future
   // or custom mode with a different maxMistakes shifting the difficulty mid-round.
   const handleModeChange = useCallback(
@@ -386,7 +386,7 @@ export const Main = (): JSX.Element => {
     [setDefaultMode]
   )
 
-  // Also live, but deliberately left out of `session` — a difficulty filter only shapes which
+  // Also live, but deliberately left out of `session` - a difficulty filter only shapes which
   // puzzle gets drawn NEXT, so touching the config that startNextRound reads from is enough for it
   // to apply the moment the current round ends, without retroactively touching the puzzle already
   // on screen (which was already drawn under whatever filter was active at the time).
@@ -400,7 +400,7 @@ export const Main = (): JSX.Element => {
 
   const handleSolved = useCallback(
     async (details: SolveDetails) => {
-      // A win decides the round — see roundDecidedRef's own declaration for why this (not
+      // A win decides the round - see roundDecidedRef's own declaration for why this (not
       // Game's outcome state) is what shouldConfirmAbandon reads.
       roundDecidedRef.current = true
       // Cleared here (synchronously, before the first await below) so it's batched with the
@@ -456,7 +456,7 @@ export const Main = (): JSX.Element => {
 
   const handleLost = useCallback(
     (details: LossDetails) => {
-      // A loss decides the round too — see roundDecidedRef's own declaration.
+      // A loss decides the round too - see roundDecidedRef's own declaration.
       roundDecidedRef.current = true
       // Cleared up front, same as handleSolved above: the round-end card shows unlocks on a loss
       // too, so a previous round's would otherwise bleed into this one.
@@ -473,7 +473,7 @@ export const Main = (): JSX.Element => {
     [pnpPhase, recordSoloRound, recordPnpRound]
   )
 
-  // The only caller left is handleRoundEnd's own automatic-next-round path below — kept as its own
+  // The only caller left is handleRoundEnd's own automatic-next-round path below - kept as its own
   // function since "draw a puzzle for some set of packKeys and mount it as the next round" is a
   // distinct step from deciding WHICH packKeys that should be.
   const startNextRound = useCallback((nextConfig: PuzzleConfig, packKeys: string[]) => {
@@ -490,13 +490,13 @@ export const Main = (): JSX.Element => {
     if (pnpPhase) {
       setPnpAnswer('')
       setPnpHint('')
-      // Fresh Game mount for the next word — otherwise the round just finished (its outcome,
+      // Fresh Game mount for the next word - otherwise the round just finished (its outcome,
       // wrongGuesses, celebration) would carry straight into the blank composing screen.
       setRoundKey((k) => k + 1)
       setPnpPhase('authoring')
       return
     }
-    // A custom word is one-off — there's no "next" word to auto-generate, so surface the drawer
+    // A custom word is one-off - there's no "next" word to auto-generate, so surface the drawer
     // to ask for a new one instead of silently replaying the same phrase.
     if (config.sourceMode === 'custom') {
       setDrawerVisible(true)
@@ -506,7 +506,7 @@ export const Main = (): JSX.Element => {
     // from (see GameStartPayload.packScope): a pack the player was specifically browsing
     // (PackPuzzlesDrawer/AchievementsDrawer's own Random, or a row tap) keeps drawing from just
     // that pack, same as a solo pack ever was; anything drawn from the player's whole standing
-    // selection (PuzzleDrawer's bottom Random) draws from that live selection again — not whatever
+    // selection (PuzzleDrawer's bottom Random) draws from that live selection again - not whatever
     // config.packKeys used to be, since a pack toggled off in Choose Packs and never confirmed via
     // "Random" should still apply to this automatic next round.
     const packKeys = session?.packScope === 'single' && session.packKey ? [session.packKey] : selectedPackKeys
@@ -517,7 +517,7 @@ export const Main = (): JSX.Element => {
     setDrawerVisible(false)
     setPnpAnswer('')
     setPnpHint('')
-    // Fresh Game mount for the composing screen — whatever was on screen before (a solo round's
+    // Fresh Game mount for the composing screen - whatever was on screen before (a solo round's
     // outcome/guessedLetters, mid-guess or not) shouldn't carry into the new blank board.
     setRoundKey((k) => k + 1)
     setPnpPhase('authoring')
@@ -531,9 +531,9 @@ export const Main = (): JSX.Element => {
     applyPnpStart()
   }, [shouldConfirmAbandon, applyPnpStart])
 
-  // Only reachable from the abandon-confirmation dialog's own confirm button below — by the time
+  // Only reachable from the abandon-confirmation dialog's own confirm button below - by the time
   // this runs, the player has already agreed to give up the round in progress. Records the loss
-  // BEFORE applying the switch — applyNewPuzzle/applyPnpStart both bump roundKey, which resets
+  // BEFORE applying the switch - applyNewPuzzle/applyPnpStart both bump roundKey, which resets
   // roundProgressRef back to zero on the very next effect pass (see its own declaration above).
   const handleConfirmAbandon = useCallback(() => {
     if (!pendingAbandon) return
@@ -558,11 +558,11 @@ export const Main = (): JSX.Element => {
       void alert('Invalid Word', result.error)
       return
     }
-    // Deliberately does NOT write to `config` — that's what feeds the drawer, and a phrase left
+    // Deliberately does NOT write to `config` - that's what feeds the drawer, and a phrase left
     // there is a phrase the next guesser can read (see withoutSecret above). `session` owns it.
     setSession(result.payload)
     // No roundKey bump: Game has been mounted (and locked) since composing began, already
-    // rendering this exact word live the entire time (see buildPnpDraftSession) — finalizing it
+    // rendering this exact word live the entire time (see buildPnpDraftSession) - finalizing it
     // into `session` here doesn't remount anything, so there's nothing left to flicker.
     // Opt-in, off by default (see useAutoSaveCustom). Fire-and-forget so handing over isn't
     // blocked on a storage write.
@@ -571,36 +571,36 @@ export const Main = (): JSX.Element => {
   }, [config.mode, pnpAnswer, pnpHint, autoSave, refreshCustomPacks])
 
   // What Game actually renders: the live draft while composing (so the board reflects the word as
-  // it's typed), the real thing otherwise. Computing this here — rather than branching inside the
-  // JSX below — is what lets the game slot below stay a single Game element instead of two, which
+  // it's typed), the real thing otherwise. Computing this here - rather than branching inside the
+  // JSX below - is what lets the game slot below stay a single Game element instead of two, which
   // is the whole point (see the comment there).
   const effectiveSession = pnpPhase === 'authoring' ? buildPnpDraftSession(pnpAnswer, config.mode) : session
 
   // Memoized, not called inline in the JSX below: PuzzleDrawer is memoized (see its own file) so
   // that unrelated re-renders of Main don't cascade into its own always-mounted subtree
-  // (PacksScreen, SettingsDrawer, the pack editor form) — a fresh object from withoutSecret(config)
+  // (PacksScreen, SettingsDrawer, the pack editor form) - a fresh object from withoutSecret(config)
   // on every render would defeat that regardless of the memo, since it'd never compare equal to
   // the previous initialConfig prop.
   const initialDrawerConfig = useMemo(() => withoutSecret(config), [config])
 
   return (
     <View style={[styles.flex, { backgroundColor: theme.colors.surface }]}>
-      {/* One occupant, always: Game. It mounts once at the start of a pass-and-play round — the
-          moment composing begins, not once a word's been handed off — and stays mounted, unchanged,
+      {/* One occupant, always: Game. It mounts once at the start of a pass-and-play round - the
+          moment composing begins, not once a word's been handed off - and stays mounted, unchanged,
           all the way through play. Nothing ever swaps it out for a separate preview or screen,
           because a swap between two differently-built component trees is what actually caused the
           flicker this used to have at Hand off; matching their rendered data was never going to
           fully fix that on its own. PnpWordPrompt and PnpHandoffDialog both just float a dialog on
-          top of this same, continuously-mounted board — the word prompt while composing (driving
+          top of this same, continuously-mounted board - the word prompt while composing (driving
           Game's phrase live from pnpAnswer, see buildPnpDraftSession above), then the handoff
           dialog once the word's been handed off. Game is locked for both of those phases (see its
-          `locked` prop) so nothing about the round — the one being written OR the one about to be
-          played — can be touched by tap or physical keyboard before actual play starts.
+          `locked` prop) so nothing about the round - the one being written OR the one about to be
+          played - can be touched by tap or physical keyboard before actual play starts.
           It's also locked while the Game Menu drawer, the Settings sheet or the file-import confirm
           is up: Game's web keyboard listener still hears keys pressed over any of them, so a letter
           would otherwise guess in the round behind it.
           paddingTop matches the floating corner buttons below rather than reserving a whole
-          extra header row for them — the game's own top row (PuzzleInfoRow's difficulty/hint
+          extra header row for them - the game's own top row (PuzzleInfoRow's difficulty/hint
           pills) shares that same band of space instead of sitting below it. */}
       <View style={[styles.flex, gameShell, { paddingTop: insets.top, paddingBottom: insets.bottom }]}>{effectiveSession ? <Game key={roundKey} onStop={handleRoundEnd} onSolved={handleSolved} onLost={handleLost} onGuessProgress={handleGuessProgress} phrase={effectiveSession.phrase} mode={effectiveSession.mode} hint={effectiveSession.hint} packLabel={effectiveSession.packLabel} difficultyTier={effectiveSession.difficultyTier} categoryProgress={categoryProgress} unlockedAchievements={roundUnlocks} locked={pnpPhase === 'authoring' || pnpPhase === 'handoff' || pendingAbandon !== null || drawerVisible || settingsOpen || incomingFilePreview !== null} /> : null}</View>
 

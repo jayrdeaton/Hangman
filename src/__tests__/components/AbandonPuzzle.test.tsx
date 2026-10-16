@@ -27,7 +27,7 @@ const visualMode: GameMode = {
   Visual: (() => null) as unknown as GameMode['Visual']
 }
 
-// A single wrong guess ends the round — used for the "round already decided" scenario, where the
+// A single wrong guess ends the round - used for the "round already decided" scenario, where the
 // loss needs to happen without a long guessing sequence first.
 const oneMistakeMode: GameMode = {
   id: 'test-abandon-one-mistake',
@@ -48,7 +48,7 @@ const renderApp = () =>
     </Providers>
   )
 
-describe('Main — abandoning an in-progress puzzle counts as a loss', () => {
+describe('Main - abandoning an in-progress puzzle counts as a loss', () => {
   beforeEach(() => {
     mockResolvePuzzle.mockReset()
     store.dispatch(achievementsActions.reset())
@@ -58,16 +58,16 @@ describe('Main — abandoning an in-progress puzzle counts as a loss', () => {
     mockResolvePuzzle.mockReturnValue({ ok: true, payload: payload({ puzzleId: 'puzzle-1' }) })
     const { getByLabelText, getByText } = await renderApp()
 
-    // DOG has no Q — a wrong guess, but any guess (right or wrong) is what should trigger this.
+    // DOG has no Q - a wrong guess, but any guess (right or wrong) is what should trigger this.
     await fireEvent.press(getByText('Q'))
 
     await fireEvent.press(getByLabelText('Game Menu'))
     await fireEvent.press(getByText('Random'))
 
     expect(getByText('Abandon This Puzzle?')).toBeTruthy()
-    // resolvePuzzle has been asked twice by this point — once for the initial session on mount,
+    // resolvePuzzle has been asked twice by this point - once for the initial session on mount,
     // once more for Random's own candidate draw (PuzzleDrawer computes it up front, independent of
-    // whether Main actually accepts it) — but that candidate is only HELD pending confirmation, not
+    // whether Main actually accepts it) - but that candidate is only HELD pending confirmation, not
     // applied: no loss recorded, nothing switched yet.
     expect(mockResolvePuzzle).toHaveBeenCalledTimes(2)
     expect(soloStats().solo.losses).toBe(0)
@@ -113,7 +113,7 @@ describe('Main — abandoning an in-progress puzzle counts as a loss', () => {
 
     expect(queryByText('Abandon This Puzzle?')).toBeNull()
     expect(soloStats().solo.losses).toBe(0)
-    // The candidate Random already drew (see the previous test) was discarded, not applied — no
+    // The candidate Random already drew (see the previous test) was discarded, not applied - no
     // THIRD resolvePuzzle call from cancelling, on top of the mount + Random-press pair.
     expect(mockResolvePuzzle).toHaveBeenCalledTimes(2)
   })
@@ -136,7 +136,7 @@ describe('Main — abandoning an in-progress puzzle counts as a loss', () => {
 
     await fireEvent.press(getByText('Q'))
     expect(await findByText('You Lost!')).toBeTruthy()
-    // The real loss already recorded it — this is the ONE call, not a second one from abandoning.
+    // The real loss already recorded it - this is the ONE call, not a second one from abandoning.
     expect(soloStats().solo.losses).toBe(1)
 
     await fireEvent.press(getByLabelText('Game Menu'))
@@ -156,7 +156,7 @@ describe('Main — abandoning an in-progress puzzle counts as a loss', () => {
     await fireEvent.press(getByText('Pass & Play'))
 
     expect(getByText('Abandon This Puzzle?')).toBeTruthy()
-    // Gating stops short of applying the switch — the menu (and its own now-hidden-behind-the-
+    // Gating stops short of applying the switch - the menu (and its own now-hidden-behind-the-
     // dialog "Pass & Play" button) hasn't been dismissed, and no composing screen exists yet.
     expect(getByTestId('puzzle-drawer-panel').props.accessibilityElementsHidden).toBe(false)
 
@@ -164,7 +164,7 @@ describe('Main — abandoning an in-progress puzzle counts as a loss', () => {
 
     expect(soloStats()).toMatchObject({ lettersGuessed: 1, lettersCorrect: 0 })
     // The prompt's own title bar matches the button that launched it (see PnpFlow.test.tsx's own
-    // "titles the prompt to match the button that launched it") — the drawer's OWN same-labeled
+    // "titles the prompt to match the button that launched it") - the drawer's OWN same-labeled
     // button is accessibility-hidden by now (the menu closed as part of applying the switch), so
     // this is the one remaining match.
     expect(getByText('Pass & Play')).toBeTruthy()

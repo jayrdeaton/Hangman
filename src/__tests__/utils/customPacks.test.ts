@@ -275,7 +275,7 @@ describe('exportCustomPack / importCustomPack', () => {
 })
 
 describe('parseCustomPackImport', () => {
-  it('reads the label and entries without saving anything — the incoming-file-share preview relies on this', () => {
+  it('reads the label and entries without saving anything - the incoming-file-share preview relies on this', () => {
     const payload = JSON.stringify({ pack: { key: 'custom:preview', label: 'Preview Pack', puzzles: [{ answer: 'cat', metadata: { hint: 'A pet' } }, { answer: 'dog' }] } })
 
     const parsed = parseCustomPackImport(payload)

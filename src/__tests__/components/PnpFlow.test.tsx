@@ -21,7 +21,7 @@ jest.mock('@/utils/alert', () => ({
   confirm: jest.fn().mockResolvedValue(true)
 }))
 
-// PnpWordPrompt also pulls buildCustomPuzzle from this same module for its live preview —
+// PnpWordPrompt also pulls buildCustomPuzzle from this same module for its live preview -
 // spreading the real module keeps that working and only overrides the one export the
 // Keep-this-word tests below assert on.
 jest.mock('@/utils/customPacks', () => ({
@@ -45,7 +45,7 @@ const visualMode: GameMode = {
   Visual: (() => null) as unknown as GameMode['Visual']
 }
 
-// A hand-typed word has no pack behind it, so no packKey/puzzleId — matching what resolvePuzzle
+// A hand-typed word has no pack behind it, so no packKey/puzzleId - matching what resolvePuzzle
 // really returns for sourceMode 'custom' (see puzzlePicker.ts). difficultyTier IS included, same
 // as the real thing: every test here types 'CAT', which scores 'hard' (see the comment on the
 // live-preview test below), so this is what the real resolvePuzzle would actually compute for it.
@@ -58,7 +58,7 @@ const renderApp = () =>
     </Providers>
   )
 
-describe('Main — pass and play', () => {
+describe('Main - pass and play', () => {
   beforeEach(() => {
     mockResolvePuzzle.mockReset()
     store.dispatch(achievementsActions.reset())
@@ -76,7 +76,7 @@ describe('Main — pass and play', () => {
   }
 
   // None of these appear in CAT. Game's own maxMistakes is frozen from config.mode the moment
-  // composing begins (see Main.tsx) — classicMode, the app's real default — not from whatever mode
+  // composing begins (see Main.tsx) - classicMode, the app's real default - not from whatever mode
   // the mocked resolvePuzzle payload happens to carry, so the loss-path tests need a genuine
   // six-miss run rather than a shortcut mode with a lower limit.
   const WRONG_LETTERS_FOR_CAT = ['Z', 'X', 'Q', 'W', 'E', 'R']
@@ -105,7 +105,7 @@ describe('Main — pass and play', () => {
     await fireEvent.changeText(getByTestId('pnp-answer-input'), 'CAT')
     await fireEvent.press(getByText('Next'))
 
-    // Handoff exists only as a beat while the device changes hands, so it's just a target to tap —
+    // Handoff exists only as a beat while the device changes hands, so it's just a target to tap -
     // no instructions, nobody named. The real round is already mounted underneath it (not a blank
     // screen), because there's nothing about an unstarted round that needs concealing.
     expect(getByText('Ready')).toBeTruthy()
@@ -121,7 +121,7 @@ describe('Main — pass and play', () => {
       jest.advanceTimersByTime(WIN_DIALOG_DELAY_MS)
     })
 
-    // Whoever is holding the device is "you" — no player attribution, no score line.
+    // Whoever is holding the device is "you" - no player attribution, no score line.
     expect(getByText('You Won!')).toBeTruthy()
     // Only the continue button changes, because continuing here means writing the next word.
     expect(getByText('Next')).toBeTruthy()
@@ -216,7 +216,7 @@ describe('Main — pass and play', () => {
     await fireEvent.press(getByLabelText('Game Menu'))
     await fireEvent.press(getByText('Random'))
 
-    // Straight back to a normal round — nothing to confirm, no pass-and-play surface left behind.
+    // Straight back to a normal round - nothing to confirm, no pass-and-play surface left behind.
     expect(queryByText('Pick a word')).toBeNull()
     expect(getByLabelText('Secret word display')).toBeTruthy()
     expect(mockConfirm).not.toHaveBeenCalled()
@@ -230,12 +230,12 @@ describe('Main — pass and play', () => {
     await fireEvent.press(getByLabelText('Game Menu'))
     await fireEvent.press(getByText('Pass & Play'))
 
-    // Defaults to Easy before anything's typed, rather than being absent — so the pill doesn't pop
+    // Defaults to Easy before anything's typed, rather than being absent - so the pill doesn't pop
     // into existence (and shift the layout below it) on the first valid keystroke.
     expect(getByLabelText('Difficulty: Easy')).toBeTruthy()
 
     // Few distinct letters means most of the alphabet is a miss, which is what makes a short word
-    // hard in hangman — see scoreDifficulty in customPacks.ts.
+    // hard in hangman - see scoreDifficulty in customPacks.ts.
     await fireEvent.changeText(getByTestId('pnp-answer-input'), 'CAT')
     expect(getByLabelText('Difficulty: Hard')).toBeTruthy()
     expect(getByLabelText('Secret word display')).toBeTruthy()
@@ -269,8 +269,8 @@ describe('Main — pass and play', () => {
     await fireEvent.press(getByText('Pass & Play'))
     await fireEvent.changeText(getByTestId('pnp-answer-input'), 'CAT')
 
-    // Both read from the exact same label text — not just "a difficulty badge exists on both
-    // screens" — so a real drift between the preview's scoring and the session's would fail this.
+    // Both read from the exact same label text - not just "a difficulty badge exists on both
+    // screens" - so a real drift between the preview's scoring and the session's would fail this.
     expect(getByLabelText('Difficulty: Hard')).toBeTruthy()
     expect(getByLabelText('Wrong guesses: 0 of 6')).toBeTruthy()
     const boardBeforeHandoff = getByLabelText('Secret word display')
@@ -278,11 +278,11 @@ describe('Main — pass and play', () => {
     await fireEvent.press(getByText('Next'))
 
     // Game is mounted from the moment composing itself begins, not the instant Hand off is
-    // pressed (see Main.tsx's buildPnpDraftSession/effectiveSession) — this is the SAME board the
+    // pressed (see Main.tsx's buildPnpDraftSession/effectiveSession) - this is the SAME board the
     // handoff dialog is now floating over, not a fresh screen with its own idea of what to show.
     expect(getByLabelText('Difficulty: Hard')).toBeTruthy()
     expect(getByLabelText('Wrong guesses: 0 of 6')).toBeTruthy()
-    // Same underlying instance, not merely equal-looking output from a fresh one — this is what
+    // Same underlying instance, not merely equal-looking output from a fresh one - this is what
     // actually rules out the remount that used to flicker at Hand off, independent of whether the
     // data on either side of it happens to match.
     expect(getByLabelText('Secret word display')).toBe(boardBeforeHandoff)
@@ -311,7 +311,7 @@ describe('Main — pass and play', () => {
 
     // The handoff dialog's own backdrop sits over the app bar too, but the app bar's hamburger is
     // its own button, wired straight to the menu regardless of what the dialog underneath it does
-    // on dismiss — so the menu is reachable independent of the dialog's own dismiss behavior.
+    // on dismiss - so the menu is reachable independent of the dialog's own dismiss behavior.
     await fireEvent.press(getByLabelText('Game Menu'))
 
     expect(getByTestId('puzzle-drawer-panel').props.accessibilityViewIsModal).toBe(true)
@@ -348,7 +348,7 @@ describe('Main — pass and play', () => {
     jest.useRealTimers()
   })
 
-  it('locks the board during handoff — the real round is mounted underneath, but not guessable until Ready', async () => {
+  it('locks the board during handoff - the real round is mounted underneath, but not guessable until Ready', async () => {
     jest.useFakeTimers()
     mockResolvePuzzle.mockReturnValue({ ok: true, payload: pnpPayload('CAT') })
     const utils = await renderApp()
@@ -359,7 +359,7 @@ describe('Main — pass and play', () => {
     await fireEvent.changeText(getByTestId('pnp-answer-input'), 'CAT')
     await fireEvent.press(getByText('Next'))
 
-    // Solving it here would prove the board is only VISUALLY covered, not actually locked — the
+    // Solving it here would prove the board is only VISUALLY covered, not actually locked - the
     // on-screen Keyboard's own `disabled` state (see Game's `locked` prop) is what has to stop
     // this, since RTL presses call straight through the DOM/element tree rather than respecting
     // the handoff dialog's real stacking order.
@@ -417,7 +417,7 @@ describe('Main — pass and play', () => {
     await fireEvent.press(getByLabelText('Close'))
     expect(drawerPanel().props.accessibilityViewIsModal).toBe(true)
 
-    // Closing the menu brings the prompt back with the word intact — the component stays mounted
+    // Closing the menu brings the prompt back with the word intact - the component stays mounted
     // while hidden, so nothing typed is thrown away for opening the menu.
     await fireEvent.press(getByLabelText('Close'))
     expect(getByTestId('pnp-answer-input').props.value).toBe('BANANA BREAD')
@@ -447,7 +447,7 @@ describe('Main — pass and play', () => {
     expect(getByLabelText('Secret word display')).toBeTruthy()
   })
 
-  it('does not save the authored word anywhere by default — Keep this word starts off', async () => {
+  it('does not save the authored word anywhere by default - Keep this word starts off', async () => {
     mockResolvePuzzle.mockReturnValue({ ok: true, payload: pnpPayload('CAT') })
     const utils = await renderApp()
     const { getByLabelText, getByText, getByTestId } = utils
@@ -475,7 +475,7 @@ describe('Main — pass and play', () => {
     await fireEvent(getByLabelText('Keep this word'), 'valueChange', true)
     await fireEvent.press(getByText('Next'))
 
-    // The RAW typed hint, not the resolved/normalized payload — matches what Main.tsx's
+    // The RAW typed hint, not the resolved/normalized payload - matches what Main.tsx's
     // handlePnpAuthored actually passes to addCustomPuzzle. Second arg is the dedicated pass-and-
     // play pack label, not the general Custom one.
     expect(mockAddCustomPuzzle).toHaveBeenCalledWith({ answer: 'CAT', hint: 'A pet' }, 'Pass & Play')
@@ -491,7 +491,7 @@ describe('Main — pass and play', () => {
 
     await fireEvent.changeText(getByTestId('pnp-answer-input'), 'CAT!')
 
-    // Rejected at the source, not just at normalize-time — otherwise the field would show "CAT!"
+    // Rejected at the source, not just at normalize-time - otherwise the field would show "CAT!"
     // while the preview behind it silently showed blanks for "CAT", which is its own confusing
     // inconsistency distinct from the missing feedback.
     expect(getByTestId('pnp-answer-input').props.value).toBe('CAT')

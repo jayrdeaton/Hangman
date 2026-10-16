@@ -15,7 +15,7 @@ import { getPuzzleManifest } from '@/utils/puzzleCatalog'
 
 // PacksScreen only ever talks to the real device/OS through this module (see its own doc
 // comments for why: file pickers and share sheets aren't meaningfully unit-testable, and web's
-// share path in particular depends on browser globals this test environment doesn't provide) — so
+// share path in particular depends on browser globals this test environment doesn't provide) - so
 // the boundary mocked here is hangmanFile.ts itself, not expo-document-picker/expo-sharing
 // underneath it. Those have their own dedicated coverage in hangmanFile.test.ts.
 jest.mock('@/utils/hangmanFile', () => ({
@@ -28,22 +28,22 @@ const mockShareCustomPackFile = jest.mocked(shareCustomPackFile)
 
 const builtIn = () => getPuzzleManifest().filter((item) => item.count > 0)[0]
 
-// ConfirmDialog renders through a react-native-paper Portal (Delete pack's confirm dialog) — needs
+// ConfirmDialog renders through a react-native-paper Portal (Delete pack's confirm dialog) - needs
 // a Portal.Host ancestor, normally supplied by @rific/auto-paper's Provider at the app root; same
 // wrapper AchievementsDrawer.test.tsx uses for its own Portal-based dialog.
-// ToastProvider is also required — this screen always mounts its own PackEditorDrawer (translated
+// ToastProvider is also required - this screen always mounts its own PackEditorDrawer (translated
 // off-screen when not visible, same as every other drawer in this lineage), and that drawer's own
 // form calls useToast() to surface a newly-unlocked custom-pack achievement, which throws outside a
 // ToastProvider ancestor. That form also records the new pack through useGameStats, so the app's
 // stats store and GameStatsProvider wrap everything too.
-// FeedbackPressProvider paper={RNPaper} is required too — @rific/feedback-press no longer
+// FeedbackPressProvider paper={RNPaper} is required too - @rific/feedback-press no longer
 // auto-detects react-native-paper (see Haptic.tsx's own comment on this), so without it every
 // Button/IconButton here falls back to a bare, unstyled Pressable instead of Paper's real
 // component, which breaks the accessibilityState/accessibilityLabel assertions below. It has to
 // wrap PaperProvider, not nest inside it, for the same reason Providers.tsx hoists the real app's
 // Haptic above Theme: PaperProvider's PortalHost mounts near its own root, so ConfirmDialog's
 // Portal-rendered Cancel/Delete buttons only see FeedbackPressProvider's context if it's an
-// ancestor of PaperProvider — nested inside, they'd sit outside the portaled subtree entirely.
+// ancestor of PaperProvider - nested inside, they'd sit outside the portaled subtree entirely.
 const Wrapper = ({ children }: { children: ReactNode }) => (
   <ReduxProvider store={store}>
     <GameStatsProvider>
@@ -61,7 +61,7 @@ const renderScreen = (overrides: Partial<React.ComponentProps<typeof PacksScreen
 
 describe('PacksScreen', () => {
   beforeEach(async () => {
-    // Resets customPacks.ts's module-level cache to empty via the always-null AsyncStorage mock —
+    // Resets customPacks.ts's module-level cache to empty via the always-null AsyncStorage mock -
     // otherwise a pack created in one test would leak into the next within this file.
     await loadCustomPacksCache()
     mockPickHangmanFile.mockReset()
@@ -107,7 +107,7 @@ describe('PacksScreen', () => {
     expect(onPacksChanged).toHaveBeenCalled()
     expect(onChangeSelectedKeys).toHaveBeenCalled()
 
-    // onPacksChanged only signals the parent to invalidate its own cache — in the real app
+    // onPacksChanged only signals the parent to invalidate its own cache - in the real app
     // (Main.tsx) that bumps a `packsVersion` counter passed back in as a prop, which is what
     // actually triggers this screen's manifest to recompute. Simulate that round trip here.
     await rerender(<PacksScreen visible onDismiss={jest.fn()} selectedKeys={onChangeSelectedKeys.mock.calls[0][0]} onChangeSelectedKeys={jest.fn()} packsVersion={1} onPacksChanged={jest.fn()} />)
@@ -126,7 +126,7 @@ describe('PacksScreen', () => {
 
     expect(saveButton.parent?.parent?.props.accessibilityState.disabled).toBe(false)
 
-    // Blanking it back out re-disables — a word that's whitespace-only after normalizing doesn't
+    // Blanking it back out re-disables - a word that's whitespace-only after normalizing doesn't
     // count either, same rule handleSave itself applies before actually saving.
     await fireEvent.changeText(getByTestId('entry-answer-0'), '   ')
 
@@ -159,7 +159,7 @@ describe('PacksScreen', () => {
     await waitFor(() => expect(mockShareCustomPackFile).toHaveBeenCalledWith(pack.key, pack.label))
   })
 
-  // Delete pack goes through an in-app ConfirmDialog now, not window.confirm — a native dialog
+  // Delete pack goes through an in-app ConfirmDialog now, not window.confirm - a native dialog
   // isn't reliable on web (some browser/automation environments silently auto-decline it,
   // indistinguishable from the player themselves canceling).
   it('deletes the pack and returns to the list when Delete pack is confirmed in the dialog', async () => {
@@ -175,7 +175,7 @@ describe('PacksScreen', () => {
 
     await waitFor(() => expect(getByText('Choose Packs')).toBeTruthy())
     // onPacksChanged only signals the parent to bump packsVersion and re-render with a fresh
-    // manifest (see the "creates a pack" test above) — the actual deletion is what's checked here.
+    // manifest (see the "creates a pack" test above) - the actual deletion is what's checked here.
     expect(getPuzzleManifest().some((item) => item.key === pack.key)).toBe(false)
     expect(onPacksChanged).toHaveBeenCalled()
   })
@@ -202,20 +202,20 @@ describe('PacksScreen', () => {
 
   // Growing the list this way (rather than only via the Add word button) is what lets the pack
   // editor's return-key chain always advance onto an already-mounted field instead of one that
-  // gets created and focused after the fact — see PackEditorDrawer's own comment on displayEntries
+  // gets created and focused after the fact - see PackEditorDrawer's own comment on displayEntries
   // for why that append-then-focus shape was what actually caused its keyboard flicker.
   it('keeps one blank trailing row always ready, growing a new one the moment the previous last row is typed into', async () => {
     const { getByText, getByTestId, queryByTestId } = await renderScreen()
 
     await fireEvent.press(getByText('Create'))
-    // Starts with just the one blank row — nothing typed into it yet.
+    // Starts with just the one blank row - nothing typed into it yet.
     expect(queryByTestId('entry-answer-1')).toBeNull()
 
     await fireEvent.changeText(getByTestId('entry-answer-0'), 'PARIS')
 
     // Filling in the row that WAS last grows a new blank one in that same update.
     expect(getByTestId('entry-answer-1')).toBeTruthy()
-    // Only one grows at a time — the newly-appended row is itself blank, so this doesn't cascade.
+    // Only one grows at a time - the newly-appended row is itself blank, so this doesn't cascade.
     expect(queryByTestId('entry-answer-2')).toBeNull()
   })
 
@@ -225,7 +225,7 @@ describe('PacksScreen', () => {
     await fireEvent.press(getByText('Create'))
     await fireEvent.press(getByText('Add'))
 
-    // Still just the one row — Add word only focuses the already-there blank row now, since one
+    // Still just the one row - Add word only focuses the already-there blank row now, since one
     // is always kept ready; it no longer unconditionally appends its own.
     expect(queryByTestId('entry-answer-1')).toBeNull()
   })
@@ -236,17 +236,17 @@ describe('PacksScreen', () => {
     await fireEvent.press(getByText('Create'))
     await fireEvent.changeText(getByTestId('entry-answer-0'), 'PARIS')
 
-    // entry-answer-1 now exists (see the growth test above) but nothing's been typed into IT —
+    // entry-answer-1 now exists (see the growth test above) but nothing's been typed into IT -
     // it isn't real yet (see PackEditorDrawer's updateEntry), so there's nothing to remove.
     const virtualRemoveButton = getByLabelText('Remove entry 2')
     expect(virtualRemoveButton.props.accessibilityState?.disabled ?? virtualRemoveButton.props.disabled).toBe(true)
-    // PARIS is still the only REAL entry (the virtual row above doesn't count) — removing it would
+    // PARIS is still the only REAL entry (the virtual row above doesn't count) - removing it would
     // leave zero, same reason a brand-new form's own single blank row can't be removed either.
     const soleRealRemoveButton = getByLabelText('Remove entry 1')
     expect(soleRealRemoveButton.props.accessibilityState?.disabled ?? soleRealRemoveButton.props.disabled).toBe(true)
 
     // Typing into the (formerly virtual) second row promotes it into state, growing a third, still
-    // virtual, blank row behind it — now that there are two REAL entries, either can be removed.
+    // virtual, blank row behind it - now that there are two REAL entries, either can be removed.
     await fireEvent.changeText(getByTestId('entry-answer-1'), 'LONDON')
 
     expect(soleRealRemoveButton.props.accessibilityState?.disabled ?? soleRealRemoveButton.props.disabled).toBe(false)
@@ -254,7 +254,7 @@ describe('PacksScreen', () => {
     expect(secondRealRemoveButton.props.accessibilityState?.disabled ?? secondRealRemoveButton.props.disabled).toBe(false)
   })
 
-  // Import picks a real file (see hangmanFile.ts) rather than pasting text into a box now —
+  // Import picks a real file (see hangmanFile.ts) rather than pasting text into a box now -
   // pickHangmanFile is the only thing PacksScreen itself talks to for that.
   it('imports a pack from a picked file and selects it', async () => {
     const payload = JSON.stringify({ pack: { key: 'custom:imported', label: 'Imported Pack', puzzles: [{ answer: 'FOO' }] } })
@@ -266,7 +266,7 @@ describe('PacksScreen', () => {
     await fireEvent.press(getByText('Import'))
 
     // onPacksChanged only signals the parent to bump packsVersion and re-render with a fresh
-    // manifest (see the "creates a pack" test above) — the actual import/select is checked here.
+    // manifest (see the "creates a pack" test above) - the actual import/select is checked here.
     await waitFor(() => expect(onChangeSelectedKeys).toHaveBeenCalledWith(['custom:imported']))
     expect(onPacksChanged).toHaveBeenCalled()
     expect(getPuzzleManifest().some((item) => item.key === 'custom:imported')).toBe(true)
@@ -340,7 +340,7 @@ describe('PacksScreen', () => {
 
     await fireEvent.press(getByLabelText(`View ${pack.label} contents`))
 
-    // Closed-to-screen-readers while the detail overlay covers it — RTL's default queries skip
+    // Closed-to-screen-readers while the detail overlay covers it - RTL's default queries skip
     // hidden elements (see PuzzleDrawer.test.tsx's own version of this same assertion),
     // includeHiddenElements opts back in here.
     const hiddenBehindDetail = getByTestId('packs-screen-panel', { includeHiddenElements: true })
@@ -365,7 +365,7 @@ describe('PacksScreen', () => {
     await fireEvent.press(getByLabelText(`View ${pack.label} contents`))
     await fireEvent.press(getByLabelText('Close'))
 
-    // The outer pack-puzzles-panel View always renders — only its header/list/footer children are
+    // The outer pack-puzzles-panel View always renders - only its header/list/footer children are
     // gated on `pack` (see PackPuzzlesDrawer's own `{pack ? (...) : null}`). If packKey were reset
     // to null on close (the bug this guards against), that gate would unmount those children
     // entirely, so scoping the query to inside the panel and still finding the pack's own title

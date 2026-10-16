@@ -6,8 +6,8 @@ import { clampStage } from './shared/clampStage'
 import { CenteredBody, CenteredHead, CenteredLeftArm, CenteredLeftLeg, CenteredRightArm, CenteredRightLeg } from './shared/classicParts'
 import { SCENE_START_DELAY_MS } from './shared/sceneReveal'
 
-// Starts complete. Parts scrub away — the same pen-stroke reveal in reverse, retracing the exact
-// dash it drew in with (see sketchShapes.tsx's own `erased`) — in removal order on each wrong
+// Starts complete. Parts scrub away - the same pen-stroke reveal in reverse, retracing the exact
+// dash it drew in with (see sketchShapes.tsx's own `erased`) - in removal order on each wrong
 // guess. Stays mounted for the whole round rather than being conditionally unmounted the instant a
 // wrong guess removes it: react-native-svg's shapes have no exit animation of their own to unmount
 // into, so an instant unmount was always just an instant pop, never the erase this now actually is.

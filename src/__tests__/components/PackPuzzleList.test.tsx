@@ -14,7 +14,7 @@ jest.mock('@/utils/unlocks', () => ({
 
 const mockGetPuzzleUnlockMap = jest.mocked(getPuzzleUnlockMap)
 
-// Real in-memory AsyncStorage, not the global always-null mock from jest.setup.ts — the filter
+// Real in-memory AsyncStorage, not the global always-null mock from jest.setup.ts - the filter
 // menus now persist to it (see usePackPuzzleListPrefs), and several tests below need to seed a
 // starting preference or assert what got written, the same round-trip pattern unlocks.test.ts
 // already uses for its own AsyncStorage-backed persistence.
@@ -32,11 +32,11 @@ const seedPrefs = (patch: Partial<{ statusFilter: string; difficultyFilter: stri
   mockStore[PREFS_KEY] = JSON.stringify({ statusFilter: 'all', difficultyFilter: 'all', ...patch })
 }
 
-// The filter menus render through a react-native-paper Portal — needs a Portal.Host ancestor,
+// The filter menus render through a react-native-paper Portal - needs a Portal.Host ancestor,
 // normally supplied by @rific/auto-paper's Provider at the app root; same wrapper
 // PackEditorDrawer.test.tsx/PacksScreen.test.tsx use for their own Portal-based UI. Also needs
 // FeedbackPressProvider's real `paper` module injected (see Haptic.tsx, the app's own root
-// wiring) — without it, @rific/feedback-press's Button falls back to a bare RN Pressable that
+// wiring) - without it, @rific/feedback-press's Button falls back to a bare RN Pressable that
 // drops testID/accessibilityLabel entirely, which is what the Status/Difficulty buttons below
 // rely on.
 const Wrapper = ({ children }: { children: ReactNode }) => (
@@ -46,21 +46,21 @@ const Wrapper = ({ children }: { children: ReactNode }) => (
 )
 const render = (ui: ReactElement) => rtlRender(ui, { wrapper: Wrapper })
 
-// The real, smallest built-in pack — small enough that FlatList's initial render window covers
+// The real, smallest built-in pack - small enough that FlatList's initial render window covers
 // every puzzle in it, unlike Movies' 9,091.
 const smallestPack = () =>
   getPuzzleManifest()
     .filter((item) => item.count > 0)
     .sort((a, b) => a.count - b.count)[0]
 
-// The real, largest built-in pack (Movies, 9,091 puzzles as of writing) — the actual worst case
+// The real, largest built-in pack (Movies, 9,091 puzzles as of writing) - the actual worst case
 // FlatList has to survive without choking, not a synthetic stand-in.
 const largestPack = () =>
   getPuzzleManifest()
     .filter((item) => item.count > 0)
     .sort((a, b) => b.count - a.count)[0]
 
-// The smallest real pack whose puzzles span at least two difficulty tiers — needed to exercise
+// The smallest real pack whose puzzles span at least two difficulty tiers - needed to exercise
 // the difficulty filter meaningfully against real catalog data, not synthetic puzzles.
 const packWithMixedDifficulty = () => {
   const packs = getPuzzleManifest()
@@ -73,16 +73,16 @@ const packWithMixedDifficulty = () => {
 
 describe('maskAnswer', () => {
   // Ground truth against known strings, not against maskAnswer's own output for a differently-cased
-  // input — ambiguous punctuation like "Dr." is exactly what resolveChosenPuzzle's normalizePhrase
+  // input - ambiguous punctuation like "Dr." is exactly what resolveChosenPuzzle's normalizePhrase
   // strips before a puzzle is actually played, so the mask has to agree with THAT, not with itself.
-  it('masks the normalized phrase, not the raw answer — a period does not count as a letter', () => {
+  it('masks the normalized phrase, not the raw answer - a period does not count as a letter', () => {
     expect(maskAnswer('Dr. Jekyll and Mr. Hyde')).toBe(maskAnswer('DR JEKYLL AND MR HYDE'))
-    // "Dr." is really 2 letters (DR), not 3 — the period must not turn into its own blank.
+    // "Dr." is really 2 letters (DR), not 3 - the period must not turn into its own blank.
     expect(maskAnswer('Dr. Jekyll and Mr. Hyde').split('   ')[0]).toBe('_ _')
   })
 
   it('drops a token made entirely of non-letter characters as a whole word, matching what actually gets played', () => {
-    // '&' has nothing left after normalizing and disappears — the real round is 4 words, not 5.
+    // '&' has nothing left after normalizing and disappears - the real round is 4 words, not 5.
     expect(maskAnswer('Bob Marley & The Wailers').split('   ')).toHaveLength(4)
   })
 })
@@ -115,10 +115,10 @@ describe('PackPuzzleList', () => {
     expect(row.queryByText(maskAnswer(puzzle.answer))).toBeNull()
   })
 
-  // getByLabelText alone isn't enough here — RNTL matches the accessibilityLabel prop wherever it
+  // getByLabelText alone isn't enough here - RNTL matches the accessibilityLabel prop wherever it
   // sits in the tree, the same whether it landed on the real accessible node or (per
   // react-native-paper's Card silently dropping it onto its own non-accessible wrapper instead of
-  // the Pressable it actually exposes — see PackRow.tsx's own comment) a node no real screen
+  // the Pressable it actually exposes - see PackRow.tsx's own comment) a node no real screen
   // reader would ever expose it from. The `accessible: true` check is what actually distinguishes
   // "reaches VoiceOver/TalkBack" from "the prop exists somewhere in the tree".
   it("exposes an unsolved row's accessible name on a real accessible node, not just as a prop that exists somewhere in the tree", async () => {
@@ -132,7 +132,7 @@ describe('PackPuzzleList', () => {
     expect(labeled.props.accessible).toBe(true)
   })
 
-  it('marks a row as inert (no accessibilityRole="button") when onPlayPuzzle is omitted — read-only browsing has nothing for a tap to do', async () => {
+  it('marks a row as inert (no accessibilityRole="button") when onPlayPuzzle is omitted - read-only browsing has nothing for a tap to do', async () => {
     const pack = smallestPack()
     const puzzle = getPuzzlesForCategory(pack.key)[0]
     const wordLabel = puzzle.wordCount === 1 ? 'word' : 'words'
@@ -202,7 +202,7 @@ describe('PackPuzzleList', () => {
     expect(queryByTestId(`puzzle-row-${solvedPuzzle.id}`)).toBeNull()
   })
 
-  // The empty message is derived from BOTH facets now, not just status — a bare "All puzzles
+  // The empty message is derived from BOTH facets now, not just status - a bare "All puzzles
   // solved!" would be misleading while a difficulty filter is also hiding still-unsolved puzzles
   // of a different tier.
   it('combines the status and difficulty filters in the empty message when both are hiding puzzles', async () => {
@@ -216,14 +216,14 @@ describe('PackPuzzleList', () => {
     expect(await findByText('All easy puzzles solved!')).toBeTruthy()
   })
 
-  // The actual worst case this list has to survive, not a stand-in — Movies alone is 9,091
+  // The actual worst case this list has to survive, not a stand-in - Movies alone is 9,091
   // puzzles, and FlatList eagerly rendering all of them (rather than windowing) would be a real,
   // user-visible freeze on this pack specifically.
   it('renders the largest built-in pack without eagerly mounting every one of its rows', async () => {
     const pack = largestPack()
     const { findAllByTestId } = await render(<PackPuzzleList packKey={pack.key} />)
 
-    // Not asserting an exact count (FlatList's default window size is an implementation detail) —
+    // Not asserting an exact count (FlatList's default window size is an implementation detail) -
     // just that it's nowhere near the full pack, which is what "not choking" actually means here.
     const rows = await findAllByTestId(/^puzzle-row-/)
     expect(rows.length).toBeLessThan(pack.count / 10)
@@ -266,7 +266,7 @@ describe('PackPuzzleList', () => {
     mockGetPuzzleUnlockMap.mockResolvedValue({ [pack.key]: [solvedPuzzle.id] })
     const { getByTestId, findByTestId, queryByTestId } = await render(<PackPuzzleList packKey={pack.key} />)
 
-    // Starts on 'all' — both rows present.
+    // Starts on 'all' - both rows present.
     expect(await findByTestId(`puzzle-row-${solvedPuzzle.id}`)).toBeTruthy()
     expect(await findByTestId(`puzzle-row-${unsolvedPuzzle.id}`)).toBeTruthy()
 
@@ -323,7 +323,7 @@ describe('PackPuzzleList', () => {
     await fireEvent.press(getByTestId('status-filter-solved'))
     expect(getByTestId('status-filter-button')).toHaveTextContent('Solved')
 
-    // This list stays mounted across a pack switch in its real callers (see PackPuzzlesDrawer) —
+    // This list stays mounted across a pack switch in its real callers (see PackPuzzlesDrawer) -
     // simulated here with a rerender rather than a fresh render, matching that lifecycle.
     await rerender(<PackPuzzleList packKey={packB.key} />)
 

@@ -28,14 +28,14 @@ export const isCustomPackKey = (key: string): boolean => key.startsWith(CUSTOM_K
 
 const generateKey = (): string => `${CUSTOM_KEY_PREFIX}${Date.now().toString(36)}${Math.random().toString(36).slice(2, 10)}`
 
-// Client-side port of scripts/utils.ts's difficulty/difficultyTier scoring — that version depends
+// Client-side port of scripts/utils.ts's difficulty/difficultyTier scoring - that version depends
 // on Node's crypto/dotenv, so it can't run in the app bundle, but the scoring formula itself is
 // plain math and is kept identical here so a custom-pack word lands in the same difficulty tier a
 // scraped one with the same letters would.
 //
 // Primary driver: in classic Hangman a "miss" only happens when a guessed letter is NOT present
 // anywhere in the answer, so mechanical risk is governed by how many of the 26 alphabet letters
-// are ABSENT — more alphabet coverage can only ever reduce guaranteed misses, so it makes a puzzle
+// are ABSENT - more alphabet coverage can only ever reduce guaranteed misses, so it makes a puzzle
 // EASIER, never harder. Length is folded in only as a small, saturating secondary nudge (zero once
 // the answer has 15+ letters) so it can never dominate the primary miss-risk term.
 export const scoreDifficulty = (normalizedAnswer: string): { difficulty: number; difficultyTier: Puzzle['difficultyTier'] } => {
@@ -114,7 +114,7 @@ const setStoredCustomPacks = async (packs: CustomPack[]): Promise<void> => {
 
 // In-memory mirror of storage so the (synchronous) pack picker can read custom packs alongside the
 // generated catalog without becoming async. Hydrated once at boot and kept in sync by every
-// mutator below — see loadCustomPacksCache and getCustomPacksVersion.
+// mutator below - see loadCustomPacksCache and getCustomPacksVersion.
 let cache: CustomPack[] = []
 let version = 0
 
@@ -162,7 +162,7 @@ export const saveCustomPack = async (input: SaveCustomPackInput): Promise<Custom
 }
 
 // Where a pass-and-play word lands when its author opts to keep it (see PnpWordPrompt.tsx's "Keep
-// this word" toggle) — so it's still around to replay later instead of being forgotten the moment
+// this word" toggle) - so it's still around to replay later instead of being forgotten the moment
 // the round ends. Found by label rather than a fixed key since a fresh install has no pack yet and
 // generateKey() mints a new one on first use; re-adding the identical word (retyped, or the same
 // shared link opened twice) replaces its old entry instead of piling up a duplicate, but keeps the
@@ -203,7 +203,7 @@ export const exportCustomPack = async (key: string): Promise<string | null> => {
 export type ParsedCustomPackImport = { key: string | undefined; label: string; entries: CustomPackEntryInput[] }
 
 // Split out from importCustomPack below so a caller can preview what a backup/file actually
-// contains (label, word count) before committing to saveCustomPack — the incoming-file-share flow
+// contains (label, word count) before committing to saveCustomPack - the incoming-file-share flow
 // shows the player a confirm dialog with that preview rather than importing sight-unseen the
 // moment a .hangman file is opened.
 //

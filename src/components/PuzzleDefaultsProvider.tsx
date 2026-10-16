@@ -33,7 +33,7 @@ export const PuzzleDefaultsProvider = ({ children }: PuzzleDefaultsProviderProps
   }, [])
   // Gated (unlike selectedPackKeys, which happily starts from an "every pack" fallback and
   // corrects a render later) because mode/difficulty are visible the instant the first round
-  // draws — Main.tsx's own puzzle draw needs the real persisted values already in hand, not a
+  // draws - Main.tsx's own puzzle draw needs the real persisted values already in hand, not a
   // default that would flash and then swap a round later. See KeyboardLayoutProvider's identical
   // reasoning for the keyboard's own layout.
   useSplashReady('puzzleDefaults', loaded)

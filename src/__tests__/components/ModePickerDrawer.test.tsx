@@ -9,7 +9,7 @@ import { KeyboardLayoutContext, type KeyboardLayoutContextType } from '@/hooks/u
 import { DEFAULT_MODE } from '@/modes/registry'
 
 // A lightweight stand-in exposing exactly the `mistakes` value ModePickerDrawer feeds each card,
-// keyed by mode id — the demo-loop test below asserts on that value directly rather than reaching
+// keyed by mode id - the demo-loop test below asserts on that value directly rather than reaching
 // into a specific mode's own SVG part structure (classicParts.tsx etc.), which isn't this drawer's
 // own responsibility to get right.
 jest.mock('@/components/GameVisual', () => {
@@ -20,16 +20,16 @@ jest.mock('@/components/GameVisual', () => {
   }
 })
 
-// Any mode other than DEFAULT_MODE (classic) — used to prove scrolling the carousel actually
+// Any mode other than DEFAULT_MODE (classic) - used to prove scrolling the carousel actually
 // selected a different card, not just re-confirmed the one already active.
 const OTHER_MODE_ACCESSIBILITY_LABEL = /Letters Only mode/
 const SELECTED_MODE_ACCESSIBILITY_LABEL = /Classic mode/
 
 // PaperProvider (react-native-paper's own useTheme()), auto-paper's Provider (success/warning/
 // danger roles, PalettePicker/AppearancePicker's own theme plumbing), and FeedbackPressProvider's
-// real `paper` module (see Haptic.tsx, the app's own root wiring — without it, @rific/haptic-
+// real `paper` module (see Haptic.tsx, the app's own root wiring - without it, @rific/haptic-
 // press's IconButton/SegmentedButtons/Pressable all fall back to a bare, unstyled RN element that
-// drops accessibilityLabel entirely) — the same three this app's own Providers.tsx always nests
+// drops accessibilityLabel entirely) - the same three this app's own Providers.tsx always nests
 // together, in the same order (Haptic outside Theme).
 const Wrapper = ({ children }: { children: ReactNode }) => (
   <FeedbackPressProvider paper={RNPaper}>
@@ -55,7 +55,7 @@ describe('ModePickerDrawer', () => {
     await rerender(<ModePickerDrawer visible={false} selected={DEFAULT_MODE} onDismiss={jest.fn()} onSelect={jest.fn()} />)
 
     // Closed state is deliberately hidden from accessibility tools, so RTL's default queries skip
-    // it — includeHiddenElements opts back in for this assertion.
+    // it - includeHiddenElements opts back in for this assertion.
     const closedPanel = getByTestId('mode-picker-panel', { includeHiddenElements: true })
     expect(closedPanel.props.accessibilityViewIsModal).toBe(false)
     expect(closedPanel.props.accessibilityElementsHidden).toBe(true)
@@ -87,7 +87,7 @@ describe('ModePickerDrawer', () => {
     expect(getByLabelText(OTHER_MODE_ACCESSIBILITY_LABEL).props.accessibilityState.selected).toBe(false)
   })
 
-  // Cards are plain Views, not Pressables — scrolling the carousel to a card is what selects it
+  // Cards are plain Views, not Pressables - scrolling the carousel to a card is what selects it
   // (see ModePickerDrawer's own handleScroll/commitIndex), so this simulates that by firing a
   // 'scroll' event with contentOffset.x landing exactly on the target card's page boundary, not by
   // pressing it. offsetX: 0 always lands on index 0 (Letters Only, the first VISIBLE_MODES entry)
@@ -101,7 +101,7 @@ describe('ModePickerDrawer', () => {
 
     expect(onSelect).toHaveBeenCalledTimes(1)
     expect(onSelect.mock.calls[0][0].id).toBe('letters')
-    // Selecting is just a live side effect of scrolling — it doesn't close the drawer on its own
+    // Selecting is just a live side effect of scrolling - it doesn't close the drawer on its own
     // (see ModePickerDrawer's own footer/close comments); only the header Close action or the
     // footer Done button do that.
     expect(onDismiss).not.toHaveBeenCalled()
@@ -121,7 +121,7 @@ describe('ModePickerDrawer', () => {
   it('replays a fade/redraw-then-build-then-clear demo cycle on the focused card while it has an additive behavior (e.g. Classic), and leaves a non-focused/non-additive card (e.g. Letters Only) at a constant resting mistake count throughout', async () => {
     jest.useFakeTimers()
     // ModePickerDrawer only syncs focusedIndex to `selected` on the closed-to-open transition (see
-    // its own prevVisible comment) — mounting already-open, like renderPicker's default, leaves
+    // its own prevVisible comment) - mounting already-open, like renderPicker's default, leaves
     // focusedIndex at its literal initial value (0, Letters Only) regardless of `selected`. Opening
     // it here instead, the same as a real app open, is what actually brings Classic (DEFAULT_MODE)
     // into focus.
@@ -129,23 +129,23 @@ describe('ModePickerDrawer', () => {
     await rerender(<ModePickerDrawer visible selected={DEFAULT_MODE} onDismiss={jest.fn()} onSelect={jest.fn()} />)
 
     // Classic (behavior: 'additive') is now both the selected AND focused card; Letters Only
-    // (behavior: 'none') never becomes focused in this test, so it's the control — its resting
+    // (behavior: 'none') never becomes focused in this test, so it's the control - its resting
     // count is constant (0) throughout, focused or not, since it has no mistake-reactive art to
     // animate at all (see useCardAnimation's own `animated` guard). Classic's own resting count,
     // for the single instant before its entry fade-out starts, is its fully-drawn maxMistakes (6)
-    // per useCardAnimation's own restMistakes — the "nice grey preview" the fade is about to clear.
+    // per useCardAnimation's own restMistakes - the "nice grey preview" the fade is about to clear.
     expect(getByTestId('game-visual-classic').props.children).toBe(6)
     expect(getByTestId('game-visual-letters').props.children).toBe(0)
 
     // t=200 (FADE_MS): the entry fade-out completes, the scene remounts blank, and mistakes drops
-    // to 0 — the "draw the static parts in" beat, holding at 0 for SCENE_REVEAL_HOLD_MS before the
+    // to 0 - the "draw the static parts in" beat, holding at 0 for SCENE_REVEAL_HOLD_MS before the
     // build loop below is allowed to touch it (see useCardAnimation's own comment on why).
     await act(async () => {
       jest.advanceTimersByTime(200)
     })
     expect(getByTestId('game-visual-classic').props.children).toBe(0)
 
-    // t=3200 (+200 fade, +2000 scene-reveal hold, +2 * DEMO_STEP_MS): partway through the build —
+    // t=3200 (+200 fade, +2000 scene-reveal hold, +2 * DEMO_STEP_MS): partway through the build -
     // the loop is actively advancing the focused card's mistake count up from 0, one step at a time.
     await act(async () => {
       jest.advanceTimersByTime(3000)
@@ -157,7 +157,7 @@ describe('ModePickerDrawer', () => {
 
     // t=6400 (+3200): long enough to finish building the remaining parts, hold at 6 for
     // DEMO_HOLD_MS, fade the stick figure back out (FADE_MS), and land exactly on the reset back to
-    // 0 that kicks off the next build — proving this is a repeating loop, not a one-shot reveal that
+    // 0 that kicks off the next build - proving this is a repeating loop, not a one-shot reveal that
     // just stops once fully built.
     await act(async () => {
       jest.advanceTimersByTime(3200)

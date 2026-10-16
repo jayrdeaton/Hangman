@@ -30,7 +30,7 @@ module.exports = {
     }))
   })),
   // @rific/feedback-press/audio's useAudioPool builds its pool with createAudioPlayer (a plain
-  // factory), not the useAudioPlayer hook — both need mocking here.
+  // factory), not the useAudioPlayer hook - both need mocking here.
   createAudioPlayer: jest.fn(() => ({
     duration: 0,
     currentTime: 0,

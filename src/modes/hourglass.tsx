@@ -7,12 +7,12 @@ import { SCENE_START_DELAY_MS } from './shared/sceneReveal'
 import { FadeScaleIn, polylineLength, SketchFill, SketchLine, SketchPath } from './shared/sketchShapes'
 
 // A "frame" mode: one continuous scene whose numeric params (sand levels) shift with every wrong
-// guess, rather than discrete parts appearing or disappearing — see candle.tsx's identical comment
+// guess, rather than discrete parts appearing or disappearing - see candle.tsx's identical comment
 // for why only the very first frame, at round start, gets an actual reveal. The stand's posts and
 // the glass sketch themselves on (they're stroked outlines with real length to trace); the sand
-// wipes in as a fill (SketchFill — it has no drawn edge to trace, just a poured silhouette). The cap
-// plates are solid fills too, but only 3 units tall — too thin a strip for a hatch to read as
-// texture rather than noise — so they stay on the plain fade/scale FadeScaleIn instead.
+// wipes in as a fill (SketchFill - it has no drawn edge to trace, just a poured silhouette). The cap
+// plates are solid fills too, but only 3 units tall - too thin a strip for a hatch to read as
+// texture rather than noise - so they stay on the plain fade/scale FadeScaleIn instead.
 const SCENE_DRAW_MS = 500
 const STAGGER_MS = 110
 
@@ -45,7 +45,7 @@ const GLASS_BOTTOM_Y = 78
 const BULB_HALF_WIDTH = 20
 const TRIANGLE_HEIGHT = NECK_Y - GLASS_TOP_Y // 28, same as GLASS_BOTTOM_Y - NECK_Y
 
-// Fixed, level-independent bounding boxes for the two sand fills below — generous enough to cover
+// Fixed, level-independent bounding boxes for the two sand fills below - generous enough to cover
 // the sand at any level (SketchFill only uses these to size its own wipe mask, not as an exact
 // clip, so a little slack here costs nothing).
 const TOP_SAND_BOUNDS = { x: NECK_X - BULB_HALF_WIDTH, y: GLASS_TOP_Y, width: BULB_HALF_WIDTH * 2, height: TRIANGLE_HEIGHT }
@@ -94,7 +94,7 @@ function moundPeakY(level: number): number {
 
 // Sand piling up in the bottom bulb: a rounded dune rather than a flat-topped triangle,
 // with a touch of hand-drawn asymmetry (in the base shoulders only) so the pile doesn't read as
-// too tidy. The peak stays pinned to NECK_X, not offset — it's directly under the falling stream,
+// too tidy. The peak stays pinned to NECK_X, not offset - it's directly under the falling stream,
 // so any offset there reads as the pile missing the stream rather than as a hand-drawn touch.
 function bottomMoundPath(level: number): string | null {
   if (level <= 0) return null
@@ -110,7 +110,7 @@ const HourglassVisual = ({ mistakes, color, colors, started }: { mistakes: numbe
   const s = STAGES[index]
   const finalStage = index === STAGES.length - 1
   const tilt = finalStage ? TILT_DEG : 0
-  // Sand is the focus (primary) — same role the keyboard now plays, so both read as "the active
+  // Sand is the focus (primary) - same role the keyboard now plays, so both read as "the active
   // thing" together. Stand is secondary, glass is tertiary (thin outline, barely shows). Falls back
   // to the plain `color` when no triad is given (e.g. ModeSelector's card preview, which only passes
   // `color`).
@@ -127,13 +127,13 @@ const HourglassVisual = ({ mistakes, color, colors, started }: { mistakes: numbe
 
   return (
     <Svg viewBox='0 0 100 100'>
-      {/* transform (not rotation+origin) — react-native-svg's web renderer sets origin as a raw
+      {/* transform (not rotation+origin) - react-native-svg's web renderer sets origin as a raw
           `transform-origin` DOM attribute, which isn't a valid one (React warns about it); folding
           the pivot into the transform string itself avoids that path entirely, same result. */}
       <G transform={`rotate(${tilt}, ${NECK_X}, ${NECK_Y})`}>
-        {/* Stand frame: top/bottom cap plates + corner posts. Caps are filled (not stroked) — a
+        {/* Stand frame: top/bottom cap plates + corner posts. Caps are filled (not stroked) - a
             stroked rect whose height equals its stroke width draws as two abutting edge-strokes,
-            which leaves a hairline seam right where they meet — so they fade in as a block
+            which leaves a hairline seam right where they meet - so they fade in as a block
             alongside the posts rather than sketch-draw like the rest of the stand. */}
         <FadeScaleIn cx={NECK_X} cy={CAP_TOP_Y} start={started} delayMs={standDelay} durationMs={SCENE_DRAW_MS}>
           <Rect x={CAP_LEFT_X} y={CAP_TOP_Y} width={CAP_RIGHT_X - CAP_LEFT_X} height={CAP_H} rx='1.5' fill={frameColor} />
@@ -142,12 +142,12 @@ const HourglassVisual = ({ mistakes, color, colors, started }: { mistakes: numbe
           <Rect x={CAP_LEFT_X} y={CAP_BOTTOM_Y} width={CAP_RIGHT_X - CAP_LEFT_X} height={CAP_H} rx='1.5' fill={frameColor} />
         </FadeScaleIn>
 
-        {/* Posts sketch on properly — they're a stroked outline with real length to trace. */}
+        {/* Posts sketch on properly - they're a stroked outline with real length to trace. */}
         <SketchLine x1={POST_LEFT_X} y1={POST_TOP_Y} x2={POST_LEFT_X} y2={POST_BOTTOM_Y} color={frameColor} strokeWidth={3} start={started} delayMs={standDelay} durationMs={SCENE_DRAW_MS} />
         <SketchLine x1={POST_RIGHT_X} y1={POST_TOP_Y} x2={POST_RIGHT_X} y2={POST_BOTTOM_Y} color={frameColor} strokeWidth={3} start={started} delayMs={standDelay} durationMs={SCENE_DRAW_MS} />
 
         {/* Bottom sand: rising mound, drawn before the glass outline so the outline stays crisp on
-            top. No outline worth tracing (real sand has no drawn edge, just a poured silhouette) —
+            top. No outline worth tracing (real sand has no drawn edge, just a poured silhouette) -
             wipes in as a fill instead, same as the top bulb below. */}
         {moundPath && <SketchFill bounds={BOTTOM_MOUND_BOUNDS} clip={<Path d={moundPath} />} color={color} start={started} delayMs={sandDelay} durationMs={SCENE_DRAW_MS} />}
 
@@ -159,7 +159,7 @@ const HourglassVisual = ({ mistakes, color, colors, started }: { mistakes: numbe
         {topPath && <SketchFill bounds={TOP_SAND_BOUNDS} clip={<Path d={topPath} />} color={color} start={started} delayMs={sandDelay} durationMs={SCENE_DRAW_MS} />}
 
         {/* Falling stream through the neck, drawn as fine dots rather than a solid line so it
-            reads as individual grains of sand — its own strokeDasharray is already doing that
+            reads as individual grains of sand - its own strokeDasharray is already doing that
             dotted-line job, so it just fades in rather than sketch-drawing on top of it. */}
         {s.streamVisible && (
           <FadeScaleIn cx={NECK_X} cy={NECK_Y} start={started} delayMs={sandDelay} durationMs={SCENE_DRAW_MS}>

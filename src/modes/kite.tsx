@@ -35,7 +35,7 @@ const KITE_LEFT: [number, number] = [40, 26]
 
 // Tail is one quadratic curve off the bottom tip; it shortens (frays) as
 // tailSegmentsVisible drops, rather than just losing its bow decorations. Stretched down to
-// y=92 (rather than a shorter curve) so 4 bows have real breathing room between them —
+// y=92 (rather than a shorter curve) so 4 bows have real breathing room between them -
 // packed onto a short curve, even small bows crowd into an illegible tangle.
 const TAIL_START: [number, number] = KITE_BOTTOM
 const TAIL_CONTROL: [number, number] = [58, 65]
@@ -61,7 +61,7 @@ function bezierTangent(t: number, p0: [number, number], p1: [number, number], p2
 
 // A small ribbon bow perpendicular to the tail's direction at that point, so it reads as a
 // distinct decoration tied onto the tail instead of a zigzag overlapping the tail line itself.
-// `scale` shrinks the wings as the tail curve itself shortens (frays) — without it, a fixed
+// `scale` shrinks the wings as the tail curve itself shortens (frays) - without it, a fixed
 // wing size overlaps the kite and the other bows once only a short stub of tail remains.
 function bowPath(p: [number, number], tangent: [number, number], scale: number): string {
   const len = Math.hypot(tangent[0], tangent[1]) || 1

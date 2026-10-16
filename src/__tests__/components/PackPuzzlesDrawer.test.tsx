@@ -12,7 +12,7 @@ import { resolvePuzzle } from '@/utils/puzzlePicker'
 import { getPuzzleUnlockMap } from '@/utils/unlocks'
 
 // @rific/feedback-press no longer auto-detects react-native-paper (see Haptic.tsx's own comment
-// on this) — without an explicit FeedbackPressProvider paper={RNPaper} ancestor, every Button/
+// on this) - without an explicit FeedbackPressProvider paper={RNPaper} ancestor, every Button/
 // IconButton this drawer renders (including the puzzle rows and header Close) falls back to a
 // bare, unstyled Pressable that doesn't carry the same testID/accessibilityLabel wiring.
 const Wrapper = ({ children }: { children: ReactNode }) => (
@@ -32,7 +32,7 @@ jest.mock('@/utils/unlocks', () => ({
   getPuzzleUnlockMap: jest.fn()
 }))
 
-// resolveChosenPuzzle (real, what tapping a specific puzzle uses) stays untouched — only
+// resolveChosenPuzzle (real, what tapping a specific puzzle uses) stays untouched - only
 // resolvePuzzle (Random's own path) is overridden, and only for the one test below that needs to
 // prove the parent drawer's difficulty filter actually reaches it; every other test restores the
 // real implementation in beforeEach so it exercises genuine resolution against real pack data.
@@ -46,7 +46,7 @@ const mockGetPuzzleUnlockMap = jest.mocked(getPuzzleUnlockMap)
 const mockResolvePuzzle = jest.mocked(resolvePuzzle)
 const realResolvePuzzle: typeof resolvePuzzle = jest.requireActual('@/utils/puzzlePicker').resolvePuzzle
 
-// The real, smallest built-in pack — small enough that FlatList's initial render window covers
+// The real, smallest built-in pack - small enough that FlatList's initial render window covers
 // every puzzle in it, unlike Movies' 9,091.
 const smallestPack = () =>
   getPuzzleManifest()
@@ -56,7 +56,7 @@ const smallestPack = () =>
 const renderPackPuzzles = (overrides: Partial<ComponentProps<typeof PackPuzzlesDrawer>> = {}) => render(<PackPuzzlesDrawer visible packKey={smallestPack().key} mode={DEFAULT_MODE} difficulty='any' onDismiss={jest.fn()} onConfirm={jest.fn()} {...overrides} />)
 
 // Row rendering, masking, and the solved/unsolved/all filter itself are PackPuzzleList's own
-// contract — covered in PackPuzzleList.test.tsx. This file only covers what's specific to the
+// contract - covered in PackPuzzleList.test.tsx. This file only covers what's specific to the
 // Drawer shell wrapping it: the header, the Random footer, and that a row tap actually reaches
 // the parent's onConfirm/onDismiss through PackPuzzleList's onPlayPuzzle prop.
 describe('PackPuzzlesDrawer', () => {
@@ -174,7 +174,7 @@ describe('PackPuzzlesDrawer', () => {
   })
 
   // PacksScreen's "view contents" on a built-in pack renders this with mode/difficulty/onConfirm
-  // all omitted (see its own doc comment) — read-only browsing, nothing to actually play with here.
+  // all omitted (see its own doc comment) - read-only browsing, nothing to actually play with here.
   describe('read-only mode (mode/difficulty/onConfirm all omitted)', () => {
     it('omits the Random footer entirely', async () => {
       const pack = smallestPack()
@@ -197,7 +197,7 @@ describe('PackPuzzlesDrawer', () => {
       const { getByTestId } = await render(<PackPuzzlesDrawer visible packKey={pack.key} onDismiss={jest.fn()} />)
 
       // PackPuzzleList itself renders rows as non-tappable when onPlayPuzzle is undefined (see its
-      // own contract, tested in PackPuzzleList.test.tsx) — this just proves PackPuzzlesDrawer
+      // own contract, tested in PackPuzzleList.test.tsx) - this just proves PackPuzzlesDrawer
       // actually leaves onPlayPuzzle unwired in read-only mode, not that a press is a no-op through
       // some other path.
       expect(() => fireEvent.press(getByTestId(`puzzle-row-${puzzle.id}`))).not.toThrow()

@@ -8,7 +8,7 @@ import type { GameMode } from '@/types/gameModes'
 import type { GameStartPayload } from '@/types/gameSession'
 import * as puzzlePicker from '@/utils/puzzlePicker'
 
-// PuzzleDrawer also imports normalizePhrase and PuzzleConfig from this module — spreading the
+// PuzzleDrawer also imports normalizePhrase and PuzzleConfig from this module - spreading the
 // real module keeps those working and only overrides the one export these tests drive directly.
 jest.mock('@/utils/puzzlePicker', () => ({
   ...jest.requireActual('@/utils/puzzlePicker'),
@@ -17,7 +17,7 @@ jest.mock('@/utils/puzzlePicker', () => ({
 
 const mockResolvePuzzle = jest.mocked(puzzlePicker.resolvePuzzle)
 
-// hasVisual defaults true — used for the "before" state in the live-mode-swap test.
+// hasVisual defaults true - used for the "before" state in the live-mode-swap test.
 const visualMode: GameMode = {
   id: 'test-main-visual',
   label: 'Test Main Visual',
@@ -28,7 +28,7 @@ const visualMode: GameMode = {
   Visual: (() => null) as unknown as GameMode['Visual']
 }
 
-// A single wrong guess ends the round — keeps the difficulty-carries-into-next-round test short.
+// A single wrong guess ends the round - keeps the difficulty-carries-into-next-round test short.
 const oneMistakeMode: GameMode = {
   id: 'test-main-one-mistake',
   label: 'Test Main One Mistake',
@@ -58,37 +58,37 @@ describe('Main', () => {
     const { getByLabelText, getByTestId } = await renderApp()
 
     const displayBefore = getByLabelText('Secret word display')
-    // SketchWord takes fontSize as a direct prop, not a style object — no measured layout has
+    // SketchWord takes fontSize as a direct prop, not a style object - no measured layout has
     // landed in this test environment (no onLayout fired for art-and-word-area/wordRow), so
     // PuzzleStage's shrink-to-fit falls through to its unclamped base ceiling (see its own "if
     // (availableWidth <= 0 && wordAreaHeight === undefined) return baseFontSize" branch).
-    // visualMode has hasVisual: true (the default) — the letter display uses the smaller of the
+    // visualMode has hasVisual: true (the default) - the letter display uses the smaller of the
     // two reserved font sizes while there's still room for artwork (see PuzzleStage.tsx's
     // WORD_FONT_SIZE).
     expect(displayBefore.props.children[0].props.fontSize).toBe(42)
 
-    // The mode summary row (PuzzleDrawer.tsx's own handleOpenModePicker) opens ModePickerDrawer —
+    // The mode summary row (PuzzleDrawer.tsx's own handleOpenModePicker) opens ModePickerDrawer -
     // the full-page picker that replaced the old inline carousel this test used to poke at
     // directly via a manually-fired layout event. draft.mode there reflects the persisted config
-    // (DEFAULT_MODE), not necessarily the currently-playing round's own mode — same reasoning
+    // (DEFAULT_MODE), not necessarily the currently-playing round's own mode - same reasoning
     // PuzzleDrawer.test.tsx's own comment gives for using DEFAULT_MODE here too.
     await fireEvent.press(getByLabelText('Game Menu'))
     await fireEvent.press(getByLabelText(`Mode: ${DEFAULT_MODE.label}. Change mode`))
-    // Cards are plain Views, not Pressables — scrolling the carousel to a card is what selects it
+    // Cards are plain Views, not Pressables - scrolling the carousel to a card is what selects it
     // (see ModePickerDrawer's own handleScroll/commitIndex and ModePickerDrawer.test.tsx's
     // identical comment). offsetX: 0 lands on index 0 (Letters Only, the first VISIBLE_MODES
     // entry) regardless of this test environment's own windowWidth, since 0 / anything is still 0.
     await fireEvent.scroll(getByTestId('mode-picker-carousel'), { nativeEvent: { contentOffset: { x: 0, y: 0 } } })
 
     const displayAfter = getByLabelText('Secret word display')
-    // Letters Only has hasVisual: false, enlarging the letter display (WORD_FONT_SIZE_LARGE) —
+    // Letters Only has hasVisual: false, enlarging the letter display (WORD_FONT_SIZE_LARGE) -
     // reflected immediately, with the drawer's confirm button never pressed and no second
     // resolvePuzzle call (same round, same puzzle, just a different look).
     expect(displayAfter.props.children[0].props.fontSize).toBe(80)
     expect(mockResolvePuzzle).toHaveBeenCalledTimes(1)
   })
 
-  it('keeps a live difficulty change out of the round already on screen, but applies it to the next round the moment this one ends — no Random press required', async () => {
+  it('keeps a live difficulty change out of the round already on screen, but applies it to the next round the moment this one ends - no Random press required', async () => {
     mockResolvePuzzle.mockReturnValueOnce({ ok: true, payload: payload({ mode: oneMistakeMode, phrase: 'DOG', puzzleId: 'puzzle-1' }) }).mockReturnValueOnce({ ok: true, payload: payload({ mode: oneMistakeMode, phrase: 'FISH', puzzleId: 'puzzle-2' }) })
     const { getByLabelText, getByText, findByText } = await renderApp()
 
@@ -99,7 +99,7 @@ describe('Main', () => {
     await fireEvent.press(getByText('Hard'))
     await fireEvent.press(getByLabelText('Close'))
 
-    // The puzzle already on screen was drawn before "Hard" was picked — changing the filter can't
+    // The puzzle already on screen was drawn before "Hard" was picked - changing the filter can't
     // retroactively change it, so the round plays out normally and ends on its own terms.
     await fireEvent.press(getByText('Q'))
     expect(await findByText('You Lost!')).toBeTruthy()
@@ -108,7 +108,7 @@ describe('Main', () => {
     await fireEvent.press(getByText('Next'))
 
     expect(mockResolvePuzzle).toHaveBeenCalledTimes(2)
-    // The live difficulty change is exactly what the automatic next round now reads — no drawer
+    // The live difficulty change is exactly what the automatic next round now reads - no drawer
     // confirm button involved anywhere in this flow.
     expect(mockResolvePuzzle.mock.calls[1][0].difficulty).toBe('hard')
   })
@@ -136,7 +136,7 @@ describe('Main', () => {
     await fireEvent.press(getByText('Next'))
 
     expect(mockResolvePuzzle).toHaveBeenCalledTimes(2)
-    // Same packKeys the initial auto-start itself drew from (the live selection) — not narrowed to
+    // Same packKeys the initial auto-start itself drew from (the live selection) - not narrowed to
     // the single pack the just-finished puzzle happened to land on.
     expect(mockResolvePuzzle.mock.calls[1][1]).toEqual(mockResolvePuzzle.mock.calls[0][1])
   })
@@ -148,11 +148,11 @@ describe('Main', () => {
     await renderApp()
 
     // The very first, synchronous draw can only ever run under whatever selectedPackKeys already
-    // is in memory at mount — the persisted selection hasn't been read back from AsyncStorage yet.
+    // is in memory at mount - the persisted selection hasn't been read back from AsyncStorage yet.
     expect(mockResolvePuzzle.mock.calls[0][1]).not.toEqual(['pack-1'])
 
     // Once that read resolves, the first round gets corrected the same way a manual mode/
-    // difficulty pick would — a second draw, this time actually scoped to the persisted packs.
+    // difficulty pick would - a second draw, this time actually scoped to the persisted packs.
     await waitFor(() => expect(mockResolvePuzzle).toHaveBeenCalledTimes(2))
     expect(mockResolvePuzzle.mock.calls[1][1]).toEqual(['pack-1'])
   })
@@ -197,12 +197,12 @@ describe('Main', () => {
 
     const { getByText } = await renderApp()
 
-    // A correct guess that doesn't end the round — same "there's something to protect" condition
+    // A correct guess that doesn't end the round - same "there's something to protect" condition
     // shouldConfirmAbandon itself uses for every other puzzle-switch path in Main.tsx.
     await fireEvent.press(getByText('D'))
 
     // The persisted selection resolves to a genuinely different set (see the previous test), but
-    // this round already has an undecided guess on it — the correction should skip it entirely
+    // this round already has an undecided guess on it - the correction should skip it entirely
     // rather than silently discard the guess with no abandon-confirmation dialog and no loss
     // recorded, the way every other puzzle-switch path in this file requires.
     await act(async () => {

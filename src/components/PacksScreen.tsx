@@ -35,7 +35,7 @@ export type PacksScreenProps = {
 // Memoized: stays mounted (translated off-screen) even while closed, and its own children
 // (PackPuzzlesDrawer/PackEditorDrawer, each with their own always-mounted content) are heavy
 // enough that re-rendering this whole tree on every unrelated ancestor state change is
-// noticeable — see PuzzleDrawer's own memo comment for the full reasoning.
+// noticeable - see PuzzleDrawer's own memo comment for the full reasoning.
 export const PacksScreen = memo(({ visible, onDismiss, selectedKeys, onChangeSelectedKeys, packsVersion, onPacksChanged }: PacksScreenProps): JSX.Element => {
   const theme = useTheme()
   // Same panel width every other fixed-width drawer in the app uses (PuzzleDrawer's own Game Menu,
@@ -43,7 +43,7 @@ export const PacksScreen = memo(({ visible, onDismiss, selectedKeys, onChangeSel
   // should be the one exception.
   const drawerWidth = useDrawerWidth()
 
-  // packsVersion isn't read inside the memo — it's a change counter bumped whenever a custom pack
+  // packsVersion isn't read inside the memo - it's a change counter bumped whenever a custom pack
   // is created/edited/deleted/imported, since getPuzzleManifest() otherwise looks pure to React.
   // eslint-disable-next-line react-hooks/exhaustive-deps -- packsVersion is an intentional external invalidation trigger, not a value the memo body reads
   const manifest = useMemo(() => getPuzzleManifest().filter((item) => item.count > 0), [packsVersion])
@@ -53,10 +53,10 @@ export const PacksScreen = memo(({ visible, onDismiss, selectedKeys, onChangeSel
 
   // A built-in pack's own read-only puzzle list (PackPuzzlesDrawer, mode/difficulty/onConfirm all
   // omitted) and the create/edit form (PackEditorDrawer) each stack on top of this screen as their
-  // own animated Drawer — same as PackPuzzlesDrawer already stacks on top of PuzzleDrawer — rather
+  // own animated Drawer - same as PackPuzzlesDrawer already stacks on top of PuzzleDrawer - rather
   // than swapping in as an unanimated step within this same panel. detailKey/editingKey are
-  // deliberately separate from their own drawer's visible flag (detailVisible/editorVisible) —
-  // dismissing only flips visible, never the key — so the content survives the close-translate
+  // deliberately separate from their own drawer's visible flag (detailVisible/editorVisible) -
+  // dismissing only flips visible, never the key - so the content survives the close-translate
   // animation instead of blanking out mid-slide (see PackPuzzlesDrawer/PackEditorDrawer's own doc
   // comments on why, and PuzzleDrawer's identical playPackKey/playDrawerVisible split). Both
   // visible flags reset together below whenever this screen reopens; the keys themselves are left
@@ -69,7 +69,7 @@ export const PacksScreen = memo(({ visible, onDismiss, selectedKeys, onChangeSel
 
   const [unlockMap, setUnlockMap] = useState<PuzzleUnlockMap>({})
 
-  // Always reopens on the list, with neither overlay open — otherwise a screen left mid-edit or
+  // Always reopens on the list, with neither overlay open - otherwise a screen left mid-edit or
   // mid-detail on last close would silently resume there next time.
   useEffect(() => {
     if (visible) {
@@ -78,7 +78,7 @@ export const PacksScreen = memo(({ visible, onDismiss, selectedKeys, onChangeSel
     }
   }, [visible])
 
-  // Re-fetched each time this screen opens, not subscribed to live — good enough for a summary
+  // Re-fetched each time this screen opens, not subscribed to live - good enough for a summary
   // count sitting in a list row, and matches the one-shot fetch every other pack-progress display
   // in this app already does (PackPuzzleList, AchievementsDrawer).
   useEffect(() => {
@@ -113,7 +113,7 @@ export const PacksScreen = memo(({ visible, onDismiss, selectedKeys, onChangeSel
   )
 
   // Wrapped in useCallback (unlike toggle/selectKey's other callers above, which stay inline
-  // since they're only ever handed to a plain Button/PackRow) — these three specifically become
+  // since they're only ever handed to a plain Button/PackRow) - these three specifically become
   // PackEditorDrawer's own onSaved/onDelete/onShare props, and that drawer is memoized (see its
   // own file), so a fresh function identity here on every render would silently defeat that.
   const handleSaved = useCallback(
@@ -125,7 +125,7 @@ export const PacksScreen = memo(({ visible, onDismiss, selectedKeys, onChangeSel
     [selectKey, onPacksChanged]
   )
 
-  // No confirm() here — PackEditorDrawer's own ConfirmDialog gates the call to this, so by the time
+  // No confirm() here - PackEditorDrawer's own ConfirmDialog gates the call to this, so by the time
   // it runs the player has already agreed. Unconditional and side-effecting only.
   const handleDelete = useCallback(
     async (key: string) => {
@@ -149,7 +149,7 @@ export const PacksScreen = memo(({ visible, onDismiss, selectedKeys, onChangeSel
   const handleCloseEditor = useCallback(() => setEditorVisible(false), [])
 
   // Reads a file straight off the device (a real "pick a .hangman file" flow) rather than a
-  // paste-text box — see hangmanFile.ts's own doc comments for why: the old clipboard-and-paste
+  // paste-text box - see hangmanFile.ts's own doc comments for why: the old clipboard-and-paste
   // round trip also depended on alert() to tell the player it worked, which isn't reliable on web.
   // useCallback (unlike before): this is now a listHeader dependency (see below), so a fresh
   // identity every render would recompute that memo for nothing.
@@ -167,11 +167,11 @@ export const PacksScreen = memo(({ visible, onDismiss, selectedKeys, onChangeSel
     }
   }, [selectKey, onPacksChanged])
 
-  // The built-in manifest is 48 packs (50 total minus whatever's custom) — real enough on-device
+  // The built-in manifest is 48 packs (50 total minus whatever's custom) - real enough on-device
   // render cost that the old plain .map() inside a ScrollView was the actual cause of "opening
   // Choose packs feels slow": every row mounted at once instead of just the ones on screen.
   // Custom packs stay a plain .map() in listHeader below (typically a handful, not worth
-  // virtualizing) — only the built-in list becomes the FlatList's own `data`.
+  // virtualizing) - only the built-in list becomes the FlatList's own `data`.
   const renderBuiltInPackRow = useCallback(
     ({ item }: { item: PuzzleManifestItem }) => {
       const unlocked = getUnlockedCountForPack(unlockMap, item.key)
@@ -204,7 +204,7 @@ export const PacksScreen = memo(({ visible, onDismiss, selectedKeys, onChangeSel
   const packRowKeyExtractor = useCallback((item: PuzzleManifestItem) => item.key, [])
 
   // "My packs" (a handful of custom entries, cheap to always render) through the "Built-in packs"
-  // label, as the FlatList's own scrolling header rather than a sibling before it — same
+  // label, as the FlatList's own scrolling header rather than a sibling before it - same
   // ListHeaderComponent approach as PuzzleDrawer's own pack list (see its own comment on this).
   const listHeader = useMemo(
     () => (
@@ -251,7 +251,7 @@ export const PacksScreen = memo(({ visible, onDismiss, selectedKeys, onChangeSel
                 onPress={() => toggle(item.key)}
                 leading={<Checkbox status={selectedSet.has(item.key) ? 'checked' : 'unchecked'} onPress={() => toggle(item.key)} />}
                 // Share and Delete both live in the editor header now (Edit -> pack name ->
-                // Share/Delete) — this row used to be 3 icons deep with no real gap between
+                // Share/Delete) - this row used to be 3 icons deep with no real gap between
                 // them. Edit is the one thing this row itself needs: everything else about
                 // managing a specific pack happens once you're actually in it.
                 trailing={
@@ -281,20 +281,20 @@ export const PacksScreen = memo(({ visible, onDismiss, selectedKeys, onChangeSel
   return (
     <>
       {/* open is gated on !anyOverlayVisible too, the same way PuzzleDrawer gates itself against
-          PacksScreen/PackPuzzlesDrawer stacked on top of IT — see PuzzleDrawer's own comment on
+          PacksScreen/PackPuzzlesDrawer stacked on top of IT - see PuzzleDrawer's own comment on
           this same pattern for why (blurred headers now make "still open, just covered" read as a
           layering glitch instead of a clean navigation transition). PackPuzzlesDrawer/
           PackEditorDrawer translate in over this panel's own content, which stays mounted
-          underneath either way (Drawer never unmounts on close, just translates) —
+          underneath either way (Drawer never unmounts on close, just translates) -
           accessibilityElementsHidden below (unchanged) is what keeps this panel's title/close
           button/rows from staying reachable by screen readers and keyboard focus while invisible. */}
       <Drawer open={visible && !anyOverlayVisible} onClose={onDismiss} width={drawerWidth} zIndex={DRAWER_PACKS_SCREEN_Z_INDEX}>
         <View testID='packs-screen-panel' style={styles.panel} accessibilityViewIsModal={visible && !anyOverlayVisible} accessibilityElementsHidden={!visible || anyOverlayVisible} importantForAccessibility={visible && !anyOverlayVisible ? 'yes' : 'no-hide-descendants'} onAccessibilityEscape={visible && !anyOverlayVisible ? onDismiss : undefined}>
           <ScrollViewProvider footerFixed>
-            {/* Close sits on the LEADING (left) side — this screen is reached from the Game Menu's
+            {/* Close sits on the LEADING (left) side - this screen is reached from the Game Menu's
                 hamburger icon (top-left of the game screen), same left-anchored lineage as
                 PuzzleDrawer/PackPuzzlesDrawer, so closing it lands back under the same thumb that
-                opened the chain. 'Close', not the Appbar.BackAction default of 'Back' — see
+                opened the chain. 'Close', not the Appbar.BackAction default of 'Back' - see
                 PuzzleDrawer's own ScrollViewHeader comment for why. Custom IconButton, not the
                 default callback-driven Appbar.BackAction: a plain arrow in the surface's ink (the fleet's back-button style), matching every other
                 back/close action in the app; IconButton already fires the app's own haptic
@@ -303,7 +303,7 @@ export const PacksScreen = memo(({ visible, onDismiss, selectedKeys, onChangeSel
             <ScrollViewHeader title='Choose Packs' actionSize={40} backAction={<IconButton icon='arrow-left' hitSlop={ICON_ACTION_HIT_SLOP} iconColor={theme.colors.onSurface} onPress={onDismiss} accessibilityLabel='Close' />} />
 
             {/* "My packs" through the "Built-in packs" label live in listHeader (see its own
-                declaration above) — everything above the built-in pack list scrolls away with it
+                declaration above) - everything above the built-in pack list scrolls away with it
                 exactly as it did back when this was all one plain ScrollView; only the built-in
                 list itself needed to become a real FlatList. */}
             <FlatList
@@ -314,15 +314,15 @@ export const PacksScreen = memo(({ visible, onDismiss, selectedKeys, onChangeSel
               showsVerticalScrollIndicator={false}
               contentContainerStyle={styles.scrollContent}
               keyboardShouldPersistTaps='handled'
-              // Solid vibrant fill, not the chip's own default muted surface tint — matches every
+              // Solid vibrant fill, not the chip's own default muted surface tint - matches every
               // other accent on this screen now instead of being the one control still washed out.
               chipProps={{ style: { backgroundColor: theme.colors.primary }, selectedColor: theme.colors.onPrimary }}
             />
 
             {/* Select all/Clear sit in their own row above Done, not part of the scrollable content
-                — same "reachable without scrolling back up" reasoning the old single-row footer
+                - same "reachable without scrolling back up" reasoning the old single-row footer
                 had. The count that used to live in its own label text next to them now lives in
-                Done's own label instead — Done is already the one line every eye lands on before
+                Done's own label instead - Done is already the one line every eye lands on before
                 closing this screen, so the count reads there rather than needing a second, separate
                 bit of text just above it. */}
             <ScrollViewFooter style={styles.footer}>
@@ -351,8 +351,8 @@ PacksScreen.displayName = 'PacksScreen'
 
 const styles = StyleSheet.create({
   emptyText: { marginBottom: 12, opacity: 0.7 },
-  // Matches ModePickerDrawer's own footer/footerButton exactly — same plain dismiss-button footer.
-  // alignItems/flexDirection override ScrollViewFooter's own row+center defaults — the quick
+  // Matches ModePickerDrawer's own footer/footerButton exactly - same plain dismiss-button footer.
+  // alignItems/flexDirection override ScrollViewFooter's own row+center defaults - the quick
   // actions row and Done stack vertically here, same convention PuzzleDrawer's own footer uses for
   // Random/Pass & play.
   footer: {
@@ -366,11 +366,11 @@ const styles = StyleSheet.create({
   muted: { opacity: 0.7 },
   panel: { flex: 1 },
   // Select all/Clear split the row evenly (flex: 1 each via quickActionButton) rather than sitting
-  // at their own natural width — reads as one cohesive block with the full-width Done button below,
+  // at their own natural width - reads as one cohesive block with the full-width Done button below,
   // instead of two oddly-sized pills floating above it.
   quickActionButton: { flex: 1 },
   quickActions: { flexDirection: 'row', gap: 8 },
-  // paddingBottom matches sectionHeaderRow's own marginTop above exactly — the scrollable
+  // paddingBottom matches sectionHeaderRow's own marginTop above exactly - the scrollable
   // content's last row sits the same distance from what follows it (the footer) as the first
   // row sits from the header.
   scrollContent: { paddingBottom: 12, paddingHorizontal: 16 },
@@ -380,13 +380,13 @@ const styles = StyleSheet.create({
     marginBottom: 4,
     marginTop: 12
   },
-  // Same bold treatment as sectionHeader, but no marginTop of its own — this Text sits inside
+  // Same bold treatment as sectionHeader, but no marginTop of its own - this Text sits inside
   // sectionHeaderRow (a flex row alongside Create/Import), which now carries that same 12px as a
   // margin on the ROW itself instead, so both the label and its buttons move down together rather
   // than only the text shifting inside the row.
   sectionHeaderInRow: { fontWeight: '700' },
   // marginTop matches every other drawer's own top-of-content breathing room (see PuzzleDrawer's
-  // modeSelectorBleed/AchievementsDrawer's firstCard/SettingsDrawer's topSectionLabel) — this row
+  // modeSelectorBleed/AchievementsDrawer's firstCard/SettingsDrawer's topSectionLabel) - this row
   // used to sit flush against the header with no gap at all.
   sectionHeaderRow: {
     alignItems: 'center',

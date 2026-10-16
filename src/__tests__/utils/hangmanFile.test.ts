@@ -1,7 +1,7 @@
 /**
  * @jest-environment jsdom
  */
-// jsdom, not the default jest-expo/RN environment — the web-platform tests below need a real
+// jsdom, not the default jest-expo/RN environment - the web-platform tests below need a real
 // `document` (creating an anchor, clicking it) to exercise shareCustomPackFile's browser-download
 // fallback, which plain react-native's test environment doesn't provide at all.
 
@@ -17,7 +17,7 @@ const setPlatform = (os: string) => {
   RN.Platform.OS = os
 }
 
-// A minimal in-memory stand-in for expo-file-system's File class — write() stores by uri, text()
+// A minimal in-memory stand-in for expo-file-system's File class - write() stores by uri, text()
 // reads it back, matching the real class closely enough to exercise shareCustomPackFile's native
 // write-then-share path and the native read paths in pickHangmanFile/readHangmanFileFromUri.
 const mockFileStore = new Map<string, string>()
@@ -56,7 +56,7 @@ jest.mock('@/utils/unlocks', () => ({
   exportPuzzleUnlocks: jest.fn()
 }))
 
-// A full property-descriptor replacement, not a value assignment — Expo's own web polyfill layer
+// A full property-descriptor replacement, not a value assignment - Expo's own web polyfill layer
 // installs `URL` as a lazy getter (node_modules/expo/src/winter/installGlobal.ts) that, the moment
 // it's READ at all (even just to save the previous value), constructs a real polyfilled URL
 // implementation pulling in a TextEncoder this test environment doesn't provide. defineProperty
@@ -72,7 +72,7 @@ describe('hangmanFile', () => {
     setPlatform('ios')
   })
 
-  // Guarantees document.createElement spies are undone even if an assertion above them throws —
+  // Guarantees document.createElement spies are undone even if an assertion above them throws -
   // an unrestored spy from a failed test otherwise cascades into every test after it.
   afterEach(() => {
     jest.restoreAllMocks()
@@ -113,7 +113,7 @@ describe('hangmanFile', () => {
 
       expect(result).toBe(true)
       expect(createObjectURL).toHaveBeenCalledTimes(1)
-      // Punctuation stripped, extension appended — same rule a real OS filesystem would otherwise
+      // Punctuation stripped, extension appended - same rule a real OS filesystem would otherwise
       // reject or mangle characters for.
       const anchor = createElementSpy.mock.results.find((r) => r.value.tagName === 'A')?.value
       expect(anchor.download).toBe('My Trip.hangman')

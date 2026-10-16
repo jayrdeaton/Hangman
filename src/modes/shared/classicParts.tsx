@@ -7,15 +7,15 @@ const JOIN = 'round' as const
 
 // All coordinates in a 100x100 viewBox.
 // The figure hangs at x=62, gallows pole at x=22.
-// Safe art area: x=5–95, y=5–93.
+// Safe art area: x=5-95, y=5-93.
 
 // The gallows itself draws slower than a body part (its lines are 2-6x longer) and in a staggered
-// construction order — base, pole, beam, rope — rather than all at once, so it reads as a scene
+// construction order - base, pole, beam, rope - rather than all at once, so it reads as a scene
 // being sketched into place rather than a single quick flash.
 const GALLOWS_DRAW_MS = 500
 const GALLOWS_STAGGER_MS = 90
 
-// Hidden until `started` (Game.tsx's own gameReady, threaded down via GameVisual — see
+// Hidden until `started` (Game.tsx's own gameReady, threaded down via GameVisual - see
 // gameModes.ts's own `started` comment) flips true, then sketches itself on in construction order:
 // the base, the pole, the beam, and finally the rope drop. Defaults `started` to true so anything
 // that mounts this without wiring the signal still gets a (simple, on-mount) draw-in rather than
@@ -47,11 +47,11 @@ export const RightLeg = ({ color }: { color: string }) => <SketchLine x1={62} y1
 //
 // Each takes the same `started`/`delayMs` pair for the same two reasons SketchLine's own parts do:
 // appearing.tsx mounts these one at a time as a wrong guess reveals each (started stays at its
-// default `true`, so mounting is already the "just revealed" signal, delayMs stays 0 — nothing to
+// default `true`, so mounting is already the "just revealed" signal, delayMs stays 0 - nothing to
 // stagger against). disappearing.tsx mounts all six together at round start instead (see its own
 // REMOVAL_ORDER comment), so it passes `started` down from its own Visual prop, gated exactly like
 // GallowsWithRope, and a per-part delayMs so the group draws in a staggered construction order
-// rather than all six snapping on as one flash. `erased` is disappearing.tsx's own — it flips true
+// rather than all six snapping on as one flash. `erased` is disappearing.tsx's own - it flips true
 // on whichever single part a wrong guess just removed, scrubbing that one part's own stroke back
 // out (see sketchShapes.tsx's own useDrawProgress) instead of unmounting it.
 type CenteredPartProps = { color: string; started?: boolean; erased?: boolean; delayMs?: number }
@@ -66,7 +66,7 @@ export const CenteredLeftLeg = ({ color, started, erased, delayMs }: CenteredPar
 
 export const CenteredRightLeg = ({ color, started, erased, delayMs }: CenteredPartProps) => <SketchLine x1={50} y1={68} x2={62} y2={83} color={color} start={started} erased={erased} delayMs={delayMs} />
 
-// Head only, no rope stub — unlike classic.tsx's own gallows-and-rope Head, these gallows-less
+// Head only, no rope stub - unlike classic.tsx's own gallows-and-rope Head, these gallows-less
 // modes have no pole for a rope to hang from, so a floating rope segment above the head had
 // nothing to attach to and just read as a stray mark.
 export const CenteredHead = ({ color, started, erased, delayMs }: CenteredPartProps) => <SketchCircle cx={50} cy={36} r={11} color={color} start={started} erased={erased} delayMs={delayMs} />

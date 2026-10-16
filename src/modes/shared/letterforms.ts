@@ -1,12 +1,12 @@
 export type Point = [number, number]
 
 // Every glyph is defined on this fixed box, baseline at the bottom (y grows downward, matching
-// SVG) — SketchLetter (see sketchLetter.tsx) scales it to whatever height a caller needs.
+// SVG) - SketchLetter (see sketchLetter.tsx) scales it to whatever height a caller needs.
 export const GLYPH_WIDTH = 60
 export const GLYPH_HEIGHT = 100
 
 // A coarse polyline approximation of an elliptical arc, in screen-space degrees (0 = +x/right, 90 =
-// +y/down, matching every other angle in this app — see sketchShapes.tsx's own SVG rotate() use).
+// +y/down, matching every other angle in this app - see sketchShapes.tsx's own SVG rotate() use).
 // Round letters below build their curves from this rather than true bezier segments: one consistent
 // technique across all 26 letters, and a slightly faceted curve reads as more hand-drawn, not less.
 function arc(cx: number, cy: number, rx: number, ry: number, startDeg: number, endDeg: number, steps: number): Point[] {
@@ -20,7 +20,7 @@ function arc(cx: number, cy: number, rx: number, ry: number, startDeg: number, e
 }
 
 // Rotates a point set around (cx, cy), screen-space clockwise-positive degrees (matching arc()
-// above). Used sparingly — only where a glyph's own symmetry needs a deliberate optical
+// above). Used sparingly - only where a glyph's own symmetry needs a deliberate optical
 // correction (see S below): a perfectly vertical, mirror-symmetric double-curve reliably reads as
 // slightly tilted even though its spine is mathematically straight, the same correction real
 // typefaces apply to their own S rather than leaving it "technically" upright.
@@ -36,9 +36,9 @@ function rotate(pts: Point[], cx: number, cy: number, deg: number): Point[] {
 }
 
 // Each letter is one or more pen strokes (a stroke = one continuous polyline, drawn as one
-// SketchPath) — deliberately simple monoline capitals in the same geometric hand as the rest of
+// SketchPath) - deliberately simple monoline capitals in the same geometric hand as the rest of
 // this app's sketch primitives (a star is a 10-point polygon, not a font glyph; the gallows is
-// straight lines). Only A–Z: nothing else this app draws a letter for needs more than that (see
+// straight lines). Only A-Z: nothing else this app draws a letter for needs more than that (see
 // SketchLetter's own fallback for any character not listed here).
 export const GLYPHS: Record<string, Point[][]> = {
   A: [
@@ -192,18 +192,18 @@ export const GLYPHS: Record<string, Point[][]> = {
   // bulging opposite ways. ry=25 is load-bearing, not tunable: each half's own height is 2*ry, and
   // the two need to sum to exactly 100 (GLYPH_HEIGHT) to meet without a gap or an overlapping kink.
   // rx=28 (wider than ry, unlike a true semicircle) is the exact same radius C/G use for their own
-  // single open arc — cx=32 is shared with them too, so this bulges out to x=4/x=60 exactly like
+  // single open arc - cx=32 is shared with them too, so this bulges out to x=4/x=60 exactly like
   // they do, not past it. A narrower rx (ry's own 25, a true semicircle) read as a tightly coiled
   // cursive squiggle, out of step with how open every other curved letter in this alphabet is.
   //
   // rotate(...,20) at the end: the shape above is perfectly mirror-symmetric (top bulges left,
-  // bottom bulges right, spine dead vertical through x=32) and reads as tilted anyway — the top-
+  // bottom bulges right, spine dead vertical through x=32) and reads as tilted anyway - the top-
   // left/bottom-right mass pulls the eye along that diagonal even though nothing is geometrically
-  // slanted. Clockwise is the right direction (confirmed against a live A/B — negative reads worse,
+  // slanted. Clockwise is the right direction (confirmed against a live A/B - negative reads worse,
   // not better), it just took more of it than a first pass (6, then 16) suggested: this shape's
   // fat bulges and its thin terminal tips actually shift in opposite relative senses under a single
-  // rotation, so eyeballing the terminals alone undersold how much correction the bulges — the part
-  // that actually reads as "leaning" — still needed.
+  // rotation, so eyeballing the terminals alone undersold how much correction the bulges - the part
+  // that actually reads as "leaning" - still needed.
   S: [rotate([...arc(32, 25, 28, 25, 270, 90, 16), ...arc(32, 75, 28, 25, 270, 450, 16).slice(1)], 30, 50, 20)],
   T: [
     [

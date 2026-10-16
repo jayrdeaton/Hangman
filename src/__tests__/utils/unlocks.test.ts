@@ -115,7 +115,7 @@ describe('parseProgressBackup', () => {
   })
 
   // Unlike importPuzzleUnlocks/mergePuzzleUnlocks, a bare unlocks-map with no wrapper key is
-  // rejected — this function's job is telling a progress backup apart from a custom pack file
+  // rejected - this function's job is telling a progress backup apart from a custom pack file
   // (which has a `pack` key instead), and a bare map is indistinguishable from neither.
   it('rejects a bare unlocks-map shape with no unlocks key', () => {
     const payload = JSON.stringify({ animals: ['lion'] })

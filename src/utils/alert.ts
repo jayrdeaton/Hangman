@@ -2,12 +2,12 @@ import { Alert, Platform } from 'react-native'
 
 // window.alert() blocks the JS thread synchronously, which also blocks the browser from
 // painting. Calling it right after a state update (e.g. the winning/losing guess) would freeze
-// the page before React ever gets to paint that final letter or mistake — the player would only
+// the page before React ever gets to paint that final letter or mistake - the player would only
 // ever see the dialog, never the completed board underneath it. Waiting two animation frames
 // guarantees a real paint has happened first.
 const nextPaint = (): Promise<void> => new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(() => resolve())))
 
-// react-native-web's Alert is a no-op — fall back to the browser's native dialogs there.
+// react-native-web's Alert is a no-op - fall back to the browser's native dialogs there.
 export const alert = (title: string, message: string): Promise<void> =>
   new Promise((resolve) => {
     if (Platform.OS === 'web') {

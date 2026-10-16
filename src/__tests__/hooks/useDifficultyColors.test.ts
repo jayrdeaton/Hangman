@@ -11,7 +11,7 @@ const mockThemeColors = {
   dangerContainer: '#666666'
 }
 
-// jest.mock calls are hoisted above these imports automatically — mocking just useAutoPaperTheme
+// jest.mock calls are hoisted above these imports automatically - mocking just useAutoPaperTheme
 // (keeping every other @rific/auto-paper export real) lets these tests check the tier->role
 // mapping in isolation, without rendering through a real Provider tree.
 jest.mock('@rific/auto-paper', () => ({
@@ -42,7 +42,7 @@ describe('useDifficultyContainerColors', () => {
 })
 
 describe('getContainerColor', () => {
-  it('delegates to getColorRoles(baseHex, surface).container — used for PuzzleDrawer\'s "Any" segment, which has no semantic role of its own', () => {
+  it('delegates to getColorRoles(baseHex, surface).container - used for PuzzleDrawer\'s "Any" segment, which has no semantic role of its own', () => {
     const { getColorRoles } = jest.requireActual('@rific/auto-paper')
     const base = '#6750a4'
     const surface = '#FFFBFE'

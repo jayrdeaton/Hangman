@@ -23,7 +23,7 @@ const DIFFICULTY_LABELS: Record<PuzzleDifficultyTier, string> = {
 }
 
 // Some pack labels are generated as "<Group> <Specific>" (e.g. "Theme Superheroes", "Geography
-// National Parks") — run together inside the hint pill they read like a garbled sentence, so the
+// National Parks") - run together inside the hint pill they read like a garbled sentence, so the
 // group word gets split into its own "|" segment, matching every other join in that pill.
 const GROUP_LABEL_PREFIXES = ['Theme', 'Geography']
 
@@ -50,19 +50,19 @@ export const PuzzleInfoRow = ({ difficultyTier, packLabel, hint, hintRevealed, o
   // The hint pill is FILLED with tertiary and draws its icon/text in onTertiary, rather than
   // tinting them tertiary against the surface the way the pips below do. tertiary is derived from
   // whatever accent the player picked (see Theme.tsx / @rific/auto-paper), and at the pale end of
-  // that range — yellows especially — tertiary-on-surface text washes out to nearly unreadable.
+  // that range - yellows especially - tertiary-on-surface text washes out to nearly unreadable.
   // onTertiary is the one color the palette guarantees is legible against tertiary, in both the
   // light and dark variants, so pairing them keeps the label readable for every accent choice.
   const onTertiaryColor = theme.colors.onTertiary
-  // easy/medium/hard map onto @rific/auto-paper's success/warning/danger theme roles — see
+  // easy/medium/hard map onto @rific/auto-paper's success/warning/danger theme roles - see
   // useDifficultyColors. Shared with PuzzleDrawer's difficulty picker's own CHECKED segment, so
   // both reflect the exact same solid-vibrant fill rather than the muted container tint an
-  // unchecked segment gets there — this pill has no "unselected" state to distinguish itself
+  // unchecked segment gets there - this pill has no "unselected" state to distinguish itself
   // from, so it's always the vibrant one.
   const difficultyVibrantColors = useDifficultyVibrantColors()
   const difficultyOnVibrantColors = useDifficultyOnVibrantColors()
 
-  // Difficulty sits in its own pill, always visible when known — unlike the hint, glancing at it
+  // Difficulty sits in its own pill, always visible when known - unlike the hint, glancing at it
   // isn't "getting help", so it doesn't route through hintRevealed (which onSolved reports for the
   // no-hints achievement; see achievements.ts). The pack it was drawn from and the derived
   // category/artist/year hint share a second pill next to it, revealed together by "Show hint".
@@ -95,7 +95,7 @@ export const PuzzleInfoRow = ({ difficultyTier, packLabel, hint, hintRevealed, o
         ) : null}
         {hasHintContent ? (
           // One persistent TouchableRipple across both states (not a View/TouchableRipple
-          // swap keyed on hintRevealed) — swapping component type on press unmounts the
+          // swap keyed on hintRevealed) - swapping component type on press unmounts the
           // touchable mid-gesture, tearing down the native view its ripple/underlay
           // animation is running on before it has time to play. Keeping the same element
           // and only changing its content/disabled state lets that animation finish

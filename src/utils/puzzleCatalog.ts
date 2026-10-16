@@ -9,7 +9,7 @@ export type PuzzleDifficultyTier = 'easy' | 'medium' | 'hard'
 
 // Primary sort by group (so related packs like Sports' NFL/NBA/MLB/... actually land together
 // instead of scattered wherever their key happens to fall alphabetically), secondary by label
-// within a group. A group-less pack (Bands' own decade packs, and every custom pack — neither has a
+// within a group. A group-less pack (Bands' own decade packs, and every custom pack - neither has a
 // `group`) sorts after every named group, not before: '￿' compares larger than any real group
 // name, so those items collect at the end rather than jumping ahead of "Animals" etc. This ordering
 // is what every caller that lists packs (PacksScreen, PuzzleDrawer, AchievementsDrawer) sees, since
@@ -21,7 +21,7 @@ const compareManifestItems = (a: PuzzleManifestItem, b: PuzzleManifestItem): num
 }
 
 // Merges the build-time generated packs with whatever user-created packs are currently cached in
-// memory (see customPacks.ts) so every caller — the pack picker, the drawer, unlock tracking —
+// memory (see customPacks.ts) so every caller - the pack picker, the drawer, unlock tracking -
 // treats a custom pack exactly like a built-in one without knowing the difference.
 export const getPuzzleManifest = (): PuzzleManifestItem[] => [...puzzleManifest, ...getCustomPackSummaries()].sort(compareManifestItems)
 

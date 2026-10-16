@@ -22,10 +22,10 @@ const isValidPrefs = (value: unknown): value is PackPuzzleListPrefs => {
 }
 
 // One shared preference across every pack's puzzle list (PackPuzzlesDrawer, AchievementsDrawer's
-// own pack-detail step, PacksScreen's read-only "view contents"), not a per-pack setting — matches
+// own pack-detail step, PacksScreen's read-only "view contents"), not a per-pack setting - matches
 // how every other player preference in this app persists (see PackSelectionProvider's own
 // AsyncStorage read/write pattern). A player who sets "Unsolved, Hard" once expects every pack
-// they open afterward to open the same way, not reset back to defaults each time — see
+// they open afterward to open the same way, not reset back to defaults each time - see
 // PackPuzzleList's own doc comment on why it no longer resets on packKey change.
 export const usePackPuzzleListPrefs = () => {
   const [prefs, setPrefsState] = useState<PackPuzzleListPrefs>(DEFAULT_PREFS)
@@ -37,7 +37,7 @@ export const usePackPuzzleListPrefs = () => {
         const parsed: unknown = JSON.parse(stored)
         if (isValidPrefs(parsed)) setPrefsState(parsed)
       } catch {
-        // Ignore a corrupted value — the default already in state stands.
+        // Ignore a corrupted value - the default already in state stands.
       }
     })
   }, [])

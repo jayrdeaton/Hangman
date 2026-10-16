@@ -48,7 +48,7 @@ const JengaVisual = ({ mistakes, color }: { mistakes: number; color: string }) =
 
   return (
     <Svg viewBox='0 0 100 100'>
-      {/* transform (not rotation+origin) — react-native-svg's web renderer sets origin as a raw
+      {/* transform (not rotation+origin) - react-native-svg's web renderer sets origin as a raw
           `transform-origin` DOM attribute, which isn't a valid one (React warns about it); folding
           the pivot into the transform string itself avoids that path entirely, same result. */}
       {!toppled && (

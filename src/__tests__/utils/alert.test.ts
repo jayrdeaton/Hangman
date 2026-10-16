@@ -22,7 +22,7 @@ describe('alert', () => {
 
     const { alert } = require('@/utils/alert')
     // window.alert is deferred a couple of animation frames (so a pending React paint isn't
-    // hidden behind the blocking dialog) — awaiting the promise itself covers that deferral.
+    // hidden behind the blocking dialog) - awaiting the promise itself covers that deferral.
     await alert('Game Over', 'You lost')
 
     expect(window.alert).toHaveBeenCalledTimes(1)

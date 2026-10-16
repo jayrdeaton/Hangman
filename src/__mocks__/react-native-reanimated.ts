@@ -11,7 +11,7 @@ const Animated = {
   ScrollView: RN.ScrollView,
   FlatList: RN.FlatList,
   createAnimatedComponent: (Component: unknown) => Component,
-  // Real shared values are stable across re-renders (ref-like) — a fresh `{ value }` object per
+  // Real shared values are stable across re-renders (ref-like) - a fresh `{ value }` object per
   // call, as this used to be, silently drops any mutation the instant something else triggers a
   // re-render, since the next render just makes a brand new one starting back at the initial
   // value. Anything that mutates .value from an event callback and expects a later render to
@@ -42,7 +42,7 @@ const Animated = {
     try {
       react(prepare(), undefined)
     } catch {
-      // Swallowed, same as useAnimatedStyle/useAnimatedProps above — a reaction that throws on
+      // Swallowed, same as useAnimatedStyle/useAnimatedProps above - a reaction that throws on
       // this one-shot mock call shouldn't fail a test that isn't exercising it.
     }
   },

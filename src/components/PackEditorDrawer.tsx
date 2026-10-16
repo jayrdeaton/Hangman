@@ -25,27 +25,27 @@ const ICON_ACTION_HIT_SLOP = { top: 4, bottom: 4, left: 4, right: 4 }
 export type PackEditorDrawerProps = {
   visible: boolean
   // The pack being edited, or null to create a new one. Deliberately NOT reset to null on dismiss
-  // by the caller — like every other drawer here, this translates away rather than unmounting, so
+  // by the caller - like every other drawer here, this translates away rather than unmounting, so
   // the form needs to hold steady through that close animation instead of blanking out mid-slide.
   editingKey: string | null
   onDismiss: () => void
   onSaved: (pack: CustomPack) => void
-  // Unconditional — this drawer's own ConfirmDialog is what gates calling it, so by the time it
+  // Unconditional - this drawer's own ConfirmDialog is what gates calling it, so by the time it
   // runs the player has already agreed. No confirm() inside it (see ConfirmDialog's own doc
   // comment for why: window.confirm() isn't reliable on web).
   onDelete: (key: string) => Promise<void>
   onShare: (key: string, label: string) => Promise<void>
 }
 
-// Create/edit a custom pack — its own animated Drawer (reached from PacksScreen's "Create" button
+// Create/edit a custom pack - its own animated Drawer (reached from PacksScreen's "Create" button
 // or a custom pack row's edit icon), stacked on top of PacksScreen the same way PackPuzzlesDrawer
 // stacks on top of PuzzleDrawer, rather than swapping in as an unanimated step within the same
 // panel. Close sits on the LEADING (left) side, matching every other drawer in the Game Menu's
-// lineage (see PuzzleDrawer/PackPuzzlesDrawer) — freeing the trailing side for Share/Delete once
+// lineage (see PuzzleDrawer/PackPuzzlesDrawer) - freeing the trailing side for Share/Delete once
 // there's an actual saved pack behind editingKey, rather than "back" and those two icons competing
 // for the same corner.
 // Memoized: stays mounted (translated off-screen) even while closed, and always renders the full
-// form below (every entry row, focus-chain registration and all) regardless of `visible` — see
+// form below (every entry row, focus-chain registration and all) regardless of `visible` - see
 // PuzzleDrawer's own memo comment for why an always-mounted, never-visible-right-now subtree
 // still costs a re-render without this whenever an unrelated ancestor state change bubbles
 // through it.
@@ -55,8 +55,8 @@ export const PackEditorDrawer = memo(({ visible, editingKey, onDismiss, onSaved,
   return (
     <Drawer open={visible} onClose={onDismiss} width={windowWidth} zIndex={DRAWER_PACK_DETAIL_Z_INDEX}>
       <View testID='pack-editor-panel' style={styles.panel} accessibilityViewIsModal={visible} accessibilityElementsHidden={!visible} importantForAccessibility={visible ? 'yes' : 'no-hide-descendants'} onAccessibilityEscape={visible ? onDismiss : undefined}>
-        {/* Keyed on the pack being edited (or 'new') so switching which pack you're editing — or
-            from editing into creating — always starts the form fresh, without needing an effect to
+        {/* Keyed on the pack being edited (or 'new') so switching which pack you're editing - or
+            from editing into creating - always starts the form fresh, without needing an effect to
             resync it. The Drawer above never unmounts this (translates only), so without the key
             the form would keep showing whatever it last had the next time visible flips back on
             for a different target. */}
@@ -85,7 +85,7 @@ const PackEditorForm = ({ editingKey, onSaved, onCancel, onDelete, onShare }: Pa
     const pack = getPuzzleManifest().find((item) => item.key === editingKey)
     if (!pack) return null
     // The list only ever needs the manifest summary, but the editor needs the full puzzle list to
-    // prefill entries — createdAt/updatedAt aren't used by the editor so they're left blank rather
+    // prefill entries - createdAt/updatedAt aren't used by the editor so they're left blank rather
     // than looking up the full CustomPack record just for two unused timestamps.
     return { key: pack.key, label: pack.label, createdAt: '', updatedAt: '', puzzles: getCustomPackPuzzles(editingKey) }
   }, [editingKey])
@@ -96,32 +96,32 @@ const PackEditorForm = ({ editingKey, onSaved, onCancel, onDelete, onShare }: Pa
   const [confirmDeleteVisible, setConfirmDeleteVisible] = useState(false)
 
   // A blank row appended, purely for display, whenever the last REAL entry (in state) isn't blank
-  // — not written into state itself until the player actually types into it (see updateEntry).
+  // - not written into state itself until the player actually types into it (see updateEntry).
   // Derived during render, not grown via an effect + setState: an effect would still lag a render
   // behind the keystroke that fills in "the last row", and eslint's react-hooks "set-state-in-effect"
   // rule rejects that cascading-render shape anyway. Computed fresh every render instead, so the
   // blank row is already part of the SAME commit as the keystroke that made the real last row
-  // non-blank — which is exactly what fixes the pack editor's keyboard flicker: the return-key chain
+  // non-blank - which is exactly what fixes the pack editor's keyboard flicker: the return-key chain
   // (see entryRows below) always advances onto a field that's already mounted, never one that gets
   // created and focused after the fact (the previous design's append-then-focus, which is what
-  // actually caused the flicker — not @rific/focus-chain itself, which has no way to tell an
+  // actually caused the flicker - not @rific/focus-chain itself, which has no way to tell an
   // existing sibling apart from a component that just mounted this render).
   const lastRealEntry = entries[entries.length - 1]
   const displayEntries = lastRealEntry.answer.trim() === '' && (lastRealEntry.hint ?? '').trim() === '' ? entries : [...entries, EMPTY_ENTRY]
 
-  // index === entries.length means this is the not-yet-real trailing row above — promotes it into
+  // index === entries.length means this is the not-yet-real trailing row above - promotes it into
   // state (with whatever was just typed) rather than trying to update an out-of-bounds entry.
   const updateEntry = (index: number, patch: Partial<CustomPackEntryInput>) => setEntries((prev) => (index < prev.length ? prev.map((entry, i) => (i === index ? { ...entry, ...patch } : entry)) : [...prev, { ...EMPTY_ENTRY, ...patch }]))
   const removeEntry = (index: number) => setEntries((prev) => (prev.length > 1 ? prev.filter((_, i) => i !== index) : prev))
 
-  // Registration order IS focus order, and register() must be called during render — see
+  // Registration order IS focus order, and register() must be called during render - see
   // PnpWordPrompt's own comment on useFocusChain for why. The label leads the chain, then every
   // entry's answer/hint pair in list order.
   const register = useFocusChain()
-  // Destructured to plain locals rather than kept as `labelReg.ref` etc. — eslint's react-hooks
+  // Destructured to plain locals rather than kept as `labelReg.ref` etc. - eslint's react-hooks
   // "refs" rule flags property access shaped like `.ref`/`.focus` as if it were a raw ref read
   // during render, same as PnpWordPrompt's own registration does.
-  // blurOnSubmit=false on every field below (see PnpWordPrompt's own comment on register()) — the
+  // blurOnSubmit=false on every field below (see PnpWordPrompt's own comment on register()) - the
   // TextInput's native default would otherwise race each onSubmitEditing's own focus() call and
   // flicker the keyboard shut and back open between fields.
   const {
@@ -130,21 +130,21 @@ const PackEditorForm = ({ editingKey, onSaved, onCancel, onDelete, onShare }: Pa
   } = register()
 
   // Holds the always-blank trailing row's answer-field instance, kept up to date by the ref
-  // callback below (see entryRows) — written at commit time via the ref callback (fired by React
+  // callback below (see entryRows) - written at commit time via the ref callback (fired by React
   // on commit), not synchronously during render, so eslint's react-hooks "refs" rule is fine with
   // it. Backs the "Add word" button below: since displayEntries above guarantees that row already
   // exists and is already mounted, the button can just focus it directly rather than adding then
   // focusing a new one.
   const lastAnswerElRef = useRef<{ focus: () => void } | null>(null)
 
-  // Same rule handleSave itself applies when actually saving — surfaced here too so the button can
+  // Same rule handleSave itself applies when actually saving - surfaced here too so the button can
   // just be disabled instead of doing nothing (or popping an alert unreliably, see ConfirmDialog's
   // own doc comment on why native dialogs aren't trusted for feedback in this app) when pressed
   // with nothing to save.
   const hasValidEntry = entries.some((entry) => normalizePhrase(entry.answer).replace(/ /g, '').length > 0)
 
   const handleSave = async () => {
-    // Falls back to "Custom" rather than blocking the save on an empty name — the field stays
+    // Falls back to "Custom" rather than blocking the save on an empty name - the field stays
     // freely editable either way, this just means leaving it blank isn't a dead end.
     const trimmedLabel = label.trim() || CUSTOM_QUICK_PACK_LABEL
 
@@ -169,7 +169,7 @@ const PackEditorForm = ({ editingKey, onSaved, onCancel, onDelete, onShare }: Pa
   }
 
   // Only reachable from the confirm dialog's own Delete button (see the ConfirmDialog rendered
-  // below) — by the time this runs, the player has already agreed.
+  // below) - by the time this runs, the player has already agreed.
   const handleConfirmDelete = async () => {
     if (!editingKey) return
     setConfirmDeleteVisible(false)
@@ -192,10 +192,10 @@ const PackEditorForm = ({ editingKey, onSaved, onCancel, onDelete, onShare }: Pa
       props: { onSubmitEditing: focusNextAnswer, blurOnSubmit: hintBlurOnSubmit }
     } = register()
     // displayEntries above keeps a blank entry always mounted after the last real one, so there's
-    // no special "last" case here — every hint field's return key just advances the chain onto the
+    // no special "last" case here - every hint field's return key just advances the chain onto the
     // next answer field, same as every other field, because that next field already exists.
     const isLast = index === displayEntries.length - 1
-    // True for the not-yet-real trailing row (see displayEntries/updateEntry above) — nothing to
+    // True for the not-yet-real trailing row (see displayEntries/updateEntry above) - nothing to
     // remove there yet, so its own remove button is disabled rather than a no-op tap.
     const isVirtual = index >= entries.length
 
@@ -206,7 +206,7 @@ const PackEditorForm = ({ editingKey, onSaved, onCancel, onDelete, onShare }: Pa
             testID={`entry-answer-${index}`}
             // Merged with the chain's own ref callback: it always registers this field for the
             // return-key chain, and additionally keeps lastAnswerElRef pointed at whichever entry is
-            // currently last — a ref write, but happening inside a ref callback (fired by React at
+            // currently last - a ref write, but happening inside a ref callback (fired by React at
             // commit time), not synchronously during render, so it's fine here.
             ref={(el: Parameters<typeof answerRef>[0]) => {
               answerRef(el)
@@ -233,16 +233,16 @@ const PackEditorForm = ({ editingKey, onSaved, onCancel, onDelete, onShare }: Pa
   return (
     <>
       {/* footerAboveKeyboard: this form's own entries can run long enough that the last row's
-          fields sit right where the keyboard covers the screen — without it, Cancel/Save (in the
+          fields sit right where the keyboard covers the screen - without it, Cancel/Save (in the
           footer below) would be hidden behind the keyboard while a mid-form field is focused. */}
       <ScrollViewProvider footerAboveKeyboard>
-        {/* Share/Delete only make sense once there's an actual saved pack behind editingKey — no
+        {/* Share/Delete only make sense once there's an actual saved pack behind editingKey - no
             trailing action at all for a brand-new, not-yet-saved pack instead (ScrollViewHeader
             centers the title independently of whether a trailing action is present, unlike the old
-            hand-rolled row, which needed a balancing spacer). Leading icon is arrow-left, not X —
+            hand-rolled row, which needed a balancing spacer). Leading icon is arrow-left, not X -
             same left-anchored Game Menu lineage as PuzzleDrawer/PackPuzzlesDrawer/PacksScreen (see
             PuzzleDrawer's own header comment for why an arrow instead of a close X). 'Close', not
-            the Appbar.BackAction default of 'Back' — see PuzzleDrawer's own ScrollViewHeader
+            the Appbar.BackAction default of 'Back' - see PuzzleDrawer's own ScrollViewHeader
             comment for why. Custom IconButton, not the default callback-driven Appbar.BackAction:
             a plain arrow in the surface's ink (the fleet's back-button style), matching every other back/close action in the app; IconButton already
             fires the app's own haptic convention on press itself, so this needs no manual
@@ -257,7 +257,7 @@ const PackEditorForm = ({ editingKey, onSaved, onCancel, onDelete, onShare }: Pa
               iconColor={theme.colors.onSurface}
               onPress={() => {
                 // The Drawer this panel lives in never unmounts on close, only translates
-                // off-screen (see PackEditorDrawer's own doc comment above) — so a focused
+                // off-screen (see PackEditorDrawer's own doc comment above) - so a focused
                 // TextInput keeps native focus and the OS keyboard stays up through the close
                 // animation unless dismissed here.
                 Keyboard.dismiss()
@@ -278,7 +278,7 @@ const PackEditorForm = ({ editingKey, onSaved, onCancel, onDelete, onShare }: Pa
 
         <ScrollView keyboardAware showsVerticalScrollIndicator={false} contentContainerStyle={styles.scrollContent} keyboardShouldPersistTaps='handled'>
           {/* A list-item-header treatment (like "My packs"/"Built-in packs" above the rows they
-            label) rather than just another form field identical to the entries below it — this is
+            label) rather than just another form field identical to the entries below it - this is
             the one field that names the whole thing the rest of the screen is building. */}
           <Text variant='titleSmall' style={styles.sectionHeader}>
             Pack Name
@@ -292,7 +292,7 @@ const PackEditorForm = ({ editingKey, onSaved, onCancel, onDelete, onShare }: Pa
           </Button>
         </ScrollView>
 
-        {/* Not part of the scrollable content — same reasoning as PuzzleDrawer's own footer and
+        {/* Not part of the scrollable content - same reasoning as PuzzleDrawer's own footer and
             PacksScreen's listFooter: Cancel/Save should be reachable without scrolling down
             through however many entries this pack has. */}
         <ScrollViewFooter style={styles.footer}>
@@ -327,14 +327,14 @@ const styles = StyleSheet.create({
     marginTop: 12
   },
   // Matches PuzzleDrawer's own footer padding. alignItems override matches every other migrated
-  // footer's stretch-not-center reasoning (see PuzzleDrawer's own footer comment) — inert here in
+  // footer's stretch-not-center reasoning (see PuzzleDrawer's own footer comment) - inert here in
   // practice (footerButton's flex:1 splits width, not height, and both buttons share one natural
   // height), kept for consistency with the rest.
   footer: {
     alignItems: 'stretch',
     flexDirection: 'row',
     gap: 12,
-    // Matches ScrollViewHeader's own actionMargin — see PuzzleDrawer's own footer comment for why.
+    // Matches ScrollViewHeader's own actionMargin - see PuzzleDrawer's own footer comment for why.
     paddingBottom: 4,
     paddingHorizontal: 16,
     paddingTop: 4
@@ -343,7 +343,7 @@ const styles = StyleSheet.create({
   hintInput: { marginTop: 0 },
   panel: { flex: 1 },
   rowActions: { flexDirection: 'row' },
-  // paddingBottom matches sectionHeader's own marginTop above exactly — the scrollable content's
+  // paddingBottom matches sectionHeader's own marginTop above exactly - the scrollable content's
   // last field sits the same distance from what follows it (the footer) as the first sits from
   // the header.
   scrollContent: { paddingBottom: 12, paddingHorizontal: 16 },
