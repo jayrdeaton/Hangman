@@ -74,8 +74,8 @@ export const PuzzleDrawer = memo(({ visible, onDismiss, onRequestOpen, initialCo
   const manifest = useMemo(() => getPuzzleManifest().filter((item) => item.count > 0), [packsVersion])
   const drawerWidth = useDrawerWidth()
   // Seeded at the closed position (see useDrawerWidth for why it must be the same width the Drawer
-  // gets). Only the first render reads this: after that, Drawer itself springs the value to its own
-  // closed offset whenever the width changes.
+  // gets). Only the first render reads this: after that, Drawer itself moves the value to its own
+  // closed offset whenever the width changes (a jump while closed, so a wider panel never peeks in).
   const translateX = useSharedValue(-drawerWidth)
   // The persisted default (see usePackSelection) — read and written live, not staged in `draft`
   // like the rest of this config, so toggling a pack takes effect immediately for every future
