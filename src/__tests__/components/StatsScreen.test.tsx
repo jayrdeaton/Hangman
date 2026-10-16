@@ -137,8 +137,7 @@ describe('StatsScreen', () => {
     const onBack = jest.fn()
     const screen = await renderScreen({ onBack })
 
-    // The header's arrow is the screen's first button.
-    await fireEvent.press(screen.getAllByRole('button')[0])
+    await fireEvent.press(screen.getByLabelText('Back'))
     expect(onBack).toHaveBeenCalledTimes(1)
 
     const handler = addEventListener.mock.calls.find(([event]) => event === 'hardwareBackPress')![1] as () => boolean

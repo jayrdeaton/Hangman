@@ -159,7 +159,7 @@ describe('PuzzleDrawer', () => {
       const utils = await renderDrawerWithRealTheme({ onDismiss })
       await fireEvent.press(utils.getByText('Achievements Earned'))
 
-      await fireEvent.press(within(utils.getByTestId('stats-screen')).getAllByRole('button')[0])
+      await fireEvent.press(within(utils.getByTestId('stats-screen')).getByLabelText('Back'))
 
       expect(utils.queryByTestId('stats-screen')).toBeNull()
       expect(onDismiss).not.toHaveBeenCalled()
