@@ -166,9 +166,9 @@ describe('ModePickerDrawer', () => {
     expect(getByTestId('game-visual-letters').props.children).toBe(0)
   })
 
-  // The drawer stays mounted while closed (see PuzzleDrawer), so a cycle that kept running would
+  // The drawer stays mounted while closed (see LoadoutScreen), so a cycle that kept running would
   // keep re-rendering a card nobody can see, forever. That also used to keep every test rendering
-  // Main feeding React real-timer updates long after it ended.
+  // the old Main screen feeding React real-timer updates long after it ended.
   it("freezes the focused card's demo cycle while the drawer is closed, and restarts it from the entry fade on the next open", async () => {
     jest.useFakeTimers()
     const { getByTestId, rerender } = await render(<ModePickerDrawer visible={false} selected={DEFAULT_MODE} onDismiss={jest.fn()} onSelect={jest.fn()} />)

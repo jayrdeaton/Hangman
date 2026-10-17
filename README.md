@@ -8,27 +8,30 @@ Hangman is an ad-free word-guessing game for iOS, Android, and web. Built with E
 
 ## Features
 
-- **Straight into a puzzle:** the app opens on a random puzzle with no setup screen. Guess letters on the on-screen keyboard (or a physical keyboard on web); six wrong guesses ends the round. Each puzzle shows its difficulty, and Show Hint reveals its pack and, where it has one, a clue.
+- **Home, then play:** the title screen offers Single Player and Pass & Play, each with its own setup page (art, difficulty, packs), like the other Tastic games. Guess letters on the on-screen keyboard (or a physical keyboard on web); six wrong guesses ends the round. Each puzzle shows its difficulty, and Show Hint reveals its pack and, where it has one, a clue.
+- **Picks up where you left off:** the board is saved on every guess. Close the app mid-puzzle and it opens straight back into that puzzle, letters and all (Pass & Play too). Leave a puzzle for the setup page and it waits there under Continue.
 - **Pass & Play:** one person types a secret word (with an optional hint) and taps Hand Off, the next person taps Ready and guesses, then becomes the next author. There are no scores or player slots, so any number of people can pass the device around. Turning on Keep This Word saves each word to a Pass & Play pack.
 - **58 built-in packs, 19,700 puzzles:** grouped under Geography, Sports, Media, Language, Nature, Science, Games, Business, History, Mythology, Transportation, and Other, from Countries and NFL teams to Movies (8,389), TV Shows (4,028), and Songs (1,806).
 - **Difficulty:** Any, Easy, Medium, or Hard (6,560, 8,339, and 4,801 puzzles). Random draws favor puzzles you haven't solved yet.
 - **Choose Packs and browse:** pick which packs random puzzles come from, or open a pack to see solved answers and blanks for the rest, filter by solved status and difficulty, and tap a puzzle to play it.
 - **Custom packs:** create packs of your own words with optional hints, then share them as a `.hangman` file through the share sheet (a download on web). Opening a `.hangman` file from Messages, Mail, Files, or AirDrop offers to import it.
-- **Ten art styles:** Classic, Appearing, Disappearing, Robot, Candle, Balloons, Stars, Snowflakes, Hourglass, and Letters Only (no artwork, bigger letters), each previewed with an animated demo in the picker. Switching applies to the round already in progress. A win ends in fireworks.
+- **Ten art styles:** Classic, Appearing, Disappearing, Robot, Candle, Balloons, Stars, Snowflakes, Hourglass, and Letters Only (no artwork, bigger letters), each previewed with an animated demo in the picker, and the current one acts out a round on the title screen. Switching also applies to a puzzle left waiting. A win ends in fireworks.
 - **Stats and achievements:** a Stats & Achievements screen (the Tastic games' shared stats screen) with puzzles unlocked and packs completed, solo stats (played, won, lost, win rate, current and best streak, flawless and no-hint wins, modes won, letters guessed and correct), separate Pass & Play stats, days played, and 34 achievements on the Tastic games' shared bronze, silver and gold ladders: first games, solve milestones up to 2,500, win streaks, flawless and no-hint wins, winning in every art style, completing built-in packs, creating packs, Pass & Play rounds, and days played in a row. Pack Progress shows every pack's progress, selected or not.
-- **Progress backup:** Settings' Export writes your unlocked puzzles to a `.hangman` file and Import merges one back in. Reset All Stats, on the stats screen, clears the stats, achievements and unlocked puzzles together. Leaving a puzzle after you've made a guess asks first and counts as a loss.
-- **Settings and Customize:** Settings (the cog) has Sound, Haptics, System, Light, or Dark appearance (and Blur on iOS and web), a QWERTY or ABC keyboard layout, the backup, and Check for Updates. Customize, in the menu, has the theme color and color harmony beside the art styles.
+- **Progress backup:** Settings' Export writes your unlocked puzzles to a `.hangman` file and Import merges one back in. Reset All Stats, on the stats screen, clears the stats, achievements and unlocked puzzles together. Starting a different puzzle over one you've already guessed in asks first and counts it as a loss.
+- **Settings and Customize:** Settings (the cog, on every screen) has Sound, Haptics, System, Light, or Dark appearance (and Blur on iOS and web), a QWERTY or ABC keyboard layout, the backup, and Check for Updates. Customize, from the art row on either setup page, has the theme color and color harmony beside the art styles.
+- **A whiteboard to play on:** every screen sits on one board, a chalkboard in dark appearance and a whiteboard in light, with the faint smudges of old writing.
 
 ## Under the hood
 
-- **One screen, stacked drawers:** there's no router. `App.tsx` renders the providers and `Main`, which owns the current session and remounts `Game` with a fresh key each round so no state leaks between puzzles. Everything else (the menu, Choose Packs, the pack browser and editor, Pack Progress, Customize) is a `@rific/drawer` panel with a fixed stacking tier (`src/constants/drawerStacking.ts`), and the Stats & Achievements screen is a full-screen layer over the open menu, above every tier.
+- **Routes:** Expo Router, in `src/app/`: Home (`/`), a setup page per play mode (`/loadout?mode=solo|pnp`), the game (`/game?mode=solo|pnp`), Stats & Achievements (`/achievements`), and `/play` for shared links. Every screen is transparent over one board drawn behind the stack. The game screen remounts `Game` with a fresh key each round so no state leaks between puzzles. Choose Packs, the pack browser and editor, Pack Progress and Customize are `@rific/drawer` panels over the Single Player setup page, each with a fixed stacking tier (`src/constants/drawerStacking.ts`).
+- **Resume:** the round on the board (and the Pass & Play one, separately) lives in a Redux slice saved under its own key on every guess. The slice also remembers which game screen was open; a cold launch reads that once and Home redirects straight into the game before its menu ever draws.
 - **Hand-drawn rendering:** letters are drawn stroke by stroke from baked-in Hershey Roman Simplex font data, and every art style is a `GameMode` (`src/modes/`) whose artwork is a react-native-svg component in a fixed 100x100 viewBox, animated on with Reanimated. The screen fades in once as a whole after the puzzle stage and keyboard are laid out, rather than piece by piece.
 - **Mode registry:** `ALL_MODES` holds 17 modes, and `VISIBLE_MODES` drops the seven marked `hidden`. Hidden modes still resolve from links and old progress, and Mode Master only requires wins in the visible ones. Every mode allows six wrong guesses, and the limit is frozen at round start.
 - **Puzzle selection:** `resolvePuzzle` picks a random pack from the current selection that has the chosen difficulty, then an unsolved puzzle from it, falling back to solved ones once a pack is complete. Answers are normalized at runtime, folding accents (Café becomes CAFE) so every letter is on the A-Z keyboard. Custom words get a difficulty tier from a heuristic based on letters absent from the answer and its length.
-- **Persistence:** Redux Toolkit with redux-persist covers the theme, haptic, and sound settings and the stats and achievements (`@tastic/achievements`' slice). Unlocks and custom packs are each one versioned JSON blob in AsyncStorage (`puzzle_unlocks_v1`, `custom_packs_v1`), and small context providers save keyboard layout, pack selection, and the last mode and difficulty. `@rific/splash-gate` keeps the splash screen up until the theme, fonts, and those saved preferences have loaded.
-- **Files and links:** `app.json` registers the `.hangman` file type (an iOS document type and UTI, an Android intent filter). One format carries either a pack or a progress backup, told apart by content, and an incoming file is previewed and only imported after confirmation. A `hangman://play?phrase=...&hint=...&mode=...` link opens straight into that puzzle, with the phrase and hint checked against the same length limits as the input fields.
+- **Persistence:** Redux Toolkit with redux-persist covers the theme, haptic, and sound settings, the stats and achievements (`@tastic/achievements`' slice), and the rounds in progress (their own persist key, so a guess doesn't rewrite the stats). Unlocks and custom packs are each one versioned JSON blob in AsyncStorage (`puzzle_unlocks_v1`, `custom_packs_v1`), and small context providers save keyboard layout, pack selection, and the last mode and difficulty. `@rific/splash-gate` keeps the splash screen up until the theme, fonts, and those saved preferences have loaded.
+- **Files and links:** `app.json` registers the `.hangman` file type (an iOS document type and UTI, an Android intent filter). One format carries either a pack or a progress backup, told apart by content, and an incoming file is previewed and only imported after confirmation. A `hangman://play?phrase=...&hint=...&mode=...` link (or `/play?...` on the web) lands on the `/play` route, which opens straight into that puzzle, with the phrase and hint checked against the same length limits as the input fields.
 - **Platform details:** the `@tastic/core` config plugin owns the native portrait lock. On web the game column is capped at 480px wide, and file sharing falls back to a browser download. Over-the-air updates ship through `expo-updates` and `@rific/updater`.
-- **Tests:** 42 Jest suites with 463 tests covering the main screen and abandon flow, Pass & Play, the game screen and keyboard, every drawer, the win celebration, achievements, unlock tracking, custom packs, `.hangman` file handling, shared links, and the puzzle picker. CI runs `npm run verify` on pushes and pull requests to `main`.
+- **Tests:** 54 Jest suites with 800 tests covering the routes (Home, both setup pages, the game screen, shared links, the root layout), the resume and the saved rounds, the abandon flow, Pass & Play, the keyboard, every drawer, the win celebration, achievements, unlock tracking, custom packs, `.hangman` file handling, and the puzzle picker. CI runs `npm run verify` on pushes and pull requests to `main`.
 
 ## Built on
 
@@ -38,11 +41,11 @@ Hangman is an ad-free word-guessing game for iOS, Android, and web. Built with E
 | [`@tastic/sprites`](https://www.npmjs.com/package/@tastic/sprites) | SVG fireworks burst on a win (the `./fireworks` subpath) |
 | [`@tastic/hud`](https://www.npmjs.com/package/@tastic/hud) | The fleet's shared update card, Settings sheet, confirm cards, result card and Stats & Achievements screen (the light `./chrome` subpath only) |
 | [`@tastic/achievements`](https://www.npmjs.com/package/@tastic/achievements) | Stats, the achievements catalog engine and its Redux slice |
-| [`@rific/core`](https://www.npmjs.com/package/@rific/core) | Shared foundation that `@tastic/core` and most of the `@rific` packages here depend on (not imported directly) |
+| [`@rific/core`](https://www.npmjs.com/package/@rific/core) | The fleet's `safeBack` (back, or Home when there's nothing to go back to), and the shared foundation `@tastic/core` and most of the `@rific` packages here depend on |
 | [`@rific/auto-paper`](https://www.npmjs.com/package/@rific/auto-paper) | React Native Paper theming from a seed color and harmony, light/dark appearance, the color picker, dialogs and menus |
-| [`@rific/drawer`](https://www.npmjs.com/package/@rific/drawer) | The menu and every drawer stacked on top of it |
+| [`@rific/drawer`](https://www.npmjs.com/package/@rific/drawer) | Choose Packs, the pack browser and editor, Pack Progress and Customize, stacked over the setup page |
 | [`@rific/feedback-press`](https://www.npmjs.com/package/@rific/feedback-press) | Buttons, switches, and keyboard keys with haptic and sound feedback, game sounds, haptic and sound settings |
-| [`@rific/scroll-view`](https://www.npmjs.com/package/@rific/scroll-view) | Blurred floating headers and footers in each drawer |
+| [`@rific/scroll-view`](https://www.npmjs.com/package/@rific/scroll-view) | Blurred floating headers and footers on the setup pages and in each drawer |
 | [`@rific/splash-gate`](https://www.npmjs.com/package/@rific/splash-gate) | Holds the splash screen until the theme, fonts, and saved preferences are ready |
 | [`@rific/toaster`](https://www.npmjs.com/package/@rific/toaster) | Toast notifications (achievement unlocks, input warnings) |
 | [`@rific/updater`](https://www.npmjs.com/package/@rific/updater) | OTA update checks and the `build`/`update` scripts |
@@ -114,13 +117,14 @@ This is a small enough shape that a short script to automate steps 1 and 2 is ea
 
 ```
 src/
-  components/   game screen, on-screen keyboard, menu and drawers, dialogs, providers
+  app/          Expo Router routes (Home, setup pages, game, stats, shared links) and the root layout
+  components/   screens, game board, on-screen keyboard, drawers, dialogs, providers
   constants/    drawer stacking order, release (OTA) version
   data/         generated puzzle packs and catalog (see Puzzle content)
   effects/      win celebration
   hooks/        sound effects, saved preferences, difficulty colors
   modes/        react-native-svg art styles and the shared sketch primitives they're drawn with
-  redux/        store with persisted theme, haptic, and sound settings
+  redux/        store with persisted theme, haptic, and sound settings, stats, and the rounds in progress
   types/        shared TypeScript types (Puzzle, GameMode, game session)
   utils/        puzzle picker and catalog, normalization, unlocks, stats engine, custom packs, .hangman files, links
   __tests__/    Jest suites

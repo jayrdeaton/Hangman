@@ -26,7 +26,7 @@ export type RoundEndDialogProps = {
   // here are the ones the player never found, and they draw in red.
   guessedLetters: string[]
   categoryProgress?: CategoryProgress | null
-  // What the round just unlocked, in catalog order (see Main's handleSolved and handleLost).
+  // What the round just unlocked, in catalog order (see GameScreen's handleSolved and handleLost).
   unlockedAchievements?: UnlockedAchievement[]
   onDismiss: () => void
 }
@@ -211,10 +211,10 @@ export const RoundEndDialog = ({ visible, outcome, phrase, guessedLetters, categ
             ) : null}
           </ScrollView>
           {/* One button that already knows where to draw the next puzzle from (see
-              GameStartPayload.packScope and Main's handleRoundEnd: still inside the pack the player
-              was browsing if they were browsing one, otherwise back to their whole selection). No
-              separate "stay in this pack" action needed since it's not really a choice, just what
-              continuing already means given how this round started. */}
+              GameStartPayload.packScope and GameScreen's handleRoundEnd: still inside the pack the
+              player was browsing if they were browsing one, otherwise back to their whole
+              selection). No separate "stay in this pack" action needed since it's not really a
+              choice, just what continuing already means given how this round started. */}
           <View style={overlayActionStyles.actions}>
             <Button mode='contained' onPress={onDismiss} style={overlayActionStyles.actionButtonSingle} buttonColor={theme.colors.primary} textColor={theme.colors.onPrimary}>
               Next

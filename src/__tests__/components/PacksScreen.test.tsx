@@ -1,12 +1,12 @@
 import { FeedbackPressProvider } from '@rific/feedback-press'
 import { ToastProvider } from '@rific/toaster'
-import { fireEvent, render as rtlRender, waitFor, within } from '@testing-library/react-native'
-import type { ReactElement, ReactNode } from 'react'
+import { act, fireEvent, render as rtlRender, waitFor, within } from '@testing-library/react-native'
+import { createRef, type ReactElement, type ReactNode } from 'react'
 import * as RNPaper from 'react-native-paper'
 import { PaperProvider } from 'react-native-paper'
 import { Provider as ReduxProvider } from 'react-redux'
 
-import { PacksScreen } from '@/components/PacksScreen'
+import { PacksScreen, type PacksScreenHandle } from '@/components/PacksScreen'
 import { GameStatsProvider } from '@/hooks/useGameStats'
 import { store } from '@/redux/store'
 import { loadCustomPacksCache, saveCustomPack } from '@/utils/customPacks'
@@ -107,8 +107,9 @@ describe('PacksScreen', () => {
     expect(onChangeSelectedKeys).toHaveBeenCalled()
 
     // onPacksChanged only signals the parent to invalidate its own cache - in the real app
-    // (Main.tsx) that bumps a `packsVersion` counter passed back in as a prop, which is what
-    // actually triggers this screen's manifest to recompute. Simulate that round trip here.
+    // (LoadoutScreen, through useCatalog's refreshCustomPacks) that bumps a `packsVersion` counter
+    // passed back in as a prop, which is what actually triggers this screen's manifest to
+    // recompute. Simulate that round trip here.
     await rerender(<PacksScreen visible onDismiss={jest.fn()} selectedKeys={onChangeSelectedKeys.mock.calls[0][0]} onChangeSelectedKeys={jest.fn()} packsVersion={1} onPacksChanged={jest.fn()} />)
 
     expect(getByText('My Trip')).toBeTruthy()
@@ -340,7 +341,7 @@ describe('PacksScreen', () => {
     await fireEvent.press(getByLabelText(`View ${pack.label} contents`))
 
     // Closed-to-screen-readers while the detail overlay covers it - RTL's default queries skip
-    // hidden elements (see PuzzleDrawer.test.tsx's own version of this same assertion),
+    // hidden elements (see ModePickerDrawer.test.tsx's own version of this same assertion),
     // includeHiddenElements opts back in here.
     const hiddenBehindDetail = getByTestId('packs-screen-panel', { includeHiddenElements: true })
     expect(hiddenBehindDetail.props.accessibilityViewIsModal).toBe(false)
@@ -372,5 +373,85 @@ describe('PacksScreen', () => {
     // blanking the content mid-slide.
     const hiddenDetailPanel = getByTestId('pack-puzzles-panel', { includeHiddenElements: true })
     expect(within(hiddenDetailPanel).getByText(pack.label, { includeHiddenElements: true })).toBeTruthy()
+  })
+
+  // The Single Player loadout's Android back asks this screen first, through its ref, since only this
+  // screen knows whether its own editor or pack browser is open over it. A false sends the loadout on
+  // to closing this screen itself.
+  describe('closeTopOverlay', () => {
+    const renderWithHandle = async (overrides: Partial<React.ComponentProps<typeof PacksScreen>> = {}) => {
+      const handle = createRef<PacksScreenHandle>()
+      const screen = await renderScreen({ ...overrides, ref: handle })
+      // Inside act, as the loadout's back listener runs it, since closing one sets this screen's state.
+      const closeTopOverlay = async () => {
+        let closed = false
+        await act(async () => {
+          closed = handle.current!.closeTopOverlay()
+        })
+        return closed
+      }
+      const panelHidden = (testID: string) => screen.getByTestId(testID, { includeHiddenElements: true }).props.accessibilityElementsHidden
+      return { ...screen, closeTopOverlay, panelHidden }
+    }
+
+    it('returns false, closing nothing, with nothing open over the list', async () => {
+      const onDismiss = jest.fn()
+      const { closeTopOverlay, panelHidden } = await renderWithHandle({ onDismiss })
+
+      expect(await closeTopOverlay()).toBe(false)
+
+      expect(panelHidden('packs-screen-panel')).toBe(false)
+      // Closing this screen is the loadout's call, not this one's.
+      expect(onDismiss).not.toHaveBeenCalled()
+    })
+
+    it('closes the pack browser and returns true, leaving the list open, then has nothing left to close', async () => {
+      const pack = builtIn()
+      const onDismiss = jest.fn()
+      const { getByLabelText, closeTopOverlay, panelHidden } = await renderWithHandle({ onDismiss })
+      await fireEvent.press(getByLabelText(`View ${pack.label} contents`))
+      expect(panelHidden('pack-puzzles-panel')).toBe(false)
+
+      expect(await closeTopOverlay()).toBe(true)
+
+      expect(panelHidden('pack-puzzles-panel')).toBe(true)
+      expect(panelHidden('packs-screen-panel')).toBe(false)
+      expect(await closeTopOverlay()).toBe(false)
+      expect(onDismiss).not.toHaveBeenCalled()
+    })
+
+    it('closes the editor and returns true, leaving the list open, then has nothing left to close', async () => {
+      const onDismiss = jest.fn()
+      const { getByText, closeTopOverlay, panelHidden } = await renderWithHandle({ onDismiss })
+      await fireEvent.press(getByText('Create'))
+      expect(panelHidden('pack-editor-panel')).toBe(false)
+
+      expect(await closeTopOverlay()).toBe(true)
+
+      expect(panelHidden('pack-editor-panel')).toBe(true)
+      expect(panelHidden('packs-screen-panel')).toBe(false)
+      expect(await closeTopOverlay()).toBe(false)
+      expect(onDismiss).not.toHaveBeenCalled()
+    })
+
+    it('closes the editor before the pack browser when both are open', async () => {
+      const pack = builtIn()
+      const { getByLabelText, getByText, closeTopOverlay, panelHidden } = await renderWithHandle()
+      await fireEvent.press(getByLabelText(`View ${pack.label} contents`))
+      // The browser covers the list, so Create is only reachable through the hidden-elements query.
+      await fireEvent.press(getByText('Create', { includeHiddenElements: true }))
+      expect(panelHidden('pack-puzzles-panel')).toBe(false)
+      expect(panelHidden('pack-editor-panel')).toBe(false)
+
+      expect(await closeTopOverlay()).toBe(true)
+      expect(panelHidden('pack-editor-panel')).toBe(true)
+      expect(panelHidden('pack-puzzles-panel')).toBe(false)
+
+      expect(await closeTopOverlay()).toBe(true)
+      expect(panelHidden('pack-puzzles-panel')).toBe(true)
+      expect(panelHidden('packs-screen-panel')).toBe(false)
+
+      expect(await closeTopOverlay()).toBe(false)
+    })
   })
 })

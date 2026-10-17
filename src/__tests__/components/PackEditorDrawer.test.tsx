@@ -41,7 +41,7 @@ const Wrapper = ({ children }: { children: ReactNode }) => (
 const render = (ui: ReactElement) => rtlRender(ui, { wrapper: Wrapper })
 
 // This file only covers what's specific to PackEditorDrawer's own shell - the accessibility-modal
-// wiring every sibling drawer's test (PuzzleDrawer.test.tsx, PackProgressDrawer.test.tsx) already
+// wiring every sibling drawer's test (ModePickerDrawer.test.tsx, PackProgressDrawer.test.tsx) already
 // checks for its own panel, which nothing exercised for this one since it used to be an in-place
 // step inside PacksScreen rather than its own animated Drawer. Everything else about the form
 // itself (save/delete/share/validation) is already covered thoroughly through PacksScreen.test.tsx.

@@ -21,13 +21,12 @@ export type PackSelectionProviderProps = { children: ReactNode }
 export const PackSelectionProvider = ({ children }: PackSelectionProviderProps): JSX.Element => {
   const [selectedPackKeys, setSelectedPackKeysState] = useState<string[]>(allPackKeys)
   // Separate from selectedPackKeys itself (which happily starts from the "every pack" fallback
-  // above and corrects in place once this resolves) - Main's own first, synchronous puzzle draw
-  // reads selectedPackKeys before this ever has a chance to run, so it needs this flag to know
-  // when it's safe to go back and correct that one draw. See Main.tsx's packSelectionReady effect.
-  // Also fed into the app's shared splash gate (see splashGate.ts) - the same one puzzleDefaults
-  // uses for the identical reason - so on a normal cold boot Main's own correction has already run
-  // behind the splash screen by the time it lifts, instead of visibly swapping the puzzle out from
-  // under the player a beat after they can already see it.
+  // above and corrects in place once this resolves), so a reader can tell the saved selection from
+  // that fallback: the game screen waits for it before drawing a puzzle (see SoloRound in
+  // GameScreen.tsx), so a draw never comes from packs the player had switched off.
+  // Also fed into the app's shared splash gate (see splashGate.ts), alongside puzzleDefaults, so on
+  // a normal cold boot the saved selection is already in place by the time the splash lifts,
+  // before the loadout's pack list or any draw can read it.
   const [ready, setReady] = useState(false)
   useSplashReady('packSelection', ready)
 

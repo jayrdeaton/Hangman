@@ -52,7 +52,7 @@ const Wrapper = ({ children }: { children: ReactNode }) => (
 )
 const render = (ui: ReactElement) => rtlRender(ui, { wrapper: Wrapper })
 
-// What PuzzleDrawer passes in (its own manifest); built once, so it's the same array every render.
+// What LoadoutScreen passes in (its own manifest); built once, so it's the same array every render.
 const MANIFEST = getPuzzleManifest().filter((item) => item.count > 0)
 const builtIn = () => MANIFEST[0]
 
@@ -95,7 +95,7 @@ describe('PackProgressDrawer', () => {
     expect(glyphs).toContain('chevron-right')
   })
 
-  // PuzzleDrawer's manifest includes custom packs and is rebuilt when one is saved, so the drawer has
+  // LoadoutScreen's manifest includes custom packs and is rebuilt when one is saved, so the drawer has
   // to list exactly what it's given, picking a new one up on open.
   it('lists exactly the manifest it is given, and picks up a changed one when it opens', async () => {
     const customPack = { key: 'custom:test', label: 'My Words', count: 3, group: 'Custom' } as (typeof MANIFEST)[number]
@@ -203,7 +203,7 @@ describe('PackProgressDrawer', () => {
     expect(mockAlert).toHaveBeenCalledWith('No Puzzles Available', 'No puzzles available for the selected packs and difficulty.')
   })
 
-  it("passes Main.tsx's current mode/difficulty through to the Random draw, not pickers of its own", async () => {
+  it("passes the loadout's current mode/difficulty through to the Random draw, not pickers of its own", async () => {
     const pack = builtIn()
     mockResolvePuzzle.mockReturnValue({ ok: true, payload: { phrase: 'X', mode: DEFAULT_MODE, sourceMode: 'random', packKey: pack.key, packLabel: pack.label, puzzleId: 'x', difficultyTier: 'hard' } })
     const { getByText } = await renderDrawer({ difficulty: 'hard' })
@@ -308,7 +308,7 @@ describe('PackProgressDrawer', () => {
     const { rerender } = await renderDrawer({ unlockVersion: 0 })
     await waitFor(() => expect(mockGetPuzzleUnlockMap).toHaveBeenCalledTimes(1))
 
-    // A real bump comes from Main.tsx's refreshUnlocks after a puzzle unlocks: this is what proves
+    // A real bump comes from useCatalog's refreshUnlocks after a puzzle unlocks: this is what proves
     // the effect re-runs (not just that it ran once on mount).
     await rerender(drawer({ unlockVersion: 1 }))
 

@@ -39,16 +39,15 @@ export type PackEditorDrawerProps = {
 
 // Create/edit a custom pack - its own animated Drawer (reached from PacksScreen's "Create" button
 // or a custom pack row's edit icon), stacked on top of PacksScreen the same way PackPuzzlesDrawer
-// stacks on top of PuzzleDrawer, rather than swapping in as an unanimated step within the same
-// panel. Close sits on the LEADING (left) side, matching every other drawer in the Game Menu's
-// lineage (see PuzzleDrawer/PackPuzzlesDrawer) - freeing the trailing side for Share/Delete once
+// stacks on top of the Single Player loadout, rather than swapping in as an unanimated step within
+// the same panel. Close sits on the LEADING (left) side, matching every other drawer the loadout
+// opens (see PacksScreen/PackPuzzlesDrawer) - freeing the trailing side for Share/Delete once
 // there's an actual saved pack behind editingKey, rather than "back" and those two icons competing
 // for the same corner.
 // Memoized: stays mounted (translated off-screen) even while closed, and always renders the full
-// form below (every entry row, focus-chain registration and all) regardless of `visible` - see
-// PuzzleDrawer's own memo comment for why an always-mounted, never-visible-right-now subtree
-// still costs a re-render without this whenever an unrelated ancestor state change bubbles
-// through it.
+// form below (every entry row, focus-chain registration and all) regardless of `visible` - and an
+// always-mounted, never-visible-right-now subtree still costs a re-render without this whenever
+// an unrelated ancestor state change bubbles through it.
 export const PackEditorDrawer = memo(({ visible, editingKey, onDismiss, onSaved, onDelete, onShare }: PackEditorDrawerProps): JSX.Element => {
   const { width: windowWidth } = useWindowDimensions()
 
@@ -156,7 +155,7 @@ const PackEditorForm = ({ editingKey, onSaved, onCancel, onDelete, onShare }: Pa
       // pack from editing one that already exists; only the former counts toward the custom pack
       // achievements, so re-saving edits to an existing pack doesn't inflate them.
       if (!editingKey) {
-        // No round-end card here to fold this into (unlike a solved puzzle: see Main.tsx's
+        // No round-end card here to fold this into (unlike a solved puzzle: see GameScreen's
         // handleSolved), so each unlock gets the fleet's achievement toast instead, from the
         // @rific/toaster <Toaster/> mounted once in Providers.tsx: the achievement's title, then
         // 'Achievement unlocked', in its tier's color with its own icon.
@@ -240,10 +239,10 @@ const PackEditorForm = ({ editingKey, onSaved, onCancel, onDelete, onShare }: Pa
             trailing action at all for a brand-new, not-yet-saved pack instead (ScrollViewHeader
             centers the title independently of whether a trailing action is present, unlike the old
             hand-rolled row, which needed a balancing spacer). Leading icon is arrow-left, not X -
-            same left-anchored Game Menu lineage as PuzzleDrawer/PackPuzzlesDrawer/PacksScreen (see
-            PuzzleDrawer's own header comment for why an arrow instead of a close X). 'Close', not
-            the Appbar.BackAction default of 'Back' - see PuzzleDrawer's own ScrollViewHeader
-            comment for why. Custom IconButton, not the default callback-driven Appbar.BackAction:
+            same left-anchored lineage as PackPuzzlesDrawer/PacksScreen and the loadout's own Back
+            arrow (the fleet's back-button style). 'Close', not the Appbar.BackAction default of
+            'Back' - this dismisses the whole panel rather than stepping back a level within it.
+            Custom IconButton, not the default callback-driven Appbar.BackAction:
             a plain arrow in the surface's ink (the fleet's back-button style), matching every other back/close action in the app; IconButton already
             fires the app's own haptic convention on press itself, so this needs no manual
             selection() call the way the callback form used to. */}
@@ -292,9 +291,9 @@ const PackEditorForm = ({ editingKey, onSaved, onCancel, onDelete, onShare }: Pa
           </Button>
         </ScrollView>
 
-        {/* Not part of the scrollable content - same reasoning as PuzzleDrawer's own footer and
-            PacksScreen's listFooter: Cancel/Save should be reachable without scrolling down
-            through however many entries this pack has. */}
+        {/* Not part of the scrollable content - same reasoning as the loadouts' own footers and
+            PacksScreen's: Cancel/Save should be reachable without scrolling down through however
+            many entries this pack has. */}
         <ScrollViewFooter style={styles.footer}>
           <Button
             mode='outlined'
@@ -326,15 +325,16 @@ const styles = StyleSheet.create({
     gap: 4,
     marginTop: 12
   },
-  // Matches PuzzleDrawer's own footer padding. alignItems override matches every other migrated
-  // footer's stretch-not-center reasoning (see PuzzleDrawer's own footer comment) - inert here in
-  // practice (footerButton's flex:1 splits width, not height, and both buttons share one natural
-  // height), kept for consistency with the rest.
+  // Matches the loadouts' own footer padding. alignItems override matches every other migrated
+  // footer's stretch-not-center reasoning (see PackPuzzlesDrawer's own footer comment) - inert
+  // here in practice (footerButton's flex:1 splits width, not height, and both buttons share one
+  // natural height), kept for consistency with the rest.
   footer: {
     alignItems: 'stretch',
     flexDirection: 'row',
     gap: 12,
-    // Matches ScrollViewHeader's own actionMargin - see PuzzleDrawer's own footer comment for why.
+    // Matches ScrollViewHeader's own actionMargin (4pt), so this bar reads as the same weight of
+    // chrome as the header.
     paddingBottom: 4,
     paddingHorizontal: 16,
     paddingTop: 4

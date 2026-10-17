@@ -58,7 +58,7 @@ export type PackPuzzleListProps = {
 // independently-maintained ones that had quietly drifted apart.
 export const PackPuzzleList = ({ packKey, onPlayPuzzle }: PackPuzzleListProps): JSX.Element => {
   const theme = useTheme()
-  // Same four-way (Any + the three real tiers) vibrant/container set PuzzleDrawer's own
+  // Same four-way (Any + the three real tiers) vibrant/container set the loadout's own
   // Difficulty picker uses, for both the difficulty filter menu below and each row's own
   // difficulty badge - see useDifficultyOptionColors's own doc comment for why this is one
   // shared hook instead of two hand-rolled copies.
@@ -150,7 +150,7 @@ export const PackPuzzleList = ({ packKey, onPlayPuzzle }: PackPuzzleListProps): 
           long pack instead of scrolling away with row 1. paddingTop reserves space for the
           floating ScrollViewHeader above, which overlays rather than pushing this down itself. */}
       <View style={[styles.progressHeader, { paddingTop: (headerHeight ?? 0) + 12 }]}>
-        {/* The same PackRow every pack list (PacksScreen/PuzzleDrawer's Choose Packs/
+        {/* The same PackRow every pack list (PacksScreen's Choose Packs/the loadout's Quick Start/
             PackProgressDrawer's "Browse by pack") already uses for this exact pack - its group
             icon+eyebrow, unlocked count, and progress bar, carried into the detail view it opens
             rather than left behind the moment you drill in. Lives here rather than in the fixed

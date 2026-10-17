@@ -12,8 +12,9 @@ import { JSX } from 'react'
 // the Portal.Host auto-paper's Provider mounts inside Theme, and its Buttons need Haptic's
 // FeedbackPressProvider. onError only fires when applying the update fails (useUpdater swallows a
 // failed background fetch), hence "Update Failed", in Title Case like the app's other toast titles.
-// PuzzleDrawer's version text keeps its own useUpdater({ autoCheck: false }) for manual checks, which
-// adds no AppState listener, so this stays the only automatic check.
+// The Settings sheet's Check for Updates (hud's BaseSettingsDialog) keeps its own
+// useUpdater({ autoCheck: false }) for manual checks, which adds no AppState listener, so this stays
+// the only automatic check.
 export const UpdateDialog = (): JSX.Element => {
   const onError = useUpdateErrorToast('Update Failed')
   return <SharedUpdateDialog onError={onError} />

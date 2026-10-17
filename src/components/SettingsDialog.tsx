@@ -17,7 +17,7 @@ import { SettingsSection } from './SettingsSection'
 export type SettingsDialogProps = {
   visible: boolean
   onDismiss: () => void
-  // Called after a backup is imported, so the Game Menu re-reads the unlocked puzzles.
+  // Called after a backup is imported, so every screen re-reads the unlocked puzzles.
   onUnlocksChanged?: () => void
 }
 

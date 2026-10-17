@@ -104,6 +104,12 @@
         {
           "drawsRotation": false
         }
+      ],
+      [
+        "expo-router",
+        {
+          "sitemap": false
+        }
       ]
     ],
     "runtimeVersion": {

@@ -3,7 +3,7 @@ import { useMemo } from 'react'
 
 import type { PuzzleDifficultyTier } from '@/utils/puzzleCatalog'
 
-// A fill/container color, not a text color - for the currently-selected segment in PuzzleDrawer's
+// A fill/container color, not a text color - for the currently-selected segment in the loadout's
 // Difficulty picker, so its background reads as "this tier" instead of the theme's generic
 // selected-segment tint. Only used for the "Any" segment, which stands in for a difficulty tier
 // using theme.colors.primary (the app's own accent) rather than one of the semantic tiers below -
@@ -11,7 +11,7 @@ import type { PuzzleDifficultyTier } from '@/utils/puzzleCatalog'
 // dangerContainer), so this plain helper is only needed for the one case that isn't a semantic role.
 export const getContainerColor = (baseHex: string, surface: string): string => getColorRoles(baseHex, surface).container
 
-// Shared by PuzzleInfoRow's difficulty badge and PuzzleDrawer's difficulty picker, so both reflect
+// Shared by PuzzleInfoRow's difficulty badge and the loadout's difficulty picker, so both reflect
 // the exact same colors. easy/medium/hard map onto @rific/auto-paper's success/warning/danger theme
 // roles (see useComputedTheme.ts) rather than Hangman defining its own hex - those roles already
 // exist for every app built on this theme system. `danger`, not `error` - MD3's own error role is
@@ -30,7 +30,7 @@ export const useDifficultyColors = (): Record<PuzzleDifficultyTier, string> => {
   )
 }
 
-// The fill for whichever segment is currently selected in PuzzleDrawer's Difficulty picker -
+// The fill for whichever segment is currently selected in the loadout's Difficulty picker -
 // sibling to useDifficultyColors above (that one's for the badge text shown during play), kept
 // separate rather than folded into one return value since PuzzleInfoRow's badge only ever needs
 // the text color and has no use for a container fill.
@@ -46,10 +46,10 @@ export const useDifficultyContainerColors = (): Record<PuzzleDifficultyTier, str
   )
 }
 
-// The SELECTED segment's own fill in PuzzleDrawer's Difficulty picker - full-saturation
+// The SELECTED segment's own fill in the loadout's Difficulty picker - full-saturation
 // success/warning/danger rather than useDifficultyContainerColors' muted container tint, so the
 // checked tier reads as solid and vibrant the same way every other button in this app now does,
-// with the UNCHECKED segments left on the muted container fill instead (see PuzzleDrawer's own
+// with the UNCHECKED segments left on the muted container fill instead (see LoadoutScreen's own
 // difficultyOptions comment for the checked/unchecked split).
 export const useDifficultyVibrantColors = (): Record<PuzzleDifficultyTier, string> => {
   const theme = useAutoPaperTheme()
@@ -83,8 +83,8 @@ export type DifficultyOptionColors = { container: string; onContainer: string; o
 // The full vibrant/container pairing for every difficulty CHOICE a player picks from - the three
 // real tiers plus "Any", which isn't a tier at all (colored with the theme's own primary instead,
 // so it still pops when selected rather than being the one option that looks unfinished next to
-// three colored ones - see PuzzleDrawer's own original comment on this). One shared hook rather
-// than each picker (PuzzleDrawer's own Difficulty segmented control, PackPuzzleList's own
+// three colored ones). One shared hook rather than each picker (the Single Player loadout's own
+// Difficulty segmented control, PackPuzzleList's own
 // difficulty filter menu) hand-rolling the same four-way color set, so a change here can't drift
 // between the two.
 export const useDifficultyOptionColors = (): Record<'any' | PuzzleDifficultyTier, DifficultyOptionColors> => {

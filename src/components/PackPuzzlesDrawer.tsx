@@ -29,23 +29,23 @@ export type PackPuzzlesDrawerProps = {
   onDismiss: () => void
   // Omitted for read-only browsing (PacksScreen's "view contents" on a built-in pack) - no Random
   // footer, no tap-to-play, since there's no mode/difficulty context there to actually start a
-  // round with. A caller supplies either all three (playable, PuzzleDrawer's own usage) or none of
+  // round with. A caller supplies either all three (playable, the loadout's own usage) or none of
   // them (read-only) - never a partial mix.
   mode?: GameMode
   difficulty?: 'any' | PuzzleDifficultyTier
   onConfirm?: (payload: GameStartPayload, config: PuzzleConfig) => void
 }
 
-// One pack's full puzzle list. Two callers: PuzzleDrawer's own quick-start list opens this
-// playable (tapping a row plays that exact puzzle, Random in the footer draws one) when a player
-// taps a pack they've selected; PacksScreen's built-in-pack info icon opens it read-only (mode/
+// One pack's full puzzle list. Two callers: the Single Player loadout's quick-start list opens this
+// playable (tapping a row plays that exact puzzle, Random in the footer draws one) from a selected
+// pack's info icon; PacksScreen's built-in-pack info icon opens it read-only (mode/
 // difficulty/onConfirm all omitted) - there's no round to start from Choose Packs, just browsing
 // what's inside. Every puzzle in the pack shows as its own row (via PackPuzzleList), masked to
 // blanks unless already solved either way.
 // Memoized: two instances of this stay mounted (translated off-screen) even while closed - one
-// under PuzzleDrawer, one under PacksScreen - see PuzzleDrawer's own memo comment for why an
-// always-mounted, never-visible-right-now subtree still costs a re-render without this whenever
-// an unrelated ancestor state change bubbles through it.
+// over the Single Player loadout, one under PacksScreen - and an always-mounted,
+// never-visible-right-now subtree still costs a re-render without this whenever an unrelated
+// ancestor state change bubbles through it.
 export const PackPuzzlesDrawer = memo(({ visible, packKey, onDismiss, mode, difficulty, onConfirm }: PackPuzzlesDrawerProps): JSX.Element => {
   const { width: windowWidth } = useWindowDimensions()
   const theme = useTheme()
@@ -53,8 +53,8 @@ export const PackPuzzlesDrawer = memo(({ visible, packKey, onDismiss, mode, diff
 
   const pack = useMemo(() => getPuzzleManifest().find((item) => item.key === packKey), [packKey])
 
-  // Re-fetched whenever this drawer opens on a pack, not subscribed to live - same one-shot
-  // pattern PuzzleDrawer's own unlockMap uses. Feeds Random below so it prefers a puzzle the
+  // Re-fetched whenever this drawer opens on a pack, not subscribed to live - same fetch-on-open
+  // pattern PackProgressDrawer's own unlockMap uses. Feeds Random below so it prefers a puzzle the
   // player hasn't unlocked yet in THIS pack over one they have (see resolvePuzzle).
   const [unlockMap, setUnlockMap] = useState<PuzzleUnlockMap>({})
   useEffect(() => {
@@ -76,9 +76,9 @@ export const PackPuzzlesDrawer = memo(({ visible, packKey, onDismiss, mode, diff
       return
     }
     onConfirm(result.payload, { sourceMode: 'random', difficulty: difficulty ?? 'any', mode, customPhrase: '', customHint: '' })
-    // Starting a round is what closes this - otherwise it's left stacked on top of the game that
-    // just started, blocking it from view (and from accessibility/keyboard focus) until the
-    // player finds and taps the close icon themselves.
+    // Starting a round closes this: the abandon confirm (when the waiting round has a guess on it)
+    // opens over the page this drawer was opened from, not over this drawer, and the page should be
+    // clear when the player comes back from the round.
     onDismiss()
   }
 
@@ -99,12 +99,12 @@ export const PackPuzzlesDrawer = memo(({ visible, packKey, onDismiss, mode, diff
       <View testID='pack-puzzles-panel' style={styles.panel} accessibilityViewIsModal={visible} accessibilityElementsHidden={!visible} importantForAccessibility={visible ? 'yes' : 'no-hide-descendants'} onAccessibilityEscape={visible ? onDismiss : undefined}>
         {pack ? (
           <ScrollViewProvider>
-            {/* Close sits on the LEADING (left) side - this drawer is reached from the Game Menu's
-                hamburger icon (top-left of the game screen), whether directly (a pack row in
-                PuzzleDrawer) or via Choose Packs (also reached from there) - same left-anchored
-                lineage either way, so closing it lands back under the same thumb that opened the
-                chain. 'Close', not the Appbar.BackAction default of 'Back' - see PuzzleDrawer's own
-                ScrollViewHeader comment for why. Custom IconButton, not the default
+            {/* Close sits on the LEADING (left) side - this drawer opens over the Single Player
+                loadout, whether directly (a quick-start row's info icon) or via Choose Packs (its
+                All Packs row) - same left-anchored lineage either way, so its exit sits in the same
+                top-left corner as the loadout's own Back arrow. 'Close', not the Appbar.BackAction
+                default of 'Back' - this dismisses the whole panel rather than stepping back a level
+                within it. Custom IconButton, not the default
                 callback-driven Appbar.BackAction: a plain arrow in the surface's ink (the fleet's back-button style), matching every other
                 back/close action in the app; IconButton already fires the app's own haptic
                 convention on press itself, so this needs no manual selection() call the way the
@@ -144,7 +144,8 @@ const styles = StyleSheet.create({
   footer: {
     alignItems: 'stretch',
     flexDirection: 'column',
-    // Matches ScrollViewHeader's own actionMargin - see PuzzleDrawer's own footer comment for why.
+    // Matches ScrollViewHeader's own actionMargin (4pt), so this bar reads as the same weight of
+    // chrome as the header.
     paddingBottom: 4,
     paddingHorizontal: 16,
     paddingTop: 4

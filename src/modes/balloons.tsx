@@ -10,7 +10,8 @@ import { DRAW_MS, quadraticBezierLength, SketchEllipse, SketchFill, SketchPath }
 
 // Quantitative/depletion: N balloons generated at game start, one popped per wrong guess.
 // Positions, sizes and colors are re-rolled each round (generated once in useState initializer -
-// Main.tsx remounts Game with a fresh `key` per round, so this isn't stuck reusing one game's roll).
+// GameScreen's SavedBoard remounts Game keyed on the round id, so this isn't stuck reusing one
+// game's roll).
 
 type BalloonData = {
   key: string

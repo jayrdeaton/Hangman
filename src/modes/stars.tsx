@@ -11,7 +11,7 @@ import { DRAW_MS, polylineLength, SketchFill, SketchPath } from './shared/sketch
 // Quantitative/depletion: a night sky dims one proper 5-pointed star at a time.
 // maxMistakes=6, same baseline every mode uses.
 // Positions/sizes/colors are re-rolled each round (generated once in useState initializer - see
-// balloons.tsx's own doc comment for why that's safe: Main.tsx remounts Game per round).
+// balloons.tsx's own doc comment for why that's safe: GameScreen remounts Game per round).
 
 type StarData = {
   key: string

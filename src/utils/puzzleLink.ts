@@ -5,8 +5,9 @@ import type { GameStartPayload } from '@/types/gameSession'
 
 import { normalizePhrase, type PuzzleConfig } from './puzzlePicker'
 
-// Matches the drawer's own TextInput maxLength props - a link claiming a longer phrase/hint than
-// the UI could ever produce is malformed (or hostile), not a puzzle worth trying to resolve.
+// Matches PnpWordPrompt's and PackEditorDrawer's TextInput maxLength props - a link claiming a
+// longer phrase/hint than the UI could ever produce is malformed (or hostile), not a puzzle worth
+// trying to resolve.
 const MAX_PHRASE_LENGTH = 128
 const MAX_HINT_LENGTH = 80
 
@@ -21,11 +22,31 @@ export const findMode = (id: string | string[] | undefined) => {
 // validated, normalized phrase - never whatever half-typed text was sitting in the input.
 export const buildPuzzleLink = (payload: Pick<GameStartPayload, 'phrase' | 'hint' | 'mode'>): string => Linking.createURL('play', { queryParams: { phrase: payload.phrase, hint: payload.hint ?? '', mode: payload.mode.id } })
 
-// Returns null for any link that isn't a recognized, playable puzzle share - including the app's
-// own default URL with no query params, an untrusted/hand-crafted URL Linking.parse can't decode,
-// a phrase that would normalize to nothing, or a phrase/hint longer than the drawer's own input
-// limits - so callers can always safely fall back to the normal auto-start puzzle instead of
-// committing to a puzzle that would only fail to resolve two layers further down.
+export type SharedPuzzleParams = { phrase?: string | string[]; hint?: string | string[]; mode?: string | string[] }
+
+// Returns null for anything that isn't a recognized, playable puzzle share - including the app's own
+// default URL with no query params, a phrase that would normalize to nothing, or a phrase/hint longer
+// than the input limits - so callers can always fall back safely instead of committing to a puzzle
+// that would only fail to resolve two layers further down. Takes the query params themselves: the
+// /play route reads them straight from the router (see src/app/play.tsx).
+export const parseSharedPuzzleParams = (params: SharedPuzzleParams): PuzzleConfig | null => {
+  const { phrase, hint } = params
+  if (typeof phrase !== 'string' || phrase.length > MAX_PHRASE_LENGTH) return null
+  if (normalizePhrase(phrase).replace(/ /g, '').length === 0) return null
+
+  const customHint = typeof hint === 'string' ? hint : ''
+  if (customHint.length > MAX_HINT_LENGTH) return null
+
+  return {
+    sourceMode: 'custom',
+    difficulty: 'any',
+    mode: findMode(params.mode),
+    customPhrase: phrase,
+    customHint
+  }
+}
+
+// The same, from a whole link (an untrusted or hand-crafted URL Linking.parse can't decode is null too).
 export const parseSharedPuzzle = (url: string): PuzzleConfig | null => {
   let queryParams: Linking.QueryParams | null
   try {
@@ -33,20 +54,5 @@ export const parseSharedPuzzle = (url: string): PuzzleConfig | null => {
   } catch {
     return null
   }
-
-  const phrase = queryParams?.phrase
-  if (typeof phrase !== 'string' || phrase.length > MAX_PHRASE_LENGTH) return null
-  if (normalizePhrase(phrase).replace(/ /g, '').length === 0) return null
-
-  const hint = queryParams?.hint
-  const customHint = typeof hint === 'string' ? hint : ''
-  if (customHint.length > MAX_HINT_LENGTH) return null
-
-  return {
-    sourceMode: 'custom',
-    difficulty: 'any',
-    mode: findMode(queryParams?.mode),
-    customPhrase: phrase,
-    customHint
-  }
+  return parseSharedPuzzleParams(queryParams ?? {})
 }

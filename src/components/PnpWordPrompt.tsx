@@ -15,18 +15,19 @@ import { WORD_SEPARATORS } from '@/utils/normalizePhrase'
 export type PnpWordPromptProps = {
   answer: string
   hint: string
-  // Owned by Main, not local state: Main mounts the real Game continuously for the entire pass-
-  // and-play round (see Main.tsx) and needs the live phrase to feed it, so this card is purely the
-  // input surface, not a second place the word lives.
+  // Owned by the game screen, not local state: it mounts the real Game continuously for the entire
+  // pass-and-play round (see GameScreen.tsx) and needs the live phrase to feed it, so this card is
+  // purely the input surface, not a second place the word lives.
   onAnswerChange: (value: string) => void
   onHintChange: (value: string) => void
-  // False while the Game Menu or the Settings sheet is open: the card steps out of the way rather
-  // than fighting them. The typed word and hint survive the round trip because Main owns them; this
-  // component stays mounted (rendering nothing) so its own show/hide toggle survives too.
+  // False while the Settings sheet is open (or the game screen isn't the one showing): the card steps
+  // out of the way rather than fighting it. The typed word and hint survive the round trip because the
+  // game screen owns them; this component stays mounted (rendering nothing) so its own show/hide
+  // toggle survives too.
   promptVisible: boolean
-  // Closing the card means "let me at the menu", which is also how you leave pass and play (start a
-  // Random puzzle). Closing the menu brings this straight back.
-  onRequestMenu: () => void
+  // Closing the card leaves the game for the Pass & Play loadout, the same as the game screen's back
+  // corner (which the card covers).
+  onClose: () => void
   onSubmit: () => void
 }
 
@@ -42,14 +43,14 @@ const ICON_ACTION_HIT_SLOP = { top: 4, bottom: 4, left: 4, right: 4 }
 // Entering a pass-and-play word, on the fleet's card (@tastic/hud's OverlayBackdrop and OverlayCard,
 // the card the confirms, the hand-off and the result use): a "Pass & Play" title with a plain close
 // glyph in the corner, the Word and Hint fields, the Keep This Word switch, and Next. The board
-// behind it (artwork, blanks, difficulty, keyboard) is the real Game, mounted continuously by Main
-// for the whole round, not a second preview rendering owned here; see Main.tsx for why that matters
-// (the old split-owned preview was the source of a flicker at Hand off).
+// behind it (artwork, blanks, difficulty, keyboard) is the real Game, mounted continuously by the game
+// screen for the whole round, not a second preview rendering owned here; see GameScreen.tsx for why
+// that matters (the old split-owned preview was the source of a flicker at Hand off).
 //
-// The close glyph (and Android's back button) opens the Game Menu instead of doing anything to the
-// round, and the card also hides on its own whenever the menu is open, so the two never compete for
-// the screen. No backdrop dismissal, like every fleet card: a stray tap beside the card while typing
-// can't throw the prompt away.
+// The close glyph (and Android's back button) leaves for the Pass & Play loadout, and the card also
+// hides on its own whenever the Settings sheet is open, so the two never compete for the screen. No
+// backdrop dismissal, like every fleet card: a stray tap beside the card while typing can't throw the
+// prompt away.
 //
 // The card rises to clear the software keyboard, and never grows past the room it has: above the
 // keyboard when it's up, inside the safe area always. Past that, the fields scroll between the title
@@ -60,7 +61,7 @@ const ICON_ACTION_HIT_SLOP = { top: 4, bottom: 4, left: 4, right: 4 }
 // events do, so those drive it, with the lift eased over the OS's own keyboard duration.
 //
 // Says nothing about how to play, and names nobody: any number of people can be passing the device.
-export const PnpWordPrompt = ({ answer, hint, onAnswerChange, onHintChange, promptVisible, onRequestMenu, onSubmit }: PnpWordPromptProps): JSX.Element | null => {
+export const PnpWordPrompt = ({ answer, hint, onAnswerChange, onHintChange, promptVisible, onClose, onSubmit }: PnpWordPromptProps): JSX.Element | null => {
   const theme = useTheme()
   const { fg, fgMuted } = useOverlayCardColors()
   const insets = useSafeAreaInsets()
@@ -68,7 +69,7 @@ export const PnpWordPrompt = ({ answer, hint, onAnswerChange, onHintChange, prom
   // Revealed by default: you can't reliably type a word you can't see, and this is the one moment
   // it's meant to be visible. The toggle covers handing the device over early.
   const [isRevealed, setIsRevealed] = useState(true)
-  // Global, not local: the same preference Main.tsx's handlePnpAuthored reads at Hand off to decide
+  // Global, not local: the same preference GameScreen.tsx's handlePnpAuthored reads at Hand off to decide
   // whether to keep the word. This is the only place left to set it now that authoring a word only
   // happens here (see useAutoSaveCustom for why it defaults off and what "on" means).
   const { autoSave, setAutoSave } = useAutoSaveCustom()
@@ -114,11 +115,11 @@ export const PnpWordPrompt = ({ answer, hint, onAnswerChange, onHintChange, prom
   useEffect(() => {
     if (!promptVisible) return
     const subscription = BackHandler.addEventListener('hardwareBackPress', () => {
-      onRequestMenu()
+      onClose()
       return true
     })
     return () => subscription.remove()
-  }, [promptVisible, onRequestMenu])
+  }, [promptVisible, onClose])
 
   // A hyphen, dash or slash becomes a space rather than a rejected keystroke: it's the same word
   // break normalizePhrase makes, so a typed Spider-Man shows SPIDER MAN here exactly as it plays.
@@ -141,9 +142,9 @@ export const PnpWordPrompt = ({ answer, hint, onAnswerChange, onHintChange, prom
   } = register()
   const { ref: hintRef } = register()
 
-  // The same builder the drawer's custom form uses (and that Main uses to score the live board
-  // behind this card), so what counts as a valid, submittable word can't drift between the two
-  // places one can be authored. null while blank, which is all this is needed for here.
+  // The same builder the pack editor's entries go through (and whose scorer GameScreen uses for the
+  // live board behind this card), so what counts as a valid, submittable word can't drift between
+  // the two places one can be authored. null while blank, which is all this is needed for here.
   const preview = buildCustomPuzzle('preview', '', { answer })
 
   const handleStart = () => {
@@ -158,7 +159,7 @@ export const PnpWordPrompt = ({ answer, hint, onAnswerChange, onHintChange, prom
       <OverlayBackdrop style={[styles.overlay, { paddingBottom: insets.bottom + SCREEN_GUTTER, paddingTop: insets.top + SCREEN_GUTTER }]}>
         <Animated.View testID='pnp-card' style={[styles.lift, liftStyle]} onLayout={(event) => setCardHeight(event.nativeEvent.layout.height)}>
           <OverlayCard accessibilityViewIsModal style={[styles.card, { maxHeight: cardMaxHeight }]}>
-            {/* "Pass & Play" matches the Game Menu button that opens this. */}
+            {/* "Pass & Play" matches the Home button that leads here. */}
             <Text variant='headlineSmall' style={[styles.title, { color: theme.colors.primary }]}>
               Pass & Play
             </Text>
@@ -200,7 +201,7 @@ export const PnpWordPrompt = ({ answer, hint, onAnswerChange, onHintChange, prom
                 maxLength={80}
                 mode='outlined'
               />
-              {/* Written at Hand off, not here (see Main.tsx's handlePnpAuthored), so this switch
+              {/* Written at Hand off, not here (see GameScreen.tsx's handlePnpAuthored), so this switch
                   only needs to reflect the shared preference, not act on it itself. */}
               <View style={styles.autoSaveRow}>
                 <View style={styles.flex}>
@@ -221,7 +222,7 @@ export const PnpWordPrompt = ({ answer, hint, onAnswerChange, onHintChange, prom
             </View>
             {/* A plain glyph in the card's top-right corner, outside the column so the title stays
                 centered on the card. */}
-            <IconButton icon='close' hitSlop={ICON_ACTION_HIT_SLOP} iconColor={fg} onPress={onRequestMenu} accessibilityLabel='Close' style={styles.close} />
+            <IconButton icon='close' hitSlop={ICON_ACTION_HIT_SLOP} iconColor={fg} onPress={onClose} accessibilityLabel='Close' style={styles.close} />
           </OverlayCard>
         </Animated.View>
       </OverlayBackdrop>

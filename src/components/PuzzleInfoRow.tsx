@@ -55,7 +55,7 @@ export const PuzzleInfoRow = ({ difficultyTier, packLabel, hint, hintRevealed, o
   // light and dark variants, so pairing them keeps the label readable for every accent choice.
   const onTertiaryColor = theme.colors.onTertiary
   // easy/medium/hard map onto @rific/auto-paper's success/warning/danger theme roles - see
-  // useDifficultyColors. Shared with PuzzleDrawer's difficulty picker's own CHECKED segment, so
+  // useDifficultyColors. Shared with the loadout's difficulty picker's own CHECKED segment, so
   // both reflect the exact same solid-vibrant fill rather than the muted container tint an
   // unchecked segment gets there - this pill has no "unselected" state to distinguish itself
   // from, so it's always the vibrant one.
@@ -119,7 +119,7 @@ export const PuzzleInfoRow = ({ difficultyTier, packLabel, hint, hintRevealed, o
 
 const styles = StyleSheet.create({
   hintPill: { alignItems: 'center', columnGap: 6, flexDirection: 'row' },
-  // Lines up with the corner buttons Main.tsx floats over this same row (@tastic/hud's
+  // Lines up with the corner buttons GameScreen floats over this same row (@tastic/hud's
   // CornerActionButtons: a 40pt IconButton with Paper's 6pt margin, placed 8pt in from the safe-area
   // edge). Each button's box therefore ends 8 + 6 + 40 = 54pt in from the side, and paddingHorizontal
   // 62 keeps an 8pt gap so wide pill content stays centered between them instead of drifting

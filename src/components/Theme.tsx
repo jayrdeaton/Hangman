@@ -9,6 +9,7 @@ import { ReactNode, useCallback, useEffect } from 'react'
 import Reanimated from 'react-native-reanimated'
 import { shallowEqual, useDispatch, useSelector } from 'react-redux'
 
+import { boardColor } from '@/components/BoardBackground'
 import { RootState } from '@/redux/store'
 import { markSplashReady, useSplashReady } from '@/utils/splashGate'
 
@@ -25,17 +26,19 @@ export type ThemeProps = {
 // @tastic/core sets the OS root background to black as soon as its barrel is imported (its
 // useThemedRootBackground.ts calls SystemUI.setBackgroundColorAsync('#000000') at module scope), and
 // every @tastic/hud/chrome component imports that barrel. The fleet's games correct it with that
-// hook's black or white, but this app paints its theme's surface behind every screen (Main.tsx), so
-// it repaints the root with that instead: the iOS window and root view, the Android decor view, and
-// the web page body. That's what shows at the corners while an iPad turns upside down, behind an
-// Android keyboard resize, and past the page edges on web. Effects run after every module has
-// loaded, so this always lands after the import-time call, and it renders inside Provider, which
-// renders nothing until the computed theme exists.
+// hook's black or white, but this app paints its board behind every screen (BoardBackground, the
+// theme's surface in light appearance and a step below it in dark), so it repaints the root with the
+// board's color instead: the iOS window and root view, the
+// Android decor view, and the web page body. That's what shows at the corners while an iPad turns
+// upside down, behind an Android keyboard resize, and past the page edges on web. Effects run after
+// every module has loaded, so this always lands after the import-time call, and it renders inside
+// Provider, which renders nothing until the computed theme exists.
 const RootBackground = (): null => {
-  const { colors } = useAutoPaperTheme()
+  const { colors, dark } = useAutoPaperTheme()
+  const color = boardColor(dark, colors.surface)
   useEffect(() => {
-    void SystemUI.setBackgroundColorAsync(colors.surface)
-  }, [colors.surface])
+    void SystemUI.setBackgroundColorAsync(color)
+  }, [color])
   return null
 }
 
@@ -47,16 +50,17 @@ export const Theme = ({ children }: ThemeProps) => {
   // the 'theme' gate (see src/utils/splashGate.ts) directly instead.
   const onReady = useCallback(() => markSplashReady('theme'), [])
   // Every icon in this app renders through react-native-paper's own icon prop/Icon component
-  // (see e.g. Main.tsx's AppbarAction icon='menu', PuzzleInfoRow.tsx's <Icon source='lightbulb...'),
-  // which always resolves to this exact font (see node_modules/react-native-paper's own
-  // MaterialCommunityIcon.tsx). @expo/vector-icons has never loaded this font by the time it's
-  // first asked to render a glyph: each Icon instance mounts already-blank (`Font.isLoaded` false),
-  // independently kicks off its own `Font.loadAsync` in componentDidMount, and only swaps in the
-  // real glyph once that resolves (see @expo/vector-icons/build/createIconSet.js). A handful of
-  // icons all across the app (the header's menu/trophy, the hint pill's lightbulb, every drawer
-  // icon) popping in a beat after everything else already rendered. Loading it here and marking the
-  // 'fonts' gate ready only once it resolves means every icon this app will ever show is already
-  // loaded by the time the splash lifts, so nothing pops in afterward.
+  // (see e.g. LoadoutScreen.tsx's IconButton icon='cog', PuzzleInfoRow.tsx's
+  // <Icon source='lightbulb...'), which always resolves to this exact font (see
+  // node_modules/react-native-paper's own MaterialCommunityIcon.tsx). @expo/vector-icons has never
+  // loaded this font by the time it's first asked to render a glyph: each Icon instance mounts
+  // already-blank (`Font.isLoaded` false), independently kicks off its own `Font.loadAsync` in
+  // componentDidMount, and only swaps in the real glyph once that resolves (see
+  // @expo/vector-icons/build/createIconSet.js). A handful of icons all across the app (the corners'
+  // trophy, arrow and cog, the hint pill's lightbulb, every drawer icon) popping in a beat after
+  // everything else already rendered. Loading it here and marking the 'fonts' gate ready only once
+  // it resolves means every icon this app will ever show is already loaded by the time the splash
+  // lifts, so nothing pops in afterward.
   // A failed load also counts as ready: `fontsLoaded` stays false forever after an error, which
   // would leave the splash up for good, so the app opens without the icon font instead (audit F010).
   const [fontsLoaded, fontError] = useFonts(MaterialCommunityIcons.font)
@@ -74,8 +78,8 @@ export const Theme = ({ children }: ThemeProps) => {
     // statusBar={false}: auto-paper renders no React Native StatusBar (here or in Appbar.Header).
     // @tastic/core's config plugin turns UIViewControllerBasedStatusBarAppearance on, under which a
     // mounted StatusBar logs an error (a red box in a dev build), and an app linked against the iOS
-    // 27 SDK can't set the status bar through one anyway. With no navigator here, the bar keeps the
-    // root view controller's default: its text follows the system appearance, not this theme.
+    // 27 SDK can't set the status bar through one anyway. The bar is set per screen instead, by the
+    // root Stack's statusBarStyle (src/app/_layout.tsx), which follows this theme.
     <Provider initialValue={settings} onChange={onChange} onReady={onReady} expoBlur={ExpoBlur} maskedView={MaskedView} reanimated={Reanimated} statusBar={false}>
       <RootBackground />
       {children}

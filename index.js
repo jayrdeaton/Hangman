@@ -1,10 +1,5 @@
 import 'react-native-gesture-handler'
 
-import { registerRootComponent } from 'expo'
-
-import App from './App'
-
-// registerRootComponent calls AppRegistry.registerComponent('main', () => App);
-// It also ensures that whether you load the app in Expo Go or in a native build,
-// the environment is set up appropriately
-registerRootComponent(App)
+// expo-router's own entry renders the root layout (src/app/_layout.tsx) in place of the old
+// App.tsx. Imported last so gesture-handler's side-effect import above still runs first.
+import 'expo-router/entry'

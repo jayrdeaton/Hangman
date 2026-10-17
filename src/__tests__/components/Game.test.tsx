@@ -42,8 +42,8 @@ const render = (ui: ReactElement) => rtlRender(ui, { wrapper: Wrapper })
 
 // danger/onDanger (Keyboard's own wrong-guess color, see Keyboard.tsx) only exist on a theme
 // @rific/auto-paper's Provider actually computed - render's own bare PaperProvider fallback
-// (MD3LightTheme) doesn't have them, same reasoning PuzzleDrawer.test.tsx's own
-// renderDrawerWithRealTheme gives for its difficulty-color tests.
+// (MD3LightTheme) doesn't have them, same reasoning LoadoutScreen.test.tsx's own
+// renderLoadoutWithTheme gives for its difficulty-color tests.
 let capturedTheme: AutoPaperTheme | null = null
 const ThemeCapture = () => {
   const theme = useAutoPaperTheme()
@@ -77,8 +77,8 @@ const shortMode: GameMode = {
 }
 
 // Two more fixtures, used together to test a live mode swap mid-round (the player picking a new
-// art style from the drawer while a round is already in progress - see PuzzleDrawer's
-// onModeChange). Different maxMistakes from each other so a swap's effect on the mistake limit is
+// art style from the loadout while a round is already in progress - see LoadoutScreen's
+// handleSelectMode, which moves the saved round onto the new art with roundActions.setRoundArt). Different maxMistakes from each other so a swap's effect on the mistake limit is
 // unambiguous, and different hasVisual so the layout change itself is also observable.
 const roomyVisualMode: GameMode = {
   id: 'test-roomy-visual',
@@ -326,8 +326,9 @@ describe('Game', () => {
     jest.useRealTimers()
   })
 
-  // A shared-link puzzle's Next only opens the Game Menu, over this same Game (Main's handleRoundEnd),
-  // so nothing remounts it: the card and the fireworks have to go away on their own.
+  // A shared-link puzzle's Next leaves for the loadout instead of drawing a new round (GameScreen's
+  // SoloRound), and the web keeps a left screen mounted, so nothing remounts this Game: the card and
+  // the fireworks have to go away on their own.
   it('takes the card and the celebration down on Next even when the round is not replaced', async () => {
     jest.useFakeTimers()
     const onStop = jest.fn()
@@ -638,9 +639,9 @@ describe('Game', () => {
     // reserved for it (see Game.tsx's WORD_FONT_SIZE) while there's still room for artwork.
     expect(displayBefore.props.children[0].props.fontSize).toBe(42)
 
-    // Simulates PuzzleDrawer's onModeChange pushing a freshly picked art style straight into the
-    // session mid-round (see Main.tsx's handleModeChange) - the same Game instance, just a new
-    // mode prop, not a remount.
+    // Simulates an art pick from the loadout reaching the board mid-round (LoadoutScreen's
+    // handleSelectMode saves it on the round, and GameScreen's SavedBoard passes it down) - the same
+    // Game instance, just a new mode prop, not a remount.
     await rerender(<Game phrase='CAT' onStop={jest.fn()} mode={tightNoVisualMode} />)
 
     const displayAfter = getByLabelText('Secret word display')
@@ -680,7 +681,7 @@ describe('Game', () => {
     expect(getByTestId('visual-mistakes').props.children).toBe(7)
 
     // Live-swap to a mode with a SMALLER maxMistakes (6) than the round's frozen limit (8) - the
-    // same interaction PuzzleDrawer's onModeChange drives (see Main.tsx's handleModeChange).
+    // same interaction an art pick from the loadout drives (see LoadoutScreen's handleSelectMode).
     // Without a cap this would hand the new mode's artwork mistakes=7 - at or past ITS OWN
     // maxMistakes (6), which every real mode's Visual treats as its own fully-"lost" stage (see
     // e.g. classic.tsx's `Math.min(mistakes, PARTS.length)`) - even though the round hasn't
@@ -771,7 +772,7 @@ describe('Game physical keyboard (web)', () => {
     expect(getByLabelText(/Wrong guesses: 0/)).toBeTruthy()
   })
 
-  it('ignores letter keys while locked (Main locks Game behind the Game Menu and other overlays)', async () => {
+  it('ignores letter keys while locked (GameScreen locks Game behind Settings and while unfocused)', async () => {
     const { getByLabelText } = await render(<Game phrase='CAT' onStop={jest.fn()} locked />)
 
     await pressKey({ key: 'a' })

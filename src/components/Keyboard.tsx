@@ -23,7 +23,7 @@ export type KeyboardProps = {
   // SketchFill wipe-reveal every key's fill already uses for a guess landing - a win is just
   // another redraw, not a different visual language. Game.tsx sets it once, in the same tick as
   // setOutcome('win'), and never clears it (a fresh round means a fresh Keyboard instance, keyed
-  // via Main.tsx's roundKey, so there's nothing to reset here).
+  // via GameScreen's SavedBoard on the round id, so there's nothing to reset here).
   winningLetter?: string | null
   // True once the round has been lost - drives a quick shake across the whole board, then the same
   // final hatch-fill redraw a win uses, in the app's danger color instead, cascading down the board

@@ -1,6 +1,7 @@
 // Small randomization helpers for modes whose art is regenerated fresh each round (balloons,
 // stars, ...) rather than using one fixed layout every game. Safe to call from a useState
-// initializer since Main.tsx remounts Game (and everything under it) with a fresh `key` per round.
+// initializer since GameScreen's SavedBoard remounts Game (and everything under it), keyed on the
+// round id, per round.
 
 export const randIn = (min: number, max: number): number => min + Math.random() * (max - min)
 

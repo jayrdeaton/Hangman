@@ -147,7 +147,7 @@ export const getTotalUnlockedCount = (unlockMap: PuzzleUnlockMap): number => {
   return Object.values(unlockMap).reduce((sum, ids) => sum + ids.length, 0)
 }
 
-// Shared by PackProgressDrawer's own "Total progress" card, PuzzleDrawer's All Packs row and
+// Shared by PackProgressDrawer's own "Total progress" card, the loadout's All Packs row and
 // StatsScreen's Puzzles Unlocked row - all showing the exact same numbers, so this lives in one place
 // rather than copies of the same reduce quietly drifting apart. Caps each pack's contribution at its own
 // item.count (a pack whose catalog shrank shouldn't let a stale unlock entry push a tile's count

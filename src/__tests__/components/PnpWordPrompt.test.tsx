@@ -13,7 +13,7 @@ jest.mock('@tastic/hud/chrome', () => {
 })
 const mockOverlayCard = jest.mocked(OverlayCard)
 
-const baseProps: PnpWordPromptProps = { answer: '', hint: '', onAnswerChange: jest.fn(), onHintChange: jest.fn(), promptVisible: true, onRequestMenu: jest.fn(), onSubmit: jest.fn() }
+const baseProps: PnpWordPromptProps = { answer: '', hint: '', onAnswerChange: jest.fn(), onHintChange: jest.fn(), promptVisible: true, onClose: jest.fn(), onSubmit: jest.fn() }
 const renderPrompt = (props: Partial<PnpWordPromptProps> = {}) =>
   render(
     <Providers>
@@ -22,7 +22,7 @@ const renderPrompt = (props: Partial<PnpWordPromptProps> = {}) =>
   )
 
 describe('PnpWordPrompt', () => {
-  it('renders nothing while the menu has it stepped aside, and leaves the back button alone', async () => {
+  it('renders nothing while Settings has it stepped aside, and leaves the back button alone', async () => {
     const addEventListener = jest.spyOn(BackHandler, 'addEventListener')
     const { queryByTestId } = await renderPrompt({ promptVisible: false })
 
@@ -62,22 +62,22 @@ describe('PnpWordPrompt', () => {
     expect(onSubmit).toHaveBeenCalledTimes(1)
   })
 
-  it('opens the menu from the close glyph and from Android back, never touching the round, and lets go of back once hidden', async () => {
+  it('closes from the close glyph and from Android back, never submitting the word, and lets go of back once hidden', async () => {
     const remove = jest.fn()
     const addEventListener = jest.spyOn(BackHandler, 'addEventListener').mockReturnValue({ remove })
     const backListenerCount = () => addEventListener.mock.calls.filter(([event]) => event === 'hardwareBackPress').length
-    const onRequestMenu = jest.fn()
+    const onClose = jest.fn()
     const onSubmit = jest.fn()
-    const props = { answer: 'CAT', onRequestMenu, onSubmit }
+    const props = { answer: 'CAT', onClose, onSubmit }
     const { getByLabelText, rerender } = await renderPrompt(props)
 
     await fireEvent.press(getByLabelText('Close'))
     const handler = addEventListener.mock.calls.find(([event]) => event === 'hardwareBackPress')![1] as () => boolean
     expect(handler()).toBe(true)
-    expect(onRequestMenu).toHaveBeenCalledTimes(2)
+    expect(onClose).toHaveBeenCalledTimes(2)
     expect(onSubmit).not.toHaveBeenCalled()
 
-    // Hidden behind the menu, it holds no back listener: the one it had is removed, none added.
+    // Hidden behind Settings, it holds no back listener: the one it had is removed, none added.
     await rerender(
       <Providers>
         <PnpWordPrompt {...baseProps} {...props} promptVisible={false} />

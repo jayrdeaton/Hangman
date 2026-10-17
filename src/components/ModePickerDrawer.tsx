@@ -5,13 +5,13 @@ import { ScrollView, ScrollViewFooter, ScrollViewHeader, ScrollViewProvider } fr
 import { JSX, memo, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { FlatList, NativeScrollEvent, NativeSyntheticEvent, StyleSheet, useWindowDimensions, View } from 'react-native'
 import { Text, useTheme } from 'react-native-paper'
-import Animated, { useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated'
+import Animated, { useAnimatedStyle } from 'react-native-reanimated'
 
 import { DRAWER_MODE_PICKER_Z_INDEX } from '@/constants/drawerStacking'
+import { useArtDemoLoop } from '@/hooks/useArtDemoLoop'
 import { useDrawerWidth } from '@/hooks/useDrawerWidth'
 import { useHorizontalWheelScrollProps } from '@/hooks/useHorizontalWheelScroll'
 import { VISIBLE_MODES } from '@/modes/registry'
-import { fullyDrawnMistakes } from '@/modes/shared/fullyDrawnMistakes'
 import type { GameMode } from '@/types/gameModes'
 
 import { GameVisual } from './GameVisual'
@@ -42,159 +42,6 @@ const CATEGORY_LABEL: Record<GameMode['category'], string> = {
   minimal: 'Minimal'
 }
 
-// Time between each successive wrong-guess step during a card's demo cycle - comfortably longer
-// than sketchShapes.tsx's own DRAW_MS (380) so a part/instance visibly finishes its own sketch-in or
-// fade-in before the next step lands. DEMO_HOLD_MS is how long the fully-built (or fully-depleted)
-// extreme holds before the cycle fades back out and restarts.
-const DEMO_STEP_MS = 500
-const DEMO_HOLD_MS = 1000
-// Quick opacity tween for every fade in this cycle - fast enough to read as a beat between two
-// drawn states, not a slow cross-dissolve.
-const FADE_MS = 200
-// How long a freshly (re)mounted scene's own one-time reveal (GallowsWithRope, RobotCore, Candle's
-// base-to-flame sketch-on, a whole scattered field of stars/snowflakes) needs to finish before the
-// mistake-simulation loop below starts touching `mistakes` again. Sized to comfortably clear the
-// slowest of these - Robot's antenna, the last of six staggered removable parts, only finishes
-// around 1.9s after its own core scaffold starts (see robot.tsx's own CORE_END_MS/STAGGER_MS) -
-// rather than tracking each mode's own exact stagger math here. Too short and a slow-revealing part
-// gets yanked away by the loop before a viewer ever sees it drawn (the antenna bug this cycle was
-// built to fix); too long just reads as a pause, not a functional problem.
-const SCENE_REVEAL_HOLD_MS = 2000
-
-// classic.tsx is the only mode with a permanent scaffold (the gallows) structurally separate from
-// its mistake-tracked parts (the stick figure) - see gameModes.ts's own comment on partsOpacity.
-// Every other mode's "scene" IS its mistakes-reactive content, so there's nothing to preserve across
-// a fade/redraw the way the gallows is here.
-const SCAFFOLDED_MODE_ID = 'classic'
-
-// Drives each card's demo cycle while it's focused: fades the resting "fully drawn" preview out,
-// (re)mounts the scene so its own one-time reveal plays fresh (bumping `revealKey` forces this - see
-// its own usage below), waits for that reveal to finish, then steps `mistakes` from 0 up to
-// maxMistakes (holding briefly once fully built/depleted) the same way a real round's wrong guesses
-// would, just looped. At the end of each hold: classic.tsx fades `partsOpacity` down to fade out just
-// the stick figure, leaving the gallows alone, then loops straight back into the next build (no
-// remount, no scene-reveal wait - the gallows never went anywhere). Every other mode instead fades
-// the whole card out, remounts for a full fresh redraw, and waits out the reveal again before
-// continuing - there's no persistent piece worth preserving there, so a full redraw each cycle is
-// simpler and reads just as well ("draw in, animate through, fade out, draw back in, repeat").
-// `paused` (the drawer is closed) stops the cycle outright; see its own guard below.
-const useCardAnimation = (isFocused: boolean, paused: boolean, mode: GameMode) => {
-  const restMistakes = fullyDrawnMistakes(mode)
-  // 'none' (Letters Only) has no mistake-reactive art - nothing for the mistake-stepping half of
-  // this cycle (runMistakeLoop below) to animate. It still has its own one-time reveal worth
-  // replaying on a loop now that it draws its letters in (SketchLetter) rather than rendering
-  // static text, so it's not exempted from this hook entirely - see the `animated` branch below,
-  // which skips straight from one remount to the next, holding on the resting frame in between
-  // rather than stepping through mistakes it doesn't have.
-  const animated = mode.behavior !== 'none'
-  const isClassic = mode.id === SCAFFOLDED_MODE_ID
-
-  const [mistakes, setMistakes] = useState(restMistakes)
-  const [revealKey, setRevealKey] = useState(0)
-  const cardOpacity = useSharedValue(1)
-  const partsOpacity = useSharedValue(1)
-
-  useEffect(() => {
-    if (!isFocused) {
-      // Snapped, not faded - this card isn't visible mid-transition to begin with (it's the one
-      // losing focus as the carousel settles elsewhere), so there's nothing for a tween to show.
-      // No setMistakes call here: the returned `mistakes` below already masks stale state at the
-      // source whenever unfocused, so there's nothing for this effect itself to reset.
-      cardOpacity.value = 1
-      partsOpacity.value = 1
-      return
-    }
-
-    // This drawer stays mounted (translated off-screen) while closed, and focusedIndex keeps its
-    // value, so without this the focused card's cycle would keep re-rendering and remounting its art
-    // forever in the background. It also kept every test that renders Main (which mounts this drawer
-    // via PuzzleDrawer) feeding React a never-ending stream of real-timer updates. Bailing out here,
-    // rather than through the snap above, leaves whatever frame was showing in place for the close
-    // slide-out; the next open (which re-syncs focus, see ModePickerDrawer's own prevVisible) flips
-    // this back and restarts from the entry fade below.
-    if (paused) return
-
-    let cancelled = false
-    let timeoutId: ReturnType<typeof setTimeout>
-
-    if (!animated) {
-      // No mistakes to step through, just the one-time reveal itself, replayed on a loop: fade
-      // out, remount (revealKey forces SketchLetter's own draw-in to play fresh, same trick the
-      // animated branch below uses), hold on the resting frame, repeat.
-      const runStaticLoop = () => {
-        cardOpacity.value = withTiming(0, { duration: FADE_MS })
-        timeoutId = setTimeout(() => {
-          if (cancelled) return
-          setRevealKey((key) => key + 1)
-          cardOpacity.value = 1
-          timeoutId = setTimeout(runStaticLoop, SCENE_REVEAL_HOLD_MS + DEMO_HOLD_MS)
-        }, FADE_MS)
-      }
-      timeoutId = setTimeout(runStaticLoop, SCENE_REVEAL_HOLD_MS + DEMO_HOLD_MS)
-      return () => {
-        cancelled = true
-        clearTimeout(timeoutId)
-      }
-    }
-
-    const runMistakeLoop = () => {
-      let step = 0
-      const advanceMistakes = () => {
-        if (cancelled) return
-        if (step > mode.maxMistakes) {
-          if (isClassic) {
-            partsOpacity.value = withTiming(0, { duration: FADE_MS })
-            timeoutId = setTimeout(() => {
-              if (cancelled) return
-              setMistakes(0)
-              partsOpacity.value = 1
-              step = 0
-              advanceMistakes()
-            }, FADE_MS)
-          } else {
-            cardOpacity.value = withTiming(0, { duration: FADE_MS })
-            timeoutId = setTimeout(() => {
-              if (cancelled) return
-              setMistakes(0)
-              setRevealKey((key) => key + 1)
-              cardOpacity.value = 1
-              step = 0
-              timeoutId = setTimeout(advanceMistakes, SCENE_REVEAL_HOLD_MS)
-            }, FADE_MS)
-          }
-          return
-        }
-        setMistakes(step)
-        const isLastStep = step === mode.maxMistakes
-        step += 1
-        timeoutId = setTimeout(advanceMistakes, isLastStep ? DEMO_HOLD_MS : DEMO_STEP_MS)
-      }
-      advanceMistakes()
-    }
-
-    // Entry: fade the resting preview out, swap to a blank/fresh scene while invisible, then reveal
-    // it (a real mount, so every started-gated part replays its own sketch-in) before the loop above
-    // starts touching mistakes.
-    cardOpacity.value = withTiming(0, { duration: FADE_MS })
-    timeoutId = setTimeout(() => {
-      if (cancelled) return
-      setMistakes(0)
-      setRevealKey((key) => key + 1)
-      cardOpacity.value = 1
-      partsOpacity.value = 1
-      timeoutId = setTimeout(runMistakeLoop, SCENE_REVEAL_HOLD_MS)
-    }, FADE_MS)
-
-    return () => {
-      cancelled = true
-      clearTimeout(timeoutId)
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- mode/isClassic/restMistakes are fixed for a given card instance; only isFocused/paused should retrigger this
-  }, [isFocused, paused])
-
-  return { mistakes: animated && isFocused ? mistakes : restMistakes, revealKey, cardOpacity, partsOpacity }
-}
-
 type ModePickerCardProps = {
   item: GameMode
   isFocused: boolean
@@ -212,21 +59,21 @@ type ModePickerCardProps = {
 // with a button role, just without implying an action that no longer exists.
 const ModePickerCard = ({ item, isFocused, paused, isSelected, width, height, color, colors }: ModePickerCardProps) => {
   const theme = useTheme()
-  const { mistakes, revealKey, cardOpacity, partsOpacity } = useCardAnimation(isFocused, paused, item)
+  const { mistakes, revealKey, cardOpacity, partsOpacity } = useArtDemoLoop(isFocused, paused, item)
   const previewAnimatedStyle = useAnimatedStyle(() => ({ opacity: cardOpacity.value }))
 
   return (
     <View style={{ width, height }}>
       <View style={[styles.card, { backgroundColor: theme.colors.surfaceVariant, borderColor: theme.colors.outline }, isSelected && { borderColor: color, backgroundColor: theme.colors.surface }]} accessible accessibilityLabel={`${item.label} mode, ${CATEGORY_LABEL[item.category]}. ${item.description}`} accessibilityState={{ selected: isSelected }}>
         <Animated.View style={[styles.preview, previewAnimatedStyle]}>
-          {/* key={revealKey}: forces a full remount whenever useCardAnimation wants this mode's own
+          {/* key={revealKey}: forces a full remount whenever useArtDemoLoop wants this mode's own
               one-time "construct the scene" reveal (useDrawProgress, sketchShapes.tsx - a permanent
               scaffold like Classic's gallows or Robot's core, or a whole continuous scene for
               Candle/Hourglass) to replay from scratch, rather than the single on-mount-only play an
               earlier version of this file deliberately used. started stays a constant true: a fresh
               mount already IS "just revealed" for anything gated on it, so nothing here needs to
               toggle the prop itself, just force the remount. partsOpacity is classic.tsx's own
-              fade-just-the-figure control (see useCardAnimation's own comment); every other mode
+              fade-just-the-figure control (see useArtDemoLoop's own comment); every other mode
               ignores the prop entirely. */}
           <GameVisual key={revealKey} mode={item} mistakes={mistakes} color={isSelected ? color : theme.colors.onSurfaceVariant} colors={isSelected ? colors : undefined} started partsOpacity={partsOpacity} style={styles.previewVisual} />
         </Animated.View>
@@ -267,9 +114,9 @@ export type ModePickerDrawerProps = {
 // in the top-right corner), the same place every other @tastic game keeps them. The carousel's own
 // selected-card frame/name and the pips take their color from the seed this palette picker picks.
 //
-// Memoized: stays mounted (translated off-screen) even while closed - see PuzzleDrawer's own memo
-// comment for why an always-mounted, never-visible-right-now subtree still costs a re-render
-// without this.
+// Memoized: stays mounted (translated off-screen) even while closed, and an always-mounted,
+// never-visible-right-now subtree still costs a re-render without this whenever an unrelated
+// ancestor state change bubbles through it.
 export const ModePickerDrawer = memo(({ visible, onDismiss, selected, onSelect }: ModePickerDrawerProps): JSX.Element => {
   const { height: windowHeight } = useWindowDimensions()
   // Also the carousel's page width (see getItemLayout/renderCard/handleScroll below), not the raw
@@ -332,7 +179,7 @@ export const ModePickerDrawer = memo(({ visible, onDismiss, selected, onSelect }
   //
   // Also where selection itself happens: whichever card the carousel settles on becomes the real
   // selected mode immediately, live - matching how mode/difficulty already work everywhere else in
-  // this app (see PuzzleDrawer's own onModeChange comment). There's no separate "confirm" step
+  // this app (see LoadoutScreen's handleSelectMode). There's no separate "confirm" step
   // baked into a tap anymore, since that closed the drawer before the focused card's own reveal
   // animation ever got a chance to play - the footer button and the header's close button both just
   // dismiss now, neither one committing or reverting anything the scroll position hasn't already.
@@ -499,7 +346,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 16
   },
   // paddingVertical/paddingHorizontal match ScrollViewHeader's own actionMargin - same convention
-  // PuzzleDrawer's own footer uses.
+  // the loadouts' own footers use.
   footer: {
     paddingBottom: 4,
     paddingHorizontal: 16,
@@ -530,7 +377,7 @@ const styles = StyleSheet.create({
     width: '100%'
   },
   previewVisual: { flex: 1, width: '100%' },
-  // Matches SettingsDrawer/PuzzleDrawer's own scrollContent convention - a little breathing room
+  // Matches the loadouts' and other drawers' own scrollContent convention - a little breathing room
   // below the last section, on top of (not instead of) the real footer clearance ScrollViewProvider's
   // footerFixed reserves automatically.
   scrollContent: { paddingBottom: 12 }

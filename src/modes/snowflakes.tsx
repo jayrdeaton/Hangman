@@ -11,7 +11,7 @@ import { SketchLine } from './shared/sketchShapes'
 // Quantitative/depletion: a flurry of snowflakes melts away one by one.
 // maxMistakes=6, same baseline every mode uses.
 // Positions/sizes/colors are re-rolled each round (generated once in useState initializer - see
-// balloons.tsx's own doc comment for why that's safe: Main.tsx remounts Game per round).
+// balloons.tsx's own doc comment for why that's safe: GameScreen remounts Game per round).
 // This file used to be the "Stars" mode - renamed once stars.tsx got a proper 5-pointed star
 // shape, since this 4-pointed doodle reads more like a snowflake than a star.
 

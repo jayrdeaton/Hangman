@@ -1,5 +1,5 @@
 import { classicMode, DEFAULT_MODE, robotMode } from '@/modes/registry'
-import { buildPuzzleLink, parseSharedPuzzle } from '@/utils/puzzleLink'
+import { buildPuzzleLink, parseSharedPuzzle, parseSharedPuzzleParams } from '@/utils/puzzleLink'
 
 type MockQueryParams = Record<string, string | undefined>
 
@@ -123,5 +123,70 @@ describe('parseSharedPuzzle edge cases', () => {
 
     expect(() => parseSharedPuzzle(malformedUrl)).not.toThrow()
     expect(parseSharedPuzzle(malformedUrl)).toBeNull()
+  })
+})
+
+// The /play route reads a link's query params straight from the router (useLocalSearchParams), so
+// these are the same checks parseSharedPuzzle makes, on params that never went through a URL. A
+// repeated param arrives as an array.
+describe('parseSharedPuzzleParams', () => {
+  it('turns a valid link into a custom puzzle with its own art and hint', () => {
+    expect(parseSharedPuzzleParams({ phrase: 'HELLO WORLD', hint: 'A friendly greeting', mode: robotMode.id })).toEqual({
+      sourceMode: 'custom',
+      difficulty: 'any',
+      mode: robotMode,
+      customPhrase: 'HELLO WORLD',
+      customHint: 'A friendly greeting'
+    })
+  })
+
+  // Normalizing is resolvePuzzle's job: the phrase is handed on as it came, as long as some letter
+  // survives normalizing.
+  it('hands the raw phrase on unnormalized', () => {
+    expect(parseSharedPuzzleParams({ phrase: 'hello, world!' })?.customPhrase).toBe('hello, world!')
+  })
+
+  it('defaults the hint to an empty string when the link has none', () => {
+    expect(parseSharedPuzzleParams({ phrase: 'HELLO' })?.customHint).toBe('')
+  })
+
+  it.each([
+    ['no phrase at all', {}],
+    ['an empty phrase', { phrase: '' }],
+    ['a repeated phrase param', { phrase: ['HELLO', 'WORLD'] }]
+  ])('returns null for %s', (_label, params) => {
+    expect(parseSharedPuzzleParams(params)).toBeNull()
+  })
+
+  it('returns null for a phrase longer than 128 characters, and takes one of exactly 128', () => {
+    expect(parseSharedPuzzleParams({ phrase: 'A'.repeat(129) })).toBeNull()
+    expect(parseSharedPuzzleParams({ phrase: 'A'.repeat(128) })?.customPhrase).toBe('A'.repeat(128))
+  })
+
+  it.each([['12345'], ['   '], ['!?-,.']])('returns null for %j, which has no letter left after normalizing', (phrase) => {
+    expect(parseSharedPuzzleParams({ phrase })).toBeNull()
+  })
+
+  it('returns null for a hint longer than 80 characters, and takes one of exactly 80', () => {
+    expect(parseSharedPuzzleParams({ phrase: 'HELLO', hint: 'B'.repeat(81) })).toBeNull()
+    expect(parseSharedPuzzleParams({ phrase: 'HELLO', hint: 'B'.repeat(80) })?.customHint).toBe('B'.repeat(80))
+  })
+
+  it.each([
+    ['an unknown mode id', { mode: 'totally-not-a-real-mode' }],
+    ['no mode', {}],
+    ['a repeated mode param', { mode: [robotMode.id, classicMode.id] }]
+  ])('falls back to DEFAULT_MODE for %s, without returning null', (_label, params) => {
+    const result = parseSharedPuzzleParams({ phrase: 'HELLO', hint: 'A hint', ...params })
+
+    expect(result).not.toBeNull()
+    expect(result?.mode).toBe(DEFAULT_MODE)
+    expect(result?.customPhrase).toBe('HELLO')
+  })
+
+  it('gives the same answer as parseSharedPuzzle for the same link', () => {
+    const params = { phrase: 'HELLO WORLD', hint: 'A friendly greeting', mode: robotMode.id }
+
+    expect(parseSharedPuzzle(buildPuzzleLink({ phrase: params.phrase, hint: params.hint, mode: robotMode }))).toEqual(parseSharedPuzzleParams(params))
   })
 })

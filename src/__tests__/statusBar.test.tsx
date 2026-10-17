@@ -7,7 +7,9 @@ import { Theme } from '@/components/Theme'
 // @tastic/core's config plugin turns UIViewControllerBasedStatusBarAppearance on, and with it on, every
 // React Native StatusBar logs an error (a red box in a dev build). An app linked against the iOS 27 SDK
 // can't set the bar through one anyway: that component only sets it app-wide, which UIKit ignores
-// there. So nothing in the app may mount one: not a component here, and not auto-paper's own.
+// there. So nothing in the app may mount one: not a component here, and not auto-paper's own. The
+// bar's ink is set per screen instead, through the root Stack's statusBarStyle (see
+// app/layout.test.tsx).
 
 const mockAutoPaperProvider = jest.fn(({ children }: { children: unknown }) => children)
 jest.mock('@rific/auto-paper', () => ({
@@ -24,6 +26,9 @@ jest.mock('@expo/vector-icons/MaterialCommunityIcons', () => ({ __esModule: true
 jest.mock('expo-system-ui', () => ({ setBackgroundColorAsync: () => Promise.resolve() }))
 
 const SRC = join(__dirname, '..')
+// The one app file outside src/: expo-router's entry (src/app/_layout.tsx, the old App.tsx's
+// replacement, is under src/ and scanned with the rest).
+const ENTRY = join(SRC, '..', 'index.js')
 
 /** Every app source file (tests and mocks left out). */
 function sourceFiles(dir = SRC): string[] {
@@ -36,7 +41,11 @@ function sourceFiles(dir = SRC): string[] {
 
 describe('the status bar', () => {
   it('is never a StatusBar component: no source file imports expo-status-bar or React Native StatusBar', () => {
-    const offenders = [...sourceFiles(), join(SRC, '..', 'App.tsx')].filter((file) => {
+    const files = [...sourceFiles(), ENTRY]
+    // Guards the scan itself: the routes and the root layout have to be in it.
+    expect(files).toEqual(expect.arrayContaining([join(SRC, 'app', '_layout.tsx'), join(SRC, 'app', 'game.tsx'), join(SRC, 'components', 'Theme.tsx')]))
+
+    const offenders = files.filter((file) => {
       const source = readFileSync(file, 'utf8')
       return /from ['"]expo-status-bar['"]/.test(source) || /import\s*\{[^}]*\bStatusBar\b[^}]*\}\s*from ['"]react-native['"]/.test(source)
     })

@@ -132,7 +132,7 @@ describe('SettingsDialog', () => {
       expect(onUnlocksChanged).not.toHaveBeenCalled()
     })
 
-    it('merges a picked backup, tells the Game Menu, and reports the counts', async () => {
+    it('merges a picked backup, tells its screen, and reports the counts', async () => {
       const payload = JSON.stringify({ unlocks: { animals: ['lion'] } })
       mockPickHangmanFile.mockResolvedValue(payload)
       mockMergePuzzleUnlocks.mockResolvedValue({ importedCount: 3, addedCount: 2 })

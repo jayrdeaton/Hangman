@@ -28,7 +28,7 @@ export const Haptic = ({ children }: HapticProps) => {
   // Memoized so an unrelated Haptic re-render doesn't hand FeedbackPressProvider's `sound` prop a
   // new object identity every time - only changes when playClick's own identity changes (i.e. when
   // settings.enabled toggles). notification (long-press) intentionally left unwired: the only
-  // long-press action in the app today (PackRow's deselect, via PuzzleDrawer.tsx) already reads as
+  // long-press action in the app today (PackRow's deselect, via LoadoutScreen.tsx) already reads as
   // a deliberate, distinct gesture, and scope here is the generic press click, not every event this
   // package can fire.
   const sound = useMemo<SoundConfig>(() => ({ selection: playClick }), [playClick])

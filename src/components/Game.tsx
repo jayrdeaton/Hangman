@@ -11,6 +11,7 @@ import { useSoundEffects } from '@/hooks/useSoundEffects'
 import { DEFAULT_MODE } from '@/modes/registry'
 import { PIPS_SWEEP_DELAY_MS } from '@/modes/shared/sceneReveal'
 import { FadeScaleIn, SketchCircle } from '@/modes/shared/sketchShapes'
+import type { RoundProgress } from '@/redux/roundSlice'
 import type { GameMode } from '@/types/gameModes'
 import type { UnlockedAchievement } from '@/types/stats'
 import type { PuzzleDifficultyTier } from '@/utils/puzzleCatalog'
@@ -60,11 +61,13 @@ export type GameProps = {
   onStop: () => void
   onSolved?: (details: SolveDetails) => void
   onLost?: (details: LossDetails) => void
-  // Fired whenever the guessed-letter set changes, mid-round - lets a caller track "has the
-  // player guessed anything yet" and "how many wrong guesses so far" for THIS round without
-  // lifting the full guessedLetters state, e.g. to decide whether starting a different puzzle
-  // should count as an abandoned loss (see Main.tsx's shouldConfirmAbandon).
-  onGuessProgress?: (details: LossDetails) => void
+  // Fired whenever a guess lands or the hint opens. The game screen saves it into the round slice,
+  // so a relaunch puts the same board back (see initialGuessedLetters) and leaving mid-round keeps it.
+  onProgress?: (progress: RoundProgress) => void
+  // The board to start from, read once at mount: a saved round coming back after a relaunch or a trip
+  // to the loadout. Omitted, the round starts blank.
+  initialGuessedLetters?: string[]
+  initialHintRevealed?: boolean
   phrase: string
   mode?: GameMode
   hint?: string
@@ -74,9 +77,9 @@ export type GameProps = {
   categoryProgress?: CategoryProgress | null
   // What this round unlocked, passed straight through to RoundEndDialog like categoryProgress above.
   unlockedAchievements?: UnlockedAchievement[]
-  // True while a dialog covers the board - currently only pass-and-play's handoff step, which
-  // mounts the real round underneath itself rather than a blank screen (see Main.tsx), so that
-  // there's nothing left to reveal once the dialog closes. Guards handleGuess only, deliberately
+  // True while a dialog covers the board (pass-and-play's prompt and hand-off, which mount the real
+  // round underneath themselves rather than a blank screen, so there's nothing left to reveal once
+  // the dialog closes; the Settings sheet), or while the game screen isn't the one showing. Guards handleGuess only, deliberately
   // NOT the Keyboard's own `disabled` styling below - greying it out would repaint the board the
   // instant the dialog disappears, which is the exact flash mounting it early was meant to avoid.
   // The dialog's backdrop already blocks on-screen taps; this only needs to catch the
@@ -84,15 +87,15 @@ export type GameProps = {
   locked?: boolean
 }
 
-export const Game = ({ onStop, onSolved, onLost, onGuessProgress, phrase, mode = DEFAULT_MODE, hint, packLabel, difficultyTier, celebration = DEFAULT_CELEBRATION, categoryProgress, unlockedAchievements, locked = false }: GameProps): JSX.Element => {
+export const Game = ({ onStop, onSolved, onLost, onProgress, initialGuessedLetters, initialHintRevealed = false, phrase, mode = DEFAULT_MODE, hint, packLabel, difficultyTier, celebration = DEFAULT_CELEBRATION, categoryProgress, unlockedAchievements, locked = false }: GameProps): JSX.Element => {
   const { layout } = useKeyboardLayout()
   const { playCorrect, playWrong, playWin, playLoss } = useSoundEffects()
   const gameHaptics = useGameHaptics()
   const theme = useTheme()
   const secondaryColor = theme.colors.secondary
-  const [guessedLetters, setGuessedLetters] = useState<string[]>([])
-  const [wrongGuesses, setWrongGuesses] = useState(0)
-  const [hintRevealed, setHintRevealed] = useState(false)
+  const [guessedLetters, setGuessedLetters] = useState<string[]>(() => initialGuessedLetters ?? [])
+  const [wrongGuesses, setWrongGuesses] = useState(() => (initialGuessedLetters ?? []).filter((letter) => !phrase.includes(letter)).length)
+  const [hintRevealed, setHintRevealed] = useState(initialHintRevealed)
   const [outcome, setOutcome] = useState<'win' | 'loss' | null>(null)
   // The letter whose guess completed the round, once won - see Keyboard.tsx's own comment on why
   // it's only ever set, never cleared (a fresh round is a fresh Game/Keyboard instance).
@@ -109,8 +112,8 @@ export const Game = ({ onStop, onSolved, onLost, onGuessProgress, phrase, mode =
   // rather than waiting on the 450ms delay that only exists to let the final hangman art render.
   const [keyboardFalling, setKeyboardFalling] = useState(false)
   // Set by Next. Every next-puzzle path remounts Game, so this usually never matters, but a
-  // shared-link puzzle's Next only opens the Game Menu over this same finished round: without it the
-  // card (and a win's fireworks) would stay up on top of the menu, and Next would do nothing more.
+  // shared-link puzzle's Next leaves for the loadout instead, and the web keeps a left screen
+  // mounted: without this the card (and a win's fireworks) would still be up if the player came back.
   const [roundEndDismissed, setRoundEndDismissed] = useState(false)
   const handleRoundEndDismiss = useCallback(() => {
     setRoundEndDismissed(true)
@@ -120,8 +123,8 @@ export const Game = ({ onStop, onSolved, onLost, onGuessProgress, phrase, mode =
   // (keyed on this value below) to start a fresh cycle - keeping the effect running for as long
   // as outcome stays 'win', i.e. for as long as the win dialog is open.
   const [celebrationCycle, setCelebrationCycle] = useState(0)
-  // Captured once, not read live from `mode` - `mode` itself updates immediately when the player
-  // picks a new art style mid-round (see PuzzleDrawer's onModeChange), which should only change how
+  // Captured once, not read live from `mode` - `mode` itself updates when the player picks a new art
+  // style for a round left waiting on the loadout (see roundSlice's setRoundArt), which should only change how
   // the round is drawn, never its mechanics. Every built-in mode shares the same 6-mistake baseline
   // today, but this freeze still guards a future or custom mode that doesn't - without it, switching
   // to or from one mid-round would shift how many wrong guesses the player has left partway through.
@@ -135,8 +138,8 @@ export const Game = ({ onStop, onSolved, onLost, onGuessProgress, phrase, mode =
   const lossTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const winDialogTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
-  // Both start false on every fresh mount (a new round is a new Game instance - see Main.tsx's
-  // roundKey), and each flips true once, permanently, the moment its own owner reports it's fully
+  // Both start false on every fresh mount (a new round is a new Game instance - see roundSlice's
+  // round id), and each flips true once, permanently, the moment its own owner reports it's fully
   // measured (see PuzzleStage's and Keyboard's own onReadyChange comments for what that covers:
   // the artwork box, the word row, and every keyboard key's real width). Before this fix, each of
   // those measured its own size independently and popped into its final layout the moment ITS OWN
@@ -165,8 +168,8 @@ export const Game = ({ onStop, onSolved, onLost, onGuessProgress, phrase, mode =
   )
 
   useEffect(() => {
-    onGuessProgress?.({ wrongGuesses, guessCount: guessedLetters.length })
-  }, [guessedLetters, wrongGuesses, onGuessProgress])
+    onProgress?.({ guessedLetters, hintRevealed })
+  }, [guessedLetters, hintRevealed, onProgress])
 
   const handleGuess = (letter: string) => {
     if (locked || roundOverRef.current) return

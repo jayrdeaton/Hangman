@@ -31,11 +31,11 @@ export const PuzzleDefaultsProvider = ({ children }: PuzzleDefaultsProviderProps
       setLoaded(true)
     })
   }, [])
-  // Gated (unlike selectedPackKeys, which happily starts from an "every pack" fallback and
-  // corrects a render later) because mode/difficulty are visible the instant the first round
-  // draws - Main.tsx's own puzzle draw needs the real persisted values already in hand, not a
-  // default that would flash and then swap a round later. See KeyboardLayoutProvider's identical
-  // reasoning for the keyboard's own layout.
+  // Gated because the art is visible on the very first screen (Home's hero acts out a round in
+  // it), so the splash waits for the real persisted values rather than showing the default art and
+  // swapping it a beat later. A puzzle draw doesn't rely on the splash: the game screen waits for
+  // `ready` itself before drawing (see SoloRound in GameScreen.tsx). See KeyboardLayoutProvider's
+  // identical reasoning for the keyboard's own layout.
   useSplashReady('puzzleDefaults', loaded)
 
   const setMode = useCallback((next: GameMode) => {

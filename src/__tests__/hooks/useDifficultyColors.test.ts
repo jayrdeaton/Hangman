@@ -42,7 +42,7 @@ describe('useDifficultyContainerColors', () => {
 })
 
 describe('getContainerColor', () => {
-  it('delegates to getColorRoles(baseHex, surface).container - used for PuzzleDrawer\'s "Any" segment, which has no semantic role of its own', () => {
+  it('delegates to getColorRoles(baseHex, surface).container - used for the solo loadout\'s "Any" segment, which has no semantic role of its own', () => {
     const { getColorRoles } = jest.requireActual('@rific/auto-paper')
     const base = '#6750a4'
     const surface = '#FFFBFE'

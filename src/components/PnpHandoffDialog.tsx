@@ -2,8 +2,9 @@ import { ConfirmDialog } from '@tastic/hud/chrome'
 import { JSX } from 'react'
 
 export type PnpHandoffDialogProps = {
-  // False while the Game Menu or the Settings sheet is open, the same contract as PnpWordPrompt's
-  // promptVisible: this card steps aside rather than fighting them for the screen.
+  // False while the Settings sheet is open (or the game screen isn't the one showing), the same
+  // contract as PnpWordPrompt's promptVisible: this card steps aside rather than fighting it for the
+  // screen.
   visible: boolean
   onReady: () => void
 }

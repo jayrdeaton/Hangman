@@ -3,7 +3,7 @@ import Svg from 'react-native-svg'
 import { GLYPH_HEIGHT, HERSHEY_GAP, HERSHEY_GLYPHS } from '@/modes/shared/letterformsHershey'
 import { WORD_SWEEP_DELAY_MS } from '@/modes/shared/sceneReveal'
 import { SketchLetter } from '@/modes/shared/sketchLetter'
-import { SketchLine } from '@/modes/shared/sketchShapes'
+import { DRAW_MS, SketchLine } from '@/modes/shared/sketchShapes'
 
 // Every position - letter or blank - gets this same cell width, in the same GLYPH_HEIGHT-relative
 // units as a glyph's own width. 110 comfortably fits the widest real letter (M/W, ~104) with a
@@ -41,6 +41,11 @@ const sketchMetrics = (fontSize: number) => {
   const glyphHeight = Math.max(1, fontSize - glyphMargin * 2)
   return { strokeWidth, glyphMargin, glyphHeight, scale: glyphHeight / GLYPH_HEIGHT }
 }
+
+// When the last of a word's blanks has finished drawing in (each starts BLANK_STAGGER_MS after the one
+// before, after the sweep's own WORD_SWEEP_DELAY_MS), for a caller that fills them in afterward
+// (Home's hero).
+export const sketchWordBlanksDrawnMs = (letterCount: number): number => WORD_SWEEP_DELAY_MS + Math.max(0, letterCount - 1) * BLANK_STAGGER_MS + DRAW_MS
 
 // How wide SketchWord draws a word of `letterCount` letters at `fontSize` (its height is fontSize).
 export const sketchWordWidth = (letterCount: number, fontSize: number): number => {
