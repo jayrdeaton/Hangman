@@ -8,14 +8,16 @@ import { useSharedValue } from 'react-native-reanimated'
 
 import { DRAWER_PACK_PROGRESS_Z_INDEX } from '@/constants/drawerStacking'
 import { useDrawerWidth } from '@/hooks/useDrawerWidth'
+import { usePuzzleUnlocks } from '@/hooks/usePuzzleUnlocks'
 import type { GameMode } from '@/types/gameModes'
 import type { GameStartPayload } from '@/types/gameSession'
 import { alert } from '@/utils/alert'
 import { commaString } from '@/utils/commaString'
 import { PuzzleDifficultyTier, type PuzzleManifestItem } from '@/utils/puzzleCatalog'
 import { type PuzzleConfig, resolveChosenPuzzle, resolvePuzzle } from '@/utils/puzzlePicker'
-import { getManifestUnlockProgress, getPuzzleUnlockMap, getUnlockedCountForPack, PuzzleUnlockMap } from '@/utils/unlocks'
+import { getManifestUnlockProgress, getUnlockedCountForPack } from '@/utils/unlocks'
 
+import { PackHeaderTitle } from './PackHeaderTitle'
 import { PackPuzzleList } from './PackPuzzleList'
 import { PackRow } from './PackRow'
 
@@ -31,19 +33,18 @@ export type PackProgressDrawerProps = {
   // bumps), so this lists exactly the packs its Pack Progress row counts. Must stay referentially
   // stable between changes (the loadout memoizes it), or the memo below does nothing.
   manifest: PuzzleManifestItem[]
-  unlockVersion: number
   mode: GameMode
   difficulty: 'any' | PuzzleDifficultyTier
   onConfirm: (payload: GameStartPayload, config: PuzzleConfig) => void
 }
 
 // Every pack's progress, selected or not (the Single Player loadout's Quick Start list shows only
-// the selected packs), with a drill-in to a pack's puzzles and a pack-scoped Random. What's left of
-// the old Achievements drawer: its stats and achievement list moved to StatsScreen, and its backup
-// to the Settings sheet. Left-side, like every drawer the loadout opens; it only opens from the
+// the selected packs), with a drill-in to a pack's puzzles, titled with its name, and Play This Pack
+// (the same footer action as PackPuzzlesDrawer's). What's left of the old Achievements drawer: its
+// stats and achievement list moved to StatsScreen, and its backup to the Settings sheet. Left-side, like every drawer the loadout opens; it only opens from the
 // loadout's Pack Progress row, so it stacks over that page (see DRAWER_PACK_PROGRESS_Z_INDEX) with
 // no edge-swipe of its own, same as PackPuzzlesDrawer (also only reached via a tap).
-// mode/difficulty are read in this file only inside handlePlayPuzzle/handleRandom (see below), event
+// mode/difficulty are read in this file only inside handlePlayPuzzle/handlePlayThisPack (see below), event
 // handlers that fire from an actual tap, never from rendering, so while this drawer is closed a
 // mode/difficulty change elsewhere (e.g. the player picking a difficulty on the loadout) has nothing
 // here for it to affect. Comparing them only once `visible` is true (or transitioning) means this
@@ -51,12 +52,14 @@ export type PackProgressDrawerProps = {
 // changed," without going stale: the moment `visible` flips true this falls through to the full
 // comparison, so the render that actually brings the panel on screen always picks up the loadout's
 // current mode/difficulty, not a cached one. The manifest is skipped while closed for the same
-// reason: a custom pack saved elsewhere reaches the list the moment the drawer opens.
+// reason: a custom pack saved elsewhere reaches the list the moment the drawer opens. The unlocked
+// puzzles aren't a prop: the drawer reads the active player's itself (usePuzzleUnlocks), only while
+// open.
 const arePackProgressDrawerPropsEqual = (prev: PackProgressDrawerProps, next: PackProgressDrawerProps): boolean => {
   if (!prev.visible && !next.visible) {
-    return prev.onDismiss === next.onDismiss && prev.unlockVersion === next.unlockVersion && prev.onConfirm === next.onConfirm
+    return prev.onDismiss === next.onDismiss && prev.onConfirm === next.onConfirm
   }
-  return prev.visible === next.visible && prev.onDismiss === next.onDismiss && prev.manifest === next.manifest && prev.unlockVersion === next.unlockVersion && prev.mode === next.mode && prev.difficulty === next.difficulty && prev.onConfirm === next.onConfirm
+  return prev.visible === next.visible && prev.onDismiss === next.onDismiss && prev.manifest === next.manifest && prev.mode === next.mode && prev.difficulty === next.difficulty && prev.onConfirm === next.onConfirm
 }
 
 // Memoized: this stays mounted (translated off-screen) even while closed and renders a row per pack,
@@ -65,13 +68,14 @@ const arePackProgressDrawerPropsEqual = (prev: PackProgressDrawerProps, next: Pa
 // nothing. Uses the custom
 // comparator above (not memo's own default shallow-equal) specifically to ALSO ignore mode/difficulty
 // while closed - see its own comment for why that's safe.
-export const PackProgressDrawer = memo(({ visible, onDismiss, manifest, unlockVersion, mode, difficulty, onConfirm }: PackProgressDrawerProps): JSX.Element => {
+export const PackProgressDrawer = memo(({ visible, onDismiss, manifest, mode, difficulty, onConfirm }: PackProgressDrawerProps): JSX.Element => {
   const theme = useTheme()
   const drawerWidth = useDrawerWidth()
   // Closed position for a `side='left'` drawer (the default, see @rific/drawer's own
   // getClosedOffset) is -drawerWidth, the seed useDrawerWidth's own comment describes.
   const translateX = useSharedValue(-drawerWidth)
-  const [unlockMap, setUnlockMap] = useState<PuzzleUnlockMap>({})
+  // The active player's, read again each time this opens and whenever a count moves while it's open.
+  const { unlockMap } = usePuzzleUnlocks({ enabled: visible })
   const [detailPackKey, setDetailPackKey] = useState<string | null>(null)
 
   // Always reopens on the overview, same as PacksScreen resetting its own step on open -
@@ -80,20 +84,11 @@ export const PackProgressDrawer = memo(({ visible, onDismiss, manifest, unlockVe
     if (visible) setDetailPackKey(null)
   }, [visible])
 
-  useEffect(() => {
-    if (!visible) return
-    let mounted = true
-    void getPuzzleUnlockMap().then((nextUnlocks) => {
-      if (mounted) setUnlockMap(nextUnlocks)
-    })
-    return () => {
-      mounted = false
-    }
-  }, [visible, unlockVersion])
-
   const { totalUnlocked, totalAvailable, overallProgress } = useMemo(() => getManifestUnlockProgress(manifest, unlockMap), [manifest, unlockMap])
+  // The pack being browsed, for the header's title.
+  const detailPack = useMemo(() => (detailPackKey ? manifest.find((item) => item.key === detailPackKey) : undefined), [manifest, detailPackKey])
 
-  // Mirrors PackPuzzlesDrawer's own row-tap-to-play (same resolve-then-close shape as handleRandom
+  // Mirrors PackPuzzlesDrawer's own row-tap-to-play (same resolve-then-close shape as handlePlayThisPack
   // below) - a specific puzzle row should start that puzzle here exactly like it does there.
   const handlePlayPuzzle = (puzzleId: string) => {
     if (!detailPackKey) return
@@ -109,11 +104,13 @@ export const PackProgressDrawer = memo(({ visible, onDismiss, manifest, unlockVe
     onDismiss()
   }
 
-  // Mirrors PackPuzzlesDrawer's own Random button - browsing into a pack's progress here would
-  // otherwise be a dead end with no way to act on it. Uses the app's current mode/difficulty
-  // (passed down from the Single Player loadout) rather than exposing pickers of its own; this
-  // drawer is about reviewing progress, not choosing settings.
-  const handleRandom = () => {
+  // Mirrors PackPuzzlesDrawer's own Play This Pack - browsing into a pack's progress here would
+  // otherwise be a dead end with no way to act on it. A one-pack draw (packScope 'single'), so Next
+  // keeps to this pack too. Uses the app's current mode/difficulty (passed down from the Single
+  // Player loadout) rather than exposing pickers of its own; this drawer is about reviewing
+  // progress, not choosing settings. Only This Pack stays PackPuzzlesDrawer's: this drawer reviews
+  // every pack, selected or not, and trimming the selection is the loadout's and Choose Packs' job.
+  const handlePlayThisPack = () => {
     if (!detailPackKey) return
     const configToResolve: PuzzleConfig = { sourceMode: 'random', difficulty, mode, customPhrase: '', customHint: '' }
     const result = resolvePuzzle(configToResolve, [detailPackKey], unlockMap)
@@ -194,20 +191,19 @@ export const PackProgressDrawer = memo(({ visible, onDismiss, manifest, unlockVe
               read the same direction now that this panel itself is left-anchored. */}
           <ScrollViewHeader
             actionSize={40}
-            // Generic "Pack" while drilled in, rather than the pack's own name or group tint - its
-            // actual identity (icon, genre, title, progress) lives entirely in PackPuzzleList's own
-            // in-flow pack summary row; this is just enough of a label that the floating bar
-            // doesn't read as unexpectedly bare.
-            title={detailPackKey ? 'Pack' : 'Pack Progress'}
+            // The pack's own name while drilled in, as in PackPuzzlesDrawer (the rest of its identity
+            // is PackPuzzleList's in-flow pack summary row).
+            title={detailPackKey ? undefined : 'Pack Progress'}
+            centerContent={detailPackKey ? <PackHeaderTitle label={detailPack?.label ?? 'Pack'} /> : undefined}
             backAction={detailPackKey ? <IconButton icon='arrow-left' hitSlop={ICON_ACTION_HIT_SLOP} iconColor={theme.colors.onSurface} onPress={() => setDetailPackKey(null)} accessibilityLabel='Back to pack progress' /> : <IconButton icon='arrow-left' hitSlop={ICON_ACTION_HIT_SLOP} iconColor={theme.colors.onSurface} onPress={onDismiss} accessibilityLabel='Close' />}
           />
 
           {detailPackKey ? (
             <>
-              <PackPuzzleList packKey={detailPackKey} onPlayPuzzle={handlePlayPuzzle} />
+              <PackPuzzleList packKey={detailPackKey} unlockMap={unlockMap} onPlayPuzzle={handlePlayPuzzle} />
               <ScrollViewFooter style={styles.footer}>
-                <Button mode='contained' icon='play' onPress={handleRandom}>
-                  Random
+                <Button mode='contained' icon='play' onPress={handlePlayThisPack}>
+                  Play This Pack
                 </Button>
               </ScrollViewFooter>
             </>
@@ -242,7 +238,7 @@ const styles = StyleSheet.create({
   // flexDirection/alignItems override matches every other migrated footer (the loadouts'
   // included): alignItems alone only stretches the cross axis, which is height while
   // ScrollViewFooter's own row stays flexDirection 'row', so flexDirection has to flip to
-  // 'column' too for Random to actually stretch full width instead of shrinking to content.
+  // 'column' too for Play This Pack to actually stretch full width instead of shrinking to content.
   footer: {
     alignItems: 'stretch',
     flexDirection: 'column',

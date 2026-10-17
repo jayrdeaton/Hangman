@@ -7,6 +7,7 @@ import { Provider as ReduxProvider } from 'react-redux'
 import { PackEditorDrawer } from '@/components/PackEditorDrawer'
 import { GameStatsProvider } from '@/hooks/useGameStats'
 import { achievementsActions } from '@/redux/achievementsSlice'
+import { activePlayerActions } from '@/redux/activePlayerSlice'
 import { store } from '@/redux/store'
 import { loadCustomPacksCache } from '@/utils/customPacks'
 
@@ -51,6 +52,7 @@ describe('PackEditorDrawer', () => {
     // matching PacksScreen.test.tsx's own setup, and starts every test from fresh stats.
     await loadCustomPacksCache()
     store.dispatch(achievementsActions.reset())
+    store.dispatch(activePlayerActions.setActivePlayer(null))
     mockSuccess.mockClear()
   })
 
@@ -95,5 +97,18 @@ describe('PackEditorDrawer', () => {
     await waitFor(() => expect(mockSuccess).toHaveBeenCalledWith('Pack Rat', 'Achievement unlocked', undefined, { color: '#CD7F32', icon: 'folder-plus-outline' }))
     expect(mockSuccess).toHaveBeenCalledTimes(1)
     expect(store.getState().achievements.stats.customPacksCreated).toBe(1)
+  })
+
+  // Whoever is playing makes the pack, so it counts toward their own custom pack achievements.
+  it('counts a new pack for the active player', async () => {
+    store.dispatch(activePlayerActions.setActivePlayer('profile-a'))
+    const { getByTestId, getByText } = await render(<PackEditorDrawer visible editingKey={null} onDismiss={jest.fn()} onSaved={jest.fn()} onDelete={jest.fn()} onShare={jest.fn()} />)
+
+    await fireEvent.changeText(getByTestId('entry-answer-0'), 'PARIS')
+    await fireEvent.press(getByText('Save'))
+
+    await waitFor(() => expect(mockSuccess).toHaveBeenCalledWith('Pack Rat', 'Achievement unlocked', undefined, expect.anything()))
+    expect(store.getState().achievements.stats.profiles['profile-a']?.customPacksCreated).toBe(1)
+    expect(store.getState().achievements.unlocked).toHaveProperty('profile-a:first_custom_pack')
   })
 })

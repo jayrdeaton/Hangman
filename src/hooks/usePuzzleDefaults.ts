@@ -4,14 +4,14 @@ import { DEFAULT_MODE } from '@/modes/registry'
 import type { GameMode } from '@/types/gameModes'
 import type { PuzzleDifficultyTier } from '@/utils/puzzleCatalog'
 
+// The active player's art and difficulty picks (see PuzzleDefaultsProvider): each player has their own.
 export type PuzzleDefaultsContextType = {
   mode: GameMode
   setMode: (mode: GameMode) => void
   difficulty: 'any' | PuzzleDifficultyTier
   setDifficulty: (difficulty: 'any' | PuzzleDifficultyTier) => void
-  // True once the persisted values (if any) have been read back from storage - mode/difficulty
-  // are only the DEFAULT_MODE/'any' fallback until then. The game screen waits for this before
-  // drawing a puzzle (see SoloRound in GameScreen.tsx), so a draw never uses that fallback.
+  // Always true under PuzzleDefaultsProvider: the picks live in redux, which has rehydrated by the time
+  // anything renders (PersistGate). Only this fallback, with no provider, reads false.
   ready: boolean
 }
 

@@ -1,11 +1,12 @@
 import { FeedbackPressProvider } from '@rific/feedback-press'
 import { ToastProvider } from '@rific/toaster'
 import { act, fireEvent, render as rtlRender, waitFor, within } from '@testing-library/react-native'
-import { createRef, type ReactElement, type ReactNode } from 'react'
+import { createRef, type ReactElement, type ReactNode, useState } from 'react'
 import * as RNPaper from 'react-native-paper'
 import { PaperProvider } from 'react-native-paper'
 import { Provider as ReduxProvider } from 'react-redux'
 
+import { PackRow } from '@/components/PackRow'
 import { PacksScreen, type PacksScreenHandle } from '@/components/PacksScreen'
 import { GameStatsProvider } from '@/hooks/useGameStats'
 import { store } from '@/redux/store'
@@ -23,10 +24,19 @@ jest.mock('@/utils/hangmanFile', () => ({
   shareCustomPackFile: jest.fn()
 }))
 
+// Still the real row, only watched, so a test can see which rows a toggle redraws.
+jest.mock('@/components/PackRow', () => {
+  const actual = jest.requireActual('@/components/PackRow')
+  const { createElement } = jest.requireActual('react')
+  return { PackRow: jest.fn((props) => createElement(actual.PackRow, props)) }
+})
+
 const mockPickHangmanFile = jest.mocked(pickHangmanFile)
 const mockShareCustomPackFile = jest.mocked(shareCustomPackFile)
+const mockPackRow = jest.mocked(PackRow)
 
-const builtIn = () => getPuzzleManifest().filter((item) => item.count > 0)[0]
+const builtInPacks = () => getPuzzleManifest().filter((item) => item.count > 0 && !item.key.startsWith('custom:'))
+const builtIn = () => builtInPacks()[0]
 
 // ConfirmDialog renders through a react-native-paper Portal (Delete pack's confirm dialog) - needs
 // a Portal.Host ancestor, normally supplied by @rific/auto-paper's Provider at the app root.
@@ -57,6 +67,20 @@ const Wrapper = ({ children }: { children: ReactNode }) => (
 const render = (ui: ReactElement) => rtlRender(ui, { wrapper: Wrapper })
 
 const renderScreen = (overrides: Partial<React.ComponentProps<typeof PacksScreen>> = {}) => render(<PacksScreen visible onDismiss={jest.fn()} selectedKeys={[]} onChangeSelectedKeys={jest.fn()} packsVersion={0} onPacksChanged={jest.fn()} {...overrides} />)
+
+// The loadout's side of the selection: it hands back whatever the screen asks for, with stable
+// callbacks (the screen is memoized), the way PackSelectionProvider does.
+const noop = () => {}
+const SelectionHost = ({ initialKeys, visible = true, packsVersion = 0, onChange }: { initialKeys: string[]; visible?: boolean; packsVersion?: number; onChange?: (keys: string[]) => void }) => {
+  const [selectedKeys, setSelectedKeys] = useState(initialKeys)
+  const [handleChange] = useState(() => (keys: string[]) => {
+    onChange?.(keys)
+    setSelectedKeys(keys)
+  })
+  return <PacksScreen visible={visible} onDismiss={noop} selectedKeys={selectedKeys} onChangeSelectedKeys={handleChange} packsVersion={packsVersion} onPacksChanged={noop} />
+}
+
+const checkboxState = (screen: Awaited<ReturnType<typeof render>>, label: string) => screen.getByLabelText(label).props.accessibilityState?.checked
 
 describe('PacksScreen', () => {
   beforeEach(async () => {
@@ -295,11 +319,12 @@ describe('PacksScreen', () => {
 
   it("shows a built-in pack's progress in its own animated detail drawer, and returns to the list when closed", async () => {
     const pack = builtIn()
-    const { getByLabelText, getByText, queryByText } = await renderScreen()
+    const { getByLabelText, getByRole, getByText, queryByText } = await renderScreen()
 
     await fireEvent.press(getByLabelText(`View ${pack.label} contents`))
 
-    expect(getByText(pack.label)).toBeTruthy()
+    // Titled with the pack's own name.
+    expect(getByRole('header', { name: pack.label })).toBeTruthy()
     await waitFor(() => expect(getByText(/unlocked/)).toBeTruthy())
     expect(queryByText('My Packs')).toBeNull()
 
@@ -307,6 +332,17 @@ describe('PacksScreen', () => {
 
     expect(getByText('Choose Packs')).toBeTruthy()
     expect(getByText('My Packs')).toBeTruthy()
+  })
+
+  it('opens read-only from Choose Packs: no Play This Pack or Only This Pack', async () => {
+    const pack = builtIn()
+    const { getByLabelText, getByTestId } = await renderScreen()
+
+    await fireEvent.press(getByLabelText(`View ${pack.label} contents`))
+
+    const panel = getByTestId('pack-puzzles-panel')
+    expect(within(panel).queryByText('Play This Pack')).toBeNull()
+    expect(within(panel).queryByText('Only This Pack')).toBeNull()
   })
 
   it('calls onDismiss when closed from the list root', async () => {
@@ -341,8 +377,7 @@ describe('PacksScreen', () => {
     await fireEvent.press(getByLabelText(`View ${pack.label} contents`))
 
     // Closed-to-screen-readers while the detail overlay covers it - RTL's default queries skip
-    // hidden elements (see ModePickerDrawer.test.tsx's own version of this same assertion),
-    // includeHiddenElements opts back in here.
+    // hidden elements, and includeHiddenElements opts back in here.
     const hiddenBehindDetail = getByTestId('packs-screen-panel', { includeHiddenElements: true })
     expect(hiddenBehindDetail.props.accessibilityViewIsModal).toBe(false)
     expect(hiddenBehindDetail.props.accessibilityElementsHidden).toBe(true)
@@ -372,7 +407,168 @@ describe('PacksScreen', () => {
     // there (hidden, not absent) is what actually proves the key survived the close instead of
     // blanking the content mid-slide.
     const hiddenDetailPanel = getByTestId('pack-puzzles-panel', { includeHiddenElements: true })
-    expect(within(hiddenDetailPanel).getByText(pack.label, { includeHiddenElements: true })).toBeTruthy()
+    expect(within(hiddenDetailPanel).getByRole('header', { name: pack.label, includeHiddenElements: true })).toBeTruthy()
+  })
+
+  describe('selection', () => {
+    it("labels each pack's checkbox with its name, checked for the selected packs", async () => {
+      const [packA, packB] = builtInPacks()
+      const screen = await renderScreen({ selectedKeys: [packA.key] })
+
+      expect(screen.getByLabelText(packA.label).props.accessibilityRole).toBe('checkbox')
+      expect(checkboxState(screen, packA.label)).toBe(true)
+      expect(checkboxState(screen, packB.label)).toBe(false)
+    })
+
+    it('adds and removes packs one toggle at a time, each building on the last', async () => {
+      const [packA, packB, packC] = builtInPacks()
+      const onChange = jest.fn()
+      const screen = await render(<SelectionHost initialKeys={[packA.key]} onChange={onChange} />)
+
+      await fireEvent.press(screen.getByLabelText(packB.label))
+      await fireEvent.press(screen.getByText(packC.label))
+      await fireEvent.press(screen.getByLabelText(packA.label))
+
+      expect(onChange.mock.calls.map(([keys]) => keys)).toEqual([
+        [packA.key, packB.key],
+        [packA.key, packB.key, packC.key],
+        [packB.key, packC.key]
+      ])
+      expect(checkboxState(screen, packA.label)).toBe(false)
+      expect(checkboxState(screen, packB.label)).toBe(true)
+      expect(checkboxState(screen, packC.label)).toBe(true)
+    })
+
+    // The row renderers read the selection through a ref and the checkboxes read it themselves, so a
+    // toggle redraws one checkbox, not the visible rows.
+    it('redraws no row when a pack is toggled, only its checkbox', async () => {
+      const [packA, packB] = builtInPacks()
+      const screen = await render(<SelectionHost initialKeys={[]} />)
+      // The watched row is the one the screen draws.
+      expect(mockPackRow.mock.calls.map(([props]) => props.label)).toContain(packB.label)
+      mockPackRow.mockClear()
+
+      await fireEvent.press(screen.getByLabelText(packA.label))
+
+      expect(checkboxState(screen, packA.label)).toBe(true)
+      const redrawn = mockPackRow.mock.calls.map(([props]) => props.label)
+      expect(redrawn).not.toContain(packA.label)
+      expect(redrawn).not.toContain(packB.label)
+    })
+
+    it('selects every pack from Select All, and none from Clear', async () => {
+      const onChangeSelectedKeys = jest.fn()
+      const { getByText } = await renderScreen({ onChangeSelectedKeys })
+
+      await fireEvent.press(getByText('Select All'))
+      expect(onChangeSelectedKeys).toHaveBeenLastCalledWith(
+        getPuzzleManifest()
+          .filter((item) => item.count > 0)
+          .map((item) => item.key)
+      )
+
+      await fireEvent.press(getByText('Clear'))
+      expect(onChangeSelectedKeys).toHaveBeenLastCalledWith([])
+    })
+
+    it('drops a deleted custom pack from the selection, keeping the rest', async () => {
+      const pack = await saveCustomPack({ label: 'My Pack', entries: [{ answer: 'FOO', hint: '' }] })
+      const other = builtIn()
+      const onChange = jest.fn()
+      const screen = await render(<SelectionHost initialKeys={[other.key, pack.key]} onChange={onChange} />)
+
+      await fireEvent.press(screen.getByLabelText(`Edit ${pack.label}`))
+      await fireEvent.press(screen.getByLabelText('Delete pack'))
+      await fireEvent.press(screen.getByText('Delete'))
+
+      await waitFor(() => expect(onChange).toHaveBeenCalledWith([other.key]))
+    })
+  })
+
+  // A trimmed selection is easy to review: Selected shows only the packs that are in it.
+  describe('the All / Selected filter', () => {
+    const pressFilter = (screen: Awaited<ReturnType<typeof render>>, label: 'All' | 'Selected') => fireEvent.press(screen.getByRole('button', { name: label }))
+    const filterChecked = (screen: Awaited<ReturnType<typeof render>>, label: 'All' | 'Selected') => screen.getByRole('button', { name: label }).props.accessibilityState?.checked
+
+    it('starts on All, every pack listed', async () => {
+      const [packA, packB] = builtInPacks()
+      const screen = await renderScreen({ selectedKeys: [packA.key] })
+
+      expect(filterChecked(screen, 'All')).toBe(true)
+      expect(filterChecked(screen, 'Selected')).toBe(false)
+      expect(screen.getByText(packA.label)).toBeTruthy()
+      expect(screen.getByText(packB.label)).toBeTruthy()
+    })
+
+    // The AsyncStorage mock never returns what was saved, so only the last custom pack saved exists:
+    // an unselected custom pack is covered by the empty-section test below.
+    it('lists only the selected packs, custom and built-in, keeping Create and Import', async () => {
+      const [packA, packB, packC] = builtInPacks()
+      const custom = await saveCustomPack({ label: 'Picked Pack', entries: [{ answer: 'FOO', hint: '' }] })
+      const screen = await renderScreen({ selectedKeys: [packB.key, custom.key], packsVersion: 1 })
+
+      await pressFilter(screen, 'Selected')
+
+      expect(filterChecked(screen, 'Selected')).toBe(true)
+      expect(screen.getByText(packB.label)).toBeTruthy()
+      expect(screen.getByText(custom.label)).toBeTruthy()
+      for (const hidden of [packA.label, packC.label]) expect(screen.queryByText(hidden)).toBeNull()
+      expect(screen.getByText('Create')).toBeTruthy()
+      expect(screen.getByText('Import')).toBeTruthy()
+
+      await pressFilter(screen, 'All')
+
+      for (const shown of [packA.label, packB.label, packC.label, custom.label]) expect(screen.getByText(shown)).toBeTruthy()
+    })
+
+    it('drops a pack unchecked in the Selected view, and All brings it back', async () => {
+      const [packA, packB] = builtInPacks()
+      const screen = await render(<SelectionHost initialKeys={[packA.key, packB.key]} />)
+      await pressFilter(screen, 'Selected')
+
+      await fireEvent.press(screen.getByLabelText(packA.label))
+
+      expect(screen.queryByText(packA.label)).toBeNull()
+      expect(screen.getByText(packB.label)).toBeTruthy()
+
+      await pressFilter(screen, 'All')
+
+      expect(screen.getByText(packA.label)).toBeTruthy()
+      expect(checkboxState(screen, packA.label)).toBe(false)
+    })
+
+    it('says so when a section has nothing selected', async () => {
+      await saveCustomPack({ label: 'My Pack', entries: [{ answer: 'FOO', hint: '' }] })
+      const screen = await renderScreen({ selectedKeys: [], packsVersion: 1 })
+
+      await pressFilter(screen, 'Selected')
+
+      expect(screen.getByText('No custom packs selected.')).toBeTruthy()
+      expect(screen.getByText('No built-in packs selected.')).toBeTruthy()
+    })
+
+    it('keeps saying there are no custom packs yet when there are none at all', async () => {
+      const screen = await renderScreen({ selectedKeys: [builtIn().key] })
+
+      await pressFilter(screen, 'Selected')
+
+      expect(screen.getByText('No custom packs yet.')).toBeTruthy()
+      expect(screen.queryByText('No built-in packs selected.')).toBeNull()
+    })
+
+    // Someone coming back to add a pack would otherwise find only the ones already in.
+    it('reopens on All', async () => {
+      const [packA, packB] = builtInPacks()
+      const screen = await render(<SelectionHost initialKeys={[packA.key]} />)
+      await pressFilter(screen, 'Selected')
+      expect(screen.queryByText(packB.label)).toBeNull()
+
+      await screen.rerender(<SelectionHost initialKeys={[packA.key]} visible={false} />)
+      await screen.rerender(<SelectionHost initialKeys={[packA.key]} />)
+
+      expect(filterChecked(screen, 'All')).toBe(true)
+      expect(screen.getByText(packB.label)).toBeTruthy()
+    })
   })
 
   // The Single Player loadout's Android back asks this screen first, through its ref, since only this

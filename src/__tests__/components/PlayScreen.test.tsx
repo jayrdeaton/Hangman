@@ -7,8 +7,10 @@ import { Providers } from '@/components/Providers'
 import { type ActiveGame, useActiveGame } from '@/hooks/useActiveGame'
 import { classicMode, DEFAULT_MODE, robotMode } from '@/modes/registry'
 import { achievementsActions } from '@/redux/achievementsSlice'
-import { roundActions, type SavedPuzzle } from '@/redux/roundSlice'
+import { activePlayerActions } from '@/redux/activePlayerSlice'
+import { roundActions, type SavedPuzzle, selectSoloRound } from '@/redux/roundSlice'
 import { store } from '@/redux/store'
+import { GUEST_PLAYER_KEY } from '@/utils/players'
 
 // /play is where a share link lands (hangman://play?phrase=...&hint=...&mode=...). It draws nothing
 // of its own: it puts the shared puzzle on the solo board and hands off to the game screen. Its
@@ -21,15 +23,15 @@ const GAME_HREF = { pathname: '/game', params: { mode: 'solo' } }
 const VALID_LINK = { phrase: 'Hello, World', hint: 'A friendly greeting', mode: robotMode.id }
 
 // The real round and stats slices: what a link started, or an abandon recorded, is read straight
-// from the store.
-const soloRound = () => store.getState().round.solo
+// from the store. The board is the active player's: the guest's, unless a test says otherwise.
+const soloRound = (playerKey = GUEST_PLAYER_KEY) => selectSoloRound(store.getState().round, playerKey)
 const soloRecord = () => store.getState().achievements.stats.solo
 
 // A round already on the solo board, as the loadout would have left it.
 const waitingPuzzle: SavedPuzzle = { phrase: 'DOG', modeId: classicMode.id, sourceMode: 'random', packKey: 'pack-1', packLabel: 'Test Pack', puzzleId: 'puzzle-1', difficultyTier: 'easy', packScope: 'selection' }
-const seedSoloRound = (guessedLetters: string[]) => {
-  store.dispatch(roundActions.startSolo(waitingPuzzle))
-  store.dispatch(roundActions.saveSoloProgress({ guessedLetters, hintRevealed: false }))
+const seedSoloRound = (guessedLetters: string[], playerKey = GUEST_PLAYER_KEY) => {
+  store.dispatch(roundActions.startSolo({ playerKey, puzzle: waitingPuzzle }))
+  store.dispatch(roundActions.saveSoloProgress({ playerKey, guessedLetters, hintRevealed: false }))
 }
 
 const renderLink = (params: Record<string, string | string[]>) => {
@@ -48,6 +50,7 @@ describe('PlayScreen', () => {
     jest.mocked(router.canGoBack).mockReturnValue(false)
     store.dispatch(achievementsActions.reset())
     store.dispatch(roundActions.reset())
+    store.dispatch(activePlayerActions.setActivePlayer(null))
   })
 
   describe('a valid link', () => {
@@ -84,6 +87,18 @@ describe('PlayScreen', () => {
 
       expect(soloRound().id).toBeGreaterThan(previousId)
       expect(soloRound().puzzle?.phrase).toBe('HELLO WORLD')
+    })
+
+    // A link is played by whoever is playing: it never touches another player's waiting round.
+    it("puts the puzzle on the active player's board", async () => {
+      seedSoloRound(['Q'])
+      store.dispatch(activePlayerActions.setActivePlayer('profile-a'))
+
+      await renderLink(VALID_LINK)
+
+      expect(soloRound('profile-a').puzzle?.phrase).toBe('HELLO WORLD')
+      expect(soloRound()).toMatchObject({ puzzle: { phrase: 'DOG' }, guessedLetters: ['Q'] })
+      expect(router.dismissTo).toHaveBeenCalledWith(GAME_HREF)
     })
 
     it('draws in the default art for a mode it does not know, and leaves the hint off when the link has none', async () => {

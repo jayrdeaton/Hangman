@@ -1,10 +1,15 @@
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
+import type { PlayerKey } from '@/utils/players'
 import type { PuzzleManifestItem } from '@/utils/puzzleCatalog'
 
 import { puzzleManifest } from '../data/puzzleCatalog.generated'
 
-const PUZZLE_UNLOCKS_KEY = 'puzzle_unlocks_v1'
+// Every player's unlocked puzzles (the ones they've solved) under their own AsyncStorage key, so one
+// player's solves never show as another's. The old single device-wide key (`puzzle_unlocks_v1` on its
+// own) isn't read or adopted: the app hadn't shipped.
+const PUZZLE_UNLOCKS_KEY_PREFIX = 'puzzle_unlocks_v1:'
+const storageKey = (playerKey: PlayerKey): string => `${PUZZLE_UNLOCKS_KEY_PREFIX}${playerKey}`
 
 export type PuzzleUnlockMap = Record<string, string[]>
 
@@ -29,18 +34,47 @@ const normalizeUnlockMap = (raw: unknown): PuzzleUnlockMap => {
   return next
 }
 
-export const getPuzzleUnlockMap = async (): Promise<PuzzleUnlockMap> => {
+const parseStoredMap = (raw: string | null): PuzzleUnlockMap => {
+  if (!raw) return {}
   try {
-    const raw = await AsyncStorage.getItem(PUZZLE_UNLOCKS_KEY)
-    if (!raw) return {}
     return normalizeUnlockMap(JSON.parse(raw))
   } catch {
     return {}
   }
 }
 
-export const exportPuzzleUnlocks = async (): Promise<string> => {
-  const unlocks = await getPuzzleUnlockMap()
+const writeMap = (playerKey: PlayerKey, unlockMap: PuzzleUnlockMap): Promise<void> => AsyncStorage.setItem(storageKey(playerKey), JSON.stringify(unlockMap))
+
+export const getPuzzleUnlockMap = async (playerKey: PlayerKey): Promise<PuzzleUnlockMap> => {
+  try {
+    return parseStoredMap(await AsyncStorage.getItem(storageKey(playerKey)))
+  } catch {
+    return {}
+  }
+}
+
+// Every player key with unlocked puzzles saved on this device.
+const getStoredUnlockKeys = async (): Promise<string[]> => (await AsyncStorage.getAllKeys()).filter((key) => key.startsWith(PUZZLE_UNLOCKS_KEY_PREFIX))
+
+// Every player's unlocked puzzles together: a puzzle anyone on this device has solved. What Stats shows
+// for All Profiles, the way its numbers there are every round played on the device.
+export const getDevicePuzzleUnlockMap = async (): Promise<PuzzleUnlockMap> => {
+  try {
+    const keys = await getStoredUnlockKeys()
+    const maps = await Promise.all(keys.map(async (key) => parseStoredMap(await AsyncStorage.getItem(key))))
+    const device: PuzzleUnlockMap = {}
+    for (const map of maps) {
+      for (const [packKey, ids] of Object.entries(map)) device[packKey] = [...new Set([...(device[packKey] ?? []), ...ids])]
+    }
+    return device
+  } catch {
+    return {}
+  }
+}
+
+// One player's unlocked puzzles, for their own progress backup (Settings' Export).
+export const exportPuzzleUnlocks = async (playerKey: PlayerKey): Promise<string> => {
+  const unlocks = await getPuzzleUnlockMap(playerKey)
   const payload: PuzzleUnlockExportPayload = {
     version: 1,
     exportedAt: new Date().toISOString(),
@@ -66,7 +100,8 @@ export const parseProgressBackup = (raw: string): PuzzleUnlockMap => {
   return normalizeUnlockMap((parsed as Record<string, unknown>).unlocks)
 }
 
-export const importPuzzleUnlocks = async (raw: string): Promise<{ importedCount: number }> => {
+// Replaces one player's unlocked puzzles with a backup's.
+export const importPuzzleUnlocks = async (playerKey: PlayerKey, raw: string): Promise<{ importedCount: number }> => {
   const parsed: unknown = JSON.parse(raw)
 
   let unlocks: PuzzleUnlockMap = {}
@@ -77,13 +112,15 @@ export const importPuzzleUnlocks = async (raw: string): Promise<{ importedCount:
     unlocks = normalizeUnlockMap(parsed)
   }
 
-  await AsyncStorage.setItem(PUZZLE_UNLOCKS_KEY, JSON.stringify(unlocks))
+  await writeMap(playerKey, unlocks)
 
   const importedCount = Object.values(unlocks).reduce((sum, ids) => sum + ids.length, 0)
   return { importedCount }
 }
 
-export const mergePuzzleUnlocks = async (raw: string): Promise<{ importedCount: number; addedCount: number }> => {
+// Adds a backup's unlocked puzzles to one player's own (Settings' Import, a .hangman file opened from
+// another app).
+export const mergePuzzleUnlocks = async (playerKey: PlayerKey, raw: string): Promise<{ importedCount: number; addedCount: number }> => {
   const parsed: unknown = JSON.parse(raw)
 
   let incoming: PuzzleUnlockMap = {}
@@ -94,7 +131,7 @@ export const mergePuzzleUnlocks = async (raw: string): Promise<{ importedCount: 
     incoming = normalizeUnlockMap(parsed)
   }
 
-  const current = await getPuzzleUnlockMap()
+  const current = await getPuzzleUnlockMap(playerKey)
   const merged: PuzzleUnlockMap = { ...current }
 
   let addedCount = 0
@@ -110,21 +147,28 @@ export const mergePuzzleUnlocks = async (raw: string): Promise<{ importedCount: 
     if (existing.size > 0) merged[packKey] = [...existing]
   }
 
-  await AsyncStorage.setItem(PUZZLE_UNLOCKS_KEY, JSON.stringify(merged))
+  await writeMap(playerKey, merged)
 
   const importedCount = Object.values(incoming).reduce((sum, ids) => sum + ids.length, 0)
   return { importedCount, addedCount }
 }
 
-export const clearPuzzleUnlocks = async (): Promise<void> => {
-  await AsyncStorage.removeItem(PUZZLE_UNLOCKS_KEY)
+// One player's unlocked puzzles, for when a profile is reset or deleted.
+export const clearPuzzleUnlocks = async (playerKey: PlayerKey): Promise<void> => {
+  await AsyncStorage.removeItem(storageKey(playerKey))
 }
 
-export const markPuzzleUnlocked = async (packKey: string, puzzleId: string): Promise<boolean> => {
+// Every player's, for Stats' Reset All Stats.
+export const clearAllPuzzleUnlocks = async (): Promise<void> => {
+  await Promise.all((await getStoredUnlockKeys()).map((key) => AsyncStorage.removeItem(key)))
+}
+
+// A puzzle the player just solved. Returns whether it was new for them.
+export const markPuzzleUnlocked = async (playerKey: PlayerKey, packKey: string, puzzleId: string): Promise<boolean> => {
   if (!packKey || !puzzleId) return false
 
   try {
-    const unlockMap = await getPuzzleUnlockMap()
+    const unlockMap = await getPuzzleUnlockMap(playerKey)
     const existing = new Set(unlockMap[packKey] ?? [])
 
     if (existing.has(puzzleId)) return false
@@ -132,7 +176,7 @@ export const markPuzzleUnlocked = async (packKey: string, puzzleId: string): Pro
     existing.add(puzzleId)
     unlockMap[packKey] = [...existing]
 
-    await AsyncStorage.setItem(PUZZLE_UNLOCKS_KEY, JSON.stringify(unlockMap))
+    await writeMap(playerKey, unlockMap)
     return true
   } catch {
     return false
@@ -159,6 +203,6 @@ export const getManifestUnlockProgress = (manifest: PuzzleManifestItem[], unlock
 }
 
 // Built-in packs (never custom ones) with every puzzle unlocked: the Collection Complete family's
-// count. Rescans the whole manifest rather than only the pack just played, so a pack finished through
-// a backup import is credited on the next win too.
+// count, over the winner's own unlocked puzzles. Rescans the whole manifest rather than only the pack
+// just played, so a pack finished through a backup import is credited on the next win too.
 export const getCompletedBuiltInPackKeys = (unlockMap: PuzzleUnlockMap): string[] => puzzleManifest.filter((item) => item.count > 0 && getUnlockedCountForPack(unlockMap, item.key) >= item.count).map((item) => item.key)

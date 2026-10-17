@@ -1,16 +1,19 @@
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons'
 import MaskedView from '@react-native-masked-view/masked-view'
-import { Provider, themeActions, type ThemeSettings, useAutoPaperTheme } from '@rific/auto-paper'
+import { Provider, themeActions, type ThemeSettings, useAutoPaperTheme, useThemeSettings } from '@rific/auto-paper'
 import * as ExpoBlur from 'expo-blur'
 import { useFonts } from 'expo-font'
 import * as SplashScreen from 'expo-splash-screen'
 import * as SystemUI from 'expo-system-ui'
-import { ReactNode, useCallback, useEffect } from 'react'
+import { ReactNode, useCallback, useEffect, useRef } from 'react'
 import Reanimated from 'react-native-reanimated'
-import { shallowEqual, useDispatch, useSelector } from 'react-redux'
+import { shallowEqual, useDispatch, useSelector, useStore } from 'react-redux'
 
 import { boardColor } from '@/components/BoardBackground'
+import { useActivePlayer } from '@/hooks/useActivePlayer'
+import { isSamePlayerTheme, playerThemeActions } from '@/redux/playerThemeSlice'
 import { RootState } from '@/redux/store'
+import type { PlayerKey } from '@/utils/players'
 import { markSplashReady, useSplashReady } from '@/utils/splashGate'
 
 SplashScreen.preventAutoHideAsync()
@@ -39,6 +42,39 @@ const RootBackground = (): null => {
   useEffect(() => {
     void SystemUI.setBackgroundColorAsync(color)
   }, [color])
+  return null
+}
+
+// Each player's colors (the palette and its harmony; appearance and Blur stay the device's). The live
+// theme always holds the active player's: when the active player changes, theirs (if they have any
+// saved) go on screen, and every change after that (the palette picker in Customize) is saved as theirs.
+// A player with none saved yet keeps the colors on screen and has them saved as theirs, so switching
+// back to whoever was playing before brings their colors back too. Loop-free: putting a player's colors
+// on screen writes nothing (they already match), and only a real difference is ever written either way.
+// Renders inside Provider, for useThemeSettings.
+const PlayerThemeSync = (): null => {
+  const store = useStore<RootState>()
+  const dispatch = useDispatch()
+  const { key: playerKey } = useActivePlayer()
+  const { settings, set } = useThemeSettings()
+  const { color, harmony } = settings
+  // The player whose colors are on screen. null until the first run.
+  const syncedPlayerRef = useRef<PlayerKey | null>(null)
+
+  useEffect(() => {
+    const live = { color, harmony }
+    const saved = store.getState().playerTheme[playerKey]
+    if (syncedPlayerRef.current !== playerKey) {
+      syncedPlayerRef.current = playerKey
+      if (saved && !isSamePlayerTheme(saved, live)) {
+        // Their colors land on the next render, which then finds them matching and writes nothing.
+        set(saved)
+        return
+      }
+    }
+    if (!isSamePlayerTheme(saved, live)) dispatch(playerThemeActions.setPlayerTheme({ playerKey, theme: live }))
+  }, [playerKey, color, harmony, set, store, dispatch])
+
   return null
 }
 
@@ -82,6 +118,7 @@ export const Theme = ({ children }: ThemeProps) => {
     // root Stack's statusBarStyle (src/app/_layout.tsx), which follows this theme.
     <Provider initialValue={settings} onChange={onChange} onReady={onReady} expoBlur={ExpoBlur} maskedView={MaskedView} reanimated={Reanimated} statusBar={false}>
       <RootBackground />
+      <PlayerThemeSync />
       {children}
     </Provider>
   )

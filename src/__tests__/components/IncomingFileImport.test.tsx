@@ -1,4 +1,3 @@
-import AsyncStorage from '@react-native-async-storage/async-storage'
 import { act, cleanup, fireEvent, render, waitFor } from '@testing-library/react-native'
 import * as Linking from 'expo-linking'
 import { useEffect } from 'react'
@@ -8,9 +7,13 @@ import { IncomingFileImport } from '@/components/IncomingFileImport'
 import { Providers } from '@/components/Providers'
 import { type CatalogVersions, useCatalogVersions } from '@/hooks/useCatalog'
 import { usePackSelection } from '@/hooks/usePackSelection'
+import { activePlayerActions } from '@/redux/activePlayerSlice'
+import { playerSettingsActions } from '@/redux/playerSettingsSlice'
+import { store } from '@/redux/store'
 import { alert } from '@/utils/alert'
 import { buildCustomPuzzle, getCustomPacks, importCustomPack, loadCustomPacksCache } from '@/utils/customPacks'
 import { readHangmanFileFromUri } from '@/utils/hangmanFile'
+import { GUEST_PLAYER_KEY } from '@/utils/players'
 import { getPuzzleManifest } from '@/utils/puzzleCatalog'
 import { mergePuzzleUnlocks } from '@/utils/unlocks'
 
@@ -68,8 +71,8 @@ const MANIFEST = getPuzzleManifest().filter((item) => item.count > 0)
 const backupFile = (unlocks: Record<string, string[]>) => JSON.stringify({ version: 1, exportedAt: '2026-10-01T00:00:00.000Z', unlocks })
 const BACKUP_FILE = backupFile({ [MANIFEST[0].key]: ['one', 'two'], [MANIFEST[1].key]: ['three'] })
 
-// The selection every new install starts on (PackSelectionProvider's every-pack fallback, which the
-// stub AsyncStorage never overrides): the built-in packs, before any import.
+// The selection every new install starts on (PackSelectionProvider's every pack, for a player who never
+// chose): the built-in packs, before any import.
 const ALL_PACK_KEYS = MANIFEST.map((item) => item.key)
 
 // What the import changes outside the card: the pack selection and the catalog counters, read
@@ -118,7 +121,6 @@ const expectNothingImported = (screen: Screen) => {
 
 describe('IncomingFileImport', () => {
   const originalOS = Platform.OS
-  let getItem: jest.SpyInstance | null = null
 
   beforeEach(async () => {
     jest.clearAllMocks()
@@ -127,13 +129,13 @@ describe('IncomingFileImport', () => {
     // Back to the stub storage's empty custom-pack list, so a pack imported by one test is gone in the next.
     await loadCustomPacksCache()
     probe = { selectedPackKeys: [], versions: { unlockVersion: 0, packsVersion: 0 } }
+    store.dispatch(activePlayerActions.setActivePlayer(null))
+    store.dispatch(playerSettingsActions.reset())
   })
 
   afterEach(async () => {
-    // Unmount now, while any Platform or AsyncStorage stub is still installed.
+    // Unmount now, while any Platform stub is still installed.
     await cleanup()
-    getItem?.mockRestore()
-    getItem = null
     Object.defineProperty(Platform, 'OS', { configurable: true, value: originalOS })
   })
 
@@ -198,7 +200,7 @@ describe('IncomingFileImport', () => {
     // Re-importing an updated export of a pack the player already has lands on the same key.
     it("doesn't add a pack already in the selection a second time", async () => {
       const stored = [MANIFEST[0].key, PACK_KEY]
-      getItem = jest.spyOn(AsyncStorage, 'getItem').mockImplementation((key: string) => Promise.resolve(key === 'selectedPackKeys' ? JSON.stringify(stored) : null))
+      store.dispatch(playerSettingsActions.setPackKeys({ playerKey: GUEST_PLAYER_KEY, packKeys: stored }))
       const screen = await renderImport(FILE_URL, PACK_FILE)
       await waitFor(() => expect(probe.selectedPackKeys).toEqual(stored))
       await screen.findByText('Import "My Words"?')
@@ -218,12 +220,32 @@ describe('IncomingFileImport', () => {
 
       expect(await screen.findByText('Progress Imported')).toBeTruthy()
       expect(screen.getByText('3 unlocked puzzles merged')).toBeTruthy()
-      expect(mockMergePuzzleUnlocks).toHaveBeenCalledWith(BACKUP_FILE)
+      expect(mockMergePuzzleUnlocks).toHaveBeenCalledWith(GUEST_PLAYER_KEY, BACKUP_FILE)
       // Every screen counting unlocks re-reads them; the packs and the selection didn't change.
       expect(probe.versions).toEqual({ unlockVersion: 1, packsVersion: 1 })
       expect(probe.selectedPackKeys).toEqual(ALL_PACK_KEYS)
       expect(mockImportCustomPack).not.toHaveBeenCalled()
       expect(screen.queryByText('Import Progress Backup?')).toBeNull()
+    })
+
+    // Everything belongs to a player (2026-10-17): a backup lands in the active player's unlocked
+    // puzzles, and a pack in their selection.
+    it("merges a progress backup into the active player's unlocked puzzles, and a pack into their selection", async () => {
+      store.dispatch(activePlayerActions.setActivePlayer('profile-a'))
+      store.dispatch(playerSettingsActions.setPackKeys({ playerKey: 'profile-a', packKeys: [MANIFEST[0].key] }))
+      const backup = await renderImport(FILE_URL, BACKUP_FILE)
+      await backup.findByText('Import Progress Backup?')
+      await fireEvent.press(backup.getByText('Import'))
+      expect(await backup.findByText('Progress Imported')).toBeTruthy()
+      expect(mockMergePuzzleUnlocks).toHaveBeenCalledWith('profile-a', BACKUP_FILE)
+      await cleanup()
+
+      const pack = await renderImport(FILE_URL, PACK_FILE)
+      await pack.findByText('Import "My Words"?')
+      await fireEvent.press(pack.getByText('Import'))
+      expect(await pack.findByText('Pack Imported')).toBeTruthy()
+      expect(store.getState().playerSettings['profile-a']?.packKeys).toEqual([MANIFEST[0].key, PACK_KEY])
+      expect(store.getState().playerSettings[GUEST_PLAYER_KEY]).toBeUndefined()
     })
 
     // Only the import this file runs is made to fail: clearAllMocks leaves a queued once-value in place,

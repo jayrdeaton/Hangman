@@ -2,7 +2,7 @@ import { act, render, renderHook } from '@testing-library/react-native'
 import { type ReactNode, useEffect } from 'react'
 import { Text } from 'react-native'
 
-import { CatalogProvider, useCatalogActions, useCatalogVersions } from '@/hooks/useCatalog'
+import { CatalogProvider, useCatalogActions, useCatalogVersions, useUnlockVersion } from '@/hooks/useCatalog'
 import { loadCustomPacksCache } from '@/utils/customPacks'
 
 // The mount-time load reads AsyncStorage (a stub here), so the tests decide when it resolves.
@@ -124,10 +124,40 @@ describe('useCatalog', () => {
     expect(renders.versions).toBe(before.versions + 2)
   })
 
+  // usePuzzleUnlocks reads the unlock counter on its own, so a custom pack saved elsewhere doesn't
+  // re-render the memoized drawers that read unlocked puzzles.
+  it("hands out the unlock count on its own, which a custom pack change doesn't re-render", async () => {
+    let renders = 0
+    let actions: ReturnType<typeof useCatalogActions> | null = null
+    const UnlockReader = () => {
+      const unlockVersion = useUnlockVersion()
+      const value = useCatalogActions()
+      useEffect(() => {
+        renders += 1
+        actions = value
+      })
+      return <Text testID='unlocks'>{String(unlockVersion)}</Text>
+    }
+    const screen = await render(
+      <CatalogProvider>
+        <UnlockReader />
+      </CatalogProvider>
+    )
+    const before = renders
+
+    await act(async () => actions!.refreshCustomPacks())
+    expect(renders).toBe(before)
+
+    await act(async () => actions!.refreshUnlocks())
+    expect(screen.getByTestId('unlocks').props.children).toBe('1')
+    expect(renders).toBe(before + 1)
+  })
+
   it('reads zero counts and harmless no-op actions outside a provider', async () => {
-    const { result } = await renderHook(() => ({ versions: useCatalogVersions(), actions: useCatalogActions() }))
+    const { result } = await renderHook(() => ({ versions: useCatalogVersions(), actions: useCatalogActions(), unlockVersion: useUnlockVersion() }))
 
     expect(result.current.versions).toEqual({ unlockVersion: 0, packsVersion: 0 })
+    expect(result.current.unlockVersion).toBe(0)
     expect(() => {
       result.current.actions.refreshUnlocks()
       result.current.actions.refreshCustomPacks()

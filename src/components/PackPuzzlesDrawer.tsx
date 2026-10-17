@@ -1,18 +1,19 @@
 import { Drawer } from '@rific/drawer'
 import { Button, IconButton } from '@rific/feedback-press'
 import { ScrollViewFooter, ScrollViewHeader, ScrollViewProvider } from '@rific/scroll-view'
-import { JSX, memo, useEffect, useMemo, useState } from 'react'
+import { JSX, memo, useMemo } from 'react'
 import { StyleSheet, useWindowDimensions, View } from 'react-native'
 import { useTheme } from 'react-native-paper'
 
 import { DRAWER_PACK_DETAIL_Z_INDEX } from '@/constants/drawerStacking'
+import { usePuzzleUnlocks } from '@/hooks/usePuzzleUnlocks'
 import type { GameMode } from '@/types/gameModes'
 import type { GameStartPayload } from '@/types/gameSession'
 import { alert } from '@/utils/alert'
 import { getPuzzleManifest, PuzzleDifficultyTier } from '@/utils/puzzleCatalog'
 import { type PuzzleConfig, resolveChosenPuzzle, resolvePuzzle } from '@/utils/puzzlePicker'
-import { getPuzzleUnlockMap, type PuzzleUnlockMap } from '@/utils/unlocks'
 
+import { PackHeaderTitle } from './PackHeaderTitle'
 import { PackPuzzleList } from './PackPuzzleList'
 
 // 4px on every side of a 40x40 icon button (see the matching actionSize={40} on this drawer's own
@@ -34,11 +35,21 @@ export type PackPuzzlesDrawerProps = {
   mode?: GameMode
   difficulty?: 'any' | PuzzleDifficultyTier
   onConfirm?: (payload: GameStartPayload, config: PuzzleConfig) => void
+  // Supplied by the Single Player loadout only: the footer's Only This Pack, which makes this pack the
+  // player's whole pack selection (the loadout's Random and Quick Start become just this pack). This
+  // drawer closes itself after calling it, the same as after starting a puzzle, so the player sees the
+  // trimmed page.
+  onOnlyThisPack?: (packKey: string) => void
+  // Whether the selection is already just this pack, which leaves Only This Pack nothing to do. A plain
+  // boolean, not the selection itself, so a change to some other pack's selection doesn't re-render
+  // this memoized drawer.
+  onlyThisPackSelected?: boolean
 }
 
-// One pack's full puzzle list. Two callers: the Single Player loadout's quick-start list opens this
-// playable (tapping a row plays that exact puzzle, Random in the footer draws one) from a selected
-// pack's info icon; PacksScreen's built-in-pack info icon opens it read-only (mode/
+// One pack's full puzzle list, titled with the pack's name. Two callers: the Single Player loadout's
+// quick-start list opens this playable from a selected pack's info icon (tapping a row plays that exact
+// puzzle; the footer's Play This Pack draws one from just this pack, and Only This Pack trims the pack
+// selection down to it); PacksScreen's built-in-pack info icon opens it read-only (mode/
 // difficulty/onConfirm all omitted) - there's no round to start from Choose Packs, just browsing
 // what's inside. Every puzzle in the pack shows as its own row (via PackPuzzleList), masked to
 // blanks unless already solved either way.
@@ -46,27 +57,17 @@ export type PackPuzzlesDrawerProps = {
 // over the Single Player loadout, one under PacksScreen - and an always-mounted,
 // never-visible-right-now subtree still costs a re-render without this whenever an unrelated
 // ancestor state change bubbles through it.
-export const PackPuzzlesDrawer = memo(({ visible, packKey, onDismiss, mode, difficulty, onConfirm }: PackPuzzlesDrawerProps): JSX.Element => {
+export const PackPuzzlesDrawer = memo(({ visible, packKey, onDismiss, mode, difficulty, onConfirm, onOnlyThisPack, onlyThisPackSelected = false }: PackPuzzlesDrawerProps): JSX.Element => {
   const { width: windowWidth } = useWindowDimensions()
   const theme = useTheme()
   const playable = Boolean(mode && difficulty && onConfirm)
 
   const pack = useMemo(() => getPuzzleManifest().find((item) => item.key === packKey), [packKey])
 
-  // Re-fetched whenever this drawer opens on a pack, not subscribed to live - same fetch-on-open
-  // pattern PackProgressDrawer's own unlockMap uses. Feeds Random below so it prefers a puzzle the
-  // player hasn't unlocked yet in THIS pack over one they have (see resolvePuzzle).
-  const [unlockMap, setUnlockMap] = useState<PuzzleUnlockMap>({})
-  useEffect(() => {
-    if (!visible) return
-    let mounted = true
-    void getPuzzleUnlockMap().then((map) => {
-      if (mounted) setUnlockMap(map)
-    })
-    return () => {
-      mounted = false
-    }
-  }, [visible, packKey])
+  // The active player's, read again whenever this drawer opens and whenever a count moves while it's
+  // open - the same read PackProgressDrawer's own unlockMap uses. Feeds Play This Pack below so it
+  // prefers a puzzle the player hasn't unlocked yet in THIS pack over one they have (see resolvePuzzle).
+  const { unlockMap } = usePuzzleUnlocks({ enabled: visible })
 
   const handlePlayPuzzle = (puzzleId: string) => {
     if (!packKey || !mode || !onConfirm) return
@@ -82,7 +83,9 @@ export const PackPuzzlesDrawer = memo(({ visible, packKey, onDismiss, mode, diff
     onDismiss()
   }
 
-  const handleRandom = () => {
+  // Play This Pack: a random puzzle from just this pack. A one-pack draw is packScope 'single' (see
+  // resolvePuzzle), so the game screen's Next keeps drawing from this pack too.
+  const handlePlayThisPack = () => {
     if (!packKey || !mode || !difficulty || !onConfirm) return
     const configToResolve: PuzzleConfig = { sourceMode: 'random', difficulty, mode, customPhrase: '', customHint: '' }
     const result = resolvePuzzle(configToResolve, [packKey], unlockMap)
@@ -91,6 +94,12 @@ export const PackPuzzlesDrawer = memo(({ visible, packKey, onDismiss, mode, diff
       return
     }
     onConfirm(result.payload, configToResolve)
+    onDismiss()
+  }
+
+  const handleOnlyThisPack = () => {
+    if (!packKey || !onOnlyThisPack) return
+    onOnlyThisPack(packKey)
     onDismiss()
   }
 
@@ -111,21 +120,27 @@ export const PackPuzzlesDrawer = memo(({ visible, packKey, onDismiss, mode, diff
                 callback form used to. */}
             <ScrollViewHeader
               actionSize={40}
-              // Generic "Pack" rather than the pack's own name or group tint - its actual identity
-              // (icon, genre, title, progress) lives entirely in PackPuzzleList's own in-flow pack
-              // summary row now; this is just enough of a label that the floating bar doesn't read
-              // as unexpectedly bare.
-              title='Pack'
+              // The pack's own name, so the footer's "This Pack" actions say which pack they mean. The
+              // rest of its identity (icon, genre, progress) is PackPuzzleList's in-flow pack summary
+              // row, the same card the player tapped to get here.
+              centerContent={<PackHeaderTitle label={pack.label} />}
               backAction={<IconButton icon='arrow-left' hitSlop={ICON_ACTION_HIT_SLOP} iconColor={theme.colors.onSurface} onPress={onDismiss} accessibilityLabel='Close' />}
             />
 
-            <PackPuzzleList packKey={packKey} onPlayPuzzle={playable ? handlePlayPuzzle : undefined} />
+            <PackPuzzleList packKey={packKey} unlockMap={unlockMap} onPlayPuzzle={playable ? handlePlayPuzzle : undefined} />
 
-            {playable ? (
+            {playable || onOnlyThisPack ? (
               <ScrollViewFooter style={styles.footer}>
-                <Button mode='contained' icon='play' onPress={handleRandom}>
-                  Random
-                </Button>
+                {playable ? (
+                  <Button mode='contained' icon='play' onPress={handlePlayThisPack}>
+                    Play This Pack
+                  </Button>
+                ) : null}
+                {onOnlyThisPack ? (
+                  <Button mode='outlined' icon='filter-outline' onPress={handleOnlyThisPack} disabled={onlyThisPackSelected} style={playable ? styles.secondButton : undefined}>
+                    Only This Pack
+                  </Button>
+                ) : null}
               </ScrollViewFooter>
             ) : null}
           </ScrollViewProvider>
@@ -139,8 +154,8 @@ PackPuzzlesDrawer.displayName = 'PackPuzzlesDrawer'
 const styles = StyleSheet.create({
   // flexDirection/alignItems override ScrollViewFooter's own row+center defaults - alignItems
   // alone stretches the CROSS axis, which is height while flexDirection stays 'row' (see
-  // ScrollViewFooter's own styles.row); flexDirection has to flip to 'column' too so Random
-  // actually stretches full width, matching this footer's look before the scroll-view migration.
+  // ScrollViewFooter's own styles.row); flexDirection has to flip to 'column' too so the buttons
+  // actually stretch full width, stacked like the loadout's own Continue and Random.
   footer: {
     alignItems: 'stretch',
     flexDirection: 'column',
@@ -150,5 +165,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     paddingTop: 4
   },
-  panel: { flex: 1 }
+  panel: { flex: 1 },
+  // The loadout footer's own gap between its stacked buttons.
+  secondButton: { marginTop: 8 }
 })

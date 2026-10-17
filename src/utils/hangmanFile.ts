@@ -4,6 +4,7 @@ import * as Sharing from 'expo-sharing'
 import { Platform } from 'react-native'
 
 import { exportCustomPack } from './customPacks'
+import type { PlayerKey } from './players'
 import { exportPuzzleUnlocks } from './unlocks'
 
 // One file format, two payload shapes it can carry (a custom pack, or a progress backup - see
@@ -61,8 +62,9 @@ export const shareCustomPackFile = async (key: string, label: string): Promise<b
   return writeAndShareFile(payload, sanitizeFilename(label), `Share "${label}"`)
 }
 
-export const shareProgressBackupFile = async (): Promise<boolean> => {
-  const payload = await exportPuzzleUnlocks()
+// One player's unlocked puzzles (Settings' Export, for whoever is playing).
+export const shareProgressBackupFile = async (playerKey: PlayerKey): Promise<boolean> => {
+  const payload = await exportPuzzleUnlocks(playerKey)
   return writeAndShareFile(payload, `hangman-progress-backup${HANGMAN_FILE_EXTENSION}`, 'Share Progress Backup')
 }
 

@@ -11,6 +11,7 @@ import { Text, TextInput } from 'react-native-paper'
 
 import { ACHIEVEMENT_TIER_COLORS } from '@/constants/achievements'
 import { DRAWER_PACK_DETAIL_Z_INDEX } from '@/constants/drawerStacking'
+import { useActivePlayer } from '@/hooks/useActivePlayer'
 import { useGameStats } from '@/hooks/useGameStats'
 import { CUSTOM_QUICK_PACK_LABEL, type CustomPack, type CustomPackEntryInput, getCustomPackPuzzles, saveCustomPack } from '@/utils/customPacks'
 import { normalizePhrase } from '@/utils/normalizePhrase'
@@ -78,6 +79,8 @@ const PackEditorForm = ({ editingKey, onSaved, onCancel, onDelete, onShare }: Pa
   const theme = useAutoPaperTheme()
   const { success } = useToast()
   const { recordCustomPackCreated } = useGameStats()
+  // Whoever is playing makes the pack, so it counts toward their custom pack achievements.
+  const { profileId } = useActivePlayer()
 
   const editingPack = useMemo((): CustomPack | null => {
     if (!editingKey) return null
@@ -159,7 +162,7 @@ const PackEditorForm = ({ editingKey, onSaved, onCancel, onDelete, onShare }: Pa
         // handleSolved), so each unlock gets the fleet's achievement toast instead, from the
         // @rific/toaster <Toaster/> mounted once in Providers.tsx: the achievement's title, then
         // 'Achievement unlocked', in its tier's color with its own icon.
-        recordCustomPackCreated().forEach((achievement) => success(achievement.title, 'Achievement unlocked', undefined, { color: ACHIEVEMENT_TIER_COLORS[achievement.tier], icon: achievement.icon }))
+        recordCustomPackCreated(profileId).forEach((achievement) => success(achievement.title, 'Achievement unlocked', undefined, { color: ACHIEVEMENT_TIER_COLORS[achievement.tier], icon: achievement.icon }))
       }
       onSaved(pack)
     } finally {

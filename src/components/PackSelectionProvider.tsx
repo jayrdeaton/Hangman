@@ -1,16 +1,15 @@
-import AsyncStorage from '@react-native-async-storage/async-storage'
-import { JSX, ReactNode, useCallback, useEffect, useState } from 'react'
+import { JSX, ReactNode, useCallback, useMemo } from 'react'
+import { useDispatch, useSelector, useStore } from 'react-redux'
 
+import { useActivePlayer } from '@/hooks/useActivePlayer'
+import { useCatalogVersions } from '@/hooks/useCatalog'
 import { PackSelectionContext } from '@/hooks/usePackSelection'
+import { playerSettingsActions } from '@/redux/playerSettingsSlice'
+import type { RootState } from '@/redux/store'
 import { getPuzzleManifest } from '@/utils/puzzleCatalog'
-import { useSplashReady } from '@/utils/splashGate'
 
-const STORAGE_KEY = 'selectedPackKeys'
-
-// "Every pack" - the same fallback buildInitialConfig used before this existed, and still the
-// right first-paint value: getPuzzleManifest() is synchronous (built-in packs are static,
-// custom-pack summaries come from an in-memory cache), so this is available immediately. Only
-// reading what was previously *persisted* is actually async.
+// Every pack with a puzzle in it, built-in and custom (custom-pack summaries come from customPacks.ts's
+// in-memory cache, loaded a moment after launch: see useCatalog's packsVersion).
 const allPackKeys = (): string[] =>
   getPuzzleManifest()
     .filter((item) => item.count > 0)
@@ -18,36 +17,38 @@ const allPackKeys = (): string[] =>
 
 export type PackSelectionProviderProps = { children: ReactNode }
 
+// The active player's pack selection, from their playerSettings entry. Stored as null while every pack
+// is on (a player who never changed it, or who switched them all back on), so the custom packs that load
+// after launch, and any made or imported later, are part of it without anyone switching them on; it's
+// only stored as a list while some pack is off. Must render inside CatalogProvider, whose packsVersion
+// rebuilds "every pack" when the custom packs change. Nothing to wait for: redux has rehydrated by the
+// time this renders (PersistGate), so `ready` is always true.
 export const PackSelectionProvider = ({ children }: PackSelectionProviderProps): JSX.Element => {
-  const [selectedPackKeys, setSelectedPackKeysState] = useState<string[]>(allPackKeys)
-  // Separate from selectedPackKeys itself (which happily starts from the "every pack" fallback
-  // above and corrects in place once this resolves), so a reader can tell the saved selection from
-  // that fallback: the game screen waits for it before drawing a puzzle (see SoloRound in
-  // GameScreen.tsx), so a draw never comes from packs the player had switched off.
-  // Also fed into the app's shared splash gate (see splashGate.ts), alongside puzzleDefaults, so on
-  // a normal cold boot the saved selection is already in place by the time the splash lifts,
-  // before the loadout's pack list or any draw can read it.
-  const [ready, setReady] = useState(false)
-  useSplashReady('packSelection', ready)
+  const dispatch = useDispatch()
+  const store = useStore<RootState>()
+  const { key: playerKey } = useActivePlayer()
+  const { packsVersion } = useCatalogVersions()
+  const storedPackKeys = useSelector((state: RootState) => state.playerSettings[playerKey]?.packKeys ?? null)
+  // packsVersion isn't read here: it's a change counter bumped whenever a custom pack is created,
+  // edited, deleted or imported (or the cache loads), since getPuzzleManifest() otherwise looks pure.
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- packsVersion is an intentional external invalidation trigger, not a value the memo body reads
+  const everyPack = useMemo(() => allPackKeys(), [packsVersion])
+  const selectedPackKeys = storedPackKeys ?? everyPack
 
-  useEffect(() => {
-    void AsyncStorage.getItem(STORAGE_KEY).then((stored) => {
-      if (stored) {
-        try {
-          const parsed: unknown = JSON.parse(stored)
-          if (Array.isArray(parsed) && parsed.every((key) => typeof key === 'string')) setSelectedPackKeysState(parsed)
-        } catch {
-          // Ignore a corrupted value - the synchronous "every pack" fallback already in state stands.
-        }
-      }
-      setReady(true)
-    })
-  }, [])
+  // A selection that has every pack in it is stored as "every pack" (null), whatever order it came in.
+  const setSelectedPackKeys = useCallback(
+    (next: string[]) => {
+      const chosen = new Set(next)
+      const packKeys = allPackKeys().every((key) => chosen.has(key)) ? null : [...next]
+      const current = store.getState().playerSettings[playerKey]?.packKeys ?? null
+      if (packKeys === null && current === null) return
+      dispatch(playerSettingsActions.setPackKeys({ playerKey, packKeys }))
+    },
+    [dispatch, store, playerKey]
+  )
 
-  const setSelectedPackKeys = useCallback((next: string[]) => {
-    setSelectedPackKeysState(next)
-    void AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(next))
-  }, [])
+  // Memoized: the loadouts' memoized drawers take these values as props.
+  const value = useMemo(() => ({ selectedPackKeys, setSelectedPackKeys, ready: true }), [selectedPackKeys, setSelectedPackKeys])
 
-  return <PackSelectionContext.Provider value={{ selectedPackKeys, setSelectedPackKeys, ready }}>{children}</PackSelectionContext.Provider>
+  return <PackSelectionContext.Provider value={value}>{children}</PackSelectionContext.Provider>
 }

@@ -1,4 +1,5 @@
-import { clearPuzzleUnlocks, exportPuzzleUnlocks, getCompletedBuiltInPackKeys, getPuzzleUnlockMap, getTotalUnlockedCount, getUnlockedCountForPack, importPuzzleUnlocks, markPuzzleUnlocked, mergePuzzleUnlocks, parseProgressBackup } from '@/utils/unlocks'
+import { GUEST_PLAYER_KEY } from '@/utils/players'
+import { clearAllPuzzleUnlocks, clearPuzzleUnlocks, exportPuzzleUnlocks, getCompletedBuiltInPackKeys, getDevicePuzzleUnlockMap, getPuzzleUnlockMap, getTotalUnlockedCount, getUnlockedCountForPack, importPuzzleUnlocks, markPuzzleUnlocked, mergePuzzleUnlocks, parseProgressBackup } from '@/utils/unlocks'
 
 import { puzzleManifest } from '../../data/puzzleCatalog.generated'
 
@@ -13,10 +14,14 @@ jest.mock('@react-native-async-storage/async-storage', () => ({
   removeItem: jest.fn((key: string) => {
     delete mockStore[key]
     return Promise.resolve(null)
-  })
+  }),
+  getAllKeys: jest.fn(() => Promise.resolve(Object.keys(mockStore)))
 }))
 
-const PUZZLE_UNLOCKS_KEY = 'puzzle_unlocks_v1'
+// Every function here is the guest's unless a test says otherwise: one player's puzzles, under its key.
+const PLAYER = GUEST_PLAYER_KEY
+const OTHER = 'profile-a'
+const PUZZLE_UNLOCKS_KEY = `puzzle_unlocks_v1:${PLAYER}`
 
 beforeEach(() => {
   mockStore = {}
@@ -24,33 +29,33 @@ beforeEach(() => {
 
 describe('markPuzzleUnlocked', () => {
   it('returns true and persists on first unlock for a packKey+puzzleId', async () => {
-    const result = await markPuzzleUnlocked('animals', 'lion')
+    const result = await markPuzzleUnlocked(PLAYER, 'animals', 'lion')
 
     expect(result).toBe(true)
 
-    const map = await getPuzzleUnlockMap()
+    const map = await getPuzzleUnlockMap(PLAYER)
     expect(map).toEqual({ animals: ['lion'] })
   })
 
   it('returns false when the exact same packKey+puzzleId is already unlocked', async () => {
-    await markPuzzleUnlocked('animals', 'lion')
-    const result = await markPuzzleUnlocked('animals', 'lion')
+    await markPuzzleUnlocked(PLAYER, 'animals', 'lion')
+    const result = await markPuzzleUnlocked(PLAYER, 'animals', 'lion')
 
     expect(result).toBe(false)
 
-    const map = await getPuzzleUnlockMap()
+    const map = await getPuzzleUnlockMap(PLAYER)
     expect(map).toEqual({ animals: ['lion'] })
   })
 
   it('returns false without touching storage when packKey is empty', async () => {
-    const result = await markPuzzleUnlocked('', 'lion')
+    const result = await markPuzzleUnlocked(PLAYER, '', 'lion')
 
     expect(result).toBe(false)
     expect(mockStore[PUZZLE_UNLOCKS_KEY]).toBeUndefined()
   })
 
   it('returns false without touching storage when puzzleId is empty', async () => {
-    const result = await markPuzzleUnlocked('animals', '')
+    const result = await markPuzzleUnlocked(PLAYER, 'animals', '')
 
     expect(result).toBe(false)
     expect(mockStore[PUZZLE_UNLOCKS_KEY]).toBeUndefined()
@@ -59,39 +64,39 @@ describe('markPuzzleUnlocked', () => {
 
 describe('getPuzzleUnlockMap', () => {
   it('returns {} when storage is empty', async () => {
-    const map = await getPuzzleUnlockMap()
+    const map = await getPuzzleUnlockMap(PLAYER)
     expect(map).toEqual({})
   })
 
   it('returns the previously-stored map after a markPuzzleUnlocked call', async () => {
-    await markPuzzleUnlocked('animals', 'lion')
-    await markPuzzleUnlocked('animals', 'tiger')
+    await markPuzzleUnlocked(PLAYER, 'animals', 'lion')
+    await markPuzzleUnlocked(PLAYER, 'animals', 'tiger')
 
-    const map = await getPuzzleUnlockMap()
+    const map = await getPuzzleUnlockMap(PLAYER)
     expect(map.animals?.sort()).toEqual(['lion', 'tiger'])
   })
 
   it('returns {} (not a throw) when the stored value is corrupted JSON', async () => {
     mockStore[PUZZLE_UNLOCKS_KEY] = '{not valid json'
 
-    const map = await getPuzzleUnlockMap()
+    const map = await getPuzzleUnlockMap(PLAYER)
     expect(map).toEqual({})
   })
 
   it('normalizes away a valid-JSON but invalid shape (array instead of object) rather than crashing', async () => {
     mockStore[PUZZLE_UNLOCKS_KEY] = JSON.stringify(['lion', 'tiger'])
 
-    const map = await getPuzzleUnlockMap()
+    const map = await getPuzzleUnlockMap(PLAYER)
     expect(map).toEqual({})
   })
 })
 
 describe('exportPuzzleUnlocks', () => {
   it('returns a JSON string with version 1, exportedAt, and the unlocked puzzles', async () => {
-    await markPuzzleUnlocked('animals', 'lion')
-    await markPuzzleUnlocked('countries', 'france')
+    await markPuzzleUnlocked(PLAYER, 'animals', 'lion')
+    await markPuzzleUnlocked(PLAYER, 'countries', 'france')
 
-    const raw = await exportPuzzleUnlocks()
+    const raw = await exportPuzzleUnlocks(PLAYER)
     const parsed = JSON.parse(raw)
 
     expect(parsed.version).toBe(1)
@@ -136,7 +141,7 @@ describe('parseProgressBackup', () => {
 
 describe('importPuzzleUnlocks', () => {
   it('replaces whatever was there before (hard overwrite)', async () => {
-    await markPuzzleUnlocked('animals', 'lion')
+    await markPuzzleUnlocked(PLAYER, 'animals', 'lion')
 
     const payload = JSON.stringify({
       version: 1,
@@ -144,11 +149,11 @@ describe('importPuzzleUnlocks', () => {
       unlocks: { countries: ['france', 'spain'] }
     })
 
-    const result = await importPuzzleUnlocks(payload)
+    const result = await importPuzzleUnlocks(PLAYER, payload)
 
     expect(result.importedCount).toBe(2)
 
-    const map = await getPuzzleUnlockMap()
+    const map = await getPuzzleUnlockMap(PLAYER)
     expect(map).toEqual({ countries: ['france', 'spain'] })
   })
 
@@ -159,30 +164,30 @@ describe('importPuzzleUnlocks', () => {
       unlocks: { animals: ['lion', 'tiger'], countries: ['france'] }
     })
 
-    const result = await importPuzzleUnlocks(payload)
+    const result = await importPuzzleUnlocks(PLAYER, payload)
 
     expect(result.importedCount).toBe(3)
 
-    const map = await getPuzzleUnlockMap()
+    const map = await getPuzzleUnlockMap(PLAYER)
     expect(map).toEqual({ animals: ['lion', 'tiger'], countries: ['france'] })
   })
 
   it('accepts a bare unlocks-map shape directly', async () => {
     const payload = JSON.stringify({ animals: ['lion'], countries: ['france', 'spain'] })
 
-    const result = await importPuzzleUnlocks(payload)
+    const result = await importPuzzleUnlocks(PLAYER, payload)
 
     expect(result.importedCount).toBe(3)
 
-    const map = await getPuzzleUnlockMap()
+    const map = await getPuzzleUnlockMap(PLAYER)
     expect(map).toEqual({ animals: ['lion'], countries: ['france', 'spain'] })
   })
 })
 
 describe('mergePuzzleUnlocks', () => {
   it('adds only genuinely new ids, keeps importedCount as the incoming total regardless of overlap, and unions with existing state instead of clobbering it', async () => {
-    await markPuzzleUnlocked('animals', 'lion')
-    await markPuzzleUnlocked('countries', 'japan')
+    await markPuzzleUnlocked(PLAYER, 'animals', 'lion')
+    await markPuzzleUnlocked(PLAYER, 'countries', 'japan')
 
     const payload = JSON.stringify({
       unlocks: {
@@ -190,39 +195,112 @@ describe('mergePuzzleUnlocks', () => {
       }
     })
 
-    const result = await mergePuzzleUnlocks(payload)
+    const result = await mergePuzzleUnlocks(PLAYER, payload)
 
     expect(result.importedCount).toBe(2)
     expect(result.addedCount).toBe(1)
 
-    const map = await getPuzzleUnlockMap()
+    const map = await getPuzzleUnlockMap(PLAYER)
     expect(map.animals?.sort()).toEqual(['lion', 'tiger'])
     expect(map.countries).toEqual(['japan'])
   })
 
   it('accepts a bare unlocks-map shape directly', async () => {
-    await markPuzzleUnlocked('animals', 'lion')
+    await markPuzzleUnlocked(PLAYER, 'animals', 'lion')
 
     const payload = JSON.stringify({ animals: ['tiger'] })
 
-    const result = await mergePuzzleUnlocks(payload)
+    const result = await mergePuzzleUnlocks(PLAYER, payload)
 
     expect(result.importedCount).toBe(1)
     expect(result.addedCount).toBe(1)
 
-    const map = await getPuzzleUnlockMap()
+    const map = await getPuzzleUnlockMap(PLAYER)
     expect(map.animals?.sort()).toEqual(['lion', 'tiger'])
   })
 })
 
 describe('clearPuzzleUnlocks', () => {
   it('clears storage so getPuzzleUnlockMap returns {} again', async () => {
-    await markPuzzleUnlocked('animals', 'lion')
+    await markPuzzleUnlocked(PLAYER, 'animals', 'lion')
 
-    await clearPuzzleUnlocks()
+    await clearPuzzleUnlocks(PLAYER)
 
-    const map = await getPuzzleUnlockMap()
+    const map = await getPuzzleUnlockMap(PLAYER)
     expect(map).toEqual({})
+  })
+})
+
+// Everything belongs to a player (2026-10-17): one player's solves never show as another's.
+describe("each player's own unlocked puzzles", () => {
+  it('keeps every player under their own key', async () => {
+    await markPuzzleUnlocked(PLAYER, 'animals', 'lion')
+    await markPuzzleUnlocked(OTHER, 'animals', 'tiger')
+
+    expect(await getPuzzleUnlockMap(PLAYER)).toEqual({ animals: ['lion'] })
+    expect(await getPuzzleUnlockMap(OTHER)).toEqual({ animals: ['tiger'] })
+    expect(Object.keys(mockStore).sort()).toEqual(['puzzle_unlocks_v1:guest', 'puzzle_unlocks_v1:profile-a'])
+  })
+
+  it('counts a puzzle new for one player even when another already solved it', async () => {
+    await markPuzzleUnlocked(OTHER, 'animals', 'lion')
+
+    expect(await markPuzzleUnlocked(PLAYER, 'animals', 'lion')).toBe(true)
+  })
+
+  // No migration (the app hadn't shipped): the old single device-wide key is never read or adopted.
+  it('never reads the old device-wide key', async () => {
+    mockStore.puzzle_unlocks_v1 = JSON.stringify({ animals: ['lion'] })
+
+    expect(await getPuzzleUnlockMap(PLAYER)).toEqual({})
+    expect(await getDevicePuzzleUnlockMap()).toEqual({})
+  })
+
+  it("exports, imports and merges only the player's own", async () => {
+    await markPuzzleUnlocked(OTHER, 'countries', 'japan')
+    await markPuzzleUnlocked(PLAYER, 'animals', 'lion')
+
+    expect(JSON.parse(await exportPuzzleUnlocks(PLAYER)).unlocks).toEqual({ animals: ['lion'] })
+    await mergePuzzleUnlocks(PLAYER, JSON.stringify({ unlocks: { animals: ['tiger'] } }))
+    await importPuzzleUnlocks(OTHER, JSON.stringify({ unlocks: { colors: ['red'] } }))
+
+    expect(await getPuzzleUnlockMap(PLAYER)).toEqual({ animals: ['lion', 'tiger'] })
+    expect(await getPuzzleUnlockMap(OTHER)).toEqual({ colors: ['red'] })
+  })
+
+  it("clears one player's, or every player's", async () => {
+    await markPuzzleUnlocked(PLAYER, 'animals', 'lion')
+    await markPuzzleUnlocked(OTHER, 'animals', 'tiger')
+    mockStore.selectedSomethingElse = 'kept'
+
+    await clearPuzzleUnlocks(OTHER)
+    expect(await getPuzzleUnlockMap(PLAYER)).toEqual({ animals: ['lion'] })
+    expect(await getPuzzleUnlockMap(OTHER)).toEqual({})
+
+    await markPuzzleUnlocked(OTHER, 'animals', 'tiger')
+    await clearAllPuzzleUnlocks()
+    expect(Object.keys(mockStore)).toEqual(['selectedSomethingElse'])
+  })
+})
+
+describe('getDevicePuzzleUnlockMap', () => {
+  it("puts every player's unlocked puzzles together, each once", async () => {
+    await markPuzzleUnlocked(PLAYER, 'animals', 'lion')
+    await markPuzzleUnlocked(PLAYER, 'countries', 'japan')
+    await markPuzzleUnlocked(OTHER, 'animals', 'lion')
+    await markPuzzleUnlocked(OTHER, 'animals', 'tiger')
+
+    const map = await getDevicePuzzleUnlockMap()
+    expect(map.animals?.sort()).toEqual(['lion', 'tiger'])
+    expect(map.countries).toEqual(['japan'])
+  })
+
+  it('is empty with nothing stored, and skips a corrupt player', async () => {
+    expect(await getDevicePuzzleUnlockMap()).toEqual({})
+
+    mockStore[`puzzle_unlocks_v1:${OTHER}`] = '{not valid json'
+    await markPuzzleUnlocked(PLAYER, 'animals', 'lion')
+    expect(await getDevicePuzzleUnlockMap()).toEqual({ animals: ['lion'] })
   })
 })
 

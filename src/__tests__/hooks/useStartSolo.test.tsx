@@ -5,19 +5,23 @@ import { Providers } from '@/components/Providers'
 import { useStartSolo } from '@/hooks/useStartSolo'
 import { DEFAULT_MODE, lettersMode } from '@/modes/registry'
 import { achievementsActions } from '@/redux/achievementsSlice'
-import { roundActions } from '@/redux/roundSlice'
+import { activePlayerActions } from '@/redux/activePlayerSlice'
+import { roundActions, selectSoloRound } from '@/redux/roundSlice'
 import { store } from '@/redux/store'
 import type { GameStartPayload } from '@/types/gameSession'
+import { GUEST_PLAYER_KEY } from '@/utils/players'
 
 // The real store: the round slice is what a start replaces, and the stats are what an abandon records.
-const soloRound = () => store.getState().round.solo
+// Everything is the guest's unless a test says otherwise.
+const soloRound = (playerKey = GUEST_PLAYER_KEY) => selectSoloRound(store.getState().round, playerKey)
 const stats = () => store.getState().achievements.stats
+const saveGuesses = (guessedLetters: string[], playerKey = GUEST_PLAYER_KEY) => store.dispatch(roundActions.saveSoloProgress({ playerKey, guessedLetters, hintRevealed: false }))
 
 // The round left waiting on the board: DOG on the Classic art (six mistakes), with these guesses.
-const seedSoloRound = (guessedLetters: string[] = []) => {
-  store.dispatch(roundActions.startSolo({ phrase: 'DOG', modeId: DEFAULT_MODE.id, sourceMode: 'random', packKey: 'seeded-pack', packLabel: 'Seeded Pack', puzzleId: 'seeded-puzzle', difficultyTier: 'easy', packScope: 'selection' }))
-  if (guessedLetters.length > 0) store.dispatch(roundActions.saveSoloProgress({ guessedLetters, hintRevealed: false }))
-  return soloRound()
+const seedSoloRound = (guessedLetters: string[] = [], playerKey = GUEST_PLAYER_KEY) => {
+  store.dispatch(roundActions.startSolo({ playerKey, puzzle: { phrase: 'DOG', modeId: DEFAULT_MODE.id, sourceMode: 'random', packKey: 'seeded-pack', packLabel: 'Seeded Pack', puzzleId: 'seeded-puzzle', difficultyTier: 'easy', packScope: 'selection' } }))
+  if (guessedLetters.length > 0) saveGuesses(guessedLetters, playerKey)
+  return soloRound(playerKey)
 }
 
 // What the loadout or a share link would hand over: a new puzzle, on a different art than the old one.
@@ -51,6 +55,7 @@ describe('useStartSolo', () => {
   beforeEach(() => {
     store.dispatch(achievementsActions.reset())
     store.dispatch(roundActions.reset())
+    store.dispatch(activePlayerActions.setActivePlayer(null))
   })
 
   it('starts right away when there is no round on the board', async () => {
@@ -139,7 +144,7 @@ describe('useStartSolo', () => {
     await requestStart({ onStarted: jest.fn() })
     // DOG: D right, Q and X wrong, and still short of Classic's six mistakes.
     await act(async () => {
-      store.dispatch(roundActions.saveSoloProgress({ guessedLetters: ['Q', 'D', 'X'], hintRevealed: false }))
+      saveGuesses(['Q', 'D', 'X'])
     })
     await fireEvent.press(screen.getByText('Abandon'))
 
@@ -152,9 +157,9 @@ describe('useStartSolo', () => {
   // puzzle, and the game screen records a round it finishes itself. Only a round still unfinished,
   // with a guess on it, costs a loss, but the pending puzzle starts either way.
   it.each([
-    ['replaced with a fresh one', () => store.dispatch(roundActions.startSolo({ phrase: 'CAT', modeId: DEFAULT_MODE.id, sourceMode: 'custom' }))],
-    ['won', () => store.dispatch(roundActions.saveSoloProgress({ guessedLetters: ['Q', 'D', 'O', 'G'], hintRevealed: false }))],
-    ['lost', () => store.dispatch(roundActions.saveSoloProgress({ guessedLetters: ['Q', 'A', 'B', 'C', 'E', 'F'], hintRevealed: false }))]
+    ['replaced with a fresh one', () => store.dispatch(roundActions.startSolo({ playerKey: GUEST_PLAYER_KEY, puzzle: { phrase: 'CAT', modeId: DEFAULT_MODE.id, sourceMode: 'custom' } }))],
+    ['won', () => saveGuesses(['Q', 'D', 'O', 'G'])],
+    ['lost', () => saveGuesses(['Q', 'A', 'B', 'C', 'E', 'F'])]
   ])('records nothing on Abandon, but still starts, calling onStarted once, when the round was %s while the confirm was up', async (_change, change) => {
     const before = seedSoloRound(['Q'])
     const screen = await renderHost()
@@ -224,5 +229,52 @@ describe('useStartSolo', () => {
 
     expect(onStarted).toHaveBeenCalledTimes(1)
     expect(stats().solo.losses).toBe(1)
+  })
+
+  // Everything belongs to a player (2026-10-17): the waiting round being replaced is the active
+  // player's, and so is the loss.
+  describe('for each player', () => {
+    const OTHER = 'profile-a'
+
+    it("puts the puzzle on the active player's board, leaving everyone else's", async () => {
+      const guestRound = seedSoloRound(['Q'])
+      store.dispatch(activePlayerActions.setActivePlayer(OTHER))
+      await renderHost()
+
+      await requestStart({ onStarted: jest.fn() })
+
+      expect(soloRound(OTHER)).toMatchObject({ id: 1, puzzle: { phrase: 'FISH' } })
+      expect(soloRound()).toEqual(guestRound)
+    })
+
+    it("asks about the active player's own round, not another player's", async () => {
+      seedSoloRound(['Q'])
+      store.dispatch(activePlayerActions.setActivePlayer(OTHER))
+      const screen = await renderHost()
+      const onStarted = jest.fn()
+
+      await requestStart({ onStarted })
+
+      expect(screen.queryByText('Abandon This Puzzle?')).toBeNull()
+      expect(onStarted).toHaveBeenCalledTimes(1)
+    })
+
+    it('records the loss for the player whose round it was, even after someone else became active', async () => {
+      store.dispatch(activePlayerActions.setActivePlayer(OTHER))
+      seedSoloRound(['D', 'Q'], OTHER)
+      const guestRound = seedSoloRound(['Z'])
+      const screen = await renderHost()
+
+      await requestStart({ onStarted: jest.fn() })
+      await act(async () => {
+        store.dispatch(activePlayerActions.setActivePlayer(null))
+      })
+      await fireEvent.press(screen.getByText('Abandon'))
+
+      expect(stats().profiles[OTHER].solo).toMatchObject({ played: 1, losses: 1 })
+      expect(stats().profiles[OTHER]).toMatchObject({ lettersGuessed: 2, lettersCorrect: 1 })
+      expect(soloRound(OTHER)).toMatchObject({ guessedLetters: [], puzzle: { phrase: 'FISH' } })
+      expect(soloRound()).toEqual(guestRound)
+    })
   })
 })

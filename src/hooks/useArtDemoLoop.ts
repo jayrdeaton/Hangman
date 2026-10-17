@@ -29,7 +29,7 @@ const SCENE_REVEAL_HOLD_MS = 2000
 // a fade/redraw the way the gallows is here.
 const SCAFFOLDED_MODE_ID = 'classic'
 
-// Drives each card's demo cycle while it's focused: fades the resting "fully drawn" preview out,
+// Drives the art's demo cycle while it's focused: fades the resting "fully drawn" preview out,
 // (re)mounts the scene so its own one-time reveal plays fresh (bumping `revealKey` forces this - see
 // its own usage below), waits for that reveal to finish, then steps `mistakes` from 0 up to
 // maxMistakes (holding briefly once fully built/depleted) the same way a real round's wrong guesses
@@ -39,9 +39,13 @@ const SCAFFOLDED_MODE_ID = 'classic'
 // the whole card out, remounts for a full fresh redraw, and waits out the reveal again before
 // continuing - there's no persistent piece worth preserving there, so a full redraw each cycle is
 // simpler and reads just as well ("draw in, animate through, fade out, draw back in, repeat").
-// `paused` (the drawer is closed, Home is covered) stops the cycle outright; see its own guard below.
+// `paused` (Home is covered, by another screen or the Settings sheet) stops the cycle outright; see
+// its own guard below.
 //
-// Shared by ModePickerDrawer's carousel cards and Home's hero (HeroTitle), which both demo the art.
+// Home's hero (HeroTitle) is its one user now, always focused. `isFocused` is from the art carousel
+// that shared it (ModePickerDrawer, one looping card per art, only the focused one playing), which the
+// Settings sheet's static ART grid (ArtPicker) replaced; it still works for a future picker that
+// demos one art at a time.
 //
 // `startBlank` (Home's hero) starts on a blank scene that draws itself in at mount, rather than on the
 // resting "fully drawn" preview with an entry fade: nobody has seen a resting frame to fade out of.
@@ -67,7 +71,7 @@ export const useArtDemoLoop = (isFocused: boolean, paused: boolean, mode: GameMo
   useEffect(() => {
     if (!isFocused) {
       // Snapped, not faded - this card isn't visible mid-transition to begin with (it's the one
-      // losing focus as the carousel settles elsewhere), so there's nothing for a tween to show.
+      // losing focus as a carousel settles elsewhere), so there's nothing for a tween to show.
       // No setMistakes call here: the returned `mistakes` below already masks stale state at the
       // source whenever unfocused, so there's nothing for this effect itself to reset.
       cardOpacity.value = 1
@@ -75,13 +79,12 @@ export const useArtDemoLoop = (isFocused: boolean, paused: boolean, mode: GameMo
       return
     }
 
-    // ModePickerDrawer stays mounted (translated off-screen) while closed, and Home stays mounted under
-    // the loadout and the game, so without this the cycle would keep re-rendering and remounting its
-    // art forever in the background. It also kept every test that renders a screen holding one of
-    // these feeding React a never-ending stream of real-timer updates. Bailing out here,
-    // rather than through the snap above, leaves whatever frame was showing in place for the close
-    // slide-out; the next open (which re-syncs focus, see ModePickerDrawer's own prevVisible) flips
-    // this back and restarts from the entry fade below.
+    // Home stays mounted under the loadout and the game (and under the Settings sheet), and so did the
+    // old Customize drawer's carousel while closed, so without this the cycle would keep re-rendering
+    // and remounting its art forever in the background. It also kept every test that renders a screen
+    // holding one of these feeding React a never-ending stream of real-timer updates. Bailing out
+    // here, rather than through the snap above, leaves whatever frame was showing in place while
+    // covered; uncovering flips this back and restarts from the entry fade below.
     if (paused) return
 
     let cancelled = false
@@ -91,8 +94,8 @@ export const useArtDemoLoop = (isFocused: boolean, paused: boolean, mode: GameMo
       // No mistakes to step through, just the one-time reveal itself, replayed on a loop: fade
       // out, remount (revealKey forces SketchLetter's own draw-in to play fresh, same trick the
       // animated branch below uses), hold on the resting frame, repeat. Shown first: a pause that
-      // landed mid-fade (the drawer closing, Home being covered) left it at whatever opacity it had,
-      // and this branch's first fade is a whole hold away.
+      // landed mid-fade (Home being covered) left it at whatever opacity it had, and this branch's
+      // first fade is a whole hold away.
       cardOpacity.value = 1
       const runStaticLoop = () => {
         cardOpacity.value = withTiming(0, { duration: FADE_MS })

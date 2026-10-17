@@ -1,7 +1,9 @@
 import { classicMode, DEFAULT_MODE, jengaMode, robotMode } from '@/modes/registry'
-import { initialRoundState, type RoundState, type SavedPuzzle, type SavedRound } from '@/redux/roundSlice'
+import { initialRoundState, type PnpRound, type RoundState, type SavedPuzzle, type SavedRound } from '@/redux/roundSlice'
 import type { GameStartPayload } from '@/types/gameSession'
-import { countWrongGuesses, hasUnfinishedGuesses, isRoundDecided, isRoundPlayable, sanitizeRoundState, toGamePayload, toSavedPuzzle } from '@/utils/roundState'
+import { GUEST_PLAYER_KEY } from '@/utils/players'
+import { createDefaultPnpSession, type PnpSession } from '@/utils/pnpSession'
+import { countWrongGuesses, getPnpRemovalLoss, hasUnfinishedGuesses, isRoundDecided, isRoundPlayable, sanitizeRoundState, toGamePayload, toSavedPuzzle } from '@/utils/roundState'
 
 const puzzle = (overrides: Partial<SavedPuzzle> = {}): SavedPuzzle => ({ phrase: 'HI THERE', modeId: 'classic', sourceMode: 'random', ...overrides })
 const round = (guessedLetters: string[], overrides: Partial<SavedPuzzle> = {}): Pick<SavedRound, 'puzzle' | 'guessedLetters'> => ({ puzzle: puzzle(overrides), guessedLetters })
@@ -125,15 +127,33 @@ describe('isRoundPlayable', () => {
 })
 
 describe('sanitizeRoundState', () => {
+  const OTHER = 'profile-a'
+  // The guest's solo round mid-guess, and another player's empty one.
+  const guestSlot = (): SavedRound => ({ id: 4, puzzle: { phrase: 'HELLO WORLD', modeId: 'robot', sourceMode: 'random', hint: 'A greeting', packKey: 'phrases', packLabel: 'Phrases', puzzleId: 'phrases:abc', difficultyTier: 'easy', packScope: 'single' }, guessedLetters: ['H', 'Z'], hintRevealed: true })
+  const otherSlot = (): SavedRound => ({ id: 1, puzzle: null, guessedLetters: [], hintRevealed: false })
+  // Three players a round in, Cy writing for Ann.
+  const session = (): PnpSession => ({
+    players: [
+      { id: 'p1', name: 'Ann', profileId: null },
+      { id: 'p2', name: 'Bo', profileId: null },
+      { id: 'p3', name: 'Cy', profileId: null }
+    ],
+    standings: { p2: { played: 1, wins: 1 } },
+    writerId: 'p3',
+    guesserId: 'p1',
+    recordedRoundId: null
+  })
   const validState = (): RoundState => ({
-    solo: { id: 4, puzzle: { phrase: 'HELLO WORLD', modeId: 'robot', sourceMode: 'random', hint: 'A greeting', packKey: 'phrases', packLabel: 'Phrases', puzzleId: 'phrases:abc', difficultyTier: 'easy', packScope: 'single' }, guessedLetters: ['H', 'Z'], hintRevealed: true },
-    pnp: { id: 9, puzzle: { phrase: 'CAT', modeId: 'classic', sourceMode: 'custom' }, guessedLetters: ['C'], hintRevealed: false, phase: 'playing' },
+    solo: { [GUEST_PLAYER_KEY]: guestSlot(), [OTHER]: otherSlot() },
+    pnp: { id: 9, puzzle: { phrase: 'CAT', modeId: 'classic', sourceMode: 'custom' }, guessedLetters: ['C'], hintRevealed: false, phase: 'playing', session: session() },
     activeMode: 'pnp'
   })
 
-  // A stored blob with one slot replaced, the rest left valid.
-  const withSolo = (solo: unknown): unknown => ({ ...validState(), solo })
-  const withSoloPuzzle = (overrides: Record<string, unknown>): unknown => withSolo({ ...validState().solo, puzzle: { ...validState().solo.puzzle, ...overrides } })
+  // A stored blob with the guest's slot replaced, the rest left valid, and what it sanitizes to when
+  // that slot is dropped: everything else, the other player's slot included.
+  const withSolo = (slot: unknown): unknown => ({ ...validState(), solo: { ...validState().solo, [GUEST_PLAYER_KEY]: slot } })
+  const withSoloPuzzle = (overrides: Record<string, unknown>): unknown => withSolo({ ...guestSlot(), puzzle: { ...guestSlot().puzzle, ...overrides } })
+  const withoutGuest = (): RoundState => ({ ...validState(), solo: { [OTHER]: otherSlot() } })
 
   it('passes a valid state through unchanged', () => {
     expect(sanitizeRoundState(validState())).toEqual(validState())
@@ -146,7 +166,7 @@ describe('sanitizeRoundState', () => {
   })
 
   it('keeps an empty round with its id', () => {
-    const state = { ...validState(), solo: { id: 3, puzzle: null, guessedLetters: [], hintRevealed: false } }
+    const state = { ...validState(), solo: { [GUEST_PLAYER_KEY]: { id: 3, puzzle: null, guessedLetters: [], hintRevealed: false } } }
 
     expect(sanitizeRoundState(state)).toEqual(state)
   })
@@ -186,14 +206,14 @@ describe('sanitizeRoundState', () => {
     ['an unknown difficulty', { difficultyTier: 'extreme' }],
     ['an unknown pack scope', { packScope: 'everything' }]
   ])('drops only the slot whose puzzle has %s', (_label, overrides) => {
-    expect(sanitizeRoundState(withSoloPuzzle(overrides))).toEqual({ ...validState(), solo: initialRoundState.solo })
+    expect(sanitizeRoundState(withSoloPuzzle(overrides))).toEqual(withoutGuest())
   })
 
   it.each([
     ['a missing puzzle', { puzzle: undefined }],
     ['a puzzle that is not an object', { puzzle: 'HELLO' }]
   ])('drops only the slot with %s', (_label, overrides) => {
-    expect(sanitizeRoundState(withSolo({ ...validState().solo, ...overrides }))).toEqual({ ...validState(), solo: initialRoundState.solo })
+    expect(sanitizeRoundState(withSolo({ ...guestSlot(), ...overrides }))).toEqual(withoutGuest())
   })
 
   it.each([
@@ -205,7 +225,7 @@ describe('sanitizeRoundState', () => {
     ['a string instead of a list', 'HE'],
     ['no list at all', undefined]
   ])('drops only the slot whose guesses have %s', (_label, guessedLetters) => {
-    expect(sanitizeRoundState(withSolo({ ...validState().solo, guessedLetters }))).toEqual({ ...validState(), solo: initialRoundState.solo })
+    expect(sanitizeRoundState(withSolo({ ...guestSlot(), guessedLetters }))).toEqual(withoutGuest())
   })
 
   it.each([
@@ -215,13 +235,60 @@ describe('sanitizeRoundState', () => {
     ['no id', { id: undefined }],
     ['a hint flag that is not a boolean', { hintRevealed: 'yes' }]
   ])('drops only the slot with %s', (_label, overrides) => {
-    expect(sanitizeRoundState(withSolo({ ...validState().solo, ...overrides }))).toEqual({ ...validState(), solo: initialRoundState.solo })
+    expect(sanitizeRoundState(withSolo({ ...guestSlot(), ...overrides }))).toEqual(withoutGuest())
   })
 
-  it('drops only a broken Pass & Play slot, keeping the solo one', () => {
+  it.each([
+    ['an empty key', ''],
+    ['a key with a colon', 'profile:a']
+  ])('drops a slot under %s, which no player could have', (_label, playerKey) => {
+    expect(sanitizeRoundState({ ...validState(), solo: { ...validState().solo, [playerKey]: guestSlot() } })).toEqual(validState())
+  })
+
+  it.each([
+    ['a list', [guestSlot()]],
+    ['a string', 'guest'],
+    ['null', null]
+  ])('has no solo rounds when they are stored as %s', (_label, solo) => {
+    expect(sanitizeRoundState({ ...validState(), solo }).solo).toEqual({})
+  })
+
+  // No migration (the app hadn't shipped): a version 1 blob's one solo round isn't a map of rounds by
+  // player, so none of it passes, and the guest starts with no round waiting.
+  it('drops a solo round saved before rounds were kept per player', () => {
+    expect(sanitizeRoundState({ ...validState(), solo: guestSlot() })).toEqual({ ...validState(), solo: {} })
+  })
+
+  it('drops only a broken Pass & Play slot, keeping the solo one and the table playing it', () => {
     const state = { ...validState(), pnp: { ...validState().pnp, guessedLetters: ['c'] } }
 
-    expect(sanitizeRoundState(state)).toEqual({ ...validState(), pnp: initialRoundState.pnp })
+    expect(sanitizeRoundState(state)).toEqual({ ...validState(), pnp: { ...initialRoundState.pnp, session: session() } })
+  })
+
+  describe('the Pass & Play session', () => {
+    const withSession = (value: unknown): unknown => ({ ...validState(), pnp: { ...validState().pnp, session: value } })
+
+    // No migration (the app hadn't shipped): a round saved before sessions has none to read.
+    it('starts a fresh session, keeping the round, for a round saved without one', () => {
+      const { session: _session, ...round } = validState().pnp
+
+      expect(sanitizeRoundState({ ...validState(), pnp: round })).toEqual({ ...validState(), pnp: { ...validState().pnp, session: createDefaultPnpSession() } })
+    })
+
+    it('starts a fresh session, keeping the round, for a broken one', () => {
+      expect(sanitizeRoundState(withSession({ ...session(), players: [] }))).toEqual({ ...validState(), pnp: { ...validState().pnp, session: createDefaultPnpSession() } })
+    })
+
+    it('keeps the count of the round stored with it', () => {
+      expect(sanitizeRoundState(withSession({ ...session(), recordedRoundId: 9 })).pnp.session.recordedRoundId).toBe(9)
+    })
+
+    // A count of round 9 kept beside the empty round 0 would wrongly skip round 9's result later on.
+    it('drops the count when the round falls back to the empty one', () => {
+      const state = { ...validState(), pnp: { ...validState().pnp, guessedLetters: ['c'], session: { ...session(), recordedRoundId: 9 } } }
+
+      expect(sanitizeRoundState(state).pnp).toEqual({ ...initialRoundState.pnp, session: session() })
+    })
   })
 
   it.each([
@@ -247,8 +314,8 @@ describe('sanitizeRoundState', () => {
 
   describe('the Pass & Play draft', () => {
     // A prompt still open on the board, with whatever was typed into it.
-    const authoring = (draft: unknown): unknown => ({ ...validState(), pnp: { id: 9, puzzle: null, guessedLetters: [], hintRevealed: false, phase: 'authoring', draft } })
-    const authoringRound = { id: 9, puzzle: null, guessedLetters: [], hintRevealed: false, phase: 'authoring' }
+    const authoring = (draft: unknown): unknown => ({ ...validState(), pnp: { id: 9, puzzle: null, guessedLetters: [], hintRevealed: false, phase: 'authoring', draft, session: session() } })
+    const authoringRound = { id: 9, puzzle: null, guessedLetters: [], hintRevealed: false, phase: 'authoring', session: session() }
 
     it.each([
       ['a word and a hint', { answer: 'CAT', hint: 'A pet' }],
@@ -289,9 +356,62 @@ describe('sanitizeRoundState', () => {
     })
 
     it('goes with a broken Pass & Play slot, which falls back to the empty round', () => {
-      const state = { ...validState(), pnp: { id: 9, puzzle: null, guessedLetters: ['c'], hintRevealed: false, phase: 'authoring', draft: { answer: 'CAT', hint: '' } } }
+      const state = { ...validState(), pnp: { id: 9, puzzle: null, guessedLetters: ['c'], hintRevealed: false, phase: 'authoring', draft: { answer: 'CAT', hint: '' }, session: session() } }
 
-      expect(sanitizeRoundState(state)).toStrictEqual({ ...validState(), pnp: initialRoundState.pnp })
+      expect(sanitizeRoundState(state)).toStrictEqual({ ...validState(), pnp: { ...initialRoundState.pnp, session: session() } })
     })
+  })
+})
+
+describe('getPnpRemovalLoss', () => {
+  // Ann writes CAT for Bo, with Cy also at the table and Bo a word in.
+  const base = (): PnpRound => ({
+    id: 4,
+    puzzle: { phrase: 'CAT', modeId: 'classic', sourceMode: 'custom' },
+    guessedLetters: ['C'],
+    hintRevealed: false,
+    phase: 'playing',
+    session: {
+      players: [
+        { id: 'p1', name: 'Ann', profileId: null },
+        { id: 'p2', name: 'Bo', profileId: null },
+        { id: 'p3', name: 'Cy', profileId: null }
+      ],
+      standings: { p2: { played: 1, wins: 0 } },
+      writerId: 'p1',
+      guesserId: 'p2',
+      recordedRoundId: null
+    }
+  })
+
+  it('takes their standing for a player who has guessed this session', () => {
+    expect(getPnpRemovalLoss(base(), 'p2').standing).toBe(true)
+    expect(getPnpRemovalLoss(base(), 'p1').standing).toBe(false)
+  })
+
+  it.each(['handoff', 'playing'] as const)('takes the word %s with its writer or its guesser, not anyone else', (phase) => {
+    const pnp = { ...base(), phase }
+
+    expect(getPnpRemovalLoss(pnp, 'p1').word).toBe(true)
+    expect(getPnpRemovalLoss(pnp, 'p2').word).toBe(true)
+    expect(getPnpRemovalLoss(pnp, 'p3')).toEqual({ standing: false, word: false })
+  })
+
+  it('takes a word being written only from its writer, and only with something typed', () => {
+    const writing: PnpRound = { ...base(), puzzle: null, guessedLetters: [], phase: 'authoring' }
+
+    expect(getPnpRemovalLoss(writing, 'p1').word).toBe(false)
+    expect(getPnpRemovalLoss({ ...writing, draft: { answer: 'CAT', hint: '' } }, 'p1').word).toBe(true)
+    expect(getPnpRemovalLoss({ ...writing, draft: { answer: 'CAT', hint: '' } }, 'p2').word).toBe(false)
+  })
+
+  // Its result is in, so there's nothing left of it to lose.
+  it('takes no word once the round is decided', () => {
+    expect(getPnpRemovalLoss({ ...base(), guessedLetters: ['C', 'A', 'T'] }, 'p1').word).toBe(false)
+    expect(getPnpRemovalLoss({ ...base(), session: { ...base().session, recordedRoundId: 4 } }, 'p2').word).toBe(false)
+  })
+
+  it('takes nothing with no session under way', () => {
+    expect(getPnpRemovalLoss({ ...base(), phase: null, session: { ...base().session, standings: {} } }, 'p1')).toEqual({ standing: false, word: false })
   })
 })

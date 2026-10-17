@@ -11,10 +11,13 @@ import { Providers } from '@/components/Providers'
 import { useAutoSaveCustom } from '@/hooks/useAutoSaveCustom'
 import { DEFAULT_MODE } from '@/modes/registry'
 import { achievementsActions } from '@/redux/achievementsSlice'
-import roundReducer, { initialRoundState, type PnpPhase, roundActions, type SavedPuzzle } from '@/redux/roundSlice'
+import activePlayerReducer from '@/redux/activePlayerSlice'
+import roundReducer, { initialRoundState, type PnpPhase, roundActions, type SavedPuzzle, selectSoloRound } from '@/redux/roundSlice'
 import { store } from '@/redux/store'
 import { alert } from '@/utils/alert'
 import { addCustomPuzzle } from '@/utils/customPacks'
+import { GUEST_PLAYER_KEY } from '@/utils/players'
+import { createDefaultPnpSession } from '@/utils/pnpSession'
 import * as puzzlePicker from '@/utils/puzzlePicker'
 import { sanitizeRoundState } from '@/utils/roundState'
 
@@ -157,8 +160,8 @@ describe('GameScreen - pass and play', () => {
     expect(pnpRound()).toMatchObject({ phase: 'authoring', id: 1, puzzle: null })
     expect(getByTestId('pnp-answer-input').props.value).toBe('')
     expect(getByTestId('pnp-hint-input').props.value).toBe('')
-    // Titled to match the Home button that leads here.
-    expect(getByText('Pass & Play')).toBeTruthy()
+    // Named for who's writing: the first seat, in a fresh session.
+    expect(getByText("Player 1's Word")).toBeTruthy()
     // Composing happens over the real board, not a blank screen: the word row, and the on-screen
     // keyboard where it will sit once play starts rather than a dead gap.
     expect(getByLabelText('Secret word display')).toBeTruthy()
@@ -230,7 +233,9 @@ describe('GameScreen - pass and play', () => {
     // The word is saved as the real resolver built it, under the same round id: the board has been
     // drawing this exact word since composing began, so finalizing it has nothing to remount.
     expect(pnpRound()).toMatchObject({ phase: 'handoff', id: 1, puzzle: savedCat, guessedLetters: [] })
-    expect(getByText('Your Turn')).toBeTruthy()
+    // Naming who to hand the device to, and whose word is waiting.
+    expect(getByText("Player 2's Turn")).toBeTruthy()
+    expect(getByText("Player 1's word is set.")).toBeTruthy()
     // Both read from the exact same label text, so a drift between the preview's scoring and the
     // saved word's would fail this.
     expect(getByLabelText('Difficulty: Hard')).toBeTruthy()
@@ -248,13 +253,13 @@ describe('GameScreen - pass and play', () => {
 
     await writeWord(utils, 'CAT')
 
-    expect(getByText('Your Turn')).toBeTruthy()
+    expect(getByText("Player 2's Turn")).toBeTruthy()
     expect(queryByTestId('dialog-backdrop')).toBeNull()
 
     await fireEvent.press(getByText('Ready'))
 
     expect(pnpRound().phase).toBe('playing')
-    expect(queryByText('Your Turn')).toBeNull()
+    expect(queryByText("Player 2's Turn")).toBeNull()
   })
 
   it('locks the board during the hand-off: the round is mounted underneath, but not guessable until Ready', async () => {
@@ -285,7 +290,7 @@ describe('GameScreen - pass and play', () => {
     await pressBack()
 
     // A card with only a confirm button has to be answered (see hud's ConfirmDialog).
-    expect(utils.getByText('Your Turn')).toBeTruthy()
+    expect(utils.getByText("Player 2's Turn")).toBeTruthy()
     expect(pnpRound().phase).toBe('handoff')
     expect(router.dismissTo).not.toHaveBeenCalled()
   })
@@ -299,14 +304,17 @@ describe('GameScreen - pass and play', () => {
     const finishedBoard = getByLabelText('Secret word display')
     await winWithCat(utils)
 
-    // Whoever is holding the device is "you": no player attribution, no score line.
+    // "You" is the guesser holding the device; the card names who played whose word, and who's next.
     expect(getByText('You Won!')).toBeTruthy()
+    expect(getByText("Player 2 solved Player 1's word.")).toBeTruthy()
+    expect(getByText('Player 2 writes next')).toBeTruthy()
 
     await fireEvent.press(getByText('Next'))
 
     // Straight back to composing, with the fields cleared for whoever is next, on a new round id so
     // nothing of the finished round (its outcome, its celebration) carries into the new board.
     expect(pnpRound()).toMatchObject({ phase: 'authoring', id: 2, puzzle: null, guessedLetters: [] })
+    expect(getByText("Player 2's Word")).toBeTruthy()
     expect(getByTestId('pnp-answer-input').props.value).toBe('')
     expect(getByTestId('pnp-hint-input').props.value).toBe('')
     expect(getByLabelText('Secret word display')).not.toBe(finishedBoard)
@@ -404,7 +412,7 @@ describe('GameScreen - pass and play', () => {
     expect(mockAlert).toHaveBeenCalledWith('Invalid Word', 'Enter a secret word using letters A-Z (spaces allowed).')
     expect(pnpRound()).toMatchObject({ phase: 'authoring', id: 1, puzzle: null })
     expect(getByTestId('pnp-answer-input').props.value).toBe('CAT')
-    expect(queryByText('Your Turn')).toBeNull()
+    expect(queryByText("Player 2's Turn")).toBeNull()
     expect(mockAddCustomPuzzle).not.toHaveBeenCalled()
   })
 
@@ -473,7 +481,7 @@ describe('GameScreen - pass and play', () => {
 
     await writeWord(utils, 'CAT')
     await fireEvent.press(getByLabelText('Settings'))
-    expect(queryByText('Your Turn')).toBeNull()
+    expect(queryByText("Player 2's Turn")).toBeNull()
 
     await fireEvent.press(getByText('Done'))
     await fireEvent.press(getByText('Ready'))
@@ -576,12 +584,182 @@ describe('GameScreen - pass and play', () => {
     })
   })
 
+  describe('the session', () => {
+    const session = () => pnpRound().session
+
+    it('counts each round for its guesser, once, and has the guesser write the next word for the writer', async () => {
+      jest.useFakeTimers()
+      const utils = await renderGame()
+      const { getByLabelText, getByText, queryByText } = utils
+
+      await playThroughToRound(utils, 'CAT')
+      await winWithCat(utils)
+
+      expect(session().standings).toEqual({ p2: { played: 1, wins: 1 } })
+      expect(stats().pnp).toEqual({ played: 1, wins: 1, losses: 0, draws: 0 })
+      // The card's standings, this round counted.
+      expect(getByText('Standings')).toBeTruthy()
+      expect(getByLabelText('Player 2: 1 of 1 solved')).toBeTruthy()
+      expect(getByLabelText('Player 1: no words guessed yet')).toBeTruthy()
+
+      await fireEvent.press(getByText('Next'))
+
+      // Two players: no For row, the word can only be for Player 1.
+      expect(getByText("Player 2's Word")).toBeTruthy()
+      expect(queryByText('For')).toBeNull()
+      expect(session()).toMatchObject({ writerId: 'p2', guesserId: 'p1' })
+
+      await writeWord(utils, 'CAT')
+      expect(getByText("Player 1's Turn")).toBeTruthy()
+      expect(getByText("Player 2's word is set.")).toBeTruthy()
+      await fireEvent.press(getByText('Ready'))
+      await loseWithCat(utils)
+
+      expect(session().standings).toEqual({ p1: { played: 1, wins: 0 }, p2: { played: 1, wins: 1 } })
+      expect(stats().pnp).toEqual({ played: 2, wins: 1, losses: 1, draws: 0 })
+      expect(getByText("Player 1 missed Player 2's word.")).toBeTruthy()
+      expect(getByText('Player 1 writes next')).toBeTruthy()
+
+      jest.useRealTimers()
+    })
+
+    it('with three players, pre-picks whoever has guessed the fewest words and lets the writer pick someone else', async () => {
+      jest.useFakeTimers()
+      store.dispatch(roundActions.addPnpPlayer())
+      const utils = await renderGame()
+      const { getByLabelText, getByText } = utils
+
+      // Player 2 and Player 3 have guessed nothing: Player 2 sits next after the writer.
+      expect(getByText('For')).toBeTruthy()
+      expect(getByLabelText('For Player 2')).toBeSelected()
+      expect(getByLabelText('For Player 3')).not.toBeSelected()
+
+      await fireEvent.press(getByLabelText('For Player 3'))
+      expect(getByLabelText('For Player 3')).toBeSelected()
+      expect(session().guesserId).toBe('p3')
+
+      await writeWord(utils, 'CAT')
+      expect(getByText("Player 3's Turn")).toBeTruthy()
+      await fireEvent.press(getByText('Ready'))
+      await winWithCat(utils)
+      expect(session().standings).toEqual({ p3: { played: 1, wins: 1 } })
+      await fireEvent.press(getByText('Next'))
+
+      // Player 3 writes; Player 1 and Player 2 have guessed nothing, and Player 1 sits next after them.
+      expect(getByText("Player 3's Word")).toBeTruthy()
+      expect(getByLabelText('For Player 1')).toBeSelected()
+      expect(getByLabelText('For Player 2')).not.toBeSelected()
+
+      jest.useRealTimers()
+    })
+
+    // The count lands with the last guess, and redux-persist could save the one without the other: the
+    // round comes back undecided, and finishing it again counts nothing.
+    it('counts nothing for a round whose result was already counted, when it ends again after a relaunch', async () => {
+      jest.useFakeTimers()
+      seedPnp('playing', ['C', 'A'])
+      store.dispatch(roundActions.recordPnpResult({ roundId: pnpRound().id, result: 'win' }))
+      const counted = session()
+      const utils = await renderGame()
+
+      await guess(utils, ['T'])
+      await act(async () => {
+        jest.advanceTimersByTime(WIN_DIALOG_DELAY_MS)
+      })
+
+      expect(utils.getByText('You Won!')).toBeTruthy()
+      expect(session()).toEqual(counted)
+      expect(stats().pnp.played).toBe(0)
+
+      jest.useRealTimers()
+    })
+
+    it('comes back after a relaunch to a prompt for whoever guessed the round that ended', async () => {
+      seedPnp('playing', ['C', 'A', 'T'])
+      store.dispatch(roundActions.recordPnpResult({ roundId: pnpRound().id, result: 'win' }))
+      const { getByText } = await renderGame()
+
+      expect(getByText("Player 2's Word")).toBeTruthy()
+      expect(session()).toMatchObject({ writerId: 'p2', guesserId: 'p1', standings: { p2: { played: 1, wins: 1 } } })
+    })
+
+    describe('End Session', () => {
+      const endSession = async (utils: Utils) => {
+        await playThroughToRound(utils, 'CAT')
+        await winWithCat(utils)
+        await fireEvent.press(utils.getByText('End Session'))
+      }
+
+      it('puts the round card away for the standings card, with the winner', async () => {
+        jest.useFakeTimers()
+        store.dispatch(roundActions.addPnpPlayer())
+        const utils = await renderGame()
+
+        await endSession(utils)
+
+        expect(utils.queryByText('You Won!')).toBeNull()
+        expect(utils.getByText('Player 2 Wins!')).toBeTruthy()
+        expect(utils.getByText('1 of 1 solved, the best rate at 100%.')).toBeTruthy()
+        // Nothing has ended yet: the card is all there is until Done.
+        expect(session().standings).toEqual({ p2: { played: 1, wins: 1 } })
+        expect(router.dismissTo).not.toHaveBeenCalled()
+
+        jest.useRealTimers()
+      })
+
+      it('ends the session from Done: the standings cleared, the table kept, and back to the loadout', async () => {
+        jest.useFakeTimers()
+        store.dispatch(roundActions.addPnpPlayer())
+        store.dispatch(roundActions.renamePnpPlayer({ id: 'p1', name: 'Ann' }))
+        const utils = await renderGame()
+
+        await endSession(utils)
+        await fireEvent.press(utils.getByText('Done'))
+
+        expect(router.dismissTo).toHaveBeenCalledWith(PNP_LOADOUT)
+        expect(utils.queryByText('Player 2 Wins!')).toBeNull()
+        expect(session()).toMatchObject({ standings: {}, recordedRoundId: null, writerId: 'p1', guesserId: 'p2' })
+        expect(session().players.map((player) => player.name)).toEqual(['Ann', 'Player 2', 'Player 3'])
+        expect(pnpRound().phase).toBeNull()
+        expect(store.getState().round.activeMode).toBeNull()
+        // The stats keep the round: ending a session only clears its own standings.
+        expect(stats().pnp.played).toBe(1)
+
+        jest.useRealTimers()
+      })
+
+      // The standings card is End Session's confirm: Keep Playing, or Android back, brings the round's
+      // card back with the session untouched, and Next still goes on to the next word.
+      it.each<[string, (utils: Utils) => Promise<unknown>]>([
+        ['Keep Playing', (utils) => fireEvent.press(utils.getByText('Keep Playing'))],
+        ['Android back', () => pressBack()]
+      ])('backs out from %s, the round card back and the session untouched', async (_label, back) => {
+        jest.useFakeTimers()
+        store.dispatch(roundActions.addPnpPlayer())
+        const utils = await renderGame()
+
+        await endSession(utils)
+        await back(utils)
+
+        expect(utils.queryByText('Player 2 Wins!')).toBeNull()
+        expect(utils.getByText('You Won!')).toBeTruthy()
+        expect(session().standings).toEqual({ p2: { played: 1, wins: 1 } })
+        expect(router.dismissTo).not.toHaveBeenCalled()
+
+        await fireEvent.press(utils.getByText('Next'))
+        expect(utils.getByText("Player 2's Word")).toBeTruthy()
+
+        jest.useRealTimers()
+      })
+    })
+  })
+
   describe('resuming a saved session', () => {
     it('comes back to the hand-off card for a word already handed off', async () => {
       seedPnp('handoff')
       const { getByLabelText, getByText, queryByTestId } = await renderGame()
 
-      expect(getByText('Your Turn')).toBeTruthy()
+      expect(getByText("Player 2's Turn")).toBeTruthy()
       expect(queryByTestId('pnp-answer-input')).toBeNull()
       expect(getByLabelText('Difficulty: Hard')).toBeTruthy()
       expect(pnpRound()).toMatchObject({ phase: 'handoff', id: 1, puzzle: savedCat })
@@ -598,7 +776,7 @@ describe('GameScreen - pass and play', () => {
 
       await pressBack()
 
-      expect(getByText('Your Turn')).toBeTruthy()
+      expect(getByText("Player 2's Turn")).toBeTruthy()
       expect(router.dismissTo).not.toHaveBeenCalled()
     })
 
@@ -623,7 +801,7 @@ describe('GameScreen - pass and play', () => {
       const { getByLabelText, getByText, queryByTestId, queryByText } = utils
 
       expect(queryByTestId('pnp-answer-input')).toBeNull()
-      expect(queryByText('Your Turn')).toBeNull()
+      expect(queryByText("Player 2's Turn")).toBeNull()
       expect(getByLabelText('Wrong guesses: 1 of 6 (Z)')).toBeTruthy()
 
       await guess(utils, ['A', 'T'])
@@ -649,7 +827,8 @@ describe('GameScreen - pass and play', () => {
     })
 
     // The round as redux-persist wrote it (JSON) and read it back through the slice's own migrate
-    // (sanitizeRoundState) into a fresh store: a relaunch while the prompt was open.
+    // (sanitizeRoundState) into a fresh store: a relaunch while the prompt was open. The store has the
+    // active player too (the guest), which the Settings sheet's backup reads.
     it('comes back to the word and hint as typed, on the same round, for a prompt left mid-word', async () => {
       const first = await renderGame()
       await fireEvent.changeText(first.getByTestId('pnp-answer-input'), 'CAT')
@@ -657,7 +836,7 @@ describe('GameScreen - pass and play', () => {
       const blob: unknown = JSON.parse(JSON.stringify(store.getState().round))
       await first.unmount()
 
-      const roundStore = configureStore({ reducer: { round: roundReducer }, preloadedState: { round: sanitizeRoundState(blob) } })
+      const roundStore = configureStore({ reducer: { round: roundReducer, activePlayer: activePlayerReducer }, preloadedState: { round: sanitizeRoundState(blob) } })
       const { getByLabelText, getByTestId } = await render(
         <Providers>
           <ReduxProvider store={roundStore}>
@@ -687,7 +866,7 @@ describe('GameScreen - pass and play', () => {
     // the screen reads its round from a store built from that blob, under the app's own Providers.
     it('starts a new prompt for a saved hand-off whose word went missing', async () => {
       const blob = { solo: initialRoundState.solo, pnp: { id: 4, puzzle: null, guessedLetters: [], hintRevealed: false, phase: 'handoff' }, activeMode: 'pnp' }
-      const roundStore = configureStore({ reducer: { round: roundReducer }, preloadedState: { round: sanitizeRoundState(blob) } })
+      const roundStore = configureStore({ reducer: { round: roundReducer, activePlayer: activePlayerReducer }, preloadedState: { round: sanitizeRoundState(blob) } })
       expect(roundStore.getState().round.pnp).toMatchObject({ phase: 'handoff', puzzle: null })
 
       const { getByTestId, queryByText } = await render(
@@ -700,7 +879,7 @@ describe('GameScreen - pass and play', () => {
 
       expect(roundStore.getState().round.pnp).toMatchObject({ phase: 'authoring', id: 5, puzzle: null })
       expect(getByTestId('pnp-answer-input').props.value).toBe('')
-      expect(queryByText('Your Turn')).toBeNull()
+      expect(queryByText("Player 2's Turn")).toBeNull()
     })
   })
 })
@@ -713,23 +892,23 @@ describe('LoadoutScreen - pass and play', () => {
       </Providers>
     )
 
-  it('starts a fresh session from Write a Word and opens the game', async () => {
+  it('starts a fresh session from New Session and opens the game', async () => {
     const { getByText, queryByText } = await renderLoadout()
 
-    // Nothing to come back to yet, so Write a Word is the only way in.
+    // Nothing to come back to yet, so New Session is the only way in.
     expect(queryByText('Continue')).toBeNull()
 
-    await fireEvent.press(getByText('Write a Word'))
+    await fireEvent.press(getByText('New Session'))
 
     expect(pnpRound()).toMatchObject({ phase: 'authoring', id: 1, puzzle: null })
     expect(router.push).toHaveBeenCalledWith(PNP_GAME)
   })
 
-  it('replaces a session left waiting with a blank prompt from Write a Word, recording nothing', async () => {
+  it('replaces a round left waiting with a blank prompt from New Session, recording nothing', async () => {
     seedPnp('playing', ['C', 'Z'])
     const { getByText } = await renderLoadout()
 
-    await fireEvent.press(getByText('Write a Word'))
+    await fireEvent.press(getByText('New Session'))
 
     // Pass & Play keeps no record of how a session ends, only of rounds actually finished.
     expect(pnpRound()).toMatchObject({ phase: 'authoring', id: 2, puzzle: null, guessedLetters: [] })
@@ -762,14 +941,14 @@ describe('LoadoutScreen - pass and play', () => {
     expect(pnpRound()).toEqual(saved)
   })
 
-  // Write a Word is always a fresh word: the half-typed one goes with the rest of the session.
-  it('replaces a half-typed word with a blank prompt from Write a Word', async () => {
+  // New Session is always a fresh word: the half-typed one goes with the rest of the session.
+  it('replaces a half-typed word with a blank prompt from New Session', async () => {
     seedDraft('CAT', 'A pet')
     const { getByText } = await renderLoadout()
 
-    await fireEvent.press(getByText('Write a Word'))
+    await fireEvent.press(getByText('New Session'))
 
-    expect(pnpRound()).toStrictEqual({ id: 2, puzzle: null, guessedLetters: [], hintRevealed: false, phase: 'authoring' })
+    expect(pnpRound()).toStrictEqual({ id: 2, puzzle: null, guessedLetters: [], hintRevealed: false, phase: 'authoring', session: createDefaultPnpSession() })
     expect(router.push).toHaveBeenCalledWith(PNP_GAME)
   })
 
@@ -784,7 +963,7 @@ describe('LoadoutScreen - pass and play', () => {
     const { getByText, queryByText } = await renderLoadout()
 
     expect(queryByText('Continue')).toBeNull()
-    expect(getByText('Write a Word')).toBeTruthy()
+    expect(getByText('New Session')).toBeTruthy()
   })
 
   it('switches Keep Each Word, the same preference the prompt reads at Next', async () => {
@@ -809,14 +988,47 @@ describe('LoadoutScreen - pass and play', () => {
     expect(getByTestId('auto-save').props.children).toBe('false')
   })
 
-  it('never touches the solo round left waiting', async () => {
-    store.dispatch(roundActions.startSolo({ phrase: 'DOG', modeId: DEFAULT_MODE.id, sourceMode: 'random', packKey: 'pack-1', packLabel: 'Test Pack', puzzleId: 'puzzle-1', difficultyTier: 'easy' }))
-    store.dispatch(roundActions.saveSoloProgress({ guessedLetters: ['D'], hintRevealed: true }))
-    const solo = store.getState().round.solo
+  // A round counted into the standings, the way the game screen leaves one: decided, then the next
+  // prompt opened for its guesser.
+  const playOneRound = () => {
+    seedPnp('playing', ['C', 'A', 'T'])
+    store.dispatch(roundActions.recordPnpResult({ roundId: pnpRound().id, result: 'win' }))
+    store.dispatch(roundActions.startPnpAuthoring())
+  }
+
+  it('offers Continue for a session under way, and goes back to it as it was', async () => {
+    playOneRound()
+    const saved = pnpRound()
     const { getByText } = await renderLoadout()
 
-    await fireEvent.press(getByText('Write a Word'))
+    await fireEvent.press(getByText('Continue'))
 
-    expect(store.getState().round.solo).toEqual(solo)
+    expect(router.push).toHaveBeenCalledWith(PNP_GAME)
+    expect(pnpRound()).toEqual(saved)
+  })
+
+  it('starts a new session for the same table from New Session: the standings cleared, the first seat writing', async () => {
+    store.dispatch(roundActions.addPnpPlayer())
+    store.dispatch(roundActions.renamePnpPlayer({ id: 'p3', name: 'Cy' }))
+    playOneRound()
+    const players = pnpRound().session.players
+    const { getByText } = await renderLoadout()
+
+    await fireEvent.press(getByText('New Session'))
+
+    expect(pnpRound()).toMatchObject({ phase: 'authoring', puzzle: null, session: { players, standings: {}, writerId: 'p1', guesserId: 'p2', recordedRoundId: null } })
+    expect(stats().pnp.played).toBe(0)
+    expect(router.push).toHaveBeenCalledWith(PNP_GAME)
+  })
+
+  it('never touches the solo round left waiting', async () => {
+    store.dispatch(roundActions.startSolo({ playerKey: GUEST_PLAYER_KEY, puzzle: { phrase: 'DOG', modeId: DEFAULT_MODE.id, sourceMode: 'random', packKey: 'pack-1', packLabel: 'Test Pack', puzzleId: 'puzzle-1', difficultyTier: 'easy' } }))
+    store.dispatch(roundActions.saveSoloProgress({ playerKey: GUEST_PLAYER_KEY, guessedLetters: ['D'], hintRevealed: true }))
+    const solo = selectSoloRound(store.getState().round, GUEST_PLAYER_KEY)
+    const { getByText } = await renderLoadout()
+
+    await fireEvent.press(getByText('New Session'))
+
+    expect(selectSoloRound(store.getState().round, GUEST_PLAYER_KEY)).toEqual(solo)
   })
 })

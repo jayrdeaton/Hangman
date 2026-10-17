@@ -1,7 +1,12 @@
-import { type PersistConfig, type PersistedState, persistReducer } from 'redux-persist'
+import { type PersistConfig, type PersistedState, persistReducer, REHYDRATE } from 'redux-persist'
 
+import { activePlayerActions } from '@/redux/activePlayerSlice'
+import { playerSettingsActions } from '@/redux/playerSettingsSlice'
+import { playerThemeActions } from '@/redux/playerThemeSlice'
 import { initialRoundState, roundActions, type RoundState } from '@/redux/roundSlice'
 import { store } from '@/redux/store'
+import { GUEST_PLAYER_KEY } from '@/utils/players'
+import { createDefaultPnpSession } from '@/utils/pnpSession'
 
 // The app's redux-persist mock passes the reducer straight through, so the config the store hands
 // persistReducer is recorded here instead.
@@ -22,18 +27,21 @@ const persistConfig = (key: string): PersistConfig<unknown> => {
 const migrateRound = (state: unknown): Promise<PersistedState> => {
   const { migrate } = persistConfig('round')
   if (!migrate) throw new Error('The round config has no migrate')
-  return migrate(state as PersistedState, 1)
+  return migrate(state as PersistedState, 3)
 }
 
-const PERSIST = { version: 1, rehydrated: true }
+const PERSIST = { version: 3, rehydrated: true }
 const validRound: RoundState = {
-  solo: { id: 2, puzzle: { phrase: 'HELLO WORLD', modeId: 'robot', sourceMode: 'random', packKey: 'phrases' }, guessedLetters: ['H', 'Z'], hintRevealed: true },
-  pnp: { id: 5, puzzle: { phrase: 'CAT', modeId: 'classic', sourceMode: 'custom' }, guessedLetters: [], hintRevealed: false, phase: 'handoff' },
+  solo: { [GUEST_PLAYER_KEY]: { id: 2, puzzle: { phrase: 'HELLO WORLD', modeId: 'robot', sourceMode: 'random', packKey: 'phrases' }, guessedLetters: ['H', 'Z'], hintRevealed: true } },
+  pnp: { id: 5, puzzle: { phrase: 'CAT', modeId: 'classic', sourceMode: 'custom' }, guessedLetters: [], hintRevealed: false, phase: 'handoff', session: createDefaultPnpSession() },
   activeMode: 'solo'
 }
 
 beforeEach(() => {
   store.dispatch(roundActions.reset())
+  store.dispatch(activePlayerActions.setActivePlayer(null))
+  store.dispatch(playerSettingsActions.reset())
+  store.dispatch(playerThemeActions.reset())
 })
 
 describe('store', () => {
@@ -45,14 +53,19 @@ describe('store', () => {
   it('mounts the round slice under the key the game screens read', () => {
     expect(store.getState().round).toEqual(initialRoundState)
 
-    store.dispatch(roundActions.startSolo({ phrase: 'CAT', modeId: 'classic', sourceMode: 'random' }))
+    store.dispatch(roundActions.startSolo({ playerKey: GUEST_PLAYER_KEY, puzzle: { phrase: 'CAT', modeId: 'classic', sourceMode: 'random' } }))
 
-    expect(store.getState().round.solo).toMatchObject({ id: 1, puzzle: { phrase: 'CAT' } })
+    expect(store.getState().round.solo[GUEST_PLAYER_KEY]).toMatchObject({ id: 1, puzzle: { phrase: 'CAT' } })
   })
 
-  // Without this entry the stats and achievements reset on every launch, and nothing else would fail.
-  it('persists the settings and the achievements slice with the root', () => {
-    expect(persistConfig('root').whitelist).toEqual(expect.arrayContaining(['theme', 'haptic', 'sound', 'achievements']))
+  it('mounts the per-player slices, starting with the guest and nothing picked', () => {
+    expect(store.getState()).toMatchObject({ activePlayer: { profileId: null }, playerSettings: {}, playerTheme: {} })
+  })
+
+  // Without these entries the stats, achievements and every player's picks reset on every launch, and
+  // nothing else would fail.
+  it('persists the settings, the achievements slice and the per-player slices with the root', () => {
+    expect(persistConfig('root').whitelist).toEqual(expect.arrayContaining(['theme', 'haptic', 'sound', 'achievements', 'activePlayer', 'playerSettings', 'playerTheme']))
   })
 
   // The round is saved on every guess, and rewriting the stats and achievements with it would be wasteful.
@@ -60,11 +73,41 @@ describe('store', () => {
     expect(persistConfig('root').whitelist).not.toContain('round')
   })
 
-  it('persists the round slice under its own key, in the same storage, with a migrate', () => {
+  // Version 2 is the per-player solo rounds (a version 1 blob's single solo round is dropped), 3 the
+  // Pass & Play session (an older blob has none, so it starts a fresh one).
+  it('persists the round slice under its own key, in the same storage, at version 3 with a migrate', () => {
     const round = persistConfig('round')
 
     expect(round.storage).toBe(persistConfig('root').storage)
+    expect(round.version).toBe(3)
     expect(round.migrate).toEqual(expect.any(Function))
+  })
+})
+
+// redux-persist's own reconciler would put whatever was stored straight in; each per-player slice
+// sanitizes its own entry on the root's REHYDRATE instead (see rehydrate.ts).
+describe('the root rehydrate', () => {
+  const rehydrate = (payload: unknown, key = 'root') => store.dispatch({ type: REHYDRATE, key, payload })
+
+  it('sanitizes each per-player slice it brings back', () => {
+    rehydrate({ activePlayer: { profileId: 7 }, playerSettings: { [GUEST_PLAYER_KEY]: { modeId: 'robot', difficulty: 'impossible', packKeys: ['animals'] } }, playerTheme: { [GUEST_PLAYER_KEY]: { color: '#123456', harmony: 'sideways' } } })
+
+    expect(store.getState()).toMatchObject({ activePlayer: { profileId: null }, playerSettings: { [GUEST_PLAYER_KEY]: { modeId: 'robot', difficulty: 'any', packKeys: ['animals'] } }, playerTheme: {} })
+  })
+
+  it('starts each per-player slice fresh when nothing was stored for it', () => {
+    store.dispatch(playerSettingsActions.setDifficulty({ playerKey: GUEST_PLAYER_KEY, difficulty: 'hard' }))
+    rehydrate(undefined)
+
+    expect(store.getState().playerSettings).toEqual({})
+  })
+
+  // The round slice's blob rehydrates under its own key, which says nothing about the player slices.
+  it("leaves them alone on the round slice's rehydrate", () => {
+    store.dispatch(playerSettingsActions.setDifficulty({ playerKey: GUEST_PLAYER_KEY, difficulty: 'hard' }))
+    rehydrate(validRound, 'round')
+
+    expect(store.getState().playerSettings).toEqual({ [GUEST_PLAYER_KEY]: { modeId: 'classic', difficulty: 'hard', packKeys: null } })
   })
 })
 
@@ -74,9 +117,24 @@ describe("the round slice's migrate", () => {
   })
 
   it('sanitizes a corrupt stored round slot by slot, keeping its _persist', async () => {
-    const corrupt = { solo: { id: 'two', puzzle: null, guessedLetters: [], hintRevealed: false }, pnp: validRound.pnp, activeMode: 'menu', _persist: PERSIST }
+    const corrupt = { solo: { [GUEST_PLAYER_KEY]: { id: 'two', puzzle: null, guessedLetters: [], hintRevealed: false } }, pnp: validRound.pnp, activeMode: 'menu', _persist: PERSIST }
 
-    await expect(migrateRound(corrupt)).resolves.toEqual({ solo: initialRoundState.solo, pnp: validRound.pnp, activeMode: null, _persist: PERSIST })
+    await expect(migrateRound(corrupt)).resolves.toEqual({ solo: {}, pnp: validRound.pnp, activeMode: null, _persist: PERSIST })
+  })
+
+  it("drops a version 1 blob's single solo round, keeping the Pass & Play one", async () => {
+    const versionOne = { ...validRound, solo: validRound.solo[GUEST_PLAYER_KEY], _persist: { version: 1, rehydrated: true } }
+
+    await expect(migrateRound(versionOne)).resolves.toEqual({ ...validRound, solo: {}, _persist: { version: 1, rehydrated: true } })
+  })
+
+  // No migration (the app hadn't shipped): a version 2 blob's Pass & Play round has no session, so it
+  // keeps its round with a fresh one.
+  it("starts a fresh Pass & Play session for a version 2 blob's round", async () => {
+    const { session: _session, ...versionTwoPnp } = validRound.pnp
+    const versionTwo = { ...validRound, pnp: versionTwoPnp, _persist: { version: 2, rehydrated: true } }
+
+    await expect(migrateRound(versionTwo)).resolves.toEqual({ ...validRound, _persist: { version: 2, rehydrated: true } })
   })
 
   it('falls back to the starting rounds for a stored blob with nothing usable in it', async () => {

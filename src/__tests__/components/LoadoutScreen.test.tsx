@@ -1,6 +1,6 @@
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { type AutoPaperTheme, getColorRoles, useAutoPaperTheme } from '@rific/auto-paper'
-import { act, fireEvent, render, within } from '@testing-library/react-native'
+import { act, fireEvent, render, waitFor, within } from '@testing-library/react-native'
 import * as ExpoRouter from 'expo-router'
 import { router, useIsFocused } from 'expo-router'
 import { useEffect } from 'react'
@@ -8,12 +8,15 @@ import { BackHandler, StyleSheet } from 'react-native'
 
 import { LoadoutScreen } from '@/components/LoadoutScreen'
 import { Providers } from '@/components/Providers'
-import { DEFAULT_MODE, lettersMode } from '@/modes/registry'
+import { DEFAULT_MODE, lettersMode, robotMode } from '@/modes/registry'
 import { achievementsActions } from '@/redux/achievementsSlice'
-import { roundActions } from '@/redux/roundSlice'
+import { activePlayerActions } from '@/redux/activePlayerSlice'
+import { playerSettingsActions } from '@/redux/playerSettingsSlice'
+import { roundActions, selectSoloRound } from '@/redux/roundSlice'
 import { store } from '@/redux/store'
 import { alert } from '@/utils/alert'
 import { commaString } from '@/utils/commaString'
+import { GUEST_PLAYER_KEY } from '@/utils/players'
 import { getPuzzleManifest, getPuzzlesForCategory } from '@/utils/puzzleCatalog'
 import { resolvePuzzle } from '@/utils/puzzlePicker'
 
@@ -29,8 +32,8 @@ jest.mock('@/utils/puzzlePicker', () => {
   return { ...actual, resolvePuzzle: jest.fn(actual.resolvePuzzle) }
 })
 
-// The art itself isn't this screen's concern (see GameVisual's and the modes' own suites), and the
-// Art row plus every carousel card would otherwise draw a real SVG scene.
+// The art itself isn't this screen's concern (see GameVisual's and the modes' own suites), and every
+// thumbnail in the Settings sheet's ART grid would otherwise draw a real SVG scene.
 jest.mock('@/components/GameVisual', () => {
   const { createElement } = jest.requireActual('react')
   const { View } = jest.requireActual('react-native')
@@ -43,23 +46,24 @@ const mockRouter = jest.mocked(router)
 const mockUseIsFocused = jest.mocked(useIsFocused)
 
 // Real packs from the real manifest, filtered the way the loadout filters it. PackSelectionProvider
-// starts on every pack (AsyncStorage is a stub that never has a saved selection), so these are also
-// the first two Quick Start rows.
+// starts on every pack (the player has picked nothing: the playerSettings slice is reset before each
+// test), so these are also the first two Quick Start rows.
 const MANIFEST = getPuzzleManifest().filter((item) => item.count > 0)
 const [PACK_A, PACK_B] = MANIFEST
 const GAME_HREF = { pathname: '/game', params: { mode: 'solo' } }
 
 // The real store: the round slice is what the loadout starts and continues, and the stats are what an
-// abandon records.
-const soloRound = () => store.getState().round.solo
+// abandon records. Everything is the guest's unless a test says otherwise.
+const soloRound = (playerKey = GUEST_PLAYER_KEY) => selectSoloRound(store.getState().round, playerKey)
 const stats = () => store.getState().achievements.stats
+const saveGuesses = (guessedLetters: string[], playerKey = GUEST_PLAYER_KEY) => store.dispatch(roundActions.saveSoloProgress({ playerKey, guessedLetters, hintRevealed: false }))
 
 // A solo round as the game screen leaves it: a DOG puzzle on the Classic art (six mistakes), with
 // whatever guesses are already on the board.
-const seedSoloRound = (guessedLetters: string[] = []) => {
-  store.dispatch(roundActions.startSolo({ phrase: 'DOG', modeId: DEFAULT_MODE.id, sourceMode: 'random', packKey: PACK_A.key, packLabel: PACK_A.label, puzzleId: 'seeded-puzzle', difficultyTier: 'easy', packScope: 'selection' }))
-  if (guessedLetters.length > 0) store.dispatch(roundActions.saveSoloProgress({ guessedLetters, hintRevealed: false }))
-  return soloRound()
+const seedSoloRound = (guessedLetters: string[] = [], playerKey = GUEST_PLAYER_KEY) => {
+  store.dispatch(roundActions.startSolo({ playerKey, puzzle: { phrase: 'DOG', modeId: DEFAULT_MODE.id, sourceMode: 'random', packKey: PACK_A.key, packLabel: PACK_A.label, puzzleId: 'seeded-puzzle', difficultyTier: 'easy', packScope: 'selection' } }))
+  if (guessedLetters.length > 0) saveGuesses(guessedLetters, playerKey)
+  return soloRound(playerKey)
 }
 
 const renderLoadout = () =>
@@ -93,16 +97,22 @@ const renderLoadoutWithTheme = async () => {
 
 type Screen = Awaited<ReturnType<typeof renderLoadout>>
 
+// auto-paper's palette swatch, beside the Colors row's label (it carries no label of its own).
+const paletteTrigger = (screen: Screen) => {
+  const [, swatch] = screen.getByTestId('colors-row').children
+  if (typeof swatch === 'string') throw new Error('expected the palette trigger beside the label')
+  return swatch
+}
+
 const checkedState = (screen: Screen, label: string) => screen.getByText(label).parent?.parent?.props.accessibilityState?.checked
 const panelHidden = (screen: Screen, testID: string) => screen.getByTestId(testID, { includeHiddenElements: true }).props.accessibilityElementsHidden
 
-// Scrolling the Customize carousel is what picks an art (see ModePickerDrawer's own handleScroll). An
-// offset of 0 always settles on its first card, Letters Only, whatever the drawer's width.
+// Art is picked in the Settings sheet (the header's cog), from its ART grid (see ArtPicker): a tap
+// picks it, and Done closes the sheet.
 const pickLettersArt = async (screen: Screen) => {
-  await fireEvent.press(screen.getByText(DEFAULT_MODE.label))
-  await fireEvent.scroll(screen.getByTestId('mode-picker-carousel'), { nativeEvent: { contentOffset: { x: 0, y: 0 } } })
-  // Closing pauses the open card's demo loop, so no art timers outlive the test.
-  await fireEvent.press(within(screen.getByTestId('mode-picker-panel')).getByLabelText('Close'))
+  await fireEvent.press(screen.getByLabelText('Settings'))
+  await fireEvent.press(screen.getByRole('button', { name: `${lettersMode.label} art` }))
+  await fireEvent.press(screen.getByText('Done'))
 }
 
 // Android's back button, as React Native's BackHandler runs it (BackHandler.android.js): listeners in
@@ -153,9 +163,11 @@ describe('LoadoutScreen (Single Player)', () => {
     jest.clearAllMocks()
     store.dispatch(achievementsActions.reset())
     store.dispatch(roundActions.reset())
+    store.dispatch(activePlayerActions.setActivePlayer(null))
+    store.dispatch(playerSettingsActions.reset())
   })
 
-  // Every list on the page (Quick Start, the drawers' lists, the art carousel) batches its cell
+  // Every list on the page (Quick Start and the drawers' lists) batches its cell
   // updates behind VirtualizedList's own 50ms timer. Letting that land inside act, before RNTL's
   // cleanup unmounts the page, keeps it from firing as an un-acted update between tests.
   afterEach(async () => {
@@ -166,7 +178,6 @@ describe('LoadoutScreen (Single Player)', () => {
 
   describe('starting a puzzle', () => {
     it('draws Random from the whole selection with the current art and difficulty, starts it as the solo round and opens the game', async () => {
-      const setItem = jest.spyOn(AsyncStorage, 'setItem')
       const screen = await renderLoadout()
 
       await fireEvent.press(screen.getByText('Hard'))
@@ -181,10 +192,8 @@ describe('LoadoutScreen (Single Player)', () => {
       expect(soloRound()).toMatchObject({ id: 1, guessedLetters: [], hintRevealed: false, puzzle: { modeId: 'letters', sourceMode: 'random', difficultyTier: 'hard', packScope: 'selection' } })
       expect(mockRouter.push).toHaveBeenCalledTimes(1)
       expect(mockRouter.push).toHaveBeenCalledWith(GAME_HREF)
-      // Both picks are the persisted defaults, not just this page's state.
-      expect(setItem).toHaveBeenCalledWith('defaultDifficulty', 'hard')
-      expect(setItem).toHaveBeenCalledWith('defaultModeId', 'letters')
-      setItem.mockRestore()
+      // Both picks are the player's saved ones, not just this page's state.
+      expect(store.getState().playerSettings[GUEST_PLAYER_KEY]).toEqual({ modeId: 'letters', difficulty: 'hard', packKeys: null })
     })
 
     it('draws from just that pack when a Quick Start row is tapped', async () => {
@@ -198,30 +207,48 @@ describe('LoadoutScreen (Single Player)', () => {
       expect(mockRouter.push).toHaveBeenCalledWith(GAME_HREF)
     })
 
-    it('shows a Quick Start row for each selected pack, with its unlock progress', async () => {
+    it('shows a Quick Start row for each selected pack, with its unlock progress, a browse button and a remove button', async () => {
       const screen = await renderLoadout()
 
       expect(screen.getByText('Quick Start')).toBeTruthy()
       for (const pack of [PACK_A, PACK_B]) {
         expect(screen.getByText(pack.label)).toBeTruthy()
         expect(screen.getByLabelText(`Browse ${pack.label}`)).toBeTruthy()
+        expect(screen.getByLabelText(`Remove ${pack.label} from Quick Start`)).toBeTruthy()
       }
       expect((await screen.findAllByText(`${commaString(0)} of ${commaString(PACK_A.count)} unlocked`)).length).toBeGreaterThan(0)
     })
 
-    it('unselects a pack on a long press, without starting anything', async () => {
+    it("unselects a pack from its row's remove button, without starting anything", async () => {
       const screen = await renderLoadout()
       expect(screen.getByText('All Packs')).toBeTruthy()
 
-      await fireEvent(screen.getByText(PACK_A.label), 'longPress')
+      await fireEvent.press(screen.getByLabelText(`Remove ${PACK_A.label} from Quick Start`))
 
       expect(screen.queryByText(PACK_A.label)).toBeNull()
       expect(screen.getByText(PACK_B.label)).toBeTruthy()
       // The same selection Choose Packs edits, so the collection row's count follows.
       expect(screen.getByText(`${MANIFEST.length - 1} of ${MANIFEST.length} Packs`)).toBeTruthy()
+      expect(store.getState().playerSettings[GUEST_PLAYER_KEY]?.packKeys).toEqual(MANIFEST.slice(1).map((item) => item.key))
       expect(mockResolvePuzzle).not.toHaveBeenCalled()
       expect(soloRound().puzzle).toBeNull()
       expect(mockRouter.push).not.toHaveBeenCalled()
+
+      // Each removal builds on the last.
+      await fireEvent.press(screen.getByLabelText(`Remove ${PACK_B.label} from Quick Start`))
+
+      expect(screen.queryByText(PACK_B.label)).toBeNull()
+      expect(screen.getByText(`${MANIFEST.length - 2} of ${MANIFEST.length} Packs`)).toBeTruthy()
+    })
+
+    // The long press it replaced was a hidden gesture.
+    it('does nothing on a long press', async () => {
+      const screen = await renderLoadout()
+
+      await fireEvent(screen.getByText(PACK_A.label), 'longPress')
+
+      expect(screen.getByText(PACK_A.label)).toBeTruthy()
+      expect(screen.getByText('All Packs')).toBeTruthy()
     })
 
     it("opens that pack's own puzzle list from the info icon, and starts the puzzle picked from it", async () => {
@@ -249,29 +276,97 @@ describe('LoadoutScreen (Single Player)', () => {
       expect(screen.queryByTestId('pack-puzzles-panel')).toBeNull()
     })
 
-    it("starts a Random draw from just that pack from its list's own Random", async () => {
+    it("titles that pack's list with its name, and starts a draw from just that pack from its Play This Pack", async () => {
       const screen = await renderLoadout()
 
       await fireEvent.press(screen.getByLabelText(`Browse ${PACK_A.label}`))
-      await fireEvent.press(within(screen.getByTestId('pack-puzzles-panel')).getByText('Random'))
+      const panel = screen.getByTestId('pack-puzzles-panel')
+      expect(within(panel).getByRole('header', { name: PACK_A.label })).toBeTruthy()
+      await fireEvent.press(within(panel).getByText('Play This Pack'))
 
       expect(mockResolvePuzzle.mock.calls[0][1]).toEqual([PACK_A.key])
+      // One pack, so the game's Next keeps to it.
       expect(soloRound().puzzle).toMatchObject({ packKey: PACK_A.key, packScope: 'single' })
       expect(mockRouter.push).toHaveBeenCalledWith(GAME_HREF)
+      // The selection itself is untouched.
+      expect(screen.getByText('All Packs')).toBeTruthy()
     })
 
-    it("alerts 'No Puzzles Available' and starts nothing when nothing can be drawn", async () => {
-      // A saved empty selection, read back by PackSelectionProvider on mount.
-      const getItem = jest.spyOn(AsyncStorage, 'getItem').mockImplementation((key: string) => Promise.resolve(key === 'selectedPackKeys' ? '[]' : null))
+    it("narrows the selection to that pack from its list's Only This Pack, starting nothing", async () => {
       const screen = await renderLoadout()
-      expect(await screen.findByText(`0 of ${MANIFEST.length} Packs`)).toBeTruthy()
+
+      await fireEvent.press(screen.getByLabelText(`Browse ${PACK_B.label}`))
+      await fireEvent.press(within(screen.getByTestId('pack-puzzles-panel')).getByText('Only This Pack'))
+
+      expect(store.getState().playerSettings[GUEST_PLAYER_KEY]?.packKeys).toEqual([PACK_B.key])
+      // The list closes on the trimmed page: one Quick Start row, and Random draws from just it.
+      expect(screen.queryByTestId('pack-puzzles-panel')).toBeNull()
+      expect(screen.getByText(`1 of ${MANIFEST.length} Packs`)).toBeTruthy()
+      expect(screen.queryByText(PACK_A.label)).toBeNull()
+      expect(screen.getByText(PACK_B.label)).toBeTruthy()
+      expect(soloRound().puzzle).toBeNull()
+      expect(mockRouter.push).not.toHaveBeenCalled()
+
+      // Already just this pack, so there's nothing left for it to do.
+      await fireEvent.press(screen.getByLabelText(`Browse ${PACK_B.label}`))
+      expect(within(screen.getByTestId('pack-puzzles-panel')).getByRole('button', { name: 'Only This Pack' }).props.accessibilityState?.disabled).toBe(true)
+
+      await fireEvent.press(within(screen.getByTestId('pack-puzzles-panel')).getByLabelText('Close'))
+      await fireEvent.press(screen.getByText('Random'))
+      expect(mockResolvePuzzle.mock.calls[0][1]).toEqual([PACK_B.key])
+    })
+
+    it('turns Random off, saying why, while no pack is selected', async () => {
+      const screen = await renderLoadout()
+      const random = () => screen.getByRole('button', { name: 'Random' })
+      expect(random().props.accessibilityState?.disabled).toBe(false)
+      expect(screen.queryByText('Choose at least one pack to play Random.')).toBeNull()
+
+      // Choose Packs' Clear, the way a player gets there.
+      await fireEvent.press(screen.getByText('All Packs'))
+      await fireEvent.press(within(screen.getByTestId('packs-screen-panel')).getByText('Clear'))
+      await fireEvent.press(within(screen.getByTestId('packs-screen-panel')).getByLabelText('Close'))
+
+      expect(screen.getByText(`0 of ${MANIFEST.length} Packs`)).toBeTruthy()
+      expect(screen.getByText('No packs selected.')).toBeTruthy()
+      expect(screen.getByText('Choose at least one pack to play Random.')).toBeTruthy()
+      expect(random().props.accessibilityState?.disabled).toBe(true)
+      await fireEvent.press(random())
+      expect(mockResolvePuzzle).not.toHaveBeenCalled()
+      expect(mockAlert).not.toHaveBeenCalled()
+
+      // Picking a pack again turns it back on.
+      await fireEvent.press(screen.getByText(`0 of ${MANIFEST.length} Packs`))
+      await fireEvent.press(within(screen.getByTestId('packs-screen-panel')).getByText(PACK_A.label))
+      await fireEvent.press(within(screen.getByTestId('packs-screen-panel')).getByLabelText('Close'))
+
+      expect(random().props.accessibilityState?.disabled).toBe(false)
+      expect(screen.queryByText('Choose at least one pack to play Random.')).toBeNull()
+    })
+
+    // A waiting round's Continue stays the first action, Random off under the reason.
+    it('keeps Continue on while Random is off', async () => {
+      seedSoloRound(['Q'])
+      store.dispatch(playerSettingsActions.setPackKeys({ playerKey: GUEST_PLAYER_KEY, packKeys: [] }))
+      const screen = await renderLoadout()
+
+      expect(screen.getByRole('button', { name: 'Continue' }).props.accessibilityState?.disabled).toBe(false)
+      expect(screen.getByRole('button', { name: 'Random' }).props.accessibilityState?.disabled).toBe(true)
+      expect(screen.getByText('Choose at least one pack to play Random.')).toBeTruthy()
+    })
+
+    it("alerts 'No Puzzles Available' and starts nothing when the selection has nothing at the difficulty", async () => {
+      // A pack with no Hard puzzles, and Hard picked.
+      const noHard = MANIFEST.find((item) => !item.difficultyTiers.includes('hard'))!
+      store.dispatch(playerSettingsActions.setPackKeys({ playerKey: GUEST_PLAYER_KEY, packKeys: [noHard.key] }))
+      store.dispatch(playerSettingsActions.setDifficulty({ playerKey: GUEST_PLAYER_KEY, difficulty: 'hard' }))
+      const screen = await renderLoadout()
 
       await fireEvent.press(screen.getByText('Random'))
 
       expect(mockAlert).toHaveBeenCalledWith('No Puzzles Available', expect.any(String))
       expect(soloRound().puzzle).toBeNull()
       expect(mockRouter.push).not.toHaveBeenCalled()
-      getItem.mockRestore()
     })
   })
 
@@ -294,11 +389,11 @@ describe('LoadoutScreen (Single Player)', () => {
 
       // Won (every letter found), then lost (Classic's six mistakes): nothing to go back to.
       await act(async () => {
-        store.dispatch(roundActions.saveSoloProgress({ guessedLetters: ['D', 'O', 'G'], hintRevealed: false }))
+        saveGuesses(['D', 'O', 'G'])
       })
       expect(screen.queryByText('Continue')).toBeNull()
       await act(async () => {
-        store.dispatch(roundActions.saveSoloProgress({ guessedLetters: ['A', 'B', 'C', 'E', 'F', 'H'], hintRevealed: false }))
+        saveGuesses(['A', 'B', 'C', 'E', 'F', 'H'])
       })
       expect(screen.queryByText('Continue')).toBeNull()
     })
@@ -404,25 +499,25 @@ describe('LoadoutScreen (Single Player)', () => {
     })
   })
 
-  describe('art', () => {
-    it('shows the current art on its row and opens Customize from it', async () => {
+  // The art moved to the Settings sheet (2026-10-17); the palette stays on the page until the player
+  // picker takes it.
+  describe('colors and art', () => {
+    it('starts the page with the Colors row, and has no Art row or art drawer of its own', async () => {
       const screen = await renderLoadout()
-      expect(screen.getByLabelText(`Art: ${DEFAULT_MODE.label}. Change art`)).toBeTruthy()
-      expect(panelHidden(screen, 'mode-picker-panel')).toBe(true)
 
-      await fireEvent.press(screen.getByText(DEFAULT_MODE.label))
-
-      expect(panelHidden(screen, 'mode-picker-panel')).toBe(false)
-      await fireEvent.press(within(screen.getByTestId('mode-picker-panel')).getByLabelText('Close'))
+      expect(screen.getByTestId('colors-row')).toBeTruthy()
+      expect(screen.queryByText('Art')).toBeNull()
+      expect(screen.queryByLabelText(/Change art/)).toBeNull()
+      expect(screen.queryByTestId('mode-picker-panel', { includeHiddenElements: true })).toBeNull()
     })
 
-    it('sets the default art and applies it to the round waiting on the board, guesses and all', async () => {
+    it('sets the default art from the Settings sheet and applies it to the round waiting on the board, guesses and all', async () => {
       seedSoloRound(['D', 'Q'])
       const screen = await renderLoadout()
 
       await pickLettersArt(screen)
 
-      expect(screen.getByLabelText(`Art: ${lettersMode.label}. Change art`)).toBeTruthy()
+      expect(store.getState().playerSettings[GUEST_PLAYER_KEY]?.modeId).toBe('letters')
       expect(soloRound().puzzle?.modeId).toBe('letters')
       expect(soloRound().guessedLetters).toEqual(['D', 'Q'])
       // Cosmetic, so it never counts as abandoning anything.
@@ -432,8 +527,7 @@ describe('LoadoutScreen (Single Player)', () => {
   })
 
   describe('difficulty', () => {
-    it('checks the picked segment and saves it as the default', async () => {
-      const setItem = jest.spyOn(AsyncStorage, 'setItem')
+    it("checks the picked segment and saves it as the player's", async () => {
       const screen = await renderLoadout()
       expect(checkedState(screen, 'Any')).toBe(true)
 
@@ -441,8 +535,7 @@ describe('LoadoutScreen (Single Player)', () => {
 
       expect(checkedState(screen, 'Medium')).toBe(true)
       expect(checkedState(screen, 'Any')).toBe(false)
-      expect(setItem).toHaveBeenCalledWith('defaultDifficulty', 'medium')
-      setItem.mockRestore()
+      expect(store.getState().playerSettings[GUEST_PLAYER_KEY]?.difficulty).toBe('medium')
     })
 
     it("colors the checked segment's text with its tier's vibrant ink and every other segment's with its tier's muted ink", async () => {
@@ -518,6 +611,69 @@ describe('LoadoutScreen (Single Player)', () => {
     })
   })
 
+  // Everything on the page belongs to the active player (2026-10-17): their picks, their unlocked
+  // puzzles and their waiting round.
+  describe("the active player's own", () => {
+    const OTHER = 'profile-a'
+    const setActivePlayer = (profileId: string | null) =>
+      act(async () => {
+        store.dispatch(activePlayerActions.setActivePlayer(profileId))
+      })
+
+    it('picks, switched with the player', async () => {
+      store.dispatch(playerSettingsActions.setDifficulty({ playerKey: OTHER, difficulty: 'hard' }))
+      store.dispatch(playerSettingsActions.setPackKeys({ playerKey: OTHER, packKeys: [PACK_B.key] }))
+      const screen = await renderLoadout()
+      expect(checkedState(screen, 'Any')).toBe(true)
+      expect(screen.getByText('All Packs')).toBeTruthy()
+
+      await setActivePlayer(OTHER)
+
+      expect(checkedState(screen, 'Hard')).toBe(true)
+      expect(screen.getByText(`1 of ${MANIFEST.length} Packs`)).toBeTruthy()
+      expect(screen.queryByText(PACK_A.label)).toBeNull()
+    })
+
+    it('waiting round: Continue follows the player, and Random asks only about their own round', async () => {
+      seedSoloRound(['Q'])
+      const screen = await renderLoadout()
+      expect(screen.getByText('Continue')).toBeTruthy()
+
+      await setActivePlayer(OTHER)
+      expect(screen.queryByText('Continue')).toBeNull()
+
+      await fireEvent.press(screen.getByText('Random'))
+      expect(screen.queryByText('Abandon This Puzzle?')).toBeNull()
+      expect(soloRound(OTHER).puzzle).not.toBeNull()
+      expect(soloRound().guessedLetters).toEqual(['Q'])
+    })
+
+    it('unlocked puzzles, on every count', async () => {
+      const unlocked = getPuzzlesForCategory(PACK_A.key).map((puzzle) => puzzle.id)
+      const getItem = jest.spyOn(AsyncStorage, 'getItem').mockImplementation((key: string) => Promise.resolve(key === `puzzle_unlocks_v1:${OTHER}` ? JSON.stringify({ [PACK_A.key]: unlocked }) : null))
+      const screen = await renderLoadout()
+      expect(await screen.findByText(`0 of ${MANIFEST.length} packs complete`)).toBeTruthy()
+
+      await setActivePlayer(OTHER)
+
+      expect(await screen.findByText(`1 of ${MANIFEST.length} packs complete`)).toBeTruthy()
+      expect(screen.getAllByText(`${commaString(PACK_A.count)} of ${commaString(PACK_A.count)} unlocked`).length).toBeGreaterThan(0)
+      getItem.mockRestore()
+    })
+
+    it('art, which moves only their own waiting round', async () => {
+      seedSoloRound(['D'], OTHER)
+      seedSoloRound(['D'])
+      const screen = await renderLoadout()
+
+      await pickLettersArt(screen)
+
+      expect(soloRound().puzzle?.modeId).toBe('letters')
+      expect(soloRound(OTHER).puzzle?.modeId).toBe(DEFAULT_MODE.id)
+      expect(store.getState().playerSettings[OTHER]).toBeUndefined()
+    })
+  })
+
   describe('header and Android back', () => {
     it('titles the page Single Player', async () => {
       const screen = await renderLoadout()
@@ -567,6 +723,25 @@ describe('LoadoutScreen (Single Player)', () => {
         expect(mockRouter.replace).toHaveBeenCalledWith('/')
       })
 
+      // Neither is the page's to close: each dialog adds its own listener as it opens, after the page's,
+      // so it runs first.
+      it.each([
+        ['the Settings sheet', (screen: Screen) => fireEvent.press(screen.getByLabelText('Settings'))],
+        ['the palette dialog', (screen: Screen) => fireEvent.press(paletteTrigger(screen))]
+      ])('closes %s first, then goes back', async (_dialog, open) => {
+        const screen = await renderLoadout()
+
+        await open(screen)
+        expect(screen.getByTestId('dialog')).toBeTruthy()
+
+        expect(await pressAndroidBack()).toBe(true)
+        expect(mockRouter.replace).not.toHaveBeenCalled()
+        await waitFor(() => expect(screen.queryByTestId('dialog')).toBeNull())
+
+        expect(await pressAndroidBack()).toBe(true)
+        expect(mockRouter.replace).toHaveBeenCalledWith('/')
+      })
+
       it('cancels the abandon confirm and stays on the page', async () => {
         const before = seedSoloRound(['Q'])
         const screen = await renderLoadout()
@@ -601,7 +776,7 @@ describe('LoadoutScreen (Single Player)', () => {
       // drawer, in one commit.
       it.each([
         ['puzzle pick', (panel: ReturnType<Screen['getByTestId']>) => within(panel).getByTestId(`puzzle-row-${getPuzzlesForCategory(PACK_A.key)[0].id}`)],
-        ['Random', (panel: ReturnType<Screen['getByTestId']>) => within(panel).getByText('Random')]
+        ['Play This Pack', (panel: ReturnType<Screen['getByTestId']>) => within(panel).getByText('Play This Pack')]
       ])("cancels the abandon confirm opened by Pack Progress' %s, and stays on the page", async (_pick, findPick) => {
         const before = seedSoloRound(['Q'])
         const screen = await renderLoadout()
@@ -673,8 +848,6 @@ describe('LoadoutScreen (Single Player)', () => {
         await pressAndroidBack()
         await fireEvent.press(screen.getByLabelText(`Browse ${PACK_A.label}`))
         await pressAndroidBack()
-        await fireEvent.press(screen.getByText(DEFAULT_MODE.label))
-        await pressAndroidBack()
         await fireEvent.press(screen.getByText('All Packs'))
         await fireEvent.press(within(screen.getByTestId('packs-screen-panel')).getByText('Create'))
         await pressAndroidBack()
@@ -711,10 +884,9 @@ describe('LoadoutScreen (Single Player)', () => {
           mockUseIsFocused.mockReturnValue(true)
         })
 
-        // An open art picker would otherwise keep its demo loop running under the screen in front.
+        // Coming back finds the page itself, not a drawer left open from before.
         it.each([
           ['Pack Progress', 'Pack Progress', 'pack-progress-drawer-panel'],
-          ['Customize', DEFAULT_MODE.label, 'mode-picker-panel'],
           ['Choose Packs', 'All Packs', 'packs-screen-panel']
         ])('closes %s, drops its listener, and adds it back on focus', async (_drawer, opener, testID) => {
           const screen = await renderLoadout()
@@ -748,6 +920,75 @@ describe('LoadoutScreen (Single Player)', () => {
           expect(panelHidden(screen, 'pack-editor-panel')).toBe(true)
         })
       })
+    })
+  })
+})
+
+// Only what changed with the art's move to the Settings sheet (2026-10-17). The rest of this page (its
+// Continue, Write a Word and Keep Each Word) is covered by PnpFlow.test.tsx.
+describe('LoadoutScreen (Pass & Play)', () => {
+  const renderPnpLoadout = () =>
+    render(
+      <Providers>
+        <LoadoutScreen mode='pnp' />
+      </Providers>
+    )
+
+  beforeEach(() => {
+    jest.clearAllMocks()
+    store.dispatch(achievementsActions.reset())
+    store.dispatch(roundActions.reset())
+    store.dispatch(activePlayerActions.setActivePlayer(null))
+    store.dispatch(playerSettingsActions.reset())
+  })
+
+  it('has the Colors row under its intro, and no Art row or art drawer of its own', async () => {
+    const screen = await renderPnpLoadout()
+
+    expect(screen.getByTestId('colors-row')).toBeTruthy()
+    expect(screen.queryByText('Art')).toBeNull()
+    expect(screen.queryByLabelText(/Change art/)).toBeNull()
+    expect(screen.queryByTestId('mode-picker-panel', { includeHiddenElements: true })).toBeNull()
+  })
+
+  // The same sheet and grid as everywhere else, so the pick reaches the Pass & Play round too.
+  it("picks the player's art from the Settings sheet, redrawing the word waiting to be guessed", async () => {
+    store.dispatch(roundActions.setPnpWord({ phrase: 'CAT', modeId: DEFAULT_MODE.id, sourceMode: 'custom' }))
+    const screen = await renderPnpLoadout()
+
+    await fireEvent.press(screen.getByLabelText('Settings'))
+    await fireEvent.press(screen.getByRole('button', { name: `${robotMode.label} art` }))
+
+    expect(store.getState().playerSettings[GUEST_PLAYER_KEY]?.modeId).toBe(robotMode.id)
+    expect(store.getState().round.pnp.puzzle?.modeId).toBe(robotMode.id)
+  })
+
+  describe('Android back', () => {
+    let addEventListener: jest.SpyInstance
+    beforeEach(() => {
+      backListeners.length = 0
+      addEventListener = installAndroidBack()
+    })
+    afterEach(() => addEventListener.mockRestore())
+
+    // No drawers of its own any more, so there's nothing for back to close first.
+    it('goes straight back', async () => {
+      await renderPnpLoadout()
+
+      expect(await pressAndroidBack()).toBe(true)
+      expect(mockRouter.replace).toHaveBeenCalledWith('/')
+    })
+
+    it('closes the Settings sheet first, then goes back', async () => {
+      const screen = await renderPnpLoadout()
+
+      await fireEvent.press(screen.getByLabelText('Settings'))
+      expect(await pressAndroidBack()).toBe(true)
+      expect(mockRouter.replace).not.toHaveBeenCalled()
+      await waitFor(() => expect(screen.queryByTestId('dialog')).toBeNull())
+
+      expect(await pressAndroidBack()).toBe(true)
+      expect(mockRouter.replace).toHaveBeenCalledWith('/')
     })
   })
 })

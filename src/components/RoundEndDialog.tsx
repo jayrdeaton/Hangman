@@ -9,6 +9,9 @@ import { fitSketchWordFontSize, SketchWord, sketchWordWidth } from '@/components
 import { ACHIEVEMENT_TIER_COLORS } from '@/constants/achievements'
 import type { UnlockedAchievement } from '@/types/stats'
 import { commaString } from '@/utils/commaString'
+import type { PnpStandingRow } from '@/utils/pnpSession'
+
+import { PnpStandingsList, STANDINGS_ONE_COLUMN_MAX, STANDINGS_ROW_GAP, STANDINGS_ROW_HEIGHT, standingsLineCount } from './PnpStandings'
 
 export type RoundEndOutcome = 'win' | 'loss'
 
@@ -16,6 +19,17 @@ export type CategoryProgress = {
   label: string
   unlockedCount: number
   totalCount: number
+}
+
+// A Pass & Play round's own rows on the card (see GameScreen's PnpRound).
+export type PnpRoundSummary = {
+  guesserId: string
+  guesserName: string
+  writerName: string
+  // Who writes the next word: by the session's rule, the guesser.
+  nextWriterName: string
+  // The session's standings with this round counted, in seat order.
+  standings: PnpStandingRow[]
 }
 
 export type RoundEndDialogProps = {
@@ -28,28 +42,42 @@ export type RoundEndDialogProps = {
   categoryProgress?: CategoryProgress | null
   // What the round just unlocked, in catalog order (see GameScreen's handleSolved and handleLost).
   unlockedAchievements?: UnlockedAchievement[]
+  // A Pass & Play round's card: who guessed whose word, the session's standings, and who writes next.
+  // Absent, it's the solo card.
+  passAndPlay?: PnpRoundSummary | null
+  // End Session beside Next (Pass & Play). Absent, Next is the only way on.
+  onEndSession?: () => void
   onDismiss: () => void
 }
 
 // The card's geometry, from @tastic/hud: OverlayBackdrop here keeps the card 24 from the screen edges
 // (the same as ConfirmDialog and Solitaire's banners, plus the safe area top and bottom), and
-// overlayStyles.card caps the card at 360 wide with 32 of padding, a 1pt border and a 16 gap between
-// its rows. What's left inside is the room the answer can use.
+// overlayStyles.card caps the card at 360 wide with 24 of padding, no border and a 16 gap between its
+// rows. What's left inside is the room the answer can use.
 const SCREEN_GUTTER = 24
 const CARD_MAX_WIDTH = 360
-const CARD_PADDING = 32
-const CARD_BORDER = 1
+const CARD_PADDING = 24
 const CARD_GAP = 16
-// The card's height outside the scrolling body: padding and border, the 64pt icon, the title (one
-// headlineLarge line, 40), the Next row (40) and the three gaps between those four and the body.
-const CARD_CHROME_HEIGHT = CARD_PADDING * 2 + CARD_BORDER * 2 + 64 + 40 + 40 + CARD_GAP * 3
+const BUTTON_HEIGHT = 40
+// The card's height outside the scrolling body: padding, the 64pt icon, the title (one headlineLarge
+// line, 40), the button row (40) and the three gaps between those four and the body.
+const CARD_CHROME_HEIGHT = CARD_PADDING * 2 + 64 + 40 + BUTTON_HEIGHT + CARD_GAP * 3
+// Pass & Play's two buttons share the row while both fit at hud's 128 floor with its 12 gap
+// (overlayActionStyles), and stack, a second row, on a card narrower than that.
+const ACTION_BUTTON_MIN_WIDTH = 128
+const ACTION_GAP = 12
+// Pass & Play's line above the buttons ("Player 2 writes next", one bodyMedium line), with its gap.
+const NEXT_WRITER_HEIGHT = 20
 // Rough heights of the body's other blocks, only used to leave the answer room for them: the unlock
-// block's heading, each unlock row under it (a 28pt badge plus the gap), and the progress caption (up
-// to two lines) with its bar. If one runs taller, the body scrolls a little rather than anything
-// going off-screen.
+// block's heading, each unlock row under it (a 28pt badge plus the gap), the progress caption (up
+// to two lines) with its bar, Pass & Play's who-guessed line (up to two bodyLarge lines), and the
+// standings' heading (with its gap) and rows. If one runs taller, the body scrolls a little rather
+// than anything going off-screen.
 const UNLOCKS_HEADER_HEIGHT = 30
 const UNLOCK_ROW_HEIGHT = 34
 const PROGRESS_HEIGHT = 46
+const RESULT_LINE_HEIGHT = 48
+const STANDINGS_HEADER_HEIGHT = 30
 // The answer's largest size: big enough to read as the round's headline beneath the title, small
 // enough that a two- or three-word answer still wraps into a few lines on a phone.
 const ANSWER_MAX_FONT_SIZE = 40
@@ -106,11 +134,15 @@ export const fitAnswerFontSize = (wordLengths: number[], width: number, heightBu
 // left to right in the board's own sketch letters; on a loss, the letters the player never found draw
 // in the theme's error red. Pack progress (wins only) and any new achievements follow, then Next.
 //
+// A Pass & Play round's card (passAndPlay) also says who guessed whose word, above the answer, and
+// shows the session's standings under it, the guesser's row in bold; then who writes next, above End
+// Session and Next. "You" is still the guesser: the device is in their hands.
+//
 // No backdrop dismissal, like every fleet card: a stray tap after the round can't skip to the next
-// puzzle. Next is the only way on, and Android's back button counts as Next. The card never runs off
-// the screen: it stops at the safe area, and the answer, unlocks and progress scroll between the
-// title and Next, so Next always stays in reach.
-export const RoundEndDialog = ({ visible, outcome, phrase, guessedLetters, categoryProgress, unlockedAchievements, onDismiss }: RoundEndDialogProps): JSX.Element | null => {
+// puzzle. Next (or End Session) is the only way on, and Android's back button counts as Next. The card
+// never runs off the screen: it stops at the safe area, and the answer, standings, unlocks and progress
+// scroll between the title and the buttons, so Next always stays in reach.
+export const RoundEndDialog = ({ visible, outcome, phrase, guessedLetters, categoryProgress, unlockedAchievements, passAndPlay, onEndSession, onDismiss }: RoundEndDialogProps): JSX.Element | null => {
   const theme = useTheme()
   const { fg, fgMuted } = useOverlayCardColors()
   const { width: windowWidth, height: windowHeight } = useWindowDimensions()
@@ -122,12 +154,15 @@ export const RoundEndDialog = ({ visible, outcome, phrase, guessedLetters, categ
 
   // The card is a plain overlay rather than a native modal, so nothing tells a screen reader it
   // appeared: this announces the result, the answer and any unlocks.
+  // Pass & Play's who-guessed line, shown above the answer and announced with the result.
+  const resultLine = passAndPlay ? `${passAndPlay.guesserName} ${won ? 'solved' : 'missed'} ${passAndPlay.writerName}'s word.` : null
+  const nextWriterLine = passAndPlay ? `${passAndPlay.nextWriterName} writes next` : null
   useEffect(() => {
     if (!visible || !outcome) return
-    const base = outcome === 'win' ? `You won! The answer was ${phrase}.` : `You lost! The answer was ${phrase}.`
+    const base = `${outcome === 'win' ? 'You won!' : 'You lost!'}${resultLine ? ` ${resultLine}` : ''} The answer was ${phrase}.`
     const unlockSuffix = hasUnlocks ? ` Achievement${unlockedAchievements!.length > 1 ? 's' : ''} unlocked: ${unlockedAchievements!.map((achievement) => achievement.title).join(', ')}.` : ''
-    AccessibilityInfo.announceForAccessibility(base + unlockSuffix)
-  }, [visible, outcome, phrase, hasUnlocks, unlockedAchievements])
+    AccessibilityInfo.announceForAccessibility(base + unlockSuffix + (nextWriterLine ? ` ${nextWriterLine}.` : ''))
+  }, [visible, outcome, phrase, resultLine, nextWriterLine, hasUnlocks, unlockedAchievements])
 
   useEffect(() => {
     if (!visible) return
@@ -145,12 +180,23 @@ export const RoundEndDialog = ({ visible, outcome, phrase, guessedLetters, categ
   const words = phrase.split(' ')
   const showProgress = won && Boolean(categoryProgress && categoryProgress.totalCount > 0)
   const cardMaxHeight = windowHeight - insets.top - insets.bottom - SCREEN_GUTTER * 2
-  const answerWidth = Math.min(CARD_MAX_WIDTH, windowWidth - SCREEN_GUTTER * 2) - CARD_PADDING * 2 - CARD_BORDER * 2
-  const otherBodyHeight = (hasUnlocks ? CARD_GAP + UNLOCKS_HEADER_HEIGHT + UNLOCK_ROW_HEIGHT * unlockedAchievements!.length : 0) + (showProgress ? CARD_GAP + PROGRESS_HEIGHT : 0)
+  const answerWidth = Math.min(CARD_MAX_WIDTH, windowWidth - SCREEN_GUTTER * 2) - CARD_PADDING * 2
+  const standingsCount = passAndPlay?.standings.length ?? 0
+  // Compact: a table of more than four lays out in two columns (see PnpStandingsList).
+  const standingsColumns = standingsCount > STANDINGS_ONE_COLUMN_MAX ? 2 : 1
+  const standingsLines = standingsLineCount(standingsCount, standingsColumns)
+  // Pass & Play adds the next-writer line and, on a card too narrow for both buttons side by side, a
+  // second button row.
+  const buttonsStack = Boolean(onEndSession) && answerWidth < ACTION_BUTTON_MIN_WIDTH * 2 + ACTION_GAP
+  const chromeHeight = CARD_CHROME_HEIGHT + (nextWriterLine ? NEXT_WRITER_HEIGHT + CARD_GAP : 0) + (buttonsStack ? ACTION_GAP + BUTTON_HEIGHT : 0)
+  const resultLineHeight = resultLine ? RESULT_LINE_HEIGHT + CARD_GAP : 0
+  const standingsHeight = standingsLines > 0 ? CARD_GAP + STANDINGS_HEADER_HEIGHT + standingsLines * STANDINGS_ROW_HEIGHT + (standingsLines - 1) * STANDINGS_ROW_GAP : 0
+  const unlocksHeight = hasUnlocks ? CARD_GAP + UNLOCKS_HEADER_HEIGHT + UNLOCK_ROW_HEIGHT * unlockedAchievements!.length : 0
+  const otherBodyHeight = resultLineHeight + standingsHeight + unlocksHeight + (showProgress ? CARD_GAP + PROGRESS_HEIGHT : 0)
   const answerFontSize = fitAnswerFontSize(
     words.map((word) => word.length),
     answerWidth,
-    cardMaxHeight - CARD_CHROME_HEIGHT - otherBodyHeight
+    cardMaxHeight - chromeHeight - otherBodyHeight
   )
   const missedColor = theme.dark ? MISSED_LETTER_DARK : theme.colors.error
   // Each letter's place in the whole answer (not just its word), so the writing runs on across word
@@ -172,18 +218,33 @@ export const RoundEndDialog = ({ visible, outcome, phrase, guessedLetters, categ
             {won ? 'You Won!' : 'You Lost!'}
           </Text>
           <ScrollView style={styles.body} contentContainerStyle={styles.bodyContent} alwaysBounceVertical={false}>
+            {resultLine ? (
+              <Text variant='bodyLarge' style={[styles.resultLine, { color: fg }]}>
+                {resultLine}
+              </Text>
+            ) : null}
             <View accessible accessibilityLabel={`The answer was ${phrase}`} style={[styles.answer, { rowGap: answerFontSize * ANSWER_ROW_GAP_RATIO }]}>
               {answerWords.map(({ letters, letterDelaysMs, letterColors }, i) => (
                 <SketchWord key={i} letters={letters} fontSize={answerFontSize} color={fg} letterColors={letterColors} letterDelaysMs={letterDelaysMs} />
               ))}
             </View>
+            {/* Every player's words solved so far this session, this round included, in seat order:
+                one column, or two for a table of more than four. */}
+            {passAndPlay && standingsCount > 0 ? (
+              <View style={styles.standings}>
+                <Text variant='titleMedium' style={[styles.blockHeading, { color: fg }]}>
+                  Standings
+                </Text>
+                <PnpStandingsList rows={passAndPlay.standings} columns={standingsColumns} color={fg} mutedColor={fgMuted} highlightId={passAndPlay.guesserId} />
+              </View>
+            ) : null}
             {/* Every newly unlocked achievement at once, for as long as the card is up: the fleet's
                 tier-colored badge (the achievement's own icon, black on its bronze, silver or gold,
                 as on the Stats & Achievements screen) beside its title. A left-aligned list, centered as a
                 block. */}
             {hasUnlocks ? (
               <View style={styles.achievements}>
-                <Text variant='titleMedium' style={[styles.achievementsHeading, { color: fg }]}>
+                <Text variant='titleMedium' style={[styles.blockHeading, { color: fg }]}>
                   Achievement{unlockedAchievements!.length > 1 ? 's' : ''} Unlocked
                 </Text>
                 {unlockedAchievements!.map((achievement) => (
@@ -210,13 +271,24 @@ export const RoundEndDialog = ({ visible, outcome, phrase, guessedLetters, categ
               </View>
             ) : null}
           </ScrollView>
-          {/* One button that already knows where to draw the next puzzle from (see
+          {nextWriterLine ? (
+            <Text variant='bodyMedium' style={[styles.nextWriter, { color: fgMuted }]}>
+              {nextWriterLine}
+            </Text>
+          ) : null}
+          {/* Solo: one button that already knows where to draw the next puzzle from (see
               GameStartPayload.packScope and GameScreen's handleRoundEnd: still inside the pack the
               player was browsing if they were browsing one, otherwise back to their whole
               selection). No separate "stay in this pack" action needed since it's not really a
-              choice, just what continuing already means given how this round started. */}
+              choice, just what continuing already means given how this round started. Pass & Play:
+              End Session (outlined, the confirms' secondary place) beside Next, for the next word. */}
           <View style={overlayActionStyles.actions}>
-            <Button mode='contained' onPress={onDismiss} style={overlayActionStyles.actionButtonSingle} buttonColor={theme.colors.primary} textColor={theme.colors.onPrimary}>
+            {onEndSession ? (
+              <Button mode='outlined' onPress={onEndSession} style={overlayActionStyles.actionButton}>
+                End Session
+              </Button>
+            ) : null}
+            <Button mode='contained' onPress={onDismiss} style={onEndSession ? overlayActionStyles.actionButton : overlayActionStyles.actionButtonSingle} buttonColor={theme.colors.primary} textColor={theme.colors.onPrimary}>
               Next
             </Button>
           </View>
@@ -228,8 +300,9 @@ export const RoundEndDialog = ({ visible, outcome, phrase, guessedLetters, categ
 
 const styles = StyleSheet.create({
   achievements: { alignItems: 'flex-start', alignSelf: 'center', gap: 6 },
-  achievementsHeading: { alignSelf: 'center', fontWeight: '700' },
   answer: { alignSelf: 'stretch', columnGap: ANSWER_COLUMN_GAP, flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center' },
+  // The unlock and standings blocks' headings.
+  blockHeading: { alignSelf: 'center', fontWeight: '700' },
   // Takes only the height its content needs, and gives it up (then scrolls) when the card meets
   // its maxHeight, so the icon, title and Next row keep theirs.
   body: { alignSelf: 'stretch', flexGrow: 0, flexShrink: 1 },
@@ -237,6 +310,7 @@ const styles = StyleSheet.create({
   // ConfirmDialog's own card/overlay additions: the card claims its full maxWidth, and the overlay
   // keeps it off the screen edges (SCREEN_GUTTER above).
   card: { width: '100%' },
+  nextWriter: { textAlign: 'center' },
   overlay: { paddingHorizontal: SCREEN_GUTTER },
   progress: { alignSelf: 'stretch' },
   progressBar: {
@@ -249,6 +323,9 @@ const styles = StyleSheet.create({
     overflow: 'hidden'
   },
   progressLabel: { textAlign: 'center' },
+  resultLine: { textAlign: 'center' },
+  // The heading over the full-width list, with the unlock block's 6 between them.
+  standings: { alignSelf: 'stretch', gap: 6 },
   title: { fontWeight: 'bold', textAlign: 'center' },
   unlockBadge: { alignItems: 'center', borderRadius: 8, height: 28, justifyContent: 'center', width: 28 },
   unlockRow: { alignItems: 'center', flexDirection: 'row', gap: 10 },

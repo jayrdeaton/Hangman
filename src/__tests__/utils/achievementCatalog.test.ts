@@ -32,6 +32,12 @@ describe('ACHIEVEMENT_CATALOG', () => {
     expect(ACHIEVEMENT_CATALOG.map((achievement) => achievement.id)).toEqual(['first_game_played', 'first_ever_win', 'flawless_debut', ...tiers('puzzles_solved'), ...tiers('puzzles_solved_veteran'), ...tiers('win_streak'), ...tiers('flawless'), ...tiers('no_hints_needed'), ...tiers('mode_explorer'), ...tiers('packs_completed'), 'first_custom_pack', ...tiers('packs_created'), ...tiers('local_matches'), ...tiers('days_played')])
   })
 
+  // Everything belongs to a player (2026-10-17): a device-only entry would never unlock for a profile.
+  it('is evaluated per player: no entry is device-only, Flawless Debut included', () => {
+    expect(ACHIEVEMENT_CATALOG.filter((achievement) => achievement.scope === 'device').map((achievement) => achievement.id)).toEqual([])
+    expect(evaluateUnlockedIds(ACHIEVEMENT_CATALOG, stats({ solo: record(1, 1), firstGameResult: 'win', firstGameFlawless: true }), { scope: 'profile' }).has('flawless_debut')).toBe(true)
+  })
+
   it("counts the Customize carousel's modes the same as the registry does", () => {
     expect(VISIBLE_MODE_COUNT).toBe(VISIBLE_MODES.length)
   })

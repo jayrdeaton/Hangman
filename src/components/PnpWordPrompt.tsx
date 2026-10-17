@@ -1,18 +1,27 @@
-import { Button, IconButton, Switch } from '@rific/feedback-press'
+import { Button, Chip, IconButton, Switch } from '@rific/feedback-press'
 import { useFocusChain } from '@rific/focus-chain'
 import { useToast } from '@rific/toaster'
 import { overlayActionStyles, OverlayBackdrop, OverlayCard, useOverlayCardColors } from '@tastic/hud/chrome'
 import { JSX, useEffect, useState } from 'react'
-import { BackHandler, Keyboard, type KeyboardEvent, Platform, ScrollView, StyleSheet, useWindowDimensions, View } from 'react-native'
+import { BackHandler, ScrollView, StyleSheet, View } from 'react-native'
 import { Portal, Text, TextInput, useTheme } from 'react-native-paper'
-import Animated, { useAnimatedStyle, withTiming } from 'react-native-reanimated'
-import { useSafeAreaInsets } from 'react-native-safe-area-context'
+import Animated from 'react-native-reanimated'
 
 import { useAutoSaveCustom } from '@/hooks/useAutoSaveCustom'
+import { SCREEN_GUTTER, useKeyboardLiftedCard } from '@/hooks/useKeyboardLiftedCard'
 import { buildCustomPuzzle } from '@/utils/customPacks'
 import { WORD_SEPARATORS } from '@/utils/normalizePhrase'
 
+export type PnpGuesserOption = { id: string; name: string }
+
 export type PnpWordPromptProps = {
+  // Who is writing, for the title.
+  writerName: string
+  // Everyone the word could be for (every player but the writer), in seat order. With more than one,
+  // the card shows a For row of them, the current pick selected.
+  guessers: PnpGuesserOption[]
+  guesserId: string
+  onGuesserChange: (playerId: string) => void
   answer: string
   hint: string
   // Owned by the game screen, not local state: it mounts the real Game continuously for the entire
@@ -31,18 +40,13 @@ export type PnpWordPromptProps = {
   onSubmit: () => void
 }
 
-// The card keeps 24 from the screen edges (the same as the confirms and the result card, plus the
-// safe area top and bottom).
-const SCREEN_GUTTER = 24
-// Breathing room between the card's bottom edge and the keyboard's top edge once the card has to
-// rise to clear it; without this the card stops flush against the keyboard, touching it.
-const KEYBOARD_BREATHING_GAP = 16
 // The 4pt slop the drawer headers' icon buttons use, for a 48pt close target.
 const ICON_ACTION_HIT_SLOP = { top: 4, bottom: 4, left: 4, right: 4 }
 
 // Entering a pass-and-play word, on the fleet's card (@tastic/hud's OverlayBackdrop and OverlayCard,
-// the card the confirms, the hand-off and the result use): a "Pass & Play" title with a plain close
-// glyph in the corner, the Word and Hint fields, the Keep This Word switch, and Next. The board
+// the card the confirms, the hand-off and the result use): the writer's name as its title ("Player 1's
+// Word") with a plain close glyph in the corner, the Word and Hint fields, who the word is for (with
+// three or more players), the Keep This Word switch, and Next. The board
 // behind it (artwork, blanks, difficulty, keyboard) is the real Game, mounted continuously by the game
 // screen for the whole round, not a second preview rendering owned here; see GameScreen.tsx for why
 // that matters (the old split-owned preview was the source of a flicker at Hand off).
@@ -53,19 +57,15 @@ const ICON_ACTION_HIT_SLOP = { top: 4, bottom: 4, left: 4, right: 4 }
 // prompt away.
 //
 // The card rises to clear the software keyboard, and never grows past the room it has: above the
-// keyboard when it's up, inside the safe area always. Past that, the fields scroll between the title
-// and Next, so the title, the close glyph and Next stay on screen even at the largest text sizes or
-// with the keyboard up on a short phone. Neither reanimated's useAnimatedKeyboard nor
-// react-native-keyboard-controller ever delivered a real keyboard height in this app's build
-// (confirmed live: both stayed at 0 with the keyboard open), while React Native's own Keyboard
-// events do, so those drive it, with the lift eased over the OS's own keyboard duration.
+// keyboard when it's up, inside the safe area always (useKeyboardLiftedCard). Past that, the fields
+// scroll between the title and Next, so the title, the close glyph and Next stay on screen even at
+// the largest text sizes or with the keyboard up on a short phone.
 //
-// Says nothing about how to play, and names nobody: any number of people can be passing the device.
-export const PnpWordPrompt = ({ answer, hint, onAnswerChange, onHintChange, promptVisible, onClose, onSubmit }: PnpWordPromptProps): JSX.Element | null => {
+// Says nothing about how to play. Two players need no For row: the word can only be for the other one.
+export const PnpWordPrompt = ({ writerName, guessers, guesserId, onGuesserChange, answer, hint, onAnswerChange, onHintChange, promptVisible, onClose, onSubmit }: PnpWordPromptProps): JSX.Element | null => {
   const theme = useTheme()
   const { fg, fgMuted } = useOverlayCardColors()
-  const insets = useSafeAreaInsets()
-  const { height: windowHeight } = useWindowDimensions()
+  const { overlayStyle, cardMaxHeight, liftStyle, onCardLayout } = useKeyboardLiftedCard()
   // Revealed by default: you can't reliably type a word you can't see, and this is the one moment
   // it's meant to be visible. The toggle covers handing the device over early.
   const [isRevealed, setIsRevealed] = useState(true)
@@ -79,38 +79,6 @@ export const PnpWordPrompt = ({ answer, hint, onAnswerChange, onHintChange, prom
   // @rific/toaster's <Toaster/> (mounted once in Providers.tsx) is keyboard-aware, unlike Paper's own
   // Snackbar, which this card needs since the keyboard is up for the entire time this can fire.
   const { warning } = useToast()
-
-  // Show and hide are two discrete events, so plain state is enough: the card's height cap and its
-  // lift both follow it, and the lift eases over the duration the keyboard itself takes.
-  const [keyboard, setKeyboard] = useState({ height: 0, duration: 250 })
-  useEffect(() => {
-    const showEvent = Platform.OS === 'ios' ? 'keyboardWillShow' : 'keyboardDidShow'
-    const hideEvent = Platform.OS === 'ios' ? 'keyboardWillHide' : 'keyboardDidHide'
-    const showSub = Keyboard.addListener(showEvent, (event: KeyboardEvent) => setKeyboard({ height: event.endCoordinates.height, duration: event.duration || 250 }))
-    const hideSub = Keyboard.addListener(hideEvent, (event: KeyboardEvent) => setKeyboard({ height: 0, duration: event.duration || 250 }))
-    return () => {
-      hideSub.remove()
-      showSub.remove()
-    }
-  }, [])
-  const [cardHeight, setCardHeight] = useState(0)
-
-  // The backdrop centers the card between its safe-area-plus-gutter edges, regionTop and
-  // regionBottom. With the keyboard up the card also has to end a breathing gap above the
-  // keyboard's top edge: usableBottom. iOS reports a keyboard height that already covers the home
-  // indicator's strip (the bottom inset); Android's leaves out the navigation bar under it, so the
-  // keyboard's top edge sits that much higher there.
-  const regionTop = insets.top + SCREEN_GUTTER
-  const regionBottom = windowHeight - insets.bottom - SCREEN_GUTTER
-  const keyboardTop = windowHeight - keyboard.height - (Platform.OS === 'ios' ? 0 : insets.bottom)
-  const usableBottom = keyboard.height > 0 ? Math.min(regionBottom, keyboardTop - KEYBOARD_BREATHING_GAP) : regionBottom
-  const cardMaxHeight = Math.max(0, usableBottom - regionTop)
-  // Centered, the card's bottom sits at regionTop + gap + cardHeight. It rises by however far that
-  // passes usableBottom, which the cap above keeps within gap: never past its own top clearance, and
-  // otherwise as low as it can stay.
-  const gap = Math.max(0, (regionBottom - regionTop - cardHeight) / 2)
-  const lift = Math.min(gap, Math.max(0, regionTop + gap + cardHeight - usableBottom))
-  const liftStyle = useAnimatedStyle(() => ({ transform: [{ translateY: withTiming(-lift, { duration: keyboard.duration }) }] }), [lift, keyboard.duration])
 
   useEffect(() => {
     if (!promptVisible) return
@@ -156,12 +124,12 @@ export const PnpWordPrompt = ({ answer, hint, onAnswerChange, onHintChange, prom
 
   return (
     <Portal>
-      <OverlayBackdrop style={[styles.overlay, { paddingBottom: insets.bottom + SCREEN_GUTTER, paddingTop: insets.top + SCREEN_GUTTER }]}>
-        <Animated.View testID='pnp-card' style={[styles.lift, liftStyle]} onLayout={(event) => setCardHeight(event.nativeEvent.layout.height)}>
+      <OverlayBackdrop style={[styles.overlay, overlayStyle]}>
+        <Animated.View testID='pnp-card' style={[styles.lift, liftStyle]} onLayout={onCardLayout}>
           <OverlayCard accessibilityViewIsModal style={[styles.card, { maxHeight: cardMaxHeight }]}>
-            {/* "Pass & Play" matches the Home button that leads here. */}
-            <Text variant='headlineSmall' style={[styles.title, { color: theme.colors.primary }]}>
-              Pass & Play
+            {/* Names who is writing, so the device is in the right hands before anything is typed. */}
+            <Text variant='headlineSmall' accessibilityRole='header' style={[styles.title, { color: theme.colors.primary }]}>
+              {writerName}&apos;s Word
             </Text>
             <ScrollView style={styles.body} contentContainerStyle={styles.fields} keyboardShouldPersistTaps='handled' alwaysBounceVertical={false}>
               <TextInput
@@ -201,6 +169,22 @@ export const PnpWordPrompt = ({ answer, hint, onAnswerChange, onHintChange, prom
                 maxLength={80}
                 mode='outlined'
               />
+              {/* Who the word is for: the fair pick (whoever has guessed the fewest words) is already
+                  selected, and the writer can pick anyone else at the table instead. */}
+              {guessers.length > 1 ? (
+                <View style={styles.forRow}>
+                  <Text variant='bodyLarge' style={[styles.forLabel, { color: fg }]}>
+                    For
+                  </Text>
+                  <View style={styles.chips}>
+                    {guessers.map((player) => (
+                      <Chip key={player.id} mode='outlined' selected={player.id === guesserId} onPress={() => onGuesserChange(player.id)} accessibilityLabel={`For ${player.name}`}>
+                        {player.name}
+                      </Chip>
+                    ))}
+                  </View>
+                </View>
+              ) : null}
               {/* Written at Hand off, not here (see GameScreen.tsx's handlePnpAuthored), so this switch
                   only needs to reflect the shared preference, not act on it itself. */}
               <View style={styles.autoSaveRow}>
@@ -242,14 +226,21 @@ const styles = StyleSheet.create({
   // maxHeight, so the title and Next keep theirs.
   body: { alignSelf: 'stretch', flexGrow: 0, flexShrink: 1 },
   caption: { marginTop: 4 },
-  // The card's own 32 of padding, less this card's 24 on top and bottom: a form needs the height
-  // more than the confirms do, with the keyboard up on a small phone.
+  // 24 on top and bottom, the card's own padding today (hud's overlayStyles.card), pinned here because
+  // a form needs the height more than the confirms do, with the keyboard up on a small phone.
   card: { paddingVertical: 24, width: '100%' },
+  chips: { flex: 1, flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
   close: { margin: 0, position: 'absolute', right: 8, top: 8 },
   fields: { gap: 8 },
   flex: { flex: 1 },
+  // The label sits level with the first line of chips (32 tall, its own line 24), however many lines
+  // they wrap into.
+  forLabel: { paddingTop: 4 },
+  forRow: { alignItems: 'flex-start', flexDirection: 'row', gap: 12, paddingTop: 4 },
   // Full width so the card inside can take its 360 maximum, as it does straight in the backdrop.
   lift: { alignItems: 'center', width: '100%' },
   overlay: { paddingHorizontal: SCREEN_GUTTER },
-  title: { fontWeight: 'bold', textAlign: 'center' }
+  // Clear of the close glyph in the corner on both sides (its 40 box sits 8 in, 24 past the card's own
+  // padding), so a long name wraps before running under it and the title stays centered on the card.
+  title: { fontWeight: 'bold', paddingHorizontal: 24, textAlign: 'center' }
 })

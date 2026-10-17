@@ -1,52 +1,32 @@
-import AsyncStorage from '@react-native-async-storage/async-storage'
-import { JSX, ReactNode, useCallback, useEffect, useState } from 'react'
+import { JSX, ReactNode, useCallback, useMemo } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
+import { useActivePlayer } from '@/hooks/useActivePlayer'
 import { PuzzleDefaultsContext } from '@/hooks/usePuzzleDefaults'
-import { DEFAULT_MODE } from '@/modes/registry'
+import { DEFAULT_PLAYER_SETTINGS, type DifficultyFilter, playerSettingsActions } from '@/redux/playerSettingsSlice'
+import type { RootState } from '@/redux/store'
 import type { GameMode } from '@/types/gameModes'
-import type { PuzzleDifficultyTier } from '@/utils/puzzleCatalog'
 import { findMode } from '@/utils/puzzleLink'
-import { useSplashReady } from '@/utils/splashGate'
-
-const MODE_STORAGE_KEY = 'defaultModeId'
-const DIFFICULTY_STORAGE_KEY = 'defaultDifficulty'
-
-type DifficultyFilter = 'any' | PuzzleDifficultyTier
 
 export type PuzzleDefaultsProviderProps = { children: ReactNode }
 
+// The active player's art and difficulty, from their playerSettings entry (the defaults until they pick
+// something). A change of player changes both at once. Nothing to wait for: redux has rehydrated by the
+// time this renders (it sits inside PersistGate), so the art on Home's hero and a puzzle's first draw are
+// both the player's from the very first frame, and `ready` is always true.
 export const PuzzleDefaultsProvider = ({ children }: PuzzleDefaultsProviderProps): JSX.Element => {
-  const [mode, setModeState] = useState<GameMode>(DEFAULT_MODE)
-  const [difficulty, setDifficultyState] = useState<DifficultyFilter>('any')
-  // Separate from mode/difficulty themselves, same as KeyboardLayoutProvider's own layoutLoaded:
-  // a saved value that happens to match the default above wouldn't change either piece of state,
-  // so gating readiness on THOSE changing would leave the 'puzzleDefaults' gate (see
-  // src/utils/splashGate.ts) permanently unsatisfied for anyone who'd saved the defaults.
-  const [loaded, setLoaded] = useState(false)
+  const dispatch = useDispatch()
+  const { key: playerKey } = useActivePlayer()
+  const modeId = useSelector((state: RootState) => state.playerSettings[playerKey]?.modeId ?? DEFAULT_PLAYER_SETTINGS.modeId)
+  const difficulty = useSelector((state: RootState) => state.playerSettings[playerKey]?.difficulty ?? DEFAULT_PLAYER_SETTINGS.difficulty)
+  // findMode resolves an art id that no longer exists to the default art.
+  const mode = useMemo(() => findMode(modeId), [modeId])
 
-  useEffect(() => {
-    void Promise.all([AsyncStorage.getItem(MODE_STORAGE_KEY), AsyncStorage.getItem(DIFFICULTY_STORAGE_KEY)]).then(([storedModeId, storedDifficulty]) => {
-      if (storedModeId) setModeState(findMode(storedModeId))
-      if (storedDifficulty === 'any' || storedDifficulty === 'easy' || storedDifficulty === 'medium' || storedDifficulty === 'hard') setDifficultyState(storedDifficulty)
-      setLoaded(true)
-    })
-  }, [])
-  // Gated because the art is visible on the very first screen (Home's hero acts out a round in
-  // it), so the splash waits for the real persisted values rather than showing the default art and
-  // swapping it a beat later. A puzzle draw doesn't rely on the splash: the game screen waits for
-  // `ready` itself before drawing (see SoloRound in GameScreen.tsx). See KeyboardLayoutProvider's
-  // identical reasoning for the keyboard's own layout.
-  useSplashReady('puzzleDefaults', loaded)
+  const setMode = useCallback((next: GameMode) => dispatch(playerSettingsActions.setMode({ playerKey, modeId: next.id })), [dispatch, playerKey])
+  const setDifficulty = useCallback((next: DifficultyFilter) => dispatch(playerSettingsActions.setDifficulty({ playerKey, difficulty: next })), [dispatch, playerKey])
 
-  const setMode = useCallback((next: GameMode) => {
-    setModeState(next)
-    void AsyncStorage.setItem(MODE_STORAGE_KEY, next.id)
-  }, [])
+  // Memoized: the loadouts' memoized drawers take these values as props.
+  const value = useMemo(() => ({ mode, setMode, difficulty, setDifficulty, ready: true }), [mode, setMode, difficulty, setDifficulty])
 
-  const setDifficulty = useCallback((next: DifficultyFilter) => {
-    setDifficultyState(next)
-    void AsyncStorage.setItem(DIFFICULTY_STORAGE_KEY, next)
-  }, [])
-
-  return <PuzzleDefaultsContext.Provider value={{ mode, setMode, difficulty, setDifficulty, ready: loaded }}>{children}</PuzzleDefaultsContext.Provider>
+  return <PuzzleDefaultsContext.Provider value={value}>{children}</PuzzleDefaultsContext.Provider>
 }

@@ -2,10 +2,10 @@ import { Provider } from '@rific/auto-paper'
 import { FeedbackPressProvider } from '@rific/feedback-press'
 import { fireEvent, render as rtlRender } from '@testing-library/react-native'
 import type { ReactElement, ReactNode } from 'react'
-import { BackHandler, type StyleProp, StyleSheet, type ViewStyle } from 'react-native'
+import { AccessibilityInfo, BackHandler, type StyleProp, StyleSheet, type ViewStyle } from 'react-native'
 import * as RNPaper from 'react-native-paper'
 
-import { fitAnswerFontSize, RoundEndDialog, type RoundEndDialogProps } from '@/components/RoundEndDialog'
+import { fitAnswerFontSize, type PnpRoundSummary, RoundEndDialog, type RoundEndDialogProps } from '@/components/RoundEndDialog'
 import { SketchWord, sketchWordWidth } from '@/components/SketchWord'
 
 // SketchWord draws SVG strokes, so the answer is checked through the props each word is given.
@@ -149,23 +149,23 @@ describe('RoundEndDialog', () => {
     delays.slice(1).forEach((delay, i) => expect(delay).toBeGreaterThan(delays[i]))
   })
 
-  // Jest's window is 750 wide, so the card is at its 360 maximum: 360 less 2 x 32 padding and 2 x 1
-  // border leaves 294 for the answer.
+  // Jest's window is 750 wide, so the card is at its 360 maximum: 360 less hud's 2 x 24 of padding
+  // (and no border) leaves 312 for the answer.
   it('caps a short answer at the headline size and shrinks a long word until it fits the card', async () => {
     await renderDialog({ phrase: 'CAT' })
     expect(answerWords(1)[0].fontSize).toBe(40)
 
     mockSketchWord.mockClear()
     await renderDialog({ phrase: 'CONGRATULATIONS', guessedLetters: 'CONGRATULIS'.split('') })
-    expect(answerWords(1)[0].fontSize).toBe(17)
-    expect(sketchWordWidth(15, 17)).toBeLessThanOrEqual(294)
-    expect(sketchWordWidth(15, 18)).toBeGreaterThan(294)
+    expect(answerWords(1)[0].fontSize).toBe(18)
+    expect(sketchWordWidth(15, 18)).toBeLessThanOrEqual(312)
+    expect(sketchWordWidth(15, 19)).toBeGreaterThan(312)
   })
 
   it('sizes a several-word answer by its longest word, not its total letters', async () => {
     await renderDialog({ phrase: 'ICE CREAM SANDWICH', guessedLetters: 'ICREAMSNDWH'.split('') })
 
-    expect(answerWords(3).map((word) => word.fontSize)).toEqual([32, 32, 32])
+    expect(answerWords(3).map((word) => word.fontSize)).toEqual([34, 34, 34])
   })
 
   it('moves on only from Next: no backdrop to tap, and the card itself does nothing', async () => {
@@ -206,28 +206,148 @@ describe('RoundEndDialog', () => {
   })
 })
 
+describe('RoundEndDialog (Pass & Play)', () => {
+  const standings = (count: number) => Array.from({ length: count }, (_, i) => ({ id: `p${i + 1}`, name: `Player ${i + 1}`, played: i === 1 ? 2 : 1, wins: i === 1 ? 1 : 0 }))
+  const summary = (overrides: Partial<PnpRoundSummary> = {}): PnpRoundSummary => ({
+    guesserId: 'p2',
+    guesserName: 'Bo',
+    writerName: 'Ann',
+    nextWriterName: 'Bo',
+    standings: [
+      { id: 'p1', name: 'Ann', played: 0, wins: 0 },
+      { id: 'p2', name: 'Bo', played: 2, wins: 1 }
+    ],
+    ...overrides
+  })
+
+  beforeEach(() => {
+    mockSketchWord.mockClear()
+    mockIcon.mockClear()
+  })
+
+  it('says who guessed whose word, shows the standings with the guesser in bold, and who writes next', async () => {
+    const { getByText, getByLabelText } = await renderDialog({ passAndPlay: summary(), onEndSession: jest.fn() })
+
+    expect(getByText('You Won!')).toBeTruthy()
+    expect(getByText("Bo solved Ann's word.")).toBeTruthy()
+    expect(getByText('Standings')).toBeTruthy()
+    expect(getByLabelText('Bo: 1 of 2 solved')).toBeTruthy()
+    expect(getByLabelText('Ann: no words guessed yet')).toBeTruthy()
+    expect(StyleSheet.flatten(getByText('Bo').props.style).fontWeight).toBe('700')
+    expect(StyleSheet.flatten(getByText('Ann').props.style).fontWeight).not.toBe('700')
+    expect(getByText('Bo writes next')).toBeTruthy()
+  })
+
+  it('says the word was missed on a loss', async () => {
+    const { getByText } = await renderDialog({ outcome: 'loss', guessedLetters: ['Q'], passAndPlay: summary() })
+
+    expect(getByText('You Lost!')).toBeTruthy()
+    expect(getByText("Bo missed Ann's word.")).toBeTruthy()
+  })
+
+  it('offers End Session beside Next, each doing only its own thing', async () => {
+    const onEndSession = jest.fn()
+    const onDismiss = jest.fn()
+    const { getByText } = await renderDialog({ passAndPlay: summary(), onEndSession, onDismiss })
+
+    await fireEvent.press(getByText('End Session'))
+    expect(onEndSession).toHaveBeenCalledTimes(1)
+    expect(onDismiss).not.toHaveBeenCalled()
+
+    await fireEvent.press(getByText('Next'))
+    expect(onDismiss).toHaveBeenCalledTimes(1)
+    expect(onEndSession).toHaveBeenCalledTimes(1)
+  })
+
+  it('keeps the solo card to its own rows', async () => {
+    const { queryByText } = await renderDialog()
+
+    expect(queryByText('Standings')).toBeNull()
+    expect(queryByText('End Session')).toBeNull()
+    expect(queryByText(/writes next/)).toBeNull()
+  })
+
+  it('announces who guessed whose word and who writes next with the result', async () => {
+    const announce = jest.spyOn(AccessibilityInfo, 'announceForAccessibility')
+    await renderDialog({ passAndPlay: summary() })
+
+    expect(announce).toHaveBeenLastCalledWith("You won! Bo solved Ann's word. The answer was CAT. Bo writes next.")
+    announce.mockRestore()
+  })
+
+  // The standings take room the answer would otherwise have, so a long answer has to shrink for them.
+  // A phone's 667 of height, by way of the safe area (Jest's window is 1334 tall).
+  describe('on a small phone', () => {
+    const LONG = 'THE WOMAN IN THE HOUSE ACROSS THE STREET FROM THE GIRL IN THE WINDOW'
+    const answerSize = () => answerWords(LONG.split(' ').length)[0].fontSize
+    let insets: jest.SpyInstance
+    beforeEach(() => {
+      // The module object itself (the app's manual mock): a namespace import would only spy a copy.
+      insets = jest.spyOn(require('react-native-safe-area-context'), 'useSafeAreaInsets').mockReturnValue({ top: 333, bottom: 334, left: 0, right: 0 })
+    })
+    afterEach(() => insets.mockRestore())
+
+    it('gives a long answer less room the more players there are, down to the floor', async () => {
+      await renderDialog({ phrase: LONG, guessedLetters: [] })
+      const solo = answerSize()
+
+      await renderDialog({ phrase: LONG, guessedLetters: [], passAndPlay: summary({ standings: standings(2) }), onEndSession: jest.fn() })
+      const twoPlayers = answerSize()
+
+      await renderDialog({ phrase: LONG, guessedLetters: [], passAndPlay: summary({ standings: standings(8) }), onEndSession: jest.fn() })
+      const eightPlayers = answerSize()
+
+      expect(twoPlayers).toBeLessThan(solo)
+      expect(eightPlayers).toBeLessThan(twoPlayers)
+      expect(eightPlayers).toBe(20)
+    })
+
+    it('keeps a short answer at the headline size with a full table', async () => {
+      await renderDialog({ passAndPlay: summary({ standings: standings(8) }), onEndSession: jest.fn() })
+
+      expect(answerWords(1)[0].fontSize).toBe(40)
+    })
+  })
+})
+
 describe('fitAnswerFontSize', () => {
   const words = (phrase: string) => phrase.split(' ').map((word) => word.length)
-  // A 375 x 667 phone: the card's inside is 261 wide, and on a pack win (progress row, no unlocks)
-  // 667 less the 48 gutter, the card's 258 of chrome and the progress block's 62 leaves 299.
+  // A 375 x 667 phone: the card's inside is 279 wide, and on a pack win (progress row, no unlocks)
+  // 667 less the 48 gutter, the card's 240 of chrome and the progress block's 62 leaves 317.
   const longest = words('THE WOMAN IN THE HOUSE ACROSS THE STREET FROM THE GIRL IN THE WINDOW')
 
   it("shrinks the longest catalog answer to fit a small phone's card without scrolling", () => {
-    const fontSize = fitAnswerFontSize(longest, 261, 299)
+    const fontSize = fitAnswerFontSize(longest, 279, 317)
+    const lines = (size: number) => {
+      // The same greedy wrap the card's row does, at the 16 word gap.
+      let count = 1
+      let width = 0
+      for (const letters of longest) {
+        const wordWidth = sketchWordWidth(letters, size)
+        if (width > 0 && width + 16 + wordWidth > 279) {
+          count++
+          width = wordWidth
+        } else width += (width > 0 ? 16 : 0) + wordWidth
+      }
+      return count
+    }
+    const height = (size: number) => lines(size) * size + (lines(size) - 1) * size * 0.2
 
-    expect(fontSize).toBe(25)
-    // Ten lines at 25 with the 0.2 line gap: 250 + 45 = 295, inside 299.
-    expect(10 * fontSize + 9 * fontSize * 0.2).toBeLessThanOrEqual(299)
+    expect(fontSize).toBeGreaterThan(20)
+    expect(height(fontSize)).toBeLessThanOrEqual(317)
+    // And it's the largest size that does.
+    expect(height(fontSize + 1)).toBeGreaterThan(317)
   })
 
   it('stops shrinking for height at 20 and lets the card scroll instead', () => {
-    expect(fitAnswerFontSize(longest, 261, 50)).toBe(20)
+    expect(fitAnswerFontSize(longest, 279, 50)).toBe(20)
   })
 
   it('lets width win below that floor, so a very long word still fits whole', () => {
-    const fontSize = fitAnswerFontSize([34], 261, 1000)
+    const fontSize = fitAnswerFontSize([34], 279, 1000)
 
-    expect(fontSize).toBe(8)
-    expect(sketchWordWidth(34, fontSize)).toBeLessThanOrEqual(261)
+    expect(sketchWordWidth(34, fontSize)).toBeLessThanOrEqual(279)
+    expect(sketchWordWidth(34, fontSize + 1)).toBeGreaterThan(279)
+    expect(fontSize).toBeLessThan(20)
   })
 })

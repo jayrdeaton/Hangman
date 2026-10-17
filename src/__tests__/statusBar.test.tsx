@@ -16,9 +16,12 @@ jest.mock('@rific/auto-paper', () => ({
   Provider: (props: { children: unknown }) => mockAutoPaperProvider(props),
   themeActions: { initialize: (settings: unknown) => ({ type: 'theme/initialize', payload: settings }) },
   useThemeBridgeProps: (props: object) => props,
-  useAutoPaperTheme: () => ({ colors: { surface: '#ffffff' } })
+  useAutoPaperTheme: () => ({ colors: { surface: '#ffffff' } }),
+  useThemeSettings: () => ({ settings: { color: '#f44336', harmony: 'split-complementary' }, set: () => {} })
 }))
-jest.mock('react-redux', () => ({ shallowEqual: () => true, useDispatch: () => () => {}, useSelector: () => ({}) }))
+// Just enough of the store for Theme and its per-player color sync: the guest, with nothing saved.
+const mockState = { theme: {}, activePlayer: { profileId: null }, playerTheme: {} }
+jest.mock('react-redux', () => ({ shallowEqual: () => true, useDispatch: () => () => {}, useSelector: (select: (state: typeof mockState) => unknown) => select(mockState), useStore: () => ({ getState: () => mockState }) }))
 jest.mock('@/utils/splashGate', () => ({ markSplashReady: () => {}, useSplashReady: () => {} }))
 jest.mock('expo-blur', () => ({ BlurView: () => null }))
 jest.mock('expo-font', () => ({ useFonts: () => [true, null] }))

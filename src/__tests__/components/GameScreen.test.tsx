@@ -12,9 +12,12 @@ import { type PackSelectionContextType, usePackSelection } from '@/hooks/usePack
 import { type PuzzleDefaultsContextType, usePuzzleDefaults } from '@/hooks/usePuzzleDefaults'
 import { DEFAULT_MODE } from '@/modes/registry'
 import { achievementsActions } from '@/redux/achievementsSlice'
-import { roundActions, type RoundProgress, type SavedPuzzle } from '@/redux/roundSlice'
+import { activePlayerActions } from '@/redux/activePlayerSlice'
+import { type DifficultyFilter, playerSettingsActions } from '@/redux/playerSettingsSlice'
+import { roundActions, type RoundProgress, type SavedPuzzle, selectSoloRound } from '@/redux/roundSlice'
 import { store } from '@/redux/store'
 import type { GameStartPayload } from '@/types/gameSession'
+import { GUEST_PLAYER_KEY, type PlayerKey } from '@/utils/players'
 import { findMode } from '@/utils/puzzleLink'
 import * as puzzlePicker from '@/utils/puzzlePicker'
 import { applySoloRound } from '@/utils/statsEngine'
@@ -44,16 +47,17 @@ const realGetPuzzleUnlockMap: typeof unlocks.getPuzzleUnlockMap = jest.requireAc
 const realMarkPuzzleUnlocked: typeof unlocks.markPuzzleUnlocked = jest.requireActual('@/utils/unlocks').markPuzzleUnlocked
 const mockUseIsFocused = jest.mocked(useIsFocused)
 
-const solo = () => store.getState().round.solo
+// Everything is the guest's unless a test says otherwise.
+const solo = (playerKey: PlayerKey = GUEST_PLAYER_KEY) => selectSoloRound(store.getState().round, playerKey)
 const stats = () => store.getState().achievements.stats
 
 // A random draw from the player's whole selection, in Classic, unless a test says otherwise.
 const savedPuzzle = (overrides: Partial<SavedPuzzle> = {}): SavedPuzzle => ({ phrase: 'DOG', modeId: DEFAULT_MODE.id, sourceMode: 'random', packKey: 'pack-1', packLabel: 'Test Pack', puzzleId: 'puzzle-1', difficultyTier: 'easy', packScope: 'selection', ...overrides })
 
 // The round the player left on the board: what the round slice holds when the screen mounts.
-const seedRound = (puzzle: SavedPuzzle, progress?: RoundProgress) => {
-  store.dispatch(roundActions.startSolo(puzzle))
-  if (progress) store.dispatch(roundActions.saveSoloProgress(progress))
+const seedRound = (puzzle: SavedPuzzle, progress?: RoundProgress, playerKey: PlayerKey = GUEST_PLAYER_KEY) => {
+  store.dispatch(roundActions.startSolo({ playerKey, puzzle }))
+  if (progress) store.dispatch(roundActions.saveSoloProgress({ playerKey, ...progress }))
 }
 
 // What resolvePuzzle hands back: FISH from pack-2, in whatever art it was asked for (the real
@@ -62,15 +66,13 @@ const drawFish =
   (overrides: Partial<GameStartPayload> = {}) =>
   (config: puzzlePicker.PuzzleConfig): puzzlePicker.PuzzleResolution => ({ ok: true, payload: { phrase: 'FISH', mode: config.mode, sourceMode: 'random', packKey: 'pack-2', packLabel: 'Next Pack', puzzleId: 'puzzle-2', difficultyTier: 'medium', packScope: 'selection', ...overrides } })
 
-// The player's persisted choices, as the providers read them back from AsyncStorage at launch.
-type StoredSettings = { selectedPackKeys?: string[]; defaultModeId?: string; defaultDifficulty?: string }
-const storeSettings = ({ selectedPackKeys, defaultModeId, defaultDifficulty }: StoredSettings) =>
-  jest.spyOn(AsyncStorage, 'getItem').mockImplementation((key: string) => {
-    if (key === 'selectedPackKeys' && selectedPackKeys) return Promise.resolve(JSON.stringify(selectedPackKeys))
-    if (key === 'defaultModeId' && defaultModeId) return Promise.resolve(defaultModeId)
-    if (key === 'defaultDifficulty' && defaultDifficulty) return Promise.resolve(defaultDifficulty)
-    return Promise.resolve(null)
-  })
+// The player's saved picks (their playerSettings entry), already in the store when the screen mounts.
+type StoredSettings = { selectedPackKeys?: string[]; modeId?: string; difficulty?: DifficultyFilter }
+const storeSettings = ({ selectedPackKeys, modeId, difficulty }: StoredSettings, playerKey: PlayerKey = GUEST_PLAYER_KEY) => {
+  if (selectedPackKeys) store.dispatch(playerSettingsActions.setPackKeys({ playerKey, packKeys: selectedPackKeys }))
+  if (modeId) store.dispatch(playerSettingsActions.setMode({ playerKey, modeId }))
+  if (difficulty) store.dispatch(playerSettingsActions.setDifficulty({ playerKey, difficulty }))
+}
 
 // The app-level setters the loadout and a .hangman import use, captured so a test can change the
 // player's choices while the game screen is up.
@@ -106,8 +108,8 @@ const guess = async (screen: Screen, letters: string[]) => {
   for (const letter of letters) await fireEvent.press(screen.getByText(letter))
 }
 
-// Lets the screen's mount work settle: the persisted settings and the unlock map are read back
-// asynchronously, and the one-time "anything to play?" check waits on all of them.
+// Lets the screen's mount work settle: the player's unlocked puzzles are read back asynchronously, and
+// the one-time "anything to play?" check waits on them.
 const settle = async () => {
   await waitFor(() => expect(mockGetPuzzleUnlockMap).toHaveBeenCalled())
   await act(async () => {
@@ -126,6 +128,8 @@ const resetForTest = () => {
   handles = null
   store.dispatch(roundActions.reset())
   store.dispatch(achievementsActions.reset())
+  store.dispatch(activePlayerActions.setActivePlayer(null))
+  store.dispatch(playerSettingsActions.reset())
 }
 
 // The win card waits WIN_DIALOG_DELAY_MS (see Game.tsx), the loss card 450ms.
@@ -236,7 +240,7 @@ describe('GameScreen (solo)', () => {
 
       // What the loadout's art picker dispatches. Letters Only has no artwork, so the word grows.
       await act(async () => {
-        store.dispatch(roundActions.setRoundArt('letters'))
+        store.dispatch(roundActions.setRoundArt({ playerKey: GUEST_PLAYER_KEY, modeId: 'letters' }))
       })
 
       expect(fontSize()).toBe(80)
@@ -246,29 +250,30 @@ describe('GameScreen (solo)', () => {
   })
 
   describe('with nothing playable to put on the board', () => {
-    it("draws a puzzle once, from the player's persisted pack selection and in their current difficulty and art, waiting for the selection to load instead of drawing from every pack first", async () => {
-      // The selection is read back last, after everything else the check waits on.
-      let resolveSelection: (value: string | null) => void = () => {}
-      const pendingSelection = new Promise<string | null>((resolve) => {
-        resolveSelection = resolve
-      })
-      jest.spyOn(AsyncStorage, 'getItem').mockImplementation((key: string) => Promise.resolve(key === 'selectedPackKeys' ? pendingSelection : key === 'defaultModeId' ? 'robot' : key === 'defaultDifficulty' ? 'hard' : null))
+    it("draws a puzzle once, from the player's pack selection and in their current difficulty and art, waiting for their unlocked puzzles so the draw can prefer unsolved ones", async () => {
+      storeSettings({ selectedPackKeys: ['pack-1', 'pack-3'], modeId: 'robot', difficulty: 'hard' })
+      let resolveUnlockMap: (map: unlocks.PuzzleUnlockMap) => void = () => {}
+      mockGetPuzzleUnlockMap.mockImplementationOnce(
+        () =>
+          new Promise((resolve) => {
+            resolveUnlockMap = resolve
+          })
+      )
       const screen = await renderScreen()
-      await settle()
       expect(mockResolvePuzzle).not.toHaveBeenCalled()
 
       await act(async () => {
-        resolveSelection(JSON.stringify(['pack-1', 'pack-3']))
-        await pendingSelection
+        resolveUnlockMap({ 'pack-1': ['puzzle-1'] })
       })
 
       await waitFor(() => expect(mockResolvePuzzle).toHaveBeenCalledTimes(1))
       await settle()
       expect(mockResolvePuzzle).toHaveBeenCalledTimes(1)
-      const [config, packKeys] = mockResolvePuzzle.mock.calls[0]
+      const [config, packKeys, unlockMap] = mockResolvePuzzle.mock.calls[0]
       expect(packKeys).toEqual(['pack-1', 'pack-3'])
       expect(config).toMatchObject({ sourceMode: 'random', difficulty: 'hard' })
       expect(config.mode.id).toBe('robot')
+      expect(unlockMap).toEqual({ 'pack-1': ['puzzle-1'] })
 
       expect(solo().puzzle).toMatchObject({ phrase: 'FISH', modeId: 'robot', packKey: 'pack-2' })
       expect(revealed(screen)).toEqual(['_', '_', '_', '_'])
@@ -298,19 +303,20 @@ describe('GameScreen (solo)', () => {
       expect(mockResolvePuzzle.mock.calls[0][1]).toEqual(['pack-1', 'pack-3'])
     })
 
-    it('leaves a round with guesses on it alone when the persisted pack selection loads late, rather than swapping it out with no abandon confirm and no loss recorded', async () => {
-      let resolveSelection: (value: string | null) => void = () => {}
-      const pending = new Promise<string | null>((resolve) => {
-        resolveSelection = resolve
-      })
-      jest.spyOn(AsyncStorage, 'getItem').mockImplementation((key: string) => (key === 'selectedPackKeys' ? pending : Promise.resolve(null)))
+    it("leaves a round with guesses on it alone when the player's unlocked puzzles load late, rather than swapping it out with no abandon confirm and no loss recorded", async () => {
+      let resolveUnlockMap: (map: unlocks.PuzzleUnlockMap) => void = () => {}
+      mockGetPuzzleUnlockMap.mockImplementationOnce(
+        () =>
+          new Promise((resolve) => {
+            resolveUnlockMap = resolve
+          })
+      )
       seedRound(savedPuzzle())
       const screen = await renderScreen()
 
       await guess(screen, ['D'])
       await act(async () => {
-        resolveSelection(JSON.stringify(['pack-1']))
-        await pending
+        resolveUnlockMap({})
       })
       await settle()
 
@@ -487,7 +493,7 @@ describe('GameScreen (solo)', () => {
     it('shows no achievement callout on an ordinary win that unlocks nothing new', async () => {
       // One flawless win already behind the player, its unlocks already earned (the provider's mount
       // sweep records them).
-      store.dispatch(achievementsActions.update({ stats: applySoloRound(createDefaultStats(), { result: 'win', wrongGuesses: 0, guessCount: 3, hintAvailable: false, hintRevealed: false, completedPackKeys: [] }) }))
+      store.dispatch(achievementsActions.update({ stats: applySoloRound(createDefaultStats(), { result: 'win', wrongGuesses: 0, guessCount: 3, hintAvailable: false, hintRevealed: false, completedPackKeys: [] }, null) }))
       seedRound(plainCat)
       const screen = await renderScreen()
 
@@ -511,7 +517,7 @@ describe('GameScreen (solo)', () => {
       await guess(screen, ['C', 'A', 'T'])
       await openRoundEndCard()
 
-      expect(mockMarkPuzzleUnlocked).toHaveBeenCalledWith(pack.key, 'solved-id')
+      expect(mockMarkPuzzleUnlocked).toHaveBeenCalledWith(GUEST_PLAYER_KEY, pack.key, 'solved-id')
       expect(screen.getByText(`3 of ${pack.count.toLocaleString('en-US')} unlocked in Animals`)).toBeTruthy()
     })
 
@@ -582,6 +588,89 @@ describe('GameScreen (solo)', () => {
         await winCat({})
 
         expect(stats().completedPackKeys).toEqual([pack.key])
+      })
+    })
+  })
+
+  // Everything belongs to a player (2026-10-17): the board, the record and the unlocked puzzles are all
+  // the active player's.
+  describe("each player's own round", () => {
+    const OTHER = 'profile-a'
+    const setActivePlayer = (profileId: string | null) =>
+      act(async () => {
+        store.dispatch(activePlayerActions.setActivePlayer(profileId))
+      })
+
+    it("plays the active player's waiting round, and switching players switches the board", async () => {
+      seedRound(savedPuzzle(), { guessedLetters: ['D'], hintRevealed: false })
+      seedRound(savedPuzzle({ phrase: 'CAT' }), { guessedLetters: ['C'], hintRevealed: false }, OTHER)
+      const screen = await renderScreen()
+      await settle()
+      expect(revealed(screen)).toEqual(['D', '_', '_'])
+
+      await setActivePlayer(OTHER)
+      expect(revealed(screen)).toEqual(['C', '_', '_'])
+      await guess(screen, ['A'])
+
+      expect(solo(OTHER).guessedLetters).toEqual(['C', 'A'])
+      expect(solo().guessedLetters).toEqual(['D'])
+      expect(mockResolvePuzzle).not.toHaveBeenCalled()
+    })
+
+    it('draws a puzzle, from their own picks, for a player with no round waiting when they become the active one', async () => {
+      seedRound(savedPuzzle(), { guessedLetters: ['D'], hintRevealed: false })
+      storeSettings({ selectedPackKeys: ['pack-5'], difficulty: 'hard' }, OTHER)
+      await renderScreen()
+      await settle()
+
+      await setActivePlayer(OTHER)
+
+      await waitFor(() => expect(mockResolvePuzzle).toHaveBeenCalledTimes(1))
+      const [config, packKeys] = mockResolvePuzzle.mock.calls[0]
+      expect(packKeys).toEqual(['pack-5'])
+      expect(config.difficulty).toBe('hard')
+      expect(mockGetPuzzleUnlockMap).toHaveBeenLastCalledWith(OTHER)
+      expect(solo(OTHER).puzzle?.phrase).toBe('FISH')
+      expect(solo()).toMatchObject({ puzzle: { phrase: 'DOG' }, guessedLetters: ['D'] })
+    })
+
+    describe('a finished round', () => {
+      beforeEach(() => {
+        jest.useFakeTimers()
+      })
+
+      it('counts toward, and unlocks its puzzle for, the player whose round it is', async () => {
+        const [pack] = puzzleManifest
+        await setActivePlayer(OTHER)
+        seedRound(savedPuzzle({ phrase: 'CAT', packKey: pack.key, packLabel: 'Animals', puzzleId: 'solved-id' }), undefined, OTHER)
+        const screen = await renderScreen()
+        await settle()
+
+        await guess(screen, ['C', 'A', 'T'])
+        await openRoundEndCard()
+
+        expect(mockMarkPuzzleUnlocked).toHaveBeenCalledWith(OTHER, pack.key, 'solved-id')
+        expect(stats().profiles[OTHER].solo).toEqual({ played: 1, wins: 1, losses: 0, draws: 0 })
+        // The device's record has every round played here.
+        expect(stats().solo.wins).toBe(1)
+        // The card shows the profile's own unlocks.
+        expect(screen.getByText('First Word')).toBeTruthy()
+      })
+
+      it("credits Collection Complete from the winner's own unlocked puzzles, never another player's", async () => {
+        const [pack] = puzzleManifest
+        const complete = { [pack.key]: Array.from({ length: pack.count }, (_, i) => `id-${i}`) }
+        mockGetPuzzleUnlockMap.mockImplementation((playerKey) => Promise.resolve(playerKey === GUEST_PLAYER_KEY ? complete : {}))
+        await setActivePlayer(OTHER)
+        seedRound({ phrase: 'CAT', modeId: DEFAULT_MODE.id, sourceMode: 'random', difficultyTier: 'easy' }, undefined, OTHER)
+        const screen = await renderScreen()
+        await settle()
+
+        await guess(screen, ['C', 'A', 'T'])
+        await openRoundEndCard()
+
+        expect(stats().profiles[OTHER].completedPackKeys).toEqual([])
+        expect(stats().completedPackKeys).toEqual([])
       })
     })
   })

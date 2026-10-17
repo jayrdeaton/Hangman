@@ -4,6 +4,7 @@ import * as Linking from 'expo-linking'
 import { JSX, useCallback, useEffect, useState } from 'react'
 import { Platform } from 'react-native'
 
+import { useActivePlayer } from '@/hooks/useActivePlayer'
 import { useCatalogActions } from '@/hooks/useCatalog'
 import { usePackSelection } from '@/hooks/usePackSelection'
 import { alert } from '@/utils/alert'
@@ -24,6 +25,9 @@ type FilePreview = { kind: 'pack'; raw: string; label: string; wordCount: number
 export const IncomingFileImport = (): JSX.Element => {
   const incomingUrl = Linking.useLinkingURL()
   const { selectedPackKeys, setSelectedPackKeys } = usePackSelection()
+  // A progress backup is merged into the active player's unlocked puzzles, and an imported pack joins
+  // their pack selection.
+  const { key: playerKey } = useActivePlayer()
   const { refreshUnlocks, refreshCustomPacks } = useCatalogActions()
   const { success } = useToast()
   const [preview, setPreview] = useState<FilePreview | null>(null)
@@ -71,7 +75,7 @@ export const IncomingFileImport = (): JSX.Element => {
     if (!preview) return
     try {
       if (preview.kind === 'progress') {
-        await mergePuzzleUnlocks(preview.raw)
+        await mergePuzzleUnlocks(playerKey, preview.raw)
         refreshUnlocks()
         success('Progress Imported', `${commaString(preview.unlockCount)} unlocked puzzle${preview.unlockCount === 1 ? '' : 's'} merged`)
       } else {
@@ -85,7 +89,7 @@ export const IncomingFileImport = (): JSX.Element => {
     } finally {
       setPreview(null)
     }
-  }, [preview, selectedPackKeys, setSelectedPackKeys, refreshCustomPacks, refreshUnlocks, success])
+  }, [preview, playerKey, selectedPackKeys, setSelectedPackKeys, refreshCustomPacks, refreshUnlocks, success])
 
   const title = preview ? (preview.kind === 'progress' ? 'Import Progress Backup?' : `Import "${preview.label}"?`) : ''
   const message = preview ? (preview.kind === 'progress' ? `Merges ${commaString(preview.unlockCount)} unlocked puzzle${preview.unlockCount === 1 ? '' : 's'} into your existing progress.` : `Adds ${commaString(preview.wordCount)} word${preview.wordCount === 1 ? '' : 's'} as a new pack you can play.`) : ''

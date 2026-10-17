@@ -1,21 +1,29 @@
 import { getAchievementCatalogRows } from '@tastic/achievements'
 import { AchievementCatalogSection, ActivityStatSection, BaseStatsScreen, StatRow, StatSection } from '@tastic/hud/chrome'
-import { JSX, useEffect, useMemo, useState } from 'react'
+import { JSX, useMemo } from 'react'
 import { StyleSheet, View } from 'react-native'
 import { useSelector } from 'react-redux'
 
 import { ACHIEVEMENT_CATALOG, VISIBLE_MODE_COUNT } from '@/constants/achievements'
 import { useCatalogActions, useCatalogVersions } from '@/hooks/useCatalog'
 import { useGameStats } from '@/hooks/useGameStats'
+import { usePlayerPuzzleUnlocks } from '@/hooks/usePuzzleUnlocks'
 import type { RootState } from '@/redux/store'
 import { commaString } from '@/utils/commaString'
+import { playerKeyFor } from '@/utils/players'
 import { getPuzzleManifest } from '@/utils/puzzleCatalog'
-import { getManifestUnlockProgress, getPuzzleUnlockMap, getUnlockedCountForPack, type PuzzleUnlockMap } from '@/utils/unlocks'
+import { getProfileStatsView } from '@/utils/statsEngine'
+import { createDefaultProfileStats } from '@/utils/statsValidation'
+import { getManifestUnlockProgress, getUnlockedCountForPack } from '@/utils/unlocks'
 import { gameShell } from '@/utils/webLayout'
 
 export type StatsScreenProps = {
   onBack: () => void
   insets: { top: number; left: number; bottom: number; right: number }
+  // Whose numbers to show: a profile's id, or null/undefined for All Profiles, the device's (every round
+  // played here, which is also the guests' record). There's no picker yet, so the route always shows
+  // All Profiles.
+  profileId?: string | null
 }
 
 // The fleet's "-" for a rate with nothing played yet, rather than a 0% that reads as a real result.
@@ -29,30 +37,25 @@ const count = (n: number): string => commaString(n)
 // every other screen; text stays the fleet's high-contrast ink. Counts packs over the same
 // packsVersion-keyed manifest the Single Player loadout's All Packs and Pack Progress rows use, so all
 // of them agree, custom packs included.
-export const StatsScreen = ({ onBack, insets }: StatsScreenProps): JSX.Element => {
-  const { stats, unlocked } = useSelector((state: RootState) => state.achievements)
+export const StatsScreen = ({ onBack, insets, profileId = null }: StatsScreenProps): JSX.Element => {
+  const { stats: deviceStats, unlocked } = useSelector((state: RootState) => state.achievements)
   const { resetAll } = useGameStats()
-  const { packsVersion, unlockVersion } = useCatalogVersions()
+  const { packsVersion } = useCatalogVersions()
   const { refreshUnlocks } = useCatalogActions()
   // eslint-disable-next-line react-hooks/exhaustive-deps -- packsVersion is an intentional external invalidation trigger, not a value the memo body reads
   const manifest = useMemo(() => getPuzzleManifest().filter((item) => item.count > 0), [packsVersion])
-  const [unlockMap, setUnlockMap] = useState<PuzzleUnlockMap>({})
-
-  useEffect(() => {
-    let mounted = true
-    void getPuzzleUnlockMap().then((map) => {
-      if (mounted) setUnlockMap(map)
-    })
-    return () => {
-      mounted = false
-    }
-  }, [unlockVersion])
+  // The profile's own bucket (empty until they finish a round), read exactly as the device's is.
+  const profileBucket = profileId ? deviceStats.profiles[profileId] : undefined
+  const stats = useMemo(() => (profileId ? getProfileStatsView(profileBucket ?? createDefaultProfileStats()) : deviceStats), [profileId, profileBucket, deviceStats])
+  // The profile's own unlocked puzzles, or for All Profiles everyone's together.
+  const { unlockMap } = usePlayerPuzzleUnlocks(profileId ? playerKeyFor(profileId) : null)
 
   const { totalUnlocked, totalAvailable } = useMemo(() => getManifestUnlockProgress(manifest, unlockMap), [manifest, unlockMap])
   const packsComplete = useMemo(() => manifest.filter((item) => getUnlockedCountForPack(unlockMap, item.key) >= item.count).length, [manifest, unlockMap])
-  // Ids no longer in the catalog don't count, the same rule as useUnlockedAchievementCount's count.
-  const achievementsEarned = ACHIEVEMENT_CATALOG.filter((achievement) => achievement.id in unlocked).length
-  const achievementRows = getAchievementCatalogRows(ACHIEVEMENT_CATALOG, stats, stats, unlocked, null)
+  const achievementRows = useMemo(() => getAchievementCatalogRows(ACHIEVEMENT_CATALOG, deviceStats, stats, unlocked, profileId), [deviceStats, stats, unlocked, profileId])
+  // Counted from the rows, so it's the shown player's own unlocks, and ids no longer in the catalog
+  // don't count.
+  const achievementsEarned = achievementRows.filter((row) => row.unlockedAt !== undefined).length
 
   // BaseStatsScreen calls this once its confirm is accepted. Clears the stats, achievements and
   // unlocked puzzles together (see useGameStats), then has every screen re-read its unlock map.

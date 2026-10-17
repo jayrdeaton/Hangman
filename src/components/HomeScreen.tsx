@@ -18,10 +18,13 @@ import { SettingsDialog } from './SettingsDialog'
 const HomeMenu = (): JSX.Element => {
   const theme = useTheme()
   const insets = useSafeAreaInsets()
-  // Home stays mounted under every other screen, so the hero's art loop pauses while it's covered.
   const focused = useIsFocused()
   const { refreshUnlocks } = useCatalogActions()
   const [settingsOpen, setSettingsOpen] = useState(false)
+  // The hero holds still whenever something covers it: every other screen (Home stays mounted under
+  // them) and the Settings sheet, whose ART grid is where new art is picked. A pick made over it waits
+  // for the sheet to close, then draws itself in (see HeroTitle).
+  const heroPaused = !focused || settingsOpen
   const openStats = useCallback(() => router.push('/achievements'), [])
   const openSettings = useCallback(() => setSettingsOpen(true), [])
   const closeSettings = useCallback(() => setSettingsOpen(false), [])
@@ -29,7 +32,7 @@ const HomeMenu = (): JSX.Element => {
   return (
     <Portal.Host>
       <View style={[styles.content, { paddingTop: insets.top + 56, paddingBottom: insets.bottom + 24 }]}>
-        <HeroTitle paused={!focused} />
+        <HeroTitle paused={heroPaused} />
         <View style={styles.actions}>
           <Button testID='mode-solo' mode='contained' icon='account' onPress={() => router.push(loadoutHref('solo'))} style={styles.actionButton} buttonColor={theme.colors.primary} textColor={theme.colors.onPrimary}>
             Single Player

@@ -1,9 +1,13 @@
 import { Card } from '@rific/feedback-press'
-import { JSX, memo, ReactNode } from 'react'
-import { StyleSheet, View } from 'react-native'
+import { JSX, memo, ReactNode, useCallback } from 'react'
+import { type AccessibilityActionEvent, Platform, StyleSheet, View } from 'react-native'
 import { Avatar, ProgressBar, Text, useTheme } from 'react-native-paper'
 
 import { packGroupColors, packGroupIcon, packGroupLabel } from '@/utils/packGroupStyle'
+
+// A control in a row's `trailing` (browse a pack, remove it, rename a player), offered to a screen
+// reader as one of the row's actions too: see PackRow's wrapper below for why the button itself can't be.
+export type PackRowAction = { name: string; label: string; onPress: () => void }
 
 export type PackRowProps = {
   label: string
@@ -11,7 +15,7 @@ export type PackRowProps = {
   // (e.g. "Sports" above "NFL"). Only rendered (and only recolors the card) when `isPack` is true
   // - see its own comment below for why a puzzle row inside a pack never sets this.
   group?: string
-  // True for a row that represents a whole PACK (LoadoutScreen/PacksScreen/PackProgressDrawer's
+  // True for a row that represents a whole PACK (SoloLoadout/PacksScreen/PackProgressDrawer's
   // own pack lists) - false (the default) for a row that represents a single PUZZLE within one
   // (PackPuzzleList), which has no group of its own to show. Gates the group icon/eyebrow AND the
   // card's own tinted background: without this split, an ungrouped custom pack (group=== undefined,
@@ -24,25 +28,29 @@ export type PackRowProps = {
   // optional in that case; nothing else about the row depends on it being present.
   subtitleBadge?: ReactNode
   progress?: number
+  // No long press: every row action is a visible control (the Quick Start rows' remove button took
+  // over the hidden long press that used to unselect a pack).
   onPress?: () => void
-  onLongPress?: () => void
   leading?: ReactNode
   trailing?: ReactNode
   // Overrides the accessible name derived from label/subtitle's own text content - needed
   // whenever that text isn't meant to be read literally (e.g. a masked "_ _ _ _" blank row).
   accessibilityLabel?: string
+  // The controls in `trailing`, again, as the row's accessibility actions (VoiceOver's rotor, TalkBack's
+  // actions menu). Pass one for every button `trailing` holds.
+  actions?: PackRowAction[]
   // A stable per-row identifier for callers whose label/subtitle/accessibilityLabel can collide
   // across rows (e.g. two masked puzzles that happen to share a letter count) - label text alone
   // isn't always enough to target one specific row.
   testID?: string
 }
 
-// Memoized: every caller now renders this as a FlatList renderItem (LoadoutScreen/PacksScreen/
+// Memoized: every caller now renders this as a FlatList renderItem (SoloLoadout/PacksScreen/
 // PackProgressDrawer's pack lists, up to 50 rows in the built-in manifest) rather than a plain
 // .map() inside a ScrollView - this component is the actual list-item cost that virtualization
 // exists to avoid paying for off-screen rows, so keeping it a pure, memoizable presentational
 // component (no inline-recreated non-primitive props from its own body) matters here.
-export const PackRow = memo(({ label, group, isPack = false, subtitle, subtitleBadge, progress, onPress, onLongPress, leading, trailing, accessibilityLabel, testID }: PackRowProps): JSX.Element => {
+export const PackRow = memo(({ label, group, isPack = false, subtitle, subtitleBadge, progress, onPress, leading, trailing, accessibilityLabel, actions, testID }: PackRowProps): JSX.Element => {
   const theme = useTheme()
   // Cycles primary/secondary/tertiary per group (see packGroupStyle.ts) so scanning down a long
   // pack list reads as visibly different clusters instead of one uniform color end to end -
@@ -50,7 +58,7 @@ export const PackRow = memo(({ label, group, isPack = false, subtitle, subtitleB
   const groupColors = isPack ? packGroupColors(group, theme) : null
 
   const card = (
-    <Card style={[styles.card, groupColors ? { backgroundColor: groupColors.container } : null]} mode='contained' onPress={onPress} onLongPress={onLongPress} testID={testID}>
+    <Card style={[styles.card, groupColors ? { backgroundColor: groupColors.container } : null]} mode='contained' onPress={onPress} testID={testID}>
       <Card.Content style={styles.row}>
         {/* The same badge-on-the-left shape as the loadout's own All Packs and Pack Progress rows
             (Avatar.Icon at a vibrant triad color, size 40), so group identity reads at the same
@@ -90,12 +98,25 @@ export const PackRow = memo(({ label, group, isPack = false, subtitle, subtitleB
   // VoiceOver/TalkBack at all. Wrapping in an accessible View here is what actually works:
   // accessible=true collapses the whole subtree into one element using this label, instead of the
   // default fallback of reading every descendant Text node - a masked row's literal "_ _ _ _".
-  return accessibilityLabel ? (
-    <View accessible accessibilityLabel={accessibilityLabel} accessibilityRole={onPress ? 'button' : undefined}>
+  //
+  // The same wrapper carries `actions`. The card's own Pressable is one accessible element, so on iOS
+  // VoiceOver never reaches the buttons inside it (`trailing`): a row's browse and remove buttons would
+  // be unreachable without these. An activation (a double tap) still lands on the card underneath. Not
+  // on the web, where the browser reaches those buttons itself, and where a View with the button role
+  // renders a real <button>, which can't hold the trailing buttons inside it.
+  const handleAccessibilityAction = useCallback(
+    (event: AccessibilityActionEvent) => {
+      actions?.find((action) => action.name === event.nativeEvent.actionName)?.onPress()
+    },
+    [actions]
+  )
+  const offersActions = Platform.OS !== 'web' && Boolean(actions?.length)
+  if (!accessibilityLabel && !offersActions) return card
+  const spokenLabel = accessibilityLabel ?? [groupColors ? packGroupLabel(group) : null, label, subtitle].filter(Boolean).join(', ')
+  return (
+    <View accessible accessibilityLabel={spokenLabel} accessibilityRole={onPress ? 'button' : undefined} accessibilityActions={offersActions ? actions?.map(({ name, label: actionLabel }) => ({ name, label: actionLabel })) : undefined} onAccessibilityAction={offersActions ? handleAccessibilityAction : undefined}>
       {card}
     </View>
-  ) : (
-    card
   )
 })
 PackRow.displayName = 'PackRow'

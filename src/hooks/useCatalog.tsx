@@ -12,6 +12,9 @@ export type CatalogActions = { refreshUnlocks: () => void; refreshCustomPacks: (
 
 const CatalogVersionsContext = createContext<CatalogVersions>({ unlockVersion: 0, packsVersion: 0 })
 const CatalogActionsContext = createContext<CatalogActions>({ refreshUnlocks: () => {}, refreshCustomPacks: () => {} })
+// The unlock counter on its own too, for usePuzzleUnlocks: the memoized drawers read the unlocked
+// puzzles through it, and a custom pack saved elsewhere shouldn't re-render them as well.
+const UnlockVersionContext = createContext(0)
 
 export const CatalogProvider = ({ children }: { children: ReactNode }): JSX.Element => {
   const [unlockVersion, setUnlockVersion] = useState(0)
@@ -25,16 +28,19 @@ export const CatalogProvider = ({ children }: { children: ReactNode }): JSX.Elem
     void loadCustomPacksCache().then(refreshCustomPacks)
   }, [refreshCustomPacks])
 
-  // Two contexts, so the game screen (which only ever calls these) doesn't re-render when a count moves.
+  // Separate contexts, so the game screen (which only ever calls these) doesn't re-render when a count moves.
   const actions = useMemo(() => ({ refreshUnlocks, refreshCustomPacks }), [refreshUnlocks, refreshCustomPacks])
   const versions = useMemo(() => ({ unlockVersion, packsVersion }), [unlockVersion, packsVersion])
 
   return (
     <CatalogActionsContext.Provider value={actions}>
-      <CatalogVersionsContext.Provider value={versions}>{children}</CatalogVersionsContext.Provider>
+      <CatalogVersionsContext.Provider value={versions}>
+        <UnlockVersionContext.Provider value={unlockVersion}>{children}</UnlockVersionContext.Provider>
+      </CatalogVersionsContext.Provider>
     </CatalogActionsContext.Provider>
   )
 }
 
 export const useCatalogVersions = (): CatalogVersions => useContext(CatalogVersionsContext)
 export const useCatalogActions = (): CatalogActions => useContext(CatalogActionsContext)
+export const useUnlockVersion = (): number => useContext(UnlockVersionContext)

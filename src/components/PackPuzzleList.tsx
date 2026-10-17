@@ -1,7 +1,7 @@
 import { Menu } from '@rific/auto-paper'
 import { Button } from '@rific/feedback-press'
 import { FlatList, ScrollViewContext } from '@rific/scroll-view'
-import { JSX, useContext, useEffect, useMemo, useState } from 'react'
+import { JSX, useContext, useMemo, useState } from 'react'
 import { StyleSheet, View } from 'react-native'
 import { Icon, Text, useTheme } from 'react-native-paper'
 
@@ -11,7 +11,7 @@ import type { Puzzle } from '@/types/puzzle'
 import { commaString } from '@/utils/commaString'
 import { normalizePhrase } from '@/utils/normalizePhrase'
 import { getPuzzleManifest, getPuzzlesForCategory, PuzzleDifficultyTier } from '@/utils/puzzleCatalog'
-import { getPuzzleUnlockMap } from '@/utils/unlocks'
+import type { PuzzleUnlockMap } from '@/utils/unlocks'
 
 import { PackRow } from './PackRow'
 
@@ -45,6 +45,10 @@ const emptyMessage = (statusFilter: PackPuzzleStatusFilter, difficultyFilter: Pa
 
 export type PackPuzzleListProps = {
   packKey: string | null
+  // The active player's unlocked puzzles, from the drawer showing this list (PackPuzzlesDrawer,
+  // PackProgressDrawer), which reads them only while it's open. Not read here: a closed drawer keeps
+  // this list mounted, and a read of its own would follow every win behind the game screen.
+  unlockMap: PuzzleUnlockMap
   // Rows become tappable to play that exact puzzle when supplied. Omitted for read-only browsing
   // (PacksScreen's "view contents" step) - that caller has no mode/difficulty context to actually
   // start a round with, so there's nothing a tap could do.
@@ -56,7 +60,7 @@ export type PackPuzzleListProps = {
 // wired up) and reviewing progress read-only (PacksScreen's "view contents" step, no
 // onPlayPuzzle). One row-rendering, masking, and progress implementation instead of
 // independently-maintained ones that had quietly drifted apart.
-export const PackPuzzleList = ({ packKey, onPlayPuzzle }: PackPuzzleListProps): JSX.Element => {
+export const PackPuzzleList = ({ packKey, unlockMap, onPlayPuzzle }: PackPuzzleListProps): JSX.Element => {
   const theme = useTheme()
   // Same four-way (Any + the three real tiers) vibrant/container set the loadout's own
   // Difficulty picker uses, for both the difficulty filter menu below and each row's own
@@ -83,7 +87,6 @@ export const PackPuzzleList = ({ packKey, onPlayPuzzle }: PackPuzzleListProps): 
   // the header's very first layout pass measures it - reading it directly from context, the same
   // value ScrollViewHeader/ScrollView/Footer already key their own positioning off of.
   const { headerHeight } = useContext(ScrollViewContext)
-  const [unlockedIds, setUnlockedIds] = useState<Set<string>>(new Set())
   // A shared, persisted preference (see usePackPuzzleListPrefs's own doc comment on why) rather
   // than local component state - every pack this opens on should reflect the same status/
   // difficulty filter the player last picked, not reset to defaults each time.
@@ -91,19 +94,7 @@ export const PackPuzzleList = ({ packKey, onPlayPuzzle }: PackPuzzleListProps): 
   const [statusMenuVisible, setStatusMenuVisible] = useState(false)
   const [difficultyMenuVisible, setDifficultyMenuVisible] = useState(false)
 
-  // Re-fetched per packKey rather than once - the unlock map itself doesn't push updates, but a
-  // fresh read here is what makes a puzzle solved during THIS session show up revealed without
-  // needing an explicit refresh trigger threaded in from above.
-  useEffect(() => {
-    if (!packKey) return
-    let mounted = true
-    void getPuzzleUnlockMap().then((unlockMap) => {
-      if (mounted) setUnlockedIds(new Set(unlockMap[packKey] ?? []))
-    })
-    return () => {
-      mounted = false
-    }
-  }, [packKey])
+  const unlockedIds = useMemo(() => new Set(packKey ? (unlockMap[packKey] ?? []) : []), [unlockMap, packKey])
 
   const pack = useMemo(() => getPuzzleManifest().find((item) => item.key === packKey), [packKey])
   const allPuzzles = useMemo(() => (packKey ? getPuzzlesForCategory(packKey) : []), [packKey])

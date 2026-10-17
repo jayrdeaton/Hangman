@@ -2,10 +2,10 @@ import type { AchievementDefinition as BaseAchievementDefinition, DayStreakState
 
 export type { AchievementTier, UnlockedAchievementsState } from '@tastic/achievements'
 
-// Everything the achievements catalog reads, kept by @tastic/achievements' slice (see
-// src/redux/achievementsSlice.ts) and changed only through the pure funnel in src/utils/statsEngine.ts.
-// There are no profiles: the whole device is one player.
-export interface StatsState extends DayStreakState {
+// One player's numbers: everything the achievements catalog reads. Kept by @tastic/achievements' slice
+// (see src/redux/achievementsSlice.ts) and changed only through the pure funnel in
+// src/utils/statsEngine.ts.
+export interface ProfileStats extends DayStreakState {
   // Solo rounds: catalog puzzles, custom packs and shared links. An abandoned round counts as a loss.
   solo: OutcomeRecord
   soloStreak: WinStreakState
@@ -22,10 +22,18 @@ export interface StatsState extends DayStreakState {
   // Solo letters guessed, and how many of them were in the answer.
   lettersGuessed: number
   lettersCorrect: number
-  // The very first round on this device (solo or Pass & Play), and whether it was won without a
-  // wrong guess (Flawless Debut).
+  // This player's very first round (solo or Pass & Play), and whether it was won without a wrong guess
+  // (Flawless Debut). The device bucket's is the device's first round.
   firstGameResult: RoundResult | null
   firstGameFlawless: boolean
+}
+
+// The top level is the device bucket: every round played on this device, whoever played it, which is
+// also the guests' record (a guest has no bucket of their own) and the All Profiles view. Each profile's
+// own rounds are in `profiles`, by profile id, as Snake and Solitaire keep theirs (@tastic/achievements'
+// per-profile model).
+export interface StatsState extends ProfileStats {
+  profiles: Record<string, ProfileStats>
 }
 
 export type AchievementDefinition = BaseAchievementDefinition<StatsState>

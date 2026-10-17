@@ -15,18 +15,21 @@ import { store } from '@/redux/store'
 import type { StatsState, UnlockedAchievementsState } from '@/types/stats'
 import { loadCustomPacksCache, saveCustomPack } from '@/utils/customPacks'
 import { getPuzzleManifest, getPuzzlesForCategory } from '@/utils/puzzleCatalog'
-import { createDefaultStats } from '@/utils/statsValidation'
-import { clearPuzzleUnlocks, getPuzzleUnlockMap, type PuzzleUnlockMap } from '@/utils/unlocks'
+import { createDefaultProfileStats, createDefaultStats } from '@/utils/statsValidation'
+import { clearAllPuzzleUnlocks, getDevicePuzzleUnlockMap, getPuzzleUnlockMap, type PuzzleUnlockMap } from '@/utils/unlocks'
 
-// AsyncStorage is a no-op stub in tests, so the unlocked puzzles come from getPuzzleUnlockMap (the
-// real one, always empty, unless a test hands it a map) and the reset's puzzle-unlock half is checked
-// through clearPuzzleUnlocks.
+// AsyncStorage is a no-op stub in tests, so the unlocked puzzles come from getDevicePuzzleUnlockMap
+// (All Profiles: every player's together) and getPuzzleUnlockMap (one profile's), the real ones,
+// always empty, unless a test hands them a map. The reset's puzzle-unlock half is checked through
+// clearAllPuzzleUnlocks.
 jest.mock('@/utils/unlocks', () => {
   const actual = jest.requireActual('@/utils/unlocks')
-  return { ...actual, getPuzzleUnlockMap: jest.fn(actual.getPuzzleUnlockMap), clearPuzzleUnlocks: jest.fn().mockResolvedValue(undefined) }
+  return { ...actual, getDevicePuzzleUnlockMap: jest.fn(actual.getDevicePuzzleUnlockMap), getPuzzleUnlockMap: jest.fn(actual.getPuzzleUnlockMap), clearAllPuzzleUnlocks: jest.fn().mockResolvedValue(undefined) }
 })
+const mockGetDeviceUnlockMap = jest.mocked(getDevicePuzzleUnlockMap)
 const mockGetPuzzleUnlockMap = jest.mocked(getPuzzleUnlockMap)
-const mockClearPuzzleUnlocks = jest.mocked(clearPuzzleUnlocks)
+const mockClearAllPuzzleUnlocks = jest.mocked(clearAllPuzzleUnlocks)
+const realGetDeviceUnlockMap: typeof getDevicePuzzleUnlockMap = jest.requireActual('@/utils/unlocks').getDevicePuzzleUnlockMap
 const realGetPuzzleUnlockMap: typeof getPuzzleUnlockMap = jest.requireActual('@/utils/unlocks').getPuzzleUnlockMap
 
 // What every other screen sharing the catalog counters can do while this one is open: a win, a
@@ -64,7 +67,8 @@ const MANIFEST = getPuzzleManifest().filter((item) => item.count > 0)
 const TOTAL = MANIFEST.reduce((sum, item) => sum + item.count, 0)
 const renderScreen = (props: Partial<StatsScreenProps> = {}) => render(<StatsScreen onBack={jest.fn()} insets={insets} {...props} />)
 const seedStats = (patch: Partial<StatsState>, unlocked: UnlockedAchievementsState = {}) => store.dispatch(achievementsActions.update({ stats: { ...createDefaultStats(), ...patch }, unlocked }))
-const storeUnlocks = (map: PuzzleUnlockMap) => mockGetPuzzleUnlockMap.mockResolvedValue(map)
+// Every player's unlocked puzzles together, what All Profiles counts.
+const storeUnlocks = (map: PuzzleUnlockMap) => mockGetDeviceUnlockMap.mockResolvedValue(map)
 
 type Screen = Awaited<ReturnType<typeof renderScreen>>
 // A StatRow is its label then its value, side by side in one row.
@@ -74,6 +78,7 @@ const n = (value: number) => value.toLocaleString('en-US')
 describe('StatsScreen', () => {
   beforeEach(async () => {
     jest.clearAllMocks()
+    mockGetDeviceUnlockMap.mockImplementation(realGetDeviceUnlockMap)
     mockGetPuzzleUnlockMap.mockImplementation(realGetPuzzleUnlockMap)
     store.dispatch(achievementsActions.reset())
     // Back to the stub storage's empty custom-pack list, in case a test saved one.
@@ -137,7 +142,7 @@ describe('StatsScreen', () => {
     expect(rowValue(screen, 'Solve Rate')).toBe('-')
   })
 
-  it('counts puzzles unlocked and packs completed over the catalog and the stored unlock map, and achievements earned from the store', async () => {
+  it("counts puzzles unlocked and packs completed over the catalog and every player's unlocked puzzles, and achievements earned from the store", async () => {
     const [full, partial] = MANIFEST
     seedStats({}, { first_game_played: 1, first_ever_win: 2, retired_achievement: 3 })
     storeUnlocks({ [full.key]: getPuzzlesForCategory(full.key).map((puzzle) => puzzle.id), [partial.key]: ['some-puzzle'] })
@@ -155,20 +160,20 @@ describe('StatsScreen', () => {
   it('reads the unlock map again whenever the unlocks change elsewhere', async () => {
     const [pack] = MANIFEST
     const screen = await renderScreen()
-    await waitFor(() => expect(mockGetPuzzleUnlockMap).toHaveBeenCalledTimes(1))
+    await waitFor(() => expect(mockGetDeviceUnlockMap).toHaveBeenCalledTimes(1))
     expect(rowValue(screen, 'Puzzles Unlocked')).toBe(`0 / ${n(TOTAL)}`)
 
     storeUnlocks({ [pack.key]: ['one', 'two'] })
     await act(async () => catalog!.refreshUnlocks())
 
     await waitFor(() => expect(rowValue(screen, 'Puzzles Unlocked')).toBe(`2 / ${n(TOTAL)}`))
-    expect(mockGetPuzzleUnlockMap).toHaveBeenCalledTimes(2)
+    expect(mockGetDeviceUnlockMap).toHaveBeenCalledTimes(2)
   })
 
   it('counts a custom pack once the custom packs change, completed when every word in it is won', async () => {
     storeUnlocks({ 'custom:test': ['a', 'b', 'c'] })
     const screen = await renderScreen()
-    await waitFor(() => expect(mockGetPuzzleUnlockMap).toHaveBeenCalledTimes(1))
+    await waitFor(() => expect(mockGetDeviceUnlockMap).toHaveBeenCalledTimes(1))
     // Its unlocks don't count while the pack itself isn't in the catalog.
     expect(rowValue(screen, 'Puzzles Unlocked')).toBe(`0 / ${n(TOTAL)}`)
 
@@ -233,7 +238,7 @@ describe('StatsScreen', () => {
   it('keeps everything when the reset confirm is canceled', async () => {
     seedStats({ solo: { played: 2, wins: 2, losses: 0, draws: 0 } })
     const screen = await renderScreen()
-    await waitFor(() => expect(mockGetPuzzleUnlockMap).toHaveBeenCalledTimes(1))
+    await waitFor(() => expect(mockGetDeviceUnlockMap).toHaveBeenCalledTimes(1))
 
     await fireEvent.press(screen.getByText('Reset All Stats'))
     expect(screen.getByText('Reset Everything?')).toBeTruthy()
@@ -241,20 +246,20 @@ describe('StatsScreen', () => {
     await fireEvent.press(screen.getByText('Cancel'))
 
     expect(screen.queryByText('Reset Everything?')).toBeNull()
-    expect(mockClearPuzzleUnlocks).not.toHaveBeenCalled()
+    expect(mockClearAllPuzzleUnlocks).not.toHaveBeenCalled()
     expect(store.getState().achievements.stats.solo.wins).toBe(2)
     // No refreshUnlocks, so nothing re-reads the unlocked puzzles.
-    expect(mockGetPuzzleUnlockMap).toHaveBeenCalledTimes(1)
+    expect(mockGetDeviceUnlockMap).toHaveBeenCalledTimes(1)
   })
 
-  it('clears every stat, achievement and unlocked puzzle once the reset is confirmed, then has every screen re-read the unlocks', async () => {
+  it("clears every stat, achievement and every player's unlocked puzzles once the reset is confirmed, then has every screen re-read the unlocks", async () => {
     const [pack] = MANIFEST
     seedStats({ solo: { played: 2, wins: 2, losses: 0, draws: 0 } }, { first_ever_win: Date.now() })
     storeUnlocks({ [pack.key]: ['one', 'two'] })
     const screen = await renderScreen()
     await waitFor(() => expect(rowValue(screen, 'Puzzles Unlocked')).toBe(`2 / ${n(TOTAL)}`))
 
-    // What the storage holds once clearPuzzleUnlocks has run.
+    // What the storage holds once clearAllPuzzleUnlocks has run.
     storeUnlocks({})
     await fireEvent.press(screen.getByText('Reset All Stats'))
     await fireEvent.press(screen.getByText('Reset'))
@@ -262,11 +267,50 @@ describe('StatsScreen', () => {
     // refreshUnlocks bumps unlockVersion, which is what re-reads the map here (and on every other
     // screen counting unlocks).
     await waitFor(() => expect(rowValue(screen, 'Puzzles Unlocked')).toBe(`0 / ${n(TOTAL)}`))
-    expect(mockClearPuzzleUnlocks).toHaveBeenCalledTimes(1)
-    expect(mockGetPuzzleUnlockMap).toHaveBeenCalledTimes(2)
+    expect(mockClearAllPuzzleUnlocks).toHaveBeenCalledTimes(1)
+    expect(mockGetDeviceUnlockMap).toHaveBeenCalledTimes(2)
     // Only after the unlocks are cleared, or the re-read would find them still there.
-    expect(mockClearPuzzleUnlocks.mock.invocationCallOrder[0]).toBeLessThan(mockGetPuzzleUnlockMap.mock.invocationCallOrder[1])
+    expect(mockClearAllPuzzleUnlocks.mock.invocationCallOrder[0]).toBeLessThan(mockGetDeviceUnlockMap.mock.invocationCallOrder[1])
     expect(store.getState().achievements).toEqual({ stats: createDefaultStats(), unlocked: {} })
     expect(rowValue(screen, 'Won')).toBe('0')
+  })
+
+  // One profile's own view (the picker comes later; the route shows All Profiles). Everything on the
+  // page is that profile's: their bucket, their unlocked puzzles and their achievements.
+  describe("a profile's own view", () => {
+    const PROFILE = 'profile-a'
+    const record = (played: number, wins: number) => ({ played, wins, losses: played - wins, draws: 0 })
+
+    it("shows the profile's own numbers, with the device's left out", async () => {
+      seedStats({ solo: record(10, 8), customPacksCreated: 3, profiles: { [PROFILE]: { ...createDefaultProfileStats(), solo: record(4, 1), customPacksCreated: 1 } } })
+      const screen = await renderScreen({ profileId: PROFILE })
+
+      expect(rowValue(screen, 'Played')).toBe('4')
+      expect(rowValue(screen, 'Won')).toBe('1')
+      expect(rowValue(screen, 'Win Rate')).toBe('25%')
+      expect(rowValue(screen, 'Custom Packs Created')).toBe('1')
+    })
+
+    it("starts from nothing for a profile that hasn't finished a round", async () => {
+      seedStats({ solo: record(10, 8) })
+      const screen = await renderScreen({ profileId: PROFILE })
+
+      expect(rowValue(screen, 'Played')).toBe('0')
+      expect(rowValue(screen, 'Win Rate')).toBe('-')
+    })
+
+    it("counts the profile's own unlocked puzzles and achievements", async () => {
+      const [full] = MANIFEST
+      seedStats({ profiles: { [PROFILE]: createDefaultProfileStats() } }, { first_game_played: 1, first_ever_win: 2, [`${PROFILE}:first_game_played`]: 3 })
+      storeUnlocks({ [full.key]: ['some-puzzle', 'another'] })
+      mockGetPuzzleUnlockMap.mockResolvedValue({ [full.key]: getPuzzlesForCategory(full.key).map((puzzle) => puzzle.id) })
+      const screen = await renderScreen({ profileId: PROFILE })
+
+      await waitFor(() => expect(rowValue(screen, 'Packs Completed')).toBe(`1 / ${MANIFEST.length}`))
+      expect(mockGetPuzzleUnlockMap).toHaveBeenCalledWith(PROFILE)
+      expect(mockGetDeviceUnlockMap).not.toHaveBeenCalled()
+      expect(rowValue(screen, 'Puzzles Unlocked')).toBe(`${n(full.count)} / ${n(TOTAL)}`)
+      expect(rowValue(screen, 'Achievements Earned')).toBe(`1 / ${ACHIEVEMENT_CATALOG.length}`)
+    })
   })
 })

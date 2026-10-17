@@ -2,8 +2,12 @@ import { FeedbackPressProvider } from '@rific/feedback-press'
 import { fireEvent, render as rtlRender, within } from '@testing-library/react-native'
 import type { ReactElement, ReactNode } from 'react'
 import * as RNPaper from 'react-native-paper'
+import { Provider as ReduxProvider } from 'react-redux'
 
-import { maskAnswer, PackPuzzleList } from '@/components/PackPuzzleList'
+import { maskAnswer, PackPuzzleList, type PackPuzzleListProps } from '@/components/PackPuzzleList'
+import { CatalogProvider } from '@/hooks/useCatalog'
+import { usePuzzleUnlocks } from '@/hooks/usePuzzleUnlocks'
+import { store } from '@/redux/store'
 import { getPuzzleManifest, getPuzzlesForCategory } from '@/utils/puzzleCatalog'
 import { getPuzzleUnlockMap } from '@/utils/unlocks'
 
@@ -38,13 +42,25 @@ const seedPrefs = (patch: Partial<{ statusFilter: string; difficultyFilter: stri
 // FeedbackPressProvider's real `paper` module injected (see Haptic.tsx, the app's own root
 // wiring) - without it, @rific/feedback-press's Button falls back to a bare RN Pressable that
 // drops testID/accessibilityLabel entirely, which is what the Status/Difficulty buttons below
-// rely on.
+// rely on. The store and the catalog counters are what the list reads the active player's solved
+// puzzles through (usePuzzleUnlocks).
 const Wrapper = ({ children }: { children: ReactNode }) => (
-  <RNPaper.PaperProvider>
-    <FeedbackPressProvider paper={RNPaper}>{children}</FeedbackPressProvider>
-  </RNPaper.PaperProvider>
+  <ReduxProvider store={store}>
+    <CatalogProvider>
+      <RNPaper.PaperProvider>
+        <FeedbackPressProvider paper={RNPaper}>{children}</FeedbackPressProvider>
+      </RNPaper.PaperProvider>
+    </CatalogProvider>
+  </ReduxProvider>
 )
 const render = (ui: ReactElement) => rtlRender(ui, { wrapper: Wrapper })
+
+// The list takes its unlocked puzzles from the drawer showing it; this stands in for that drawer,
+// reading them the same way (usePuzzleUnlocks, through the mocked getPuzzleUnlockMap above).
+const ListWithUnlocks = (props: Omit<PackPuzzleListProps, 'unlockMap'>) => {
+  const { unlockMap } = usePuzzleUnlocks()
+  return <PackPuzzleList {...props} unlockMap={unlockMap} />
+}
 
 // The real, smallest built-in pack - small enough that FlatList's initial render window covers
 // every puzzle in it, unlike Movies' 9,091.
@@ -97,7 +113,7 @@ describe('PackPuzzleList', () => {
   it('masks an unsolved puzzle as blanks rather than showing its answer', async () => {
     const pack = smallestPack()
     const puzzle = getPuzzlesForCategory(pack.key)[0]
-    const { getByTestId } = await render(<PackPuzzleList packKey={pack.key} />)
+    const { getByTestId } = await render(<ListWithUnlocks packKey={pack.key} />)
 
     const row = within(getByTestId(`puzzle-row-${puzzle.id}`))
     expect(row.getByText(maskAnswer(puzzle.answer))).toBeTruthy()
@@ -108,7 +124,7 @@ describe('PackPuzzleList', () => {
     const pack = smallestPack()
     const puzzle = getPuzzlesForCategory(pack.key)[0]
     mockGetPuzzleUnlockMap.mockResolvedValue({ [pack.key]: [puzzle.id] })
-    const { findByTestId } = await render(<PackPuzzleList packKey={pack.key} />)
+    const { findByTestId } = await render(<ListWithUnlocks packKey={pack.key} />)
 
     const row = within(await findByTestId(`puzzle-row-${puzzle.id}`))
     expect(await row.findByText(puzzle.answer)).toBeTruthy()
@@ -126,7 +142,7 @@ describe('PackPuzzleList', () => {
     const puzzle = getPuzzlesForCategory(pack.key)[0]
     const wordLabel = puzzle.wordCount === 1 ? 'word' : 'words'
     const difficultyLabel = puzzle.difficultyTier.charAt(0).toUpperCase() + puzzle.difficultyTier.slice(1)
-    const { getByLabelText } = await render(<PackPuzzleList packKey={pack.key} />)
+    const { getByLabelText } = await render(<ListWithUnlocks packKey={pack.key} />)
 
     const labeled = getByLabelText(`Hidden puzzle, ${puzzle.letterCount} letters, ${puzzle.wordCount} ${wordLabel}, ${difficultyLabel}`)
     expect(labeled.props.accessible).toBe(true)
@@ -137,7 +153,7 @@ describe('PackPuzzleList', () => {
     const puzzle = getPuzzlesForCategory(pack.key)[0]
     const wordLabel = puzzle.wordCount === 1 ? 'word' : 'words'
     const difficultyLabel = puzzle.difficultyTier.charAt(0).toUpperCase() + puzzle.difficultyTier.slice(1)
-    const { getByLabelText } = await render(<PackPuzzleList packKey={pack.key} />)
+    const { getByLabelText } = await render(<ListWithUnlocks packKey={pack.key} />)
 
     const row = getByLabelText(`Hidden puzzle, ${puzzle.letterCount} letters, ${puzzle.wordCount} ${wordLabel}, ${difficultyLabel}`)
     expect(row.props.accessibilityRole).toBeUndefined()
@@ -149,7 +165,7 @@ describe('PackPuzzleList', () => {
     const onPlayPuzzle = jest.fn()
     const wordLabel = puzzle.wordCount === 1 ? 'word' : 'words'
     const difficultyLabel = puzzle.difficultyTier.charAt(0).toUpperCase() + puzzle.difficultyTier.slice(1)
-    const { getByLabelText, getByTestId } = await render(<PackPuzzleList packKey={pack.key} onPlayPuzzle={onPlayPuzzle} />)
+    const { getByLabelText, getByTestId } = await render(<ListWithUnlocks packKey={pack.key} onPlayPuzzle={onPlayPuzzle} />)
 
     expect(getByLabelText(`Hidden puzzle, ${puzzle.letterCount} letters, ${puzzle.wordCount} ${wordLabel}, ${difficultyLabel}`).props.accessibilityRole).toBe('button')
 
@@ -165,7 +181,7 @@ describe('PackPuzzleList', () => {
     const unsolvedPuzzle = puzzles[1]
     mockGetPuzzleUnlockMap.mockResolvedValue({ [pack.key]: [solvedPuzzle.id] })
     seedPrefs({ statusFilter: 'solved' })
-    const { findByText, queryByTestId } = await render(<PackPuzzleList packKey={pack.key} />)
+    const { findByText, queryByTestId } = await render(<ListWithUnlocks packKey={pack.key} />)
 
     expect(await findByText(solvedPuzzle.answer)).toBeTruthy()
     expect(queryByTestId(`puzzle-row-${unsolvedPuzzle.id}`)).toBeNull()
@@ -174,7 +190,7 @@ describe('PackPuzzleList', () => {
   it('a persisted "solved" status filter shows the trophy-case empty message when nothing is unlocked yet', async () => {
     const pack = smallestPack()
     seedPrefs({ statusFilter: 'solved' })
-    const { findByText } = await render(<PackPuzzleList packKey={pack.key} />)
+    const { findByText } = await render(<ListWithUnlocks packKey={pack.key} />)
 
     expect(await findByText('No puzzles solved yet.')).toBeTruthy()
   })
@@ -184,7 +200,7 @@ describe('PackPuzzleList', () => {
     const allIds = getPuzzlesForCategory(pack.key).map((puzzle) => puzzle.id)
     mockGetPuzzleUnlockMap.mockResolvedValue({ [pack.key]: allIds })
     seedPrefs({ statusFilter: 'unsolved' })
-    const { findByText } = await render(<PackPuzzleList packKey={pack.key} />)
+    const { findByText } = await render(<ListWithUnlocks packKey={pack.key} />)
 
     expect(await findByText('All puzzles solved!')).toBeTruthy()
   })
@@ -196,7 +212,7 @@ describe('PackPuzzleList', () => {
     const unsolvedPuzzle = puzzles[1]
     mockGetPuzzleUnlockMap.mockResolvedValue({ [pack.key]: [solvedPuzzle.id] })
     seedPrefs({ statusFilter: 'unsolved' })
-    const { findByTestId, queryByTestId } = await render(<PackPuzzleList packKey={pack.key} />)
+    const { findByTestId, queryByTestId } = await render(<ListWithUnlocks packKey={pack.key} />)
 
     expect(await findByTestId(`puzzle-row-${unsolvedPuzzle.id}`)).toBeTruthy()
     expect(queryByTestId(`puzzle-row-${solvedPuzzle.id}`)).toBeNull()
@@ -211,7 +227,7 @@ describe('PackPuzzleList', () => {
     if (easyPuzzles.length === 0) throw new Error('expected at least one easy puzzle')
     mockGetPuzzleUnlockMap.mockResolvedValue({ [pack.key]: easyPuzzles.map((puzzle) => puzzle.id) })
     seedPrefs({ statusFilter: 'unsolved', difficultyFilter: 'easy' })
-    const { findByText } = await render(<PackPuzzleList packKey={pack.key} />)
+    const { findByText } = await render(<ListWithUnlocks packKey={pack.key} />)
 
     expect(await findByText('All easy puzzles solved!')).toBeTruthy()
   })
@@ -221,7 +237,7 @@ describe('PackPuzzleList', () => {
   // user-visible freeze on this pack specifically.
   it('renders the largest built-in pack without eagerly mounting every one of its rows', async () => {
     const pack = largestPack()
-    const { findAllByTestId } = await render(<PackPuzzleList packKey={pack.key} />)
+    const { findAllByTestId } = await render(<ListWithUnlocks packKey={pack.key} />)
 
     // Not asserting an exact count (FlatList's default window size is an implementation detail) -
     // just that it's nowhere near the full pack, which is what "not choking" actually means here.
@@ -230,14 +246,14 @@ describe('PackPuzzleList', () => {
   })
 
   it('renders nothing for a null packKey', async () => {
-    const { queryByText } = await render(<PackPuzzleList packKey={null} />)
+    const { queryByText } = await render(<ListWithUnlocks packKey={null} />)
 
     expect(queryByText(/unlocked/)).toBeNull()
   })
 
   it('the status menu offers All, Unsolved, and Solved choices', async () => {
     const pack = smallestPack()
-    const { getByTestId } = await render(<PackPuzzleList packKey={pack.key} />)
+    const { getByTestId } = await render(<ListWithUnlocks packKey={pack.key} />)
 
     await fireEvent.press(getByTestId('status-filter-button'))
 
@@ -248,7 +264,7 @@ describe('PackPuzzleList', () => {
 
   it('the difficulty menu offers Any, Easy, Medium, and Hard choices', async () => {
     const pack = smallestPack()
-    const { getByTestId } = await render(<PackPuzzleList packKey={pack.key} />)
+    const { getByTestId } = await render(<ListWithUnlocks packKey={pack.key} />)
 
     await fireEvent.press(getByTestId('difficulty-filter-button'))
 
@@ -264,7 +280,7 @@ describe('PackPuzzleList', () => {
     const solvedPuzzle = puzzles[0]
     const unsolvedPuzzle = puzzles[1]
     mockGetPuzzleUnlockMap.mockResolvedValue({ [pack.key]: [solvedPuzzle.id] })
-    const { getByTestId, findByTestId, queryByTestId } = await render(<PackPuzzleList packKey={pack.key} />)
+    const { getByTestId, findByTestId, queryByTestId } = await render(<ListWithUnlocks packKey={pack.key} />)
 
     // Starts on 'all' - both rows present.
     expect(await findByTestId(`puzzle-row-${solvedPuzzle.id}`)).toBeTruthy()
@@ -283,7 +299,7 @@ describe('PackPuzzleList', () => {
     const easyPuzzle = puzzles.find((puzzle) => puzzle.difficultyTier === 'easy')
     const otherPuzzle = puzzles.find((puzzle) => puzzle.difficultyTier !== 'easy')
     if (!easyPuzzle || !otherPuzzle) throw new Error('expected both an easy and a non-easy puzzle')
-    const { getByTestId, findByTestId, queryByTestId } = await render(<PackPuzzleList packKey={pack.key} />)
+    const { getByTestId, findByTestId, queryByTestId } = await render(<ListWithUnlocks packKey={pack.key} />)
 
     await fireEvent.press(getByTestId('difficulty-filter-button'))
     await fireEvent.press(getByTestId('difficulty-filter-easy'))
@@ -298,7 +314,7 @@ describe('PackPuzzleList', () => {
     const easyPuzzle = getPuzzlesForCategory(pack.key).find((puzzle) => puzzle.difficultyTier === 'easy')
     if (!hardPuzzle || !easyPuzzle) throw new Error('expected both an easy and a hard puzzle')
     seedPrefs({ difficultyFilter: 'hard' })
-    const { findByTestId, queryByTestId } = await render(<PackPuzzleList packKey={pack.key} />)
+    const { findByTestId, queryByTestId } = await render(<ListWithUnlocks packKey={pack.key} />)
 
     expect(await findByTestId(`puzzle-row-${hardPuzzle.id}`)).toBeTruthy()
     expect(queryByTestId(`puzzle-row-${easyPuzzle.id}`)).toBeNull()
@@ -306,7 +322,7 @@ describe('PackPuzzleList', () => {
 
   it('persists a newly picked status filter to storage, so a pack opened afterward keeps the same choice', async () => {
     const pack = smallestPack()
-    const { getByTestId } = await render(<PackPuzzleList packKey={pack.key} />)
+    const { getByTestId } = await render(<ListWithUnlocks packKey={pack.key} />)
 
     await fireEvent.press(getByTestId('status-filter-button'))
     await fireEvent.press(getByTestId('status-filter-unsolved'))
@@ -317,7 +333,7 @@ describe('PackPuzzleList', () => {
   it("keeps the player's chosen filter across a pack switch, since it's a persisted preference now, not a per-pack default", async () => {
     const packA = smallestPack()
     const packB = largestPack()
-    const { getByTestId, rerender } = await render(<PackPuzzleList packKey={packA.key} />)
+    const { getByTestId, rerender } = await render(<ListWithUnlocks packKey={packA.key} />)
 
     await fireEvent.press(getByTestId('status-filter-button'))
     await fireEvent.press(getByTestId('status-filter-solved'))
@@ -325,7 +341,7 @@ describe('PackPuzzleList', () => {
 
     // This list stays mounted across a pack switch in its real callers (see PackPuzzlesDrawer) -
     // simulated here with a rerender rather than a fresh render, matching that lifecycle.
-    await rerender(<PackPuzzleList packKey={packB.key} />)
+    await rerender(<ListWithUnlocks packKey={packB.key} />)
 
     expect(getByTestId('status-filter-button')).toHaveTextContent('Solved')
   })

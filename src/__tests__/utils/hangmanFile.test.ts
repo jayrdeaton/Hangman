@@ -193,7 +193,7 @@ describe('hangmanFile', () => {
       )
 
       const { shareProgressBackupFile } = require('@/utils/hangmanFile')
-      const result = await shareProgressBackupFile()
+      const result = await shareProgressBackupFile('guest')
 
       expect(result).toBe(true)
       const anchor = createElementSpy.mock.results.find((r) => r.value.tagName === 'A')?.value
@@ -209,9 +209,11 @@ describe('hangmanFile', () => {
       Sharing.shareAsync.mockResolvedValue(undefined)
 
       const { shareProgressBackupFile } = require('@/utils/hangmanFile')
-      const result = await shareProgressBackupFile()
+      const result = await shareProgressBackupFile('guest')
 
       expect(result).toBe(true)
+      // The backup is one player's own unlocked puzzles.
+      expect(exportPuzzleUnlocks).toHaveBeenCalledWith('guest')
       expect(mockFileStore.get('mock-cache/hangman-progress-backup.hangman')).toBe('{"unlocks":{}}')
       expect(Sharing.shareAsync).toHaveBeenCalledWith('mock-cache/hangman-progress-backup.hangman', expect.objectContaining({ mimeType: 'application/x-hangman', dialogTitle: 'Share Progress Backup' }))
     })
@@ -223,7 +225,7 @@ describe('hangmanFile', () => {
       Sharing.isAvailableAsync.mockResolvedValue(false)
 
       const { shareProgressBackupFile } = require('@/utils/hangmanFile')
-      const result = await shareProgressBackupFile()
+      const result = await shareProgressBackupFile('guest')
 
       expect(result).toBe(false)
       expect(Sharing.shareAsync).not.toHaveBeenCalled()

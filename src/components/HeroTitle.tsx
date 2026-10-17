@@ -39,7 +39,7 @@ const HeroWord = ({ paused, fontSize }: HeroWordProps): JSX.Element => {
 type HeroArtProps = { mode: GameMode; paused: boolean; size: number }
 
 // The art acting out a round on a loop. Its own component, keyed on the mode by HeroTitle, so picking
-// new art in Customize starts the loop over for the new art (the loop reads the mode once).
+// new art in the Settings sheet starts the loop over for the new art (the loop reads the mode once).
 const HeroArt = ({ mode, paused, size }: HeroArtProps): JSX.Element => {
   const theme = useTheme()
   const { settings } = useThemeSettings()
@@ -54,23 +54,29 @@ const HeroArt = ({ mode, paused, size }: HeroArtProps): JSX.Element => {
 }
 
 export type HeroTitleProps = {
-  // True while Home is covered (the loadout, the game, Stats): the art's demo loop stops, so nothing
-  // keeps re-rendering behind a screen that's in front of it.
+  // True while Home is covered (the loadout, the game, Stats, the Settings sheet): the art's demo loop
+  // and the title's reveal stop, so nothing keeps re-rendering behind whatever is in front of them.
   paused: boolean
 }
 
 // Home's hero, the fleet's title-plus-animation in Hangman's own hand: the player's chosen art drawing
-// itself in and acting out a round (the same demo loop Customize's carousel plays, in the player's
-// palette), over HANGMAN in the board's sketch letters, filled in on its blanks like a solved puzzle.
+// itself in and acting out a round (useArtDemoLoop, in the player's palette), over HANGMAN in the
+// board's sketch letters, filled in on its blanks like a solved puzzle.
 export const HeroTitle = ({ paused }: HeroTitleProps): JSX.Element => {
   const { mode } = usePuzzleDefaults()
+  // The art on show. A pick made while the hero is paused (in the Settings sheet over Home, the usual
+  // place) waits until it's uncovered, so the new art draws itself in where the player can see it
+  // rather than behind the sheet, and the old art holds its frame until then. Adjusted during render,
+  // React's pattern for state that follows a prop, so the swap lands in the same commit as the unpause.
+  const [shownMode, setShownMode] = useState(mode)
+  if (!paused && shownMode.id !== mode.id) setShownMode(mode)
   const { width } = useWindowDimensions()
   const artSize = Math.min(MAX_ART_SIZE, width * 0.6)
   const fontSize = fitSketchWordFontSize(TITLE.length, Math.min(width, 480) - 64, MAX_TITLE_FONT_SIZE)
 
   return (
     <View style={styles.hero} accessible accessibilityRole='header' accessibilityLabel='Hangman'>
-      <HeroArt key={mode.id} mode={mode} paused={paused} size={artSize} />
+      <HeroArt key={shownMode.id} mode={shownMode} paused={paused} size={artSize} />
       <HeroWord paused={paused} fontSize={fontSize} />
     </View>
   )

@@ -79,8 +79,9 @@ describe('useArtDemoLoop', () => {
     expect(result.current.revealKey).toBe(0)
   })
 
-  // The carousel's cards: the resting "fully drawn" preview shows first, then fades out, remounts
-  // blank while invisible, and the build starts after the fresh scene's reveal.
+  // Without startBlank (the old Customize carousel's cards; the hero starts blank): the resting "fully
+  // drawn" preview shows first, then fades out, remounts blank while invisible, and the build starts
+  // after the fresh scene's reveal.
   it('by default starts on the resting frame, then fades it out and remounts a blank scene', async () => {
     const { result } = await renderLoop({ isFocused: true, paused: false, mode: classicMode })
 
@@ -171,7 +172,7 @@ describe('useArtDemoLoop', () => {
     expect(result.current.revealKey).toBe(0)
   })
 
-  // Home covered by another screen, or the drawer closed: the frame on screen stays put, and nothing
+  // Home covered by another screen or the Settings sheet: the frame on screen stays put, and nothing
   // keeps re-rendering behind it.
   it('stops mid-cycle when paused, holding its frame, and restarts from the entry fade when unpaused', async () => {
     const { result, rerender } = await renderLoop({ isFocused: true, paused: false, mode: classicMode, startBlank: true })

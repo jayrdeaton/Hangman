@@ -19,7 +19,7 @@ import type { PuzzleDifficultyTier } from '@/utils/puzzleCatalog'
 import { Keyboard } from './Keyboard'
 import { PuzzleInfoRow } from './PuzzleInfoRow'
 import { PuzzleStage } from './PuzzleStage'
-import { type CategoryProgress, RoundEndDialog } from './RoundEndDialog'
+import { type CategoryProgress, type PnpRoundSummary, RoundEndDialog } from './RoundEndDialog'
 
 export type SolveDetails = { wrongGuesses: number; hintRevealed: boolean; guessCount: number }
 export type LossDetails = { wrongGuesses: number; guessCount: number }
@@ -77,6 +77,12 @@ export type GameProps = {
   categoryProgress?: CategoryProgress | null
   // What this round unlocked, passed straight through to RoundEndDialog like categoryProgress above.
   unlockedAchievements?: UnlockedAchievement[]
+  // A Pass & Play round's rows on the result card, and its End Session button (see RoundEndDialog).
+  passAndPlay?: PnpRoundSummary | null
+  onEndSession?: () => void
+  // Hides the result card (and a win's fireworks) while another card stands in for it: Pass & Play's
+  // End Session standings, which can still be backed out of, bringing this card back.
+  roundCardHidden?: boolean
   // True while a dialog covers the board (pass-and-play's prompt and hand-off, which mount the real
   // round underneath themselves rather than a blank screen, so there's nothing left to reveal once
   // the dialog closes; the Settings sheet), or while the game screen isn't the one showing. Guards handleGuess only, deliberately
@@ -87,7 +93,7 @@ export type GameProps = {
   locked?: boolean
 }
 
-export const Game = ({ onStop, onSolved, onLost, onProgress, initialGuessedLetters, initialHintRevealed = false, phrase, mode = DEFAULT_MODE, hint, packLabel, difficultyTier, celebration = DEFAULT_CELEBRATION, categoryProgress, unlockedAchievements, locked = false }: GameProps): JSX.Element => {
+export const Game = ({ onStop, onSolved, onLost, onProgress, initialGuessedLetters, initialHintRevealed = false, phrase, mode = DEFAULT_MODE, hint, packLabel, difficultyTier, celebration = DEFAULT_CELEBRATION, categoryProgress, unlockedAchievements, passAndPlay, onEndSession, roundCardHidden = false, locked = false }: GameProps): JSX.Element => {
   const { layout } = useKeyboardLayout()
   const { playCorrect, playWrong, playWin, playLoss } = useSoundEffects()
   const gameHaptics = useGameHaptics()
@@ -277,7 +283,7 @@ export const Game = ({ onStop, onSolved, onLost, onProgress, initialGuessedLette
         ) : null}
         <Keyboard guessedLetters={guessedLetters} phrase={phrase} winningLetter={winningLetter} falling={keyboardFalling} started={gameReady} disabled={outcome !== null} layout={layout} onGuess={handleGuess} onReadyChange={setKeyboardReady} />
       </Animated.View>
-      {outcome === 'win' && !roundEndDismissed ? (
+      {outcome === 'win' && !roundEndDismissed && !roundCardHidden ? (
         // Portal escapes this component's own box (which sits below the app header and inside
         // safe-area padding) to render at the app root instead (the same mechanism
         // RoundEndDialog's card uses for its full-screen backdrop), so the celebration covers
@@ -286,7 +292,7 @@ export const Game = ({ onStop, onSolved, onLost, onProgress, initialGuessedLette
           <CelebrationView key={celebrationCycle} colors={[theme.colors.primary, theme.colors.secondary, theme.colors.tertiary]} dark={theme.dark} onComplete={() => setCelebrationCycle((c) => c + 1)} />
         </Portal>
       ) : null}
-      <RoundEndDialog visible={outcome !== null && dialogReady && !roundEndDismissed} outcome={outcome} phrase={phrase} guessedLetters={guessedLetters} categoryProgress={categoryProgress} unlockedAchievements={unlockedAchievements} onDismiss={handleRoundEndDismiss} />
+      <RoundEndDialog visible={outcome !== null && dialogReady && !roundEndDismissed && !roundCardHidden} outcome={outcome} phrase={phrase} guessedLetters={guessedLetters} categoryProgress={categoryProgress} unlockedAchievements={unlockedAchievements} passAndPlay={passAndPlay} onEndSession={onEndSession} onDismiss={handleRoundEndDismiss} />
     </View>
   )
 }

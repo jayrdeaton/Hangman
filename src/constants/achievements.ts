@@ -17,6 +17,11 @@ export const VISIBLE_MODE_COUNT = 10
 // Jay's calls (2026-10-15): the solve ladders stop at 2,500 (the old 5,000 to 20,000 ladder is gone);
 // Flawless Debut keeps the fleet's id and gold tier but asks for the first puzzle to be solved with no
 // wrong guess; Pass & Play's ladder is 5 / 25 / 100; shared-link puzzles count as solo rounds.
+//
+// Every entry is evaluated per player (2026-10-17, everything belongs to a player): against the device
+// bucket, which is also the guests' record, and against each profile's own bucket (see useGameStats).
+// None is scope 'device', not even Flawless Debut: each player's first round is their own (see
+// statsEngine's firstGameFields).
 export const ACHIEVEMENT_CATALOG: AchievementDefinition[] = [
   {
     id: 'first_game_played',
@@ -40,7 +45,6 @@ export const ACHIEVEMENT_CATALOG: AchievementDefinition[] = [
     description: 'Solve the very first puzzle you play without a wrong guess.',
     tier: 'gold',
     icon: 'star-circle',
-    scope: 'device',
     isUnlocked: (stats) => stats.firstGameFlawless
   },
   ...tieredFamily<StatsState>({

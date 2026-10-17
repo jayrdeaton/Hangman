@@ -3,9 +3,13 @@ import { router, useIsFocused } from 'expo-router'
 
 import { HomeScreen } from '@/components/HomeScreen'
 import { Providers } from '@/components/Providers'
+import { robotMode } from '@/modes/registry'
 import { achievementsActions } from '@/redux/achievementsSlice'
+import { activePlayerActions } from '@/redux/activePlayerSlice'
+import { playerSettingsActions } from '@/redux/playerSettingsSlice'
 import { roundActions } from '@/redux/roundSlice'
 import { store } from '@/redux/store'
+import { GUEST_PLAYER_KEY } from '@/utils/players'
 
 // The hero's art and its loop have their own suites (HeroTitle, useArtDemoLoop). Here it only shows
 // whether Home asked it to pause.
@@ -36,6 +40,8 @@ describe('HomeScreen', () => {
     mockUseIsFocused.mockReturnValue(true)
     store.dispatch(roundActions.reset())
     store.dispatch(achievementsActions.reset())
+    store.dispatch(activePlayerActions.setActivePlayer(null))
+    store.dispatch(playerSettingsActions.reset())
   })
 
   describe('with no game left open', () => {
@@ -90,6 +96,28 @@ describe('HomeScreen', () => {
       await rerender(home())
 
       expect(getByTestId('hero').props.children).toBe('paused')
+    })
+
+    // The sheet covers the hero too, and it's where new art is picked: the hero waits for it to close.
+    it('pauses the hero while Settings is open over Home, and plays it again once the sheet closes', async () => {
+      const { getByLabelText, getByTestId, getByText } = await renderHome()
+
+      await fireEvent.press(getByLabelText('Settings'))
+      expect(getByTestId('hero').props.children).toBe('paused')
+
+      await fireEvent.press(getByText('Done'))
+      expect(getByTestId('hero').props.children).toBe('playing')
+    })
+
+    // The whole app's nesting, so the pick crosses the sheet's Portal the way it does on device.
+    it("picks the player's art from the Settings sheet's ART grid", async () => {
+      const { getByLabelText, getByRole } = await renderHome()
+
+      await fireEvent.press(getByLabelText('Settings'))
+      await fireEvent.press(getByRole('button', { name: `${robotMode.label} art` }))
+
+      expect(store.getState().playerSettings[GUEST_PLAYER_KEY]?.modeId).toBe(robotMode.id)
+      expect(getByRole('button', { name: `${robotMode.label} art`, selected: true })).toBeTruthy()
     })
   })
 

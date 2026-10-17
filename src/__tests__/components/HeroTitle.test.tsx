@@ -161,8 +161,8 @@ describe('HeroTitle', () => {
     expect(art()).toBe(1)
   })
 
-  // The loop reads the mode once, so new art picked in Customize needs a fresh hero art, with its
-  // own draw-in, rather than the old loop carrying on with the new picture.
+  // The loop reads the mode once, so new art picked in the Settings sheet needs a fresh hero art, with
+  // its own draw-in, rather than the old loop carrying on with the new picture.
   it('starts the art over, from blank, when the player picks new art', async () => {
     const { getByTestId, queryByTestId, rerender } = await render()
     await advance(REVEAL_HOLD + 3 * STEP)
@@ -179,6 +179,30 @@ describe('HeroTitle', () => {
     await advance(REVEAL_HOLD + STEP - 1)
     expect(art()).toBe(0)
     await advance(1)
+    expect(art()).toBe(1)
+  })
+
+  // Art is picked in the Settings sheet, which pauses the hero under it: the new art draws itself in
+  // once the sheet is gone, where the player can watch it, not behind the sheet.
+  it('keeps the old art, frozen, while new art is picked over a paused hero, then draws the new art in once uncovered', async () => {
+    const { getByTestId, queryByTestId, rerender } = await render()
+    await advance(REVEAL_HOLD + 3 * STEP)
+    await rerender(hero(classicMode, true))
+
+    await rerender(hero(candleMode, true))
+    await advance(20000)
+
+    expect(getByTestId('hero-art-classic').props.children).toBe(3)
+    expect(queryByTestId('hero-art-candle')).toBeNull()
+    expect(count('render:candle')).toBe(0)
+
+    await rerender(hero(candleMode, false))
+    const art = () => getByTestId('hero-art-candle').props.children
+
+    expect(queryByTestId('hero-art-classic')).toBeNull()
+    expect(count('mount:candle')).toBe(1)
+    expect(art()).toBe(0)
+    await advance(REVEAL_HOLD + STEP)
     expect(art()).toBe(1)
   })
 })

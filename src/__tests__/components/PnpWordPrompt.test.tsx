@@ -13,7 +13,7 @@ jest.mock('@tastic/hud/chrome', () => {
 })
 const mockOverlayCard = jest.mocked(OverlayCard)
 
-const baseProps: PnpWordPromptProps = { answer: '', hint: '', onAnswerChange: jest.fn(), onHintChange: jest.fn(), promptVisible: true, onClose: jest.fn(), onSubmit: jest.fn() }
+const baseProps: PnpWordPromptProps = { writerName: 'Player 1', guessers: [{ id: 'p2', name: 'Player 2' }], guesserId: 'p2', onGuesserChange: jest.fn(), answer: '', hint: '', onAnswerChange: jest.fn(), onHintChange: jest.fn(), promptVisible: true, onClose: jest.fn(), onSubmit: jest.fn() }
 const renderPrompt = (props: Partial<PnpWordPromptProps> = {}) =>
   render(
     <Providers>
@@ -31,10 +31,10 @@ describe('PnpWordPrompt', () => {
     addEventListener.mockRestore()
   })
 
-  it('is the fleet card: a title, the two fields, Keep This Word and Next, with nothing to tap beside it', async () => {
+  it("is the fleet card: the writer's name, the two fields, Keep This Word and Next, with nothing to tap beside it", async () => {
     const { getByText, getByTestId, getByLabelText, queryByTestId } = await renderPrompt()
 
-    expect(getByText('Pass & Play')).toBeTruthy()
+    expect(getByText("Player 1's Word")).toBeTruthy()
     expect(getByTestId('pnp-answer-input')).toBeTruthy()
     expect(getByTestId('pnp-hint-input')).toBeTruthy()
     expect(getByLabelText('Keep this word')).toBeTruthy()
@@ -46,6 +46,33 @@ describe('PnpWordPrompt', () => {
     expect(backdrop.children).toEqual([getByTestId('pnp-card')])
     expect(backdrop.props.onStartShouldSetResponder).toBeUndefined()
     expect(backdrop.props.onClick).toBeUndefined()
+  })
+
+  // With two players the word can only be for the other one.
+  it('has no For row with only one player to guess', async () => {
+    const { queryByText, queryByLabelText } = await renderPrompt()
+
+    expect(queryByText('For')).toBeNull()
+    expect(queryByLabelText('For Player 2')).toBeNull()
+  })
+
+  it('lists everyone else at the table to write for, with the current pick selected, and reports a new pick', async () => {
+    const onGuesserChange = jest.fn()
+    const guessers = [
+      { id: 'p3', name: 'Cy' },
+      { id: 'p1', name: 'Ann' }
+    ]
+    const { getByText, getByLabelText, getAllByLabelText } = await renderPrompt({ writerName: 'Bo', guessers, guesserId: 'p1', onGuesserChange })
+
+    expect(getByText("Bo's Word")).toBeTruthy()
+    expect(getByText('For')).toBeTruthy()
+    // In the order given (seat order from the writer), and only the pick selected.
+    expect(getAllByLabelText(/^For /).map((chip) => chip.props.accessibilityLabel)).toEqual(['For Cy', 'For Ann'])
+    expect(getByLabelText('For Ann')).toBeSelected()
+    expect(getByLabelText('For Cy')).not.toBeSelected()
+
+    await fireEvent.press(getByLabelText('For Cy'))
+    expect(onGuesserChange).toHaveBeenCalledWith('p3')
   })
 
   it('offers Next only once there is a word to play', async () => {
