@@ -1,4 +1,3 @@
-import { getTriadicPalette } from '@rific/auto-paper'
 import { type Profile, profilesActions } from '@tastic/profile'
 import { act, fireEvent, render } from '@testing-library/react-native'
 import { StyleSheet } from 'react-native'
@@ -126,12 +125,14 @@ describe('ManageProfilesScreen', () => {
     expect(roster()[0].name).toBe('Ali')
   })
 
-  it("draws each profile's chip as its palette, in that player's own harmony", async () => {
+  // Flat since 2026-10-18 (a legible tag on one color; the palette is drawn only where a color is
+  // chosen): the profile's own color, not their Hangman pick.
+  it("draws each profile's chip flat, in the profile's own color", async () => {
     store.dispatch(playerThemeActions.setPlayerTheme({ playerKey: ALICE.id, theme: { color: '#2196f3', harmony: 'square', profileColor: ALICE.color } }))
     const screen = await renderScreen()
 
-    const { secondary, tertiary } = getTriadicPalette(ALICE.color, 'square')
-    expect(pathFills(screen.toJSON())).toEqual(expect.arrayContaining([secondary, tertiary]))
+    expect(pathFills(screen.toJSON())).toEqual([])
+    expect(JSON.stringify(screen.toJSON())).toContain(`"backgroundColor":"${ALICE.color}"`)
   })
 
   it("follows the roster as it changes elsewhere (another game's edit)", async () => {

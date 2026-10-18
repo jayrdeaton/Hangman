@@ -1,7 +1,7 @@
 import { FadingScrollView } from '@rific/auto-paper'
 import { Button, Card, IconButton, SegmentedButtons, Switch } from '@rific/feedback-press'
 import { ConfirmDialog, WELL_SHADOW } from '@tastic/hud/chrome'
-import { OptionPicker, type OptionPickerOption, type Profile, ProfileColorProvider } from '@tastic/profile'
+import { OptionPicker, type OptionPickerOption, type Profile } from '@tastic/profile'
 import { router, useFocusEffect, useIsFocused } from 'expo-router'
 import { JSX, memo, type ReactNode, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { AccessibilityInfo, type LayoutChangeEvent, Platform, StyleSheet, useWindowDimensions, View } from 'react-native'
@@ -65,8 +65,7 @@ const inkFor = (dark: boolean) => (dark ? '#FFFFFF' : '#000000')
 // pill rather than a segmented control, which cut "Medium" short on small phones; the difficulty is a
 // saved pick, so the extra tap costs little. Its chip, menu border and picked row take the tier's
 // color, the same colors the board's difficulty badge uses (Any is the theme's primary), and the pill
-// the tier's muted container. Drawn flat: the app's ProfileColorProvider (PlayerSwatches) draws every
-// chip as a profile's palette, which means nothing for a difficulty.
+// the tier's muted container.
 const DifficultyPicker = memo(({ value, onChange }: { value: DifficultyFilter; onChange: (value: DifficultyFilter) => void }): JSX.Element => {
   const theme = useTheme()
   const host = useLoadoutPopoverHost()
@@ -79,11 +78,7 @@ const DifficultyPicker = memo(({ value, onChange }: { value: DifficultyFilter; o
   // white name and chevron read on it, light containers in light mode and dark ones in dark).
   const container = colors[value].container
   const pillStyle = useMemo(() => [styles.pill, { backgroundColor: container }], [container])
-  return (
-    <ProfileColorProvider>
-      <OptionPicker id={DIFFICULTY_PICKER_ID} host={host} options={options} value={value} onChange={onChange} color={colors[value].vibrant} dark={theme.dark} icon={icon} triggerStyle={pillStyle} />
-    </ProfileColorProvider>
-  )
+  return <OptionPicker id={DIFFICULTY_PICKER_ID} host={host} options={options} value={value} onChange={onChange} color={colors[value].vibrant} dark={theme.dark} icon={icon} triggerStyle={pillStyle} />
 })
 DifficultyPicker.displayName = 'DifficultyPicker'
 

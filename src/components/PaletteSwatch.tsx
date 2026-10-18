@@ -22,8 +22,8 @@ const paletteFor = (color: string, harmony: ColorHarmony): TriadicPalette => {
 // One player's whole palette as a round swatch: the 2:1:1 pie auto-paper's palette picker draws for
 // each of its swatches (its private Pie), primary across the top half (centered at 12 o'clock),
 // secondary bottom left and tertiary bottom right, from getTriadicPalette with the player's harmony.
-// Every profile chip and swatch in the app draws through it (see PlayerSwatches), so a player's chip
-// shows the colors they actually play in. Drawn in a 2x2 box scaled to `size`, layered rather than
+// The player pickers' Color row and color page draw through it (HarmonySwatches), so picking a color
+// previews the palette it gives this player; chips stay flat (see harmonySwatchRenderer). Drawn in a 2x2 box scaled to `size`, layered rather than
 // cut into three wedges: the full circle in primary, the bottom half in secondary over it, then the
 // bottom-right quarter in tertiary, so any antialiased seam shows a neighboring color, never the page.
 export const PaletteSwatch = memo(({ color, harmony, size }: PaletteSwatchProps): JSX.Element => {

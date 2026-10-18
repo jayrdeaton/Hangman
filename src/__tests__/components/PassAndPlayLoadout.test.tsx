@@ -1,5 +1,5 @@
 import AsyncStorage from '@react-native-async-storage/async-storage'
-import { defaultColors, getTriadicPalette } from '@rific/auto-paper'
+import { defaultColors } from '@rific/auto-paper'
 import { type Profile, profilesActions } from '@tastic/profile'
 import { act, fireEvent, render, waitFor, within } from '@testing-library/react-native'
 import { router } from 'expo-router'
@@ -349,13 +349,11 @@ describe('the Pass & Play page', () => {
       store.dispatch(playerThemeActions.setPlayerTheme({ playerKey: guestSeatKey('p2'), theme: { color: '#00bcd4', harmony: 'triadic' } }))
       const screen = await renderLoadout()
 
-      const triad = (color: string, harmony: 'analogous' | 'triadic') => {
-        const { secondary, tertiary } = getTriadicPalette(color, harmony)
-        return [secondary, tertiary]
-      }
+      // Flat chips since 2026-10-18: each pill's chip is its seat's own color, with no palette drawn.
       await waitFor(() => expect(store.getState().theme.color).toBe('#8bc34a'))
-      expect(seatFills(screen, 'p1')).toEqual({ Circle: ['#8bc34a'], Path: triad('#8bc34a', 'analogous') })
-      expect(seatFills(screen, 'p2')).toEqual({ Circle: ['#00bcd4'], Path: triad('#00bcd4', 'triadic') })
+      expect(seatFills(screen, 'p1')).toEqual({ Circle: [], Path: [] })
+      expect(JSON.stringify(screen.getByTestId('seat-p1').toJSON())).toContain('"backgroundColor":"#8bc34a"')
+      expect(JSON.stringify(screen.getByTestId('seat-p2').toJSON())).toContain('"backgroundColor":"#00bcd4"')
     })
 
     it("hands the seat's own guest back their art and colors when a profile sitting there gives the seat back", async () => {

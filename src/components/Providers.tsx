@@ -21,7 +21,6 @@ import { AutoSaveCustomProvider } from './AutoSaveCustomProvider'
 import { Haptic } from './Haptic'
 import { KeyboardLayoutProvider } from './KeyboardLayoutProvider'
 import { PackSelectionProvider } from './PackSelectionProvider'
-import { PlayerSwatches } from './PlayerSwatches'
 import { PuzzleDefaultsProvider } from './PuzzleDefaultsProvider'
 import { Theme } from './Theme'
 
@@ -96,10 +95,8 @@ export const Providers = ({ children }: ProvidersProps): JSX.Element => (
                                   puzzles. Holds everything below back until the launch reconcile is
                                   in. */}
                               <ProfilesProvider>
-                                <PlayerSwatches>
-                                  {/* Inside PersistGate too: the resume reads the rehydrated round slice. */}
-                                  <ActiveGameProvider>{children}</ActiveGameProvider>
-                                </PlayerSwatches>
+                                {/* Inside PersistGate too: the resume reads the rehydrated round slice. */}
+                                <ActiveGameProvider>{children}</ActiveGameProvider>
                               </ProfilesProvider>
                             </GameStatsProvider>
                           </PuzzleDefaultsProvider>

@@ -4,8 +4,8 @@ import { JSX, memo, type ReactNode, useCallback } from 'react'
 import { type StyleProp, StyleSheet, View, type ViewStyle } from 'react-native'
 
 // Who a player is, the one way every screen shows it: a profile has its chip (@tastic/profile's
-// ProfileChip: its tag, or the account glyph, on its color drawn as the whole palette, which
-// PlayerSwatches does app-wide), and a guest has none, only their name. So a table of guests reads
+// ProfileChip: its tag, or the account glyph, on its own flat color, 2026-10-18: the palette pie made
+// the tag hard to read), and a guest has none, only their name. So a table of guests reads
 // exactly as it did before profiles, and a profile reads the same wherever it's named: the Pass & Play
 // prompt, hand-off, result and session cards, and the standings.
 
