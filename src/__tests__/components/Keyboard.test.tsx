@@ -1,6 +1,8 @@
+import { type AutoPaperTheme, Provider as AutoPaperProvider, useAutoPaperTheme, useThemeSettings } from '@rific/auto-paper'
 import { FeedbackPressProvider } from '@rific/feedback-press'
-import { fireEvent, render as rtlRender, within } from '@testing-library/react-native'
-import type { JSX, ReactElement, ReactNode } from 'react'
+import { act, fireEvent, render as rtlRender, within } from '@testing-library/react-native'
+import { type JSX, type ReactElement, type ReactNode, useEffect } from 'react'
+import { StyleSheet } from 'react-native'
 import * as RNPaper from 'react-native-paper'
 import { PaperProvider } from 'react-native-paper'
 
@@ -95,6 +97,39 @@ describe('Keyboard', () => {
   // protecting here is the plain (row, col) distance math above (findKeyPosition) and that handing
   // Keyboard a winningLetter doesn't blow up rendering, which this covers; the visual "does it
   // actually draw in" question is a manual/on-device check, not a unit-testable one.
+  // A key keeps what it stands for, not a color: a Pass & Play board is built in the writer's colors
+  // and played in the guesser's, and the colors can change mid-round, so an untouched key shows
+  // whatever theme is on screen now.
+  it("recolors its keys when the theme's colors change mid-round", async () => {
+    let theme: AutoPaperTheme | null = null
+    let setTheme: ((patch: { color: string }) => void) | null = null
+    const ThemeHandle = () => {
+      const live = useAutoPaperTheme()
+      const { set } = useThemeSettings()
+      useEffect(() => {
+        theme = live
+        setTheme = set
+      }, [live, set])
+      return null
+    }
+    const screen = await rtlRender(
+      <AutoPaperProvider initialValue={{ appearance: 'light', color: '#FFEB3B' }}>
+        <FeedbackPressProvider paper={RNPaper}>
+          <ThemeHandle />
+          <Keyboard guessedLetters={[]} phrase='CAT' onGuess={jest.fn()} />
+        </FeedbackPressProvider>
+      </AutoPaperProvider>
+    )
+    const labelColor = () => StyleSheet.flatten(screen.getByText('Q').props.style).color
+    const yellowInk = theme!.colors.onPrimary
+    expect(labelColor()).toBe(yellowInk)
+
+    await act(async () => setTheme!({ color: '#0D47A1' }))
+
+    expect(theme!.colors.onPrimary).not.toBe(yellowInk)
+    expect(labelColor()).toBe(theme!.colors.onPrimary)
+  })
+
   it('renders without error when a winningLetter is provided', async () => {
     const { getByText } = await render(<Keyboard guessedLetters={['C', 'A', 'T']} phrase='CAT' winningLetter='T' disabled onGuess={jest.fn()} />)
 

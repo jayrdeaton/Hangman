@@ -10,7 +10,7 @@ import { activePlayerActions } from '@/redux/activePlayerSlice'
 import { playerSettingsActions } from '@/redux/playerSettingsSlice'
 import { roundActions, selectSoloRound } from '@/redux/roundSlice'
 import { store } from '@/redux/store'
-import { GUEST_PLAYER_KEY } from '@/utils/players'
+import { GUEST_PLAYER_KEY, guestSeatKey } from '@/utils/players'
 
 const wrapper = ({ children }: { children: ReactNode }) => (
   <ReduxProvider store={store}>
@@ -47,7 +47,7 @@ describe('useSelectArt', () => {
   })
 
   // The art is cosmetic: the round on the board takes it as is, guesses, hint and all.
-  it("redraws the player's waiting solo round and the Pass & Play round in it, changing nothing else", async () => {
+  it("redraws the player's waiting solo round, changing nothing else", async () => {
     seedSoloRound()
     store.dispatch(roundActions.setPnpWord({ phrase: 'CAT', modeId: DEFAULT_MODE.id, sourceMode: 'custom' }))
     const before = soloRound()
@@ -58,7 +58,26 @@ describe('useSelectArt', () => {
     })
 
     expect(soloRound()).toEqual({ ...before, puzzle: { ...before.puzzle, modeId: candleMode.id } })
+    // The word waiting is the second seat's guest's, a player of their own.
+    expect(store.getState().round.pnp.puzzle?.modeId).toBe(DEFAULT_MODE.id)
+  })
+
+  it('redraws the Pass & Play word waiting for its guesser, a guest seat picking as its own guest', async () => {
+    seedSoloRound()
+    store.dispatch(roundActions.setPnpWord({ phrase: 'CAT', modeId: DEFAULT_MODE.id, sourceMode: 'custom' }))
+    store.dispatch(activePlayerActions.setActivePlayer(null, 'p2'))
+    const before = soloRound()
+    const { result } = await renderSelectArt()
+
+    await act(async () => {
+      result.current.selectArt(candleMode)
+    })
+
     expect(store.getState().round.pnp.puzzle?.modeId).toBe(candleMode.id)
+    expect(playerArt(guestSeatKey('p2'))).toBe(candleMode.id)
+    // Single Player's guest keeps their own art and round.
+    expect(playerArt()).toBeUndefined()
+    expect(soloRound()).toEqual(before)
   })
 
   // A player with no round waiting has nothing to redraw, and gets no empty round made for them.

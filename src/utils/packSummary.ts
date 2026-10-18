@@ -1,4 +1,4 @@
-// The Single Player loadout's packs card names the packs selected in one line of text that never runs
+// The loadout's packs card names the packs selected in one line of text that never runs
 // long: as many names as fit `maxChars`, then how many more there are, counted exactly ("Brands &
 // Products, Companies and 8 more"). Every name fits: "A, B and C". The first name always shows, however
 // long, so the line never reads as just a count.

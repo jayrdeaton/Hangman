@@ -1,4 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
+import { defaultColors } from '@rific/auto-paper'
 import { localDateString, previousDateString } from '@tastic/achievements'
 import { type Profile, profilesActions } from '@tastic/profile'
 import { act, fireEvent, render } from '@testing-library/react-native'
@@ -13,13 +14,14 @@ import { Providers } from '@/components/Providers'
 import { useAutoSaveCustom } from '@/hooks/useAutoSaveCustom'
 import { DEFAULT_MODE } from '@/modes/registry'
 import { achievementsActions } from '@/redux/achievementsSlice'
-import activePlayerReducer from '@/redux/activePlayerSlice'
+import activePlayerReducer, { activePlayerActions } from '@/redux/activePlayerSlice'
+import { playerSettingsActions } from '@/redux/playerSettingsSlice'
+import { playerThemeActions } from '@/redux/playerThemeSlice'
 import roundReducer, { initialRoundState, type PnpPhase, roundActions, type SavedPuzzle, selectSoloRound } from '@/redux/roundSlice'
 import { store } from '@/redux/store'
 import { alert } from '@/utils/alert'
 import { addCustomPuzzle } from '@/utils/customPacks'
-import { GUEST_PLAYER_KEY } from '@/utils/players'
-import { createDefaultPnpSession } from '@/utils/pnpSession'
+import { GUEST_PLAYER_KEY, guestSeatKey } from '@/utils/players'
 import * as puzzlePicker from '@/utils/puzzlePicker'
 import { sanitizeRoundState } from '@/utils/roundState'
 import { createDefaultProfileStats, createDefaultStats } from '@/utils/statsValidation'
@@ -99,6 +101,9 @@ beforeEach(() => {
   mockUseIsFocused.mockReturnValue(true)
   store.dispatch(achievementsActions.reset())
   store.dispatch(roundActions.reset())
+  store.dispatch(activePlayerActions.setActivePlayer(null))
+  store.dispatch(playerSettingsActions.reset())
+  store.dispatch(playerThemeActions.reset())
   store.dispatch(profilesActions.setAll([]))
   backListeners = []
   addBackListener = jest.spyOn(BackHandler, 'addEventListener').mockImplementation((_event, listener) => {
@@ -533,7 +538,7 @@ describe('GameScreen - pass and play', () => {
       expect(pnpRound()).toMatchObject({ phase: 'authoring', id: 1, puzzle: null })
     })
 
-    it('keeps the word through the close glyph, offers Continue for it, and brings the prompt back with it', async () => {
+    it("keeps the word through the close glyph, the loadout's Ready goes back to it, and brings the prompt back with it", async () => {
       const game = await renderGame()
       await fireEvent.changeText(game.getByTestId('pnp-answer-input'), 'CAT')
       await fireEvent.changeText(game.getByTestId('pnp-hint-input'), 'A pet')
@@ -549,10 +554,11 @@ describe('GameScreen - pass and play', () => {
         </Providers>
       )
       const saved = pnpRound()
-      await fireEvent.press(loadout.getByText('Continue'))
+      await fireEvent.press(loadout.getByRole('button', { name: 'Ready' }))
 
       expect(router.push).toHaveBeenCalledWith(PNP_GAME)
       expect(pnpRound()).toEqual(saved)
+      await loadout.unmount()
 
       const again = await renderGame()
 
@@ -752,6 +758,49 @@ describe('GameScreen - pass and play', () => {
         jest.useRealTimers()
       })
 
+      // The board is whoever's turn it is (Jay, 2026-10-18): the writer's while they write, the
+      // guesser's from the hand-off on, in their colors and their art.
+      it('makes the writer the active player while they write, and the guesser from the hand-off on', async () => {
+        store.dispatch(playerSettingsActions.setMode({ playerKey: BOB.id, modeId: 'robot' }))
+        const utils = await renderGame()
+
+        expect(store.getState().activePlayer.profileId).toBe(ALICE.id)
+        expect(store.getState().theme.color).toBe(ALICE.color)
+
+        await writeWord(utils, 'CAT')
+
+        expect(store.getState().activePlayer.profileId).toBe(BOB.id)
+        expect(store.getState().theme.color).toBe(BOB.color)
+        // The word is drawn in the guesser's own art.
+        expect(pnpRound().puzzle?.modeId).toBe('robot')
+
+        await fireEvent.press(utils.getByText('Ready'))
+        expect(store.getState().activePlayer.profileId).toBe(BOB.id)
+      })
+
+      it('has the guesser write the next word, still the active player', async () => {
+        jest.useFakeTimers()
+        const utils = await renderGame()
+
+        await playThroughToRound(utils, 'CAT')
+        await winWithCat(utils)
+        expect(store.getState().activePlayer.profileId).toBe(BOB.id)
+        await fireEvent.press(utils.getByText('Next'))
+
+        expect(utils.getByText("Bob's Word")).toBeTruthy()
+        expect(store.getState().activePlayer.profileId).toBe(BOB.id)
+
+        jest.useRealTimers()
+      })
+
+      // The web keeps a left screen mounted, and the loadout puts its own focused seat back.
+      it("leaves the active player alone while the screen isn't the one showing", async () => {
+        mockUseIsFocused.mockReturnValue(false)
+        await renderGame()
+
+        expect(store.getState().activePlayer.profileId).toBeNull()
+      })
+
       it("keeps a guest guesser's card the plain one, under the device's unlocks", async () => {
         jest.useFakeTimers()
         seat('p2', null)
@@ -767,6 +816,59 @@ describe('GameScreen - pass and play', () => {
         expect(queryByText('Alice Unlocked')).toBeNull()
 
         jest.useRealTimers()
+      })
+    })
+
+    // Each guest seat is a player of its own (2026-10-18): the board is in the colors and art of whichever
+    // guest's turn it is, each their own, never Single Player's guest's.
+    describe('with guests at the table', () => {
+      const colorOf = (seatId: string) => store.getState().playerTheme[guestSeatKey(seatId)]?.color
+
+      beforeEach(() => {
+        store.dispatch(playerThemeActions.setPlayerTheme({ playerKey: guestSeatKey('p1'), theme: { color: '#8bc34a', harmony: 'analogous' } }))
+        store.dispatch(playerThemeActions.setPlayerTheme({ playerKey: guestSeatKey('p2'), theme: { color: '#00bcd4', harmony: 'triadic' } }))
+        store.dispatch(playerSettingsActions.setMode({ playerKey: guestSeatKey('p2'), modeId: 'robot' }))
+        store.dispatch(playerSettingsActions.setMode({ playerKey: GUEST_PLAYER_KEY, modeId: 'candle' }))
+      })
+
+      it('makes the writing guest the active player in their own colors, and the guessing guest from the hand-off on in theirs and their art', async () => {
+        jest.useFakeTimers()
+        const utils = await renderGame()
+
+        expect(store.getState().activePlayer).toEqual({ profileId: null, seatId: 'p1' })
+        expect(store.getState().theme.color).toBe('#8bc34a')
+
+        await writeWord(utils, 'CAT')
+
+        expect(store.getState().activePlayer).toEqual({ profileId: null, seatId: 'p2' })
+        expect(store.getState().theme).toMatchObject({ color: '#00bcd4', harmony: 'triadic' })
+        expect(pnpRound().puzzle?.modeId).toBe('robot')
+
+        await fireEvent.press(utils.getByText('Ready'))
+        await winWithCat(utils)
+        await fireEvent.press(utils.getByText('Next'))
+
+        // The guesser writes the next word, still in their own colors.
+        expect(utils.getByText("Player 2's Word")).toBeTruthy()
+        expect(store.getState().activePlayer).toEqual({ profileId: null, seatId: 'p2' })
+        expect(store.getState().theme.color).toBe('#00bcd4')
+        // A guest's rounds are the device's, on no profile's bucket.
+        expect(stats().pnp.played).toBe(1)
+        expect(stats().profiles).toEqual({})
+
+        jest.useRealTimers()
+      })
+
+      // A table stored before guest seats had colors: each is given its own as it first plays.
+      it('gives a guest with no colors yet a color of their own as their turn comes, never the colors already on screen', async () => {
+        store.dispatch(playerThemeActions.reset())
+        const utils = await renderGame()
+
+        expect(store.getState().activePlayer).toEqual({ profileId: null, seatId: 'p1' })
+        // Spread across the wheel (see guestSeats.ts): Red, then Cyan.
+        expect([colorOf('p1'), colorOf('p2')]).toEqual([defaultColors.find((color) => color.label === 'Red')!.value, defaultColors.find((color) => color.label === 'Cyan')!.value])
+        await writeWord(utils, 'CAT')
+        expect(store.getState().theme.color).toBe(defaultColors.find((color) => color.label === 'Cyan')!.value)
       })
     })
 
@@ -797,7 +899,8 @@ describe('GameScreen - pass and play', () => {
       it('ends the session from Done: the standings cleared, the table kept, and back to the loadout', async () => {
         jest.useFakeTimers()
         store.dispatch(roundActions.addPnpPlayer())
-        store.dispatch(roundActions.renamePnpPlayer({ id: 'p1', name: 'Ann' }))
+        store.dispatch(profilesActions.setAll([{ id: 'profile-ann', name: 'Ann', color: '#9c27b0', tag: 'AN', createdAt: 1, updatedAt: 1 }]))
+        store.dispatch(roundActions.setPnpSeatProfile({ id: 'p1', profile: { id: 'profile-ann', name: 'Ann' } }))
         const utils = await renderGame()
 
         await endSession(utils)
@@ -971,6 +1074,8 @@ describe('GameScreen - pass and play', () => {
   })
 })
 
+// Ready on the Pass & Play page while the players write (the default): back to a session under way, or
+// a new one. New session clears one. The rest of the page is PassAndPlayLoadout.test.tsx's.
 describe('LoadoutScreen - pass and play', () => {
   const renderLoadout = () =>
     render(
@@ -978,79 +1083,65 @@ describe('LoadoutScreen - pass and play', () => {
         <LoadoutScreen mode='pnp' />
       </Providers>
     )
+  type Loadout = Awaited<ReturnType<typeof renderLoadout>>
+  const ready = (utils: Loadout) => utils.getByRole('button', { name: 'Ready' })
 
-  it('starts a fresh session from New Session and opens the game', async () => {
-    const { getByText, queryByText } = await renderLoadout()
+  it('starts a fresh session from Ready with nothing under way, and opens the game', async () => {
+    const utils = await renderLoadout()
 
-    // Nothing to come back to yet, so New Session is the only way in.
-    expect(queryByText('Continue')).toBeNull()
+    expect(ready(utils).props.accessibilityHint).toBe('Starts a new session')
+    // Nothing to clear yet.
+    expect(utils.queryByLabelText('New session')).toBeNull()
 
-    await fireEvent.press(getByText('New Session'))
+    await fireEvent.press(ready(utils))
 
     expect(pnpRound()).toMatchObject({ phase: 'authoring', id: 1, puzzle: null })
-    expect(router.push).toHaveBeenCalledWith(PNP_GAME)
-  })
-
-  it('replaces a round left waiting with a blank prompt from New Session, recording nothing', async () => {
-    seedPnp('playing', ['C', 'Z'])
-    const { getByText } = await renderLoadout()
-
-    await fireEvent.press(getByText('New Session'))
-
-    // Pass & Play keeps no record of how a session ends, only of rounds actually finished.
-    expect(pnpRound()).toMatchObject({ phase: 'authoring', id: 2, puzzle: null, guessedLetters: [] })
-    expect(stats().pnp.played).toBe(0)
     expect(router.push).toHaveBeenCalledWith(PNP_GAME)
   })
 
   it.each<[string, PnpPhase, string[]]>([
     ['a word handed off', 'handoff', []],
     ['a round mid-guess', 'playing', ['C', 'Z']]
-  ])('offers Continue for %s, and opens the game on it without resetting it', async (_label, phase, guessedLetters) => {
+  ])('goes back to %s from Ready, without resetting it', async (_label, phase, guessedLetters) => {
     seedPnp(phase, guessedLetters)
     const saved = pnpRound()
-    const { getByText } = await renderLoadout()
+    const utils = await renderLoadout()
 
-    await fireEvent.press(getByText('Continue'))
+    expect(ready(utils).props.accessibilityHint).toBe('Continues the session')
+    await fireEvent.press(ready(utils))
 
     expect(router.push).toHaveBeenCalledWith(PNP_GAME)
     expect(pnpRound()).toEqual(saved)
   })
 
-  it('offers Continue for a word half typed, and opens the game on it without resetting it', async () => {
+  it('goes back to a word half typed from Ready, without resetting it', async () => {
     seedDraft('CAT', '')
     const saved = pnpRound()
-    const { getByText } = await renderLoadout()
+    const utils = await renderLoadout()
 
-    await fireEvent.press(getByText('Continue'))
+    await fireEvent.press(ready(utils))
 
     expect(router.push).toHaveBeenCalledWith(PNP_GAME)
     expect(pnpRound()).toEqual(saved)
   })
 
-  // New Session is always a fresh word: the half-typed one goes with the rest of the session.
-  it('replaces a half-typed word with a blank prompt from New Session', async () => {
-    seedDraft('CAT', 'A pet')
-    const { getByText } = await renderLoadout()
-
-    await fireEvent.press(getByText('New Session'))
-
-    expect(pnpRound()).toStrictEqual({ id: 2, puzzle: null, guessedLetters: [], hintRevealed: false, phase: 'authoring', session: createDefaultPnpSession() })
-    expect(router.push).toHaveBeenCalledWith(PNP_GAME)
-  })
-
-  // A hint is no word to come back to: Continue is for a board with something on it.
+  // A hint is no word to come back to: Ready goes back to a board with something on it.
   it.each<[string, () => void]>([
     ['a prompt with nothing typed', () => seedPnp('authoring')],
     ['a prompt with only a hint typed', () => seedDraft('', 'A pet')],
     ['a prompt with only spaces typed', () => seedDraft('   ', '')],
     ['a round already decided', () => seedPnp('playing', ['C', 'A', 'T'])]
-  ])('offers no Continue for %s', async (_label, seed) => {
+  ])('starts a new session from Ready for %s, with no New session to offer', async (_label, seed) => {
     seed()
-    const { getByText, queryByText } = await renderLoadout()
+    const before = pnpRound()
+    const utils = await renderLoadout()
 
-    expect(queryByText('Continue')).toBeNull()
-    expect(getByText('New Session')).toBeTruthy()
+    expect(utils.queryByLabelText('New session')).toBeNull()
+    await fireEvent.press(ready(utils))
+
+    expect(pnpRound()).toMatchObject({ phase: 'authoring', id: before.id + 1, puzzle: null, guessedLetters: [] })
+    expect(pnpRound()).not.toHaveProperty('draft')
+    expect(router.push).toHaveBeenCalledWith(PNP_GAME)
   })
 
   it('switches Keep Each Word, the same preference the prompt reads at Next', async () => {
@@ -1070,7 +1161,7 @@ describe('LoadoutScreen - pass and play', () => {
     expect(getByLabelText('Keep each word').props.value).toBe(true)
     expect(getByTestId('auto-save').props.children).toBe('true')
 
-    // The whole row toggles it too, not just the switch.
+    // The whole card toggles it too, not just the switch.
     await fireEvent.press(getByText('Keep Each Word'))
     expect(getByTestId('auto-save').props.children).toBe('false')
   })
@@ -1083,39 +1174,75 @@ describe('LoadoutScreen - pass and play', () => {
     store.dispatch(roundActions.startPnpAuthoring())
   }
 
-  it('offers Continue for a session under way, and goes back to it as it was', async () => {
+  it('goes back to a session under way from Ready, as it was', async () => {
     playOneRound()
     const saved = pnpRound()
-    const { getByText } = await renderLoadout()
+    const utils = await renderLoadout()
 
-    await fireEvent.press(getByText('Continue'))
+    await fireEvent.press(ready(utils))
 
     expect(router.push).toHaveBeenCalledWith(PNP_GAME)
     expect(pnpRound()).toEqual(saved)
   })
 
-  it('starts a new session for the same table from New Session: the standings cleared, the first seat writing', async () => {
-    store.dispatch(roundActions.addPnpPlayer())
-    store.dispatch(roundActions.renamePnpPlayer({ id: 'p3', name: 'Cy' }))
-    playOneRound()
-    const players = pnpRound().session.players
-    const { getByText } = await renderLoadout()
+  describe('New session', () => {
+    it('asks first, saying what goes, and Cancel changes nothing', async () => {
+      playOneRound()
+      store.dispatch(roundActions.setPnpDraft({ answer: 'DOG', hint: '' }))
+      const saved = pnpRound()
+      const utils = await renderLoadout()
 
-    await fireEvent.press(getByText('New Session'))
+      await fireEvent.press(utils.getByLabelText('New session'))
+      expect(utils.getByText('New Session?')).toBeTruthy()
+      expect(utils.getByText("Everyone's standing starts over. The word waiting on the board goes too.")).toBeTruthy()
+      await fireEvent.press(utils.getByText('Cancel'))
 
-    expect(pnpRound()).toMatchObject({ phase: 'authoring', puzzle: null, session: { players, standings: {}, writerId: 'p1', guesserId: 'p2', recordedRoundId: null } })
-    expect(stats().pnp.played).toBe(0)
-    expect(router.push).toHaveBeenCalledWith(PNP_GAME)
-  })
+      expect(pnpRound()).toEqual(saved)
+      expect(router.push).not.toHaveBeenCalled()
+    })
 
-  it('never touches the solo round left waiting', async () => {
-    store.dispatch(roundActions.startSolo({ playerKey: GUEST_PLAYER_KEY, puzzle: { phrase: 'DOG', modeId: DEFAULT_MODE.id, sourceMode: 'random', packKey: 'pack-1', packLabel: 'Test Pack', puzzleId: 'puzzle-1', difficultyTier: 'easy' } }))
-    store.dispatch(roundActions.saveSoloProgress({ playerKey: GUEST_PLAYER_KEY, guessedLetters: ['D'], hintRevealed: true }))
-    const solo = selectSoloRound(store.getState().round, GUEST_PLAYER_KEY)
-    const { getByText } = await renderLoadout()
+    it('clears the standings once confirmed, the same table, the first seat writing, staying on the page', async () => {
+      store.dispatch(roundActions.addPnpPlayer())
+      playOneRound()
+      const players = pnpRound().session.players
+      const utils = await renderLoadout()
 
-    await fireEvent.press(getByText('New Session'))
+      await fireEvent.press(utils.getByLabelText('New session'))
+      await fireEvent.press(utils.getByRole('button', { name: 'New Session' }))
 
-    expect(selectSoloRound(store.getState().round, GUEST_PLAYER_KEY)).toEqual(solo)
+      expect(pnpRound()).toMatchObject({ phase: 'authoring', puzzle: null, session: { players, standings: {}, writerId: 'p1', guesserId: 'p2', recordedRoundId: null } })
+      expect(stats().pnp.played).toBe(0)
+      expect(router.push).not.toHaveBeenCalled()
+      // Nothing left to clear, and Ready starts the session.
+      expect(utils.queryByLabelText('New session')).toBeNull()
+    })
+
+    // Pass & Play keeps no record of how a session ends, only of rounds actually finished.
+    it('replaces a round left waiting with a blank prompt, recording nothing', async () => {
+      seedPnp('playing', ['C', 'Z'])
+      const utils = await renderLoadout()
+
+      expect(utils.getByLabelText('New session')).toBeTruthy()
+      await fireEvent.press(utils.getByLabelText('New session'))
+      expect(utils.getByText('The word waiting on the board goes too.')).toBeTruthy()
+      await fireEvent.press(utils.getByRole('button', { name: 'New Session' }))
+
+      expect(pnpRound()).toMatchObject({ phase: 'authoring', id: 2, puzzle: null, guessedLetters: [] })
+      expect(stats().pnp.played).toBe(0)
+    })
+
+    it('never touches the solo round left waiting', async () => {
+      store.dispatch(roundActions.startSolo({ playerKey: GUEST_PLAYER_KEY, puzzle: { phrase: 'DOG', modeId: DEFAULT_MODE.id, sourceMode: 'random', packKey: 'pack-1', packLabel: 'Test Pack', puzzleId: 'puzzle-1', difficultyTier: 'easy' } }))
+      store.dispatch(roundActions.saveSoloProgress({ playerKey: GUEST_PLAYER_KEY, guessedLetters: ['D'], hintRevealed: true }))
+      const solo = selectSoloRound(store.getState().round, GUEST_PLAYER_KEY)
+      playOneRound()
+      const utils = await renderLoadout()
+
+      await fireEvent.press(utils.getByLabelText('New session'))
+      await fireEvent.press(utils.getByRole('button', { name: 'New Session' }))
+      await fireEvent.press(ready(utils))
+
+      expect(selectSoloRound(store.getState().round, GUEST_PLAYER_KEY)).toEqual(solo)
+    })
   })
 })

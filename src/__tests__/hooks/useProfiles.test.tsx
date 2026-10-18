@@ -1,5 +1,6 @@
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { configureStore } from '@reduxjs/toolkit'
+import { defaultColors } from '@rific/auto-paper'
 import type { Profile } from '@tastic/profile'
 import { act, render } from '@testing-library/react-native'
 import { useEffect } from 'react'
@@ -14,9 +15,10 @@ import { DEFAULT_MODE } from '@/modes/registry'
 import achievements, { achievementsActions } from '@/redux/achievementsSlice'
 import activePlayer, { activePlayerActions } from '@/redux/activePlayerSlice'
 import playerSettings, { playerSettingsActions } from '@/redux/playerSettingsSlice'
-import playerTheme, { playerThemeActions } from '@/redux/playerThemeSlice'
+import playerTheme, { DEFAULT_HARMONY, playerThemeActions } from '@/redux/playerThemeSlice'
 import profiles from '@/redux/profilesSlice'
 import round, { initialRoundState, roundActions, type RoundState } from '@/redux/roundSlice'
+import { GUEST_PLAYER_KEY, guestSeatKey } from '@/utils/players'
 import { createDefaultProfileStats, createDefaultStats } from '@/utils/statsValidation'
 
 // The fleet's shared roster, faked the way @tastic/profile's own tests fake it, here at its native
@@ -186,6 +188,16 @@ describe('ProfilesProvider', () => {
       expect(store.getState().playerSettings[BOB.id]?.difficulty).toBe('easy')
     })
 
+    // A guest seat's unlocked puzzles go with the seat; any left behind (a seat that left while a write
+    // was cut short) are cleared, so a new seat given its id starts with none.
+    it("clears the unlocked puzzles of every guest seat no longer at the table, and nobody else's", async () => {
+      const getAllKeys = jest.spyOn(AsyncStorage, 'getAllKeys').mockResolvedValue(['puzzle_unlocks_v1:guest', `puzzle_unlocks_v1:${ALICE.id}`, `puzzle_unlocks_v1:${guestSeatKey('p2')}`, `puzzle_unlocks_v1:${guestSeatKey('p9')}`, 'theme'])
+      await renderProvider(makeStore({ roster: [ALICE] }))
+
+      expect(removeItem.mock.calls).toEqual([[`puzzle_unlocks_v1:${guestSeatKey('p9')}`]])
+      getAllKeys.mockRestore()
+    })
+
     // A failed read is not an empty roster: taking it as one would delete every profile from every game.
     it("keeps this device's roster, forgets nothing and writes nothing when the shared one can't be read", async () => {
       const store = makeStore({ roster: [ALICE] })
@@ -243,6 +255,26 @@ describe('ProfilesProvider', () => {
       expect(store.getState().activePlayer.profileId).toBe(ALICE.id)
       await act(async () => actions!.selectPlayer(null))
       expect(store.getState().activePlayer.profileId).toBeNull()
+    })
+
+    // Each Pass & Play guest seat is a player of its own (2026-10-18), with colors of its own from the
+    // moment it first plays, so the colors already on screen are never filed as theirs.
+    it("picks a guest seat's own guest, giving the table's guest seats colors of their own first", async () => {
+      const store = makeStore({ roster: [ALICE] })
+      await renderProvider(store)
+
+      await act(async () => actions!.selectPlayer(null, 'p2'))
+
+      expect(store.getState().activePlayer).toEqual({ profileId: null, seatId: 'p2' })
+      expect(store.getState().playerTheme).toEqual({
+        [guestSeatKey('p1')]: { color: defaultColors[0].value, harmony: DEFAULT_HARMONY },
+        [guestSeatKey('p2')]: { color: defaultColors.find((color) => color.label === 'Cyan')!.value, harmony: DEFAULT_HARMONY }
+      })
+
+      // Single Player's guest takes whatever is on screen, as ever.
+      await act(async () => actions!.selectPlayer(null))
+      expect(store.getState().activePlayer).toEqual({ profileId: null, seatId: null })
+      expect(store.getState().playerTheme[GUEST_PLAYER_KEY]).toBeUndefined()
     })
   })
 

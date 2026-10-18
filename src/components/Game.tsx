@@ -18,7 +18,7 @@ import type { PuzzleDifficultyTier } from '@/utils/puzzleCatalog'
 import { Keyboard } from './Keyboard'
 import { PuzzleInfoRow } from './PuzzleInfoRow'
 import { PuzzleStage } from './PuzzleStage'
-import { type CategoryProgress, type PnpRoundSummary, RoundEndDialog, type RoundUnlocks, type UpNextChoice } from './RoundEndDialog'
+import { type CategoryProgress, type PnpRoundSummary, RoundEndDialog, type RoundUnlocks } from './RoundEndDialog'
 
 export type SolveDetails = { wrongGuesses: number; hintRevealed: boolean; guessCount: number }
 export type LossDetails = { wrongGuesses: number; guessCount: number }
@@ -80,8 +80,6 @@ export type GameProps = {
   // A Pass & Play round's rows on the result card, and its End Session button (see RoundEndDialog).
   passAndPlay?: PnpRoundSummary | null
   onEndSession?: () => void
-  // The solo result card's Up Next row (see RoundEndDialog's upNext).
-  upNext?: UpNextChoice | null
   // Hides the result card (and a win's fireworks) while another card stands in for it: Pass & Play's
   // End Session standings, which can still be backed out of, bringing this card back.
   roundCardHidden?: boolean
@@ -95,7 +93,7 @@ export type GameProps = {
   locked?: boolean
 }
 
-export const Game = ({ onStop, onSolved, onLost, onProgress, initialGuessedLetters, initialHintRevealed = false, phrase, mode = DEFAULT_MODE, hint, packLabel, difficultyTier, celebration = DEFAULT_CELEBRATION, categoryProgress, unlocks, passAndPlay, onEndSession, upNext, roundCardHidden = false, locked = false }: GameProps): JSX.Element => {
+export const Game = ({ onStop, onSolved, onLost, onProgress, initialGuessedLetters, initialHintRevealed = false, phrase, mode = DEFAULT_MODE, hint, packLabel, difficultyTier, celebration = DEFAULT_CELEBRATION, categoryProgress, unlocks, passAndPlay, onEndSession, roundCardHidden = false, locked = false }: GameProps): JSX.Element => {
   const { layout } = useKeyboardLayout()
   const { playCorrect, playWrong, playWin, playLoss } = useSoundEffects()
   const gameHaptics = useGameHaptics()
@@ -294,7 +292,7 @@ export const Game = ({ onStop, onSolved, onLost, onProgress, initialGuessedLette
           <CelebrationView key={celebrationCycle} colors={[theme.colors.primary, theme.colors.secondary, theme.colors.tertiary]} dark={theme.dark} onComplete={() => setCelebrationCycle((c) => c + 1)} />
         </Portal>
       ) : null}
-      <RoundEndDialog visible={outcome !== null && dialogReady && !roundEndDismissed && !roundCardHidden} outcome={outcome} phrase={phrase} guessedLetters={guessedLetters} categoryProgress={categoryProgress} unlocks={unlocks} passAndPlay={passAndPlay} upNext={upNext} onEndSession={onEndSession} onDismiss={handleRoundEndDismiss} />
+      <RoundEndDialog visible={outcome !== null && dialogReady && !roundEndDismissed && !roundCardHidden} outcome={outcome} phrase={phrase} guessedLetters={guessedLetters} categoryProgress={categoryProgress} unlocks={unlocks} passAndPlay={passAndPlay} onEndSession={onEndSession} onDismiss={handleRoundEndDismiss} />
     </View>
   )
 }

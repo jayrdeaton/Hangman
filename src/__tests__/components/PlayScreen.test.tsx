@@ -11,7 +11,7 @@ import { achievementsActions } from '@/redux/achievementsSlice'
 import { activePlayerActions } from '@/redux/activePlayerSlice'
 import { roundActions, type SavedPuzzle, selectSoloRound } from '@/redux/roundSlice'
 import { store } from '@/redux/store'
-import { GUEST_PLAYER_KEY } from '@/utils/players'
+import { GUEST_PLAYER_KEY, guestSeatKey } from '@/utils/players'
 
 // /play is where a share link lands (hangman://play?phrase=...&hint=...&mode=...). It draws nothing
 // of its own: it puts the shared puzzle on the solo board and hands off to the game screen. Its
@@ -67,6 +67,19 @@ describe('PlayScreen', () => {
       expect(router.dismissTo).toHaveBeenCalledWith(GAME_HREF)
       expect(router.back).not.toHaveBeenCalled()
       expect(router.replace).not.toHaveBeenCalled()
+    })
+
+    // A share link is Single Player's game: a Pass & Play guest seat's guest left playing by the table
+    // hands it to Single Player's own guest first.
+    it("plays as Single Player's guest when a guest seat's guest was left playing", async () => {
+      store.dispatch(activePlayerActions.setActivePlayer(null, 'p2'))
+
+      await renderLink(VALID_LINK)
+
+      expect(store.getState().activePlayer).toEqual({ profileId: null, seatId: null })
+      expect(soloRound()).toMatchObject({ puzzle: { phrase: 'HELLO WORLD' } })
+      expect(soloRound(guestSeatKey('p2')).puzzle).toBeNull()
+      expect(router.dismissTo).toHaveBeenCalledTimes(1)
     })
 
     // The game screen reads the round from the store as it mounts, so it has to be there first.
@@ -251,7 +264,7 @@ describe('PlayScreen', () => {
         </Providers>
       )
 
-      expect(activeGame?.consumeResumeMode()).toBe('pnp')
+      expect(activeGame?.consumeResume()).toEqual({ mode: 'pnp', door: 'pnp' })
     })
 
     it('is cancelled by a link, which leaves the saved game itself alone', async () => {
@@ -263,7 +276,7 @@ describe('PlayScreen', () => {
         </Providers>
       )
 
-      expect(activeGame?.consumeResumeMode()).toBeNull()
+      expect(activeGame?.consumeResume()).toBeNull()
       expect(store.getState().round.activeMode).toBe('pnp')
     })
 
@@ -276,7 +289,7 @@ describe('PlayScreen', () => {
         </Providers>
       )
 
-      expect(activeGame?.consumeResumeMode()).toBeNull()
+      expect(activeGame?.consumeResume()).toBeNull()
     })
   })
 })

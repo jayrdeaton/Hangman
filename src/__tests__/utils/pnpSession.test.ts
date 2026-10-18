@@ -1,13 +1,13 @@
 import type { Profile } from '@tastic/profile'
 
-import { createDefaultPnpSession, createPlayer, formatWinRate, getSeatIdentity, getSessionResult, getStanding, getStandingRows, guestNameForSeat, hasStandings, isPlayerNameTaken, joinNames, MAX_PLAYER_NAME_LENGTH, normalizePlayerName, pickFairGuesser, type PnpPlayer, type PnpSession, type PnpStandingRow, rankStandingRows, sanitizePnpSession, seatAfterRemoved, settleGuestNames } from '@/utils/pnpSession'
+import { createDefaultPnpSession, createPlayer, formatWinRate, getFocusedSeat, getSeatIdentity, getSessionResult, getStanding, getStandingRows, guestName, hasStandings, joinNames, MAX_PLAYER_NAME_LENGTH, normalizePlayerName, numberGuests, packTurnRoundKey, pickFairGuesser, pickNextTurn, type PnpPlayer, type PnpSession, type PnpStandingRow, rankStandingRows, sanitizePnpSession, seatAfterRemoved, seatPlayer } from '@/utils/pnpSession'
 
 const player = (id: string, name = `Name ${id}`): PnpPlayer => ({ id, name, profileId: null })
 const table = (...ids: string[]): PnpPlayer[] => ids.map((id) => player(id))
 const row = (id: string, played: number, wins: number): PnpStandingRow => ({ id, name: `Name ${id}`, played, wins })
 
 describe('createDefaultPnpSession', () => {
-  it('seats two guests, Player 1 writing for Player 2, with nothing played', () => {
+  it('seats two guests, Player 1 writing for Player 2, with nothing played, the players writing, the first seat shown and no pack turn yet', () => {
     expect(createDefaultPnpSession()).toEqual({
       players: [
         { id: 'p1', name: 'Player 1', profileId: null },
@@ -16,7 +16,11 @@ describe('createDefaultPnpSession', () => {
       standings: {},
       writerId: 'p1',
       guesserId: 'p2',
-      recordedRoundId: null
+      recordedRoundId: null,
+      source: 'write',
+      focusedId: 'p1',
+      turnId: null,
+      recordedTurnRound: null
     })
   })
 
@@ -84,6 +88,61 @@ describe('pickFairGuesser', () => {
   })
 })
 
+// The table on the packs: each turn goes to the same fair pick, the last turn's seat in the writer's
+// place.
+describe('pickNextTurn', () => {
+  const session = (standings: PnpSession['standings'], turnId: string | null, players = table('p1', 'p2', 'p3')) => ({ players, standings, turnId })
+
+  it('starts a session with the first seat, whoever has guessed the fewest words going first', () => {
+    expect(pickNextTurn(session({}, null))).toBe('p1')
+    // Written words count too: the standings are the seat's, whichever way it played.
+    expect(pickNextTurn(session({ p1: { played: 2, wins: 1 }, p2: { played: 1, wins: 1 } }, null))).toBe('p3')
+  })
+
+  it('goes around the table, nobody playing twice in a row', () => {
+    const standings: PnpSession['standings'] = {}
+    const order: string[] = []
+    let turnId: string | null = null
+    for (let turn = 0; turn < 7; turn++) {
+      turnId = pickNextTurn(session(standings, turnId))
+      order.push(turnId)
+      standings[turnId] = { played: (standings[turnId]?.played ?? 0) + 1, wins: 0 }
+    }
+    expect(order).toEqual(['p1', 'p2', 'p3', 'p1', 'p2', 'p3', 'p1'])
+    // Two at the table take it in turns.
+    expect(pickNextTurn(session({ p1: { played: 1, wins: 0 } }, 'p1', table('p1', 'p2')))).toBe('p2')
+    expect(pickNextTurn(session({ p1: { played: 1, wins: 0 }, p2: { played: 1, wins: 1 } }, 'p2', table('p1', 'p2')))).toBe('p1')
+  })
+
+  it('sends a newcomer, who has played nothing, next', () => {
+    const players = table('p1', 'p2', 'p3', 'p4')
+    expect(pickNextTurn(session({ p1: { played: 2, wins: 1 }, p2: { played: 2, wins: 0 }, p3: { played: 1, wins: 1 } }, 'p3', players))).toBe('p4')
+  })
+
+  it("keeps a turn's round apart from another player's round with the same id", () => {
+    expect(packTurnRoundKey('profile-a', 3)).toBe('profile-a:3')
+    expect(packTurnRoundKey('profile-a', 3)).not.toBe(packTurnRoundKey('guest', 3))
+  })
+})
+
+describe('getFocusedSeat', () => {
+  it('is the seat the loadout shows, or the first for a focus that is no seat', () => {
+    const players = table('p1', 'p2', 'p3')
+    expect(getFocusedSeat({ players, focusedId: 'p2' })).toBe(players[1])
+    expect(getFocusedSeat({ players, focusedId: 'p9' })).toBe(players[0])
+  })
+})
+
+// Each guest seat is a player of its own (2026-10-18), by the seat's own id.
+describe('seatPlayer', () => {
+  it("is a seat's profile while the roster has it, else the seat's own guest", () => {
+    const seated: PnpPlayer = { id: 'p2', name: 'Alice', profileId: 'profile-a' }
+    expect(seatPlayer(seated, [{ id: 'profile-a' }])).toEqual({ profileId: 'profile-a', seatId: null })
+    expect(seatPlayer(seated, [])).toEqual({ profileId: null, seatId: 'p2' })
+    expect(seatPlayer({ id: 'p3', name: 'Player 3', profileId: null }, [{ id: 'profile-a' }])).toEqual({ profileId: null, seatId: 'p3' })
+  })
+})
+
 describe('seatAfterRemoved', () => {
   it('is the seat that slid into the removed one, wrapping from the end', () => {
     const remaining = table('p1', 'p3', 'p4')
@@ -101,13 +160,6 @@ describe('names', () => {
     expect(normalizePlayerName('   ')).toBe('')
   })
 
-  it('knows a name another seat goes by, in any case, but not the seat itself', () => {
-    const players = [player('p1', 'Ann'), player('p2', 'Bo')]
-    expect(isPlayerNameTaken(players, ' ann ')).toBe(true)
-    expect(isPlayerNameTaken(players, 'Ann', 'p1')).toBe(false)
-    expect(isPlayerNameTaken(players, 'Cy')).toBe(false)
-  })
-
   it('joins names the way a sentence would', () => {
     expect(joinNames(['Ann'])).toBe('Ann')
     expect(joinNames(['Ann', 'Bo'])).toBe('Ann and Bo')
@@ -116,41 +168,38 @@ describe('names', () => {
 })
 
 describe('createPlayer', () => {
-  it('adds the next guest seat with the next number', () => {
+  it('adds the next guest seat, named for its seat', () => {
     expect(createPlayer(createDefaultPnpSession().players)).toEqual({ id: 'p3', name: 'Player 3', profileId: null })
   })
 
-  // A new id is never one a seat at the table has, and a default name never one a seat goes by.
-  it('skips an id and a name already taken', () => {
-    expect(createPlayer([player('p1', 'Player 1'), player('p3', 'Player 3')])).toEqual({ id: 'p4', name: 'Player 4', profileId: null })
-    expect(createPlayer([player('p2', 'Ann'), player('p7', 'Bo')])).toEqual({ id: 'p8', name: 'Player 3', profileId: null })
+  // A new id is never one a seat at the table has.
+  it('skips an id already taken, naming the seat for where it sits', () => {
+    expect(createPlayer([player('p1', 'Player 1'), player('p3', 'Player 2')])).toEqual({ id: 'p4', name: 'Player 3', profileId: null })
+    expect(createPlayer([player('p2', 'Player 1'), player('p7', 'Player 2')])).toEqual({ id: 'p8', name: 'Player 3', profileId: null })
   })
 })
 
-// A seat handed back to a guest, and the guests a profile's name would clash with.
+// Guests are "Player N" by seat (Jay, 2026-10-18: no renaming; a player who wants a name makes a
+// profile).
 describe('guest names', () => {
   const seated = (id: string, name: string, profileId: string): PnpPlayer => ({ id, name, profileId })
 
-  it("gives a seat its own number's Player N when nobody else goes by it", () => {
-    expect(guestNameForSeat([player('p1', 'Player 1'), seated('p2', 'Alice', 'profile-a'), player('p3', 'Player 3')], 'p2')).toBe('Player 2')
+  it('names a guest for their seat', () => {
+    expect(guestName(0)).toBe('Player 1')
+    expect(guestName(7)).toBe('Player 8')
   })
 
-  it('counts up from there past every name at the table, profiles included', () => {
-    const players = [player('p1', 'Player 2'), seated('p2', 'Alice', 'profile-a'), seated('p3', 'Player 3', 'profile-c'), player('p4', 'Player 5')]
-    expect(guestNameForSeat(players, 'p2')).toBe('Player 4')
+  it('numbers every guest by seat, leaving the profiles their own names', () => {
+    const players = [seated('p1', 'Alice', 'profile-a'), player('p3', 'Player 3'), player('p4', 'Grandma')]
+    numberGuests(players)
+    expect(players.map((item) => item.name)).toEqual(['Alice', 'Player 2', 'Player 3'])
   })
 
-  it("renames a guest going by a profile's name to their seat's guest name, and nobody else", () => {
-    const players = [player('p1', 'alice'), seated('p2', 'Alice', 'profile-a'), player('p3', 'Bo')]
-    settleGuestNames(players)
-    expect(players.map((item) => item.name)).toEqual(['Player 1', 'Alice', 'Bo'])
-  })
-
-  // The roster's names are the roster's: two profiles may share one, told apart by their chips.
-  it('leaves two profiles sharing a name alone', () => {
-    const players = [seated('p1', 'Sam', 'profile-a'), seated('p2', 'Sam', 'profile-b')]
-    settleGuestNames(players)
-    expect(players.map((item) => item.name)).toEqual(['Sam', 'Sam'])
+  // Their chips tell them apart.
+  it("lets a guest share a profile's name", () => {
+    const players = [seated('p1', 'Player 2', 'profile-a'), player('p2', 'Player 2')]
+    numberGuests(players)
+    expect(players.map((item) => item.name)).toEqual(['Player 2', 'Player 2'])
   })
 })
 
@@ -187,14 +236,14 @@ describe('the session result', () => {
 
 describe('sanitizePnpSession', () => {
   const ROUND = 7
-  const valid = (): PnpSession => ({ players: [player('p1', 'Ann'), player('p2', 'Bo'), player('p3', 'Cy')], standings: { p2: { played: 3, wins: 2 } }, writerId: 'p3', guesserId: 'p1', recordedRoundId: ROUND })
+  const valid = (): PnpSession => ({ players: [player('p1', 'Player 1'), player('p2', 'Player 2'), player('p3', 'Player 3')], standings: { p2: { played: 3, wins: 2 } }, writerId: 'p3', guesserId: 'p1', recordedRoundId: ROUND, source: 'packs', focusedId: 'p2', turnId: 'p1', recordedTurnRound: 'guest:4' })
 
   it('passes a valid session through unchanged', () => {
     expect(sanitizePnpSession(valid(), ROUND)).toEqual(valid())
   })
 
   it('keeps a profile on a seat', () => {
-    const session = { ...valid(), players: [{ ...player('p1', 'Ann'), profileId: 'profile-1' }, player('p2', 'Bo')], writerId: 'p1', guesserId: 'p2' }
+    const session = { ...valid(), players: [{ ...player('p1', 'Ann'), profileId: 'profile-1' }, player('p2', 'Player 2')], writerId: 'p1', guesserId: 'p2' }
     expect(sanitizePnpSession(session, ROUND)).toEqual(session)
   })
 
@@ -216,13 +265,11 @@ describe('sanitizePnpSession', () => {
     ['a string', 'session'],
     ['a list', [valid()]],
     ['no players', { ...valid(), players: undefined }],
-    ['one player', { ...valid(), players: [player('p1')] }],
+    ['one player', { ...valid(), players: [player('p1', 'Player 1')] }],
     ['nine players', { ...valid(), players: table('p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7', 'p8', 'p9') }],
     ['a seat with no id', { ...valid(), players: [player('p1'), { name: 'Bo', profileId: null }] }],
     ['a seat id with a colon', { ...valid(), players: [player('p1'), player('p:2')] }],
     ['two seats with one id', { ...valid(), players: [player('p1', 'Ann'), player('p1', 'Bo')] }],
-    ['two seats with one name', { ...valid(), players: [player('p1', 'Ann'), player('p2', 'ANN')] }],
-    ["a guest going by a profile's name", { ...valid(), players: [{ ...player('p1', 'Ann'), profileId: 'profile-1' }, player('p2', 'ann')] }],
     [
       'one profile in two seats',
       {
@@ -233,16 +280,30 @@ describe('sanitizePnpSession', () => {
         ]
       }
     ],
-    ['a blank name', { ...valid(), players: [player('p1'), player('p2', '   ')] }],
+    ["a profile's seat with a blank name", { ...valid(), players: [player('p1'), { id: 'p2', name: '   ', profileId: 'profile-2' }] }],
     ['a name that is not a string', { ...valid(), players: [player('p1'), { id: 'p2', name: 2, profileId: null }] }],
     ['a profile that is not a string', { ...valid(), players: [player('p1'), { id: 'p2', name: 'Bo', profileId: 4 }] }],
+    ["a guest's key as a seat's profile", { ...valid(), players: [player('p1'), { id: 'p2', name: 'Bo', profileId: 'guest-p1' }] }],
     ['no profile at all', { ...valid(), players: [player('p1'), { id: 'p2', name: 'Bo' }] }]
   ])('starts a fresh session for %s', (_label, value) => {
     expect(sanitizePnpSession(value, ROUND)).toEqual(createDefaultPnpSession())
   })
 
-  it('tidies a stored name the way a rename would', () => {
-    expect(sanitizePnpSession({ ...valid(), players: [player('p1', '  Ann  '), player('p2', 'Bo'), player('p3', 'Cy')] }, ROUND).players[0].name).toBe('Ann')
+  it("tidies a profile's stored name, and names every guest for their seat, whatever was stored", () => {
+    const players = [{ id: 'p1', name: '  Ann  ', profileId: 'profile-1' }, player('p2', 'Grandma'), player('p3', '   ')]
+    expect(sanitizePnpSession({ ...valid(), players }, ROUND).players.map((item) => item.name)).toEqual(['Ann', 'Player 2', 'Player 3'])
+  })
+
+  it.each([
+    ['missing', undefined],
+    ['not one', 'turns']
+  ])('has the players writing for a word source %s', (_label, source) => {
+    expect(sanitizePnpSession({ ...valid(), source }, ROUND).source).toBe('write')
+  })
+
+  it('shows the first seat for a focus not at the table', () => {
+    expect(sanitizePnpSession({ ...valid(), focusedId: 'p9' }, ROUND).focusedId).toBe('p1')
+    expect(sanitizePnpSession({ ...valid(), focusedId: undefined }, ROUND).focusedId).toBe('p1')
   })
 
   it.each([
@@ -279,5 +340,20 @@ describe('sanitizePnpSession', () => {
     expect(sanitizePnpSession(valid(), ROUND + 1).recordedRoundId).toBeNull()
     expect(sanitizePnpSession(valid(), null).recordedRoundId).toBeNull()
     expect(sanitizePnpSession({ ...valid(), recordedRoundId: '7' }, ROUND).recordedRoundId).toBeNull()
+  })
+
+  it('has no pack turn for a turn whose seat is not at the table, and none counted with it', () => {
+    expect(sanitizePnpSession({ ...valid(), turnId: 'p9' }, ROUND)).toMatchObject({ turnId: null, recordedTurnRound: null })
+    expect(sanitizePnpSession({ ...valid(), turnId: undefined }, ROUND)).toMatchObject({ turnId: null, recordedTurnRound: null })
+  })
+
+  it.each([
+    ['missing', undefined],
+    ['not a string', 4],
+    ['without a round id', 'guest'],
+    ['with a round id that is no count', 'guest:four'],
+    ['under a key no player could have', 'a:b:4']
+  ])('keeps a pack turn whose counted round is %s, still to be counted', (_label, recordedTurnRound) => {
+    expect(sanitizePnpSession({ ...valid(), recordedTurnRound }, ROUND)).toMatchObject({ turnId: 'p1', recordedTurnRound: null })
   })
 })

@@ -48,7 +48,7 @@ const count = (n: number): string => commaString(n)
 //
 // Transparent over the app's one board (see BoardBackground), so it reads as the same whiteboard as
 // every other screen; text stays the fleet's high-contrast ink. Counts packs over the same
-// packsVersion-keyed manifest the Single Player loadout and Choose Packs use, so all of them agree,
+// packsVersion-keyed manifest the loadout and Choose Packs use, so all of them agree,
 // custom packs included.
 export const StatsScreen = ({ onBack, insets, initialProfileId = null }: StatsScreenProps): JSX.Element => {
   const theme = useTheme()

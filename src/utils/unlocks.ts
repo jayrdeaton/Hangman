@@ -1,6 +1,6 @@
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
-import type { PlayerKey } from '@/utils/players'
+import { isGuestSeatKey, type PlayerKey } from '@/utils/players'
 import type { PuzzleManifestItem } from '@/utils/puzzleCatalog'
 
 import { puzzleManifest } from '../data/puzzleCatalog.generated'
@@ -153,9 +153,20 @@ export const mergePuzzleUnlocks = async (playerKey: PlayerKey, raw: string): Pro
   return { importedCount, addedCount }
 }
 
-// One player's unlocked puzzles, for when a profile is reset or deleted.
+// One player's unlocked puzzles, for when a profile is reset or deleted, or a guest seat leaves.
 export const clearPuzzleUnlocks = async (playerKey: PlayerKey): Promise<void> => {
   await AsyncStorage.removeItem(storageKey(playerKey))
+}
+
+// Every guest seat's whose seat has left the table (`seated`: the guest seats' keys at the table now),
+// at launch: a seat's unlocked puzzles go with the seat (usePlayerData's forgetGuestSeat), and this
+// catches any left behind, so a new seat given a leaver's id starts with none.
+export const clearLeftGuestSeatUnlocks = async (seated: ReadonlySet<PlayerKey>): Promise<void> => {
+  const left = (await getStoredUnlockKeys()).filter((key) => {
+    const playerKey = key.slice(PUZZLE_UNLOCKS_KEY_PREFIX.length)
+    return isGuestSeatKey(playerKey) && !seated.has(playerKey)
+  })
+  await Promise.all(left.map((key) => AsyncStorage.removeItem(key)))
 }
 
 // Every player's, for Stats' Reset All Stats.

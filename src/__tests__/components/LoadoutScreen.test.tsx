@@ -21,7 +21,7 @@ import { alert } from '@/utils/alert'
 import { commaString } from '@/utils/commaString'
 import { buildCustomPuzzle, loadCustomPacksCache } from '@/utils/customPacks'
 import { packGroupColors, packGroupIcon } from '@/utils/packGroupStyle'
-import { GUEST_PLAYER_KEY } from '@/utils/players'
+import { GUEST_PLAYER_KEY, guestSeatKey } from '@/utils/players'
 import { getPuzzleManifest, getPuzzlesForCategory } from '@/utils/puzzleCatalog'
 import { resolvePuzzle } from '@/utils/puzzlePicker'
 
@@ -423,6 +423,18 @@ describe('LoadoutScreen (Single Player)', () => {
       // Picking closes the popover.
       expect(screen.queryByText('Medium')).toBeNull()
       expect(store.getState().playerSettings[GUEST_PLAYER_KEY]).toEqual({ modeId: DEFAULT_MODE.id, difficulty: 'hard', packKeys: null })
+    })
+
+    // Its popover drops down over the packs card and Ready, which come after it on the page.
+    it('lifts its row over the rest of the page while its popover is open', async () => {
+      const screen = await renderLoadout()
+      const rowZIndex = () => StyleSheet.flatten(screen.getByTestId('loadout-settings-row').props.style).zIndex
+
+      expect(rowZIndex()).toBeUndefined()
+      await fireEvent.press(screen.getByLabelText('ANY'))
+      expect(rowZIndex()).toBe(1)
+      await fireEvent.press(screen.getByLabelText('ANY'))
+      expect(rowZIndex()).toBeUndefined()
     })
 
     // The board's difficulty badge colors (Any is the theme's primary), drawn flat, not as a palette.
@@ -901,6 +913,24 @@ describe('LoadoutScreen (Single Player)', () => {
       expect(screen.getByText('KEYBOARD')).toBeTruthy()
     })
 
+    // The page's own catcher starts below the corners' strip, so the strip has one of its own (Jay,
+    // 2026-10-18: a tap between Home and the cog left the popover open).
+    it.each([
+      ['the player picker', 'GUEST', 'Manage'],
+      ['Difficulty', 'ANY', 'Medium']
+    ])("closes %s's popover on a press in the corners' strip, which has nothing to press with none open", async (_picker, trigger, row) => {
+      const screen = await renderLoadout()
+      const strip = () => within(screen.getByTestId('loadout-corner-press-away', { includeHiddenElements: true }))
+      expect(strip().queryByLabelText('Dismiss', { includeHiddenElements: true })).toBeNull()
+
+      await fireEvent.press(screen.getByLabelText(trigger))
+      expect(screen.getByText(row)).toBeTruthy()
+      await fireEvent.press(strip().getByLabelText('Dismiss', { includeHiddenElements: true }))
+
+      expect(screen.queryByText(row)).toBeNull()
+      expect(strip().queryByLabelText('Dismiss', { includeHiddenElements: true })).toBeNull()
+    })
+
     // Opening one closes the other: they share the page's popover host.
     it("closes when Difficulty's popover opens", async () => {
       const screen = await renderLoadout()
@@ -1278,8 +1308,8 @@ describe('LoadoutScreen (Single Player)', () => {
   })
 })
 
-// Only what changed with the art's move to the Settings sheet (2026-10-17). The rest of this page (its
-// Continue, Write a Word and Keep Each Word) is covered by PnpFlow.test.tsx.
+// The Settings sheet and Android back on the Pass & Play door's page. The rest of it is
+// PassAndPlayLoadout.test.tsx's, and its Ready while the players write PnpFlow.test.tsx's.
 describe('LoadoutScreen (Pass & Play)', () => {
   const renderPnpLoadout = () =>
     render(
@@ -1296,26 +1326,30 @@ describe('LoadoutScreen (Pass & Play)', () => {
     store.dispatch(playerSettingsActions.reset())
   })
 
-  // The board is in the active player's colors, picked on the Single Player loadout.
-  it('has no Colors row, Art row or art drawer of its own', async () => {
+  // The focused seat's colors are its picker's, and its art the carousel's, as on Single Player.
+  it('has the art carousel and a picker per seat, and no Colors row, Art row or art drawer of its own', async () => {
     const screen = await renderPnpLoadout()
 
+    expect(screen.getByTestId('art-carousel')).toBeTruthy()
+    expect(screen.getByLabelText('PLAYER 1')).toBeTruthy()
     expect(screen.queryByText('Colors')).toBeNull()
-    expect(screen.queryByLabelText('GUEST')).toBeNull()
     expect(screen.queryByText('Art')).toBeNull()
     expect(screen.queryByLabelText(/Change art/)).toBeNull()
     expect(screen.queryByTestId('mode-picker-panel', { includeHiddenElements: true })).toBeNull()
   })
 
-  // The same sheet and grid as everywhere else, so the pick reaches the Pass & Play round too.
+  // The same sheet and grid as everywhere else, so the pick reaches the Pass & Play round too: the word
+  // waiting for the second seat, picked while the page is theirs (each guest seat its own player).
   it("picks the player's art from the Settings sheet, redrawing the word waiting to be guessed", async () => {
     store.dispatch(roundActions.setPnpWord({ phrase: 'CAT', modeId: DEFAULT_MODE.id, sourceMode: 'custom' }))
+    store.dispatch(roundActions.focusPnpSeat('p2'))
     const screen = await renderPnpLoadout()
 
     await fireEvent.press(screen.getByLabelText('Settings'))
     await fireEvent.press(screen.getByRole('button', { name: `${robotMode.label} art` }))
 
-    expect(store.getState().playerSettings[GUEST_PLAYER_KEY]?.modeId).toBe(robotMode.id)
+    expect(store.getState().playerSettings[guestSeatKey('p2')]?.modeId).toBe(robotMode.id)
+    expect(store.getState().playerSettings[GUEST_PLAYER_KEY]).toBeUndefined()
     expect(store.getState().round.pnp.puzzle?.modeId).toBe(robotMode.id)
   })
 

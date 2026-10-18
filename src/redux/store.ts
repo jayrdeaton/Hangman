@@ -13,6 +13,7 @@ import activePlayer from './activePlayerSlice'
 import playerSettings from './playerSettingsSlice'
 import playerTheme from './playerThemeSlice'
 import profiles from './profilesSlice'
+import { pruneLeftGuestSeats } from './rehydrate'
 import round from './roundSlice'
 
 // @rific/feedback-press's own soundReducer defaults `enabled` to true unconditionally (that
@@ -58,8 +59,16 @@ const rootReducer = combineReducers({
   round: persistReducer(roundPersistConfig, round)
 })
 
+// Every REHYDRATE, the root blob's or the round's, also trims whatever is kept for a Pass & Play guest
+// seat that's no longer at the table (see rehydrate.ts' pruneLeftGuestSeats): the two come back in no
+// set order, and only together do they say which seats are left.
+const appReducer: typeof rootReducer = (state, action) => {
+  const next = rootReducer(state, action)
+  return action.type === REHYDRATE ? pruneLeftGuestSeats(next) : next
+}
+
 const persistConfig = { key: 'root', storage: AsyncStorage, whitelist: ['theme', 'haptic', 'sound', 'achievements', 'profiles', 'activePlayer', 'playerSettings', 'playerTheme', 'keepAwake'] }
-const persistedReducer = persistReducer(persistConfig, rootReducer)
+const persistedReducer = persistReducer(persistConfig, appReducer)
 
 export const store = configureStore({
   reducer: persistedReducer,

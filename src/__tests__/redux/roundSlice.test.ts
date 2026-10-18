@@ -1,7 +1,7 @@
 import { type Profile, profilesActions } from '@tastic/profile'
 
 import reducer, { initialRoundState, roundActions, type RoundState, type SavedPuzzle, selectSoloRound } from '@/redux/roundSlice'
-import { GUEST_PLAYER_KEY } from '@/utils/players'
+import { GUEST_PLAYER_KEY, guestSeatKey } from '@/utils/players'
 import { createDefaultPnpSession, type PnpSession } from '@/utils/pnpSession'
 
 type RoundAction = Parameters<typeof reducer>[1]
@@ -22,7 +22,8 @@ describe('roundSlice', () => {
     expect(reducer(undefined, { type: '@@INIT' })).toEqual({
       solo: {},
       pnp: { id: 0, puzzle: null, guessedLetters: [], hintRevealed: false, phase: null, session: createDefaultPnpSession() },
-      activeMode: null
+      activeMode: null,
+      activeDoor: null
     })
   })
 
@@ -95,7 +96,7 @@ describe("each player's own solo round", () => {
 
 // A forgotten profile (usePlayerData's forgetPlayer): their Pass & Play seats stay at the table as guests.
 describe('clearPnpProfile', () => {
-  it('turns every seat holding that profile into a guest, keeping its name, the standings and the turn', () => {
+  it('turns every seat holding that profile into a guest named for the seat, keeping the standings and the turn', () => {
     const base = midGame()
     const players = base.pnp.session.players.map((player, index) => ({ ...player, profileId: index === 0 ? OTHER : 'profile-b' }))
     const before: RoundState = { ...base, pnp: { ...base.pnp, session: { ...base.pnp.session, players, standings: { [players[0].id]: { played: 2, wins: 1 } } } } }
@@ -114,8 +115,8 @@ describe('clearPnpProfile', () => {
     expect(reducer(before, roundActions.clearPnpProfile(OTHER))).toEqual(before)
   })
 
-  // Two profiles may share a name; a guest may not share one with anybody.
-  it('gives the seat its guest name when another profile at the table goes by the name it had', () => {
+  // Guests are named by seat, whatever name the profile had.
+  it("names the seat's guest for its number", () => {
     const seatTwo = (state: RoundState) => state.pnp.session.players[1]
     const before = run([roundActions.setPnpSeatProfile({ id: 'p1', profile: { id: OTHER, name: 'Sam' } }), roundActions.setPnpSeatProfile({ id: 'p2', profile: { id: 'profile-b', name: 'Sam' } })])
     expect(seatTwo(before)).toEqual({ id: 'p2', name: 'Sam', profileId: 'profile-b' })
@@ -147,25 +148,16 @@ describe('setPnpSeatProfile', () => {
   })
 
   it("hands a seat back to a guest under its own number's Player N", () => {
-    const next = run([roundActions.renamePnpPlayer({ id: 'p2', name: 'Grandma' }), seat('p2', ALICE), seat('p2', null)])
+    const next = run([roundActions.addPnpPlayer(), seat('p2', ALICE), seat('p2', null)])
 
     expect(players(next)[1]).toEqual({ id: 'p2', name: 'Player 2', profileId: null })
   })
 
-  it('counts up past a name another seat goes by', () => {
-    const next = run([roundActions.addPnpPlayer(), seat('p2', ALICE), roundActions.renamePnpPlayer({ id: 'p1', name: 'Player 2' }), seat('p2', null)])
+  // Their chips tell them apart (Jay, 2026-10-18: guests go by their seats, with no renaming).
+  it("lets a guest share a seated profile's name", () => {
+    const next = run([seat('p1', { id: OTHER, name: 'Player 2' })])
 
-    expect(players(next).map((player) => player.name)).toEqual(['Player 2', 'Player 4', 'Player 3'])
-  })
-
-  it("renames a guest already going by the profile's name, never silently sharing it", () => {
-    const next = run([roundActions.addPnpPlayer(), roundActions.renamePnpPlayer({ id: 'p3', name: 'ALICE' }), seat('p1', ALICE)])
-
-    expect(players(next)).toEqual([
-      { id: 'p1', name: 'Alice', profileId: OTHER },
-      { id: 'p2', name: 'Player 2', profileId: null },
-      { id: 'p3', name: 'Player 3', profileId: null }
-    ])
+    expect(players(next).map((player) => player.name)).toEqual(['Player 2', 'Player 2'])
   })
 
   it('swaps one profile for another in a seat', () => {
@@ -179,6 +171,8 @@ describe('setPnpSeatProfile', () => {
     ['the profile already in that seat', seat('p1', ALICE)],
     ['a profile seated elsewhere', seat('p2', ALICE)],
     ['a profile id that could not be a player', seat('p2', { id: 'bad:id', name: 'Eve' })],
+    ["a guest's key as a profile id", seat('p2', { id: GUEST_PLAYER_KEY, name: 'Eve' })],
+    ["a guest seat's key as a profile id", seat('p2', { id: guestSeatKey('p1'), name: 'Eve' })],
     ['a name that tidies to nothing', seat('p2', { id: 'profile-e', name: '   ' })]
   ])('changes nothing for %s', (_label, action) => {
     const before = run([seat('p1', ALICE)])
@@ -190,22 +184,32 @@ describe('setPnpSeatProfile', () => {
     expect(reducer(initialRoundState, seat('p1', null))).toBe(initialRoundState)
   })
 
-  it("won't rename a profile's seat: it goes by the profile's name", () => {
-    const before = run([seat('p1', ALICE)])
-
-    expect(reducer(before, roundActions.renamePnpPlayer({ id: 'p1', name: 'Ally' }))).toBe(before)
-  })
-
-  it("won't let a guest take a seated profile's name", () => {
-    const before = run([seat('p1', ALICE)])
-
-    expect(reducer(before, roundActions.renamePnpPlayer({ id: 'p2', name: 'alice' }))).toBe(before)
-  })
-
-  it("adds a new seat under a Player N nobody goes by, a profile's name included", () => {
+  it('adds a new seat named for where it sits', () => {
     const next = run([seat('p1', { id: OTHER, name: 'Player 3' }), roundActions.addPnpPlayer()])
 
-    expect(players(next)[2]).toEqual({ id: 'p3', name: 'Player 4', profileId: null })
+    expect(players(next)[2]).toEqual({ id: 'p3', name: 'Player 3', profileId: null })
+  })
+})
+
+// The seat the loadout shows, and where the table's words come from.
+describe('focusPnpSeat and setPnpSource', () => {
+  it('focuses a seat at the table', () => {
+    const next = run([roundActions.addPnpPlayer(), roundActions.focusPnpSeat('p3')])
+
+    expect(next.pnp.session.focusedId).toBe('p3')
+  })
+
+  it('changes nothing for a seat not at the table', () => {
+    expect(reducer(initialRoundState, roundActions.focusPnpSeat('p9'))).toBe(initialRoundState)
+  })
+
+  it('switches the word source, touching nothing else', () => {
+    const before = midGame()
+    const next = reducer(before, roundActions.setPnpSource('packs'))
+
+    expect(next.pnp.session.source).toBe('packs')
+    expect({ ...next.pnp, session: { ...next.pnp.session, source: 'write' } }).toEqual(before.pnp)
+    expect(next.solo).toBe(before.solo)
   })
 })
 
@@ -217,9 +221,8 @@ describe("the roster's names", () => {
   // @tastic/profile's actions, as the store hands them to this reducer.
   const fromRoster = ({ type, payload }: { type: string; payload: unknown }): RoundAction => ({ type, payload })
 
-  it("follows a rename on the Profiles screen, giving a guest who'd now share it their guest name", () => {
-    const before = run([roundActions.renamePnpPlayer({ id: 'p3', name: 'Ally' })], seated())
-    const next = reducer(before, fromRoster(profilesActions.update({ id: OTHER, patch: { name: 'Ally' } })))
+  it('follows a rename on the Profiles screen', () => {
+    const next = reducer(seated(), fromRoster(profilesActions.update({ id: OTHER, patch: { name: 'Ally' } })))
 
     expect(players(next).map((player) => player.name)).toEqual(['Ally', 'Player 2', 'Player 3'])
   })
@@ -327,7 +330,7 @@ describe('the Pass & Play round', () => {
 
   it('never touches the solo round or the open game', () => {
     const before = run([roundActions.setActiveMode('pnp')], midGame())
-    const next = run([roundActions.startPnpAuthoring(), roundActions.setPnpDraft({ answer: 'CAT', hint: '' }), roundActions.setPnpWord(puzzle()), roundActions.startPnpPlaying(), roundActions.savePnpProgress({ guessedLetters: ['A'], hintRevealed: false }), roundActions.recordPnpResult({ roundId: before.pnp.id + 1, result: 'win' }), roundActions.addPnpPlayer(), roundActions.renamePnpPlayer({ id: 'p1', name: 'Ann' }), roundActions.removePnpPlayer('p3'), roundActions.startPnpSession(), roundActions.endPnpSession()], before)
+    const next = run([roundActions.startPnpAuthoring(), roundActions.setPnpDraft({ answer: 'CAT', hint: '' }), roundActions.setPnpWord(puzzle()), roundActions.startPnpPlaying(), roundActions.savePnpProgress({ guessedLetters: ['A'], hintRevealed: false }), roundActions.recordPnpResult({ roundId: before.pnp.id + 1, result: 'win' }), roundActions.addPnpPlayer(), roundActions.focusPnpSeat('p3'), roundActions.setPnpSource('packs'), roundActions.removePnpPlayer('p3'), roundActions.startPnpSession(), roundActions.endPnpSession()], before)
 
     expect(next.solo).toEqual(before.solo)
     expect(next.activeMode).toBe('pnp')
@@ -442,7 +445,7 @@ describe('the Pass & Play session', () => {
     const played = (): RoundState => run([roundActions.startPnpAuthoring()], decide(inPlay(threePlayers())))
 
     it('New Session clears the standings and keeps the table, the first seat writing a blank prompt', () => {
-      const before = run([roundActions.renamePnpPlayer({ id: 'p2', name: 'Bo' })], played())
+      const before = run([roundActions.setPnpSeatProfile({ id: 'p2', profile: { id: OTHER, name: 'Bo' } })], played())
       const next = reducer(before, roundActions.startPnpSession())
 
       expect(next.pnp).toEqual({ id: before.pnp.id + 1, puzzle: null, guessedLetters: [], hintRevealed: false, phase: 'authoring', session: { ...session(before), standings: {}, writerId: 'p1', guesserId: 'p2', recordedRoundId: null } })
@@ -499,28 +502,6 @@ describe('the Pass & Play session', () => {
     })
   })
 
-  describe('renamePnpPlayer', () => {
-    it('renames the seat, tidied, keeping its id and standing', () => {
-      const before = decide(inPlay())
-      const next = reducer(before, roundActions.renamePnpPlayer({ id: 'p2', name: '  Bo   Diddley ' }))
-
-      expect(session(next).players[1]).toEqual({ id: 'p2', name: 'Bo Diddley', profileId: null })
-      expect(session(next).standings).toEqual(session(before).standings)
-    })
-
-    it.each([
-      ['a blank name', 'p2', '   '],
-      ['a name another seat goes by', 'p2', 'player 1'],
-      ['a seat not at the table', 'p9', 'Bo']
-    ])('ignores %s', (_label, id, name) => {
-      expect(reducer(initialRoundState, roundActions.renamePnpPlayer({ id, name }))).toBe(initialRoundState)
-    })
-
-    it('takes a change of case on the same seat', () => {
-      expect(session(reducer(initialRoundState, roundActions.renamePnpPlayer({ id: 'p1', name: 'PLAYER 1' }))).players[0].name).toBe('PLAYER 1')
-    })
-  })
-
   describe('removePnpPlayer', () => {
     const remove = (state: RoundState, id: string) => reducer(state, roundActions.removePnpPlayer(id))
     const ids = (state: RoundState) => session(state).players.map((player) => player.id)
@@ -529,12 +510,24 @@ describe('the Pass & Play session', () => {
       expect(remove(initialRoundState, 'p2')).toBe(initialRoundState)
     })
 
-    it('removes the seat and its standing', () => {
+    it('removes the seat and its standing, the guests after it moving up a number', () => {
       const before = run([roundActions.startPnpAuthoring()], decide(inPlay(threePlayers())))
       const next = remove(before, 'p2')
 
-      expect(ids(next)).toEqual(['p1', 'p3'])
+      expect(session(next).players).toEqual([
+        { id: 'p1', name: 'Player 1', profileId: null },
+        { id: 'p3', name: 'Player 2', profileId: null }
+      ])
       expect(session(next).standings).toEqual({})
+    })
+
+    it("shows the seat that took the focused seat's place, or the one before for the last", () => {
+      const four = run([roundActions.addPnpPlayer(), roundActions.addPnpPlayer()])
+
+      expect(session(remove(run([roundActions.focusPnpSeat('p2')], four), 'p2')).focusedId).toBe('p3')
+      expect(session(remove(run([roundActions.focusPnpSeat('p4')], four), 'p4')).focusedId).toBe('p3')
+      // Another seat leaving leaves the focus where it was.
+      expect(session(remove(run([roundActions.focusPnpSeat('p4')], four), 'p1')).focusedId).toBe('p4')
     })
 
     it('hands the next word to the seat after a writer who leaves, at a blank prompt', () => {
@@ -598,15 +591,137 @@ describe('the Pass & Play session', () => {
   })
 })
 
+// The table on the packs takes turns, each one player's own solo round (utils/packTurns.ts).
+describe('pack turns', () => {
+  const session = (state: RoundState): PnpSession => state.pnp.session
+  const ALICE = 'profile-a'
+  const BOB = 'profile-b'
+  // Alice and Bob at the table, each with a fresh solo round (both round 1: ids only differ within one
+  // player's slot), and a guest in the third seat.
+  const table = (): RoundState => run([roundActions.addPnpPlayer(), roundActions.setPnpSeatProfile({ id: 'p1', profile: { id: ALICE, name: 'Alice' } }), roundActions.setPnpSeatProfile({ id: 'p2', profile: { id: BOB, name: 'Bob' } }), roundActions.setPnpSource('packs'), startSolo({ phrase: 'ALICE WORD' }, ALICE), startSolo({ phrase: 'BOB WORD' }, BOB)])
+  const count = (playerKey: string, roundId: number, result: 'win' | 'loss' = 'win') => roundActions.recordPackTurn({ playerKey, roundId, result })
+
+  describe('startPackTurn', () => {
+    it("starts with the first seat, the turn's round still to be counted", () => {
+      const next = reducer(table(), roundActions.startPackTurn())
+
+      expect(session(next)).toMatchObject({ turnId: 'p1', recordedTurnRound: null })
+    })
+
+    it('goes around the table by the fair pick, touching nothing a written word needs', () => {
+      const first = run([roundActions.startPackTurn(), count(ALICE, 1)], table())
+      const second = reducer(first, roundActions.startPackTurn())
+      expect(session(second)).toMatchObject({ turnId: 'p2', recordedTurnRound: null })
+
+      const third = run([count(BOB, 1, 'loss'), roundActions.startPackTurn()], second)
+      expect(session(third).turnId).toBe('p3')
+      expect(session(third)).toMatchObject({ writerId: 'p1', guesserId: 'p2', recordedRoundId: null })
+      expect({ ...third.pnp, session: undefined }).toEqual({ ...initialRoundState.pnp, session: undefined })
+    })
+  })
+
+  describe('recordPackTurn', () => {
+    it("counts the turn's round for its seat, keeping it by its player and id", () => {
+      const next = run([roundActions.startPackTurn(), count(ALICE, 1)], table())
+
+      expect(session(next)).toMatchObject({ standings: { p1: { played: 1, wins: 1 } }, recordedTurnRound: `${ALICE}:1` })
+      expect(session(reducer(run([roundActions.startPackTurn()], table()), count(ALICE, 1, 'loss'))).standings).toEqual({ p1: { played: 1, wins: 0 } })
+    })
+
+    // Its end reported again after a relaunch counts nothing.
+    it('counts a turn once, however many times its end is reported', () => {
+      const once = run([roundActions.startPackTurn(), count(ALICE, 1)], table())
+
+      expect(reducer(once, count(ALICE, 1, 'loss'))).toBe(once)
+    })
+
+    // Alice's round 1 and Bob's round 1 are two rounds.
+    it("counts another player's round with the same id on their own turn", () => {
+      const next = run([roundActions.startPackTurn(), count(ALICE, 1), roundActions.startPackTurn(), count(BOB, 1)], table())
+
+      expect(session(next)).toMatchObject({ standings: { p1: { played: 1, wins: 1 }, p2: { played: 1, wins: 1 } }, recordedTurnRound: `${BOB}:1` })
+    })
+
+    it.each<[string, (state: RoundState) => RoundState, RoundAction]>([
+      ['with no turn', (state) => state, count(ALICE, 1)],
+      ['for a round that is not on the board', (state) => run([roundActions.startPackTurn()], state), count(ALICE, 2)],
+      ['for a player with no round', (state) => run([roundActions.startPackTurn()], state), count(GUEST_PLAYER_KEY, 1)],
+      ['once its seat has left the table', (state) => run([roundActions.startPackTurn(), roundActions.removePnpPlayer('p1')], state), count(ALICE, 1)]
+    ])('counts nothing %s', (_label, setUp, action) => {
+      const before = setUp(table())
+
+      expect(reducer(before, action)).toBe(before)
+    })
+  })
+
+  // The standings are the seat's, whichever way it played.
+  it('shares the standings with written words, both ways', () => {
+    const written = run([roundActions.startPnpAuthoring(), roundActions.setPnpWord(puzzle({ phrase: 'CAT', sourceMode: 'custom' })), roundActions.startPnpPlaying(), roundActions.savePnpProgress({ guessedLetters: ['C', 'A', 'T'], hintRevealed: false })], table())
+    const both = run([roundActions.recordPnpResult({ roundId: written.pnp.id, result: 'win' }), roundActions.startPackTurn()], written)
+
+    // p2 guessed the written word, so the fair pick is the first of the two who haven't played.
+    expect(session(both).turnId).toBe('p1')
+    expect(session(reducer(both, count(ALICE, 1))).standings).toEqual({ p1: { played: 1, wins: 1 }, p2: { played: 1, wins: 1 } })
+  })
+
+  it('keeps the turn through a switch of word source, and through a switch of who sits in its seat', () => {
+    const before = run([roundActions.startPackTurn()], table())
+    const switched = run([roundActions.setPnpSource('write'), roundActions.setPnpSource('packs'), roundActions.setPnpSeatProfile({ id: 'p1', profile: null })], before)
+
+    expect(session(switched)).toMatchObject({ turnId: 'p1', recordedTurnRound: null })
+  })
+
+  it('ends the turn with its seat when it leaves, the next going to the fair pick, and only then', () => {
+    const before = run([roundActions.startPackTurn(), count(ALICE, 1), roundActions.startPackTurn()], table())
+
+    expect(session(reducer(before, roundActions.removePnpPlayer('p3')))).toMatchObject({ turnId: 'p2', recordedTurnRound: null })
+    const gone = reducer(before, roundActions.removePnpPlayer('p2'))
+    expect(session(gone)).toMatchObject({ turnId: null, recordedTurnRound: null })
+    // The seat that slid into its place, who hasn't played, is next.
+    expect(session(reducer(gone, roundActions.startPackTurn())).turnId).toBe('p3')
+  })
+
+  it.each([
+    ['New session', roundActions.startPnpSession()],
+    ['End Session', roundActions.endPnpSession()]
+  ])('starts the rotation over from the first seat after %s', (_label, action) => {
+    const before = run([roundActions.startPackTurn(), count(ALICE, 1), roundActions.startPackTurn()], table())
+    const next = reducer(before, action)
+
+    expect(session(next)).toMatchObject({ standings: {}, turnId: null, recordedTurnRound: null })
+    expect(session(reducer(next, roundActions.startPackTurn())).turnId).toBe('p1')
+    // The rounds themselves stay in their players' slots.
+    expect(selectSoloRound(next, BOB)).toEqual(selectSoloRound(before, BOB))
+  })
+})
+
 describe('setRoundArt', () => {
   const setArt = (modeId: string, playerKey = GUEST_PLAYER_KEY) => roundActions.setRoundArt({ playerKey, modeId })
 
-  it("switches the art on the player's waiting round and the Pass & Play one, keeping their ids and guesses", () => {
+  it("switches the art on the player's waiting round, keeping its id and guesses", () => {
     const before = midGame()
     const next = reducer(before, setArt('robot'))
 
     expect(guest(next)).toEqual({ ...guest(before), puzzle: { ...guest(before).puzzle, modeId: 'robot' } })
+  })
+
+  // Each guest seat is a player of its own: the word waiting for the second seat's guest is theirs, by
+  // the seat's own key, never Single Player's guest's.
+  it('switches the art on the Pass & Play word for its guesser, a guest seat by its own key, keeping its id and guesses', () => {
+    const before = midGame()
+    const next = reducer(before, setArt('robot', guestSeatKey('p2')))
+
     expect(next.pnp).toEqual({ ...before.pnp, puzzle: { ...before.pnp.puzzle, modeId: 'robot' } })
+    expect(reducer(before, setArt('robot')).pnp).toBe(before.pnp)
+    expect(reducer(before, setArt('robot', guestSeatKey('p1'))).pnp).toBe(before.pnp)
+  })
+
+  // From the hand-off on, the board is the guesser's (Jay, 2026-10-18).
+  it('leaves the Pass & Play word alone for anyone but its guesser', () => {
+    const before = run([roundActions.setPnpSeatProfile({ id: 'p2', profile: { id: OTHER, name: 'Alice' } })], midGame())
+
+    expect(reducer(before, setArt('robot')).pnp).toBe(before.pnp)
+    expect(reducer(before, setArt('robot', OTHER)).pnp.puzzle?.modeId).toBe('robot')
   })
 
   it("leaves every other player's waiting round on its own art", () => {
@@ -641,6 +756,17 @@ describe('setActiveMode', () => {
     expect([solo.activeMode, pnp.activeMode, none.activeMode]).toEqual(['solo', 'pnp', null])
     expect(none.solo).toEqual(initialRoundState.solo)
     expect(none.pnp).toEqual(initialRoundState.pnp)
+  })
+
+  // The Pass & Play table on the packs plays its pack turns on the solo game, and goes back to its own
+  // page.
+  it('records the door the game was played from: its own unless said, and none with no game', () => {
+    const own = reducer(initialRoundState, roundActions.setActiveMode('pnp'))
+    const fromPnp = reducer(own, roundActions.setActiveMode('solo', 'pnp'))
+    const none = reducer(fromPnp, roundActions.setActiveMode(null))
+
+    expect([own.activeDoor, fromPnp.activeDoor, none.activeDoor]).toEqual(['pnp', 'pnp', null])
+    expect(fromPnp.activeMode).toBe('solo')
   })
 })
 

@@ -21,7 +21,7 @@ export type KeyboardLiftedCard = {
   onCardLayout: (event: LayoutChangeEvent) => void
 }
 
-// A fleet card with a text field in it (the Pass & Play prompt, the player name dialog), centered on
+// A fleet card with a text field in it (the Pass & Play prompt), centered on
 // @tastic/hud's OverlayBackdrop, that rises to clear the software keyboard and never grows past the
 // room it has. Neither reanimated's useAnimatedKeyboard nor react-native-keyboard-controller ever
 // delivered a real keyboard height in this app's build (confirmed live: both stayed at 0 with the

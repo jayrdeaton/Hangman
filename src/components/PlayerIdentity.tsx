@@ -6,8 +6,8 @@ import { type StyleProp, StyleSheet, View, type ViewStyle } from 'react-native'
 // Who a player is, the one way every screen shows it: a profile has its chip (@tastic/profile's
 // ProfileChip: its tag, or the account glyph, on its color drawn as the whole palette, which
 // PlayerSwatches does app-wide), and a guest has none, only their name. So a table of guests reads
-// exactly as it did before profiles, and a profile reads the same wherever it's named: the result
-// card's Up Next row, the Pass & Play prompt, hand-off, result and session cards, and the standings.
+// exactly as it did before profiles, and a profile reads the same wherever it's named: the Pass & Play
+// prompt, hand-off, result and session cards, and the standings.
 
 // The chip inside a Paper Chip (its avatar slot is 24 across).
 export const PLAYER_CHIP_AVATAR_SIZE = 24
@@ -35,7 +35,7 @@ export type PlayerChipProps<Id extends string | null> = {
   accessibilityLabel: string
 }
 
-// A pick between players (the prompt's For row, the result card's Up Next row): an outlined Paper
+// A pick between players (the prompt's For row): an outlined Paper
 // Chip with the player's name, led by their profile's chip. Selected, Paper fills it and checks it (the
 // check sits over a profile's chip, as Paper draws a selected avatar). Memoized, with one stable
 // onSelect for the whole row, so a row of these re-renders only the chips whose selection moved.

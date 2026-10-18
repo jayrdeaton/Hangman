@@ -59,9 +59,12 @@ const HomeMenu = (): JSX.Element => {
 // nothing, and the board shows behind it. `resume` turns off the game screen's push animation for that
 // one trip (see _layout.tsx). The decision is read once, when Home first mounts, never again.
 export const HomeScreen = (): JSX.Element => {
-  const { consumeResumeMode } = useActiveGame()
-  const [resumeMode] = useState(consumeResumeMode)
-  if (resumeMode) return <Redirect href={{ ...gameHref(resumeMode), params: { mode: resumeMode, resume: '1' } }} />
+  const { consumeResume } = useActiveGame()
+  const [resume] = useState(consumeResume)
+  if (resume) {
+    const href = gameHref(resume.mode, resume.door)
+    return <Redirect href={{ ...href, params: { ...href.params, resume: '1' } }} />
+  }
   return <HomeMenu />
 }
 

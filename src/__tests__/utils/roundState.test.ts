@@ -131,22 +131,27 @@ describe('sanitizeRoundState', () => {
   // The guest's solo round mid-guess, and another player's empty one.
   const guestSlot = (): SavedRound => ({ id: 4, puzzle: { phrase: 'HELLO WORLD', modeId: 'robot', sourceMode: 'random', hint: 'A greeting', packKey: 'phrases', packLabel: 'Phrases', puzzleId: 'phrases:abc', difficultyTier: 'easy', packScope: 'single' }, guessedLetters: ['H', 'Z'], hintRevealed: true })
   const otherSlot = (): SavedRound => ({ id: 1, puzzle: null, guessedLetters: [], hintRevealed: false })
-  // Three players a round in, Cy writing for Ann.
+  // Three players a round in, Player 3 writing for Player 1, the second seat shown.
   const session = (): PnpSession => ({
     players: [
-      { id: 'p1', name: 'Ann', profileId: null },
-      { id: 'p2', name: 'Bo', profileId: null },
-      { id: 'p3', name: 'Cy', profileId: null }
+      { id: 'p1', name: 'Player 1', profileId: null },
+      { id: 'p2', name: 'Player 2', profileId: null },
+      { id: 'p3', name: 'Player 3', profileId: null }
     ],
     standings: { p2: { played: 1, wins: 1 } },
     writerId: 'p3',
     guesserId: 'p1',
-    recordedRoundId: null
+    recordedRoundId: null,
+    source: 'write',
+    focusedId: 'p2',
+    turnId: null,
+    recordedTurnRound: null
   })
   const validState = (): RoundState => ({
     solo: { [GUEST_PLAYER_KEY]: guestSlot(), [OTHER]: otherSlot() },
     pnp: { id: 9, puzzle: { phrase: 'CAT', modeId: 'classic', sourceMode: 'custom' }, guessedLetters: ['C'], hintRevealed: false, phase: 'playing', session: session() },
-    activeMode: 'pnp'
+    activeMode: 'pnp',
+    activeDoor: 'pnp'
   })
 
   // A stored blob with the guest's slot replaced, the rest left valid, and what it sanitizes to when
@@ -289,6 +294,14 @@ describe('sanitizeRoundState', () => {
 
       expect(sanitizeRoundState(state).pnp).toEqual({ ...initialRoundState.pnp, session: session() })
     })
+
+    // A relaunch mid-turn comes back to the same turn, and a counted one stays counted.
+    it("keeps the pack turn and its counted round through a save and a relaunch, whatever happens to the written word's round", () => {
+      const turn = { ...session(), source: 'packs', turnId: 'p2', recordedTurnRound: `${GUEST_PLAYER_KEY}:4` }
+
+      expect(sanitizeRoundState(JSON.parse(JSON.stringify(withSession(turn)))).pnp.session).toEqual(turn)
+      expect(sanitizeRoundState({ ...validState(), pnp: { ...validState().pnp, guessedLetters: ['c'], session: turn } }).pnp.session).toEqual(turn)
+    })
   })
 
   it.each([
@@ -308,8 +321,14 @@ describe('sanitizeRoundState', () => {
     ['a number', 1],
     ['a boolean', true],
     ['nothing', undefined]
-  ])('clears an open game of %s, leaving both rounds alone', (_label, activeMode) => {
-    expect(sanitizeRoundState({ ...validState(), activeMode })).toEqual({ ...validState(), activeMode: null })
+  ])('clears an open game of %s, and its door, leaving both rounds alone', (_label, activeMode) => {
+    expect(sanitizeRoundState({ ...validState(), activeMode })).toEqual({ ...validState(), activeMode: null, activeDoor: null })
+  })
+
+  it("keeps the door an open game was played from, and takes the game's own for one that isn't a door", () => {
+    expect(sanitizeRoundState({ ...validState(), activeMode: 'solo', activeDoor: 'pnp' })).toMatchObject({ activeMode: 'solo', activeDoor: 'pnp' })
+    expect(sanitizeRoundState({ ...validState(), activeMode: 'solo', activeDoor: 'lobby' })).toMatchObject({ activeMode: 'solo', activeDoor: 'solo' })
+    expect(sanitizeRoundState({ ...validState(), activeMode: 'solo', activeDoor: undefined })).toMatchObject({ activeMode: 'solo', activeDoor: 'solo' })
   })
 
   describe('the Pass & Play draft', () => {
@@ -373,14 +392,18 @@ describe('getPnpRemovalLoss', () => {
     phase: 'playing',
     session: {
       players: [
-        { id: 'p1', name: 'Ann', profileId: null },
-        { id: 'p2', name: 'Bo', profileId: null },
-        { id: 'p3', name: 'Cy', profileId: null }
+        { id: 'p1', name: 'Ann', profileId: 'profile-ann' },
+        { id: 'p2', name: 'Bo', profileId: 'profile-bo' },
+        { id: 'p3', name: 'Player 3', profileId: null }
       ],
       standings: { p2: { played: 1, wins: 0 } },
       writerId: 'p1',
       guesserId: 'p2',
-      recordedRoundId: null
+      recordedRoundId: null,
+      source: 'write',
+      focusedId: 'p1',
+      turnId: null,
+      recordedTurnRound: null
     }
   })
 

@@ -1,7 +1,7 @@
 import type { UnknownAction } from '@reduxjs/toolkit'
 import { isValidProfile, type Profile, profilesReducer } from '@tastic/profile'
 
-import { isPlayerKey } from '@/utils/players'
+import { isProfileId } from '@/utils/players'
 
 import { isRootRehydrate } from './rehydrate'
 
@@ -13,14 +13,15 @@ import { isRootRehydrate } from './rehydrate'
 // own per-player slices, keyed by the profile's id, never on the profile.
 export type ProfilesState = Profile[]
 
-// Checks what comes back from storage: a profile that isn't valid, or whose id couldn't be a player key
-// (utils/players.ts), is dropped, as is a second profile with an id already seen.
+// Checks what comes back from storage: a profile that isn't valid, or whose id couldn't be a profile's
+// (utils/players.ts' isProfileId: a player key that isn't a guest's), is dropped, as is a second profile
+// with an id already seen.
 export const sanitizeProfiles = (value: unknown): ProfilesState => {
   if (!Array.isArray(value)) return []
   const seen = new Set<string>()
   const next: ProfilesState = []
   for (const item of value) {
-    if (!isValidProfile(item) || !isPlayerKey(item.id) || seen.has(item.id)) continue
+    if (!isValidProfile(item) || !isProfileId(item.id) || seen.has(item.id)) continue
     seen.add(item.id)
     next.push({ id: item.id, name: item.name, color: item.color, tag: item.tag, createdAt: item.createdAt, updatedAt: item.updatedAt })
   }

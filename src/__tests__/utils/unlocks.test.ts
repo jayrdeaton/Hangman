@@ -1,5 +1,5 @@
-import { GUEST_PLAYER_KEY } from '@/utils/players'
-import { clearAllPuzzleUnlocks, clearPuzzleUnlocks, exportPuzzleUnlocks, getCompletedBuiltInPackKeys, getDevicePuzzleUnlockMap, getPuzzleUnlockMap, getTotalUnlockedCount, getUnlockedCountForPack, importPuzzleUnlocks, markPuzzleUnlocked, mergePuzzleUnlocks, parseProgressBackup } from '@/utils/unlocks'
+import { GUEST_PLAYER_KEY, guestSeatKey } from '@/utils/players'
+import { clearAllPuzzleUnlocks, clearLeftGuestSeatUnlocks, clearPuzzleUnlocks, exportPuzzleUnlocks, getCompletedBuiltInPackKeys, getDevicePuzzleUnlockMap, getPuzzleUnlockMap, getTotalUnlockedCount, getUnlockedCountForPack, importPuzzleUnlocks, markPuzzleUnlocked, mergePuzzleUnlocks, parseProgressBackup } from '@/utils/unlocks'
 
 import { puzzleManifest } from '../../data/puzzleCatalog.generated'
 
@@ -231,6 +231,20 @@ describe('clearPuzzleUnlocks', () => {
   })
 })
 
+// A guest seat's unlocked puzzles go with the seat; this catches any left behind, at launch.
+describe('clearLeftGuestSeatUnlocks', () => {
+  it("clears every guest seat's whose seat has left the table, and nobody else's", async () => {
+    await markPuzzleUnlocked(PLAYER, 'animals', 'lion')
+    await markPuzzleUnlocked(OTHER, 'animals', 'tiger')
+    await markPuzzleUnlocked(guestSeatKey('p1'), 'animals', 'bear')
+    await markPuzzleUnlocked(guestSeatKey('p5'), 'animals', 'wolf')
+
+    await clearLeftGuestSeatUnlocks(new Set([guestSeatKey('p1'), guestSeatKey('p2')]))
+
+    expect(Object.keys(mockStore).sort()).toEqual(['puzzle_unlocks_v1:guest', 'puzzle_unlocks_v1:guest-p1', 'puzzle_unlocks_v1:profile-a'])
+  })
+})
+
 // Everything belongs to a player (2026-10-17): one player's solves never show as another's.
 describe("each player's own unlocked puzzles", () => {
   it('keeps every player under their own key', async () => {
@@ -240,6 +254,17 @@ describe("each player's own unlocked puzzles", () => {
     expect(await getPuzzleUnlockMap(PLAYER)).toEqual({ animals: ['lion'] })
     expect(await getPuzzleUnlockMap(OTHER)).toEqual({ animals: ['tiger'] })
     expect(Object.keys(mockStore).sort()).toEqual(['puzzle_unlocks_v1:guest', 'puzzle_unlocks_v1:profile-a'])
+  })
+
+  // Each Pass & Play guest seat is a player of its own (2026-10-18).
+  it("keeps each guest seat's apart from Single Player's guest's and from each other's", async () => {
+    await markPuzzleUnlocked(PLAYER, 'animals', 'lion')
+    await markPuzzleUnlocked(guestSeatKey('p2'), 'animals', 'tiger')
+
+    expect(await getPuzzleUnlockMap(guestSeatKey('p2'))).toEqual({ animals: ['tiger'] })
+    expect(await getPuzzleUnlockMap(guestSeatKey('p3'))).toEqual({})
+    expect(await getPuzzleUnlockMap(PLAYER)).toEqual({ animals: ['lion'] })
+    expect(await getDevicePuzzleUnlockMap()).toEqual({ animals: ['lion', 'tiger'] })
   })
 
   it('counts a puzzle new for one player even when another already solved it', async () => {

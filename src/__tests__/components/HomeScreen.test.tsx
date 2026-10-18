@@ -136,6 +136,14 @@ describe('HomeScreen', () => {
       expect(store.getState().round.activeMode).toBe(mode)
     })
 
+    // The Pass & Play table on the packs plays solo rounds for now, and goes back to its own page.
+    it('redirects with the door the game was played from, when it differs', async () => {
+      store.dispatch(roundActions.setActiveMode('solo', 'pnp'))
+      const screen = await renderHome()
+
+      expect(redirectHref(screen)).toEqual({ pathname: '/game', params: { mode: 'solo', door: 'pnp', resume: '1' } })
+    })
+
     // Back to Home from the resumed game is Home, not another trip into the game.
     it('shows the menu the next time Home mounts', async () => {
       store.dispatch(roundActions.setActiveMode('solo'))

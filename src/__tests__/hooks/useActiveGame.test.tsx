@@ -27,7 +27,7 @@ const renderActiveGame = () => {
 }
 
 const activeMode = () => store.getState().round.activeMode
-const setActiveModeCalls = (dispatch: jest.SpyInstance) => dispatch.mock.calls.filter(([action]) => roundActions.setActiveMode.match(action)).map(([action]) => action.payload)
+const setActiveModeCalls = (dispatch: jest.SpyInstance) => dispatch.mock.calls.filter(([action]) => roundActions.setActiveMode.match(action)).map(([action]) => action.payload.mode)
 
 describe('useActiveGame', () => {
   let dispatch: jest.SpyInstance
@@ -41,15 +41,23 @@ describe('useActiveGame', () => {
     dispatch.mockRestore()
   })
 
-  describe('consumeResumeMode', () => {
+  describe('consumeResume', () => {
     it('returns the game left open at launch the first time, then null every time after', async () => {
       store.dispatch(roundActions.setActiveMode('pnp'))
       const { result } = await renderActiveGame()
 
-      expect(result.current.consumeResumeMode()).toBe('pnp')
-      expect(result.current.consumeResumeMode()).toBeNull()
+      expect(result.current.consumeResume()).toEqual({ mode: 'pnp', door: 'pnp' })
+      expect(result.current.consumeResume()).toBeNull()
       // The saved mode itself stays: only the pending resume is spent.
       expect(activeMode()).toBe('pnp')
+    })
+
+    // The Pass & Play table on the packs plays solo rounds for now, from its own page.
+    it('returns the door the game was played from with it', async () => {
+      store.dispatch(roundActions.setActiveMode('solo', 'pnp'))
+      const { result } = await renderActiveGame()
+
+      expect(result.current.consumeResume()).toEqual({ mode: 'solo', door: 'pnp' })
     })
 
     // Read when first asked, not at mount, so it sees the rehydrated slice even if the provider
@@ -60,17 +68,17 @@ describe('useActiveGame', () => {
         store.dispatch(roundActions.setActiveMode('solo'))
       })
 
-      expect(result.current.consumeResumeMode()).toBe('solo')
+      expect(result.current.consumeResume()).toEqual({ mode: 'solo', door: 'solo' })
     })
 
     it('returns null when no game was left open, and stays spent once a game is', async () => {
       const { result } = await renderActiveGame()
 
-      expect(result.current.consumeResumeMode()).toBeNull()
+      expect(result.current.consumeResume()).toBeNull()
       await act(async () => {
         store.dispatch(roundActions.setActiveMode('solo'))
       })
-      expect(result.current.consumeResumeMode()).toBeNull()
+      expect(result.current.consumeResume()).toBeNull()
     })
   })
 
@@ -92,6 +100,21 @@ describe('useActiveGame', () => {
       expect(setActiveModeCalls(dispatch)).toEqual(['solo', 'pnp'])
     })
 
+    it('saves the door the game is played from, its own unless said', async () => {
+      const { result } = await renderActiveGame()
+
+      await act(async () => {
+        result.current.markActive('solo', 'pnp')
+      })
+      expect(store.getState().round).toMatchObject({ activeMode: 'solo', activeDoor: 'pnp' })
+
+      await act(async () => {
+        result.current.markActive('solo')
+      })
+      expect(store.getState().round).toMatchObject({ activeMode: 'solo', activeDoor: 'solo' })
+      expect(setActiveModeCalls(dispatch)).toEqual(['solo', 'solo'])
+    })
+
     // A share link opened cold lands in the game before Home ever asks; Home afterward must be Home.
     it('cancels a pending resume, even when the saved mode is unchanged', async () => {
       store.dispatch(roundActions.setActiveMode('solo'))
@@ -104,7 +127,7 @@ describe('useActiveGame', () => {
 
       expect(setActiveModeCalls(dispatch)).toEqual([])
       expect(activeMode()).toBe('solo')
-      expect(result.current.consumeResumeMode()).toBeNull()
+      expect(result.current.consumeResume()).toBeNull()
     })
   })
 
@@ -139,7 +162,7 @@ describe('useActiveGame', () => {
       await act(async () => {
         store.dispatch(roundActions.setActiveMode('solo'))
       })
-      expect(result.current.consumeResumeMode()).toBeNull()
+      expect(result.current.consumeResume()).toBeNull()
     })
   })
 
@@ -155,7 +178,7 @@ describe('useActiveGame', () => {
 
       expect(dispatch).not.toHaveBeenCalled()
       expect(activeMode()).toBe('solo')
-      expect(result.current.consumeResumeMode()).toBeNull()
+      expect(result.current.consumeResume()).toBeNull()
     })
   })
 
@@ -186,7 +209,7 @@ describe('useActiveGame', () => {
     result.current.markActive('solo')
     result.current.clearActive()
 
-    expect(result.current.consumeResumeMode()).toBeNull()
+    expect(result.current.consumeResume()).toBeNull()
     expect(dispatch).not.toHaveBeenCalled()
     expect(activeMode()).toBe('pnp')
   })

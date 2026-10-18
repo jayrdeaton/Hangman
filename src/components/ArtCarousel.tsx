@@ -1,6 +1,7 @@
+import MaskedView from '@react-native-masked-view/masked-view'
 import { resolveSeedColor, useThemeSettings } from '@rific/auto-paper'
-import { JSX, memo, useCallback, useEffect, useMemo, useRef } from 'react'
-import { type AccessibilityActionEvent, FlatList, type NativeScrollEvent, type NativeSyntheticEvent, Platform, StyleSheet, useWindowDimensions, View } from 'react-native'
+import { JSX, memo, type ReactNode, useCallback, useEffect, useMemo, useRef } from 'react'
+import { type AccessibilityActionEvent, FlatList, type NativeScrollEvent, type NativeSyntheticEvent, Platform, StyleSheet, useWindowDimensions, View, type ViewStyle } from 'react-native'
 import { Text, useTheme } from 'react-native-paper'
 import Animated, { useAnimatedStyle } from 'react-native-reanimated'
 
@@ -78,7 +79,7 @@ export type ArtCarouselProps = {
   artHeight: number
 }
 
-// The Single Player loadout's art picker (Jay, 2026-10-18), the old Customize drawer's carousel back on
+// The loadout's art picker (Jay, 2026-10-18), the old Customize drawer's carousel back on
 // the page: one card per art the picker offers (VISIBLE_MODES), a page a swipe, and whichever card it
 // settles on is the active player's art, live, through useSelectArt (theirs, and the rounds waiting).
 // It starts on their art and follows the art when it changes from elsewhere (another player picked, the
@@ -169,9 +170,9 @@ export const ArtCarousel = memo(({ paused, artHeight }: ArtCarouselProps): JSX.E
       {/* Clipped to the cards' height: the web's horizontal scroll view keeps a scrollbar gutter that
           WebKit and Blink still lay out, hidden or not. scrollEventThrottle 16 gives the settle check
           a scroll event a frame; decelerationRate 'fast' turns a page crisply instead of coasting. */}
-      <View style={[styles.list, { height: listHeight }]}>
+      <CarouselEdgeFade height={listHeight}>
         <FlatList testID='art-carousel' ref={listRef} data={VISIBLE_MODES} renderItem={renderCard} keyExtractor={keyExtractor} horizontal pagingEnabled decelerationRate='fast' showsHorizontalScrollIndicator={false} getItemLayout={getItemLayout} initialScrollIndex={selectedIndex} onScroll={handleScroll} scrollEventThrottle={16} style={{ height: listHeight }} {...horizontalWheelScrollProps} />
-      </View>
+      </CarouselEdgeFade>
       {/* Which page: the board's wrong-guess pips' shape, the picked one filled, the rest outlined in
           the page's muted ink, which reads on the chalkboard and the whiteboard alike. */}
       <View style={styles.pips} accessibilityElementsHidden importantForAccessibility='no-hide-descendants'>
@@ -184,12 +185,49 @@ export const ArtCarousel = memo(({ paused, artHeight }: ArtCarouselProps): JSX.E
 })
 ArtCarousel.displayName = 'ArtCarousel'
 
+// How far in from the left and right edges the carousel fades out: the page's gutter twice, so a card
+// sliding in or out fades at the screen's edge instead of being cut there, while the settled art (a
+// square in the middle of a wider page) is never touched.
+const EDGE_FADE_WIDTH = 2 * GUTTER
+
+// auto-paper's FadingScrollView treatment (Stats and the loadout page fade at their top and bottom,
+// Jay 2026-10-18), turned on its side: the same masks, a native gradient band at each side inside the
+// MaskedView Theme also hands auto-paper, and a CSS mask on the web, where the masked view doesn't mask.
+const CarouselEdgeFade = ({ height, children }: { height: number; children: ReactNode }): JSX.Element => {
+  if (Platform.OS === 'web') return <View style={[styles.list, { height }, WEB_EDGE_FADE]}>{children}</View>
+  return (
+    <MaskedView
+      style={[styles.list, { height }]}
+      maskElement={
+        <View style={styles.mask}>
+          <View style={[styles.maskEdge, FADE_IN_FROM_LEFT]} />
+          <View style={styles.maskOpaque} />
+          <View style={[styles.maskEdge, FADE_OUT_TO_RIGHT]} />
+        </View>
+      }
+    >
+      {children}
+    </MaskedView>
+  )
+}
+
+// React Native's native linear gradient (as auto-paper's FadingScrollView uses), cast for the types. A
+// mask's alpha is what shows: opaque keeps the content, transparent hides it.
+const FADE_IN_FROM_LEFT = { experimental_backgroundImage: 'linear-gradient(to right, transparent, #000)' } as unknown as ViewStyle
+const FADE_OUT_TO_RIGHT = { experimental_backgroundImage: 'linear-gradient(to right, #000, transparent)' } as unknown as ViewStyle
+// mask-image isn't in React Native's style types, but react-native-web passes it to the DOM as is.
+const WEB_EDGE_MASK = `linear-gradient(to right, transparent 0, #000 ${EDGE_FADE_WIDTH}px, #000 calc(100% - ${EDGE_FADE_WIDTH}px), transparent 100%)`
+const WEB_EDGE_FADE = { maskImage: WEB_EDGE_MASK, WebkitMaskImage: WEB_EDGE_MASK } as unknown as ViewStyle
+
 const styles = StyleSheet.create({
   art: { flex: 1, width: '100%' },
   card: { paddingHorizontal: GUTTER },
   // Out past the page's gutters, so a card is a whole page wide.
   carousel: { alignSelf: 'stretch', marginHorizontal: -GUTTER },
   list: { overflow: 'hidden' },
+  mask: { flex: 1, flexDirection: 'row' },
+  maskEdge: { width: EDGE_FADE_WIDTH },
+  maskOpaque: { backgroundColor: '#000', flex: 1 },
   name: { fontWeight: '700', height: NAME_HEIGHT, marginTop: NAME_GAP, textAlign: 'center' },
   pip: { borderRadius: PIPS_HEIGHT / 2, borderWidth: 1.5, height: PIPS_HEIGHT, width: PIPS_HEIGHT },
   pips: { flexDirection: 'row', gap: 6, justifyContent: 'center', marginTop: PIPS_GAP }

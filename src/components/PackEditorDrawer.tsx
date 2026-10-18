@@ -39,7 +39,7 @@ export type PackEditorDrawerProps = {
 
 // Create/edit a custom pack - its own animated Drawer (reached from PacksScreen's "Create" button
 // or a custom pack row's edit icon), stacked on top of PacksScreen the same way PackPuzzlesDrawer
-// stacks on top of the Single Player loadout, rather than swapping in as an unanimated step within
+// stacks on top of the loadout, rather than swapping in as an unanimated step within
 // the same panel. Close sits on the LEADING (left) side, matching every other drawer the loadout
 // opens (see PacksScreen/PackPuzzlesDrawer) - freeing the trailing side for Share/Delete once
 // there's an actual saved pack behind editingKey, rather than "back" and those two icons competing

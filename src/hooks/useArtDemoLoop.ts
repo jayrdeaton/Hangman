@@ -42,7 +42,7 @@ const SCAFFOLDED_MODE_ID = 'classic'
 // `paused` (Home is covered, by another screen or the Settings sheet) stops the cycle outright; see
 // its own guard below.
 //
-// Three users: Home's hero (HeroTitle, always focused, `once`), the Single Player loadout's art
+// Three users: Home's hero (HeroTitle, always focused, `once`), the loadout's art
 // carousel (ArtCarousel, one card per art, `isFocused` true only for the card it settled on, paused
 // while the page is covered) and the Settings sheet's ART thumbnails (ArtPicker, `waitForReplay`).
 //

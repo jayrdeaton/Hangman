@@ -4,9 +4,10 @@ import { type PersistConfig, type PersistedState, persistReducer, REHYDRATE } fr
 import { activePlayerActions } from '@/redux/activePlayerSlice'
 import { playerSettingsActions } from '@/redux/playerSettingsSlice'
 import { playerThemeActions } from '@/redux/playerThemeSlice'
+import { pruneLeftGuestSeats } from '@/redux/rehydrate'
 import { initialRoundState, roundActions, type RoundState } from '@/redux/roundSlice'
 import { store } from '@/redux/store'
-import { GUEST_PLAYER_KEY } from '@/utils/players'
+import { GUEST_PLAYER_KEY, guestSeatKey } from '@/utils/players'
 import { createDefaultPnpSession } from '@/utils/pnpSession'
 
 // The app's redux-persist mock passes the reducer straight through, so the config the store hands
@@ -35,7 +36,8 @@ const PERSIST = { version: 3, rehydrated: true }
 const validRound: RoundState = {
   solo: { [GUEST_PLAYER_KEY]: { id: 2, puzzle: { phrase: 'HELLO WORLD', modeId: 'robot', sourceMode: 'random', packKey: 'phrases' }, guessedLetters: ['H', 'Z'], hintRevealed: true } },
   pnp: { id: 5, puzzle: { phrase: 'CAT', modeId: 'classic', sourceMode: 'custom' }, guessedLetters: [], hintRevealed: false, phase: 'handoff', session: createDefaultPnpSession() },
-  activeMode: 'solo'
+  activeMode: 'solo',
+  activeDoor: 'solo'
 }
 
 beforeEach(() => {
@@ -61,7 +63,7 @@ describe('store', () => {
 
   it('mounts the profile roster and the per-player slices, starting with no profiles, the guest and nothing picked', () => {
     store.dispatch(profilesActions.setAll([]))
-    expect(store.getState()).toMatchObject({ profiles: [], activePlayer: { profileId: null }, playerSettings: {}, playerTheme: {} })
+    expect(store.getState()).toMatchObject({ profiles: [], activePlayer: { profileId: null, seatId: null }, playerSettings: {}, playerTheme: {} })
   })
 
   // Without these entries the stats, achievements, the roster (the only copy on a device with no shared
@@ -94,12 +96,12 @@ describe('the root rehydrate', () => {
   it('sanitizes each per-player slice it brings back', () => {
     rehydrate({ activePlayer: { profileId: 7 }, playerSettings: { [GUEST_PLAYER_KEY]: { modeId: 'robot', difficulty: 'impossible', packKeys: ['animals'] } }, playerTheme: { [GUEST_PLAYER_KEY]: { color: '#123456', harmony: 'sideways' } } })
 
-    expect(store.getState()).toMatchObject({ activePlayer: { profileId: null }, playerSettings: { [GUEST_PLAYER_KEY]: { modeId: 'robot', difficulty: 'any', packKeys: ['animals'] } }, playerTheme: {} })
+    expect(store.getState()).toMatchObject({ activePlayer: { profileId: null, seatId: null }, playerSettings: { [GUEST_PLAYER_KEY]: { modeId: 'robot', difficulty: 'any', packKeys: ['animals'] } }, playerTheme: {} })
   })
 
-  it('keeps only the valid profiles of a stored roster, each id once', () => {
+  it("keeps only the valid profiles of a stored roster, each id once, never under a guest's key", () => {
     const alice = { id: 'profile-a', name: 'Alice', color: '#9c27b0', tag: 'A', createdAt: 1, updatedAt: 1 }
-    rehydrate({ profiles: [alice, { ...alice, name: 'Second Alice' }, { ...alice, id: 'profile-b', color: 'purple' }, { ...alice, id: 'bad:id' }, 'nobody'] })
+    rehydrate({ profiles: [alice, { ...alice, name: 'Second Alice' }, { ...alice, id: 'profile-b', color: 'purple' }, { ...alice, id: 'bad:id' }, { ...alice, id: GUEST_PLAYER_KEY }, { ...alice, id: guestSeatKey('p2') }, 'nobody'] })
 
     expect(store.getState().profiles).toEqual([alice])
   })
@@ -121,6 +123,60 @@ describe('the root rehydrate', () => {
   })
 })
 
+// A guest seat's data lives as long as its seat (2026-10-18): what's kept for a seat no longer at the
+// table is trimmed as the store rehydrates, whichever of the two blobs comes back last.
+describe('guest seats that have left the table', () => {
+  const rehydrate = (payload: unknown, key = 'root') => store.dispatch({ type: REHYDRATE, key, payload })
+  const theme = { color: '#00bcd4', harmony: 'triadic' }
+  const picks = { modeId: 'robot', difficulty: 'hard', packKeys: null }
+
+  // The table: p1, p2 and p3 (the default two and one added).
+  beforeEach(() => {
+    store.dispatch(roundActions.addPnpPlayer())
+  })
+
+  it("drops the root blob's entries for a seat not at the table, keeping every seat's at it, Single Player's guest's and every profile's", () => {
+    rehydrate({
+      activePlayer: { profileId: null, seatId: 'p2' },
+      playerSettings: { [GUEST_PLAYER_KEY]: picks, 'profile-a': picks, [guestSeatKey('p2')]: picks, [guestSeatKey('p9')]: picks },
+      playerTheme: { [GUEST_PLAYER_KEY]: theme, [guestSeatKey('p3')]: theme, [guestSeatKey('p9')]: theme }
+    })
+
+    expect(Object.keys(store.getState().playerSettings).sort()).toEqual([GUEST_PLAYER_KEY, guestSeatKey('p2'), 'profile-a'])
+    expect(Object.keys(store.getState().playerTheme).sort()).toEqual([GUEST_PLAYER_KEY, guestSeatKey('p3')])
+    expect(store.getState().activePlayer).toEqual({ profileId: null, seatId: 'p2' })
+  })
+
+  it("hands a stored active player whose seat has left to Single Player's guest", () => {
+    rehydrate({ activePlayer: { profileId: null, seatId: 'p9' } })
+
+    expect(store.getState().activePlayer).toEqual({ profileId: null, seatId: null })
+  })
+
+  // The root blob came back first, with the stored table not in yet.
+  it("trims them again on the round's rehydrate, against the table that came back", () => {
+    store.dispatch(playerSettingsActions.setDifficulty({ playerKey: guestSeatKey('p3'), difficulty: 'hard' }))
+    store.dispatch(playerThemeActions.setPlayerTheme({ playerKey: guestSeatKey('p3'), theme: { color: '#00bcd4', harmony: 'triadic' } }))
+    store.dispatch(activePlayerActions.setActivePlayer(null, 'p3'))
+    store.dispatch(roundActions.removePnpPlayer('p3'))
+
+    rehydrate(validRound, 'round')
+
+    expect(store.getState().playerSettings).toEqual({})
+    expect(store.getState().playerTheme).toEqual({})
+    expect(store.getState().activePlayer).toEqual({ profileId: null, seatId: null })
+  })
+
+  it('waits for the round to come back before trimming anything, and hands back the same state with nothing to trim', () => {
+    const state = store.getState()
+    const stale = { ...state, playerSettings: { [guestSeatKey('p9')]: state.playerSettings[GUEST_PLAYER_KEY] } }
+
+    expect(pruneLeftGuestSeats({ ...stale, round: { ...state.round, _persist: { version: 3, rehydrated: false } } }).playerSettings).toBe(stale.playerSettings)
+    expect(pruneLeftGuestSeats({ ...stale, round: { ...state.round, _persist: { version: 3, rehydrated: true } } }).playerSettings).toEqual({})
+    expect(pruneLeftGuestSeats(state)).toBe(state)
+  })
+})
+
 describe("the round slice's migrate", () => {
   it('passes a valid stored round through, keeping its _persist', async () => {
     await expect(migrateRound({ ...validRound, _persist: PERSIST })).resolves.toEqual({ ...validRound, _persist: PERSIST })
@@ -129,7 +185,7 @@ describe("the round slice's migrate", () => {
   it('sanitizes a corrupt stored round slot by slot, keeping its _persist', async () => {
     const corrupt = { solo: { [GUEST_PLAYER_KEY]: { id: 'two', puzzle: null, guessedLetters: [], hintRevealed: false } }, pnp: validRound.pnp, activeMode: 'menu', _persist: PERSIST }
 
-    await expect(migrateRound(corrupt)).resolves.toEqual({ solo: {}, pnp: validRound.pnp, activeMode: null, _persist: PERSIST })
+    await expect(migrateRound(corrupt)).resolves.toEqual({ solo: {}, pnp: validRound.pnp, activeMode: null, activeDoor: null, _persist: PERSIST })
   })
 
   it("drops a version 1 blob's single solo round, keeping the Pass & Play one", async () => {
@@ -149,6 +205,14 @@ describe("the round slice's migrate", () => {
 
   it('falls back to the starting rounds for a stored blob with nothing usable in it', async () => {
     await expect(migrateRound({ solo: 'garbage', _persist: PERSIST })).resolves.toEqual({ ...initialRoundState, _persist: PERSIST })
+  })
+
+  // A guest seat's waiting round goes with its seat.
+  it("drops a guest seat's solo round whose seat isn't at the stored table", async () => {
+    const round = { ...validRound.solo[GUEST_PLAYER_KEY] }
+    const stored = { ...validRound, solo: { ...validRound.solo, [guestSeatKey('p2')]: round, [guestSeatKey('p9')]: round }, _persist: PERSIST }
+
+    await expect(migrateRound(stored)).resolves.toEqual({ ...validRound, solo: { ...validRound.solo, [guestSeatKey('p2')]: round }, _persist: PERSIST })
   })
 
   // A first launch: nothing stored, so the slice keeps its initial state.

@@ -19,8 +19,9 @@ export type ProfilesActions = {
   // Removes the profile from the roster, every game's on the shared one, and forgets everything
   // Hangman kept for it (usePlayerData's forgetPlayer). Confirm before calling it.
   deleteProfile: (id: string) => void
-  // Who plays now: a profile's id, or null for the guest. Everything kept per player follows.
-  selectPlayer: (profileId: string | null) => void
+  // Who plays now: a profile's id; or null and a Pass & Play guest seat's id for that seat's guest, or
+  // null alone for Single Player's guest. Everything kept per player follows.
+  selectPlayer: (profileId: string | null, seatId?: string | null) => void
 }
 
 const ProfilesActionsContext = createContext<ProfilesActions | null>(null)
@@ -31,7 +32,7 @@ export const useProfiles = (): Profile[] => useSelector((state: RootState) => st
 
 export const selectProfile = (state: RootState, profileId: string | null): Profile | null => (profileId ? (state.profiles.find((profile) => profile.id === profileId) ?? null) : null)
 
-// The active player's profile, or null for the guest.
+// The active player's profile, or null for a guest.
 export const useActiveProfile = (): Profile | null => useSelector((state: RootState) => selectProfile(state, state.activePlayer.profileId))
 
 // Keeps the device's roster (the `profiles` slice) in step with the fleet's shared one, Solitaire's
@@ -40,7 +41,9 @@ export const useActiveProfile = (): Profile | null => useSelector((state: RootSt
 // and picked up again when another game changes it (useSharedProfilesSync: on returning to the
 // foreground, and on the web the moment another tab saves). A profile that's gone from the roster that
 // comes in, the active player's or a Pass & Play seat's included, is forgotten (usePlayerData's
-// forgetPlayer: the guest takes over), so nothing is left pointing at a profile that no longer exists.
+// forgetPlayer: Single Player's guest takes over), so nothing is left pointing at a profile that no
+// longer exists. At launch it also clears the unlocked puzzles of any Pass & Play guest seat no longer
+// at the table (usePlayerData's clearLeftGuestSeats).
 //
 // Inside PersistGate (the local roster has rehydrated) and inside GameStatsProvider and CatalogProvider
 // (forgetting a player clears their stats and unlocked puzzles). Holds every screen back, with the
@@ -49,7 +52,7 @@ export const useActiveProfile = (): Profile | null => useSelector((state: RootSt
 export const ProfilesProvider = ({ children }: { children: ReactNode }): JSX.Element => {
   const dispatch = useDispatch<AppDispatch>()
   const store = useStore<RootState>()
-  const { forgetPlayer } = usePlayerData()
+  const { forgetPlayer, colorGuestSeats, clearLeftGuestSeats } = usePlayerData()
   const [loaded, setLoaded] = useState(false)
 
   // Takes a roster from outside (the launch reconcile, another game's change): only a real change is
@@ -77,6 +80,7 @@ export const ProfilesProvider = ({ children }: { children: ReactNode }): JSX.Ele
     const finish = () => {
       if (!cancelled) setLoaded(true)
     }
+    void clearLeftGuestSeats()
     resolveInitialProfiles(SHARED_PROFILES_GROUP_ID, store.getState().profiles).then((resolved) => {
       if (cancelled) return
       applyRoster(resolved)
@@ -118,7 +122,15 @@ export const ProfilesProvider = ({ children }: { children: ReactNode }): JSX.Ele
     },
     [dispatch, store, syncToShared, forgetPlayer]
   )
-  const selectPlayer = useCallback((profileId: string | null) => dispatch(activePlayerActions.setActivePlayer(profileId)), [dispatch])
+  // A guest seat is given colors of its own before it first plays (utils/guestSeats.ts), so Theme's
+  // PlayerThemeSync never files the colors already on screen as theirs.
+  const selectPlayer = useCallback(
+    (profileId: string | null, seatId: string | null = null) => {
+      if (!profileId && seatId) colorGuestSeats()
+      dispatch(activePlayerActions.setActivePlayer(profileId, seatId))
+    },
+    [dispatch, colorGuestSeats]
+  )
 
   const actions = useMemo(() => ({ createProfile, updateProfile, deleteProfile, selectPlayer }), [createProfile, updateProfile, deleteProfile, selectPlayer])
 

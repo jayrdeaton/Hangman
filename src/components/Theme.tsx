@@ -47,7 +47,9 @@ const RootBackground = (): null => {
 
 // Each player's colors (the palette and its harmony; appearance and Blur stay the device's). The live
 // theme always holds the active player's: their Hangman pick (playerTheme); else, for a profile, the
-// profile's own color with the default harmony; else, for the guest, whatever is on screen. A profile's
+// profile's own color with the default harmony; else, for a guest, whatever is on screen (a Pass &
+// Play guest seat is given colors of its own before it first plays, see useProfiles' selectPlayer, so
+// that's only ever Single Player's guest). A profile's
 // pick lapses once the profile's own color changes (playerThemeSlice's resolvePlayerTheme), so a new
 // color given to the profile on the Profiles screen, or in another game, shows here too. When the
 // active player changes, or their profile's color does, their colors go on screen, and every change
@@ -60,7 +62,7 @@ const PlayerThemeSync = (): null => {
   const store = useStore<RootState>()
   const dispatch = useDispatch()
   const { key: playerKey, profileId } = useActivePlayer()
-  // The active profile's own color as the roster has it now; null for the guest.
+  // The active profile's own color as the roster has it now; null for a guest.
   const profileColor = useSelector((state: RootState) => (profileId ? (state.profiles.find((profile) => profile.id === profileId)?.color ?? null) : null))
   const { settings, set } = useThemeSettings()
   const { color, harmony } = settings

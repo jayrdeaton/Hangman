@@ -72,26 +72,27 @@ export type PacksScreenProps = {
   packsVersion: number
   onPacksChanged: () => void
   // What a puzzle started from the pack browser is played with (the active player's art and
-  // difficulty), and where it goes: the Single Player loadout's start, which asks before abandoning a
-  // round with a guess on it.
+  // difficulty), and where it goes: the loadout's start, which asks before abandoning a
+  // round with a guess on it. Without onConfirm the pack browser only browses (the Pass & Play
+  // table on the packs, whose puzzles come by turns).
   mode: GameMode
   difficulty: 'any' | PuzzleDifficultyTier
-  onConfirm: (payload: GameStartPayload) => void
+  onConfirm?: (payload: GameStartPayload) => void
   ref?: Ref<PacksScreenHandle>
 }
 
-// For the Single Player loadout's Android back: this screen's own pack browser and editor stack above
+// For the loadout's Android back: this screen's own pack browser and editor stack above
 // it, and only this screen knows whether one is open.
 export type PacksScreenHandle = {
   // Closes the editor or the pack browser, whichever is open. Returns whether it closed one.
   closeTopOverlay: () => boolean
 }
 
-// Choose Packs, the Single Player loadout's Packs button: every pack, custom and built-in, checked for
+// Choose Packs, the loadout's Packs button: every pack, custom and built-in, checked for
 // the active player's selection, with its unlock progress and a trophy once it's complete (what Pack
 // Progress showed until it was folded in here, 2026-10-18). A row's info button opens the pack's
-// puzzles (PackPuzzlesDrawer), where a puzzle or Play This Pack starts a round and Only This Pack
-// narrows the selection to that pack.
+// puzzles (PackPuzzlesDrawer), where a puzzle or Play This Pack starts a round (on the pages that play
+// from it, see onConfirm) and Only This Pack narrows the selection to that pack.
 //
 // Memoized: stays mounted (translated off-screen) even while closed, and its own children
 // (PackPuzzlesDrawer/PackEditorDrawer, each with their own always-mounted content) are heavy

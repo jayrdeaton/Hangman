@@ -36,7 +36,7 @@ const KEYBOARD_BUTTONS = [
 // the progress backup below Appearance. Not passed: Lock Orientation and Edge Guard (Hangman is
 // portrait-locked by the OS and has no edge-swipe controls) or How to Play (no guide yet), so those
 // rows stay hidden. rotation is 0 because Hangman never draws a rotation of its own. The player's color
-// isn't here: it's the player picker's color page, on the Single Player loadout (PlayerPicker).
+// isn't here: it's the player picker's color page, on the loadout (PlayerPicker).
 //
 // Must render inside Providers, like UpdateDialog: the update-error toast needs the ToastProvider and
 // the sheet's Portal needs the Portal.Host auto-paper's Provider mounts inside Theme.

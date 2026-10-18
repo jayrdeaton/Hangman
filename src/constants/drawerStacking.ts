@@ -3,7 +3,6 @@
 // stacking order was whatever the JSX happened to declare them in). Each Drawer's panel/handle
 // still layer above its own backdrop via zIndex+1/+2 internally; these only need to stay in
 // ascending order relative to each other for the chain below to stack correctly. Both open over the
-// Single Player loadout (Pass & Play's opens none: the art picker that used to open there,
-// ModePickerDrawer, is the Settings sheet's ART grid now).
+// loadout, from its packs card (the Single Player page's, and the Pass & Play page's on the packs).
 export const DRAWER_PACKS_SCREEN_Z_INDEX = 60 // PacksScreen (Choose Packs), from the loadout's Packs button.
 export const DRAWER_PACK_DETAIL_Z_INDEX = 70 // PackPuzzlesDrawer/PackEditorDrawer - always innermost, stacking above PacksScreen, which opens them.

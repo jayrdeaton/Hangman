@@ -45,7 +45,8 @@ describe('useClickSound', () => {
 
     await clickAndFlush(result.current.playClick)
 
-    expect(player.seekTo).toHaveBeenCalledWith(0)
+    // @rific/feedback-press 0.13.1 rewinds each player as its clip finishes, so a trigger only calls play().
+    expect(player.seekTo).not.toHaveBeenCalled()
     expect(player.play).toHaveBeenCalledTimes(1)
   })
 

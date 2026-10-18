@@ -1,7 +1,7 @@
-import { initialRoundState, type PnpPhase, type PnpRound, type RoundState, type SavedPuzzle, type SavedRound } from '@/redux/roundSlice'
+import { initialRoundState, type PlayMode, type PnpPhase, type PnpRound, type RoundState, type SavedPuzzle, type SavedRound } from '@/redux/roundSlice'
 import type { GameStartPayload } from '@/types/gameSession'
 
-import { isPlayerKey } from './players'
+import { guestSeatKey, isGuestSeatKey, isPlayerKey, type PlayerKey } from './players'
 import { getStanding, sanitizePnpSession } from './pnpSession'
 import { findMode } from './puzzleLink'
 
@@ -59,18 +59,21 @@ const sanitizeRound = (value: unknown): SavedRound | null => {
   return { id: value.id, puzzle: value.puzzle, guessedLetters: value.guessedLetters, hintRevealed: value.hintRevealed }
 }
 
-// Each player's solo round that passes, under a key a player could have. Anything else is dropped, a
-// solo round saved before rounds were kept per player (a single round, not a map of them) included:
-// there's no carrying it over (the app hadn't shipped).
-const sanitizeSoloRounds = (value: unknown): RoundState['solo'] => {
+// Each player's solo round that passes, under a key a player could have, a guest seat's only while its
+// seat is at the table (`seated`: a seat's round goes with the seat, see usePlayerData's
+// forgetGuestSeat). Anything else is dropped, a solo round saved before rounds were kept per player (a
+// single round, not a map of them) included: there's no carrying it over (the app hadn't shipped).
+const sanitizeSoloRounds = (value: unknown, seated: Set<PlayerKey>): RoundState['solo'] => {
   const solo: RoundState['solo'] = {}
   if (!isRecord(value)) return solo
   for (const [playerKey, round] of Object.entries(value)) {
-    const saved = isPlayerKey(playerKey) ? sanitizeRound(round) : null
+    const saved = isPlayerKey(playerKey) && (!isGuestSeatKey(playerKey) || seated.has(playerKey)) ? sanitizeRound(round) : null
     if (saved) solo[playerKey] = saved
   }
   return solo
 }
+
+const isPlayMode = (value: unknown): value is PlayMode => value === 'solo' || value === 'pnp'
 
 // Checks the persisted round blob (its own redux-persist key, see store.ts) before it's trusted. A
 // slot that fails falls back to an empty round instead of putting a broken board on screen at launch.
@@ -79,13 +82,15 @@ const sanitizeSoloRounds = (value: unknown): RoundState['solo'] => {
 // included, with no carrying anything over: the app hadn't shipped) starts a fresh one.
 export const sanitizeRoundState = (value: unknown): RoundState => {
   if (!isRecord(value)) return initialRoundState
-  const solo = sanitizeSoloRounds(value.solo)
   const pnpRound = sanitizeRound(value.pnp)
   const phase = isRecord(value.pnp) && PHASES.includes(value.pnp.phase as PnpPhase | null) ? (value.pnp.phase as PnpPhase | null) : null
   const draft = isRecord(value.pnp) && isRecord(value.pnp.draft) && typeof value.pnp.draft.answer === 'string' && /^[A-Za-z ]*$/.test(value.pnp.draft.answer) && typeof value.pnp.draft.hint === 'string' ? { answer: value.pnp.draft.answer, hint: value.pnp.draft.hint } : undefined
   // Only a count of the round kept with it means anything, so a slot that falls back takes none.
   const session = sanitizePnpSession(isRecord(value.pnp) ? value.pnp.session : undefined, pnpRound ? pnpRound.id : null)
+  const solo = sanitizeSoloRounds(value.solo, new Set(session.players.map((player) => guestSeatKey(player.id))))
   const pnp = pnpRound ? { ...pnpRound, phase, ...(draft && phase === 'authoring' ? { draft } : {}), session } : { ...initialRoundState.pnp, session }
-  const activeMode = value.activeMode === 'solo' || value.activeMode === 'pnp' ? value.activeMode : null
-  return { solo, pnp, activeMode }
+  const activeMode = isPlayMode(value.activeMode) ? value.activeMode : null
+  // A game's door is its own unless another was saved with it.
+  const activeDoor = activeMode ? (isPlayMode(value.activeDoor) ? value.activeDoor : activeMode) : null
+  return { solo, pnp, activeMode, activeDoor }
 }

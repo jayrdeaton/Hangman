@@ -82,7 +82,7 @@ export type DifficultyOptionColors = { container: string; onContainer: string; o
 // The full vibrant/container pairing for every difficulty CHOICE a player picks from - the three
 // real tiers plus "Any", which isn't a tier at all (colored with the theme's own primary instead,
 // so it still pops when selected rather than being the one option that looks unfinished next to
-// three colored ones). One shared hook rather than each picker (the Single Player loadout's
+// three colored ones). One shared hook rather than each picker (the loadout's
 // Difficulty picker, PackPuzzleList's own difficulty filter menu) hand-rolling the same four-way
 // color set, so a change here can't drift between the two.
 export const useDifficultyOptionColors = (): Record<'any' | PuzzleDifficultyTier, DifficultyOptionColors> => {

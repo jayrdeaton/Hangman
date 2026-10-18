@@ -29,10 +29,12 @@ export type PackPuzzlesDrawerProps = {
   packKey: string | null
   onDismiss: () => void
   // What a puzzle started here is played with (the active player's art and difficulty), and where it
-  // goes (the Single Player loadout's start, through Choose Packs).
+  // goes (the loadout's start, through Choose Packs). Without onConfirm the pack is only browsed (the
+  // Pass & Play table on the packs, whose puzzles come by turns): no row plays, and there's no Play This
+  // Pack.
   mode: GameMode
   difficulty: 'any' | PuzzleDifficultyTier
-  onConfirm: (payload: GameStartPayload, config: PuzzleConfig) => void
+  onConfirm?: (payload: GameStartPayload, config: PuzzleConfig) => void
   // The footer's Only This Pack, which makes this pack the player's whole pack selection (so Ready
   // draws from just this pack). This drawer closes itself after calling it, the same as after starting
   // a puzzle, back onto Choose Packs, where the trimmed selection shows.
@@ -45,7 +47,8 @@ export type PackPuzzlesDrawerProps = {
 
 // One pack's full puzzle list, titled with the pack's name, opened from a pack's info button in Choose
 // Packs (PacksScreen): tapping a row plays that exact puzzle, the footer's Play This Pack draws one
-// from just this pack, and Only This Pack trims the pack selection down to it. Every puzzle in the pack
+// from just this pack (neither while it's only browsed, see onConfirm), and Only This Pack trims the
+// pack selection down to it. Every puzzle in the pack
 // shows as its own row (via PackPuzzleList), masked to blanks unless already solved.
 // Memoized: it stays mounted (translated off-screen) under Choose Packs even while closed, and an
 // always-mounted, never-visible-right-now subtree still costs a re-render without this whenever an
@@ -62,7 +65,7 @@ export const PackPuzzlesDrawer = memo(({ visible, packKey, onDismiss, mode, diff
   const { unlockMap } = usePuzzleUnlocks({ enabled: visible })
 
   const handlePlayPuzzle = (puzzleId: string) => {
-    if (!packKey) return
+    if (!packKey || !onConfirm) return
     const result = resolveChosenPuzzle(packKey, puzzleId, mode)
     if (!result.ok) {
       void alert('No Puzzles Available', result.error)
@@ -78,7 +81,7 @@ export const PackPuzzlesDrawer = memo(({ visible, packKey, onDismiss, mode, diff
   // Play This Pack: a random puzzle from just this pack. A one-pack draw is packScope 'single' (see
   // resolvePuzzle), so the game screen's Next keeps drawing from this pack too.
   const handlePlayThisPack = () => {
-    if (!packKey) return
+    if (!packKey || !onConfirm) return
     const configToResolve: PuzzleConfig = { sourceMode: 'random', difficulty, mode, customPhrase: '', customHint: '' }
     const result = resolvePuzzle(configToResolve, [packKey], unlockMap)
     if (!result.ok) {
@@ -114,13 +117,15 @@ export const PackPuzzlesDrawer = memo(({ visible, packKey, onDismiss, mode, diff
               backAction={<IconButton icon='arrow-left' hitSlop={ICON_ACTION_HIT_SLOP} iconColor={theme.colors.onSurface} onPress={onDismiss} accessibilityLabel='Close' />}
             />
 
-            <PackPuzzleList packKey={packKey} unlockMap={unlockMap} onPlayPuzzle={handlePlayPuzzle} />
+            <PackPuzzleList packKey={packKey} unlockMap={unlockMap} onPlayPuzzle={onConfirm ? handlePlayPuzzle : undefined} />
 
             <ScrollViewFooter style={styles.footer}>
-              <Button mode='contained' icon='play' onPress={handlePlayThisPack}>
-                Play This Pack
-              </Button>
-              <Button mode='outlined' icon='filter-outline' onPress={handleOnlyThisPack} disabled={onlyThisPackSelected} style={styles.secondButton}>
+              {onConfirm ? (
+                <Button mode='contained' icon='play' onPress={handlePlayThisPack}>
+                  Play This Pack
+                </Button>
+              ) : null}
+              <Button mode='outlined' icon='filter-outline' onPress={handleOnlyThisPack} disabled={onlyThisPackSelected} style={onConfirm ? styles.secondButton : undefined}>
                 Only This Pack
               </Button>
             </ScrollViewFooter>

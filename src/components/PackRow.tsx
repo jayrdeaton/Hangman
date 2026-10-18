@@ -5,7 +5,7 @@ import { Avatar, ProgressBar, Text, useTheme } from 'react-native-paper'
 
 import { packGroupColors, packGroupIcon, packGroupLabel } from '@/utils/packGroupStyle'
 
-// A control in a row's `trailing` (browse a pack, remove it, rename a player), offered to a screen
+// A control in a row's `trailing` (browse a pack, remove it), offered to a screen
 // reader as one of the row's actions too: see PackRow's wrapper below for why the button itself can't be.
 export type PackRowAction = { name: string; label: string; onPress: () => void }
 

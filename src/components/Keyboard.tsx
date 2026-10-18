@@ -190,6 +190,28 @@ const KeyFill = ({ width, height, color, start, delayMs }: { width: number; heig
 
 // Split out of Keyboard's own render loop - each key needs its own Reanimated shared value for
 // the shake below, and hooks can't be called from inside a .map() in the parent.
+// What a key's fill stands for, resolved against the live theme at every render rather than stored as
+// a color, so a key always shows the theme on screen: a Pass & Play board is built while the writer
+// is active and played in the guesser's colors after the hand-off, and the colors can change mid-round
+// (a new color or harmony from Settings, light and dark). A change of theme recolors the fill in place;
+// only a change of role (a guess, the win or loss) redraws it.
+type KeyFillRole = 'idle' | 'spent' | 'wrong' | 'won' | 'lost'
+
+const keyFillColors = (theme: AutoPaperTheme, role: KeyFillRole): { color: string; textColor: string } => {
+  switch (role) {
+    case 'spent':
+      return { color: theme.colors.surfaceVariant, textColor: theme.colors.onSurfaceVariant }
+    case 'wrong':
+      return { color: theme.colors.dangerContainer, textColor: theme.colors.onDangerContainer }
+    case 'won':
+      return { color: theme.colors.success, textColor: theme.colors.onSuccess }
+    case 'lost':
+      return { color: theme.colors.danger, textColor: theme.colors.onDanger }
+    default:
+      return { color: theme.colors.primary, textColor: theme.colors.onPrimary }
+  }
+}
+
 const KeyboardKey = ({ letter, isGuessed, isWrong, disabled, width, rippleDistance, falling, cascadeBaseDelayMs, started, entranceBaseDelayMs, onPress, theme }: KeyboardKeyProps) => {
   const translateX = useSharedValue(0)
   const rotate = useSharedValue(0)
@@ -219,13 +241,14 @@ const KeyboardKey = ({ letter, isGuessed, isWrong, disabled, width, rippleDistan
   // pattern React itself documents for one-time-per-mount randomness.
   const [jitterMs] = useState(() => Math.random() * CASCADE_JITTER_MS)
 
-  // This key's own hatch fill: `color`/`textColor` are whatever this key should currently be
-  // showing, `gen` is bumped every time either changes so KeyFill (keyed on it below) remounts and
-  // replays its own draw-in in the new color - SketchFill's own mask has no "already fully open,
+  // This key's own hatch fill: `role` is what it should currently be showing (its colors come from
+  // the live theme, see keyFillColors), `gen` is bumped every time the role changes so KeyFill (keyed
+  // on it below) remounts and replays its own draw-in in the new color - SketchFill's own mask has no "already fully open,
   // just recolor instantly" mode, so a fresh mount is what makes each transition read as a redraw
   // rather than a flat color swap. `delayMs` is whatever stagger that particular transition uses
   // (none for a single key's own guess, the win/loss wave's own stagger for those).
-  const [fill, setFill] = useState({ gen: 0, color: theme.colors.primary, textColor: theme.colors.onPrimary, delayMs: KEYBOARD_SWEEP_DELAY_MS + entranceBaseDelayMs })
+  const [fill, setFill] = useState<{ gen: number; role: KeyFillRole; delayMs: number }>({ gen: 0, role: 'idle', delayMs: KEYBOARD_SWEEP_DELAY_MS + entranceBaseDelayMs })
+  const { color: fillColor, textColor: fillTextColor } = keyFillColors(theme, fill.role)
 
   // Redraws this key's own fill the instant its own guess lands - a correct guess gets no color
   // of its own at all, just the same muted "spent" look a disabled control already has everywhere
@@ -240,7 +263,7 @@ const KeyboardKey = ({ letter, isGuessed, isWrong, disabled, width, rippleDistan
      not state derived from other state within this render. */
   useLayoutEffect(() => {
     if (!isGuessed) return
-    setFill((f) => ({ gen: f.gen + 1, color: isWrong ? theme.colors.dangerContainer : theme.colors.surfaceVariant, textColor: isWrong ? theme.colors.onDangerContainer : theme.colors.onSurfaceVariant, delayMs: 0 }))
+    setFill((f) => ({ gen: f.gen + 1, role: isWrong ? 'wrong' : 'spent', delayMs: 0 }))
     // isGuessed is only ever set true once per key (a letter can't be un-guessed) - re-running
     // this if theme/isWrong happened to change identity would just no-op against the same values.
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -254,10 +277,8 @@ const KeyboardKey = ({ letter, isGuessed, isWrong, disabled, width, rippleDistan
      comment). */
   useLayoutEffect(() => {
     if (rippleDistance === null) return
-    setFill((f) => ({ gen: f.gen + 1, color: theme.colors.success, textColor: theme.colors.onSuccess, delayMs: rippleDistance * WIN_FILL_STAGGER_MS }))
-    // rippleDistance is only ever set once per round (see its own prop comment) - re-running this
-    // if its own identity happened to change would just re-fire the same one-shot transition.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    setFill((f) => ({ gen: f.gen + 1, role: 'won', delayMs: rippleDistance * WIN_FILL_STAGGER_MS }))
+    // rippleDistance is only ever set once per round (see its own prop comment).
   }, [rippleDistance])
   /* eslint-enable react-hooks/set-state-in-effect */
 
@@ -270,7 +291,7 @@ const KeyboardKey = ({ letter, isGuessed, isWrong, disabled, width, rippleDistan
     // plain setTimeout (rather than passed as SketchFill's own delayMs) so this key's redraw only
     // actually mounts once its own turn arrives, keeping 26 keys' worth of shake sequences and 26
     // keys' worth of fill redraws from all getting scheduled in the exact same synchronous burst.
-    const timer = setTimeout(() => setFill((f) => ({ gen: f.gen + 1, color: theme.colors.danger, textColor: theme.colors.onDanger, delayMs: 0 })), SHAKE_TOTAL_MS + cascadeBaseDelayMs + jitterMs)
+    const timer = setTimeout(() => setFill((f) => ({ gen: f.gen + 1, role: 'lost', delayMs: 0 })), SHAKE_TOTAL_MS + cascadeBaseDelayMs + jitterMs)
     return () => clearTimeout(timer)
     // falling is only ever set true once per Keyboard instance (see its own prop comment) -
     // re-running this if jitterMs/cascadeBaseDelayMs/theme happened to change would just re-fire
@@ -302,7 +323,7 @@ const KeyboardKey = ({ letter, isGuessed, isWrong, disabled, width, rippleDistan
     <Animated.View style={keyStyle} onLayout={keyHeight !== null ? undefined : (e) => setKeyHeight(e.nativeEvent.layout.height)}>
       {/* Painted first (behind the Button, same stacking order as CSS) - the Button's own
           background is always transparent (see styles.key below) so this shows through it. */}
-      {width !== undefined && keyHeight !== null && <KeyFill key={fill.gen} width={width} height={keyHeight} color={fill.color} start={fill.gen === 0 ? started : true} delayMs={fill.delayMs} />}
+      {width !== undefined && keyHeight !== null && <KeyFill key={fill.gen} width={width} height={keyHeight} color={fillColor} start={fill.gen === 0 ? started : true} delayMs={fill.delayMs} />}
       {/* soundDisabled - a letter guess already plays playCorrect()/playWrong() from Game.tsx's
           handleGuess, a beat after this same press; without this, the generic feedback-press click
           would double up with that on every single guess. The key still keeps its own
@@ -312,7 +333,7 @@ const KeyboardKey = ({ letter, isGuessed, isWrong, disabled, width, rippleDistan
           and substitutes its own flat colors regardless, which is why only a style/labelStyle
           override (applied after that internal color) can override a disabled key's color at all,
           same reasoning as styles.key's own transparent background below. */}
-      <Button mode='contained' soundDisabled disabled={isGuessed || disabled} style={[styles.key, width ? { width } : null]} onPress={onPress} hitSlop={KEY_HIT_SLOP} labelStyle={[styles.text, { color: fill.textColor }]}>
+      <Button mode='contained' soundDisabled disabled={isGuessed || disabled} style={[styles.key, width ? { width } : null]} onPress={onPress} hitSlop={KEY_HIT_SLOP} labelStyle={[styles.text, { color: fillTextColor }]}>
         {letter}
       </Button>
     </Animated.View>
