@@ -48,6 +48,26 @@ describe('PnpWordPrompt', () => {
     expect(backdrop.props.onClick).toBeUndefined()
   })
 
+  it("leads the title with the writer's chip, and each profile in the For row with theirs", async () => {
+    const ann = { id: 'profile-a', name: 'Ann', color: '#9c27b0', tag: 'AN', createdAt: 1, updatedAt: 1 }
+    const bo = { id: 'profile-b', name: 'Bo', color: '#4caf50', tag: 'BO', createdAt: 1, updatedAt: 1 }
+    const { getByText, getByLabelText } = await renderPrompt({
+      writerName: 'Ann',
+      writerProfile: ann,
+      guessers: [
+        { id: 'p2', name: 'Bo', profile: bo },
+        { id: 'p3', name: 'Player 3' }
+      ],
+      guesserId: 'p2'
+    })
+
+    expect(getByText("Ann's Word")).toBeTruthy()
+    expect(getByText('AN')).toBeTruthy()
+    expect(getByText('BO')).toBeTruthy()
+    expect(getByLabelText('For Bo')).toBeSelected()
+    expect(getByLabelText('For Player 3')).not.toBeSelected()
+  })
+
   // With two players the word can only be for the other one.
   it('has no For row with only one player to guess', async () => {
     const { queryByText, queryByLabelText } = await renderPrompt()

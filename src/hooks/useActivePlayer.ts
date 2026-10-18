@@ -11,8 +11,8 @@ export type ActivePlayer = {
   key: PlayerKey
 }
 
-// Who is playing on this device right now (the activePlayer slice). Always the guest until profiles
-// arrive. Only re-renders its reader when the player changes.
+// Who is playing on this device right now (the activePlayer slice): a profile picked in the player
+// picker, or the guest. Only re-renders its reader when the player changes.
 export const useActivePlayer = (): ActivePlayer => {
   const profileId = useSelector((state: RootState) => state.activePlayer.profileId)
   return useMemo(() => ({ profileId, key: playerKeyFor(profileId) }), [profileId])

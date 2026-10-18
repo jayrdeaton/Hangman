@@ -1,4 +1,4 @@
-import { type AutoPaperTheme, Provider, useAutoPaperTheme } from '@rific/auto-paper'
+import { type AutoPaperTheme, Provider, type ThemeSettings, useAutoPaperTheme, useThemeSettings } from '@rific/auto-paper'
 import { FeedbackPressProvider } from '@rific/feedback-press'
 import { ToastProvider } from '@rific/toaster'
 import { act, fireEvent, render as rtlRender, waitFor } from '@testing-library/react-native'
@@ -54,13 +54,16 @@ const mockShareProgressBackupFile = jest.mocked(shareProgressBackupFile)
 const mockAlert = jest.mocked(alert)
 const mockMergePuzzleUnlocks = jest.mocked(mergePuzzleUnlocks)
 
-// The theme the sheet renders with, for the art's colors.
+// The theme the sheet renders with, for the art's colors, and the live settings, for its harmony.
 let capturedTheme: AutoPaperTheme | null = null
+let capturedSettings: ThemeSettings | null = null
 const ThemeCapture = () => {
   const theme = useAutoPaperTheme()
+  const { settings } = useThemeSettings()
   useEffect(() => {
     capturedTheme = theme
-  }, [theme])
+    capturedSettings = settings
+  }, [theme, settings])
   return null
 }
 
@@ -137,6 +140,19 @@ describe('SettingsDialog', () => {
     await fireEvent.press(getByText('ABC'))
 
     expect(mockSetLayout).toHaveBeenCalledWith('abc')
+  })
+
+  // The player picker's color page has no harmony control, so it's here. The live theme's harmony is
+  // the active player's: Theme's PlayerThemeSync files the change under them (see Theme.test.tsx).
+  it("sets the player's harmony from its HARMONY row, with the one in use checked", async () => {
+    const { getByText, getByLabelText } = await render(<SettingsDialog visible onDismiss={jest.fn()} />)
+    expect(getByText('HARMONY')).toBeTruthy()
+    expect(getByLabelText('Split').props.accessibilityState).toMatchObject({ checked: true })
+
+    await fireEvent.press(getByLabelText('Triadic'))
+
+    expect(capturedSettings?.harmony).toBe('triadic')
+    expect(getByLabelText('Triadic').props.accessibilityState).toMatchObject({ checked: true })
   })
 
   it('renders nothing while closed', async () => {
@@ -225,7 +241,7 @@ describe('SettingsDialog', () => {
       expect(soloRound().puzzle?.modeId).toBe(DEFAULT_MODE.id)
     })
 
-    // Static thumbnails: nothing here runs on a timer, so the art never redraws by itself.
+    // Until one is pressed, nothing here runs on a timer, so the art never redraws by itself.
     it('never redraws the thumbnails while the sheet sits open', async () => {
       jest.useFakeTimers()
       try {
@@ -240,6 +256,45 @@ describe('SettingsDialog', () => {
         })
 
         expect(mockArtRenders.length).toBe(rendersOnceOpen)
+      } finally {
+        jest.useRealTimers()
+      }
+    })
+
+    // Like the hero (Jay, 2026-10-18): a press picks the art and acts out a round on its thumbnail,
+    // Classic's figure redrawn a guess at a time, then it holds still again.
+    it('acts out a round on a pressed thumbnail, then holds it still', async () => {
+      jest.useFakeTimers()
+      try {
+        const screen = await render(<SettingsDialog visible onDismiss={jest.fn()} />)
+        const art = () => screen.getByTestId(`art-${classicMode.id}`).props.mistakes
+
+        await fireEvent.press(thumbnail(screen, classicMode.label))
+        // The figure fades, then is drawn back in one step at a time.
+        await act(async () => {
+          jest.advanceTimersByTime(200)
+        })
+        expect(art()).toBe(0)
+        await act(async () => {
+          jest.advanceTimersByTime(500)
+        })
+        expect(art()).toBe(1)
+        for (let step = 1; step < classicMode.maxMistakes; step++) {
+          await act(async () => {
+            jest.advanceTimersByTime(500)
+          })
+        }
+        expect(art()).toBe(classicMode.maxMistakes)
+
+        await act(async () => {
+          jest.advanceTimersByTime(1000)
+        })
+        const rendersWhenSettled = mockArtRenders.length
+        await act(async () => {
+          jest.advanceTimersByTime(20000)
+        })
+        expect(mockArtRenders.length).toBe(rendersWhenSettled)
+        expect(art()).toBe(classicMode.maxMistakes)
       } finally {
         jest.useRealTimers()
       }

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { useSharedValue, withTiming } from 'react-native-reanimated'
 
 import { fullyDrawnMistakes } from '@/modes/shared/fullyDrawnMistakes'
@@ -42,14 +42,32 @@ const SCAFFOLDED_MODE_ID = 'classic'
 // `paused` (Home is covered, by another screen or the Settings sheet) stops the cycle outright; see
 // its own guard below.
 //
-// Home's hero (HeroTitle) is its one user now, always focused. `isFocused` is from the art carousel
-// that shared it (ModePickerDrawer, one looping card per art, only the focused one playing), which the
-// Settings sheet's static ART grid (ArtPicker) replaced; it still works for a future picker that
-// demos one art at a time.
+// Three users: Home's hero (HeroTitle, always focused, `once`), the Single Player loadout's art
+// carousel (ArtCarousel, one card per art, `isFocused` true only for the card it settled on, paused
+// while the page is covered) and the Settings sheet's ART thumbnails (ArtPicker, `waitForReplay`).
 //
 // `startBlank` (Home's hero) starts on a blank scene that draws itself in at mount, rather than on the
 // resting "fully drawn" preview with an entry fade: nobody has seen a resting frame to fade out of.
-export const useArtDemoLoop = (isFocused: boolean, paused: boolean, mode: GameMode, startBlank = false) => {
+//
+// `once` (Home's hero, Jay 2026-10-18: it doesn't need to keep animating) plays the cycle a single
+// time and settles on the fully drawn frame: art that builds up holds where the round ends; art that
+// wears away fades and draws itself back in whole, as the loop's next cycle would start, and stops
+// there. Once settled it stays settled, so uncovering Home doesn't replay it; a pause before then
+// replays it from the entry fade, as the loop does.
+//
+// `replay()` (a press on Home's hero art, just for fun, Jay 2026-10-18) plays the round again, and only
+// the round: Classic's figure fades and is drawn back in a guess at a time under the gallows that never
+// went anywhere, the way the loop starts its next cycle; art that wears away and is showing whole
+// starts wearing away straight off; anything else (art that builds up from an empty scene, or a press
+// mid-round) goes through the entry fade first. Then it settles again (`once`) or loops on.
+//
+// `waitForReplay` (the Settings sheet's ART thumbnails, Jay 2026-10-18: they should re-run on a press,
+// like the hero) starts settled on the fully drawn frame and plays a round only when replay() asks,
+// then settles again (it implies `once`), so a sheet of them runs no timers until one is pressed.
+export type ArtDemoOptions = { startBlank?: boolean; once?: boolean; waitForReplay?: boolean }
+
+export const useArtDemoLoop = (isFocused: boolean, paused: boolean, mode: GameMode, { startBlank = false, once: playOnce = false, waitForReplay = false }: ArtDemoOptions = {}) => {
+  const once = playOnce || waitForReplay
   const restMistakes = fullyDrawnMistakes(mode)
   // 'none' (Letters Only) has no mistake-reactive art - nothing for the mistake-stepping half of
   // this cycle (runMistakeLoop below) to animate. It still has its own one-time reveal worth
@@ -64,6 +82,13 @@ export const useArtDemoLoop = (isFocused: boolean, paused: boolean, mode: GameMo
   // Whether the scene on screen is still the blank one it mounted with (startBlank), so the first run
   // skips the entry fade. Effect-only, never read during render.
   const blankSceneRef = useRef(startBlank)
+  // Set once a `once` cycle has settled on its fully drawn frame (from the start with waitForReplay).
+  // Effect-only, like blankSceneRef.
+  const settledRef = useRef(waitForReplay)
+  // Replays asked for, and how many the effect has started, so it can tell a replay from any other run.
+  const [replays, setReplays] = useState(0)
+  const startedReplaysRef = useRef(0)
+  const replay = useCallback(() => setReplays((count) => count + 1), [])
   const [revealKey, setRevealKey] = useState(0)
   const cardOpacity = useSharedValue(1)
   const partsOpacity = useSharedValue(1)
@@ -79,13 +104,20 @@ export const useArtDemoLoop = (isFocused: boolean, paused: boolean, mode: GameMo
       return
     }
 
-    // Home stays mounted under the loadout and the game (and under the Settings sheet), and so did the
-    // old Customize drawer's carousel while closed, so without this the cycle would keep re-rendering
+    // Home stays mounted under the loadout and the game (and under the Settings sheet), and so does the
+    // loadout's art carousel under the game, so without this the cycle would keep re-rendering
     // and remounting its art forever in the background. It also kept every test that renders a screen
     // holding one of these feeding React a never-ending stream of real-timer updates. Bailing out
     // here, rather than through the snap above, leaves whatever frame was showing in place while
     // covered; uncovering flips this back and restarts from the entry fade below.
     if (paused) return
+    const replaying = replays !== startedReplaysRef.current
+    startedReplaysRef.current = replays
+    if (replaying) {
+      settledRef.current = false
+      blankSceneRef.current = false
+    }
+    if (settledRef.current) return
 
     let cancelled = false
     let timeoutId: ReturnType<typeof setTimeout>
@@ -97,16 +129,25 @@ export const useArtDemoLoop = (isFocused: boolean, paused: boolean, mode: GameMo
       // landed mid-fade (Home being covered) left it at whatever opacity it had, and this branch's
       // first fade is a whole hold away.
       cardOpacity.value = 1
+      // Played once: a blank scene's reveal is already that one play.
+      if (once && blankSceneRef.current) {
+        blankSceneRef.current = false
+        settledRef.current = true
+        return
+      }
       const runStaticLoop = () => {
         cardOpacity.value = withTiming(0, { duration: FADE_MS })
         timeoutId = setTimeout(() => {
           if (cancelled) return
           setRevealKey((key) => key + 1)
           cardOpacity.value = 1
-          timeoutId = setTimeout(runStaticLoop, SCENE_REVEAL_HOLD_MS + DEMO_HOLD_MS)
+          if (once) settledRef.current = true
+          else timeoutId = setTimeout(runStaticLoop, SCENE_REVEAL_HOLD_MS + DEMO_HOLD_MS)
         }, FADE_MS)
       }
-      timeoutId = setTimeout(runStaticLoop, SCENE_REVEAL_HOLD_MS + DEMO_HOLD_MS)
+      // A replay draws it in again right away.
+      if (replaying) runStaticLoop()
+      else timeoutId = setTimeout(runStaticLoop, SCENE_REVEAL_HOLD_MS + DEMO_HOLD_MS)
       return () => {
         cancelled = true
         clearTimeout(timeoutId)
@@ -118,6 +159,23 @@ export const useArtDemoLoop = (isFocused: boolean, paused: boolean, mode: GameMo
       const advanceMistakes = () => {
         if (cancelled) return
         if (step > mode.maxMistakes) {
+          if (once && restMistakes === mode.maxMistakes) {
+            // Built up: the round's last frame is the fully drawn one.
+            settledRef.current = true
+            return
+          }
+          if (once) {
+            // Worn away: draw it back in whole, then stop.
+            cardOpacity.value = withTiming(0, { duration: FADE_MS })
+            timeoutId = setTimeout(() => {
+              if (cancelled) return
+              setMistakes(restMistakes)
+              setRevealKey((key) => key + 1)
+              cardOpacity.value = 1
+              settledRef.current = true
+            }, FADE_MS)
+            return
+          }
           if (isClassic) {
             partsOpacity.value = withTiming(0, { duration: FADE_MS })
             timeoutId = setTimeout(() => {
@@ -148,6 +206,31 @@ export const useArtDemoLoop = (isFocused: boolean, paused: boolean, mode: GameMo
       advanceMistakes()
     }
 
+    // A replay of the round alone, the scene staying where it is: Classic's figure fades and is drawn
+    // in again under its gallows; art that wears away and is showing whole starts wearing away straight
+    // off. Anything else needs the entry fade below.
+    if (replaying && isClassic) {
+      partsOpacity.value = withTiming(0, { duration: FADE_MS })
+      timeoutId = setTimeout(() => {
+        if (cancelled) return
+        setMistakes(0)
+        partsOpacity.value = 1
+        runMistakeLoop()
+      }, FADE_MS)
+      return () => {
+        cancelled = true
+        clearTimeout(timeoutId)
+      }
+    }
+    if (replaying && restMistakes === 0 && mistakes === 0) {
+      cardOpacity.value = 1
+      runMistakeLoop()
+      return () => {
+        cancelled = true
+        clearTimeout(timeoutId)
+      }
+    }
+
     // Entry, from a scene that mounted blank and is drawing itself in already: just wait out that
     // reveal before the loop starts touching mistakes.
     if (blankSceneRef.current) {
@@ -176,8 +259,8 @@ export const useArtDemoLoop = (isFocused: boolean, paused: boolean, mode: GameMo
       cancelled = true
       clearTimeout(timeoutId)
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- mode/isClassic/restMistakes are fixed for a given card instance; only isFocused/paused should retrigger this
-  }, [isFocused, paused])
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- mode/isClassic/restMistakes/once are fixed for a given card instance, and `mistakes` is only read as it stands when a replay starts; only isFocused/paused/replays should retrigger this
+  }, [isFocused, paused, replays])
 
-  return { mistakes: animated && isFocused ? mistakes : restMistakes, revealKey, cardOpacity, partsOpacity }
+  return { mistakes: animated && isFocused ? mistakes : restMistakes, revealKey, cardOpacity, partsOpacity, replay }
 }

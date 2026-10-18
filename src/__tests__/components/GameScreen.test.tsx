@@ -1,4 +1,5 @@
 import AsyncStorage from '@react-native-async-storage/async-storage'
+import { type Profile, profilesActions } from '@tastic/profile'
 import { act, cleanup, fireEvent, render, waitFor } from '@testing-library/react-native'
 import { router, useIsFocused } from 'expo-router'
 import { useEffect } from 'react'
@@ -130,6 +131,7 @@ const resetForTest = () => {
   store.dispatch(achievementsActions.reset())
   store.dispatch(activePlayerActions.setActivePlayer(null))
   store.dispatch(playerSettingsActions.reset())
+  store.dispatch(profilesActions.setAll([]))
 }
 
 // The win card waits WIN_DIALOG_DELAY_MS (see Game.tsx), the loss card 450ms.
@@ -596,10 +598,15 @@ describe('GameScreen (solo)', () => {
   // the active player's.
   describe("each player's own round", () => {
     const OTHER = 'profile-a'
+    // On the roster, or the launch reconcile would forget a player it doesn't have (see ProfilesProvider).
+    const ALICE: Profile = { id: OTHER, name: 'Alice', color: '#2196f3', tag: 'A', createdAt: 1, updatedAt: 1 }
     const setActivePlayer = (profileId: string | null) =>
       act(async () => {
         store.dispatch(activePlayerActions.setActivePlayer(profileId))
       })
+    beforeEach(() => {
+      store.dispatch(profilesActions.setAll([ALICE]))
+    })
 
     it("plays the active player's waiting round, and switching players switches the board", async () => {
       seedRound(savedPuzzle(), { guessedLetters: ['D'], hintRevealed: false })
@@ -653,8 +660,10 @@ describe('GameScreen (solo)', () => {
         expect(stats().profiles[OTHER].solo).toEqual({ played: 1, wins: 1, losses: 0, draws: 0 })
         // The device's record has every round played here.
         expect(stats().solo.wins).toBe(1)
-        // The card shows the profile's own unlocks.
+        // The card shows the profile's own unlocks, under their name.
         expect(screen.getByText('First Word')).toBeTruthy()
+        expect(screen.getByText('Alice Unlocked')).toBeTruthy()
+        expect(screen.queryByText(/^Achievements? Unlocked$/)).toBeNull()
       })
 
       it("credits Collection Complete from the winner's own unlocked puzzles, never another player's", async () => {
@@ -675,24 +684,227 @@ describe('GameScreen (solo)', () => {
     })
   })
 
+  // Jay: his kids play a puzzle, then hand him the device. The result card's Up Next row picks who
+  // plays next, and only Next acts on it.
+  describe('the round-over hot swap (Up Next)', () => {
+    const ALICE: Profile = { id: 'profile-a', name: 'Alice', color: '#2196f3', tag: 'A', createdAt: 1, updatedAt: 1 }
+    const BOB: Profile = { id: 'profile-b', name: 'Bob', color: '#4caf50', tag: 'B', createdAt: 2, updatedAt: 2 }
+    const activePlayer = () => store.getState().activePlayer.profileId
+    // Every read of a player's unlocked puzzles so far, settled, for a board that just changed hands.
+    const settleUnlocks = () =>
+      act(async () => {
+        await Promise.all(mockGetPuzzleUnlockMap.mock.results.map((result) => result.value))
+      })
+    const winDog = async (screen: Screen) => {
+      await guess(screen, ['D', 'O', 'G'])
+      await openRoundEndCard()
+    }
+
+    beforeEach(() => {
+      jest.useFakeTimers()
+      store.dispatch(profilesActions.setAll([ALICE, BOB]))
+    })
+
+    it('has no Up Next row with nobody on the roster', async () => {
+      store.dispatch(profilesActions.setAll([]))
+      seedRound(savedPuzzle())
+      const screen = await renderScreen()
+      await settle()
+      await winDog(screen)
+
+      expect(screen.getByText('You Won!')).toBeTruthy()
+      expect(screen.queryByText('Up Next')).toBeNull()
+      expect(screen.queryByLabelText('Up next: Guest')).toBeNull()
+    })
+
+    it("lists the guest and every profile with the round's player picked, and a pick changes nothing until Next", async () => {
+      seedRound(savedPuzzle())
+      const screen = await renderScreen()
+      await settle()
+      await winDog(screen)
+      const colorBefore = store.getState().theme.color
+
+      expect(screen.getByLabelText('Up next: Guest').props.accessibilityState.selected).toBe(true)
+      await fireEvent.press(screen.getByLabelText('Up next: Alice'))
+
+      expect(screen.getByLabelText('Up next: Alice').props.accessibilityState.selected).toBe(true)
+      expect(screen.getByLabelText('Up next: Guest').props.accessibilityState.selected).toBe(false)
+      expect(activePlayer()).toBeNull()
+      expect(store.getState().theme.color).toBe(colorBefore)
+      expect(screen.getByText('You Won!')).toBeTruthy()
+      expect(mockResolvePuzzle).not.toHaveBeenCalled()
+    })
+
+    it("hands the device over on Next: the pick plays, from their own picks, and the finished round stays decided in the old player's slot with nothing drawn into it", async () => {
+      storeSettings({ selectedPackKeys: ['pack-5'], difficulty: 'hard' }, ALICE.id)
+      seedRound(savedPuzzle())
+      const screen = await renderScreen()
+      await settle()
+      const finishedId = solo().id
+      await winDog(screen)
+      await fireEvent.press(screen.getByLabelText('Up next: Alice'))
+
+      await fireEvent.press(screen.getByText('Next'))
+      await settleUnlocks()
+
+      expect(activePlayer()).toBe(ALICE.id)
+      // Alice had nothing waiting, so her own picks drew her a puzzle.
+      await waitFor(() => expect(mockResolvePuzzle).toHaveBeenCalledTimes(1))
+      const [config, packKeys] = mockResolvePuzzle.mock.calls[0]
+      expect(packKeys).toEqual(['pack-5'])
+      expect(config.difficulty).toBe('hard')
+      expect(solo(ALICE.id).puzzle?.phrase).toBe('FISH')
+      expect(revealed(screen)).toEqual(['_', '_', '_', '_'])
+      expect(screen.queryByText('You Won!')).toBeNull()
+      // The guest's round, as it ended: no next puzzle drawn for them, and recorded once.
+      expect(solo()).toMatchObject({ id: finishedId, puzzle: { phrase: 'DOG' }, guessedLetters: ['D', 'O', 'G'] })
+      expect(stats().solo.played).toBe(1)
+      // Her colors, now that the card is gone.
+      await waitFor(() => expect(store.getState().theme.color).toBe(ALICE.color))
+    })
+
+    it("resumes the picked player's own waiting round instead of drawing", async () => {
+      seedRound(savedPuzzle())
+      seedRound(savedPuzzle({ phrase: 'CAT' }), { guessedLetters: ['C'], hintRevealed: false }, BOB.id)
+      const screen = await renderScreen()
+      await settle()
+      await winDog(screen)
+      await fireEvent.press(screen.getByLabelText('Up next: Bob'))
+
+      await fireEvent.press(screen.getByText('Next'))
+      await settleUnlocks()
+
+      expect(activePlayer()).toBe(BOB.id)
+      expect(revealed(screen)).toEqual(['C', '_', '_'])
+      expect(mockResolvePuzzle).not.toHaveBeenCalled()
+    })
+
+    it('draws the swapped-away player a fresh puzzle when they next play, recording nothing again', async () => {
+      seedRound(savedPuzzle())
+      seedRound(savedPuzzle({ phrase: 'CAT' }), { guessedLetters: ['C'], hintRevealed: false }, BOB.id)
+      const screen = await renderScreen()
+      await settle()
+      await winDog(screen)
+      await fireEvent.press(screen.getByLabelText('Up next: Bob'))
+      await fireEvent.press(screen.getByText('Next'))
+      await settleUnlocks()
+
+      await act(async () => {
+        store.dispatch(activePlayerActions.setActivePlayer(null))
+      })
+      await settleUnlocks()
+
+      await waitFor(() => expect(mockResolvePuzzle).toHaveBeenCalledTimes(1))
+      expect(solo().puzzle?.phrase).toBe('FISH')
+      expect(stats().solo.played).toBe(1)
+      expect(revealed(screen)).toEqual(['_', '_', '_', '_'])
+    })
+
+    it("draws the round's own player their next puzzle when they're picked again", async () => {
+      seedRound(savedPuzzle())
+      const screen = await renderScreen()
+      await settle()
+      await winDog(screen)
+      await fireEvent.press(screen.getByLabelText('Up next: Bob'))
+      await fireEvent.press(screen.getByLabelText('Up next: Guest'))
+
+      await fireEvent.press(screen.getByText('Next'))
+
+      expect(activePlayer()).toBeNull()
+      expect(mockResolvePuzzle).toHaveBeenCalledTimes(1)
+      expect(solo().puzzle?.phrase).toBe('FISH')
+    })
+
+    it("treats Android's back button on the card as Next, with the pick applied", async () => {
+      const pressBack = installBackHandler()
+      seedRound(savedPuzzle())
+      const screen = await renderScreen()
+      await settle()
+      await winDog(screen)
+      await fireEvent.press(screen.getByLabelText('Up next: Bob'))
+
+      expect(await pressBack()).toBe(true)
+      await settleUnlocks()
+
+      expect(activePlayer()).toBe(BOB.id)
+      expect(router.dismissTo).not.toHaveBeenCalled()
+      await waitFor(() => expect(solo(BOB.id).puzzle?.phrase).toBe('FISH'))
+    })
+
+    it('hands a profile their own round on to the guest too', async () => {
+      await act(async () => {
+        store.dispatch(activePlayerActions.setActivePlayer(ALICE.id))
+      })
+      seedRound(savedPuzzle(), undefined, ALICE.id)
+      const screen = await renderScreen()
+      await settle()
+      await winDog(screen)
+      expect(screen.getByLabelText('Up next: Alice').props.accessibilityState.selected).toBe(true)
+
+      await fireEvent.press(screen.getByLabelText('Up next: Guest'))
+      await fireEvent.press(screen.getByText('Next'))
+      await settleUnlocks()
+
+      expect(activePlayer()).toBeNull()
+      expect(stats().profiles[ALICE.id].solo.wins).toBe(1)
+      expect(solo(ALICE.id)).toMatchObject({ puzzle: { phrase: 'DOG' }, guessedLetters: ['D', 'O', 'G'] })
+    })
+
+    it("applies the pick on a shared-link puzzle's Next, then leaves for the loadout without drawing the new player a puzzle", async () => {
+      seedRound({ phrase: 'DOG', modeId: DEFAULT_MODE.id, sourceMode: 'custom', difficultyTier: 'easy' })
+      const screen = await renderScreen()
+      await settle()
+      await winDog(screen)
+      await fireEvent.press(screen.getByLabelText('Up next: Alice'))
+
+      await fireEvent.press(screen.getByText('Next'))
+      await settleUnlocks()
+
+      expect(activePlayer()).toBe(ALICE.id)
+      expect(router.dismissTo).toHaveBeenCalledWith({ pathname: '/loadout', params: { mode: 'solo' } })
+      expect(solo().puzzle).toBeNull()
+      expect(mockResolvePuzzle).not.toHaveBeenCalled()
+      expect(solo(ALICE.id).puzzle).toBeNull()
+    })
+
+    // Deleted in another game, say, while the card was up: there's nobody to hand over to.
+    it('keeps the round with its own player when the pick has left the roster by Next', async () => {
+      seedRound(savedPuzzle())
+      const screen = await renderScreen()
+      await settle()
+      await winDog(screen)
+      await fireEvent.press(screen.getByLabelText('Up next: Bob'))
+      await act(async () => {
+        store.dispatch(profilesActions.setAll([ALICE]))
+      })
+      expect(screen.getByLabelText('Up next: Guest').props.accessibilityState.selected).toBe(true)
+
+      await fireEvent.press(screen.getByText('Next'))
+
+      expect(activePlayer()).toBeNull()
+      expect(mockResolvePuzzle).toHaveBeenCalledTimes(1)
+    })
+  })
+
   describe('leaving', () => {
-    it('goes back from the corner: the keyboard down, the resume cleared, and a dismiss to the solo loadout that keeps the round', async () => {
+    // Home, not back: a launch can open straight into the game, with no loadout it came from.
+    it('goes Home from the corner: the keyboard down, the resume cleared, and a dismiss to Home that keeps the round', async () => {
       const dismissKeyboard = jest.spyOn(Keyboard, 'dismiss')
       seedRound(savedPuzzle(), { guessedLetters: ['D'], hintRevealed: false })
       const screen = await renderScreen()
       expect(store.getState().round.activeMode).toBe('solo')
 
-      await fireEvent.press(screen.getByLabelText('Back'))
+      await fireEvent.press(screen.getByLabelText('Home'))
 
       expect(dismissKeyboard).toHaveBeenCalled()
       expect(store.getState().round.activeMode).toBeNull()
       expect(router.dismissTo).toHaveBeenCalledTimes(1)
-      expect(router.dismissTo).toHaveBeenCalledWith({ pathname: '/loadout', params: { mode: 'solo' } })
+      expect(router.dismissTo).toHaveBeenCalledWith('/')
       // Left for later: the loadout offers Continue.
       expect(solo()).toMatchObject({ puzzle: { phrase: 'DOG' }, guessedLetters: ['D'] })
     })
 
-    it("does what the back corner does on Android's back button, and lets go of it on unmount", async () => {
+    it("steps back to the solo loadout on Android's back button, and lets go of it on unmount", async () => {
       const pressBack = installBackHandler()
       seedRound(savedPuzzle())
       const screen = await renderScreen()
@@ -750,14 +962,14 @@ describe('GameScreen (solo)', () => {
         jest.useFakeTimers()
       })
 
-      // Both ways out, the back corner and then Android's back button. Back is still handled (so
+      // Both ways out, the Home corner and then Android's back button. Back is still handled (so
       // Android doesn't close the app instead), it just does nothing.
       const tryToLeave = async (screen: Screen, pressBack: () => Promise<boolean>) => {
-        await fireEvent.press(screen.getByLabelText('Back'))
+        await fireEvent.press(screen.getByLabelText('Home'))
         expect(await pressBack()).toBe(true)
       }
 
-      it('stays on a won round through its celebration, then leaves from the corner again once Next has drawn the next puzzle', async () => {
+      it('stays on a won round through its celebration, then goes Home from the corner once Next has drawn the next puzzle', async () => {
         const pressBack = installBackHandler()
         seedRound(savedPuzzle())
         const screen = await renderScreen()
@@ -782,9 +994,9 @@ describe('GameScreen (solo)', () => {
         expect(mockResolvePuzzle).toHaveBeenCalledTimes(1)
         expect(revealed(screen)).toEqual(['_', '_', '_', '_'])
 
-        await fireEvent.press(screen.getByLabelText('Back'))
+        await fireEvent.press(screen.getByLabelText('Home'))
         expect(router.dismissTo).toHaveBeenCalledTimes(1)
-        expect(router.dismissTo).toHaveBeenCalledWith({ pathname: '/loadout', params: { mode: 'solo' } })
+        expect(router.dismissTo).toHaveBeenCalledWith('/')
         expect(store.getState().round.activeMode).toBeNull()
       })
 

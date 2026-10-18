@@ -11,6 +11,10 @@ configureNavigation({ router })
 
 export { safeBack }
 
+// The Home corner (the loadouts'): dismissTo pops back to the Home already beneath, or replaces this
+// screen with it when there's none (a loadout reached from a resumed game).
+export const goHome = () => router.dismissTo('/')
+
 export const loadoutHref = (mode: PlayMode) => ({ pathname: '/loadout' as const, params: { mode } })
 export const gameHref = (mode: PlayMode) => ({ pathname: '/game' as const, params: { mode } })
 

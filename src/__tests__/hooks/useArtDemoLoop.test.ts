@@ -11,9 +11,9 @@ const FADE = 200
 const REVEAL_HOLD = 2000
 const STEP = 500
 
-type Props = { isFocused: boolean; paused: boolean; mode: GameMode; startBlank?: boolean }
+type Props = { isFocused: boolean; paused: boolean; mode: GameMode; startBlank?: boolean; once?: boolean; waitForReplay?: boolean }
 
-const renderLoop = (props: Props) => renderHook(({ isFocused, paused, mode, startBlank }: Props) => useArtDemoLoop(isFocused, paused, mode, startBlank), { initialProps: props })
+const renderLoop = (props: Props) => renderHook(({ isFocused, paused, mode, startBlank, once, waitForReplay }: Props) => useArtDemoLoop(isFocused, paused, mode, { startBlank, once, waitForReplay }), { initialProps: props })
 
 const advance = async (ms: number) => {
   await act(async () => {
@@ -240,6 +240,176 @@ describe('useArtDemoLoop', () => {
     expect(result.current.cardOpacity.value).toBe(1)
     expect(result.current.partsOpacity.value).toBe(1)
     expect(pendingTimeouts.size).toBe(0)
+  })
+
+  // Home's hero plays once: draw in, act out a round, then hold the fully drawn picture for good.
+  describe('once', () => {
+    it('holds a build-up art (Classic) on its last frame, the fully drawn one, with nothing left scheduled', async () => {
+      const { result } = await renderLoop({ isFocused: true, paused: false, mode: classicMode, startBlank: true, once: true })
+
+      await advance(REVEAL_HOLD + classicMode.maxMistakes * STEP)
+      expect(result.current.mistakes).toBe(classicMode.maxMistakes)
+
+      // Where the loop would fade the figure out after its hold, nothing moves.
+      await advance(1000)
+      expect(pendingTimeouts.size).toBe(0)
+      await advance(20000)
+      expect(result.current.mistakes).toBe(classicMode.maxMistakes)
+      expect(result.current.partsOpacity.value).toBe(1)
+      expect(result.current.cardOpacity.value).toBe(1)
+      expect(result.current.revealKey).toBe(0)
+    })
+
+    it('draws a worn-away art (Candle) back in whole after its round, then stops', async () => {
+      const { result } = await renderLoop({ isFocused: true, paused: false, mode: candleMode, startBlank: true, once: true })
+
+      await advance(REVEAL_HOLD + candleMode.maxMistakes * STEP)
+      expect(result.current.mistakes).toBe(candleMode.maxMistakes)
+      await advance(1000)
+      expect(result.current.cardOpacity.value).toBe(0)
+
+      await advance(FADE)
+      expect(result.current.mistakes).toBe(0)
+      expect(result.current.revealKey).toBe(1)
+      expect(result.current.cardOpacity.value).toBe(1)
+      expect(pendingTimeouts.size).toBe(0)
+
+      await advance(20000)
+      expect(result.current.mistakes).toBe(0)
+      expect(result.current.revealKey).toBe(1)
+    })
+
+    it('stays settled when Home is covered and uncovered again', async () => {
+      const { result, rerender } = await renderLoop({ isFocused: true, paused: false, mode: classicMode, startBlank: true, once: true })
+      await advance(REVEAL_HOLD + classicMode.maxMistakes * STEP + 1000)
+
+      await rerender({ isFocused: true, paused: true, mode: classicMode, startBlank: true, once: true })
+      await rerender({ isFocused: true, paused: false, mode: classicMode, startBlank: true, once: true })
+
+      expect(pendingTimeouts.size).toBe(0)
+      expect(result.current.cardOpacity.value).toBe(1)
+      await advance(20000)
+      expect(result.current.mistakes).toBe(classicMode.maxMistakes)
+      expect(result.current.revealKey).toBe(0)
+    })
+
+    it('plays its round again from the entry fade when a pause cut it short, then settles', async () => {
+      const { result, rerender } = await renderLoop({ isFocused: true, paused: false, mode: classicMode, startBlank: true, once: true })
+      await advance(REVEAL_HOLD + 3 * STEP)
+      await rerender({ isFocused: true, paused: true, mode: classicMode, startBlank: true, once: true })
+
+      await rerender({ isFocused: true, paused: false, mode: classicMode, startBlank: true, once: true })
+      await advance(FADE)
+      expect(result.current.mistakes).toBe(0)
+      expect(result.current.revealKey).toBe(1)
+
+      await advance(REVEAL_HOLD + classicMode.maxMistakes * STEP + 1000)
+      expect(result.current.mistakes).toBe(classicMode.maxMistakes)
+      expect(pendingTimeouts.size).toBe(0)
+    })
+
+    // A press on Home's hero art (Jay, 2026-10-18): the round again, and only the round.
+    describe('replay', () => {
+      it("redraws Classic's figure under the gallows it keeps, then settles again", async () => {
+        const { result } = await renderLoop({ isFocused: true, paused: false, mode: classicMode, startBlank: true, once: true })
+        await advance(REVEAL_HOLD + classicMode.maxMistakes * STEP + 1000)
+
+        await act(async () => result.current.replay())
+        expect(result.current.partsOpacity.value).toBe(0)
+        expect(result.current.cardOpacity.value).toBe(1)
+
+        await advance(FADE)
+        expect(result.current.mistakes).toBe(0)
+        expect(result.current.partsOpacity.value).toBe(1)
+        expect(result.current.revealKey).toBe(0)
+        await advance(STEP)
+        expect(result.current.mistakes).toBe(1)
+
+        await advance((classicMode.maxMistakes - 1) * STEP + 1000)
+        expect(result.current.mistakes).toBe(classicMode.maxMistakes)
+        expect(pendingTimeouts.size).toBe(0)
+        expect(result.current.revealKey).toBe(0)
+      })
+
+      it('starts a worn-away art (Candle) wearing away straight off from its whole frame, then draws it back in', async () => {
+        const { result } = await renderLoop({ isFocused: true, paused: false, mode: candleMode, startBlank: true, once: true })
+        await advance(REVEAL_HOLD + candleMode.maxMistakes * STEP + 1000 + FADE)
+        expect(result.current.mistakes).toBe(0)
+        expect(result.current.revealKey).toBe(1)
+
+        await act(async () => result.current.replay())
+        expect(result.current.cardOpacity.value).toBe(1)
+        await advance(STEP)
+        expect(result.current.mistakes).toBe(1)
+        expect(result.current.revealKey).toBe(1)
+
+        await advance((candleMode.maxMistakes - 1) * STEP + 1000 + FADE)
+        expect(result.current.mistakes).toBe(0)
+        expect(result.current.revealKey).toBe(2)
+        expect(pendingTimeouts.size).toBe(0)
+      })
+
+      it("starts over from a press mid-round, Classic's gallows still up", async () => {
+        const { result } = await renderLoop({ isFocused: true, paused: false, mode: classicMode, startBlank: true, once: true })
+        await advance(REVEAL_HOLD + 3 * STEP)
+        expect(result.current.mistakes).toBe(3)
+
+        await act(async () => result.current.replay())
+        await advance(FADE)
+        expect(result.current.mistakes).toBe(0)
+        expect(result.current.revealKey).toBe(0)
+        await advance(classicMode.maxMistakes * STEP + 1000)
+        expect(result.current.mistakes).toBe(classicMode.maxMistakes)
+        expect(pendingTimeouts.size).toBe(0)
+      })
+
+      it('draws Letters Only in again', async () => {
+        const { result } = await renderLoop({ isFocused: true, paused: false, mode: lettersMode, startBlank: true, once: true })
+
+        await act(async () => result.current.replay())
+        expect(result.current.cardOpacity.value).toBe(0)
+        await advance(FADE)
+        expect(result.current.revealKey).toBe(1)
+        expect(result.current.cardOpacity.value).toBe(1)
+        expect(pendingTimeouts.size).toBe(0)
+      })
+    })
+
+    // Its draw-in at mount is the one play.
+    it('schedules nothing for Letters Only from a blank start', async () => {
+      const { result } = await renderLoop({ isFocused: true, paused: false, mode: lettersMode, startBlank: true, once: true })
+
+      expect(pendingTimeouts.size).toBe(0)
+      await advance(20000)
+      expect(result.current.revealKey).toBe(0)
+      expect(result.current.cardOpacity.value).toBe(1)
+    })
+  })
+
+  // The Settings sheet's ART thumbnails: still until pressed, then one round, then still again.
+  describe('waitForReplay', () => {
+    it('rests on the fully drawn frame with no timer until replay() asks', async () => {
+      const { result } = await renderLoop({ isFocused: true, paused: false, mode: classicMode, waitForReplay: true })
+
+      expect(result.current.mistakes).toBe(classicMode.maxMistakes)
+      expect(pendingTimeouts.size).toBe(0)
+      await advance(20000)
+      expect(result.current.mistakes).toBe(classicMode.maxMistakes)
+      expect(result.current.revealKey).toBe(0)
+      expect(result.current.cardOpacity.value).toBe(1)
+    })
+
+    it('plays one round on replay(), then settles again', async () => {
+      const { result } = await renderLoop({ isFocused: true, paused: false, mode: classicMode, waitForReplay: true })
+
+      await act(async () => result.current.replay())
+      await advance(FADE)
+      expect(result.current.mistakes).toBe(0)
+      expect(result.current.revealKey).toBe(0)
+      await advance(classicMode.maxMistakes * STEP + 1000)
+      expect(result.current.mistakes).toBe(classicMode.maxMistakes)
+      expect(pendingTimeouts.size).toBe(0)
+    })
   })
 
   it('leaves no timer behind after unmounting mid-cycle', async () => {

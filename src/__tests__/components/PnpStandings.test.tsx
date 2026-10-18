@@ -1,3 +1,4 @@
+import type { Profile } from '@tastic/profile'
 import { render } from '@testing-library/react-native'
 import { type StyleProp, StyleSheet, type TextStyle } from 'react-native'
 
@@ -50,6 +51,21 @@ describe('PnpStandingsList', () => {
     expect(firstLine.children).toContain(getByLabelText('Bo: no words guessed yet'))
     const lastLine = getByLabelText('Cy: 0 of 1 solved').parent!
     expect(lastLine.children).toEqual([getByLabelText('Cy: 0 of 1 solved'), getByTestId('standings-spacer')])
+  })
+
+  // A profile's chip before its name, and with one in the list every guest's name keeps the room.
+  it("leads a profile's name with its chip, holding the room open for every guest beside it", async () => {
+    const ann: Profile = { id: 'profile-a', name: 'Ann', color: '#9c27b0', tag: 'AN', createdAt: 1, updatedAt: 1 }
+    const { getByText, getAllByTestId } = await render(<PnpStandingsList rows={[{ ...rows[0], profile: ann }, rows[1], rows[2]]} color={INK} mutedColor={MUTED} />)
+
+    expect(getByText('AN')).toBeTruthy()
+    expect(getAllByTestId('player-mark-slot')).toHaveLength(2)
+  })
+
+  it('draws no chips and holds no room for guests alone', async () => {
+    const { queryAllByTestId } = await render(<PnpStandingsList rows={rows} color={INK} mutedColor={MUTED} />)
+
+    expect(queryAllByTestId('player-mark-slot')).toHaveLength(0)
   })
 
   it('counts the lines a list takes', () => {

@@ -1,3 +1,4 @@
+import { profilesActions } from '@tastic/profile'
 import { type PersistConfig, type PersistedState, persistReducer, REHYDRATE } from 'redux-persist'
 
 import { activePlayerActions } from '@/redux/activePlayerSlice'
@@ -58,14 +59,15 @@ describe('store', () => {
     expect(store.getState().round.solo[GUEST_PLAYER_KEY]).toMatchObject({ id: 1, puzzle: { phrase: 'CAT' } })
   })
 
-  it('mounts the per-player slices, starting with the guest and nothing picked', () => {
-    expect(store.getState()).toMatchObject({ activePlayer: { profileId: null }, playerSettings: {}, playerTheme: {} })
+  it('mounts the profile roster and the per-player slices, starting with no profiles, the guest and nothing picked', () => {
+    store.dispatch(profilesActions.setAll([]))
+    expect(store.getState()).toMatchObject({ profiles: [], activePlayer: { profileId: null }, playerSettings: {}, playerTheme: {} })
   })
 
-  // Without these entries the stats, achievements and every player's picks reset on every launch, and
-  // nothing else would fail.
-  it('persists the settings, the achievements slice and the per-player slices with the root', () => {
-    expect(persistConfig('root').whitelist).toEqual(expect.arrayContaining(['theme', 'haptic', 'sound', 'achievements', 'activePlayer', 'playerSettings', 'playerTheme']))
+  // Without these entries the stats, achievements, the roster (the only copy on a device with no shared
+  // one) and every player's picks reset on every launch, and nothing else would fail.
+  it('persists the settings, the achievements slice, the profile roster and the per-player slices with the root', () => {
+    expect(persistConfig('root').whitelist).toEqual(expect.arrayContaining(['theme', 'haptic', 'sound', 'achievements', 'profiles', 'activePlayer', 'playerSettings', 'playerTheme']))
   })
 
   // The round is saved on every guess, and rewriting the stats and achievements with it would be wasteful.
@@ -95,11 +97,19 @@ describe('the root rehydrate', () => {
     expect(store.getState()).toMatchObject({ activePlayer: { profileId: null }, playerSettings: { [GUEST_PLAYER_KEY]: { modeId: 'robot', difficulty: 'any', packKeys: ['animals'] } }, playerTheme: {} })
   })
 
+  it('keeps only the valid profiles of a stored roster, each id once', () => {
+    const alice = { id: 'profile-a', name: 'Alice', color: '#9c27b0', tag: 'A', createdAt: 1, updatedAt: 1 }
+    rehydrate({ profiles: [alice, { ...alice, name: 'Second Alice' }, { ...alice, id: 'profile-b', color: 'purple' }, { ...alice, id: 'bad:id' }, 'nobody'] })
+
+    expect(store.getState().profiles).toEqual([alice])
+  })
+
   it('starts each per-player slice fresh when nothing was stored for it', () => {
     store.dispatch(playerSettingsActions.setDifficulty({ playerKey: GUEST_PLAYER_KEY, difficulty: 'hard' }))
     rehydrate(undefined)
 
     expect(store.getState().playerSettings).toEqual({})
+    expect(store.getState().profiles).toEqual([])
   })
 
   // The round slice's blob rehydrates under its own key, which says nothing about the player slices.

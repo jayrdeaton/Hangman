@@ -1,8 +1,9 @@
 import { Provider } from '@rific/auto-paper'
 import { FeedbackPressProvider } from '@rific/feedback-press'
+import { type Profile, profilesActions } from '@tastic/profile'
 import { act, fireEvent, render as rtlRender, waitFor } from '@testing-library/react-native'
 import { type ReactElement, type ReactNode, useEffect } from 'react'
-import { BackHandler, StyleSheet } from 'react-native'
+import { BackHandler, StyleSheet, View } from 'react-native'
 import * as RNPaper from 'react-native-paper'
 import { Provider as ReduxProvider } from 'react-redux'
 
@@ -16,7 +17,7 @@ import type { StatsState, UnlockedAchievementsState } from '@/types/stats'
 import { loadCustomPacksCache, saveCustomPack } from '@/utils/customPacks'
 import { getPuzzleManifest, getPuzzlesForCategory } from '@/utils/puzzleCatalog'
 import { createDefaultProfileStats, createDefaultStats } from '@/utils/statsValidation'
-import { clearAllPuzzleUnlocks, getDevicePuzzleUnlockMap, getPuzzleUnlockMap, type PuzzleUnlockMap } from '@/utils/unlocks'
+import { clearAllPuzzleUnlocks, clearPuzzleUnlocks, getDevicePuzzleUnlockMap, getPuzzleUnlockMap, type PuzzleUnlockMap } from '@/utils/unlocks'
 
 // AsyncStorage is a no-op stub in tests, so the unlocked puzzles come from getDevicePuzzleUnlockMap
 // (All Profiles: every player's together) and getPuzzleUnlockMap (one profile's), the real ones,
@@ -24,11 +25,12 @@ import { clearAllPuzzleUnlocks, getDevicePuzzleUnlockMap, getPuzzleUnlockMap, ty
 // clearAllPuzzleUnlocks.
 jest.mock('@/utils/unlocks', () => {
   const actual = jest.requireActual('@/utils/unlocks')
-  return { ...actual, getDevicePuzzleUnlockMap: jest.fn(actual.getDevicePuzzleUnlockMap), getPuzzleUnlockMap: jest.fn(actual.getPuzzleUnlockMap), clearAllPuzzleUnlocks: jest.fn().mockResolvedValue(undefined) }
+  return { ...actual, getDevicePuzzleUnlockMap: jest.fn(actual.getDevicePuzzleUnlockMap), getPuzzleUnlockMap: jest.fn(actual.getPuzzleUnlockMap), clearAllPuzzleUnlocks: jest.fn().mockResolvedValue(undefined), clearPuzzleUnlocks: jest.fn().mockResolvedValue(undefined) }
 })
 const mockGetDeviceUnlockMap = jest.mocked(getDevicePuzzleUnlockMap)
 const mockGetPuzzleUnlockMap = jest.mocked(getPuzzleUnlockMap)
 const mockClearAllPuzzleUnlocks = jest.mocked(clearAllPuzzleUnlocks)
+const mockClearPuzzleUnlocks = jest.mocked(clearPuzzleUnlocks)
 const realGetDeviceUnlockMap: typeof getDevicePuzzleUnlockMap = jest.requireActual('@/utils/unlocks').getDevicePuzzleUnlockMap
 const realGetPuzzleUnlockMap: typeof getPuzzleUnlockMap = jest.requireActual('@/utils/unlocks').getPuzzleUnlockMap
 
@@ -81,6 +83,7 @@ describe('StatsScreen', () => {
     mockGetDeviceUnlockMap.mockImplementation(realGetDeviceUnlockMap)
     mockGetPuzzleUnlockMap.mockImplementation(realGetPuzzleUnlockMap)
     store.dispatch(achievementsActions.reset())
+    store.dispatch(profilesActions.setAll([]))
     // Back to the stub storage's empty custom-pack list, in case a test saved one.
     await loadCustomPacksCache()
     catalog = null
@@ -275,15 +278,55 @@ describe('StatsScreen', () => {
     expect(rowValue(screen, 'Won')).toBe('0')
   })
 
-  // One profile's own view (the picker comes later; the route shows All Profiles). Everything on the
-  // page is that profile's: their bucket, their unlocked puzzles and their achievements.
-  describe("a profile's own view", () => {
+  // The picker at the top picks whose numbers show: All Profiles (the device's) on every visit, or one
+  // profile's own, where everything on the page is that profile's: their bucket, their unlocked puzzles
+  // and their achievements. The reset follows it.
+  describe('the profile picker', () => {
     const PROFILE = 'profile-a'
+    const ALICE: Profile = { id: PROFILE, name: 'Alice', color: '#2196f3', tag: 'A', createdAt: 1, updatedAt: 1 }
+    const BOB: Profile = { id: 'profile-b', name: 'Bob', color: '#4caf50', tag: 'B', createdAt: 2, updatedAt: 2 }
     const record = (played: number, wins: number) => ({ played, wins, losses: played - wins, draws: 0 })
+    // The picker's popover only shows once hud's useAutoAlign has measured its trigger, and the jest
+    // preset's View never answers measureInWindow: this one does, from a spot near the top left.
+    let measureInWindow: jest.SpyInstance
+    beforeEach(() => {
+      store.dispatch(profilesActions.setAll([ALICE, BOB]))
+      measureInWindow = jest.spyOn(View.prototype as unknown as { measureInWindow: (callback: (x: number, y: number, width: number, height: number) => void) => void }, 'measureInWindow').mockImplementation((callback) => callback(16, 120, 140, 28))
+    })
+    afterEach(() => {
+      measureInWindow.mockRestore()
+    })
+    const pick = async (screen: Screen, trigger: string, name: string) => {
+      await fireEvent.press(screen.getByLabelText(trigger))
+      await fireEvent.press(screen.getByText(name))
+    }
+
+    it('is hidden while there are no profiles', async () => {
+      store.dispatch(profilesActions.setAll([]))
+      const screen = await renderScreen()
+
+      expect(screen.queryByLabelText('ALL PROFILES')).toBeNull()
+    })
+
+    it("opens on All Profiles, the device's numbers, and shows a profile's own once picked, and the device's again from All Profiles", async () => {
+      seedStats({ solo: record(10, 8), profiles: { [PROFILE]: { ...createDefaultProfileStats(), solo: record(4, 1) } } })
+      const screen = await renderScreen()
+      expect(screen.getByLabelText('ALL PROFILES')).toBeTruthy()
+      expect(rowValue(screen, 'Played')).toBe('10')
+
+      await pick(screen, 'ALL PROFILES', 'Alice')
+      expect(screen.getByLabelText('ALICE')).toBeTruthy()
+      expect(rowValue(screen, 'Played')).toBe('4')
+      expect(screen.getByText("Reset Alice's Stats")).toBeTruthy()
+
+      await pick(screen, 'ALICE', 'All Profiles')
+      expect(rowValue(screen, 'Played')).toBe('10')
+      expect(screen.getByText('Reset All Stats')).toBeTruthy()
+    })
 
     it("shows the profile's own numbers, with the device's left out", async () => {
       seedStats({ solo: record(10, 8), customPacksCreated: 3, profiles: { [PROFILE]: { ...createDefaultProfileStats(), solo: record(4, 1), customPacksCreated: 1 } } })
-      const screen = await renderScreen({ profileId: PROFILE })
+      const screen = await renderScreen({ initialProfileId: PROFILE })
 
       expect(rowValue(screen, 'Played')).toBe('4')
       expect(rowValue(screen, 'Won')).toBe('1')
@@ -293,7 +336,7 @@ describe('StatsScreen', () => {
 
     it("starts from nothing for a profile that hasn't finished a round", async () => {
       seedStats({ solo: record(10, 8) })
-      const screen = await renderScreen({ profileId: PROFILE })
+      const screen = await renderScreen({ initialProfileId: PROFILE })
 
       expect(rowValue(screen, 'Played')).toBe('0')
       expect(rowValue(screen, 'Win Rate')).toBe('-')
@@ -304,13 +347,48 @@ describe('StatsScreen', () => {
       seedStats({ profiles: { [PROFILE]: createDefaultProfileStats() } }, { first_game_played: 1, first_ever_win: 2, [`${PROFILE}:first_game_played`]: 3 })
       storeUnlocks({ [full.key]: ['some-puzzle', 'another'] })
       mockGetPuzzleUnlockMap.mockResolvedValue({ [full.key]: getPuzzlesForCategory(full.key).map((puzzle) => puzzle.id) })
-      const screen = await renderScreen({ profileId: PROFILE })
+      const screen = await renderScreen({ initialProfileId: PROFILE })
 
       await waitFor(() => expect(rowValue(screen, 'Packs Completed')).toBe(`1 / ${MANIFEST.length}`))
       expect(mockGetPuzzleUnlockMap).toHaveBeenCalledWith(PROFILE)
       expect(mockGetDeviceUnlockMap).not.toHaveBeenCalled()
       expect(rowValue(screen, 'Puzzles Unlocked')).toBe(`${n(full.count)} / ${n(TOTAL)}`)
       expect(rowValue(screen, 'Achievements Earned')).toBe(`1 / ${ACHIEVEMENT_CATALOG.length}`)
+    })
+
+    it('goes back to All Profiles if the profile shown is deleted while the screen is open', async () => {
+      seedStats({ solo: record(10, 8), profiles: { [PROFILE]: { ...createDefaultProfileStats(), solo: record(4, 1) } } })
+      const screen = await renderScreen({ initialProfileId: PROFILE })
+      expect(rowValue(screen, 'Played')).toBe('4')
+
+      await act(async () => {
+        store.dispatch(profilesActions.remove(PROFILE))
+      })
+
+      expect(screen.getByLabelText('ALL PROFILES')).toBeTruthy()
+      expect(rowValue(screen, 'Played')).toBe('10')
+    })
+
+    it("resets only the profile shown: their stats, achievements and unlocked puzzles, keeping All Profiles' rounds and everyone else's", async () => {
+      seedStats({ solo: record(10, 8), profiles: { [PROFILE]: { ...createDefaultProfileStats(), solo: record(4, 1) }, [BOB.id]: { ...createDefaultProfileStats(), solo: record(2, 2) } } }, { first_game_played: 1, [`${PROFILE}:first_game_played`]: 2, [`${BOB.id}:first_game_played`]: 3 })
+      const screen = await renderScreen({ initialProfileId: PROFILE })
+
+      await fireEvent.press(screen.getByText("Reset Alice's Stats"))
+      expect(screen.getByText('Reset Alice?')).toBeTruthy()
+      expect(screen.getByText(/erases Alice's stats, achievements and unlocked puzzles/)).toBeTruthy()
+      await fireEvent.press(screen.getByText('Reset'))
+
+      await waitFor(() => expect(mockClearPuzzleUnlocks).toHaveBeenCalledWith(PROFILE))
+      expect(mockClearAllPuzzleUnlocks).not.toHaveBeenCalled()
+      const { stats, unlocked } = store.getState().achievements
+      expect(stats.profiles[PROFILE]).toBeUndefined()
+      expect(stats.profiles[BOB.id]?.solo.played).toBe(2)
+      expect(stats.solo.played).toBe(10)
+      // Nothing of Alice's is left; the others' are kept (the package re-sweeps the catalog as it
+      // removes her, so their seeded wins earn their badges too).
+      expect(Object.keys(unlocked).filter((id) => id.startsWith(`${PROFILE}:`))).toEqual([])
+      expect(unlocked).toMatchObject({ first_game_played: 1, [`${BOB.id}:first_game_played`]: 3 })
+      expect(rowValue(screen, 'Played')).toBe('0')
     })
   })
 })

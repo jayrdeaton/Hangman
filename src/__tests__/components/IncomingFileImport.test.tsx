@@ -1,3 +1,4 @@
+import { profilesActions } from '@tastic/profile'
 import { act, cleanup, fireEvent, render, waitFor } from '@testing-library/react-native'
 import * as Linking from 'expo-linking'
 import { useEffect } from 'react'
@@ -131,6 +132,7 @@ describe('IncomingFileImport', () => {
     probe = { selectedPackKeys: [], versions: { unlockVersion: 0, packsVersion: 0 } }
     store.dispatch(activePlayerActions.setActivePlayer(null))
     store.dispatch(playerSettingsActions.reset())
+    store.dispatch(profilesActions.setAll([]))
   })
 
   afterEach(async () => {
@@ -231,6 +233,8 @@ describe('IncomingFileImport', () => {
     // Everything belongs to a player (2026-10-17): a backup lands in the active player's unlocked
     // puzzles, and a pack in their selection.
     it("merges a progress backup into the active player's unlocked puzzles, and a pack into their selection", async () => {
+      // On the roster, or the launch reconcile would forget a player it doesn't have (ProfilesProvider).
+      store.dispatch(profilesActions.setAll([{ id: 'profile-a', name: 'Alice', color: '#2196f3', tag: 'A', createdAt: 1, updatedAt: 1 }]))
       store.dispatch(activePlayerActions.setActivePlayer('profile-a'))
       store.dispatch(playerSettingsActions.setPackKeys({ playerKey: 'profile-a', packKeys: [MANIFEST[0].key] }))
       const backup = await renderImport(FILE_URL, BACKUP_FILE)

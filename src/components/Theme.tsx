@@ -11,7 +11,7 @@ import { shallowEqual, useDispatch, useSelector, useStore } from 'react-redux'
 
 import { boardColor } from '@/components/BoardBackground'
 import { useActivePlayer } from '@/hooks/useActivePlayer'
-import { isSamePlayerTheme, playerThemeActions } from '@/redux/playerThemeSlice'
+import { isSamePlayerTheme, isSamePlayerThemeEntry, playerThemeActions, resolvePlayerTheme, sameColor } from '@/redux/playerThemeSlice'
 import { RootState } from '@/redux/store'
 import type { PlayerKey } from '@/utils/players'
 import { markSplashReady, useSplashReady } from '@/utils/splashGate'
@@ -46,34 +46,44 @@ const RootBackground = (): null => {
 }
 
 // Each player's colors (the palette and its harmony; appearance and Blur stay the device's). The live
-// theme always holds the active player's: when the active player changes, theirs (if they have any
-// saved) go on screen, and every change after that (the palette picker in Customize) is saved as theirs.
-// A player with none saved yet keeps the colors on screen and has them saved as theirs, so switching
-// back to whoever was playing before brings their colors back too. Loop-free: putting a player's colors
-// on screen writes nothing (they already match), and only a real difference is ever written either way.
-// Renders inside Provider, for useThemeSettings.
+// theme always holds the active player's: their Hangman pick (playerTheme); else, for a profile, the
+// profile's own color with the default harmony; else, for the guest, whatever is on screen. A profile's
+// pick lapses once the profile's own color changes (playerThemeSlice's resolvePlayerTheme), so a new
+// color given to the profile on the Profiles screen, or in another game, shows here too. When the
+// active player changes, or their profile's color does, their colors go on screen, and every change
+// after that (the player picker's color page, Settings' HARMONY) is saved as theirs, with the profile's
+// color it was picked against. A guest with none saved yet keeps the colors on screen and has them
+// saved as theirs, so switching back to whoever was playing before brings their colors back too.
+// Loop-free: putting a player's colors on screen writes nothing until they're there, and only a real
+// difference is ever written either way. Renders inside Provider, for useThemeSettings.
 const PlayerThemeSync = (): null => {
   const store = useStore<RootState>()
   const dispatch = useDispatch()
-  const { key: playerKey } = useActivePlayer()
+  const { key: playerKey, profileId } = useActivePlayer()
+  // The active profile's own color as the roster has it now; null for the guest.
+  const profileColor = useSelector((state: RootState) => (profileId ? (state.profiles.find((profile) => profile.id === profileId)?.color ?? null) : null))
   const { settings, set } = useThemeSettings()
   const { color, harmony } = settings
-  // The player whose colors are on screen. null until the first run.
-  const syncedPlayerRef = useRef<PlayerKey | null>(null)
+  // Whose colors are on screen, and against which profile color. null until the first run.
+  const syncedRef = useRef<{ playerKey: PlayerKey; profileColor: string | null } | null>(null)
 
   useEffect(() => {
     const live = { color, harmony }
     const saved = store.getState().playerTheme[playerKey]
-    if (syncedPlayerRef.current !== playerKey) {
-      syncedPlayerRef.current = playerKey
-      if (saved && !isSamePlayerTheme(saved, live)) {
-        // Their colors land on the next render, which then finds them matching and writes nothing.
-        set(saved)
+    const synced = syncedRef.current
+    if (!synced || synced.playerKey !== playerKey || !sameColor(synced.profileColor, profileColor)) {
+      syncedRef.current = { playerKey, profileColor }
+      const wanted = resolvePlayerTheme(saved, profileColor)
+      if (wanted && !isSamePlayerTheme(wanted, live)) {
+        // Their colors land on the next render, which then files them (with this profile color) and
+        // puts nothing else on screen.
+        set(wanted)
         return
       }
     }
-    if (!isSamePlayerTheme(saved, live)) dispatch(playerThemeActions.setPlayerTheme({ playerKey, theme: live }))
-  }, [playerKey, color, harmony, set, store, dispatch])
+    const next = profileColor ? { ...live, profileColor } : live
+    if (!isSamePlayerThemeEntry(saved, next)) dispatch(playerThemeActions.setPlayerTheme({ playerKey, theme: next }))
+  }, [playerKey, profileColor, color, harmony, set, store, dispatch])
 
   return null
 }

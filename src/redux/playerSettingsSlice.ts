@@ -67,7 +67,7 @@ const playerSettingsSlice = createSlice({
     setPackKeys: (state, action: PlayerPayload<{ packKeys: string[] | null }>) => {
       entryFor(state, action.payload.playerKey).packKeys = action.payload.packKeys
     },
-    // A deleted profile's picks, for when profiles arrive.
+    // A forgotten profile's picks (see usePlayerData's forgetPlayer).
     removePlayer: (state, action: PayloadAction<PlayerKey>) => {
       delete state[action.payload]
     },

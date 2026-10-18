@@ -21,8 +21,8 @@ const isValidPrefs = (value: unknown): value is PackPuzzleListPrefs => {
   return (prefs.statusFilter === 'all' || prefs.statusFilter === 'unsolved' || prefs.statusFilter === 'solved') && (prefs.difficultyFilter === 'all' || prefs.difficultyFilter === 'easy' || prefs.difficultyFilter === 'medium' || prefs.difficultyFilter === 'hard')
 }
 
-// One shared preference across every pack's puzzle list (PackPuzzlesDrawer, PackProgressDrawer's
-// own pack-detail step, PacksScreen's read-only "view contents"), not a per-pack setting - matches
+// One shared preference across every pack's puzzle list (PackPuzzlesDrawer, whichever pack Choose
+// Packs opens it on), not a per-pack setting - matches
 // how every other player preference in this app persists (see PackSelectionProvider's own
 // AsyncStorage read/write pattern). A player who sets "Unsolved, Hard" once expects every pack
 // they open afterward to open the same way, not reset back to defaults each time - see

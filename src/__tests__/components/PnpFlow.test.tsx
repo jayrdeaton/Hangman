@@ -1,4 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit'
+import { localDateString, previousDateString } from '@tastic/achievements'
+import { type Profile, profilesActions } from '@tastic/profile'
 import { act, fireEvent, render } from '@testing-library/react-native'
 import { router, useIsFocused } from 'expo-router'
 import { BackHandler, Keyboard, Text } from 'react-native'
@@ -20,6 +22,7 @@ import { GUEST_PLAYER_KEY } from '@/utils/players'
 import { createDefaultPnpSession } from '@/utils/pnpSession'
 import * as puzzlePicker from '@/utils/puzzlePicker'
 import { sanitizeRoundState } from '@/utils/roundState'
+import { createDefaultProfileStats, createDefaultStats } from '@/utils/statsValidation'
 
 // The real resolver by default (a hand-typed word goes through it at Next), so a test can make one
 // call fail without the rest of the file running on a stand-in.
@@ -96,6 +99,7 @@ beforeEach(() => {
   mockUseIsFocused.mockReturnValue(true)
   store.dispatch(achievementsActions.reset())
   store.dispatch(roundActions.reset())
+  store.dispatch(profilesActions.setAll([]))
   backListeners = []
   addBackListener = jest.spyOn(BackHandler, 'addEventListener').mockImplementation((_event, listener) => {
     backListeners.push(listener as BackListener)
@@ -442,14 +446,14 @@ describe('GameScreen - pass and play', () => {
     expect(store.getState().round.activeMode).toBeNull()
   })
 
-  it('leaves from the back corner mid-round with the guesses saved for Continue', async () => {
+  it('goes Home from the corner mid-round with the guesses saved for Continue', async () => {
     const utils = await renderGame()
 
     await playThroughToRound(utils, 'CAT')
     await guess(utils, ['C', 'Z'])
-    await fireEvent.press(utils.getByLabelText('Back'))
+    await fireEvent.press(utils.getByLabelText('Home'))
 
-    expect(router.dismissTo).toHaveBeenCalledWith(PNP_LOADOUT)
+    expect(router.dismissTo).toHaveBeenCalledWith('/')
     expect(pnpRound()).toMatchObject({ phase: 'playing', id: 1, puzzle: savedCat, guessedLetters: ['C', 'Z'] })
   })
 
@@ -681,6 +685,89 @@ describe('GameScreen - pass and play', () => {
 
       expect(getByText("Player 2's Word")).toBeTruthy()
       expect(session()).toMatchObject({ writerId: 'p2', guesserId: 'p1', standings: { p2: { played: 1, wins: 1 } } })
+    })
+
+    // Seats holding profiles: each is named from the roster with its chip (its tag here) wherever the
+    // round names it, and each player's own unlocks go under their name.
+    describe('with profiles at the table', () => {
+      const ALICE: Profile = { id: 'profile-a', name: 'Alice', color: '#9c27b0', tag: 'AL', createdAt: 1, updatedAt: 1 }
+      const BOB: Profile = { id: 'profile-b', name: 'Bob', color: '#4caf50', tag: 'BO', createdAt: 2, updatedAt: 2 }
+      const seat = (id: string, profile: Profile | null) => store.dispatch(roundActions.setPnpSeatProfile({ id, profile }))
+
+      beforeEach(() => {
+        store.dispatch(profilesActions.setAll([ALICE, BOB]))
+        seat('p1', ALICE)
+        seat('p2', BOB)
+      })
+
+      it("names the writer with their chip, and shows each profile's chip in the For row, a guest's plain", async () => {
+        store.dispatch(roundActions.addPnpPlayer())
+        const { getByText, getByLabelText } = await renderGame()
+
+        expect(getByText("Alice's Word")).toBeTruthy()
+        expect(getByText('AL')).toBeTruthy()
+        expect(getByLabelText('For Bob')).toBeSelected()
+        expect(getByText('BO')).toBeTruthy()
+        expect(getByLabelText('For Player 3')).not.toBeSelected()
+      })
+
+      it('hands the device to the guesser on a card headed by their chip, which answers Android back itself', async () => {
+        const utils = await renderGame()
+        const { getByText, queryByText } = utils
+
+        await writeWord(utils, 'CAT')
+
+        expect(getByText("Bob's Turn")).toBeTruthy()
+        expect(getByText("Alice's word is set.")).toBeTruthy()
+        expect(getByText('BO')).toBeTruthy()
+        await pressBack()
+        expect(getByText("Bob's Turn")).toBeTruthy()
+        expect(router.dismissTo).not.toHaveBeenCalled()
+
+        await fireEvent.press(getByText('Ready'))
+        expect(queryByText("Bob's Turn")).toBeNull()
+        expect(pnpRound().phase).toBe('playing')
+      })
+
+      it("shows the guesser's and the writer's own unlocks, each under their name, and counts the round to each of them", async () => {
+        jest.useFakeTimers()
+        // Alice has played the two days before today, so writing today is her third in a row.
+        const yesterday = previousDateString(localDateString(new Date()))
+        store.dispatch(achievementsActions.update({ stats: { ...createDefaultStats(), profiles: { [ALICE.id]: { ...createDefaultProfileStats(), distinctDaysPlayed: 2, currentDayStreak: 2, bestDayStreak: 2, lastPlayedDate: yesterday } } }, unlocked: {} }))
+        const utils = await renderGame()
+        const { getByText } = utils
+
+        await playThroughToRound(utils, 'CAT')
+        await winWithCat(utils)
+
+        expect(getByText("Bob solved Alice's word.")).toBeTruthy()
+        expect(getByText('Bob writes next')).toBeTruthy()
+        expect(getByText('Bob Unlocked')).toBeTruthy()
+        expect(getByText('First Word')).toBeTruthy()
+        expect(getByText('Alice Unlocked')).toBeTruthy()
+        expect(getByText('Regular Visitor')).toBeTruthy()
+        expect(stats().profiles[BOB.id].pnp).toEqual({ played: 1, wins: 1, losses: 0, draws: 0 })
+        expect(stats().profiles[ALICE.id].bestDayStreak).toBe(3)
+
+        jest.useRealTimers()
+      })
+
+      it("keeps a guest guesser's card the plain one, under the device's unlocks", async () => {
+        jest.useFakeTimers()
+        seat('p2', null)
+        const utils = await renderGame()
+        const { getByText, queryByText } = utils
+
+        await writeWord(utils, 'CAT')
+        expect(getByText("Player 2's Turn")).toBeTruthy()
+        await fireEvent.press(getByText('Ready'))
+        await winWithCat(utils)
+
+        expect(getByText(/^Achievements? Unlocked$/)).toBeTruthy()
+        expect(queryByText('Alice Unlocked')).toBeNull()
+
+        jest.useRealTimers()
+      })
     })
 
     describe('End Session', () => {

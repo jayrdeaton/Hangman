@@ -1,10 +1,13 @@
+import type { Profile } from '@tastic/profile'
+
 import { isPlayerKey } from './players'
 
 // A Pass & Play session: who is at the table, how each of them has done guessing so far, and who
 // writes and who guesses the word on the board. It lives with the Pass & Play round (roundSlice's
-// pnp.session), so it's saved with it and comes back after a relaunch. Everyone at the table is a
-// guest for now (profileId null): a later phase seats profiles here, and the stats already take each
-// seat's profile id (see GameScreen's PnpRound).
+// pnp.session), so it's saved with it and comes back after a relaunch. A seat is a guest ("Player 2",
+// renamable) or a profile from the roster, seated from the loadout (roundSlice's setPnpSeatProfile):
+// the stats take each seat's profile id (see GameScreen's PnpRound), and a profile that's forgotten
+// leaves its seats as guests (roundSlice's clearPnpProfile).
 //
 // Open-ended: a session runs until someone ends it from the round-over card (or starts a new one from
 // the loadout), and its winner is whoever has the best win rate among the players who guessed at
@@ -18,11 +21,15 @@ export const MAX_PNP_PLAYERS = 8
 export const MAX_PLAYER_NAME_LENGTH = 16
 
 export type PnpPlayer = {
-  // The seat's own id, stable for as long as the seat exists (a rename keeps it), so the standings
-  // and the writer and guesser follow the seat, not its name.
+  // The seat's own id, stable for as long as the seat exists (a rename, or another player sitting
+  // there, keeps it), so the standings and the writer and guesser follow the seat, not its name.
   id: string
+  // A guest's own name. A profile's seat keeps a copy of the profile's name here (kept in step by
+  // roundSlice whenever the roster changes), so every name check below covers the profiles at the
+  // table too, and a forgotten profile's seat carries on as a guest under it; the screens show the
+  // roster's name itself (getSeatIdentity).
   name: string
-  // The seat's @tastic/profile profile, for when profiles arrive. Always null (a guest) for now.
+  // The seat's @tastic/profile profile, or null for a guest. One profile sits in one seat at most.
   profileId: string | null
 }
 
@@ -44,8 +51,12 @@ export type PnpSession = {
   recordedRoundId: number | null
 }
 
-// What the standings lists show: a seat with its rounds this session.
-export type PnpStandingRow = { id: string; name: string; played: number; wins: number }
+// A seat as the screens show it: its name (a profile's own, live from the roster) and its profile
+// (null for a guest, and for a seat whose profile has just left the roster, until it's forgotten).
+export type PnpSeatIdentity = { name: string; profile: Profile | null }
+
+// What the standings lists show: a seat with its rounds this session, and its profile, for its chip.
+export type PnpStandingRow = { id: string; name: string; profile?: Profile | null; played: number; wins: number }
 
 export type PnpSessionResult = { kind: 'winner'; winner: PnpStandingRow } | { kind: 'tie'; tied: PnpStandingRow[] } | { kind: 'none' }
 
@@ -58,6 +69,18 @@ export const getStanding = (session: Pick<PnpSession, 'standings'>, playerId: st
 export const hasStandings = (session: Pick<PnpSession, 'standings'>): boolean => Object.values(session.standings).some((standing) => standing.played > 0)
 
 export const getPlayerName = (players: PnpPlayer[], playerId: string): string => players.find((player) => player.id === playerId)?.name ?? ''
+
+const identityOf = (player: PnpPlayer, profiles: readonly Profile[]): PnpSeatIdentity => {
+  const profile = player.profileId ? (profiles.find((item) => item.id === player.profileId) ?? null) : null
+  return { name: profile?.name ?? player.name, profile }
+}
+
+// Who sits in a seat, as the screens name them: a profile by the roster's name for it, a guest by
+// their own.
+export const getSeatIdentity = (players: PnpPlayer[], playerId: string, profiles: readonly Profile[]): PnpSeatIdentity => {
+  const player = players.find((item) => item.id === playerId)
+  return player ? identityOf(player, profiles) : { name: '', profile: null }
+}
 
 // The other players in seat order starting from the one after `playerId`, wrapping: the order ties
 // are broken in.
@@ -81,7 +104,7 @@ export const pickFairGuesser = (session: Pick<PnpSession, 'players' | 'standings
 // which has slid into its place.
 export const seatAfterRemoved = (remaining: PnpPlayer[], index: number): string => remaining[index % remaining.length].id
 
-const sameName = (a: string, b: string): boolean => a.toLocaleLowerCase() === b.toLocaleLowerCase()
+export const sameName = (a: string, b: string): boolean => a.toLocaleLowerCase() === b.toLocaleLowerCase()
 
 // Trimmed, single-spaced and capped, the way every name is kept. Empty when there's nothing left.
 export const normalizePlayerName = (name: string): string => name.replace(/\s+/g, ' ').trim().slice(0, MAX_PLAYER_NAME_LENGTH).trim()
@@ -92,13 +115,34 @@ export const isPlayerNameTaken = (players: PnpPlayer[], name: string, exceptId?:
 
 const SEAT_ID = /^p(\d+)$/
 
+// The first "Player N" from `number` up that no seat but `exceptId` goes by.
+const freeGuestName = (players: PnpPlayer[], number: number, exceptId?: string): string => {
+  let n = number
+  while (players.some((player) => player.id !== exceptId && sameName(player.name, `Player ${n}`))) n++
+  return `Player ${n}`
+}
+
 // A new seat: the next id never used by a seat at the table, and the first "Player N" from the new
 // seat's number up that nobody already goes by (a table of Player 1 and Player 3 adds Player 4).
 export const createPlayer = (players: PnpPlayer[]): PnpPlayer => {
   const highest = Math.max(0, ...players.map((player) => Number(SEAT_ID.exec(player.id)?.[1] ?? 0)))
-  let number = players.length + 1
-  while (players.some((player) => sameName(player.name, `Player ${number}`))) number++
-  return { id: `p${highest + 1}`, name: `Player ${number}`, profileId: null }
+  return { id: `p${highest + 1}`, name: freeGuestName(players, players.length + 1), profileId: null }
+}
+
+// The guest name a seat takes when it's handed back to a guest (from a profile, or clearing a name
+// another player now goes by): the first "Player N" from its own seat number up that nobody else at
+// the table goes by, so the second seat is Player 2 again whenever it can be.
+export const guestNameForSeat = (players: PnpPlayer[], playerId: string): string => freeGuestName(players, players.findIndex((player) => player.id === playerId) + 1, playerId)
+
+// Whether a seat's name can't stand: a guest's name has to differ from everyone else's at the table.
+// Two profiles may share one (the roster's names are the roster's; their chips tell them apart).
+const nameClashes = (players: PnpPlayer[], player: PnpPlayer): boolean => players.some((other) => other.id !== player.id && sameName(other.name, player.name) && !(player.profileId && other.profileId))
+
+// Every guest whose name another seat now goes by (a profile just seated, renamed or forgotten) takes
+// their seat's guest name instead (guestNameForSeat), in seat order. Mutates the list it's given (the
+// round slice's draft).
+export const settleGuestNames = (players: PnpPlayer[]): void => {
+  for (const player of players) if (!player.profileId && nameClashes(players, player)) player.name = guestNameForSeat(players, player.id)
 }
 
 // A new session's table: two guests, Player 1 writing first for Player 2.
@@ -113,7 +157,9 @@ export const createDefaultPnpSession = (): PnpSession => ({
   recordedRoundId: null
 })
 
-export const getStandingRows = (session: Pick<PnpSession, 'players' | 'standings'>): PnpStandingRow[] => session.players.map(({ id, name }) => ({ id, name, ...getStanding(session, id) }))
+// In seat order, each seat named and given its profile the way getSeatIdentity does (`profiles` is the
+// roster; without it every seat reads as its stored name, with no profile).
+export const getStandingRows = (session: Pick<PnpSession, 'players' | 'standings'>, profiles: readonly Profile[] = []): PnpStandingRow[] => session.players.map((player) => ({ id: player.id, ...identityOf(player, profiles), ...getStanding(session, player.id) }))
 
 // Positive when `b` has the better win rate, compared without division so equal rates (1 of 2 and
 // 2 of 4) are exactly equal.
@@ -158,18 +204,20 @@ const sanitizePlayers = (value: unknown): PnpPlayer[] | null => {
   for (const item of value) {
     if (!isRecord(item) || !isPlayerKey(item.id) || typeof item.name !== 'string') return null
     const name = normalizePlayerName(item.name)
-    if (!name || players.some((player) => player.id === item.id || sameName(player.name, name))) return null
     if (item.profileId !== null && !isPlayerKey(item.profileId)) return null
-    players.push({ id: item.id, name, profileId: item.profileId })
+    const player: PnpPlayer = { id: item.id, name, profileId: item.profileId }
+    if (!name || players.some((other) => other.id === item.id || (player.profileId !== null && other.profileId === player.profileId)) || nameClashes([...players, player], player)) return null
+    players.push(player)
   }
   return players.length >= MIN_PNP_PLAYERS && players.length <= MAX_PNP_PLAYERS ? players : null
 }
 
 // Checks a stored session before it's trusted (sanitizeRoundState runs it on the Pass & Play round's
 // session). A table that doesn't pass (too few or too many seats, a seat without a usable id or name,
-// two seats sharing one) starts a fresh session; with the table kept, a standing that doesn't pass is
-// dropped (that seat hasn't guessed), and a writer or guesser who isn't at the table falls back to the
-// first seat and the fair pick. `roundId` is the round stored with it: only a count of that round
+// two seats sharing an id, a guest going by another seat's name, one profile in two seats) starts a
+// fresh session; with the table kept, a standing that doesn't pass is dropped (that seat hasn't
+// guessed), and a writer or guesser who isn't at the table falls back to the first seat and the fair
+// pick. `roundId` is the round stored with it: only a count of that round
 // means anything (see recordedRoundId), so any other is dropped.
 export const sanitizePnpSession = (value: unknown, roundId: number | null): PnpSession => {
   const players = isRecord(value) ? sanitizePlayers(value.players) : null

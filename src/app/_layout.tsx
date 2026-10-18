@@ -43,6 +43,7 @@ const RootStack = (): JSX.Element => {
           <Stack.Screen name='loadout' />
           <Stack.Screen name='game' options={gameOptions} />
           <Stack.Screen name='achievements' />
+          <Stack.Screen name='profiles' />
           {/* Draws nothing of its own (see PlayScreen), so there's nothing to animate in. */}
           <Stack.Screen name='play' options={{ animation: 'none' }} />
         </Stack>

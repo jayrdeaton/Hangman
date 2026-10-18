@@ -1,11 +1,12 @@
 import { Provider } from '@rific/auto-paper'
 import { FeedbackPressProvider } from '@rific/feedback-press'
+import type { Profile } from '@tastic/profile'
 import { fireEvent, render as rtlRender } from '@testing-library/react-native'
 import type { ReactElement, ReactNode } from 'react'
 import { AccessibilityInfo, BackHandler, type StyleProp, StyleSheet, type ViewStyle } from 'react-native'
 import * as RNPaper from 'react-native-paper'
 
-import { fitAnswerFontSize, type PnpRoundSummary, RoundEndDialog, type RoundEndDialogProps } from '@/components/RoundEndDialog'
+import { fitAnswerFontSize, type PnpRoundSummary, RoundEndDialog, type RoundEndDialogProps, upNextLineCount } from '@/components/RoundEndDialog'
 import { SketchWord, sketchWordWidth } from '@/components/SketchWord'
 
 // SketchWord draws SVG strokes, so the answer is checked through the props each word is given.
@@ -52,6 +53,12 @@ const renderDialog = (props: Partial<RoundEndDialogProps> = {}) =>
 
 // The props of every SketchWord in the most recent render, one per answer word.
 const answerWords = (wordCount: number) => mockSketchWord.mock.calls.slice(-wordCount).map(([props]) => props)
+
+// Players on the roster: each chip shows its profile's tag.
+const ALICE: Profile = { id: 'profile-a', name: 'Alice', color: '#9c27b0', tag: 'A', createdAt: 1, updatedAt: 1 }
+const BOB: Profile = { id: 'profile-b', name: 'Bob', color: '#4caf50', tag: 'B', createdAt: 2, updatedAt: 2 }
+const SOLVED_IT = { id: 'first_ever_win', title: 'Solved It', icon: 'star', tier: 'bronze' as const }
+const DAY_ONE = { id: 'days_played_1', title: 'Day One', icon: 'calendar', tier: 'bronze' as const }
 
 describe('RoundEndDialog', () => {
   beforeEach(() => {
@@ -111,13 +118,58 @@ describe('RoundEndDialog', () => {
     expect(themeColors().error).not.toBe('#DC362E')
   })
 
+  // A solo round's unlocks belong to whoever played it: a profile is named, beside their chip.
+  it("names a profile's unlocks after them, and announces them that way", async () => {
+    const announce = jest.spyOn(AccessibilityInfo, 'announceForAccessibility')
+    const unlocksOwner = { id: 'profile-a', name: 'Alice', color: '#9c27b0', tag: 'A', createdAt: 1, updatedAt: 1 }
+    const unlockedAchievements = [{ id: 'first_ever_win', title: 'Solved It', icon: 'star', tier: 'bronze' as const }]
+    const { getByText, queryByText } = await renderDialog({ unlocks: [{ owner: unlocksOwner, achievements: unlockedAchievements }] })
+
+    expect(getByText('Alice Unlocked')).toBeTruthy()
+    expect(queryByText('Achievement Unlocked')).toBeNull()
+    expect(getByText('Solved It')).toBeTruthy()
+    // Her chip, with her tag, leads the heading.
+    expect(getByText('Alice Unlocked').parent!.children.length).toBe(2)
+    expect(getByText('A')).toBeTruthy()
+    expect(announce).toHaveBeenLastCalledWith(expect.stringContaining('Alice unlocked: Solved It.'))
+    announce.mockRestore()
+  })
+
+  // A Pass & Play round's guesser and writer can both be profiles, each with their own unlocks.
+  it("shows each player's unlocks under their own name, and announces each block", async () => {
+    const announce = jest.spyOn(AccessibilityInfo, 'announceForAccessibility')
+    const { getByText } = await renderDialog({
+      unlocks: [
+        { owner: ALICE, achievements: [SOLVED_IT] },
+        { owner: BOB, achievements: [DAY_ONE] }
+      ]
+    })
+
+    expect(getByText('Alice Unlocked')).toBeTruthy()
+    expect(getByText('Bob Unlocked')).toBeTruthy()
+    expect(announce).toHaveBeenLastCalledWith(expect.stringContaining('Alice unlocked: Solved It. Bob unlocked: Day One.'))
+    announce.mockRestore()
+  })
+
+  it('leaves out a block with nothing in it', async () => {
+    const { queryByText, getByText } = await renderDialog({
+      unlocks: [
+        { owner: null, achievements: [SOLVED_IT] },
+        { owner: BOB, achievements: [] }
+      ]
+    })
+
+    expect(getByText('Achievement Unlocked')).toBeTruthy()
+    expect(queryByText('Bob Unlocked')).toBeNull()
+  })
+
   it("lists new achievements with their own icon on their tier's color, and shows pack progress on wins only", async () => {
     const categoryProgress = { label: 'Animals', unlockedCount: 3, totalCount: 40 }
     const unlockedAchievements = [
       { id: 'first_ever_win', title: 'Solved It', icon: 'star', tier: 'bronze' as const },
       { id: 'flawless_debut', title: "Beginner's Luck", icon: 'star-circle', tier: 'gold' as const }
     ]
-    const { getByText } = await renderDialog({ categoryProgress, unlockedAchievements })
+    const { getByText } = await renderDialog({ categoryProgress, unlocks: [{ owner: null, achievements: unlockedAchievements }] })
 
     expect(getByText('Achievements Unlocked')).toBeTruthy()
     expect(getByText('Solved It')).toBeTruthy()
@@ -259,6 +311,33 @@ describe('RoundEndDialog (Pass & Play)', () => {
     expect(onEndSession).toHaveBeenCalledTimes(1)
   })
 
+  // A player sitting as a profile is named with their chip; with one at the table, a guest's standing
+  // keeps the chip's room, so the names line up.
+  it("puts a profile's chip beside their name on the who-guessed line, the standings and the next-writer line", async () => {
+    const bo = { ...BOB, name: 'Bo' }
+    const { getAllByText, getAllByTestId, getByText } = await renderDialog({
+      passAndPlay: summary({
+        guesserProfile: bo,
+        nextWriterProfile: bo,
+        standings: [
+          { id: 'p1', name: 'Ann', profile: null, played: 0, wins: 0 },
+          { id: 'p2', name: 'Bo', profile: bo, played: 2, wins: 1 }
+        ]
+      })
+    })
+
+    expect(getAllByText('B')).toHaveLength(3)
+    expect(getAllByTestId('player-mark-slot')).toHaveLength(1)
+    expect(getByText("Bo solved Ann's word.")).toBeTruthy()
+    expect(getByText('Bo writes next')).toBeTruthy()
+  })
+
+  it('draws no chips, and holds no room for any, at a table of guests', async () => {
+    const { queryAllByTestId } = await renderDialog({ passAndPlay: summary() })
+
+    expect(queryAllByTestId('player-mark-slot')).toHaveLength(0)
+  })
+
   it('keeps the solo card to its own rows', async () => {
     const { queryByText } = await renderDialog()
 
@@ -307,6 +386,98 @@ describe('RoundEndDialog (Pass & Play)', () => {
 
       expect(answerWords(1)[0].fontSize).toBe(40)
     })
+  })
+})
+
+// The solo card's hot swap: who plays the next puzzle.
+describe('RoundEndDialog (Up Next)', () => {
+  const upNext = (overrides: Partial<NonNullable<RoundEndDialogProps['upNext']>> = {}) => ({ profiles: [BOB, ALICE], selectedId: ALICE.id, onSelect: jest.fn(), ...overrides })
+  const chipSelected = (screen: Awaited<ReturnType<typeof renderDialog>>, name: string) => screen.getByLabelText(`Up next: ${name}`).props.accessibilityState?.selected
+
+  beforeEach(() => {
+    mockSketchWord.mockClear()
+    mockIcon.mockClear()
+  })
+
+  it('has no row with nobody on the roster, or none passed', async () => {
+    const empty = await renderDialog({ upNext: upNext({ profiles: [] }) })
+    expect(empty.queryByText('Up Next')).toBeNull()
+    expect(empty.queryByLabelText('Up next: Guest')).toBeNull()
+
+    const none = await renderDialog()
+    expect(none.queryByText('Up Next')).toBeNull()
+  })
+
+  it('lists the guest, then every profile by name with its chip, the pick selected', async () => {
+    const screen = await renderDialog({ upNext: upNext() })
+
+    expect(screen.getByText('Up Next')).toBeTruthy()
+    expect(screen.getAllByLabelText(/^Up next: /).map((chip) => chip.props.accessibilityLabel)).toEqual(['Up next: Guest', 'Up next: Alice', 'Up next: Bob'])
+    expect(chipSelected(screen, 'Alice')).toBe(true)
+    expect(chipSelected(screen, 'Guest')).toBe(false)
+    expect(chipSelected(screen, 'Bob')).toBe(false)
+    // Each profile's chip carries its tag; the guest has none.
+    expect(screen.getByText('A')).toBeTruthy()
+    expect(screen.getByText('B')).toBeTruthy()
+  })
+
+  it('selects the guest when the guest is picked', async () => {
+    const screen = await renderDialog({ upNext: upNext({ selectedId: null }) })
+
+    expect(chipSelected(screen, 'Guest')).toBe(true)
+    expect(chipSelected(screen, 'Alice')).toBe(false)
+  })
+
+  it('reports a pick and does nothing else: Next is still the only way on', async () => {
+    const onSelect = jest.fn()
+    const onDismiss = jest.fn()
+    const screen = await renderDialog({ upNext: upNext({ onSelect }), onDismiss })
+
+    await fireEvent.press(screen.getByLabelText('Up next: Bob'))
+    await fireEvent.press(screen.getByLabelText('Up next: Guest'))
+
+    expect(onSelect.mock.calls).toEqual([[BOB.id], [null]])
+    expect(onDismiss).not.toHaveBeenCalled()
+  })
+
+  it('has no row on a Pass & Play card', async () => {
+    const screen = await renderDialog({ passAndPlay: { guesserId: 'p2', guesserName: 'Bo', writerName: 'Ann', nextWriterName: 'Bo', standings: [] } })
+
+    expect(screen.queryByText('Up Next')).toBeNull()
+  })
+
+  describe('on a small phone', () => {
+    const LONG = 'THE WOMAN IN THE HOUSE ACROSS THE STREET FROM THE GIRL IN THE WINDOW'
+    const answerSize = () => answerWords(LONG.split(' ').length)[0].fontSize
+    let insets: jest.SpyInstance
+    beforeEach(() => {
+      insets = jest.spyOn(require('react-native-safe-area-context'), 'useSafeAreaInsets').mockReturnValue({ top: 333, bottom: 334, left: 0, right: 0 })
+    })
+    afterEach(() => insets.mockRestore())
+
+    // The row scrolls with the answer, so it takes room the answer would otherwise have; the room
+    // is guessed from the names alone, so a new pick never resizes the answer under the player.
+    it('leaves the answer less room for the row, the same whoever is picked', async () => {
+      await renderDialog({ phrase: LONG, guessedLetters: [] })
+      const withoutRow = answerSize()
+
+      await renderDialog({ phrase: LONG, guessedLetters: [], upNext: upNext() })
+      const withRow = answerSize()
+
+      await renderDialog({ phrase: LONG, guessedLetters: [], upNext: upNext({ selectedId: null }) })
+
+      expect(withRow).toBeLessThan(withoutRow)
+      expect(answerSize()).toBe(withRow)
+    })
+  })
+})
+
+describe('upNextLineCount', () => {
+  it('wraps the chips onto as many lines as their names need', () => {
+    expect(upNextLineCount(['Guest', 'Alice', 'Bob'], 312)).toBe(1)
+    expect(upNextLineCount(['Guest', 'Alexandria', 'Bartholomew', 'Christopher'], 312)).toBe(3)
+    // A name too long for a whole line still takes just its own.
+    expect(upNextLineCount(['A'.repeat(40), 'Bo'], 312)).toBe(2)
   })
 })
 

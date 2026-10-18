@@ -1,4 +1,5 @@
 import { ToastProvider } from '@rific/toaster'
+import { profilesActions } from '@tastic/profile'
 import { fireEvent, render as rtlRender, waitFor } from '@testing-library/react-native'
 import type { ReactElement, ReactNode } from 'react'
 import { PaperProvider } from 'react-native-paper'
@@ -42,7 +43,7 @@ const Wrapper = ({ children }: { children: ReactNode }) => (
 const render = (ui: ReactElement) => rtlRender(ui, { wrapper: Wrapper })
 
 // This file only covers what's specific to PackEditorDrawer's own shell - the accessibility-modal
-// wiring every sibling drawer's test (ModePickerDrawer.test.tsx, PackProgressDrawer.test.tsx) already
+// wiring every sibling drawer's test (ModePickerDrawer.test.tsx, PacksScreen.test.tsx) already
 // checks for its own panel, which nothing exercised for this one since it used to be an in-place
 // step inside PacksScreen rather than its own animated Drawer. Everything else about the form
 // itself (save/delete/share/validation) is already covered thoroughly through PacksScreen.test.tsx.
@@ -53,6 +54,7 @@ describe('PackEditorDrawer', () => {
     await loadCustomPacksCache()
     store.dispatch(achievementsActions.reset())
     store.dispatch(activePlayerActions.setActivePlayer(null))
+    store.dispatch(profilesActions.setAll([]))
     mockSuccess.mockClear()
   })
 
@@ -99,15 +101,17 @@ describe('PackEditorDrawer', () => {
     expect(store.getState().achievements.stats.customPacksCreated).toBe(1)
   })
 
-  // Whoever is playing makes the pack, so it counts toward their own custom pack achievements.
-  it('counts a new pack for the active player', async () => {
+  // Whoever is playing makes the pack, so it counts toward their own custom pack achievements, and
+  // its toast names them (LightCycles' caption).
+  it('counts a new pack for the active player, and names them under its unlock toast', async () => {
+    store.dispatch(profilesActions.setAll([{ id: 'profile-a', name: 'Alice', color: '#2196f3', tag: 'A', createdAt: 1, updatedAt: 1 }]))
     store.dispatch(activePlayerActions.setActivePlayer('profile-a'))
     const { getByTestId, getByText } = await render(<PackEditorDrawer visible editingKey={null} onDismiss={jest.fn()} onSaved={jest.fn()} onDelete={jest.fn()} onShare={jest.fn()} />)
 
     await fireEvent.changeText(getByTestId('entry-answer-0'), 'PARIS')
     await fireEvent.press(getByText('Save'))
 
-    await waitFor(() => expect(mockSuccess).toHaveBeenCalledWith('Pack Rat', 'Achievement unlocked', undefined, expect.anything()))
+    await waitFor(() => expect(mockSuccess).toHaveBeenCalledWith('Pack Rat', 'Alice unlocked', undefined, { color: '#CD7F32', icon: 'folder-plus-outline' }))
     expect(store.getState().achievements.stats.profiles['profile-a']?.customPacksCreated).toBe(1)
     expect(store.getState().achievements.unlocked).toHaveProperty('profile-a:first_custom_pack')
   })

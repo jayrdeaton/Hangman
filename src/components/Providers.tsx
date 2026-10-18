@@ -14,12 +14,14 @@ import { PersistGate } from 'redux-persist/integration/react'
 import { ActiveGameProvider } from '@/hooks/useActiveGame'
 import { CatalogProvider } from '@/hooks/useCatalog'
 import { GameStatsProvider } from '@/hooks/useGameStats'
+import { ProfilesProvider } from '@/hooks/useProfiles'
 import { persistor, type RootState, store } from '@/redux/store'
 
 import { AutoSaveCustomProvider } from './AutoSaveCustomProvider'
 import { Haptic } from './Haptic'
 import { KeyboardLayoutProvider } from './KeyboardLayoutProvider'
 import { PackSelectionProvider } from './PackSelectionProvider'
+import { PlayerSwatches } from './PlayerSwatches'
 import { PuzzleDefaultsProvider } from './PuzzleDefaultsProvider'
 import { Theme } from './Theme'
 
@@ -89,8 +91,16 @@ export const Providers = ({ children }: ProvidersProps): JSX.Element => (
                             {/* Inside PersistGate, so its one mount-time catalog sweep sees the
                                 rehydrated stats; and never keyed or gated, so it never remounts. */}
                             <GameStatsProvider>
-                              {/* Inside PersistGate too: the resume reads the rehydrated round slice. */}
-                              <ActiveGameProvider>{children}</ActiveGameProvider>
+                              {/* Inside GameStatsProvider and CatalogProvider: forgetting a profile
+                                  that's gone from the shared roster clears its stats and unlocked
+                                  puzzles. Holds everything below back until the launch reconcile is
+                                  in. */}
+                              <ProfilesProvider>
+                                <PlayerSwatches>
+                                  {/* Inside PersistGate too: the resume reads the rehydrated round slice. */}
+                                  <ActiveGameProvider>{children}</ActiveGameProvider>
+                                </PlayerSwatches>
+                              </ProfilesProvider>
                             </GameStatsProvider>
                           </PuzzleDefaultsProvider>
                         </PackSelectionProvider>

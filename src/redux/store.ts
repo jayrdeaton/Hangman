@@ -12,6 +12,7 @@ import achievements from './achievementsSlice'
 import activePlayer from './activePlayerSlice'
 import playerSettings from './playerSettingsSlice'
 import playerTheme from './playerThemeSlice'
+import profiles from './profilesSlice'
 import round from './roundSlice'
 
 // @rific/feedback-press's own soundReducer defaults `enabled` to true unconditionally (that
@@ -46,16 +47,18 @@ const rootReducer = combineReducers({
   // Stats and unlocked achievements (@tastic/achievements). Listed in the whitelist below, or nothing
   // in it would survive a relaunch.
   achievements,
-  // Who is playing (always the guest until profiles arrive), and what each player has picked: the art,
-  // difficulty and packs, and their colors. Each sanitizes what it rehydrates (see rehydrate.ts). All
-  // three are in the whitelist below for the same reason as achievements.
+  // The fleet's profile roster (see profilesSlice.ts), who is playing (a profile, or the guest), and
+  // what each player has picked: the art, difficulty and packs, and their colors. Each sanitizes what it
+  // rehydrates (see rehydrate.ts). All four are in the whitelist below for the same reason as
+  // achievements.
+  profiles,
   activePlayer,
   playerSettings,
   playerTheme,
   round: persistReducer(roundPersistConfig, round)
 })
 
-const persistConfig = { key: 'root', storage: AsyncStorage, whitelist: ['theme', 'haptic', 'sound', 'achievements', 'activePlayer', 'playerSettings', 'playerTheme', 'keepAwake'] }
+const persistConfig = { key: 'root', storage: AsyncStorage, whitelist: ['theme', 'haptic', 'sound', 'achievements', 'profiles', 'activePlayer', 'playerSettings', 'playerTheme', 'keepAwake'] }
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 
 export const store = configureStore({

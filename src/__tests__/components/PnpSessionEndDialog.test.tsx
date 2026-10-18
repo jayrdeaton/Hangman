@@ -1,3 +1,4 @@
+import type { Profile } from '@tastic/profile'
 import { fireEvent, render } from '@testing-library/react-native'
 import { AccessibilityInfo, BackHandler, StyleSheet } from 'react-native'
 
@@ -41,6 +42,28 @@ describe('PnpSessionEndDialog', () => {
     expect(getByText("It's a Tie!")).toBeTruthy()
     expect(getByText('Ann and Bo tied at 50%.')).toBeTruthy()
     expect(queryByText(/Wins!/)).toBeNull()
+  })
+
+  // The winner's chip under the header, when they sit as a profile; a tie's every profile.
+  it("shows a winning profile's chip, every tied profile's for a tie, and none for a guest", async () => {
+    const bo: Profile = { id: 'profile-b', name: 'Bo', color: '#4caf50', tag: 'BO', createdAt: 1, updatedAt: 1 }
+    const ann: Profile = { id: 'profile-a', name: 'Ann', color: '#9c27b0', tag: 'AN', createdAt: 1, updatedAt: 1 }
+    const won = await renderCard({ standings: [row('p1', 'Ann', 3, 1), { ...row('p2', 'Bo', 2, 2), profile: bo }] })
+    expect(won.getByText('Bo Wins!')).toBeTruthy()
+    expect(won.getAllByText('BO')).toHaveLength(2)
+    await won.unmount()
+
+    const tie = await renderCard({
+      standings: [
+        { ...row('p1', 'Ann', 2, 1), profile: ann },
+        { ...row('p2', 'Bo', 4, 2), profile: bo }
+      ]
+    })
+    expect(tie.getByTestId('session-crowned').children).toHaveLength(2)
+    await tie.unmount()
+
+    const guest = await renderCard()
+    expect(guest.queryByTestId('session-crowned')).toBeNull()
   })
 
   it('has no winner for a session nobody guessed in', async () => {

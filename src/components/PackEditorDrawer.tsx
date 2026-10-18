@@ -3,16 +3,15 @@ import { Drawer } from '@rific/drawer'
 import { Button, IconButton } from '@rific/feedback-press'
 import { useFocusChain } from '@rific/focus-chain'
 import { ScrollView, ScrollViewFooter, ScrollViewHeader, ScrollViewProvider } from '@rific/scroll-view'
-import { useToast } from '@rific/toaster'
 import { ConfirmDialog } from '@tastic/hud/chrome'
 import { JSX, memo, useMemo, useRef, useState } from 'react'
 import { Keyboard, StyleSheet, useWindowDimensions, View } from 'react-native'
 import { Text, TextInput } from 'react-native-paper'
 
-import { ACHIEVEMENT_TIER_COLORS } from '@/constants/achievements'
 import { DRAWER_PACK_DETAIL_Z_INDEX } from '@/constants/drawerStacking'
 import { useActivePlayer } from '@/hooks/useActivePlayer'
 import { useGameStats } from '@/hooks/useGameStats'
+import { useUnlockToasts } from '@/hooks/useUnlockToasts'
 import { CUSTOM_QUICK_PACK_LABEL, type CustomPack, type CustomPackEntryInput, getCustomPackPuzzles, saveCustomPack } from '@/utils/customPacks'
 import { normalizePhrase } from '@/utils/normalizePhrase'
 import { getPuzzleManifest } from '@/utils/puzzleCatalog'
@@ -77,8 +76,8 @@ type PackEditorFormProps = {
 
 const PackEditorForm = ({ editingKey, onSaved, onCancel, onDelete, onShare }: PackEditorFormProps): JSX.Element => {
   const theme = useAutoPaperTheme()
-  const { success } = useToast()
   const { recordCustomPackCreated } = useGameStats()
+  const showUnlockToasts = useUnlockToasts()
   // Whoever is playing makes the pack, so it counts toward their custom pack achievements.
   const { profileId } = useActivePlayer()
 
@@ -159,10 +158,9 @@ const PackEditorForm = ({ editingKey, onSaved, onCancel, onDelete, onShare }: Pa
       // achievements, so re-saving edits to an existing pack doesn't inflate them.
       if (!editingKey) {
         // No round-end card here to fold this into (unlike a solved puzzle: see GameScreen's
-        // handleSolved), so each unlock gets the fleet's achievement toast instead, from the
-        // @rific/toaster <Toaster/> mounted once in Providers.tsx: the achievement's title, then
-        // 'Achievement unlocked', in its tier's color with its own icon.
-        recordCustomPackCreated(profileId).forEach((achievement) => success(achievement.title, 'Achievement unlocked', undefined, { color: ACHIEVEMENT_TIER_COLORS[achievement.tier], icon: achievement.icon }))
+        // handleSolved), so each unlock gets the fleet's achievement toast instead (useUnlockToasts:
+        // its title, then whose it is, in its tier's color with its own icon).
+        showUnlockToasts(recordCustomPackCreated(profileId), profileId)
       }
       onSaved(pack)
     } finally {

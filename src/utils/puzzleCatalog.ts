@@ -12,7 +12,7 @@ export type PuzzleDifficultyTier = 'easy' | 'medium' | 'hard'
 // within a group. A group-less pack (Bands' own decade packs, and every custom pack - neither has a
 // `group`) sorts after every named group, not before: '￿' compares larger than any real group
 // name, so those items collect at the end rather than jumping ahead of "Animals" etc. This ordering
-// is what every caller that lists packs (PacksScreen, LoadoutScreen, PackProgressDrawer, StatsScreen) sees, since
+// is what every caller that lists packs (PacksScreen, SoloLoadout, StatsScreen) sees, since
 // they all read through this one function rather than sorting independently.
 const compareManifestItems = (a: PuzzleManifestItem, b: PuzzleManifestItem): number => {
   const groupCompare = (a.group ?? '￿').localeCompare(b.group ?? '￿', undefined, { numeric: true, sensitivity: 'base' })

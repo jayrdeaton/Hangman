@@ -15,8 +15,8 @@ export type PackRowProps = {
   // (e.g. "Sports" above "NFL"). Only rendered (and only recolors the card) when `isPack` is true
   // - see its own comment below for why a puzzle row inside a pack never sets this.
   group?: string
-  // True for a row that represents a whole PACK (SoloLoadout/PacksScreen/PackProgressDrawer's
-  // own pack lists) - false (the default) for a row that represents a single PUZZLE within one
+  // True for a row that represents a whole PACK (PacksScreen's pack lists, PackPuzzleList's
+  // pack summary) - false (the default) for a row that represents a single PUZZLE within one
   // (PackPuzzleList), which has no group of its own to show. Gates the group icon/eyebrow AND the
   // card's own tinted background: without this split, an ungrouped custom pack (group=== undefined,
   // meant to fall back to the "Custom" bucket - see packGroupStyle.ts) would be indistinguishable
@@ -28,8 +28,8 @@ export type PackRowProps = {
   // optional in that case; nothing else about the row depends on it being present.
   subtitleBadge?: ReactNode
   progress?: number
-  // No long press: every row action is a visible control (the Quick Start rows' remove button took
-  // over the hidden long press that used to unselect a pack).
+  // No long press: every row action is a visible control (a hidden long press used to unselect a
+  // pack).
   onPress?: () => void
   leading?: ReactNode
   trailing?: ReactNode
@@ -45,8 +45,8 @@ export type PackRowProps = {
   testID?: string
 }
 
-// Memoized: every caller now renders this as a FlatList renderItem (SoloLoadout/PacksScreen/
-// PackProgressDrawer's pack lists, up to 50 rows in the built-in manifest) rather than a plain
+// Memoized: the long lists render this as a FlatList renderItem (PacksScreen's pack list, up to 50
+// rows in the built-in manifest, and PackPuzzleList's puzzles) rather than a plain
 // .map() inside a ScrollView - this component is the actual list-item cost that virtualization
 // exists to avoid paying for off-screen rows, so keeping it a pure, memoizable presentational
 // component (no inline-recreated non-primitive props from its own body) matters here.
@@ -60,9 +60,8 @@ export const PackRow = memo(({ label, group, isPack = false, subtitle, subtitleB
   const card = (
     <Card style={[styles.card, groupColors ? { backgroundColor: groupColors.container } : null]} mode='contained' onPress={onPress} testID={testID}>
       <Card.Content style={styles.row}>
-        {/* The same badge-on-the-left shape as the loadout's own All Packs and Pack Progress rows
-            (Avatar.Icon at a vibrant triad color, size 40), so group identity reads at the same
-            glance-weight. */}
+        {/* A badge on the left (Avatar.Icon at a vibrant triad color, size 40), the same shape as
+            the Pass & Play seats' avatars, so group identity reads at the same glance-weight. */}
         {groupColors ? <Avatar.Icon size={40} icon={packGroupIcon(group)} color={groupColors.onColor} style={{ backgroundColor: groupColors.color }} /> : null}
         {leading}
         <View style={styles.text}>

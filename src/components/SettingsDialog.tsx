@@ -1,4 +1,4 @@
-import { useAutoPaperTheme } from '@rific/auto-paper'
+import { HarmonyPicker, useAutoPaperTheme, useThemeSettings } from '@rific/auto-paper'
 import { Button, SegmentedButtons } from '@rific/feedback-press'
 import { useUpdateErrorToast } from '@rific/toaster'
 import { BaseSettingsDialog } from '@tastic/hud/chrome'
@@ -32,11 +32,11 @@ const KEYBOARD_BUTTONS = [
 
 // The fleet's shared Settings sheet (the cog on Home, both loadouts and the game screen), the same
 // @tastic/hud BaseSettingsDialog every @tastic game wraps. It brings Sound, Haptics, Appearance and the
-// version with Check for Updates; Hangman adds the player's art, its keyboard layout and the progress
-// backup below Appearance. Not passed: Lock Orientation and Edge Guard (Hangman is portrait-locked by
-// the OS and has no edge-swipe controls) or How to Play (no guide yet), so those rows stay hidden.
-// rotation is 0 because Hangman never draws a rotation of its own. The palette picker isn't here: it
-// sits at the top of the loadouts (ColorsRow) until the player picker takes it over.
+// version with Check for Updates; Hangman adds the player's art and harmony, its keyboard layout and
+// the progress backup below Appearance. Not passed: Lock Orientation and Edge Guard (Hangman is
+// portrait-locked by the OS and has no edge-swipe controls) or How to Play (no guide yet), so those
+// rows stay hidden. rotation is 0 because Hangman never draws a rotation of its own. The player's color
+// isn't here: it's the player picker's color page, on the Single Player loadout (PlayerPicker).
 //
 // Must render inside Providers, like UpdateDialog: the update-error toast needs the ToastProvider and
 // the sheet's Portal needs the Portal.Host auto-paper's Provider mounts inside Theme.
@@ -51,6 +51,8 @@ export const SettingsDialog = ({ visible, onDismiss, onUnlocksChanged = () => {}
   const selectArt = useSelectArt()
   // The backup is the active player's: Export saves their unlocked puzzles, Import adds to them.
   const { key: playerKey } = useActivePlayer()
+  // The live theme's harmony is the active player's (Theme's PlayerThemeSync files a change under them).
+  const { settings: themeSettings, set: setThemeSettings } = useThemeSettings()
 
   const handleExport = async () => {
     try {
@@ -86,6 +88,11 @@ export const SettingsDialog = ({ visible, onDismiss, onUnlocksChanged = () => {}
           mid-round, it redraws the board behind the sheet (see useSelectArt). */}
       <SettingsSection label='ART'>
         <ArtPicker selected={mode} onSelect={selectArt} />
+      </SettingsSection>
+      {/* How the player's two other colors are drawn from their color (the picker's color page has
+          no harmony control): icons only, since six labels don't fit the sheet. */}
+      <SettingsSection label='HARMONY'>
+        <HarmonyPicker value={themeSettings.harmony} onChange={(harmony) => setThemeSettings({ harmony })} showLabels={false} />
       </SettingsSection>
       <SettingsSection label='KEYBOARD'>
         <SegmentedButtons value={layout} onValueChange={(value) => setLayout(value as typeof layout)} buttons={KEYBOARD_BUTTONS} />

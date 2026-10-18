@@ -1,6 +1,7 @@
+import { type Profile, profilesActions } from '@tastic/profile'
 import { act, fireEvent, render, waitFor, within } from '@testing-library/react-native'
 import { router } from 'expo-router'
-import { BackHandler } from 'react-native'
+import { BackHandler, View } from 'react-native'
 
 import { LoadoutScreen } from '@/components/LoadoutScreen'
 import { Providers } from '@/components/Providers'
@@ -42,6 +43,7 @@ beforeEach(() => {
   jest.clearAllMocks()
   store.dispatch(achievementsActions.reset())
   store.dispatch(roundActions.reset())
+  store.dispatch(profilesActions.setAll([]))
   backListeners = []
   addBackListener = jest.spyOn(BackHandler, 'addEventListener').mockImplementation((_event, listener) => {
     backListeners.push(listener as BackListener)
@@ -187,5 +189,207 @@ describe('PnpLoadout - standings', () => {
     expect(getByText('Standings')).toBeTruthy()
     const standings = within(getByTestId('pnp-standings'))
     expect(standings.getAllByLabelText(/solved|guessed/).map((entry) => entry.props.accessibilityLabel)).toEqual(['Player 2: 1 of 1 solved, 100%', 'Player 1: no words guessed yet', 'Player 3: no words guessed yet'])
+  })
+})
+
+// Each seat's picker, once there's a profile on the roster: who sits there, a guest or a profile.
+describe('PnpLoadout - seating profiles', () => {
+  const ALICE: Profile = { id: 'profile-a', name: 'Alice', color: '#9c27b0', tag: 'AL', createdAt: 1, updatedAt: 1 }
+  const BOB: Profile = { id: 'profile-b', name: 'Bob', color: '#4caf50', tag: 'BO', createdAt: 2, updatedAt: 2 }
+  const players = () => session().players
+  // A seat's popover only shows once hud's useAutoAlign has measured its trigger, and the jest
+  // preset's View never answers measureInWindow: this one does, from near the page's top left.
+  let measure: jest.SpyInstance
+  beforeEach(() => {
+    store.dispatch(profilesActions.setAll([ALICE, BOB]))
+    measure = jest.spyOn(View.prototype as unknown as { measureInWindow: (callback: (x: number, y: number, width: number, height: number) => void) => void }, 'measureInWindow').mockImplementation((callback) => callback(80, 160, 120, 28))
+  })
+  afterEach(() => {
+    measure.mockRestore()
+  })
+
+  type Screen = Awaited<ReturnType<typeof renderLoadout>>
+  // A seat's trigger is the name of whoever sits there, as the fleet's pickers write it.
+  const openSeat = (screen: Screen, name: string) => fireEvent.press(screen.getByLabelText(name.toUpperCase()))
+  const pick = async (screen: Screen, seatName: string, row: string) => {
+    await openSeat(screen, seatName)
+    await fireEvent.press(screen.getByText(row))
+  }
+
+  it('keeps every seat a plain guest row with nobody on the roster', async () => {
+    store.dispatch(profilesActions.setAll([]))
+    const { queryByLabelText, getByText } = await renderLoadout()
+
+    expect(getByText('Player 1')).toBeTruthy()
+    expect(queryByLabelText('PLAYER 1')).toBeNull()
+  })
+
+  it('gives every seat a picker named for who sits there: Guest, every profile, then Manage', async () => {
+    const screen = await renderLoadout()
+
+    expect(screen.getByLabelText('PLAYER 1')).toBeTruthy()
+    expect(screen.getByLabelText('PLAYER 2')).toBeTruthy()
+    await openSeat(screen, 'Player 2')
+
+    expect(screen.getByText('Guest')).toBeTruthy()
+    expect(screen.getByText('Alice')).toBeTruthy()
+    expect(screen.getByText('Bob')).toBeTruthy()
+    expect(screen.getByText('Manage')).toBeTruthy()
+  })
+
+  it("seats a profile under its own name and chip, with no rename, keeping the seat's turn", async () => {
+    const screen = await renderLoadout()
+
+    await pick(screen, 'Player 2', 'Alice')
+
+    expect(players()[1]).toEqual({ id: 'p2', name: 'Alice', profileId: ALICE.id })
+    expect(session()).toMatchObject({ writerId: 'p1', guesserId: 'p2' })
+    expect(screen.getByLabelText('ALICE')).toBeTruthy()
+    expect(screen.getByText('AL')).toBeTruthy()
+    expect(screen.queryByLabelText('Rename Alice')).toBeNull()
+    expect(screen.getByLabelText('Rename Player 1')).toBeTruthy()
+    // The popover closed with the pick.
+    expect(screen.queryByText('Manage')).toBeNull()
+  })
+
+  it('sits a profile in one seat at most', async () => {
+    const screen = await renderLoadout()
+    await pick(screen, 'Player 2', 'Alice')
+
+    await pick(screen, 'Player 1', 'Alice')
+
+    expect(players().map((player) => player.profileId)).toEqual([null, ALICE.id])
+    // Still open: a taken profile's row does nothing.
+    expect(screen.getByText('Manage')).toBeTruthy()
+  })
+
+  it("hands a seat back to a guest from Guest, under its own seat's Player N", async () => {
+    store.dispatch(roundActions.renamePnpPlayer({ id: 'p2', name: 'Grandma' }))
+    const screen = await renderLoadout()
+    await pick(screen, 'Grandma', 'Bob')
+
+    await pick(screen, 'Bob', 'Guest')
+
+    expect(players()[1]).toEqual({ id: 'p2', name: 'Player 2', profileId: null })
+    expect(screen.getByLabelText('PLAYER 2')).toBeTruthy()
+    expect(screen.getByLabelText('Rename Player 2')).toBeTruthy()
+  })
+
+  it("gives a guest going by the profile's name their seat's guest name", async () => {
+    store.dispatch(roundActions.renamePnpPlayer({ id: 'p1', name: 'alice' }))
+    const screen = await renderLoadout()
+
+    await pick(screen, 'Player 2', 'Alice')
+
+    expect(players().map((player) => player.name)).toEqual(['Player 1', 'Alice'])
+  })
+
+  it("won't let a guest be renamed to a seated profile's name", async () => {
+    const screen = await renderLoadout()
+    await pick(screen, 'Player 2', 'Alice')
+
+    await fireEvent.press(screen.getByLabelText('Rename Player 1'))
+    await fireEvent.changeText(screen.getByTestId('player-name-input'), 'ALICE')
+
+    expect(screen.getByText('Another player has this name')).toBeTruthy()
+    await fireEvent.press(screen.getByText('Save'))
+    expect(players()[0].name).toBe('Player 1')
+  })
+
+  // A seat's standing belongs to the seat: whoever sits there next carries it on.
+  it('asks before switching who sits in a seat with a standing, saying who takes it over, and keeps it on Cancel', async () => {
+    winRound()
+    const screen = await renderLoadout()
+
+    await pick(screen, 'Player 2', 'Bob')
+
+    expect(screen.getByText('Switch to Bob?')).toBeTruthy()
+    expect(screen.getByText("Bob takes over Player 2's standing this session: 1 of 1 solved.")).toBeTruthy()
+    expect(players()[1].profileId).toBeNull()
+
+    await fireEvent.press(screen.getByText('Cancel'))
+    await waitFor(() => expect(screen.queryByText('Switch to Bob?')).toBeNull())
+    expect(players()[1].profileId).toBeNull()
+
+    await pick(screen, 'Player 2', 'Bob')
+    await fireEvent.press(screen.getByText('Switch'))
+
+    expect(players()[1]).toEqual({ id: 'p2', name: 'Bob', profileId: BOB.id })
+    expect(session().standings).toEqual({ p2: { played: 1, wins: 1 } })
+  })
+
+  it("names the seat's next guest in the confirm when handing a seat with a standing back to a guest", async () => {
+    store.dispatch(roundActions.setPnpSeatProfile({ id: 'p2', profile: { id: BOB.id, name: BOB.name } }))
+    winRound()
+    const screen = await renderLoadout()
+
+    await pick(screen, 'Bob', 'Guest')
+
+    expect(screen.getByText('Switch to Player 2?')).toBeTruthy()
+    expect(screen.getByText("Player 2 takes over Bob's standing this session: 1 of 1 solved.")).toBeTruthy()
+  })
+
+  it('switches a seat that has played nothing straight away', async () => {
+    winRound()
+    const screen = await renderLoadout()
+
+    await pick(screen, 'Player 1', 'Alice')
+
+    expect(screen.queryByText('Switch to Alice?')).toBeNull()
+    expect(players()[0].profileId).toBe(ALICE.id)
+  })
+
+  it('opens the Profiles screen from Manage', async () => {
+    const screen = await renderLoadout()
+
+    await pick(screen, 'Player 1', 'Manage')
+
+    expect(router.push).toHaveBeenCalledWith('/profiles')
+    expect(screen.queryByText('Manage')).toBeNull()
+  })
+
+  it('closes on a press away', async () => {
+    const screen = await renderLoadout()
+    await openSeat(screen, 'Player 1')
+
+    await fireEvent.press(screen.getByLabelText('Dismiss'))
+
+    expect(screen.queryByText('Manage')).toBeNull()
+  })
+
+  it('closes an open seat picker on Android back first, then goes back', async () => {
+    const screen = await renderLoadout()
+    await openSeat(screen, 'Player 1')
+
+    await pressBack()
+    expect(screen.queryByText('Manage')).toBeNull()
+    expect(router.replace).not.toHaveBeenCalled()
+
+    await pressBack()
+    expect(router.replace).toHaveBeenCalledWith('/')
+  })
+
+  it('cancels the switch confirm on Android back, leaving the seat as it was', async () => {
+    winRound()
+    const screen = await renderLoadout()
+    await pick(screen, 'Player 2', 'Bob')
+
+    await pressBack()
+
+    await waitFor(() => expect(screen.queryByText('Switch to Bob?')).toBeNull())
+    expect(players()[1].profileId).toBeNull()
+    expect(router.replace).not.toHaveBeenCalled()
+  })
+
+  it("shows each seated profile's chip and roster name in the standings", async () => {
+    store.dispatch(roundActions.setPnpSeatProfile({ id: 'p2', profile: { id: BOB.id, name: BOB.name } }))
+    winRound()
+    store.dispatch(profilesActions.update({ id: BOB.id, patch: { name: 'Bobby' } }))
+    const { getByTestId } = await renderLoadout()
+
+    const standings = within(getByTestId('pnp-standings'))
+    expect(standings.getAllByLabelText(/solved|guessed/).map((entry) => entry.props.accessibilityLabel)).toEqual(['Bobby: 1 of 1 solved, 100%', 'Player 1: no words guessed yet'])
+    expect(standings.getByText('BO')).toBeTruthy()
+    expect(standings.getAllByTestId('player-mark-slot')).toHaveLength(1)
   })
 })

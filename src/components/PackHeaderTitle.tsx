@@ -6,8 +6,8 @@ import { Text, useTheme } from 'react-native-paper'
 // passes actionSize={40}), and an 8pt gap past it.
 const ACTION_CLEARANCE = 52
 
-// A pack's name as a drawer header's title (ScrollViewHeader's centerContent), for the pack views
-// (PackPuzzlesDrawer, PackProgressDrawer's drill-in). ScrollViewHeader's own title spans the whole bar,
+// A pack's name as a drawer header's title (ScrollViewHeader's centerContent), for the pack view
+// (PackPuzzlesDrawer). ScrollViewHeader's own title spans the whole bar,
 // which is fine for a fixed title like "Choose Packs", but a pack's name can be a custom pack's, up to 60
 // characters, and would run under the back arrow. This is the same type, cut short clear of both corners.
 export const PackHeaderTitle = ({ label }: { label: string }): JSX.Element => {

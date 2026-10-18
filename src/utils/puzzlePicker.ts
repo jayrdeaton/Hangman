@@ -116,8 +116,8 @@ const pickRandomPackPuzzle = (allowedKeys: Set<string>, unlockedByPack: PuzzleUn
   return { puzzle: picked.puzzle, normalizedAnswer: picked.normalized, pack: picked.pack }
 }
 
-// Shared by every way a puzzle gets drawn (the Single Player loadout's Random and quick-start rows,
-// the game screen's Next, a pack's own Random, a Pass & Play word, a share link) - one place picks
+// Shared by every way a puzzle gets drawn (the Single Player loadout's Ready, the game screen's Next,
+// a pack's own Play This Pack, a Pass & Play word, a share link) - one place picks
 // the word so they all stay in sync.
 //
 // packKeys is a separate argument, not a PuzzleConfig field: it's not something the caller stages
@@ -163,10 +163,10 @@ export const resolvePuzzle = (config: PuzzleConfig, packKeys: string[], unlocked
       puzzleId: randomPick.puzzle.id,
       difficultyTier: randomPick.puzzle.difficultyTier,
       hint: buildHint(randomPick.puzzle, randomPick.pack),
-      // A draw narrowed to exactly one pack (PackPuzzlesDrawer/PackProgressDrawer's own Random,
-      // or a selection of exactly one pack) means the player was intentionally browsing that pack
+      // A draw narrowed to exactly one pack (PackPuzzlesDrawer's Play This Pack, or a selection of
+      // exactly one pack) means the player was intentionally browsing that pack
       // - the round-end handler keeps drawing from just it. More than one means this came from the
-      // player's whole standing selection (the Single Player loadout's Random), so the next round
+      // player's whole standing selection (the Single Player loadout's Ready), so the next round
       // should draw from that same selection again, not get pinned to whichever pack happened to win.
       packScope: packKeys.length === 1 ? 'single' : 'selection'
     }

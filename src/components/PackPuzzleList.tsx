@@ -45,21 +45,18 @@ const emptyMessage = (statusFilter: PackPuzzleStatusFilter, difficultyFilter: Pa
 
 export type PackPuzzleListProps = {
   packKey: string | null
-  // The active player's unlocked puzzles, from the drawer showing this list (PackPuzzlesDrawer,
-  // PackProgressDrawer), which reads them only while it's open. Not read here: a closed drawer keeps
+  // The active player's unlocked puzzles, from the drawer showing this list (PackPuzzlesDrawer),
+  // which reads them only while it's open. Not read here: a closed drawer keeps
   // this list mounted, and a read of its own would follow every win behind the game screen.
   unlockMap: PuzzleUnlockMap
-  // Rows become tappable to play that exact puzzle when supplied. Omitted for read-only browsing
-  // (PacksScreen's "view contents" step) - that caller has no mode/difficulty context to actually
-  // start a round with, so there's nothing a tap could do.
+  // Rows become tappable to play that exact puzzle when supplied (PackPuzzlesDrawer always does);
+  // omitted, the list is read-only.
   onPlayPuzzle?: (puzzleId: string) => void
 }
 
-// The puzzle list for one pack, shared by every screen that shows "what's in this pack": browsing
-// to play (PackPuzzlesDrawer and PackProgressDrawer's own pack detail step, both onPlayPuzzle
-// wired up) and reviewing progress read-only (PacksScreen's "view contents" step, no
-// onPlayPuzzle). One row-rendering, masking, and progress implementation instead of
-// independently-maintained ones that had quietly drifted apart.
+// The puzzle list for one pack, "what's in this pack": PackPuzzlesDrawer's body, opened from Choose
+// Packs to browse a pack and play from it (onPlayPuzzle wired up). One row-rendering, masking, and
+// progress implementation instead of independently-maintained ones that had quietly drifted apart.
 export const PackPuzzleList = ({ packKey, unlockMap, onPlayPuzzle }: PackPuzzleListProps): JSX.Element => {
   const theme = useTheme()
   // Same four-way (Any + the three real tiers) vibrant/container set the loadout's own
@@ -79,8 +76,7 @@ export const PackPuzzleList = ({ packKey, unlockMap, onPlayPuzzle }: PackPuzzleL
     }),
     [theme.colors.primary, theme.colors.onPrimary, theme.colors.primaryContainer, theme.colors.onPrimaryContainer, theme.colors.secondary, theme.colors.onSecondary, theme.colors.secondaryContainer, theme.colors.onSecondaryContainer, theme.colors.tertiary, theme.colors.onTertiary, theme.colors.tertiaryContainer, theme.colors.onTertiaryContainer]
   )
-  // Every caller renders this inside a parent ScrollViewProvider now (see PackPuzzlesDrawer/
-  // PackProgressDrawer) - its floating ScrollViewHeader overlays whatever sits at the very top of
+  // Its caller renders this inside a parent ScrollViewProvider (see PackPuzzlesDrawer) - its floating ScrollViewHeader overlays whatever sits at the very top of
   // that provider, and progressHeader below is a plain in-flow sibling with no padding of its own
   // to clear it, unlike this file's own FlatList (which already gets a correct top inset for free
   // via useScrollList internally, see @rific/scroll-view's FlatList.tsx). headerHeight is null until
@@ -141,13 +137,12 @@ export const PackPuzzleList = ({ packKey, unlockMap, onPlayPuzzle }: PackPuzzleL
           long pack instead of scrolling away with row 1. paddingTop reserves space for the
           floating ScrollViewHeader above, which overlays rather than pushing this down itself. */}
       <View style={[styles.progressHeader, { paddingTop: (headerHeight ?? 0) + 12 }]}>
-        {/* The same PackRow every pack list (PacksScreen's Choose Packs/the loadout's Quick Start/
-            PackProgressDrawer's "Browse by pack") already uses for this exact pack - its group
-            icon+eyebrow, unlocked count, and progress bar, carried into the detail view it opens
-            rather than left behind the moment you drill in. Lives here rather than in the fixed
-            ScrollViewHeader above (PackPuzzlesDrawer's/PackProgressDrawer's own centerContent):
-            that header is a fixed-height band, absolutely positioned and clipped to fit only a
-            single title line - a 4-line PackRow doesn't fit it without getting cut off. No
+        {/* The same PackRow Choose Packs' list (PacksScreen) already uses for this exact pack - its
+            group icon+eyebrow, unlocked count, and progress bar, carried into the detail view it
+            opens rather than left behind the moment you drill in. Lives here rather than in the
+            fixed ScrollViewHeader above (PackPuzzlesDrawer's own centerContent): that header is a
+            fixed-height band, absolutely positioned and clipped to fit only a single title line - a
+            4-line PackRow doesn't fit it without getting cut off. No
             onPress/trailing - this is a read-only summary of the pack already open, not another
             navigable row. */}
         <View style={styles.packSummary}>
@@ -261,8 +256,8 @@ export const PackPuzzleList = ({ packKey, unlockMap, onPlayPuzzle }: PackPuzzleL
               contentContainerStyle={styles.listContent}
               keyboardShouldPersistTaps='handled'
               // Solid vibrant fill, not the chip's own default muted surface tint - matches every
-              // other accent across the app now (see PackProgressDrawer's own chipProps for this
-              // pattern), rather than being the one control that's still washed out.
+              // other accent across the app now (Choose Packs' chipProps do the same), rather than
+              // being the one control that's still washed out.
               chipProps={{ style: { backgroundColor: theme.colors.primary }, selectedColor: theme.colors.onPrimary }}
             />
           )}

@@ -1,4 +1,6 @@
-import { createDefaultPnpSession, createPlayer, formatWinRate, getSessionResult, getStanding, getStandingRows, hasStandings, isPlayerNameTaken, joinNames, MAX_PLAYER_NAME_LENGTH, normalizePlayerName, pickFairGuesser, type PnpPlayer, type PnpSession, type PnpStandingRow, rankStandingRows, sanitizePnpSession, seatAfterRemoved } from '@/utils/pnpSession'
+import type { Profile } from '@tastic/profile'
+
+import { createDefaultPnpSession, createPlayer, formatWinRate, getSeatIdentity, getSessionResult, getStanding, getStandingRows, guestNameForSeat, hasStandings, isPlayerNameTaken, joinNames, MAX_PLAYER_NAME_LENGTH, normalizePlayerName, pickFairGuesser, type PnpPlayer, type PnpSession, type PnpStandingRow, rankStandingRows, sanitizePnpSession, seatAfterRemoved, settleGuestNames } from '@/utils/pnpSession'
 
 const player = (id: string, name = `Name ${id}`): PnpPlayer => ({ id, name, profileId: null })
 const table = (...ids: string[]): PnpPlayer[] => ids.map((id) => player(id))
@@ -36,9 +38,24 @@ describe('standings', () => {
 
   it('lists every seat in seat order with its rounds', () => {
     expect(getStandingRows({ players: [player('p1', 'Ann'), player('p2', 'Bo')], standings: { p2: { played: 3, wins: 2 } } })).toEqual([
-      { id: 'p1', name: 'Ann', played: 0, wins: 0 },
-      { id: 'p2', name: 'Bo', played: 3, wins: 2 }
+      { id: 'p1', name: 'Ann', profile: null, played: 0, wins: 0 },
+      { id: 'p2', name: 'Bo', profile: null, played: 3, wins: 2 }
     ])
+  })
+
+  // A profile's seat goes by the roster's name for it, live, with the profile for its chip.
+  it("names a profile's seat from the roster, and reads one whose profile has left it as its stored name", () => {
+    const alice: Profile = { id: 'profile-a', name: 'Alice Liddell', color: '#9c27b0', tag: 'A', createdAt: 1, updatedAt: 1 }
+    const players = [player('p1', 'Ann'), { id: 'p2', name: 'Alice', profileId: alice.id }, { id: 'p3', name: 'Gone', profileId: 'profile-gone' }]
+
+    expect(getStandingRows({ players, standings: {} }, [alice])).toEqual([
+      { id: 'p1', name: 'Ann', profile: null, played: 0, wins: 0 },
+      { id: 'p2', name: 'Alice Liddell', profile: alice, played: 0, wins: 0 },
+      { id: 'p3', name: 'Gone', profile: null, played: 0, wins: 0 }
+    ])
+    expect(getSeatIdentity(players, 'p2', [alice])).toEqual({ name: 'Alice Liddell', profile: alice })
+    expect(getSeatIdentity(players, 'p1', [alice])).toEqual({ name: 'Ann', profile: null })
+    expect(getSeatIdentity(players, 'p9', [alice])).toEqual({ name: '', profile: null })
   })
 })
 
@@ -110,6 +127,33 @@ describe('createPlayer', () => {
   })
 })
 
+// A seat handed back to a guest, and the guests a profile's name would clash with.
+describe('guest names', () => {
+  const seated = (id: string, name: string, profileId: string): PnpPlayer => ({ id, name, profileId })
+
+  it("gives a seat its own number's Player N when nobody else goes by it", () => {
+    expect(guestNameForSeat([player('p1', 'Player 1'), seated('p2', 'Alice', 'profile-a'), player('p3', 'Player 3')], 'p2')).toBe('Player 2')
+  })
+
+  it('counts up from there past every name at the table, profiles included', () => {
+    const players = [player('p1', 'Player 2'), seated('p2', 'Alice', 'profile-a'), seated('p3', 'Player 3', 'profile-c'), player('p4', 'Player 5')]
+    expect(guestNameForSeat(players, 'p2')).toBe('Player 4')
+  })
+
+  it("renames a guest going by a profile's name to their seat's guest name, and nobody else", () => {
+    const players = [player('p1', 'alice'), seated('p2', 'Alice', 'profile-a'), player('p3', 'Bo')]
+    settleGuestNames(players)
+    expect(players.map((item) => item.name)).toEqual(['Player 1', 'Alice', 'Bo'])
+  })
+
+  // The roster's names are the roster's: two profiles may share one, told apart by their chips.
+  it('leaves two profiles sharing a name alone', () => {
+    const players = [seated('p1', 'Sam', 'profile-a'), seated('p2', 'Sam', 'profile-b')]
+    settleGuestNames(players)
+    expect(players.map((item) => item.name)).toEqual(['Sam', 'Sam'])
+  })
+})
+
 describe('the session result', () => {
   it('has no result when nobody has guessed', () => {
     expect(getSessionResult([row('p1', 0, 0), row('p2', 0, 0)])).toEqual({ kind: 'none' })
@@ -154,6 +198,19 @@ describe('sanitizePnpSession', () => {
     expect(sanitizePnpSession(session, ROUND)).toEqual(session)
   })
 
+  it('keeps two profiles sharing a name', () => {
+    const session = {
+      ...valid(),
+      players: [
+        { ...player('p1', 'Sam'), profileId: 'profile-1' },
+        { ...player('p2', 'Sam'), profileId: 'profile-2' }
+      ],
+      writerId: 'p1',
+      guesserId: 'p2'
+    }
+    expect(sanitizePnpSession(session, ROUND)).toEqual(session)
+  })
+
   it.each([
     ['nothing stored', undefined],
     ['a string', 'session'],
@@ -165,6 +222,17 @@ describe('sanitizePnpSession', () => {
     ['a seat id with a colon', { ...valid(), players: [player('p1'), player('p:2')] }],
     ['two seats with one id', { ...valid(), players: [player('p1', 'Ann'), player('p1', 'Bo')] }],
     ['two seats with one name', { ...valid(), players: [player('p1', 'Ann'), player('p2', 'ANN')] }],
+    ["a guest going by a profile's name", { ...valid(), players: [{ ...player('p1', 'Ann'), profileId: 'profile-1' }, player('p2', 'ann')] }],
+    [
+      'one profile in two seats',
+      {
+        ...valid(),
+        players: [
+          { ...player('p1', 'Ann'), profileId: 'profile-1' },
+          { ...player('p2', 'Bo'), profileId: 'profile-1' }
+        ]
+      }
+    ],
     ['a blank name', { ...valid(), players: [player('p1'), player('p2', '   ')] }],
     ['a name that is not a string', { ...valid(), players: [player('p1'), { id: 'p2', name: 2, profileId: null }] }],
     ['a profile that is not a string', { ...valid(), players: [player('p1'), { id: 'p2', name: 'Bo', profileId: 4 }] }],

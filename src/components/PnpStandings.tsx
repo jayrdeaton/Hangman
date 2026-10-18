@@ -4,6 +4,8 @@ import { Text } from 'react-native-paper'
 
 import { formatWinRate, type PnpStandingRow } from '@/utils/pnpSession'
 
+import { PlayerMark } from './PlayerIdentity'
+
 // One row's height (a bodyLarge line) and the space between rows, for a card that budgets its height
 // around the list (see RoundEndDialog's fitAnswerFontSize budget).
 export const STANDINGS_ROW_HEIGHT = 24
@@ -12,6 +14,9 @@ export const STANDINGS_ROW_GAP = 4
 // More players than this and the round-over card lays the standings out in two columns, so a full
 // table takes no more of the card's height than four players do (see RoundEndDialog's budget).
 export const STANDINGS_ONE_COLUMN_MAX = 4
+
+// A profile's chip before its name, a line tall less a little air.
+const STANDINGS_CHIP_SIZE = 20
 
 export type PnpStandingsListProps = {
   // In the order they're shown: seat order on the round-over card, ranked on the session's last card.
@@ -32,13 +37,17 @@ export const standingsLineCount = (count: number, columns: 1 | 2): number => Mat
 
 // A Pass & Play session's standings, one entry per player: the name, then the words solved out of the
 // words guessed ("2 of 3"), or the fleet's "-" for a player who hasn't guessed yet. Each entry reads
-// as one sentence to a screen reader.
+// as one sentence to a screen reader. A player sitting as a profile has their chip before their name
+// (PlayerIdentity), and with one at the table every guest's name keeps the chip's room, so the names
+// line up.
 export const PnpStandingsList = ({ rows, columns = 1, color, mutedColor, highlightId, showRate = false }: PnpStandingsListProps): JSX.Element => {
+  const withChips = rows.some((row) => row.profile)
   const entry = (row: PnpStandingRow) => {
     const guessed = row.played > 0
     const textStyle = [styles.text, row.id === highlightId && styles.highlight, { color: guessed ? color : mutedColor }]
     return (
       <View key={row.id} accessible accessibilityLabel={guessed ? `${row.name}: ${row.wins} of ${row.played} solved${showRate ? `, ${formatWinRate(row)}` : ''}` : `${row.name}: no words guessed yet`} style={[styles.entry, columns > 1 && styles.cell]}>
+        {withChips ? <PlayerMark profile={row.profile} size={STANDINGS_CHIP_SIZE} reserve /> : null}
         {/* One line: a long name gives way (with an ellipsis) to the numbers beside it. */}
         <Text variant='bodyLarge' numberOfLines={1} style={[textStyle, styles.name]}>
           {row.name}

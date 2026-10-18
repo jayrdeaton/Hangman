@@ -1,5 +1,6 @@
 import { Button } from '@rific/feedback-press'
 import { DialogHeader, overlayActionStyles, OverlayBackdrop, OverlayCard, useOverlayCardColors } from '@tastic/hud/chrome'
+import { ProfileChip } from '@tastic/profile'
 import { JSX, useEffect, useMemo, useRef } from 'react'
 import { AccessibilityInfo, BackHandler, ScrollView, StyleSheet, useWindowDimensions, View } from 'react-native'
 import { Portal, Text, useTheme } from 'react-native-paper'
@@ -22,6 +23,8 @@ export type PnpSessionEndDialogProps = {
 
 // The same 24 from the screen edges as every fleet card, plus the safe area top and bottom.
 const SCREEN_GUTTER = 24
+// The winner's chip (or the tied players'), under the header.
+const CROWNED_CHIP_SIZE = 40
 
 const ICONS: Record<PnpSessionResult['kind'], string> = { winner: 'trophy', tie: 'handshake-outline', none: 'flag-checkered' }
 
@@ -36,7 +39,8 @@ const summaryFor = (result: PnpSessionResult, standings: PnpStandingRow[]): stri
 // End Session's card: the fleet's result card (@tastic/hud's OverlayBackdrop and OverlayCard, like
 // RoundEndDialog) with the session's winner (the best win rate among the players who guessed at least
 // once), a tie (equal best rates) or no winner (nobody solved a word), every player's standing ranked,
-// then Keep Playing and Done. Nothing about it is saved: the game screen ends the session only on
+// then Keep Playing and Done. A winner sitting as a profile has their chip under the header (each tied
+// profile, for a tie), and the standings carry every profile's chip. Nothing about it is saved: the game screen ends the session only on
 // Done, and a relaunch with this card up comes back to the session as it was, the next word to write.
 //
 // No backdrop dismissal, like every fleet card; Android's back button is Keep Playing, so a stray back
@@ -50,6 +54,8 @@ export const PnpSessionEndDialog = ({ visible, standings, onDone, onKeepPlaying 
   const ranked = useMemo(() => rankStandingRows(standings), [standings])
   const result = useMemo(() => getSessionResult(standings), [standings])
   const summary = summaryFor(result, standings)
+  const crowned = result.kind === 'winner' ? [result.winner] : result.kind === 'tie' ? result.tied : []
+  const crownedProfiles = crowned.flatMap((row) => (row.profile ? [row.profile] : []))
 
   // A plain overlay, not a native modal, so nothing tells a screen reader it appeared.
   useEffect(() => {
@@ -79,6 +85,13 @@ export const PnpSessionEndDialog = ({ visible, standings, onDone, onKeepPlaying 
       <OverlayBackdrop style={[styles.overlay, { paddingBottom: insets.bottom + SCREEN_GUTTER, paddingTop: insets.top + SCREEN_GUTTER }]}>
         <OverlayCard accessibilityViewIsModal style={[styles.card, { maxHeight: windowHeight - insets.top - insets.bottom - SCREEN_GUTTER * 2 }]}>
           <DialogHeader icon={ICONS[result.kind]} title={titleFor(result)} color={result.kind === 'winner' ? theme.colors.primary : fg} />
+          {crownedProfiles.length > 0 ? (
+            <View testID='session-crowned' style={styles.crowned}>
+              {crownedProfiles.map((profile) => (
+                <ProfileChip key={profile.id} profile={profile} size={CROWNED_CHIP_SIZE} />
+              ))}
+            </View>
+          ) : null}
           <Text variant='bodyLarge' style={[styles.summary, { color: fg }]}>
             {summary}
           </Text>
@@ -105,6 +118,7 @@ const styles = StyleSheet.create({
   body: { alignSelf: 'stretch', flexGrow: 0, flexShrink: 1 },
   bodyContent: { alignSelf: 'stretch' },
   card: { width: '100%' },
+  crowned: { flexDirection: 'row', flexWrap: 'wrap', gap: 8, justifyContent: 'center' },
   overlay: { paddingHorizontal: SCREEN_GUTTER },
   summary: { textAlign: 'center' }
 })

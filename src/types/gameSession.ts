@@ -14,8 +14,8 @@ export type GameStartPayload = {
   puzzleId?: string
   difficultyTier?: PuzzleDifficultyTier
   // Whether this puzzle was drawn from a single pack the player was already browsing ('single' -
-  // PackPuzzlesDrawer/PackProgressDrawer's own Random button or a row tap) or from the player's
-  // whole standing pack selection ('selection' - the Single Player loadout's Random button). The
+  // PackPuzzlesDrawer's Play This Pack or a row tap) or from the player's whole standing pack
+  // selection ('selection' - the Single Player loadout's Ready). The
   // game screen's Next (SoloRound's drawNext in GameScreen.tsx) reads this to decide whether the
   // next puzzle should stay narrowed to that one pack or draw from the full selection again - see
   // resolvePuzzle/resolveChosenPuzzle.

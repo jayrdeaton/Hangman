@@ -1,3 +1,5 @@
+import { type Profile, profilesActions } from '@tastic/profile'
+
 import reducer, { initialRoundState, roundActions, type RoundState, type SavedPuzzle, selectSoloRound } from '@/redux/roundSlice'
 import { GUEST_PLAYER_KEY } from '@/utils/players'
 import { createDefaultPnpSession, type PnpSession } from '@/utils/pnpSession'
@@ -88,6 +90,159 @@ describe("each player's own solo round", () => {
 
     expect(reducer(before, roundActions.clearSolo(OTHER)).solo[GUEST_PLAYER_KEY]).toEqual(before.solo[GUEST_PLAYER_KEY])
     expect(reducer(before, roundActions.removeSolo(OTHER)).solo).toEqual({ [GUEST_PLAYER_KEY]: before.solo[GUEST_PLAYER_KEY] })
+  })
+})
+
+// A forgotten profile (usePlayerData's forgetPlayer): their Pass & Play seats stay at the table as guests.
+describe('clearPnpProfile', () => {
+  it('turns every seat holding that profile into a guest, keeping its name, the standings and the turn', () => {
+    const base = midGame()
+    const players = base.pnp.session.players.map((player, index) => ({ ...player, profileId: index === 0 ? OTHER : 'profile-b' }))
+    const before: RoundState = { ...base, pnp: { ...base.pnp, session: { ...base.pnp.session, players, standings: { [players[0].id]: { played: 2, wins: 1 } } } } }
+
+    const next = reducer(before, roundActions.clearPnpProfile(OTHER))
+
+    expect(next.pnp.session.players).toEqual([{ ...players[0], profileId: null }, players[1]])
+    expect(next.pnp.session.standings).toEqual(before.pnp.session.standings)
+    expect({ writerId: next.pnp.session.writerId, guesserId: next.pnp.session.guesserId }).toEqual({ writerId: before.pnp.session.writerId, guesserId: before.pnp.session.guesserId })
+    expect(next.pnp.puzzle).toEqual(before.pnp.puzzle)
+  })
+
+  it('changes nothing when no seat holds that profile', () => {
+    const before = midGame()
+
+    expect(reducer(before, roundActions.clearPnpProfile(OTHER))).toEqual(before)
+  })
+
+  // Two profiles may share a name; a guest may not share one with anybody.
+  it('gives the seat its guest name when another profile at the table goes by the name it had', () => {
+    const seatTwo = (state: RoundState) => state.pnp.session.players[1]
+    const before = run([roundActions.setPnpSeatProfile({ id: 'p1', profile: { id: OTHER, name: 'Sam' } }), roundActions.setPnpSeatProfile({ id: 'p2', profile: { id: 'profile-b', name: 'Sam' } })])
+    expect(seatTwo(before)).toEqual({ id: 'p2', name: 'Sam', profileId: 'profile-b' })
+
+    const next = reducer(before, roundActions.clearPnpProfile('profile-b'))
+
+    expect(seatTwo(next)).toEqual({ id: 'p2', name: 'Player 2', profileId: null })
+    expect(next.pnp.session.players[0]).toEqual({ id: 'p1', name: 'Sam', profileId: OTHER })
+  })
+})
+
+// Who sits in each Pass & Play seat: a guest, or a profile from the roster.
+describe('setPnpSeatProfile', () => {
+  const ALICE = { id: OTHER, name: 'Alice' }
+  const players = (state: RoundState) => state.pnp.session.players
+  const seat = (id: string, profile: { id: string; name: string } | null) => roundActions.setPnpSeatProfile({ id, profile })
+
+  it("seats a profile under the profile's name, keeping the seat's id, standing and turn", () => {
+    const before = run([roundActions.startPnpAuthoring(), roundActions.setPnpWord(puzzle({ phrase: 'CAT', sourceMode: 'custom' })), roundActions.startPnpPlaying(), roundActions.savePnpProgress({ guessedLetters: ['C', 'A', 'T'], hintRevealed: false }), roundActions.recordPnpResult({ roundId: 1, result: 'win' })])
+    const next = reducer(before, seat('p2', ALICE))
+
+    expect(players(next)).toEqual([
+      { id: 'p1', name: 'Player 1', profileId: null },
+      { id: 'p2', name: 'Alice', profileId: OTHER }
+    ])
+    expect(next.pnp.session.standings).toEqual({ p2: { played: 1, wins: 1 } })
+    expect({ writerId: next.pnp.session.writerId, guesserId: next.pnp.session.guesserId, recordedRoundId: next.pnp.session.recordedRoundId }).toEqual({ writerId: 'p1', guesserId: 'p2', recordedRoundId: 1 })
+    expect(next.pnp.puzzle).toEqual(before.pnp.puzzle)
+  })
+
+  it("hands a seat back to a guest under its own number's Player N", () => {
+    const next = run([roundActions.renamePnpPlayer({ id: 'p2', name: 'Grandma' }), seat('p2', ALICE), seat('p2', null)])
+
+    expect(players(next)[1]).toEqual({ id: 'p2', name: 'Player 2', profileId: null })
+  })
+
+  it('counts up past a name another seat goes by', () => {
+    const next = run([roundActions.addPnpPlayer(), seat('p2', ALICE), roundActions.renamePnpPlayer({ id: 'p1', name: 'Player 2' }), seat('p2', null)])
+
+    expect(players(next).map((player) => player.name)).toEqual(['Player 2', 'Player 4', 'Player 3'])
+  })
+
+  it("renames a guest already going by the profile's name, never silently sharing it", () => {
+    const next = run([roundActions.addPnpPlayer(), roundActions.renamePnpPlayer({ id: 'p3', name: 'ALICE' }), seat('p1', ALICE)])
+
+    expect(players(next)).toEqual([
+      { id: 'p1', name: 'Alice', profileId: OTHER },
+      { id: 'p2', name: 'Player 2', profileId: null },
+      { id: 'p3', name: 'Player 3', profileId: null }
+    ])
+  })
+
+  it('swaps one profile for another in a seat', () => {
+    const next = run([seat('p1', ALICE), seat('p1', { id: 'profile-b', name: 'Bob' })])
+
+    expect(players(next)[0]).toEqual({ id: 'p1', name: 'Bob', profileId: 'profile-b' })
+  })
+
+  it.each([
+    ['a seat that is not at the table', seat('p9', ALICE)],
+    ['the profile already in that seat', seat('p1', ALICE)],
+    ['a profile seated elsewhere', seat('p2', ALICE)],
+    ['a profile id that could not be a player', seat('p2', { id: 'bad:id', name: 'Eve' })],
+    ['a name that tidies to nothing', seat('p2', { id: 'profile-e', name: '   ' })]
+  ])('changes nothing for %s', (_label, action) => {
+    const before = run([seat('p1', ALICE)])
+
+    expect(reducer(before, action)).toBe(before)
+  })
+
+  it('changes nothing for a guest handed back to a guest', () => {
+    expect(reducer(initialRoundState, seat('p1', null))).toBe(initialRoundState)
+  })
+
+  it("won't rename a profile's seat: it goes by the profile's name", () => {
+    const before = run([seat('p1', ALICE)])
+
+    expect(reducer(before, roundActions.renamePnpPlayer({ id: 'p1', name: 'Ally' }))).toBe(before)
+  })
+
+  it("won't let a guest take a seated profile's name", () => {
+    const before = run([seat('p1', ALICE)])
+
+    expect(reducer(before, roundActions.renamePnpPlayer({ id: 'p2', name: 'alice' }))).toBe(before)
+  })
+
+  it("adds a new seat under a Player N nobody goes by, a profile's name included", () => {
+    const next = run([seat('p1', { id: OTHER, name: 'Player 3' }), roundActions.addPnpPlayer()])
+
+    expect(players(next)[2]).toEqual({ id: 'p3', name: 'Player 4', profileId: null })
+  })
+})
+
+// The seats keep their profiles' names in step with the roster, however it changes.
+describe("the roster's names", () => {
+  const profile = (id: string, name: string): Profile => ({ id, name, color: '#9c27b0', tag: '', createdAt: 1, updatedAt: 1 })
+  const players = (state: RoundState) => state.pnp.session.players
+  const seated = (): RoundState => run([roundActions.addPnpPlayer(), roundActions.setPnpSeatProfile({ id: 'p1', profile: { id: OTHER, name: 'Alice' } })])
+  // @tastic/profile's actions, as the store hands them to this reducer.
+  const fromRoster = ({ type, payload }: { type: string; payload: unknown }): RoundAction => ({ type, payload })
+
+  it("follows a rename on the Profiles screen, giving a guest who'd now share it their guest name", () => {
+    const before = run([roundActions.renamePnpPlayer({ id: 'p3', name: 'Ally' })], seated())
+    const next = reducer(before, fromRoster(profilesActions.update({ id: OTHER, patch: { name: 'Ally' } })))
+
+    expect(players(next).map((player) => player.name)).toEqual(['Ally', 'Player 2', 'Player 3'])
+  })
+
+  it('follows a roster brought in from another game', () => {
+    const next = reducer(seated(), fromRoster(profilesActions.setAll([profile(OTHER, 'Alicia')])))
+
+    expect(players(next)[0]).toEqual({ id: 'p1', name: 'Alicia', profileId: OTHER })
+  })
+
+  it("changes nothing when no seated profile's name moved, or for a profile on no seat", () => {
+    const before = seated()
+
+    expect(reducer(before, fromRoster(profilesActions.setAll([profile(OTHER, 'Alice'), profile('profile-b', 'Bob')])))).toBe(before)
+    expect(reducer(before, fromRoster(profilesActions.update({ id: OTHER, patch: { color: '#000000' } })))).toBe(before)
+    expect(reducer(before, fromRoster(profilesActions.update({ id: 'profile-b', patch: { name: 'Bobby' } })))).toBe(before)
+  })
+
+  // Forgetting it is ProfilesProvider's (clearPnpProfile, through forgetPlayer).
+  it("leaves a seat whose profile isn't on the roster brought in", () => {
+    const before = seated()
+
+    expect(reducer(before, fromRoster(profilesActions.setAll([])))).toBe(before)
   })
 })
 

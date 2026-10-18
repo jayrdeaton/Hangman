@@ -1,6 +1,7 @@
 import '@tastic/core'
 
 import { type ThemeSettings, useAutoPaperTheme, useThemeSettings } from '@rific/auto-paper'
+import { type Profile, profilesActions } from '@tastic/profile'
 import { act, render, waitFor } from '@testing-library/react-native'
 import { setBackgroundColorAsync } from 'expo-system-ui'
 import { useEffect } from 'react'
@@ -9,7 +10,7 @@ import { Provider as ReduxProvider } from 'react-redux'
 import { boardColor } from '@/components/BoardBackground'
 import { Theme } from '@/components/Theme'
 import { activePlayerActions } from '@/redux/activePlayerSlice'
-import { playerThemeActions } from '@/redux/playerThemeSlice'
+import { DEFAULT_HARMONY, playerThemeActions } from '@/redux/playerThemeSlice'
 import { store } from '@/redux/store'
 import { GUEST_PLAYER_KEY } from '@/utils/players'
 
@@ -87,6 +88,7 @@ describe("Theme's per-player colors", () => {
   beforeEach(() => {
     store.dispatch(activePlayerActions.setActivePlayer(null))
     store.dispatch(playerThemeActions.reset())
+    store.dispatch(profilesActions.setAll([]))
     liveSettings = null
   })
 
@@ -136,7 +138,8 @@ describe("Theme's per-player colors", () => {
     expect(live()).toEqual(guestColors)
   })
 
-  it('keeps the colors on screen for a player with none saved, and saves them as theirs', async () => {
+  // A profile the roster doesn't have (yet) has no color of its own to go on.
+  it('keeps the colors on screen for a player with none saved and no profile color, and saves them as theirs', async () => {
     await renderTheme()
     await waitFor(() => expect(liveSettings).not.toBeNull())
     const onScreen = live()
@@ -145,5 +148,99 @@ describe("Theme's per-player colors", () => {
 
     expect(live()).toEqual(onScreen)
     expect(saved(OTHER)).toEqual(onScreen)
+  })
+})
+
+// A profile's colors: their Hangman pick while the profile keeps the color it was picked against, else
+// the profile's own color (with the harmony they picked, or the default).
+describe("Theme's profile colors", () => {
+  const ALICE: Profile = { id: 'profile-a', name: 'Alice', color: '#9c27b0', tag: 'A', createdAt: 1, updatedAt: 1 }
+  const live = () => ({ color: liveSettings?.color, harmony: liveSettings?.harmony })
+  const saved = (playerKey: string = ALICE.id) => store.getState().playerTheme[playerKey]
+  const act$ = (run: () => void) => act(async () => run())
+
+  beforeEach(() => {
+    store.dispatch(activePlayerActions.setActivePlayer(null))
+    store.dispatch(playerThemeActions.reset())
+    store.dispatch(profilesActions.setAll([ALICE]))
+    liveSettings = null
+  })
+
+  it("plays a profile with nothing picked in the profile's own color and the default harmony, saved against that color", async () => {
+    await renderTheme()
+    await waitFor(() => expect(liveSettings).not.toBeNull())
+
+    await act$(() => store.dispatch(activePlayerActions.setActivePlayer(ALICE.id)))
+
+    expect(live()).toEqual({ color: ALICE.color, harmony: DEFAULT_HARMONY })
+    expect(saved()).toEqual({ color: ALICE.color, harmony: DEFAULT_HARMONY, profileColor: ALICE.color })
+  })
+
+  it("saves a palette or harmony change as the profile's pick, against the profile's color", async () => {
+    store.dispatch(activePlayerActions.setActivePlayer(ALICE.id))
+    await renderTheme()
+    await waitFor(() => expect(setThemeSettings).not.toBeNull())
+
+    await act$(() => setThemeSettings?.({ color: '#2196f3' }))
+    await act$(() => setThemeSettings?.({ harmony: 'triadic' }))
+
+    expect(saved()).toEqual({ color: '#2196f3', harmony: 'triadic', profileColor: ALICE.color })
+  })
+
+  it('puts a pick on screen while the profile still has the color it was picked against, in any case', async () => {
+    store.dispatch(playerThemeActions.setPlayerTheme({ playerKey: ALICE.id, theme: { color: '#2196f3', harmony: 'square', profileColor: ALICE.color.toUpperCase() } }))
+    await renderTheme()
+
+    await act$(() => store.dispatch(activePlayerActions.setActivePlayer(ALICE.id)))
+
+    expect(live()).toEqual({ color: '#2196f3', harmony: 'square' })
+  })
+
+  it("lets the pick lapse once the profile's own color changes, at once for the active player, keeping their harmony", async () => {
+    store.dispatch(playerThemeActions.setPlayerTheme({ playerKey: ALICE.id, theme: { color: '#2196f3', harmony: 'square', profileColor: ALICE.color } }))
+    store.dispatch(activePlayerActions.setActivePlayer(ALICE.id))
+    await renderTheme()
+    await waitFor(() => expect(live()).toEqual({ color: '#2196f3', harmony: 'square' }))
+
+    await act$(() => store.dispatch(profilesActions.update({ id: ALICE.id, patch: { color: '#ff9800' } })))
+
+    expect(live()).toEqual({ color: '#ff9800', harmony: 'square' })
+    // Rewritten against the new color, so a change back to the old one can't bring the old pick back.
+    expect(saved()).toEqual({ color: '#ff9800', harmony: 'square', profileColor: '#ff9800' })
+  })
+
+  it('lets the pick lapse for a profile recolored while someone else was playing, once they play again', async () => {
+    store.dispatch(playerThemeActions.setPlayerTheme({ playerKey: ALICE.id, theme: { color: '#2196f3', harmony: 'square', profileColor: '#000000' } }))
+    await renderTheme()
+    await waitFor(() => expect(liveSettings).not.toBeNull())
+
+    await act$(() => store.dispatch(activePlayerActions.setActivePlayer(ALICE.id)))
+
+    expect(live()).toEqual({ color: ALICE.color, harmony: 'square' })
+  })
+
+  it('leaves a rename alone: the pick holds and nothing is written', async () => {
+    store.dispatch(playerThemeActions.setPlayerTheme({ playerKey: ALICE.id, theme: { color: '#2196f3', harmony: 'square', profileColor: ALICE.color } }))
+    store.dispatch(activePlayerActions.setActivePlayer(ALICE.id))
+    await renderTheme()
+    await waitFor(() => expect(live()).toEqual({ color: '#2196f3', harmony: 'square' }))
+    const before = store.getState().playerTheme
+
+    await act$(() => store.dispatch(profilesActions.update({ id: ALICE.id, patch: { name: 'Ali' } })))
+
+    expect(live()).toEqual({ color: '#2196f3', harmony: 'square' })
+    expect(store.getState().playerTheme).toBe(before)
+  })
+
+  it("puts the guest's colors back when the profile stops playing", async () => {
+    store.dispatch(playerThemeActions.setPlayerTheme({ playerKey: GUEST_PLAYER_KEY, theme: { color: '#4caf50', harmony: 'analogous' } }))
+    await renderTheme()
+    await waitFor(() => expect(live()).toEqual({ color: '#4caf50', harmony: 'analogous' }))
+
+    await act$(() => store.dispatch(activePlayerActions.setActivePlayer(ALICE.id)))
+    expect(live()).toEqual({ color: ALICE.color, harmony: DEFAULT_HARMONY })
+    await act$(() => store.dispatch(activePlayerActions.setActivePlayer(null)))
+
+    expect(live()).toEqual({ color: '#4caf50', harmony: 'analogous' })
   })
 })

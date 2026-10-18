@@ -10,6 +10,11 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.infinitetoken.Hangman",
+      "entitlements": {
+        "com.apple.security.application-groups": [
+          "group.com.infinitetoken.tastic"
+        ]
+      },
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false,
         "UTExportedTypeDeclarations": [

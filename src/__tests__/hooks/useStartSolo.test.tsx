@@ -1,3 +1,4 @@
+import { type Profile, profilesActions } from '@tastic/profile'
 import { act, fireEvent, render } from '@testing-library/react-native'
 import { useEffect } from 'react'
 
@@ -56,6 +57,7 @@ describe('useStartSolo', () => {
     store.dispatch(achievementsActions.reset())
     store.dispatch(roundActions.reset())
     store.dispatch(activePlayerActions.setActivePlayer(null))
+    store.dispatch(profilesActions.setAll([]))
   })
 
   it('starts right away when there is no round on the board', async () => {
@@ -235,6 +237,11 @@ describe('useStartSolo', () => {
   // player's, and so is the loss.
   describe('for each player', () => {
     const OTHER = 'profile-a'
+    // On the roster, or the launch reconcile would forget a player it doesn't have (ProfilesProvider).
+    const ALICE: Profile = { id: 'profile-a', name: 'Alice', color: '#2196f3', tag: 'A', createdAt: 1, updatedAt: 1 }
+    beforeEach(() => {
+      store.dispatch(profilesActions.setAll([ALICE]))
+    })
 
     it("puts the puzzle on the active player's board, leaving everyone else's", async () => {
       const guestRound = seedSoloRound(['Q'])
@@ -275,6 +282,23 @@ describe('useStartSolo', () => {
       expect(stats().profiles[OTHER]).toMatchObject({ lettersGuessed: 2, lettersCorrect: 1 })
       expect(soloRound(OTHER)).toMatchObject({ guessedLetters: [], puzzle: { phrase: 'FISH' } })
       expect(soloRound()).toEqual(guestRound)
+    })
+
+    // LightCycles' caption: whose unlock it is, for a profile, however who's playing has changed since.
+    it("names the round's owner under the abandon's unlock toasts, and the guest's stay 'Achievement unlocked'", async () => {
+      store.dispatch(activePlayerActions.setActivePlayer(OTHER))
+      seedSoloRound(['Q'], OTHER)
+      const screen = await renderHost()
+
+      await requestStart({ onStarted: jest.fn() })
+      await act(async () => {
+        store.dispatch(activePlayerActions.setActivePlayer(null))
+      })
+      await fireEvent.press(screen.getByText('Abandon'))
+
+      expect(await screen.findByText('First Word')).toBeTruthy()
+      expect(screen.getAllByText('Alice unlocked').length).toBeGreaterThan(0)
+      expect(screen.queryByText('Achievement unlocked')).toBeNull()
     })
   })
 })

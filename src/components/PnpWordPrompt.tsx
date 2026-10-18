@@ -1,7 +1,8 @@
-import { Button, Chip, IconButton, Switch } from '@rific/feedback-press'
+import { Button, IconButton, Switch } from '@rific/feedback-press'
 import { useFocusChain } from '@rific/focus-chain'
 import { useToast } from '@rific/toaster'
 import { overlayActionStyles, OverlayBackdrop, OverlayCard, useOverlayCardColors } from '@tastic/hud/chrome'
+import type { Profile } from '@tastic/profile'
 import { JSX, useEffect, useState } from 'react'
 import { BackHandler, ScrollView, StyleSheet, View } from 'react-native'
 import { Portal, Text, TextInput, useTheme } from 'react-native-paper'
@@ -12,11 +13,15 @@ import { SCREEN_GUTTER, useKeyboardLiftedCard } from '@/hooks/useKeyboardLiftedC
 import { buildCustomPuzzle } from '@/utils/customPacks'
 import { WORD_SEPARATORS } from '@/utils/normalizePhrase'
 
-export type PnpGuesserOption = { id: string; name: string }
+import { PlayerChip, PlayerLine } from './PlayerIdentity'
+
+// A seat the word could be for, with its profile when one sits there (for its chip).
+export type PnpGuesserOption = { id: string; name: string; profile?: Profile | null }
 
 export type PnpWordPromptProps = {
-  // Who is writing, for the title.
+  // Who is writing, for the title, and their profile when they sit as one (their chip leads it).
   writerName: string
+  writerProfile?: Profile | null
   // Everyone the word could be for (every player but the writer), in seat order. With more than one,
   // the card shows a For row of them, the current pick selected.
   guessers: PnpGuesserOption[]
@@ -42,6 +47,8 @@ export type PnpWordPromptProps = {
 
 // The 4pt slop the drawer headers' icon buttons use, for a 48pt close target.
 const ICON_ACTION_HIT_SLOP = { top: 4, bottom: 4, left: 4, right: 4 }
+// The writer's chip beside the title: a headlineSmall line tall.
+const TITLE_CHIP_SIZE = 32
 
 // Entering a pass-and-play word, on the fleet's card (@tastic/hud's OverlayBackdrop and OverlayCard,
 // the card the confirms, the hand-off and the result use): the writer's name as its title ("Player 1's
@@ -61,8 +68,11 @@ const ICON_ACTION_HIT_SLOP = { top: 4, bottom: 4, left: 4, right: 4 }
 // scroll between the title and Next, so the title, the close glyph and Next stay on screen even at
 // the largest text sizes or with the keyboard up on a short phone.
 //
+// A player sitting as a profile has their chip beside their name, in the title and the For row
+// (PlayerIdentity), so the right person is holding the device.
+//
 // Says nothing about how to play. Two players need no For row: the word can only be for the other one.
-export const PnpWordPrompt = ({ writerName, guessers, guesserId, onGuesserChange, answer, hint, onAnswerChange, onHintChange, promptVisible, onClose, onSubmit }: PnpWordPromptProps): JSX.Element | null => {
+export const PnpWordPrompt = ({ writerName, writerProfile, guessers, guesserId, onGuesserChange, answer, hint, onAnswerChange, onHintChange, promptVisible, onClose, onSubmit }: PnpWordPromptProps): JSX.Element | null => {
   const theme = useTheme()
   const { fg, fgMuted } = useOverlayCardColors()
   const { overlayStyle, cardMaxHeight, liftStyle, onCardLayout } = useKeyboardLiftedCard()
@@ -128,9 +138,11 @@ export const PnpWordPrompt = ({ writerName, guessers, guesserId, onGuesserChange
         <Animated.View testID='pnp-card' style={[styles.lift, liftStyle]} onLayout={onCardLayout}>
           <OverlayCard accessibilityViewIsModal style={[styles.card, { maxHeight: cardMaxHeight }]}>
             {/* Names who is writing, so the device is in the right hands before anything is typed. */}
-            <Text variant='headlineSmall' accessibilityRole='header' style={[styles.title, { color: theme.colors.primary }]}>
-              {writerName}&apos;s Word
-            </Text>
+            <PlayerLine profile={writerProfile} size={TITLE_CHIP_SIZE} style={styles.titleLine}>
+              <Text variant='headlineSmall' accessibilityRole='header' style={[styles.title, writerProfile && styles.titleBeside, { color: theme.colors.primary }]}>
+                {writerName}&apos;s Word
+              </Text>
+            </PlayerLine>
             <ScrollView style={styles.body} contentContainerStyle={styles.fields} keyboardShouldPersistTaps='handled' alwaysBounceVertical={false}>
               <TextInput
                 testID='pnp-answer-input'
@@ -178,9 +190,7 @@ export const PnpWordPrompt = ({ writerName, guessers, guesserId, onGuesserChange
                   </Text>
                   <View style={styles.chips}>
                     {guessers.map((player) => (
-                      <Chip key={player.id} mode='outlined' selected={player.id === guesserId} onPress={() => onGuesserChange(player.id)} accessibilityLabel={`For ${player.name}`}>
-                        {player.name}
-                      </Chip>
+                      <PlayerChip key={player.id} id={player.id} name={player.name} profile={player.profile} selected={player.id === guesserId} onSelect={onGuesserChange} accessibilityLabel={`For ${player.name}`} />
                     ))}
                   </View>
                 </View>
@@ -242,5 +252,8 @@ const styles = StyleSheet.create({
   overlay: { paddingHorizontal: SCREEN_GUTTER },
   // Clear of the close glyph in the corner on both sides (its 40 box sits 8 in, 24 past the card's own
   // padding), so a long name wraps before running under it and the title stays centered on the card.
-  title: { fontWeight: 'bold', paddingHorizontal: 24, textAlign: 'center' }
+  title: { fontWeight: 'bold', paddingHorizontal: 24, textAlign: 'center' },
+  // Beside the writer's chip, the clearance moves out to the line holding both.
+  titleBeside: { paddingHorizontal: 0 },
+  titleLine: { paddingHorizontal: 24 }
 })

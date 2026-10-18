@@ -1,8 +1,9 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
+import { profilesActions } from '@tastic/profile'
 
 import type { PuzzleSourceMode } from '@/types/gameSession'
-import type { PlayerKey } from '@/utils/players'
-import { createDefaultPnpSession, createPlayer, getStanding, isPlayerNameTaken, MAX_PNP_PLAYERS, MIN_PNP_PLAYERS, normalizePlayerName, pickFairGuesser, type PnpSession, seatAfterRemoved } from '@/utils/pnpSession'
+import { isPlayerKey, type PlayerKey } from '@/utils/players'
+import { createDefaultPnpSession, createPlayer, getStanding, guestNameForSeat, isPlayerNameTaken, MAX_PNP_PLAYERS, MIN_PNP_PLAYERS, normalizePlayerName, pickFairGuesser, type PnpSession, seatAfterRemoved, settleGuestNames } from '@/utils/pnpSession'
 import type { PuzzleDifficultyTier } from '@/utils/puzzleCatalog'
 
 // The two game screens a player can be in (see src/app/game.tsx). Each keeps its own round, so a
@@ -102,6 +103,21 @@ const clearStandings = (session: PnpSession): void => {
   session.writerId = session.players[0].id
 }
 
+// What a seat needs of a profile: its id, and its name for the seat's copy (see PnpPlayer's name).
+export type SeatedProfile = { id: string; name: string }
+
+// The roster's names copied onto the seats holding its profiles (a profile on no seat, or a seat whose
+// profile isn't on it, changes nothing), then any guest who'd now share a name with one of them takes
+// their seat's guest name (settleGuestNames). A name that normalizes to nothing keeps the copy it had.
+const syncSeatNames = (session: PnpSession, profiles: SeatedProfile[]): void => {
+  for (const player of session.players) {
+    const profile = player.profileId ? profiles.find((item) => item.id === player.profileId) : undefined
+    const name = profile ? normalizePlayerName(profile.name) : ''
+    if (name && name !== player.name) player.name = name
+  }
+  settleGuestNames(session.players)
+}
+
 const roundSlice = createSlice({
   name: 'round',
   initialState: initialRoundState,
@@ -119,9 +135,41 @@ const roundSlice = createSlice({
       slot.guessedLetters = action.payload.guessedLetters
       slot.hintRevealed = action.payload.hintRevealed
     },
-    // A deleted profile's waiting round, for when profiles arrive.
+    // A forgotten profile's waiting round (see usePlayerData's forgetPlayer).
     removeSolo: (state, action: PayloadAction<PlayerKey>) => {
       delete state.solo[action.payload]
+    },
+    // A forgotten profile's Pass & Play seats stay at the table as guests, under the names they had, so
+    // the session's standings, writer and guesser carry on unchanged. Unless another profile at the
+    // table shares that name: then the seat takes its guest name (settleGuestNames).
+    clearPnpProfile: (state, action: PayloadAction<string>) => {
+      const { players } = state.pnp.session
+      for (const player of players) if (player.profileId === action.payload) player.profileId = null
+      settleGuestNames(players)
+    },
+    // Who sits in a seat: a profile (one seat each, so a profile already seated elsewhere changes
+    // nothing; the loadout's picker won't offer one), or null to hand the seat back to a guest, under
+    // its guest name (guestNameForSeat: Player 2 for the second seat whenever that's free). A guest
+    // already going by the newly seated profile's name takes their own guest name instead.
+    //
+    // The seat's standing, and its turn as writer or guesser, stay with the seat whoever sits there (the
+    // loadout asks first when there's a standing to hand over). Stats already recorded stay with whoever
+    // played those rounds; the seat's next round counts toward whoever sits there then.
+    setPnpSeatProfile: (state, action: PayloadAction<{ id: string; profile: SeatedProfile | null }>) => {
+      const { players } = state.pnp.session
+      const { id, profile } = action.payload
+      const player = players.find((item) => item.id === id)
+      if (!player || (player.profileId ?? null) === (profile?.id ?? null)) return
+      if (profile) {
+        const name = normalizePlayerName(profile.name)
+        if (!isPlayerKey(profile.id) || !name || players.some((other) => other.profileId === profile.id)) return
+        player.profileId = profile.id
+        player.name = name
+      } else {
+        player.profileId = null
+        player.name = guestNameForSeat(players, id)
+      }
+      settleGuestNames(players)
     },
     // A fresh, blank board for the next word. When the round on the board was decided (its result is
     // in the standings), whoever guessed it writes this one: the session moves around the table here, at
@@ -196,13 +244,14 @@ const roundSlice = createSlice({
       session.players.push(createPlayer(session.players))
       if (isPickOpen(state.pnp)) session.guesserId = pickFairGuesser(session, session.writerId)
     },
-    // Normalized (see normalizePlayerName). A name left empty, or one another seat already goes by,
-    // changes nothing: the loadout's name dialog won't offer either.
+    // A guest's own name, normalized (see normalizePlayerName). A name left empty, or one another seat
+    // already goes by (a profile's at the table included), changes nothing: the loadout's name dialog
+    // won't offer either. A profile's seat goes by the profile's name, so it can't be renamed here.
     renamePnpPlayer: (state, action: PayloadAction<{ id: string; name: string }>) => {
       const { session } = state.pnp
       const player = session.players.find((item) => item.id === action.payload.id)
       const name = normalizePlayerName(action.payload.name)
-      if (!player || !name || isPlayerNameTaken(session.players, name, player.id)) return
+      if (!player || player.profileId || !name || isPlayerNameTaken(session.players, name, player.id)) return
       player.name = name
     },
     // A seat leaves, down to MIN_PNP_PLAYERS, and their standing with them. If they were writing the
@@ -239,6 +288,17 @@ const roundSlice = createSlice({
       state.activeMode = action.payload
     },
     reset: () => initialRoundState
+  },
+  // The seats keep their profiles' names in step with the roster (syncSeatNames), however it changes:
+  // a rename on the Profiles screen, or a roster brought in from another game (ProfilesProvider's
+  // setAll). Nothing changes, and nothing is saved again, when no seated profile's name moved.
+  extraReducers: (builder) => {
+    builder
+      .addMatcher(profilesActions.setAll.match, (state, action) => syncSeatNames(state.pnp.session, action.payload))
+      .addMatcher(profilesActions.update.match, (state, action) => {
+        const { id, patch } = action.payload
+        if (patch.name !== undefined) syncSeatNames(state.pnp.session, [{ id, name: patch.name }])
+      })
   }
 })
 

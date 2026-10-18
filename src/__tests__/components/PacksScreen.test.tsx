@@ -1,3 +1,4 @@
+import AsyncStorage from '@react-native-async-storage/async-storage'
 import { FeedbackPressProvider } from '@rific/feedback-press'
 import { ToastProvider } from '@rific/toaster'
 import { act, fireEvent, render as rtlRender, waitFor, within } from '@testing-library/react-native'
@@ -9,10 +10,12 @@ import { Provider as ReduxProvider } from 'react-redux'
 import { PackRow } from '@/components/PackRow'
 import { PacksScreen, type PacksScreenHandle } from '@/components/PacksScreen'
 import { GameStatsProvider } from '@/hooks/useGameStats'
+import { DEFAULT_MODE } from '@/modes/registry'
+import { activePlayerActions } from '@/redux/activePlayerSlice'
 import { store } from '@/redux/store'
 import { loadCustomPacksCache, saveCustomPack } from '@/utils/customPacks'
 import { pickHangmanFile, shareCustomPackFile } from '@/utils/hangmanFile'
-import { getPuzzleManifest } from '@/utils/puzzleCatalog'
+import { getPuzzleManifest, getPuzzlesForCategory } from '@/utils/puzzleCatalog'
 
 // PacksScreen only ever talks to the real device/OS through this module (see its own doc
 // comments for why: file pickers and share sheets aren't meaningfully unit-testable, and web's
@@ -66,7 +69,7 @@ const Wrapper = ({ children }: { children: ReactNode }) => (
 )
 const render = (ui: ReactElement) => rtlRender(ui, { wrapper: Wrapper })
 
-const renderScreen = (overrides: Partial<React.ComponentProps<typeof PacksScreen>> = {}) => render(<PacksScreen visible onDismiss={jest.fn()} selectedKeys={[]} onChangeSelectedKeys={jest.fn()} packsVersion={0} onPacksChanged={jest.fn()} {...overrides} />)
+const renderScreen = (overrides: Partial<React.ComponentProps<typeof PacksScreen>> = {}) => render(<PacksScreen visible onDismiss={jest.fn()} selectedKeys={[]} onChangeSelectedKeys={jest.fn()} packsVersion={0} onPacksChanged={jest.fn()} mode={DEFAULT_MODE} difficulty='any' onConfirm={jest.fn()} {...overrides} />)
 
 // The loadout's side of the selection: it hands back whatever the screen asks for, with stable
 // callbacks (the screen is memoized), the way PackSelectionProvider does.
@@ -77,7 +80,7 @@ const SelectionHost = ({ initialKeys, visible = true, packsVersion = 0, onChange
     onChange?.(keys)
     setSelectedKeys(keys)
   })
-  return <PacksScreen visible={visible} onDismiss={noop} selectedKeys={selectedKeys} onChangeSelectedKeys={handleChange} packsVersion={packsVersion} onPacksChanged={noop} />
+  return <PacksScreen visible={visible} onDismiss={noop} selectedKeys={selectedKeys} onChangeSelectedKeys={handleChange} packsVersion={packsVersion} onPacksChanged={noop} mode={DEFAULT_MODE} difficulty='any' onConfirm={noop} />
 }
 
 const checkboxState = (screen: Awaited<ReturnType<typeof render>>, label: string) => screen.getByLabelText(label).props.accessibilityState?.checked
@@ -89,6 +92,15 @@ describe('PacksScreen', () => {
     await loadCustomPacksCache()
     mockPickHangmanFile.mockReset()
     mockShareCustomPackFile.mockReset()
+  })
+
+  // The pack lists (this screen's and the pack browser's) batch their cell updates behind
+  // VirtualizedList's own 50ms timer. Letting that land inside act, before RNTL's cleanup unmounts the
+  // screen, keeps it from firing as an un-acted update between tests.
+  afterEach(async () => {
+    await act(async () => {
+      await new Promise((resolve) => setTimeout(resolve, 60))
+    })
   })
 
   it('renders My packs and Built-in packs sections, honoring selectedKeys', async () => {
@@ -134,7 +146,7 @@ describe('PacksScreen', () => {
     // (LoadoutScreen, through useCatalog's refreshCustomPacks) that bumps a `packsVersion` counter
     // passed back in as a prop, which is what actually triggers this screen's manifest to
     // recompute. Simulate that round trip here.
-    await rerender(<PacksScreen visible onDismiss={jest.fn()} selectedKeys={onChangeSelectedKeys.mock.calls[0][0]} onChangeSelectedKeys={jest.fn()} packsVersion={1} onPacksChanged={jest.fn()} />)
+    await rerender(<PacksScreen visible onDismiss={jest.fn()} selectedKeys={onChangeSelectedKeys.mock.calls[0][0]} onChangeSelectedKeys={jest.fn()} packsVersion={1} onPacksChanged={jest.fn()} mode={DEFAULT_MODE} difficulty='any' onConfirm={jest.fn()} />)
 
     expect(getByText('My Trip')).toBeTruthy()
   })
@@ -334,15 +346,87 @@ describe('PacksScreen', () => {
     expect(getByText('My Packs')).toBeTruthy()
   })
 
-  it('opens read-only from Choose Packs: no Play This Pack or Only This Pack', async () => {
-    const pack = builtIn()
-    const { getByLabelText, getByTestId } = await renderScreen()
+  // The pack browser plays: the Single Player loadout's start gets the payload (and asks before
+  // abandoning a round with a guess on it).
+  describe('the pack browser', () => {
+    it("starts a draw from just that pack from Play This Pack, with the loadout's art and difficulty", async () => {
+      const pack = builtIn()
+      const onConfirm = jest.fn()
+      const { getByLabelText, getByTestId } = await renderScreen({ onConfirm, difficulty: 'easy' })
 
-    await fireEvent.press(getByLabelText(`View ${pack.label} contents`))
+      await fireEvent.press(getByLabelText(`View ${pack.label} contents`))
+      await fireEvent.press(within(getByTestId('pack-puzzles-panel')).getByText('Play This Pack'))
 
-    const panel = getByTestId('pack-puzzles-panel')
-    expect(within(panel).queryByText('Play This Pack')).toBeNull()
-    expect(within(panel).queryByText('Only This Pack')).toBeNull()
+      expect(onConfirm).toHaveBeenCalledTimes(1)
+      expect(onConfirm.mock.calls[0][0]).toMatchObject({ packKey: pack.key, packScope: 'single', mode: DEFAULT_MODE, difficultyTier: 'easy' })
+    })
+
+    it('starts the puzzle picked from it', async () => {
+      const pack = builtIn()
+      const puzzle = getPuzzlesForCategory(pack.key)[0]
+      const onConfirm = jest.fn()
+      const { getByLabelText, getByTestId } = await renderScreen({ onConfirm })
+
+      await fireEvent.press(getByLabelText(`View ${pack.label} contents`))
+      await fireEvent.press(within(getByTestId('pack-puzzles-panel')).getByTestId(`puzzle-row-${puzzle.id}`))
+
+      expect(onConfirm.mock.calls[0][0]).toMatchObject({ packKey: pack.key, puzzleId: puzzle.id })
+    })
+
+    it('narrows the selection to just that pack from Only This Pack, closing back onto the list', async () => {
+      const [packA, packB] = builtInPacks()
+      const onChange = jest.fn()
+      const screen = await render(<SelectionHost initialKeys={[packA.key, packB.key]} onChange={onChange} />)
+
+      await fireEvent.press(screen.getByLabelText(`View ${packB.label} contents`))
+      await fireEvent.press(within(screen.getByTestId('pack-puzzles-panel')).getByText('Only This Pack'))
+
+      expect(onChange).toHaveBeenLastCalledWith([packB.key])
+      expect(screen.getByTestId('pack-puzzles-panel', { includeHiddenElements: true }).props.accessibilityElementsHidden).toBe(true)
+      expect(checkboxState(screen, packA.label)).toBe(false)
+      expect(checkboxState(screen, packB.label)).toBe(true)
+
+      // Already just that pack: nothing left for it to do.
+      await fireEvent.press(screen.getByLabelText(`View ${packB.label} contents`))
+      expect(within(screen.getByTestId('pack-puzzles-panel')).getByRole('button', { name: 'Only This Pack' }).props.accessibilityState?.disabled).toBe(true)
+    })
+
+    // A custom pack plays the same way, and the row keeps its way into the editor.
+    it("opens a custom pack's puzzles too, beside its edit button", async () => {
+      const pack = await saveCustomPack({ label: 'My Pack', entries: [{ answer: 'FOO', hint: '' }] })
+      const { getByLabelText, getByTestId } = await renderScreen()
+
+      expect(getByLabelText(`Edit ${pack.label}`)).toBeTruthy()
+      await fireEvent.press(getByLabelText(`View ${pack.label} contents`))
+
+      expect(within(getByTestId('pack-puzzles-panel')).getByRole('header', { name: pack.label })).toBeTruthy()
+    })
+  })
+
+  // What Pack Progress showed (folded in here, 2026-10-18): every pack's progress, and a trophy on a
+  // pack with every puzzle unlocked.
+  describe('progress', () => {
+    beforeEach(() => {
+      store.dispatch(activePlayerActions.setActivePlayer(null))
+    })
+
+    it("marks a pack with every puzzle unlocked with a trophy, and shows every other pack's count", async () => {
+      const [packA, packB] = builtInPacks()
+      const unlocked = getPuzzlesForCategory(packA.key).map((puzzle) => puzzle.id)
+      const getItem = jest.spyOn(AsyncStorage, 'getItem').mockImplementation((key: string) => Promise.resolve(key === 'puzzle_unlocks_v1:guest' ? JSON.stringify({ [packA.key]: unlocked }) : null))
+      const screen = await renderScreen()
+
+      expect(await screen.findByText(`${packA.count.toLocaleString('en-US')} of ${packA.count.toLocaleString('en-US')} unlocked`)).toBeTruthy()
+      expect(screen.getAllByText(`0 of ${packB.count.toLocaleString('en-US')} unlocked`).length).toBeGreaterThan(0)
+      expect(screen.getAllByLabelText('Complete')).toHaveLength(1)
+      getItem.mockRestore()
+    })
+
+    it('marks nothing complete with nothing unlocked', async () => {
+      const screen = await renderScreen()
+
+      expect(screen.queryByLabelText('Complete')).toBeNull()
+    })
   })
 
   it('calls onDismiss when closed from the list root', async () => {
@@ -360,8 +444,8 @@ describe('PacksScreen', () => {
     await fireEvent.press(getByText('Create'))
     expect(getByTestId('pack-label-input')).toBeTruthy()
 
-    await rerender(<PacksScreen visible={false} onDismiss={jest.fn()} selectedKeys={[]} onChangeSelectedKeys={jest.fn()} packsVersion={0} onPacksChanged={jest.fn()} />)
-    await rerender(<PacksScreen visible onDismiss={jest.fn()} selectedKeys={[]} onChangeSelectedKeys={jest.fn()} packsVersion={0} onPacksChanged={jest.fn()} />)
+    await rerender(<PacksScreen visible={false} onDismiss={jest.fn()} selectedKeys={[]} onChangeSelectedKeys={jest.fn()} packsVersion={0} onPacksChanged={jest.fn()} mode={DEFAULT_MODE} difficulty='any' onConfirm={jest.fn()} />)
+    await rerender(<PacksScreen visible onDismiss={jest.fn()} selectedKeys={[]} onChangeSelectedKeys={jest.fn()} packsVersion={0} onPacksChanged={jest.fn()} mode={DEFAULT_MODE} difficulty='any' onConfirm={jest.fn()} />)
 
     expect(getByText('Choose Packs')).toBeTruthy()
   })

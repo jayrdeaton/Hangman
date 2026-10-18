@@ -3,16 +3,18 @@ import { Button, Checkbox, IconButton, SegmentedButtons } from '@rific/feedback-
 import { FlatList, ScrollViewFooter, ScrollViewHeader, ScrollViewProvider } from '@rific/scroll-view'
 import { createContext, JSX, memo, type Ref, useCallback, useContext, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react'
 import { StyleSheet, View } from 'react-native'
-import { Text, useTheme } from 'react-native-paper'
+import { Icon, Text, useTheme } from 'react-native-paper'
 
 import { DRAWER_PACKS_SCREEN_Z_INDEX } from '@/constants/drawerStacking'
 import { useDrawerWidth } from '@/hooks/useDrawerWidth'
 import { usePuzzleUnlocks } from '@/hooks/usePuzzleUnlocks'
+import type { GameMode } from '@/types/gameModes'
+import type { GameStartPayload } from '@/types/gameSession'
 import { alert } from '@/utils/alert'
 import { commaString } from '@/utils/commaString'
 import { type CustomPack, deleteCustomPack, importCustomPack, isCustomPackKey } from '@/utils/customPacks'
 import { pickHangmanFile, shareCustomPackFile } from '@/utils/hangmanFile'
-import { getPuzzleManifest, type PuzzleManifestItem } from '@/utils/puzzleCatalog'
+import { getPuzzleManifest, type PuzzleDifficultyTier, type PuzzleManifestItem } from '@/utils/puzzleCatalog'
 import { getUnlockedCountForPack } from '@/utils/unlocks'
 
 import { PackEditorDrawer } from './PackEditorDrawer'
@@ -50,6 +52,18 @@ const BuiltInEmpty = (): JSX.Element => (
   </Text>
 )
 
+// A pack whose every puzzle is unlocked, marked the way Pack Progress (folded in here, 2026-10-18)
+// marked it: a trophy in the row, before its buttons. Labeled, so a screen reader that reaches the
+// row's parts (the web) hears it.
+const CompleteTrophy = (): JSX.Element => {
+  const theme = useTheme()
+  return (
+    <View accessible accessibilityLabel='Complete' style={styles.trophy}>
+      <Icon source='trophy' size={20} color={theme.colors.primary} />
+    </View>
+  )
+}
+
 export type PacksScreenProps = {
   visible: boolean
   onDismiss: () => void
@@ -57,6 +71,12 @@ export type PacksScreenProps = {
   onChangeSelectedKeys: (keys: string[]) => void
   packsVersion: number
   onPacksChanged: () => void
+  // What a puzzle started from the pack browser is played with (the active player's art and
+  // difficulty), and where it goes: the Single Player loadout's start, which asks before abandoning a
+  // round with a guess on it.
+  mode: GameMode
+  difficulty: 'any' | PuzzleDifficultyTier
+  onConfirm: (payload: GameStartPayload) => void
   ref?: Ref<PacksScreenHandle>
 }
 
@@ -67,16 +87,21 @@ export type PacksScreenHandle = {
   closeTopOverlay: () => boolean
 }
 
+// Choose Packs, the Single Player loadout's Packs button: every pack, custom and built-in, checked for
+// the active player's selection, with its unlock progress and a trophy once it's complete (what Pack
+// Progress showed until it was folded in here, 2026-10-18). A row's info button opens the pack's
+// puzzles (PackPuzzlesDrawer), where a puzzle or Play This Pack starts a round and Only This Pack
+// narrows the selection to that pack.
+//
 // Memoized: stays mounted (translated off-screen) even while closed, and its own children
 // (PackPuzzlesDrawer/PackEditorDrawer, each with their own always-mounted content) are heavy
 // enough that re-rendering this whole tree on every unrelated ancestor state change is
 // noticeable. Callers must keep every prop referentially stable (useCallback/useMemo) or this memo
 // does nothing.
-export const PacksScreen = memo(({ visible, onDismiss, selectedKeys, onChangeSelectedKeys, packsVersion, onPacksChanged, ref }: PacksScreenProps): JSX.Element => {
+export const PacksScreen = memo(({ visible, onDismiss, selectedKeys, onChangeSelectedKeys, packsVersion, onPacksChanged, mode, difficulty, onConfirm, ref }: PacksScreenProps): JSX.Element => {
   const theme = useTheme()
-  // Same panel width every other fixed-width drawer in the app uses (PackProgressDrawer, the
-  // pack browser and editor). This used to be a full-width page, but there's no reason its own panel
-  // should be the one exception.
+  // Same panel width every other fixed-width drawer in the app uses (the pack editor). This used to be
+  // a full-width page, but there's no reason its own panel should be the one exception.
   const drawerWidth = useDrawerWidth()
 
   // packsVersion isn't read inside the memo - it's a change counter bumped whenever a custom pack
@@ -100,16 +125,14 @@ export const PacksScreen = memo(({ visible, onDismiss, selectedKeys, onChangeSel
   const shownCustomPacks = useMemo(() => (filter === 'selected' ? customPacks.filter((item) => selectedSet.has(item.key)) : customPacks), [filter, customPacks, selectedSet])
   const shownBuiltInPacks = useMemo(() => (filter === 'selected' ? builtInPacks.filter((item) => selectedSet.has(item.key)) : builtInPacks), [filter, builtInPacks, selectedSet])
 
-  // A built-in pack's own read-only puzzle list (PackPuzzlesDrawer, mode/difficulty/onConfirm all
-  // omitted) and the create/edit form (PackEditorDrawer) each stack on top of this screen as their
-  // own animated Drawer - same as PackPuzzlesDrawer already stacks on top of the loadout - rather
-  // than swapping in as an unanimated step within this same panel. detailKey/editingKey are
-  // deliberately separate from their own drawer's visible flag (detailVisible/editorVisible) -
+  // A pack's own puzzle list (PackPuzzlesDrawer: pick a puzzle, Play This Pack, Only This Pack) and
+  // the create/edit form (PackEditorDrawer) each stack on top of this screen as their own animated
+  // Drawer, rather than swapping in as an unanimated step within this same panel. detailKey/editingKey
+  // are deliberately separate from their own drawer's visible flag (detailVisible/editorVisible) -
   // dismissing only flips visible, never the key - so the content survives the close-translate
   // animation instead of blanking out mid-slide (see PackPuzzlesDrawer/PackEditorDrawer's own doc
-  // comments on why, and the loadout's identical playPackKey/playDrawerVisible split). Both
-  // visible flags reset together below whenever this screen reopens; the keys themselves are left
-  // alone since they're always overwritten before either drawer next opens anyway.
+  // comments on why). Both visible flags reset together below whenever this screen reopens; the keys
+  // themselves are left alone since they're always overwritten before either drawer next opens anyway.
   const [detailVisible, setDetailVisible] = useState(false)
   const [detailKey, setDetailKey] = useState<string | null>(null)
   const [editorVisible, setEditorVisible] = useState(false)
@@ -145,8 +168,23 @@ export const PacksScreen = memo(({ visible, onDismiss, selectedKeys, onChangeSel
   /* eslint-enable react-hooks/set-state-in-effect */
 
   // The active player's, read again each time this screen opens and whenever a count moves while it's
-  // open, like every other pack-progress display in this app (PackPuzzleList, PackProgressDrawer).
+  // open, like every other pack-progress display in this app (PackPuzzleList).
   const { unlockMap } = usePuzzleUnlocks({ enabled: visible })
+
+  // A row's browse button: that pack's puzzle list, over this screen.
+  const openDetail = useCallback((key: string) => {
+    setDetailKey(key)
+    setDetailVisible(true)
+  }, [])
+  const openEditor = useCallback((key: string | null) => {
+    setEditingKey(key)
+    setEditorVisible(true)
+  }, [])
+  // The pack browser's Only This Pack: the selection becomes just that pack (the browser closes itself,
+  // back onto this list, where it shows). Off while the selection is already just that pack.
+  const handleOnlyThisPack = useCallback((key: string) => onChangeSelectedKeys([key]), [onChangeSelectedKeys])
+  const selectedPackKeysInManifest = useMemo(() => manifest.filter((item) => selectedSet.has(item.key)).map((item) => item.key), [manifest, selectedSet])
+  const onlyThisPackSelected = selectedPackKeysInManifest.length === 1 && selectedPackKeysInManifest[0] === detailKey
 
   // useCallback, and the selection read through the ref: a dependency of renderBuiltInPackRow/
   // listHeader below, both of which the FlatList rows/header rely on staying referentially stable,
@@ -245,37 +283,22 @@ export const PacksScreen = memo(({ visible, onDismiss, selectedKeys, onChangeSel
           progress={progress}
           onPress={() => toggle(item.key)}
           leading={<PackCheckbox packKey={item.key} label={item.label} onToggle={toggle} />}
-          actions={[
-            {
-              name: 'view',
-              label: `View ${item.label} contents`,
-              onPress: () => {
-                setDetailKey(item.key)
-                setDetailVisible(true)
-              }
-            }
-          ]}
+          actions={[{ name: 'view', label: `View ${item.label} contents`, onPress: () => openDetail(item.key) }]}
           trailing={
-            <IconButton
-              icon='information-outline'
-              size={20}
-              onPress={() => {
-                setDetailKey(item.key)
-                setDetailVisible(true)
-              }}
-              accessibilityLabel={`View ${item.label} contents`}
-            />
+            <View style={styles.rowActions}>
+              {item.count > 0 && unlocked >= item.count ? <CompleteTrophy /> : null}
+              <IconButton icon='information-outline' size={20} onPress={() => openDetail(item.key)} accessibilityLabel={`View ${item.label} contents`} />
+            </View>
           }
         />
       )
     },
-    [unlockMap, toggle]
+    [unlockMap, toggle, openDetail]
   )
   const packRowKeyExtractor = useCallback((item: PuzzleManifestItem) => item.key, [])
 
   // Paper's SegmentedButtons has no per-segment checked background, so both are set through each
-  // option's style, in the screen's vibrant primary rather than Paper's muted default (the loadout's
-  // Difficulty picker does the same).
+  // option's style, in the screen's vibrant primary rather than Paper's muted default.
   const filterButtons = useMemo(
     () =>
       FILTER_OPTIONS.map((option) => ({
@@ -289,8 +312,7 @@ export const PacksScreen = memo(({ visible, onDismiss, selectedKeys, onChangeSel
 
   // The All / Selected filter, then "My packs" (a handful of custom entries, cheap to always render)
   // through the "Built-in packs" label, as the FlatList's own scrolling header rather than a sibling
-  // before it - same ListHeaderComponent approach as the Single Player loadout's own pack list. The
-  // filter sits first, not in FlatList's renderFilters: that slot renders after this whole header,
+  // before it. The filter sits first, not in FlatList's renderFilters: that slot renders after this whole header,
   // under the Built-In Packs label, where it would read as filtering only the built-in list.
   const listHeader = useMemo(
     () => (
@@ -302,16 +324,7 @@ export const PacksScreen = memo(({ visible, onDismiss, selectedKeys, onChangeSel
             My Packs
           </Text>
           <View style={styles.sectionActions}>
-            <Button
-              mode='contained'
-              buttonColor={theme.colors.primary}
-              textColor={theme.colors.onPrimary}
-              icon='plus'
-              onPress={() => {
-                setEditingKey(null)
-                setEditorVisible(true)
-              }}
-            >
+            <Button mode='contained' buttonColor={theme.colors.primary} textColor={theme.colors.onPrimary} icon='plus' onPress={() => openEditor(null)}>
               Create
             </Button>
             <Button mode='contained' buttonColor={theme.colors.secondary} textColor={theme.colors.onSecondary} icon='import' onPress={() => void handleImportFile()}>
@@ -339,29 +352,18 @@ export const PacksScreen = memo(({ visible, onDismiss, selectedKeys, onChangeSel
                 onPress={() => toggle(item.key)}
                 leading={<PackCheckbox packKey={item.key} label={item.label} onToggle={toggle} />}
                 actions={[
-                  {
-                    name: 'edit',
-                    label: `Edit ${item.label}`,
-                    onPress: () => {
-                      setEditingKey(item.key)
-                      setEditorVisible(true)
-                    }
-                  }
+                  { name: 'view', label: `View ${item.label} contents`, onPress: () => openDetail(item.key) },
+                  { name: 'edit', label: `Edit ${item.label}`, onPress: () => openEditor(item.key) }
                 ]}
-                // Share and Delete both live in the editor header now (Edit -> pack name ->
-                // Share/Delete) - this row used to be 3 icons deep with no real gap between
-                // them. Edit is the one thing this row itself needs: everything else about
-                // managing a specific pack happens once you're actually in it.
+                // Share and Delete both live in the editor header (Edit -> pack name -> Share/Delete),
+                // so the row only needs its way into the pack's puzzles (to play it, as a built-in
+                // pack's row has) and into the editor.
                 trailing={
-                  <IconButton
-                    icon='pencil-outline'
-                    size={20}
-                    onPress={() => {
-                      setEditingKey(item.key)
-                      setEditorVisible(true)
-                    }}
-                    accessibilityLabel={`Edit ${item.label}`}
-                  />
+                  <View style={styles.rowActions}>
+                    {item.count > 0 && unlocked >= item.count ? <CompleteTrophy /> : null}
+                    <IconButton icon='information-outline' size={20} onPress={() => openDetail(item.key)} accessibilityLabel={`View ${item.label} contents`} />
+                    <IconButton icon='pencil-outline' size={20} onPress={() => openEditor(item.key)} accessibilityLabel={`Edit ${item.label}`} />
+                  </View>
                 }
               />
             )
@@ -373,7 +375,7 @@ export const PacksScreen = memo(({ visible, onDismiss, selectedKeys, onChangeSel
         </Text>
       </>
     ),
-    [filter, filterButtons, theme.colors.primary, theme.colors.onPrimary, theme.colors.secondary, theme.colors.onSecondary, customPacks.length, shownCustomPacks, handleImportFile, unlockMap, toggle]
+    [filter, filterButtons, theme.colors.primary, theme.colors.onPrimary, theme.colors.secondary, theme.colors.onSecondary, customPacks.length, shownCustomPacks, handleImportFile, unlockMap, toggle, openDetail, openEditor]
   )
   // Stable, so a toggle doesn't hand the FlatList a new prop.
   const chipProps = useMemo(() => ({ style: { backgroundColor: theme.colors.primary }, selectedColor: theme.colors.onPrimary }), [theme.colors.primary, theme.colors.onPrimary])
@@ -392,8 +394,8 @@ export const PacksScreen = memo(({ visible, onDismiss, selectedKeys, onChangeSel
         <View testID='packs-screen-panel' style={styles.panel} accessibilityViewIsModal={visible && !anyOverlayVisible} accessibilityElementsHidden={!visible || anyOverlayVisible} importantForAccessibility={visible && !anyOverlayVisible ? 'yes' : 'no-hide-descendants'} onAccessibilityEscape={visible && !anyOverlayVisible ? onDismiss : undefined}>
           <ScrollViewProvider footerFixed>
             {/* Close sits on the LEADING (left) side - this panel slides in over the Single Player
-                loadout (its All Packs row), whose own Back arrow sits in that same top-left corner,
-                as does PackPuzzlesDrawer's, so every exit in the chain is in one place. 'Close', not
+                loadout (its Packs button), whose Home corner sits in that same top-left corner, as
+                does PackPuzzlesDrawer's Close, so every exit in the chain is in one place. 'Close', not
                 the Appbar.BackAction default of 'Back' - this dismisses the whole panel rather than
                 stepping back a level within it. Custom IconButton, not the
                 default callback-driven Appbar.BackAction: a plain arrow in the surface's ink (the fleet's back-button style), matching every other
@@ -446,7 +448,7 @@ export const PacksScreen = memo(({ visible, onDismiss, selectedKeys, onChangeSel
         </View>
       </Drawer>
 
-      <PackPuzzlesDrawer visible={detailVisible} packKey={detailKey} onDismiss={handleCloseDetail} />
+      <PackPuzzlesDrawer visible={detailVisible} packKey={detailKey} onDismiss={handleCloseDetail} mode={mode} difficulty={difficulty} onConfirm={onConfirm} onOnlyThisPack={handleOnlyThisPack} onlyThisPackSelected={onlyThisPackSelected} />
       <PackEditorDrawer visible={editorVisible} editingKey={editingKey} onDismiss={handleCloseEditor} onSaved={handleSaved} onDelete={handleDelete} onShare={handleShare} />
     </>
   )
@@ -474,6 +476,8 @@ const styles = StyleSheet.create({
   // instead of two oddly-sized pills floating above it.
   quickActionButton: { flex: 1 },
   quickActions: { flexDirection: 'row', gap: 8 },
+  // A row's trophy and buttons, side by side in its trailing slot.
+  rowActions: { alignItems: 'center', flexDirection: 'row' },
   // paddingBottom matches sectionHeaderRow's own marginTop above exactly - the scrollable
   // content's last row sits the same distance from what follows it (the footer) as the first
   // row sits from the header.
@@ -489,13 +493,14 @@ const styles = StyleSheet.create({
   // margin on the ROW itself instead, so both the label and its buttons move down together rather
   // than only the text shifting inside the row.
   sectionHeaderInRow: { fontWeight: '700' },
-  // marginTop matches the top-of-content breathing room everywhere else (see the loadout's
-  // firstSectionLabel/PackProgressDrawer's firstCard) - this row used to sit flush against the
-  // header with no gap at all.
+  // marginTop matches the top-of-content breathing room everywhere else (see the loadouts'
+  // firstSectionLabel) - this row used to sit flush against the header with no gap at all.
   sectionHeaderRow: {
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginTop: 12
-  }
+  },
+  // An icon button's 40pt slot, so the trophy lines up with the buttons beside it.
+  trophy: { alignItems: 'center', height: 40, justifyContent: 'center', width: 32 }
 })

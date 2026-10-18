@@ -1,3 +1,4 @@
+import { profilesActions } from '@tastic/profile'
 import { fireEvent, render } from '@testing-library/react-native'
 import { router, useLocalSearchParams } from 'expo-router'
 import { useEffect } from 'react'
@@ -51,6 +52,7 @@ describe('PlayScreen', () => {
     store.dispatch(achievementsActions.reset())
     store.dispatch(roundActions.reset())
     store.dispatch(activePlayerActions.setActivePlayer(null))
+    store.dispatch(profilesActions.setAll([]))
   })
 
   describe('a valid link', () => {
@@ -92,6 +94,8 @@ describe('PlayScreen', () => {
     // A link is played by whoever is playing: it never touches another player's waiting round.
     it("puts the puzzle on the active player's board", async () => {
       seedSoloRound(['Q'])
+      // On the roster, or the launch reconcile would forget a player it doesn't have (ProfilesProvider).
+      store.dispatch(profilesActions.setAll([{ id: 'profile-a', name: 'Alice', color: '#2196f3', tag: 'A', createdAt: 1, updatedAt: 1 }]))
       store.dispatch(activePlayerActions.setActivePlayer('profile-a'))
 
       await renderLink(VALID_LINK)

@@ -63,7 +63,7 @@ const smallestPack = () =>
     .filter((item) => item.count > 0)
     .sort((a, b) => a.count - b.count)[0]
 
-const renderPackPuzzles = (overrides: Partial<ComponentProps<typeof PackPuzzlesDrawer>> = {}) => render(<PackPuzzlesDrawer visible packKey={smallestPack().key} mode={DEFAULT_MODE} difficulty='any' onDismiss={jest.fn()} onConfirm={jest.fn()} {...overrides} />)
+const renderPackPuzzles = (overrides: Partial<ComponentProps<typeof PackPuzzlesDrawer>> = {}) => render(<PackPuzzlesDrawer visible packKey={smallestPack().key} mode={DEFAULT_MODE} difficulty='any' onDismiss={jest.fn()} onConfirm={jest.fn()} onOnlyThisPack={jest.fn()} {...overrides} />)
 
 // Row rendering, masking, and the solved/unsolved/all filter itself are PackPuzzleList's own
 // contract - covered in PackPuzzleList.test.tsx. This file only covers what's specific to the
@@ -199,17 +199,8 @@ describe('PackPuzzlesDrawer', () => {
     expect(queryByText('Only This Pack', { includeHiddenElements: true })).toBeNull()
   })
 
-  // The Single Player loadout's own: the pack selection becomes just this pack.
+  // The pack selection becomes just this pack (Choose Packs' selection, so Ready draws from it alone).
   describe('Only This Pack', () => {
-    it('only shows when the caller supplies onOnlyThisPack', async () => {
-      const { queryByText, rerender } = await renderPackPuzzles()
-      expect(queryByText('Only This Pack')).toBeNull()
-
-      await rerender(<PackPuzzlesDrawer visible packKey={smallestPack().key} mode={DEFAULT_MODE} difficulty='any' onDismiss={jest.fn()} onConfirm={jest.fn()} onOnlyThisPack={jest.fn()} />)
-
-      expect(queryByText('Only This Pack')).toBeTruthy()
-    })
-
     it('hands the caller this pack and closes itself, starting nothing', async () => {
       const pack = smallestPack()
       const onOnlyThisPack = jest.fn()
@@ -236,38 +227,6 @@ describe('PackPuzzlesDrawer', () => {
 
       expect(onOnlyThisPack).not.toHaveBeenCalled()
       expect(onDismiss).not.toHaveBeenCalled()
-    })
-  })
-
-  // PacksScreen's "view contents" on a built-in pack renders this with mode/difficulty/onConfirm
-  // all omitted (see its own doc comment) - read-only browsing, nothing to actually play with here.
-  describe('read-only mode (mode/difficulty/onConfirm all omitted)', () => {
-    it('omits the footer entirely', async () => {
-      const pack = smallestPack()
-      const { queryByText } = await render(<PackPuzzlesDrawer visible packKey={pack.key} onDismiss={jest.fn()} />)
-
-      expect(queryByText('Play This Pack')).toBeNull()
-      expect(queryByText('Only This Pack')).toBeNull()
-    })
-
-    it('still shows the header and puzzle list, just not playable', async () => {
-      const pack = smallestPack()
-      const { getByRole, findByText } = await render(<PackPuzzlesDrawer visible packKey={pack.key} onDismiss={jest.fn()} />)
-
-      expect(getByRole('header', { name: pack.label })).toBeTruthy()
-      expect(await findByText(`0 of ${pack.count} unlocked`)).toBeTruthy()
-    })
-
-    it('does not crash and calls no onConfirm when a puzzle row is pressed, since there is nothing to play with', async () => {
-      const pack = smallestPack()
-      const puzzle = getPuzzlesForCategory(pack.key)[0]
-      const { getByTestId } = await render(<PackPuzzlesDrawer visible packKey={pack.key} onDismiss={jest.fn()} />)
-
-      // PackPuzzleList itself renders rows as non-tappable when onPlayPuzzle is undefined (see its
-      // own contract, tested in PackPuzzleList.test.tsx) - this just proves PackPuzzlesDrawer
-      // actually leaves onPlayPuzzle unwired in read-only mode, not that a press is a no-op through
-      // some other path.
-      expect(() => fireEvent.press(getByTestId(`puzzle-row-${puzzle.id}`))).not.toThrow()
     })
   })
 })

@@ -1,5 +1,5 @@
 import { Provider } from '@rific/auto-paper'
-import { act, render as rtlRender } from '@testing-library/react-native'
+import { act, fireEvent, render as rtlRender } from '@testing-library/react-native'
 import type { ReactNode } from 'react'
 
 import { HeroTitle } from '@/components/HeroTitle'
@@ -137,9 +137,54 @@ describe('HeroTitle', () => {
     expect(getByTestId('hero-art-classic').props.children).toBe(2)
   })
 
+  // Jay, 2026-10-18: the hero doesn't need to keep animating. One round, then the finished figure
+  // stays, even after Home has been covered and uncovered.
+  it('acts out one round, then holds the finished picture for good', async () => {
+    const { getByTestId, rerender } = await render()
+    const art = () => getByTestId('hero-art-classic').props.children
+
+    await advance(REVEAL_HOLD + classicMode.maxMistakes * STEP + 1000)
+    expect(art()).toBe(classicMode.maxMistakes)
+    const rendersWhenSettled = count('render:classic')
+
+    await advance(20000)
+    await rerender(hero(classicMode, true))
+    await rerender(hero(classicMode, false))
+    await advance(20000)
+
+    expect(art()).toBe(classicMode.maxMistakes)
+    expect(count('mount:classic')).toBe(1)
+    // The two rerenders above, and nothing of the art's own.
+    expect(count('render:classic')).toBe(rendersWhenSettled + 2)
+  })
+
+  // Just for fun (Jay, 2026-10-18): pressing the art plays the round again, and only the round: the
+  // figure is drawn back in under the same gallows (no remount), and the title stays solved.
+  it('plays the round again when the art is pressed, keeping the gallows up and the title solved', async () => {
+    const { getByTestId } = await render()
+    const art = () => getByTestId('hero-art-classic').props.children
+    const title = () => getByTestId('hero-title').props.children
+    // In small steps: the title schedules each letter once the last is on screen.
+    for (let elapsed = 0; elapsed < REVEAL_HOLD + classicMode.maxMistakes * STEP + 1000; elapsed += 100) await advance(100)
+    expect(art()).toBe(classicMode.maxMistakes)
+    expect(title()).toBe('HANGMAN')
+
+    await fireEvent.press(getByTestId('hero-art-replay'))
+    // The figure fades, then the round starts over straight away: no reveal hold, the gallows never left.
+    await advance(200)
+    expect(art()).toBe(0)
+    await advance(STEP)
+    expect(art()).toBe(1)
+    await advance((classicMode.maxMistakes - 1) * STEP + 1000)
+    expect(art()).toBe(classicMode.maxMistakes)
+
+    expect(count('mount:classic')).toBe(1)
+    expect(title()).toBe('HANGMAN')
+  })
+
   // Home stays mounted under the loadout, the game and Stats: covered, the art holds its frame and
   // nothing behind the screen in front keeps re-rendering.
-  it('holds its frame with no further renders while paused, and picks the loop back up when uncovered', async () => {
+  it('holds its frame with no further renders while paused, and plays its round again when uncovered before it finished', async () => {
     const { getByTestId, rerender } = await render()
     const art = () => getByTestId('hero-art-classic').props.children
     await advance(REVEAL_HOLD + 3 * STEP)

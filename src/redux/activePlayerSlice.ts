@@ -5,8 +5,8 @@ import { GUEST_PLAYER_KEY, isPlayerKey } from '@/utils/players'
 import { isRootRehydrate } from './rehydrate'
 
 // Who is playing on this device: a @tastic/profile profile's id, or null for the guest (see
-// utils/players.ts). Always null until profiles arrive; everything kept per player reads it through
-// useActivePlayer. Persisted with the root blob (store.ts's whitelist), and always this device's own,
+// utils/players.ts), set from the player picker (useProfiles' selectPlayer) and dropped back to the
+// guest when that profile is forgotten; everything kept per player reads it through useActivePlayer. Persisted with the root blob (store.ts's whitelist), and always this device's own,
 // never part of a shared profile roster.
 export type ActivePlayerState = { profileId: string | null }
 

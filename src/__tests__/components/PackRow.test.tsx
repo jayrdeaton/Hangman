@@ -17,7 +17,7 @@ describe('PackRow', () => {
   // the row offers them as its own actions instead.
   it("offers its trailing controls as the row's accessibility actions, each running its own handler", async () => {
     const browse = jest.fn()
-    const remove = jest.fn()
+    const edit = jest.fn()
     const { getByLabelText } = await render(
       <PackRow
         label='NFL'
@@ -27,7 +27,7 @@ describe('PackRow', () => {
         onPress={jest.fn()}
         actions={[
           { name: 'browse', label: 'Browse NFL', onPress: browse },
-          { name: 'remove', label: 'Remove NFL from Quick Start', onPress: remove }
+          { name: 'edit', label: 'Edit NFL', onPress: edit }
         ]}
       />
     )
@@ -35,12 +35,12 @@ describe('PackRow', () => {
     const row = getByLabelText('Sports, NFL, 3 of 31 unlocked')
     expect(row.props.accessibilityActions).toEqual([
       { name: 'browse', label: 'Browse NFL' },
-      { name: 'remove', label: 'Remove NFL from Quick Start' }
+      { name: 'edit', label: 'Edit NFL' }
     ])
     expect(row.props.accessibilityRole).toBe('button')
 
-    await fireEvent(row, 'accessibilityAction', { nativeEvent: { actionName: 'remove' } })
-    expect(remove).toHaveBeenCalledTimes(1)
+    await fireEvent(row, 'accessibilityAction', { nativeEvent: { actionName: 'edit' } })
+    expect(edit).toHaveBeenCalledTimes(1)
     expect(browse).not.toHaveBeenCalled()
   })
 
@@ -51,8 +51,8 @@ describe('PackRow', () => {
   })
 
   it('adds no wrapper for a row with neither a label nor actions', async () => {
-    const { queryByLabelText } = await render(<PackRow label='Pack Progress' subtitle='0 of 58 packs complete' onPress={jest.fn()} />)
+    const { queryByLabelText } = await render(<PackRow label='NFL' subtitle='3 of 31 unlocked' onPress={jest.fn()} />)
 
-    expect(queryByLabelText(/Pack Progress,/)).toBeNull()
+    expect(queryByLabelText(/NFL,/)).toBeNull()
   })
 })

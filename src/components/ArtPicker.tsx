@@ -1,11 +1,12 @@
 import { resolveSeedColor, useAutoPaperTheme, useThemeSettings } from '@rific/auto-paper'
 import { TouchableRipple } from '@rific/feedback-press'
-import { JSX, memo, useMemo } from 'react'
+import { JSX, memo, useCallback, useMemo } from 'react'
 import { StyleSheet, View } from 'react-native'
 import { Text } from 'react-native-paper'
+import Animated, { useAnimatedStyle } from 'react-native-reanimated'
 
+import { useArtDemoLoop } from '@/hooks/useArtDemoLoop'
 import { VISIBLE_MODES } from '@/modes/registry'
-import { fullyDrawnMistakes } from '@/modes/shared/fullyDrawnMistakes'
 import type { GameMode } from '@/types/gameModes'
 
 import { GameVisual } from './GameVisual'
@@ -27,15 +28,27 @@ type ArtThumbnailProps = {
   onSelect: (mode: GameMode) => void
 }
 
-// One art, drawn complete (fullyDrawnMistakes) in the player's colors, the selected one framed in
-// primary. Static: no demo loop, so the sheet runs no timers (the modes only sketch themselves in once
-// as the sheet opens, on the UI thread). Memoized, so a pick re-renders just the old and new picks.
+// Waits for a press, then plays one round (see useArtDemoLoop's waitForReplay).
+const THUMBNAIL_DEMO = { waitForReplay: true }
+
+// One art, drawn complete in the player's colors, the selected one framed in primary. It sketches
+// itself in as the sheet opens, then holds still with no timers running; a press picks it and acts out
+// a round, like the hero (Jay, 2026-10-18), Classic's figure redrawn under its gallows, then holds
+// again. Memoized, so a pick re-renders just the old and new picks.
 const ArtThumbnail = memo(({ mode, selected, color, colors, onSelect }: ArtThumbnailProps): JSX.Element => {
   const theme = useAutoPaperTheme()
+  const { mistakes, revealKey, cardOpacity, partsOpacity, replay } = useArtDemoLoop(true, false, mode, THUMBNAIL_DEMO)
+  const visualStyle = useAnimatedStyle(() => ({ opacity: cardOpacity.value }))
+  const handlePress = useCallback(() => {
+    onSelect(mode)
+    replay()
+  }, [onSelect, mode, replay])
   return (
     <View style={styles.cell}>
-      <TouchableRipple onPress={() => onSelect(mode)} accessibilityRole='button' accessibilityLabel={`${mode.label} art`} accessibilityState={{ selected }} style={[styles.thumbnail, { backgroundColor: theme.colors.surface, borderColor: selected ? theme.colors.primary : theme.colors.outlineVariant }]}>
-        <GameVisual mode={mode} mistakes={fullyDrawnMistakes(mode)} color={color} colors={colors} style={styles.visual} />
+      <TouchableRipple onPress={handlePress} accessibilityRole='button' accessibilityLabel={`${mode.label} art`} accessibilityState={{ selected }} style={[styles.thumbnail, { backgroundColor: theme.colors.surface, borderColor: selected ? theme.colors.primary : theme.colors.outlineVariant }]}>
+        <Animated.View style={[styles.visual, visualStyle]}>
+          <GameVisual key={revealKey} mode={mode} mistakes={mistakes} color={color} colors={colors} partsOpacity={partsOpacity} style={styles.visual} />
+        </Animated.View>
       </TouchableRipple>
     </View>
   )
@@ -51,10 +64,9 @@ export type ArtPickerProps = {
 
 // The Settings sheet's ART section (SettingsDialog): every art the picker offers (VISIBLE_MODES) as a
 // thumbnail, then the picked art's name and description. Controlled: the sheet hands it the active
-// player's art and useSelectArt's pick, read outside the sheet's Portal (see SettingsDialog). It
-// replaced the Customize drawer's carousel (ModePickerDrawer), whose card demo loop had to be paused
-// whenever the drawer was closed; the sheet unmounts its rows after its close fade (auto-paper's
-// Dialog), so nothing here outlives the sheet either.
+// player's art and useSelectArt's pick, read outside the sheet's Portal (see SettingsDialog). Nothing
+// here outlives the sheet: it unmounts its rows after its close fade (auto-paper's Dialog), a round a
+// press started included.
 export const ArtPicker = ({ selected, onSelect }: ArtPickerProps): JSX.Element => {
   const theme = useAutoPaperTheme()
   const { settings } = useThemeSettings()

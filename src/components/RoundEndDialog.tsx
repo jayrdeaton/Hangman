@@ -1,6 +1,7 @@
 import { Button } from '@rific/feedback-press'
 import { overlayActionStyles, OverlayBackdrop, OverlayCard, useOverlayCardColors } from '@tastic/hud/chrome'
-import { JSX, useEffect } from 'react'
+import { type Profile, ProfileChip } from '@tastic/profile'
+import { JSX, useEffect, useMemo } from 'react'
 import { AccessibilityInfo, BackHandler, ScrollView, StyleSheet, useWindowDimensions, View } from 'react-native'
 import { Icon, Portal, ProgressBar, Text, useTheme } from 'react-native-paper'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
@@ -11,6 +12,7 @@ import type { UnlockedAchievement } from '@/types/stats'
 import { commaString } from '@/utils/commaString'
 import type { PnpStandingRow } from '@/utils/pnpSession'
 
+import { PlayerChip, PlayerLine } from './PlayerIdentity'
 import { PnpStandingsList, STANDINGS_ONE_COLUMN_MAX, STANDINGS_ROW_GAP, STANDINGS_ROW_HEIGHT, standingsLineCount } from './PnpStandings'
 
 export type RoundEndOutcome = 'win' | 'loss'
@@ -21,15 +23,32 @@ export type CategoryProgress = {
   totalCount: number
 }
 
-// A Pass & Play round's own rows on the card (see GameScreen's PnpRound).
+// A Pass & Play round's own rows on the card (see GameScreen's PnpRound). Each player's profile, when
+// they sit as one, puts their chip beside their name (see PlayerIdentity).
 export type PnpRoundSummary = {
   guesserId: string
   guesserName: string
+  guesserProfile?: Profile | null
   writerName: string
   // Who writes the next word: by the session's rule, the guesser.
   nextWriterName: string
+  nextWriterProfile?: Profile | null
   // The session's standings with this round counted, in seat order.
   standings: PnpStandingRow[]
+}
+
+// One player's unlocks this round. A profile's go under their name, beside their chip; the guest's
+// (owner null, the device's own progress) under the plain "Achievement(s) Unlocked".
+export type RoundUnlocks = { owner: Profile | null; achievements: UnlockedAchievement[] }
+
+// The solo card's Up Next row (the round-over hot swap): who plays the next puzzle. Every profile on
+// the roster, after the guest, the round's own player picked to start with. A pick changes nothing on
+// the card; Next (or Android back) makes them the active player (see GameScreen's SoloRound).
+export type UpNextChoice = {
+  profiles: Profile[]
+  // The pick: a profile's id, or null for the guest.
+  selectedId: string | null
+  onSelect: (profileId: string | null) => void
 }
 
 export type RoundEndDialogProps = {
@@ -40,11 +59,15 @@ export type RoundEndDialogProps = {
   // here are the ones the player never found, and they draw in red.
   guessedLetters: string[]
   categoryProgress?: CategoryProgress | null
-  // What the round just unlocked, in catalog order (see GameScreen's handleSolved and handleLost).
-  unlockedAchievements?: UnlockedAchievement[]
+  // What the round just unlocked, each in catalog order, one block per player (see GameScreen's
+  // handleSolved and handleLost): a solo round's player, or a Pass & Play round's guesser and, when
+  // they're a profile, its writer. A block with nothing in it isn't shown.
+  unlocks?: RoundUnlocks[]
   // A Pass & Play round's card: who guessed whose word, the session's standings, and who writes next.
   // Absent, it's the solo card.
   passAndPlay?: PnpRoundSummary | null
+  // The solo card's Up Next row, shown while there's a profile on the roster. Absent, there's no row.
+  upNext?: UpNextChoice | null
   // End Session beside Next (Pass & Play). Absent, Next is the only way on.
   onEndSession?: () => void
   onDismiss: () => void
@@ -74,7 +97,23 @@ const NEXT_WRITER_HEIGHT = 20
 // standings' heading (with its gap) and rows. If one runs taller, the body scrolls a little rather
 // than anything going off-screen.
 const UNLOCKS_HEADER_HEIGHT = 30
+// The owner's chip beside that heading: one titleMedium line tall, so the heading keeps its height.
+const UNLOCKS_OWNER_CHIP_SIZE = 24
 const UNLOCK_ROW_HEIGHT = 34
+// The chips on Pass & Play's who-guessed line (a bodyLarge line tall) and next-writer line (a bodyMedium
+// line), so neither line grows for them.
+const RESULT_LINE_CHIP_SIZE = 24
+const NEXT_WRITER_CHIP_SIZE = 20
+// Up Next: its heading (with its gap), then the chips (Paper's 32pt Chip), wrapping 8 apart. A chip's
+// width is guessed from its name: about a letter's width per character at labelLarge, plus the frame
+// around the label (the avatar or the selected check, and the padding either side). Guessed the same
+// whatever is picked, so a pick can't move the answer's size.
+const UP_NEXT_HEADER_HEIGHT = 30
+const UP_NEXT_CHIP_HEIGHT = 32
+const UP_NEXT_CHIP_GAP = 8
+const UP_NEXT_LETTER_WIDTH = 9
+const UP_NEXT_CHIP_FRAME = 56
+const GUEST_NAME = 'Guest'
 const PROGRESS_HEIGHT = 46
 const RESULT_LINE_HEIGHT = 48
 const STANDINGS_HEADER_HEIGHT = 30
@@ -116,6 +155,22 @@ const answerLineCount = (wordLengths: number[], fontSize: number, width: number)
   return lines
 }
 
+// How many lines Up Next's chips wrap into across `width`, by the same greedy wrap as the answer's.
+export const upNextLineCount = (names: string[], width: number): number => {
+  let lines = 1
+  let lineWidth = 0
+  for (const name of names) {
+    const chipWidth = Math.min(width, UP_NEXT_CHIP_FRAME + name.length * UP_NEXT_LETTER_WIDTH)
+    if (lineWidth > 0 && lineWidth + UP_NEXT_CHIP_GAP + chipWidth > width) {
+      lines++
+      lineWidth = chipWidth
+    } else {
+      lineWidth += (lineWidth > 0 ? UP_NEXT_CHIP_GAP : 0) + chipWidth
+    }
+  }
+  return lines
+}
+
 // The answer's font size: the largest (up to ANSWER_MAX_FONT_SIZE) at which its longest word fits
 // the card's width and, down to ANSWER_HEIGHT_FIT_FLOOR, at which all its lines fit `heightBudget`.
 export const fitAnswerFontSize = (wordLengths: number[], width: number, heightBudget: number): number => {
@@ -136,21 +191,32 @@ export const fitAnswerFontSize = (wordLengths: number[], width: number, heightBu
 //
 // A Pass & Play round's card (passAndPlay) also says who guessed whose word, above the answer, and
 // shows the session's standings under it, the guesser's row in bold; then who writes next, above End
-// Session and Next. "You" is still the guesser: the device is in their hands.
+// Session and Next. "You" is still the guesser: the device is in their hands. A player sitting as a
+// profile has their chip beside their name on each of those lines, and the unlocks are each player's
+// own: the guesser's, then the writer's when the writer is a profile (a guest's progress is the
+// device's, which is the guesser's to see).
+//
+// The solo card ends with Up Next (upNext) once there's a profile on the roster: the guest and every
+// profile as chips, the round's player picked. Nothing changes until Next, which hands the device to the
+// pick.
 //
 // No backdrop dismissal, like every fleet card: a stray tap after the round can't skip to the next
 // puzzle. Next (or End Session) is the only way on, and Android's back button counts as Next. The card
 // never runs off the screen: it stops at the safe area, and the answer, standings, unlocks and progress
 // scroll between the title and the buttons, so Next always stays in reach.
-export const RoundEndDialog = ({ visible, outcome, phrase, guessedLetters, categoryProgress, unlockedAchievements, passAndPlay, onEndSession, onDismiss }: RoundEndDialogProps): JSX.Element | null => {
+export const RoundEndDialog = ({ visible, outcome, phrase, guessedLetters, categoryProgress, unlocks, passAndPlay, upNext, onEndSession, onDismiss }: RoundEndDialogProps): JSX.Element | null => {
   const theme = useTheme()
   const { fg, fgMuted } = useOverlayCardColors()
   const { width: windowWidth, height: windowHeight } = useWindowDimensions()
   const insets = useSafeAreaInsets()
   // Not gated on outcome === 'win': a loss can still unlock something (the first puzzle played, a
-  // Pass & Play rounds rung, a day streak).
-  const hasUnlocks = Boolean(unlockedAchievements?.length)
+  // Pass & Play rounds rung, a day streak). Each block is headed "Alice Unlocked" for a profile (the
+  // fleet's "<Name> unlocked", as the toasts say it), else the plain "Achievement(s) Unlocked", and
+  // announced as "<heading> unlocked: ...".
+  const unlockBlocks = useMemo(() => (unlocks ?? []).filter((block) => block.achievements.length > 0).map((block) => ({ ...block, heading: block.owner ? block.owner.name : `Achievement${block.achievements.length > 1 ? 's' : ''}` })), [unlocks])
   const won = outcome === 'win'
+  // The guest, then the roster in the order the player picker lists it.
+  const upNextPlayers = useMemo(() => (upNext && upNext.profiles.length > 0 ? [{ id: null, name: GUEST_NAME, profile: null }, ...[...upNext.profiles].sort((a, b) => a.name.localeCompare(b.name)).map((profile) => ({ id: profile.id, name: profile.name, profile }))] : []), [upNext])
 
   // The card is a plain overlay rather than a native modal, so nothing tells a screen reader it
   // appeared: this announces the result, the answer and any unlocks.
@@ -160,9 +226,9 @@ export const RoundEndDialog = ({ visible, outcome, phrase, guessedLetters, categ
   useEffect(() => {
     if (!visible || !outcome) return
     const base = `${outcome === 'win' ? 'You won!' : 'You lost!'}${resultLine ? ` ${resultLine}` : ''} The answer was ${phrase}.`
-    const unlockSuffix = hasUnlocks ? ` Achievement${unlockedAchievements!.length > 1 ? 's' : ''} unlocked: ${unlockedAchievements!.map((achievement) => achievement.title).join(', ')}.` : ''
+    const unlockSuffix = unlockBlocks.map((block) => ` ${block.heading} unlocked: ${block.achievements.map((achievement) => achievement.title).join(', ')}.`).join('')
     AccessibilityInfo.announceForAccessibility(base + unlockSuffix + (nextWriterLine ? ` ${nextWriterLine}.` : ''))
-  }, [visible, outcome, phrase, resultLine, nextWriterLine, hasUnlocks, unlockedAchievements])
+  }, [visible, outcome, phrase, resultLine, nextWriterLine, unlockBlocks])
 
   useEffect(() => {
     if (!visible) return
@@ -191,8 +257,16 @@ export const RoundEndDialog = ({ visible, outcome, phrase, guessedLetters, categ
   const chromeHeight = CARD_CHROME_HEIGHT + (nextWriterLine ? NEXT_WRITER_HEIGHT + CARD_GAP : 0) + (buttonsStack ? ACTION_GAP + BUTTON_HEIGHT : 0)
   const resultLineHeight = resultLine ? RESULT_LINE_HEIGHT + CARD_GAP : 0
   const standingsHeight = standingsLines > 0 ? CARD_GAP + STANDINGS_HEADER_HEIGHT + standingsLines * STANDINGS_ROW_HEIGHT + (standingsLines - 1) * STANDINGS_ROW_GAP : 0
-  const unlocksHeight = hasUnlocks ? CARD_GAP + UNLOCKS_HEADER_HEIGHT + UNLOCK_ROW_HEIGHT * unlockedAchievements!.length : 0
-  const otherBodyHeight = resultLineHeight + standingsHeight + unlocksHeight + (showProgress ? CARD_GAP + PROGRESS_HEIGHT : 0)
+  const unlocksHeight = unlockBlocks.reduce((height, block) => height + CARD_GAP + UNLOCKS_HEADER_HEIGHT + UNLOCK_ROW_HEIGHT * block.achievements.length, 0)
+  const upNextLines =
+    upNextPlayers.length > 0
+      ? upNextLineCount(
+          upNextPlayers.map((player) => player.name),
+          answerWidth
+        )
+      : 0
+  const upNextHeight = upNextLines > 0 ? CARD_GAP + UP_NEXT_HEADER_HEIGHT + upNextLines * UP_NEXT_CHIP_HEIGHT + (upNextLines - 1) * UP_NEXT_CHIP_GAP : 0
+  const otherBodyHeight = resultLineHeight + standingsHeight + unlocksHeight + (showProgress ? CARD_GAP + PROGRESS_HEIGHT : 0) + upNextHeight
   const answerFontSize = fitAnswerFontSize(
     words.map((word) => word.length),
     answerWidth,
@@ -219,9 +293,11 @@ export const RoundEndDialog = ({ visible, outcome, phrase, guessedLetters, categ
           </Text>
           <ScrollView style={styles.body} contentContainerStyle={styles.bodyContent} alwaysBounceVertical={false}>
             {resultLine ? (
-              <Text variant='bodyLarge' style={[styles.resultLine, { color: fg }]}>
-                {resultLine}
-              </Text>
+              <PlayerLine profile={passAndPlay?.guesserProfile} size={RESULT_LINE_CHIP_SIZE}>
+                <Text variant='bodyLarge' style={[styles.resultLine, { color: fg }]}>
+                  {resultLine}
+                </Text>
+              </PlayerLine>
             ) : null}
             <View accessible accessibilityLabel={`The answer was ${phrase}`} style={[styles.answer, { rowGap: answerFontSize * ANSWER_ROW_GAP_RATIO }]}>
               {answerWords.map(({ letters, letterDelaysMs, letterColors }, i) => (
@@ -242,12 +318,15 @@ export const RoundEndDialog = ({ visible, outcome, phrase, guessedLetters, categ
                 tier-colored badge (the achievement's own icon, black on its bronze, silver or gold,
                 as on the Stats & Achievements screen) beside its title. A left-aligned list, centered as a
                 block. */}
-            {hasUnlocks ? (
-              <View style={styles.achievements}>
-                <Text variant='titleMedium' style={[styles.blockHeading, { color: fg }]}>
-                  Achievement{unlockedAchievements!.length > 1 ? 's' : ''} Unlocked
-                </Text>
-                {unlockedAchievements!.map((achievement) => (
+            {unlockBlocks.map((block, index) => (
+              <View key={block.owner?.id ?? `guest-${index}`} style={styles.achievements}>
+                <View style={styles.unlocksHeading}>
+                  {block.owner ? <ProfileChip profile={block.owner} size={UNLOCKS_OWNER_CHIP_SIZE} /> : null}
+                  <Text variant='titleMedium' style={[styles.blockHeading, styles.unlocksHeadingText, { color: fg }]}>
+                    {block.heading} Unlocked
+                  </Text>
+                </View>
+                {block.achievements.map((achievement) => (
                   <View key={achievement.id} style={styles.unlockRow}>
                     <View style={[styles.unlockBadge, { backgroundColor: ACHIEVEMENT_TIER_COLORS[achievement.tier] }]}>
                       <Icon source={achievement.icon} size={18} color='#000000' />
@@ -259,7 +338,7 @@ export const RoundEndDialog = ({ visible, outcome, phrase, guessedLetters, categ
                   </View>
                 ))}
               </View>
-            ) : null}
+            ))}
             {showProgress && categoryProgress ? (
               <View style={styles.progress}>
                 <Text variant='bodySmall' style={[styles.progressLabel, { color: fgMuted }]}>
@@ -270,11 +349,27 @@ export const RoundEndDialog = ({ visible, outcome, phrase, guessedLetters, categ
                 </View>
               </View>
             ) : null}
+            {/* Who plays the next puzzle: the pick is only applied by Next, so the card (and the colors
+                behind it) stay the round's own until then. */}
+            {upNext && upNextPlayers.length > 0 ? (
+              <View style={styles.upNext}>
+                <Text variant='titleMedium' style={[styles.blockHeading, { color: fg }]}>
+                  Up Next
+                </Text>
+                <View style={styles.upNextChips}>
+                  {upNextPlayers.map((player) => (
+                    <PlayerChip key={player.id ?? 'guest'} id={player.id} name={player.name} profile={player.profile} selected={player.id === upNext.selectedId} onSelect={upNext.onSelect} accessibilityLabel={`Up next: ${player.name}`} />
+                  ))}
+                </View>
+              </View>
+            ) : null}
           </ScrollView>
           {nextWriterLine ? (
-            <Text variant='bodyMedium' style={[styles.nextWriter, { color: fgMuted }]}>
-              {nextWriterLine}
-            </Text>
+            <PlayerLine profile={passAndPlay?.nextWriterProfile} size={NEXT_WRITER_CHIP_SIZE}>
+              <Text variant='bodyMedium' style={[styles.nextWriter, { color: fgMuted }]}>
+                {nextWriterLine}
+              </Text>
+            </PlayerLine>
           ) : null}
           {/* Solo: one button that already knows where to draw the next puzzle from (see
               GameStartPayload.packScope and GameScreen's handleRoundEnd: still inside the pack the
@@ -329,5 +424,11 @@ const styles = StyleSheet.create({
   title: { fontWeight: 'bold', textAlign: 'center' },
   unlockBadge: { alignItems: 'center', borderRadius: 8, height: 28, justifyContent: 'center', width: 28 },
   unlockRow: { alignItems: 'center', flexDirection: 'row', gap: 10 },
-  unlockTitle: { flexShrink: 1 }
+  unlockTitle: { flexShrink: 1 },
+  // The owner's chip and the heading, centered together over the list.
+  unlocksHeading: { alignItems: 'center', alignSelf: 'center', flexDirection: 'row', gap: 8 },
+  unlocksHeadingText: { flexShrink: 1 },
+  // The heading over the chips, with the unlock block's 6 between them.
+  upNext: { alignSelf: 'stretch', gap: 6 },
+  upNextChips: { flexDirection: 'row', flexWrap: 'wrap', gap: UP_NEXT_CHIP_GAP, justifyContent: 'center' }
 })

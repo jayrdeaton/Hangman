@@ -1,8 +1,8 @@
 // Who the things kept per player belong to: stats and achievements, unlocked puzzles, the waiting solo
 // round, colors, and the art, difficulty and pack picks (keyboard, sound and haptics stay the device's).
-// A player is a @tastic/profile profile, by id, or the guest when no profile is picked. There are no
-// profiles yet, so everyone is the guest for now; profiles plug in through activePlayerSlice's
-// profileId, and everything below already keys on it.
+// A player is a @tastic/profile profile, by id, or the guest when no profile is picked: the active one
+// is activePlayerSlice's profileId (picked on the Single Player loadout), and everything below keys on
+// it. The roster itself is the fleet's (see useProfiles' ProfilesProvider).
 //
 // A profile's key is its id. Profile ids are `profile-<time>-<random>` (the fleet's generator), so the
 // guest's key can never name a real profile, and neither has a ':' in it, which the per-player storage

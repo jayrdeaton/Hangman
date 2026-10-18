@@ -141,12 +141,12 @@ describe('RootLayout screen options', () => {
     expect(screenOptions()).toMatchObject({ animation: 'fade', headerShown: false, gestureEnabled: false })
   })
 
-  it('registers the five screens, with options only on game and play', async () => {
+  it('registers the six screens, with options only on game and play', async () => {
     await renderLayout()
 
     const registered = screens()
-    expect([...registered.keys()]).toEqual(['index', 'loadout', 'game', 'achievements', 'play'])
-    expect(['index', 'loadout', 'achievements'].map((name) => registered.get(name)?.options)).toEqual([undefined, undefined, undefined])
+    expect([...registered.keys()]).toEqual(['index', 'loadout', 'game', 'achievements', 'profiles', 'play'])
+    expect(['index', 'loadout', 'achievements', 'profiles'].map((name) => registered.get(name)?.options)).toEqual([undefined, undefined, undefined, undefined])
   })
 
   // Home's cold-launch resume redirects with resume=1: that game is where the player already was, so
