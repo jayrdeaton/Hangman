@@ -3,7 +3,7 @@ import { defaultColors, getTriadicPalette } from '@rific/auto-paper'
 import { type Profile, profilesActions } from '@tastic/profile'
 import { act, fireEvent, render, waitFor, within } from '@testing-library/react-native'
 import { router } from 'expo-router'
-import { BackHandler, View } from 'react-native'
+import { BackHandler, Dimensions, View } from 'react-native'
 
 import { LoadoutScreen } from '@/components/LoadoutScreen'
 import { Providers } from '@/components/Providers'
@@ -442,9 +442,9 @@ describe('the Pass & Play page', () => {
     const artHeight = (screen: Screen) => Number(screen.getByTestId('art-carousel').props.accessibilityHint)
     // A 375x667 phone: the page runs the screen's full height, under the corners (their 56 come off the
     // room, as the page's top padding).
-    const laidOut = async (above: number, below: number) => {
+    const laidOut = async (above: number, below: number, page = 667) => {
       const screen = await renderLoadout()
-      await layout(screen, 'loadout-page', 667)
+      await layout(screen, 'loadout-page', page)
       await layout(screen, 'loadout-above-art', above)
       await layout(screen, 'loadout-below-art', below)
       return screen
@@ -458,9 +458,12 @@ describe('the Pass & Play page', () => {
       expect(artHeight(screen)).toBe(667 - 56 - 116 - 236 - 20 - 52 - 16)
     })
 
-    it('stops at its floor, past which the page scrolls, and at its ceiling', async () => {
+    // Every art is a square scene, so drawn taller than wide it's no bigger: it stops at the page's
+    // width less the gutters, and a tall window's room past that goes around the whole page.
+    it('stops at its floor, past which the page scrolls, and at its own width', async () => {
       expect(artHeight(await laidOut(180, 400))).toBe(72)
-      expect(artHeight(await laidOut(44, 100))).toBe(260)
+      expect(artHeight(await laidOut(44, 100))).toBe(667 - 56 - 44 - 100 - 20 - 52 - 16)
+      expect(artHeight(await laidOut(44, 100, 3000))).toBe(Dimensions.get('window').width - 32)
     })
   })
 

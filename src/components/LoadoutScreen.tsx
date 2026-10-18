@@ -4,7 +4,7 @@ import { ConfirmDialog, WELL_SHADOW } from '@tastic/hud/chrome'
 import { OptionPicker, type OptionPickerOption, type Profile, ProfileColorProvider } from '@tastic/profile'
 import { router, useFocusEffect, useIsFocused } from 'expo-router'
 import { JSX, memo, type ReactNode, useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import { AccessibilityInfo, type LayoutChangeEvent, StyleSheet, useWindowDimensions, View } from 'react-native'
+import { AccessibilityInfo, type LayoutChangeEvent, Platform, StyleSheet, useWindowDimensions, View } from 'react-native'
 import { Avatar, Icon, ProgressBar, Text, useTheme } from 'react-native-paper'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { useDispatch, useSelector, useStore } from 'react-redux'
@@ -254,16 +254,19 @@ SourceChoice.displayName = 'SourceChoice'
 // The room between the blocks, and around the page.
 const BLOCK_GAP = 20
 // The art's own height: as tall as the room the rest of the page leaves it (measured, see
-// LoadoutScreen), between these. Past the floor, the page scrolls.
+// LoadoutScreen), from this floor up to its own width (every art is a square scene, so taller than
+// wide draws no bigger). Past the floor, the page scrolls. It used to stop at 260pt, which on a tall
+// window left the page spread out around a small art (Jay, 2026-10-18: "it seems disjointed").
 const ART_SLACK = 16
 const ART_MIN_HEIGHT = 72
-const ART_MAX_HEIGHT = 260
+// The page's gutters: the art is the page's width (MAX_PAGE_WIDTH on the web) less these.
+const PAGE_GUTTER = 16
 // Single Player's page but the art, at its tallest (two lines of pack names): the player, the
 // carousel's name and pips, the settings row, the packs card and Ready, with the gaps between. The
 // art's height until the page has been measured, so the first frame is already close.
 const SINGLE_PLAYER_PAGE_BUT_ART = 44 + BLOCK_GAP + ART_CAROUSEL_CHROME_HEIGHT + BLOCK_GAP + 44 + BLOCK_GAP + 116 + BLOCK_GAP + 48
 
-const clampArt = (height: number) => Math.round(Math.min(ART_MAX_HEIGHT, Math.max(ART_MIN_HEIGHT, height)))
+const clampArt = (height: number, maxHeight: number) => Math.round(Math.min(maxHeight, Math.max(ART_MIN_HEIGHT, height)))
 
 const isPlayerPickerOpen = (openId: string | null) => openId === PLAYER_PICKER_ID || isSeatPickerOpen(openId)
 const isDifficultyOpen = (openId: string | null) => openId === DIFFICULTY_PICKER_ID
@@ -331,7 +334,7 @@ export type LoadoutScreenProps = {
 export const LoadoutScreen = ({ mode: door }: LoadoutScreenProps): JSX.Element => {
   const dispatch = useDispatch()
   const store = useStore<RootState>()
-  const { height: windowHeight } = useWindowDimensions()
+  const { height: windowHeight, width: windowWidth } = useWindowDimensions()
   const insets = useSafeAreaInsets()
   const { selectPlayer } = useProfilesActions()
   const { forgetGuestSeat, colorGuestSeats } = usePlayerData()
@@ -644,9 +647,10 @@ export const LoadoutScreen = ({ mode: door }: LoadoutScreenProps): JSX.Element =
   // the home indicator. The fade is the strip's height, so whatever passes under Home and the cog has
   // faded away there and the glyphs stay clear.
   const pagePadding = useMemo(() => ({ paddingBottom: insets.bottom + ART_SLACK / 2, paddingTop: insets.top + CORNER_BAND_HEIGHT + ART_SLACK / 2 }), [insets.bottom, insets.top])
-  const estimate = clampArt(windowHeight - insets.top - insets.bottom - CORNER_BAND_HEIGHT - SINGLE_PLAYER_PAGE_BUT_ART - ART_SLACK)
+  const artMaxHeight = (Platform.OS === 'web' ? Math.min(windowWidth, MAX_PAGE_WIDTH) : windowWidth) - 2 * PAGE_GUTTER
+  const estimate = clampArt(windowHeight - insets.top - insets.bottom - CORNER_BAND_HEIGHT - SINGLE_PLAYER_PAGE_BUT_ART - ART_SLACK, artMaxHeight)
   const measured = viewportHeight > 0 && aboveHeight > 0 && belowHeight > 0
-  const artHeight = measured ? clampArt(viewportHeight - insets.top - insets.bottom - CORNER_BAND_HEIGHT - aboveHeight - belowHeight - BLOCK_GAP - ART_CAROUSEL_CHROME_HEIGHT - ART_SLACK) : estimate
+  const artHeight = measured ? clampArt(viewportHeight - insets.top - insets.bottom - CORNER_BAND_HEIGHT - aboveHeight - belowHeight - BLOCK_GAP - ART_CAROUSEL_CHROME_HEIGHT - ART_SLACK, artMaxHeight) : estimate
   const handleViewportLayout = useCallback((event: LayoutChangeEvent) => setViewportHeight(Math.round(event.nativeEvent.layout.height)), [])
 
   const coveredOnPage = packsScreenVisible || resetVisible || asking || removing !== null || switching !== null || clearing !== null
@@ -711,11 +715,12 @@ const styles = StyleSheet.create({
   group: { alignItems: 'center', alignSelf: 'stretch' },
   // A group over the press away catcher (and everything after it) while its popover is open.
   lifted: { zIndex: 2 },
-  // The players pinned under the corners and Ready's group at the bottom, the art centered in the room
-  // between them, inside the gutters the rest of the app keeps. Centering the whole stack instead left
-  // a tall window's spare room as a gap over the players (Jay, 2026-10-18), since the art stops at its
-  // ceiling. Once the page outgrows the room it scrolls, with no room left to spread.
-  page: { alignItems: 'center', flexGrow: 1, justifyContent: 'space-between', paddingHorizontal: 16, paddingVertical: ART_SLACK / 2 },
+  // One group, centered in the room under the corners, inside the gutters the rest of the app keeps.
+  // The art grows to fill the room (up to its width), so the group fills it too and keeps together;
+  // only past the art's width is there room left, split above and below the whole group. (Spreading
+  // the blocks apart instead, space-between, read as disjointed around a small art, Jay 2026-10-18.)
+  // Once the page outgrows the room it scrolls.
+  page: { alignItems: 'center', flexGrow: 1, justifyContent: 'center', paddingHorizontal: PAGE_GUTTER, paddingVertical: ART_SLACK / 2 },
   // Rounded at both ends, like PlayerPicker's, and raised off the board the same way.
   pill: { borderRadius: 999, boxShadow: WELL_SHADOW },
   // Centered, and never wider than the gutters, so a long name shrinks the pill instead of overflowing.
