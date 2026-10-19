@@ -6,7 +6,7 @@ import type { GameStartPayload } from '@/types/gameSession'
 
 import { normalizePhrase, type PuzzleConfig } from './puzzlePicker'
 
-// Matches PnpWordPrompt's and PackEditorDrawer's TextInput maxLength props - a link claiming a
+// Matches PnpWordPrompt's and PackEditorPage's TextInput maxLength props - a link claiming a
 // longer phrase/hint than the UI could ever produce is malformed (or hostile), not a puzzle worth
 // trying to resolve.
 const MAX_PHRASE_LENGTH = 128

@@ -1,7 +1,7 @@
 import { FadingScrollView } from '@rific/auto-paper'
 import { Button, Card, IconButton, SegmentedButtons, Switch } from '@rific/feedback-press'
 import { ConfirmDialog, WELL_SHADOW } from '@tastic/hud/chrome'
-import { OptionPicker, type OptionPickerOption, type Profile } from '@tastic/profile'
+import { type Profile } from '@tastic/profile'
 import { router, useFocusEffect, useIsFocused } from 'expo-router'
 import { JSX, memo, type ReactNode, type RefObject, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import { AccessibilityInfo, type LayoutChangeEvent, Platform, StyleSheet, useWindowDimensions, View, type ViewStyle } from 'react-native'
@@ -14,7 +14,6 @@ import { REFLOW_EASING, REFLOW_MS, SOURCE_FADE_MS } from '@/constants/loadoutMot
 import { useActivePlayer } from '@/hooks/useActivePlayer'
 import { useAutoSaveCustom } from '@/hooks/useAutoSaveCustom'
 import { useCatalogActions, useCatalogVersions } from '@/hooks/useCatalog'
-import { useDifficultyOptionColors } from '@/hooks/useDifficultyColors'
 import { useEasedValue } from '@/hooks/useEasedValue'
 import { usePackSelection } from '@/hooks/usePackSelection'
 import { usePlayerData } from '@/hooks/usePlayerData'
@@ -45,6 +44,7 @@ import { getManifestUnlockProgress } from '@/utils/unlocks'
 import { ART_CAROUSEL_CHROME_HEIGHT, ArtCarousel } from './ArtCarousel'
 import { CORNER_BAND_HEIGHT, LoadoutPressAway, LoadoutShell, useLoadoutCovered, useLoadoutMotion, useLoadoutPopoverHost } from './LoadoutShell'
 import { PacksScreen, type PacksScreenHandle } from './PacksScreen'
+import { DifficultyPicker } from './PillPicker'
 import { PLAYER_PICKER_ID_PREFIX, PlayerPicker } from './PlayerPicker'
 import { isSeatPickerOpen, SeatsRow } from './SeatsRow'
 
@@ -52,38 +52,8 @@ import { isSeatPickerOpen, SeatsRow } from './SeatsRow'
 export const DIFFICULTY_PICKER_ID = 'loadout-difficulty'
 const PLAYER_PICKER_ID = `${PLAYER_PICKER_ID_PREFIX}-profile`
 
-// Signal bars for the tiers, an open set for Any (every tier).
-const DIFFICULTY_TIERS: { value: DifficultyFilter; label: string; icon: string }[] = [
-  { value: 'any', label: 'Any', icon: 'all-inclusive' },
-  { value: 'easy', label: 'Easy', icon: 'signal-cellular-1' },
-  { value: 'medium', label: 'Medium', icon: 'signal-cellular-2' },
-  { value: 'hard', label: 'Hard', icon: 'signal-cellular-3' }
-]
-
 // The fleet's black or white, as the pickers draw their name and chevron.
 const inkFor = (dark: boolean) => (dark ? '#FFFFFF' : '#000000')
-
-// Difficulty, as @tastic/profile's OptionPicker (the fleet's CPU difficulty control in hud's
-// PlayerSetupPanel): the same pill and popover as the players' pickers, on the page's popover host. A
-// pill rather than a segmented control, which cut "Medium" short on small phones; the difficulty is a
-// saved pick, so the extra tap costs little. Its chip, menu border and picked row take the tier's
-// color, the same colors the board's difficulty badge uses (Any is the theme's primary), and the pill
-// the tier's muted container.
-const DifficultyPicker = memo(({ value, onChange }: { value: DifficultyFilter; onChange: (value: DifficultyFilter) => void }): JSX.Element => {
-  const theme = useTheme()
-  const host = useLoadoutPopoverHost()
-  const colors = useDifficultyOptionColors()
-  // Each row's icon in its own tier's color until it's the picked one, which fills with it
-  // (@tastic/profile 0.16.1+).
-  const options = useMemo((): OptionPickerOption<DifficultyFilter>[] => DIFFICULTY_TIERS.map((tier) => ({ ...tier, color: colors[tier.value].vibrant })), [colors])
-  const icon = DIFFICULTY_TIERS.find((tier) => tier.value === value)?.icon ?? 'all-inclusive'
-  // PlayerPicker's own raised pill, filled with the picked tier's container color (the fleet's black or
-  // white name and chevron read on it, light containers in light mode and dark ones in dark).
-  const container = colors[value].container
-  const pillStyle = useMemo(() => [styles.pill, { backgroundColor: container }], [container])
-  return <OptionPicker id={DIFFICULTY_PICKER_ID} host={host} options={options} value={value} onChange={onChange} color={colors[value].vibrant} dark={theme.dark} icon={icon} triggerStyle={pillStyle} />
-})
-DifficultyPicker.displayName = 'DifficultyPicker'
 
 // The packs card's names line: two lines of it at most, across the card inside the page's gutters
 // (the game's 480pt column on the web), its padding, the icon and the chevron.
@@ -211,10 +181,11 @@ type SettingsRowProps = {
 // Over the packs card and Ready after it while Difficulty's popover is open, which drops down over
 // them (zIndex only orders one parent's children, as SeatsRow's open seat has it).
 const SettingsRow = memo(({ difficulty, onChangeDifficulty, canReset, onReset }: SettingsRowProps): JSX.Element => {
-  const { openId } = useLoadoutPopoverHost()
+  const host = useLoadoutPopoverHost()
+  const { openId } = host
   return (
     <View testID='loadout-settings-row' style={[styles.settingsRow, isDifficultyOpen(openId) && styles.settingsRowOpen]}>
-      <DifficultyPicker value={difficulty} onChange={onChangeDifficulty} />
+      <DifficultyPicker id={DIFFICULTY_PICKER_ID} host={host} value={difficulty} onChange={onChangeDifficulty} />
       <ResetSettingsButton disabled={!canReset} onPress={onReset} />
     </View>
   )
@@ -898,8 +869,6 @@ const styles = StyleSheet.create({
   // the blocks apart instead, space-between, read as disjointed around a small art, Jay 2026-10-18.)
   // Once the page outgrows the room it scrolls.
   page: { alignItems: 'center', flexGrow: 1, justifyContent: 'center', paddingHorizontal: PAGE_GUTTER, paddingVertical: ART_SLACK / 2 },
-  // Rounded at both ends, like PlayerPicker's, and raised off the board the same way.
-  pill: { borderRadius: 999, boxShadow: WELL_SHADOW },
   // Centered, and never wider than the gutters, so a long name shrinks the pill instead of overflowing.
   playerRow: { alignItems: 'center', alignSelf: 'stretch', maxWidth: '100%' },
   // Over everything on the page but a lifted group (its height is the page's).

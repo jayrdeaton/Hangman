@@ -46,7 +46,7 @@ export type PnpWordPromptProps = {
   onSubmit: () => void
 }
 
-// The 4pt slop the drawer headers' icon buttons use, for a 48pt close target.
+// The 4pt slop the corners' and screen headers' icon buttons use, for a 48pt close target.
 const ICON_ACTION_HIT_SLOP = { top: 4, bottom: 4, left: 4, right: 4 }
 // The writer's chip beside the title: a headlineSmall line tall.
 const TITLE_CHIP_SIZE = 32

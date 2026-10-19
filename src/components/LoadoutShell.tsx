@@ -56,11 +56,11 @@ export type LoadoutShellProps = {
   // The page, which lays itself out in the room under the corners (scrolling only when it has to; see
   // LoadoutScreen).
   children: ReactNode
-  // Closes the top-most drawer open over the page, if one is, for Android's back button. Returns
-  // whether it closed one.
+  // Closes the top-most overlay open over the page (Choose Packs, or a page inside it), if one is,
+  // for Android's back button. Returns whether it closed one.
   closeOverlay: () => boolean
-  // Closes every drawer, when the page stops being the one showing (a browser back on the web, a
-  // share link pushed over it): an open art picker would otherwise keep its demo loop running.
+  // Closes every overlay, when the page stops being the one showing (a browser back on the web, a
+  // share link pushed over it), so coming back finds the page itself.
   closeAllOverlays: () => void
   overlays?: ReactNode
   // A button centered in the corners' strip, between Home and the cog, in their layer and at their
@@ -86,7 +86,7 @@ export const LoadoutShell = ({ children, closeOverlay, closeAllOverlays, overlay
   const popoverHost = useMemo(() => ({ openId, toggle, close: closePopover }), [openId, toggle, closePopover])
   const popoverOpenRef = useRef(false)
   // Read through refs so the back listener below is registered once per focus and never again: React
-  // Native runs the newest listener first, and re-registering whenever a drawer opened or closed put
+  // Native runs the newest listener first, and re-registering whenever an overlay opened or closed put
   // this one ahead of a confirm that opened in the same commit (picking a puzzle in a pack's list
   // opens the abandon confirm and closes the list together), so back left the page instead of
   // cancelling the confirm.
@@ -98,8 +98,8 @@ export const LoadoutShell = ({ children, closeOverlay, closeAllOverlays, overlay
     popoverOpenRef.current = openId !== null
   })
 
-  // Back closes an open popover first (it sits over the page, under any drawer, and a drawer can't
-  // open while it's up: the tap that would open one presses it away), then an open drawer, then
+  // Back closes an open popover first (it sits over the page, under any overlay, and an overlay can't
+  // open while it's up: the tap that would open one presses it away), then an open overlay, then
   // leaves for Home. safeBack replaces with Home when there's nothing beneath (this loadout replaced a
   // resumed game), where the navigator would close the app. One listener, through closeOverlay, so a
   // popover never registers its own (see CLAUDE.md's Android back ordering).

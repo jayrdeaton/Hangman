@@ -163,7 +163,7 @@ export const resolvePuzzle = (config: PuzzleConfig, packKeys: string[], unlocked
       puzzleId: randomPick.puzzle.id,
       difficultyTier: randomPick.puzzle.difficultyTier,
       hint: buildHint(randomPick.puzzle, randomPick.pack),
-      // A draw narrowed to exactly one pack (PackPuzzlesDrawer's Play This Pack, or a selection of
+      // A draw narrowed to exactly one pack (PackPuzzlesPage's Play This Pack, or a selection of
       // exactly one pack) means the player was intentionally browsing that pack
       // - the round-end handler keeps drawing from just it. More than one means this came from the
       // player's whole standing selection (the loadout's Ready), so the next round
@@ -173,7 +173,7 @@ export const resolvePuzzle = (config: PuzzleConfig, packKeys: string[], unlocked
   }
 }
 
-// A player-picked puzzle rather than a random draw - PackPuzzlesDrawer's own "browse and tap one"
+// A player-picked puzzle rather than a random draw - PackPuzzlesPage's own "browse and tap one"
 // list. Deliberately narrow (just packKey/puzzleId/mode, not a whole PuzzleConfig): which exact
 // puzzle to play is already decided by the caller, so difficulty/sourceMode/customPhrase have
 // nothing left to contribute here the way they do for resolvePuzzle's random draw.

@@ -34,8 +34,8 @@ export const Haptic = ({ children }: HapticProps) => {
   const sound = useMemo<SoundConfig>(() => ({ selection: playClick }), [playClick])
 
   return (
-    // paper is no longer auto-detected (same Metro/ESM limitation as @rific/auto-paper and
-    // @rific/drawer) - without it, every Button/IconButton/Card/etc. this app renders through
+    // paper is no longer auto-detected (the same Metro/ESM limitation as @rific/auto-paper's
+    // modules) - without it, every Button/IconButton/Card/etc. this app renders through
     // @rific/feedback-press falls back to a bare, unstyled RN element instead of the real Paper one.
     <FeedbackPressProvider initialValue={settings} onChange={onChange} soundInitialValue={soundSettings} onSoundChange={onSoundChange} paper={RNPaper} sound={sound}>
       {children}

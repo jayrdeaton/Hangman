@@ -743,7 +743,7 @@ describe('LoadoutScreen (Single Player)', () => {
       expect(packBrowser(screen).getByRole('button', { name: 'Only This Pack' }).props.accessibilityState?.disabled).toBe(true)
 
       // The page names it, and Ready draws from just it.
-      await fireEvent.press(packBrowser(screen).getByLabelText('Close'))
+      await fireEvent.press(packBrowser(screen).getByLabelText('Back'))
       await fireEvent.press(choosePacks(screen).getByLabelText('Close'))
       expect(screen.getByText(`1 of ${N} packs`)).toBeTruthy()
       expect(screen.getByText(PACK_B.label)).toBeTruthy()

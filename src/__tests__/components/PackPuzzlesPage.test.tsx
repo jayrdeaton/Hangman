@@ -6,7 +6,7 @@ import * as RNPaper from 'react-native-paper'
 import { PaperProvider } from 'react-native-paper'
 import { Provider as ReduxProvider } from 'react-redux'
 
-import { PackPuzzlesDrawer } from '@/components/PackPuzzlesDrawer'
+import { PackPuzzlesPage } from '@/components/PackPuzzlesPage'
 import { CatalogProvider } from '@/hooks/useCatalog'
 import { DEFAULT_MODE } from '@/modes/registry'
 import { store } from '@/redux/store'
@@ -17,9 +17,9 @@ import { getPuzzleUnlockMap } from '@/utils/unlocks'
 
 // @rific/feedback-press no longer auto-detects react-native-paper (see Haptic.tsx's own comment
 // on this) - without an explicit FeedbackPressProvider paper={RNPaper} ancestor, every Button/
-// IconButton this drawer renders (including the puzzle rows and header Close) falls back to a
+// IconButton this page renders (including the puzzle rows and header Back) falls back to a
 // bare, unstyled Pressable that doesn't carry the same testID/accessibilityLabel wiring. The store
-// and the catalog counters are what the drawer reads the active player's unlocked puzzles through
+// and the catalog counters are what the page reads the active player's unlocked puzzles through
 // (usePuzzleUnlocks).
 const Wrapper = ({ children }: { children: ReactNode }) => (
   <ReduxProvider store={store}>
@@ -44,7 +44,7 @@ jest.mock('@/utils/unlocks', () => ({
 
 // resolveChosenPuzzle (real, what tapping a specific puzzle uses) stays untouched - only
 // resolvePuzzle (Play This Pack's own path) is overridden, and only for the one test below that needs to
-// prove the parent drawer's difficulty filter actually reaches it; every other test restores the
+// prove the parent screen's difficulty filter actually reaches it; every other test restores the
 // real implementation in beforeEach so it exercises genuine resolution against real pack data.
 jest.mock('@/utils/puzzlePicker', () => ({
   ...jest.requireActual('@/utils/puzzlePicker'),
@@ -63,13 +63,16 @@ const smallestPack = () =>
     .filter((item) => item.count > 0)
     .sort((a, b) => a.count - b.count)[0]
 
-const renderPackPuzzles = (overrides: Partial<ComponentProps<typeof PackPuzzlesDrawer>> = {}) => render(<PackPuzzlesDrawer visible packKey={smallestPack().key} mode={DEFAULT_MODE} difficulty='any' onDismiss={jest.fn()} onConfirm={jest.fn()} onOnlyThisPack={jest.fn()} {...overrides} />)
+// PacksScreen's popover host for the page's filters: none open, unless a test opens one.
+const closedHost = () => ({ openId: null, toggle: jest.fn(), close: jest.fn() })
+
+const renderPackPuzzles = (overrides: Partial<ComponentProps<typeof PackPuzzlesPage>> = {}) => render(<PackPuzzlesPage visible packKey={smallestPack().key} mode={DEFAULT_MODE} difficulty='any' onDismiss={jest.fn()} onConfirm={jest.fn()} onOnlyThisPack={jest.fn()} popoverHost={closedHost()} {...overrides} />)
 
 // Row rendering, masking, and the solved/unsolved/all filter itself are PackPuzzleList's own
 // contract - covered in PackPuzzleList.test.tsx. This file only covers what's specific to the
-// Drawer shell wrapping it: the header, the footer (Play This Pack and Only This Pack), and that a
+// page wrapping it: the header, the footer (Play This Pack and Only This Pack), and that a
 // row tap actually reaches the parent's onConfirm/onDismiss through PackPuzzleList's onPlayPuzzle prop.
-describe('PackPuzzlesDrawer', () => {
+describe('PackPuzzlesPage', () => {
   beforeEach(() => {
     mockAlert.mockClear()
     mockGetPuzzleUnlockMap.mockReset()
@@ -78,25 +81,41 @@ describe('PackPuzzlesDrawer', () => {
     mockResolvePuzzle.mockImplementation(realResolvePuzzle)
   })
 
-  it("titles the header with the pack's own name, with the full unlock progress delegated to PackPuzzleList underneath it", async () => {
+  it("titles the header with the pack's own name, with the unlock progress delegated to PackPuzzleList underneath it", async () => {
     const pack = smallestPack()
     const { getByRole, getAllByText, findByText, queryByText } = await renderPackPuzzles()
 
     expect(getByRole('header', { name: pack.label })).toBeTruthy()
-    // The header, and PackPuzzleList's pack summary row under it.
-    expect(getAllByText(pack.label)).toHaveLength(2)
+    // Only the header: PackPuzzleList's summary under it doesn't repeat the name.
+    expect(getAllByText(pack.label)).toHaveLength(1)
     expect(queryByText('Pack')).toBeNull()
     expect(await findByText(`0 of ${pack.count} unlocked`)).toBeTruthy()
   })
 
-  // A custom pack's name can be 60 characters: the title is cut to one line, clear of the back arrow.
-  it('keeps the title to one line, inset clear of the back arrow', async () => {
+  // The page's own catcher, under the list (which carries its own over its rows): a tap on Back or a
+  // footer button with a filter open only closes the filter.
+  it('covers its header and footer with a press away catcher while a filter is open', async () => {
+    const host = { ...closedHost(), openId: 'pack-status' }
+    const onDismiss = jest.fn()
+    const { getAllByLabelText } = await renderPackPuzzles({ popoverHost: host, onDismiss })
+
+    const catchers = getAllByLabelText('Dismiss')
+    expect(catchers).toHaveLength(2)
+    await fireEvent.press(catchers[0])
+
+    expect(host.close).toHaveBeenCalledTimes(1)
+    expect(onDismiss).not.toHaveBeenCalled()
+  })
+
+  // A custom pack's name can be 60 characters: the title is cut to one line, in the room the header row
+  // leaves beside the back arrow.
+  it('keeps the title to one line, beside the back arrow', async () => {
     const pack = smallestPack()
     const { getByRole } = await renderPackPuzzles()
 
     const title = getByRole('header', { name: pack.label })
     expect(title.props.numberOfLines).toBe(1)
-    expect(StyleSheet.flatten(title.parent?.props.style)).toMatchObject({ paddingHorizontal: 52 })
+    expect(StyleSheet.flatten(title.props.style)).toMatchObject({ flex: 1 })
   })
 
   it('plays the exact puzzle tapped, not a random draw from the rest of the pack, and closes itself so the started round is actually visible', async () => {
@@ -146,7 +165,7 @@ describe('PackPuzzlesDrawer', () => {
     expect(onDismiss).not.toHaveBeenCalled()
   })
 
-  it("passes the parent drawer's difficulty filter through to the Play This Pack draw", async () => {
+  it("passes the parent screen's difficulty filter through to the Play This Pack draw", async () => {
     const pack = smallestPack()
     mockResolvePuzzle.mockReturnValue({ ok: true, payload: { phrase: 'X', mode: DEFAULT_MODE, sourceMode: 'random', packKey: pack.key, packLabel: pack.label, puzzleId: 'x', difficultyTier: 'hard' } })
     const { getByText } = await renderPackPuzzles({ difficulty: 'hard' })
@@ -183,17 +202,17 @@ describe('PackPuzzlesDrawer', () => {
     expect(mockAlert).toHaveBeenCalledWith('No Puzzles Available', 'No puzzles available for the selected packs and difficulty.')
   })
 
-  it('closes via the header close button', async () => {
+  it('steps back via the header back arrow', async () => {
     const onDismiss = jest.fn()
     const { getByLabelText } = await renderPackPuzzles({ onDismiss })
 
-    await fireEvent.press(getByLabelText('Close'))
+    await fireEvent.press(getByLabelText('Back'))
 
     expect(onDismiss).toHaveBeenCalledTimes(1)
   })
 
   it('renders no header, list, or footer while no pack has ever been chosen', async () => {
-    const { queryByText } = await render(<PackPuzzlesDrawer visible={false} packKey={null} mode={DEFAULT_MODE} difficulty='any' onDismiss={jest.fn()} onConfirm={jest.fn()} onOnlyThisPack={jest.fn()} />)
+    const { queryByText } = await render(<PackPuzzlesPage visible={false} packKey={null} mode={DEFAULT_MODE} difficulty='any' onDismiss={jest.fn()} onConfirm={jest.fn()} onOnlyThisPack={jest.fn()} popoverHost={closedHost()} />)
 
     expect(queryByText('Play This Pack', { includeHiddenElements: true })).toBeNull()
     expect(queryByText('Only This Pack', { includeHiddenElements: true })).toBeNull()

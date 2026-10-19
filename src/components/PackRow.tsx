@@ -1,4 +1,5 @@
 import { Card } from '@rific/feedback-press'
+import { WELL_SHADOW } from '@tastic/hud/chrome'
 import { JSX, memo, ReactNode, useCallback } from 'react'
 import { type AccessibilityActionEvent, Platform, StyleSheet, View } from 'react-native'
 import { Avatar, ProgressBar, Text, useTheme } from 'react-native-paper'
@@ -43,6 +44,8 @@ export type PackRowProps = {
   // across rows (e.g. two masked puzzles that happen to share a letter count) - label text alone
   // isn't always enough to target one specific row.
   testID?: string
+  // Fills its cell's height, so the cards in one row of Choose Packs' grid all end level.
+  fill?: boolean
 }
 
 // Memoized: the long lists render this as a FlatList renderItem (PacksScreen's pack list, up to 50
@@ -50,7 +53,7 @@ export type PackRowProps = {
 // .map() inside a ScrollView - this component is the actual list-item cost that virtualization
 // exists to avoid paying for off-screen rows, so keeping it a pure, memoizable presentational
 // component (no inline-recreated non-primitive props from its own body) matters here.
-export const PackRow = memo(({ label, group, isPack = false, subtitle, subtitleBadge, progress, onPress, leading, trailing, accessibilityLabel, actions, testID }: PackRowProps): JSX.Element => {
+export const PackRow = memo(({ label, group, isPack = false, subtitle, subtitleBadge, progress, onPress, leading, trailing, accessibilityLabel, actions, testID, fill = false }: PackRowProps): JSX.Element => {
   const theme = useTheme()
   // Cycles primary/secondary/tertiary per group (see packGroupStyle.ts) so scanning down a long
   // pack list reads as visibly different clusters instead of one uniform color end to end -
@@ -58,7 +61,7 @@ export const PackRow = memo(({ label, group, isPack = false, subtitle, subtitleB
   const groupColors = isPack ? packGroupColors(group, theme) : null
 
   const card = (
-    <Card style={[styles.card, groupColors ? { backgroundColor: groupColors.container } : null]} mode='contained' onPress={onPress} testID={testID}>
+    <Card style={[styles.card, fill && styles.fill, groupColors ? { backgroundColor: groupColors.container } : null]} contentStyle={fill ? styles.fillContent : undefined} mode='contained' onPress={onPress} testID={testID}>
       <Card.Content style={styles.row}>
         {/* A badge on the left (Avatar.Icon at a vibrant triad color, size 40), the same shape as
             the Pass & Play seats' avatars, so group identity reads at the same glance-weight. */}
@@ -113,7 +116,7 @@ export const PackRow = memo(({ label, group, isPack = false, subtitle, subtitleB
   if (!accessibilityLabel && !offersActions) return card
   const spokenLabel = accessibilityLabel ?? [groupColors ? packGroupLabel(group) : null, label, subtitle].filter(Boolean).join(', ')
   return (
-    <View accessible accessibilityLabel={spokenLabel} accessibilityRole={onPress ? 'button' : undefined} accessibilityActions={offersActions ? actions?.map(({ name, label: actionLabel }) => ({ name, label: actionLabel })) : undefined} onAccessibilityAction={offersActions ? handleAccessibilityAction : undefined}>
+    <View accessible accessibilityLabel={spokenLabel} accessibilityRole={onPress ? 'button' : undefined} accessibilityActions={offersActions ? actions?.map(({ name, label: actionLabel }) => ({ name, label: actionLabel })) : undefined} onAccessibilityAction={offersActions ? handleAccessibilityAction : undefined} style={fill ? styles.fill : undefined}>
       {card}
     </View>
   )
@@ -121,7 +124,12 @@ export const PackRow = memo(({ label, group, isPack = false, subtitle, subtitleB
 PackRow.displayName = 'PackRow'
 
 const styles = StyleSheet.create({
-  card: { marginBottom: 4 },
+  // Raised off the board by the fleet's wells' shadow, like the loadout's packs card, so it doesn't
+  // sink into the whiteboard. The lists space their cards themselves.
+  card: { boxShadow: WELL_SHADOW },
+  fill: { flex: 1 },
+  // The card's content centered in a cell taller than it.
+  fillContent: { flex: 1, justifyContent: 'center' },
   group: { fontWeight: '700', letterSpacing: 0.5 },
   muted: { opacity: 0.7 },
   progressBar: {

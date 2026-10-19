@@ -1,6 +1,4 @@
-import * as AutoPaper from '@rific/auto-paper'
 import { useAutoPaperTheme } from '@rific/auto-paper'
-import { configureDrawer } from '@rific/drawer'
 import { DarkTheme, DefaultTheme, type NativeStackNavigationOptions, Stack, ThemeProvider } from 'expo-router'
 import { JSX, useMemo } from 'react'
 import { Platform, StyleSheet, View } from 'react-native'
@@ -10,11 +8,6 @@ import { BoardBackground } from '@/components/BoardBackground'
 import { IncomingFileImport } from '@/components/IncomingFileImport'
 import { Providers } from '@/components/Providers'
 import { UpdateDialog } from '@/components/UpdateDialog'
-
-// @rific/drawer no longer auto-detects @rific/auto-paper (Metro doesn't resolve a
-// require()-in-try/catch into an ESM build's module graph), so every drawer's panel needs this
-// injected explicitly once, near the app root, or it falls back to a solid (non-blurred) backdrop.
-configureDrawer({ autoPaper: AutoPaper })
 
 // A resumed game (Home's cold-launch redirect, see HomeScreen.tsx) appears without the push: it's
 // where the player already was, not somewhere new.

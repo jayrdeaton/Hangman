@@ -1,7 +1,9 @@
-import { useCallback, useEffect, useState } from 'react'
-import { Keyboard, type KeyboardEvent, type LayoutChangeEvent, Platform, useWindowDimensions, type ViewStyle } from 'react-native'
+import { useCallback, useState } from 'react'
+import { type LayoutChangeEvent, useWindowDimensions, type ViewStyle } from 'react-native'
 import { useAnimatedStyle, withTiming } from 'react-native-reanimated'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
+
+import { useKeyboard } from './useKeyboard'
 
 // The card keeps 24 from the screen edges (the same as the confirms and the result card, plus the
 // safe area top and bottom).
@@ -22,38 +24,24 @@ export type KeyboardLiftedCard = {
 }
 
 // A fleet card with a text field in it (the Pass & Play prompt), centered on
-// @tastic/hud's OverlayBackdrop, that rises to clear the software keyboard and never grows past the
-// room it has. Neither reanimated's useAnimatedKeyboard nor react-native-keyboard-controller ever
-// delivered a real keyboard height in this app's build (confirmed live: both stayed at 0 with the
-// keyboard open), while React Native's own Keyboard events do, so those drive it.
+// @tastic/hud's OverlayBackdrop, that rises to clear the software keyboard (useKeyboard) and never
+// grows past the room it has.
 export const useKeyboardLiftedCard = (): KeyboardLiftedCard => {
   const insets = useSafeAreaInsets()
   const { height: windowHeight } = useWindowDimensions()
 
-  // Show and hide are two discrete events, so plain state is enough: the card's height cap and its
-  // lift both follow it, and the lift eases over the duration the keyboard itself takes.
-  const [keyboard, setKeyboard] = useState({ height: 0, duration: 250 })
-  useEffect(() => {
-    const showEvent = Platform.OS === 'ios' ? 'keyboardWillShow' : 'keyboardDidShow'
-    const hideEvent = Platform.OS === 'ios' ? 'keyboardWillHide' : 'keyboardDidHide'
-    const showSub = Keyboard.addListener(showEvent, (event: KeyboardEvent) => setKeyboard({ height: event.endCoordinates.height, duration: event.duration || 250 }))
-    const hideSub = Keyboard.addListener(hideEvent, (event: KeyboardEvent) => setKeyboard({ height: 0, duration: event.duration || 250 }))
-    return () => {
-      hideSub.remove()
-      showSub.remove()
-    }
-  }, [])
+  // The card's height cap and its lift both follow the keyboard, and the lift eases over the duration
+  // the keyboard itself takes.
+  const keyboard = useKeyboard()
   const [cardHeight, setCardHeight] = useState(0)
   const onCardLayout = useCallback((event: LayoutChangeEvent) => setCardHeight(event.nativeEvent.layout.height), [])
 
   // The backdrop centers the card between its safe-area-plus-gutter edges, regionTop and
   // regionBottom. With the keyboard up the card also has to end a breathing gap above the
-  // keyboard's top edge: usableBottom. iOS reports a keyboard height that already covers the home
-  // indicator's strip (the bottom inset); Android's leaves out the navigation bar under it, so the
-  // keyboard's top edge sits that much higher there.
+  // keyboard's top edge: usableBottom (see useKeyboard's overlap).
   const regionTop = insets.top + SCREEN_GUTTER
   const regionBottom = windowHeight - insets.bottom - SCREEN_GUTTER
-  const keyboardTop = windowHeight - keyboard.height - (Platform.OS === 'ios' ? 0 : insets.bottom)
+  const keyboardTop = windowHeight - keyboard.overlap
   const usableBottom = keyboard.height > 0 ? Math.min(regionBottom, keyboardTop - KEYBOARD_BREATHING_GAP) : regionBottom
   const cardMaxHeight = Math.max(0, usableBottom - regionTop)
   // Centered, the card's bottom sits at regionTop + gap + cardHeight. It rises by however far that

@@ -19,7 +19,7 @@ const DARK_BOARD_SHADE = 0.5
 
 // The board's base color, which the OS root background matches too (Theme.tsx's RootBackground). In light
 // appearance it is the theme's surface: a whiteboard, where the cards drawn on the surface (the Stats screen's
-// wells, the drawers) stand off it on @tastic/hud's well shadow, as on the fleet's white screens. In dark
+// wells, Choose Packs' cards) stand off it on @tastic/hud's well shadow, as on the fleet's white screens. In dark
 // appearance it is that surface shaded halfway to black, a step below it, so the same cards read on the
 // chalkboard the way the fleet's other games put surface cards on a black screen (Jay, 2026-10-17: with hud
 // 0.22's wells, the theme's surface, a surface-colored chalkboard left them showing only by a shadow that

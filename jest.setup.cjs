@@ -2,7 +2,7 @@
 globalThis.IS_REACT_ACT_ENVIRONMENT = true
 
 // A manual mock under src/__mocks__/ for a BARE node_modules package name
-// (react-native-reanimated, expo-audio, redux-persist, @rific/scroll-view, etc.) is picked up
+// (react-native-reanimated, expo-audio, redux-persist, @rific/gestures, etc.) is picked up
 // automatically, with zero registration needed - confirmed by every one of those working with no
 // jest.mock() call anywhere for them. A manual mock for a deep SUBPATH of a package is not
 // reliably auto-applied the same way: confirmed directly (a console.warn planted in the real,

@@ -1,5 +1,4 @@
-import { BlurView, themeActions, useBlur } from '@rific/auto-paper'
-import { getDrawerConfig } from '@rific/drawer'
+import { themeActions } from '@rific/auto-paper'
 import { useUpdater } from '@rific/updater'
 import { act, render, waitFor } from '@testing-library/react-native'
 import { DarkTheme, DefaultTheme } from 'expo-router'
@@ -87,11 +86,6 @@ afterEach(() => {
 describe('RootLayout', () => {
   it('renders without crashing', async () => {
     await expect(renderLayout()).resolves.toBeTruthy()
-  })
-
-  // Moved here from the old App.tsx: without it every drawer's panel falls back to a solid backdrop.
-  it('hands the drawers auto-paper once, at load', () => {
-    expect(getDrawerConfig().autoPaper).toMatchObject({ BlurView, useBlur })
   })
 
   // The old App test: App used to call useUpdater() bare, which confirms an update through the native

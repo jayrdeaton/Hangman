@@ -1,70 +1,59 @@
-import { useAutoPaperTheme } from '@rific/auto-paper'
-import { Drawer } from '@rific/drawer'
+import { FadingScrollView, useAutoPaperTheme } from '@rific/auto-paper'
 import { Button, IconButton } from '@rific/feedback-press'
 import { useFocusChain } from '@rific/focus-chain'
-import { ScrollView, ScrollViewFooter, ScrollViewHeader, ScrollViewProvider } from '@rific/scroll-view'
 import { ConfirmDialog } from '@tastic/hud/chrome'
 import { JSX, memo, useMemo, useRef, useState } from 'react'
-import { Keyboard, StyleSheet, useWindowDimensions, View } from 'react-native'
+import { Keyboard, StyleSheet, View } from 'react-native'
 import { Text, TextInput } from 'react-native-paper'
+import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
-import { DRAWER_PACK_DETAIL_Z_INDEX } from '@/constants/drawerStacking'
 import { useActivePlayer } from '@/hooks/useActivePlayer'
 import { useGameStats } from '@/hooks/useGameStats'
+import { useKeyboard } from '@/hooks/useKeyboard'
 import { useUnlockToasts } from '@/hooks/useUnlockToasts'
 import { CUSTOM_QUICK_PACK_LABEL, type CustomPack, type CustomPackEntryInput, getCustomPackPuzzles, saveCustomPack } from '@/utils/customPacks'
 import { normalizePhrase } from '@/utils/normalizePhrase'
 import { getPuzzleManifest } from '@/utils/puzzleCatalog'
 
-const EMPTY_ENTRY: CustomPackEntryInput = { answer: '', hint: '' }
-// 4px on every side of a 40x40 icon button (see the matching actionSize={40} on this drawer's own
-// ScrollViewHeader) brings the actual tap target up to 48x48, without the visible circle itself
-// growing to fill that whole area.
-const ICON_ACTION_HIT_SLOP = { top: 4, bottom: 4, left: 4, right: 4 }
+import { FullScreenLayer } from './FullScreenLayer'
+import { PAGE_MAX_WIDTH } from './PackPuzzlesPage'
+import { ScreenHeader } from './ScreenHeader'
 
-export type PackEditorDrawerProps = {
+const EMPTY_ENTRY: CustomPackEntryInput = { answer: '', hint: '' }
+
+export type PackEditorPageProps = {
   visible: boolean
-  // The pack being edited, or null to create a new one. Deliberately NOT reset to null on dismiss
-  // by the caller - like every other drawer here, this translates away rather than unmounting, so
-  // the form needs to hold steady through that close animation instead of blanking out mid-slide.
+  // The pack being edited, or null to create a new one. Deliberately NOT reset to null on leaving by
+  // the caller - like Choose Packs' other page, this slides away rather than unmounting, so the form
+  // has to hold steady through that slide instead of blanking out mid-way.
   editingKey: string | null
   onDismiss: () => void
   onSaved: (pack: CustomPack) => void
-  // Unconditional - this drawer's own ConfirmDialog is what gates calling it, so by the time it
-  // runs the player has already agreed. No confirm() inside it (see ConfirmDialog's own doc
-  // comment for why: window.confirm() isn't reliable on web).
+  // Unconditional - this page's own ConfirmDialog is what gates calling it, so by the time it runs
+  // the player has already agreed. No confirm() inside it (see ConfirmDialog's own doc comment for
+  // why: window.confirm() isn't reliable on web).
   onDelete: (key: string) => Promise<void>
   onShare: (key: string, label: string) => Promise<void>
 }
 
-// Create/edit a custom pack - its own animated Drawer (reached from PacksScreen's "Create" button
-// or a custom pack row's edit icon), stacked on top of PacksScreen the same way PackPuzzlesDrawer
-// stacks on top of the loadout, rather than swapping in as an unanimated step within
-// the same panel. Close sits on the LEADING (left) side, matching every other drawer the loadout
-// opens (see PacksScreen/PackPuzzlesDrawer) - freeing the trailing side for Share/Delete once
-// there's an actual saved pack behind editingKey, rather than "back" and those two icons competing
-// for the same corner.
-// Memoized: stays mounted (translated off-screen) even while closed, and always renders the full
-// form below (every entry row, focus-chain registration and all) regardless of `visible` - and an
-// always-mounted, never-visible-right-now subtree still costs a re-render without this whenever
-// an unrelated ancestor state change bubbles through it.
-export const PackEditorDrawer = memo(({ visible, editingKey, onDismiss, onSaved, onDelete, onShare }: PackEditorDrawerProps): JSX.Element => {
-  const { width: windowWidth } = useWindowDimensions()
-
-  return (
-    <Drawer open={visible} onClose={onDismiss} width={windowWidth} zIndex={DRAWER_PACK_DETAIL_Z_INDEX}>
-      <View testID='pack-editor-panel' style={styles.panel} accessibilityViewIsModal={visible} accessibilityElementsHidden={!visible} importantForAccessibility={visible ? 'yes' : 'no-hide-descendants'} onAccessibilityEscape={visible ? onDismiss : undefined}>
-        {/* Keyed on the pack being edited (or 'new') so switching which pack you're editing - or
-            from editing into creating - always starts the form fresh, without needing an effect to
-            resync it. The Drawer above never unmounts this (translates only), so without the key
-            the form would keep showing whatever it last had the next time visible flips back on
-            for a different target. */}
-        <PackEditorForm key={editingKey ?? 'new'} editingKey={editingKey} onCancel={onDismiss} onSaved={onSaved} onDelete={onDelete} onShare={onShare} />
-      </View>
-    </Drawer>
-  )
-})
-PackEditorDrawer.displayName = 'PackEditorDrawer'
+// Create or edit a custom pack (Choose Packs' Create, or a custom pack's pencil): a page that slides
+// in over Choose Packs' list (FullScreenLayer), under the same screen header with a Back arrow, and
+// Share and Delete at its end once there's a saved pack behind editingKey.
+// Memoized: it stays mounted (off the screen's edge) even while away, and always renders the full form
+// below (every entry row, focus-chain registration and all) regardless of `visible`, and an
+// always-mounted subtree still costs a re-render without this whenever something above it changes.
+export const PackEditorPage = memo(({ visible, editingKey, onDismiss, onSaved, onDelete, onShare }: PackEditorPageProps): JSX.Element => (
+  <FullScreenLayer visible={visible} from='right'>
+    <View testID='pack-editor-panel' style={styles.panel} accessibilityViewIsModal={visible} accessibilityElementsHidden={!visible} importantForAccessibility={visible ? 'yes' : 'no-hide-descendants'} onAccessibilityEscape={visible ? onDismiss : undefined}>
+      {/* Keyed on the pack being edited (or 'new') so switching which pack you're editing - or from
+          editing into creating - always starts the form fresh, without needing an effect to resync it.
+          The page never unmounts this (it only slides away), so without the key the form would keep
+          showing whatever it last had the next time it opens for a different pack. */}
+      <PackEditorForm key={editingKey ?? 'new'} editingKey={editingKey} onCancel={onDismiss} onSaved={onSaved} onDelete={onDelete} onShare={onShare} />
+    </View>
+  </FullScreenLayer>
+))
+PackEditorPage.displayName = 'PackEditorPage'
 
 type PackEditorFormProps = {
   editingKey: string | null
@@ -76,6 +65,9 @@ type PackEditorFormProps = {
 
 const PackEditorForm = ({ editingKey, onSaved, onCancel, onDelete, onShare }: PackEditorFormProps): JSX.Element => {
   const theme = useAutoPaperTheme()
+  const insets = useSafeAreaInsets()
+  // Cancel and Save rise with the keyboard, so they stay reachable while a field is being typed in.
+  const keyboard = useKeyboard()
   const { recordCustomPackCreated } = useGameStats()
   const showUnlockToasts = useUnlockToasts()
   // Whoever is playing makes the pack, so it counts toward their custom pack achievements.
@@ -230,57 +222,39 @@ const PackEditorForm = ({ editingKey, onSaved, onCancel, onDelete, onShare }: Pa
     )
   })
 
+  // Leaving: a focused field keeps the keyboard up through the page's slide out unless it's put away
+  // here.
+  const handleCancel = () => {
+    Keyboard.dismiss()
+    onCancel()
+  }
+
   return (
     <>
-      {/* footerAboveKeyboard: this form's own entries can run long enough that the last row's
-          fields sit right where the keyboard covers the screen - without it, Cancel/Save (in the
-          footer below) would be hidden behind the keyboard while a mid-form field is focused. */}
-      <ScrollViewProvider footerAboveKeyboard>
-        {/* Share/Delete only make sense once there's an actual saved pack behind editingKey - no
-            trailing action at all for a brand-new, not-yet-saved pack instead (ScrollViewHeader
-            centers the title independently of whether a trailing action is present, unlike the old
-            hand-rolled row, which needed a balancing spacer). Leading icon is arrow-left, not X -
-            same left-anchored lineage as PackPuzzlesDrawer/PacksScreen and the loadout's own Back
-            arrow (the fleet's back-button style). 'Close', not the Appbar.BackAction default of
-            'Back' - this dismisses the whole panel rather than stepping back a level within it.
-            Custom IconButton, not the default callback-driven Appbar.BackAction:
-            a plain arrow in the surface's ink (the fleet's back-button style), matching every other back/close action in the app; IconButton already
-            fires the app's own haptic convention on press itself, so this needs no manual
-            selection() call the way the callback form used to. */}
-        <ScrollViewHeader
+      <View style={[styles.column, { paddingLeft: insets.left, paddingRight: insets.right }]}>
+        {/* Back, not Close: it steps back to Choose Packs' list, which is still under it. Share and Delete
+            only once there's a saved pack behind editingKey. */}
+        <ScreenHeader
+          icon='arrow-left'
+          label='Back'
           title={editingKey ? 'Edit Pack' : 'New Pack'}
-          actionSize={40}
-          backAction={
-            <IconButton
-              icon='arrow-left'
-              hitSlop={ICON_ACTION_HIT_SLOP}
-              iconColor={theme.colors.onSurface}
-              onPress={() => {
-                // The Drawer this panel lives in never unmounts on close, only translates
-                // off-screen (see PackEditorDrawer's own doc comment above) - so a focused
-                // TextInput keeps native focus and the OS keyboard stays up through the close
-                // animation unless dismissed here.
-                Keyboard.dismiss()
-                onCancel()
-              }}
-              accessibilityLabel='Close'
-            />
-          }
-          trailingAction={
+          onPress={handleCancel}
+          trailing={
             editingKey ? (
-              <View style={styles.rowActions}>
-                <IconButton icon='share-variant' size={20} onPress={() => void handleSharePress()} accessibilityLabel='Share pack' />
+              <>
+                <IconButton icon='share-variant' size={20} iconColor={theme.colors.onSurface} onPress={() => void handleSharePress()} accessibilityLabel='Share pack' />
                 <IconButton icon='delete-outline' size={20} iconColor={theme.colors.danger} onPress={() => setConfirmDeleteVisible(true)} accessibilityLabel='Delete pack' />
-              </View>
+              </>
             ) : undefined
           }
         />
 
-        <ScrollView keyboardAware showsVerticalScrollIndicator={false} contentContainerStyle={styles.scrollContent} keyboardShouldPersistTaps='handled'>
-          {/* A list-item-header treatment (like "My packs"/"Built-in packs" above the rows they
-            label) rather than just another form field identical to the entries below it - this is
-            the one field that names the whole thing the rest of the screen is building. */}
-          <Text variant='titleSmall' style={styles.sectionHeader}>
+        {/* automaticallyAdjustKeyboardInsets: on iOS the form itself keeps a focused field clear of the
+            keyboard. */}
+        <FadingScrollView style={styles.scroll} showsVerticalScrollIndicator={false} contentContainerStyle={styles.scrollContent} keyboardShouldPersistTaps='handled' automaticallyAdjustKeyboardInsets>
+          {/* A section label rather than just another field like the entries below: this is the one field
+              that names the whole thing the rest of the screen is building. */}
+          <Text variant='titleMedium' style={[styles.sectionTitle, { color: theme.colors.onSurface }]}>
             Pack Name
           </Text>
           <TextInput testID='pack-label-input' ref={labelRef} onSubmitEditing={focusFirstEntry} blurOnSubmit={labelBlurOnSubmit} returnKeyType='next' value={label} onChangeText={setLabel} mode='outlined' maxLength={60} />
@@ -290,27 +264,19 @@ const PackEditorForm = ({ editingKey, onSaved, onCancel, onDelete, onShare }: Pa
           <Button icon='plus' onPress={() => lastAnswerElRef.current?.focus()} style={styles.addButton}>
             Add
           </Button>
-        </ScrollView>
+        </FadingScrollView>
 
-        {/* Not part of the scrollable content - same reasoning as the loadouts' own footers and
-            PacksScreen's: Cancel/Save should be reachable without scrolling down through however
-            many entries this pack has. */}
-        <ScrollViewFooter style={styles.footer}>
-          <Button
-            mode='outlined'
-            onPress={() => {
-              Keyboard.dismiss()
-              onCancel()
-            }}
-            style={styles.footerButton}
-          >
+        {/* Pinned under the form, so Cancel and Save are reachable without scrolling through however many
+            entries the pack has, and above the keyboard while it's up. */}
+        <View style={[styles.footer, { paddingBottom: 12 + Math.max(insets.bottom, keyboard.overlap) }]}>
+          <Button mode='outlined' onPress={handleCancel} style={styles.footerButton} contentStyle={styles.footerButtonContent}>
             Cancel
           </Button>
-          <Button mode='contained' onPress={() => void handleSave()} loading={saving} disabled={saving || !hasValidEntry} style={styles.footerButton}>
+          <Button mode='contained' onPress={() => void handleSave()} loading={saving} disabled={saving || !hasValidEntry} style={styles.footerButton} contentStyle={styles.footerButtonContent}>
             Save
           </Button>
-        </ScrollViewFooter>
-      </ScrollViewProvider>
+        </View>
+      </View>
 
       <ConfirmDialog visible={confirmDeleteVisible} title='Delete Pack?' message={`This permanently deletes "${label}" and any unlock progress for it. This cannot be undone.`} icon='delete-outline' confirmLabel='Delete' cancelLabel='Cancel' destructive onConfirm={() => void handleConfirmDelete()} onCancel={() => setConfirmDeleteVisible(false)} />
     </>
@@ -319,6 +285,7 @@ const PackEditorForm = ({ editingKey, onSaved, onCancel, onDelete, onShare }: Pa
 
 const styles = StyleSheet.create({
   addButton: { marginTop: 4 },
+  column: { alignSelf: 'center', flex: 1, maxWidth: PAGE_MAX_WIDTH, width: '100%' },
   entryInputs: { flex: 1, gap: 8 },
   entryRow: {
     alignItems: 'center',
@@ -326,31 +293,12 @@ const styles = StyleSheet.create({
     gap: 4,
     marginTop: 12
   },
-  // Matches the loadouts' own footer padding. alignItems override matches every other migrated
-  // footer's stretch-not-center reasoning (see PackPuzzlesDrawer's own footer comment) - inert
-  // here in practice (footerButton's flex:1 splits width, not height, and both buttons share one
-  // natural height), kept for consistency with the rest.
-  footer: {
-    alignItems: 'stretch',
-    flexDirection: 'row',
-    gap: 12,
-    // Matches ScrollViewHeader's own actionMargin (4pt), so this bar reads as the same weight of
-    // chrome as the header.
-    paddingBottom: 4,
-    paddingHorizontal: 16,
-    paddingTop: 4
-  },
+  footer: { flexDirection: 'row', gap: 12, paddingHorizontal: 16, paddingTop: 12 },
   footerButton: { flex: 1 },
+  footerButtonContent: { height: 48 },
   hintInput: { marginTop: 0 },
   panel: { flex: 1 },
-  rowActions: { flexDirection: 'row' },
-  // paddingBottom matches sectionHeader's own marginTop above exactly - the scrollable content's
-  // last field sits the same distance from what follows it (the footer) as the first sits from
-  // the header.
-  scrollContent: { paddingBottom: 12, paddingHorizontal: 16 },
-  sectionHeader: {
-    fontWeight: '700',
-    marginBottom: 4,
-    marginTop: 12
-  }
+  scroll: { flex: 1 },
+  scrollContent: { paddingBottom: 16, paddingHorizontal: 16, paddingTop: 4 },
+  sectionTitle: { fontWeight: '700', marginBottom: 4 }
 })

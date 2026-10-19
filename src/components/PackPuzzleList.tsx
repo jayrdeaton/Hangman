@@ -1,24 +1,35 @@
-import { Menu } from '@rific/auto-paper'
-import { Button } from '@rific/feedback-press'
-import { FlatList, ScrollViewContext } from '@rific/scroll-view'
-import { JSX, useContext, useMemo, useState } from 'react'
-import { StyleSheet, View } from 'react-native'
-import { Icon, Text, useTheme } from 'react-native-paper'
+import { type PopoverHost, PressAwayOverlay } from '@tastic/hud/chrome'
+import { JSX, useCallback, useMemo } from 'react'
+import { FlatList, StyleSheet, View } from 'react-native'
+import { Avatar, Icon, ProgressBar, Text, useTheme } from 'react-native-paper'
 
-import { type DifficultyOptionColors, useDifficultyOptionColors } from '@/hooks/useDifficultyColors'
+import { useDifficultyOptionColors } from '@/hooks/useDifficultyColors'
 import { type PackPuzzleDifficultyFilter, type PackPuzzleStatusFilter, usePackPuzzleListPrefs } from '@/hooks/usePackPuzzleListPrefs'
+import type { DifficultyFilter } from '@/redux/playerSettingsSlice'
 import type { Puzzle } from '@/types/puzzle'
 import { commaString } from '@/utils/commaString'
 import { normalizePhrase } from '@/utils/normalizePhrase'
-import { getPuzzleManifest, getPuzzlesForCategory, PuzzleDifficultyTier } from '@/utils/puzzleCatalog'
+import { packGroupColors, packGroupIcon, packGroupLabel } from '@/utils/packGroupStyle'
+import { getPuzzleManifest, getPuzzlesForCategory, type PuzzleDifficultyTier, type PuzzleManifestItem } from '@/utils/puzzleCatalog'
 import type { PuzzleUnlockMap } from '@/utils/unlocks'
 
+import { renderFadingScrollComponent } from './fadingScrollComponent'
 import { PackRow } from './PackRow'
+import { DifficultyPicker, PillPicker, type PillPickerOption } from './PillPicker'
 
 const DIFFICULTY_LABELS: Record<PuzzleDifficultyTier, string> = { easy: 'Easy', medium: 'Medium', hard: 'Hard' }
-const STATUS_LABELS: Record<PackPuzzleStatusFilter, string> = { all: 'All', unsolved: 'Unsolved', solved: 'Solved' }
-const STATUS_OPTIONS: PackPuzzleStatusFilter[] = ['all', 'unsolved', 'solved']
-const DIFFICULTY_OPTIONS: PackPuzzleDifficultyFilter[] = ['all', 'easy', 'medium', 'hard']
+
+// The filters' popover ids, on the page's popover host (PacksScreen's, handed down through
+// PackPuzzlesPage).
+export const PACK_STATUS_PICKER_ID = 'pack-status'
+export const PACK_DIFFICULTY_PICKER_ID = 'pack-difficulty'
+
+// "All puzzles" rather than a bare "All", which beside the difficulty's "Any" said nothing.
+const STATUS_OPTIONS: PillPickerOption<PackPuzzleStatusFilter>[] = [
+  { value: 'all', label: 'All puzzles', icon: 'format-list-bulleted' },
+  { value: 'unsolved', label: 'Unsolved', icon: 'circle-outline' },
+  { value: 'solved', label: 'Solved', icon: 'check-circle' }
+]
 
 // Masks the NORMALIZED phrase, not the raw answer - resolveChosenPuzzle plays
 // normalizePhrase(puzzle.answer), which strips punctuation/digits/accents and can drop or shrink
@@ -45,50 +56,71 @@ const emptyMessage = (statusFilter: PackPuzzleStatusFilter, difficultyFilter: Pa
 
 export type PackPuzzleListProps = {
   packKey: string | null
-  // The active player's unlocked puzzles, from the drawer showing this list (PackPuzzlesDrawer),
-  // which reads them only while it's open. Not read here: a closed drawer keeps
-  // this list mounted, and a read of its own would follow every win behind the game screen.
+  // The active player's unlocked puzzles, from the page showing this list (PackPuzzlesPage), which
+  // reads them only while it's open. Not read here: a page that's away keeps this list mounted, and a
+  // read of its own would follow every win behind the game screen.
   unlockMap: PuzzleUnlockMap
-  // Rows become tappable to play that exact puzzle when supplied (PackPuzzlesDrawer always does);
-  // omitted, the list is read-only.
+  // Rows become tappable to play that exact puzzle when supplied (the pages that play from Choose
+  // Packs); omitted, the list only browses.
   onPlayPuzzle?: (puzzleId: string) => void
+  // The page's popover host, for the two filters' popovers. The page closes it on leaving, and on
+  // Android back before anything else (PacksScreen's closeTopOverlay).
+  popoverHost: PopoverHost
 }
 
-// The puzzle list for one pack, "what's in this pack": PackPuzzlesDrawer's body, opened from Choose
-// Packs to browse a pack and play from it (onPlayPuzzle wired up). One row-rendering, masking, and
-// progress implementation instead of independently-maintained ones that had quietly drifted apart.
-export const PackPuzzleList = ({ packKey, unlockMap, onPlayPuzzle }: PackPuzzleListProps): JSX.Element => {
+// The pack at the top of its page, under the title that already names it (Jay, 2026-10-19: no card
+// repeating the name): its category's badge and eyebrow, how many of its puzzles are unlocked, and
+// the bar, drawn straight on the board in the category's colors. One element to a screen reader.
+const PackSummary = ({ pack, unlocked }: { pack: PuzzleManifestItem; unlocked: number }): JSX.Element => {
   const theme = useTheme()
-  // Same four-way (Any + the three real tiers) vibrant/container set the loadout's own
-  // Difficulty picker uses, for both the difficulty filter menu below and each row's own
-  // difficulty badge - see useDifficultyOptionColors's own doc comment for why this is one
-  // shared hook instead of two hand-rolled copies.
-  const difficultyOptionColors = useDifficultyOptionColors()
-  // Mirrors difficultyOptionColors' own {vibrant, onVibrant, container, onContainer} shape, using
-  // the theme's own primary/secondary/tertiary triad instead of the difficulty semantic roles -
-  // All/Unsolved/Solved aren't a severity scale the way Easy/Medium/Hard are, so they get the
-  // app's plain accent triad rather than borrowing success/warning/danger.
-  const statusOptionColors: Record<PackPuzzleStatusFilter, DifficultyOptionColors> = useMemo(
-    () => ({
-      all: { vibrant: theme.colors.primary, onVibrant: theme.colors.onPrimary, container: theme.colors.primaryContainer, onContainer: theme.colors.onPrimaryContainer },
-      unsolved: { vibrant: theme.colors.secondary, onVibrant: theme.colors.onSecondary, container: theme.colors.secondaryContainer, onContainer: theme.colors.onSecondaryContainer },
-      solved: { vibrant: theme.colors.tertiary, onVibrant: theme.colors.onTertiary, container: theme.colors.tertiaryContainer, onContainer: theme.colors.onTertiaryContainer }
-    }),
-    [theme.colors.primary, theme.colors.onPrimary, theme.colors.primaryContainer, theme.colors.onPrimaryContainer, theme.colors.secondary, theme.colors.onSecondary, theme.colors.secondaryContainer, theme.colors.onSecondaryContainer, theme.colors.tertiary, theme.colors.onTertiary, theme.colors.tertiaryContainer, theme.colors.onTertiaryContainer]
+  const colors = packGroupColors(pack.group, theme)
+  const count = `${commaString(unlocked)} of ${commaString(pack.count)} unlocked`
+  return (
+    <View testID='pack-summary' accessible accessibilityLabel={`${packGroupLabel(pack.group)}, ${count}`} style={styles.summary}>
+      <Avatar.Icon size={40} icon={packGroupIcon(pack.group)} color={colors.onColor} style={{ backgroundColor: colors.color }} />
+      <View style={styles.summaryText}>
+        <Text variant='labelSmall' style={[styles.eyebrow, { color: colors.color }]}>
+          {packGroupLabel(pack.group).toUpperCase()}
+        </Text>
+        <Text variant='bodySmall' style={{ color: theme.colors.onSurfaceVariant }}>
+          {count}
+        </Text>
+        <View style={styles.barWrapper}>
+          <ProgressBar progress={pack.count > 0 ? unlocked / pack.count : 0} color={colors.color} style={[styles.bar, { backgroundColor: colors.container }]} />
+        </View>
+      </View>
+    </View>
   )
-  // Its caller renders this inside a parent ScrollViewProvider (see PackPuzzlesDrawer) - its floating ScrollViewHeader overlays whatever sits at the very top of
-  // that provider, and progressHeader below is a plain in-flow sibling with no padding of its own
-  // to clear it, unlike this file's own FlatList (which already gets a correct top inset for free
-  // via useScrollList internally, see @rific/scroll-view's FlatList.tsx). headerHeight is null until
-  // the header's very first layout pass measures it - reading it directly from context, the same
-  // value ScrollViewHeader/ScrollView/Footer already key their own positioning off of.
-  const { headerHeight } = useContext(ScrollViewContext)
+}
+
+// The puzzle list for one pack, "what's in this pack": PackPuzzlesPage's body, opened from Choose
+// Packs to browse a pack and play from it (onPlayPuzzle wired up). The pack's summary and the
+// filters stay put above the rows, which scroll under them and fade at the list's edges while there's
+// more past them (auto-paper's FadingScrollView, as every scrolling screen here).
+export const PackPuzzleList = ({ packKey, unlockMap, onPlayPuzzle, popoverHost }: PackPuzzleListProps): JSX.Element => {
+  const theme = useTheme()
+  // The four-way (Any and the three tiers) vibrant/container set the loadout's Difficulty picker uses,
+  // for each row's difficulty badge (the filter's own pill reads it itself, DifficultyPicker).
+  const difficultyOptionColors = useDifficultyOptionColors()
+  // The theme's own primary/secondary/tertiary for All/Unsolved/Solved, which aren't a severity scale
+  // the way Easy/Medium/Hard are, so they don't borrow the difficulty colors.
+  const statusOptionColors = useMemo(
+    (): Record<PackPuzzleStatusFilter, { vibrant: string; container: string }> => ({
+      all: { vibrant: theme.colors.primary, container: theme.colors.primaryContainer },
+      unsolved: { vibrant: theme.colors.secondary, container: theme.colors.secondaryContainer },
+      solved: { vibrant: theme.colors.tertiary, container: theme.colors.tertiaryContainer }
+    }),
+    [theme.colors.primary, theme.colors.primaryContainer, theme.colors.secondary, theme.colors.secondaryContainer, theme.colors.tertiary, theme.colors.tertiaryContainer]
+  )
   // A shared, persisted preference (see usePackPuzzleListPrefs's own doc comment on why) rather
   // than local component state - every pack this opens on should reflect the same status/
   // difficulty filter the player last picked, not reset to defaults each time.
   const { prefs, setPrefs } = usePackPuzzleListPrefs()
-  const [statusMenuVisible, setStatusMenuVisible] = useState(false)
-  const [difficultyMenuVisible, setDifficultyMenuVisible] = useState(false)
+  // The difficulty filter stores 'all' where the loadout's picker says 'any'.
+  const difficultyValue: DifficultyFilter = prefs.difficultyFilter === 'all' ? 'any' : prefs.difficultyFilter
+  const handleStatusChange = useCallback((value: PackPuzzleStatusFilter) => setPrefs({ statusFilter: value }), [setPrefs])
+  const handleDifficultyChange = useCallback((value: DifficultyFilter) => setPrefs({ difficultyFilter: value === 'any' ? 'all' : value }), [setPrefs])
+  const popoverOpen = popoverHost.openId === PACK_STATUS_PICKER_ID || popoverHost.openId === PACK_DIFFICULTY_PICKER_ID
 
   const unlockedIds = useMemo(() => new Set(packKey ? (unlockMap[packKey] ?? []) : []), [unlockMap, packKey])
 
@@ -103,10 +135,6 @@ export const PackPuzzleList = ({ packKey, unlockMap, onPlayPuzzle }: PackPuzzleL
     return result
   }, [allPuzzles, prefs.statusFilter, prefs.difficultyFilter, unlockedIds])
 
-  const statusButtonColors = statusOptionColors[prefs.statusFilter]
-  const difficultyButtonColors = difficultyOptionColors[prefs.difficultyFilter === 'all' ? 'any' : prefs.difficultyFilter]
-  const difficultyButtonLabel = prefs.difficultyFilter === 'all' ? 'Any' : DIFFICULTY_LABELS[prefs.difficultyFilter]
-
   const renderItem = ({ item }: { item: Puzzle }) => {
     const solved = unlockedIds.has(item.id)
     const wordLabel = item.wordCount === 1 ? 'word' : 'words'
@@ -120,187 +148,54 @@ export const PackPuzzleList = ({ packKey, unlockMap, onPlayPuzzle }: PackPuzzleL
 
   if (!pack) return <View style={styles.flex} />
 
-  // A leading checkmark icon reserved on EVERY row, not just the selected one (rendered
-  // transparent instead of omitted) - Menu.Item sizes its own leading-icon slot only when an item
-  // actually has one, so a mix of "has an icon" and "has none" rows indent inconsistently against
-  // each other. Always passing one, just invisible when not selected, keeps every row's label
-  // starting at the same x position regardless of which one is checked.
-  // eslint-disable-next-line react/display-name -- a render-prop factory (Menu.Item's own IconSource shape), not a component of its own
-  const checkmark = (selected: boolean, color: string) => (iconProps: { size: number }) => <Icon source='check' size={iconProps.size} color={selected ? color : 'transparent'} />
-
   return (
-    // Hidden until the header measures, same as the FlatList below already does internally - this
-    // View's own top padding depends on headerHeight too (see progressHeader below), so revealing
-    // it before that first measurement would flash it in unpadded, up under the floating header.
-    <View style={[styles.flex, headerHeight === null && styles.hidden]}>
-      {/* Fixed, not part of the scrollable list below - stays in view while scrolling through a
-          long pack instead of scrolling away with row 1. paddingTop reserves space for the
-          floating ScrollViewHeader above, which overlays rather than pushing this down itself. */}
-      <View style={[styles.progressHeader, { paddingTop: (headerHeight ?? 0) + 12 }]}>
-        {/* The same PackRow Choose Packs' list (PacksScreen) already uses for this exact pack - its
-            group icon+eyebrow, unlocked count, and progress bar, carried into the detail view it
-            opens rather than left behind the moment you drill in. Lives here rather than in the
-            fixed ScrollViewHeader above (PackPuzzlesDrawer's own centerContent): that header is a
-            fixed-height band, absolutely positioned and clipped to fit only a single title line - a
-            4-line PackRow doesn't fit it without getting cut off. No
-            onPress/trailing - this is a read-only summary of the pack already open, not another
-            navigable row. */}
-        <View style={styles.packSummary}>
-          <PackRow label={pack.label} group={pack.group} isPack subtitle={`${commaString(unlockedIds.size)} of ${commaString(pack.count)} unlocked`} progress={pack.count > 0 ? unlockedIds.size / pack.count : 0} />
-        </View>
+    // Over the page's own press away catcher (PackPuzzlesPage's) while a filter's popover is open, which
+    // drops down over the puzzles: on native, zIndex only orders one parent's children.
+    <View style={[styles.flex, popoverOpen && styles.lifted]}>
+      {/* Under the filters and over the rows while a popover is open, so a tap on a row only closes it. */}
+      <PressAwayOverlay active={popoverOpen} onPress={popoverHost.close} style={styles.pressAway} />
+      {/* Fixed, not part of the scrolling list: stays in view while scrolling through a long pack. */}
+      <View style={[styles.progressHeader, popoverOpen && styles.lifted]}>
+        <PackSummary pack={pack} unlocked={unlockedIds.size} />
+        {/* The loadout's picker pills (Jay, 2026-10-19), in place of red pills over Paper menus. */}
         <View style={styles.controlsRow}>
-          <Menu
-            visible={statusMenuVisible}
-            onDismiss={() => setStatusMenuVisible(false)}
-            contentStyle={styles.menuContent}
-            anchor={
-              <Button testID='status-filter-button' mode='contained' buttonColor={statusButtonColors.vibrant} textColor={statusButtonColors.onVibrant} icon='filter-variant' onPress={() => setStatusMenuVisible(true)} accessibilityLabel='Filter by solved status'>
-                {STATUS_LABELS[prefs.statusFilter]}
-              </Button>
-            }
-          >
-            {STATUS_OPTIONS.map((value) => {
-              const selected = prefs.statusFilter === value
-              const colors = statusOptionColors[value]
-              return (
-                <Menu.Item
-                  key={value}
-                  testID={`status-filter-${value}`}
-                  leadingIcon={checkmark(selected, colors.onVibrant)}
-                  title={STATUS_LABELS[value]}
-                  style={{ backgroundColor: selected ? colors.vibrant : colors.container }}
-                  titleStyle={{ color: selected ? colors.onVibrant : colors.onContainer }}
-                  onPress={() => {
-                    setPrefs({ statusFilter: value })
-                    setStatusMenuVisible(false)
-                  }}
-                />
-              )
-            })}
-          </Menu>
-          <Menu
-            visible={difficultyMenuVisible}
-            onDismiss={() => setDifficultyMenuVisible(false)}
-            contentStyle={styles.menuContent}
-            anchor={
-              <Button testID='difficulty-filter-button' mode='contained' buttonColor={difficultyButtonColors.vibrant} textColor={difficultyButtonColors.onVibrant} icon='speedometer' onPress={() => setDifficultyMenuVisible(true)} accessibilityLabel='Filter by difficulty'>
-                {difficultyButtonLabel}
-              </Button>
-            }
-          >
-            {DIFFICULTY_OPTIONS.map((value) => {
-              const selected = prefs.difficultyFilter === value
-              const colors = difficultyOptionColors[value === 'all' ? 'any' : value]
-              return (
-                <Menu.Item
-                  key={value}
-                  testID={`difficulty-filter-${value}`}
-                  leadingIcon={checkmark(selected, colors.onVibrant)}
-                  title={value === 'all' ? 'Any Difficulty' : DIFFICULTY_LABELS[value]}
-                  style={{ backgroundColor: selected ? colors.vibrant : colors.container }}
-                  titleStyle={{ color: selected ? colors.onVibrant : colors.onContainer }}
-                  onPress={() => {
-                    setPrefs({ difficultyFilter: value })
-                    setDifficultyMenuVisible(false)
-                  }}
-                />
-              )
-            })}
-          </Menu>
+          <PillPicker id={PACK_STATUS_PICKER_ID} host={popoverHost} options={STATUS_OPTIONS} colors={statusOptionColors} value={prefs.statusFilter} onChange={handleStatusChange} />
+          <DifficultyPicker id={PACK_DIFFICULTY_PICKER_ID} host={popoverHost} value={difficultyValue} onChange={handleDifficultyChange} />
         </View>
       </View>
 
-      {/* Its own flex:1 box, a sibling of progressHeader rather than sharing a parent with it -
-          @rific/scroll-view's FlatList switches its own outer container to StyleSheet.absoluteFill
-          once its header height is measured (see useScrollList's containerStyle), which fills
-          whatever View is its own DIRECT parent edge-to-edge. Without this wrapper, that parent
-          was the same flex column progressHeader sits in, so the absolutely-filled FlatList
-          ignored progressHeader's occupied space entirely and painted its rows starting right
-          under the real header, overlapping the count text and filter buttons. Wrapping it here
-          means the absoluteFill only fills THIS box, whose own bounds are already correctly
-          placed below progressHeader by ordinary flex layout before that switch ever happens.
-          overflow: 'hidden' - see the inner wrapper's own comment for why this box's bounds have
-          to stay exactly here, unshifted, even though what's inside it isn't. */}
-      <View style={styles.list}>
-        {/* @rific/scroll-view's FlatList always adds its own contentContainerStyle paddingTop:
-            headerHeight (see useScrollList's contentPadding), on the assumption it sits directly
-            under the floating header with nothing else in between - true before progressHeader
-            existed, not true now that progressHeader already reserves that same headerHeight
-            worth of space itself. Left uncorrected, the list's first row sat a whole extra
-            headerHeight below progressHeader's own bottom edge (a redundant gap, not the overlap
-            the outer wrapper above already fixed). Shifting THIS inner box up by that amount
-            cancels it, landing the FlatList's own internal padding back at progressHeader's true
-            bottom edge.
-
-            This has to be a SEPARATE inner box, not the same marginTop applied to the outer
-            wrapper directly: a negative margin moves a view's entire box, touch target included -
-            applied to the outer wrapper, that dragged the FlatList's real (if invisible) hit
-            region up over progressHeader's own Filter/Sort buttons, silently swallowing their
-            presses despite nothing being visibly wrong (the exact class of bug the drag-handle
-            strip's own pointerEvents fix in @rific/drawer's Drawer.tsx addresses for a different
-            component). Keeping the shift on an INNER box while the OUTER one stays fixed and
-            clips via overflow: 'hidden' means anything this inner box renders above the outer
-            box's own top edge - including its touch target - is clipped away along with it,
-            the same way any other overflow: 'hidden' boundary in this app already behaves. */}
-        <View style={[styles.listInner, { marginTop: -(headerHeight ?? 0) }]}>
-          {puzzles.length === 0 ? (
-            <Text variant='bodySmall' style={styles.emptyText}>
-              {emptyMessage(prefs.statusFilter, prefs.difficultyFilter)}
-            </Text>
-          ) : (
-            <FlatList
-              data={puzzles}
-              keyExtractor={(item) => item.id}
-              renderItem={renderItem}
-              showsVerticalScrollIndicator={false}
-              contentContainerStyle={styles.listContent}
-              keyboardShouldPersistTaps='handled'
-              // Solid vibrant fill, not the chip's own default muted surface tint - matches every
-              // other accent across the app now (Choose Packs' chipProps do the same), rather than
-              // being the one control that's still washed out.
-              chipProps={{ style: { backgroundColor: theme.colors.primary }, selectedColor: theme.colors.onPrimary }}
-            />
-          )}
-        </View>
-      </View>
+      {puzzles.length === 0 ? (
+        <Text variant='bodySmall' style={styles.emptyText}>
+          {emptyMessage(prefs.statusFilter, prefs.difficultyFilter)}
+        </Text>
+      ) : (
+        <FlatList data={puzzles} keyExtractor={(item) => item.id} renderItem={renderItem} ItemSeparatorComponent={RowGap} renderScrollComponent={renderFadingScrollComponent} showsVerticalScrollIndicator={false} style={styles.flex} contentContainerStyle={styles.listContent} keyboardShouldPersistTaps='handled' />
+      )}
     </View>
   )
 }
 
+// The room between two puzzle rows.
+const RowGap = (): JSX.Element => <View style={styles.rowGap} />
+
 const styles = StyleSheet.create({
-  controlsRow: { flexDirection: 'row', gap: 8 },
+  bar: { borderRadius: 6, height: 6 },
+  barWrapper: { height: 6, marginTop: 8, overflow: 'hidden' },
+  controlsRow: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
   // alignSelf keeps the pill sized to its own text rather than stretching to PackRow's full text
   // column width - matches PuzzleInfoRow's own difficulty pill shape, just smaller (a list row's
   // subtitle line, not a standalone gameplay badge).
   difficultyBadge: { alignSelf: 'flex-start', borderRadius: 8, paddingHorizontal: 8, paddingVertical: 2 },
   difficultyBadgeText: { fontSize: 11, fontWeight: '700', letterSpacing: 0.5, textTransform: 'uppercase' },
   emptyText: { marginTop: 12, opacity: 0.7, paddingHorizontal: 16 },
+  eyebrow: { fontWeight: '700', letterSpacing: 0.5 },
   flex: { flex: 1 },
-  hidden: { opacity: 0 },
-  // overflow: 'hidden' clips listInner's own upward shift (and its touch target) at exactly this
-  // box's own top edge - see listInner's call-site comment for why that boundary has to stay
-  // fixed here rather than moving with the shift.
-  list: { flex: 1, overflow: 'hidden' },
-  // paddingBottom matches progressHeader's own top clearance (12px past the header, see the call
-  // site above) - the last row sits the same distance from what follows it as the first row sits
-  // from the filter controls above it.
-  listContent: {
-    paddingBottom: 12,
-    paddingHorizontal: 16
-  },
-  listInner: { flex: 1 },
-  // Rounder than the Menu's own default (theme.roundness, MD3's subtle 4) - overflow: 'hidden' so
-  // each Menu.Item's own colored background (see the checked/unchecked style above) gets clipped
-  // to this shape too, instead of showing sharp item corners poking past a rounded outer edge.
-  menuContent: { borderRadius: 16, overflow: 'hidden' },
-  // Wraps the pack summary PackRow - its own default marginBottom (4, meant for stacking against
-  // an identical row right below it in an ordinary pack list) reads as too tight against the
-  // differently-shaped filter buttons that follow it here.
-  packSummary: { marginBottom: 8 },
-  // paddingTop is applied dynamically at the call site (see above) - always overrides whatever's
-  // declared here, so it's deliberately left out of this static object rather than left dead.
-  progressHeader: {
-    paddingBottom: 8,
-    paddingHorizontal: 16
-  }
+  // Over the press away catcher (zIndex 1).
+  lifted: { zIndex: 2 },
+  listContent: { paddingBottom: 16, paddingHorizontal: 16, paddingTop: 4 },
+  pressAway: { zIndex: 1 },
+  progressHeader: { gap: 16, paddingBottom: 12, paddingHorizontal: 16, paddingTop: 4 },
+  rowGap: { height: 8 },
+  summary: { alignItems: 'center', flexDirection: 'row', gap: 12 },
+  summaryText: { flex: 1, flexShrink: 1 }
 })

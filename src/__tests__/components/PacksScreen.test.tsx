@@ -3,12 +3,13 @@ import { FeedbackPressProvider } from '@rific/feedback-press'
 import { ToastProvider } from '@rific/toaster'
 import { act, fireEvent, render as rtlRender, waitFor, within } from '@testing-library/react-native'
 import { createRef, type ReactElement, type ReactNode, useState } from 'react'
+import { View } from 'react-native'
 import * as RNPaper from 'react-native-paper'
 import { PaperProvider } from 'react-native-paper'
 import { Provider as ReduxProvider } from 'react-redux'
 
 import { PackRow } from '@/components/PackRow'
-import { PacksScreen, type PacksScreenHandle } from '@/components/PacksScreen'
+import { packGrid, PacksScreen, type PacksScreenHandle } from '@/components/PacksScreen'
 import { GameStatsProvider } from '@/hooks/useGameStats'
 import { DEFAULT_MODE } from '@/modes/registry'
 import { activePlayerActions } from '@/redux/activePlayerSlice'
@@ -43,8 +44,8 @@ const builtIn = () => builtInPacks()[0]
 
 // ConfirmDialog renders through a react-native-paper Portal (Delete pack's confirm dialog) - needs
 // a Portal.Host ancestor, normally supplied by @rific/auto-paper's Provider at the app root.
-// ToastProvider is also required - this screen always mounts its own PackEditorDrawer (translated
-// off-screen when not visible, same as every other drawer in this lineage), and that drawer's own
+// ToastProvider is also required - this screen always mounts its own PackEditorPage (translated
+// off-screen when not visible, as Choose Packs itself is), and that page's own
 // form calls useToast() to surface a newly-unlocked custom-pack achievement, which throws outside a
 // ToastProvider ancestor. That form also records the new pack through useGameStats, so the app's
 // stats store and GameStatsProvider wrap everything too.
@@ -177,7 +178,7 @@ describe('PacksScreen', () => {
     expect(getByLabelText('Share pack')).toBeTruthy()
     expect(getByLabelText('Delete pack')).toBeTruthy()
 
-    await fireEvent.press(getByLabelText('Close'))
+    await fireEvent.press(getByLabelText('Back'))
     await fireEvent.press(getByText('Create'))
 
     expect(queryByLabelText('Share pack')).toBeNull()
@@ -238,7 +239,7 @@ describe('PacksScreen', () => {
 
   // Growing the list this way (rather than only via the Add word button) is what lets the pack
   // editor's return-key chain always advance onto an already-mounted field instead of one that
-  // gets created and focused after the fact - see PackEditorDrawer's own comment on displayEntries
+  // gets created and focused after the fact - see PackEditorPage's own comment on displayEntries
   // for why that append-then-focus shape was what actually caused its keyboard flicker.
   it('keeps one blank trailing row always ready, growing a new one the moment the previous last row is typed into', async () => {
     const { getByText, getByTestId, queryByTestId } = await renderScreen()
@@ -273,7 +274,7 @@ describe('PacksScreen', () => {
     await fireEvent.changeText(getByTestId('entry-answer-0'), 'PARIS')
 
     // entry-answer-1 now exists (see the growth test above) but nothing's been typed into IT -
-    // it isn't real yet (see PackEditorDrawer's updateEntry), so there's nothing to remove.
+    // it isn't real yet (see PackEditorPage's updateEntry), so there's nothing to remove.
     const virtualRemoveButton = getByLabelText('Remove entry 2')
     expect(virtualRemoveButton.props.accessibilityState?.disabled ?? virtualRemoveButton.props.disabled).toBe(true)
     // PARIS is still the only REAL entry (the virtual row above doesn't count) - removing it would
@@ -329,7 +330,7 @@ describe('PacksScreen', () => {
     expect(onPacksChanged).not.toHaveBeenCalled()
   })
 
-  it("shows a built-in pack's progress in its own animated detail drawer, and returns to the list when closed", async () => {
+  it("shows a built-in pack's progress on its own page, and returns to the list from its Back arrow", async () => {
     const pack = builtIn()
     const { getByLabelText, getByRole, getByText, queryByText } = await renderScreen()
 
@@ -340,7 +341,7 @@ describe('PacksScreen', () => {
     await waitFor(() => expect(getByText(/unlocked/)).toBeTruthy())
     expect(queryByText('My Packs')).toBeNull()
 
-    await fireEvent.press(getByLabelText('Close'))
+    await fireEvent.press(getByLabelText('Back'))
 
     expect(getByText('Choose Packs')).toBeTruthy()
     expect(getByText('My Packs')).toBeTruthy()
@@ -467,7 +468,7 @@ describe('PacksScreen', () => {
     expect(hiddenBehindDetail.props.accessibilityElementsHidden).toBe(true)
     expect(hiddenBehindDetail.props.importantForAccessibility).toBe('no-hide-descendants')
 
-    await fireEvent.press(getByLabelText('Close'))
+    await fireEvent.press(getByLabelText('Back'))
 
     expect(getByTestId('packs-screen-panel').props.accessibilityViewIsModal).toBe(true)
 
@@ -477,15 +478,15 @@ describe('PacksScreen', () => {
     expect(hiddenBehindEditor.props.accessibilityElementsHidden).toBe(true)
   })
 
-  it("keeps the detail drawer's own content mounted (just accessibility-hidden) after closing, instead of unmounting it mid-slide", async () => {
+  it("keeps the pack page's own content mounted (just accessibility-hidden) after leaving, instead of unmounting it mid-slide", async () => {
     const pack = builtIn()
     const { getByLabelText, getByTestId } = await renderScreen()
 
     await fireEvent.press(getByLabelText(`View ${pack.label} contents`))
-    await fireEvent.press(getByLabelText('Close'))
+    await fireEvent.press(getByLabelText('Back'))
 
     // The outer pack-puzzles-panel View always renders - only its header/list/footer children are
-    // gated on `pack` (see PackPuzzlesDrawer's own `{pack ? (...) : null}`). If packKey were reset
+    // gated on `pack` (see PackPuzzlesPage's own `{pack ? (...) : null}`). If packKey were reset
     // to null on close (the bug this guards against), that gate would unmount those children
     // entirely, so scoping the query to inside the panel and still finding the pack's own title
     // there (hidden, not absent) is what actually proves the key survived the close instead of
@@ -540,21 +541,6 @@ describe('PacksScreen', () => {
       expect(redrawn).not.toContain(packB.label)
     })
 
-    it('selects every pack from Select All, and none from Clear', async () => {
-      const onChangeSelectedKeys = jest.fn()
-      const { getByText } = await renderScreen({ onChangeSelectedKeys })
-
-      await fireEvent.press(getByText('Select All'))
-      expect(onChangeSelectedKeys).toHaveBeenLastCalledWith(
-        getPuzzleManifest()
-          .filter((item) => item.count > 0)
-          .map((item) => item.key)
-      )
-
-      await fireEvent.press(getByText('Clear'))
-      expect(onChangeSelectedKeys).toHaveBeenLastCalledWith([])
-    })
-
     it('drops a deleted custom pack from the selection, keeping the rest', async () => {
       const pack = await saveCustomPack({ label: 'My Pack', entries: [{ answer: 'FOO', hint: '' }] })
       const other = builtIn()
@@ -569,89 +555,72 @@ describe('PacksScreen', () => {
     })
   })
 
-  // A trimmed selection is easy to review: Selected shows only the packs that are in it.
-  describe('the All / Selected filter', () => {
-    const pressFilter = (screen: Awaited<ReturnType<typeof render>>, label: 'All' | 'Selected') => fireEvent.press(screen.getByRole('button', { name: label }))
-    const filterChecked = (screen: Awaited<ReturnType<typeof render>>, label: 'All' | 'Selected') => screen.getByRole('button', { name: label }).props.accessibilityState?.checked
+  // The header's one bulk action, in place of the footer's Clear and Select All and the All / Selected
+  // filter (2026-10-19): a checkbox for every pack, beside the title.
+  describe("the header's All packs checkbox", () => {
+    const allPacks = () =>
+      getPuzzleManifest()
+        .filter((item) => item.count > 0)
+        .map((item) => item.key)
+    const allPacksBox = (screen: Awaited<ReturnType<typeof render>>) => screen.getByRole('checkbox', { name: 'All packs' })
+    // Throws unless the checkbox is in that state (byRole reads aria-checked as a screen reader would).
+    const expectAllPacks = (screen: Awaited<ReturnType<typeof render>>, checked: boolean | 'mixed') => expect(screen.getByRole('checkbox', { name: 'All packs', checked })).toBeTruthy()
 
-    it('starts on All, every pack listed', async () => {
-      const [packA, packB] = builtInPacks()
-      const screen = await renderScreen({ selectedKeys: [packA.key] })
-
-      expect(filterChecked(screen, 'All')).toBe(true)
-      expect(filterChecked(screen, 'Selected')).toBe(false)
-      expect(screen.getByText(packA.label)).toBeTruthy()
-      expect(screen.getByText(packB.label)).toBeTruthy()
-    })
-
-    // The AsyncStorage mock never returns what was saved, so only the last custom pack saved exists:
-    // an unselected custom pack is covered by the empty-section test below.
-    it('lists only the selected packs, custom and built-in, keeping Create and Import', async () => {
-      const [packA, packB, packC] = builtInPacks()
-      const custom = await saveCustomPack({ label: 'Picked Pack', entries: [{ answer: 'FOO', hint: '' }] })
-      const screen = await renderScreen({ selectedKeys: [packB.key, custom.key], packsVersion: 1 })
-
-      await pressFilter(screen, 'Selected')
-
-      expect(filterChecked(screen, 'Selected')).toBe(true)
-      expect(screen.getByText(packB.label)).toBeTruthy()
-      expect(screen.getByText(custom.label)).toBeTruthy()
-      for (const hidden of [packA.label, packC.label]) expect(screen.queryByText(hidden)).toBeNull()
-      expect(screen.getByText('Create')).toBeTruthy()
-      expect(screen.getByText('Import')).toBeTruthy()
-
-      await pressFilter(screen, 'All')
-
-      for (const shown of [packA.label, packB.label, packC.label, custom.label]) expect(screen.getByText(shown)).toBeTruthy()
-    })
-
-    it('drops a pack unchecked in the Selected view, and All brings it back', async () => {
-      const [packA, packB] = builtInPacks()
-      const screen = await render(<SelectionHost initialKeys={[packA.key, packB.key]} />)
-      await pressFilter(screen, 'Selected')
-
-      await fireEvent.press(screen.getByLabelText(packA.label))
-
-      expect(screen.queryByText(packA.label)).toBeNull()
-      expect(screen.getByText(packB.label)).toBeTruthy()
-
-      await pressFilter(screen, 'All')
-
-      expect(screen.getByText(packA.label)).toBeTruthy()
-      expect(checkboxState(screen, packA.label)).toBe(false)
-    })
-
-    it('says so when a section has nothing selected', async () => {
-      await saveCustomPack({ label: 'My Pack', entries: [{ answer: 'FOO', hint: '' }] })
-      const screen = await renderScreen({ selectedKeys: [], packsVersion: 1 })
-
-      await pressFilter(screen, 'Selected')
-
-      expect(screen.getByText('No custom packs selected.')).toBeTruthy()
-      expect(screen.getByText('No built-in packs selected.')).toBeTruthy()
-    })
-
-    it('keeps saying there are no custom packs yet when there are none at all', async () => {
+    it('replaces the filter and the Clear and Select All buttons', async () => {
       const screen = await renderScreen({ selectedKeys: [builtIn().key] })
 
-      await pressFilter(screen, 'Selected')
-
-      expect(screen.getByText('No custom packs yet.')).toBeTruthy()
-      expect(screen.queryByText('No built-in packs selected.')).toBeNull()
+      expect(allPacksBox(screen)).toBeTruthy()
+      for (const gone of ['Select All', 'Clear', 'Selected']) expect(screen.queryByText(gone)).toBeNull()
+      // Every pack is listed, selected or not.
+      for (const pack of builtInPacks().slice(0, 3)) expect(screen.getByText(pack.label)).toBeTruthy()
     })
 
-    // Someone coming back to add a pack would otherwise find only the ones already in.
-    it('reopens on All', async () => {
+    it('is empty with no pack selected, and selects every pack', async () => {
+      const onChangeSelectedKeys = jest.fn()
+      const screen = await renderScreen({ selectedKeys: [], onChangeSelectedKeys })
+
+      expectAllPacks(screen, false)
+      await fireEvent.press(allPacksBox(screen))
+
+      expect(onChangeSelectedKeys).toHaveBeenLastCalledWith(allPacks())
+    })
+
+    it('is partly checked with some packs selected, and selects every pack', async () => {
+      const onChangeSelectedKeys = jest.fn()
+      const screen = await renderScreen({ selectedKeys: [builtIn().key], onChangeSelectedKeys })
+
+      expectAllPacks(screen, 'mixed')
+      await fireEvent.press(allPacksBox(screen))
+
+      expect(onChangeSelectedKeys).toHaveBeenLastCalledWith(allPacks())
+    })
+
+    it('is checked with every pack selected, and clears them all', async () => {
+      const onChangeSelectedKeys = jest.fn()
+      const screen = await renderScreen({ selectedKeys: allPacks(), onChangeSelectedKeys })
+
+      expectAllPacks(screen, true)
+      await fireEvent.press(allPacksBox(screen))
+
+      expect(onChangeSelectedKeys).toHaveBeenLastCalledWith([])
+    })
+
+    it('follows the selection as packs are checked, and its presses show on every card', async () => {
       const [packA, packB] = builtInPacks()
       const screen = await render(<SelectionHost initialKeys={[packA.key]} />)
-      await pressFilter(screen, 'Selected')
-      expect(screen.queryByText(packB.label)).toBeNull()
 
-      await screen.rerender(<SelectionHost initialKeys={[packA.key]} visible={false} />)
-      await screen.rerender(<SelectionHost initialKeys={[packA.key]} />)
+      await fireEvent.press(allPacksBox(screen))
+      expectAllPacks(screen, true)
+      expect(checkboxState(screen, packB.label)).toBe(true)
+      expect(screen.getByText(`Done (${allPacks().length} of ${allPacks().length})`)).toBeTruthy()
 
-      expect(filterChecked(screen, 'All')).toBe(true)
-      expect(screen.getByText(packB.label)).toBeTruthy()
+      await fireEvent.press(allPacksBox(screen))
+      expectAllPacks(screen, false)
+      expect(checkboxState(screen, packA.label)).toBe(false)
+      expect(screen.getByText(`Done (0 of ${allPacks().length})`)).toBeTruthy()
+
+      await fireEvent.press(screen.getByLabelText(packB.label))
+      expectAllPacks(screen, 'mixed')
     })
   })
 
@@ -700,6 +669,46 @@ describe('PacksScreen', () => {
       expect(onDismiss).not.toHaveBeenCalled()
     })
 
+    // The page's filters' popovers only show once their pill is measured (see PackPuzzleList.test.tsx).
+    const answerMeasureInWindow = () => jest.spyOn(View.prototype as unknown as { measureInWindow: (callback: (x: number, y: number, width: number, height: number) => void) => void }, 'measureInWindow').mockImplementation((callback) => callback(16, 120, 140, 44))
+
+    it("closes an open filter on the pack's page before the page itself", async () => {
+      const measure = answerMeasureInWindow()
+      try {
+        const pack = builtIn()
+        const { getByLabelText, getByText, queryByText, closeTopOverlay, panelHidden } = await renderWithHandle()
+        await fireEvent.press(getByLabelText(`View ${pack.label} contents`))
+        await fireEvent.press(getByLabelText('ALL PUZZLES'))
+        expect(getByText('Unsolved')).toBeTruthy()
+
+        expect(await closeTopOverlay()).toBe(true)
+        expect(queryByText('Unsolved')).toBeNull()
+        expect(panelHidden('pack-puzzles-panel')).toBe(false)
+
+        expect(await closeTopOverlay()).toBe(true)
+        expect(panelHidden('pack-puzzles-panel')).toBe(true)
+      } finally {
+        measure.mockRestore()
+      }
+    })
+
+    it("doesn't bring a filter left open back over the next pack's page", async () => {
+      const measure = answerMeasureInWindow()
+      try {
+        const [packA, packB] = builtInPacks()
+        const { getByLabelText, queryByText } = await renderWithHandle()
+        await fireEvent.press(getByLabelText(`View ${packA.label} contents`))
+        await fireEvent.press(getByLabelText('ALL PUZZLES'))
+        await fireEvent.press(getByLabelText('Back'))
+
+        await fireEvent.press(getByLabelText(`View ${packB.label} contents`))
+
+        expect(queryByText('Unsolved')).toBeNull()
+      } finally {
+        measure.mockRestore()
+      }
+    })
+
     it('closes the editor and returns true, leaving the list open, then has nothing left to close', async () => {
       const onDismiss = jest.fn()
       const { getByText, closeTopOverlay, panelHidden } = await renderWithHandle({ onDismiss })
@@ -733,5 +742,24 @@ describe('PacksScreen', () => {
 
       expect(await closeTopOverlay()).toBe(false)
     })
+  })
+})
+
+// Jay, 2026-10-19: on a large enough screen the packs in a grid.
+describe('packGrid', () => {
+  it.each([
+    [375, 1],
+    [744, 2],
+    [834, 2],
+    [1024, 3],
+    [1600, 3]
+  ])('lays a %ipt screen out in %i column(s)', (width, columns) => {
+    expect(packGrid(width).columns).toBe(columns)
+  })
+
+  // The screen stops at 1100pt, less its 16pt gutters, the cards 12pt apart.
+  it('splits the room evenly between the columns, up to the screen widest it gets', () => {
+    expect(packGrid(375).cardWidth).toBe(343)
+    expect(packGrid(1600).cardWidth).toBeCloseTo((1100 - 32 - 24) / 3)
   })
 })

@@ -1,6 +1,8 @@
 import { FeedbackPressProvider } from '@rific/feedback-press'
+import { usePopoverHost } from '@tastic/hud/chrome'
 import { fireEvent, render as rtlRender, within } from '@testing-library/react-native'
-import type { ReactElement, ReactNode } from 'react'
+import { type ReactElement, type ReactNode, useMemo } from 'react'
+import { View } from 'react-native'
 import * as RNPaper from 'react-native-paper'
 import { Provider as ReduxProvider } from 'react-redux'
 
@@ -36,13 +38,9 @@ const seedPrefs = (patch: Partial<{ statusFilter: string; difficultyFilter: stri
   mockStore[PREFS_KEY] = JSON.stringify({ statusFilter: 'all', difficultyFilter: 'all', ...patch })
 }
 
-// The filter menus render through a react-native-paper Portal - needs a Portal.Host ancestor,
-// normally supplied by @rific/auto-paper's Provider at the app root; same wrapper
-// PackEditorDrawer.test.tsx/PacksScreen.test.tsx use for their own Portal-based UI. Also needs
-// FeedbackPressProvider's real `paper` module injected (see Haptic.tsx, the app's own root
-// wiring) - without it, @rific/feedback-press's Button falls back to a bare RN Pressable that
-// drops testID/accessibilityLabel entirely, which is what the Status/Difficulty buttons below
-// rely on. The store and the catalog counters are what the list reads the active player's solved
+// Paper's provider for the pickers and rows, and FeedbackPressProvider's real `paper` module
+// injected (see Haptic.tsx, the app's own root wiring) - without it, @rific/feedback-press's
+// buttons fall back to bare RN Pressables. The store and the catalog counters are what the list reads the active player's solved
 // puzzles through (usePuzzleUnlocks).
 const Wrapper = ({ children }: { children: ReactNode }) => (
   <ReduxProvider store={store}>
@@ -55,11 +53,30 @@ const Wrapper = ({ children }: { children: ReactNode }) => (
 )
 const render = (ui: ReactElement) => rtlRender(ui, { wrapper: Wrapper })
 
-// The list takes its unlocked puzzles from the drawer showing it; this stands in for that drawer,
-// reading them the same way (usePuzzleUnlocks, through the mocked getPuzzleUnlockMap above).
-const ListWithUnlocks = (props: Omit<PackPuzzleListProps, 'unlockMap'>) => {
+// The list takes its unlocked puzzles and its popover host from the page showing it; this stands in
+// for that page, reading them the same way (usePuzzleUnlocks, through the mocked getPuzzleUnlockMap
+// above, and hud's usePopoverHost, as PacksScreen holds it).
+const ListWithUnlocks = (props: Omit<PackPuzzleListProps, 'unlockMap' | 'popoverHost'>) => {
   const { unlockMap } = usePuzzleUnlocks()
-  return <PackPuzzleList {...props} unlockMap={unlockMap} />
+  const { openId, toggle, close } = usePopoverHost()
+  const popoverHost = useMemo(() => ({ openId, toggle, close }), [openId, toggle, close])
+  return <PackPuzzleList {...props} unlockMap={unlockMap} popoverHost={popoverHost} />
+}
+
+// The filters' popovers only show once hud's useAutoAlign has measured their pill, and the jest
+// preset's View never answers measureInWindow: this one does, from near the top, where the pills sit.
+const answerMeasureInWindow = () => jest.spyOn(View.prototype as unknown as { measureInWindow: (callback: (x: number, y: number, width: number, height: number) => void) => void }, 'measureInWindow').mockImplementation((callback) => callback(16, 120, 140, 44))
+
+type Screen = Awaited<ReturnType<typeof render>>
+// A filter's option in its open popover, not a row's difficulty badge of the same name.
+const pressOption = async (screen: Screen, label: string) => {
+  const inRow = (node: { props: { testID?: unknown }; parent: unknown } | null): boolean => {
+    for (let current = node; current; current = current.parent as typeof node) if (typeof current.props.testID === 'string' && current.props.testID.startsWith('puzzle-row-')) return true
+    return false
+  }
+  const option = screen.getAllByText(label).find((node) => !inRow(node))
+  if (!option) throw new Error(`no ${label} option open`)
+  await fireEvent.press(option)
 }
 
 // The real, smallest built-in pack - small enough that FlatList's initial render window covers
@@ -251,98 +268,145 @@ describe('PackPuzzleList', () => {
     expect(queryByText(/unlocked/)).toBeNull()
   })
 
-  it('the status menu offers All, Unsolved, and Solved choices', async () => {
-    const pack = smallestPack()
-    const { getByTestId } = await render(<ListWithUnlocks packKey={pack.key} />)
+  describe('the filters', () => {
+    let measure: jest.SpyInstance
+    beforeEach(() => {
+      measure = answerMeasureInWindow()
+    })
+    afterEach(() => measure.mockRestore())
 
-    await fireEvent.press(getByTestId('status-filter-button'))
+    it("shows the pack's category, unlock count and bar, not its name again (the page's title has it)", async () => {
+      const pack = smallestPack()
+      const screen = await render(<ListWithUnlocks packKey={pack.key} />)
 
-    expect(getByTestId('status-filter-all')).toBeTruthy()
-    expect(getByTestId('status-filter-unsolved')).toBeTruthy()
-    expect(getByTestId('status-filter-solved')).toBeTruthy()
-  })
+      expect(screen.getByLabelText(`${pack.group ?? 'Custom'}, 0 of ${pack.count} unlocked`)).toBeTruthy()
+      expect(screen.queryByText(pack.label)).toBeNull()
+    })
 
-  it('the difficulty menu offers Any, Easy, Medium, and Hard choices', async () => {
-    const pack = smallestPack()
-    const { getByTestId } = await render(<ListWithUnlocks packKey={pack.key} />)
+    it("are the loadout's picker pills, on All puzzles and Any", async () => {
+      const screen = await render(<ListWithUnlocks packKey={smallestPack().key} />)
 
-    await fireEvent.press(getByTestId('difficulty-filter-button'))
+      expect(screen.getByLabelText('ALL PUZZLES')).toBeTruthy()
+      expect(screen.getByLabelText('ANY')).toBeTruthy()
+    })
 
-    expect(getByTestId('difficulty-filter-all')).toBeTruthy()
-    expect(getByTestId('difficulty-filter-easy')).toBeTruthy()
-    expect(getByTestId('difficulty-filter-medium')).toBeTruthy()
-    expect(getByTestId('difficulty-filter-hard')).toBeTruthy()
-  })
+    it('the status picker offers All puzzles, Unsolved and Solved', async () => {
+      const screen = await render(<ListWithUnlocks packKey={smallestPack().key} />)
 
-  it('switches which puzzles show when a status choice is picked from its own menu, without needing a new packKey', async () => {
-    const pack = smallestPack()
-    const puzzles = getPuzzlesForCategory(pack.key)
-    const solvedPuzzle = puzzles[0]
-    const unsolvedPuzzle = puzzles[1]
-    mockGetPuzzleUnlockMap.mockResolvedValue({ [pack.key]: [solvedPuzzle.id] })
-    const { getByTestId, findByTestId, queryByTestId } = await render(<ListWithUnlocks packKey={pack.key} />)
+      await fireEvent.press(screen.getByLabelText('ALL PUZZLES'))
 
-    // Starts on 'all' - both rows present.
-    expect(await findByTestId(`puzzle-row-${solvedPuzzle.id}`)).toBeTruthy()
-    expect(await findByTestId(`puzzle-row-${unsolvedPuzzle.id}`)).toBeTruthy()
+      for (const label of ['All puzzles', 'Unsolved', 'Solved']) expect(screen.getByText(label)).toBeTruthy()
+    })
 
-    await fireEvent.press(getByTestId('status-filter-button'))
-    await fireEvent.press(getByTestId('status-filter-solved'))
+    it('the difficulty picker offers Any, Easy, Medium and Hard, and opening it closes the status one', async () => {
+      const screen = await render(<ListWithUnlocks packKey={smallestPack().key} />)
 
-    expect(await findByTestId(`puzzle-row-${solvedPuzzle.id}`)).toBeTruthy()
-    expect(queryByTestId(`puzzle-row-${unsolvedPuzzle.id}`)).toBeNull()
-  })
+      await fireEvent.press(screen.getByLabelText('ALL PUZZLES'))
+      await fireEvent.press(screen.getByLabelText('ANY'))
 
-  it('filters to a single difficulty tier when picked from its own menu', async () => {
-    const pack = packWithMixedDifficulty()
-    const puzzles = getPuzzlesForCategory(pack.key)
-    const easyPuzzle = puzzles.find((puzzle) => puzzle.difficultyTier === 'easy')
-    const otherPuzzle = puzzles.find((puzzle) => puzzle.difficultyTier !== 'easy')
-    if (!easyPuzzle || !otherPuzzle) throw new Error('expected both an easy and a non-easy puzzle')
-    const { getByTestId, findByTestId, queryByTestId } = await render(<ListWithUnlocks packKey={pack.key} />)
+      expect(screen.queryByText('Unsolved')).toBeNull()
+      expect(screen.getByText('Any')).toBeTruthy()
+      for (const label of ['Easy', 'Medium', 'Hard']) expect(screen.getAllByText(label).length).toBeGreaterThan(0)
+    })
 
-    await fireEvent.press(getByTestId('difficulty-filter-button'))
-    await fireEvent.press(getByTestId('difficulty-filter-easy'))
+    // A tap away lands on the list's own catcher, over the rows, never on a row.
+    it('closes an open popover on a tap away, without playing a puzzle', async () => {
+      const onPlayPuzzle = jest.fn()
+      const screen = await render(<ListWithUnlocks packKey={smallestPack().key} onPlayPuzzle={onPlayPuzzle} />)
 
-    expect(await findByTestId(`puzzle-row-${easyPuzzle.id}`)).toBeTruthy()
-    expect(queryByTestId(`puzzle-row-${otherPuzzle.id}`)).toBeNull()
-  })
+      await fireEvent.press(screen.getByLabelText('ALL PUZZLES'))
+      await fireEvent.press(screen.getByLabelText('Dismiss'))
 
-  it('loads a previously persisted filter preference from storage on mount', async () => {
-    const pack = packWithMixedDifficulty()
-    const hardPuzzle = getPuzzlesForCategory(pack.key).find((puzzle) => puzzle.difficultyTier === 'hard')
-    const easyPuzzle = getPuzzlesForCategory(pack.key).find((puzzle) => puzzle.difficultyTier === 'easy')
-    if (!hardPuzzle || !easyPuzzle) throw new Error('expected both an easy and a hard puzzle')
-    seedPrefs({ difficultyFilter: 'hard' })
-    const { findByTestId, queryByTestId } = await render(<ListWithUnlocks packKey={pack.key} />)
+      expect(screen.queryByText('Unsolved')).toBeNull()
+      expect(screen.queryByLabelText('Dismiss')).toBeNull()
+      expect(onPlayPuzzle).not.toHaveBeenCalled()
+    })
 
-    expect(await findByTestId(`puzzle-row-${hardPuzzle.id}`)).toBeTruthy()
-    expect(queryByTestId(`puzzle-row-${easyPuzzle.id}`)).toBeNull()
-  })
+    it('switches which puzzles show when a status is picked, without needing a new packKey', async () => {
+      const pack = smallestPack()
+      const puzzles = getPuzzlesForCategory(pack.key)
+      const solvedPuzzle = puzzles[0]
+      const unsolvedPuzzle = puzzles[1]
+      mockGetPuzzleUnlockMap.mockResolvedValue({ [pack.key]: [solvedPuzzle.id] })
+      const screen = await render(<ListWithUnlocks packKey={pack.key} />)
 
-  it('persists a newly picked status filter to storage, so a pack opened afterward keeps the same choice', async () => {
-    const pack = smallestPack()
-    const { getByTestId } = await render(<ListWithUnlocks packKey={pack.key} />)
+      // Starts on 'all' - both rows present.
+      expect(await screen.findByTestId(`puzzle-row-${solvedPuzzle.id}`)).toBeTruthy()
+      expect(await screen.findByTestId(`puzzle-row-${unsolvedPuzzle.id}`)).toBeTruthy()
 
-    await fireEvent.press(getByTestId('status-filter-button'))
-    await fireEvent.press(getByTestId('status-filter-unsolved'))
+      await fireEvent.press(screen.getByLabelText('ALL PUZZLES'))
+      await pressOption(screen, 'Solved')
 
-    expect(JSON.parse(mockStore[PREFS_KEY])).toEqual({ statusFilter: 'unsolved', difficultyFilter: 'all' })
-  })
+      expect(await screen.findByTestId(`puzzle-row-${solvedPuzzle.id}`)).toBeTruthy()
+      expect(screen.queryByTestId(`puzzle-row-${unsolvedPuzzle.id}`)).toBeNull()
+      // Picking closes the popover, and the pill shows the pick.
+      expect(screen.queryByText('Unsolved')).toBeNull()
+      expect(screen.getByLabelText('SOLVED')).toBeTruthy()
+    })
 
-  it("keeps the player's chosen filter across a pack switch, since it's a persisted preference now, not a per-pack default", async () => {
-    const packA = smallestPack()
-    const packB = largestPack()
-    const { getByTestId, rerender } = await render(<ListWithUnlocks packKey={packA.key} />)
+    it('filters to a single difficulty tier when picked', async () => {
+      const pack = packWithMixedDifficulty()
+      const puzzles = getPuzzlesForCategory(pack.key)
+      const easyPuzzle = puzzles.find((puzzle) => puzzle.difficultyTier === 'easy')
+      const otherPuzzle = puzzles.find((puzzle) => puzzle.difficultyTier !== 'easy')
+      if (!easyPuzzle || !otherPuzzle) throw new Error('expected both an easy and a non-easy puzzle')
+      const screen = await render(<ListWithUnlocks packKey={pack.key} />)
 
-    await fireEvent.press(getByTestId('status-filter-button'))
-    await fireEvent.press(getByTestId('status-filter-solved'))
-    expect(getByTestId('status-filter-button')).toHaveTextContent('Solved')
+      await fireEvent.press(screen.getByLabelText('ANY'))
+      await pressOption(screen, 'Easy')
 
-    // This list stays mounted across a pack switch in its real callers (see PackPuzzlesDrawer) -
-    // simulated here with a rerender rather than a fresh render, matching that lifecycle.
-    await rerender(<ListWithUnlocks packKey={packB.key} />)
+      expect(await screen.findByTestId(`puzzle-row-${easyPuzzle.id}`)).toBeTruthy()
+      expect(screen.queryByTestId(`puzzle-row-${otherPuzzle.id}`)).toBeNull()
+      expect(screen.getByLabelText('EASY')).toBeTruthy()
+    })
 
-    expect(getByTestId('status-filter-button')).toHaveTextContent('Solved')
+    it('loads a previously persisted filter preference from storage on mount', async () => {
+      const pack = packWithMixedDifficulty()
+      const hardPuzzle = getPuzzlesForCategory(pack.key).find((puzzle) => puzzle.difficultyTier === 'hard')
+      const easyPuzzle = getPuzzlesForCategory(pack.key).find((puzzle) => puzzle.difficultyTier === 'easy')
+      if (!hardPuzzle || !easyPuzzle) throw new Error('expected both an easy and a hard puzzle')
+      seedPrefs({ difficultyFilter: 'hard' })
+      const screen = await render(<ListWithUnlocks packKey={pack.key} />)
+
+      expect(await screen.findByTestId(`puzzle-row-${hardPuzzle.id}`)).toBeTruthy()
+      expect(screen.queryByTestId(`puzzle-row-${easyPuzzle.id}`)).toBeNull()
+      expect(screen.getByLabelText('HARD')).toBeTruthy()
+    })
+
+    it('persists a newly picked status filter to storage, so a pack opened afterward keeps the same choice', async () => {
+      const screen = await render(<ListWithUnlocks packKey={smallestPack().key} />)
+
+      await fireEvent.press(screen.getByLabelText('ALL PUZZLES'))
+      await pressOption(screen, 'Unsolved')
+
+      expect(JSON.parse(mockStore[PREFS_KEY])).toEqual({ statusFilter: 'unsolved', difficultyFilter: 'all' })
+    })
+
+    // The loadout's picker says Any; the stored preference keeps its 'all'.
+    it("stores Any as the difficulty filter's 'all'", async () => {
+      seedPrefs({ difficultyFilter: 'easy' })
+      const screen = await render(<ListWithUnlocks packKey={packWithMixedDifficulty().key} />)
+
+      await fireEvent.press(await screen.findByLabelText('EASY'))
+      await pressOption(screen, 'Any')
+
+      expect(JSON.parse(mockStore[PREFS_KEY])).toEqual({ statusFilter: 'all', difficultyFilter: 'all' })
+    })
+
+    it("keeps the player's chosen filter across a pack switch, since it's a persisted preference, not a per-pack default", async () => {
+      const packA = smallestPack()
+      const packB = largestPack()
+      const screen = await render(<ListWithUnlocks packKey={packA.key} />)
+
+      await fireEvent.press(screen.getByLabelText('ALL PUZZLES'))
+      await pressOption(screen, 'Solved')
+      expect(screen.getByLabelText('SOLVED')).toBeTruthy()
+
+      // This list stays mounted across a pack switch in its real callers (see PackPuzzlesPage) -
+      // simulated here with a rerender rather than a fresh render, matching that lifecycle.
+      await screen.rerender(<ListWithUnlocks packKey={packB.key} />)
+
+      expect(screen.getByLabelText('SOLVED')).toBeTruthy()
+    })
   })
 })

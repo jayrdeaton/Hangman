@@ -14,7 +14,7 @@ export type PuzzleUnlocks = {
 }
 
 export type PuzzleUnlocksOptions = {
-  // False while whatever shows the map is off screen (a closed drawer): it isn't read until it's
+  // False while whatever shows the map is off screen (Choose Packs or a pack's page while away): it isn't read until it's
   // true again, and the last map read stays in the meantime. Defaults to true.
   enabled?: boolean
 }
