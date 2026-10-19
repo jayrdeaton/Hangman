@@ -2,7 +2,7 @@ import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 import { profilesActions } from '@tastic/profile'
 
 import type { PuzzleSourceMode } from '@/types/gameSession'
-import { isProfileId, type PlayerKey, playerKeyFor } from '@/utils/players'
+import { isProfileId, type PlayerKey, playerKeyFor, SINGLE_PLAYER_SEAT_ID } from '@/utils/players'
 import { createDefaultPnpSession, createPlayer, getStanding, guestName, MAX_PNP_PLAYERS, MIN_PNP_PLAYERS, normalizePlayerName, numberGuests, packTurnRoundKey, pickFairGuesser, pickNextTurn, type PnpSession, seatAfterRemoved, type SeatedProfile, type WordSource } from '@/utils/pnpSession'
 import type { PuzzleDifficultyTier } from '@/utils/puzzleCatalog'
 
@@ -289,7 +289,8 @@ const roundSlice = createSlice({
       session.players.push(createPlayer(session.players))
       if (isPickOpen(state.pnp)) session.guesserId = pickFairGuesser(session, session.writerId)
     },
-    // A seat leaves, down to MIN_PNP_PLAYERS, and their standing with them; the guests after it move up
+    // A seat leaves, down to MIN_PNP_PLAYERS, and their standing with them (never seat 1, whose guest is
+    // Single Player's, see players.ts' SINGLE_PLAYER_SEAT_ID); the guests after it move up
     // a seat, and a number (their own art and colors go with them: they're kept by seat id, not number).
     // What the seat's own guest kept is forgotten with the seat, by usePlayerData's forgetGuestSeat. If they were writing the next word, the seat after theirs writes it instead,
     // and if the loadout was showing them, it shows the seat that took their place (the one before, for
@@ -301,7 +302,7 @@ const roundSlice = createSlice({
       const { pnp } = state
       const { session } = pnp
       const index = session.players.findIndex((player) => player.id === action.payload)
-      if (index < 0 || session.players.length <= MIN_PNP_PLAYERS) return
+      if (index < 0 || session.players.length <= MIN_PNP_PLAYERS || action.payload === SINGLE_PLAYER_SEAT_ID) return
       const removedId = action.payload
       const resultIn = isResultIn(pnp)
       // Once the round on the board is decided, its guesser is the one writing next (startPnpAuthoring).

@@ -236,12 +236,14 @@ describe('clearLeftGuestSeatUnlocks', () => {
   it("clears every guest seat's whose seat has left the table, and nobody else's", async () => {
     await markPuzzleUnlocked(PLAYER, 'animals', 'lion')
     await markPuzzleUnlocked(OTHER, 'animals', 'tiger')
-    await markPuzzleUnlocked(guestSeatKey('p1'), 'animals', 'bear')
+    await markPuzzleUnlocked(guestSeatKey('p2'), 'animals', 'bear')
     await markPuzzleUnlocked(guestSeatKey('p5'), 'animals', 'wolf')
+    // Seat 1's own, from before its guest was Single Player's.
+    await markPuzzleUnlocked('guest-p1', 'animals', 'fox')
 
     await clearLeftGuestSeatUnlocks(new Set([guestSeatKey('p1'), guestSeatKey('p2')]))
 
-    expect(Object.keys(mockStore).sort()).toEqual(['hangman:puzzle_unlocks_v1:guest', 'hangman:puzzle_unlocks_v1:guest-p1', 'hangman:puzzle_unlocks_v1:profile-a'])
+    expect(Object.keys(mockStore).sort()).toEqual(['hangman:puzzle_unlocks_v1:guest', 'hangman:puzzle_unlocks_v1:guest-p2', 'hangman:puzzle_unlocks_v1:profile-a'])
   })
 })
 

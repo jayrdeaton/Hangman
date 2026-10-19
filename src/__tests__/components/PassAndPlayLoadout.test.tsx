@@ -240,12 +240,15 @@ describe('the Pass & Play page', () => {
       expect(session().focusedId).toBe('p3')
     })
 
-    it('offers to remove only the focused seat, and none at two', async () => {
+    it("offers to remove only the focused seat, never seat 1 (Single Player's guest's), and none at two", async () => {
       store.dispatch(roundActions.addPnpPlayer())
       const screen = await renderLoadout()
+      expect(screen.queryByLabelText(/^Remove /)).toBeNull()
 
-      expect(screen.getAllByLabelText(/^Remove /).map((button) => button.props.accessibilityLabel)).toEqual(['Remove Player 1'])
-      await fireEvent.press(screen.getByLabelText('Remove Player 1'))
+      await fireEvent.press(pill(screen, 'Player 2'))
+
+      expect(screen.getAllByLabelText(/^Remove /).map((button) => button.props.accessibilityLabel)).toEqual(['Remove Player 2'])
+      await fireEvent.press(screen.getByLabelText('Remove Player 2'))
       expect(names()).toEqual(['Player 1', 'Player 2'])
       expect(screen.queryByLabelText(/^Remove /)).toBeNull()
     })
@@ -273,18 +276,19 @@ describe('the Pass & Play page', () => {
     it('asks first when the word waiting on the board would go too', async () => {
       store.dispatch(roundActions.addPnpPlayer())
       putWordInPlay()
+      store.dispatch(roundActions.focusPnpSeat('p2'))
       const screen = await renderLoadout()
 
-      await fireEvent.press(screen.getByLabelText('Remove Player 1'))
+      await fireEvent.press(screen.getByLabelText('Remove Player 2'))
       expect(screen.getByText('The word waiting on the board goes too.')).toBeTruthy()
 
       await fireEvent.press(screen.getByText('Remove'))
-      expect(session().players.map((player) => player.id)).toEqual(['p2', 'p3'])
+      expect(session().players.map((player) => player.id)).toEqual(['p1', 'p3'])
       expect(store.getState().round.pnp).toMatchObject({ phase: 'authoring', puzzle: null })
     })
 
-    // Jay, 2026-10-18: the toaster's swipe (@rific/gestures' SwipeToDismiss), on any seat, by the
-    // glyph's rules. Firing 'dismiss' is the swipe completing; the gesture is the package's to test.
+    // Jay, 2026-10-18: the toaster's swipe (@rific/gestures' SwipeToDismiss), on any seat but the first,
+    // by the glyph's rules. Firing 'dismiss' is the swipe completing; the gesture is the package's to test.
     describe('swiped away', () => {
       const swipeAway = (screen: Screen, seatId: string) => fireEvent(screen.getByTestId(`seat-${seatId}`), 'dismiss')
       // The mock's own record (src/__mocks__/@rific/gestures.ts), the instance the page was given.
@@ -294,13 +298,14 @@ describe('the Pass & Play page', () => {
         restored().length = 0
       })
 
-      it('lets any seat be swiped away once there are more than two, and none at two', async () => {
+      it("lets any seat but seat 1 (Single Player's guest's) be swiped away once there are more than two, and none at two", async () => {
         const screen = await renderLoadout()
         expect(['p1', 'p2'].map((id) => screen.getByTestId(`seat-${id}`).props.onDismiss)).toEqual([undefined, undefined])
 
         await fireEvent.press(screen.getByLabelText('Add player'))
 
-        for (const id of ['p1', 'p2', 'p3']) expect(screen.getByTestId(`seat-${id}`).props.onDismiss).toEqual(expect.any(Function))
+        expect(screen.getByTestId('seat-p1').props.onDismiss).toBeUndefined()
+        for (const id of ['p2', 'p3']) expect(screen.getByTestId(`seat-${id}`).props.onDismiss).toEqual(expect.any(Function))
       })
 
       it("removes a seat that isn't the focused one straight away when it'd take nothing, the focus staying put", async () => {
@@ -317,7 +322,8 @@ describe('the Pass & Play page', () => {
           ['p4', 'Player 3']
         ])
         expect(session().focusedId).toBe('p1')
-        expect(store.getState().activePlayer).toEqual({ profileId: null, seatId: 'p1' })
+        // Seat 1's guest is Single Player's.
+        expect(store.getState().activePlayer).toEqual({ profileId: null, seatId: null })
       })
 
       it('moves the focus on when the focused seat is swiped away', async () => {
@@ -380,7 +386,8 @@ describe('the Pass & Play page', () => {
   })
 
   // Each guest seat is a player of its own (Jay, 2026-10-18): its own art, difficulty, packs, colors,
-  // waiting round and unlocked puzzles, under the seat's own key, never Single Player's guest's.
+  // waiting round and unlocked puzzles, under the seat's own key. Seat 1's guest is Single Player's
+  // (2026-10-19), under theirs.
   describe("each guest seat's own player", () => {
     const activePlayer = () => store.getState().activePlayer
     const colorOf = (seatId: string) => store.getState().playerTheme[guestSeatKey(seatId)]?.color
@@ -400,15 +407,14 @@ describe('the Pass & Play page', () => {
       return fills
     }
 
-    it("makes the focused guest seat's own guest the page's player, with their own difficulty and packs", async () => {
+    it("makes the focused guest seat's own guest the page's player, seat 1's being Single Player's guest, with their own difficulty and packs", async () => {
       store.dispatch(roundActions.setPnpSource('packs'))
-      store.dispatch(playerSettingsActions.setDifficulty({ playerKey: guestSeatKey('p1'), difficulty: 'hard' }))
+      store.dispatch(playerSettingsActions.setDifficulty({ playerKey: GUEST_PLAYER_KEY, difficulty: 'hard' }))
       store.dispatch(playerSettingsActions.setDifficulty({ playerKey: guestSeatKey('p2'), difficulty: 'easy' }))
       store.dispatch(playerSettingsActions.setPackKeys({ playerKey: guestSeatKey('p2'), packKeys: [MANIFEST[0].key] }))
-      store.dispatch(playerSettingsActions.setDifficulty({ playerKey: GUEST_PLAYER_KEY, difficulty: 'medium' }))
       const screen = await renderLoadout()
 
-      expect(activePlayer()).toEqual({ profileId: null, seatId: 'p1' })
+      expect(activePlayer()).toEqual({ profileId: null, seatId: null })
       expect(screen.getByLabelText('HARD')).toBeTruthy()
       expect(screen.getByText(`All ${MANIFEST.length} packs`)).toBeTruthy()
 
@@ -417,7 +423,7 @@ describe('the Pass & Play page', () => {
       expect(activePlayer()).toEqual({ profileId: null, seatId: 'p2' })
       expect(screen.getByLabelText('EASY')).toBeTruthy()
       expect(screen.getByText(`1 of ${MANIFEST.length} packs`)).toBeTruthy()
-      expect(store.getState().playerSettings[GUEST_PLAYER_KEY]?.difficulty).toBe('medium')
+      expect(store.getState().playerSettings[GUEST_PLAYER_KEY]?.difficulty).toBe('hard')
     })
 
     it('files a pick made on the page under the focused guest seat alone', async () => {
@@ -429,16 +435,13 @@ describe('the Pass & Play page', () => {
       await fireEvent.press(screen.getByText('Hard'))
 
       expect(store.getState().playerSettings[guestSeatKey('p2')]?.difficulty).toBe('hard')
-      expect(store.getState().playerSettings[guestSeatKey('p1')]).toBeUndefined()
       expect(store.getState().playerSettings[GUEST_PLAYER_KEY]).toBeUndefined()
     })
 
     it('starts every guest seat on a color nobody else at the table is showing, spread across the wheel, in the default harmony', async () => {
-      // Alice sits first in Red, and the third seat's guest already has Orange: the others land across
-      // the wheel from both (see guestSeats.ts).
-      const redAlice = { ...ALICE, color: defaultColors[0].value }
-      store.dispatch(profilesActions.setAll([redAlice]))
-      seat('p1', redAlice)
+      // Single Player's guest sits first in Red, and the third seat's guest already has Orange: the others
+      // land across the wheel from both (see guestSeats.ts).
+      store.dispatch(playerThemeActions.setPlayerTheme({ playerKey: GUEST_PLAYER_KEY, theme: { color: defaultColors[0].value, harmony: DEFAULT_HARMONY } }))
       store.dispatch(roundActions.addPnpPlayer())
       store.dispatch(roundActions.addPnpPlayer())
       store.dispatch(playerThemeActions.setPlayerTheme({ playerKey: guestSeatKey('p3'), theme: { color: defaultColors[2].value, harmony: 'triadic' } }))
@@ -446,8 +449,8 @@ describe('the Pass & Play page', () => {
 
       expect([colorOf('p2'), colorOf('p3'), colorOf('p4')]).toEqual([defaultColors.find((color) => color.label === 'Sky')!.value, defaultColors[2].value, defaultColors.find((color) => color.label === 'Emerald')!.value])
       expect(store.getState().playerTheme[guestSeatKey('p2')]).toEqual({ color: defaultColors.find((color) => color.label === 'Sky')!.value, harmony: DEFAULT_HARMONY })
-      // The seat a profile sits in keeps no colors for its guest until it's handed back.
-      expect(colorOf('p1')).toBeUndefined()
+      // Single Player's guest keeps their own.
+      expect(colorOf('p1')).toBe(defaultColors[0].value)
 
       // A seat added later skips every color at the table too.
       await fireEvent.press(screen.getByLabelText('Add player'))
@@ -469,13 +472,14 @@ describe('the Pass & Play page', () => {
     it("hands the seat's own guest back their art and colors when a profile sitting there gives the seat back", async () => {
       store.dispatch(profilesActions.setAll([ALICE]))
       store.dispatch(roundActions.setPnpSource('packs'))
-      store.dispatch(playerSettingsActions.setDifficulty({ playerKey: guestSeatKey('p1'), difficulty: 'hard' }))
-      store.dispatch(playerThemeActions.setPlayerTheme({ playerKey: guestSeatKey('p1'), theme: { color: '#00bcd4', harmony: 'triadic' } }))
+      store.dispatch(playerSettingsActions.setDifficulty({ playerKey: guestSeatKey('p2'), difficulty: 'hard' }))
+      store.dispatch(playerThemeActions.setPlayerTheme({ playerKey: guestSeatKey('p2'), theme: { color: '#00bcd4', harmony: 'triadic' } }))
+      store.dispatch(roundActions.focusPnpSeat('p2'))
       const screen = await renderLoadout()
       await waitFor(() => expect(store.getState().theme.color).toBe('#00bcd4'))
 
       await act(async () => {
-        seat('p1', ALICE)
+        seat('p2', ALICE)
       })
       expect(activePlayer()).toEqual({ profileId: ALICE.id, seatId: null })
       expect(screen.getByLabelText('ANY')).toBeTruthy()
@@ -483,12 +487,13 @@ describe('the Pass & Play page', () => {
       await fireEvent.press(pill(screen, 'Alice'))
       await fireEvent.press(screen.getByText('Guest'))
 
-      expect(activePlayer()).toEqual({ profileId: null, seatId: 'p1' })
+      expect(activePlayer()).toEqual({ profileId: null, seatId: 'p2' })
       expect(screen.getByLabelText('HARD')).toBeTruthy()
       await waitFor(() => expect(store.getState().theme.color).toBe('#00bcd4'))
     })
 
-    // A seated profile deleted in another game is forgotten: the seat, and the page, are its guest's.
+    // A seated profile deleted in another game is forgotten: the seat, and the page, are its guest's
+    // (seat 1's: Single Player's guest).
     it("hands the page to the focused seat's own guest when its profile leaves the roster", async () => {
       store.dispatch(profilesActions.setAll([ALICE]))
       seat('p1', ALICE)
@@ -499,12 +504,13 @@ describe('the Pass & Play page', () => {
         store.dispatch(profilesActions.setAll([]))
       })
 
-      expect(activePlayer()).toEqual({ profileId: null, seatId: 'p1' })
+      expect(activePlayer()).toEqual({ profileId: null, seatId: null })
       expect(colorOf('p1')).toEqual(expect.any(String))
     })
 
     it('forgets everything a guest seat kept when the seat is removed, so a new seat given its id starts fresh', async () => {
       const removeItem = jest.spyOn(AsyncStorage, 'removeItem')
+      store.dispatch(playerThemeActions.setPlayerTheme({ playerKey: GUEST_PLAYER_KEY, theme: { color: defaultColors[0].value, harmony: DEFAULT_HARMONY } }))
       store.dispatch(roundActions.addPnpPlayer())
       store.dispatch(roundActions.focusPnpSeat('p3'))
       const key = guestSeatKey('p3')
@@ -527,34 +533,37 @@ describe('the Pass & Play page', () => {
 
       expect(session().players.map((player) => player.id)).toEqual(['p1', 'p2', 'p3'])
       expect(store.getState().playerSettings[key]).toBeUndefined()
-      // Across the wheel from the Red and Lime the other two guests were given.
+      // Across the wheel from Single Player's guest's Red, at seat 1, and the Lime seat 2 was given.
       expect(store.getState().playerTheme[key]).toEqual({ color: defaultColors.find((color) => color.label === 'Indigo')!.value, harmony: DEFAULT_HARMONY })
       removeItem.mockRestore()
     })
 
-    // Single Player's guest is never a table's guest seat's.
+    // Single Player's guest is never seat 2's guest or later's (seat 1's is theirs).
     it("hands a guest seat left playing to Single Player's own guest on the Single Player page", async () => {
       store.dispatch(playerSettingsActions.setDifficulty({ playerKey: guestSeatKey('p2'), difficulty: 'hard' }))
       store.dispatch(activePlayerActions.setActivePlayer(null, 'p2'))
       const screen = await renderLoadout('solo')
 
       expect(activePlayer()).toEqual({ profileId: null, seatId: null })
-      expect(pill(screen, 'Guest')).toBeTruthy()
+      expect(pill(screen, 'Player 1')).toBeTruthy()
       expect(screen.getByLabelText('ANY')).toBeTruthy()
     })
   })
 
   // The page fits a 375x667 phone whole with up to three seats: the art takes the room the rest leaves.
   describe("the art's height", () => {
-    const layout = (screen: Screen, testID: string, height: number) => fireEvent(screen.getByTestId(testID), 'layout', { nativeEvent: { layout: { x: 0, y: 0, width: 343, height } } })
+    const layout = (screen: Screen, testID: string, height: number) => fireEvent(screen.getByTestId(testID, { includeHiddenElements: true }), 'layout', { nativeEvent: { layout: { x: 0, y: 0, width: 343, height } } })
     const artHeight = (screen: Screen) => Number(screen.getByTestId('art-carousel').props.accessibilityHint)
     // A 375x667 phone: the page runs the screen's full height, under the corners (their 56 come off the
-    // room, as the page's top padding).
+    // room, as the page's top padding). The word sources' options alike, so neither leaves room (see
+    // 'how the page moves').
     const laidOut = async (above: number, below: number, page = 667) => {
       const screen = await renderLoadout()
       await layout(screen, 'loadout-page', page)
       await layout(screen, 'loadout-above-art', above)
       await layout(screen, 'loadout-below-art', below)
+      await layout(screen, 'loadout-packs-content', 100)
+      await layout(screen, 'loadout-write-content', 100)
       return screen
     }
 
@@ -579,13 +588,18 @@ describe('the Pass & Play page', () => {
   // reanimated mock animates nothing (an Animated.View is a plain View carrying the props), so these pin
   // what the page asks for: which views animate, and when not.
   describe('how the page moves', () => {
-    const layout = (screen: Screen, testID: string, height: number) => fireEvent(screen.getByTestId(testID), 'layout', { nativeEvent: { layout: { x: 0, y: 0, width: 343, height } } })
+    const layout = (screen: Screen, testID: string, height: number) => fireEvent(screen.getByTestId(testID, { includeHiddenElements: true }), 'layout', { nativeEvent: { layout: { x: 0, y: 0, width: 343, height } } })
     const carousel = (screen: Screen) => screen.getByTestId('art-carousel')
+    // The packs' options (the settings row and the packs card) taller than Keep Each Word, as they are.
+    const PACKS_OPTIONS = 162
+    const WRITE_OPTIONS = 78
     const laidOut = async () => {
       const screen = await renderLoadout()
       await layout(screen, 'loadout-page', 667)
       await layout(screen, 'loadout-above-art', 116)
       await layout(screen, 'loadout-below-art', 290)
+      await layout(screen, 'loadout-packs-content', PACKS_OPTIONS)
+      await layout(screen, 'loadout-write-content', WRITE_OPTIONS)
       return screen
     }
     const seatMotion = (screen: Screen, seatId: string) => {
@@ -613,6 +627,10 @@ describe('the Pass & Play page', () => {
       await layout(screen, 'loadout-page', 667)
       await layout(screen, 'loadout-above-art', 116)
       await layout(screen, 'loadout-below-art', 290)
+      // Nor before the word sources' options are, since one of them leaves the art room.
+      expect(carousel(screen).props.animated).toBe(false)
+      await layout(screen, 'loadout-packs-content', PACKS_OPTIONS)
+      await layout(screen, 'loadout-write-content', WRITE_OPTIONS)
 
       expect(carousel(screen).props.animated).toBe(true)
     })
@@ -636,24 +654,25 @@ describe('the Pass & Play page', () => {
       expect(carousel(screen).props.animated).toBe(false)
     })
 
-    // Both sources' options sit in one cell as tall as the taller, so the page around them, and the art,
-    // never change with a switch: they cross-fade in place.
-    it("keeps both word sources' options laid out together, the one not chosen hidden and untouchable, so a switch leaves the art its size", async () => {
+    // Both sources' options sit in one cell as tall as the taller, cross-fading in place, and the room
+    // the shorter leaves goes to the art (Jay, 2026-10-19: writing left the Difficulty row's room empty).
+    it("keeps both word sources' options laid out together, the one not chosen hidden and untouchable, and gives the art the room the shorter leaves", async () => {
       const screen = await laidOut()
-      const height = Number(carousel(screen).props.accessibilityHint)
+      const writing = Number(carousel(screen).props.accessibilityHint)
       const options = (testID: string) => screen.getByTestId(testID, { includeHiddenElements: true }).props
       const below = within(screen.getByTestId('loadout-below-art'))
 
       expect(options('loadout-write-options')).toMatchObject({ pointerEvents: 'auto', 'aria-hidden': false })
       expect(options('loadout-packs-options')).toMatchObject({ pointerEvents: 'none', 'aria-hidden': true })
       expect(below.getByTestId('packs-card', { includeHiddenElements: true })).toBeTruthy()
+      expect(writing).toBe(667 - 56 - 116 - 290 - 20 - 52 - 16 + PACKS_OPTIONS - WRITE_OPTIONS)
 
       await fireEvent.press(screen.getByText('Packs'))
 
       expect(options('loadout-packs-options')).toMatchObject({ pointerEvents: 'auto', 'aria-hidden': false })
       expect(options('loadout-write-options')).toMatchObject({ pointerEvents: 'none', 'aria-hidden': true })
       expect(below.getByTestId('keep-words-card', { includeHiddenElements: true })).toBeTruthy()
-      expect(Number(carousel(screen).props.accessibilityHint)).toBe(height)
+      expect(Number(carousel(screen).props.accessibilityHint)).toBe(writing - (PACKS_OPTIONS - WRITE_OPTIONS))
     })
   })
 

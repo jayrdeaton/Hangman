@@ -141,6 +141,12 @@ describe('seatPlayer', () => {
     expect(seatPlayer(seated, [])).toEqual({ profileId: null, seatId: 'p2' })
     expect(seatPlayer({ id: 'p3', name: 'Player 3', profileId: null }, [{ id: 'profile-a' }])).toEqual({ profileId: null, seatId: 'p3' })
   })
+
+  // Seat 1's guest is Single Player's (2026-10-19).
+  it("is Single Player's guest for seat 1's guest", () => {
+    expect(seatPlayer({ id: 'p1', name: 'Player 1', profileId: null }, [])).toEqual({ profileId: null, seatId: null })
+    expect(seatPlayer({ id: 'p1', name: 'Alice', profileId: 'profile-a' }, [{ id: 'profile-a' }])).toEqual({ profileId: 'profile-a', seatId: null })
+  })
 })
 
 describe('seatAfterRemoved', () => {
@@ -284,6 +290,9 @@ describe('sanitizePnpSession', () => {
     ['a name that is not a string', { ...valid(), players: [player('p1'), { id: 'p2', name: 2, profileId: null }] }],
     ['a profile that is not a string', { ...valid(), players: [player('p1'), { id: 'p2', name: 'Bo', profileId: 4 }] }],
     ["a guest's key as a seat's profile", { ...valid(), players: [player('p1'), { id: 'p2', name: 'Bo', profileId: 'guest-p1' }] }],
+    // Seat 1's guest is Single Player's, so seat 1 is always first.
+    ['no seat 1', { ...valid(), players: [player('p2'), player('p3')] }],
+    ['seat 1 not first', { ...valid(), players: [player('p2'), player('p1')] }],
     ['no profile at all', { ...valid(), players: [player('p1'), { id: 'p2', name: 'Bo' }] }]
   ])('starts a fresh session for %s', (_label, value) => {
     expect(sanitizePnpSession(value, ROUND)).toEqual(createDefaultPnpSession())

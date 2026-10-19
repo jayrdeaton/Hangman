@@ -10,7 +10,7 @@ import { Providers } from '@/components/Providers'
 import { achievementsActions } from '@/redux/achievementsSlice'
 import { activePlayerActions } from '@/redux/activePlayerSlice'
 import { type DifficultyFilter, playerSettingsActions } from '@/redux/playerSettingsSlice'
-import { playerThemeActions } from '@/redux/playerThemeSlice'
+import { DEFAULT_HARMONY, playerThemeActions } from '@/redux/playerThemeSlice'
 import { roundActions, type SavedPuzzle, selectSoloRound } from '@/redux/roundSlice'
 import { store } from '@/redux/store'
 import { GUEST_PLAYER_KEY, guestSeatKey, type PlayerKey } from '@/utils/players'
@@ -22,7 +22,7 @@ import * as unlocks from '@/utils/unlocks'
 // door. Ready on the page is PassAndPlayLoadout.test.tsx's.
 
 // Every draw goes through resolvePuzzle: each player's packs draw their own word, so a test can tell
-// whose board is up (Alice's CAT, Bob's DOG, the guest's EMU).
+// whose board is up (Alice's CAT, Bob's DOG).
 jest.mock('@/utils/puzzlePicker', () => ({
   ...jest.requireActual('@/utils/puzzlePicker'),
   resolvePuzzle: jest.fn()
@@ -57,7 +57,7 @@ const ALICE: Profile = { id: 'profile-a', name: 'Alice', color: '#9c27b0', tag: 
 const BOB: Profile = { id: 'profile-b', name: 'Bob', color: '#4caf50', tag: 'BO', createdAt: 2, updatedAt: 2 }
 const PNP_LOADOUT = { pathname: '/loadout', params: { mode: 'pnp' } }
 
-const WORDS: Record<string, string> = { 'pack-a': 'CAT', 'pack-b': 'DOG', 'pack-g': 'EMU' }
+const WORDS: Record<string, string> = { 'pack-a': 'CAT', 'pack-b': 'DOG' }
 const drawByPack: typeof puzzlePicker.resolvePuzzle = (config, packKeys) => ({ ok: true, payload: { phrase: WORDS[packKeys[0]] ?? 'FISH', mode: config.mode, sourceMode: 'random', packKey: packKeys[0], difficultyTier: 'easy', packScope: 'selection' } })
 
 const session = () => store.getState().round.pnp.session
@@ -396,12 +396,13 @@ describe("a pack turn's board", () => {
 })
 
 describe('guest seats', () => {
-  // Each guest seat is a player of its own (Jay, 2026-10-18), never Single Player's guest: its own
-  // packs, difficulty and art (the first seat's draw CAT, the second's DOG, Single Player's guest's EMU).
+  // Each guest seat is a player of its own (Jay, 2026-10-18), seat 1's being Single Player's guest
+  // (2026-10-19): its own packs, difficulty and art (the first seat's draw CAT, the second's DOG).
+  const RED = defaultColors.find((color) => color.label === 'Red')!.value
   beforeEach(() => {
-    storePicks(GUEST_PLAYER_KEY, { packKeys: ['pack-g'], modeId: 'classic', difficulty: 'any' })
-    storePicks(guestSeatKey('p1'), { packKeys: ['pack-a'], modeId: 'robot', difficulty: 'hard' })
+    storePicks(GUEST_PLAYER_KEY, { packKeys: ['pack-a'], modeId: 'robot', difficulty: 'hard' })
     storePicks(guestSeatKey('p2'), { packKeys: ['pack-b'], modeId: 'candle', difficulty: 'easy' })
+    store.dispatch(playerThemeActions.setPlayerTheme({ playerKey: GUEST_PLAYER_KEY, theme: { color: RED, harmony: DEFAULT_HARMONY } }))
   })
 
   it("plays each guest seat's own round, from its own picks and in its own colors, around the table", async () => {
@@ -409,13 +410,11 @@ describe('guest seats', () => {
     await settle()
 
     expect(session().turnId).toBe('p1')
-    expect(store.getState().activePlayer).toEqual({ profileId: null, seatId: 'p1' })
-    expect(solo(guestSeatKey('p1'))).toMatchObject({ id: 1, puzzle: { phrase: 'CAT', modeId: 'robot' } })
-    // Both seats were given colors of their own as the first one sat down to play: auto-paper's first
-    // two swatches, in seat order.
+    expect(store.getState().activePlayer).toEqual({ profileId: null, seatId: null })
+    expect(solo(GUEST_PLAYER_KEY)).toMatchObject({ id: 1, puzzle: { phrase: 'CAT', modeId: 'robot' } })
     const colorOf = (seatId: string) => store.getState().playerTheme[guestSeatKey(seatId)]?.color
-    // Spread across the wheel (see guestSeats.ts): Red, then Cyan.
-    expect([colorOf('p1'), colorOf('p2')]).toEqual([defaultColors.find((color) => color.label === 'Red')!.value, defaultColors.find((color) => color.label === 'Cyan')!.value])
+    // Seat 1 in Single Player's guest's Red.
+    expect(colorOf('p1')).toBe(RED)
     expect(store.getState().theme.color).toBe(colorOf('p1'))
     await win(screen, 'CAT')
     expect(screen.getByText('Player 1 solved it.')).toBeTruthy()
@@ -426,6 +425,8 @@ describe('guest seats', () => {
 
     expect(session().turnId).toBe('p2')
     expect(store.getState().activePlayer).toEqual({ profileId: null, seatId: 'p2' })
+    // The second seat given its own as its turn came, across the wheel from seat 1's (see guestSeats.ts).
+    expect(colorOf('p2')).toBe(defaultColors.find((color) => color.label === 'Cyan')!.value)
     expect(store.getState().theme.color).toBe(colorOf('p2'))
     const [config, packKeys] = mockResolvePuzzle.mock.calls[1]
     expect(packKeys).toEqual(['pack-b'])
@@ -434,16 +435,15 @@ describe('guest seats', () => {
     expect(solo(guestSeatKey('p2'))).toMatchObject({ id: 1, puzzle: { phrase: 'DOG', modeId: 'candle' } })
     expect(revealed(screen)).toEqual(['_', '_', '_'])
     expect(screen.queryByText('You Won!')).toBeNull()
-    // The first seat's decided round stays in its own slot.
-    expect(solo(guestSeatKey('p1'))).toMatchObject({ id: 1, puzzle: { phrase: 'CAT' } })
+    // The first seat's decided round stays in its own slot, Single Player's guest's.
+    expect(solo(GUEST_PLAYER_KEY)).toMatchObject({ id: 1, puzzle: { phrase: 'CAT' } })
 
     await win(screen, 'DOG')
     expect(session()).toMatchObject({ standings: { p1: { played: 1, wins: 1 }, p2: { played: 1, wins: 1 } }, recordedTurnRound: `${guestSeatKey('p2')}:1` })
     expect(screen.getByText('Player 1 is up next')).toBeTruthy()
-    // A guest's rounds are the device's, on no profile's bucket; Single Player's guest is untouched.
+    // A guest's rounds are the device's, on no profile's bucket.
     expect(stats().solo).toMatchObject({ played: 2, wins: 2 })
     expect(stats().profiles).toEqual({})
-    expect(solo(GUEST_PLAYER_KEY).puzzle).toBeNull()
     expect(mockFirstDrawnIn).toEqual([colorOf('p1'), colorOf('p2')])
   })
 })

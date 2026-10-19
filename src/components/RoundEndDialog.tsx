@@ -14,6 +14,7 @@ import type { PnpStandingRow } from '@/utils/pnpSession'
 
 import { PlayerLine } from './PlayerIdentity'
 import { PnpStandingsList, STANDINGS_ONE_COLUMN_MAX, STANDINGS_ROW_GAP, STANDINGS_ROW_HEIGHT, standingsLineCount } from './PnpStandings'
+import { ReadableAccent } from './ReadableAccent'
 
 export type RoundEndOutcome = 'win' | 'loss'
 
@@ -171,7 +172,7 @@ export const fitAnswerFontSize = (wordLengths: number[], width: number, heightBu
 // puzzle. Next (or End Session) is the only way on, and Android's back button counts as Next. The card
 // never runs off the screen: it stops at the safe area, and the answer, standings, unlocks and progress
 // scroll between the title and the buttons, so Next always stays in reach.
-export const RoundEndDialog = ({ visible, outcome, phrase, guessedLetters, categoryProgress, unlocks, passAndPlay, onEndSession, onDismiss }: RoundEndDialogProps): JSX.Element | null => {
+const RoundEndCard = ({ visible, outcome, phrase, guessedLetters, categoryProgress, unlocks, passAndPlay, onEndSession, onDismiss }: RoundEndDialogProps): JSX.Element | null => {
   const theme = useTheme()
   const { fg, fgMuted } = useOverlayCardColors()
   const { width: windowWidth, height: windowHeight } = useWindowDimensions()
@@ -375,3 +376,10 @@ const styles = StyleSheet.create({
   unlocksHeading: { alignItems: 'center', alignSelf: 'center', flexDirection: 'row', gap: 8 },
   unlocksHeadingText: { flexShrink: 1 }
 })
+
+// The card in a shade of the player's color that reads on it (ReadableAccent).
+export const RoundEndDialog = (props: RoundEndDialogProps): JSX.Element => (
+  <ReadableAccent>
+    <RoundEndCard {...props} />
+  </ReadableAccent>
+)

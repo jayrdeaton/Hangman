@@ -15,7 +15,9 @@ import { seatPlayer } from './pnpSession'
 // art, Any and every pack). A guest seat is given its colors the first time it's shown (the Pass & Play
 // page, see LoadoutScreen) or made the active player (useProfiles' selectPlayer), whichever comes
 // first, so a new seat and one in a table stored before guest seats had colors are treated alike.
-// Single Player's guest isn't at the table, so their colors never count.
+// Seat 1's guest is Single Player's (players.ts' SINGLE_PLAYER_SEAT_ID): their own colors count like
+// any seat's, and they're never given new ones (they have some from the first launch: Theme's
+// PlayerThemeSync files the colors on screen as the active player's).
 
 export type GuestSeatColor = { playerKey: PlayerKey; theme: PlayerThemeEntry }
 
@@ -75,6 +77,8 @@ export const pickGuestSeatColors = ({ round, profiles, playerTheme }: ColorState
     const colors = resolvePlayerTheme(playerTheme[playerKeyFor(profileId, seatId)], profileColor)
     if (colors) shown.add(colorKey(resolveSeedColor(colors.color)))
     else if (seatId) uncolored.push(seatId)
+    // Seat 1's guest, Single Player's, with nothing kept yet shows the first swatch, as its pill does.
+    else if (!profileId) shown.add(colorKey(defaultColors[0].value))
   }
   return uncolored.map((seatId) => {
     // Eight seats at most, among twenty swatches, so one is always free; the first is the fallback anyway.

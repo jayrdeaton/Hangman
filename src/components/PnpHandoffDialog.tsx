@@ -5,6 +5,8 @@ import { JSX, useEffect } from 'react'
 import { BackHandler, StyleSheet, View } from 'react-native'
 import { Portal, Text, useTheme } from 'react-native-paper'
 
+import { ReadableAccent } from './ReadableAccent'
+
 export type PnpHandoffDialogProps = {
   // False while the Settings sheet is open (or the game screen isn't the one showing), the same
   // contract as PnpWordPrompt's promptVisible: this card steps aside rather than fighting it for the
@@ -75,8 +77,8 @@ const ProfileHandoffCard = ({ visible, title, message, profile, onReady }: Profi
 export const PnpHandoffDialog = ({ visible, guesserName, guesserProfile, writerName, onReady }: PnpHandoffDialogProps): JSX.Element | null => {
   const title = `${guesserName}'s Turn`
   const message = `${writerName}'s word is set.`
-  if (guesserProfile) return <ProfileHandoffCard visible={visible} title={title} message={message} profile={guesserProfile} onReady={onReady} />
-  return <ConfirmDialog visible={visible} icon='account-arrow-right' title={title} message={message} confirmLabel='Ready' onConfirm={onReady} />
+  // In a shade of the guesser's color that reads on the card (ReadableAccent).
+  return <ReadableAccent>{guesserProfile ? <ProfileHandoffCard visible={visible} title={title} message={message} profile={guesserProfile} onReady={onReady} /> : <ConfirmDialog visible={visible} icon='account-arrow-right' title={title} message={message} confirmLabel='Ready' onConfirm={onReady} />}</ReadableAccent>
 }
 
 const styles = StyleSheet.create({

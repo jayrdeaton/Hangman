@@ -1,4 +1,4 @@
-import { GUEST_PLAYER_KEY, guestSeatKey, isGuestSeatKey, isPlayerKey, isProfileId, playerKeyFor } from '@/utils/players'
+import { GUEST_PLAYER_KEY, guestSeatKey, guestSeatRef, isGuestSeatKey, isPlayerKey, isProfileId, playerKeyFor, SINGLE_PLAYER_SEAT_ID } from '@/utils/players'
 
 describe('players', () => {
   it("files Single Player's guest under the guest's key and a profile under its own id", () => {
@@ -13,6 +13,15 @@ describe('players', () => {
     expect(playerKeyFor(null, 'p2')).not.toBe(playerKeyFor(null, 'p3'))
     expect(playerKeyFor(null, 'p2')).not.toBe(GUEST_PLAYER_KEY)
     expect(isPlayerKey(guestSeatKey('p2'))).toBe(true)
+  })
+
+  // Seat 1's guest is Single Player's (2026-10-19): one player at either door.
+  it("files seat 1's guest as Single Player's guest, and refers to them by no seat", () => {
+    expect(SINGLE_PLAYER_SEAT_ID).toBe('p1')
+    expect(guestSeatKey('p1')).toBe(GUEST_PLAYER_KEY)
+    expect(playerKeyFor(null, 'p1')).toBe(GUEST_PLAYER_KEY)
+    expect(isGuestSeatKey(guestSeatKey('p1'))).toBe(false)
+    expect([guestSeatRef('p1'), guestSeatRef('p2'), guestSeatRef(null)]).toEqual([null, 'p2', null])
   })
 
   // A profile is the same player in any seat.

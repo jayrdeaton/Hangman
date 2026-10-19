@@ -9,7 +9,8 @@
 // A profile's key is its id. Single Player's guest is 'guest', and each guest seat at the Pass & Play
 // table is `guest-<seat id>` (Jay, 2026-10-18: each guest seat has its own art, difficulty, packs,
 // colors, waiting solo round and unlocked puzzles), from the seat's stable id, never its "Player N",
-// which renumbers as seats come and go. Profile ids are `profile-<time>-<random>` (the fleet's
+// which renumbers as seats come and go. Seat 1's guest is Single Player's guest, though, 'guest' (see
+// SINGLE_PLAYER_SEAT_ID). Profile ids are `profile-<time>-<random>` (the fleet's
 // generator), and a stored id that could be a guest's is never taken for a profile's (isProfileId), so
 // no guest's key can name a real profile. None of them has a ':' in it, which the per-player storage
 // keys (see unlocks.ts) rely on. A guest's stats stay the device's: only a profile has a bucket of its
@@ -20,13 +21,25 @@ export const GUEST_PLAYER_KEY: PlayerKey = 'guest'
 
 const GUEST_SEAT_KEY_PREFIX = `${GUEST_PLAYER_KEY}-`
 
-// A guest seat's own key: `guest-p2` for the seat whose id is p2.
-export const guestSeatKey = (seatId: string): PlayerKey => `${GUEST_SEAT_KEY_PREFIX}${seatId}`
+// Seat 1 at the Pass & Play table is Single Player's guest's (Jay, 2026-10-19): whoever plays alone is
+// nearly always Player 1 when the table comes out, so they're one player, with one art, set of colors,
+// packs, waiting puzzle and unlocked puzzles, the way a profile is the same player at either door. So
+// the seat is always first and never leaves the table (a seat leaving forgets its guest, see
+// usePlayerData's forgetGuestSeat), and its guest is keyed and referred to as Single Player's guest.
+export const SINGLE_PLAYER_SEAT_ID = 'p1'
+
+// A guest seat's own key: `guest-p2` for the seat whose id is p2, and Single Player's for seat 1.
+export const guestSeatKey = (seatId: string): PlayerKey => (seatId === SINGLE_PLAYER_SEAT_ID ? GUEST_PLAYER_KEY : `${GUEST_SEAT_KEY_PREFIX}${seatId}`)
+
+// The seat a guest sitting at `seatId` is referred to by (PlayerRef's seatId): none for seat 1, whose
+// guest is Single Player's.
+export const guestSeatRef = (seatId: string | null): string | null => (seatId === SINGLE_PLAYER_SEAT_ID ? null : seatId)
 
 export const isGuestSeatKey = (key: PlayerKey): boolean => key.startsWith(GUEST_SEAT_KEY_PREFIX)
 
 // Who a player is: a profile's id, or for a guest null and the guest seat they sit in (null for Single
-// Player's guest). A profile is the same player in any seat, so a profile's seatId is always null.
+// Player's guest, seat 1's included). A profile is the same player in any seat, so a profile's seatId is
+// always null.
 export type PlayerRef = { profileId: string | null; seatId: string | null }
 
 export const playerKeyFor = (profileId: string | null, seatId: string | null = null): PlayerKey => profileId ?? (seatId ? guestSeatKey(seatId) : GUEST_PLAYER_KEY)

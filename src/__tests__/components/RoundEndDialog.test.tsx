@@ -8,6 +8,7 @@ import * as RNPaper from 'react-native-paper'
 
 import { fitAnswerFontSize, type PnpRoundSummary, RoundEndDialog, type RoundEndDialogProps } from '@/components/RoundEndDialog'
 import { SketchWord, sketchWordWidth } from '@/components/SketchWord'
+import { contrastRatio } from '@/utils/readableColor'
 
 // SketchWord draws SVG strokes, so the answer is checked through the props each word is given.
 jest.mock('@/components/SketchWord', () => ({
@@ -74,6 +75,29 @@ describe('RoundEndDialog', () => {
     expect(mockSketchWord).not.toHaveBeenCalled()
     expect(addEventListener.mock.calls.filter(([event]) => event === 'hardwareBackPress')).toHaveLength(0)
     addEventListener.mockRestore()
+  })
+
+  // Jay, 2026-10-19: a light player color (here the picker's Lime) all but vanished as the title. The
+  // card is in a deeper shade of it that reads (ReadableAccent).
+  it('draws the trophy and "You Won!" in a shade of a light player color that reads on the card', async () => {
+    const { getByText } = await rtlRender(
+      <>
+        <ThemeProbe />
+        <RoundEndDialog {...baseProps} />
+      </>,
+      {
+        wrapper: ({ children }: { children: ReactNode }) => (
+          <FeedbackPressProvider paper={RNPaper}>
+            <Provider initialValue={{ appearance: 'light', color: '#8bc34a' }}>{children}</Provider>
+          </FeedbackPressProvider>
+        )
+      }
+    )
+    const titleColor = StyleSheet.flatten(getByText('You Won!').props.style).color as string
+
+    expect(titleColor).not.toBe(themeColors().primary)
+    expect(contrastRatio(titleColor, themeColors().surface)).toBeGreaterThanOrEqual(3)
+    expect(headerIcon()).toMatchObject({ source: 'trophy', color: titleColor })
   })
 
   it('writes the whole answer in sketch letters under a primary-colored trophy and "You Won!", every letter in the ink color', async () => {

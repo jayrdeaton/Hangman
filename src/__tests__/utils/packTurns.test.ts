@@ -26,15 +26,19 @@ beforeEach(() => {
 })
 
 describe('getSeatPlayer', () => {
-  it("is the seat's profile while it's on the roster, the seat's own guest once it's left it, and nothing for no seat", () => {
+  it("is the seat's profile while it's on the roster, the seat's own guest once it's left it (seat 1's being Single Player's), and nothing for no seat", () => {
     expect(getSeatPlayer(state(), 'p1')).toEqual({ profileId: ALICE.id, seatId: null })
     expect(getSeatPlayerKey(state(), 'p1')).toBe(ALICE.id)
     expect(getSeatPlayer(state(), 'p9')).toBeUndefined()
     expect(getSeatPlayerKey(state(), null)).toBeUndefined()
 
+    store.dispatch(profilesActions.setAll([ALICE]))
+    expect(getSeatPlayer(state(), 'p2')).toEqual({ profileId: null, seatId: 'p2' })
+    expect(getSeatPlayerKey(state(), 'p2')).toBe(guestSeatKey('p2'))
+
     store.dispatch(profilesActions.setAll([BOB]))
-    expect(getSeatPlayer(state(), 'p1')).toEqual({ profileId: null, seatId: 'p1' })
-    expect(getSeatPlayerKey(state(), 'p1')).toBe(guestSeatKey('p1'))
+    expect(getSeatPlayer(state(), 'p1')).toEqual({ profileId: null, seatId: null })
+    expect(getSeatPlayerKey(state(), 'p1')).toBe(GUEST_PLAYER_KEY)
   })
 
   // Each guest seat is a player of its own, never Single Player's guest.
@@ -111,15 +115,32 @@ describe('isPackTurnUnderWay', () => {
     expect(isPackTurnUnderWay(state())).toBe(false)
   })
 
-  // A guest seat's turn is its own guest's round, never Single Player's guest's.
+  // A guest seat's turn is its own guest's round, never Single Player's guest's (seat 1's aside).
   it("reads a guest seat's turn from its own slot", () => {
-    store.dispatch(roundActions.setPnpSeatProfile({ id: 'p1', profile: null }))
+    store.dispatch(roundActions.setPnpSeatProfile({ id: 'p2', profile: null }))
+    // Alice's turn first, played out, so the next is seat 2's.
     store.dispatch(roundActions.startPackTurn())
-    startSolo(guestSeatKey('p1'))
-    guessAll(guestSeatKey('p1'), ['C'])
-    countTurn(guestSeatKey('p1'))
+    startSolo(ALICE.id)
+    guessAll(ALICE.id)
+    countTurn(ALICE.id)
+    store.dispatch(roundActions.startPackTurn())
+    startSolo(guestSeatKey('p2'))
+    guessAll(guestSeatKey('p2'), ['C'])
+    countTurn(guestSeatKey('p2'))
     startSolo(GUEST_PLAYER_KEY)
 
+    expect(isPackTurnUnderWay(state())).toBe(true)
+  })
+
+  // Seat 1's guest is Single Player's: their turn is the round Single Player picks up too, as a
+  // profile's is.
+  it("reads seat 1's guest's turn from Single Player's guest's slot", () => {
+    store.dispatch(roundActions.setPnpSeatProfile({ id: 'p1', profile: null }))
+    store.dispatch(roundActions.startPackTurn())
+    startSolo(GUEST_PLAYER_KEY)
+    guessAll(GUEST_PLAYER_KEY, ['C'])
+
+    expect(getTurnPlayerKey(state())).toBe(GUEST_PLAYER_KEY)
     expect(isPackTurnUnderWay(state())).toBe(true)
   })
 })

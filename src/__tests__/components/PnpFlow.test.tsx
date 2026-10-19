@@ -820,7 +820,7 @@ describe('GameScreen - pass and play', () => {
     })
 
     // Each guest seat is a player of its own (2026-10-18): the board is in the colors and art of whichever
-    // guest's turn it is, each their own, never Single Player's guest's.
+    // guest's turn it is, each their own, seat 1's being Single Player's guest's (2026-10-19).
     describe('with guests at the table', () => {
       const colorOf = (seatId: string) => store.getState().playerTheme[guestSeatKey(seatId)]?.color
 
@@ -828,14 +828,14 @@ describe('GameScreen - pass and play', () => {
         store.dispatch(playerThemeActions.setPlayerTheme({ playerKey: guestSeatKey('p1'), theme: { color: '#8bc34a', harmony: 'analogous' } }))
         store.dispatch(playerThemeActions.setPlayerTheme({ playerKey: guestSeatKey('p2'), theme: { color: '#00bcd4', harmony: 'triadic' } }))
         store.dispatch(playerSettingsActions.setMode({ playerKey: guestSeatKey('p2'), modeId: 'robot' }))
-        store.dispatch(playerSettingsActions.setMode({ playerKey: GUEST_PLAYER_KEY, modeId: 'candle' }))
       })
 
       it('makes the writing guest the active player in their own colors, and the guessing guest from the hand-off on in theirs and their art', async () => {
         jest.useFakeTimers()
         const utils = await renderGame()
 
-        expect(store.getState().activePlayer).toEqual({ profileId: null, seatId: 'p1' })
+        // Seat 1's guest is Single Player's.
+        expect(store.getState().activePlayer).toEqual({ profileId: null, seatId: null })
         expect(store.getState().theme.color).toBe('#8bc34a')
 
         await writeWord(utils, 'CAT')
@@ -859,16 +859,21 @@ describe('GameScreen - pass and play', () => {
         jest.useRealTimers()
       })
 
-      // A table stored before guest seats had colors: each is given its own as it first plays.
+      // A table stored before guest seats had colors: each is given its own as it first plays (seat 1's
+      // guest, Single Player's, has theirs from the first launch).
       it('gives a guest with no colors yet a color of their own as their turn comes, never the colors already on screen', async () => {
+        const red = defaultColors.find((color) => color.label === 'Red')!.value
         store.dispatch(playerThemeActions.reset())
+        store.dispatch(playerThemeActions.setPlayerTheme({ playerKey: GUEST_PLAYER_KEY, theme: { color: red, harmony: 'triadic' } }))
         const utils = await renderGame()
 
-        expect(store.getState().activePlayer).toEqual({ profileId: null, seatId: 'p1' })
-        // Spread across the wheel (see guestSeats.ts): Red, then Cyan.
-        expect([colorOf('p1'), colorOf('p2')]).toEqual([defaultColors.find((color) => color.label === 'Red')!.value, defaultColors.find((color) => color.label === 'Cyan')!.value])
+        expect(store.getState().activePlayer).toEqual({ profileId: null, seatId: null })
+        expect(colorOf('p1')).toBe(red)
+        expect(colorOf('p2')).toBeUndefined()
         await writeWord(utils, 'CAT')
-        expect(store.getState().theme.color).toBe(defaultColors.find((color) => color.label === 'Cyan')!.value)
+        // Spread across the wheel from seat 1's Red (see guestSeats.ts).
+        expect(colorOf('p2')).toBe(defaultColors.find((color) => color.label === 'Cyan')!.value)
+        expect(store.getState().theme.color).toBe(colorOf('p2'))
       })
     })
 

@@ -9,6 +9,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { formatWinRate, getSessionResult, joinNames, type PnpSessionResult, type PnpStandingRow, rankStandingRows } from '@/utils/pnpSession'
 
 import { PnpStandingsList } from './PnpStandings'
+import { ReadableAccent } from './ReadableAccent'
 
 export type PnpSessionEndDialogProps = {
   visible: boolean
@@ -46,7 +47,7 @@ const summaryFor = (result: PnpSessionResult, standings: PnpStandingRow[]): stri
 // No backdrop dismissal, like every fleet card; Android's back button is Keep Playing, so a stray back
 // never wipes the standings. Past the room the screen has, the standings scroll between the header and
 // the buttons.
-export const PnpSessionEndDialog = ({ visible, standings, onDone, onKeepPlaying }: PnpSessionEndDialogProps): JSX.Element | null => {
+const PnpSessionEndCard = ({ visible, standings, onDone, onKeepPlaying }: PnpSessionEndDialogProps): JSX.Element | null => {
   const theme = useTheme()
   const { fg, fgMuted } = useOverlayCardColors()
   const { height: windowHeight } = useWindowDimensions()
@@ -122,3 +123,10 @@ const styles = StyleSheet.create({
   overlay: { paddingHorizontal: SCREEN_GUTTER },
   summary: { textAlign: 'center' }
 })
+
+// The card in a shade of the player's color that reads on it (ReadableAccent).
+export const PnpSessionEndDialog = (props: PnpSessionEndDialogProps): JSX.Element => (
+  <ReadableAccent>
+    <PnpSessionEndCard {...props} />
+  </ReadableAccent>
+)

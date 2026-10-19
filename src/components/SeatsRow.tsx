@@ -13,7 +13,7 @@ import { REFLOW_EASING, REFLOW_MS, SEAT_FADE_MS } from '@/constants/loadoutMotio
 import { selectProfile } from '@/hooks/useProfiles'
 import { DEFAULT_HARMONY, type PlayerTheme, resolvePlayerTheme } from '@/redux/playerThemeSlice'
 import type { RootState } from '@/redux/store'
-import { playerKeyFor } from '@/utils/players'
+import { playerKeyFor, SINGLE_PLAYER_SEAT_ID } from '@/utils/players'
 import { getStanding, MIN_PNP_PLAYERS, type PnpPlayer, type PnpStanding, seatPlayer } from '@/utils/pnpSession'
 
 import { useLoadoutMotion, useLoadoutPopoverHost } from './LoadoutShell'
@@ -67,8 +67,9 @@ type SeatProps = {
   seat: PnpPlayer
   // Whether this is the seat the page shows (its player is the active one).
   focused: boolean
-  // More than the fewest a table can seat: any seat can be swiped away, and the focused one has the
-  // remove glyph.
+  // More than the fewest a table can seat, and not seat 1 (whose guest is Single Player's, so it never
+  // leaves, see players.ts' SINGLE_PLAYER_SEAT_ID): it can be swiped away, and has the remove glyph
+  // while focused.
   removable: boolean
   // Whether this seat's remove confirm is open.
   confirming: boolean
@@ -83,14 +84,14 @@ type SeatProps = {
 // One seat: the PlayerPicker pill, ringed while it's the seat the page shows (in the theme's primary,
 // which is the focused player's own color, since the focused seat is the active player: the ring
 // matches their chip; Jay 2026-10-18, it was the fleet's black or white ink), with its standing this
-// session in a small badge on the pill's top-right corner and, on the focused seat while the table has
-// more than two, a remove glyph on its top-left (the way a home screen's icons show theirs). A press on a seat
+// session in a small badge on the pill's top-right corner and, on the focused seat (but the first) while
+// the table has more than two, a remove glyph on its top-left (the way a home screen's icons show theirs). A press on a seat
 // that isn't focused focuses it (its picker is handed a host whose toggle does that, so the press
 // keeps the pill's own ripple and feedback); a press on the focused one opens its picker. A seat that
 // isn't the active player's is drawn in its player's own colors (a profile's Hangman pick, or their
 // profile's color; a guest seat's own), the focused one in the live theme, which is theirs.
 //
-// While the table has more than two, any seat can be swiped away too, sideways either way or with a
+// While the table has more than two, any seat but the first can be swiped away too, sideways either way or with a
 // quick flick (Jay, 2026-10-18), with @rific/gestures' SwipeToDismiss, the toaster's own swipe, so it
 // feels like swiping a toast away. It goes by the glyph's rules (a confirm only when a standing or a word
 // waiting would go with it); a seat swiped away while its confirm is up waits off the table, and comes
@@ -189,7 +190,7 @@ export const SeatsRow = memo(({ players, focusedId, standings, showStandings, on
   const ink = inkFor(theme.dark)
   const { openId } = useLoadoutPopoverHost()
   const motion = useLoadoutMotion()
-  const removable = players.length > MIN_PNP_PLAYERS
+  const canRemove = players.length > MIN_PNP_PLAYERS
   // Every profile seated: none of them can sit in a second seat.
   const takenIds = useMemo(() => players.flatMap((player) => (player.profileId ? [player.profileId] : [])), [players])
   const buttonStyle = useMemo(() => [styles.button, { backgroundColor: theme.colors.surface }], [theme.colors.surface])
@@ -201,7 +202,7 @@ export const SeatsRow = memo(({ players, focusedId, standings, showStandings, on
       <View style={styles.row}>
         {players.map((seat) => (
           <Animated.View key={seat.id} testID={`seat-slot-${seat.id}`} {...(motion ? SEAT_MOTION : NO_MOTION)} style={[styles.slot, openId === seatPickerId(seat.id) && styles.slotOpen]}>
-            <Seat seat={seat} focused={seat.id === focusedId} removable={removable} confirming={seat.id === removingId} standing={showStandings ? getStanding({ standings }, seat.id) : null} takenIds={takenIds} onFocus={onFocus} onPick={onPick} onRemove={onRemove} />
+            <Seat seat={seat} focused={seat.id === focusedId} removable={canRemove && seat.id !== SINGLE_PLAYER_SEAT_ID} confirming={seat.id === removingId} standing={showStandings ? getStanding({ standings }, seat.id) : null} takenIds={takenIds} onFocus={onFocus} onPick={onPick} onRemove={onRemove} />
           </Animated.View>
         ))}
         {onNewSession ? (

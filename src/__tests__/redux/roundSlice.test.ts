@@ -505,9 +505,19 @@ describe('the Pass & Play session', () => {
   describe('removePnpPlayer', () => {
     const remove = (state: RoundState, id: string) => reducer(state, roundActions.removePnpPlayer(id))
     const ids = (state: RoundState) => session(state).players.map((player) => player.id)
+    // Player 2 writing the next word, for Player 3 (Player 1 wrote the first, for Player 2).
+    const p2Writing = (): RoundState => run([roundActions.startPnpAuthoring()], decide(inPlay(threePlayers())))
+    const p2WordInPlay = (): RoundState => run([roundActions.setPnpWord(word), roundActions.startPnpPlaying()], p2Writing())
 
     it('never goes below two players', () => {
       expect(remove(initialRoundState, 'p2')).toBe(initialRoundState)
+    })
+
+    // Seat 1's guest is Single Player's (players.ts' SINGLE_PLAYER_SEAT_ID).
+    it('never removes seat 1', () => {
+      const before = threePlayers()
+
+      expect(remove(before, 'p1')).toBe(before)
     })
 
     it('removes the seat and its standing, the guests after it moving up a number', () => {
@@ -527,14 +537,14 @@ describe('the Pass & Play session', () => {
       expect(session(remove(run([roundActions.focusPnpSeat('p2')], four), 'p2')).focusedId).toBe('p3')
       expect(session(remove(run([roundActions.focusPnpSeat('p4')], four), 'p4')).focusedId).toBe('p3')
       // Another seat leaving leaves the focus where it was.
-      expect(session(remove(run([roundActions.focusPnpSeat('p4')], four), 'p1')).focusedId).toBe('p4')
+      expect(session(remove(run([roundActions.focusPnpSeat('p4')], four), 'p2')).focusedId).toBe('p4')
     })
 
     it('hands the next word to the seat after a writer who leaves, at a blank prompt', () => {
-      const before = run([roundActions.startPnpAuthoring(), roundActions.setPnpDraft({ answer: 'CAT', hint: '' })], threePlayers())
-      const next = remove(before, 'p1')
+      const before = run([roundActions.setPnpDraft({ answer: 'CAT', hint: '' })], p2Writing())
+      const next = remove(before, 'p2')
 
-      expect(session(next)).toMatchObject({ writerId: 'p2', guesserId: 'p3' })
+      expect(session(next)).toMatchObject({ writerId: 'p3', guesserId: 'p1' })
       expect(next.pnp).toMatchObject({ id: before.pnp.id + 1, phase: 'authoring', puzzle: null })
       expect(next.pnp).not.toHaveProperty('draft')
     })
@@ -547,8 +557,11 @@ describe('the Pass & Play session', () => {
       expect(next.pnp).toMatchObject({ id: before.pnp.id, draft: { answer: 'CAT', hint: '' } })
     })
 
-    it.each(['p1', 'p2'])('replaces a word handed off or in play with a blank prompt when %s, its writer or guesser, leaves', (id) => {
-      const before = inPlay(threePlayers())
+    it.each([
+      ['writer', 'p2'],
+      ['guesser', 'p3']
+    ])('replaces a word handed off or in play with a blank prompt when its %s leaves', (_role, id) => {
+      const before = p2WordInPlay()
       const next = remove(before, id)
 
       expect(next.pnp).toMatchObject({ id: before.pnp.id + 1, phase: 'authoring', puzzle: null, guessedLetters: [] })
@@ -574,8 +587,9 @@ describe('the Pass & Play session', () => {
       // The next prompt has no move of its own left to make.
       expect(session(reducer(guesserGone, roundActions.startPnpAuthoring())).writerId).toBe('p3')
 
-      const writerGone = remove(decided, 'p1')
-      expect(session(writerGone)).toMatchObject({ writerId: 'p2', guesserId: 'p3' })
+      // Player 2's word for Player 3 decided, and Player 2 leaving: Player 3 writes, for Player 1.
+      const writerGone = remove(decide(p2WordInPlay()), 'p2')
+      expect(session(writerGone)).toMatchObject({ writerId: 'p3', guesserId: 'p1' })
     })
 
     it('wraps to the first seat when the last seat writing leaves', () => {
@@ -646,7 +660,7 @@ describe('pack turns', () => {
       ['with no turn', (state) => state, count(ALICE, 1)],
       ['for a round that is not on the board', (state) => run([roundActions.startPackTurn()], state), count(ALICE, 2)],
       ['for a player with no round', (state) => run([roundActions.startPackTurn()], state), count(GUEST_PLAYER_KEY, 1)],
-      ['once its seat has left the table', (state) => run([roundActions.startPackTurn(), roundActions.removePnpPlayer('p1')], state), count(ALICE, 1)]
+      ['once its seat has left the table', (state) => run([roundActions.startPackTurn(), count(ALICE, 1), roundActions.startPackTurn(), roundActions.removePnpPlayer('p2')], state), count(BOB, 1)]
     ])('counts nothing %s', (_label, setUp, action) => {
       const before = setUp(table())
 

@@ -1,7 +1,7 @@
 import MaskedView from '@react-native-masked-view/masked-view'
 import { resolveSeedColor, useThemeSettings } from '@rific/auto-paper'
 import { IconButton } from '@rific/feedback-press'
-import { JSX, memo, type ReactNode, useCallback, useEffect, useMemo, useRef } from 'react'
+import { JSX, memo, type ReactNode, useCallback, useEffect, useLayoutEffect, useMemo, useRef } from 'react'
 import { type AccessibilityActionEvent, FlatList, type NativeScrollEvent, type NativeSyntheticEvent, Platform, StyleSheet, useWindowDimensions, View, type ViewStyle } from 'react-native'
 import { Text, useTheme } from 'react-native-paper'
 import Animated, { type AnimatedStyle, type SharedValue, useAnimatedStyle } from 'react-native-reanimated'
@@ -115,6 +115,17 @@ export const ArtCarousel = memo(({ paused, artHeight, animated = false }: ArtCar
     0,
     VISIBLE_MODES.findIndex((item) => item.id === mode.id)
   )
+
+  // On the web the list starts at its first card and only moves to initialScrollIndex once it has
+  // painted (react-native-web's scroll view has no contentOffset), so for a frame the page showed the
+  // first art (Letters Only's HANGMAN) before the player's (Jay, 2026-10-19: a flash as the loadout
+  // opened). Moved there before the first paint instead; elsewhere initialScrollIndex starts it there.
+  const placedRef = useRef(false)
+  useLayoutEffect(() => {
+    if (placedRef.current || Platform.OS !== 'web') return
+    placedRef.current = true
+    listRef.current?.scrollToOffset({ offset: selectedIndex * pageWidth, animated: false })
+  }, [selectedIndex, pageWidth])
 
   // The art the list is showing: what it settled on itself, or what it was last moved to. A change of
   // art from anywhere else moves the list to it; one the list settled on itself is already there, and

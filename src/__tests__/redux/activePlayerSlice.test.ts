@@ -26,6 +26,12 @@ describe('activePlayerSlice', () => {
     expect(reducer(seat, activePlayerActions.setActivePlayer(null))).toEqual(GUEST)
   })
 
+  // Seat 1's guest is Single Player's (2026-10-19).
+  it("takes seat 1's guest as Single Player's, stored or picked", () => {
+    expect(reducer(initialActivePlayerState, activePlayerActions.setActivePlayer(null, 'p1'))).toEqual(GUEST)
+    expect(rehydrate({ activePlayer: { profileId: null, seatId: 'p1' } })).toEqual(GUEST)
+  })
+
   // A profile is the same player in any seat.
   it('never keeps a seat for a profile', () => {
     expect(reducer(initialActivePlayerState, activePlayerActions.setActivePlayer('profile-a', 'p2'))).toEqual({ profileId: 'profile-a', seatId: null })

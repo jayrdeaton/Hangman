@@ -1,6 +1,6 @@
 import { resolveSeedColor, useThemeSettings } from '@rific/auto-paper'
 import { Pressable } from '@rific/feedback-press'
-import { JSX, useEffect, useMemo, useState } from 'react'
+import { JSX, useMemo, useState } from 'react'
 import { StyleSheet, useWindowDimensions, View } from 'react-native'
 import { useTheme } from 'react-native-paper'
 import Animated, { useAnimatedStyle } from 'react-native-reanimated'
@@ -10,35 +10,14 @@ import { usePuzzleDefaults } from '@/hooks/usePuzzleDefaults'
 import type { GameMode } from '@/types/gameModes'
 
 import { GameVisual } from './GameVisual'
-import { fitSketchWordFontSize, SketchWord, sketchWordBlanksDrawnMs } from './SketchWord'
+import { fitSketchWordFontSize } from './SketchWord'
+import { SolvingWord } from './SolvingWord'
 
-const TITLE = 'HANGMAN'.split('')
+const TITLE = 'HANGMAN'
 const MAX_TITLE_FONT_SIZE = 56
 const MAX_ART_SIZE = 240
 // How much of the art's room a hero with no art (Letters Only) keeps above its title.
 const NO_ART_ROOM = 0.4
-// The title is solved like a puzzle: its blanks sketch in first, then, after a short beat, each blank
-// gives way to its letter left to right, one beat apart, the way a right guess fills a blank on the
-// board.
-const TITLE_FIRST_LETTER_MS = sketchWordBlanksDrawnMs(TITLE.length) + 150
-const TITLE_LETTER_STAGGER_MS = 120
-
-type HeroWordProps = { paused: boolean; fontSize: number }
-
-// One letter at a time, one timer at a time, and none while Home is covered: a reveal cut short by
-// the player leaving picks up where it stopped when they come back.
-const HeroWord = ({ paused, fontSize }: HeroWordProps): JSX.Element => {
-  const theme = useTheme()
-  const [revealed, setRevealed] = useState(0)
-  useEffect(() => {
-    if (paused || revealed >= TITLE.length) return
-    const timeout = setTimeout(() => setRevealed((count) => count + 1), revealed === 0 ? TITLE_FIRST_LETTER_MS : TITLE_LETTER_STAGGER_MS)
-    return () => clearTimeout(timeout)
-  }, [paused, revealed])
-  const letters = useMemo(() => TITLE.map((letter, i) => (i < revealed ? letter : '_')), [revealed])
-  return <SketchWord letters={letters} fontSize={fontSize} color={theme.colors.onSurface} started />
-}
-
 type HeroArtProps = { mode: GameMode; paused: boolean; size: number }
 
 const HERO_DEMO = { startBlank: true, once: true }
@@ -75,6 +54,7 @@ export type HeroTitleProps = {
 // over HANGMAN in the board's sketch letters, filled in on its blanks like a solved puzzle. Pressing the
 // art plays its round again (see HeroArt).
 export const HeroTitle = ({ paused }: HeroTitleProps): JSX.Element => {
+  const theme = useTheme()
   const { mode } = usePuzzleDefaults()
   // The art on show. A pick made while the hero is paused (in the Settings sheet over Home, the usual
   // place) waits until it's uncovered, so the new art draws itself in where the player can see it
@@ -92,7 +72,9 @@ export const HeroTitle = ({ paused }: HeroTitleProps): JSX.Element => {
           than HANGMAN twice (Jay, 2026-10-18), with some of the art's room kept above it so the title
           doesn't crowd the buttons under it. */}
       {shownMode.hasVisual === false ? <View style={{ height: artSize * NO_ART_ROOM }} /> : <HeroArt key={shownMode.id} mode={shownMode} paused={paused} size={artSize} />}
-      <HeroWord paused={paused} fontSize={fontSize} />
+      {/* Solved like a puzzle on the board: the blanks, then each gives way to its letter (SolvingWord, the
+          Letters Only art's preview too). */}
+      <SolvingWord word={TITLE} fontSize={fontSize} color={theme.colors.onSurface} paused={paused} />
     </View>
   )
 }

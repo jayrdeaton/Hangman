@@ -14,6 +14,7 @@ import { buildCustomPuzzle } from '@/utils/customPacks'
 import { WORD_SEPARATORS } from '@/utils/normalizePhrase'
 
 import { PlayerChip, PlayerLine } from './PlayerIdentity'
+import { ReadableAccent } from './ReadableAccent'
 
 // A seat the word could be for, with its profile when one sits there (for its chip).
 export type PnpGuesserOption = { id: string; name: string; profile?: Profile | null }
@@ -72,7 +73,7 @@ const TITLE_CHIP_SIZE = 32
 // (PlayerIdentity), so the right person is holding the device.
 //
 // Says nothing about how to play. Two players need no For row: the word can only be for the other one.
-export const PnpWordPrompt = ({ writerName, writerProfile, guessers, guesserId, onGuesserChange, answer, hint, onAnswerChange, onHintChange, promptVisible, onClose, onSubmit }: PnpWordPromptProps): JSX.Element | null => {
+const PnpWordPromptCard = ({ writerName, writerProfile, guessers, guesserId, onGuesserChange, answer, hint, onAnswerChange, onHintChange, promptVisible, onClose, onSubmit }: PnpWordPromptProps): JSX.Element | null => {
   const theme = useTheme()
   const { fg, fgMuted } = useOverlayCardColors()
   const { overlayStyle, cardMaxHeight, liftStyle, onCardLayout } = useKeyboardLiftedCard()
@@ -257,3 +258,10 @@ const styles = StyleSheet.create({
   titleBeside: { paddingHorizontal: 0 },
   titleLine: { paddingHorizontal: 24 }
 })
+
+// The card in a shade of the player's color that reads on it (ReadableAccent).
+export const PnpWordPrompt = (props: PnpWordPromptProps): JSX.Element => (
+  <ReadableAccent>
+    <PnpWordPromptCard {...props} />
+  </ReadableAccent>
+)

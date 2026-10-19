@@ -1,6 +1,6 @@
 import type { Profile } from '@tastic/profile'
 
-import { isPlayerKey, isProfileId, type PlayerRef } from './players'
+import { guestSeatRef, isPlayerKey, isProfileId, type PlayerRef, SINGLE_PLAYER_SEAT_ID } from './players'
 
 // A Pass & Play session: who is at the table, how each of them has done so far, who writes and who
 // guesses the word on the board, where the words come from and which seat the loadout is showing. It
@@ -11,7 +11,8 @@ import { isPlayerKey, isProfileId, type PlayerRef } from './players'
 // clearPnpProfile). Each guest seat is a player of its own (utils/players.ts' guestSeatKey: its own art,
 // difficulty, packs, colors, waiting solo round and unlocked puzzles), kept for as long as the seat is at
 // the table, a profile sitting there in the meantime included (see seatPlayer and usePlayerData's
-// forgetGuestSeat).
+// forgetGuestSeat). Seat 1's guest is Single Player's guest (players.ts' SINGLE_PLAYER_SEAT_ID), so
+// seat 1 is always first and never leaves.
 //
 // The players take turns, either writing words for each other or from the packs (a pack turn: one
 // player's own solo round, see packTurns.ts). Both count into the same standings, by seat, so a
@@ -114,8 +115,8 @@ export const getSeatIdentity = (players: PnpPlayer[], playerId: string, profiles
 
 // Who plays for a seat: its profile while the roster has it, otherwise the seat's own guest (a seat
 // whose profile has just left the roster plays as its guest until the profile is forgotten, which makes
-// the seat a guest's for good).
-export const seatPlayer = (player: PnpPlayer, profiles: readonly { id: string }[]): PlayerRef => (player.profileId && profiles.some((profile) => profile.id === player.profileId) ? { profileId: player.profileId, seatId: null } : { profileId: null, seatId: player.id })
+// the seat a guest's for good), seat 1's being Single Player's guest.
+export const seatPlayer = (player: PnpPlayer, profiles: readonly { id: string }[]): PlayerRef => (player.profileId && profiles.some((profile) => profile.id === player.profileId) ? { profileId: player.profileId, seatId: null } : { profileId: null, seatId: guestSeatRef(player.id) })
 
 // The other players in seat order starting from the one after `playerId`, wrapping: the order ties
 // are broken in.
@@ -235,7 +236,8 @@ const SOURCES: WordSource[] = ['packs', 'write']
 const TURN_ROUND_KEY = /^[^:]+:\d+$/
 
 // The seats that pass, in order, every guest named for their seat (a guest's stored name isn't
-// trusted: names come from the seat), or null for a table that can't stand.
+// trusted: names come from the seat), or null for a table that can't stand (seat 1 not first among
+// them included: its guest is Single Player's, see SINGLE_PLAYER_SEAT_ID).
 const sanitizePlayers = (value: unknown): PnpPlayer[] | null => {
   if (!Array.isArray(value)) return null
   const players: PnpPlayer[] = []
@@ -247,11 +249,11 @@ const sanitizePlayers = (value: unknown): PnpPlayer[] | null => {
     if (!name || players.some((other) => other.id === item.id || (profileId !== null && other.profileId === profileId))) return null
     players.push({ id: item.id, name, profileId })
   }
-  return players.length >= MIN_PNP_PLAYERS && players.length <= MAX_PNP_PLAYERS ? players : null
+  return players.length >= MIN_PNP_PLAYERS && players.length <= MAX_PNP_PLAYERS && players[0].id === SINGLE_PLAYER_SEAT_ID ? players : null
 }
 
 // Checks a stored session before it's trusted (sanitizeRoundState runs it on the Pass & Play round's
-// session). A table that doesn't pass (too few or too many seats, a seat without a usable id, a
+// session). A table that doesn't pass (too few or too many seats, seat 1 not first, a seat without a usable id, a
 // profile's seat without a usable name, two seats sharing an id, one profile in two seats) starts a
 // fresh session. With the table kept, a standing that doesn't pass is dropped (that seat hasn't
 // guessed); a writer, focus or guesser who isn't at the table falls back to the first seat and the

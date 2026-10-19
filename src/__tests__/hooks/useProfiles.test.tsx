@@ -258,20 +258,23 @@ describe('ProfilesProvider', () => {
     })
 
     // Each Pass & Play guest seat is a player of its own (2026-10-18), with colors of its own from the
-    // moment it first plays, so the colors already on screen are never filed as theirs.
-    it("picks a guest seat's own guest, giving the table's guest seats colors of their own first", async () => {
+    // moment it first plays, so the colors already on screen are never filed as theirs. Seat 1's guest is
+    // Single Player's (2026-10-19), whose colors are their own already.
+    it("picks a guest seat's own guest, giving the table's guest seats after the first colors of their own first", async () => {
       const store = makeStore({ roster: [ALICE] })
       await renderProvider(store)
 
       await act(async () => actions!.selectPlayer(null, 'p2'))
 
       expect(store.getState().activePlayer).toEqual({ profileId: null, seatId: 'p2' })
+      // Spaced from seat 1's first swatch, which Single Player's guest shows with nothing kept yet.
       expect(store.getState().playerTheme).toEqual({
-        [guestSeatKey('p1')]: { color: defaultColors[0].value, harmony: DEFAULT_HARMONY },
         [guestSeatKey('p2')]: { color: defaultColors.find((color) => color.label === 'Cyan')!.value, harmony: DEFAULT_HARMONY }
       })
 
-      // Single Player's guest takes whatever is on screen, as ever.
+      // Single Player's guest takes whatever is on screen, as ever, seat 1's included.
+      await act(async () => actions!.selectPlayer(null, 'p1'))
+      expect(store.getState().activePlayer).toEqual({ profileId: null, seatId: null })
       await act(async () => actions!.selectPlayer(null))
       expect(store.getState().activePlayer).toEqual({ profileId: null, seatId: null })
       expect(store.getState().playerTheme[GUEST_PLAYER_KEY]).toBeUndefined()

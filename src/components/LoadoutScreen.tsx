@@ -3,10 +3,10 @@ import { Button, Card, IconButton, SegmentedButtons, Switch } from '@rific/feedb
 import { ConfirmDialog, WELL_SHADOW } from '@tastic/hud/chrome'
 import { OptionPicker, type OptionPickerOption, type Profile } from '@tastic/profile'
 import { router, useFocusEffect, useIsFocused } from 'expo-router'
-import { JSX, memo, type ReactNode, useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { JSX, memo, type ReactNode, type RefObject, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import { AccessibilityInfo, type LayoutChangeEvent, Platform, StyleSheet, useWindowDimensions, View, type ViewStyle } from 'react-native'
 import { Avatar, Icon, ProgressBar, Text, useTheme } from 'react-native-paper'
-import Animated, { useAnimatedStyle } from 'react-native-reanimated'
+import Animated, { useAnimatedStyle, useSharedValue, withDelay, withTiming } from 'react-native-reanimated'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { useDispatch, useSelector, useStore } from 'react-redux'
 
@@ -224,7 +224,7 @@ SettingsRow.displayName = 'SettingsRow'
 // Single Player's one player, and their colors, first on the page (Jay, 2026-10-18): everything under
 // it is theirs (their art, difficulty and packs), so picking another player switches the whole page.
 // The active player's PlayerPicker, centered; a long name shrinks the pill rather than overflowing the
-// gutters.
+// gutters. Its guest is Player 1, the Pass & Play table's seat 1 (players.ts' SINGLE_PLAYER_SEAT_ID).
 const PlayerRow = memo((): JSX.Element => {
   const host = useLoadoutPopoverHost()
   const activeProfile = useActiveProfile()
@@ -232,7 +232,7 @@ const PlayerRow = memo((): JSX.Element => {
   const handleSelect = useCallback((profile: Profile | null) => selectPlayer(profile?.id ?? null), [selectPlayer])
   return (
     <View style={styles.playerRow}>
-      <PlayerPicker host={host} selectedId={activeProfile?.id ?? null} onSelect={handleSelect} />
+      <PlayerPicker host={host} selectedId={activeProfile?.id ?? null} guestLabel={guestName(0)} onSelect={handleSelect} />
     </View>
   )
 })
@@ -291,6 +291,19 @@ const clampArt = (height: number, maxHeight: number) => Math.round(Math.min(maxH
 const isPlayerPickerOpen = (openId: string | null) => openId === PLAYER_PICKER_ID || isSeatPickerOpen(openId)
 const isDifficultyOpen = (openId: string | null) => openId === DIFFICULTY_PICKER_ID
 
+// A view's height, read before the first paint where the platform lets a layout effect read it: the
+// web's DOM, and React Native's new architecture, whose views are DOM-like elements. So the page, laid
+// out from measured heights, is right from its first frame (Jay, 2026-10-19: the art started at its
+// estimate and jumped to its measured height a few frames later, shifting the whole page, since
+// onLayout comes after the paint). Read as the page mounts; every later change comes through onLayout.
+// Where nothing can be read (Jest), onLayout brings the first one too.
+const useHeightBeforePaint = (ref: RefObject<View | null>, onHeight: (height: number) => void): void => {
+  useLayoutEffect(() => {
+    const height = (ref.current as unknown as { getBoundingClientRect?: () => { height: number } } | null)?.getBoundingClientRect?.().height
+    if (height) onHeight(Math.round(height))
+  }, [ref, onHeight])
+}
+
 // The page above the art, or below it: measured for the art's height (only its own height, see
 // LoadoutScreen), and lifted over the press away catcher (and everything after it) while one of the
 // popovers it holds is open, so the popover's rows take their own taps. Lifting the whole group is what
@@ -300,25 +313,41 @@ const isDifficultyOpen = (openId: string | null) => openId === DIFFICULTY_PICKER
 // rather than jumping (Jay, 2026-10-18), on the same clock as the art, which gives up or takes back
 // exactly that much (see ArtCarousel), so the rest of the page stays put. The content inside is laid out
 // at its new height at once (what's measured); only the group's own box eases, so a new row shows over
-// the top of the art for that moment while the seats glide into it. The first height lands as is.
-const PageGroup = ({ testID, lift, onHeight, children }: { testID: string; lift: (openId: string | null) => boolean; onHeight: (height: number) => void; children: ReactNode }): JSX.Element => {
+// the art for that moment while the seats glide into it. The first height lands as is. The group under
+// the art hangs from its foot (`end`), so Ready never moves, and gives back what the word source's
+// shorter options leave (`shrink`, see SourceSwap), easing with the art once the page is `measured`.
+// Empty room in a group lets taps through to whatever it lies over (the press away catcher, the art's
+// arrows).
+type PageGroupProps = {
+  testID: string
+  lift: (openId: string | null) => boolean
+  onHeight: (height: number) => void
+  shrink?: number
+  measured?: boolean
+  end?: boolean
+  children: ReactNode
+}
+const PageGroup = ({ testID, lift, onHeight, shrink = 0, measured = false, end = false, children }: PageGroupProps): JSX.Element => {
   const { openId } = useLoadoutPopoverHost()
   const motion = useLoadoutMotion()
   const [height, setHeight] = useState(0)
-  const handleLayout = useCallback(
-    (event: LayoutChangeEvent) => {
-      const next = Math.round(event.nativeEvent.layout.height)
+  const contentRef = useRef<View>(null)
+  const measure = useCallback(
+    (next: number) => {
       setHeight(next)
       onHeight(next)
     },
     [onHeight]
   )
+  useHeightBeforePaint(contentRef, measure)
+  const handleLayout = useCallback((event: LayoutChangeEvent) => measure(Math.round(event.nativeEvent.layout.height)), [measure])
   const eased = useEasedValue(height, motion && height > 0, REFLOW_MS, REFLOW_EASING)
+  const easedShrink = useEasedValue(shrink, motion && measured, REFLOW_MS, REFLOW_EASING)
   // Its own height until the first measurement lands.
-  const easedStyle = useAnimatedStyle(() => (eased.value > 0 ? { height: eased.value } : {}))
+  const easedStyle = useAnimatedStyle(() => (eased.value > 0 ? { height: eased.value - easedShrink.value } : {}))
   return (
-    <Animated.View style={[styles.groupBox, easedStyle, lift(openId) && styles.lifted]}>
-      <View testID={testID} onLayout={handleLayout} style={styles.group}>
+    <Animated.View pointerEvents='box-none' style={[styles.groupBox, end && styles.groupBoxEnd, easedStyle, lift(openId) && styles.lifted]}>
+      <View ref={contentRef} testID={testID} onLayout={handleLayout} pointerEvents='box-none' style={styles.group}>
         {children}
       </View>
     </Animated.View>
@@ -341,38 +370,90 @@ const PageArtCarousel = ({ coveredOnPage, artHeight, measured }: { coveredOnPage
   )
 }
 
-// What each word source shows under the choice, laid over each other in one cell as tall as the taller
-// of the two (Jay, 2026-10-18: the switch was jarring): the packs' settings row and packs card, or Keep
-// Each Word. So a switch changes nothing around them, and the art keeps its size, while the two
-// cross-fade in place. The one not chosen is invisible, untouchable and out of a screen reader's way
-// (on the web also out of the keyboard's, once it has faded: CSS's visibility, which a transition holds
-// back until the fade is over). Each sits at the cell's foot, just above Ready, so the cards fade into
-// each other. While Difficulty's popover is open the cell sits over Ready, which its popover drops over.
-const SourceSwap = ({ source, packs, write }: { source: WordSource; packs: ReactNode; write: ReactNode }): JSX.Element => {
+// What each word source shows under the choice (Jay, 2026-10-18): both always mounted, laid over each
+// other in one cell, the chosen one over the other, cross-fading on a switch. The one not chosen is
+// invisible, untouchable and out of a screen reader's way (on the web also out of the keyboard's, once
+// it has faded: CSS's visibility, which a transition holds back until the fade is over). Each sits at the
+// cell's foot, just above Ready. While Difficulty's popover is open the cell sits over Ready, which its
+// popover drops over.
+//
+// The cell is as tall as the taller (the packs' settings row and packs card), but the page only keeps
+// the chosen one's height (Jay, 2026-10-19: writing left the Difficulty row's room empty above Keep
+// Each Word). What the shorter leaves (`slack`) comes off the group's box (PageGroup's `shrink`) and goes
+// to the art (LoadoutScreen's artHeight), and the choice slides down into that room, drawn over the
+// options so it passes over the ones fading out. All three ease on the reflow's clock from the same
+// commit once the page is measured, so they move as one (as the art and the groups always have). So the page
+// around it stays put: Ready doesn't move, and the art grows or shrinks by what the choice slides.
+// Options the choice has to slide up past to uncover (the packs', coming back from writing) wait half
+// the reflow before fading in, so the Difficulty row never shows above the choice while it passes. The
+// cell's empty room above the shorter options lets taps through to the art's arrows it lies over.
+type SourceSwapProps = {
+  source: WordSource
+  choice: ReactNode
+  packs: ReactNode
+  write: ReactNode
+  heights: { packs: number; write: number }
+  onPacksHeight: (height: number) => void
+  onWriteHeight: (height: number) => void
+  slack: number
+  measured: boolean
+}
+const SourceSwap = ({ source, choice, packs, write, heights, onPacksHeight, onWriteHeight, slack, measured }: SourceSwapProps): JSX.Element => {
   const { openId } = useLoadoutPopoverHost()
   const motion = useLoadoutMotion()
   const onPacks = source === 'packs'
-  const shown = useEasedValue(onPacks ? 1 : 0, motion, SOURCE_FADE_MS)
+  const slide = useEasedValue(slack, motion && measured, REFLOW_MS, REFLOW_EASING)
+  const slideStyle = useAnimatedStyle(() => ({ transform: [{ translateY: slide.value }] }))
+
+  const chosenTaller = onPacks ? heights.packs > heights.write : heights.write > heights.packs
+  const fadeDelay = motion && chosenTaller ? REFLOW_MS / 2 : 0
+  const shown = useSharedValue(onPacks ? 1 : 0)
+  const fadedBefore = useRef(false)
+  useEffect(() => {
+    const target = onPacks ? 1 : 0
+    const fade = withTiming(target, { duration: SOURCE_FADE_MS })
+    shown.value = motion && fadedBefore.current ? (fadeDelay > 0 ? withDelay(fadeDelay, fade) : fade) : target
+    fadedBefore.current = motion
+  }, [shown, onPacks, motion, fadeDelay])
   const packsStyle = useAnimatedStyle(() => ({ opacity: shown.value }))
   const writeStyle = useAnimatedStyle(() => ({ opacity: 1 - shown.value }))
-  const fadeMs = motion ? SOURCE_FADE_MS : 0
+  const hideAfterMs = motion ? fadeDelay + SOURCE_FADE_MS : 0
   return (
-    <View style={[styles.swap, isDifficultyOpen(openId) && styles.swapOpen]}>
-      <Animated.View testID='loadout-packs-options' pointerEvents={onPacks ? 'auto' : 'none'} aria-hidden={!onPacks} style={[styles.swapLayer, packsStyle, swapLayerState(onPacks, fadeMs)]}>
-        {packs}
-      </Animated.View>
-      <Animated.View testID='loadout-write-options' pointerEvents={onPacks ? 'none' : 'auto'} aria-hidden={onPacks} style={[styles.swapLayer, styles.swapLayerOver, writeStyle, swapLayerState(!onPacks, fadeMs)]}>
-        {write}
-      </Animated.View>
+    <>
+      <Animated.View style={[styles.sourceSlide, slideStyle]}>{choice}</Animated.View>
+      <View pointerEvents='box-none' style={[styles.swap, isDifficultyOpen(openId) && styles.swapOpen]}>
+        <Animated.View testID='loadout-packs-options' pointerEvents={onPacks ? 'auto' : 'none'} aria-hidden={!onPacks} style={[styles.swapLayer, packsStyle, swapLayerState(onPacks, hideAfterMs)]}>
+          <SwapContent testID='loadout-packs-content' onHeight={onPacksHeight}>
+            {packs}
+          </SwapContent>
+        </Animated.View>
+        <Animated.View testID='loadout-write-options' pointerEvents={onPacks ? 'none' : 'auto'} aria-hidden={onPacks} style={[styles.swapLayer, styles.swapLayerOver, writeStyle, swapLayerState(!onPacks, hideAfterMs)]}>
+          <SwapContent testID='loadout-write-content' onHeight={onWriteHeight}>
+            {write}
+          </SwapContent>
+        </Animated.View>
+      </View>
+    </>
+  )
+}
+
+// One word source's options, measured (for the room the other leaves; see SourceSwap).
+const SwapContent = ({ testID, onHeight, children }: { testID: string; onHeight: (height: number) => void; children: ReactNode }): JSX.Element => {
+  const ref = useRef<View>(null)
+  useHeightBeforePaint(ref, onHeight)
+  const handleLayout = useCallback((event: LayoutChangeEvent) => onHeight(Math.round(event.nativeEvent.layout.height)), [onHeight])
+  return (
+    <View ref={ref} testID={testID} onLayout={handleLayout} style={styles.swapContent}>
+      {children}
     </View>
   )
 }
 
 // The chosen layer over the other (its taps, and Difficulty's popover, come first), and on the web the
 // other out of sight once its fade is over.
-const swapLayerState = (chosen: boolean, fadeMs: number): ViewStyle => {
+const swapLayerState = (chosen: boolean, hideAfterMs: number): ViewStyle => {
   if (Platform.OS !== 'web') return chosen ? styles.swapLayerChosen : {}
-  const visibility = chosen ? { visibility: 'visible' } : { visibility: 'hidden', transitionDelay: `${fadeMs}ms`, transitionProperty: 'visibility' }
+  const visibility = chosen ? { visibility: 'visible' } : { visibility: 'hidden', transitionDelay: `${hideAfterMs}ms`, transitionProperty: 'visibility' }
   return { ...(chosen ? styles.swapLayerChosen : {}), ...(visibility as unknown as ViewStyle) }
 }
 
@@ -728,9 +809,18 @@ export const LoadoutScreen = ({ mode: door }: LoadoutScreenProps): JSX.Element =
   const pagePadding = useMemo(() => ({ paddingBottom: insets.bottom + ART_SLACK / 2, paddingTop: insets.top + CORNER_BAND_HEIGHT + ART_SLACK / 2 }), [insets.bottom, insets.top])
   const artMaxHeight = (Platform.OS === 'web' ? Math.min(windowWidth, MAX_PAGE_WIDTH) : windowWidth) - 2 * PAGE_GUTTER
   const estimate = clampArt(windowHeight - insets.top - insets.bottom - CORNER_BAND_HEIGHT - SINGLE_PLAYER_PAGE_BUT_ART - ART_SLACK, artMaxHeight)
-  const measured = viewportHeight > 0 && aboveHeight > 0 && belowHeight > 0
-  const artHeight = measured ? clampArt(viewportHeight - insets.top - insets.bottom - CORNER_BAND_HEIGHT - aboveHeight - belowHeight - BLOCK_GAP - ART_CAROUSEL_CHROME_HEIGHT - ART_SLACK, artMaxHeight) : estimate
+  // At the table, the word sources' options: the group under the art is measured with the taller in
+  // it, and the art also gets the room the chosen one leaves (see SourceSwap), so it never sits empty.
+  const [swapHeights, setSwapHeights] = useState({ packs: 0, write: 0 })
+  const handlePacksHeight = useCallback((height: number) => setSwapHeights((previous) => (previous.packs === height ? previous : { ...previous, packs: height })), [])
+  const handleWriteHeight = useCallback((height: number) => setSwapHeights((previous) => (previous.write === height ? previous : { ...previous, write: height })), [])
+  const swapMeasured = swapHeights.packs > 0 && swapHeights.write > 0
+  const swapSlack = table && swapMeasured ? Math.max(swapHeights.packs, swapHeights.write) - (source === 'packs' ? swapHeights.packs : swapHeights.write) : 0
+  const measured = viewportHeight > 0 && aboveHeight > 0 && belowHeight > 0 && (!table || swapMeasured)
+  const artHeight = measured ? clampArt(viewportHeight - insets.top - insets.bottom - CORNER_BAND_HEIGHT - aboveHeight - belowHeight - BLOCK_GAP - ART_CAROUSEL_CHROME_HEIGHT - ART_SLACK + swapSlack, artMaxHeight) : estimate
   const handleViewportLayout = useCallback((event: LayoutChangeEvent) => setViewportHeight(Math.round(event.nativeEvent.layout.height)), [])
+  const viewportRef = useRef<View>(null)
+  useHeightBeforePaint(viewportRef, setViewportHeight)
 
   const coveredOnPage = packsScreenVisible || resetVisible || asking || removing !== null || switching !== null || clearing !== null
 
@@ -761,30 +851,26 @@ export const LoadoutScreen = ({ mode: door }: LoadoutScreenProps): JSX.Element =
       }
     >
       {/* A plain scroll view that only scrolls once the art is at its floor (see artHeight); until then
-          the page spreads over it (see styles.page). */}
-      <FadingScrollView testID='loadout-page' style={styles.flex} fadeHeight={insets.top + CORNER_BAND_HEIGHT} contentContainerStyle={[styles.page, pagePadding]} onLayout={handleViewportLayout} alwaysBounceVertical={false} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps='handled'>
-        {/* First, under everything a tap should reach while a popover is open (the lifted group). */}
-        <LoadoutPressAway style={styles.pressAway} />
-        <PageGroup testID='loadout-above-art' lift={isPlayerPickerOpen} onHeight={setAboveHeight}>
-          {table ? <SeatsRow players={players} focusedId={focusedSeat.id} standings={standings} showStandings={sessionStarted} onFocus={handleFocus} onPick={handlePick} onRemove={handleRemove} removingId={removing?.id ?? null} onNewSession={sessionUnderWay ? openNewSession : undefined} /> : <PlayerRow />}
-        </PageGroup>
-        <PageArtCarousel coveredOnPage={coveredOnPage} artHeight={artHeight} measured={measured} />
-        <PageGroup testID='loadout-below-art' lift={isDifficultyOpen} onHeight={setBelowHeight}>
-          {table ? (
-            <>
-              <SourceChoice value={source} onChange={handleSource} />
-              <SourceSwap source={source} packs={packsOptions} write={<KeepWordsCard value={autoSave} onChange={setAutoSave} />} />
-            </>
-          ) : (
-            packsOptions
-          )}
-          {/* Off, rather than an alert after the tap, while there's nothing to draw from (the packs card
+          the page spreads over it (see styles.page). In a view of its own size, read before the first
+          paint (see useHeightBeforePaint). */}
+      <View ref={viewportRef} style={styles.flex}>
+        <FadingScrollView testID='loadout-page' style={styles.flex} fadeHeight={insets.top + CORNER_BAND_HEIGHT} contentContainerStyle={[styles.page, pagePadding]} onLayout={handleViewportLayout} alwaysBounceVertical={false} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps='handled'>
+          {/* First, under everything a tap should reach while a popover is open (the lifted group). */}
+          <LoadoutPressAway style={styles.pressAway} />
+          <PageGroup testID='loadout-above-art' lift={isPlayerPickerOpen} onHeight={setAboveHeight}>
+            {table ? <SeatsRow players={players} focusedId={focusedSeat.id} standings={standings} showStandings={sessionStarted} onFocus={handleFocus} onPick={handlePick} onRemove={handleRemove} removingId={removing?.id ?? null} onNewSession={sessionUnderWay ? openNewSession : undefined} /> : <PlayerRow />}
+          </PageGroup>
+          <PageArtCarousel coveredOnPage={coveredOnPage} artHeight={artHeight} measured={measured} />
+          <PageGroup testID='loadout-below-art' lift={isDifficultyOpen} onHeight={setBelowHeight} shrink={swapSlack} measured={measured} end>
+            {table ? <SourceSwap source={source} choice={<SourceChoice value={source} onChange={handleSource} />} packs={packsOptions} write={<KeepWordsCard value={autoSave} onChange={setAutoSave} />} heights={swapHeights} onPacksHeight={handlePacksHeight} onWriteHeight={handleWriteHeight} slack={swapSlack} measured={measured} /> : packsOptions}
+            {/* Off, rather than an alert after the tap, while there's nothing to draw from (the packs card
               says why). */}
-          <Button mode='contained' icon='play' onPress={handleReady} disabled={readyDisabled} accessibilityHint={readyHint} style={styles.ready} contentStyle={styles.readyContent} labelStyle={styles.readyLabel}>
-            Ready
-          </Button>
-        </PageGroup>
-      </FadingScrollView>
+            <Button mode='contained' icon='play' onPress={handleReady} disabled={readyDisabled} accessibilityHint={readyHint} style={styles.ready} contentStyle={styles.readyContent} labelStyle={styles.readyLabel}>
+              Ready
+            </Button>
+          </PageGroup>
+        </FadingScrollView>
+      </View>
     </LoadoutShell>
   )
 }
@@ -802,6 +888,8 @@ const styles = StyleSheet.create({
   group: { alignItems: 'center', alignSelf: 'stretch' },
   // The group's own box, whose height eases (its content keeps its own, see PageGroup).
   groupBox: { alignSelf: 'stretch' },
+  // Hung from its foot, so a change of height moves what's above it, never Ready.
+  groupBoxEnd: { justifyContent: 'flex-end' },
   // A group over the press away catcher (and everything after it) while its popover is open.
   lifted: { zIndex: 2 },
   // One group, centered in the room under the corners, inside the gutters the rest of the app keeps.
@@ -828,9 +916,12 @@ const styles = StyleSheet.create({
   settingsRow: { alignItems: 'center', alignSelf: 'stretch', flexDirection: 'row', gap: 8, justifyContent: 'space-between', marginTop: BLOCK_GAP },
   settingsRowOpen: { zIndex: 1 },
   source: { alignSelf: 'stretch', borderRadius: 20, boxShadow: WELL_SHADOW, marginTop: BLOCK_GAP },
+  // Over the options, so it slides over the ones fading out (see SourceSwap).
+  sourceSlide: { alignSelf: 'stretch', zIndex: 2 },
   // The word sources' options overlaid: a row of two whole-width layers, the second pulled back over the
   // first, so the row is as tall as the taller and each sits at its foot.
   swap: { alignItems: 'flex-end', alignSelf: 'stretch', flexDirection: 'row' },
+  swapContent: { alignItems: 'center', alignSelf: 'stretch' },
   swapLayer: { alignItems: 'center', width: '100%' },
   swapLayerChosen: { zIndex: 1 },
   swapLayerOver: { marginLeft: '-100%' },

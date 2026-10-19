@@ -5,7 +5,8 @@ import * as ExpoBlur from 'expo-blur'
 import { useFonts } from 'expo-font'
 import * as SplashScreen from 'expo-splash-screen'
 import * as SystemUI from 'expo-system-ui'
-import { ReactNode, useCallback, useEffect, useRef } from 'react'
+import { ReactNode, useCallback, useEffect, useMemo, useRef } from 'react'
+import { ThemeProvider } from 'react-native-paper'
 import Reanimated from 'react-native-reanimated'
 import { shallowEqual, useDispatch, useSelector, useStore } from 'react-redux'
 
@@ -90,8 +91,30 @@ const PlayerThemeSync = (): null => {
   return null
 }
 
+// The scrim behind every card and sheet in dark appearance: black rather than MD3's grey
+// (rgba(51, 47, 55, 0.4)). The chalkboard is a step darker than the cards' surface (BoardBackground's
+// boardColor), and the grey scrim lifted it to the cards' own color, so a card's edge vanished into the
+// board (Jay, 2026-10-19). Light appearance keeps MD3's.
+export const DARK_BACKDROP = 'rgba(0, 0, 0, 0.6)'
+
+// The theme with DARK_BACKDROP for the whole app, under auto-paper's Provider (Paper's Portal carries
+// it into every card and sheet from where each is declared).
+const BackdropTheme = ({ children }: { children: ReactNode }) => {
+  const theme = useAutoPaperTheme()
+  const scrimTheme = useMemo(() => (theme.dark ? { ...theme, colors: { ...theme.colors, backdrop: DARK_BACKDROP } } : theme), [theme])
+  return <ThemeProvider theme={scrimTheme}>{children}</ThemeProvider>
+}
+
+// How much of the theme's surface every frosted card and sheet lays over its blur (auto-paper's
+// `blurTint`, 0.2 by default). The board's art is drawn in thick, bright strokes right where the cards
+// open, and at 0.2 the gallows, the figure and the keyboard read clearly through every card, right
+// behind its title and the answer, and in dark mode a card's edge all but vanished into the board (Jay,
+// 2026-10-19). Hangman's own, set here rather than stored: nothing lets a player change it.
+export const CARD_BLUR_TINT = 0.7
+
 export const Theme = ({ children }: ThemeProps) => {
-  const settings = useSelector((state: RootState) => state.theme, shallowEqual)
+  const storedSettings = useSelector((state: RootState) => state.theme, shallowEqual)
+  const settings = useMemo(() => ({ ...storedSettings, blurTint: CARD_BLUR_TINT }), [storedSettings])
   const dispatch = useDispatch()
   const onChange = useCallback((next: ThemeSettings) => dispatch(themeActions.initialize(next)), [dispatch])
   // A one-shot callback, not a boolean, so there's nothing for useSplashReady to watch. This marks
@@ -131,7 +154,7 @@ export const Theme = ({ children }: ThemeProps) => {
     <Provider initialValue={settings} onChange={onChange} onReady={onReady} expoBlur={ExpoBlur} maskedView={MaskedView} reanimated={Reanimated} statusBar={false}>
       <RootBackground />
       <PlayerThemeSync />
-      {children}
+      <BackdropTheme>{children}</BackdropTheme>
     </Provider>
   )
 }

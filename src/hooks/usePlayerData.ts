@@ -7,7 +7,7 @@ import { playerThemeActions } from '@/redux/playerThemeSlice'
 import { roundActions } from '@/redux/roundSlice'
 import type { RootState } from '@/redux/store'
 import { pickGuestSeatColors } from '@/utils/guestSeats'
-import { guestSeatKey, type PlayerKey, playerKeyFor } from '@/utils/players'
+import { guestSeatKey, isGuestSeatKey, type PlayerKey, playerKeyFor } from '@/utils/players'
 import { clearLeftGuestSeatUnlocks, clearPuzzleUnlocks } from '@/utils/unlocks'
 
 import { useCatalogActions } from './useCatalog'
@@ -25,7 +25,8 @@ export type PlayerData = {
   // Everything a Pass & Play guest seat's own guest kept (utils/players.ts' guestSeatKey), for when the
   // seat has left the table (the loadout's remove): their art, difficulty and pack picks, their colors,
   // their waiting solo round and their unlocked puzzles. Their rounds stay on the device's record, as
-  // every guest's do. If they're the one playing, Single Player's guest takes over.
+  // every guest's do. If they're the one playing, Single Player's guest takes over. Never seat 1's, whose
+  // guest is Single Player's (it never leaves the table anyway).
   forgetGuestSeat: (seatId: string) => Promise<void>
   // Colors of their own for every guest seat at the table that has none yet (utils/guestSeats.ts), the
   // first time it's shown or made the active player. Nothing changes when every seat has some.
@@ -65,6 +66,7 @@ export const usePlayerData = (): PlayerData => {
     }
     const forgetGuestSeat = async (seatId: string) => {
       const playerKey = guestSeatKey(seatId)
+      if (!isGuestSeatKey(playerKey)) return
       if (store.getState().activePlayer.seatId === seatId) dispatch(activePlayerActions.setActivePlayer(null))
       removeKept(playerKey)
       await clearPuzzleUnlocks(playerKey)

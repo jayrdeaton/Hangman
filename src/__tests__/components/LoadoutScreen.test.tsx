@@ -243,7 +243,7 @@ describe('LoadoutScreen (Single Player)', () => {
     expect(screen.getByLabelText('ANY')).toBeTruthy()
     expect(screen.getByLabelText('Reset settings')).toBeTruthy()
     expect(screen.getByText(`All ${N} packs`)).toBeTruthy()
-    expect(screen.getByLabelText('GUEST')).toBeTruthy()
+    expect(screen.getByLabelText('PLAYER 1')).toBeTruthy()
     expect(ready(screen)).toBeTruthy()
     for (const gone of ['Quick Start', 'Pack Progress', 'All Packs', 'Random', 'Continue', 'Player', 'Difficulty']) expect(screen.queryByText(gone)).toBeNull()
     expect(screen.queryByTestId('pack-progress-drawer-panel', { includeHiddenElements: true })).toBeNull()
@@ -262,7 +262,7 @@ describe('LoadoutScreen (Single Player)', () => {
     it.each([
       ['the Settings sheet is open', (screen: Screen) => fireEvent.press(screen.getByLabelText('Settings'))],
       ['Choose Packs is open', (screen: Screen) => fireEvent.press(packsCard(screen))],
-      ["the player picker's popover is open", (screen: Screen) => fireEvent.press(screen.getByLabelText('GUEST'))],
+      ["the player picker's popover is open", (screen: Screen) => fireEvent.press(screen.getByLabelText('PLAYER 1'))],
       ["Difficulty's popover is open", (screen: Screen) => fireEvent.press(screen.getByLabelText('ANY'))],
       [
         'the reset confirm is up',
@@ -791,7 +791,7 @@ describe('LoadoutScreen (Single Player)', () => {
     it('has the player picker, on the guest, and no Colors row, Art row or art drawer of its own', async () => {
       const screen = await renderLoadout()
 
-      expect(screen.getByLabelText('GUEST')).toBeTruthy()
+      expect(screen.getByLabelText('PLAYER 1')).toBeTruthy()
       expect(screen.queryByText('Colors')).toBeNull()
       expect(screen.queryByText('Art')).toBeNull()
       expect(screen.queryByLabelText(/Change art/)).toBeNull()
@@ -823,7 +823,7 @@ describe('LoadoutScreen (Single Player)', () => {
     })
     afterEach(() => measure.mockRestore())
 
-    const open = (screen: Screen, trigger = 'GUEST') => fireEvent.press(screen.getByLabelText(trigger))
+    const open = (screen: Screen, trigger = 'PLAYER 1') => fireEvent.press(screen.getByLabelText(trigger))
     const live = () => store.getState().theme
 
     it('lists the guest and every profile by name, then Manage', async () => {
@@ -916,7 +916,7 @@ describe('LoadoutScreen (Single Player)', () => {
     // The page's own catcher starts below the corners' strip, so the strip has one of its own (Jay,
     // 2026-10-18: a tap between Home and the cog left the popover open).
     it.each([
-      ['the player picker', 'GUEST', 'Manage'],
+      ['the player picker', 'PLAYER 1', 'Manage'],
       ['Difficulty', 'ANY', 'Medium']
     ])("closes %s's popover on a press in the corners' strip, which has nothing to press with none open", async (_picker, trigger, row) => {
       const screen = await renderLoadout()
@@ -1129,7 +1129,7 @@ describe('LoadoutScreen (Single Player)', () => {
 
       // The page's own, through its one listener: an open picker's popover closes before anything else.
       it.each([
-        ['the player picker', 'GUEST', 'Manage'],
+        ['the player picker', 'PLAYER 1', 'Manage'],
         ['Difficulty', 'ANY', 'Medium']
       ])("closes %s's popover first, then goes back", async (_picker, trigger, row) => {
         store.dispatch(profilesActions.setAll([ALICE]))
@@ -1275,7 +1275,7 @@ describe('LoadoutScreen (Single Player)', () => {
         })
 
         it.each([
-          ['the player picker', 'GUEST', 'Manage'],
+          ['the player picker', 'PLAYER 1', 'Manage'],
           ['Difficulty', 'ANY', 'Medium']
         ])("closes %s's popover, so coming back finds the page itself", async (_picker, trigger, row) => {
           store.dispatch(profilesActions.setAll([ALICE]))

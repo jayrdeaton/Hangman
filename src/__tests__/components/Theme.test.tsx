@@ -8,7 +8,7 @@ import { useEffect } from 'react'
 import { Provider as ReduxProvider } from 'react-redux'
 
 import { boardColor } from '@/components/BoardBackground'
-import { Theme } from '@/components/Theme'
+import { CARD_BLUR_TINT, DARK_BACKDROP, Theme } from '@/components/Theme'
 import { activePlayerActions } from '@/redux/activePlayerSlice'
 import { DEFAULT_HARMONY, playerThemeActions } from '@/redux/playerThemeSlice'
 import { store } from '@/redux/store'
@@ -28,6 +28,7 @@ const mockSetBackgroundColorAsync = jest.mocked(setBackgroundColorAsync)
 let paintedBoard: string | null = null
 let setThemeSettings: ((patch: Partial<ThemeSettings>) => void) | null = null
 let liveSettings: ThemeSettings | null = null
+let liveBackdrop: string | null = null
 const ThemeProbe = () => {
   const { colors, dark } = useAutoPaperTheme()
   const { settings, set } = useThemeSettings()
@@ -35,7 +36,8 @@ const ThemeProbe = () => {
     paintedBoard = boardColor(dark, colors.surface)
     setThemeSettings = set
     liveSettings = settings
-  }, [colors.surface, dark, set, settings])
+    liveBackdrop = colors.backdrop
+  }, [colors.surface, colors.backdrop, dark, set, settings])
   return null
 }
 
@@ -72,6 +74,29 @@ describe('Theme', () => {
 
     expect(paintedBoard).not.toBe(light)
     expect(mockSetBackgroundColorAsync).toHaveBeenLastCalledWith(paintedBoard)
+  })
+
+  // Jay, 2026-10-19: the board's art read through every card at auto-paper's 0.2.
+  it("frosts every card and sheet with Hangman's own tint, whatever is stored", async () => {
+    await renderTheme()
+    await waitFor(() => expect(liveSettings).not.toBeNull())
+
+    expect(liveSettings?.blurTint).toBe(CARD_BLUR_TINT)
+  })
+
+  // Jay, 2026-10-19: MD3's grey scrim lifted the dark chalkboard to the cards' own color.
+  it('puts a black scrim behind every card in dark appearance, and keeps MD3s in light', async () => {
+    await renderTheme()
+    await waitFor(() => expect(setThemeSettings).not.toBeNull())
+    await act(async () => {
+      setThemeSettings?.({ appearance: 'dark' })
+    })
+    expect(liveBackdrop).toBe(DARK_BACKDROP)
+
+    await act(async () => {
+      setThemeSettings?.({ appearance: 'light' })
+    })
+    expect(liveBackdrop).not.toBe(DARK_BACKDROP)
   })
 })
 
