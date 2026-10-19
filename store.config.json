@@ -13,7 +13,7 @@
       "en-US": {
         "title": "HangmanTastic",
         "subtitle": "Classic Hangman. No Ads.",
-        "description": "The classic word-guessing game, with 19,700 puzzles across 58 packs and no ads or accounts.\n\n• Opens straight into a puzzle\n• Packs from Countries and NFL Teams to Movies, TV Shows, and Songs\n• Easy, Medium, and Hard puzzles, with optional hints\n• Pass & Play: write a word, hand off the phone, and let a friend guess\n• Make your own packs and share them as a file\n• Ten art styles, from Classic to Balloons and Hourglass\n• Stats and 34 achievements\n• Plays offline\n\nPart of the Tastic family of games.\n\nOpen source on GitHub: https://github.com/jayrdeaton/Hangman",
+        "description": "The classic word-guessing game, with 19k+ puzzles across 50+ packs and no ads or accounts.\n\n• Opens straight into a puzzle\n• Packs from Countries and NFL Teams to Movies, TV Shows, and Songs\n• Easy, Medium, and Hard puzzles, with optional hints\n• Pass & Play: write a word, hand off the phone, and let a friend guess\n• Make your own packs and share them as a file\n• Ten art styles, from Classic to Balloons and Hourglass\n• Stats and 34 achievements\n• Plays offline\n\nPart of the Tastic family of games.\n\nOpen source on GitHub: https://github.com/jayrdeaton/Hangman",
         "keywords": [
           "word",
           "guess",
@@ -26,9 +26,9 @@
           "pass and play",
           "offline"
         ],
-        "marketingUrl": "https://hangman.infinitetoken.com",
-        "supportUrl": "https://infinitetoken.com",
-        "privacyPolicyUrl": "https://hangman.infinitetoken.com/privacy"
+        "marketingUrl": "https://games.infinitetoken.com/hangman",
+        "supportUrl": "https://games.infinitetoken.com/support",
+        "privacyPolicyUrl": "https://games.infinitetoken.com/privacy"
       }
     },
     "advisory": {

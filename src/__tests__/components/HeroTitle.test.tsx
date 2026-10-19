@@ -5,7 +5,7 @@ import type { ReactNode } from 'react'
 import { HeroTitle } from '@/components/HeroTitle'
 import { sketchWordBlanksDrawnMs } from '@/components/SketchWord'
 import { PuzzleDefaultsContext } from '@/hooks/usePuzzleDefaults'
-import { candleMode, classicMode } from '@/modes/registry'
+import { candleMode, classicMode, lettersMode } from '@/modes/registry'
 import type { GameMode } from '@/types/gameModes'
 
 // A stand-in for the art that shows the `mistakes` the hero's demo loop feeds it, and records every
@@ -71,6 +71,15 @@ describe('HeroTitle', () => {
 
   afterEach(() => {
     jest.useRealTimers()
+  })
+
+  // Letters Only has no artwork, and its preview spells HANGMAN: drawn over the title it read as HANGMAN
+  // twice, so the hero is just the title.
+  it('draws no art for Letters Only, only the title', async () => {
+    const { getByTestId, queryByTestId } = await render(lettersMode)
+
+    expect(queryByTestId('hero-art-letters')).toBeNull()
+    expect(getByTestId('hero-title')).toBeTruthy()
   })
 
   // One element for a screen reader: "Hangman, heading", not seven sketched letters and a drawing.

@@ -1,6 +1,7 @@
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { useCallback, useEffect, useState } from 'react'
 
+import { STORAGE_PREFIX } from '@/constants/storage'
 import type { PuzzleDifficultyTier } from '@/utils/puzzleCatalog'
 
 export type PackPuzzleStatusFilter = 'all' | 'unsolved' | 'solved'
@@ -11,7 +12,7 @@ export type PackPuzzleListPrefs = {
   difficultyFilter: PackPuzzleDifficultyFilter
 }
 
-const STORAGE_KEY = 'packPuzzleListPrefs'
+const STORAGE_KEY = `${STORAGE_PREFIX}packPuzzleListPrefs`
 
 const DEFAULT_PREFS: PackPuzzleListPrefs = { statusFilter: 'all', difficultyFilter: 'all' }
 

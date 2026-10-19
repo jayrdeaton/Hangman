@@ -21,7 +21,7 @@ jest.mock('@react-native-async-storage/async-storage', () => ({
 // Every function here is the guest's unless a test says otherwise: one player's puzzles, under its key.
 const PLAYER = GUEST_PLAYER_KEY
 const OTHER = 'profile-a'
-const PUZZLE_UNLOCKS_KEY = `puzzle_unlocks_v1:${PLAYER}`
+const PUZZLE_UNLOCKS_KEY = `hangman:puzzle_unlocks_v1:${PLAYER}`
 
 beforeEach(() => {
   mockStore = {}
@@ -241,7 +241,7 @@ describe('clearLeftGuestSeatUnlocks', () => {
 
     await clearLeftGuestSeatUnlocks(new Set([guestSeatKey('p1'), guestSeatKey('p2')]))
 
-    expect(Object.keys(mockStore).sort()).toEqual(['puzzle_unlocks_v1:guest', 'puzzle_unlocks_v1:guest-p1', 'puzzle_unlocks_v1:profile-a'])
+    expect(Object.keys(mockStore).sort()).toEqual(['hangman:puzzle_unlocks_v1:guest', 'hangman:puzzle_unlocks_v1:guest-p1', 'hangman:puzzle_unlocks_v1:profile-a'])
   })
 })
 
@@ -253,7 +253,7 @@ describe("each player's own unlocked puzzles", () => {
 
     expect(await getPuzzleUnlockMap(PLAYER)).toEqual({ animals: ['lion'] })
     expect(await getPuzzleUnlockMap(OTHER)).toEqual({ animals: ['tiger'] })
-    expect(Object.keys(mockStore).sort()).toEqual(['puzzle_unlocks_v1:guest', 'puzzle_unlocks_v1:profile-a'])
+    expect(Object.keys(mockStore).sort()).toEqual(['hangman:puzzle_unlocks_v1:guest', 'hangman:puzzle_unlocks_v1:profile-a'])
   })
 
   // Each Pass & Play guest seat is a player of its own (2026-10-18).
@@ -273,9 +273,11 @@ describe("each player's own unlocked puzzles", () => {
     expect(await markPuzzleUnlocked(PLAYER, 'animals', 'lion')).toBe(true)
   })
 
-  // No migration (the app hadn't shipped): the old single device-wide key is never read or adopted.
-  it('never reads the old device-wide key', async () => {
+  // No migration (the app hadn't shipped): the old single device-wide key is never read or adopted, and
+  // neither is a player's key from before every key took the hangman: prefix (see storage.ts).
+  it('never reads the old device-wide key or the unprefixed per-player keys', async () => {
     mockStore.puzzle_unlocks_v1 = JSON.stringify({ animals: ['lion'] })
+    mockStore[`puzzle_unlocks_v1:${PLAYER}`] = JSON.stringify({ animals: ['tiger'] })
 
     expect(await getPuzzleUnlockMap(PLAYER)).toEqual({})
     expect(await getDevicePuzzleUnlockMap()).toEqual({})
@@ -323,7 +325,7 @@ describe('getDevicePuzzleUnlockMap', () => {
   it('is empty with nothing stored, and skips a corrupt player', async () => {
     expect(await getDevicePuzzleUnlockMap()).toEqual({})
 
-    mockStore[`puzzle_unlocks_v1:${OTHER}`] = '{not valid json'
+    mockStore[`hangman:puzzle_unlocks_v1:${OTHER}`] = '{not valid json'
     await markPuzzleUnlocked(PLAYER, 'animals', 'lion')
     expect(await getDevicePuzzleUnlockMap()).toEqual({ animals: ['lion'] })
   })

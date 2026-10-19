@@ -171,7 +171,7 @@ describe('ProfilesProvider', () => {
       expect(store.getState().profiles).toEqual([BOB])
       expect(store.getState().activePlayer.profileId).toBeNull()
       expect(aliceLeft(store)).toEqual(ALICE_FORGOTTEN)
-      expect(removeItem).toHaveBeenCalledWith(`puzzle_unlocks_v1:${ALICE.id}`)
+      expect(removeItem).toHaveBeenCalledWith(`hangman:puzzle_unlocks_v1:${ALICE.id}`)
       expect(seatProfiles(store)).toEqual([null, null])
       expect(store.getState().round.pnp.session.players.map((player) => player.name)).toEqual(['Player 1', 'Player 2'])
     })
@@ -191,10 +191,10 @@ describe('ProfilesProvider', () => {
     // A guest seat's unlocked puzzles go with the seat; any left behind (a seat that left while a write
     // was cut short) are cleared, so a new seat given its id starts with none.
     it("clears the unlocked puzzles of every guest seat no longer at the table, and nobody else's", async () => {
-      const getAllKeys = jest.spyOn(AsyncStorage, 'getAllKeys').mockResolvedValue(['puzzle_unlocks_v1:guest', `puzzle_unlocks_v1:${ALICE.id}`, `puzzle_unlocks_v1:${guestSeatKey('p2')}`, `puzzle_unlocks_v1:${guestSeatKey('p9')}`, 'theme'])
+      const getAllKeys = jest.spyOn(AsyncStorage, 'getAllKeys').mockResolvedValue(['hangman:puzzle_unlocks_v1:guest', `hangman:puzzle_unlocks_v1:${ALICE.id}`, `hangman:puzzle_unlocks_v1:${guestSeatKey('p2')}`, `hangman:puzzle_unlocks_v1:${guestSeatKey('p9')}`, 'theme'])
       await renderProvider(makeStore({ roster: [ALICE] }))
 
-      expect(removeItem.mock.calls).toEqual([[`puzzle_unlocks_v1:${guestSeatKey('p9')}`]])
+      expect(removeItem.mock.calls).toEqual([[`hangman:puzzle_unlocks_v1:${guestSeatKey('p9')}`]])
       getAllKeys.mockRestore()
     })
 
@@ -243,7 +243,7 @@ describe('ProfilesProvider', () => {
       expect(sharedRoster()).toEqual([BOB])
       expect(store.getState().activePlayer.profileId).toBeNull()
       expect(aliceLeft(store)).toEqual(ALICE_FORGOTTEN)
-      expect(removeItem).toHaveBeenCalledWith(`puzzle_unlocks_v1:${ALICE.id}`)
+      expect(removeItem).toHaveBeenCalledWith(`hangman:puzzle_unlocks_v1:${ALICE.id}`)
       expect(seatProfiles(store)).toEqual([null, null])
     })
 

@@ -5,10 +5,10 @@ import { getTotalPlayed, getTotalWins } from '@/utils/statsEngine'
 
 export { ACHIEVEMENT_TIER_COLORS } from '@tastic/achievements'
 
-// How many modes the Customize carousel offers (VISIBLE_MODES in src/modes/registry.ts). Hardcoded so
-// this file doesn't pull every mode's artwork into whatever imports the catalog; the catalog test
-// checks it still matches the registry.
-export const VISIBLE_MODE_COUNT = 10
+// How many arts the pickers offer (VISIBLE_MODES in src/modes/registry.ts: the loadout's carousel, the
+// Settings sheet's ART grid). Hardcoded so this file doesn't pull every mode's artwork into whatever
+// imports the catalog; the catalog test checks it still matches the registry.
+export const VISIBLE_MODE_COUNT = 8
 
 // Every achievement, in the order the Stats & Achievements screen lists them and the round-end card lists fresh
 // unlocks. The ids become stored unlock keys, so they're permanent once the app ships: rename a title,

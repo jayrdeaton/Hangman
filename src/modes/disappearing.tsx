@@ -36,6 +36,9 @@ const DisappearingVisual = ({ mistakes, color, started }: { mistakes: number; co
 export const disappearingMode: GameMode = {
   id: 'disappearing',
   label: 'Disappearing',
+  // Hidden 2026-10-18: Jay found it weak beside the others (the same stick figure as Classic, without
+  // its gallows). Still resolves for a shared link or a player who already picked it.
+  hidden: true,
   description: 'The figure starts complete and gets erased, piece by piece, with each wrong guess',
   category: 'parts',
   behavior: 'subtractive',

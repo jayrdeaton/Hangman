@@ -1,9 +1,11 @@
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { defaultColors } from '@rific/auto-paper'
+import * as Gestures from '@rific/gestures'
 import { type Profile, profilesActions } from '@tastic/profile'
 import { act, fireEvent, render, waitFor, within } from '@testing-library/react-native'
-import { router } from 'expo-router'
+import { router, useIsFocused } from 'expo-router'
 import { BackHandler, Dimensions, View } from 'react-native'
+import { useReducedMotion } from 'react-native-reanimated'
 
 import { LoadoutScreen } from '@/components/LoadoutScreen'
 import { Providers } from '@/components/Providers'
@@ -22,11 +24,12 @@ import { getPuzzleManifest } from '@/utils/puzzleCatalog'
 // source under the art, and its Ready on the packs (pack turns). Ready while the players write, and New
 // session, are PnpFlow.test.tsx's.
 
-// The art carousel has its own suite (ArtCarousel.test.tsx), and runs no demo loop here.
+// The art carousel has its own suite (ArtCarousel.test.tsx), and runs no demo loop here. It shows the
+// height the page gave it and whether it may ease to a new one.
 jest.mock('@/components/ArtCarousel', () => {
   const { createElement } = jest.requireActual('react')
   const { Text } = jest.requireActual('react-native')
-  return { ART_CAROUSEL_CHROME_HEIGHT: 52, ArtCarousel: ({ paused, artHeight }: { paused: boolean; artHeight: number }) => createElement(Text, { testID: 'art-carousel', accessibilityHint: String(artHeight) }, paused ? 'paused' : 'playing') }
+  return { ART_CAROUSEL_CHROME_HEIGHT: 52, ArtCarousel: ({ paused, artHeight, animated }: { paused: boolean; artHeight: number; animated?: boolean }) => createElement(Text, { testID: 'art-carousel', accessibilityHint: String(artHeight), animated }, paused ? 'paused' : 'playing') }
 })
 
 const session = () => store.getState().round.pnp.session
@@ -136,7 +139,7 @@ describe('the Pass & Play page', () => {
   })
 
   describe('seats', () => {
-    it('adds guests up to eight, each named for its seat, then offers no more', async () => {
+    it('adds guests up to eight, each named for its seat, then turns Add player off', async () => {
       const screen = await renderLoadout()
 
       await fireEvent.press(screen.getByLabelText('Add player'))
@@ -145,7 +148,33 @@ describe('the Pass & Play page', () => {
 
       for (let i = 0; i < 5; i++) await fireEvent.press(screen.getByLabelText('Add player'))
       expect(names()).toHaveLength(8)
-      expect(screen.queryByLabelText('Add player')).toBeNull()
+      expect(screen.getByLabelText('Add player').props.accessibilityState?.disabled).toBe(true)
+      await fireEvent.press(screen.getByLabelText('Add player'))
+      expect(names()).toHaveLength(8)
+    })
+
+    // Jay, 2026-10-18: at the end of the seats it moved with every seat added, which made adding
+    // several in a row harder. In the corners' strip it never moves.
+    it("keeps Add player in the corners' strip, out of the seats' row, and on this page alone", async () => {
+      const screen = await renderLoadout()
+
+      expect(screen.getByLabelText('Add player')).toBeTruthy()
+      expect(within(screen.getByTestId('loadout-above-art')).queryByLabelText('Add player')).toBeNull()
+      await screen.unmount()
+
+      const solo = await renderLoadout('solo')
+      expect(solo.queryByLabelText('Add player')).toBeNull()
+    })
+
+    it("closes an open seat's picker as it adds, so none is left over the new seat", async () => {
+      const screen = await renderLoadout()
+      await fireEvent.press(pill(screen, 'Player 1'))
+      expect(screen.getByText('Manage')).toBeTruthy()
+
+      await fireEvent.press(screen.getByLabelText('Add player'))
+
+      expect(names()).toEqual(['Player 1', 'Player 2', 'Player 3'])
+      expect(screen.queryByText('Manage')).toBeNull()
     })
 
     it("focuses a seat on the first press, making its player the page's, and opens its picker on the next", async () => {
@@ -252,6 +281,87 @@ describe('the Pass & Play page', () => {
       await fireEvent.press(screen.getByText('Remove'))
       expect(session().players.map((player) => player.id)).toEqual(['p2', 'p3'])
       expect(store.getState().round.pnp).toMatchObject({ phase: 'authoring', puzzle: null })
+    })
+
+    // Jay, 2026-10-18: the toaster's swipe (@rific/gestures' SwipeToDismiss), on any seat, by the
+    // glyph's rules. Firing 'dismiss' is the swipe completing; the gesture is the package's to test.
+    describe('swiped away', () => {
+      const swipeAway = (screen: Screen, seatId: string) => fireEvent(screen.getByTestId(`seat-${seatId}`), 'dismiss')
+      // The mock's own record (src/__mocks__/@rific/gestures.ts), the instance the page was given.
+      const restored = () => (Gestures as unknown as { restoredSwipes: string[] }).restoredSwipes
+
+      beforeEach(() => {
+        restored().length = 0
+      })
+
+      it('lets any seat be swiped away once there are more than two, and none at two', async () => {
+        const screen = await renderLoadout()
+        expect(['p1', 'p2'].map((id) => screen.getByTestId(`seat-${id}`).props.onDismiss)).toEqual([undefined, undefined])
+
+        await fireEvent.press(screen.getByLabelText('Add player'))
+
+        for (const id of ['p1', 'p2', 'p3']) expect(screen.getByTestId(`seat-${id}`).props.onDismiss).toEqual(expect.any(Function))
+      })
+
+      it("removes a seat that isn't the focused one straight away when it'd take nothing, the focus staying put", async () => {
+        store.dispatch(roundActions.addPnpPlayer())
+        store.dispatch(roundActions.addPnpPlayer())
+        const screen = await renderLoadout()
+
+        await swipeAway(screen, 'p2')
+
+        expect(screen.queryByText('Remove Player 2?')).toBeNull()
+        expect(session().players.map((player) => [player.id, player.name])).toEqual([
+          ['p1', 'Player 1'],
+          ['p3', 'Player 2'],
+          ['p4', 'Player 3']
+        ])
+        expect(session().focusedId).toBe('p1')
+        expect(store.getState().activePlayer).toEqual({ profileId: null, seatId: 'p1' })
+      })
+
+      it('moves the focus on when the focused seat is swiped away', async () => {
+        store.dispatch(roundActions.addPnpPlayer())
+        store.dispatch(roundActions.focusPnpSeat('p2'))
+        const screen = await renderLoadout()
+
+        await swipeAway(screen, 'p2')
+
+        expect(session().players.map((player) => player.id)).toEqual(['p1', 'p3'])
+        expect(session().focusedId).toBe('p3')
+      })
+
+      it('asks first when their standing would go with them, and brings the seat back on Cancel', async () => {
+        store.dispatch(roundActions.addPnpPlayer())
+        winRound()
+        const screen = await renderLoadout()
+
+        await swipeAway(screen, 'p2')
+        expect(screen.getByText('Remove Player 2?')).toBeTruthy()
+        expect(restored()).toEqual([])
+
+        await fireEvent.press(screen.getByText('Cancel'))
+        expect(names()).toEqual(['Player 1', 'Player 2', 'Player 3'])
+        await waitFor(() => expect(screen.queryByText('Remove Player 2?')).toBeNull())
+        expect(restored()).toEqual(['seat-p2'])
+
+        await swipeAway(screen, 'p2')
+        await fireEvent.press(screen.getByText('Remove'))
+        expect(names()).toEqual(['Player 1', 'Player 2'])
+        expect(restored()).toEqual(['seat-p2'])
+      })
+
+      it("closes an open seat's picker as one is swiped away", async () => {
+        store.dispatch(roundActions.addPnpPlayer())
+        const screen = await renderLoadout()
+        await fireEvent.press(pill(screen, 'Player 1'))
+        expect(screen.getByText('Manage')).toBeTruthy()
+
+        await swipeAway(screen, 'p3')
+
+        expect(names()).toEqual(['Player 1', 'Player 2'])
+        expect(screen.queryByText('Manage')).toBeNull()
+      })
     })
 
     it('hands the page to the player who takes the removed seat', async () => {
@@ -411,7 +521,7 @@ describe('the Pass & Play page', () => {
       expect(store.getState().playerSettings[key]).toBeUndefined()
       expect(store.getState().playerTheme[key]).toBeUndefined()
       expect(store.getState().round.solo[key]).toBeUndefined()
-      expect(removeItem).toHaveBeenCalledWith(`puzzle_unlocks_v1:${key}`)
+      expect(removeItem).toHaveBeenCalledWith(`hangman:puzzle_unlocks_v1:${key}`)
 
       await fireEvent.press(screen.getByLabelText('Add player'))
 
@@ -462,6 +572,88 @@ describe('the Pass & Play page', () => {
       expect(artHeight(await laidOut(180, 400))).toBe(72)
       expect(artHeight(await laidOut(44, 100))).toBe(667 - 56 - 44 - 100 - 20 - 52 - 16)
       expect(artHeight(await laidOut(44, 100, 3000))).toBe(Dimensions.get('window').width - 32)
+    })
+  })
+
+  // Jay, 2026-10-18: switching the word source, and adding or removing players, were jarring. Jest's
+  // reanimated mock animates nothing (an Animated.View is a plain View carrying the props), so these pin
+  // what the page asks for: which views animate, and when not.
+  describe('how the page moves', () => {
+    const layout = (screen: Screen, testID: string, height: number) => fireEvent(screen.getByTestId(testID), 'layout', { nativeEvent: { layout: { x: 0, y: 0, width: 343, height } } })
+    const carousel = (screen: Screen) => screen.getByTestId('art-carousel')
+    const laidOut = async () => {
+      const screen = await renderLoadout()
+      await layout(screen, 'loadout-page', 667)
+      await layout(screen, 'loadout-above-art', 116)
+      await layout(screen, 'loadout-below-art', 290)
+      return screen
+    }
+    const seatMotion = (screen: Screen, seatId: string) => {
+      const { entering, exiting, layout: reflow } = screen.getByTestId(`seat-slot-${seatId}`).props
+      return { entering, exiting, layout: reflow }
+    }
+
+    afterEach(() => {
+      jest.mocked(useReducedMotion).mockReturnValue(false)
+      jest.mocked(useIsFocused).mockReturnValue(true)
+    })
+
+    it('has every seat grow in, shrink away and glide, and New session fade and glide, while the page is in view', async () => {
+      putWordInPlay()
+      const screen = await laidOut()
+
+      expect(seatMotion(screen, 'p1')).toEqual({ entering: expect.anything(), exiting: expect.anything(), layout: expect.anything() })
+      expect(screen.getByTestId('new-session-slot').props.layout).toBeDefined()
+    })
+
+    it('eases the art to a new height once the page has been measured, and not before (the first one lands as is)', async () => {
+      const screen = await renderLoadout()
+      expect(carousel(screen).props.animated).toBe(false)
+
+      await layout(screen, 'loadout-page', 667)
+      await layout(screen, 'loadout-above-art', 116)
+      await layout(screen, 'loadout-below-art', 290)
+
+      expect(carousel(screen).props.animated).toBe(true)
+    })
+
+    it("animates nothing with the system's Reduce Motion on", async () => {
+      jest.mocked(useReducedMotion).mockReturnValue(true)
+      putWordInPlay()
+      const screen = await laidOut()
+
+      expect(seatMotion(screen, 'p1')).toEqual({ entering: undefined, exiting: undefined, layout: undefined })
+      expect(screen.getByTestId('new-session-slot').props.layout).toBeUndefined()
+      expect(carousel(screen).props.animated).toBe(false)
+    })
+
+    // It stays mounted under the game (see Hidden screens): nothing may move there.
+    it('animates nothing while the page is out of sight', async () => {
+      jest.mocked(useIsFocused).mockReturnValue(false)
+      const screen = await laidOut()
+
+      expect(seatMotion(screen, 'p1')).toEqual({ entering: undefined, exiting: undefined, layout: undefined })
+      expect(carousel(screen).props.animated).toBe(false)
+    })
+
+    // Both sources' options sit in one cell as tall as the taller, so the page around them, and the art,
+    // never change with a switch: they cross-fade in place.
+    it("keeps both word sources' options laid out together, the one not chosen hidden and untouchable, so a switch leaves the art its size", async () => {
+      const screen = await laidOut()
+      const height = Number(carousel(screen).props.accessibilityHint)
+      const options = (testID: string) => screen.getByTestId(testID, { includeHiddenElements: true }).props
+      const below = within(screen.getByTestId('loadout-below-art'))
+
+      expect(options('loadout-write-options')).toMatchObject({ pointerEvents: 'auto', 'aria-hidden': false })
+      expect(options('loadout-packs-options')).toMatchObject({ pointerEvents: 'none', 'aria-hidden': true })
+      expect(below.getByTestId('packs-card', { includeHiddenElements: true })).toBeTruthy()
+
+      await fireEvent.press(screen.getByText('Packs'))
+
+      expect(options('loadout-packs-options')).toMatchObject({ pointerEvents: 'auto', 'aria-hidden': false })
+      expect(options('loadout-write-options')).toMatchObject({ pointerEvents: 'none', 'aria-hidden': true })
+      expect(below.getByTestId('keep-words-card', { includeHiddenElements: true })).toBeTruthy()
+      expect(Number(carousel(screen).props.accessibilityHint)).toBe(height)
     })
   })
 

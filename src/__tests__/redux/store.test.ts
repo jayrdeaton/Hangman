@@ -86,6 +86,13 @@ describe('store', () => {
     expect(round.version).toBe(3)
     expect(round.migrate).toEqual(expect.any(Function))
   })
+
+  // On the web every Tastic game shares games.infinitetoken.com's localStorage, where redux-persist's
+  // default prefix would make the root blob the same persist:root every game writes.
+  it("stores both blobs under Hangman's own prefix, hangman:root and hangman:round", () => {
+    expect(persistConfig('root').keyPrefix).toBe('hangman:')
+    expect(persistConfig('round').keyPrefix).toBe('hangman:')
+  })
 })
 
 // redux-persist's own reconciler would put whatever was stored straight in; each per-player slice

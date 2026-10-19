@@ -3,6 +3,7 @@ import { useFocusEffect, useIsFocused } from 'expo-router'
 import { createContext, JSX, type ReactNode, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react'
 import { BackHandler, type StyleProp, StyleSheet, View, type ViewStyle } from 'react-native'
 import { Portal, useTheme } from 'react-native-paper'
+import { useReducedMotion } from 'react-native-reanimated'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
 import { useCatalogActions } from '@/hooks/useCatalog'
@@ -14,6 +15,8 @@ import { SettingsDialog } from './SettingsDialog'
 // The corners' strip: 8pt in, a 40pt button with Paper's 6pt margin, 8pt out (the 56pt Home leaves
 // above its hero too). The body starts under it.
 export const CORNER_BAND_HEIGHT = 56
+// How far in CornerActionButtons sets each corner's button.
+const CORNER_INSET = 8
 
 // The page's one popover host (hud's usePopoverHost), for the pickers on it (each seat's, and
 // Difficulty's): opening one closes any other. LoadoutShell owns it, so Android back, losing focus
@@ -28,6 +31,16 @@ export const useLoadoutPopoverHost = (): PopoverHost => useContext(LoadoutPopove
 const LoadoutCoveredContext = createContext(false)
 
 export const useLoadoutCovered = (): boolean => useContext(LoadoutCoveredContext)
+
+// Whether the page may animate its own changes (constants/loadoutMotion.ts: the seats coming, going
+// and gliding, the heights easing, the word source's cross-fade): never while it's out of sight, so
+// nothing moves under the game, and never with the system's Reduce Motion on (reanimated's
+// useReducedMotion, the setting as the app launched, which reanimated's own animations follow too).
+export const useLoadoutMotion = (): boolean => {
+  const covered = useLoadoutCovered()
+  const reducedMotion = useReducedMotion()
+  return !covered && !reducedMotion
+}
 
 // hud's invisible "press away to close" catcher for the page's popover, placed by the page itself, as
 // the first child of its content: on native, zIndex only orders the children of one parent, so a
@@ -50,6 +63,10 @@ export type LoadoutShellProps = {
   // share link pushed over it): an open art picker would otherwise keep its demo loop running.
   closeAllOverlays: () => void
   overlays?: ReactNode
+  // A button centered in the corners' strip, between Home and the cog, in their layer and at their
+  // height (the Pass & Play page's Add player): it stays put however the page below it changes. It's
+  // inside the page's popover host, so it can close an open popover first, as the cog does.
+  centerAction?: ReactNode
 }
 
 // The loadout's frame (see LoadoutScreen): the corners, the body under them, Android back, the page's
@@ -58,7 +75,7 @@ export type LoadoutShellProps = {
 // blurred action circles, like the other games' loadouts (Jay, 2026-10-18): Home top-left, as on the
 // game screen (Solitaire's), the Settings cog top-right. The body starts below the corners and runs
 // down to the bottom safe area.
-export const LoadoutShell = ({ children, closeOverlay, closeAllOverlays, overlays }: LoadoutShellProps): JSX.Element => {
+export const LoadoutShell = ({ children, closeOverlay, closeAllOverlays, overlays, centerAction }: LoadoutShellProps): JSX.Element => {
   const theme = useTheme()
   const insets = useSafeAreaInsets()
   const { refreshUnlocks } = useCatalogActions()
@@ -124,9 +141,16 @@ export const LoadoutShell = ({ children, closeOverlay, closeAllOverlays, overlay
         <PressAwayOverlay active={openId !== null} onPress={closePopover} />
       </View>
       {/* The same corner pair as Home and the game screen, over the whole screen like theirs. box-none
-          lets taps between them reach the page. hitSlop={4} makes each a 48pt target. */}
+          lets taps between them reach the page. hitSlop={4} makes each a 48pt target. The center
+          action sits between them, at their 8pt inset (CornerActionButtons' own), over the strip's
+          catcher so it takes its own taps. */}
       <View style={[StyleSheet.absoluteFill, styles.corners]} pointerEvents='box-none'>
         <CornerActionButtons backIcon='home' backLabel='Home' onBack={goHome} onSettings={openSettings} fg={theme.colors.onSurface} insets={insets} hitSlop={4} />
+        {centerAction ? (
+          <View style={[styles.center, { top: CORNER_INSET + insets.top }]} pointerEvents='box-none'>
+            <LoadoutPopoverContext.Provider value={popoverHost}>{centerAction}</LoadoutPopoverContext.Provider>
+          </View>
+        ) : null}
       </View>
       {overlays}
       <SettingsDialog visible={settingsOpen} onDismiss={() => setSettingsOpen(false)} onUnlocksChanged={refreshUnlocks} />
@@ -135,6 +159,8 @@ export const LoadoutShell = ({ children, closeOverlay, closeAllOverlays, overlay
 }
 
 const styles = StyleSheet.create({
+  // Across the screen, the button centered in it.
+  center: { alignItems: 'center', left: 0, position: 'absolute', right: 0 },
   corners: { zIndex: 10 },
   flex: { flex: 1 },
   // The corners' strip, the whole width of the screen (past the game's column on the web).

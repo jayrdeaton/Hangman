@@ -14,8 +14,9 @@ export const summarizePackNames = (names: string[], maxChars: number): string =>
   return `${names[0]} and ${count - 1} more`
 }
 
-// About how many characters of the packs card's names line fit in `lines` lines of `width` points, at
-// its 14pt body type. A little wide per character on purpose, so a line of capitals and ampersands
-// still wraps where the count says: one short of the room reads fine, one past it adds a line.
+// About how many characters of the packs card's names fit in `lines` lines of `width` points, at
+// `charWidth` points a character (14pt body type's by default; the card's title passes its own). A
+// little wide per character on purpose, so a line of capitals and ampersands still wraps where the
+// count says: one short of the room reads fine, one past it adds a line.
 const AVERAGE_CHAR_WIDTH = 7.2
-export const packNamesBudget = (width: number, lines: number): number => Math.max(0, Math.floor(width / AVERAGE_CHAR_WIDTH)) * lines
+export const packNamesBudget = (width: number, lines: number, charWidth = AVERAGE_CHAR_WIDTH): number => Math.max(0, Math.floor(width / charWidth)) * lines

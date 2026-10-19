@@ -11,11 +11,11 @@ import type { GameMode } from '@/types/gameModes'
 
 import { GameVisual } from './GameVisual'
 
-// Five to a row: the ten visible arts are two full rows. The sheet's content is 279pt wide on a 375pt
-// phone (hud's 327pt card less its 24pt padding a side), so a cell is 57pt and its thumbnail 51pt,
-// over the 48pt tap target. A 360pt Android phone still gets 48pt thumbnails (264pt of content).
-const COLUMNS = 5
-// Half the gap between two thumbnails. Each cell is an exact fifth of the row, padded by this, and the
+// Four to a row: the eight visible arts are two full rows (five a row while there were ten). The
+// sheet's content is 279pt wide on a 375pt phone (hud's 327pt card less its 24pt padding a side), so a
+// cell is 70pt and its thumbnail 64pt; a 360pt Android phone gets 60pt thumbnails (264pt of content).
+const COLUMNS = 4
+// Half the gap between two thumbnails. Each cell is an exact quarter of the row, padded by this, and the
 // grid hangs this far past the section's edges, so the thumbnails themselves line up with the rows
 // above and below with no measuring (only the cells' invisible padding overhangs).
 const CELL_INSET = 3

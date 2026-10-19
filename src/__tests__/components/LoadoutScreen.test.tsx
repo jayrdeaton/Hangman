@@ -210,7 +210,7 @@ const openPackBrowser = async (screen: Screen, label: string) => {
 }
 
 // The guest's unlocked puzzles (or a profile's), as storage hands them to usePuzzleUnlocks.
-const storeUnlocks = (unlocks: Record<string, Record<string, string[]>>) => jest.spyOn(AsyncStorage, 'getItem').mockImplementation((key: string) => Promise.resolve(key.startsWith('puzzle_unlocks_v1:') && unlocks[key.slice('puzzle_unlocks_v1:'.length)] ? JSON.stringify(unlocks[key.slice('puzzle_unlocks_v1:'.length)]) : null))
+const storeUnlocks = (unlocks: Record<string, Record<string, string[]>>) => jest.spyOn(AsyncStorage, 'getItem').mockImplementation((key: string) => Promise.resolve(key.startsWith('hangman:puzzle_unlocks_v1:') && unlocks[key.slice('hangman:puzzle_unlocks_v1:'.length)] ? JSON.stringify(unlocks[key.slice('hangman:puzzle_unlocks_v1:'.length)]) : null))
 const everyPuzzleOf = (packKey: string) => getPuzzlesForCategory(packKey).map((puzzle) => puzzle.id)
 // The packs card's icon badge, as last drawn.
 const badge = () => mockAvatarIcon.mock.calls.filter(([props]) => props.testID === 'packs-card-badge').at(-1)![0]
@@ -361,7 +361,7 @@ describe('LoadoutScreen (Single Player)', () => {
       store.dispatch(playerSettingsActions.setPackKeys({ playerKey: GUEST_PLAYER_KEY, packKeys: [] }))
       const screen = await renderLoadout()
 
-      expect(screen.getByText(`0 of ${N} packs`)).toBeTruthy()
+      expect(screen.getByText('No packs')).toBeTruthy()
       expect(screen.getByText('Choose at least one pack to play.')).toBeTruthy()
       expect(ready(screen).props.accessibilityState?.disabled).toBe(true)
       await fireEvent.press(ready(screen))
@@ -558,7 +558,7 @@ describe('LoadoutScreen (Single Player)', () => {
     // Choose Packs lists the player's own packs (My Packs) above the built-in ones.
     it("names the player's own packs first, as Choose Packs lists them, counting them with the rest", async () => {
       const custom = { key: 'custom:mine', label: 'My Words', createdAt: '', updatedAt: '', puzzles: [buildCustomPuzzle('custom:mine', 'My Words', { answer: 'PARIS' })!] }
-      const getItem = jest.spyOn(AsyncStorage, 'getItem').mockImplementation((key: string) => Promise.resolve(key === 'custom_packs_v1' ? JSON.stringify([custom]) : null))
+      const getItem = jest.spyOn(AsyncStorage, 'getItem').mockImplementation((key: string) => Promise.resolve(key === 'hangman:custom_packs_v1' ? JSON.stringify([custom]) : null))
       store.dispatch(playerSettingsActions.setPackKeys({ playerKey: GUEST_PLAYER_KEY, packKeys: [PACK_A.key, custom.key] }))
       try {
         const screen = await renderLoadout()

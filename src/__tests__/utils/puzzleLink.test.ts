@@ -1,3 +1,5 @@
+import { Platform } from 'react-native'
+
 import { classicMode, DEFAULT_MODE, robotMode } from '@/modes/registry'
 import { buildPuzzleLink, parseSharedPuzzle, parseSharedPuzzleParams } from '@/utils/puzzleLink'
 
@@ -66,6 +68,38 @@ describe('buildPuzzleLink + parseSharedPuzzle round trip', () => {
       mode: robotMode,
       customPhrase: 'HELLO WORLD',
       customHint: 'A friendly greeting'
+    })
+  })
+
+  it('builds the native link at the bare play path', () => {
+    expect(new URL(buildPuzzleLink({ phrase: 'HELLO', hint: '', mode: classicMode })).pathname).toBe('/play')
+  })
+
+  describe('on the web under a base URL', () => {
+    const originalOS = Platform.OS
+    const originalBaseUrl = process.env.EXPO_BASE_URL
+
+    afterEach(() => {
+      Object.defineProperty(Platform, 'OS', { configurable: true, value: originalOS })
+      if (originalBaseUrl === undefined) delete process.env.EXPO_BASE_URL
+      else process.env.EXPO_BASE_URL = originalBaseUrl
+    })
+
+    it.each(['/hangman', '/hangman/'])('puts the play path under the base URL %s, so the link reaches the game rather than the hub', (baseUrl) => {
+      Object.defineProperty(Platform, 'OS', { configurable: true, value: 'web' })
+      process.env.EXPO_BASE_URL = baseUrl
+
+      const link = buildPuzzleLink({ phrase: 'HELLO', hint: 'A hint', mode: robotMode })
+
+      expect(new URL(link).pathname).toBe('/hangman/play')
+      expect(parseSharedPuzzle(link)?.customPhrase).toBe('HELLO')
+    })
+
+    it('stays at /play on the web with no base URL', () => {
+      Object.defineProperty(Platform, 'OS', { configurable: true, value: 'web' })
+      delete process.env.EXPO_BASE_URL
+
+      expect(new URL(buildPuzzleLink({ phrase: 'HELLO', hint: '', mode: classicMode })).pathname).toBe('/play')
     })
   })
 

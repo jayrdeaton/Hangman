@@ -1,10 +1,11 @@
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { JSX, ReactNode, useCallback, useEffect, useState } from 'react'
 
+import { STORAGE_PREFIX } from '@/constants/storage'
 import { KeyboardLayout, KeyboardLayoutContext } from '@/hooks/useKeyboardLayout'
 import { useSplashReady } from '@/utils/splashGate'
 
-const STORAGE_KEY = 'keyboardLayout'
+const STORAGE_KEY = `${STORAGE_PREFIX}keyboardLayout`
 
 export type KeyboardLayoutProviderProps = { children: ReactNode }
 

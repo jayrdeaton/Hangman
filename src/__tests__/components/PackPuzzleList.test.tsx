@@ -31,7 +31,7 @@ jest.mock('@react-native-async-storage/async-storage', () => ({
   })
 }))
 
-const PREFS_KEY = 'packPuzzleListPrefs'
+const PREFS_KEY = 'hangman:packPuzzleListPrefs'
 const seedPrefs = (patch: Partial<{ statusFilter: string; difficultyFilter: string }>) => {
   mockStore[PREFS_KEY] = JSON.stringify({ statusFilter: 'all', difficultyFilter: 'all', ...patch })
 }

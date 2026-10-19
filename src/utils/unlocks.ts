@@ -1,5 +1,6 @@
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
+import { STORAGE_PREFIX } from '@/constants/storage'
 import { isGuestSeatKey, type PlayerKey } from '@/utils/players'
 import type { PuzzleManifestItem } from '@/utils/puzzleCatalog'
 
@@ -8,7 +9,7 @@ import { puzzleManifest } from '../data/puzzleCatalog.generated'
 // Every player's unlocked puzzles (the ones they've solved) under their own AsyncStorage key, so one
 // player's solves never show as another's. The old single device-wide key (`puzzle_unlocks_v1` on its
 // own) isn't read or adopted: the app hadn't shipped.
-const PUZZLE_UNLOCKS_KEY_PREFIX = 'puzzle_unlocks_v1:'
+const PUZZLE_UNLOCKS_KEY_PREFIX = `${STORAGE_PREFIX}puzzle_unlocks_v1:`
 const storageKey = (playerKey: PlayerKey): string => `${PUZZLE_UNLOCKS_KEY_PREFIX}${playerKey}`
 
 export type PuzzleUnlockMap = Record<string, string[]>

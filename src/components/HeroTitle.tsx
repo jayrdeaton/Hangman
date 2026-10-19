@@ -15,6 +15,8 @@ import { fitSketchWordFontSize, SketchWord, sketchWordBlanksDrawnMs } from './Sk
 const TITLE = 'HANGMAN'.split('')
 const MAX_TITLE_FONT_SIZE = 56
 const MAX_ART_SIZE = 240
+// How much of the art's room a hero with no art (Letters Only) keeps above its title.
+const NO_ART_ROOM = 0.4
 // The title is solved like a puzzle: its blanks sketch in first, then, after a short beat, each blank
 // gives way to its letter left to right, one beat apart, the way a right guess fills a blank on the
 // board.
@@ -86,7 +88,10 @@ export const HeroTitle = ({ paused }: HeroTitleProps): JSX.Element => {
 
   return (
     <View style={styles.hero} accessible accessibilityRole='header' accessibilityLabel='Hangman'>
-      <HeroArt key={shownMode.id} mode={shownMode} paused={paused} size={artSize} />
+      {/* Letters Only has no artwork (its preview spells HANGMAN), so the hero is just the title, rather
+          than HANGMAN twice (Jay, 2026-10-18), with some of the art's room kept above it so the title
+          doesn't crowd the buttons under it. */}
+      {shownMode.hasVisual === false ? <View style={{ height: artSize * NO_ART_ROOM }} /> : <HeroArt key={shownMode.id} mode={shownMode} paused={paused} size={artSize} />}
       <HeroWord paused={paused} fontSize={fontSize} />
     </View>
   )

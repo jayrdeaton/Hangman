@@ -1,11 +1,12 @@
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
+import { STORAGE_PREFIX } from '@/constants/storage'
 import type { Puzzle } from '@/types/puzzle'
 
 import type { PuzzleManifestItem } from '../data/puzzleCatalog.generated'
 import { normalizePhrase } from './normalizePhrase'
 
-const CUSTOM_PACKS_KEY = 'custom_packs_v1'
+const CUSTOM_PACKS_KEY = `${STORAGE_PREFIX}custom_packs_v1`
 const CUSTOM_KEY_PREFIX = 'custom:'
 
 export type CustomPackEntryInput = { answer: string; hint?: string }

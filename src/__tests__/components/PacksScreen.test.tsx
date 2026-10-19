@@ -413,7 +413,7 @@ describe('PacksScreen', () => {
     it("marks a pack with every puzzle unlocked with a trophy, and shows every other pack's count", async () => {
       const [packA, packB] = builtInPacks()
       const unlocked = getPuzzlesForCategory(packA.key).map((puzzle) => puzzle.id)
-      const getItem = jest.spyOn(AsyncStorage, 'getItem').mockImplementation((key: string) => Promise.resolve(key === 'puzzle_unlocks_v1:guest' ? JSON.stringify({ [packA.key]: unlocked }) : null))
+      const getItem = jest.spyOn(AsyncStorage, 'getItem').mockImplementation((key: string) => Promise.resolve(key === 'hangman:puzzle_unlocks_v1:guest' ? JSON.stringify({ [packA.key]: unlocked }) : null))
       const screen = await renderScreen()
 
       expect(await screen.findByText(`${packA.count.toLocaleString('en-US')} of ${packA.count.toLocaleString('en-US')} unlocked`)).toBeTruthy()

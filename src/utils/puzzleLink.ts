@@ -1,4 +1,5 @@
 import * as Linking from 'expo-linking'
+import { Platform } from 'react-native'
 
 import { ALL_MODES, DEFAULT_MODE } from '@/modes/registry'
 import type { GameStartPayload } from '@/types/gameSession'
@@ -18,9 +19,15 @@ export const findMode = (id: string | string[] | undefined) => {
   return ALL_MODES.find((candidate) => candidate.id === id) ?? DEFAULT_MODE
 }
 
+// The /play route's path for Linking.createURL. On the web the game is served under a base URL
+// (games.infinitetoken.com/hangman/, see app.config.ts), which createURL leaves out: it builds from the
+// page's origin alone, so a bare 'play' would point at the hub's /play. Expo inlines the base URL as
+// process.env.EXPO_BASE_URL in the web export; native links (hangman://play) never carry it.
+const playPath = (): string => (Platform.OS === 'web' ? `${(process.env.EXPO_BASE_URL ?? '').replace(/\/+$/, '')}/play` : 'play')
+
 // Built from an already-resolved payload (not raw draft state) so a shared link always carries a
 // validated, normalized phrase - never whatever half-typed text was sitting in the input.
-export const buildPuzzleLink = (payload: Pick<GameStartPayload, 'phrase' | 'hint' | 'mode'>): string => Linking.createURL('play', { queryParams: { phrase: payload.phrase, hint: payload.hint ?? '', mode: payload.mode.id } })
+export const buildPuzzleLink = (payload: Pick<GameStartPayload, 'phrase' | 'hint' | 'mode'>): string => Linking.createURL(playPath(), { queryParams: { phrase: payload.phrase, hint: payload.hint ?? '', mode: payload.mode.id } })
 
 export type SharedPuzzleParams = { phrase?: string | string[]; hint?: string | string[]; mode?: string | string[] }
 

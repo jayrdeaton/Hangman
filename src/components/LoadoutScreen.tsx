@@ -4,15 +4,18 @@ import { ConfirmDialog, WELL_SHADOW } from '@tastic/hud/chrome'
 import { OptionPicker, type OptionPickerOption, type Profile } from '@tastic/profile'
 import { router, useFocusEffect, useIsFocused } from 'expo-router'
 import { JSX, memo, type ReactNode, useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import { AccessibilityInfo, type LayoutChangeEvent, Platform, StyleSheet, useWindowDimensions, View } from 'react-native'
+import { AccessibilityInfo, type LayoutChangeEvent, Platform, StyleSheet, useWindowDimensions, View, type ViewStyle } from 'react-native'
 import { Avatar, Icon, ProgressBar, Text, useTheme } from 'react-native-paper'
+import Animated, { useAnimatedStyle } from 'react-native-reanimated'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { useDispatch, useSelector, useStore } from 'react-redux'
 
+import { REFLOW_EASING, REFLOW_MS, SOURCE_FADE_MS } from '@/constants/loadoutMotion'
 import { useActivePlayer } from '@/hooks/useActivePlayer'
 import { useAutoSaveCustom } from '@/hooks/useAutoSaveCustom'
 import { useCatalogActions, useCatalogVersions } from '@/hooks/useCatalog'
 import { useDifficultyOptionColors } from '@/hooks/useDifficultyColors'
+import { useEasedValue } from '@/hooks/useEasedValue'
 import { usePackSelection } from '@/hooks/usePackSelection'
 import { usePlayerData } from '@/hooks/usePlayerData'
 import { useActiveProfile, useProfiles, useProfilesActions } from '@/hooks/useProfiles'
@@ -33,14 +36,14 @@ import { packGroupColors, packGroupIcon, packGroupLabel } from '@/utils/packGrou
 import { packNamesBudget, summarizePackNames } from '@/utils/packSummary'
 import { getPackTurnPlan, getSeatPlayer, getSeatPlayerKey } from '@/utils/packTurns'
 import { GUEST_PLAYER_KEY, playerKeyFor } from '@/utils/players'
-import { getFocusedSeat, getSeatIdentity, getStanding, guestName, hasStandings, type WordSource } from '@/utils/pnpSession'
+import { getFocusedSeat, getSeatIdentity, getStanding, guestName, hasStandings, MAX_PNP_PLAYERS, type WordSource } from '@/utils/pnpSession'
 import { getPuzzleManifest, type PuzzleManifestItem } from '@/utils/puzzleCatalog'
 import { resolvePuzzle } from '@/utils/puzzlePicker'
 import { getPnpRemovalLoss, isRoundPlayable } from '@/utils/roundState'
 import { getManifestUnlockProgress } from '@/utils/unlocks'
 
 import { ART_CAROUSEL_CHROME_HEIGHT, ArtCarousel } from './ArtCarousel'
-import { CORNER_BAND_HEIGHT, LoadoutPressAway, LoadoutShell, useLoadoutCovered, useLoadoutPopoverHost } from './LoadoutShell'
+import { CORNER_BAND_HEIGHT, LoadoutPressAway, LoadoutShell, useLoadoutCovered, useLoadoutMotion, useLoadoutPopoverHost } from './LoadoutShell'
 import { PacksScreen, type PacksScreenHandle } from './PacksScreen'
 import { PLAYER_PICKER_ID_PREFIX, PlayerPicker } from './PlayerPicker'
 import { isSeatPickerOpen, SeatsRow } from './SeatsRow'
@@ -87,6 +90,8 @@ DifficultyPicker.displayName = 'DifficultyPicker'
 const PACK_NAMES_LINES = 2
 const PACK_NAMES_INSET = 2 * 16 + 2 * 16 + 40 + 12 + 24 + 12
 const MAX_PAGE_WIDTH = 480
+// The names are the card's title now, in titleMedium's bolder, wider 16pt type.
+const TITLE_CHAR_WIDTH = 8.6
 
 // The packs card's bar shows from 1% (Jay, 2026-10-18), where its fill starts to show.
 const MIN_SHOWN_PROGRESS = 0.01
@@ -116,10 +121,15 @@ const PacksCard = memo(({ packs, total, progress, unlocked, available, onPress }
   const { width } = useWindowDimensions()
   const selected = packs.length
   const all = selected === total
-  const title = all ? `All ${commaString(total)} packs` : `${commaString(selected)} of ${commaString(total)} packs`
+  // The packs themselves are the headline, the count the detail (Jay, 2026-10-18): "Brands & Products
+  // and Companies" over "2 of 58 packs".
   const names = useMemo(() => packs.map((item) => item.label), [packs])
-  const detail = all ? 'Every pack, new ones included' : selected === 0 ? 'Choose at least one pack to play.' : summarizePackNames(names, packNamesBudget(Math.min(width, MAX_PAGE_WIDTH) - PACK_NAMES_INSET, PACK_NAMES_LINES))
-  const spoken = selected === 0 ? `${title}. ${detail}` : `${title}. ${detail}. ${commaString(unlocked)} of ${commaString(available)} puzzles unlocked`
+  // With every pack, the whole set is the list.
+  const some = !all && selected > 0
+  const title = all ? `All ${commaString(total)} packs` : selected === 0 ? 'No packs' : summarizePackNames(names, packNamesBudget(Math.min(width, MAX_PAGE_WIDTH) - PACK_NAMES_INSET, PACK_NAMES_LINES, TITLE_CHAR_WIDTH))
+  const detail = all ? 'Every pack, new ones included' : selected === 0 ? 'Choose at least one pack to play.' : `${commaString(selected)} of ${commaString(total)} packs`
+  // A screen reader hears the count first, then which packs.
+  const spoken = selected === 0 ? `${title}. ${detail}` : some ? `${detail}. ${title}. ${commaString(unlocked)} of ${commaString(available)} puzzles unlocked` : `${title}. ${detail}. ${commaString(unlocked)} of ${commaString(available)} puzzles unlocked`
   // The one category every selected pack is of (undefined is Custom's), when they share one.
   const oneCategory = !all && selected > 0 && new Set(packs.map((item) => packGroupLabel(item.group))).size === 1
   const group = oneCategory ? packs[0].group : undefined
@@ -228,6 +238,21 @@ const PlayerRow = memo((): JSX.Element => {
 })
 PlayerRow.displayName = 'PlayerRow'
 
+// Add player, for the Pass & Play table (Jay, 2026-10-18): in the corners' strip, centered between Home
+// and the cog, in their plain-glyph look (the same ink, size and slop), so it stays under the same
+// point however many seats are added, for adding several in a row. Dimmed and off at eight. An open
+// popover closes first, as it does for the cog, so none is left hanging over the new seat.
+const AddPlayerButton = memo(({ disabled, onAdd }: { disabled: boolean; onAdd: () => void }): JSX.Element => {
+  const theme = useTheme()
+  const { close } = useLoadoutPopoverHost()
+  const handlePress = useCallback(() => {
+    close()
+    onAdd()
+  }, [close, onAdd])
+  return <IconButton icon='account-plus' iconColor={theme.colors.onSurface} size={24} onPress={handlePress} disabled={disabled} hitSlop={4} accessibilityLabel='Add player' />
+})
+AddPlayerButton.displayName = 'AddPlayerButton'
+
 // Where the Pass & Play table's words come from (Jay, 2026-10-18): the packs, each player's own,
 // taking turns, or the players write them for each other (Pass & Play). Two segments, short enough for
 // a 360pt phone, in the primary colors Choose Packs' filter uses, raised off the board like the pills.
@@ -270,27 +295,85 @@ const isDifficultyOpen = (openId: string | null) => openId === DIFFICULTY_PICKER
 // LoadoutScreen), and lifted over the press away catcher (and everything after it) while one of the
 // popovers it holds is open, so the popover's rows take their own taps. Lifting the whole group is what
 // does it: on native, zIndex only orders the children of one parent, and the catcher is the page's.
+//
+// Its height eases to a new one (a row of seats more or less, a line more or less in the packs card)
+// rather than jumping (Jay, 2026-10-18), on the same clock as the art, which gives up or takes back
+// exactly that much (see ArtCarousel), so the rest of the page stays put. The content inside is laid out
+// at its new height at once (what's measured); only the group's own box eases, so a new row shows over
+// the top of the art for that moment while the seats glide into it. The first height lands as is.
 const PageGroup = ({ testID, lift, onHeight, children }: { testID: string; lift: (openId: string | null) => boolean; onHeight: (height: number) => void; children: ReactNode }): JSX.Element => {
   const { openId } = useLoadoutPopoverHost()
-  const handleLayout = useCallback((event: LayoutChangeEvent) => onHeight(Math.round(event.nativeEvent.layout.height)), [onHeight])
+  const motion = useLoadoutMotion()
+  const [height, setHeight] = useState(0)
+  const handleLayout = useCallback(
+    (event: LayoutChangeEvent) => {
+      const next = Math.round(event.nativeEvent.layout.height)
+      setHeight(next)
+      onHeight(next)
+    },
+    [onHeight]
+  )
+  const eased = useEasedValue(height, motion && height > 0, REFLOW_MS, REFLOW_EASING)
+  // Its own height until the first measurement lands.
+  const easedStyle = useAnimatedStyle(() => (eased.value > 0 ? { height: eased.value } : {}))
   return (
-    <View testID={testID} onLayout={handleLayout} style={[styles.group, lift(openId) && styles.lifted]}>
-      {children}
-    </View>
+    <Animated.View style={[styles.groupBox, easedStyle, lift(openId) && styles.lifted]}>
+      <View testID={testID} onLayout={handleLayout} style={styles.group}>
+        {children}
+      </View>
+    </Animated.View>
   )
 }
 
 // The art carousel, sized by the page, and paused whenever it's out of sight: the page covered
 // (another screen, the Settings sheet; see useLoadoutCovered), or something over it on the page
-// (`coveredOnPage`, or an open popover). Its own component because it reads the shell's context.
-const PageArtCarousel = ({ coveredOnPage, artHeight }: { coveredOnPage: boolean; artHeight: number }): JSX.Element => {
+// (`coveredOnPage`, or an open popover). Its height eases with the page's groups once the page has been
+// measured (`measured`: the first measured height lands as is, over the estimate). Its own component
+// because it reads the shell's context.
+const PageArtCarousel = ({ coveredOnPage, artHeight, measured }: { coveredOnPage: boolean; artHeight: number; measured: boolean }): JSX.Element => {
   const covered = useLoadoutCovered()
+  const motion = useLoadoutMotion()
   const { openId } = useLoadoutPopoverHost()
   return (
     <View style={styles.carousel}>
-      <ArtCarousel paused={covered || coveredOnPage || openId !== null} artHeight={artHeight} />
+      <ArtCarousel paused={covered || coveredOnPage || openId !== null} artHeight={artHeight} animated={motion && measured} />
     </View>
   )
+}
+
+// What each word source shows under the choice, laid over each other in one cell as tall as the taller
+// of the two (Jay, 2026-10-18: the switch was jarring): the packs' settings row and packs card, or Keep
+// Each Word. So a switch changes nothing around them, and the art keeps its size, while the two
+// cross-fade in place. The one not chosen is invisible, untouchable and out of a screen reader's way
+// (on the web also out of the keyboard's, once it has faded: CSS's visibility, which a transition holds
+// back until the fade is over). Each sits at the cell's foot, just above Ready, so the cards fade into
+// each other. While Difficulty's popover is open the cell sits over Ready, which its popover drops over.
+const SourceSwap = ({ source, packs, write }: { source: WordSource; packs: ReactNode; write: ReactNode }): JSX.Element => {
+  const { openId } = useLoadoutPopoverHost()
+  const motion = useLoadoutMotion()
+  const onPacks = source === 'packs'
+  const shown = useEasedValue(onPacks ? 1 : 0, motion, SOURCE_FADE_MS)
+  const packsStyle = useAnimatedStyle(() => ({ opacity: shown.value }))
+  const writeStyle = useAnimatedStyle(() => ({ opacity: 1 - shown.value }))
+  const fadeMs = motion ? SOURCE_FADE_MS : 0
+  return (
+    <View style={[styles.swap, isDifficultyOpen(openId) && styles.swapOpen]}>
+      <Animated.View testID='loadout-packs-options' pointerEvents={onPacks ? 'auto' : 'none'} aria-hidden={!onPacks} style={[styles.swapLayer, packsStyle, swapLayerState(onPacks, fadeMs)]}>
+        {packs}
+      </Animated.View>
+      <Animated.View testID='loadout-write-options' pointerEvents={onPacks ? 'none' : 'auto'} aria-hidden={onPacks} style={[styles.swapLayer, styles.swapLayerOver, writeStyle, swapLayerState(!onPacks, fadeMs)]}>
+        {write}
+      </Animated.View>
+    </View>
+  )
+}
+
+// The chosen layer over the other (its taps, and Difficulty's popover, come first), and on the web the
+// other out of sight once its fade is over.
+const swapLayerState = (chosen: boolean, fadeMs: number): ViewStyle => {
+  if (Platform.OS !== 'web') return chosen ? styles.swapLayerChosen : {}
+  const visibility = chosen ? { visibility: 'visible' } : { visibility: 'hidden', transitionDelay: `${fadeMs}ms`, transitionProperty: 'visibility' }
+  return { ...(chosen ? styles.swapLayerChosen : {}), ...(visibility as unknown as ViewStyle) }
 }
 
 // What the remove confirm says a player leaving would take with them (see getPnpRemovalLoss).
@@ -324,7 +407,7 @@ export type LoadoutScreenProps = {
 // the pack turn under way or starts the next one, the fair pick, whose player plays their own round the
 // same way (see utils/packTurns.ts); the table writing goes back to the session under way (a round
 // played, a word handed off or half typed) or starts one, the first seat writing. The page fits a
-// 375x667 phone whole with up to three seats: the art takes whatever room the rest of the page leaves
+// 375x667 phone whole with up to four seats: the art takes whatever room the rest of the page leaves
 // it, down to a floor, and only past that does the page scroll.
 export const LoadoutScreen = ({ mode: door }: LoadoutScreenProps): JSX.Element => {
   const dispatch = useDispatch()
@@ -448,7 +531,8 @@ export const LoadoutScreen = ({ mode: door }: LoadoutScreenProps): JSX.Element =
   const handleAdd = useCallback(() => dispatch(roundActions.addPnpPlayer()), [dispatch])
 
   // Straight away when nothing goes with the player; a confirm first when their standing or a word
-  // waiting for them would. The focus moves on when it was theirs, and what the seat's own guest kept
+  // waiting for them would. From the focused seat's glyph or any seat swiped away (SeatsRow). The
+  // focus moves on when it was theirs, and what the seat's own guest kept
   // (their art, colors, packs, waiting round and unlocked puzzles) goes with the seat.
   const removeSeat = useCallback(
     (seatId: string) => {
@@ -650,10 +734,19 @@ export const LoadoutScreen = ({ mode: door }: LoadoutScreenProps): JSX.Element =
 
   const coveredOnPage = packsScreenVisible || resetVisible || asking || removing !== null || switching !== null || clearing !== null
 
+  // The focused player's settings row and packs card: Single Player's page, and the table's on the packs.
+  const packsOptions = (
+    <>
+      <SettingsRow difficulty={difficulty} onChangeDifficulty={setDifficulty} canReset={!atDefaults} onReset={openReset} />
+      <PacksCard packs={selectedPacks} total={manifest.length} progress={overallProgress} unlocked={totalUnlocked} available={totalAvailable} onPress={openPacksScreen} />
+    </>
+  )
+
   return (
     <LoadoutShell
       closeOverlay={closeOverlay}
       closeAllOverlays={closeAllOverlays}
+      centerAction={table ? <AddPlayerButton disabled={players.length >= MAX_PNP_PLAYERS} onAdd={handleAdd} /> : undefined}
       overlays={
         <>
           {/* At the table the packs are only browsed: every puzzle comes by turns, from each player's own
@@ -673,18 +766,17 @@ export const LoadoutScreen = ({ mode: door }: LoadoutScreenProps): JSX.Element =
         {/* First, under everything a tap should reach while a popover is open (the lifted group). */}
         <LoadoutPressAway style={styles.pressAway} />
         <PageGroup testID='loadout-above-art' lift={isPlayerPickerOpen} onHeight={setAboveHeight}>
-          {table ? <SeatsRow players={players} focusedId={focusedSeat.id} standings={standings} showStandings={sessionStarted} onFocus={handleFocus} onPick={handlePick} onAdd={handleAdd} onRemove={handleRemove} onNewSession={sessionUnderWay ? openNewSession : undefined} /> : <PlayerRow />}
+          {table ? <SeatsRow players={players} focusedId={focusedSeat.id} standings={standings} showStandings={sessionStarted} onFocus={handleFocus} onPick={handlePick} onRemove={handleRemove} removingId={removing?.id ?? null} onNewSession={sessionUnderWay ? openNewSession : undefined} /> : <PlayerRow />}
         </PageGroup>
-        <PageArtCarousel coveredOnPage={coveredOnPage} artHeight={artHeight} />
+        <PageArtCarousel coveredOnPage={coveredOnPage} artHeight={artHeight} measured={measured} />
         <PageGroup testID='loadout-below-art' lift={isDifficultyOpen} onHeight={setBelowHeight}>
-          {table ? <SourceChoice value={source} onChange={handleSource} /> : null}
-          {source === 'packs' ? (
+          {table ? (
             <>
-              <SettingsRow difficulty={difficulty} onChangeDifficulty={setDifficulty} canReset={!atDefaults} onReset={openReset} />
-              <PacksCard packs={selectedPacks} total={manifest.length} progress={overallProgress} unlocked={totalUnlocked} available={totalAvailable} onPress={openPacksScreen} />
+              <SourceChoice value={source} onChange={handleSource} />
+              <SourceSwap source={source} packs={packsOptions} write={<KeepWordsCard value={autoSave} onChange={setAutoSave} />} />
             </>
           ) : (
-            <KeepWordsCard value={autoSave} onChange={setAutoSave} />
+            packsOptions
           )}
           {/* Off, rather than an alert after the tap, while there's nothing to draw from (the packs card
               says why). */}
@@ -708,6 +800,8 @@ const styles = StyleSheet.create({
   carousel: { alignSelf: 'stretch', marginTop: BLOCK_GAP },
   flex: { flex: 1 },
   group: { alignItems: 'center', alignSelf: 'stretch' },
+  // The group's own box, whose height eases (its content keeps its own, see PageGroup).
+  groupBox: { alignSelf: 'stretch' },
   // A group over the press away catcher (and everything after it) while its popover is open.
   lifted: { zIndex: 2 },
   // One group, centered in the room under the corners, inside the gutters the rest of the app keeps.
@@ -733,5 +827,12 @@ const styles = StyleSheet.create({
   // Difficulty at the left edge, the reset at the right.
   settingsRow: { alignItems: 'center', alignSelf: 'stretch', flexDirection: 'row', gap: 8, justifyContent: 'space-between', marginTop: BLOCK_GAP },
   settingsRowOpen: { zIndex: 1 },
-  source: { alignSelf: 'stretch', borderRadius: 20, boxShadow: WELL_SHADOW, marginTop: BLOCK_GAP }
+  source: { alignSelf: 'stretch', borderRadius: 20, boxShadow: WELL_SHADOW, marginTop: BLOCK_GAP },
+  // The word sources' options overlaid: a row of two whole-width layers, the second pulled back over the
+  // first, so the row is as tall as the taller and each sits at its foot.
+  swap: { alignItems: 'flex-end', alignSelf: 'stretch', flexDirection: 'row' },
+  swapLayer: { alignItems: 'center', width: '100%' },
+  swapLayerChosen: { zIndex: 1 },
+  swapLayerOver: { marginLeft: '-100%' },
+  swapOpen: { zIndex: 1 }
 })

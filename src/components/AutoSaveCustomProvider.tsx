@@ -1,9 +1,10 @@
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { JSX, ReactNode, useCallback, useEffect, useState } from 'react'
 
+import { STORAGE_PREFIX } from '@/constants/storage'
 import { AutoSaveCustomContext } from '@/hooks/useAutoSaveCustom'
 
-const STORAGE_KEY = 'autoSaveCustom'
+const STORAGE_KEY = `${STORAGE_PREFIX}autoSaveCustom`
 
 // Stored as an explicit 'on'/'off' string rather than JSON, matching KeyboardLayoutProvider: the
 // validating read below then treats anything unrecognized (absent key, corrupt value, a shape from

@@ -23,6 +23,9 @@ const AppearingVisual = ({ mistakes, color }: { mistakes: number; color: string 
 export const appearingMode: GameMode = {
   id: 'appearing',
   label: 'Appearing',
+  // Hidden 2026-10-18: Jay found it weak beside the others (the same stick figure as Classic, without
+  // its gallows). Still resolves for a shared link or a player who already picked it.
+  hidden: true,
   description: 'The figure appears head to toe with each wrong guess',
   category: 'parts',
   behavior: 'additive',

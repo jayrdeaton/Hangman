@@ -4,6 +4,15 @@ const { useRef } = require('react')
 const passthrough = (value: unknown) => value
 const passthroughLast = (...values: unknown[]) => values[values.length - 1]
 
+// A layout animation builder (FadeIn, LinearTransition, ...): every modifier hands back the same
+// builder, so a chain like `LinearTransition.duration(250).easing(...)` still ends on one. Nothing
+// animates under Jest: Animated.View is React Native's own View, which only carries the prop.
+const layoutAnimation = () => {
+  const builder: Record<string, unknown> = {}
+  for (const modifier of ['duration', 'delay', 'easing', 'springify', 'damping', 'stiffness', 'withInitialValues', 'withCallback', 'reduceMotion']) builder[modifier] = () => builder
+  return builder
+}
+
 const Animated = {
   View: RN.View,
   Text: RN.Text,
@@ -73,14 +82,20 @@ const Animated = {
     EXTEND: 'extend',
     IDENTITY: 'identity'
   },
-  FadeIn: { duration: () => ({}) },
-  FadeInDown: { duration: () => ({}) },
-  FadeInUp: { duration: () => ({}) },
-  FadeOut: { duration: () => ({}) },
-  FadeOutDown: { duration: () => ({}) },
-  FadeOutUp: { duration: () => ({}) },
-  Layout: { duration: () => ({}) },
-  LinearTransition: { duration: () => ({}) },
+  FadeIn: layoutAnimation(),
+  FadeInDown: layoutAnimation(),
+  FadeInUp: layoutAnimation(),
+  FadeOut: layoutAnimation(),
+  FadeOutDown: layoutAnimation(),
+  FadeOutUp: layoutAnimation(),
+  Layout: layoutAnimation(),
+  LinearTransition: layoutAnimation(),
+  ZoomIn: layoutAnimation(),
+  ZoomOut: layoutAnimation(),
+  // Renders its children as they are (it only tells real layout animations to skip).
+  LayoutAnimationConfig: ({ children }: { children: unknown }) => children,
+  // The system's Reduce Motion, as reanimated read it at launch: off, unless a test says otherwise.
+  useReducedMotion: jest.fn(() => false),
   default: {
     View: RN.View,
     Text: RN.Text,

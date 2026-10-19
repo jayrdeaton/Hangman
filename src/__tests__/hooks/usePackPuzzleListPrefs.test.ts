@@ -11,7 +11,7 @@ jest.mock('@react-native-async-storage/async-storage', () => ({
   })
 }))
 
-const STORAGE_KEY = 'packPuzzleListPrefs'
+const STORAGE_KEY = 'hangman:packPuzzleListPrefs'
 
 describe('usePackPuzzleListPrefs', () => {
   beforeEach(() => {

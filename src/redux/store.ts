@@ -6,6 +6,7 @@ import { defaultSoundSettings, hapticReducer, soundReducer, type SoundSettings }
 import { combineReducers } from 'redux'
 import { FLUSH, PAUSE, PERSIST, type PersistedState, persistReducer, persistStore, PURGE, REGISTER, REHYDRATE } from 'redux-persist'
 
+import { STORAGE_PREFIX } from '@/constants/storage'
 import { sanitizeRoundState } from '@/utils/roundState'
 
 import achievements from './achievementsSlice'
@@ -30,9 +31,10 @@ const appSoundReducer = (state: SoundSettings = initialSoundSettings, action: { 
 // stored blob that fails the checks in sanitizeRoundState falls back to empty rounds. Version 2 is the
 // per-player solo rounds; a version 1 blob's single solo round doesn't pass, so it's dropped, not
 // carried over. Version 3 is the Pass & Play session (players and standings) kept with its round; an
-// older blob has none, so it starts a fresh one.
+// older blob has none, so it starts a fresh one. Stored as hangman:round (see storage.ts).
 const roundPersistConfig = {
   key: 'round',
+  keyPrefix: STORAGE_PREFIX,
   storage: AsyncStorage,
   version: 3,
   migrate: (state: PersistedState) => Promise.resolve(state ? ({ ...sanitizeRoundState(state), _persist: state._persist } as PersistedState) : state)
@@ -67,7 +69,9 @@ const appReducer: typeof rootReducer = (state, action) => {
   return action.type === REHYDRATE ? pruneLeftGuestSeats(next) : next
 }
 
-const persistConfig = { key: 'root', storage: AsyncStorage, whitelist: ['theme', 'haptic', 'sound', 'achievements', 'profiles', 'activePlayer', 'playerSettings', 'playerTheme', 'keepAwake'] }
+// Stored as hangman:root, not persist:root (see storage.ts). REHYDRATE still reports key 'root', which
+// is what rehydrate.ts' isRootRehydrate checks.
+const persistConfig = { key: 'root', keyPrefix: STORAGE_PREFIX, storage: AsyncStorage, whitelist: ['theme', 'haptic', 'sound', 'achievements', 'profiles', 'activePlayer', 'playerSettings', 'playerTheme', 'keepAwake'] }
 const persistedReducer = persistReducer(persistConfig, appReducer)
 
 export const store = configureStore({
