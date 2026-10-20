@@ -1,14 +1,12 @@
 import { Button } from '@rific/feedback-press'
 import { overlayActionStyles, OverlayBackdrop, OverlayCard, useOverlayCardColors } from '@tastic/hud/chrome'
-import { type Profile, ProfileChip } from '@tastic/profile'
-import { JSX, useEffect, useMemo } from 'react'
+import type { Profile } from '@tastic/profile'
+import { JSX, useEffect } from 'react'
 import { AccessibilityInfo, BackHandler, ScrollView, StyleSheet, useWindowDimensions, View } from 'react-native'
 import { Icon, Portal, ProgressBar, Text, useTheme } from 'react-native-paper'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
 import { fitSketchWordFontSize, SketchWord, sketchWordWidth } from '@/components/SketchWord'
-import { ACHIEVEMENT_TIER_COLORS } from '@/constants/achievements'
-import type { UnlockedAchievement } from '@/types/stats'
 import { commaString } from '@/utils/commaString'
 import type { PnpStandingRow } from '@/utils/pnpSession'
 
@@ -44,10 +42,6 @@ export type PnpRoundSummary = {
   standings: PnpStandingRow[]
 }
 
-// One player's unlocks this round. A profile's go under their name, beside their chip; the guest's
-// (owner null, the device's own progress) under the plain "Achievement(s) Unlocked".
-export type RoundUnlocks = { owner: Profile | null; achievements: UnlockedAchievement[] }
-
 export type RoundEndDialogProps = {
   visible: boolean
   outcome: RoundEndOutcome | null
@@ -56,15 +50,12 @@ export type RoundEndDialogProps = {
   // here are the ones the player never found, and they draw in red.
   guessedLetters: string[]
   categoryProgress?: CategoryProgress | null
-  // What the round just unlocked, each in catalog order, one block per player (see GameScreen's
-  // handleSolved and handleLost): a solo round's player (a pack turn's included), or a written word's
-  // guesser and, when they're a profile, its writer. A block with nothing in it isn't shown.
-  unlocks?: RoundUnlocks[]
   // A Pass & Play round's card: who guessed whose word (or who played the pack turn), the session's
   // standings, and who writes or plays next. Absent, it's the solo card.
   passAndPlay?: PnpRoundSummary | null
-  // End Session beside Next (Pass & Play). Absent, Next is the only way on.
-  onEndSession?: () => void
+  // Back beside Next (Pass & Play): to the Pass & Play page, the session kept. Absent, Next is the only
+  // way on.
+  onBack?: () => void
   onDismiss: () => void
 }
 
@@ -87,15 +78,10 @@ const ACTION_GAP = 12
 // Pass & Play's line above the buttons ("Player 2 writes next", or "Player 2 is up next" after a pack
 // turn: one bodyMedium line), with its gap.
 const NEXT_WRITER_HEIGHT = 20
-// Rough heights of the body's other blocks, only used to leave the answer room for them: the unlock
-// block's heading, each unlock row under it (a 28pt badge plus the gap), the progress caption (up
-// to two lines) with its bar, Pass & Play's who-guessed line (up to two bodyLarge lines), and the
-// standings' heading (with its gap) and rows. If one runs taller, the body scrolls a little rather
-// than anything going off-screen.
-const UNLOCKS_HEADER_HEIGHT = 30
-// The owner's chip beside that heading: one titleMedium line tall, so the heading keeps its height.
-const UNLOCKS_OWNER_CHIP_SIZE = 24
-const UNLOCK_ROW_HEIGHT = 34
+// Rough heights of the body's other blocks, only used to leave the answer room for them: the progress
+// caption (up to two lines) with its bar, Pass & Play's who-guessed line (up to two bodyLarge lines),
+// and the standings' heading (with its gap) and rows. If one runs taller, the body scrolls a little
+// rather than anything going off-screen.
 // The chips on Pass & Play's who-guessed line (a bodyLarge line tall) and next-writer line (a bodyMedium
 // line), so neither line grows for them.
 const RESULT_LINE_CHIP_SIZE = 24
@@ -157,35 +143,30 @@ export const fitAnswerFontSize = (wordLengths: number[], width: number, heightBu
 // card the confirms and Solitaire's win and loss banners use). A win shows a trophy and "You Won!" in
 // the primary color, a loss a muted skull and "You Lost!". Under the title the answer writes itself
 // left to right in the board's own sketch letters; on a loss, the letters the player never found draw
-// in the theme's error red. Pack progress (wins only) and any new achievements follow, then Next.
+// in the theme's error red. Pack progress (wins only) follows, then Next. New achievements aren't on
+// the card (Jay, 2026-10-20: toasts are enough, as in Solitaire): the game screen toasts them the moment
+// the round ends (see useUnlockToasts).
 //
 // A Pass & Play round's card (passAndPlay) also says who guessed whose word, above the answer, and
-// shows the session's standings under it, the guesser's row in bold; then who writes next, above End
-// Session and Next. "You" is still the guesser: the device is in their hands. A player sitting as a
-// profile has their chip beside their name on each of those lines, and the unlocks are each player's
-// own: the guesser's, then the writer's when the writer is a profile (a guest's progress is the
-// device's, which is the guesser's to see). A pack turn's card is the solo card (its player's unlocks
-// and pack progress) with the same session pieces: who solved or missed it, the standings with their
-// row in bold, and who's up next.
+// shows the session's standings under it, the guesser's row in bold; then who writes next, above Back
+// and Next. "You" is still the guesser: the device is in their hands. A player sitting as a
+// profile has their chip beside their name on each of those lines. A pack turn's card is the solo card
+// (its player's pack progress) with the same session pieces: who solved or missed it, the standings with
+// their row in bold, and who's up next.
 //
 // No backdrop dismissal, like every fleet card: a stray tap after the round can't skip to the next
-// puzzle. Next (or End Session) is the only way on, and Android's back button counts as Next. The card
-// never runs off the screen: it stops at the safe area, and the answer, standings, unlocks and progress
+// puzzle. Next (or Pass & Play's Back) is the only way on, and Android's back button counts as Next. The card
+// never runs off the screen: it stops at the safe area, and the answer, standings and progress
 // scroll between the title and the buttons, so Next always stays in reach.
-const RoundEndCard = ({ visible, outcome, phrase, guessedLetters, categoryProgress, unlocks, passAndPlay, onEndSession, onDismiss }: RoundEndDialogProps): JSX.Element | null => {
+const RoundEndCard = ({ visible, outcome, phrase, guessedLetters, categoryProgress, passAndPlay, onBack, onDismiss }: RoundEndDialogProps): JSX.Element | null => {
   const theme = useTheme()
   const { fg, fgMuted } = useOverlayCardColors()
   const { width: windowWidth, height: windowHeight } = useWindowDimensions()
   const insets = useSafeAreaInsets()
-  // Not gated on outcome === 'win': a loss can still unlock something (the first puzzle played, a
-  // Pass & Play rounds rung, a day streak). Each block is headed "Alice Unlocked" for a profile (the
-  // fleet's "<Name> unlocked", as the toasts say it), else the plain "Achievement(s) Unlocked", and
-  // announced as "<heading> unlocked: ...".
-  const unlockBlocks = useMemo(() => (unlocks ?? []).filter((block) => block.achievements.length > 0).map((block) => ({ ...block, heading: block.owner ? block.owner.name : `Achievement${block.achievements.length > 1 ? 's' : ''}` })), [unlocks])
   const won = outcome === 'win'
 
   // The card is a plain overlay rather than a native modal, so nothing tells a screen reader it
-  // appeared: this announces the result, the answer and any unlocks.
+  // appeared: this announces the result and the answer.
   // Pass & Play's who-guessed line, shown above the answer and announced with the result, and who's
   // next: a written word's guesser writes the next one, and after a pack turn the fair pick plays.
   const verb = won ? 'solved' : 'missed'
@@ -194,9 +175,8 @@ const RoundEndCard = ({ visible, outcome, phrase, guessedLetters, categoryProgre
   useEffect(() => {
     if (!visible || !outcome) return
     const base = `${outcome === 'win' ? 'You won!' : 'You lost!'}${resultLine ? ` ${resultLine}` : ''} The answer was ${phrase}.`
-    const unlockSuffix = unlockBlocks.map((block) => ` ${block.heading} unlocked: ${block.achievements.map((achievement) => achievement.title).join(', ')}.`).join('')
-    AccessibilityInfo.announceForAccessibility(base + unlockSuffix + (nextWriterLine ? ` ${nextWriterLine}.` : ''))
-  }, [visible, outcome, phrase, resultLine, nextWriterLine, unlockBlocks])
+    AccessibilityInfo.announceForAccessibility(base + (nextWriterLine ? ` ${nextWriterLine}.` : ''))
+  }, [visible, outcome, phrase, resultLine, nextWriterLine])
 
   useEffect(() => {
     if (!visible) return
@@ -221,12 +201,11 @@ const RoundEndCard = ({ visible, outcome, phrase, guessedLetters, categoryProgre
   const standingsLines = standingsLineCount(standingsCount, standingsColumns)
   // Pass & Play adds the next-writer line and, on a card too narrow for both buttons side by side, a
   // second button row.
-  const buttonsStack = Boolean(onEndSession) && answerWidth < ACTION_BUTTON_MIN_WIDTH * 2 + ACTION_GAP
+  const buttonsStack = Boolean(onBack) && answerWidth < ACTION_BUTTON_MIN_WIDTH * 2 + ACTION_GAP
   const chromeHeight = CARD_CHROME_HEIGHT + (nextWriterLine ? NEXT_WRITER_HEIGHT + CARD_GAP : 0) + (buttonsStack ? ACTION_GAP + BUTTON_HEIGHT : 0)
   const resultLineHeight = resultLine ? RESULT_LINE_HEIGHT + CARD_GAP : 0
   const standingsHeight = standingsLines > 0 ? CARD_GAP + STANDINGS_HEADER_HEIGHT + standingsLines * STANDINGS_ROW_HEIGHT + (standingsLines - 1) * STANDINGS_ROW_GAP : 0
-  const unlocksHeight = unlockBlocks.reduce((height, block) => height + CARD_GAP + UNLOCKS_HEADER_HEIGHT + UNLOCK_ROW_HEIGHT * block.achievements.length, 0)
-  const otherBodyHeight = resultLineHeight + standingsHeight + unlocksHeight + (showProgress ? CARD_GAP + PROGRESS_HEIGHT : 0)
+  const otherBodyHeight = resultLineHeight + standingsHeight + (showProgress ? CARD_GAP + PROGRESS_HEIGHT : 0)
   const answerFontSize = fitAnswerFontSize(
     words.map((word) => word.length),
     answerWidth,
@@ -274,31 +253,6 @@ const RoundEndCard = ({ visible, outcome, phrase, guessedLetters, categoryProgre
                 <PnpStandingsList rows={passAndPlay.standings} columns={standingsColumns} color={fg} mutedColor={fgMuted} highlightId={passAndPlay.playerId} />
               </View>
             ) : null}
-            {/* Every newly unlocked achievement at once, for as long as the card is up: the fleet's
-                tier-colored badge (the achievement's own icon, black on its bronze, silver or gold,
-                as on the Stats & Achievements screen) beside its title. A left-aligned list, centered as a
-                block. */}
-            {unlockBlocks.map((block, index) => (
-              <View key={block.owner?.id ?? `guest-${index}`} style={styles.achievements}>
-                <View style={styles.unlocksHeading}>
-                  {block.owner ? <ProfileChip profile={block.owner} size={UNLOCKS_OWNER_CHIP_SIZE} /> : null}
-                  <Text variant='titleMedium' style={[styles.blockHeading, styles.unlocksHeadingText, { color: fg }]}>
-                    {block.heading} Unlocked
-                  </Text>
-                </View>
-                {block.achievements.map((achievement) => (
-                  <View key={achievement.id} style={styles.unlockRow}>
-                    <View style={[styles.unlockBadge, { backgroundColor: ACHIEVEMENT_TIER_COLORS[achievement.tier] }]}>
-                      <Icon source={achievement.icon} size={18} color='#000000' />
-                    </View>
-                    {/* flexShrink so a long title wraps at large text sizes instead of running off. */}
-                    <Text variant='bodyLarge' style={[styles.unlockTitle, { color: fg }]}>
-                      {achievement.title}
-                    </Text>
-                  </View>
-                ))}
-              </View>
-            ))}
             {showProgress && categoryProgress ? (
               <View style={styles.progress}>
                 <Text variant='bodySmall' style={[styles.progressLabel, { color: fgMuted }]}>
@@ -322,15 +276,17 @@ const RoundEndCard = ({ visible, outcome, phrase, guessedLetters, categoryProgre
               player was browsing if they were browsing one, otherwise back to their whole
               selection). No separate "stay in this pack" action needed since it's not really a
               choice, just what continuing already means given how this round started. Pass & Play:
-              End Session (outlined, the confirms' secondary place) beside Next, for the next word or
-              pack turn. */}
+              Back (outlined, the confirms' secondary place: Jay, 2026-10-20, a plain word for kids in
+              place of End Session) beside Next, for the next word or pack turn. Back goes to the Pass &
+              Play page with the session kept: its standings ride on the seats there, and New session
+              clears them. */}
           <View style={overlayActionStyles.actions}>
-            {onEndSession ? (
-              <Button mode='outlined' onPress={onEndSession} style={overlayActionStyles.actionButton}>
-                End Session
+            {onBack ? (
+              <Button mode='outlined' onPress={onBack} style={overlayActionStyles.actionButton}>
+                Back
               </Button>
             ) : null}
-            <Button mode='contained' onPress={onDismiss} style={onEndSession ? overlayActionStyles.actionButton : overlayActionStyles.actionButtonSingle} buttonColor={theme.colors.primary} textColor={theme.colors.onPrimary}>
+            <Button mode='contained' onPress={onDismiss} style={onBack ? overlayActionStyles.actionButton : overlayActionStyles.actionButtonSingle} buttonColor={theme.colors.primary} textColor={theme.colors.onPrimary}>
               Next
             </Button>
           </View>
@@ -341,9 +297,8 @@ const RoundEndCard = ({ visible, outcome, phrase, guessedLetters, categoryProgre
 }
 
 const styles = StyleSheet.create({
-  achievements: { alignItems: 'flex-start', alignSelf: 'center', gap: 6 },
   answer: { alignSelf: 'stretch', columnGap: ANSWER_COLUMN_GAP, flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center' },
-  // The unlock and standings blocks' headings.
+  // The standings' heading.
   blockHeading: { alignSelf: 'center', fontWeight: '700' },
   // Takes only the height its content needs, and gives it up (then scrolls) when the card meets
   // its maxHeight, so the icon, title and Next row keep theirs.
@@ -366,15 +321,9 @@ const styles = StyleSheet.create({
   },
   progressLabel: { textAlign: 'center' },
   resultLine: { textAlign: 'center' },
-  // The heading over the full-width list, with the unlock block's 6 between them.
+  // The heading over the full-width list, 6 between them.
   standings: { alignSelf: 'stretch', gap: 6 },
-  title: { fontWeight: 'bold', textAlign: 'center' },
-  unlockBadge: { alignItems: 'center', borderRadius: 8, height: 28, justifyContent: 'center', width: 28 },
-  unlockRow: { alignItems: 'center', flexDirection: 'row', gap: 10 },
-  unlockTitle: { flexShrink: 1 },
-  // The owner's chip and the heading, centered together over the list.
-  unlocksHeading: { alignItems: 'center', alignSelf: 'center', flexDirection: 'row', gap: 8 },
-  unlocksHeadingText: { flexShrink: 1 }
+  title: { fontWeight: 'bold', textAlign: 'center' }
 })
 
 // The card in a shade of the player's color that reads on it (ReadableAccent).

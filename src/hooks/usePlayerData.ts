@@ -26,7 +26,7 @@ export type PlayerData = {
   // seat has left the table (the loadout's remove): their art, difficulty and pack picks, their colors,
   // their waiting solo round and their unlocked puzzles. Their rounds stay on the device's record, as
   // every guest's do. If they're the one playing, Single Player's guest takes over. Never seat 1's, whose
-  // guest is Single Player's (it never leaves the table anyway).
+  // guest is Single Player's: they keep everything when the seat leaves.
   forgetGuestSeat: (seatId: string) => Promise<void>
   // Colors of their own for every guest seat at the table that has none yet (utils/guestSeats.ts), the
   // first time it's shown or made the active player. Nothing changes when every seat has some.

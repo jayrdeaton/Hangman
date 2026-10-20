@@ -4,10 +4,10 @@ import { Toaster, ToastProvider } from '@rific/toaster'
 import * as ExpoHaptics from 'expo-haptics'
 import * as ExpoKeepAwake from 'expo-keep-awake'
 import { Fragment, JSX, ReactNode, useCallback } from 'react'
-import { Platform } from 'react-native'
+import { Platform, useWindowDimensions } from 'react-native'
 import { KeyboardProvider } from 'react-native-keyboard-controller'
 import * as RNPaper from 'react-native-paper'
-import { SafeAreaProvider } from 'react-native-safe-area-context'
+import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context'
 import { Provider as ReduxProvider, useDispatch, useSelector } from 'react-redux'
 import { PersistGate } from 'redux-persist/integration/react'
 
@@ -25,6 +25,31 @@ import { PuzzleDefaultsProvider } from './PuzzleDefaultsProvider'
 import { Theme } from './Theme'
 
 export type ProvidersProps = { children: ReactNode }
+
+// Where the toasts sit (Jay, 2026-10-20, as in Solitaire, once every unlock became a toast): at the top,
+// in the band between the screens' corner buttons (Home and the cog end 54 in, at the inset's 8 plus
+// Paper's 6 margin and the 40 button, and their box starts 14 down), so a round's unlocks never cover the
+// result card's Next. At the bottom, a stack of three ran off the screen's edge on the web. A wide
+// window caps the stack at the cards' 360.
+const TOAST_TOP = 14
+const TOAST_SIDE_CLEARANCE = 60
+const TOAST_MAX_WIDTH = 360
+
+export const toastStackFrame = (width: number, insets: { left: number; right: number }): { left: number; right: number; marginTop: number } => {
+  const start = TOAST_SIDE_CLEARANCE + insets.left
+  const end = width - TOAST_SIDE_CLEARANCE - insets.right
+  const stackWidth = Math.min(TOAST_MAX_WIDTH, Math.max(0, end - start))
+  const left = start + (end - start - stackWidth) / 2
+  return { left, marginTop: TOAST_TOP, right: width - left - stackWidth }
+}
+
+// The app's one toaster: the newest three at a time, with no history or clear chips (nothing here
+// needs to dig through past toasts).
+const AppToaster = (): JSX.Element => {
+  const { width } = useWindowDimensions()
+  const insets = useSafeAreaInsets()
+  return <Toaster position='top' wrapperStyle={toastStackFrame(width, insets)} clearButton={null} historyButton={null} limit={3} />
+}
 
 // react-native-keyboard-controller has no web implementation - skip its provider there.
 const KeyboardWrapper = Platform.OS === 'web' ? Fragment : KeyboardProvider
@@ -104,7 +129,7 @@ export const Providers = ({ children }: ProvidersProps): JSX.Element => (
                       </CatalogProvider>
                     </AutoSaveCustomProvider>
                   </KeyboardLayoutProvider>
-                  <Toaster clearButton={null} historyButton={null} limit={3} />
+                  <AppToaster />
                 </HapticGatedToastProvider>
               </Theme>
             </Haptic>

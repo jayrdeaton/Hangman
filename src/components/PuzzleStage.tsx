@@ -2,12 +2,8 @@ import { resolveSeedColor, useThemeSettings } from '@rific/auto-paper'
 import { JSX, useEffect, useMemo, useState } from 'react'
 import { LayoutChangeEvent, StyleSheet, View } from 'react-native'
 import { useTheme } from 'react-native-paper'
-import Svg, { Circle } from 'react-native-svg'
 
 import { HERSHEY_GAP } from '@/modes/shared/letterformsHershey'
-import { PIPS_SWEEP_DELAY_MS } from '@/modes/shared/sceneReveal'
-import { glyphWidth, SketchLetter } from '@/modes/shared/sketchLetter'
-import { FadeScaleIn, SketchCircle } from '@/modes/shared/sketchShapes'
 import type { GameMode } from '@/types/gameModes'
 
 import { GameVisual } from './GameVisual'
@@ -38,44 +34,15 @@ const WORD_ROW_PADDING_HORIZONTAL = 12
 // space for something else, or the artwork would end up sized as if this margin didn't exist.
 const WORD_ROW_MARGIN_BOTTOM = 12
 
-// Wrong-guess pip in Letters Only mode: a small hand-drawn ring (SketchCircle), same stroke-by-
-// stroke technique as every other shape in this app, standing in for what used to be a plain
-// rn-paper bordered View. A wrong guess blooms a solid dot on top of that ring (FadeScaleIn, per
-// its own "solid dot" doc comment) and, since there's room to spare here (see the pip cluster's own
-// comment below), draws the actual wrong letter inside via the same Hershey letterforms SketchWord
-// uses for the puzzle word itself - legible tucked inside a 32px ring at PIP_LETTER_HEIGHT despite
-// being real vector strokes, not a font.
-const PIP_SIZE = 32
-const PIP_CENTER = PIP_SIZE / 2
-const PIP_STROKE_WIDTH = 3
-// Centerline radius for the ring's stroke - leaves the ring's own outer edge (r + strokeWidth/2)
-// just inside PIP_CENTER, matching the fitted-but-not-clipped look the old bordered View had.
-const PIP_RADIUS = PIP_CENTER - PIP_STROKE_WIDTH
-const PIP_LETTER_HEIGHT = 15
-const PIP_LETTER_STROKE_WIDTH = 2
-// Stagger between one pip ring's own reveal and the next at round start - same spirit as
-// SketchWord's own BLANK_STAGGER_MS, just local to this file since nothing else needs it. Added on
-// top of PIPS_SWEEP_DELAY_MS (see sceneReveal.ts), which is the whole-screen sweep's own head start
-// for this band, not a per-pip amount.
-const PIP_STAGGER_MS = 60
-// A beat after a wrong guess's fill dot blooms in, so the pip reads as bloom-then-letter rather
-// than both popping in at the same instant.
-const PIP_LETTER_DELAY_MS = 120
-
 export type PuzzleStageProps = {
   mode: GameMode
   phrase: string
   guessedLetters: string[]
   wrongGuesses: number
-  // The wrong guesses, in the order they happened - same array Game.tsx derives once and also
-  // uses for pipsLabel below, so this component doesn't need phrase/guessedLetters to re-derive
-  // its own copy of the same filter.
-  wrongLetters: string[]
   // The round's real, frozen mistake ceiling (see Game.tsx) - distinct from mode.maxMistakes,
   // which is only the CURRENTLY selected mode's own stage count and can differ from it after a
   // live art-style swap mid-round (see modes/stars.tsx).
   maxWrong: number
-  pipsLabel: string
   // Fired whenever this region's own "fully measured, nothing left to jump" readiness changes -
   // see stageReady's own comment. This component no longer fades itself in: Game.tsx combines this
   // with Keyboard's own readiness signal to hold the WHOLE game screen hidden until everything on
@@ -88,14 +55,14 @@ export type PuzzleStageProps = {
 }
 
 // The artwork-plus-word-blanks region of a round: everything between the difficulty/hint pills
-// and the wrong-guess pips. Isolated from Game.tsx because sizing it correctly needs its own,
+// and the wrong-guess pips (Game.tsx's, under it for every art). Letters Only has no artwork, so its
+// word gets the whole region. Isolated from Game.tsx because sizing it correctly needs its own,
 // fairly involved layout math (see visualHeight/fittedWordFontSize below) that has nothing to do
 // with the win/loss state machine driving the rest of the round.
-export const PuzzleStage = ({ mode, phrase, guessedLetters, wrongGuesses, wrongLetters, maxWrong, pipsLabel, onReadyChange, started }: PuzzleStageProps): JSX.Element => {
+export const PuzzleStage = ({ mode, phrase, guessedLetters, wrongGuesses, maxWrong, onReadyChange, started }: PuzzleStageProps): JSX.Element => {
   const { settings } = useThemeSettings()
   const theme = useTheme()
   const color = resolveSeedColor(settings.color)
-  const tertiaryColor = theme.colors.tertiary
   // Same triad Game.tsx's own win-celebration fireworks already randomizes particle colors over
   // (see Game.tsx's CelebrationView) - reused here so a mode that wants per-instance color variety
   // (balloons, stars) draws from the same palette rather than inventing a second one.
@@ -175,7 +142,8 @@ export const PuzzleStage = ({ mode, phrase, guessedLetters, wrongGuesses, wrongL
   const [combinedAreaSize, setCombinedAreaSize] = useState({ width: 0, height: 0 })
   const handleCombinedAreaLayout = (e: LayoutChangeEvent) => setCombinedAreaSize(e.nativeEvent.layout)
   const combinedAreaMeasured = combinedAreaSize.width > 0 && combinedAreaSize.height > 0
-  const visualHeight = combinedAreaMeasured ? Math.max(0, Math.min(combinedAreaSize.width, combinedAreaSize.height - (wordRowSize.height ? wordRowSize.height + WORD_ROW_MARGIN_BOTTOM : 0))) : undefined
+  // Letters Only has no artwork box at all: none of the region goes to it.
+  const visualHeight = !hasVisual ? 0 : combinedAreaMeasured ? Math.max(0, Math.min(combinedAreaSize.width, combinedAreaSize.height - (wordRowSize.height ? wordRowSize.height + WORD_ROW_MARGIN_BOTTOM : 0))) : undefined
 
   // True only once BOTH halves of this region have reported a real measurement: this box's own
   // (combinedAreaSize, which visualHeight above is derived from) and the word row's own
@@ -242,50 +210,19 @@ export const PuzzleStage = ({ mode, phrase, guessedLetters, wrongGuesses, wrongL
           long, multi-line phrase can leave the artwork no room at all once the word row's own
           height is subtracted, see visualHeight above), and a bare truthy check would wrongly
           treat that real, final "give it nothing" measurement as "not measured yet" and fall back
-          to flex:1 instead - the one case that actually needs height:0. */}
-      <View testID='visual-area' style={[styles.visualArea, visualHeight !== undefined ? { height: visualHeight } : styles.visualAreaFallback]}>
-        {hasVisual ? (
-          // Mounts unconditionally - GameVisual itself doesn't measure anything of its own (see its
-          // own comment - GameMode['Visual'] dropped width/height entirely, every mode's <Svg> just
-          // fills whatever box it's given), so mounting it early against visualArea's own
-          // not-yet-final fallback size costs nothing visible: the whole game screen, this region
-          // included, stays behind Game.tsx's own curtain until stageReady above anyway.
+          to flex:1 instead - the one case that actually needs height:0. Mounts unconditionally:
+          GameVisual itself doesn't measure anything of its own (see its own comment -
+          GameMode['Visual'] dropped width/height entirely, every mode's <Svg> just fills whatever
+          box it's given), so mounting it early against visualArea's own not-yet-final fallback
+          size costs nothing visible: the whole game screen, this region included, stays behind
+          Game.tsx's own curtain until stageReady above anyway. */}
+      {hasVisual ? (
+        <View testID='visual-area' style={[styles.visualArea, visualHeight !== undefined ? { height: visualHeight } : styles.visualAreaFallback]}>
           <GameVisual mode={mode} mistakes={visualMistakes} color={color} colors={themeColors} started={started} style={styles.visualFill} />
-        ) : (
-          // No artwork to carry the "how many guesses left" tension in this mode, so the pips
-          // take over the artwork's own slot (and its size) instead of trailing after the word
-          // as a row of barely-there dots. This is also the one place a filled pip shows the
-          // actual letter it was for, not just a plain dot - there's room to spare here (32px,
-          // the whole artwork slot) that the small pip row under the keyboard in every other mode
-          // doesn't have, see Game.tsx's own pipRow comment for why that one stays letter-less.
-          <View style={styles.pipClusterWrap} accessibilityLabel={pipsLabel}>
-            <View style={styles.pipClusterRow}>
-              {Array.from({ length: maxWrong }, (_, i) => {
-                const filled = i < wrongGuesses
-                const letter = wrongLetters[i]
-                const letterWidth = letter ? glyphWidth(letter, PIP_LETTER_HEIGHT) : 0
-                return (
-                  // testID lives on this wrapping View, not the Svg itself - Svg has no single host
-                  // node of its own to carry one (it's a pure viewport around its children).
-                  <View key={i} testID={`pip-${i}`}>
-                    <Svg width={PIP_SIZE} height={PIP_SIZE} viewBox={`0 0 ${PIP_SIZE} ${PIP_SIZE}`}>
-                      <SketchCircle cx={PIP_CENTER} cy={PIP_CENTER} r={PIP_RADIUS} color={tertiaryColor} strokeWidth={PIP_STROKE_WIDTH} start={started} delayMs={PIPS_SWEEP_DELAY_MS + i * PIP_STAGGER_MS} />
-                      {filled ? (
-                        <FadeScaleIn cx={PIP_CENTER} cy={PIP_CENTER}>
-                          <Circle cx={PIP_CENTER} cy={PIP_CENTER} r={PIP_RADIUS} fill={tertiaryColor} />
-                        </FadeScaleIn>
-                      ) : null}
-                      {filled && letter ? <SketchLetter letter={letter} x={(PIP_SIZE - letterWidth) / 2} y={(PIP_SIZE - PIP_LETTER_HEIGHT) / 2} height={PIP_LETTER_HEIGHT} color={theme.colors.onTertiary} strokeWidth={PIP_LETTER_STROKE_WIDTH} delayMs={PIP_LETTER_DELAY_MS} /> : null}
-                    </Svg>
-                  </View>
-                )
-              })}
-            </View>
-          </View>
-        )}
-      </View>
+        </View>
+      ) : null}
       {/* flex:1, the artwork's sibling above - whatever height the (now capped) artwork box
-          can't use flows here instead, and this centers the word row within it rather than
+          can't use flows here instead (all of it, in Letters Only), and this centers the word row within it rather than
           leaving it packed against the keyboard the way it would be at its own intrinsic size. */}
       <View style={styles.wordArea}>
         <View style={hasVisual ? styles.wordRow : styles.wordRowLarge} accessible accessibilityLabel='Secret word display' onLayout={handleWordRowLayout}>
@@ -300,8 +237,6 @@ export const PuzzleStage = ({ mode, phrase, guessedLetters, wrongGuesses, wrongL
 
 const styles = StyleSheet.create({
   artAndWordArea: { flex: 1, width: '100%' },
-  pipClusterRow: { columnGap: 18, flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', paddingHorizontal: 24, rowGap: 18 },
-  pipClusterWrap: { alignItems: 'center', flex: 1, justifyContent: 'center', width: '100%' },
   visualArea: { width: '100%' },
   // Only used before combinedAreaSize's first measurement lands - without it the box would render
   // at 0 height (no explicit height yet, no flex to grow into). Nothing in here is actually visible

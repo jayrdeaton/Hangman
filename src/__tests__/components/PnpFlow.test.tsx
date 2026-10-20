@@ -735,22 +735,23 @@ describe('GameScreen - pass and play', () => {
         expect(pnpRound().phase).toBe('playing')
       })
 
-      it("shows the guesser's and the writer's own unlocks, each under their name, and counts the round to each of them", async () => {
+      // Toasts, not rows on the card (Jay, 2026-10-20), each named for its player.
+      it("toasts the guesser's and the writer's own unlocks, each named for them, and counts the round to each of them", async () => {
         jest.useFakeTimers()
         // Alice has played the two days before today, so writing today is her third in a row.
         const yesterday = previousDateString(localDateString(new Date()))
         store.dispatch(achievementsActions.update({ stats: { ...createDefaultStats(), profiles: { [ALICE.id]: { ...createDefaultProfileStats(), distinctDaysPlayed: 2, currentDayStreak: 2, bestDayStreak: 2, lastPlayedDate: yesterday } } }, unlocked: {} }))
         const utils = await renderGame()
-        const { getByText } = utils
+        const { getByText, getAllByText, queryByText } = utils
 
         await playThroughToRound(utils, 'CAT')
         await winWithCat(utils)
 
         expect(getByText("Bob solved Alice's word.")).toBeTruthy()
         expect(getByText('Bob writes next')).toBeTruthy()
-        expect(getByText('Bob Unlocked')).toBeTruthy()
-        expect(getByText('First Word')).toBeTruthy()
-        expect(getByText('Alice Unlocked')).toBeTruthy()
+        expect(queryByText(/Unlocked$/)).toBeNull()
+        expect(getAllByText('Bob unlocked').length).toBeGreaterThan(0)
+        expect(getByText('Alice unlocked')).toBeTruthy()
         expect(getByText('Regular Visitor')).toBeTruthy()
         expect(stats().profiles[BOB.id].pnp).toEqual({ played: 1, wins: 1, losses: 0, draws: 0 })
         expect(stats().profiles[ALICE.id].bestDayStreak).toBe(3)
@@ -801,19 +802,19 @@ describe('GameScreen - pass and play', () => {
         expect(store.getState().activePlayer.profileId).toBeNull()
       })
 
-      it("keeps a guest guesser's card the plain one, under the device's unlocks", async () => {
+      it("toasts a guest guesser's unlocks as the device's, under no one's name", async () => {
         jest.useFakeTimers()
         seat('p2', null)
         const utils = await renderGame()
-        const { getByText, queryByText } = utils
+        const { getByText, getAllByText, queryByText } = utils
 
         await writeWord(utils, 'CAT')
         expect(getByText("Player 2's Turn")).toBeTruthy()
         await fireEvent.press(getByText('Ready'))
         await winWithCat(utils)
 
-        expect(getByText(/^Achievements? Unlocked$/)).toBeTruthy()
-        expect(queryByText('Alice Unlocked')).toBeNull()
+        expect(getAllByText('Achievement unlocked').length).toBeGreaterThan(0)
+        expect(queryByText('Alice unlocked')).toBeNull()
 
         jest.useRealTimers()
       })
@@ -877,72 +878,40 @@ describe('GameScreen - pass and play', () => {
       })
     })
 
-    describe('End Session', () => {
-      const endSession = async (utils: Utils) => {
+    // Jay, 2026-10-20: Back, a plain word for kids, in place of End Session and its standings card.
+    describe('Back', () => {
+      const backFromCard = async (utils: Utils) => {
         await playThroughToRound(utils, 'CAT')
         await winWithCat(utils)
-        await fireEvent.press(utils.getByText('End Session'))
+        await fireEvent.press(utils.getByText('Back'))
       }
 
-      it('puts the round card away for the standings card, with the winner', async () => {
+      it('goes back to the Pass & Play loadout, the session kept, the card put away', async () => {
         jest.useFakeTimers()
         store.dispatch(roundActions.addPnpPlayer())
         const utils = await renderGame()
 
-        await endSession(utils)
-
-        expect(utils.queryByText('You Won!')).toBeNull()
-        expect(utils.getByText('Player 2 Wins!')).toBeTruthy()
-        expect(utils.getByText('1 of 1 solved, the best rate at 100%.')).toBeTruthy()
-        // Nothing has ended yet: the card is all there is until Done.
-        expect(session().standings).toEqual({ p2: { played: 1, wins: 1 } })
-        expect(router.dismissTo).not.toHaveBeenCalled()
-
-        jest.useRealTimers()
-      })
-
-      it('ends the session from Done: the standings cleared, the table kept, and back to the loadout', async () => {
-        jest.useFakeTimers()
-        store.dispatch(roundActions.addPnpPlayer())
-        store.dispatch(profilesActions.setAll([{ id: 'profile-ann', name: 'Ann', color: '#9c27b0', tag: 'AN', createdAt: 1, updatedAt: 1 }]))
-        store.dispatch(roundActions.setPnpSeatProfile({ id: 'p1', profile: { id: 'profile-ann', name: 'Ann' } }))
-        const utils = await renderGame()
-
-        await endSession(utils)
-        await fireEvent.press(utils.getByText('Done'))
+        await backFromCard(utils)
 
         expect(router.dismissTo).toHaveBeenCalledWith(PNP_LOADOUT)
-        expect(utils.queryByText('Player 2 Wins!')).toBeNull()
-        expect(session()).toMatchObject({ standings: {}, recordedRoundId: null, writerId: 'p1', guesserId: 'p2' })
-        expect(session().players.map((player) => player.name)).toEqual(['Ann', 'Player 2', 'Player 3'])
-        expect(pnpRound().phase).toBeNull()
+        expect(utils.queryByText('You Won!')).toBeNull()
+        expect(session().standings).toEqual({ p2: { played: 1, wins: 1 } })
         expect(store.getState().round.activeMode).toBeNull()
-        // The stats keep the round: ending a session only clears its own standings.
         expect(stats().pnp.played).toBe(1)
 
         jest.useRealTimers()
       })
 
-      // The standings card is End Session's confirm: Keep Playing, or Android back, brings the round's
-      // card back with the session untouched, and Next still goes on to the next word.
-      it.each<[string, (utils: Utils) => Promise<unknown>]>([
-        ['Keep Playing', (utils) => fireEvent.press(utils.getByText('Keep Playing'))],
-        ['Android back', () => pressBack()]
-      ])('backs out from %s, the round card back and the session untouched', async (_label, back) => {
+      it('starts the next word when the players come back, the guesser writing it', async () => {
         jest.useFakeTimers()
-        store.dispatch(roundActions.addPnpPlayer())
+        const first = await renderGame()
+        await backFromCard(first)
+        await first.unmount()
+
         const utils = await renderGame()
 
-        await endSession(utils)
-        await back(utils)
-
-        expect(utils.queryByText('Player 2 Wins!')).toBeNull()
-        expect(utils.getByText('You Won!')).toBeTruthy()
-        expect(session().standings).toEqual({ p2: { played: 1, wins: 1 } })
-        expect(router.dismissTo).not.toHaveBeenCalled()
-
-        await fireEvent.press(utils.getByText('Next'))
         expect(utils.getByText("Player 2's Word")).toBeTruthy()
+        expect(session()).toMatchObject({ writerId: 'p2', standings: { p2: { played: 1, wins: 1 } } })
 
         jest.useRealTimers()
       })

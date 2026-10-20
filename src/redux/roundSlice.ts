@@ -2,9 +2,11 @@ import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 import { profilesActions } from '@tastic/profile'
 
 import type { PuzzleSourceMode } from '@/types/gameSession'
-import { isProfileId, type PlayerKey, playerKeyFor, SINGLE_PLAYER_SEAT_ID } from '@/utils/players'
+import { isProfileId, type PlayerKey, playerKeyFor } from '@/utils/players'
 import { createDefaultPnpSession, createPlayer, getStanding, guestName, MAX_PNP_PLAYERS, MIN_PNP_PLAYERS, normalizePlayerName, numberGuests, packTurnRoundKey, pickFairGuesser, pickNextTurn, type PnpSession, seatAfterRemoved, type SeatedProfile, type WordSource } from '@/utils/pnpSession'
 import type { PuzzleDifficultyTier } from '@/utils/puzzleCatalog'
+
+import { playerSettingsActions } from './playerSettingsSlice'
 
 export type { SeatedProfile } from '@/utils/pnpSession'
 
@@ -88,6 +90,18 @@ export const initialRoundState: RoundState = {
 // A player's next round id. Ids only have to differ within one player's slot: the game screen keys its
 // board on the player as well (see GameScreen's SavedBoard).
 const nextSoloId = (state: RoundState, playerKey: PlayerKey): number => (state.solo[playerKey]?.id ?? 0) + 1
+
+// A player's waiting solo round with no guess on it yet goes when they pick packs or a difficulty that
+// wouldn't have drawn it (Jay, 2026-10-20: a puzzle from a pack just switched off, never tried, was
+// still what Ready picked up), so Ready, or their next pack turn, draws one from the new picks. A round
+// with a guess on it stays theirs to finish (nothing here abandons a round), and so does a shared
+// puzzle, which no pack drew. Never while a solo board is open (the picks only change on the loadout,
+// but a board's round is never pulled out from under it).
+const dropUnfitSolo = (state: RoundState, playerKey: PlayerKey, fits: (puzzle: SavedPuzzle) => boolean): void => {
+  const solo = state.solo[playerKey]
+  if (state.activeMode === 'solo' || !solo?.puzzle || solo.guessedLetters.length > 0 || solo.puzzle.sourceMode !== 'random' || fits(solo.puzzle)) return
+  state.solo[playerKey] = emptyRound(nextSoloId(state, playerKey))
+}
 
 // Whether the Pass & Play round on the board was decided and counted: its guesser writes next.
 const isResultIn = (pnp: PnpRound): boolean => pnp.session.recordedRoundId === pnp.id
@@ -269,18 +283,6 @@ const roundSlice = createSlice({
       clearStandings(state.pnp.session)
       openPrompt(state.pnp)
     },
-    // End Session, once its standings card is closed, from a written word's card or a pack turn's: the
-    // standings cleared and nothing in play (a written word left waiting goes too, as with New session),
-    // the same table kept for next time. The finished round stays drawn (no new id, the board keeps its
-    // word) while the game screen leaves, and the next visit starts a prompt for the first seat, or the
-    // first seat's pack turn.
-    endPnpSession: (state) => {
-      const { pnp } = state
-      clearStandings(pnp.session)
-      pnp.session.guesserId = pickFairGuesser(pnp.session, pnp.session.writerId)
-      pnp.phase = null
-      delete pnp.draft
-    },
     // A new guest seat at the end of the table, up to MAX_PNP_PLAYERS. With the next word not written
     // yet, the fair pick is made again, since the newcomer has guessed nothing.
     addPnpPlayer: (state) => {
@@ -289,10 +291,25 @@ const roundSlice = createSlice({
       session.players.push(createPlayer(session.players))
       if (isPickOpen(state.pnp)) session.guesserId = pickFairGuesser(session, session.writerId)
     },
-    // A seat leaves, down to MIN_PNP_PLAYERS, and their standing with them (never seat 1, whose guest is
-    // Single Player's, see players.ts' SINGLE_PLAYER_SEAT_ID); the guests after it move up
+    // The seats in a new order (Jay, 2026-10-20: dragged on the loadout), by seat id, each seat once:
+    // any other list changes nothing. Everything kept by seat goes with its seat (standings, the writer
+    // and guesser, the focus, the pack turn, a guest's own art and colors), and the guests are named for
+    // their new places. Only "around the table" changes: whose turn comes after whose, from the next
+    // pick on (the guesser already picked stays).
+    reorderPnpPlayers: (state, action: PayloadAction<string[]>) => {
+      const { players } = state.pnp.session
+      const order = action.payload
+      if (order.length !== players.length || new Set(order).size !== order.length || order.every((id, index) => players[index].id === id)) return
+      const byId = new Map(players.map((player) => [player.id, player]))
+      if (!order.every((id) => byId.has(id))) return
+      state.pnp.session.players = order.map((id) => byId.get(id)!)
+      numberGuests(state.pnp.session.players)
+    },
+    // A seat leaves, down to MIN_PNP_PLAYERS, and their standing with them; the guests after it move up
     // a seat, and a number (their own art and colors go with them: they're kept by seat id, not number).
-    // What the seat's own guest kept is forgotten with the seat, by usePlayerData's forgetGuestSeat. If they were writing the next word, the seat after theirs writes it instead,
+    // What the seat's own guest kept is forgotten with the seat, by usePlayerData's forgetGuestSeat,
+    // except seat 1's, whose guest is Single Player's (players.ts' SINGLE_PLAYER_SEAT_ID): it can leave
+    // too (Jay, 2026-10-20), and they keep everything. If they were writing the next word, the seat after theirs writes it instead,
     // and if the loadout was showing them, it shows the seat that took their place (the one before, for
     // the last seat). A word waiting on the board with them as its writer or guesser can't go on, so
     // it's replaced by a blank prompt; one that has nothing to do with them stays. Their pack turn, under
@@ -302,7 +319,7 @@ const roundSlice = createSlice({
       const { pnp } = state
       const { session } = pnp
       const index = session.players.findIndex((player) => player.id === action.payload)
-      if (index < 0 || session.players.length <= MIN_PNP_PLAYERS || action.payload === SINGLE_PLAYER_SEAT_ID) return
+      if (index < 0 || session.players.length <= MIN_PNP_PLAYERS) return
       const removedId = action.payload
       const resultIn = isResultIn(pnp)
       // Once the round on the board is decided, its guesser is the one writing next (startPnpAuthoring).
@@ -346,13 +363,23 @@ const roundSlice = createSlice({
   },
   // The seats keep their profiles' names in step with the roster (syncSeatNames), however it changes:
   // a rename on the Profiles screen, or a roster brought in from another game (ProfilesProvider's
-  // setAll). Nothing changes, and nothing is saved again, when no seated profile's name moved.
+  // setAll). Nothing changes, and nothing is saved again, when no seated profile's name moved. A
+  // player's new packs or difficulty drop their waiting round if it's untouched and no longer fits
+  // (dropUnfitSolo).
   extraReducers: (builder) => {
     builder
       .addMatcher(profilesActions.setAll.match, (state, action) => syncSeatNames(state.pnp.session, action.payload))
       .addMatcher(profilesActions.update.match, (state, action) => {
         const { id, patch } = action.payload
         if (patch.name !== undefined) syncSeatNames(state.pnp.session, [{ id, name: patch.name }])
+      })
+      .addMatcher(playerSettingsActions.setPackKeys.match, (state, action) => {
+        const { playerKey, packKeys } = action.payload
+        dropUnfitSolo(state, playerKey, (puzzle) => packKeys === null || (puzzle.packKey !== undefined && packKeys.includes(puzzle.packKey)))
+      })
+      .addMatcher(playerSettingsActions.setDifficulty.match, (state, action) => {
+        const { playerKey, difficulty } = action.payload
+        dropUnfitSolo(state, playerKey, (puzzle) => difficulty === 'any' || puzzle.difficultyTier === difficulty)
       })
   }
 })

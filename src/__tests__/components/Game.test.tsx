@@ -249,23 +249,21 @@ describe('Game', () => {
     expect(StyleSheet.flatten(getByText('C').props.style).color).not.toBe(theme.colors.onDangerContainer)
   })
 
-  // Letters Only mode's own pip cluster (PuzzleStage.tsx, hasVisual: false) has the room a
-  // real mode's small pip row under the keyboard doesn't (see Game.tsx's own pipRow comment) - so
-  // unlike that row, a filled pip here shows which letter it was for, not just a plain dot. The
-  // letter itself draws as a hand-drawn SketchLetter rather than Text (see PuzzleStage's own pip
-  // comment), so this asserts on the SketchLetter element's own `letter` prop directly - same
-  // prop-introspection style the word display's own tests already use for SketchWord - rather than
-  // rendered text content, which no longer exists here.
-  it('shows the actual wrong letter inside a filled pip in Letters Only mode, but leaves it empty for a correct guess', async () => {
-    const { getByText, getByTestId } = await render(<Game phrase='CAT' onStop={jest.fn()} mode={roomyNoVisualMode} />)
+  // Jay, 2026-10-20: Letters Only's own big lettered pips, in the artwork's slot, took the room its
+  // letters needed. It has the same small pip row as every art now, and no artwork box at all, so the
+  // word has the whole area.
+  it('gives Letters Only the same pip row as every art, filling a dot per wrong guess, and no artwork box', async () => {
+    const { getByText, getByTestId, queryByTestId } = await render(<Game phrase='CAT' onStop={jest.fn()} mode={roomyNoVisualMode} />)
+    const filled = (index: number) => getByTestId(`pip-${index}`).props.children.props.children[1] !== null
+
+    expect(queryByTestId('visual-area')).toBeNull()
+    expect(queryByTestId('pip-3')).toBeNull()
 
     await guessLetter(getByText, 'C')
-    expect(getByTestId('pip-0').props.children.props.children[2]).toBeNull()
+    expect(filled(0)).toBe(false)
 
     await guessLetter(getByText, 'Q')
-    expect(getByTestId('pip-0').props.children.props.children[2].props.letter).toBe('Q')
-    // Nothing filled past the one actual wrong guess yet.
-    expect(getByTestId('pip-1').props.children.props.children[2]).toBeNull()
+    expect([0, 1, 2].map(filled)).toEqual([true, false, false])
   })
 
   it('triggers a loss once wrong guesses reach the mode maxMistakes, showing a dialog that calls onStop when dismissed', async () => {

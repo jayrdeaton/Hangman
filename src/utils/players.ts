@@ -23,9 +23,10 @@ const GUEST_SEAT_KEY_PREFIX = `${GUEST_PLAYER_KEY}-`
 
 // Seat 1 at the Pass & Play table is Single Player's guest's (Jay, 2026-10-19): whoever plays alone is
 // nearly always Player 1 when the table comes out, so they're one player, with one art, set of colors,
-// packs, waiting puzzle and unlocked puzzles, the way a profile is the same player at either door. So
-// the seat is always first and never leaves the table (a seat leaving forgets its guest, see
-// usePlayerData's forgetGuestSeat), and its guest is keyed and referred to as Single Player's guest.
+// packs, waiting puzzle and unlocked puzzles, the way a profile is the same player at either door. Its
+// guest is keyed and referred to as Single Player's guest wherever the seat sits, and the seat can leave
+// the table like any other (Jay, 2026-10-20: a parent's seat, for the children to play on their own),
+// though unlike any other seat's guest (usePlayerData's forgetGuestSeat), theirs keeps everything.
 export const SINGLE_PLAYER_SEAT_ID = 'p1'
 
 // A guest seat's own key: `guest-p2` for the seat whose id is p2, and Single Player's for seat 1.

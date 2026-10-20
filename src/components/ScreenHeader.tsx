@@ -9,6 +9,8 @@ export type ScreenHeaderProps = {
   icon: 'close' | 'arrow-left'
   label: string
   onPress: () => void
+  // Holds the screen open (Choose Packs with no pack selected).
+  disabled?: boolean
   title: string
   // Plain glyphs at its end (the pack editor's Share and Delete).
   trailing?: ReactNode
@@ -18,13 +20,13 @@ export type ScreenHeaderProps = {
 // Stats & Achievements, the Profiles screen): a plain glyph in the screen's ink, then the title, bold,
 // on the board itself rather than a bar of its own. The glyph is a 48pt target (hitSlop 4, as the
 // corners'). A long title (a custom pack's name, up to 60 characters) is cut short on one line.
-export const ScreenHeader = ({ icon, label, onPress, title, trailing }: ScreenHeaderProps): JSX.Element => {
+export const ScreenHeader = ({ icon, label, onPress, disabled = false, title, trailing }: ScreenHeaderProps): JSX.Element => {
   const theme = useTheme()
   const insets = useSafeAreaInsets()
   const ink = theme.colors.onSurface
   return (
     <View style={[styles.header, { paddingTop: 8 + insets.top }]}>
-      <IconButton icon={icon} iconColor={ink} size={24} hitSlop={4} onPress={onPress} accessibilityLabel={label} />
+      <IconButton icon={icon} iconColor={ink} size={24} hitSlop={4} onPress={onPress} disabled={disabled} accessibilityLabel={label} />
       <Text variant='headlineSmall' numberOfLines={1} accessibilityRole='header' style={[styles.title, { color: ink }]}>
         {title}
       </Text>

@@ -179,7 +179,7 @@ type SettingsRowProps = {
 // The player's settings, between the art and the packs card (Jay, 2026-10-18: right under the player
 // pill, the difficulty pill competed with it): Difficulty at the left edge, the reset at the right.
 // Over the packs card and Ready after it while Difficulty's popover is open, which drops down over
-// them (zIndex only orders one parent's children, as SeatsRow's open seat has it).
+// them (zIndex only orders one parent's children).
 const SettingsRow = memo(({ difficulty, onChangeDifficulty, canReset, onReset }: SettingsRowProps): JSX.Element => {
   const host = useLoadoutPopoverHost()
   const { openId } = host
@@ -582,6 +582,9 @@ export const LoadoutScreen = ({ mode: door }: LoadoutScreenProps): JSX.Element =
 
   const handleAdd = useCallback(() => dispatch(roundActions.addPnpPlayer()), [dispatch])
 
+  // A seat dragged into a new place (SeatsRow): everything kept by seat goes with it.
+  const handleReorder = useCallback((seatIds: string[]) => dispatch(roundActions.reorderPnpPlayers(seatIds)), [dispatch])
+
   // Straight away when nothing goes with the player; a confirm first when their standing or a word
   // waiting for them would. From the focused seat's glyph or any seat swiped away (SeatsRow). The
   // focus moves on when it was theirs, and what the seat's own guest kept
@@ -742,8 +745,10 @@ export const LoadoutScreen = ({ mode: door }: LoadoutScreenProps): JSX.Element =
 
   // Read through a ref by closeOverlay, so the shell's back listener needs nothing new each time.
   const packsScreenRef = useRef<PacksScreenHandle>(null)
-  // Choose Packs' own pack browser and editor sit above it, so they close first. The confirms answer
+  // Choose Packs' own pack browser and editor sit above it, so they close first, and Choose Packs
+  // itself stays open while no pack is selected (as its close glyph and Done do). The confirms answer
   // back themselves (each registers as it opens, so it runs first); this is the page's fallback.
+  const hasPacks = selectedPacks.length > 0
   const closeOverlay = useCallback(() => {
     if (resetVisible || removing || switching || clearing !== null) {
       setResetVisible(false)
@@ -751,10 +756,10 @@ export const LoadoutScreen = ({ mode: door }: LoadoutScreenProps): JSX.Element =
       setSwitching(null)
       setClearing(null)
     } else if (packsScreenVisible) {
-      if (!packsScreenRef.current?.closeTopOverlay()) setPacksScreenVisible(false)
+      if (!packsScreenRef.current?.closeTopOverlay() && hasPacks) setPacksScreenVisible(false)
     } else return false
     return true
-  }, [resetVisible, removing, switching, clearing, packsScreenVisible])
+  }, [resetVisible, removing, switching, clearing, packsScreenVisible, hasPacks])
   const closeAllOverlays = useCallback(() => {
     setPacksScreenVisible(false)
     setResetVisible(false)
@@ -829,7 +834,7 @@ export const LoadoutScreen = ({ mode: door }: LoadoutScreenProps): JSX.Element =
           {/* First, under everything a tap should reach while a popover is open (the lifted group). */}
           <LoadoutPressAway style={styles.pressAway} />
           <PageGroup testID='loadout-above-art' lift={isPlayerPickerOpen} onHeight={setAboveHeight}>
-            {table ? <SeatsRow players={players} focusedId={focusedSeat.id} standings={standings} showStandings={sessionStarted} onFocus={handleFocus} onPick={handlePick} onRemove={handleRemove} removingId={removing?.id ?? null} onNewSession={sessionUnderWay ? openNewSession : undefined} /> : <PlayerRow />}
+            {table ? <SeatsRow players={players} focusedId={focusedSeat.id} standings={standings} showStandings={sessionStarted} onFocus={handleFocus} onPick={handlePick} onRemove={handleRemove} onReorder={handleReorder} removingId={removing?.id ?? null} onNewSession={sessionUnderWay ? openNewSession : undefined} /> : <PlayerRow />}
           </PageGroup>
           <PageArtCarousel coveredOnPage={coveredOnPage} artHeight={artHeight} measured={measured} />
           <PageGroup testID='loadout-below-art' lift={isDifficultyOpen} onHeight={setBelowHeight} shrink={swapSlack} measured={measured} end>

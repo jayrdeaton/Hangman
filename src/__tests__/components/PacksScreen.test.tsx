@@ -430,13 +430,29 @@ describe('PacksScreen', () => {
     })
   })
 
-  it('calls onDismiss when closed from the list root', async () => {
+  it('calls onDismiss when closed from the list root, or Done', async () => {
     const onDismiss = jest.fn()
-    const { getByLabelText } = await renderScreen({ onDismiss })
+    const packs = getPuzzleManifest().filter((item) => item.count > 0)
+    const { getByLabelText, getByText } = await renderScreen({ onDismiss, selectedKeys: [packs[0].key] })
 
     await fireEvent.press(getByLabelText('Close'))
+    await fireEvent.press(getByText(`Done (1 of ${packs.length})`))
 
-    expect(onDismiss).toHaveBeenCalledTimes(1)
+    expect(onDismiss).toHaveBeenCalledTimes(2)
+  })
+
+  // Jay, 2026-10-20: nothing to play from, so it stays open until a pack is picked.
+  it('stays open while no pack is selected, its close glyph and Done off, and Done saying what it needs', async () => {
+    const onDismiss = jest.fn()
+    const screen = await renderScreen({ onDismiss })
+
+    expect(screen.getByLabelText('Close').props.accessibilityState?.disabled).toBe(true)
+    expect(screen.getByRole('button', { name: 'Choose at least one pack' }).props.accessibilityState?.disabled).toBe(true)
+    await fireEvent.press(screen.getByLabelText('Close'))
+    await fireEvent.press(screen.getByText('Choose at least one pack'))
+    expect(screen.getByTestId('packs-screen-panel').props.onAccessibilityEscape).toBeUndefined()
+
+    expect(onDismiss).not.toHaveBeenCalled()
   })
 
   it('always reopens at the list step, even if it was left mid-edit', async () => {
@@ -617,7 +633,7 @@ describe('PacksScreen', () => {
       await fireEvent.press(allPacksBox(screen))
       expectAllPacks(screen, false)
       expect(checkboxState(screen, packA.label)).toBe(false)
-      expect(screen.getByText(`Done (0 of ${allPacks().length})`)).toBeTruthy()
+      expect(screen.getByText('Choose at least one pack')).toBeTruthy()
 
       await fireEvent.press(screen.getByLabelText(packB.label))
       expectAllPacks(screen, 'mixed')

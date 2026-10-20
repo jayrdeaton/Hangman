@@ -1,6 +1,6 @@
 import type { Profile } from '@tastic/profile'
 
-import { guestSeatRef, isPlayerKey, isProfileId, type PlayerRef, SINGLE_PLAYER_SEAT_ID } from './players'
+import { guestSeatRef, isPlayerKey, isProfileId, type PlayerRef } from './players'
 
 // A Pass & Play session: who is at the table, how each of them has done so far, who writes and who
 // guesses the word on the board, where the words come from and which seat the loadout is showing. It
@@ -11,14 +11,13 @@ import { guestSeatRef, isPlayerKey, isProfileId, type PlayerRef, SINGLE_PLAYER_S
 // clearPnpProfile). Each guest seat is a player of its own (utils/players.ts' guestSeatKey: its own art,
 // difficulty, packs, colors, waiting solo round and unlocked puzzles), kept for as long as the seat is at
 // the table, a profile sitting there in the meantime included (see seatPlayer and usePlayerData's
-// forgetGuestSeat). Seat 1's guest is Single Player's guest (players.ts' SINGLE_PLAYER_SEAT_ID), so
-// seat 1 is always first and never leaves.
+// forgetGuestSeat). Seat 1's guest (the seat whose id is p1, wherever it sits) is Single Player's guest
+// (players.ts' SINGLE_PLAYER_SEAT_ID), whose things stay when the seat leaves.
 //
 // The players take turns, either writing words for each other or from the packs (a pack turn: one
 // player's own solo round, see packTurns.ts). Both count into the same standings, by seat, so a
-// session can switch between them and carry on. A session is open-ended: it runs until someone ends it
-// from the round-over card (or starts a new one from the loadout), and its winner is whoever has the
-// best win rate among the players who guessed at least once (see getSessionResult).
+// session can switch between them and carry on. A session is open-ended: it runs until the players
+// start a new one from the loadout (New session), which clears the standings.
 
 export const MIN_PNP_PLAYERS = 2
 // Enough for a family or a table of friends, and few enough that the standings still fit the
@@ -68,7 +67,7 @@ export type PnpSession = {
   focusedId: string
   // The seat whose pack turn it is: under way, or played and counted until the next one starts (so the
   // next fair pick goes around the table after it). Null before a session's first pack turn, after a
-  // new session or End Session, and once the seat it named leaves the table.
+  // new session, and once the seat it named leaves the table.
   turnId: string | null
   // The pack turn's round once it's been counted into the standings, as packTurnRoundKey has it (a
   // player's key and their round's id: solo round ids only differ within one player's slot), or null
@@ -87,8 +86,6 @@ export type PnpSeatIdentity = { name: string; profile: Profile | null }
 
 // What the standings lists show: a seat with its rounds this session, and its profile, for its chip.
 export type PnpStandingRow = { id: string; name: string; profile?: Profile | null; played: number; wins: number }
-
-export type PnpSessionResult = { kind: 'winner'; winner: PnpStandingRow } | { kind: 'tie'; tied: PnpStandingRow[] } | { kind: 'none' }
 
 const NO_STANDING: PnpStanding = Object.freeze({ played: 0, wins: 0 })
 
@@ -195,39 +192,9 @@ export const createDefaultPnpSession = (): PnpSession => ({
 // roster; without it every seat reads as its stored name, with no profile).
 export const getStandingRows = (session: Pick<PnpSession, 'players' | 'standings'>, profiles: readonly Profile[] = []): PnpStandingRow[] => session.players.map((player) => ({ id: player.id, ...identityOf(player, profiles), ...getStanding(session, player.id) }))
 
-// Positive when `b` has the better win rate, compared without division so equal rates (1 of 2 and
-// 2 of 4) are exactly equal.
-const compareRates = (a: PnpStandingRow, b: PnpStandingRow): number => b.wins * a.played - a.wins * b.played
-
-// Best win rate first, more words solved breaking an equal rate, then seat order; players who haven't
-// guessed yet go last, in seat order.
-export const rankStandingRows = (rows: PnpStandingRow[]): PnpStandingRow[] =>
-  rows
-    .map((row, seat) => ({ row, seat }))
-    .sort((a, b) => {
-      const aGuessed = a.row.played > 0
-      if (aGuessed !== b.row.played > 0) return aGuessed ? -1 : 1
-      return compareRates(a.row, b.row) || b.row.wins - a.row.wins || a.seat - b.seat
-    })
-    .map(({ row }) => row)
-
-// The session's winner: the best win rate among the players who guessed at least once. Equal best
-// rates are a tie (Jay's call). A session nobody guessed in, or one where nobody solved a word, has
-// no winner: a 0% "best" would crown someone for losing every word they guessed.
-export const getSessionResult = (rows: PnpStandingRow[]): PnpSessionResult => {
-  const guessed = rows.filter((row) => row.played > 0)
-  if (!guessed.some((row) => row.wins > 0)) return { kind: 'none' }
-  const best = guessed.reduce((leader, row) => (compareRates(leader, row) > 0 ? row : leader))
-  const tied = guessed.filter((row) => compareRates(row, best) === 0)
-  return tied.length === 1 ? { kind: 'winner', winner: tied[0] } : { kind: 'tie', tied }
-}
-
 // The fleet's "-" for a rate with nothing played yet, as on the Stats screen, rather than a 0% that
 // reads as a real result.
 export const formatWinRate = ({ wins, played }: PnpStanding): string => (played > 0 ? `${Math.round((wins / played) * 100)}%` : '-')
-
-// "Player 1", "Player 1 and Player 2", "Player 1, Player 2 and Player 3".
-export const joinNames = (names: string[]): string => (names.length <= 1 ? (names[0] ?? '') : `${names.slice(0, -1).join(', ')} and ${names[names.length - 1]}`)
 
 const isRecord = (value: unknown): value is Record<string, unknown> => !!value && typeof value === 'object' && !Array.isArray(value)
 const isCount = (value: unknown): value is number => typeof value === 'number' && Number.isInteger(value) && value >= 0
@@ -236,8 +203,7 @@ const SOURCES: WordSource[] = ['packs', 'write']
 const TURN_ROUND_KEY = /^[^:]+:\d+$/
 
 // The seats that pass, in order, every guest named for their seat (a guest's stored name isn't
-// trusted: names come from the seat), or null for a table that can't stand (seat 1 not first among
-// them included: its guest is Single Player's, see SINGLE_PLAYER_SEAT_ID).
+// trusted: names come from the seat), or null for a table that can't stand.
 const sanitizePlayers = (value: unknown): PnpPlayer[] | null => {
   if (!Array.isArray(value)) return null
   const players: PnpPlayer[] = []
@@ -249,11 +215,11 @@ const sanitizePlayers = (value: unknown): PnpPlayer[] | null => {
     if (!name || players.some((other) => other.id === item.id || (profileId !== null && other.profileId === profileId))) return null
     players.push({ id: item.id, name, profileId })
   }
-  return players.length >= MIN_PNP_PLAYERS && players.length <= MAX_PNP_PLAYERS && players[0].id === SINGLE_PLAYER_SEAT_ID ? players : null
+  return players.length >= MIN_PNP_PLAYERS && players.length <= MAX_PNP_PLAYERS ? players : null
 }
 
 // Checks a stored session before it's trusted (sanitizeRoundState runs it on the Pass & Play round's
-// session). A table that doesn't pass (too few or too many seats, seat 1 not first, a seat without a usable id, a
+// session). A table that doesn't pass (too few or too many seats, a seat without a usable id, a
 // profile's seat without a usable name, two seats sharing an id, one profile in two seats) starts a
 // fresh session. With the table kept, a standing that doesn't pass is dropped (that seat hasn't
 // guessed); a writer, focus or guesser who isn't at the table falls back to the first seat and the

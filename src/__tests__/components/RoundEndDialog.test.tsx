@@ -3,7 +3,7 @@ import { FeedbackPressProvider } from '@rific/feedback-press'
 import type { Profile } from '@tastic/profile'
 import { fireEvent, render as rtlRender } from '@testing-library/react-native'
 import type { ReactElement, ReactNode } from 'react'
-import { AccessibilityInfo, BackHandler, type StyleProp, StyleSheet, type ViewStyle } from 'react-native'
+import { AccessibilityInfo, BackHandler, StyleSheet } from 'react-native'
 import * as RNPaper from 'react-native-paper'
 
 import { fitAnswerFontSize, type PnpRoundSummary, RoundEndDialog, type RoundEndDialogProps } from '@/components/RoundEndDialog'
@@ -58,8 +58,6 @@ const answerWords = (wordCount: number) => mockSketchWord.mock.calls.slice(-word
 // Players on the roster: each chip shows its profile's tag.
 const ALICE: Profile = { id: 'profile-a', name: 'Alice', color: '#9c27b0', tag: 'A', createdAt: 1, updatedAt: 1 }
 const BOB: Profile = { id: 'profile-b', name: 'Bob', color: '#4caf50', tag: 'B', createdAt: 2, updatedAt: 2 }
-const SOLVED_IT = { id: 'first_ever_win', title: 'Solved It', icon: 'star', tier: 'bronze' as const }
-const DAY_ONE = { id: 'days_played_1', title: 'Day One', icon: 'calendar', tier: 'bronze' as const }
 
 describe('RoundEndDialog', () => {
   beforeEach(() => {
@@ -142,76 +140,13 @@ describe('RoundEndDialog', () => {
     expect(themeColors().error).not.toBe('#DC362E')
   })
 
-  // A solo round's unlocks belong to whoever played it: a profile is named, beside their chip.
-  it("names a profile's unlocks after them, and announces them that way", async () => {
-    const announce = jest.spyOn(AccessibilityInfo, 'announceForAccessibility')
-    const unlocksOwner = { id: 'profile-a', name: 'Alice', color: '#9c27b0', tag: 'A', createdAt: 1, updatedAt: 1 }
-    const unlockedAchievements = [{ id: 'first_ever_win', title: 'Solved It', icon: 'star', tier: 'bronze' as const }]
-    const { getByText, queryByText } = await renderDialog({ unlocks: [{ owner: unlocksOwner, achievements: unlockedAchievements }] })
-
-    expect(getByText('Alice Unlocked')).toBeTruthy()
-    expect(queryByText('Achievement Unlocked')).toBeNull()
-    expect(getByText('Solved It')).toBeTruthy()
-    // Her chip, with her tag, leads the heading.
-    expect(getByText('Alice Unlocked').parent!.children.length).toBe(2)
-    expect(getByText('A')).toBeTruthy()
-    expect(announce).toHaveBeenLastCalledWith(expect.stringContaining('Alice unlocked: Solved It.'))
-    announce.mockRestore()
-  })
-
-  // A Pass & Play round's guesser and writer can both be profiles, each with their own unlocks.
-  it("shows each player's unlocks under their own name, and announces each block", async () => {
-    const announce = jest.spyOn(AccessibilityInfo, 'announceForAccessibility')
-    const { getByText } = await renderDialog({
-      unlocks: [
-        { owner: ALICE, achievements: [SOLVED_IT] },
-        { owner: BOB, achievements: [DAY_ONE] }
-      ]
-    })
-
-    expect(getByText('Alice Unlocked')).toBeTruthy()
-    expect(getByText('Bob Unlocked')).toBeTruthy()
-    expect(announce).toHaveBeenLastCalledWith(expect.stringContaining('Alice unlocked: Solved It. Bob unlocked: Day One.'))
-    announce.mockRestore()
-  })
-
-  it('leaves out a block with nothing in it', async () => {
-    const { queryByText, getByText } = await renderDialog({
-      unlocks: [
-        { owner: null, achievements: [SOLVED_IT] },
-        { owner: BOB, achievements: [] }
-      ]
-    })
-
-    expect(getByText('Achievement Unlocked')).toBeTruthy()
-    expect(queryByText('Bob Unlocked')).toBeNull()
-  })
-
-  it("lists new achievements with their own icon on their tier's color, and shows pack progress on wins only", async () => {
+  // Jay, 2026-10-20: new achievements are toasts (the game screen's), not rows on the card.
+  it('shows pack progress on wins only, and no achievements', async () => {
     const categoryProgress = { label: 'Animals', unlockedCount: 3, totalCount: 40 }
-    const unlockedAchievements = [
-      { id: 'first_ever_win', title: 'Solved It', icon: 'star', tier: 'bronze' as const },
-      { id: 'flawless_debut', title: "Beginner's Luck", icon: 'star-circle', tier: 'gold' as const }
-    ]
-    const { getByText } = await renderDialog({ categoryProgress, unlocks: [{ owner: null, achievements: unlockedAchievements }] })
+    const { getByText, queryByText } = await renderDialog({ categoryProgress })
 
-    expect(getByText('Achievements Unlocked')).toBeTruthy()
-    expect(getByText('Solved It')).toBeTruthy()
-    expect(getByText("Beginner's Luck")).toBeTruthy()
-    // Each badge is the achievement's icon in black on its tier's color (bronze, then gold).
-    const badges = mockIcon.mock.calls.map(([props]) => props).filter((props) => props.source === 'star' || props.source === 'star-circle')
-    expect(badges.map((props) => [props.source, props.color])).toEqual([
-      ['star', '#000000'],
-      ['star-circle', '#000000']
-    ])
-    // Each row is the badge (a View in the tier color) and then the title.
-    const badgeColor = (title: string) => {
-      const badge = getByText(title).parent!.children[0] as unknown as { props: { style: StyleProp<ViewStyle> } }
-      return StyleSheet.flatten(badge.props.style)?.backgroundColor
-    }
-    expect(badgeColor('Solved It')).toBe('#CD7F32') // bronze
-    expect(badgeColor("Beginner's Luck")).toBe('#FFD54F') // gold
     expect(getByText('3 of 40 unlocked in Animals')).toBeTruthy()
+    expect(queryByText(/Unlocked$/)).toBeNull()
 
     const loss = await renderDialog({ outcome: 'loss', guessedLetters: ['Q'], categoryProgress })
     expect(loss.queryByText('3 of 40 unlocked in Animals')).toBeNull()
@@ -302,7 +237,7 @@ describe('RoundEndDialog (Pass & Play)', () => {
   })
 
   it('says who guessed whose word, shows the standings with the guesser in bold, and who writes next', async () => {
-    const { getByText, getByLabelText } = await renderDialog({ passAndPlay: summary(), onEndSession: jest.fn() })
+    const { getByText, getByLabelText } = await renderDialog({ passAndPlay: summary(), onBack: jest.fn() })
 
     expect(getByText('You Won!')).toBeTruthy()
     expect(getByText("Bo solved Ann's word.")).toBeTruthy()
@@ -321,18 +256,20 @@ describe('RoundEndDialog (Pass & Play)', () => {
     expect(getByText("Bo missed Ann's word.")).toBeTruthy()
   })
 
-  it('offers End Session beside Next, each doing only its own thing', async () => {
-    const onEndSession = jest.fn()
+  // Jay, 2026-10-20: a plain word for kids, in place of End Session.
+  it('offers Back beside Next, each doing only its own thing', async () => {
+    const onBack = jest.fn()
     const onDismiss = jest.fn()
-    const { getByText } = await renderDialog({ passAndPlay: summary(), onEndSession, onDismiss })
+    const { getByText, queryByText } = await renderDialog({ passAndPlay: summary(), onBack, onDismiss })
 
-    await fireEvent.press(getByText('End Session'))
-    expect(onEndSession).toHaveBeenCalledTimes(1)
+    expect(queryByText('End Session')).toBeNull()
+    await fireEvent.press(getByText('Back'))
+    expect(onBack).toHaveBeenCalledTimes(1)
     expect(onDismiss).not.toHaveBeenCalled()
 
     await fireEvent.press(getByText('Next'))
     expect(onDismiss).toHaveBeenCalledTimes(1)
-    expect(onEndSession).toHaveBeenCalledTimes(1)
+    expect(onBack).toHaveBeenCalledTimes(1)
   })
 
   // A player sitting as a profile is named with their chip; with one at the table, a guest's standing
@@ -366,7 +303,7 @@ describe('RoundEndDialog (Pass & Play)', () => {
     const { queryByText } = await renderDialog()
 
     expect(queryByText('Standings')).toBeNull()
-    expect(queryByText('End Session')).toBeNull()
+    expect(queryByText('Back')).toBeNull()
     expect(queryByText(/writes next/)).toBeNull()
   })
 
@@ -384,14 +321,14 @@ describe('RoundEndDialog (Pass & Play)', () => {
     const turn = (overrides: Partial<PnpRoundSummary> = {}): PnpRoundSummary => ({ ...summary({ playerId: 'p1', playerName: 'Alice', writerName: undefined, nextName: 'Bob' }), ...overrides })
 
     it("says who solved it or missed it, the standings with their row in bold, and who's up next", async () => {
-      const { getByText, queryByText, getByLabelText } = await renderDialog({ passAndPlay: turn({ standings: [{ id: 'p1', name: 'Alice', played: 1, wins: 1 }] }), onEndSession: jest.fn() })
+      const { getByText, queryByText, getByLabelText } = await renderDialog({ passAndPlay: turn({ standings: [{ id: 'p1', name: 'Alice', played: 1, wins: 1 }] }), onBack: jest.fn() })
 
       expect(getByText('Alice solved it.')).toBeTruthy()
       expect(getByLabelText('Alice: 1 of 1 solved')).toBeTruthy()
       expect(StyleSheet.flatten(getByText('Alice').props.style).fontWeight).toBe('700')
       expect(getByText('Bob is up next')).toBeTruthy()
       expect(queryByText(/writes next/)).toBeNull()
-      expect(getByText('End Session')).toBeTruthy()
+      expect(getByText('Back')).toBeTruthy()
     })
 
     it('says it was missed on a loss', async () => {
@@ -401,12 +338,10 @@ describe('RoundEndDialog (Pass & Play)', () => {
       expect(getByText('Alice missed it.')).toBeTruthy()
     })
 
-    it("keeps the solo card's pack progress and the player's unlocks, under their name", async () => {
-      const { getByText } = await renderDialog({ passAndPlay: turn({ playerProfile: ALICE }), categoryProgress: { label: 'Animals', unlockedCount: 3, totalCount: 40 }, unlocks: [{ owner: ALICE, achievements: [SOLVED_IT] }] })
+    it("keeps the solo card's pack progress", async () => {
+      const { getByText } = await renderDialog({ passAndPlay: turn({ playerProfile: ALICE }), categoryProgress: { label: 'Animals', unlockedCount: 3, totalCount: 40 } })
 
       expect(getByText('3 of 40 unlocked in Animals')).toBeTruthy()
-      expect(getByText('Alice Unlocked')).toBeTruthy()
-      expect(getByText('Solved It')).toBeTruthy()
     })
 
     it("puts the players' chips on the result and up next lines", async () => {
@@ -441,10 +376,10 @@ describe('RoundEndDialog (Pass & Play)', () => {
       await renderDialog({ phrase: LONG, guessedLetters: [] })
       const solo = answerSize()
 
-      await renderDialog({ phrase: LONG, guessedLetters: [], passAndPlay: summary({ standings: standings(2) }), onEndSession: jest.fn() })
+      await renderDialog({ phrase: LONG, guessedLetters: [], passAndPlay: summary({ standings: standings(2) }), onBack: jest.fn() })
       const twoPlayers = answerSize()
 
-      await renderDialog({ phrase: LONG, guessedLetters: [], passAndPlay: summary({ standings: standings(8) }), onEndSession: jest.fn() })
+      await renderDialog({ phrase: LONG, guessedLetters: [], passAndPlay: summary({ standings: standings(8) }), onBack: jest.fn() })
       const eightPlayers = answerSize()
 
       expect(twoPlayers).toBeLessThan(solo)
@@ -454,20 +389,20 @@ describe('RoundEndDialog (Pass & Play)', () => {
 
     // A pack turn's card has the solo card's progress row as well as the session's pieces.
     it("fits a pack turn's card too, its pack progress included, down to the floor with a full table", async () => {
-      await renderDialog({ phrase: LONG, guessedLetters: [], passAndPlay: summary({ writerName: undefined, standings: standings(2) }), onEndSession: jest.fn() })
+      await renderDialog({ phrase: LONG, guessedLetters: [], passAndPlay: summary({ writerName: undefined, standings: standings(2) }), onBack: jest.fn() })
       const twoPlayers = answerSize()
 
-      await renderDialog({ phrase: LONG, guessedLetters: [], passAndPlay: summary({ writerName: undefined, standings: standings(2) }), categoryProgress: { label: 'Phrases', unlockedCount: 1, totalCount: 900 }, onEndSession: jest.fn() })
+      await renderDialog({ phrase: LONG, guessedLetters: [], passAndPlay: summary({ writerName: undefined, standings: standings(2) }), categoryProgress: { label: 'Phrases', unlockedCount: 1, totalCount: 900 }, onBack: jest.fn() })
       const withProgress = answerSize()
 
-      await renderDialog({ phrase: LONG, guessedLetters: [], passAndPlay: summary({ writerName: undefined, standings: standings(8) }), categoryProgress: { label: 'Phrases', unlockedCount: 1, totalCount: 900 }, onEndSession: jest.fn() })
+      await renderDialog({ phrase: LONG, guessedLetters: [], passAndPlay: summary({ writerName: undefined, standings: standings(8) }), categoryProgress: { label: 'Phrases', unlockedCount: 1, totalCount: 900 }, onBack: jest.fn() })
 
       expect(withProgress).toBeLessThan(twoPlayers)
       expect(answerSize()).toBe(20)
     })
 
     it('keeps a short answer at the headline size with a full table', async () => {
-      await renderDialog({ passAndPlay: summary({ standings: standings(8) }), onEndSession: jest.fn() })
+      await renderDialog({ passAndPlay: summary({ standings: standings(8) }), onBack: jest.fn() })
 
       expect(answerWords(1)[0].fontSize).toBe(40)
     })

@@ -1,5 +1,6 @@
 import { type Profile, profilesActions } from '@tastic/profile'
 
+import { playerSettingsActions } from '@/redux/playerSettingsSlice'
 import reducer, { initialRoundState, roundActions, type RoundState, type SavedPuzzle, selectSoloRound } from '@/redux/roundSlice'
 import { GUEST_PLAYER_KEY, guestSeatKey } from '@/utils/players'
 import { createDefaultPnpSession, type PnpSession } from '@/utils/pnpSession'
@@ -91,6 +92,64 @@ describe("each player's own solo round", () => {
 
     expect(reducer(before, roundActions.clearSolo(OTHER)).solo[GUEST_PLAYER_KEY]).toEqual(before.solo[GUEST_PLAYER_KEY])
     expect(reducer(before, roundActions.removeSolo(OTHER)).solo).toEqual({ [GUEST_PLAYER_KEY]: before.solo[GUEST_PLAYER_KEY] })
+  })
+})
+
+// Jay, 2026-10-20: a puzzle from a pack just switched off, never tried, was still what Ready picked up.
+describe("a player's new packs or difficulty", () => {
+  const nhl = (overrides: Partial<SavedPuzzle> = {}, playerKey = GUEST_PLAYER_KEY) => startSolo({ packKey: 'sports-nhl', puzzleId: 'nhl:1', difficultyTier: 'hard', ...overrides }, playerKey)
+  const setPacks = (packKeys: string[] | null, playerKey = GUEST_PLAYER_KEY) => playerSettingsActions.setPackKeys({ playerKey, packKeys })
+  const setDifficulty = (difficulty: 'any' | 'easy' | 'medium' | 'hard', playerKey = GUEST_PLAYER_KEY) => playerSettingsActions.setDifficulty({ playerKey, difficulty })
+
+  it('drops an untouched round whose pack is no longer picked, under the next id, so Ready draws one from the new picks', () => {
+    const before = run([nhl()])
+    const next = reducer(before, setPacks(['animals']))
+
+    expect(guest(next)).toEqual({ id: guest(before).id + 1, puzzle: null, guessedLetters: [], hintRevealed: false })
+  })
+
+  it('drops an untouched round of another difficulty, the hint opened or not', () => {
+    const before = run([nhl(), saveSolo([], true)])
+
+    expect(guest(reducer(before, setDifficulty('easy'))).puzzle).toBeNull()
+  })
+
+  it.each([
+    ['its pack still picked', setPacks(['animals', 'sports-nhl'])],
+    ['every pack picked', setPacks(null)],
+    ['its own difficulty', setDifficulty('hard')],
+    ['any difficulty', setDifficulty('any')]
+  ])('keeps an untouched round with %s', (_label, action) => {
+    const before = run([nhl()])
+
+    expect(reducer(before, action)).toBe(before)
+  })
+
+  it('keeps a round with a guess on it for the player to finish', () => {
+    const before = run([nhl(), saveSolo(['E'])])
+
+    expect(guest(run([setPacks(['animals']), setDifficulty('easy')], before))).toEqual(guest(before))
+  })
+
+  it('never pulls the round out from under an open board', () => {
+    const before = run([nhl(), roundActions.setActiveMode('solo')])
+
+    expect(run([setPacks(['animals']), setDifficulty('easy')], before)).toBe(before)
+  })
+
+  // No pack drew it.
+  it('keeps a shared puzzle', () => {
+    const before = run([startSolo({ sourceMode: 'custom' })])
+
+    expect(run([setPacks(['animals']), setDifficulty('easy')], before)).toBe(before)
+  })
+
+  it("touches only that player's round", () => {
+    const before = run([nhl(), nhl({}, OTHER)])
+    const next = reducer(before, setPacks(['animals'], OTHER))
+
+    expect(guest(next)).toEqual(guest(before))
+    expect(selectSoloRound(next, OTHER).puzzle).toBeNull()
   })
 })
 
@@ -330,7 +389,7 @@ describe('the Pass & Play round', () => {
 
   it('never touches the solo round or the open game', () => {
     const before = run([roundActions.setActiveMode('pnp')], midGame())
-    const next = run([roundActions.startPnpAuthoring(), roundActions.setPnpDraft({ answer: 'CAT', hint: '' }), roundActions.setPnpWord(puzzle()), roundActions.startPnpPlaying(), roundActions.savePnpProgress({ guessedLetters: ['A'], hintRevealed: false }), roundActions.recordPnpResult({ roundId: before.pnp.id + 1, result: 'win' }), roundActions.addPnpPlayer(), roundActions.focusPnpSeat('p3'), roundActions.setPnpSource('packs'), roundActions.removePnpPlayer('p3'), roundActions.startPnpSession(), roundActions.endPnpSession()], before)
+    const next = run([roundActions.startPnpAuthoring(), roundActions.setPnpDraft({ answer: 'CAT', hint: '' }), roundActions.setPnpWord(puzzle()), roundActions.startPnpPlaying(), roundActions.savePnpProgress({ guessedLetters: ['A'], hintRevealed: false }), roundActions.recordPnpResult({ roundId: before.pnp.id + 1, result: 'win' }), roundActions.addPnpPlayer(), roundActions.focusPnpSeat('p3'), roundActions.setPnpSource('packs'), roundActions.removePnpPlayer('p3'), roundActions.startPnpSession()], before)
 
     expect(next.solo).toEqual(before.solo)
     expect(next.activeMode).toBe('pnp')
@@ -441,7 +500,7 @@ describe('the Pass & Play session', () => {
     })
   })
 
-  describe('startPnpSession and endPnpSession', () => {
+  describe('startPnpSession', () => {
     const played = (): RoundState => run([roundActions.startPnpAuthoring()], decide(inPlay(threePlayers())))
 
     it('New Session clears the standings and keeps the table, the first seat writing a blank prompt', () => {
@@ -449,26 +508,6 @@ describe('the Pass & Play session', () => {
       const next = reducer(before, roundActions.startPnpSession())
 
       expect(next.pnp).toEqual({ id: before.pnp.id + 1, puzzle: null, guessedLetters: [], hintRevealed: false, phase: 'authoring', session: { ...session(before), standings: {}, writerId: 'p1', guesserId: 'p2', recordedRoundId: null } })
-    })
-
-    it('End Session clears the standings and keeps the table with nothing in play, leaving the finished board drawn', () => {
-      const before = decide(inPlay(threePlayers()))
-      const next = reducer(before, roundActions.endPnpSession())
-
-      expect(next.pnp).toEqual({ ...before.pnp, phase: null, session: { ...session(before), standings: {}, writerId: 'p1', guesserId: 'p2', recordedRoundId: null } })
-    })
-
-    it('End Session drops a word being written', () => {
-      const before = run([roundActions.startPnpAuthoring(), roundActions.setPnpDraft({ answer: 'CAT', hint: '' })])
-
-      expect(reducer(before, roundActions.endPnpSession()).pnp).not.toHaveProperty('draft')
-    })
-
-    it('starts the next visit at a prompt for the first seat, with no move around the table', () => {
-      const next = run([roundActions.endPnpSession(), roundActions.startPnpAuthoring()], decide(inPlay()))
-
-      expect(session(next)).toMatchObject({ writerId: 'p1', guesserId: 'p2', standings: {} })
-      expect(next.pnp.phase).toBe('authoring')
     })
   })
 
@@ -502,6 +541,34 @@ describe('the Pass & Play session', () => {
     })
   })
 
+  // Jay, 2026-10-20: the seats dragged into a new order on the loadout.
+  describe('reorderPnpPlayers', () => {
+    const reorder = (state: RoundState, ids: string[]) => reducer(state, roundActions.reorderPnpPlayers(ids))
+
+    it('puts the seats in the new order, the guests named for their new places, and everything kept by seat going with it', () => {
+      const before = run([roundActions.setPnpSeatProfile({ id: 'p2', profile: { id: OTHER, name: 'Alice' } }), roundActions.focusPnpSeat('p3')], decide(inPlay(threePlayers())))
+      const next = reorder(before, ['p3', 'p1', 'p2'])
+
+      expect(session(next).players).toEqual([
+        { id: 'p3', name: 'Player 1', profileId: null },
+        { id: 'p1', name: 'Player 2', profileId: null },
+        { id: 'p2', name: 'Alice', profileId: OTHER }
+      ])
+      expect({ ...session(next), players: session(before).players }).toEqual(session(before))
+    })
+
+    it.each([
+      ['the same order', ['p1', 'p2', 'p3']],
+      ['a seat missing', ['p2', 'p1']],
+      ['a seat twice', ['p2', 'p2', 'p1']],
+      ['a seat not at the table', ['p2', 'p1', 'p9']]
+    ])('changes nothing for %s', (_label, ids) => {
+      const before = threePlayers()
+
+      expect(reorder(before, ids)).toBe(before)
+    })
+  })
+
   describe('removePnpPlayer', () => {
     const remove = (state: RoundState, id: string) => reducer(state, roundActions.removePnpPlayer(id))
     const ids = (state: RoundState) => session(state).players.map((player) => player.id)
@@ -513,11 +580,16 @@ describe('the Pass & Play session', () => {
       expect(remove(initialRoundState, 'p2')).toBe(initialRoundState)
     })
 
-    // Seat 1's guest is Single Player's (players.ts' SINGLE_PLAYER_SEAT_ID).
-    it('never removes seat 1', () => {
-      const before = threePlayers()
+    // Jay, 2026-10-20: a parent's seat, for the children to play on their own. Its guest is Single
+    // Player's, who keeps what they have (see usePlayerData's forgetGuestSeat).
+    it('removes seat 1 like any other, the seats after it moving up a number', () => {
+      const next = remove(threePlayers(), 'p1')
 
-      expect(remove(before, 'p1')).toBe(before)
+      expect(session(next).players).toEqual([
+        { id: 'p2', name: 'Player 1', profileId: null },
+        { id: 'p3', name: 'Player 2', profileId: null }
+      ])
+      expect(session(next)).toMatchObject({ writerId: 'p2', guesserId: 'p3', focusedId: 'p2' })
     })
 
     it('removes the seat and its standing, the guests after it moving up a number', () => {
@@ -695,12 +767,9 @@ describe('pack turns', () => {
     expect(session(reducer(gone, roundActions.startPackTurn())).turnId).toBe('p3')
   })
 
-  it.each([
-    ['New session', roundActions.startPnpSession()],
-    ['End Session', roundActions.endPnpSession()]
-  ])('starts the rotation over from the first seat after %s', (_label, action) => {
+  it('starts the rotation over from the first seat after New session', () => {
     const before = run([roundActions.startPackTurn(), count(ALICE, 1), roundActions.startPackTurn()], table())
-    const next = reducer(before, action)
+    const next = reducer(before, roundActions.startPnpSession())
 
     expect(session(next)).toMatchObject({ standings: {}, turnId: null, recordedTurnRound: null })
     expect(session(reducer(next, roundActions.startPackTurn())).turnId).toBe('p1')

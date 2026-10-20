@@ -10,17 +10,17 @@ import { useActiveGame } from '@/hooks/useActiveGame'
 import { useActivePlayer } from '@/hooks/useActivePlayer'
 import { useAutoSaveCustom } from '@/hooks/useAutoSaveCustom'
 import { useCatalogActions } from '@/hooks/useCatalog'
-import { type PnpRoundUnlocks, useGameStats } from '@/hooks/useGameStats'
+import { useGameStats } from '@/hooks/useGameStats'
 import { usePackSelection } from '@/hooks/usePackSelection'
-import { useActiveProfile, useProfiles, useProfilesActions } from '@/hooks/useProfiles'
+import { useProfiles, useProfilesActions } from '@/hooks/useProfiles'
 import { usePuzzleDefaults } from '@/hooks/usePuzzleDefaults'
 import { usePuzzleUnlocks } from '@/hooks/usePuzzleUnlocks'
+import { useUnlockToasts } from '@/hooks/useUnlockToasts'
 import { DEFAULT_PLAYER_SETTINGS } from '@/redux/playerSettingsSlice'
 import { type PlayMode, roundActions, type RoundProgress, type SavedPuzzle, type SavedRound, selectSoloRound } from '@/redux/roundSlice'
 import type { RootState } from '@/redux/store'
 import type { GameMode } from '@/types/gameModes'
 import type { GameStartPayload } from '@/types/gameSession'
-import type { UnlockedAchievement } from '@/types/stats'
 import { alert } from '@/utils/alert'
 import { addCustomPuzzle, PNP_QUICK_PACK_LABEL, scoreDifficulty } from '@/utils/customPacks'
 import { loadoutHref } from '@/utils/navigation'
@@ -37,9 +37,8 @@ import { gameShell } from '@/utils/webLayout'
 
 import { Game, type LossDetails, type SolveDetails } from './Game'
 import { PnpHandoffDialog } from './PnpHandoffDialog'
-import { PnpSessionEndDialog } from './PnpSessionEndDialog'
 import { PnpWordPrompt } from './PnpWordPrompt'
-import { type CategoryProgress, type PnpRoundSummary, type RoundUnlocks } from './RoundEndDialog'
+import { type CategoryProgress, type PnpRoundSummary } from './RoundEndDialog'
 import { SettingsDialog } from './SettingsDialog'
 
 const randomConfig = (mode: GameMode, difficulty: PuzzleConfig['difficulty']): PuzzleConfig => ({ sourceMode: 'random', difficulty, mode, customPhrase: '', customHint: '' })
@@ -76,8 +75,7 @@ type RoundProps = {
   locked: boolean
   onLeave: () => void
   // True from the moment a round is decided until Next: the result card is coming (after the win's
-  // celebration or the loss's short delay), and leaving before it shows would record the round's
-  // unlocks with nothing on screen to show them.
+  // celebration or the loss's short delay), and leaving before it shows would skip it.
   onRoundEnding: (ending: boolean) => void
   // Whether the screen is on its way out, or no longer the one showing (leave() has run, or it lost
   // focus, since it was last shown): nothing is drawn onto a board nobody will see. The Pass & Play
@@ -89,7 +87,7 @@ type RoundProps = {
 // A pack turn's part of the solo board (see PackTurnRound; off for any other solo round): the round
 // counted for the turn's seat the moment it's decided, and the result card's session pieces, as a
 // written word's card has them (who played it, the standings with their row in bold, who's up next,
-// End Session and its standings card). The board remounts for every turn, so this starts over with it.
+// and Back). The board remounts for every turn, so this starts over with it.
 const usePackTurnCard = (enabled: boolean, onLeave: () => void, onRoundEnding: (ending: boolean) => void) => {
   const dispatch = useDispatch()
   const store = useStore<RootState>()
@@ -98,8 +96,6 @@ const usePackTurnCard = (enabled: boolean, onLeave: () => void, onRoundEnding: (
   const profiles = useProfiles()
   // The turn's seat as its round was decided: the card names them, and who's up next after them.
   const [decidedSeatId, setDecidedSeatId] = useState<string | null>(null)
-  // End Session's standings card. Never saved: a relaunch with it up comes back to the session.
-  const [sessionEndOpen, setSessionEndOpen] = useState(false)
 
   // Into the session's standings for the turn's seat, once (recordPackTurn ignores a turn already
   // counted). The stats are the solo round's own (SoloRound records it as the player's solo round, and
@@ -128,19 +124,14 @@ const usePackTurnCard = (enabled: boolean, onLeave: () => void, onRoundEnding: (
     return { playerId: decidedSeatId, playerName: played.name, playerProfile: played.profile, nextName: next.name, nextProfile: next.profile, standings: standingRows }
   }, [decidedSeatId, players, standings, profiles, standingRows])
 
-  // End Session swaps the result card for the standings card, and Keep Playing (or Android back) swaps
-  // them back; Done clears the standings and the turn (the table kept) and leaves for the Pass & Play
-  // loadout, as a written word's card does.
-  const openSessionEnd = useCallback(() => setSessionEndOpen(true), [])
-  const keepPlaying = useCallback(() => setSessionEndOpen(false), [])
-  const endSession = useCallback(() => {
-    setSessionEndOpen(false)
+  // Back: to the Pass & Play page, the session kept (the turn is counted, so its Ready starts the next
+  // one), as a written word's card does.
+  const back = useCallback(() => {
     onRoundEnding(false)
-    dispatch(roundActions.endPnpSession())
     onLeave()
-  }, [dispatch, onLeave, onRoundEnding])
+  }, [onLeave, onRoundEnding])
 
-  return { recordTurn, clearDecided, summary, standingRows, sessionEndOpen, openSessionEnd, keepPlaying, endSession }
+  return { recordTurn, clearDecided, summary, back }
 }
 
 type SoloRoundProps = RoundProps & {
@@ -159,8 +150,6 @@ const SoloRound = ({ locked, onLeave, onRoundEnding, isLeaving, packTurn = false
   const store = useStore<RootState>()
   // The round's owner: whose slot it is, whose stats it counts toward and whose puzzles it unlocks.
   const { key: playerKey, profileId } = useActivePlayer()
-  // Their profile, so the result card can name whose unlocks it shows (null for the guest).
-  const owner = useActiveProfile()
   const readSaved = useCallback((state: RootState) => selectSoloRound(state.round, playerKey), [playerKey])
   const puzzle = useSelector((state: RootState) => readSaved(state).puzzle)
   const roundId = useSelector((state: RootState) => readSaved(state).id)
@@ -175,11 +164,11 @@ const SoloRound = ({ locked, onLeave, onRoundEnding, isLeaving, packTurn = false
   useEffect(() => {
     unlockMapRef.current = unlockMap
   }, [unlockMap])
-  // What the round just unlocked, and the pack's progress on a win, shown on the round-end card.
-  // Both cleared at the top of each solve and loss, so a fresh round never shows the previous one's.
-  const [roundUnlocks, setRoundUnlocks] = useState<UnlockedAchievement[]>([])
+  // The pack's progress on a win, shown on the round-end card. Cleared at the top of each solve and
+  // loss, so a fresh round never shows the previous one's. What the round unlocks is toasted the moment
+  // it's recorded, named for the player (Jay, 2026-10-20: toasts, not the card, as in Solitaire).
   const [categoryProgress, setCategoryProgress] = useState<CategoryProgress | null>(null)
-  const unlocks = useMemo((): RoundUnlocks[] => [{ owner, achievements: roundUnlocks }], [owner, roundUnlocks])
+  const showUnlockToasts = useUnlockToasts()
   const turn = usePackTurnCard(packTurn, onLeave, onRoundEnding)
   const { recordTurn, clearDecided } = turn
 
@@ -227,7 +216,6 @@ const SoloRound = ({ locked, onLeave, onRoundEnding, isLeaving, packTurn = false
       // Cleared here (synchronously, before the first await below) so it's batched with the Game's own
       // setOutcome('win') and never paints the previous round's stats while this one's lookup runs.
       setCategoryProgress(null)
-      setRoundUnlocks([])
       const { puzzle: solved, id: solvedId } = readSaved(store.getState())
       const counted = recordTurn(playerKey, solvedId, 'win')
       // Read after this puzzle is marked, so the pack totals (and the completed-pack count the
@@ -245,9 +233,8 @@ const SoloRound = ({ locked, onLeave, onRoundEnding, isLeaving, packTurn = false
       }
       const solvedMode = solved ? findMode(solved.modeId) : null
       if (counted) return
-      // Recording is synchronous and lands well within WIN_DIALOG_DELAY_MS (see Game.tsx), so the
-      // unlocks are already there when the round-end card opens.
-      setRoundUnlocks(
+      // Toasted during the win's celebration, before the round-end card opens.
+      showUnlockToasts(
         recordSoloRound(
           {
             result: 'win',
@@ -262,20 +249,20 @@ const SoloRound = ({ locked, onLeave, onRoundEnding, isLeaving, packTurn = false
             completedPackKeys: getCompletedBuiltInPackKeys(unlockMap)
           },
           profileId
-        )
+        ),
+        profileId
       )
     },
-    [store, readSaved, playerKey, profileId, refreshUnlocks, recordSoloRound, onRoundEnding, recordTurn]
+    [store, readSaved, playerKey, profileId, refreshUnlocks, recordSoloRound, showUnlockToasts, onRoundEnding, recordTurn]
   )
 
   const handleLost = useCallback(
     (details: LossDetails) => {
       onRoundEnding(true)
-      setRoundUnlocks([])
       if (recordTurn(playerKey, readSaved(store.getState()).id, 'loss')) return
-      setRoundUnlocks(recordSoloRound({ result: 'loss', wrongGuesses: details.wrongGuesses, guessCount: details.guessCount }, profileId))
+      showUnlockToasts(recordSoloRound({ result: 'loss', wrongGuesses: details.wrongGuesses, guessCount: details.guessCount }, profileId), profileId)
     },
-    [store, readSaved, playerKey, recordSoloRound, profileId, onRoundEnding, recordTurn]
+    [store, readSaved, playerKey, recordSoloRound, showUnlockToasts, profileId, onRoundEnding, recordTurn]
   )
 
   // Next. A shared-link puzzle is one-off, with no "next" word to draw, so it leaves for the loadout
@@ -302,8 +289,7 @@ const SoloRound = ({ locked, onLeave, onRoundEnding, isLeaving, packTurn = false
   // Keyed on the player as well as the round: round ids only differ within one player's slot.
   return (
     <>
-      <SavedBoard key={`${playerKey}:${roundId}`} readSaved={readSaved} session={toGamePayload(puzzle)} onStop={handleRoundEnd} onSolved={handleSolved} onLost={handleLost} onProgress={handleProgress} categoryProgress={categoryProgress} unlocks={unlocks} passAndPlay={turn.summary} onEndSession={packTurn ? turn.openSessionEnd : undefined} roundCardHidden={turn.sessionEndOpen} locked={locked} />
-      {packTurn ? <PnpSessionEndDialog visible={turn.sessionEndOpen} standings={turn.standingRows} onDone={turn.endSession} onKeepPlaying={turn.keepPlaying} /> : null}
+      <SavedBoard key={`${playerKey}:${roundId}`} readSaved={readSaved} session={toGamePayload(puzzle)} onStop={handleRoundEnd} onSolved={handleSolved} onLost={handleLost} onProgress={handleProgress} categoryProgress={categoryProgress} passAndPlay={turn.summary} onBack={packTurn ? turn.back : undefined} locked={locked} />
     </>
   )
 }
@@ -361,7 +347,7 @@ const PackTurnRound = ({ focused, ...props }: PackTurnRoundProps): JSX.Element |
     selectPlayer(turn.profileId, turn.seatId)
   }, [focused, turnKey, store, selectPlayer])
 
-  // With no turn (End Session's Done, the screen on its way out) the last board stays drawn.
+  // With no turn (the screen on its way out) the last board stays drawn.
   if (focused && turnKey !== undefined && !turnReady && boardKey !== key) return null
   return <SoloRound key={key} {...props} packTurn />
 }
@@ -371,8 +357,6 @@ type PnpRoundProps = Omit<RoundProps, 'isLeaving'> & {
   focused: boolean
   promptsVisible: boolean
 }
-
-const NO_PNP_UNLOCKS: PnpRoundUnlocks = { guesser: [], writer: [] }
 
 // Who played the round just decided, as it ended: the session moves on to the next word's writer at
 // Next (see roundSlice's startPnpAuthoring), and the result card names who played this one.
@@ -387,8 +371,7 @@ type DecidedPnpRound = { guesserId: string; writerId: string }
 // The table is the round's session (utils/pnpSession.ts): the players, their standings, and who writes and
 // guesses. The prompt names the writer and, with three or more players, lets them change the fair pick
 // of who it's for; the hand-off names the guesser; the result card names both, shows the standings and
-// who writes next, and offers End Session, whose standings card ends the session and leaves for the
-// loadout.
+// who writes next, and offers Back, to the loadout with the session kept.
 //
 // The board is whoever's turn it is (Jay, 2026-10-18): the writer's while they write, the guesser's
 // from the hand-off on, in their colors and their art. Each becomes the active player in turn, while
@@ -429,10 +412,8 @@ const PnpRound = ({ locked, focused, promptsVisible, onLeave, onRoundEnding }: P
     [dispatch, answer]
   )
   const handleGuesserChange = useCallback((playerId: string) => dispatch(roundActions.setPnpGuesser(playerId)), [dispatch])
-  const [roundUnlocks, setRoundUnlocks] = useState<PnpRoundUnlocks>(NO_PNP_UNLOCKS)
+  const showUnlockToasts = useUnlockToasts()
   const [decided, setDecided] = useState<DecidedPnpRound | null>(null)
-  // End Session's standings card. Never saved: a relaunch with it up comes back to the session.
-  const [sessionEndOpen, setSessionEndOpen] = useState(false)
 
   // Once per mount: nothing running yet, a round that ended while the app was closed, or a word that
   // went missing starts at a blank prompt. Otherwise the saved beat comes back: the hand-off card, or
@@ -467,21 +448,24 @@ const PnpRound = ({ locked, focused, promptsVisible, onLeave, onRoundEnding }: P
   // It counts into the session's standings (recordPnpResult) and the stats, each seat by its profile
   // (null for a guest, whose rounds land on the device's record only), once per round: a round already
   // counted (its end reported again after a relaunch mid-round, see recordPnpResult) records nothing.
-  // The card shows what each of them unlocked: the guesser's (a guest's being the device's), then the
-  // writer's own when the writer is a profile.
+  // What each of them unlocked is toasted, named for them: the guesser's (a guest's being the device's),
+  // then the writer's own when the writer is a profile.
   const handleDecided = useCallback(
     (result: 'win' | 'loss', wrongGuesses: number) => {
       onRoundEnding(true)
-      setRoundUnlocks(NO_PNP_UNLOCKS)
       const { pnp } = store.getState().round
       const { session } = pnp
       setDecided({ guesserId: session.guesserId, writerId: session.writerId })
       if (session.recordedRoundId === pnp.id) return
       dispatch(roundActions.recordPnpResult({ roundId: pnp.id, result }))
       const profileIdOf = (playerId: string) => session.players.find((player) => player.id === playerId)?.profileId ?? null
-      setRoundUnlocks(recordPnpRound({ result, wrongGuesses, guesserProfileId: profileIdOf(session.guesserId), writerProfileId: profileIdOf(session.writerId) }))
+      const guesserProfileId = profileIdOf(session.guesserId)
+      const writerProfileId = profileIdOf(session.writerId)
+      const unlocked = recordPnpRound({ result, wrongGuesses, guesserProfileId, writerProfileId })
+      showUnlockToasts(unlocked.guesser, guesserProfileId)
+      showUnlockToasts(unlocked.writer, writerProfileId)
     },
-    [store, dispatch, recordPnpRound, onRoundEnding]
+    [store, dispatch, recordPnpRound, showUnlockToasts, onRoundEnding]
   )
   const handleSolved = useCallback((details: SolveDetails) => handleDecided('win', details.wrongGuesses), [handleDecided])
   const handleLost = useCallback((details: LossDetails) => handleDecided('loss', details.wrongGuesses), [handleDecided])
@@ -495,18 +479,13 @@ const PnpRound = ({ locked, focused, promptsVisible, onLeave, onRoundEnding }: P
     dispatch(roundActions.startPnpAuthoring())
   }, [dispatch, onRoundEnding])
 
-  // End Session swaps the result card for the standings card (Game hides its card while
-  // roundCardHidden is set); Keep Playing, or Android back, swaps them back with nothing changed.
-  const handleEndSession = useCallback(() => setSessionEndOpen(true), [])
-  const handleKeepPlaying = useCallback(() => setSessionEndOpen(false), [])
-  // Done on the standings card: the session's standings cleared (the table kept for next time), and
-  // back to the loadout. The card goes too, since the web can keep a left screen mounted.
-  const handleSessionDone = useCallback(() => {
-    setSessionEndOpen(false)
+  // Back on the result card (Jay, 2026-10-20: in place of End Session and its standings card): to the
+  // Pass & Play page with the session kept, its standings on the seats there. The round is counted, so
+  // coming back starts the next word, the guesser writing it.
+  const handleBack = useCallback(() => {
     onRoundEnding(false)
-    dispatch(roundActions.endPnpSession())
     onLeave()
-  }, [dispatch, onLeave, onRoundEnding])
+  }, [onLeave, onRoundEnding])
 
   const handlePnpAuthored = useCallback(() => {
     // Goes through the same resolver every other custom word uses, so normalization and what counts
@@ -537,29 +516,18 @@ const PnpRound = ({ locked, focused, promptsVisible, onLeave, onRoundEnding }: P
     const decidedWriter = getSeatIdentity(players, decided.writerId, profiles)
     return { playerId: decided.guesserId, playerName: decidedGuesser.name, playerProfile: decidedGuesser.profile, writerName: decidedWriter.name, nextName: decidedGuesser.name, nextProfile: decidedGuesser.profile, standings: standingRows }
   }, [decided, players, profiles, standingRows])
-  // The guesser's unlocks, then the writer's: a guest writer's block is always empty (the device's
-  // unlocks are the guesser's), so it never shows.
-  const unlocks = useMemo((): RoundUnlocks[] => {
-    if (!decided) return []
-    return [
-      { owner: getSeatIdentity(players, decided.guesserId, profiles).profile, achievements: roundUnlocks.guesser },
-      { owner: getSeatIdentity(players, decided.writerId, profiles).profile, achievements: roundUnlocks.writer }
-    ]
-  }, [decided, players, profiles, roundUnlocks])
 
   // The live draft while composing (so the board reflects the word as it's typed, in the writer's own
-  // art), the real word after. A finished round stays drawn once its session has ended (phase null)
-  // while the screen leaves.
+  // art), the real word after.
   const board = phase === 'authoring' ? buildPnpDraftSession(answer, defaultMode) : puzzle ? toGamePayload(puzzle) : null
 
   return (
     <>
       {/* Locked while composing and during the hand-off, so nothing about the round can be touched by
           tap or physical keyboard before play actually starts. */}
-      {board ? <SavedBoard key={roundId} readSaved={readPnpRound} session={board} onStop={handleRoundEnd} onSolved={handleSolved} onLost={handleLost} onProgress={handleProgress} unlocks={unlocks} passAndPlay={roundSummary} onEndSession={handleEndSession} roundCardHidden={sessionEndOpen} locked={locked || phase !== 'playing'} /> : null}
+      {board ? <SavedBoard key={roundId} readSaved={readPnpRound} session={board} onStop={handleRoundEnd} onSolved={handleSolved} onLost={handleLost} onProgress={handleProgress} passAndPlay={roundSummary} onBack={handleBack} locked={locked || phase !== 'playing'} /> : null}
       {phase === 'authoring' ? <PnpWordPrompt writerName={writer.name} writerProfile={writer.profile} guessers={guessers} guesserId={guesserId} onGuesserChange={handleGuesserChange} answer={answer} hint={hint} onAnswerChange={handleAnswerChange} onHintChange={handleHintChange} promptVisible={promptsVisible} onClose={onLeave} onSubmit={handlePnpAuthored} /> : null}
       {phase === 'handoff' ? <PnpHandoffDialog visible={promptsVisible} guesserName={guesser.name} guesserProfile={guesser.profile} writerName={writer.name} onReady={handleReady} /> : null}
-      <PnpSessionEndDialog visible={sessionEndOpen} standings={standingRows} onDone={handleSessionDone} onKeepPlaying={handleKeepPlaying} />
     </>
   )
 }
@@ -599,7 +567,7 @@ export const GameScreen = ({ mode, door = mode }: GameScreenProps): JSX.Element 
 
   // dismissTo pops back to the screen already beneath this one, or replaces this screen with it when
   // there's none (a resumed game, a share link opened cold). Held off between a round's end and its
-  // result card (at most the win's 2s celebration), so the card and its unlocks are always seen.
+  // result card (at most the win's 2s celebration), so the card is always seen.
   const leaveFor = useCallback(
     (href: LeaveHref) => {
       if (roundEndingRef.current) return
@@ -619,7 +587,7 @@ export const GameScreen = ({ mode, door = mode }: GameScreenProps): JSX.Element 
 
   // Android's back button steps back to the loadout, even with nothing beneath this screen in the
   // stack (where the navigator would otherwise close the app). The result card, the Pass & Play
-  // prompt, End Session's standings card and the Settings sheet register their own handlers when they
+  // prompt and the Settings sheet register their own handlers when they
   // open, after this one, so theirs run first. The one overlay that can already be up when this
   // registers is a resumed Pass & Play hand-off card, which swallows back on purpose (Ready is the only
   // way on), so this steps aside for it.

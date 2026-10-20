@@ -1,4 +1,4 @@
-import { JSX, useCallback, useEffect, useRef, useState } from 'react'
+import { JSX, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Platform, StyleSheet, View } from 'react-native'
 import { Portal, useTheme } from 'react-native-paper'
 import Animated, { useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated'
@@ -18,7 +18,7 @@ import type { PuzzleDifficultyTier } from '@/utils/puzzleCatalog'
 import { Keyboard } from './Keyboard'
 import { PuzzleInfoRow } from './PuzzleInfoRow'
 import { PuzzleStage } from './PuzzleStage'
-import { type CategoryProgress, type PnpRoundSummary, RoundEndDialog, type RoundUnlocks } from './RoundEndDialog'
+import { type CategoryProgress, type PnpRoundSummary, RoundEndDialog } from './RoundEndDialog'
 
 export type SolveDetails = { wrongGuesses: number; hintRevealed: boolean; guessCount: number }
 export type LossDetails = { wrongGuesses: number; guessCount: number }
@@ -32,17 +32,14 @@ export type LossDetails = { wrongGuesses: number; guessCount: number }
 // against the real value instead of a hand-copied magic number.
 export const WIN_DIALOG_DELAY_MS = 2000
 
-// Wrong-guess pip row anchored to the keyboard (see its own render comment below) - same
-// hand-drawn ring + bloom-on-miss treatment as PuzzleStage's own Letters Only pip cluster, just at
-// a fraction of the size and with no letter inside (this row stays letter-less by design; see the
-// render comment). PIP_RADIUS = PIP_CENTER - PIP_STROKE_WIDTH mirrors PuzzleStage's own pip
-// constants exactly, so both rows read as the same shape, just scaled.
+// Wrong-guess pip row anchored to the keyboard (see its own render comment below): a hand-drawn ring
+// that blooms a dot on a miss, the same row for every art, Letters Only included.
 const PIP_SIZE = 12
 const PIP_CENTER = PIP_SIZE / 2
 const PIP_STROKE_WIDTH = 1.5
 const PIP_RADIUS = PIP_CENTER - PIP_STROKE_WIDTH
 // Stagger between one pip ring's own reveal and the next at round start - same spirit as
-// PuzzleStage's own PIP_STAGGER_MS, just local to this file since nothing else needs it. Added on
+// SketchWord's own BLANK_STAGGER_MS. Added on
 // top of PIPS_SWEEP_DELAY_MS (see sceneReveal.ts), which is the whole-screen sweep's own head start
 // for this band, not a per-pip amount.
 const PIP_STAGGER_MS = 60
@@ -74,15 +71,9 @@ export type GameProps = {
   difficultyTier?: PuzzleDifficultyTier
   celebration?: CelebrationEffect
   categoryProgress?: CategoryProgress | null
-  // What this round unlocked, one block per player, passed straight through to RoundEndDialog like
-  // categoryProgress above (see its unlocks).
-  unlocks?: RoundUnlocks[]
-  // A Pass & Play round's rows on the result card, and its End Session button (see RoundEndDialog).
+  // A Pass & Play round's rows on the result card, and its Back button (see RoundEndDialog).
   passAndPlay?: PnpRoundSummary | null
-  onEndSession?: () => void
-  // Hides the result card (and a win's fireworks) while another card stands in for it: Pass & Play's
-  // End Session standings, which can still be backed out of, bringing this card back.
-  roundCardHidden?: boolean
+  onBack?: () => void
   // True while a dialog covers the board (pass-and-play's prompt and hand-off, which mount the real
   // round underneath themselves rather than a blank screen, so there's nothing left to reveal once
   // the dialog closes; the Settings sheet), or while the game screen isn't the one showing. Guards handleGuess only, deliberately
@@ -93,7 +84,7 @@ export type GameProps = {
   locked?: boolean
 }
 
-export const Game = ({ onStop, onSolved, onLost, onProgress, initialGuessedLetters, initialHintRevealed = false, phrase, mode = DEFAULT_MODE, hint, packLabel, difficultyTier, celebration = DEFAULT_CELEBRATION, categoryProgress, unlocks, passAndPlay, onEndSession, roundCardHidden = false, locked = false }: GameProps): JSX.Element => {
+export const Game = ({ onStop, onSolved, onLost, onProgress, initialGuessedLetters, initialHintRevealed = false, phrase, mode = DEFAULT_MODE, hint, packLabel, difficultyTier, celebration = DEFAULT_CELEBRATION, categoryProgress, passAndPlay, onBack, locked = false }: GameProps): JSX.Element => {
   const { layout } = useKeyboardLayout()
   const { playCorrect, playWrong, playWin, playLoss } = useSoundEffects()
   const gameHaptics = useGameHaptics()
@@ -117,14 +108,25 @@ export const Game = ({ onStop, onSolved, onLost, onProgress, initialGuessedLette
   // setOutcome('loss') timeout, so the shake/fall begins the instant the round is actually lost
   // rather than waiting on the 450ms delay that only exists to let the final hangman art render.
   const [keyboardFalling, setKeyboardFalling] = useState(false)
-  // Set by Next. Every next-puzzle path remounts Game, so this usually never matters, but a
-  // shared-link puzzle's Next leaves for the loadout instead, and the web keeps a left screen
-  // mounted: without this the card (and a win's fireworks) would still be up if the player came back.
+  // Set by Next and by Back. Every next-puzzle path remounts Game, so this usually never matters, but a
+  // shared-link puzzle's Next and Pass & Play's Back leave for the loadout instead, and the web keeps a
+  // left screen mounted: without this the card (and a win's fireworks) would still be up if the player
+  // came back.
   const [roundEndDismissed, setRoundEndDismissed] = useState(false)
   const handleRoundEndDismiss = useCallback(() => {
     setRoundEndDismissed(true)
     onStop()
   }, [onStop])
+  const handleRoundEndBack = useMemo(
+    () =>
+      onBack
+        ? () => {
+            setRoundEndDismissed(true)
+            onBack()
+          }
+        : undefined,
+    [onBack]
+  )
   // Bumped every time the celebration effect finishes a cycle, which remounts CelebrationView
   // (keyed on this value below) to start a fresh cycle - keeping the effect running for as long
   // as outcome stays 'win', i.e. for as long as the win dialog is open.
@@ -234,10 +236,8 @@ export const Game = ({ onStop, onSolved, onLost, onProgress, initialGuessedLette
   })
 
   const CelebrationView = celebration.Component
-  const hasVisual = mode.hasVisual !== false
-  // Order-preserving: guessedLetters is already in guess order, so this stays in the order the
-  // wrong guesses actually happened - pip i (below, and in PuzzleStage's own Letters Only cluster)
-  // shows wrongLetters[i], the i-th wrong guess, not just a count.
+  // Order-preserving: guessedLetters is already in guess order, so the screen reader's label below
+  // spells the wrong guesses out in the order they actually happened.
   const wrongLetters = guessedLetters.filter((letter) => !phrase.includes(letter))
   const pipsLabel = `Wrong guesses: ${wrongGuesses} of ${maxWrong}${wrongLetters.length > 0 ? ` (${wrongLetters.join(', ')})` : ''}`
 
@@ -250,40 +250,37 @@ export const Game = ({ onStop, onSolved, onLost, onProgress, initialGuessedLette
           because they'd otherwise show anything wrong. */}
       <Animated.View testID='game-container' style={[styles.gameContainer, gameFadeStyle]}>
         <PuzzleInfoRow difficultyTier={difficultyTier} packLabel={packLabel} hint={hint} hintRevealed={hintRevealed} onRevealHint={() => setHintRevealed(true)} started={gameReady} />
-        <PuzzleStage mode={mode} phrase={phrase} guessedLetters={guessedLetters} wrongGuesses={wrongGuesses} wrongLetters={wrongLetters} maxWrong={maxWrong} pipsLabel={pipsLabel} onReadyChange={setPuzzleStageReady} started={gameReady} />
+        <PuzzleStage mode={mode} phrase={phrase} guessedLetters={guessedLetters} wrongGuesses={wrongGuesses} maxWrong={maxWrong} onReadyChange={setPuzzleStageReady} started={gameReady} />
         {/* Anchored to the keyboard (not the artwork, and not wherever PuzzleStage's own word-row
             centering happens to land it) - the pips are a "guesses remaining" readout, most useful
             right where your eyes already are while choosing the next letter, rather than a step
-            removed near the art that's already telling the same story its own way. Stays a plain
-            dot row rather than showing letters (unlike PuzzleStage's own Letters Only cluster,
-            which has the room to spare) - see PLAN.md's own reasoning: this row is deliberately
-            small since the artwork alongside it already carries the "how many mistakes" drama, and
-            legible letters wouldn't fit at this size without enlarging it. accessibilityLabel
-            (pipsLabel) still spells the wrong letters out either way, for a screen reader. */}
-        {hasVisual ? (
-          <View style={styles.pipRow} accessibilityLabel={pipsLabel}>
-            {Array.from({ length: maxWrong }, (_, i) => {
-              const filled = i < wrongGuesses
-              return (
-                // testID lives on this wrapping View, not the Svg itself - see PuzzleStage's own
-                // identical comment on why (Svg has no single host node of its own to carry one).
-                <View key={i} testID={`pip-${i}`}>
-                  <Svg width={PIP_SIZE} height={PIP_SIZE} viewBox={`0 0 ${PIP_SIZE} ${PIP_SIZE}`}>
-                    <SketchCircle cx={PIP_CENTER} cy={PIP_CENTER} r={PIP_RADIUS} color={secondaryColor} strokeWidth={PIP_STROKE_WIDTH} start={gameReady} delayMs={PIPS_SWEEP_DELAY_MS + i * PIP_STAGGER_MS} />
-                    {filled ? (
-                      <FadeScaleIn cx={PIP_CENTER} cy={PIP_CENTER}>
-                        <Circle cx={PIP_CENTER} cy={PIP_CENTER} r={PIP_RADIUS} fill={secondaryColor} />
-                      </FadeScaleIn>
-                    ) : null}
-                  </Svg>
-                </View>
-              )
-            })}
-          </View>
-        ) : null}
+            removed near the art that's already telling the same story its own way. A plain dot
+            row, deliberately small, the same for every art: Letters Only too (Jay, 2026-10-20: its
+            own big lettered pips, in the artwork's slot, took the room its letters needed), whose
+            word gets the whole artwork area instead. The keyboard already marks the wrong letters,
+            and accessibilityLabel (pipsLabel) spells them out for a screen reader. */}
+        <View style={styles.pipRow} accessibilityLabel={pipsLabel}>
+          {Array.from({ length: maxWrong }, (_, i) => {
+            const filled = i < wrongGuesses
+            return (
+              // testID lives on this wrapping View, not the Svg itself: Svg has no single host node
+              // of its own to carry one (it's a pure viewport around its children).
+              <View key={i} testID={`pip-${i}`}>
+                <Svg width={PIP_SIZE} height={PIP_SIZE} viewBox={`0 0 ${PIP_SIZE} ${PIP_SIZE}`}>
+                  <SketchCircle cx={PIP_CENTER} cy={PIP_CENTER} r={PIP_RADIUS} color={secondaryColor} strokeWidth={PIP_STROKE_WIDTH} start={gameReady} delayMs={PIPS_SWEEP_DELAY_MS + i * PIP_STAGGER_MS} />
+                  {filled ? (
+                    <FadeScaleIn cx={PIP_CENTER} cy={PIP_CENTER}>
+                      <Circle cx={PIP_CENTER} cy={PIP_CENTER} r={PIP_RADIUS} fill={secondaryColor} />
+                    </FadeScaleIn>
+                  ) : null}
+                </Svg>
+              </View>
+            )
+          })}
+        </View>
         <Keyboard guessedLetters={guessedLetters} phrase={phrase} winningLetter={winningLetter} falling={keyboardFalling} started={gameReady} disabled={outcome !== null} layout={layout} onGuess={handleGuess} onReadyChange={setKeyboardReady} />
       </Animated.View>
-      {outcome === 'win' && !roundEndDismissed && !roundCardHidden ? (
+      {outcome === 'win' && !roundEndDismissed ? (
         // Portal escapes this component's own box (which sits below the app header and inside
         // safe-area padding) to render at the app root instead (the same mechanism
         // RoundEndDialog's card uses for its full-screen backdrop), so the celebration covers
@@ -292,7 +289,7 @@ export const Game = ({ onStop, onSolved, onLost, onProgress, initialGuessedLette
           <CelebrationView key={celebrationCycle} colors={[theme.colors.primary, theme.colors.secondary, theme.colors.tertiary]} dark={theme.dark} onComplete={() => setCelebrationCycle((c) => c + 1)} />
         </Portal>
       ) : null}
-      <RoundEndDialog visible={outcome !== null && dialogReady && !roundEndDismissed && !roundCardHidden} outcome={outcome} phrase={phrase} guessedLetters={guessedLetters} categoryProgress={categoryProgress} unlocks={unlocks} passAndPlay={passAndPlay} onEndSession={onEndSession} onDismiss={handleRoundEndDismiss} />
+      <RoundEndDialog visible={outcome !== null && dialogReady && !roundEndDismissed} outcome={outcome} phrase={phrase} guessedLetters={guessedLetters} categoryProgress={categoryProgress} passAndPlay={passAndPlay} onBack={handleRoundEndBack} onDismiss={handleRoundEndDismiss} />
     </View>
   )
 }

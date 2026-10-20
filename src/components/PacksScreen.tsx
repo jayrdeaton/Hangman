@@ -204,6 +204,10 @@ export const PacksScreen = memo(({ visible, onDismiss, selectedKeys, onChangeSel
   const handleOnlyThisPack = useCallback((key: string) => onChangeSelectedKeys([key]), [onChangeSelectedKeys])
   const selectedPackKeysInManifest = useMemo(() => manifest.filter((item) => selectedSet.has(item.key)).map((item) => item.key), [manifest, selectedSet])
   const onlyThisPackSelected = selectedPackKeysInManifest.length === 1 && selectedPackKeysInManifest[0] === detailKey
+  // Nothing to play from: the screen stays open (its close glyph, Done and a screen reader's escape off,
+  // and the loadout's Android back with them) until a pack is picked (Jay, 2026-10-20). Clearing them
+  // all is still the way to pick just one or two.
+  const noneSelected = selectedPackKeysInManifest.length === 0
   const handleSelectAll = useCallback(() => onChangeSelectedKeys(manifest.map((item) => item.key)), [manifest, onChangeSelectedKeys])
   const handleClearAll = useCallback(() => onChangeSelectedKeys([]), [onChangeSelectedKeys])
 
@@ -373,10 +377,10 @@ export const PacksScreen = memo(({ visible, onDismiss, selectedKeys, onChangeSel
 
   return (
     <FullScreenLayer visible={visible} from='bottom'>
-      <View testID='packs-screen-panel' style={styles.panel} accessibilityViewIsModal={listActive} accessibilityElementsHidden={!listActive} importantForAccessibility={listActive ? 'yes' : 'no-hide-descendants'} onAccessibilityEscape={listActive ? onDismiss : undefined}>
+      <View testID='packs-screen-panel' style={styles.panel} accessibilityViewIsModal={listActive} accessibilityElementsHidden={!listActive} importantForAccessibility={listActive ? 'yes' : 'no-hide-descendants'} onAccessibilityEscape={listActive && !noneSelected ? onDismiss : undefined}>
         <View style={[styles.column, { paddingLeft: insets.left, paddingRight: insets.right }]}>
           {/* Close, not Back: it puts the whole screen away, back down onto the loadout. */}
-          <ScreenHeader icon='close' label='Close' title='Choose Packs' onPress={onDismiss} trailing={<AllPacksCheckbox selectedCount={selectedPackKeysInManifest.length} total={manifest.length} onSelectAll={handleSelectAll} onClear={handleClearAll} />} />
+          <ScreenHeader icon='close' label='Close' title='Choose Packs' onPress={onDismiss} disabled={noneSelected} trailing={<AllPacksCheckbox selectedCount={selectedPackKeysInManifest.length} total={manifest.length} onSelectAll={handleSelectAll} onClear={handleClearAll} />} />
 
           <SelectedPacksContext.Provider value={selectedSet}>
             {/* Keyed on the column count: a list can't change its numColumns in place. */}
@@ -384,10 +388,11 @@ export const PacksScreen = memo(({ visible, onDismiss, selectedKeys, onChangeSel
           </SelectedPacksContext.Provider>
 
           {/* Pinned under the list, so it's reachable without scrolling back: Done, with the count on it,
-              the one line every eye lands on before closing, the way Ready ends the loadout. */}
+              the one line every eye lands on before closing, the way Ready ends the loadout. With none
+              selected it's off and says what it needs. */}
           <View style={[styles.footer, { paddingBottom: 12 + insets.bottom }]}>
-            <Button mode='contained' icon='check' onPress={onDismiss} contentStyle={styles.doneContent} labelStyle={styles.doneLabel}>
-              Done ({commaString(selectedPackKeysInManifest.length)} of {commaString(manifest.length)})
+            <Button mode='contained' icon={noneSelected ? undefined : 'check'} onPress={onDismiss} disabled={noneSelected} contentStyle={styles.doneContent} labelStyle={styles.doneLabel}>
+              {noneSelected ? 'Choose at least one pack' : `Done (${commaString(selectedPackKeysInManifest.length)} of ${commaString(manifest.length)})`}
             </Button>
           </View>
         </View>

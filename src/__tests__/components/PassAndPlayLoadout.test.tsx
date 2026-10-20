@@ -240,10 +240,10 @@ describe('the Pass & Play page', () => {
       expect(session().focusedId).toBe('p3')
     })
 
-    it("offers to remove only the focused seat, never seat 1 (Single Player's guest's), and none at two", async () => {
+    it('offers to remove only the focused seat, and none at two', async () => {
       store.dispatch(roundActions.addPnpPlayer())
       const screen = await renderLoadout()
-      expect(screen.queryByLabelText(/^Remove /)).toBeNull()
+      expect(screen.getAllByLabelText(/^Remove /).map((button) => button.props.accessibilityLabel)).toEqual(['Remove Player 1'])
 
       await fireEvent.press(pill(screen, 'Player 2'))
 
@@ -251,6 +251,26 @@ describe('the Pass & Play page', () => {
       await fireEvent.press(screen.getByLabelText('Remove Player 2'))
       expect(names()).toEqual(['Player 1', 'Player 2'])
       expect(screen.queryByLabelText(/^Remove /)).toBeNull()
+    })
+
+    // Jay, 2026-10-20: a parent's seat, for the children to play on their own. Seat 1's guest is Single
+    // Player's, who keeps what they have; the seat after it takes the focus and the page.
+    it("removes seat 1, Single Player's guest keeping their things", async () => {
+      store.dispatch(profilesActions.setAll([ALICE, BOB]))
+      store.dispatch(roundActions.addPnpPlayer())
+      seat('p2', ALICE)
+      seat('p3', BOB)
+      store.dispatch(playerSettingsActions.setDifficulty({ playerKey: GUEST_PLAYER_KEY, difficulty: 'hard' }))
+      store.dispatch(roundActions.startSolo({ playerKey: GUEST_PLAYER_KEY, puzzle: CAT }))
+      const screen = await renderLoadout()
+
+      await fireEvent.press(screen.getByLabelText('Remove Player 1'))
+
+      expect(session().players.map((player) => player.id)).toEqual(['p2', 'p3'])
+      expect(session().focusedId).toBe('p2')
+      expect(active()).toBe(ALICE.id)
+      expect(store.getState().playerSettings[GUEST_PLAYER_KEY]?.difficulty).toBe('hard')
+      expect(selectSoloRound(store.getState().round, GUEST_PLAYER_KEY).puzzle).toEqual(CAT)
     })
 
     it('asks first when their standing would go with them, and keeps them on Cancel', async () => {
@@ -287,8 +307,61 @@ describe('the Pass & Play page', () => {
       expect(store.getState().round.pnp).toMatchObject({ phase: 'authoring', puzzle: null })
     })
 
-    // Jay, 2026-10-18: the toaster's swipe (@rific/gestures' SwipeToDismiss), on any seat but the first,
-    // by the glyph's rules. Firing 'dismiss' is the swipe completing; the gesture is the package's to test.
+    // Jay, 2026-10-20: "dragging to reorder would be dope". The drag itself is react-native-sortables';
+    // its mock (src/__mocks__/react-native-sortables.ts) hands the drop's order back as the library does.
+    describe('dragged into a new place', () => {
+      const flex = (screen: Screen) => screen.getByTestId('sortable-flex')
+      const drop = (screen: Screen, order: (keys: string[]) => string[]) => fireEvent(flex(screen), 'dragEnd', { order })
+
+      it('lets the seats be dragged, each a handle, with New session kept at the end', async () => {
+        winRound()
+        const screen = await renderLoadout()
+
+        expect(flex(screen).props.sortEnabled).toBe(true)
+        expect(screen.getAllByTestId('sortable-handle').map((handle) => handle.props.mode)).toEqual(['draggable', 'draggable', 'fixed-order'])
+      })
+
+      it("puts the seats in their new order, the guests named for their new places, each seat's standing and focus going with it", async () => {
+        store.dispatch(profilesActions.setAll([ALICE]))
+        store.dispatch(roundActions.addPnpPlayer())
+        seat('p3', ALICE)
+        winRound()
+        store.dispatch(roundActions.focusPnpSeat('p3'))
+        const screen = await renderLoadout()
+        const standings = session().standings
+
+        await drop(screen, ([first, second, third, ...rest]) => [third, first, second, ...rest])
+
+        expect(session().players.map((player) => [player.id, player.name])).toEqual([
+          ['p3', 'Alice'],
+          ['p1', 'Player 2'],
+          ['p2', 'Player 3']
+        ])
+        expect(session().standings).toEqual(standings)
+        expect(session().focusedId).toBe('p3')
+        expect(active()).toBe(ALICE.id)
+      })
+
+      // The web clicks at pointer-up, on the pill that was dragged.
+      it("takes no press from the drop's own pointer-up as a tap, and the next one as ever", async () => {
+        const now = jest.spyOn(Date, 'now').mockReturnValue(1000)
+        const screen = await renderLoadout()
+        await fireEvent(flex(screen), 'dragStart')
+        await drop(screen, ([first, second]) => [second, first])
+
+        // p2, first now.
+        await fireEvent.press(pill(screen, 'Player 1'))
+        expect(session().focusedId).toBe('p1')
+
+        now.mockReturnValue(2000)
+        await fireEvent.press(pill(screen, 'Player 1'))
+        expect(session().focusedId).toBe('p2')
+        now.mockRestore()
+      })
+    })
+
+    // Jay, 2026-10-18: the toaster's swipe (@rific/gestures' SwipeToDismiss), on any seat (seat 1 too
+    // since 2026-10-20), by the glyph's rules. Firing 'dismiss' is the swipe completing; the gesture is the package's to test.
     describe('swiped away', () => {
       const swipeAway = (screen: Screen, seatId: string) => fireEvent(screen.getByTestId(`seat-${seatId}`), 'dismiss')
       // The mock's own record (src/__mocks__/@rific/gestures.ts), the instance the page was given.
@@ -298,14 +371,13 @@ describe('the Pass & Play page', () => {
         restored().length = 0
       })
 
-      it("lets any seat but seat 1 (Single Player's guest's) be swiped away once there are more than two, and none at two", async () => {
+      it('lets any seat be swiped away once there are more than two, and none at two', async () => {
         const screen = await renderLoadout()
         expect(['p1', 'p2'].map((id) => screen.getByTestId(`seat-${id}`).props.onDismiss)).toEqual([undefined, undefined])
 
         await fireEvent.press(screen.getByLabelText('Add player'))
 
-        expect(screen.getByTestId('seat-p1').props.onDismiss).toBeUndefined()
-        for (const id of ['p2', 'p3']) expect(screen.getByTestId(`seat-${id}`).props.onDismiss).toEqual(expect.any(Function))
+        for (const id of ['p1', 'p2', 'p3']) expect(screen.getByTestId(`seat-${id}`).props.onDismiss).toEqual(expect.any(Function))
       })
 
       it("removes a seat that isn't the focused one straight away when it'd take nothing, the focus staying put", async () => {
@@ -602,9 +674,11 @@ describe('the Pass & Play page', () => {
       await layout(screen, 'loadout-write-content', WRITE_OPTIONS)
       return screen
     }
-    const seatMotion = (screen: Screen, seatId: string) => {
-      const { entering, exiting, layout: reflow } = screen.getByTestId(`seat-slot-${seatId}`).props
-      return { entering, exiting, layout: reflow }
+    // react-native-sortables lays the seats out and glides them itself (src/__mocks__/react-native-sortables.ts
+    // carries its props): what the page sets is how a seat comes and goes.
+    const seatMotion = (screen: Screen) => {
+      const { itemEntering, itemExiting } = screen.getByTestId('sortable-flex').props
+      return { itemEntering, itemExiting }
     }
 
     afterEach(() => {
@@ -612,12 +686,10 @@ describe('the Pass & Play page', () => {
       jest.mocked(useIsFocused).mockReturnValue(true)
     })
 
-    it('has every seat grow in, shrink away and glide, and New session fade and glide, while the page is in view', async () => {
-      putWordInPlay()
+    it('has every seat grow in and shrink away while the page is in view', async () => {
       const screen = await laidOut()
 
-      expect(seatMotion(screen, 'p1')).toEqual({ entering: expect.anything(), exiting: expect.anything(), layout: expect.anything() })
-      expect(screen.getByTestId('new-session-slot').props.layout).toBeDefined()
+      expect(seatMotion(screen)).toEqual({ itemEntering: expect.anything(), itemExiting: expect.anything() })
     })
 
     it('eases the art to a new height once the page has been measured, and not before (the first one lands as is)', async () => {
@@ -640,8 +712,7 @@ describe('the Pass & Play page', () => {
       putWordInPlay()
       const screen = await laidOut()
 
-      expect(seatMotion(screen, 'p1')).toEqual({ entering: undefined, exiting: undefined, layout: undefined })
-      expect(screen.getByTestId('new-session-slot').props.layout).toBeUndefined()
+      expect(seatMotion(screen)).toEqual({ itemEntering: null, itemExiting: null })
       expect(carousel(screen).props.animated).toBe(false)
     })
 
@@ -650,7 +721,7 @@ describe('the Pass & Play page', () => {
       jest.mocked(useIsFocused).mockReturnValue(false)
       const screen = await laidOut()
 
-      expect(seatMotion(screen, 'p1')).toEqual({ entering: undefined, exiting: undefined, layout: undefined })
+      expect(seatMotion(screen)).toEqual({ itemEntering: null, itemExiting: null })
       expect(carousel(screen).props.animated).toBe(false)
     })
 

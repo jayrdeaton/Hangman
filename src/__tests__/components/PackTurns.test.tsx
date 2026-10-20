@@ -224,7 +224,7 @@ describe("a pack turn's board", () => {
     expect(stats().profiles[ALICE.id].pnp.played).toBe(0)
   })
 
-  it("shows the session on the result card: who solved it, the standings, who's up next, and End Session", async () => {
+  it("shows the session on the result card: who solved it, the standings, who's up next, and Back", async () => {
     const screen = await renderTurns()
     await settle()
 
@@ -236,10 +236,9 @@ describe("a pack turn's board", () => {
     expect(screen.getByLabelText('Alice: 1 of 1 solved')).toBeTruthy()
     expect(screen.getByLabelText('Bob: no words guessed yet')).toBeTruthy()
     expect(screen.getByText('Bob is up next')).toBeTruthy()
-    expect(screen.getByText('End Session')).toBeTruthy()
-    // The solo card's own: the player's unlocks, under their name.
-    expect(screen.getByText('Alice Unlocked')).toBeTruthy()
-    expect(screen.getByText('First Word')).toBeTruthy()
+    expect(screen.getByText('Back')).toBeTruthy()
+    // The player's unlocks are toasted, named for them (Jay, 2026-10-20: not on the card).
+    expect(screen.getAllByText('Alice unlocked').length).toBeGreaterThan(0)
   })
 
   it('says a lost turn was missed', async () => {
@@ -306,35 +305,19 @@ describe("a pack turn's board", () => {
     expect(router.dismissTo).not.toHaveBeenCalled()
   })
 
-  describe('End Session', () => {
-    it('swaps the result card for the standings card, and Keep Playing brings it back with nothing changed', async () => {
+  // Jay, 2026-10-20: Back, in place of End Session and its standings card.
+  describe('Back', () => {
+    it('goes back to the Pass & Play loadout, the session and the counted turn kept, the card put away', async () => {
       const screen = await renderTurns()
       await settle()
       await win(screen, 'CAT')
 
-      await fireEvent.press(screen.getByText('End Session'))
-      expect(screen.getByText('Alice Wins!')).toBeTruthy()
-      expect(screen.queryByText('You Won!')).toBeNull()
-
-      await fireEvent.press(screen.getByText('Keep Playing'))
-      expect(screen.queryByText('Alice Wins!')).toBeNull()
-      expect(screen.getByText('You Won!')).toBeTruthy()
-      expect(session()).toMatchObject({ standings: { p1: { played: 1, wins: 1 } }, turnId: 'p1' })
-    })
-
-    it('ends the session from Done: the standings and the turn cleared, the table kept, and back to the Pass & Play loadout', async () => {
-      const screen = await renderTurns()
-      await settle()
-      await win(screen, 'CAT')
-
-      await fireEvent.press(screen.getByText('End Session'))
-      await fireEvent.press(screen.getByText('Done'))
+      await fireEvent.press(screen.getByText('Back'))
 
       expect(router.dismissTo).toHaveBeenCalledWith(PNP_LOADOUT)
-      expect(session()).toMatchObject({ standings: {}, turnId: null, recordedTurnRound: null })
-      expect(session().players.map((player) => player.profileId)).toEqual([ALICE.id, BOB.id])
+      expect(session()).toMatchObject({ standings: { p1: { played: 1, wins: 1 } }, turnId: 'p1', recordedTurnRound: `${ALICE.id}:1` })
       expect(store.getState().round.activeMode).toBeNull()
-      // The stats keep the round: ending a session only clears its own standings.
+      expect(screen.queryByText('You Won!')).toBeNull()
       expect(stats().profiles[ALICE.id].solo.played).toBe(1)
       // The last board stays drawn while the screen leaves.
       expect(revealed(screen)).toEqual(['C', 'A', 'T'])

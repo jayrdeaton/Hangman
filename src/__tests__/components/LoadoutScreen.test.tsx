@@ -377,6 +377,26 @@ describe('LoadoutScreen (Single Player)', () => {
       expect(screen.queryByText('Choose at least one pack to play.')).toBeNull()
     })
 
+    // Jay, 2026-10-20: a puzzle from a pack just switched off, never tried, was still what Ready picked
+    // up. One with a guess on it is still theirs to finish (above).
+    it('draws a new one in place of an untouched round whose pack has been switched off in Choose Packs', async () => {
+      const before = seedSoloRound()
+      const screen = await renderLoadout()
+      expect(ready(screen).props.accessibilityHint).toBe('Continues your puzzle')
+
+      await fireEvent.press(packsCard(screen))
+      await fireEvent.press(choosePacks(screen).getByText(PACK_A.label))
+      await fireEvent.press(choosePacks(screen).getByLabelText('Close'))
+      expect(ready(screen).props.accessibilityHint).toBe('Starts a new puzzle')
+      await fireEvent.press(ready(screen))
+
+      expect(mockResolvePuzzle).toHaveBeenCalledTimes(1)
+      expect(mockResolvePuzzle.mock.calls[0][1]).not.toContain(PACK_A.key)
+      expect(soloRound().id).toBe(before.id + 2)
+      expect(soloRound().puzzle?.puzzleId).not.toBe('seeded-puzzle')
+      expect(mockRouter.push).toHaveBeenCalledWith(GAME_HREF)
+    })
+
     it('stays on to pick up a waiting round with no pack selected', async () => {
       seedSoloRound(['Q'])
       store.dispatch(playerSettingsActions.setPackKeys({ playerKey: GUEST_PLAYER_KEY, packKeys: [] }))
@@ -1086,6 +1106,23 @@ describe('LoadoutScreen (Single Player)', () => {
         expect(await pressAndroidBack()).toBe(true)
         // The router mock's canGoBack is false, so safeBack replaces with Home.
         expect(mockRouter.replace).toHaveBeenCalledWith('/')
+      })
+
+      // Jay, 2026-10-20: nothing to play from, so it stays open until a pack is picked.
+      it('keeps Choose Packs open while no pack is selected', async () => {
+        const screen = await renderLoadout()
+
+        await fireEvent.press(packsCard(screen))
+        await fireEvent.press(choosePacks(screen).getByRole('checkbox', { name: 'All packs' }))
+        expect(choosePacks(screen).getByText('Choose at least one pack')).toBeTruthy()
+
+        expect(await pressAndroidBack()).toBe(true)
+        expect(panelHidden(screen, 'packs-screen-panel')).toBe(false)
+        expect(mockRouter.replace).not.toHaveBeenCalled()
+
+        await fireEvent.press(choosePacks(screen).getByText(PACK_B.label))
+        expect(await pressAndroidBack()).toBe(true)
+        expect(panelHidden(screen, 'packs-screen-panel')).toBe(true)
       })
 
       // Not the page's to close: each adds its own listener as it opens, after the page's, so it runs

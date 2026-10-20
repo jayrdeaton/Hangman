@@ -1,10 +1,9 @@
 import type { Profile } from '@tastic/profile'
 
-import { createDefaultPnpSession, createPlayer, formatWinRate, getFocusedSeat, getSeatIdentity, getSessionResult, getStanding, getStandingRows, guestName, hasStandings, joinNames, MAX_PLAYER_NAME_LENGTH, normalizePlayerName, numberGuests, packTurnRoundKey, pickFairGuesser, pickNextTurn, type PnpPlayer, type PnpSession, type PnpStandingRow, rankStandingRows, sanitizePnpSession, seatAfterRemoved, seatPlayer } from '@/utils/pnpSession'
+import { createDefaultPnpSession, createPlayer, formatWinRate, getFocusedSeat, getSeatIdentity, getStanding, getStandingRows, guestName, hasStandings, MAX_PLAYER_NAME_LENGTH, normalizePlayerName, numberGuests, packTurnRoundKey, pickFairGuesser, pickNextTurn, type PnpPlayer, type PnpSession, sanitizePnpSession, seatAfterRemoved, seatPlayer } from '@/utils/pnpSession'
 
 const player = (id: string, name = `Name ${id}`): PnpPlayer => ({ id, name, profileId: null })
 const table = (...ids: string[]): PnpPlayer[] => ids.map((id) => player(id))
-const row = (id: string, played: number, wins: number): PnpStandingRow => ({ id, name: `Name ${id}`, played, wins })
 
 describe('createDefaultPnpSession', () => {
   it('seats two guests, Player 1 writing for Player 2, with nothing played, the players writing, the first seat shown and no pack turn yet', () => {
@@ -165,12 +164,6 @@ describe('names', () => {
     expect(normalizePlayerName(`${'A'.repeat(MAX_PLAYER_NAME_LENGTH - 1)} B`)).toBe('A'.repeat(MAX_PLAYER_NAME_LENGTH - 1))
     expect(normalizePlayerName('   ')).toBe('')
   })
-
-  it('joins names the way a sentence would', () => {
-    expect(joinNames(['Ann'])).toBe('Ann')
-    expect(joinNames(['Ann', 'Bo'])).toBe('Ann and Bo')
-    expect(joinNames(['Ann', 'Bo', 'Cy'])).toBe('Ann, Bo and Cy')
-  })
 })
 
 describe('createPlayer', () => {
@@ -209,31 +202,7 @@ describe('guest names', () => {
   })
 })
 
-describe('the session result', () => {
-  it('has no result when nobody has guessed', () => {
-    expect(getSessionResult([row('p1', 0, 0), row('p2', 0, 0)])).toEqual({ kind: 'none' })
-  })
-
-  // A 0% "best" would crown someone for missing every word they guessed.
-  it('has no winner when nobody has solved a word', () => {
-    expect(getSessionResult([row('p1', 0, 0), row('p2', 2, 0)])).toEqual({ kind: 'none' })
-    expect(getSessionResult([row('p1', 1, 0), row('p2', 2, 0)])).toEqual({ kind: 'none' })
-  })
-
-  it('picks the best win rate among the players who guessed, however few words that was', () => {
-    expect(getSessionResult([row('p1', 4, 3), row('p2', 1, 1), row('p3', 0, 0)])).toEqual({ kind: 'winner', winner: row('p2', 1, 1) })
-  })
-
-  // Not more wins or more words: equal rates are equal (Jay's call).
-  it('calls equal best rates a tie, however many words each guessed', () => {
-    expect(getSessionResult([row('p1', 2, 1), row('p2', 4, 2), row('p3', 3, 0)])).toEqual({ kind: 'tie', tied: [row('p1', 2, 1), row('p2', 4, 2)] })
-  })
-
-  it('ranks best rate first, more solved breaking an equal rate, then seat order, with the players who never guessed last', () => {
-    const rows = [row('p1', 0, 0), row('p2', 2, 1), row('p3', 3, 3), row('p4', 4, 2), row('p5', 2, 1), row('p6', 0, 0)]
-    expect(rankStandingRows(rows).map(({ id }) => id)).toEqual(['p3', 'p4', 'p2', 'p5', 'p1', 'p6'])
-  })
-
+describe('the win rate', () => {
   it('formats a rate, and "-" for nothing played', () => {
     expect(formatWinRate({ played: 3, wins: 2 })).toBe('67%')
     expect(formatWinRate({ played: 0, wins: 0 })).toBe('-')
@@ -290,12 +259,19 @@ describe('sanitizePnpSession', () => {
     ['a name that is not a string', { ...valid(), players: [player('p1'), { id: 'p2', name: 2, profileId: null }] }],
     ['a profile that is not a string', { ...valid(), players: [player('p1'), { id: 'p2', name: 'Bo', profileId: 4 }] }],
     ["a guest's key as a seat's profile", { ...valid(), players: [player('p1'), { id: 'p2', name: 'Bo', profileId: 'guest-p1' }] }],
-    // Seat 1's guest is Single Player's, so seat 1 is always first.
-    ['no seat 1', { ...valid(), players: [player('p2'), player('p3')] }],
-    ['seat 1 not first', { ...valid(), players: [player('p2'), player('p1')] }],
     ['no profile at all', { ...valid(), players: [player('p1'), { id: 'p2', name: 'Bo' }] }]
   ])('starts a fresh session for %s', (_label, value) => {
     expect(sanitizePnpSession(value, ROUND)).toEqual(createDefaultPnpSession())
+  })
+
+  // Seat 1 can leave the table (Jay, 2026-10-20).
+  it('keeps a table without seat 1, or with it further down, naming the guests for their places', () => {
+    const without = sanitizePnpSession({ ...valid(), players: [player('p2'), player('p3')], writerId: 'p2', guesserId: 'p3', focusedId: 'p2' }, ROUND)
+    expect(without.players.map((item) => [item.id, item.name])).toEqual([
+      ['p2', 'Player 1'],
+      ['p3', 'Player 2']
+    ])
+    expect(sanitizePnpSession({ ...valid(), players: [player('p2'), player('p1')] }, ROUND).players.map((item) => item.id)).toEqual(['p2', 'p1'])
   })
 
   it("tidies a profile's stored name, and names every guest for their seat, whatever was stored", () => {

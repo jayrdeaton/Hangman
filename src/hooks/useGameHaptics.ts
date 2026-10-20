@@ -35,5 +35,12 @@ export const useGameHaptics = () => {
     void haptics.impactAsync(haptics.ImpactFeedbackStyle.Light)
   }, [settings.vibrate])
 
-  return { wrongGuess, correctGuess, win, burst }
+  // A seat picked up on the Pass & Play page to be dragged into a new place, the way a home screen's
+  // icon lifts.
+  const pickUp = useCallback(() => {
+    if (!settings.vibrate) return
+    void haptics.impactAsync(haptics.ImpactFeedbackStyle.Medium)
+  }, [settings.vibrate])
+
+  return { wrongGuess, correctGuess, win, burst, pickUp }
 }

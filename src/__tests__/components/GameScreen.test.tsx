@@ -3,12 +3,11 @@ import { type Profile, profilesActions } from '@tastic/profile'
 import { act, cleanup, fireEvent, render, waitFor } from '@testing-library/react-native'
 import { router, useIsFocused } from 'expo-router'
 import { useEffect } from 'react'
-import { Alert, BackHandler, Keyboard, Platform, type StyleProp, StyleSheet, type ViewStyle } from 'react-native'
+import { Alert, BackHandler, Keyboard, Platform } from 'react-native'
 
 import { WIN_DIALOG_DELAY_MS } from '@/components/Game'
 import { GameScreen } from '@/components/GameScreen'
 import { Providers } from '@/components/Providers'
-import { ACHIEVEMENT_TIER_COLORS } from '@/constants/achievements'
 import { type PackSelectionContextType, usePackSelection } from '@/hooks/usePackSelection'
 import { type PuzzleDefaultsContextType, usePuzzleDefaults } from '@/hooks/usePuzzleDefaults'
 import { DEFAULT_MODE } from '@/modes/registry'
@@ -461,7 +460,8 @@ describe('GameScreen (solo)', () => {
 
   // Ported from the old RoundEndDialogAchievements suite: the real app store and provider, so the
   // round records through useGameStats and the card shows what came back.
-  describe('what a round records, and the unlocks on its card', () => {
+  // Its unlocks are toasts, not rows on the card (Jay, 2026-10-20, as in Solitaire).
+  describe('what a round records, and the unlocks it toasts', () => {
     beforeEach(() => {
       jest.useFakeTimers()
     })
@@ -470,26 +470,21 @@ describe('GameScreen (solo)', () => {
     // pill to leave closed.
     const plainCat: SavedPuzzle = { phrase: 'CAT', modeId: DEFAULT_MODE.id, sourceMode: 'random', difficultyTier: 'easy' }
 
-    it("lists a first flawless win's unlocks together, in catalog order and each on its tier's color, once the card opens and not before", async () => {
+    it("toasts a first flawless win's unlocks the moment it's won, during the celebration, and lists none on the card", async () => {
       seedRound(plainCat)
       const screen = await renderScreen()
 
       await guess(screen, ['C', 'A', 'T'])
-      // Already recorded, but the card itself waits WIN_DIALOG_DELAY_MS.
+      // Recorded and toasted, while the card itself waits WIN_DIALOG_DELAY_MS.
       expect(screen.queryByText('You Won!')).toBeNull()
-      expect(screen.queryByText('Flawless Victory')).toBeNull()
       expect(stats().solo).toEqual({ played: 1, wins: 1, losses: 0, draws: 0 })
+      expect(screen.getByText('Flawless Victory')).toBeTruthy()
+      expect(screen.getByText("Beginner's Luck")).toBeTruthy()
+      expect(screen.getAllByText('Achievement unlocked').length).toBeGreaterThan(0)
 
       await openRoundEndCard()
       expect(screen.getByText('You Won!')).toBeTruthy()
-      expect(screen.getByText('Achievements Unlocked')).toBeTruthy()
-      expect(screen.getAllByText(/^(First Word|Solved It|Beginner's Luck|Flawless Victory)$/).map((node) => node.props.children)).toEqual(['First Word', 'Solved It', "Beginner's Luck", 'Flawless Victory'])
-      // Each row is the badge (a View in the tier color) and then the title.
-      const badgeColor = (title: string) => StyleSheet.flatten((screen.getByText(title).parent!.children[0] as unknown as { props: { style: StyleProp<ViewStyle> } }).props.style)?.backgroundColor
-      expect(badgeColor('First Word')).toBe(ACHIEVEMENT_TIER_COLORS.bronze)
-      expect(badgeColor('Solved It')).toBe(ACHIEVEMENT_TIER_COLORS.bronze)
-      expect(badgeColor("Beginner's Luck")).toBe(ACHIEVEMENT_TIER_COLORS.gold)
-      expect(badgeColor('Flawless Victory')).toBe(ACHIEVEMENT_TIER_COLORS.bronze)
+      expect(screen.queryByText(/Achievements? Unlocked$/)).toBeNull()
     })
 
     it('shows no achievement callout on an ordinary win that unlocks nothing new', async () => {
@@ -504,7 +499,7 @@ describe('GameScreen (solo)', () => {
       await openRoundEndCard()
 
       expect(screen.getByText('You Won!')).toBeTruthy()
-      expect(screen.queryByText(/Achievements? Unlocked/)).toBeNull()
+      expect(screen.queryByText('Achievement unlocked')).toBeNull()
       expect(stats().solo.wins).toBe(2)
     })
 
@@ -523,7 +518,7 @@ describe('GameScreen (solo)', () => {
       expect(screen.getByText(`3 of ${pack.count.toLocaleString('en-US')} unlocked in Animals`)).toBeTruthy()
     })
 
-    it("records a loss as a solo loss, and shows that round's unlock too: the very first puzzle played, lost", async () => {
+    it("records a loss as a solo loss, and toasts that round's unlock too: the very first puzzle played, lost", async () => {
       const [pack] = puzzleManifest
       seedRound(savedPuzzle({ phrase: 'CAT', packKey: pack.key, packLabel: 'Animals', puzzleId: 'lost-id' }))
       const screen = await renderScreen()
@@ -533,7 +528,7 @@ describe('GameScreen (solo)', () => {
       await openRoundEndCard()
 
       expect(screen.getByText('You Lost!')).toBeTruthy()
-      expect(screen.getByText('Achievement Unlocked')).toBeTruthy()
+      expect(screen.getByText('Achievement unlocked')).toBeTruthy()
       expect(screen.getByText('First Word')).toBeTruthy()
       expect(screen.queryByText("Beginner's Luck")).toBeNull()
       expect(stats()).toMatchObject({ solo: { played: 1, wins: 0, losses: 1, draws: 0 }, firstGameResult: 'loss', firstGameFlawless: false })
@@ -660,10 +655,9 @@ describe('GameScreen (solo)', () => {
         expect(stats().profiles[OTHER].solo).toEqual({ played: 1, wins: 1, losses: 0, draws: 0 })
         // The device's record has every round played here.
         expect(stats().solo.wins).toBe(1)
-        // The card shows the profile's own unlocks, under their name.
-        expect(screen.getByText('First Word')).toBeTruthy()
-        expect(screen.getByText('Alice Unlocked')).toBeTruthy()
-        expect(screen.queryByText(/^Achievements? Unlocked$/)).toBeNull()
+        // The profile's own unlocks are toasted, named for them.
+        expect(screen.getAllByText('Alice unlocked').length).toBeGreaterThan(0)
+        expect(screen.queryByText('Achievement unlocked')).toBeNull()
       })
 
       it("credits Collection Complete from the winner's own unlocked puzzles, never another player's", async () => {
