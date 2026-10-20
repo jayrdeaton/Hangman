@@ -1,6 +1,6 @@
 {
   "name": "hangman",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": true,
   "description": "Ad-free hangman word-guessing game built with Expo.",
   "type": "module",

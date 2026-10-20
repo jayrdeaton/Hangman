@@ -2,7 +2,7 @@
   "expo": {
     "name": "Hangman",
     "slug": "Hangman",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "scheme": "hangman",
     "orientation": "portrait",
     "userInterfaceStyle": "automatic",
