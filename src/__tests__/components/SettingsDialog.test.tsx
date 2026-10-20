@@ -74,7 +74,7 @@ const mockSetLayout = jest.fn()
 const Wrapper = ({ children }: { children: ReactNode }) => (
   <ReduxProvider store={store}>
     <FeedbackPressProvider paper={RNPaper}>
-      <Provider initialValue={{ appearance: 'light' }}>
+      <Provider statusBar={false} initialValue={{ appearance: 'light' }}>
         <ToastProvider>
           <KeyboardLayoutContext.Provider value={{ layout: 'qwerty', setLayout: mockSetLayout }}>
             <PuzzleDefaultsProvider>

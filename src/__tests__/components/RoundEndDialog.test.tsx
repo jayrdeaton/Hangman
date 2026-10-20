@@ -30,7 +30,9 @@ const headerIcon = () => mockIcon.mock.calls[0][0]
 // Portal.Host the card renders into.
 const Wrapper = ({ children }: { children: ReactNode }) => (
   <FeedbackPressProvider paper={RNPaper}>
-    <Provider initialValue={{ appearance: 'light' }}>{children}</Provider>
+    <Provider statusBar={false} initialValue={{ appearance: 'light' }}>
+      {children}
+    </Provider>
   </FeedbackPressProvider>
 )
 const render = (ui: ReactElement) => rtlRender(ui, { wrapper: Wrapper })
@@ -86,7 +88,9 @@ describe('RoundEndDialog', () => {
       {
         wrapper: ({ children }: { children: ReactNode }) => (
           <FeedbackPressProvider paper={RNPaper}>
-            <Provider initialValue={{ appearance: 'light', color: '#8bc34a' }}>{children}</Provider>
+            <Provider statusBar={false} initialValue={{ appearance: 'light', color: '#8bc34a' }}>
+              {children}
+            </Provider>
           </FeedbackPressProvider>
         )
       }
@@ -125,7 +129,9 @@ describe('RoundEndDialog', () => {
   it("draws missed letters a true red in dark mode, not the theme's pale dark-mode error pink", async () => {
     const DarkWrapper = ({ children }: { children: ReactNode }) => (
       <FeedbackPressProvider paper={RNPaper}>
-        <Provider initialValue={{ appearance: 'dark' }}>{children}</Provider>
+        <Provider statusBar={false} initialValue={{ appearance: 'dark' }}>
+          {children}
+        </Provider>
       </FeedbackPressProvider>
     )
     await rtlRender(

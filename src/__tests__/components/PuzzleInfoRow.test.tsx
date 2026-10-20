@@ -38,7 +38,7 @@ const contrastRatio = (hexA: string, hexB: string): number => {
 // contrast that actually matters is fill vs its own text, not either one against SURFACE.
 const renderDifficultyPill = async (tier: 'easy' | 'medium' | 'hard', dark: boolean) => {
   const utils = await render(
-    <Provider initialValue={{ appearance: dark ? 'dark' : 'light' }}>
+    <Provider statusBar={false} initialValue={{ appearance: dark ? 'dark' : 'light' }}>
       <PuzzleInfoRow difficultyTier={tier} hintRevealed={false} onRevealHint={jest.fn()} />
     </Provider>
   )

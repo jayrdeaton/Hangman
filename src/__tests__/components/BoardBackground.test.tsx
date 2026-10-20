@@ -13,7 +13,7 @@ const themeFor = async (appearance: 'light' | 'dark') => {
     return null
   }
   const { unmount } = await render(
-    <Provider initialValue={{ appearance }}>
+    <Provider statusBar={false} initialValue={{ appearance }}>
       <Probe />
     </Provider>
   )
@@ -23,7 +23,7 @@ const themeFor = async (appearance: 'light' | 'dark') => {
 
 const renderBoard = (appearance: 'light' | 'dark') =>
   render(
-    <Provider initialValue={{ appearance }}>
+    <Provider statusBar={false} initialValue={{ appearance }}>
       <BoardBackground />
     </Provider>
   )

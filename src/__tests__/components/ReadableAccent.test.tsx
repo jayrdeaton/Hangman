@@ -20,7 +20,7 @@ const lastSeen = (where: Where): Colors | undefined => mockOnColors.mock.calls.f
 const renderIn = async (color: string) => {
   mockOnColors.mockClear()
   await render(
-    <Provider initialValue={{ appearance: 'light', color }}>
+    <Provider statusBar={false} initialValue={{ appearance: 'light', color }}>
       <Probe where='outside' />
       <ReadableAccent>
         <Probe where='inside' />

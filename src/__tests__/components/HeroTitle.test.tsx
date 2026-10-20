@@ -46,7 +46,7 @@ const STEP = 500
 
 // The player's art comes from the puzzle defaults; the colors and theme from auto-paper's Provider.
 const Wrapper = ({ mode, children }: { mode: GameMode; children: ReactNode }) => (
-  <Provider initialValue={{ appearance: 'light' }}>
+  <Provider statusBar={false} initialValue={{ appearance: 'light' }}>
     <PuzzleDefaultsContext.Provider value={{ mode, setMode: jest.fn(), difficulty: 'any', setDifficulty: jest.fn(), ready: true }}>{children}</PuzzleDefaultsContext.Provider>
   </Provider>
 )

@@ -55,7 +55,9 @@ const Wrapper = ({ children }: { children: ReactNode }) => (
       <CatalogProvider>
         <CatalogProbe />
         <FeedbackPressProvider paper={RNPaper}>
-          <Provider initialValue={{ appearance: 'light' }}>{children}</Provider>
+          <Provider statusBar={false} initialValue={{ appearance: 'light' }}>
+            {children}
+          </Provider>
         </FeedbackPressProvider>
       </CatalogProvider>
     </GameStatsProvider>
