@@ -13,7 +13,7 @@ export type PackRowAction = { name: string; label: string; onPress: () => void }
 export type PackRowProps = {
   label: string
   // Small eyebrow tag shown above the label for a pack that's one of several related siblings
-  // (e.g. "Sports" above "NFL"). Only rendered (and only recolors the card) when `isPack` is true
+  // (e.g. "Sports" above "Football Teams"). Only rendered (and only recolors the card) when `isPack` is true
   // - see its own comment below for why a puzzle row inside a pack never sets this.
   group?: string
   // True for a row that represents a whole PACK (PacksScreen's pack lists, PackPuzzleList's

@@ -20,22 +20,22 @@ describe('PackRow', () => {
     const edit = jest.fn()
     const { getByLabelText } = await render(
       <PackRow
-        label='NFL'
+        label='Football Teams'
         group='Sports'
         isPack
-        subtitle='3 of 31 unlocked'
+        subtitle='3 of 32 unlocked'
         onPress={jest.fn()}
         actions={[
-          { name: 'browse', label: 'Browse NFL', onPress: browse },
-          { name: 'edit', label: 'Edit NFL', onPress: edit }
+          { name: 'browse', label: 'Browse Football Teams', onPress: browse },
+          { name: 'edit', label: 'Edit Football Teams', onPress: edit }
         ]}
       />
     )
 
-    const row = getByLabelText('Sports, NFL, 3 of 31 unlocked')
+    const row = getByLabelText('Sports, Football Teams, 3 of 32 unlocked')
     expect(row.props.accessibilityActions).toEqual([
-      { name: 'browse', label: 'Browse NFL' },
-      { name: 'edit', label: 'Edit NFL' }
+      { name: 'browse', label: 'Browse Football Teams' },
+      { name: 'edit', label: 'Edit Football Teams' }
     ])
     expect(row.props.accessibilityRole).toBe('button')
 
@@ -51,8 +51,8 @@ describe('PackRow', () => {
   })
 
   it('adds no wrapper for a row with neither a label nor actions', async () => {
-    const { queryByLabelText } = await render(<PackRow label='NFL' subtitle='3 of 31 unlocked' onPress={jest.fn()} />)
+    const { queryByLabelText } = await render(<PackRow label='Football Teams' subtitle='3 of 32 unlocked' onPress={jest.fn()} />)
 
-    expect(queryByLabelText(/NFL,/)).toBeNull()
+    expect(queryByLabelText(/Football Teams,/)).toBeNull()
   })
 })

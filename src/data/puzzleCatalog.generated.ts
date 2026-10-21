@@ -223,7 +223,7 @@ export const puzzleManifest: PuzzleManifestItem[] = [
   {
     "key": "sportsCollegeFootball",
     "file": "sportsCollegeFootball.json",
-    "label": "NCAA Football",
+    "label": "College Football",
     "group": "Sports",
     "count": 138,
     "difficultyTiers": [
@@ -241,7 +241,7 @@ export const puzzleManifest: PuzzleManifestItem[] = [
   {
     "key": "sportsMLB",
     "file": "sportsMLB.json",
-    "label": "MLB",
+    "label": "Baseball Teams",
     "group": "Sports",
     "count": 30,
     "difficultyTiers": [
@@ -258,7 +258,7 @@ export const puzzleManifest: PuzzleManifestItem[] = [
   {
     "key": "sportsMLS",
     "file": "sportsMLS.json",
-    "label": "MLS",
+    "label": "Soccer Teams",
     "group": "Sports",
     "count": 30,
     "difficultyTiers": [
@@ -276,7 +276,7 @@ export const puzzleManifest: PuzzleManifestItem[] = [
   {
     "key": "sportsNBA",
     "file": "sportsNBA.json",
-    "label": "NBA",
+    "label": "Basketball Teams",
     "group": "Sports",
     "count": 29,
     "difficultyTiers": [
@@ -294,9 +294,9 @@ export const puzzleManifest: PuzzleManifestItem[] = [
   {
     "key": "sportsNFL",
     "file": "sportsNFL.json",
-    "label": "NFL",
+    "label": "Football Teams",
     "group": "Sports",
-    "count": 31,
+    "count": 32,
     "difficultyTiers": [
       "easy",
       "hard",
@@ -312,7 +312,7 @@ export const puzzleManifest: PuzzleManifestItem[] = [
   {
     "key": "sportsNHL",
     "file": "sportsNHL.json",
-    "label": "NHL",
+    "label": "Hockey Teams",
     "group": "Sports",
     "count": 32,
     "difficultyTiers": [

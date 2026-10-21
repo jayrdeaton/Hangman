@@ -649,5 +649,26 @@
     "metadata": {
       "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
     }
+  },
+  {
+    "id": "861595b73e5615a8eb686b70e96b74c4",
+    "source": "sports",
+    "type": "title",
+    "answer": "San Francisco Forty Niners",
+    "normalizedAnswer": "SAN FRANCISCO FORTY NINERS",
+    "category": "NFL Team",
+    "difficulty": 60,
+    "difficultyTier": "easy",
+    "wordCount": 4,
+    "letterCount": 23,
+    "uniqueLetterCount": 11,
+    "tags": [
+      "sports",
+      "nfl",
+      "team"
+    ],
+    "metadata": {
+      "source": "https://en.wikipedia.org/wiki/List_of_National_Football_League_stadiums"
+    }
   }
 ]

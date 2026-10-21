@@ -7,7 +7,7 @@ export type { PuzzleManifestItem }
 
 export type PuzzleDifficultyTier = 'easy' | 'medium' | 'hard'
 
-// Primary sort by group (so related packs like Sports' NFL/NBA/MLB/... actually land together
+// Primary sort by group (so related packs like Sports' team packs actually land together
 // instead of scattered wherever their key happens to fall alphabetically), secondary by label
 // within a group. A group-less pack (Bands' own decade packs, and every custom pack - neither has a
 // `group`) sorts after every named group, not before: '￿' compares larger than any real group

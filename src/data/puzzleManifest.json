@@ -207,7 +207,7 @@
   {
     "key": "sportsCollegeFootball",
     "file": "sportsCollegeFootball.json",
-    "label": "NCAA Football",
+    "label": "College Football",
     "group": "Sports",
     "count": 138,
     "difficultyTiers": [
@@ -225,7 +225,7 @@
   {
     "key": "sportsMLB",
     "file": "sportsMLB.json",
-    "label": "MLB",
+    "label": "Baseball Teams",
     "group": "Sports",
     "count": 30,
     "difficultyTiers": [
@@ -242,7 +242,7 @@
   {
     "key": "sportsMLS",
     "file": "sportsMLS.json",
-    "label": "MLS",
+    "label": "Soccer Teams",
     "group": "Sports",
     "count": 30,
     "difficultyTiers": [
@@ -260,7 +260,7 @@
   {
     "key": "sportsNBA",
     "file": "sportsNBA.json",
-    "label": "NBA",
+    "label": "Basketball Teams",
     "group": "Sports",
     "count": 29,
     "difficultyTiers": [
@@ -278,9 +278,9 @@
   {
     "key": "sportsNFL",
     "file": "sportsNFL.json",
-    "label": "NFL",
+    "label": "Football Teams",
     "group": "Sports",
-    "count": 31,
+    "count": 32,
     "difficultyTiers": [
       "easy",
       "hard",
@@ -296,7 +296,7 @@
   {
     "key": "sportsNHL",
     "file": "sportsNHL.json",
-    "label": "NHL",
+    "label": "Hockey Teams",
     "group": "Sports",
     "count": 32,
     "difficultyTiers": [
