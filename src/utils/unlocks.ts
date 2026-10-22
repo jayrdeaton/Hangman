@@ -58,7 +58,7 @@ export const getPuzzleUnlockMap = async (playerKey: PlayerKey): Promise<PuzzleUn
 const getStoredUnlockKeys = async (): Promise<string[]> => (await AsyncStorage.getAllKeys()).filter((key) => key.startsWith(PUZZLE_UNLOCKS_KEY_PREFIX))
 
 // Every player's unlocked puzzles together: a puzzle anyone on this device has solved. What Stats shows
-// for All Profiles, the way its numbers there are every round played on the device.
+// for Everyone, the way its numbers there are every round played on the device.
 export const getDevicePuzzleUnlockMap = async (): Promise<PuzzleUnlockMap> => {
   try {
     const keys = await getStoredUnlockKeys()

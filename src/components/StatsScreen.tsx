@@ -24,9 +24,9 @@ import { gameShell } from '@/utils/webLayout'
 export type StatsScreenProps = {
   onBack: () => void
   insets: { top: number; left: number; bottom: number; right: number }
-  // Whose numbers to show first: a profile's id, or null/undefined for All Profiles, the device's (every
+  // Whose numbers to show first: a profile's id, or null/undefined for Everyone, the device's (every
   // round played here, which is also the guests' record). The route leaves it out, so every visit opens
-  // on All Profiles, as every fleet game's achievements screen does; the picker at the top changes it.
+  // on Everyone, as every fleet game's achievements screen does; the picker at the top changes it.
   initialProfileId?: string | null
 }
 
@@ -41,10 +41,10 @@ const count = (n: number): string => commaString(n)
 // the other games' achievements screens use): the /achievements route, opened from Home's trophy.
 //
 // A profile picker at the top (Solitaire's and LightCycles'), there once a profile exists, picks whose
-// numbers show: All Profiles (the device's, the null row), or one profile's own. Everything below
+// numbers show: Everyone (the device's, the null row), or one profile's own. Everything below
 // follows it, the unlocked puzzles and the achievements included, and so does the reset at the bottom:
-// one player's stats, achievements and unlocked puzzles while they're shown, everyone's on All
-// Profiles.
+// one player's stats, achievements and unlocked puzzles while they're shown, everyone's on
+// Everyone.
 //
 // Transparent over the app's one board (see BoardBackground), so it reads as the same whiteboard as
 // every other screen; text stays the fleet's high-contrast ink. Counts packs over the same
@@ -58,7 +58,7 @@ export const StatsScreen = ({ onBack, insets, initialProfileId = null }: StatsSc
   const { packsVersion } = useCatalogVersions()
   const { refreshUnlocks } = useCatalogActions()
   const profiles = useProfiles()
-  // This screen's own view, independent of who's playing. Back on All Profiles if the profile shown is
+  // This screen's own view, independent of who's playing. Back on Everyone if the profile shown is
   // deleted (in another game, say) while the screen is open.
   const [selectedId, setSelectedId] = useState<string | null>(initialProfileId)
   const shown = selectedId ? (profiles.find((profile) => profile.id === selectedId) ?? null) : null
@@ -72,7 +72,7 @@ export const StatsScreen = ({ onBack, insets, initialProfileId = null }: StatsSc
   // The profile's own bucket (empty until they finish a round), read exactly as the device's is.
   const profileBucket = profileId ? deviceStats.profiles[profileId] : undefined
   const stats = useMemo(() => (profileId ? getProfileStatsView(profileBucket ?? createDefaultProfileStats()) : deviceStats), [profileId, profileBucket, deviceStats])
-  // The profile's own unlocked puzzles, or for All Profiles everyone's together.
+  // The profile's own unlocked puzzles, or on Everyone every player's together.
   const { unlockMap } = usePlayerPuzzleUnlocks(profileId ? playerKeyFor(profileId) : null)
 
   const { totalUnlocked, totalAvailable } = useMemo(() => getManifestUnlockProgress(manifest, unlockMap), [manifest, unlockMap])
@@ -82,11 +82,11 @@ export const StatsScreen = ({ onBack, insets, initialProfileId = null }: StatsSc
   // don't count.
   const achievementsEarned = achievementRows.filter((row) => row.unlockedAt !== undefined).length
 
-  // BaseStatsScreen calls this once its confirm is accepted. All Profiles clears every stat,
-  // achievement and unlocked puzzle together (see useGameStats); a profile's clears just theirs (see
-  // usePlayerData), and All Profiles keeps the rounds they played. Either way every screen then re-reads
+  // BaseStatsScreen calls this once its confirm is accepted. On Everyone it clears every stat,
+  // achievement and unlocked puzzle together (see useGameStats); on a profile just theirs (see
+  // usePlayerData), and the totals under Everyone keep the rounds they played. Either way every screen then re-reads
   // its unlock map.
-  const reset = shown ? { onReset: () => void resetPlayer(shown.id), label: `Reset ${shown.name}'s Stats`, title: `Reset ${shown.name}?`, body: `This permanently erases ${shown.name}'s stats, achievements and unlocked puzzles. All Profiles keeps the rounds they played. This cannot be undone.` } : { onReset: () => void resetAll().then(refreshUnlocks), label: 'Reset All Stats', title: 'Reset Everything?', body: 'This permanently erases every stat, achievement and unlocked puzzle. This cannot be undone.' }
+  const reset = shown ? { onReset: () => void resetPlayer(shown.id), label: `Reset ${shown.name}'s Stats`, title: `Reset ${shown.name}?`, body: `This permanently erases ${shown.name}'s stats, achievements and unlocked puzzles. The totals under Everyone stay. This cannot be undone.` } : { onReset: () => void resetAll().then(refreshUnlocks), label: 'Reset All Stats', title: 'Reset Everything?', body: 'This permanently erases every stat, achievement and unlocked puzzle. This cannot be undone.' }
 
   return (
     <View testID='stats-screen' style={styles.screen} onAccessibilityEscape={onBack}>
@@ -101,7 +101,7 @@ export const StatsScreen = ({ onBack, insets, initialProfileId = null }: StatsSc
                   children (see LoadoutShell's LoadoutPressAway). */}
               <PressAwayOverlay active={pickerHost.openId !== null} onPress={pickerHost.close} style={styles.pressAway} />
               <View style={styles.picker}>
-                <ProfilePicker idPrefix={PICKER_ID_PREFIX} host={pickerHost} profiles={profiles} selectedId={profileId} color={ink} dark={theme.dark} guestLabel='All Profiles' nullLabel='All Profiles' nullIcon='account-group' onSelect={handleSelect} />
+                <ProfilePicker idPrefix={PICKER_ID_PREFIX} host={pickerHost} profiles={profiles} selectedId={profileId} color={ink} dark={theme.dark} guestLabel='Everyone' nullLabel='Everyone' nullIcon='account-group' onSelect={handleSelect} />
               </View>
             </>
           ) : null}

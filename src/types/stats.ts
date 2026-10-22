@@ -29,7 +29,7 @@ export interface ProfileStats extends DayStreakState {
 }
 
 // The top level is the device bucket: every round played on this device, whoever played it, which is
-// also the guests' record (a guest has no bucket of their own) and the All Profiles view. Each profile's
+// also the guests' record (a guest has no bucket of their own) and the Everyone view. Each profile's
 // own rounds are in `profiles`, by profile id, as Snake and Solitaire keep theirs (@tastic/achievements'
 // per-profile model).
 export interface StatsState extends ProfileStats {

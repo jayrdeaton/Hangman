@@ -15,7 +15,7 @@ import { useGameStats } from './useGameStats'
 
 export type PlayerData = {
   // One profile's stats and achievements and their unlocked puzzles, for Stats' Reset <Name>'s Stats.
-  // The device bucket (All Profiles) keeps the rounds they played, as Solitaire's does.
+  // The device bucket (Everyone) keeps the rounds they played, as Solitaire's does.
   resetPlayer: (profileId: string) => Promise<void>
   // Everything Hangman keeps for a profile, for when it's gone: deleted on the Profiles screen, or in
   // another game on the shared roster (ProfilesProvider's self-heal). The above, plus their art,

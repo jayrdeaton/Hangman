@@ -20,7 +20,7 @@ import { createDefaultProfileStats, createDefaultStats } from '@/utils/statsVali
 import { clearAllPuzzleUnlocks, clearPuzzleUnlocks, getDevicePuzzleUnlockMap, getPuzzleUnlockMap, type PuzzleUnlockMap } from '@/utils/unlocks'
 
 // AsyncStorage is a no-op stub in tests, so the unlocked puzzles come from getDevicePuzzleUnlockMap
-// (All Profiles: every player's together) and getPuzzleUnlockMap (one profile's), the real ones,
+// (Everyone: every player's together) and getPuzzleUnlockMap (one profile's), the real ones,
 // always empty, unless a test hands them a map. The reset's puzzle-unlock half is checked through
 // clearAllPuzzleUnlocks.
 jest.mock('@/utils/unlocks', () => {
@@ -71,7 +71,7 @@ const MANIFEST = getPuzzleManifest().filter((item) => item.count > 0)
 const TOTAL = MANIFEST.reduce((sum, item) => sum + item.count, 0)
 const renderScreen = (props: Partial<StatsScreenProps> = {}) => render(<StatsScreen onBack={jest.fn()} insets={insets} {...props} />)
 const seedStats = (patch: Partial<StatsState>, unlocked: UnlockedAchievementsState = {}) => store.dispatch(achievementsActions.update({ stats: { ...createDefaultStats(), ...patch }, unlocked }))
-// Every player's unlocked puzzles together, what All Profiles counts.
+// Every player's unlocked puzzles together, what Everyone counts.
 const storeUnlocks = (map: PuzzleUnlockMap) => mockGetDeviceUnlockMap.mockResolvedValue(map)
 
 type Screen = Awaited<ReturnType<typeof renderScreen>>
@@ -280,7 +280,7 @@ describe('StatsScreen', () => {
     expect(rowValue(screen, 'Won')).toBe('0')
   })
 
-  // The picker at the top picks whose numbers show: All Profiles (the device's) on every visit, or one
+  // The picker at the top picks whose numbers show: Everyone (the device's) on every visit, or one
   // profile's own, where everything on the page is that profile's: their bucket, their unlocked puzzles
   // and their achievements. The reset follows it.
   describe('the profile picker', () => {
@@ -307,21 +307,21 @@ describe('StatsScreen', () => {
       store.dispatch(profilesActions.setAll([]))
       const screen = await renderScreen()
 
-      expect(screen.queryByLabelText('ALL PROFILES')).toBeNull()
+      expect(screen.queryByLabelText('EVERYONE')).toBeNull()
     })
 
-    it("opens on All Profiles, the device's numbers, and shows a profile's own once picked, and the device's again from All Profiles", async () => {
+    it("opens on Everyone, the device's numbers, and shows a profile's own once picked, and the device's again from Everyone", async () => {
       seedStats({ solo: record(10, 8), profiles: { [PROFILE]: { ...createDefaultProfileStats(), solo: record(4, 1) } } })
       const screen = await renderScreen()
-      expect(screen.getByLabelText('ALL PROFILES')).toBeTruthy()
+      expect(screen.getByLabelText('EVERYONE')).toBeTruthy()
       expect(rowValue(screen, 'Played')).toBe('10')
 
-      await pick(screen, 'ALL PROFILES', 'Alice')
+      await pick(screen, 'EVERYONE', 'Alice')
       expect(screen.getByLabelText('ALICE')).toBeTruthy()
       expect(rowValue(screen, 'Played')).toBe('4')
       expect(screen.getByText("Reset Alice's Stats")).toBeTruthy()
 
-      await pick(screen, 'ALICE', 'All Profiles')
+      await pick(screen, 'ALICE', 'Everyone')
       expect(rowValue(screen, 'Played')).toBe('10')
       expect(screen.getByText('Reset All Stats')).toBeTruthy()
     })
@@ -358,7 +358,7 @@ describe('StatsScreen', () => {
       expect(rowValue(screen, 'Achievements Earned')).toBe(`1 / ${ACHIEVEMENT_CATALOG.length}`)
     })
 
-    it('goes back to All Profiles if the profile shown is deleted while the screen is open', async () => {
+    it('goes back to Everyone if the profile shown is deleted while the screen is open', async () => {
       seedStats({ solo: record(10, 8), profiles: { [PROFILE]: { ...createDefaultProfileStats(), solo: record(4, 1) } } })
       const screen = await renderScreen({ initialProfileId: PROFILE })
       expect(rowValue(screen, 'Played')).toBe('4')
@@ -367,17 +367,18 @@ describe('StatsScreen', () => {
         store.dispatch(profilesActions.remove(PROFILE))
       })
 
-      expect(screen.getByLabelText('ALL PROFILES')).toBeTruthy()
+      expect(screen.getByLabelText('EVERYONE')).toBeTruthy()
       expect(rowValue(screen, 'Played')).toBe('10')
     })
 
-    it("resets only the profile shown: their stats, achievements and unlocked puzzles, keeping All Profiles' rounds and everyone else's", async () => {
+    it("resets only the profile shown: their stats, achievements and unlocked puzzles, keeping the totals under Everyone and everyone else's", async () => {
       seedStats({ solo: record(10, 8), profiles: { [PROFILE]: { ...createDefaultProfileStats(), solo: record(4, 1) }, [BOB.id]: { ...createDefaultProfileStats(), solo: record(2, 2) } } }, { first_game_played: 1, [`${PROFILE}:first_game_played`]: 2, [`${BOB.id}:first_game_played`]: 3 })
       const screen = await renderScreen({ initialProfileId: PROFILE })
 
       await fireEvent.press(screen.getByText("Reset Alice's Stats"))
       expect(screen.getByText('Reset Alice?')).toBeTruthy()
       expect(screen.getByText(/erases Alice's stats, achievements and unlocked puzzles/)).toBeTruthy()
+      expect(screen.getByText(/The totals under Everyone stay/)).toBeTruthy()
       await fireEvent.press(screen.getByText('Reset'))
 
       await waitFor(() => expect(mockClearPuzzleUnlocks).toHaveBeenCalledWith(PROFILE))
