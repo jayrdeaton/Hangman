@@ -1,6 +1,6 @@
 import { type Profile, profilesActions } from '@tastic/profile'
 import { act, fireEvent, render } from '@testing-library/react-native'
-import { StyleSheet } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 
 import { ManageProfilesScreen } from '@/components/ManageProfilesScreen'
 import { Providers } from '@/components/Providers'
@@ -133,6 +133,26 @@ describe('ManageProfilesScreen', () => {
 
     expect(pathFills(screen.toJSON())).toEqual([])
     expect(JSON.stringify(screen.toJSON())).toContain(`"backgroundColor":"${ALICE.color}"`)
+  })
+
+  // The edit row's color picker (hud's InlineColorPicker, through @tastic/profile 0.17.0) draws its
+  // grid as the palettes the colors give, in the active player's harmony; its trigger stays flat.
+  it("draws the edit row's color swatches as palettes, its trigger flat", async () => {
+    // The popover only shows once hud's useAutoAlign has measured, and the jest preset's View never
+    // answers measureInWindow: this one does.
+    const measure = jest.spyOn(View.prototype as unknown as { measureInWindow: (callback: (x: number, y: number, width: number, height: number) => void) => void }, 'measureInWindow').mockImplementation((callback) => callback(0, 0, 480, 800))
+    try {
+      const screen = await renderScreen()
+      await fireEvent.press(screen.getByText('Alice'))
+      expect(pathFills(screen.toJSON())).toEqual([])
+
+      await fireEvent.press(screen.getByText('A'))
+      // Every swatch in the grid is a palette (a Circle under two Paths, see PaletteSwatch); the
+      // trigger, a flat chip, draws none.
+      expect(pathFills(screen.toJSON())).toHaveLength(2 * 20)
+    } finally {
+      measure.mockRestore()
+    }
   })
 
   it("follows the roster as it changes elsewhere (another game's edit)", async () => {

@@ -16,8 +16,9 @@ export const harmonySwatchRenderer = (harmony: ColorHarmony): ProfileSwatchRende
   }
 
 // A player's harmony for the pickers inside it (see PlayerPicker): their color page previews the palette
-// each color would give this player, and the Color row shows the one in effect. Everything else the
-// package draws stays flat, chips included, here and app-wide (there's no app-wide renderer).
+// each color would give this player, and the Color row shows the one in effect. The Profiles screen wraps
+// itself in the active player's, for its edit rows' color pickers (see ManageProfilesScreen). Everything
+// else the package draws stays flat, chips included (there's no app-wide renderer).
 export const HarmonySwatches = ({ harmony, children }: { harmony: ColorHarmony; children: ReactNode }): JSX.Element => {
   const renderSwatch = useMemo(() => harmonySwatchRenderer(harmony), [harmony])
   return <ProfileColorProvider renderSwatch={renderSwatch}>{children}</ProfileColorProvider>
